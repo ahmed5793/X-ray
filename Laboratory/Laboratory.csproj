@@ -84,6 +84,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BL\CategoryXRaya.cs" />
+    <Compile Include="BL\Class1.cs" />
     <Compile Include="BL\Company.cs" />
     <Compile Include="BL\Customer.cs" />
     <Compile Include="BL\Doctors.cs" />
