@@ -91,9 +91,16 @@
     <Compile Include="BL\Employee.cs" />
     <Compile Include="BL\ItemsXRaya.cs" />
     <Compile Include="BL\Masrofat.cs" />
+    <Compile Include="BL\Product.cs" />
     <Compile Include="BL\Stock.cs" />
     <Compile Include="BL\Store.cs" />
     <Compile Include="DAL\DataAccessLayer.cs" />
+    <Compile Include="PL\Add_Product.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Add_Product.Designer.cs">
+      <DependentUpon>Add_Product.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\frm_AddStock.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,6 +205,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="PL\Add_Product.resx">
+      <DependentUpon>Add_Product.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\frm_AddStock.resx">
       <DependentUpon>frm_AddStock.cs</DependentUpon>
     </EmbeddedResource>

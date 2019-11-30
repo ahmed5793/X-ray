@@ -57,8 +57,30 @@ namespace Laboratory.BL
             {
                 dt.Dispose();
             }
-           
-           
+        
+        }
+        internal DataTable Select_ComboStore()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                DataAccessLayer DA = new DataAccessLayer();
+                DA.open();
+                dt.Clear();
+                dt = DA.selected("Select_ComboStore", null);
+                return dt;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                dt.Dispose();
+            }
+
         }
     }
 }
