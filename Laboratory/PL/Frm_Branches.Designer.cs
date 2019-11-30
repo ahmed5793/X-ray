@@ -40,10 +40,10 @@
             this.txt_address = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cmb_Stock = new System.Windows.Forms.ComboBox();
-            this.btn_save = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.cmb_store = new System.Windows.Forms.ComboBox();
+            this.cmb_Stock = new System.Windows.Forms.ComboBox();
+            this.btn_save = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -130,7 +130,7 @@
             // btn_update
             // 
             this.btn_update.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_update.Location = new System.Drawing.Point(291, 127);
+            this.btn_update.Location = new System.Drawing.Point(302, 127);
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(118, 40);
             this.btn_update.TabIndex = 4;
@@ -187,6 +187,30 @@
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(274, 75);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(60, 24);
+            this.label1.TabIndex = 36;
+            this.label1.Text = "المخزن";
+            // 
+            // cmb_store
+            // 
+            this.cmb_store.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmb_store.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmb_store.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmb_store.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_store.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_store.FormattingEnabled = true;
+            this.cmb_store.Location = new System.Drawing.Point(17, 67);
+            this.cmb_store.Name = "cmb_store";
+            this.cmb_store.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cmb_store.Size = new System.Drawing.Size(215, 32);
+            this.cmb_store.TabIndex = 35;
+            // 
             // cmb_Stock
             // 
             this.cmb_Stock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -211,30 +235,6 @@
             this.btn_save.Text = "تسجيل بيانات العميل";
             this.btn_save.UseVisualStyleBackColor = true;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(274, 75);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 24);
-            this.label1.TabIndex = 36;
-            this.label1.Text = "المخزن";
-            // 
-            // cmb_store
-            // 
-            this.cmb_store.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmb_store.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cmb_store.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmb_store.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_store.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_store.FormattingEnabled = true;
-            this.cmb_store.Location = new System.Drawing.Point(17, 67);
-            this.cmb_store.Name = "cmb_store";
-            this.cmb_store.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmb_store.Size = new System.Drawing.Size(215, 32);
-            this.cmb_store.TabIndex = 35;
             // 
             // Frm_Branches
             // 

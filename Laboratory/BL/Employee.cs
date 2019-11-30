@@ -116,5 +116,78 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
+
+        internal void AddEmployee_Salf(string Name_Daen, DateTime date_Salf, DateTime date, string @note,  decimal money,int id_Empl)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[6];
+            param[0] = new SqlParameter("@Name_Daen", SqlDbType.NVarChar, 100);
+            param[0].Value = Name_Daen;
+            param[1] = new SqlParameter("@date_Salf", SqlDbType.DateTime);
+            param[1].Value = date_Salf;
+            param[2] = new SqlParameter("@date", SqlDbType.DateTime);
+            param[2].Value = date;
+            param[3] = new SqlParameter("@note", SqlDbType.NVarChar, 150);
+            param[3].Value = note;
+            param[4] = new SqlParameter("@money", SqlDbType.Decimal);
+            param[4].Value = money;
+            param[5] = new SqlParameter("@id_Empl", SqlDbType.Int);
+            param[5].Value = id_Empl;
+       
+
+
+            da.excutequery("AddEmployee_Salf", param);
+            da.close();
+        }
+        internal void UpdateEmployee_Salf(string Name_Daen, DateTime date_Salf, DateTime date, string @note, decimal money, int id_Empl,int id_salf)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[7];
+            param[0] = new SqlParameter("@Name_Daen", SqlDbType.NVarChar, 100);
+            param[0].Value = Name_Daen;
+            param[1] = new SqlParameter("@date_Salf", SqlDbType.DateTime);
+            param[1].Value = date_Salf;
+            param[2] = new SqlParameter("@date", SqlDbType.DateTime);
+            param[2].Value = date;
+            param[3] = new SqlParameter("@note", SqlDbType.NVarChar, 150);
+            param[3].Value = note;
+            param[4] = new SqlParameter("@money", SqlDbType.Decimal);
+            param[4].Value = money;
+            param[5] = new SqlParameter("@id_Empl", SqlDbType.Int);
+            param[5].Value = id_Empl;
+            param[6] = new SqlParameter("@id_salf", SqlDbType.Int);
+            param[6].Value = id_salf;
+
+
+
+            da.excutequery("UpdateEmployee_Salf", param);
+            da.close();
+        }
+        internal DataTable SelectEmployeeSalf()
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            dt = da.selected("SelectEmployeeSalf", null);
+            da.close();
+            return dt;
+        }
+        internal DataTable SearchEmployeeSalf(string id)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@id", SqlDbType.NVarChar, 100);
+            param[0].Value = id;
+            dt = da.selected("SearchEmployeeSalf", param);
+            da.close();
+            return dt;
+        }
+
     }
 }
