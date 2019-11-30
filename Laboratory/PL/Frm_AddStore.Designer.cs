@@ -82,9 +82,9 @@
             // btn_new
             // 
             this.btn_new.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_new.Location = new System.Drawing.Point(310, 109);
+            this.btn_new.Location = new System.Drawing.Point(285, 109);
             this.btn_new.Name = "btn_new";
-            this.btn_new.Size = new System.Drawing.Size(132, 40);
+            this.btn_new.Size = new System.Drawing.Size(176, 40);
             this.btn_new.TabIndex = 24;
             this.btn_new.Text = "جديد";
             this.btn_new.UseVisualStyleBackColor = true;
