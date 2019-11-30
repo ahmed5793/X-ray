@@ -52,6 +52,9 @@ namespace Laboratory.PL
             {
                 E.AddEmployee_Salf(txt_NameDaen.Text, dateTimePicker1.Value, dateTimePicker2.Value, txt_note.Text, Convert.ToDecimal(Txt_money.Text), Convert.ToInt32(cmb_employeeName.SelectedValue));
                 MessageBox.Show("تم التسجيل بنجاح");
+                E.AddEMPSalaryMins(Convert.ToInt32(cmb_employeeName.SelectedValue), dateTimePicker1.Value,
+                  Convert.ToDecimal(Txt_money.Text), "false");
+                dataGridView1.DataSource = E.SelectEmployeeSalf();
                 txt_note.Clear();
                 txt_NameDaen.Clear();
                 Txt_money.Clear();
@@ -62,6 +65,7 @@ namespace Laboratory.PL
                 btn_new.Hide();
                 btn_save.Show();
                 btn_update.Enabled = false;
+               
             }
         }
 
@@ -145,6 +149,18 @@ namespace Laboratory.PL
             {
                 e.Handled = true;
             }
+        }
+
+        private void Frm_Salf_Load(object sender, EventArgs e)
+        {
+            cmb_employeeName.DataSource = E.SelectCompoEmployee();
+            cmb_employeeName.DisplayMember = "Emp_Name";
+            cmb_employeeName.ValueMember = "Emp_ID";
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

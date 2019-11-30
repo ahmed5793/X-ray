@@ -106,6 +106,12 @@
     <Compile Include="PL\frm_AddStockMoney.Designer.cs">
       <DependentUpon>frm_AddStockMoney.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Frm_AddStore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_AddStore.Designer.cs">
+      <DependentUpon>Frm_AddStore.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_Branches.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,12 @@
     </Compile>
     <Compile Include="PL\Frm_Employee.Designer.cs">
       <DependentUpon>Frm_Employee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Frm_EmpSarf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_EmpSarf.Designer.cs">
+      <DependentUpon>Frm_EmpSarf.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Frm_GenderJob.cs">
       <SubType>Form</SubType>
@@ -198,6 +210,9 @@
     <EmbeddedResource Include="PL\frm_AddStockMoney.resx">
       <DependentUpon>frm_AddStockMoney.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_AddStore.resx">
+      <DependentUpon>Frm_AddStore.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Branches.resx">
       <DependentUpon>Frm_Branches.cs</DependentUpon>
     </EmbeddedResource>
@@ -218,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Employee.resx">
       <DependentUpon>Frm_Employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_EmpSarf.resx">
+      <DependentUpon>Frm_EmpSarf.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_GenderJob.resx">
       <DependentUpon>Frm_GenderJob.cs</DependentUpon>

@@ -134,6 +134,7 @@
             this.groupBox1.Size = new System.Drawing.Size(879, 257);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // txt_note
             // 
@@ -191,7 +192,7 @@
             // btn_new
             // 
             this.btn_new.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_new.Location = new System.Drawing.Point(174, 203);
+            this.btn_new.Location = new System.Drawing.Point(140, 203);
             this.btn_new.Name = "btn_new";
             this.btn_new.Size = new System.Drawing.Size(132, 40);
             this.btn_new.TabIndex = 12;
@@ -309,6 +310,7 @@
             this.Controls.Add(this.groupBox2);
             this.Name = "Frm_Salf";
             this.Text = "Frm_Salf";
+            this.Load += new System.EventHandler(this.Frm_Salf_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
