@@ -188,6 +188,51 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
+        internal void AddEMPSalaryMins(int emp_id,  DateTime date,  decimal money,string pay)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[4];
+            param[0] = new SqlParameter("@emp_id", SqlDbType.Int);
+            param[0].Value = emp_id;
+            param[1] = new SqlParameter("@date", SqlDbType.DateTime);
+            param[1].Value = date;
+            param[2] = new SqlParameter("@money", SqlDbType.Decimal);
+            param[2].Value = money;
+            param[3] = new SqlParameter("@Pay", SqlDbType.NVarChar,50);
+            param[3].Value = pay;
+        
+          
+        
 
+
+
+            da.excutequery("AddEMPSalaryMins", param);
+            da.close();
+        }
+
+        internal DataTable SelectCompoEmployee()
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            dt = da.selected("SelectCompoEmployee", null);
+            da.close();
+            return dt;
+        }
+        internal DataTable SelectCHECKSalaryEmployee(int id)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@id", SqlDbType.Int);
+            param[0].Value = id;
+            dt = da.selected("SelectCHECKSalaryEmployee", param);
+            da.close();
+            return dt;
+        }
     }
 }
