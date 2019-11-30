@@ -17,8 +17,8 @@ namespace Laboratory.BL
             SqlParameter[] param = new SqlParameter[2];
             param[0] = new SqlParameter("@Store_name", SqlDbType.NVarChar,150);
             param[0].Value = name;
-            param[1] = new SqlParameter("@Store_name", SqlDbType.NVarChar, 150);
-            param[1].Value = name;
+            param[1] = new SqlParameter("@Address", SqlDbType.NVarChar, 150);
+            param[1].Value = address;
             da.excutequery("add_Store", param);
             da.close();           
         }
@@ -31,8 +31,8 @@ namespace Laboratory.BL
             param[0].Value = ID;
             param[1] = new SqlParameter("@Store_name", SqlDbType.NVarChar, 150);
             param[1].Value = name;
-            param[2] = new SqlParameter("@Store_name", SqlDbType.NVarChar, 150);
-            param[2].Value = name;
+            param[2] = new SqlParameter("@Address", SqlDbType.NVarChar, 150);
+            param[2].Value = address;
             da.excutequery("Update_Store", param);
             da.close();
         }
