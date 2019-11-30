@@ -42,8 +42,8 @@ namespace Laboratory.PL
             Frm_Employee.getmain.cmb_department.DataSource = E.SelectEmpRole();
             Frm_Employee.getmain.cmb_department.DisplayMember = "Roles";
             Frm_Employee.getmain.cmb_department.ValueMember = "ID_EmpRole";
-         
+
         }
-       
+
     }
 }

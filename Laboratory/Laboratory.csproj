@@ -83,6 +83,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BL\Branches.cs" />
     <Compile Include="BL\CategoryXRaya.cs" />
     <Compile Include="BL\Company.cs" />
     <Compile Include="BL\Customer.cs" />
@@ -91,6 +92,7 @@
     <Compile Include="BL\ItemsXRaya.cs" />
     <Compile Include="BL\Masrofat.cs" />
     <Compile Include="BL\Stock.cs" />
+    <Compile Include="BL\Store.cs" />
     <Compile Include="DAL\DataAccessLayer.cs" />
     <Compile Include="PL\frm_AddStock.cs">
       <SubType>Form</SubType>

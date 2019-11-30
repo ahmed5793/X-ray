@@ -66,6 +66,7 @@ namespace Laboratory.PL
         {
             Frm_GenderJob fg = new Frm_GenderJob();
             fg.ShowDialog();
+            cmb_department.DataSource = E.SelectEmpRole();
             fg.Dispose();
         }
 
