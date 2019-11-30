@@ -10,9 +10,55 @@ namespace Laboratory.BL
 {
     class Store
     {
-        internal void add_Store()
+        internal void add_Store(string name , string address)
         {
-            
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[2];
+            param[0] = new SqlParameter("@Store_name", SqlDbType.NVarChar,150);
+            param[0].Value = name;
+            param[1] = new SqlParameter("@Store_name", SqlDbType.NVarChar, 150);
+            param[1].Value = name;
+            da.excutequery("add_Store", param);
+            da.close();           
+        }
+        internal void Update_Store(int ID,string name, string address)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[3];
+            param[0] = new SqlParameter("@id_store", SqlDbType.Int);
+            param[0].Value = ID;
+            param[1] = new SqlParameter("@Store_name", SqlDbType.NVarChar, 150);
+            param[1].Value = name;
+            param[2] = new SqlParameter("@Store_name", SqlDbType.NVarChar, 150);
+            param[2].Value = name;
+            da.excutequery("Update_Store", param);
+            da.close();
+        }
+        internal DataTable Select_Store()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                DataAccessLayer DA = new DataAccessLayer();
+                DA.open();
+                dt.Clear();
+                dt = DA.selected("Select_Store", null);
+                return dt;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                dt.Dispose();
+            }
+           
+           
         }
     }
 }
