@@ -44,6 +44,8 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cmb_branches = new System.Windows.Forms.ComboBox();
             this.Txt_Salary = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
@@ -53,8 +55,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.cmb_department = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.cmb_branches = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -83,7 +83,7 @@
             // btn_new
             // 
             this.btn_new.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_new.Location = new System.Drawing.Point(141, 200);
+            this.btn_new.Location = new System.Drawing.Point(175, 206);
             this.btn_new.Name = "btn_new";
             this.btn_new.Size = new System.Drawing.Size(132, 40);
             this.btn_new.TabIndex = 12;
@@ -269,6 +269,31 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(260, 25);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(47, 24);
+            this.label10.TabIndex = 43;
+            this.label10.Text = "الفرع";
+            // 
+            // cmb_branches
+            // 
+            this.cmb_branches.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmb_branches.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmb_branches.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmb_branches.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_branches.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_branches.FormattingEnabled = true;
+            this.cmb_branches.Location = new System.Drawing.Point(10, 18);
+            this.cmb_branches.Name = "cmb_branches";
+            this.cmb_branches.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cmb_branches.Size = new System.Drawing.Size(203, 32);
+            this.cmb_branches.TabIndex = 42;
+            // 
             // Txt_Salary
             // 
             this.Txt_Salary.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -369,31 +394,6 @@
             this.cmb_department.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmb_department.Size = new System.Drawing.Size(314, 32);
             this.cmb_department.TabIndex = 33;
-            // 
-            // label10
-            // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(260, 25);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(47, 24);
-            this.label10.TabIndex = 43;
-            this.label10.Text = "الفرع";
-            // 
-            // cmb_branches
-            // 
-            this.cmb_branches.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmb_branches.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cmb_branches.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmb_branches.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_branches.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_branches.FormattingEnabled = true;
-            this.cmb_branches.Location = new System.Drawing.Point(10, 18);
-            this.cmb_branches.Name = "cmb_branches";
-            this.cmb_branches.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmb_branches.Size = new System.Drawing.Size(203, 32);
-            this.cmb_branches.TabIndex = 42;
             // 
             // Frm_Employee
             // 
