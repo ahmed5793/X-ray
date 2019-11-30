@@ -106,9 +106,6 @@
     <Compile Include="PL\frm_AddStockMoney.Designer.cs">
       <DependentUpon>frm_AddStockMoney.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_AddStore.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="PL\Frm_Branches.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,9 +197,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\frm_AddStockMoney.resx">
       <DependentUpon>frm_AddStockMoney.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PL\Frm_AddStore.resx">
-      <DependentUpon>Frm_AddStore.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Branches.resx">
       <DependentUpon>Frm_Branches.cs</DependentUpon>
