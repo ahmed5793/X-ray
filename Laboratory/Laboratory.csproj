@@ -106,6 +106,12 @@
     <Compile Include="PL\frm_AddStockMoney.Designer.cs">
       <DependentUpon>frm_AddStockMoney.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Frm_Branches.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_Branches.Designer.cs">
+      <DependentUpon>Frm_Branches.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_CategoryXRaya.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,6 +197,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\frm_AddStockMoney.resx">
       <DependentUpon>frm_AddStockMoney.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_Branches.resx">
+      <DependentUpon>Frm_Branches.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_CategoryXRaya.resx">
       <DependentUpon>Frm_CategoryXRaya.cs</DependentUpon>

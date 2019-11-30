@@ -73,7 +73,7 @@ namespace Laboratory.PL
         private void Frm_Employee_Load(object sender, EventArgs e)
         {
 
-            cmb_branches.DataSource = b.SelectBranches();
+            cmb_branches.DataSource = b.SelectCompBranches();
             cmb_branches.DisplayMember = "Name";
             cmb_branches.ValueMember = "Branch_ID";
            
