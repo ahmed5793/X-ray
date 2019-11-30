@@ -15,6 +15,7 @@ namespace Laboratory.PL
     {
         Employee E = new Employee();
         DataTable dt = new DataTable();
+        Branches b = new Branches();
         private static Frm_Employee farm;
 
         static void STATUESCllosed(object sender, FormClosedEventArgs e)
@@ -43,9 +44,9 @@ namespace Laboratory.PL
             }
             clears();
             dataGridView1.DataSource = E.SelectEmployee();
-            comboBox1.DataSource = E.SelectEmpRole();
-            comboBox1.DisplayMember = "Roles";
-            comboBox1.ValueMember = "ID_EmpRole";
+            cmb_department.DataSource = E.SelectEmpRole();
+            cmb_department.DisplayMember = "Roles";
+            cmb_department.ValueMember = "ID_EmpRole";
             
             
         }
@@ -70,6 +71,11 @@ namespace Laboratory.PL
 
         private void Frm_Employee_Load(object sender, EventArgs e)
         {
+
+            cmb_branches.DataSource = b.SelectBranches();
+            cmb_branches.DisplayMember = "Name";
+            cmb_branches.ValueMember = "Branch_ID";
+           
 
         }
 
@@ -98,16 +104,22 @@ namespace Laboratory.PL
                     MessageBox.Show("من فضلك قم بكتابة رقم الموبايل");
                     return;
                 }
-                if (comboBox1.Text == "")
+                if (cmb_department.Text == "")
                 {
                     MessageBox.Show("من فضلك قم بااختيار التخصص");
                     return;
                    
                 }
+                if (cmb_branches.Text == "")
+                {
+                    MessageBox.Show("من فضلك قم بااختيار الفرع");
+                    return;
+
+                }
                 else
                 {
                     E.AddEmployee(txt_name.Text, Convert.ToDecimal(Txt_Salary.Text), dateTimePicker2.Value,
-                        txt_NationalID.Text, txt_phone.Text, txt_address.Text, dateTimePicker1.Value,Convert.ToInt32(comboBox1.SelectedValue));
+                        txt_NationalID.Text, txt_phone.Text, txt_address.Text, dateTimePicker1.Value,Convert.ToInt32(cmb_department.SelectedValue),Convert.ToInt32(cmb_branches.SelectedValue));
                     MessageBox.Show("تم تسجيل الموظف بنجاح");
                     clears();
                     dataGridView1.DataSource = E.SelectEmployee();
@@ -140,16 +152,23 @@ namespace Laboratory.PL
                     MessageBox.Show("من فضلك قم بكتابة رقم الموبايل");
                     return;
                 }
-                if (comboBox1.Text == "")
+                if (cmb_department.Text == "")
                 {
                     MessageBox.Show("من فضلك قم بااختيار التخصص");
+                    return;
+
+                }
+                if (cmb_branches.Text == "")
+                {
+                    MessageBox.Show("من فضلك قم بااختيار الفرع");
                     return;
 
                 }
                 else
                 {
                     E.UpdateEmployee(txt_name.Text, Convert.ToDecimal(Txt_Salary.Text), dateTimePicker2.Value,
-                        txt_NationalID.Text, txt_phone.Text, txt_address.Text, dateTimePicker1.Value,Convert.ToInt32(comboBox1.SelectedValue),Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
+                        txt_NationalID.Text, txt_phone.Text, txt_address.Text, dateTimePicker1.Value,Convert.ToInt32(cmb_department.SelectedValue),Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value),
+                        Convert.ToInt32(cmb_branches.SelectedValue));
                     MessageBox.Show("تم تعديل بيانات الموظف بنجاح");
                     clears();
               
@@ -172,7 +191,7 @@ namespace Laboratory.PL
                 btn_save.Hide();
                 btn_update.Enabled = true;
                 txt_name.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                comboBox1.Text= dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                cmb_department.Text= dataGridView1.CurrentRow.Cells[2].Value.ToString();
                 dateTimePicker1.Text= dataGridView1.CurrentRow.Cells[3].Value.ToString();
                 txt_phone.Text= dataGridView1.CurrentRow.Cells[4].Value.ToString();
                 txt_address.Text= dataGridView1.CurrentRow.Cells[5].Value.ToString();
@@ -215,6 +234,11 @@ namespace Laboratory.PL
             {
                 e.Handled = true;
             }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

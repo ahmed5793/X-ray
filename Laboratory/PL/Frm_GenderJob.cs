@@ -39,9 +39,9 @@ namespace Laboratory.PL
             E.AddEmployeeRole(txt_name.Text);
             MessageBox.Show("تم الاضافة");
             txt_name.Clear();
-            Frm_Employee.getmain.comboBox1.DataSource = E.SelectEmpRole();
-            Frm_Employee.getmain.comboBox1.DisplayMember = "Roles";
-            Frm_Employee.getmain.comboBox1.ValueMember = "ID_EmpRole";
+            Frm_Employee.getmain.cmb_department.DataSource = E.SelectEmpRole();
+            Frm_Employee.getmain.cmb_department.DisplayMember = "Roles";
+            Frm_Employee.getmain.cmb_department.ValueMember = "ID_EmpRole";
          
         }
        

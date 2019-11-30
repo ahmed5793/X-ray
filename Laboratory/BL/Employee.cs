@@ -13,11 +13,11 @@ namespace Laboratory.BL
     class Employee
     {
        
-        internal void AddEmployee(string Emp_name, decimal Salary,DateTime salary_date,string National_ID, string phone, string Address, DateTime date ,int idEmprole)
+        internal void AddEmployee(string Emp_name, decimal Salary,DateTime salary_date,string National_ID, string phone, string Address, DateTime date ,int idEmprole,int IDbeanches)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[8];
+            SqlParameter[] param = new SqlParameter[9];
             param[0] = new SqlParameter("@Emp_Name", SqlDbType.NVarChar, 150);
             param[0].Value = Emp_name;
             param[1] = new SqlParameter("@salary", SqlDbType.Decimal);
@@ -34,16 +34,18 @@ namespace Laboratory.BL
             param[6].Value = date;
             param[7] = new SqlParameter("@id_EmpRole", SqlDbType.Int);
             param[7].Value = idEmprole;
+            param[8] = new SqlParameter("@idBranches", SqlDbType.Int);
+            param[8].Value = IDbeanches;
 
 
             da.excutequery("AddEmployee", param);
             da.close();
         }
-        internal void UpdateEmployee(string Emp_name, decimal Salary, DateTime salary_date, string National_ID, string phone, string Address, DateTime date,int id_EmpRole, int idemployee)
+        internal void UpdateEmployee(string Emp_name, decimal Salary, DateTime salary_date, string National_ID, string phone, string Address, DateTime date,int id_EmpRole, int idemployee,int IDbeanches)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[9];
+            SqlParameter[] param = new SqlParameter[10];
             param[0] = new SqlParameter("@Emp_Name", SqlDbType.NVarChar, 150);
             param[0].Value = Emp_name;
             param[1] = new SqlParameter("@salary", SqlDbType.Decimal);
@@ -62,6 +64,8 @@ namespace Laboratory.BL
             param[7].Value = id_EmpRole;
             param[8] = new SqlParameter("@idemployee", SqlDbType.Int);
             param[8].Value = idemployee;
+            param[9] = new SqlParameter("@idBranches", SqlDbType.Int);
+            param[9].Value = IDbeanches;
 
 
             da.excutequery("UpdateEmployee", param);

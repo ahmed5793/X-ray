@@ -52,7 +52,9 @@
             this.txt_NationalID = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmb_department = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cmb_branches = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -62,7 +64,7 @@
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(17, 22);
+            this.dateTimePicker1.Location = new System.Drawing.Point(11, 64);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(196, 26);
             this.dateTimePicker1.TabIndex = 32;
@@ -72,7 +74,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.White;
             this.label7.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(219, 24);
+            this.label7.Location = new System.Drawing.Point(219, 66);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(109, 24);
             this.label7.TabIndex = 31;
@@ -81,7 +83,7 @@
             // btn_new
             // 
             this.btn_new.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_new.Location = new System.Drawing.Point(175, 203);
+            this.btn_new.Location = new System.Drawing.Point(141, 200);
             this.btn_new.Name = "btn_new";
             this.btn_new.Size = new System.Drawing.Size(132, 40);
             this.btn_new.TabIndex = 12;
@@ -102,7 +104,7 @@
             // btn_update
             // 
             this.btn_update.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_update.Location = new System.Drawing.Point(17, 203);
+            this.btn_update.Location = new System.Drawing.Point(17, 206);
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(118, 40);
             this.btn_update.TabIndex = 4;
@@ -113,7 +115,7 @@
             // btn_save
             // 
             this.btn_save.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_save.Location = new System.Drawing.Point(175, 203);
+            this.btn_save.Location = new System.Drawing.Point(175, 206);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(132, 40);
             this.btn_save.TabIndex = 21;
@@ -237,6 +239,8 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.cmb_branches);
             this.groupBox1.Controls.Add(this.Txt_Salary);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.dateTimePicker2);
@@ -245,7 +249,7 @@
             this.groupBox1.Controls.Add(this.txt_NationalID);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cmb_department);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.btn_new);
@@ -263,11 +267,12 @@
             this.groupBox1.Size = new System.Drawing.Size(839, 257);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // Txt_Salary
             // 
             this.Txt_Salary.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_Salary.Location = new System.Drawing.Point(17, 84);
+            this.Txt_Salary.Location = new System.Drawing.Point(26, 113);
             this.Txt_Salary.MaxLength = 11;
             this.Txt_Salary.Name = "Txt_Salary";
             this.Txt_Salary.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -280,7 +285,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(213, 92);
+            this.label9.Location = new System.Drawing.Point(217, 121);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(115, 24);
             this.label9.TabIndex = 41;
@@ -290,7 +295,7 @@
             // 
             this.dateTimePicker2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(17, 151);
+            this.dateTimePicker2.Location = new System.Drawing.Point(17, 168);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(196, 26);
             this.dateTimePicker2.TabIndex = 39;
@@ -300,7 +305,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(219, 153);
+            this.label1.Location = new System.Drawing.Point(219, 170);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(124, 24);
             this.label1.TabIndex = 38;
@@ -351,19 +356,44 @@
             this.label8.TabIndex = 34;
             this.label8.Text = "التخصص";
             // 
-            // comboBox1
+            // cmb_department
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(412, 68);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.comboBox1.Size = new System.Drawing.Size(314, 32);
-            this.comboBox1.TabIndex = 33;
+            this.cmb_department.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmb_department.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmb_department.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmb_department.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_department.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_department.FormattingEnabled = true;
+            this.cmb_department.Location = new System.Drawing.Point(412, 68);
+            this.cmb_department.Name = "cmb_department";
+            this.cmb_department.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cmb_department.Size = new System.Drawing.Size(314, 32);
+            this.cmb_department.TabIndex = 33;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(260, 25);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(47, 24);
+            this.label10.TabIndex = 43;
+            this.label10.Text = "الفرع";
+            // 
+            // cmb_branches
+            // 
+            this.cmb_branches.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmb_branches.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmb_branches.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmb_branches.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_branches.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_branches.FormattingEnabled = true;
+            this.cmb_branches.Location = new System.Drawing.Point(10, 18);
+            this.cmb_branches.Name = "cmb_branches";
+            this.cmb_branches.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cmb_branches.Size = new System.Drawing.Size(203, 32);
+            this.cmb_branches.TabIndex = 42;
             // 
             // Frm_Employee
             // 
@@ -406,10 +436,12 @@
         private System.Windows.Forms.TextBox txt_NationalID;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label8;
-        public System.Windows.Forms.ComboBox comboBox1;
+        public System.Windows.Forms.ComboBox cmb_department;
         private System.Windows.Forms.TextBox Txt_Salary;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label10;
+        public System.Windows.Forms.ComboBox cmb_branches;
     }
 }
