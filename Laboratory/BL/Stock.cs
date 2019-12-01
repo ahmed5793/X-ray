@@ -119,23 +119,22 @@ namespace Laboratory.BL
             da.close();
         }
 
-        internal void Add_StockPull(int id, decimal money, DateTime date, string name, string type, string reason)
+        internal void Add_StockPull(int id, decimal money, DateTime date, string name, string reason)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[6];
+            SqlParameter[] param = new SqlParameter[5];
             param[0] = new SqlParameter("@id_Treasury", SqlDbType.Int);
             param[0].Value = id;
-            param[1] = new SqlParameter("@Money", SqlDbType.Real);
+            param[1] = new SqlParameter("@Money", SqlDbType.Decimal);
             param[1].Value = money;
             param[2] = new SqlParameter("@Date", SqlDbType.DateTime);
             param[2].Value = date;
             param[3] = new SqlParameter("@Name", SqlDbType.NVarChar, 250);
             param[3].Value = name;
-            param[4] = new SqlParameter("@Type", SqlDbType.NVarChar, 250);
-            param[4].Value = type;
-            param[5] = new SqlParameter("@Reason", SqlDbType.NVarChar, 250);
-            param[5].Value = reason;
+
+            param[4] = new SqlParameter("@Reason", SqlDbType.NVarChar, 250);
+            param[4].Value = reason;
             da.excutequery("Add_StockPull", param);
             da.close();
         }
@@ -162,26 +161,7 @@ namespace Laboratory.BL
             da.close();
         }
 
-        internal void AddTransfairStockToBAnk(decimal money, DateTime date, string from, string to, string name)
-        {
-            DataAccessLayer da = new DataAccessLayer();
-            da.open();
-            SqlParameter[] param = new SqlParameter[5];
-            param[0] = new SqlParameter("@Money", SqlDbType.Real);
-            param[0].Value = money;
-            param[1] = new SqlParameter("@Date", SqlDbType.DateTime);
-            param[1].Value = date;
-            param[2] = new SqlParameter("@From_", SqlDbType.NVarChar, 150);
-            param[2].Value = from;
-            param[3] = new SqlParameter("@To_", SqlDbType.NVarChar, 150);
-            param[3].Value = to;
-            param[4] = new SqlParameter("@Name", SqlDbType.NVarChar, 75);
-            param[4].Value = name;
-
-
-            da.excutequery("AddTransfairStockToBAnk", param);
-            da.close();
-        }
+      
 
         internal void AddTransfairBankToStock(decimal money, DateTime date, string from, string to, string name)
         {
@@ -257,21 +237,6 @@ namespace Laboratory.BL
 
         }
 
-        internal DataTable VildateMoneyStock(int @id_Treasury, decimal money)
-        {
-            DataAccessLayer da = new DataAccessLayer();
-            da.open();
-            DataTable dt = new DataTable();
-            SqlParameter[] param = new SqlParameter[2];
-            param[0] = new SqlParameter("@id_Treasury", SqlDbType.Int);
-            param[0].Value = @id_Treasury;
-            param[1] = new SqlParameter("@Money", SqlDbType.Real);
-            param[1].Value = money;
-            dt = da.selected("VildateMoneyStock", param);
-            return dt;
-
-
-        }
         internal void DeletePullStock(int id_stock, DateTime date, decimal money)
         {
 

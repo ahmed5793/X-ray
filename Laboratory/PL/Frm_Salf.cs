@@ -28,7 +28,8 @@ namespace Laboratory.PL
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-            if (cmb_employeeName.Text=="")
+
+            if (cmb_employeeName.Text == "")
             {
                 MessageBox.Show("قم بااختيار اسم الموظف");
                 return;
@@ -42,14 +43,29 @@ namespace Laboratory.PL
 
             }
 
-            if (Txt_money.Text == "")
+            if (Txt_money.Text == ""|| Txt_money.Text == "0")
             {
                 MessageBox.Show("من فضلك قم بكتابة المبلغ");
                 return;
 
             }
-            else
+           
+            dt.Clear();
+
+            dt = E.SelectSalary(Convert.ToInt32(cmb_employeeName.SelectedValue));
+            if (dt.Rows.Count > 0)
             {
+                if (Convert.ToDecimal(textBox3.Text) > Convert.ToDecimal(dt.Rows[0][0]))
+                
+                    MessageBox.Show("عزيزى المستخدم يرجي العلم بان مبلغ الاستلاف اكبر من الراتب الشهرى للموظف لايسمح بقيام العمليه");
+
+
+
+                return;
+            }
+          
+
+
                 E.AddEmployee_Salf(txt_NameDaen.Text, dateTimePicker1.Value, dateTimePicker2.Value, txt_note.Text, Convert.ToDecimal(Txt_money.Text), Convert.ToInt32(cmb_employeeName.SelectedValue));
                 MessageBox.Show("تم التسجيل بنجاح");
                 E.AddEMPSalaryMins(Convert.ToInt32(cmb_employeeName.SelectedValue), dateTimePicker1.Value,
@@ -65,8 +81,21 @@ namespace Laboratory.PL
                 btn_new.Hide();
                 btn_save.Show();
                 btn_update.Enabled = false;
-               
-            }
+                textBox3.Clear();
+                textBox1.Clear();
+            textBox3.Clear();
+
+
+         
+
+
+            
+          
+            
+
+            
+
+            
         }
 
         private void btn_update_Click(object sender, EventArgs e)
@@ -150,17 +179,117 @@ namespace Laboratory.PL
                 e.Handled = true;
             }
         }
+      
 
         private void Frm_Salf_Load(object sender, EventArgs e)
         {
             cmb_employeeName.DataSource = E.SelectCompoEmployee();
             cmb_employeeName.DisplayMember = "Emp_Name";
             cmb_employeeName.ValueMember = "Emp_ID";
+         
+
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }
+
+        private void cmb_employeeName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmb_employeeName_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (cmb_employeeName.Text != "")
+            {
+                dt.Clear();
+                dt = E.SelectCHECKSalaryEmployee(Convert.ToInt32(cmb_employeeName.SelectedValue));
+                if (dt.Rows.Count > 0)
+                {
+                    textBox1.Text = dt.Rows[0][3].ToString();
+               
+                 
+                }
+                else
+                {
+                    textBox1.Clear();
+                 
+                }
+            }
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                textBox1.Text = "0";
+            }
+        }
+
+        private void Txt_money_KeyDown(object sender, KeyEventArgs e)
+        {
+           
+         
+        }
+
+        private void Txt_money_MouseLeave(object sender, EventArgs e)
+        {
+            if (Txt_money.Text=="")
+            {
+                Txt_money.Text = "0";
+               
+            }
+            
+        }
+
+        private void textBox3_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (Txt_money.Text == "")
+            {
+                textBox3.Text = "";
+
+            }
+            else
+            {
+                decimal x = Convert.ToDecimal(Txt_money.Text) + Convert.ToDecimal(textBox1.Text);
+                textBox3.Text = x.ToString();
+            }
+        }
+
+        private void textBox1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (Txt_money.Text == "")
+            {
+                textBox3.Text = "";
+
+            }
+            else
+            {
+                decimal x = Convert.ToDecimal(Txt_money.Text) + Convert.ToDecimal(textBox1.Text);
+                textBox3.Text = x.ToString();
+            }
+        }
+
+        private void Txt_money_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (Txt_money.Text == "")
+            {
+                textBox3.Text = "";
+
+            }
+            else
+            {
+                decimal x = Convert.ToDecimal(Txt_money.Text) + Convert.ToDecimal(textBox1.Text);
+                textBox3.Text = x.ToString();
+            }
+        }
     }
-}
+    }
+

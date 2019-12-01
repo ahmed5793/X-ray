@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cmb_stock = new System.Windows.Forms.ComboBox();
+            this.txt_branches = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cmb_employeeName = new System.Windows.Forms.ComboBox();
             this.txt_total = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_salf = new System.Windows.Forms.TextBox();
@@ -40,12 +46,6 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.btn_save = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.cmb_employeeName = new System.Windows.Forms.ComboBox();
-            this.txt_branches = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cmb_stock = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,6 +75,81 @@
             this.groupBox1.Size = new System.Drawing.Size(731, 238);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(220, 26);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(61, 24);
+            this.label5.TabIndex = 51;
+            this.label5.Text = "الخزينة";
+            // 
+            // cmb_stock
+            // 
+            this.cmb_stock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmb_stock.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmb_stock.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmb_stock.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_stock.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_stock.FormattingEnabled = true;
+            this.cmb_stock.Location = new System.Drawing.Point(6, 21);
+            this.cmb_stock.Name = "cmb_stock";
+            this.cmb_stock.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cmb_stock.Size = new System.Drawing.Size(197, 32);
+            this.cmb_stock.TabIndex = 50;
+            // 
+            // txt_branches
+            // 
+            this.txt_branches.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_branches.Location = new System.Drawing.Point(161, 59);
+            this.txt_branches.MaxLength = 11;
+            this.txt_branches.Name = "txt_branches";
+            this.txt_branches.ReadOnly = true;
+            this.txt_branches.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txt_branches.Size = new System.Drawing.Size(244, 32);
+            this.txt_branches.TabIndex = 48;
+            this.txt_branches.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(418, 62);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(36, 24);
+            this.label1.TabIndex = 49;
+            this.label1.Text = "فرع";
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(620, 21);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(97, 24);
+            this.label8.TabIndex = 47;
+            this.label8.Text = "اسم الموظف";
+            // 
+            // cmb_employeeName
+            // 
+            this.cmb_employeeName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmb_employeeName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmb_employeeName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmb_employeeName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_employeeName.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_employeeName.FormattingEnabled = true;
+            this.cmb_employeeName.Location = new System.Drawing.Point(370, 16);
+            this.cmb_employeeName.Name = "cmb_employeeName";
+            this.cmb_employeeName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cmb_employeeName.Size = new System.Drawing.Size(244, 32);
+            this.cmb_employeeName.TabIndex = 46;
+            this.cmb_employeeName.SelectedIndexChanged += new System.EventHandler(this.cmb_employeeName_SelectedIndexChanged);
+            this.cmb_employeeName.SelectionChangeCommitted += new System.EventHandler(this.cmb_employeeName_SelectionChangeCommitted);
             // 
             // txt_total
             // 
@@ -86,7 +161,6 @@
             this.txt_total.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txt_total.Size = new System.Drawing.Size(164, 32);
             this.txt_total.TabIndex = 44;
-            this.txt_total.Text = "0";
             this.txt_total.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
@@ -132,8 +206,8 @@
             this.Txt_salary.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Txt_salary.Size = new System.Drawing.Size(164, 32);
             this.Txt_salary.TabIndex = 40;
-            this.Txt_salary.Text = "0";
             this.Txt_salary.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Txt_salary.TextChanged += new System.EventHandler(this.Txt_salary_TextChanged);
             // 
             // label9
             // 
@@ -196,80 +270,7 @@
             this.btn_save.TabIndex = 21;
             this.btn_save.Text = "تسجيل بيانات العميل";
             this.btn_save.UseVisualStyleBackColor = true;
-            // 
-            // label8
-            // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(620, 21);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(97, 24);
-            this.label8.TabIndex = 47;
-            this.label8.Text = "اسم الموظف";
-            // 
-            // cmb_employeeName
-            // 
-            this.cmb_employeeName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmb_employeeName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cmb_employeeName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmb_employeeName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_employeeName.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_employeeName.FormattingEnabled = true;
-            this.cmb_employeeName.Location = new System.Drawing.Point(370, 16);
-            this.cmb_employeeName.Name = "cmb_employeeName";
-            this.cmb_employeeName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmb_employeeName.Size = new System.Drawing.Size(244, 32);
-            this.cmb_employeeName.TabIndex = 46;
-            this.cmb_employeeName.SelectedIndexChanged += new System.EventHandler(this.cmb_employeeName_SelectedIndexChanged);
-            this.cmb_employeeName.SelectionChangeCommitted += new System.EventHandler(this.cmb_employeeName_SelectionChangeCommitted);
-            // 
-            // txt_branches
-            // 
-            this.txt_branches.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_branches.Location = new System.Drawing.Point(370, 54);
-            this.txt_branches.MaxLength = 11;
-            this.txt_branches.Name = "txt_branches";
-            this.txt_branches.ReadOnly = true;
-            this.txt_branches.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txt_branches.Size = new System.Drawing.Size(244, 32);
-            this.txt_branches.TabIndex = 48;
-            this.txt_branches.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(644, 57);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(36, 24);
-            this.label1.TabIndex = 49;
-            this.label1.Text = "فرع";
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(220, 26);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 24);
-            this.label5.TabIndex = 51;
-            this.label5.Text = "الخزينة";
-            // 
-            // cmb_stock
-            // 
-            this.cmb_stock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmb_stock.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cmb_stock.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmb_stock.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_stock.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_stock.FormattingEnabled = true;
-            this.cmb_stock.Location = new System.Drawing.Point(6, 21);
-            this.cmb_stock.Name = "cmb_stock";
-            this.cmb_stock.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmb_stock.Size = new System.Drawing.Size(197, 32);
-            this.cmb_stock.TabIndex = 50;
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
             // Frm_EmpSarf
             // 

@@ -37,7 +37,7 @@ namespace Laboratory.PL
             txt_addbalance.Clear();
             txt_CurrentBalance.Text = "0";
             txt_name.Clear();
-            textBox1.Clear();
+            
             txt_reason.Clear();
         }
         private void btn_save_Click(object sender, EventArgs e)
@@ -69,7 +69,7 @@ namespace Laboratory.PL
                     }
                     if (MessageBox.Show("هل تريد حفظ السحب", "عملية السحب", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        s.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_addbalance.Text), Date_insert.Value, txt_name.Text, textBox1.Text, txt_reason.Text);
+                        s.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_addbalance.Text), Date_insert.Value, txt_name.Text, txt_reason.Text);
                         MessageBox.Show("تم سحب الرصيد من البنك المحدد");
                         clear();
 

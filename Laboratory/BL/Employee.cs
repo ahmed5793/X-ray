@@ -234,5 +234,57 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
+        internal void AddEmp_Salary(int id_Emp, decimal TotalSalary, decimal TotalSalf, decimal total, DateTime date, string @note,int idstock)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[7];
+            param[0] = new SqlParameter("@ID_Emp", SqlDbType.Int);
+            param[0].Value = id_Emp;
+            param[1] = new SqlParameter("@TotalSalary", SqlDbType.Decimal);
+            param[1].Value = TotalSalary;
+            param[2] = new SqlParameter("@TotalSalf", SqlDbType.Decimal);
+            param[2].Value = TotalSalf;
+            param[3] = new SqlParameter("@Total", SqlDbType.Decimal);
+            param[3].Value = total;
+            param[4] = new SqlParameter("@Date", SqlDbType.DateTime);
+            param[4].Value = date;
+            param[5] = new SqlParameter("@Note", SqlDbType.NVarChar, 150);
+            param[5].Value = note;
+
+            param[6] = new SqlParameter("@idStock", SqlDbType.Int);
+            param[6].Value = idstock;
+          
+            da.excutequery("AddEmp_Salary", param);
+            da.close();
+        }
+
+        internal void UpdateEMPSalaryMins(int id_Emp, string pay)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[2];
+            param[0] = new SqlParameter("@emp_id", SqlDbType.Int);
+            param[0].Value = id_Emp;
+            param[1] = new SqlParameter("@Pay", SqlDbType.NVarChar,50);
+            param[1].Value = pay;
+
+
+            da.excutequery("UpdateEMPSalaryMins", param);
+            da.close();
+        }
+        internal DataTable SelectSalary(int id)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@id", SqlDbType.Int);
+            param[0].Value = id;
+            dt = da.selected("SelectSalary", param);
+            da.close();
+            return dt;
+        }
     }
 }
