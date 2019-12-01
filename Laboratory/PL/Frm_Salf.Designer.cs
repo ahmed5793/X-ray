@@ -48,6 +48,8 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txt_search = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -62,8 +64,12 @@
             this.Txt_money.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Txt_money.Size = new System.Drawing.Size(164, 32);
             this.Txt_money.TabIndex = 40;
+            this.Txt_money.Text = "0";
             this.Txt_money.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Txt_money.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txt_money_KeyDown);
             this.Txt_money.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_money_KeyPress);
+            this.Txt_money.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txt_money_KeyUp);
+            this.Txt_money.MouseLeave += new System.EventHandler(this.Txt_money_MouseLeave);
             // 
             // label9
             // 
@@ -108,11 +114,15 @@
             this.cmb_employeeName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmb_employeeName.Size = new System.Drawing.Size(314, 32);
             this.cmb_employeeName.TabIndex = 33;
+            this.cmb_employeeName.SelectedIndexChanged += new System.EventHandler(this.cmb_employeeName_SelectedIndexChanged);
+            this.cmb_employeeName.SelectionChangeCommitted += new System.EventHandler(this.cmb_employeeName_SelectionChangeCommitted);
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.Txt_money);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.dateTimePicker2);
@@ -301,6 +311,35 @@
             this.dataGridView1.TabIndex = 12;
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(326, 115);
+            this.textBox1.MaxLength = 11;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.textBox1.Size = new System.Drawing.Size(62, 32);
+            this.textBox1.TabIndex = 54;
+            this.textBox1.Text = "0";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyUp);
+            // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(288, 51);
+            this.textBox3.MaxLength = 11;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.textBox3.Size = new System.Drawing.Size(135, 32);
+            this.textBox3.TabIndex = 56;
+            this.textBox3.Text = "0";
+            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox3.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox3_KeyUp);
+            // 
             // Frm_Salf
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -342,5 +381,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txt_search;
         public System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox3;
     }
 }
