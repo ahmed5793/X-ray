@@ -22,7 +22,6 @@ namespace Laboratory
             Application.SetCompatibleTextRenderingDefault(false);
 
 
-   //Application.Run(new Frm_Main());
 
 
 
@@ -32,7 +31,7 @@ namespace Laboratory
 
 
 
-             //Application.Run(new Frm_Main());
+
 
 
            
