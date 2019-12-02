@@ -185,5 +185,10 @@ namespace Laboratory.PL
             Add_Product add_Product = new Add_Product();
             add_Product.Show();
         }
+
+        private void toolStripMenuItem3_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
