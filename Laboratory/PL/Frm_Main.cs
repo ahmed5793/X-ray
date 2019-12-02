@@ -152,5 +152,38 @@ namespace Laboratory.PL
             frm_Branches.Show();
 
         }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Add_Masrof_Click_1(object sender, EventArgs e)
+        {
+            Frm_Masrofat frm_Masrofat = new Frm_Masrofat();
+            frm_Masrofat.Show();
+        }
+
+        private void Report_Masrofat_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Frm_Main_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddStore_Click(object sender, EventArgs e)
+        {
+            Frm_AddStore frm_AddStore = new Frm_AddStore();
+            frm_AddStore.Show();
+        }
+
+        private void AddProduct_Click(object sender, EventArgs e)
+        {
+            Add_Product add_Product = new Add_Product();
+            add_Product.Show();
+        }
     }
 }
