@@ -179,6 +179,12 @@
     <Compile Include="PL\Frm_ItemsXRaya.Designer.cs">
       <DependentUpon>Frm_ItemsXRaya.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Frm_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_Main.Designer.cs">
+      <DependentUpon>Frm_Main.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_Masrofat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -258,6 +264,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_ItemsXRaya.resx">
       <DependentUpon>Frm_ItemsXRaya.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_Main.resx">
+      <DependentUpon>Frm_Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Masrofat.resx">
       <DependentUpon>Frm_Masrofat.cs</DependentUpon>
