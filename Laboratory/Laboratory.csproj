@@ -94,6 +94,7 @@
     <Compile Include="BL\Product.cs" />
     <Compile Include="BL\Stock.cs" />
     <Compile Include="BL\Store.cs" />
+    <Compile Include="BL\Tickets.cs" />
     <Compile Include="DAL\DataAccessLayer.cs" />
     <Compile Include="PL\Add_Product.cs">
       <SubType>Form</SubType>
@@ -215,6 +216,12 @@
     <Compile Include="PL\Frm_StockTransfair.Designer.cs">
       <DependentUpon>Frm_StockTransfair.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Frm_Tickets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_Tickets.Designer.cs">
+      <DependentUpon>Frm_Tickets.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\UpdateSalf.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -282,6 +289,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_StockTransfair.resx">
       <DependentUpon>Frm_StockTransfair.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_Tickets.resx">
+      <DependentUpon>Frm_Tickets.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\UpdateSalf.resx">
       <DependentUpon>UpdateSalf.cs</DependentUpon>
