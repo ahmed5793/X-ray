@@ -219,8 +219,9 @@
     <Compile Include="PL\Frm_Tickets.cs">
       <SubType>Form</SubType>
     </Compile>
-<<<<<<< HEAD
+ HEAD
     <Compile Include="PL\Frm_Tickets.designer.cs">
+      </Compile>
 =======
     <Compile Include="PL\Frm_Tickets.Designer.cs">
 >>>>>>> a0049848d35e3fce2c9e6ae656bb4946e3565040
