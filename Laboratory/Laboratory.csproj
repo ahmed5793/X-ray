@@ -94,6 +94,7 @@
     <Compile Include="BL\Product.cs" />
     <Compile Include="BL\Stock.cs" />
     <Compile Include="BL\Store.cs" />
+    <Compile Include="BL\Tickets.cs" />
     <Compile Include="DAL\DataAccessLayer.cs" />
     <Compile Include="PL\Add_Product.cs">
       <SubType>Form</SubType>
@@ -218,7 +219,11 @@
     <Compile Include="PL\Frm_Tickets.cs">
       <SubType>Form</SubType>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="PL\Frm_Tickets.designer.cs">
+=======
+    <Compile Include="PL\Frm_Tickets.Designer.cs">
+>>>>>>> a0049848d35e3fce2c9e6ae656bb4946e3565040
       <DependentUpon>Frm_Tickets.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\UpdateSalf.cs">
