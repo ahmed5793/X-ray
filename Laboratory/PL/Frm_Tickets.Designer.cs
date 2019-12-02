@@ -688,7 +688,7 @@
             this.label22.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(753, 403);
+            this.label22.Location = new System.Drawing.Point(711, 403);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(186, 24);
             this.label22.TabIndex = 94;
