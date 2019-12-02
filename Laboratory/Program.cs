@@ -22,7 +22,7 @@ namespace Laboratory
             Application.SetCompatibleTextRenderingDefault(false);
 
 
-            Application.Run(new Frm_EmpSarf());
+            Application.Run(new Frm_Main());
 
   
 

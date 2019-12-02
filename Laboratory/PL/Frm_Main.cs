@@ -95,19 +95,8 @@ namespace Laboratory.PL
         private void Add_Doctor_Click(object sender, EventArgs e)
         {
             Frm_Doctor frm_Doctor = new Frm_Doctor();
-            try
-            {
+         
                 frm_Doctor.Show();
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-            finally
-            {
-                frm_Doctor.Dispose();
-            }
         }
 
         private void Store_Management_ButtonClick(object sender, EventArgs e)
@@ -118,40 +107,16 @@ namespace Laboratory.PL
         private void Add_Employee_Click(object sender, EventArgs e)
         {
             Frm_Employee frm_Employee = new Frm_Employee();
-
-            try
-            {
-                frm_Employee.Show();
-
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-            finally
-            {
-                frm_Employee.Dispose();
-            }
+           frm_Employee.Show();
 
         }
 
         private void السلفياتToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Frm_Salf frm_Salf = new Frm_Salf();
-            try
-            {
+         
                 frm_Salf.Show();
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-            finally
-            {
-                frm_Salf.Dispose();
-            }
+       
         }
 
         private void صرفالمرتباتToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -163,41 +128,28 @@ namespace Laboratory.PL
         private void Add_XRays_Click(object sender, EventArgs e)
         {
             Frm_ItemsXRaya frm_ItemsXRaya = new Frm_ItemsXRaya();
-            try
-            {
+       
                 frm_ItemsXRaya.Show();
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-            finally
-            {
-                frm_ItemsXRaya.Dispose();
-            }
+          
         }
 
         private void Category_XRay_Click(object sender, EventArgs e)
         {
             Frm_CategoryXRaya frm_CategoryX = new Frm_CategoryXRaya();
-            try
-            {
+           
                 frm_CategoryX.Show();
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-            finally
-            {
-                frm_CategoryX.Dispose();
-            }
+         
         }
 
         private void Main_data_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void Add_Branche_Click(object sender, EventArgs e)
+        {
+            Frm_Branches frm_Branches = new Frm_Branches();
+            frm_Branches.Show();
 
         }
     }
