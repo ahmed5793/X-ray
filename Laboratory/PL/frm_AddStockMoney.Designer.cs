@@ -227,6 +227,7 @@
             this.cmb_Stock.Size = new System.Drawing.Size(195, 27);
             this.cmb_Stock.TabIndex = 40;
             this.cmb_Stock.SelectedIndexChanged += new System.EventHandler(this.cmb_Stock_SelectedIndexChanged);
+            this.cmb_Stock.SelectionChangeCommitted += new System.EventHandler(this.cmb_Stock_SelectionChangeCommitted);
             // 
             // label3
             // 

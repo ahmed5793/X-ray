@@ -235,6 +235,7 @@
             this.Controls.Add(this.label3);
             this.Name = "Frm_StockPull";
             this.Text = "Frm_StockPull";
+            this.Load += new System.EventHandler(this.Frm_StockPull_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

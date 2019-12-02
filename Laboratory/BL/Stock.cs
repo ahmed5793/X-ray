@@ -11,14 +11,15 @@ namespace Laboratory.BL
 {
     class Stock
     {
-        internal void add_stock(int id, string name)
+        internal void add_stock(int id ,string name)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
             SqlParameter[] param = new SqlParameter[2];
+
             param[0] = new SqlParameter("@id_treasury", SqlDbType.Int);
             param[0].Value = id;
-            param[1] = new SqlParameter("@Treasury_name", SqlDbType.NVarChar, 100);
+            param[01] = new SqlParameter("@Treasury_name", SqlDbType.NVarChar, 100);
             param[1].Value = name;
             da.excutequery("add_stock", param);
             da.close();

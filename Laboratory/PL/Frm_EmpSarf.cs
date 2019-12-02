@@ -85,15 +85,14 @@ namespace Laboratory.PL
             dt = s.Select_moneyStock(Convert.ToInt32(cmb_stock.SelectedValue));
             if (dt.Rows.Count>0)
             {
-                if (Convert.ToDecimal(txt_total.Text)>Convert.ToDecimal(dt.Rows[0]))
+                if (Convert.ToDecimal(txt_total.Text)>Convert.ToDecimal(dt.Rows[0][0]))
                 {
                     MessageBox.Show("عزيزي المستخدم المبلغ الموجود في المخزن غير كافي لاجراء العملية");
                     return;
                 }
                 
             }
-            else
-            {
+           
                 E.AddEmp_Salary(Convert.ToInt32(cmb_employeeName.SelectedValue), Convert.ToDecimal(Txt_salary.Text),
                    Convert.ToDecimal(txt_salf.Text), Convert.ToDecimal(txt_total.Text), dateTimePicker1.Value,
                    txt_note.Text, Convert.ToInt32(cmb_stock.SelectedValue));
@@ -108,7 +107,7 @@ namespace Laboratory.PL
                 txt_total.Clear();
 
 
-            }
+            
         }
 
         private void Txt_salary_TextChanged(object sender, EventArgs e)

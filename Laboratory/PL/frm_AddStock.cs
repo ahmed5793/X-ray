@@ -17,7 +17,7 @@ namespace Laboratory.PL
         {
             InitializeComponent();
 
-         
+            textBox1.Text = s.Select_LastIdStock().Rows[0][0].ToString();
             dataGridView1.DataSource = s.select_Stock();
             btn_delete.Enabled = false;
             btn_new.Hide();
@@ -66,7 +66,7 @@ namespace Laboratory.PL
                 btn_delete.Enabled = false;
                 dataGridView1.DataSource = s.select_Stock();
             }
-            else if (MessageBox.Show("هل تريد تعديل بيانات الخزنة", "عمليه التعديل", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+             if (MessageBox.Show("هل تريد تعديل بيانات الخزنة", "عمليه التعديل", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
             {
 
                 s.Update_Stock(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value), txt_name.Text);

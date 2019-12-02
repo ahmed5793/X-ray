@@ -21,8 +21,8 @@ namespace Laboratory.PL
             InitializeComponent();
        
             cmb_Stock.DataSource = s.Compo_Stock();
-            cmb_Stock.DisplayMember = "Treasury_name";
-            cmb_Stock.ValueMember = "id_Treasury";
+            cmb_Stock.DisplayMember = "Name_Stock";
+            cmb_Stock.ValueMember = "ID_Stock";
       
             dt.Clear();
             dt = s.Select_moneyStock(Convert.ToInt32(cmb_Stock.SelectedValue));
@@ -100,6 +100,11 @@ namespace Laboratory.PL
             {
                 e.Handled = true;
             }
+        }
+
+        private void Frm_StockPull_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

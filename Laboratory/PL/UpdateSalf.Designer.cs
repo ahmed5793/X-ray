@@ -133,6 +133,7 @@
             this.Txt_UpdateSalary.Size = new System.Drawing.Size(164, 32);
             this.Txt_UpdateSalary.TabIndex = 40;
             this.Txt_UpdateSalary.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Txt_UpdateSalary.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_UpdateSalary_KeyPress);
             // 
             // label9
             // 
@@ -172,6 +173,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "UpdateSalf";
             this.Text = "UpdateSalf";
+            this.Load += new System.EventHandler(this.UpdateSalf_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

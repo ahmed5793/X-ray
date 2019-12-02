@@ -273,15 +273,17 @@ namespace Laboratory.BL
             da.excutequery("UpdateEMPSalaryMins", param);
             da.close();
         }
-        internal DataTable SelectSalary(int id)
+        internal DataTable SelectSalary(int id,decimal salary)
         {
             DataTable dt = new DataTable();
 
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[1];
+            SqlParameter[] param = new SqlParameter[2];
             param[0] = new SqlParameter("@id", SqlDbType.Int);
             param[0].Value = id;
+            param[1] = new SqlParameter("@salary", SqlDbType.Decimal);
+            param[1].Value = salary;
             dt = da.selected("SelectSalary", param);
             da.close();
             return dt;
@@ -305,7 +307,7 @@ namespace Laboratory.BL
 
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[1];
+            SqlParameter[] param = new SqlParameter[2];
             param[0] = new SqlParameter("@id", SqlDbType.Int);
             param[0].Value = id;
             param[1] = new SqlParameter("@money", SqlDbType.Decimal);

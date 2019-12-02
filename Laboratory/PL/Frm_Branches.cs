@@ -16,6 +16,7 @@ namespace Laboratory.PL
         Stock s = new Stock();
         Branches b = new Branches();
         DataTable dt = new DataTable();
+        Store st = new Store();
 
         public Frm_Branches()
         {
@@ -32,7 +33,9 @@ namespace Laboratory.PL
 
         private void Frm_Branches_Load(object sender, EventArgs e)
         {
-         
+            cmb_store.DataSource = st.Select_ComboStore();
+            cmb_store.DisplayMember = "Store_name";
+            cmb_store.ValueMember = "id_store";
         }
 
         private void btn_update_Click(object sender, EventArgs e)

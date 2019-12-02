@@ -125,6 +125,7 @@
             this.Cmb_StrockTo.Size = new System.Drawing.Size(195, 27);
             this.Cmb_StrockTo.TabIndex = 82;
             this.Cmb_StrockTo.SelectedIndexChanged += new System.EventHandler(this.Cmb_StrockTo_SelectedIndexChanged);
+            this.Cmb_StrockTo.SelectionChangeCommitted += new System.EventHandler(this.Cmb_StrockTo_SelectionChangeCommitted);
             // 
             // btn_save
             // 
@@ -247,6 +248,7 @@
             this.cmb_StockFrom.Size = new System.Drawing.Size(195, 27);
             this.cmb_StockFrom.TabIndex = 72;
             this.cmb_StockFrom.SelectedIndexChanged += new System.EventHandler(this.cmb_StockFrom_SelectedIndexChanged);
+            this.cmb_StockFrom.SelectionChangeCommitted += new System.EventHandler(this.cmb_StockFrom_SelectionChangeCommitted);
             // 
             // label3
             // 
@@ -285,6 +287,7 @@
             this.Controls.Add(this.label3);
             this.Name = "Frm_StockTransfair";
             this.Text = "Frm_StockTransfair";
+            this.Load += new System.EventHandler(this.Frm_StockTransfair_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -20,11 +20,11 @@ namespace Laboratory.PL
         {
             InitializeComponent();
             cmb_StockFrom.DataSource = s.Compo_Stock();
-            cmb_StockFrom.DisplayMember = "Treasury_name";
-            cmb_StockFrom.ValueMember = "id_Treasury";
+            cmb_StockFrom.DisplayMember = "Name_Stock";
+            cmb_StockFrom.ValueMember = "ID_Stock";
             Cmb_StrockTo.DataSource = s.Compo_Stock();
-            Cmb_StrockTo.DisplayMember = "Treasury_name";
-            Cmb_StrockTo.ValueMember = "id_Treasury";
+            Cmb_StrockTo.DisplayMember = "Name_Stock";
+            Cmb_StrockTo.ValueMember = "ID_Stock";
             dt.Clear();
             dt = s.Select_moneyStock(Convert.ToInt32(cmb_StockFrom.SelectedValue));
             if (dt.Rows.Count > 0)
@@ -118,13 +118,7 @@ namespace Laboratory.PL
 
         private void Cmb_StrockTo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dt.Clear();
-            dt = s.Select_moneyStock(Convert.ToInt32(Cmb_StrockTo.SelectedValue));
-            if (dt.Rows.Count > 0)
-            {
-
-            }
-            textBox1.Text = dt.Rows[0][0].ToString();
+          
         }
         void clear()
         {
@@ -137,6 +131,16 @@ namespace Laboratory.PL
         }
         private void cmb_StockFrom_SelectedIndexChanged(object sender, EventArgs e)
         {
+          
+        }
+
+        private void Frm_StockTransfair_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmb_StockFrom_SelectionChangeCommitted(object sender, EventArgs e)
+        {
             dt.Clear();
             dt = s.Select_moneyStock(Convert.ToInt32(cmb_StockFrom.SelectedValue));
             if (dt.Rows.Count > 0)
@@ -144,6 +148,17 @@ namespace Laboratory.PL
 
                 txt_CurrentBalance1.Text = dt.Rows[0][0].ToString();
             }
+        }
+
+        private void Cmb_StrockTo_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            dt.Clear();
+            dt = s.Select_moneyStock(Convert.ToInt32(Cmb_StrockTo.SelectedValue));
+            if (dt.Rows.Count > 0)
+            {
+
+            }
+            textBox1.Text = dt.Rows[0][0].ToString();
         }
     }
 }
