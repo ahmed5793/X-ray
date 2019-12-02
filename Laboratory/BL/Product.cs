@@ -11,52 +11,29 @@ namespace Laboratory.BL
     class Product
     {
 
-        internal void Add_Product(int id ,string name , decimal Quantity , decimal Selling_price , Decimal Purshasing_price 
-            ,int id_Store, int minimum)
+        internal void Add_Product(int id ,string name )
         {
             DataAccessLayer da = new DataAccessLayer();
 
-            SqlParameter[] param = new SqlParameter[7];
+            SqlParameter[] param = new SqlParameter[2];
             da.open();
             param[0] = new SqlParameter("@Id_Product", SqlDbType.Int);
             param[0].Value = id;
             param[1] = new SqlParameter("@Product_Name", SqlDbType.NVarChar,100);
             param[1].Value = name;
-            param[2] = new SqlParameter("@Quantity", SqlDbType.Decimal);
-            param[2].Value = Quantity;
-            param[3] = new SqlParameter("@Selling_Price", SqlDbType.Decimal);
-            param[3].Value = Selling_price;
-            param[4] = new SqlParameter("@purxhase_price", SqlDbType.Decimal);
-            param[4].Value = Purshasing_price;
-            param[5] = new SqlParameter("@id_store", SqlDbType.Decimal);
-            param[5].Value = id_Store;
-            param[6] = new SqlParameter("@minimum", SqlDbType.Int);
-            param[6].Value = minimum;
-
             da.excutequery("Add_Product", param);
             da.close();
         }
-        internal void Update_Product(int id, string name, decimal Quantity, decimal Selling_price, Decimal Purshasing_price, 
-            int id_Store , int minimum)
+        internal void Update_Product(int id, string name)
         {
             DataAccessLayer da = new DataAccessLayer();
 
-            SqlParameter[] param = new SqlParameter[7];
+            SqlParameter[] param = new SqlParameter[2];
             da.open();
             param[0] = new SqlParameter("@Id_Product", SqlDbType.Int);
             param[0].Value = id;
             param[1] = new SqlParameter("@Product_Name", SqlDbType.NVarChar, 100);
             param[1].Value = name;
-            param[2] = new SqlParameter("@Quantity", SqlDbType.Decimal);
-            param[2].Value = Quantity;
-            param[3] = new SqlParameter("@Selling_Price", SqlDbType.Decimal);
-            param[3].Value = Selling_price;
-            param[4] = new SqlParameter("@purxhase_price", SqlDbType.Decimal);
-            param[4].Value = Purshasing_price;
-            param[5] = new SqlParameter("@id_store", SqlDbType.Decimal);
-            param[5].Value = id_Store;
-            param[6] = new SqlParameter("@minimum", SqlDbType.Int);
-            param[6].Value = minimum;
             da.excutequery("Update_Product", param);
             da.close();
         }
@@ -139,6 +116,51 @@ namespace Laboratory.BL
             DataAccessLayer da = new DataAccessLayer();
             da.open();
             da.excutequery("Update_TotalProd", null);
+            da.close();
+        }
+        internal void Add_StoreProduct(int id_product,int id_Store,decimal Quantity,decimal Selling_price,Decimal Purshasing_price,int minimum)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+
+            SqlParameter[] param = new SqlParameter[6];
+            da.open();
+            param[0] = new SqlParameter("@Id_Product", SqlDbType.Int);
+            param[0].Value = id_product;
+            param[1] = new SqlParameter("@id_store", SqlDbType.Int);
+            param[1].Value = id_Store;
+            param[2] = new SqlParameter("@Quantity", SqlDbType.Decimal);
+            param[2].Value = Quantity;
+            param[3] = new SqlParameter("@Selling_Price", SqlDbType.Decimal);
+            param[3].Value = Selling_price;
+            param[4] = new SqlParameter("@purxhase_price", SqlDbType.Decimal);
+            param[4].Value = Purshasing_price;
+            param[5] = new SqlParameter("@minimum", SqlDbType.Int);
+            param[5].Value = minimum;
+       
+            da.excutequery("Add_StoreProduct", param);
+            da.close();
+        }
+        internal void Update_StoreProduct(int id, decimal Quantity, decimal Selling_price, Decimal Purshasing_price,
+       int id_Store, int minimum)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+
+            SqlParameter[] param = new SqlParameter[6];
+            da.open();
+            param[0] = new SqlParameter("@Id_Product", SqlDbType.Int);
+            param[0].Value = id;
+
+            param[1] = new SqlParameter("@Quantity", SqlDbType.Decimal);
+            param[1].Value = Quantity;
+            param[2] = new SqlParameter("@Selling_Price", SqlDbType.Decimal);
+            param[2].Value = Selling_price;
+            param[3] = new SqlParameter("@purxhase_price", SqlDbType.Decimal);
+            param[3].Value = Purshasing_price;
+            param[4] = new SqlParameter("@id_store", SqlDbType.Decimal);
+            param[4].Value = id_Store;
+            param[5] = new SqlParameter("@minimum", SqlDbType.Int);
+            param[5].Value = minimum;
+            da.excutequery("Update_StoreProduct", param);
             da.close();
         }
     }
