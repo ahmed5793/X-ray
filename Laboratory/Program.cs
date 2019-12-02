@@ -20,7 +20,16 @@ namespace Laboratory
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-   Application.Run(new Frm_Salf());
+<<<<<<< HEAD
+   Application.Run(new Frm_Main());
+=======
+
+
+            Application.Run(new Frm_Main());
+
+  
+
+>>>>>>> 19a15edef65b7b391832fee3042bfb61d7309957
 
         }
     }

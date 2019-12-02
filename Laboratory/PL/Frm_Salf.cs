@@ -21,9 +21,9 @@ namespace Laboratory.PL
             dataGridView1.DataSource = E.SelectEmployeeSalf();
             dataGridView1.Columns[0].Visible = false;
            
-            btn_new.Hide();
+        
             btn_save.Show();
-            btn_update.Enabled = false;
+         
         }
 
         private void btn_save_Click(object sender, EventArgs e)
@@ -55,9 +55,19 @@ namespace Laboratory.PL
             dt = E.SelectSalary(Convert.ToInt32(cmb_employeeName.SelectedValue));
             if (dt.Rows.Count > 0)
             {
-                if (Convert.ToDecimal(textBox3.Text) > Convert.ToDecimal(dt.Rows[0][0]))
+                if (Convert.ToDecimal(Txt_money.Text) > Convert.ToDecimal(dt.Rows[0][0]))
                 
                     MessageBox.Show("عزيزى المستخدم يرجي العلم بان مبلغ الاستلاف اكبر من الراتب الشهرى للموظف لايسمح بقيام العمليه");
+
+
+
+                return;
+            }
+            dt.Clear();
+            dt = E.SelectCHECKSalaryEmployee(Convert.ToInt32(cmb_employeeName.SelectedValue));
+            if (dt.Rows.Count>0)
+            {
+                MessageBox.Show("عزيزى المستخدم يرجي العلم بان هذا الموظف قام بعمليه استلاف من قبل لايمكن اتمام هذا العمليه مرتين");
 
 
 
@@ -78,12 +88,10 @@ namespace Laboratory.PL
                 txt_note.Clear();
                 txt_NameDaen.Clear();
                 Txt_money.Clear();
-                btn_new.Hide();
+            
                 btn_save.Show();
-                btn_update.Enabled = false;
-                textBox3.Clear();
-                textBox1.Clear();
-            textBox3.Clear();
+            
+           
 
 
          
@@ -128,9 +136,9 @@ namespace Laboratory.PL
                 txt_note.Clear();
                 txt_NameDaen.Clear();
                 Txt_money.Clear();
-                btn_new.Hide();
+          
                 btn_save.Show();
-                btn_update.Enabled = false;
+           
 
 
             }
@@ -141,24 +149,14 @@ namespace Laboratory.PL
             txt_note.Clear();
             txt_NameDaen.Clear();
             Txt_money.Clear();
-            btn_new.Hide();
+     
             btn_save.Show();
-            btn_update.Enabled = false;
+         
         }
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
-            if (dataGridView1.Rows.Count>0)
-            {
-                dateTimePicker1.Enabled = false;
-                dateTimePicker2.Enabled = false;
-                cmb_employeeName.Text= dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                txt_NameDaen.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                dateTimePicker1.Text= dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                Txt_money.Text= dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                dateTimePicker2.Text= dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                txt_note.Text= dataGridView1.CurrentRow.Cells[6].Value.ToString();
-            }
+          
         }
 
         private void txt_search_TextChanged(object sender, EventArgs e)
@@ -202,22 +200,7 @@ namespace Laboratory.PL
 
         private void cmb_employeeName_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            if (cmb_employeeName.Text != "")
-            {
-                dt.Clear();
-                dt = E.SelectCHECKSalaryEmployee(Convert.ToInt32(cmb_employeeName.SelectedValue));
-                if (dt.Rows.Count > 0)
-                {
-                    textBox1.Text = dt.Rows[0][3].ToString();
-               
-                 
-                }
-                else
-                {
-                    textBox1.Clear();
-                 
-                }
-            }
+      
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -227,10 +210,7 @@ namespace Laboratory.PL
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if (textBox1.Text == "")
-            {
-                textBox1.Text = "0";
-            }
+          
         }
 
         private void Txt_money_KeyDown(object sender, KeyEventArgs e)
@@ -251,44 +231,17 @@ namespace Laboratory.PL
 
         private void textBox3_KeyUp(object sender, KeyEventArgs e)
         {
-            if (Txt_money.Text == "")
-            {
-                textBox3.Text = "";
-
-            }
-            else
-            {
-                decimal x = Convert.ToDecimal(Txt_money.Text) + Convert.ToDecimal(textBox1.Text);
-                textBox3.Text = x.ToString();
-            }
+           
         }
 
         private void textBox1_KeyUp(object sender, KeyEventArgs e)
         {
-            if (Txt_money.Text == "")
-            {
-                textBox3.Text = "";
-
-            }
-            else
-            {
-                decimal x = Convert.ToDecimal(Txt_money.Text) + Convert.ToDecimal(textBox1.Text);
-                textBox3.Text = x.ToString();
-            }
+         
         }
 
         private void Txt_money_KeyUp(object sender, KeyEventArgs e)
         {
-            if (Txt_money.Text == "")
-            {
-                textBox3.Text = "";
-
-            }
-            else
-            {
-                decimal x = Convert.ToDecimal(Txt_money.Text) + Convert.ToDecimal(textBox1.Text);
-                textBox3.Text = x.ToString();
-            }
+           
         }
     }
     }
