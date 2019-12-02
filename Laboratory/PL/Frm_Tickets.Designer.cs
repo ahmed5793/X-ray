@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label19 = new System.Windows.Forms.Label();
+            this.btn_GenderJob = new System.Windows.Forms.Button();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -49,6 +55,9 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.label17 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -57,30 +66,20 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.label17 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.comboBox6 = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btn_GenderJob = new System.Windows.Forms.Button();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.comboBox8 = new System.Windows.Forms.ComboBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label22 = new System.Windows.Forms.Label();
-            this.txt_search = new System.Windows.Forms.TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
@@ -121,6 +120,69 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "بيانات العملاء";
+            // 
+            // comboBox7
+            // 
+            this.comboBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox7.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboBox7.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox7.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox7.FormattingEnabled = true;
+            this.comboBox7.Location = new System.Drawing.Point(-334, 637);
+            this.comboBox7.Name = "comboBox7";
+            this.comboBox7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.comboBox7.Size = new System.Drawing.Size(233, 32);
+            this.comboBox7.TabIndex = 90;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(0, 175);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(48, 30);
+            this.button2.TabIndex = 54;
+            this.button2.Text = "---------------";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(-44, 640);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(82, 24);
+            this.label19.TabIndex = 89;
+            this.label19.Text = "نوع الحالة";
+            // 
+            // btn_GenderJob
+            // 
+            this.btn_GenderJob.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_GenderJob.Location = new System.Drawing.Point(6, 18);
+            this.btn_GenderJob.Name = "btn_GenderJob";
+            this.btn_GenderJob.Size = new System.Drawing.Size(42, 46);
+            this.btn_GenderJob.TabIndex = 38;
+            this.btn_GenderJob.Text = "---------------";
+            this.btn_GenderJob.UseVisualStyleBackColor = true;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(6, 243);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(350, 32);
+            this.textBox4.TabIndex = 87;
+            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(362, 246);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(64, 24);
+            this.label20.TabIndex = 88;
+            this.label20.Text = "الشكوى";
             // 
             // dateTimePicker1
             // 
@@ -353,6 +415,36 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "الحسابات";
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(15, 87);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(281, 54);
+            this.button1.TabIndex = 106;
+            this.button1.Text = "+++";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker3.Location = new System.Drawing.Point(15, 49);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(281, 26);
+            this.dateTimePicker3.TabIndex = 105;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.Color.White;
+            this.label17.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(101, 16);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(92, 24);
+            this.label17.TabIndex = 104;
+            this.label17.Text = "وقت الكشف";
+            // 
             // textBox6
             // 
             this.textBox6.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -431,36 +523,6 @@
             this.label12.TabIndex = 97;
             this.label12.Text = "الخصم";
             // 
-            // dateTimePicker3
-            // 
-            this.dateTimePicker3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker3.Location = new System.Drawing.Point(15, 49);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(281, 26);
-            this.dateTimePicker3.TabIndex = 105;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.White;
-            this.label17.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(101, 16);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(92, 24);
-            this.label17.TabIndex = 104;
-            this.label17.Text = "وقت الكشف";
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(15, 87);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(281, 54);
-            this.button1.TabIndex = 106;
-            this.button1.Text = "+++";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // comboBox5
             // 
             this.comboBox5.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -531,69 +593,6 @@
             this.label18.TabIndex = 55;
             this.label18.Text = "اسم المستخدم";
             // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(0, 175);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(48, 30);
-            this.button2.TabIndex = 54;
-            this.button2.Text = "---------------";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // btn_GenderJob
-            // 
-            this.btn_GenderJob.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_GenderJob.Location = new System.Drawing.Point(6, 18);
-            this.btn_GenderJob.Name = "btn_GenderJob";
-            this.btn_GenderJob.Size = new System.Drawing.Size(42, 46);
-            this.btn_GenderJob.TabIndex = 38;
-            this.btn_GenderJob.Text = "---------------";
-            this.btn_GenderJob.UseVisualStyleBackColor = true;
-            // 
-            // comboBox7
-            // 
-            this.comboBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox7.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.comboBox7.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox7.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(-334, 637);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.comboBox7.Size = new System.Drawing.Size(233, 32);
-            this.comboBox7.TabIndex = 90;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(-44, 640);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(82, 24);
-            this.label19.TabIndex = 89;
-            this.label19.Text = "نوع الحالة";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(6, 243);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(350, 32);
-            this.textBox4.TabIndex = 87;
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(362, 246);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(64, 24);
-            this.label20.TabIndex = 88;
-            this.label20.Text = "الشكوى";
-            // 
             // groupBox4
             // 
             this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -609,6 +608,28 @@
             this.groupBox4.TabIndex = 85;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "حالة الفاتورة";
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton2.Location = new System.Drawing.Point(674, 13);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(77, 28);
+            this.radioButton2.TabIndex = 91;
+            this.radioButton2.Text = "شركات";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton1.Location = new System.Drawing.Point(787, 11);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(65, 28);
+            this.radioButton1.TabIndex = 90;
+            this.radioButton1.Text = "اهالي";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // comboBox8
             // 
@@ -643,28 +664,6 @@
             this.label1.TabIndex = 89;
             this.label1.Text = "نوع الحالة";
             // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(787, 11);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(65, 28);
-            this.radioButton1.TabIndex = 90;
-            this.radioButton1.Text = "اهالي";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(674, 13);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(77, 28);
-            this.radioButton2.TabIndex = 91;
-            this.radioButton2.Text = "شركات";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -689,21 +688,11 @@
             this.label22.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(878, 405);
+            this.label22.Location = new System.Drawing.Point(711, 403);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(130, 24);
+            this.label22.Size = new System.Drawing.Size(186, 24);
             this.label22.TabIndex = 94;
-            this.label22.Text = "الزيارات السابقة ";
-            // 
-            // txt_search
-            // 
-            this.txt_search.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.txt_search.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_search.Location = new System.Drawing.Point(630, 397);
-            this.txt_search.Name = "txt_search";
-            this.txt_search.Size = new System.Drawing.Size(244, 32);
-            this.txt_search.TabIndex = 95;
-            this.txt_search.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.label22.Text = "الزيارات السابقة للمريض";
             // 
             // dataGridView2
             // 
@@ -761,7 +750,6 @@
             this.ClientSize = new System.Drawing.Size(1013, 542);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.txt_search);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox4);
@@ -846,7 +834,6 @@
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox txt_search;
         public System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button button3;
