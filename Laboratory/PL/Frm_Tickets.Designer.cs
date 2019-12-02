@@ -32,7 +32,6 @@
             this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
-            this.btn_GenderJob = new System.Windows.Forms.Button();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -84,6 +83,9 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
             this.btn_update = new System.Windows.Forms.Button();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -96,10 +98,12 @@
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.radioButton5);
+            this.groupBox1.Controls.Add(this.radioButton3);
             this.groupBox1.Controls.Add(this.comboBox7);
+            this.groupBox1.Controls.Add(this.radioButton4);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.label19);
-            this.groupBox1.Controls.Add(this.btn_GenderJob);
             this.groupBox1.Controls.Add(this.textBox4);
             this.groupBox1.Controls.Add(this.label20);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
@@ -114,9 +118,9 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txt_address);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(576, 107);
+            this.groupBox1.Location = new System.Drawing.Point(576, 95);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(432, 287);
+            this.groupBox1.Size = new System.Drawing.Size(432, 329);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "بيانات العملاء";
@@ -138,7 +142,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(0, 175);
+            this.button2.Location = new System.Drawing.Point(0, 208);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(48, 30);
             this.button2.TabIndex = 54;
@@ -155,20 +159,10 @@
             this.label19.TabIndex = 89;
             this.label19.Text = "نوع الحالة";
             // 
-            // btn_GenderJob
-            // 
-            this.btn_GenderJob.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_GenderJob.Location = new System.Drawing.Point(6, 18);
-            this.btn_GenderJob.Name = "btn_GenderJob";
-            this.btn_GenderJob.Size = new System.Drawing.Size(42, 46);
-            this.btn_GenderJob.TabIndex = 38;
-            this.btn_GenderJob.Text = "---------------";
-            this.btn_GenderJob.UseVisualStyleBackColor = true;
-            // 
             // textBox4
             // 
             this.textBox4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(6, 243);
+            this.textBox4.Location = new System.Drawing.Point(6, 276);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(350, 32);
             this.textBox4.TabIndex = 87;
@@ -178,7 +172,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(362, 246);
+            this.label20.Location = new System.Drawing.Point(362, 279);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(64, 24);
             this.label20.TabIndex = 88;
@@ -188,7 +182,7 @@
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(54, 212);
+            this.dateTimePicker1.Location = new System.Drawing.Point(54, 245);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(222, 26);
             this.dateTimePicker1.TabIndex = 53;
@@ -198,7 +192,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.White;
             this.label7.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(321, 214);
+            this.label7.Location = new System.Drawing.Point(321, 247);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(107, 24);
             this.label7.TabIndex = 52;
@@ -208,7 +202,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(313, 177);
+            this.label8.Location = new System.Drawing.Point(313, 210);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(114, 24);
             this.label8.TabIndex = 49;
@@ -222,7 +216,7 @@
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(54, 174);
+            this.comboBox1.Location = new System.Drawing.Point(54, 207);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.comboBox1.Size = new System.Drawing.Size(253, 32);
@@ -231,12 +225,12 @@
             // txt_age
             // 
             this.txt_age.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_age.Location = new System.Drawing.Point(54, 133);
+            this.txt_age.Location = new System.Drawing.Point(16, 166);
             this.txt_age.MaxLength = 11;
             this.txt_age.Name = "txt_age";
             this.txt_age.ReadOnly = true;
             this.txt_age.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txt_age.Size = new System.Drawing.Size(276, 32);
+            this.txt_age.Size = new System.Drawing.Size(314, 32);
             this.txt_age.TabIndex = 46;
             this.txt_age.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -244,7 +238,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(377, 135);
+            this.label4.Location = new System.Drawing.Point(377, 168);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 24);
             this.label4.TabIndex = 47;
@@ -253,22 +247,22 @@
             // txt_name
             // 
             this.txt_name.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_name.Location = new System.Drawing.Point(54, 18);
+            this.txt_name.Location = new System.Drawing.Point(16, 51);
             this.txt_name.Name = "txt_name";
             this.txt_name.ReadOnly = true;
-            this.txt_name.Size = new System.Drawing.Size(276, 32);
+            this.txt_name.Size = new System.Drawing.Size(314, 32);
             this.txt_name.TabIndex = 40;
             this.txt_name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_phone
             // 
             this.txt_phone.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_phone.Location = new System.Drawing.Point(54, 60);
+            this.txt_phone.Location = new System.Drawing.Point(16, 93);
             this.txt_phone.MaxLength = 3000;
             this.txt_phone.Name = "txt_phone";
             this.txt_phone.ReadOnly = true;
             this.txt_phone.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txt_phone.Size = new System.Drawing.Size(276, 32);
+            this.txt_phone.Size = new System.Drawing.Size(314, 32);
             this.txt_phone.TabIndex = 42;
             this.txt_phone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -276,7 +270,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(336, 21);
+            this.label5.Location = new System.Drawing.Point(336, 54);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(90, 24);
             this.label5.TabIndex = 45;
@@ -286,7 +280,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(329, 60);
+            this.label3.Location = new System.Drawing.Point(329, 93);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(99, 24);
             this.label3.TabIndex = 44;
@@ -295,10 +289,10 @@
             // txt_address
             // 
             this.txt_address.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_address.Location = new System.Drawing.Point(54, 95);
+            this.txt_address.Location = new System.Drawing.Point(16, 128);
             this.txt_address.Name = "txt_address";
             this.txt_address.ReadOnly = true;
-            this.txt_address.Size = new System.Drawing.Size(276, 32);
+            this.txt_address.Size = new System.Drawing.Size(314, 32);
             this.txt_address.TabIndex = 41;
             this.txt_address.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -306,7 +300,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(362, 95);
+            this.label2.Location = new System.Drawing.Point(362, 128);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 24);
             this.label2.TabIndex = 43;
@@ -531,7 +525,7 @@
             this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(349, 7);
+            this.comboBox5.Location = new System.Drawing.Point(349, 3);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.comboBox5.Size = new System.Drawing.Size(233, 32);
@@ -542,7 +536,7 @@
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(588, 10);
+            this.label13.Location = new System.Drawing.Point(588, 6);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(36, 24);
             this.label13.TabIndex = 81;
@@ -555,7 +549,7 @@
             this.comboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox6.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(12, 7);
+            this.comboBox6.Location = new System.Drawing.Point(12, 3);
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.comboBox6.Size = new System.Drawing.Size(233, 32);
@@ -565,7 +559,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(263, 12);
+            this.label14.Location = new System.Drawing.Point(263, 8);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(51, 24);
             this.label14.TabIndex = 83;
@@ -575,7 +569,7 @@
             // 
             this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(664, 9);
+            this.textBox3.Location = new System.Drawing.Point(664, 5);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(233, 32);
@@ -587,7 +581,7 @@
             this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(902, 15);
+            this.label18.Location = new System.Drawing.Point(902, 11);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(106, 24);
             this.label18.TabIndex = 55;
@@ -602,7 +596,7 @@
             this.groupBox4.Controls.Add(this.comboBox8);
             this.groupBox4.Controls.Add(this.label21);
             this.groupBox4.Controls.Add(this.label1);
-            this.groupBox4.Location = new System.Drawing.Point(18, 53);
+            this.groupBox4.Location = new System.Drawing.Point(18, 41);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(990, 48);
             this.groupBox4.TabIndex = 85;
@@ -688,7 +682,7 @@
             this.label22.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(711, 403);
+            this.label22.Location = new System.Drawing.Point(720, 427);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(186, 24);
             this.label22.TabIndex = 94;
@@ -702,13 +696,13 @@
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.BackgroundColor = System.Drawing.Color.Maroon;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(630, 435);
+            this.dataGridView2.Location = new System.Drawing.Point(630, 462);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView2.ShowEditingIcon = false;
-            this.dataGridView2.Size = new System.Drawing.Size(378, 104);
+            this.dataGridView2.Size = new System.Drawing.Size(378, 77);
             this.dataGridView2.TabIndex = 97;
             // 
             // groupBox5
@@ -742,6 +736,39 @@
             this.btn_update.TabIndex = 100;
             this.btn_update.Text = "حفظ";
             this.btn_update.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton3.Location = new System.Drawing.Point(73, 18);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(77, 28);
+            this.radioButton3.TabIndex = 93;
+            this.radioButton3.Text = "شركات";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton4.Location = new System.Drawing.Point(186, 16);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(65, 28);
+            this.radioButton4.TabIndex = 92;
+            this.radioButton4.Text = "اهالي";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            // 
+            // radioButton5
+            // 
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton5.Location = new System.Drawing.Point(276, 16);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(65, 28);
+            this.radioButton5.TabIndex = 94;
+            this.radioButton5.Text = "اهالي";
+            this.radioButton5.UseVisualStyleBackColor = true;
             // 
             // Frm_Tickets
             // 
@@ -816,7 +843,6 @@
         public System.Windows.Forms.ComboBox comboBox7;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Button btn_GenderJob;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Button button1;
@@ -838,5 +864,8 @@
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btn_update;
+        private System.Windows.Forms.RadioButton radioButton5;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton4;
     }
 }
