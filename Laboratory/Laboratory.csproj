@@ -215,6 +215,12 @@
     <Compile Include="PL\Frm_StockTransfair.Designer.cs">
       <DependentUpon>Frm_StockTransfair.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Frm_Tickets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_Tickets.designer.cs">
+      <DependentUpon>Frm_Tickets.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\UpdateSalf.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -282,6 +288,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_StockTransfair.resx">
       <DependentUpon>Frm_StockTransfair.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_Tickets.resx">
+      <DependentUpon>Frm_Tickets.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\UpdateSalf.resx">
       <DependentUpon>UpdateSalf.cs</DependentUpon>

@@ -190,5 +190,11 @@ namespace Laboratory.PL
         {
 
         }
+
+        private void Teicket_Click(object sender, EventArgs e)
+        {
+            Frm_Tickets frm_Tickets = new Frm_Tickets();
+            frm_Tickets.ShowDialog();
+        }
     }
 }

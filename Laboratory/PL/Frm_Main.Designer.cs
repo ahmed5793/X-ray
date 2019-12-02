@@ -76,15 +76,17 @@
             this.AddStore = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
             this.ProductManage = new System.Windows.Forms.ToolStripMenuItem();
+            this.AddProduct = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator19 = new System.Windows.Forms.ToolStripSeparator();
+            this.PurshaseProduct = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator20 = new System.Windows.Forms.ToolStripSeparator();
+            this.ConsumingProduct = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator21 = new System.Windows.Forms.ToolStripSeparator();
+            this.TransFairProduct = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator18 = new System.Windows.Forms.ToolStripSeparator();
             this.SupplierManage = new System.Windows.Forms.ToolStripMenuItem();
-            this.AddProduct = new System.Windows.Forms.ToolStripMenuItem();
-            this.PurshaseProduct = new System.Windows.Forms.ToolStripMenuItem();
-            this.ConsumingProduct = new System.Windows.Forms.ToolStripMenuItem();
-            this.TransFairProduct = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator19 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator20 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator21 = new System.Windows.Forms.ToolStripSeparator();
+            this.Receiption = new System.Windows.Forms.ToolStripDropDownButton();
+            this.Teicket = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -100,7 +102,8 @@
             this.Employee,
             this.Company_Customer,
             this.Masrofat_Stock,
-            this.Store_Manage});
+            this.Store_Manage,
+            this.Receiption});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -285,7 +288,7 @@
             this.Customer_management.Image = ((System.Drawing.Image)(resources.GetObject("Customer_management.Image")));
             this.Customer_management.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Customer_management.Name = "Customer_management";
-            this.Customer_management.Size = new System.Drawing.Size(249, 92);
+            this.Customer_management.Size = new System.Drawing.Size(247, 92);
             this.Customer_management.Text = "إدارة العملاء ";
             this.Customer_management.Click += new System.EventHandler(this.Add_customer_Click);
             // 
@@ -307,7 +310,7 @@
             // toolStripSeparator10
             // 
             this.toolStripSeparator10.Name = "toolStripSeparator10";
-            this.toolStripSeparator10.Size = new System.Drawing.Size(246, 6);
+            this.toolStripSeparator10.Size = new System.Drawing.Size(244, 6);
             // 
             // Company_Managemet
             // 
@@ -317,7 +320,7 @@
             this.Company_Managemet.Image = ((System.Drawing.Image)(resources.GetObject("Company_Managemet.Image")));
             this.Company_Managemet.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Company_Managemet.Name = "Company_Managemet";
-            this.Company_Managemet.Size = new System.Drawing.Size(249, 92);
+            this.Company_Managemet.Size = new System.Drawing.Size(247, 92);
             this.Company_Managemet.Text = "إدارة الشركات";
             // 
             // Add_Company
@@ -330,7 +333,7 @@
             // toolStripSeparator11
             // 
             this.toolStripSeparator11.Name = "toolStripSeparator11";
-            this.toolStripSeparator11.Size = new System.Drawing.Size(246, 6);
+            this.toolStripSeparator11.Size = new System.Drawing.Size(244, 6);
             // 
             // Doctoer_Management
             // 
@@ -340,7 +343,7 @@
             this.Doctoer_Management.Image = ((System.Drawing.Image)(resources.GetObject("Doctoer_Management.Image")));
             this.Doctoer_Management.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Doctoer_Management.Name = "Doctoer_Management";
-            this.Doctoer_Management.Size = new System.Drawing.Size(249, 92);
+            this.Doctoer_Management.Size = new System.Drawing.Size(247, 92);
             this.Doctoer_Management.Text = "إدارة الدكاترة";
             // 
             // Add_Doctor
@@ -520,6 +523,50 @@
             this.ProductManage.Size = new System.Drawing.Size(244, 82);
             this.ProductManage.Text = "إدارة الاصناف";
             // 
+            // AddProduct
+            // 
+            this.AddProduct.BackColor = System.Drawing.Color.Yellow;
+            this.AddProduct.Name = "AddProduct";
+            this.AddProduct.Size = new System.Drawing.Size(311, 28);
+            this.AddProduct.Text = "إضافة أصناف";
+            this.AddProduct.Click += new System.EventHandler(this.AddProduct_Click);
+            // 
+            // toolStripSeparator19
+            // 
+            this.toolStripSeparator19.Name = "toolStripSeparator19";
+            this.toolStripSeparator19.Size = new System.Drawing.Size(308, 6);
+            // 
+            // PurshaseProduct
+            // 
+            this.PurshaseProduct.BackColor = System.Drawing.Color.Yellow;
+            this.PurshaseProduct.Name = "PurshaseProduct";
+            this.PurshaseProduct.Size = new System.Drawing.Size(311, 28);
+            this.PurshaseProduct.Text = "شراء أصناف";
+            // 
+            // toolStripSeparator20
+            // 
+            this.toolStripSeparator20.Name = "toolStripSeparator20";
+            this.toolStripSeparator20.Size = new System.Drawing.Size(308, 6);
+            // 
+            // ConsumingProduct
+            // 
+            this.ConsumingProduct.BackColor = System.Drawing.Color.Yellow;
+            this.ConsumingProduct.Name = "ConsumingProduct";
+            this.ConsumingProduct.Size = new System.Drawing.Size(311, 28);
+            this.ConsumingProduct.Text = "إستهلاك أصناف";
+            // 
+            // toolStripSeparator21
+            // 
+            this.toolStripSeparator21.Name = "toolStripSeparator21";
+            this.toolStripSeparator21.Size = new System.Drawing.Size(308, 6);
+            // 
+            // TransFairProduct
+            // 
+            this.TransFairProduct.BackColor = System.Drawing.Color.Yellow;
+            this.TransFairProduct.Name = "TransFairProduct";
+            this.TransFairProduct.Size = new System.Drawing.Size(311, 28);
+            this.TransFairProduct.Text = "تحويل صنف من مخزن إلى مخزن";
+            // 
             // toolStripSeparator18
             // 
             this.toolStripSeparator18.Name = "toolStripSeparator18";
@@ -534,49 +581,25 @@
             this.SupplierManage.Size = new System.Drawing.Size(244, 82);
             this.SupplierManage.Text = "إدارة الموردين";
             // 
-            // AddProduct
+            // Receiption
             // 
-            this.AddProduct.BackColor = System.Drawing.Color.Yellow;
-            this.AddProduct.Name = "AddProduct";
-            this.AddProduct.Size = new System.Drawing.Size(311, 28);
-            this.AddProduct.Text = "إضافة أصناف";
-            this.AddProduct.Click += new System.EventHandler(this.AddProduct_Click);
+            this.Receiption.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Teicket});
+            this.Receiption.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Receiption.Image = ((System.Drawing.Image)(resources.GetObject("Receiption.Image")));
+            this.Receiption.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.Receiption.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Receiption.Name = "Receiption";
+            this.Receiption.Size = new System.Drawing.Size(84, 113);
+            this.Receiption.Text = "الأستقبال";
+            this.Receiption.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
-            // PurshaseProduct
+            // Teicket
             // 
-            this.PurshaseProduct.BackColor = System.Drawing.Color.Yellow;
-            this.PurshaseProduct.Name = "PurshaseProduct";
-            this.PurshaseProduct.Size = new System.Drawing.Size(311, 28);
-            this.PurshaseProduct.Text = "شراء أصناف";
-            // 
-            // ConsumingProduct
-            // 
-            this.ConsumingProduct.BackColor = System.Drawing.Color.Yellow;
-            this.ConsumingProduct.Name = "ConsumingProduct";
-            this.ConsumingProduct.Size = new System.Drawing.Size(311, 28);
-            this.ConsumingProduct.Text = "إستهلاك أصناف";
-            // 
-            // TransFairProduct
-            // 
-            this.TransFairProduct.BackColor = System.Drawing.Color.Yellow;
-            this.TransFairProduct.Name = "TransFairProduct";
-            this.TransFairProduct.Size = new System.Drawing.Size(311, 28);
-            this.TransFairProduct.Text = "تحويل صنف من مخزن إلى مخزن";
-            // 
-            // toolStripSeparator19
-            // 
-            this.toolStripSeparator19.Name = "toolStripSeparator19";
-            this.toolStripSeparator19.Size = new System.Drawing.Size(308, 6);
-            // 
-            // toolStripSeparator20
-            // 
-            this.toolStripSeparator20.Name = "toolStripSeparator20";
-            this.toolStripSeparator20.Size = new System.Drawing.Size(308, 6);
-            // 
-            // toolStripSeparator21
-            // 
-            this.toolStripSeparator21.Name = "toolStripSeparator21";
-            this.toolStripSeparator21.Size = new System.Drawing.Size(308, 6);
+            this.Teicket.Name = "Teicket";
+            this.Teicket.Size = new System.Drawing.Size(180, 28);
+            this.Teicket.Text = "شاشة الحجز";
+            this.Teicket.Click += new System.EventHandler(this.Teicket_Click);
             // 
             // Frm_Main
             // 
@@ -653,5 +676,7 @@
         public System.Windows.Forms.ToolStripMenuItem TransFairProduct;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator18;
         public System.Windows.Forms.ToolStripMenuItem SupplierManage;
+        private System.Windows.Forms.ToolStripDropDownButton Receiption;
+        public System.Windows.Forms.ToolStripMenuItem Teicket;
     }
 }
