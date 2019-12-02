@@ -83,7 +83,6 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
             this.btn_update = new System.Windows.Forms.Button();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
@@ -99,7 +98,6 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.radioButton5);
-            this.groupBox1.Controls.Add(this.radioButton3);
             this.groupBox1.Controls.Add(this.comboBox7);
             this.groupBox1.Controls.Add(this.radioButton4);
             this.groupBox1.Controls.Add(this.button2);
@@ -247,10 +245,10 @@
             // txt_name
             // 
             this.txt_name.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_name.Location = new System.Drawing.Point(16, 51);
+            this.txt_name.Location = new System.Drawing.Point(19, 51);
             this.txt_name.Name = "txt_name";
             this.txt_name.ReadOnly = true;
-            this.txt_name.Size = new System.Drawing.Size(314, 32);
+            this.txt_name.Size = new System.Drawing.Size(305, 32);
             this.txt_name.TabIndex = 40;
             this.txt_name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -270,11 +268,11 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(336, 54);
+            this.label5.Location = new System.Drawing.Point(328, 54);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(90, 24);
+            this.label5.Size = new System.Drawing.Size(98, 24);
             this.label5.TabIndex = 45;
-            this.label5.Text = "اسم العميل ";
+            this.label5.Text = "اسم المريض";
             // 
             // label3
             // 
@@ -737,37 +735,26 @@
             this.btn_update.Text = "حفظ";
             this.btn_update.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton3.Location = new System.Drawing.Point(73, 18);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(77, 28);
-            this.radioButton3.TabIndex = 93;
-            this.radioButton3.Text = "شركات";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
             // radioButton4
             // 
             this.radioButton4.AutoSize = true;
             this.radioButton4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton4.Location = new System.Drawing.Point(186, 16);
+            this.radioButton4.Location = new System.Drawing.Point(71, 16);
             this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(65, 28);
+            this.radioButton4.Size = new System.Drawing.Size(122, 28);
             this.radioButton4.TabIndex = 92;
-            this.radioButton4.Text = "اهالي";
+            this.radioButton4.Text = "مريض مسجل";
             this.radioButton4.UseVisualStyleBackColor = true;
             // 
             // radioButton5
             // 
             this.radioButton5.AutoSize = true;
             this.radioButton5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton5.Location = new System.Drawing.Point(276, 16);
+            this.radioButton5.Location = new System.Drawing.Point(229, 16);
             this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(65, 28);
+            this.radioButton5.Size = new System.Drawing.Size(111, 28);
             this.radioButton5.TabIndex = 94;
-            this.radioButton5.Text = "اهالي";
+            this.radioButton5.Text = "مريض جديد";
             this.radioButton5.UseVisualStyleBackColor = true;
             // 
             // Frm_Tickets
@@ -865,7 +852,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btn_update;
         private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton4;
     }
 }
