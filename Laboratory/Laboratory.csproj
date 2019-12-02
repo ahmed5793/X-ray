@@ -215,6 +215,12 @@
     <Compile Include="PL\Frm_StockTransfair.Designer.cs">
       <DependentUpon>Frm_StockTransfair.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\UpdateSalf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\UpdateSalf.Designer.cs">
+      <DependentUpon>UpdateSalf.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="PL\Add_Product.resx">
@@ -276,6 +282,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_StockTransfair.resx">
       <DependentUpon>Frm_StockTransfair.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\UpdateSalf.resx">
+      <DependentUpon>UpdateSalf.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -286,5 +286,33 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
+        internal DataTable SelectSalaryMins(int id)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@id", SqlDbType.Int);
+            param[0].Value = id;
+            dt = da.selected("SelectSalaryMins", param);
+            da.close();
+            return dt;
+        }
+        internal DataTable UpdateSSalaryMins(int id,decimal money)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@id", SqlDbType.Int);
+            param[0].Value = id;
+            param[1] = new SqlParameter("@money", SqlDbType.Decimal);
+            param[1].Value = money;
+            dt = da.selected("UpdateSSalaryMins", param);
+            da.close();
+            return dt;
+        }
     }
 }
