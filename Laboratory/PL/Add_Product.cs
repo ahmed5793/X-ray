@@ -58,9 +58,9 @@ namespace Laboratory.PL
                 }
                 else
                 {
-                    int x = Convert.ToInt32(Product.Select_LastIdProduct().Rows[0][0].ToString());
-                    Product.Add_Product(x, txt_name.Text, Convert.ToDecimal(txt_quantity.Text),Convert.ToDecimal(txt_seeling.Text),
-                        decimal.Parse(txt_phr.Text), Convert.ToInt32(Cmb_Store.SelectedValue),Convert.ToInt32(Txt_Minimum.Text));
+                    //int x = Convert.ToInt32(Product.Select_LastIdProduct().Rows[0][0].ToString());
+                    //Product.Add_Product(x, txt_name.Text, Convert.ToDecimal(txt_quantity.Text),Convert.ToDecimal(txt_seeling.Text),
+                    //    decimal.Parse(txt_phr.Text), Convert.ToInt32(Cmb_Store.SelectedValue),Convert.ToInt32(Txt_Minimum.Text));
                     MessageBox.Show("تم اضافه الصنف بنجاح", "عمليه الاضافه", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                     dataGridViewPR.DataSource = Product.Select_Product();
                     Clear();
@@ -90,8 +90,8 @@ namespace Laboratory.PL
                 if (MessageBox.Show("هل تريد تعديل الصنف", "عمليه التعديل", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
                 {
 
-                    Product.Update_Product(int.Parse(dataGridViewPR.CurrentRow.Cells[0].Value.ToString()),  txt_name.Text, decimal.Parse(txt_quantity.Text),
-                        Convert.ToDecimal(txt_seeling.Text), decimal.Parse(txt_phr.Text),Convert.ToInt32(Cmb_Store.SelectedValue), Convert.ToInt32(Txt_Minimum.Text));
+                    //Product.Update_Product(int.Parse(dataGridViewPR.CurrentRow.Cells[0].Value.ToString()),  txt_name.Text, decimal.Parse(txt_quantity.Text),
+                    //    Convert.ToDecimal(txt_seeling.Text), decimal.Parse(txt_phr.Text),Convert.ToInt32(Cmb_Store.SelectedValue), Convert.ToInt32(Txt_Minimum.Text));
                     MessageBox.Show("تم تعديل الصنف بنجاح", "عمليه التعديل", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
           
 
