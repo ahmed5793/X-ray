@@ -11,11 +11,12 @@ namespace Laboratory.BL
     class Product
     {
 
-        internal void Add_Product(int id ,string name , decimal Quantity , decimal Selling_price , Decimal Purshasing_price ,int id_Store)
+        internal void Add_Product(int id ,string name , decimal Quantity , decimal Selling_price , Decimal Purshasing_price 
+            ,int id_Store, int minimum)
         {
             DataAccessLayer da = new DataAccessLayer();
 
-            SqlParameter[] param = new SqlParameter[6];
+            SqlParameter[] param = new SqlParameter[7];
             da.open();
             param[0] = new SqlParameter("@Id_Product", SqlDbType.Int);
             param[0].Value = id;
@@ -29,14 +30,18 @@ namespace Laboratory.BL
             param[4].Value = Purshasing_price;
             param[5] = new SqlParameter("@id_store", SqlDbType.Decimal);
             param[5].Value = id_Store;
+            param[6] = new SqlParameter("@minimum", SqlDbType.Int);
+            param[6].Value = minimum;
+
             da.excutequery("Add_Product", param);
             da.close();
         }
-        internal void Update_Product(int id, string name, decimal Quantity, decimal Selling_price, Decimal Purshasing_price, int id_Store)
+        internal void Update_Product(int id, string name, decimal Quantity, decimal Selling_price, Decimal Purshasing_price, 
+            int id_Store , int minimum)
         {
             DataAccessLayer da = new DataAccessLayer();
 
-            SqlParameter[] param = new SqlParameter[6];
+            SqlParameter[] param = new SqlParameter[7];
             da.open();
             param[0] = new SqlParameter("@Id_Product", SqlDbType.Int);
             param[0].Value = id;
@@ -50,6 +55,8 @@ namespace Laboratory.BL
             param[4].Value = Purshasing_price;
             param[5] = new SqlParameter("@id_store", SqlDbType.Decimal);
             param[5].Value = id_Store;
+            param[6] = new SqlParameter("@minimum", SqlDbType.Int);
+            param[6].Value = minimum;
             da.excutequery("Update_Product", param);
             da.close();
         }

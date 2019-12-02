@@ -46,6 +46,8 @@
             this.dataGridViewPR = new System.Windows.Forms.DataGridView();
             this.label15 = new System.Windows.Forms.Label();
             this.txt_search = new System.Windows.Forms.TextBox();
+            this.Txt_Minimum = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPR)).BeginInit();
             this.SuspendLayout();
@@ -55,7 +57,7 @@
             this.btn_new.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_new.Font = new System.Drawing.Font("Arial", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_new.ForeColor = System.Drawing.Color.Red;
-            this.btn_new.Location = new System.Drawing.Point(494, 207);
+            this.btn_new.Location = new System.Drawing.Point(494, 232);
             this.btn_new.Name = "btn_new";
             this.btn_new.Size = new System.Drawing.Size(195, 42);
             this.btn_new.TabIndex = 7;
@@ -68,7 +70,7 @@
             this.btn_update.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_update.Font = new System.Drawing.Font("Arial", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_update.ForeColor = System.Drawing.Color.Red;
-            this.btn_update.Location = new System.Drawing.Point(185, 207);
+            this.btn_update.Location = new System.Drawing.Point(185, 232);
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(195, 42);
             this.btn_update.TabIndex = 6;
@@ -81,7 +83,7 @@
             this.btn_add.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_add.Font = new System.Drawing.Font("Arial", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_add.ForeColor = System.Drawing.Color.Red;
-            this.btn_add.Location = new System.Drawing.Point(512, 207);
+            this.btn_add.Location = new System.Drawing.Point(512, 232);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(195, 42);
             this.btn_add.TabIndex = 5;
@@ -93,6 +95,8 @@
             // 
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this.Txt_Minimum);
+            this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Controls.Add(this.Cmb_Store);
             this.groupBox3.Controls.Add(this.label6);
@@ -106,7 +110,7 @@
             this.groupBox3.Controls.Add(this.txt_phr);
             this.groupBox3.Location = new System.Drawing.Point(5, 4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(868, 194);
+            this.groupBox3.Size = new System.Drawing.Size(868, 222);
             this.groupBox3.TabIndex = 18;
             this.groupBox3.TabStop = false;
             // 
@@ -260,12 +264,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewPR.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewPR.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewPR.Location = new System.Drawing.Point(3, 307);
+            this.dataGridViewPR.Location = new System.Drawing.Point(3, 327);
             this.dataGridViewPR.MultiSelect = false;
             this.dataGridViewPR.Name = "dataGridViewPR";
             this.dataGridViewPR.ReadOnly = true;
             this.dataGridViewPR.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dataGridViewPR.Size = new System.Drawing.Size(868, 216);
+            this.dataGridViewPR.Size = new System.Drawing.Size(868, 196);
             this.dataGridViewPR.TabIndex = 22;
             this.dataGridViewPR.DoubleClick += new System.EventHandler(this.dataGridViewPR_DoubleClick);
             // 
@@ -274,7 +278,7 @@
             this.label15.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Arial Black", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(494, 268);
+            this.label15.Location = new System.Drawing.Point(494, 290);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(180, 30);
             this.label15.TabIndex = 21;
@@ -284,13 +288,40 @@
             // 
             this.txt_search.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txt_search.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_search.Location = new System.Drawing.Point(239, 271);
+            this.txt_search.Location = new System.Drawing.Point(239, 293);
             this.txt_search.Name = "txt_search";
             this.txt_search.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txt_search.Size = new System.Drawing.Size(249, 29);
             this.txt_search.TabIndex = 8;
             this.txt_search.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_search.TextChanged += new System.EventHandler(this.txt_search_TextChanged);
+            // 
+            // Txt_Minimum
+            // 
+            this.Txt_Minimum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Txt_Minimum.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_Minimum.Location = new System.Drawing.Point(337, 183);
+            this.Txt_Minimum.Name = "Txt_Minimum";
+            this.Txt_Minimum.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Txt_Minimum.Size = new System.Drawing.Size(157, 29);
+            this.Txt_Minimum.TabIndex = 21;
+            this.Txt_Minimum.Text = "0";
+            this.Txt_Minimum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Txt_Minimum.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Txt_Minimum_MouseClick);
+            this.Txt_Minimum.TextChanged += new System.EventHandler(this.Txt_Minimum_TextChanged);
+            this.Txt_Minimum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Minimum_KeyPress);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(499, 184);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(158, 29);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "الحد الادنى للطلب ";
             // 
             // Add_Product
             // 
@@ -340,5 +371,7 @@
         private System.Windows.Forms.DataGridView dataGridViewPR;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txt_search;
+        public System.Windows.Forms.TextBox Txt_Minimum;
+        private System.Windows.Forms.Label label1;
     }
 }
