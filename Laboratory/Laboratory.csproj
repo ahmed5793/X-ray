@@ -83,6 +83,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BL\Branches.cs" />
     <Compile Include="BL\CategoryXRaya.cs" />
     <Compile Include="BL\Company.cs" />
     <Compile Include="BL\Customer.cs" />
@@ -90,55 +91,82 @@
     <Compile Include="BL\Employee.cs" />
     <Compile Include="BL\ItemsXRaya.cs" />
     <Compile Include="BL\Masrofat.cs" />
+    <Compile Include="BL\Product.cs" />
     <Compile Include="BL\Stock.cs" />
+    <Compile Include="BL\Store.cs" />
+    <Compile Include="BL\Tickets.cs" />
     <Compile Include="DAL\DataAccessLayer.cs" />
+    <Compile Include="PL\Add_Product.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Add_Product.Designer.cs">
+      <DependentUpon>Add_Product.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\frm_AddStock.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\frm_AddStock.Designer.cs">
+    <Compile Include="PL\frm_AddStock.designer.cs">
       <DependentUpon>frm_AddStock.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\frm_AddStockMoney.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\frm_AddStockMoney.Designer.cs">
+    <Compile Include="PL\frm_AddStockMoney.designer.cs">
       <DependentUpon>frm_AddStockMoney.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Frm_AddStore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_AddStore.Designer.cs">
+      <DependentUpon>Frm_AddStore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Frm_Branches.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_Branches.Designer.cs">
+      <DependentUpon>Frm_Branches.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Frm_CategoryXRaya.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\Frm_CategoryXRaya.Designer.cs">
+    <Compile Include="PL\Frm_CategoryXRaya.designer.cs">
       <DependentUpon>Frm_CategoryXRaya.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Frm_Company.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\Frm_Company.Designer.cs">
+    <Compile Include="PL\Frm_Company.designer.cs">
       <DependentUpon>Frm_Company.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Frm_Customer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\Frm_Customer.Designer.cs">
+    <Compile Include="PL\Frm_Customer.designer.cs">
       <DependentUpon>Frm_Customer.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Frm_Doctor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\Frm_Doctor.Designer.cs">
+    <Compile Include="PL\Frm_Doctor.designer.cs">
       <DependentUpon>Frm_Doctor.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Frm_DoctorJob.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\Frm_DoctorJob.Designer.cs">
+    <Compile Include="PL\Frm_DoctorJob.designer.cs">
       <DependentUpon>Frm_DoctorJob.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Frm_Employee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\Frm_Employee.Designer.cs">
+    <Compile Include="PL\Frm_Employee.designer.cs">
       <DependentUpon>Frm_Employee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Frm_EmpSarf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_EmpSarf.Designer.cs">
+      <DependentUpon>Frm_EmpSarf.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Frm_GenderJob.cs">
       <SubType>Form</SubType>
@@ -149,19 +177,25 @@
     <Compile Include="PL\Frm_ItemsXRaya.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\Frm_ItemsXRaya.Designer.cs">
+    <Compile Include="PL\Frm_ItemsXRaya.designer.cs">
       <DependentUpon>Frm_ItemsXRaya.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Frm_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_Main.Designer.cs">
+      <DependentUpon>Frm_Main.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Frm_Masrofat.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\Frm_Masrofat.Designer.cs">
+    <Compile Include="PL\Frm_Masrofat.designer.cs">
       <DependentUpon>Frm_Masrofat.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Frm_MasrofGender.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\Frm_MasrofGender.Designer.cs">
+    <Compile Include="PL\Frm_MasrofGender.designer.cs">
       <DependentUpon>Frm_MasrofGender.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Frm_Salf.cs">
@@ -173,22 +207,43 @@
     <Compile Include="PL\Frm_StockPull.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\Frm_StockPull.Designer.cs">
+    <Compile Include="PL\Frm_StockPull.designer.cs">
       <DependentUpon>Frm_StockPull.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Frm_StockTransfair.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\Frm_StockTransfair.Designer.cs">
+    <Compile Include="PL\Frm_StockTransfair.designer.cs">
       <DependentUpon>Frm_StockTransfair.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Frm_Tickets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_Tickets.Designer.cs">
+      <DependentUpon>Frm_Tickets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\UpdateSalf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\UpdateSalf.Designer.cs">
+      <DependentUpon>UpdateSalf.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="PL\Add_Product.resx">
+      <DependentUpon>Add_Product.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\frm_AddStock.resx">
       <DependentUpon>frm_AddStock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\frm_AddStockMoney.resx">
       <DependentUpon>frm_AddStockMoney.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_AddStore.resx">
+      <DependentUpon>Frm_AddStore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_Branches.resx">
+      <DependentUpon>Frm_Branches.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_CategoryXRaya.resx">
       <DependentUpon>Frm_CategoryXRaya.cs</DependentUpon>
@@ -208,11 +263,17 @@
     <EmbeddedResource Include="PL\Frm_Employee.resx">
       <DependentUpon>Frm_Employee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_EmpSarf.resx">
+      <DependentUpon>Frm_EmpSarf.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_GenderJob.resx">
       <DependentUpon>Frm_GenderJob.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_ItemsXRaya.resx">
       <DependentUpon>Frm_ItemsXRaya.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_Main.resx">
+      <DependentUpon>Frm_Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Masrofat.resx">
       <DependentUpon>Frm_Masrofat.cs</DependentUpon>
@@ -228,6 +289,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_StockTransfair.resx">
       <DependentUpon>Frm_StockTransfair.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_Tickets.resx">
+      <DependentUpon>Frm_Tickets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\UpdateSalf.resx">
+      <DependentUpon>UpdateSalf.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

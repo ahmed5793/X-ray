@@ -221,11 +221,11 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(684, 25);
+            this.label5.Location = new System.Drawing.Point(680, 27);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(90, 24);
+            this.label5.Size = new System.Drawing.Size(98, 24);
             this.label5.TabIndex = 17;
-            this.label5.Text = "اسم العميل ";
+            this.label5.Text = "اسم المريض";
             // 
             // label3
             // 
