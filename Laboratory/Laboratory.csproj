@@ -83,7 +83,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BL\Branches.cs" />
     <Compile Include="BL\CategoryXRaya.cs" />
     <Compile Include="BL\Company.cs" />
     <Compile Include="BL\Customer.cs" />
@@ -91,17 +90,8 @@
     <Compile Include="BL\Employee.cs" />
     <Compile Include="BL\ItemsXRaya.cs" />
     <Compile Include="BL\Masrofat.cs" />
-    <Compile Include="BL\Product.cs" />
     <Compile Include="BL\Stock.cs" />
-    <Compile Include="BL\Store.cs" />
-    <Compile Include="BL\Tickets.cs" />
     <Compile Include="DAL\DataAccessLayer.cs" />
-    <Compile Include="PL\Add_Product.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PL\Add_Product.Designer.cs">
-      <DependentUpon>Add_Product.cs</DependentUpon>
-    </Compile>
     <Compile Include="PL\frm_AddStock.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,18 +103,6 @@
     </Compile>
     <Compile Include="PL\frm_AddStockMoney.Designer.cs">
       <DependentUpon>frm_AddStockMoney.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PL\Frm_AddStore.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PL\Frm_AddStore.Designer.cs">
-      <DependentUpon>Frm_AddStore.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PL\Frm_Branches.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PL\Frm_Branches.Designer.cs">
-      <DependentUpon>Frm_Branches.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Frm_CategoryXRaya.cs">
       <SubType>Form</SubType>
@@ -162,12 +140,6 @@
     <Compile Include="PL\Frm_Employee.Designer.cs">
       <DependentUpon>Frm_Employee.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_EmpSarf.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PL\Frm_EmpSarf.Designer.cs">
-      <DependentUpon>Frm_EmpSarf.cs</DependentUpon>
-    </Compile>
     <Compile Include="PL\Frm_GenderJob.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,12 +151,6 @@
     </Compile>
     <Compile Include="PL\Frm_ItemsXRaya.Designer.cs">
       <DependentUpon>Frm_ItemsXRaya.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PL\Frm_Main.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PL\Frm_Main.Designer.cs">
-      <DependentUpon>Frm_Main.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Frm_Masrofat.cs">
       <SubType>Form</SubType>
@@ -216,39 +182,13 @@
     <Compile Include="PL\Frm_StockTransfair.Designer.cs">
       <DependentUpon>Frm_StockTransfair.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_Tickets.cs">
-      <SubType>Form</SubType>
-    </Compile>
- HEAD
-    <Compile Include="PL\Frm_Tickets.designer.cs">
-      </Compile>
-=======
-    <Compile Include="PL\Frm_Tickets.Designer.cs">
->>>>>>> a0049848d35e3fce2c9e6ae656bb4946e3565040
-      <DependentUpon>Frm_Tickets.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PL\UpdateSalf.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PL\UpdateSalf.Designer.cs">
-      <DependentUpon>UpdateSalf.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="PL\Add_Product.resx">
-      <DependentUpon>Add_Product.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="PL\frm_AddStock.resx">
       <DependentUpon>frm_AddStock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\frm_AddStockMoney.resx">
       <DependentUpon>frm_AddStockMoney.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PL\Frm_AddStore.resx">
-      <DependentUpon>Frm_AddStore.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PL\Frm_Branches.resx">
-      <DependentUpon>Frm_Branches.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_CategoryXRaya.resx">
       <DependentUpon>Frm_CategoryXRaya.cs</DependentUpon>
@@ -268,17 +208,11 @@
     <EmbeddedResource Include="PL\Frm_Employee.resx">
       <DependentUpon>Frm_Employee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PL\Frm_EmpSarf.resx">
-      <DependentUpon>Frm_EmpSarf.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_GenderJob.resx">
       <DependentUpon>Frm_GenderJob.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_ItemsXRaya.resx">
       <DependentUpon>Frm_ItemsXRaya.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PL\Frm_Main.resx">
-      <DependentUpon>Frm_Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Masrofat.resx">
       <DependentUpon>Frm_Masrofat.cs</DependentUpon>
@@ -295,12 +229,6 @@
     <EmbeddedResource Include="PL\Frm_StockTransfair.resx">
       <DependentUpon>Frm_StockTransfair.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PL\Frm_Tickets.resx">
-      <DependentUpon>Frm_Tickets.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PL\UpdateSalf.resx">
-      <DependentUpon>UpdateSalf.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -309,7 +237,6 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -325,8 +252,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Store 2.png" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
