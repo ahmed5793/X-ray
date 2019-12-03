@@ -86,7 +86,6 @@ namespace Laboratory.PL
                 {
                     Product.Add_StoreProduct(Convert.ToInt32(Cmb_ProdName.SelectedValue), Convert.ToInt32(Cmb_Store.SelectedValue),
                         Convert.ToDecimal(txt_quantity.Text));
-                    Product.Update_TotalProd(Convert.ToInt32(Cmb_ProdName.SelectedValue), Convert.ToDecimal(txt_quantity.Text));
                     MessageBox.Show("تم إضافة الصنف للمخزن بنجاح");
                     txt_quantity.Text = "0";
 
@@ -127,7 +126,6 @@ namespace Laboratory.PL
                 {
                     Product.Update_StoreProduct(Convert.ToInt32(dataGridViewPR.CurrentRow.Cells[0].Value),
                         Convert.ToDecimal(txt_quantity.Text) ,Convert.ToInt32(Cmb_Store.SelectedValue) );
-                    Product.Update_TotalProd(Convert.ToInt32(Cmb_ProdName.SelectedValue), Convert.ToDecimal(txt_quantity.Text));
                     MessageBox.Show("تم تعديل الصنف للمخزن بنجاح");
                     txt_quantity.Text = "0";
                     btn_new.Hide();
