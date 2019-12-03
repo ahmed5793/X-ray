@@ -196,5 +196,22 @@ namespace Laboratory.PL
             Frm_Tickets frm_Tickets = new Frm_Tickets();
             frm_Tickets.ShowDialog();
         }
+
+        private void Add_StoreProduct_Click(object sender, EventArgs e)
+        {
+            Add_StoreProduct Asp = new Add_StoreProduct();
+            Asp.ShowDialog();
+        }
+
+        private void TransFairProduct_Click(object sender, EventArgs e)
+        {
+            Tranfair_product tranfair_Product = new Tranfair_product();
+            tranfair_Product.ShowDialog();
+        }
+
+        private void Doctoer_Management_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

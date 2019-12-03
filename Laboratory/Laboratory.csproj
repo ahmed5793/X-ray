@@ -102,6 +102,12 @@
     <Compile Include="PL\Add_Product.Designer.cs">
       <DependentUpon>Add_Product.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Add_StoreProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Add_StoreProduct.Designer.cs">
+      <DependentUpon>Add_StoreProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\frm_AddStock.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,6 +228,12 @@
     <Compile Include="PL\Frm_Tickets.Designer.cs">
       <DependentUpon>Frm_Tickets.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Tranfair_product.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Tranfair_product.Designer.cs">
+      <DependentUpon>Tranfair_product.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\UpdateSalf.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -232,6 +244,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="PL\Add_Product.resx">
       <DependentUpon>Add_Product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Add_StoreProduct.resx">
+      <DependentUpon>Add_StoreProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\frm_AddStock.resx">
       <DependentUpon>frm_AddStock.cs</DependentUpon>
@@ -292,6 +307,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Tickets.resx">
       <DependentUpon>Frm_Tickets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Tranfair_product.resx">
+      <DependentUpon>Tranfair_product.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\UpdateSalf.resx">
       <DependentUpon>UpdateSalf.cs</DependentUpon>
