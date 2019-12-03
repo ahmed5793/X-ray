@@ -11,12 +11,13 @@ namespace Laboratory.BL
 {
     class Users
     {
-        internal DataTable Logins(string id, string pass)
+        internal DataTable Logins(string userName, string pass)
         {
             DataAccessLayer da = new DataAccessLayer();
             SqlParameter[] param = new SqlParameter[2];
-            param[0] = new SqlParameter("@ID", SqlDbType.NVarChar, 50);
-            param[0].Value = id;
+          
+            param[0] = new SqlParameter("@UserName", SqlDbType.NVarChar, 100);
+            param[0].Value = userName;
 
             param[1] = new SqlParameter("@PASS", SqlDbType.VarChar, 50);
             param[1].Value = pass;
@@ -68,9 +69,9 @@ namespace Laboratory.BL
             param[0] = new SqlParameter("@id", SqlDbType.Int);
             param[0].Value = id_emp;
           
-            param[1] = new SqlParameter("@userType", SqlDbType.VarChar, 100);
+            param[1] = new SqlParameter("@UserName", SqlDbType.NVarChar, 100);
             param[1].Value = userName;
-            param[2] = new SqlParameter("@userType", SqlDbType.VarChar, 50);
+            param[2] = new SqlParameter("@pass", SqlDbType.VarChar, 50);
             param[2].Value = pass;
             da.excutequery("UpdateUsers", param);
             da.close();

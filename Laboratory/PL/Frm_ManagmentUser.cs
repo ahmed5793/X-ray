@@ -19,8 +19,8 @@ namespace Laboratory.PL
         {
             InitializeComponent();
             dataGridViewList.DataSource = u.SelectUsers();
-            dataGridViewList.Columns[0].Visible = true;
-            dataGridViewList.Columns[4].Visible = true;
+            dataGridViewList.Columns[0].Visible = false;
+            dataGridViewList.Columns[4].Visible = false;
             comboBox1.DataSource = E.SelectCompoEmployee();
             comboBox1.DisplayMember = "Emp_Name";
             comboBox1.ValueMember = "Emp_ID";
@@ -29,7 +29,8 @@ namespace Laboratory.PL
 
         private void Frm_ManagmentUser_Load(object sender, EventArgs e)
         {
-
+            btn_delete.Enabled = false;
+            btn_update.Enabled = false;
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -80,10 +81,11 @@ namespace Laboratory.PL
                     }
                     u.AddUser(Convert.ToInt32(comboBox1.SelectedValue), txt_User.Text, txt_Pass.Text);
                 MessageBox.Show("Registration saved successfully");
+                dataGridViewList.DataSource = u.SelectUsers();
+
                 txt_Pass.Clear();
                 txt_User.Clear();
                 txt_PassRealy.Clear();
-                comboBox1.DataSource = E.SelectCompoEmployee();
 
 
             }
@@ -102,7 +104,7 @@ namespace Laboratory.PL
             comboBox1.Text = dataGridViewList.CurrentRow.Cells[1].Value.ToString();
             txt_PassRealy.Text = txt_Pass.Text;
      
-            txt_User.Enabled = false;
+           
             btn_save.Enabled = false;
             btn_update.Enabled = true;
             btn_delete.Enabled = true;
@@ -141,9 +143,11 @@ namespace Laboratory.PL
                 txt_User.Clear();
                 txt_PassRealy.Clear();
                 comboBox1.Enabled = true;
-                comboBox1.DataSource = E.SelectCompoEmployee();
+                dataGridViewList.DataSource = u.SelectUsers();
 
-
+                btn_update.Enabled = false;
+                btn_delete.Enabled = false;
+                btn_save.Enabled = true;
 
             }
             catch (Exception ex)
@@ -167,8 +171,11 @@ namespace Laboratory.PL
                     btn_update.Enabled = false;
                     btn_save.Enabled = true;
                     btn_delete.Enabled = false;
-                
-                  
+
+                    txt_Pass.Clear();
+                    txt_PassRealy.Clear();
+                    txt_User.Clear();
+
                 }
                 else
                 {

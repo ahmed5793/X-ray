@@ -12,12 +12,14 @@ namespace Laboratory
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        /// 
+        internal static string salesman;
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frm_Main());
+            Application.Run(new Frm_Login());
         }
     }
 }
