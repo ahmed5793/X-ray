@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Cmb_customer = new System.Windows.Forms.ComboBox();
             this.rdb_NewPatient = new System.Windows.Forms.RadioButton();
             this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.rdb_CurrentPatient = new System.Windows.Forms.RadioButton();
@@ -49,6 +50,8 @@
             this.txt_address = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label23 = new System.Windows.Forms.Label();
             this.Cmb_category = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -85,9 +88,6 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.btn_print = new System.Windows.Forms.Button();
             this.btn_save = new System.Windows.Forms.Button();
-            this.label23 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.Cmb_customer = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -126,6 +126,19 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "بيانات العملاء";
+            // 
+            // Cmb_customer
+            // 
+            this.Cmb_customer.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.Cmb_customer.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.Cmb_customer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Cmb_customer.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cmb_customer.FormattingEnabled = true;
+            this.Cmb_customer.Location = new System.Drawing.Point(-26, 50);
+            this.Cmb_customer.Name = "Cmb_customer";
+            this.Cmb_customer.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Cmb_customer.Size = new System.Drawing.Size(302, 32);
+            this.Cmb_customer.TabIndex = 92;
             // 
             // rdb_NewPatient
             // 
@@ -346,6 +359,29 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "بيانات الاشعة";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(24, 17);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.comboBox1.Size = new System.Drawing.Size(228, 32);
+            this.comboBox1.TabIndex = 92;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(258, 20);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(57, 24);
+            this.label23.TabIndex = 96;
+            this.label23.Text = "الطبيب";
             // 
             // Cmb_category
             // 
@@ -762,42 +798,6 @@
             this.btn_save.TabIndex = 100;
             this.btn_save.Text = "حفظ";
             this.btn_save.UseVisualStyleBackColor = true;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(240, 22);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(57, 24);
-            this.label23.TabIndex = 96;
-            this.label23.Text = "الطبيب";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(6, 18);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.comboBox1.Size = new System.Drawing.Size(228, 32);
-            this.comboBox1.TabIndex = 92;
-            // 
-            // Cmb_customer
-            // 
-            this.Cmb_customer.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.Cmb_customer.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.Cmb_customer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Cmb_customer.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cmb_customer.FormattingEnabled = true;
-            this.Cmb_customer.Location = new System.Drawing.Point(-26, 50);
-            this.Cmb_customer.Name = "Cmb_customer";
-            this.Cmb_customer.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Cmb_customer.Size = new System.Drawing.Size(302, 32);
-            this.Cmb_customer.TabIndex = 92;
             // 
             // Frm_Tickets
             // 
