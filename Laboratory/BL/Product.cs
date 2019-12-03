@@ -11,29 +11,42 @@ namespace Laboratory.BL
     class Product
     {
 
-        internal void Add_Product(int id ,string name )
+        internal void Add_Product(int id ,string name, decimal Selling_price, Decimal Purshasing_price, int minimum)
+ 
         {
             DataAccessLayer da = new DataAccessLayer();
 
-            SqlParameter[] param = new SqlParameter[2];
+            SqlParameter[] param = new SqlParameter[5];
             da.open();
             param[0] = new SqlParameter("@Id_Product", SqlDbType.Int);
             param[0].Value = id;
             param[1] = new SqlParameter("@Product_Name", SqlDbType.NVarChar,100);
             param[1].Value = name;
+            param[2] = new SqlParameter("@Selling_Price", SqlDbType.Decimal);
+            param[2].Value = Selling_price;
+            param[3] = new SqlParameter("@purxhase_price", SqlDbType.Decimal);
+            param[3].Value = Purshasing_price;
+            param[4] = new SqlParameter("@minimum", SqlDbType.Int);
+            param[4].Value = minimum;
             da.excutequery("Add_Product", param);
             da.close();
         }
-        internal void Update_Product(int id, string name)
+        internal void Update_Product(int id, string name, decimal Selling_price, Decimal Purshasing_price, int minimum)
         {
             DataAccessLayer da = new DataAccessLayer();
 
-            SqlParameter[] param = new SqlParameter[2];
+            SqlParameter[] param = new SqlParameter[5];
             da.open();
             param[0] = new SqlParameter("@Id_Product", SqlDbType.Int);
             param[0].Value = id;
             param[1] = new SqlParameter("@Product_Name", SqlDbType.NVarChar, 100);
             param[1].Value = name;
+            param[2] = new SqlParameter("@Selling_Price", SqlDbType.Decimal);
+            param[2].Value = Selling_price;
+            param[3] = new SqlParameter("@purxhase_price", SqlDbType.Decimal);
+            param[3].Value = Purshasing_price;
+            param[4] = new SqlParameter("@minimum", SqlDbType.Int);
+            param[4].Value = minimum;
             da.excutequery("Update_Product", param);
             da.close();
         }
@@ -111,18 +124,12 @@ namespace Laboratory.BL
                 dt.Dispose();
             }
         }
-        internal void Update_TotalProd()
-        {
-            DataAccessLayer da = new DataAccessLayer();
-            da.open();
-            da.excutequery("Update_TotalProd", null);
-            da.close();
-        }
-        internal void Add_StoreProduct(int id_product,int id_Store,decimal Quantity,decimal Selling_price,Decimal Purshasing_price,int minimum)
+       
+        internal void Add_StoreProduct(int id_product,int id_Store,decimal Quantity)
         {
             DataAccessLayer da = new DataAccessLayer();
 
-            SqlParameter[] param = new SqlParameter[6];
+            SqlParameter[] param = new SqlParameter[3];
             da.open();
             param[0] = new SqlParameter("@Id_Product", SqlDbType.Int);
             param[0].Value = id_product;
@@ -130,38 +137,187 @@ namespace Laboratory.BL
             param[1].Value = id_Store;
             param[2] = new SqlParameter("@Quantity", SqlDbType.Decimal);
             param[2].Value = Quantity;
-            param[3] = new SqlParameter("@Selling_Price", SqlDbType.Decimal);
-            param[3].Value = Selling_price;
-            param[4] = new SqlParameter("@purxhase_price", SqlDbType.Decimal);
-            param[4].Value = Purshasing_price;
-            param[5] = new SqlParameter("@minimum", SqlDbType.Int);
-            param[5].Value = minimum;
-       
             da.excutequery("Add_StoreProduct", param);
             da.close();
         }
-        internal void Update_StoreProduct(int id, decimal Quantity, decimal Selling_price, Decimal Purshasing_price,
-       int id_Store, int minimum)
+        internal void Update_StoreProduct(int id_Product, decimal Quantity, int Id_Store)
         {
             DataAccessLayer da = new DataAccessLayer();
 
-            SqlParameter[] param = new SqlParameter[6];
+            SqlParameter[] param = new SqlParameter[3];
             da.open();
             param[0] = new SqlParameter("@Id_Product", SqlDbType.Int);
-            param[0].Value = id;
-
+            param[0].Value = id_Product;
             param[1] = new SqlParameter("@Quantity", SqlDbType.Decimal);
             param[1].Value = Quantity;
-            param[2] = new SqlParameter("@Selling_Price", SqlDbType.Decimal);
-            param[2].Value = Selling_price;
-            param[3] = new SqlParameter("@purxhase_price", SqlDbType.Decimal);
-            param[3].Value = Purshasing_price;
-            param[4] = new SqlParameter("@id_store", SqlDbType.Decimal);
-            param[4].Value = id_Store;
-            param[5] = new SqlParameter("@minimum", SqlDbType.Int);
-            param[5].Value = minimum;
+            param[2] = new SqlParameter("@id_store", SqlDbType.Int);
+            param[2].Value = Id_Store;
             da.excutequery("Update_StoreProduct", param);
             da.close();
+        }
+        internal DataTable Select_ComboProduct()
+        {
+            DataAccessLayer da = new DataAccessLayer();
+
+            DataTable dt = new DataTable();
+            try
+            {
+                da.open();
+                dt.Clear();
+                dt = da.selected("Select_ComboProduct", null);
+                da.close();
+                return dt;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                dt.Dispose();
+            }
+
+        }
+        internal DataTable Select_StoreProduct()
+        {
+            DataAccessLayer da = new DataAccessLayer();
+
+            DataTable dt = new DataTable();
+            try
+            {
+                da.open();
+                dt.Clear();
+                dt = da.selected("Select_StoreProduct", null);
+                da.close();
+                return dt;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                dt.Dispose();
+            }
+        }
+        internal DataTable Search_StoreProduct(string id)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                DataAccessLayer da = new DataAccessLayer();
+
+                da.open();
+                SqlParameter[] param = new SqlParameter[1];
+                param[0] = new SqlParameter("@id", SqlDbType.NVarChar, 100);
+                param[0].Value = id;
+                dt.Clear();
+                dt = da.selected("Search_StoreProduct", param);
+                da.close();
+                return dt;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                dt.Dispose();
+            }
+        }
+
+        internal void add_TransFairProduct(int id_transfair, string  Emp_name, DateTime Date,string Note)
+
+        {
+            DataAccessLayer da = new DataAccessLayer();
+
+            SqlParameter[] param = new SqlParameter[4];
+            da.open();
+            param[0] = new SqlParameter("@Id_Transfair", SqlDbType.Int);
+            param[0].Value = id_transfair;
+            param[1] = new SqlParameter("@Employee_name", SqlDbType.NVarChar, 100);
+            param[1].Value = Emp_name;
+            param[2] = new SqlParameter("@Date", SqlDbType.DateTime);
+            param[2].Value = Date;
+            param[3] = new SqlParameter("@note", SqlDbType.NVarChar,350);
+            param[3].Value = Note;
+            da.excutequery("add_TransFairProduct", param);
+            da.close();
+        }
+        internal void Add_TransfairDetails(int id_transfair, string from_store, string To_store, int id_product,int quantity)
+
+        {
+            DataAccessLayer da = new DataAccessLayer();
+
+            SqlParameter[] param = new SqlParameter[5];
+            da.open();
+            param[0] = new SqlParameter("@Id_Transfair", SqlDbType.Int);
+            param[0].Value = id_transfair;
+            param[1] = new SqlParameter("@From_Stock", SqlDbType.NVarChar, 100);
+            param[1].Value = from_store;
+            param[2] = new SqlParameter("@To_Stock", SqlDbType.NVarChar, 100);
+            param[2].Value = To_store;
+            param[3] = new SqlParameter("@id_product", SqlDbType.Int);
+            param[3].Value = id_product;
+            param[4] = new SqlParameter("@Quantity", SqlDbType.Int);
+            param[4].Value = quantity;
+            da.excutequery("Add_TransfairDetails", param);
+            da.close();
+        }
+        internal DataTable Select_ComboTransfairProductT(int id)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                DataAccessLayer da = new DataAccessLayer();
+
+                da.open();
+                SqlParameter[] param = new SqlParameter[1];
+                param[0] = new SqlParameter("@id", SqlDbType.Int);
+                param[0].Value = id;
+                dt.Clear();
+                dt = da.selected("Select_ComboTransfairProductT", param);
+                da.close();
+                return dt;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                dt.Dispose();
+            }
+        }
+        internal DataTable Select_LastIdTransfair()
+        {
+            DataAccessLayer da = new DataAccessLayer();
+
+            DataTable dt = new DataTable();
+            try
+            {
+                da.open();
+                dt.Clear();
+                dt = da.selected("Select_LastIdTransfair", null);
+                da.close();
+                return dt;
+
+            }
+            catch (Exception )
+            {
+
+                throw;
+            }
+            finally
+            {
+                dt.Dispose();
+            }
         }
     }
 }

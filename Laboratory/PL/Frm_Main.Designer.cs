@@ -87,6 +87,10 @@
             this.SupplierManage = new System.Windows.Forms.ToolStripMenuItem();
             this.Receiption = new System.Windows.Forms.ToolStripDropDownButton();
             this.Teicket = new System.Windows.Forms.ToolStripMenuItem();
+            this.Add_StoreProduct = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -151,7 +155,7 @@
             // toolStripSeparator15
             // 
             this.toolStripSeparator15.Name = "toolStripSeparator15";
-            this.toolStripSeparator15.Size = new System.Drawing.Size(236, 6);
+            this.toolStripSeparator15.Size = new System.Drawing.Size(235, 6);
             // 
             // إدارةالاشعةToolStripMenuItem
             // 
@@ -166,7 +170,7 @@
             this.إدارةالاشعةToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.إدارةالاشعةToolStripMenuItem.Name = "إدارةالاشعةToolStripMenuItem";
             this.إدارةالاشعةToolStripMenuItem.Size = new System.Drawing.Size(239, 82);
-            this.إدارةالاشعةToolStripMenuItem.Text = "إدارة الاشعة";
+            this.إدارةالاشعةToolStripMenuItem.Text = "قسم الاشعة";
             // 
             // Category_XRay
             // 
@@ -343,8 +347,9 @@
             this.Doctoer_Management.Image = ((System.Drawing.Image)(resources.GetObject("Doctoer_Management.Image")));
             this.Doctoer_Management.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Doctoer_Management.Name = "Doctoer_Management";
-            this.Doctoer_Management.Size = new System.Drawing.Size(247, 92);
+            this.Doctoer_Management.Size = new System.Drawing.Size(249, 92);
             this.Doctoer_Management.Text = "إدارة الدكاترة";
+            this.Doctoer_Management.Click += new System.EventHandler(this.Doctoer_Management_Click);
             // 
             // Add_Doctor
             // 
@@ -483,12 +488,12 @@
             this.toolStripSeparator18,
             this.SupplierManage});
             this.Store_Manage.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            //this.Store_Manage.Image = global::Laboratory.Properties.Resources.Store_2;
+            this.Store_Manage.Image = ((System.Drawing.Image)(resources.GetObject("Store_Manage.Image")));
             this.Store_Manage.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Store_Manage.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Store_Manage.Name = "Store_Manage";
-            this.Store_Manage.Size = new System.Drawing.Size(117, 113);
-            this.Store_Manage.Text = "إدارة المخازن";
+            this.Store_Manage.Size = new System.Drawing.Size(111, 113);
+            this.Store_Manage.Text = "قسم المخازن";
             this.Store_Manage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // AddStore
@@ -512,11 +517,15 @@
             this.ProductManage.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.AddProduct,
             this.toolStripSeparator19,
+            this.Add_StoreProduct,
+            this.toolStripSeparator1,
+            this.TransFairProduct,
+            this.toolStripSeparator6,
+            this.ConsumingProduct,
+            this.toolStripSeparator7,
             this.PurshaseProduct,
             this.toolStripSeparator20,
-            this.ConsumingProduct,
-            this.toolStripSeparator21,
-            this.TransFairProduct});
+            this.toolStripSeparator21});
             this.ProductManage.Image = ((System.Drawing.Image)(resources.GetObject("ProductManage.Image")));
             this.ProductManage.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ProductManage.Name = "ProductManage";
@@ -566,6 +575,7 @@
             this.TransFairProduct.Name = "TransFairProduct";
             this.TransFairProduct.Size = new System.Drawing.Size(311, 28);
             this.TransFairProduct.Text = "تحويل صنف من مخزن إلى مخزن";
+            this.TransFairProduct.Click += new System.EventHandler(this.TransFairProduct_Click);
             // 
             // toolStripSeparator18
             // 
@@ -590,16 +600,42 @@
             this.Receiption.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Receiption.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Receiption.Name = "Receiption";
-            this.Receiption.Size = new System.Drawing.Size(84, 113);
-            this.Receiption.Text = "الأستقبال";
+            this.Receiption.Size = new System.Drawing.Size(117, 113);
+            this.Receiption.Text = "قسم الأستقبال";
             this.Receiption.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // Teicket
             // 
+            this.Teicket.BackColor = System.Drawing.Color.Salmon;
+            this.Teicket.Image = ((System.Drawing.Image)(resources.GetObject("Teicket.Image")));
+            this.Teicket.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Teicket.Name = "Teicket";
-            this.Teicket.Size = new System.Drawing.Size(180, 28);
+            this.Teicket.Size = new System.Drawing.Size(239, 82);
             this.Teicket.Text = "شاشة الحجز";
             this.Teicket.Click += new System.EventHandler(this.Teicket_Click);
+            // 
+            // Add_StoreProduct
+            // 
+            this.Add_StoreProduct.BackColor = System.Drawing.Color.Yellow;
+            this.Add_StoreProduct.Name = "Add_StoreProduct";
+            this.Add_StoreProduct.Size = new System.Drawing.Size(311, 28);
+            this.Add_StoreProduct.Text = "إضافة أصناف للمخازن";
+            this.Add_StoreProduct.Click += new System.EventHandler(this.Add_StoreProduct_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(308, 6);
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(308, 6);
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(308, 6);
             // 
             // Frm_Main
             // 
@@ -678,5 +714,9 @@
         public System.Windows.Forms.ToolStripMenuItem SupplierManage;
         private System.Windows.Forms.ToolStripDropDownButton Receiption;
         public System.Windows.Forms.ToolStripMenuItem Teicket;
+        public System.Windows.Forms.ToolStripMenuItem Add_StoreProduct;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
     }
 }

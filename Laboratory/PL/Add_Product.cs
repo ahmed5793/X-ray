@@ -13,22 +13,19 @@ namespace Laboratory.PL
     public partial class Add_Product : Form
     {
         Product Product = new Product();
-        Store Store = new Store();
         public Add_Product()
         {
             InitializeComponent();
             btn_update.Enabled = false;
             btn_new.Hide();
             dataGridViewPR.DataSource = Product.Select_Product();
-            Cmb_Store.DataSource = Store.Select_ComboStore();
-            Cmb_Store.DisplayMember = "Store_name";
-            Cmb_Store.ValueMember = "id_store";
+            txt_name.Focus();
+
 
         }
         internal void Clear()
         {
             txt_name.Text = "";
-            txt_quantity.Text = "0";
             txt_seeling.Text = "0";
             txt_phr.Text = "0";
             Txt_Minimum.Text = "0";
@@ -50,17 +47,12 @@ namespace Laboratory.PL
                     txt_name.Focus();
                     return;
                 }
-                if (Cmb_Store.Text=="")
-                {
-                    MessageBox.Show("لابد من وجود مخزن لإضافة الصنف");
-                    Cmb_Store.Focus();
-                    return;
-                }
+            
                 else
                 {
-                    //int x = Convert.ToInt32(Product.Select_LastIdProduct().Rows[0][0].ToString());
-                    //Product.Add_Product(x, txt_name.Text, Convert.ToDecimal(txt_quantity.Text),Convert.ToDecimal(txt_seeling.Text),
-                    //    decimal.Parse(txt_phr.Text), Convert.ToInt32(Cmb_Store.SelectedValue),Convert.ToInt32(Txt_Minimum.Text));
+                    int x = Convert.ToInt32(Product.Select_LastIdProduct().Rows[0][0].ToString());
+                    Product.Add_Product(x, txt_name.Text,Convert.ToDecimal(txt_seeling.Text),decimal.Parse(txt_phr.Text),
+                                        Convert.ToInt32(Txt_Minimum.Text));
                     MessageBox.Show("تم اضافه الصنف بنجاح", "عمليه الاضافه", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                     dataGridViewPR.DataSource = Product.Select_Product();
                     Clear();
@@ -90,20 +82,16 @@ namespace Laboratory.PL
                 if (MessageBox.Show("هل تريد تعديل الصنف", "عمليه التعديل", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
                 {
 
-                    //Product.Update_Product(int.Parse(dataGridViewPR.CurrentRow.Cells[0].Value.ToString()),  txt_name.Text, decimal.Parse(txt_quantity.Text),
-                    //    Convert.ToDecimal(txt_seeling.Text), decimal.Parse(txt_phr.Text),Convert.ToInt32(Cmb_Store.SelectedValue), Convert.ToInt32(Txt_Minimum.Text));
+                    Product.Update_Product(int.Parse(dataGridViewPR.CurrentRow.Cells[0].Value.ToString()),  txt_name.Text,
+                       Convert.ToDecimal(txt_seeling.Text), decimal.Parse(txt_phr.Text), Convert.ToInt32(Txt_Minimum.Text));
                     MessageBox.Show("تم تعديل الصنف بنجاح", "عمليه التعديل", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-          
-
                 }
 
                 else
                 {
                     MessageBox.Show("تم الغاء عمليه التعديل", "عمليه التعديل", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
                 }
                 dataGridViewPR.DataSource = Product.Select_Product();
-                Product.Update_TotalProd();
                 Clear();
                 btn_add.Show();
                 btn_new.Hide();
@@ -122,11 +110,9 @@ namespace Laboratory.PL
                 if (dataGridViewPR.Rows.Count > 0)
                 {
                     txt_name.Text = dataGridViewPR.CurrentRow.Cells[1].Value.ToString();
-                    txt_quantity.Text = dataGridViewPR.CurrentRow.Cells[2].Value.ToString();
-                    txt_seeling.Text = dataGridViewPR.CurrentRow.Cells[3].Value.ToString();
-                    txt_phr.Text = dataGridViewPR.CurrentRow.Cells[4].Value.ToString();
-                    Cmb_Store.Text = dataGridViewPR.CurrentRow.Cells[5].Value.ToString();
-                    Txt_Minimum.Text = dataGridViewPR.CurrentRow.Cells[6].Value.ToString();
+                    txt_seeling.Text = dataGridViewPR.CurrentRow.Cells[2].Value.ToString();
+                    txt_phr.Text = dataGridViewPR.CurrentRow.Cells[3].Value.ToString();
+                    Txt_Minimum.Text = dataGridViewPR.CurrentRow.Cells[4].Value.ToString();
                     btn_add.Hide();
                     btn_update.Enabled = true;
                     btn_new.Show();
@@ -190,15 +176,7 @@ namespace Laboratory.PL
         private void txt_quantity_KeyPress(object sender, KeyPressEventArgs e)
         {
 
-            if (e.KeyChar == '.' && txt_quantity.Text.ToString().IndexOf('.') > -1)
-            {
-                e.Handled = true;
-            }
-            else if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != Convert.ToChar(System.Globalization.CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator))
-            {
-
-                e.Handled = true;
-            }
+            
         }
 
         private void btn_new_Click(object sender, EventArgs e)
@@ -228,15 +206,11 @@ namespace Laboratory.PL
 
         private void txt_quantity_TextChanged(object sender, EventArgs e)
         {
-            if (txt_quantity.Text == "")
-            {
-                txt_quantity.Text = "0";
-            }
+            
         }
 
         private void txt_quantity_MouseClick(object sender, MouseEventArgs e)
         {
-            txt_quantity.SelectAll();
 
         }
 
@@ -252,24 +226,7 @@ namespace Laboratory.PL
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Frm_AddStore frm_AddStore = new Frm_AddStore();
-            try
-            {
-                frm_AddStore.ShowDialog();
-                Cmb_Store.DataSource = Store.Select_ComboStore();
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-            finally        
-            {
-                frm_AddStore.Dispose();
-            }
-        }
+    
 
         private void Txt_Minimum_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -291,6 +248,16 @@ namespace Laboratory.PL
         private void Txt_Minimum_MouseClick(object sender, MouseEventArgs e)
         {
             Txt_Minimum.SelectAll();
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Cmb_Store_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
