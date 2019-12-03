@@ -106,5 +106,22 @@ namespace Laboratory.BL
             return dt;
         }
 
+
+
+        internal DataTable SelectCtegoryItems(int idCategory)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@id_Ctegory", SqlDbType.Int);
+            param[0].Value = idCategory;
+
+            dt = da.selected("SelectCtegoryItems", param);
+            da.close();
+            return dt;
+        }
+
     }
 }

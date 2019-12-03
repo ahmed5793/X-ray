@@ -113,5 +113,19 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
+        internal DataTable SelectDataCompoCustomer(int id)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@id_Cust", SqlDbType.Int);
+            param[0].Value = id;
+
+            dt = da.selected("SelectDataCompoCustomer", param);
+            da.close();
+            return dt;
+        }
     }
 }

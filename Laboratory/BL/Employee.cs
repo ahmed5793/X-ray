@@ -316,5 +316,19 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
+
+        internal DataTable SelectCompoRoleEmployee(int id)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@idRole", SqlDbType.Int);
+            param[0].Value = id;
+            dt = da.selected("SelectCompoRoleEmployee", param);
+            da.close();
+            return dt;
+        }
     }
 }

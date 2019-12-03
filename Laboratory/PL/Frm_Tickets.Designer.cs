@@ -50,7 +50,7 @@
             this.txt_address = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.Cmb_employee = new System.Windows.Forms.ComboBox();
             this.label23 = new System.Windows.Forms.Label();
             this.Cmb_category = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -88,6 +88,7 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.btn_print = new System.Windows.Forms.Button();
             this.btn_save = new System.Windows.Forms.Button();
+            this.cmb_Emprole = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -131,14 +132,17 @@
             // 
             this.Cmb_customer.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.Cmb_customer.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.Cmb_customer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Cmb_customer.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cmb_customer.FormattingEnabled = true;
-            this.Cmb_customer.Location = new System.Drawing.Point(-26, 50);
+            this.Cmb_customer.Location = new System.Drawing.Point(20, 51);
             this.Cmb_customer.Name = "Cmb_customer";
             this.Cmb_customer.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Cmb_customer.Size = new System.Drawing.Size(302, 32);
             this.Cmb_customer.TabIndex = 92;
+            this.Cmb_customer.SelectedIndexChanged += new System.EventHandler(this.Cmb_customer_SelectedIndexChanged);
+            this.Cmb_customer.SelectionChangeCommitted += new System.EventHandler(this.Cmb_customer_SelectionChangeCommitted);
+            this.Cmb_customer.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Cmb_customer_KeyDown);
+            this.Cmb_customer.Leave += new System.EventHandler(this.Cmb_customer_Leave);
             // 
             // rdb_NewPatient
             // 
@@ -150,6 +154,7 @@
             this.rdb_NewPatient.TabIndex = 94;
             this.rdb_NewPatient.Text = "مريض جديد";
             this.rdb_NewPatient.UseVisualStyleBackColor = true;
+            this.rdb_NewPatient.CheckedChanged += new System.EventHandler(this.rdb_NewPatient_CheckedChanged);
             // 
             // comboBox7
             // 
@@ -168,13 +173,16 @@
             // rdb_CurrentPatient
             // 
             this.rdb_CurrentPatient.AutoSize = true;
+            this.rdb_CurrentPatient.Checked = true;
             this.rdb_CurrentPatient.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdb_CurrentPatient.Location = new System.Drawing.Point(71, 16);
             this.rdb_CurrentPatient.Name = "rdb_CurrentPatient";
             this.rdb_CurrentPatient.Size = new System.Drawing.Size(122, 28);
             this.rdb_CurrentPatient.TabIndex = 92;
+            this.rdb_CurrentPatient.TabStop = true;
             this.rdb_CurrentPatient.Text = "مريض مسجل";
             this.rdb_CurrentPatient.UseVisualStyleBackColor = true;
+            this.rdb_CurrentPatient.CheckedChanged += new System.EventHandler(this.rdb_CurrentPatient_CheckedChanged);
             // 
             // button2
             // 
@@ -265,17 +273,17 @@
             this.txt_age.Location = new System.Drawing.Point(16, 166);
             this.txt_age.MaxLength = 11;
             this.txt_age.Name = "txt_age";
-            this.txt_age.ReadOnly = true;
             this.txt_age.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txt_age.Size = new System.Drawing.Size(314, 32);
             this.txt_age.TabIndex = 46;
             this.txt_age.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_age.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_age_KeyPress);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(377, 168);
+            this.label4.Location = new System.Drawing.Point(374, 168);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 24);
             this.label4.TabIndex = 47;
@@ -286,7 +294,6 @@
             this.txt_name.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_name.Location = new System.Drawing.Point(19, 51);
             this.txt_name.Name = "txt_name";
-            this.txt_name.ReadOnly = true;
             this.txt_name.Size = new System.Drawing.Size(305, 32);
             this.txt_name.TabIndex = 40;
             this.txt_name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -297,11 +304,11 @@
             this.txt_phone.Location = new System.Drawing.Point(16, 93);
             this.txt_phone.MaxLength = 3000;
             this.txt_phone.Name = "txt_phone";
-            this.txt_phone.ReadOnly = true;
             this.txt_phone.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txt_phone.Size = new System.Drawing.Size(314, 32);
             this.txt_phone.TabIndex = 42;
             this.txt_phone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_phone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_phone_KeyPress);
             // 
             // label5
             // 
@@ -328,7 +335,6 @@
             this.txt_address.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_address.Location = new System.Drawing.Point(16, 128);
             this.txt_address.Name = "txt_address";
-            this.txt_address.ReadOnly = true;
             this.txt_address.Size = new System.Drawing.Size(314, 32);
             this.txt_address.TabIndex = 41;
             this.txt_address.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -345,43 +351,42 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.Controls.Add(this.cmb_Emprole);
+            this.groupBox2.Controls.Add(this.Cmb_employee);
             this.groupBox2.Controls.Add(this.label23);
             this.groupBox2.Controls.Add(this.Cmb_category);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.cmb_items);
-            this.groupBox2.Controls.Add(this.dtb_visit);
-            this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Location = new System.Drawing.Point(5, 93);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(565, 145);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "بيانات الاشعة";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
-            // comboBox1
+            // Cmb_employee
             // 
-            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(24, 17);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.comboBox1.Size = new System.Drawing.Size(228, 32);
-            this.comboBox1.TabIndex = 92;
+            this.Cmb_employee.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.Cmb_employee.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.Cmb_employee.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Cmb_employee.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cmb_employee.FormattingEnabled = true;
+            this.Cmb_employee.Location = new System.Drawing.Point(9, 24);
+            this.Cmb_employee.Name = "Cmb_employee";
+            this.Cmb_employee.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Cmb_employee.Size = new System.Drawing.Size(228, 32);
+            this.Cmb_employee.TabIndex = 92;
             // 
             // label23
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(258, 20);
+            this.label23.Location = new System.Drawing.Point(248, 36);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(57, 24);
+            this.label23.Size = new System.Drawing.Size(0, 24);
             this.label23.TabIndex = 96;
-            this.label23.Text = "الطبيب";
             // 
             // Cmb_category
             // 
@@ -391,11 +396,13 @@
             this.Cmb_category.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Cmb_category.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cmb_category.FormattingEnabled = true;
-            this.Cmb_category.Location = new System.Drawing.Point(13, 69);
+            this.Cmb_category.Location = new System.Drawing.Point(13, 65);
             this.Cmb_category.Name = "Cmb_category";
             this.Cmb_category.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Cmb_category.Size = new System.Drawing.Size(449, 32);
             this.Cmb_category.TabIndex = 79;
+            this.Cmb_category.SelectedIndexChanged += new System.EventHandler(this.Cmb_category_SelectedIndexChanged);
+            this.Cmb_category.SelectionChangeCommitted += new System.EventHandler(this.Cmb_category_SelectionChangeCommitted);
             // 
             // label9
             // 
@@ -435,9 +442,9 @@
             // 
             this.dtb_visit.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtb_visit.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtb_visit.Location = new System.Drawing.Point(327, 20);
+            this.dtb_visit.Location = new System.Drawing.Point(40, 15);
             this.dtb_visit.Name = "dtb_visit";
-            this.dtb_visit.Size = new System.Drawing.Size(132, 26);
+            this.dtb_visit.Size = new System.Drawing.Size(117, 26);
             this.dtb_visit.TabIndex = 75;
             // 
             // label6
@@ -445,7 +452,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(461, 22);
+            this.label6.Location = new System.Drawing.Point(202, 17);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(100, 24);
             this.label6.TabIndex = 74;
@@ -509,6 +516,7 @@
             this.txt_rent.Size = new System.Drawing.Size(134, 32);
             this.txt_rent.TabIndex = 102;
             this.txt_rent.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_rent.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_rent_KeyPress);
             // 
             // label16
             // 
@@ -528,6 +536,7 @@
             this.txt_pay.Size = new System.Drawing.Size(134, 32);
             this.txt_pay.TabIndex = 100;
             this.txt_pay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_pay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_pay_KeyPress);
             // 
             // label15
             // 
@@ -557,6 +566,7 @@
             this.text_discount.Size = new System.Drawing.Size(134, 32);
             this.text_discount.TabIndex = 96;
             this.text_discount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.text_discount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text_discount_KeyPress);
             // 
             // txt_price
             // 
@@ -568,6 +578,7 @@
             this.txt_price.Size = new System.Drawing.Size(135, 32);
             this.txt_price.TabIndex = 98;
             this.txt_price.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_price.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_price_KeyPress);
             // 
             // label12
             // 
@@ -658,6 +669,8 @@
             this.groupBox4.Controls.Add(this.cmb_Company);
             this.groupBox4.Controls.Add(this.label21);
             this.groupBox4.Controls.Add(this.label1);
+            this.groupBox4.Controls.Add(this.dtb_visit);
+            this.groupBox4.Controls.Add(this.label6);
             this.groupBox4.Location = new System.Drawing.Point(18, 39);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(990, 50);
@@ -669,23 +682,27 @@
             // 
             this.rdb_Compamy.AutoSize = true;
             this.rdb_Compamy.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdb_Compamy.Location = new System.Drawing.Point(674, 13);
+            this.rdb_Compamy.Location = new System.Drawing.Point(739, 10);
             this.rdb_Compamy.Name = "rdb_Compamy";
             this.rdb_Compamy.Size = new System.Drawing.Size(77, 28);
             this.rdb_Compamy.TabIndex = 91;
             this.rdb_Compamy.Text = "شركات";
             this.rdb_Compamy.UseVisualStyleBackColor = true;
+            this.rdb_Compamy.CheckedChanged += new System.EventHandler(this.rdb_Compamy_CheckedChanged);
             // 
             // rdb_client
             // 
             this.rdb_client.AutoSize = true;
+            this.rdb_client.Checked = true;
             this.rdb_client.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdb_client.Location = new System.Drawing.Point(787, 11);
+            this.rdb_client.Location = new System.Drawing.Point(833, 12);
             this.rdb_client.Name = "rdb_client";
             this.rdb_client.Size = new System.Drawing.Size(65, 28);
             this.rdb_client.TabIndex = 90;
+            this.rdb_client.TabStop = true;
             this.rdb_client.Text = "اهالي";
             this.rdb_client.UseVisualStyleBackColor = true;
+            this.rdb_client.CheckedChanged += new System.EventHandler(this.rdb_client_CheckedChanged);
             // 
             // cmb_Company
             // 
@@ -694,7 +711,7 @@
             this.cmb_Company.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Company.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_Company.FormattingEnabled = true;
-            this.cmb_Company.Location = new System.Drawing.Point(105, 9);
+            this.cmb_Company.Location = new System.Drawing.Point(380, 9);
             this.cmb_Company.Name = "cmb_Company";
             this.cmb_Company.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmb_Company.Size = new System.Drawing.Size(256, 32);
@@ -704,7 +721,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(376, 13);
+            this.label21.Location = new System.Drawing.Point(642, 12);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(91, 24);
             this.label21.TabIndex = 87;
@@ -798,6 +815,21 @@
             this.btn_save.TabIndex = 100;
             this.btn_save.Text = "حفظ";
             this.btn_save.UseVisualStyleBackColor = true;
+            // 
+            // cmb_Emprole
+            // 
+            this.cmb_Emprole.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmb_Emprole.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmb_Emprole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_Emprole.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_Emprole.FormattingEnabled = true;
+            this.cmb_Emprole.Location = new System.Drawing.Point(323, 24);
+            this.cmb_Emprole.Name = "cmb_Emprole";
+            this.cmb_Emprole.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cmb_Emprole.Size = new System.Drawing.Size(228, 32);
+            this.cmb_Emprole.TabIndex = 97;
+            this.cmb_Emprole.SelectedIndexChanged += new System.EventHandler(this.cmb_Emprole_SelectedIndexChanged);
+            this.cmb_Emprole.SelectionChangeCommitted += new System.EventHandler(this.Cmp_EMPRAOLE_SelectionChangeCommitted);
             // 
             // Frm_Tickets
             // 
@@ -896,8 +928,9 @@
         private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.RadioButton rdb_NewPatient;
         private System.Windows.Forms.RadioButton rdb_CurrentPatient;
-        public System.Windows.Forms.ComboBox comboBox1;
+        public System.Windows.Forms.ComboBox Cmb_employee;
         private System.Windows.Forms.Label label23;
         public System.Windows.Forms.ComboBox Cmb_customer;
+        public System.Windows.Forms.ComboBox cmb_Emprole;
     }
 }
