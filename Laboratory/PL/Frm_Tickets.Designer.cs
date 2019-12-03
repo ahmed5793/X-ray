@@ -29,15 +29,17 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rdb_NewPatient = new System.Windows.Forms.RadioButton();
             this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.rdb_CurrentPatient = new System.Windows.Forms.RadioButton();
             this.button2 = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txt_compint = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtp_recive = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmb_Doctor = new System.Windows.Forms.ComboBox();
             this.txt_age = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txt_name = new System.Windows.Forms.TextBox();
@@ -47,67 +49,69 @@
             this.txt_address = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.Cmb_category = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.cmb_items = new System.Windows.Forms.ComboBox();
+            this.dtb_visit = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.btn_addgrid = new System.Windows.Forms.Button();
+            this.dtb_revolition = new System.Windows.Forms.DateTimePicker();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txt_rent = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txt_pay = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.text_discount = new System.Windows.Forms.TextBox();
+            this.txt_price = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.cmb_branches = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.cmb_Stock = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txt_username = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.comboBox8 = new System.Windows.Forms.ComboBox();
+            this.rdb_Compamy = new System.Windows.Forms.RadioButton();
+            this.rdb_client = new System.Windows.Forms.RadioButton();
+            this.cmb_Company = new System.Windows.Forms.ComboBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgv_order = new System.Windows.Forms.DataGridView();
             this.label22 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgv_visit = new System.Windows.Forms.DataGridView();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.btn_update = new System.Windows.Forms.Button();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.btn_print = new System.Windows.Forms.Button();
+            this.btn_save = new System.Windows.Forms.Button();
+            this.label23 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.Cmb_customer = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_order)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_visit)).BeginInit();
             this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.radioButton5);
+            this.groupBox1.Controls.Add(this.Cmb_customer);
+            this.groupBox1.Controls.Add(this.rdb_NewPatient);
             this.groupBox1.Controls.Add(this.comboBox7);
-            this.groupBox1.Controls.Add(this.radioButton4);
+            this.groupBox1.Controls.Add(this.rdb_CurrentPatient);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.label19);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.txt_compint);
             this.groupBox1.Controls.Add(this.label20);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.dtp_recive);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cmb_Doctor);
             this.groupBox1.Controls.Add(this.txt_age);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txt_name);
@@ -123,6 +127,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "بيانات العملاء";
             // 
+            // rdb_NewPatient
+            // 
+            this.rdb_NewPatient.AutoSize = true;
+            this.rdb_NewPatient.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdb_NewPatient.Location = new System.Drawing.Point(229, 16);
+            this.rdb_NewPatient.Name = "rdb_NewPatient";
+            this.rdb_NewPatient.Size = new System.Drawing.Size(111, 28);
+            this.rdb_NewPatient.TabIndex = 94;
+            this.rdb_NewPatient.Text = "مريض جديد";
+            this.rdb_NewPatient.UseVisualStyleBackColor = true;
+            // 
             // comboBox7
             // 
             this.comboBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -136,6 +151,17 @@
             this.comboBox7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.comboBox7.Size = new System.Drawing.Size(233, 32);
             this.comboBox7.TabIndex = 90;
+            // 
+            // rdb_CurrentPatient
+            // 
+            this.rdb_CurrentPatient.AutoSize = true;
+            this.rdb_CurrentPatient.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdb_CurrentPatient.Location = new System.Drawing.Point(71, 16);
+            this.rdb_CurrentPatient.Name = "rdb_CurrentPatient";
+            this.rdb_CurrentPatient.Size = new System.Drawing.Size(122, 28);
+            this.rdb_CurrentPatient.TabIndex = 92;
+            this.rdb_CurrentPatient.Text = "مريض مسجل";
+            this.rdb_CurrentPatient.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -157,14 +183,14 @@
             this.label19.TabIndex = 89;
             this.label19.Text = "نوع الحالة";
             // 
-            // textBox4
+            // txt_compint
             // 
-            this.textBox4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(6, 276);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(350, 32);
-            this.textBox4.TabIndex = 87;
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_compint.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_compint.Location = new System.Drawing.Point(6, 276);
+            this.txt_compint.Name = "txt_compint";
+            this.txt_compint.Size = new System.Drawing.Size(350, 32);
+            this.txt_compint.TabIndex = 87;
+            this.txt_compint.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label20
             // 
@@ -176,14 +202,14 @@
             this.label20.TabIndex = 88;
             this.label20.Text = "الشكوى";
             // 
-            // dateTimePicker1
+            // dtp_recive
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(54, 245);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(222, 26);
-            this.dateTimePicker1.TabIndex = 53;
+            this.dtp_recive.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_recive.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_recive.Location = new System.Drawing.Point(54, 245);
+            this.dtp_recive.Name = "dtp_recive";
+            this.dtp_recive.Size = new System.Drawing.Size(222, 26);
+            this.dtp_recive.TabIndex = 53;
             // 
             // label7
             // 
@@ -202,23 +228,23 @@
             this.label8.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(313, 210);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(114, 24);
+            this.label8.Size = new System.Drawing.Size(112, 24);
             this.label8.TabIndex = 49;
-            this.label8.Text = "الدكتور المعالج";
+            this.label8.Text = "الطبيب المعالج";
             // 
-            // comboBox1
+            // cmb_Doctor
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(54, 207);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.comboBox1.Size = new System.Drawing.Size(253, 32);
-            this.comboBox1.TabIndex = 48;
+            this.cmb_Doctor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmb_Doctor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmb_Doctor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmb_Doctor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_Doctor.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_Doctor.FormattingEnabled = true;
+            this.cmb_Doctor.Location = new System.Drawing.Point(54, 207);
+            this.cmb_Doctor.Name = "cmb_Doctor";
+            this.cmb_Doctor.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cmb_Doctor.Size = new System.Drawing.Size(253, 32);
+            this.cmb_Doctor.TabIndex = 48;
             // 
             // txt_age
             // 
@@ -306,38 +332,40 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.comboBox3);
+            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.Controls.Add(this.label23);
+            this.groupBox2.Controls.Add(this.Cmb_category);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.comboBox4);
-            this.groupBox2.Controls.Add(this.dateTimePicker2);
+            this.groupBox2.Controls.Add(this.cmb_items);
+            this.groupBox2.Controls.Add(this.dtb_visit);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Location = new System.Drawing.Point(12, 111);
+            this.groupBox2.Location = new System.Drawing.Point(5, 93);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(558, 127);
+            this.groupBox2.Size = new System.Drawing.Size(565, 145);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "بيانات الاشعة";
             // 
-            // comboBox3
+            // Cmb_category
             // 
-            this.comboBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.comboBox3.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(6, 49);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.comboBox3.Size = new System.Drawing.Size(449, 32);
-            this.comboBox3.TabIndex = 79;
+            this.Cmb_category.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Cmb_category.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.Cmb_category.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.Cmb_category.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Cmb_category.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cmb_category.FormattingEnabled = true;
+            this.Cmb_category.Location = new System.Drawing.Point(13, 69);
+            this.Cmb_category.Name = "Cmb_category";
+            this.Cmb_category.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Cmb_category.Size = new System.Drawing.Size(449, 32);
+            this.Cmb_category.TabIndex = 79;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(461, 90);
+            this.label9.Location = new System.Drawing.Point(469, 110);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(92, 24);
             this.label9.TabIndex = 77;
@@ -347,41 +375,41 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(461, 52);
+            this.label10.Location = new System.Drawing.Point(474, 72);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(87, 24);
             this.label10.TabIndex = 78;
             this.label10.Text = "فئة الفحص";
             // 
-            // comboBox4
+            // cmb_items
             // 
-            this.comboBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox4.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.comboBox4.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(6, 87);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.comboBox4.Size = new System.Drawing.Size(449, 32);
-            this.comboBox4.TabIndex = 76;
+            this.cmb_items.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmb_items.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmb_items.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmb_items.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_items.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_items.FormattingEnabled = true;
+            this.cmb_items.Location = new System.Drawing.Point(13, 107);
+            this.cmb_items.Name = "cmb_items";
+            this.cmb_items.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cmb_items.Size = new System.Drawing.Size(449, 32);
+            this.cmb_items.TabIndex = 76;
             // 
-            // dateTimePicker2
+            // dtb_visit
             // 
-            this.dateTimePicker2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(71, 17);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(316, 26);
-            this.dateTimePicker2.TabIndex = 75;
+            this.dtb_visit.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtb_visit.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtb_visit.Location = new System.Drawing.Point(327, 20);
+            this.dtb_visit.Name = "dtb_visit";
+            this.dtb_visit.Size = new System.Drawing.Size(132, 26);
+            this.dtb_visit.TabIndex = 75;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(453, 16);
+            this.label6.Location = new System.Drawing.Point(461, 22);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(100, 24);
             this.label6.TabIndex = 74;
@@ -389,16 +417,16 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.button1);
-            this.groupBox3.Controls.Add(this.dateTimePicker3);
+            this.groupBox3.Controls.Add(this.btn_addgrid);
+            this.groupBox3.Controls.Add(this.dtb_revolition);
             this.groupBox3.Controls.Add(this.label17);
-            this.groupBox3.Controls.Add(this.textBox6);
+            this.groupBox3.Controls.Add(this.txt_rent);
             this.groupBox3.Controls.Add(this.label16);
-            this.groupBox3.Controls.Add(this.textBox5);
+            this.groupBox3.Controls.Add(this.txt_pay);
             this.groupBox3.Controls.Add(this.label15);
             this.groupBox3.Controls.Add(this.label11);
-            this.groupBox3.Controls.Add(this.textBox2);
-            this.groupBox3.Controls.Add(this.textBox1);
+            this.groupBox3.Controls.Add(this.text_discount);
+            this.groupBox3.Controls.Add(this.txt_price);
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Location = new System.Drawing.Point(18, 236);
             this.groupBox3.Name = "groupBox3";
@@ -407,24 +435,24 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "الحسابات";
             // 
-            // button1
+            // btn_addgrid
             // 
-            this.button1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(15, 87);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(281, 54);
-            this.button1.TabIndex = 106;
-            this.button1.Text = "+++";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_addgrid.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_addgrid.Location = new System.Drawing.Point(15, 87);
+            this.btn_addgrid.Name = "btn_addgrid";
+            this.btn_addgrid.Size = new System.Drawing.Size(281, 54);
+            this.btn_addgrid.TabIndex = 106;
+            this.btn_addgrid.Text = "+++";
+            this.btn_addgrid.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker3
+            // dtb_revolition
             // 
-            this.dateTimePicker3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker3.Location = new System.Drawing.Point(15, 49);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(281, 26);
-            this.dateTimePicker3.TabIndex = 105;
+            this.dtb_revolition.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtb_revolition.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtb_revolition.Location = new System.Drawing.Point(15, 49);
+            this.dtb_revolition.Name = "dtb_revolition";
+            this.dtb_revolition.Size = new System.Drawing.Size(281, 26);
+            this.dtb_revolition.TabIndex = 105;
             // 
             // label17
             // 
@@ -437,14 +465,14 @@
             this.label17.TabIndex = 104;
             this.label17.Text = "وقت الكشف";
             // 
-            // textBox6
+            // txt_rent
             // 
-            this.textBox6.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(340, 114);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(134, 32);
-            this.textBox6.TabIndex = 102;
-            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_rent.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_rent.Location = new System.Drawing.Point(340, 114);
+            this.txt_rent.Name = "txt_rent";
+            this.txt_rent.Size = new System.Drawing.Size(134, 32);
+            this.txt_rent.TabIndex = 102;
+            this.txt_rent.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label16
             // 
@@ -456,14 +484,14 @@
             this.label16.TabIndex = 103;
             this.label16.Text = "المتبقي";
             // 
-            // textBox5
+            // txt_pay
             // 
-            this.textBox5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(340, 79);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(134, 32);
-            this.textBox5.TabIndex = 100;
-            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_pay.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_pay.Location = new System.Drawing.Point(340, 79);
+            this.txt_pay.Name = "txt_pay";
+            this.txt_pay.Size = new System.Drawing.Size(134, 32);
+            this.txt_pay.TabIndex = 100;
+            this.txt_pay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label15
             // 
@@ -485,25 +513,25 @@
             this.label11.TabIndex = 99;
             this.label11.Text = "السعر";
             // 
-            // textBox2
+            // text_discount
             // 
-            this.textBox2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(340, 44);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(134, 32);
-            this.textBox2.TabIndex = 96;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.text_discount.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.text_discount.Location = new System.Drawing.Point(340, 44);
+            this.text_discount.Name = "text_discount";
+            this.text_discount.Size = new System.Drawing.Size(134, 32);
+            this.text_discount.TabIndex = 96;
+            this.text_discount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox1
+            // txt_price
             // 
-            this.textBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(340, 8);
-            this.textBox1.MaxLength = 11;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBox1.Size = new System.Drawing.Size(135, 32);
-            this.textBox1.TabIndex = 98;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_price.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_price.Location = new System.Drawing.Point(340, 8);
+            this.txt_price.MaxLength = 11;
+            this.txt_price.Name = "txt_price";
+            this.txt_price.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txt_price.Size = new System.Drawing.Size(135, 32);
+            this.txt_price.TabIndex = 98;
+            this.txt_price.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label12
             // 
@@ -515,19 +543,19 @@
             this.label12.TabIndex = 97;
             this.label12.Text = "الخصم";
             // 
-            // comboBox5
+            // cmb_branches
             // 
-            this.comboBox5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.comboBox5.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.comboBox5.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(349, 3);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.comboBox5.Size = new System.Drawing.Size(233, 32);
-            this.comboBox5.TabIndex = 82;
+            this.cmb_branches.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cmb_branches.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmb_branches.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmb_branches.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_branches.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_branches.FormattingEnabled = true;
+            this.cmb_branches.Location = new System.Drawing.Point(349, 3);
+            this.cmb_branches.Name = "cmb_branches";
+            this.cmb_branches.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cmb_branches.Size = new System.Drawing.Size(233, 32);
+            this.cmb_branches.TabIndex = 82;
             // 
             // label13
             // 
@@ -540,18 +568,18 @@
             this.label13.TabIndex = 81;
             this.label13.Text = "فرع";
             // 
-            // comboBox6
+            // cmb_Stock
             // 
-            this.comboBox6.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.comboBox6.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox6.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(12, 3);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.comboBox6.Size = new System.Drawing.Size(233, 32);
-            this.comboBox6.TabIndex = 84;
+            this.cmb_Stock.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmb_Stock.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmb_Stock.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_Stock.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_Stock.FormattingEnabled = true;
+            this.cmb_Stock.Location = new System.Drawing.Point(12, 3);
+            this.cmb_Stock.Name = "cmb_Stock";
+            this.cmb_Stock.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cmb_Stock.Size = new System.Drawing.Size(233, 32);
+            this.cmb_Stock.TabIndex = 84;
             // 
             // label14
             // 
@@ -563,16 +591,16 @@
             this.label14.TabIndex = 83;
             this.label14.Text = "خزينة";
             // 
-            // textBox3
+            // txt_username
             // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(664, 5);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(233, 32);
-            this.textBox3.TabIndex = 54;
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_username.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_username.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_username.Location = new System.Drawing.Point(664, 4);
+            this.txt_username.Name = "txt_username";
+            this.txt_username.ReadOnly = true;
+            this.txt_username.Size = new System.Drawing.Size(233, 32);
+            this.txt_username.TabIndex = 54;
+            this.txt_username.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label18
             // 
@@ -589,52 +617,52 @@
             // 
             this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox4.Controls.Add(this.radioButton2);
-            this.groupBox4.Controls.Add(this.radioButton1);
-            this.groupBox4.Controls.Add(this.comboBox8);
+            this.groupBox4.Controls.Add(this.rdb_Compamy);
+            this.groupBox4.Controls.Add(this.rdb_client);
+            this.groupBox4.Controls.Add(this.cmb_Company);
             this.groupBox4.Controls.Add(this.label21);
             this.groupBox4.Controls.Add(this.label1);
-            this.groupBox4.Location = new System.Drawing.Point(18, 41);
+            this.groupBox4.Location = new System.Drawing.Point(18, 39);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(990, 48);
+            this.groupBox4.Size = new System.Drawing.Size(990, 50);
             this.groupBox4.TabIndex = 85;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "حالة الفاتورة";
             // 
-            // radioButton2
+            // rdb_Compamy
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(674, 13);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(77, 28);
-            this.radioButton2.TabIndex = 91;
-            this.radioButton2.Text = "شركات";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rdb_Compamy.AutoSize = true;
+            this.rdb_Compamy.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdb_Compamy.Location = new System.Drawing.Point(674, 13);
+            this.rdb_Compamy.Name = "rdb_Compamy";
+            this.rdb_Compamy.Size = new System.Drawing.Size(77, 28);
+            this.rdb_Compamy.TabIndex = 91;
+            this.rdb_Compamy.Text = "شركات";
+            this.rdb_Compamy.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rdb_client
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(787, 11);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(65, 28);
-            this.radioButton1.TabIndex = 90;
-            this.radioButton1.Text = "اهالي";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rdb_client.AutoSize = true;
+            this.rdb_client.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdb_client.Location = new System.Drawing.Point(787, 11);
+            this.rdb_client.Name = "rdb_client";
+            this.rdb_client.Size = new System.Drawing.Size(65, 28);
+            this.rdb_client.TabIndex = 90;
+            this.rdb_client.Text = "اهالي";
+            this.rdb_client.UseVisualStyleBackColor = true;
             // 
-            // comboBox8
+            // cmb_Company
             // 
-            this.comboBox8.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.comboBox8.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox8.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox8.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Location = new System.Drawing.Point(105, 9);
-            this.comboBox8.Name = "comboBox8";
-            this.comboBox8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.comboBox8.Size = new System.Drawing.Size(256, 32);
-            this.comboBox8.TabIndex = 88;
+            this.cmb_Company.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmb_Company.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmb_Company.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_Company.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_Company.FormattingEnabled = true;
+            this.cmb_Company.Location = new System.Drawing.Point(105, 9);
+            this.cmb_Company.Name = "cmb_Company";
+            this.cmb_Company.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cmb_Company.Size = new System.Drawing.Size(256, 32);
+            this.cmb_Company.TabIndex = 88;
             // 
             // label21
             // 
@@ -656,24 +684,24 @@
             this.label1.TabIndex = 89;
             this.label1.Text = "نوع الحالة";
             // 
-            // dataGridView1
+            // dgv_order
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgv_order.AllowUserToAddRows = false;
+            this.dgv_order.AllowUserToDeleteRows = false;
+            this.dgv_order.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.Maroon;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(18, 400);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.ShowEditingIcon = false;
-            this.dataGridView1.Size = new System.Drawing.Size(336, 130);
-            this.dataGridView1.TabIndex = 92;
+            this.dgv_order.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_order.BackgroundColor = System.Drawing.Color.Maroon;
+            this.dgv_order.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_order.Location = new System.Drawing.Point(18, 400);
+            this.dgv_order.Name = "dgv_order";
+            this.dgv_order.ReadOnly = true;
+            this.dgv_order.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dgv_order.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_order.ShowEditingIcon = false;
+            this.dgv_order.Size = new System.Drawing.Size(336, 130);
+            this.dgv_order.TabIndex = 92;
             // 
             // label22
             // 
@@ -686,76 +714,90 @@
             this.label22.TabIndex = 94;
             this.label22.Text = "الزيارات السابقة للمريض";
             // 
-            // dataGridView2
+            // dgv_visit
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.Maroon;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(630, 462);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.ShowEditingIcon = false;
-            this.dataGridView2.Size = new System.Drawing.Size(378, 77);
-            this.dataGridView2.TabIndex = 97;
+            this.dgv_visit.AllowUserToAddRows = false;
+            this.dgv_visit.AllowUserToDeleteRows = false;
+            this.dgv_visit.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.dgv_visit.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_visit.BackgroundColor = System.Drawing.Color.Maroon;
+            this.dgv_visit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_visit.Location = new System.Drawing.Point(630, 462);
+            this.dgv_visit.Name = "dgv_visit";
+            this.dgv_visit.ReadOnly = true;
+            this.dgv_visit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dgv_visit.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_visit.ShowEditingIcon = false;
+            this.dgv_visit.Size = new System.Drawing.Size(378, 77);
+            this.dgv_visit.TabIndex = 97;
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.button3);
-            this.groupBox5.Controls.Add(this.btn_update);
+            this.groupBox5.Controls.Add(this.btn_print);
+            this.groupBox5.Controls.Add(this.btn_save);
             this.groupBox5.Location = new System.Drawing.Point(360, 403);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(264, 134);
             this.groupBox5.TabIndex = 98;
             this.groupBox5.TabStop = false;
             // 
-            // button3
+            // btn_print
             // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(32, 70);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(200, 40);
-            this.button3.TabIndex = 101;
-            this.button3.Text = "طباعة فاتورة";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_print.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btn_print.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_print.Location = new System.Drawing.Point(32, 70);
+            this.btn_print.Name = "btn_print";
+            this.btn_print.Size = new System.Drawing.Size(200, 40);
+            this.btn_print.TabIndex = 101;
+            this.btn_print.Text = "طباعة فاتورة";
+            this.btn_print.UseVisualStyleBackColor = true;
             // 
-            // btn_update
+            // btn_save
             // 
-            this.btn_update.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btn_update.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_update.Location = new System.Drawing.Point(32, 24);
-            this.btn_update.Name = "btn_update";
-            this.btn_update.Size = new System.Drawing.Size(200, 40);
-            this.btn_update.TabIndex = 100;
-            this.btn_update.Text = "حفظ";
-            this.btn_update.UseVisualStyleBackColor = true;
+            this.btn_save.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btn_save.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_save.Location = new System.Drawing.Point(32, 24);
+            this.btn_save.Name = "btn_save";
+            this.btn_save.Size = new System.Drawing.Size(200, 40);
+            this.btn_save.TabIndex = 100;
+            this.btn_save.Text = "حفظ";
+            this.btn_save.UseVisualStyleBackColor = true;
             // 
-            // radioButton4
+            // label23
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton4.Location = new System.Drawing.Point(71, 16);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(122, 28);
-            this.radioButton4.TabIndex = 92;
-            this.radioButton4.Text = "مريض مسجل";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(240, 22);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(57, 24);
+            this.label23.TabIndex = 96;
+            this.label23.Text = "الطبيب";
             // 
-            // radioButton5
+            // comboBox1
             // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton5.Location = new System.Drawing.Point(229, 16);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(111, 28);
-            this.radioButton5.TabIndex = 94;
-            this.radioButton5.Text = "مريض جديد";
-            this.radioButton5.UseVisualStyleBackColor = true;
+            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(6, 18);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.comboBox1.Size = new System.Drawing.Size(228, 32);
+            this.comboBox1.TabIndex = 92;
+            // 
+            // Cmb_customer
+            // 
+            this.Cmb_customer.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.Cmb_customer.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.Cmb_customer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Cmb_customer.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cmb_customer.FormattingEnabled = true;
+            this.Cmb_customer.Location = new System.Drawing.Point(-26, 50);
+            this.Cmb_customer.Name = "Cmb_customer";
+            this.Cmb_customer.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Cmb_customer.Size = new System.Drawing.Size(302, 32);
+            this.Cmb_customer.TabIndex = 92;
             // 
             // Frm_Tickets
             // 
@@ -763,21 +805,22 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1013, 542);
             this.Controls.Add(this.groupBox5);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dgv_visit);
             this.Controls.Add(this.label22);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgv_order);
             this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txt_username);
             this.Controls.Add(this.label18);
-            this.Controls.Add(this.comboBox6);
+            this.Controls.Add(this.cmb_Stock);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.comboBox5);
+            this.Controls.Add(this.cmb_branches);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Frm_Tickets";
             this.Text = "Frm_Tickets";
+            this.Load += new System.EventHandler(this.Frm_Tickets_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -786,8 +829,8 @@
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_order)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_visit)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -797,10 +840,10 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtp_recive;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        public System.Windows.Forms.ComboBox comboBox1;
+        public System.Windows.Forms.ComboBox cmb_Doctor;
         private System.Windows.Forms.TextBox txt_age;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txt_name;
@@ -810,48 +853,51 @@
         private System.Windows.Forms.TextBox txt_address;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox2;
-        public System.Windows.Forms.ComboBox comboBox3;
+        public System.Windows.Forms.ComboBox Cmb_category;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        public System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        public System.Windows.Forms.ComboBox cmb_items;
+        private System.Windows.Forms.DateTimePicker dtb_visit;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.DateTimePicker dtb_revolition;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txt_rent;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txt_pay;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox text_discount;
+        private System.Windows.Forms.TextBox txt_price;
         private System.Windows.Forms.Label label12;
         public System.Windows.Forms.ComboBox comboBox7;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txt_compint;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Button button1;
-        public System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.Button btn_addgrid;
+        public System.Windows.Forms.ComboBox cmb_branches;
         private System.Windows.Forms.Label label13;
-        public System.Windows.Forms.ComboBox comboBox6;
+        public System.Windows.Forms.ComboBox cmb_Stock;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txt_username;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        public System.Windows.Forms.ComboBox comboBox8;
+        private System.Windows.Forms.RadioButton rdb_Compamy;
+        private System.Windows.Forms.RadioButton rdb_client;
+        public System.Windows.Forms.ComboBox cmb_Company;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.DataGridView dataGridView1;
+        public System.Windows.Forms.DataGridView dgv_order;
         private System.Windows.Forms.Label label22;
-        public System.Windows.Forms.DataGridView dataGridView2;
+        public System.Windows.Forms.DataGridView dgv_visit;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button btn_update;
-        private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.Button btn_print;
+        private System.Windows.Forms.Button btn_save;
+        private System.Windows.Forms.RadioButton rdb_NewPatient;
+        private System.Windows.Forms.RadioButton rdb_CurrentPatient;
+        public System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label23;
+        public System.Windows.Forms.ComboBox Cmb_customer;
     }
 }

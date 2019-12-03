@@ -102,5 +102,16 @@ namespace Laboratory.BL
 
 
         }
+
+        internal DataTable SelectCompoCustomer()
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            dt = da.selected("SelectCompoCustomer", null);
+            da.close();
+            return dt;
+        }
     }
 }
