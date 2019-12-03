@@ -11,7 +11,7 @@ namespace Laboratory.BL
 {
     class Stock
     {
-        internal void add_stock(int id ,string name)
+        internal void add_stock(int id, string name)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
@@ -162,7 +162,7 @@ namespace Laboratory.BL
             da.close();
         }
 
-      
+
 
         internal void AddTransfairBankToStock(decimal money, DateTime date, string from, string to, string name)
         {

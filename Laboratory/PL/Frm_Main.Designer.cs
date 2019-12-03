@@ -483,7 +483,7 @@
             this.toolStripSeparator18,
             this.SupplierManage});
             this.Store_Manage.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Store_Manage.Image = global::Laboratory.Properties.Resources.Store_2;
+            //this.Store_Manage.Image = global::Laboratory.Properties.Resources.Store_2;
             this.Store_Manage.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Store_Manage.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Store_Manage.Name = "Store_Manage";
