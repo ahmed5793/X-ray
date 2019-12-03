@@ -76,7 +76,7 @@ namespace Laboratory.PL
                     Cmb_Store.Focus();
                     return;
                 }
-                if (txt_quantity.Text == string.Empty)
+                if (txt_quantity.Text =="0")
                 {
                     MessageBox.Show("لا بدان تكون الكمية أكبر من الصفر");
                     txt_quantity.Focus();
@@ -177,6 +177,11 @@ namespace Laboratory.PL
 
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void Add_StoreProduct_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

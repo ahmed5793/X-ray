@@ -213,5 +213,11 @@ namespace Laboratory.PL
         {
 
         }
+
+        private void إنشاءحسابللموظفينToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_ManagmentUser frm_ManagmentUser = new Frm_ManagmentUser();
+            frm_ManagmentUser.ShowDialog();
+        }
     }
 }

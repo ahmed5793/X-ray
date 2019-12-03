@@ -254,6 +254,7 @@
             this.Name = "Add_StoreProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "إضافة أصناف للمخزن";
+            this.Load += new System.EventHandler(this.Add_StoreProduct_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPR)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
