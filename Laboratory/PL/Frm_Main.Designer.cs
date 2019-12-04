@@ -45,6 +45,7 @@
             this.Add_Employee = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
             this.السلفياتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.إنشاءحسابللموظفينToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
             this.Sallary = new System.Windows.Forms.ToolStripMenuItem();
             this.Sallary_Sarf = new System.Windows.Forms.ToolStripMenuItem();
@@ -91,7 +92,8 @@
             this.SupplierManage = new System.Windows.Forms.ToolStripMenuItem();
             this.Receiption = new System.Windows.Forms.ToolStripDropDownButton();
             this.Teicket = new System.Windows.Forms.ToolStripMenuItem();
-            this.إنشاءحسابللموظفينToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AddSupplier = new System.Windows.Forms.ToolStripMenuItem();
+            this.Btn_Exit = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -108,7 +110,8 @@
             this.Company_Customer,
             this.Masrofat_Stock,
             this.Store_Manage,
-            this.Receiption});
+            this.Receiption,
+            this.Btn_Exit});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -245,6 +248,13 @@
             this.السلفياتToolStripMenuItem.Text = "السلفيات";
             this.السلفياتToolStripMenuItem.Click += new System.EventHandler(this.السلفياتToolStripMenuItem_Click);
             // 
+            // إنشاءحسابللموظفينToolStripMenuItem
+            // 
+            this.إنشاءحسابللموظفينToolStripMenuItem.Name = "إنشاءحسابللموظفينToolStripMenuItem";
+            this.إنشاءحسابللموظفينToolStripMenuItem.Size = new System.Drawing.Size(237, 28);
+            this.إنشاءحسابللموظفينToolStripMenuItem.Text = "إنشاء حساب للموظفين";
+            this.إنشاءحسابللموظفينToolStripMenuItem.Click += new System.EventHandler(this.إنشاءحسابللموظفينToolStripMenuItem_Click);
+            // 
             // toolStripSeparator14
             // 
             this.toolStripSeparator14.Name = "toolStripSeparator14";
@@ -294,7 +304,7 @@
             this.Customer_management.Image = ((System.Drawing.Image)(resources.GetObject("Customer_management.Image")));
             this.Customer_management.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Customer_management.Name = "Customer_management";
-            this.Customer_management.Size = new System.Drawing.Size(247, 92);
+            this.Customer_management.Size = new System.Drawing.Size(249, 92);
             this.Customer_management.Text = "إدارة العملاء ";
             this.Customer_management.Click += new System.EventHandler(this.Add_customer_Click);
             // 
@@ -316,7 +326,7 @@
             // toolStripSeparator10
             // 
             this.toolStripSeparator10.Name = "toolStripSeparator10";
-            this.toolStripSeparator10.Size = new System.Drawing.Size(244, 6);
+            this.toolStripSeparator10.Size = new System.Drawing.Size(246, 6);
             // 
             // Company_Managemet
             // 
@@ -326,7 +336,7 @@
             this.Company_Managemet.Image = ((System.Drawing.Image)(resources.GetObject("Company_Managemet.Image")));
             this.Company_Managemet.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Company_Managemet.Name = "Company_Managemet";
-            this.Company_Managemet.Size = new System.Drawing.Size(247, 92);
+            this.Company_Managemet.Size = new System.Drawing.Size(249, 92);
             this.Company_Managemet.Text = "إدارة الشركات";
             // 
             // Add_Company
@@ -339,7 +349,7 @@
             // toolStripSeparator11
             // 
             this.toolStripSeparator11.Name = "toolStripSeparator11";
-            this.toolStripSeparator11.Size = new System.Drawing.Size(244, 6);
+            this.toolStripSeparator11.Size = new System.Drawing.Size(246, 6);
             // 
             // Doctoer_Management
             // 
@@ -349,7 +359,7 @@
             this.Doctoer_Management.Image = ((System.Drawing.Image)(resources.GetObject("Doctoer_Management.Image")));
             this.Doctoer_Management.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Doctoer_Management.Name = "Doctoer_Management";
-            this.Doctoer_Management.Size = new System.Drawing.Size(247, 92);
+            this.Doctoer_Management.Size = new System.Drawing.Size(249, 92);
             this.Doctoer_Management.Text = "إدارة الدكاترة";
             this.Doctoer_Management.Click += new System.EventHandler(this.Doctoer_Management_Click);
             // 
@@ -610,6 +620,8 @@
             // SupplierManage
             // 
             this.SupplierManage.BackColor = System.Drawing.Color.Orange;
+            this.SupplierManage.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.AddSupplier});
             this.SupplierManage.Image = ((System.Drawing.Image)(resources.GetObject("SupplierManage.Image")));
             this.SupplierManage.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.SupplierManage.Name = "SupplierManage";
@@ -639,12 +651,25 @@
             this.Teicket.Text = "شاشة الحجز";
             this.Teicket.Click += new System.EventHandler(this.Teicket_Click);
             // 
-            // إنشاءحسابللموظفينToolStripMenuItem
+            // AddSupplier
             // 
-            this.إنشاءحسابللموظفينToolStripMenuItem.Name = "إنشاءحسابللموظفينToolStripMenuItem";
-            this.إنشاءحسابللموظفينToolStripMenuItem.Size = new System.Drawing.Size(237, 28);
-            this.إنشاءحسابللموظفينToolStripMenuItem.Text = "إنشاء حساب للموظفين";
-            this.إنشاءحسابللموظفينToolStripMenuItem.Click += new System.EventHandler(this.إنشاءحسابللموظفينToolStripMenuItem_Click);
+            this.AddSupplier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.AddSupplier.Name = "AddSupplier";
+            this.AddSupplier.Size = new System.Drawing.Size(180, 28);
+            this.AddSupplier.Text = "إضافة مورد ";
+            this.AddSupplier.Click += new System.EventHandler(this.AddSupplier_Click);
+            // 
+            // Btn_Exit
+            // 
+            this.Btn_Exit.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Exit.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Exit.Image")));
+            this.Btn_Exit.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.Btn_Exit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Btn_Exit.Name = "Btn_Exit";
+            this.Btn_Exit.Size = new System.Drawing.Size(103, 113);
+            this.Btn_Exit.Text = "تسجيل خروج ";
+            this.Btn_Exit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.Btn_Exit.Click += new System.EventHandler(this.Btn_Exit_Click);
             // 
             // Frm_Main
             // 
@@ -652,10 +677,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(1080, 515);
+            this.ControlBox = false;
             this.Controls.Add(this.toolStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Frm_Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "الشاشة الرئيسية";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Frm_Main_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -728,5 +756,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripMenuItem إنشاءحسابللموظفينToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem AddSupplier;
+        private System.Windows.Forms.ToolStripButton Btn_Exit;
     }
 }

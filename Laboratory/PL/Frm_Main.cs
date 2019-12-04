@@ -219,5 +219,16 @@ namespace Laboratory.PL
             Frm_ManagmentUser frm_ManagmentUser = new Frm_ManagmentUser();
             frm_ManagmentUser.ShowDialog();
         }
+
+        private void AddSupplier_Click(object sender, EventArgs e)
+        {
+            Frm_Suppliers frm_Suppliers = new Frm_Suppliers();
+            frm_Suppliers.ShowDialog();
+        }
+
+        private void Btn_Exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
