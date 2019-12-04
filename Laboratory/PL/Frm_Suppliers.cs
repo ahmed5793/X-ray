@@ -130,7 +130,7 @@ namespace Laboratory.PL
 
         private void txt_search_TextChanged(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = s.SearchSuppliers(txt_search.Text);
+            dataGridView1.DataSource = S.SearchSuppliers(txt_search.Text);
 
         }
     }
