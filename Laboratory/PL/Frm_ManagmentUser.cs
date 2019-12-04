@@ -15,6 +15,8 @@ namespace Laboratory.PL
     {
         Users u = new Users();
         Employee E = new Employee();
+        DataTable dt = new DataTable();
+
         public Frm_ManagmentUser()
         {
             InitializeComponent();
@@ -79,6 +81,14 @@ namespace Laboratory.PL
                         return;
 
                     }
+                dt.Clear();
+                dt = E.VildateEmployee(Convert.ToInt32(comboBox1.SelectedValue));
+                if (dt.Rows.Count>0)
+                {
+                    MessageBox.Show("It is not possible to register more than one employee account", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+
+                    return;
+                }
                     u.AddUser(Convert.ToInt32(comboBox1.SelectedValue), txt_User.Text, txt_Pass.Text);
                 MessageBox.Show("Registration saved successfully");
                 dataGridViewList.DataSource = u.SelectUsers();
@@ -194,6 +204,23 @@ namespace Laboratory.PL
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void txt_User_Leave(object sender, EventArgs e)
+        {
+            dt.Clear();
+            dt = u.VildateUsers(txt_User.Text);
+            if (dt.Rows.Count>0)
+            {
+                MessageBox.Show("User name already exists Try another name", "", MessageBoxButtons.RetryCancel,MessageBoxIcon.Error);
+                txt_User.Focus();
+                txt_User.Clear();
+                return;
+            }
+            else
+            {
+                txt_Pass.Focus();
             }
         }
     }

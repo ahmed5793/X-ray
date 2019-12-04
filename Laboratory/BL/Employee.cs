@@ -330,5 +330,19 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
+
+        internal DataTable VildateEmployee(int id)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@id", SqlDbType.Int);
+            param[0].Value = id;
+            dt = da.selected("VildateEmployee", param);
+            da.close();
+            return dt;
+        }
     }
 }

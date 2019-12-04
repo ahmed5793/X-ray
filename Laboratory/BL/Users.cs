@@ -112,6 +112,22 @@ namespace Laboratory.BL
             return dt;
 
         }
+        internal DataTable VildateUsers(string UserName)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+
+            da.open();
+            DataTable dt = new DataTable();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@UserName", SqlDbType.NVarChar, 100);
+            param[0].Value = UserName;
+            dt = da.selected("VildateUsers", param);
+
+            return dt;
+
+        }
+
+   
 
 
 

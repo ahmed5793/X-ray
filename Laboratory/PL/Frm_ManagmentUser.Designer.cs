@@ -53,6 +53,7 @@
             this.txt_User.Size = new System.Drawing.Size(285, 32);
             this.txt_User.TabIndex = 47;
             this.txt_User.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_User.Leave += new System.EventHandler(this.txt_User_Leave);
             // 
             // txt_PassRealy
             // 
