@@ -121,8 +121,7 @@ namespace Laboratory.PL
 
         private void صرفالمرتباتToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Frm_EmpSarf frm_EmpSarf = new Frm_EmpSarf();
-            frm_EmpSarf.Show();
+      
         }
 
         private void Add_XRays_Click(object sender, EventArgs e)
@@ -229,6 +228,24 @@ namespace Laboratory.PL
         private void Btn_Exit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Sarf_Mortbat_Click(object sender, EventArgs e)
+        {
+            Frm_EmpSarf frm_EmpSarf = new Frm_EmpSarf();
+            frm_EmpSarf.Show();
+        }
+
+        private void Doctors_Center_Click(object sender, EventArgs e)
+        {
+            Frm_DoctorOfCenter frm_DoctorOfCenter = new Frm_DoctorOfCenter();
+            frm_DoctorOfCenter.ShowDialog();
+        }
+
+        private void Techniqual_Click(object sender, EventArgs e)
+        {
+            Frm_Techincal frm_Techincal = new Frm_Techincal();
+            frm_Techincal.ShowDialog();
         }
     }
 }
