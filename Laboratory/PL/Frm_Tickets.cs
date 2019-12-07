@@ -156,10 +156,24 @@ namespace Laboratory.PL
             totalOrder();
             DoctorOfCenter();
             Techincal();
+     
 
 
 
         }
+        void SelectTicketEmployee()
+        {
+            if (rdb_CurrentPatient.Checked==true)
+            {
+                dt.Clear();
+                dt = t.SelectTicketEmployee(Convert.ToInt32(Cmb_customer.SelectedValue));
+                dgv_visit.DataSource = dt;
+
+            }
+          
+        
+        }
+
         public void totalOrder()
         {
 
@@ -289,6 +303,7 @@ namespace Laboratory.PL
 
                     txt_age.Clear();
                 }
+                SelectTicketEmployee();
             }
         }
 
@@ -644,7 +659,14 @@ namespace Laboratory.PL
                     }
                     if (cmb_DoctorOfCenter.Text == ""||cmb_Techincal.Text=="")
                     {
-                        MessageBox.Show("من فضلك قم باادخال الطبيب او الفني المسئول عن الاشعة");
+                        MessageBox.Show("من فضلك قم باادخال طبيب الحالة");
+                        cmb_DoctorOfCenter.Focus();
+
+                        return;
+                    }
+                    if (cmb_Techincal.Text == "" || cmb_Techincal.Text == "")
+                    {
+                        MessageBox.Show("من فضلك قم باادخال الفني");
                         cmb_Techincal.Focus();
 
                         return;
@@ -748,7 +770,7 @@ namespace Laboratory.PL
 
 
                     clear();
-
+                    SelectTicketEmployee();
 
                 }
                

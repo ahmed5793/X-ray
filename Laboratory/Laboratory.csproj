@@ -198,6 +198,12 @@
     <Compile Include="PL\Frm_DoctorJob.designer.cs">
       <DependentUpon>Frm_DoctorJob.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Frm_DoctorOfCenter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_DoctorOfCenter.Designer.cs">
+      <DependentUpon>Frm_DoctorOfCenter.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_Employee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -276,6 +282,12 @@
     <Compile Include="PL\Frm_Suppliers.Designer.cs">
       <DependentUpon>Frm_Suppliers.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Frm_Techincal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_Techincal.Designer.cs">
+      <DependentUpon>Frm_Techincal.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_Tickets.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -329,6 +341,9 @@
     <EmbeddedResource Include="PL\Frm_DoctorJob.resx">
       <DependentUpon>Frm_DoctorJob.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_DoctorOfCenter.resx">
+      <DependentUpon>Frm_DoctorOfCenter.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Employee.resx">
       <DependentUpon>Frm_Employee.cs</DependentUpon>
     </EmbeddedResource>
@@ -367,6 +382,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Suppliers.resx">
       <DependentUpon>Frm_Suppliers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_Techincal.resx">
+      <DependentUpon>Frm_Techincal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Tickets.resx">
       <DependentUpon>Frm_Tickets.cs</DependentUpon>

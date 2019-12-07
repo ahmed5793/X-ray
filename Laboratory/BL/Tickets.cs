@@ -115,5 +115,18 @@ namespace Laboratory.BL
             da.excutequery("AddTicketCompany", param);
             da.close();
         }
+        internal DataTable SelectTicketEmployee(int IDCustomer)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@IDCustomer", SqlDbType.Int);
+            param[0].Value = IDCustomer;
+            dt = da.selected("SelectTicketEmployee", param);
+            da.close();
+            return dt;
+        }
     }
 }
