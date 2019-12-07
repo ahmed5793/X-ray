@@ -62,6 +62,7 @@ namespace Laboratory.PL
 
         private void btn_add_Click(object sender, EventArgs e)
         {
+            DataTable dt5 = new DataTable();
             try
             {
                 if (Cmb_ProdName.Text == string.Empty )
@@ -82,7 +83,15 @@ namespace Laboratory.PL
                     txt_quantity.Focus();
                     return;
                 }
-                else
+                dt5 = Product.Validate_StoreProduct(Convert.ToInt32(Cmb_ProdName.SelectedValue), Convert.ToInt32(Cmb_Store.SelectedValue));
+                if (dt5.Rows.Count>0)
+                {
+                    Product.Update_QuantityStoreProduct(Convert.ToInt32(Cmb_ProdName.SelectedValue),
+                        Convert.ToDecimal(txt_quantity.Text),Convert.ToInt32(Cmb_Store.SelectedValue));
+                    MessageBox.Show("تم إضافة الصنف للمخزن بنجاح");
+                    txt_quantity.Text = "0";
+                }
+                else if(dt5.Rows.Count ==0)
                 {
                     Product.Add_StoreProduct(Convert.ToInt32(Cmb_ProdName.SelectedValue), Convert.ToInt32(Cmb_Store.SelectedValue),
                         Convert.ToDecimal(txt_quantity.Text));
@@ -131,6 +140,9 @@ namespace Laboratory.PL
                     btn_new.Hide();
                     btn_add.Show();
                     btn_update.Enabled = false;
+                    button1.Enabled = true;
+                    Cmb_ProdName.Enabled = true;
+
                 }
                 else
                 {
@@ -139,6 +151,8 @@ namespace Laboratory.PL
                     btn_add.Show();
                     btn_update.Enabled = false;
                     txt_quantity.Text = "0";
+                    button1.Enabled = true;
+                    Cmb_ProdName.Enabled = true;
 
                 }
                 dataGridViewPR.DataSource = Product.Select_StoreProduct();
@@ -158,6 +172,8 @@ namespace Laboratory.PL
             btn_add.Show();
             btn_update.Enabled = false;
             txt_quantity.Text = "0";
+            button1.Enabled = true;
+            Cmb_ProdName.Enabled = true;
         }
 
         private void dataGridViewPR_DoubleClick(object sender, EventArgs e)
@@ -166,10 +182,15 @@ namespace Laboratory.PL
             {
                 if (dataGridViewPR.Rows.Count>0)
                 {
-                    Cmb_ProdName.Enabled = false;
+                
                     Cmb_ProdName.Text = dataGridViewPR.CurrentRow.Cells[1].Value.ToString();
                     Cmb_Store.Text = dataGridViewPR.CurrentRow.Cells[3].Value.ToString();
                     txt_quantity.Text = dataGridViewPR.CurrentRow.Cells[4].Value.ToString();
+                    btn_new.Show();
+                    btn_add.Hide();
+                    btn_update.Enabled = true;
+                    button1.Enabled = false;
+                    Cmb_ProdName.Enabled = false;
                 }
             }
             catch (Exception ex)
@@ -182,6 +203,22 @@ namespace Laboratory.PL
         private void Add_StoreProduct_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Add_Product add_Product = new Add_Product();
+            try
+            {
+                add_Product.ShowDialog();
+                Cmb_ProdName.DataSource = Product.Select_ComboProduct();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

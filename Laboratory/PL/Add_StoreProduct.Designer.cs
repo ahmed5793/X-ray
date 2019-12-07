@@ -186,6 +186,7 @@
             this.button1.Text = ".....";
             this.button1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Cmb_ProdName
             // 
@@ -249,6 +250,7 @@
             this.Controls.Add(this.btn_add);
             this.Controls.Add(this.btn_new);
             this.Controls.Add(this.groupBox3);
+            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(532, 534);
             this.MinimumSize = new System.Drawing.Size(532, 534);
             this.Name = "Add_StoreProduct";
