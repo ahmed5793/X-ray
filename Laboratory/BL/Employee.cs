@@ -234,11 +234,11 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
-        internal void AddEmp_Salary(int id_Emp, decimal TotalSalary, decimal TotalSalf, decimal total, DateTime date, string @note, int idstock)
+        internal void AddEmp_Salary(int id_Emp, decimal TotalSalary, decimal TotalSalf, decimal total, DateTime date, string @note)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[7];
+            SqlParameter[] param = new SqlParameter[6];
             param[0] = new SqlParameter("@ID_Emp", SqlDbType.Int);
             param[0].Value = id_Emp;
             param[1] = new SqlParameter("@TotalSalary", SqlDbType.Decimal);
@@ -252,8 +252,7 @@ namespace Laboratory.BL
             param[5] = new SqlParameter("@Note", SqlDbType.NVarChar, 150);
             param[5].Value = note;
 
-            param[6] = new SqlParameter("@idStock", SqlDbType.Int);
-            param[6].Value = idstock;
+          
 
             da.excutequery("AddEmp_Salary", param);
             da.close();
@@ -341,6 +340,19 @@ namespace Laboratory.BL
             param[0] = new SqlParameter("@id", SqlDbType.Int);
             param[0].Value = id;
             dt = da.selected("VildateEmployee", param);
+            da.close();
+            return dt;
+        }
+        internal DataTable SelectSalaryEmployee(int id)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@id", SqlDbType.Int);
+            param[0].Value = id;
+            dt = da.selected("SelectSalaryEmployee", param);
             da.close();
             return dt;
         }

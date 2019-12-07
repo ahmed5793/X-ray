@@ -13,7 +13,7 @@ namespace Laboratory.PL
     public partial class Frm_EmpSarf : Form
     {
         Employee E = new Employee();
-        Stock s = new Stock();
+      
         DataTable dt = new DataTable();
         public Frm_EmpSarf()
         {
@@ -22,9 +22,7 @@ namespace Laboratory.PL
             cmb_employeeName.DisplayMember = "Emp_Name";
             cmb_employeeName.ValueMember = "Emp_ID";
 
-            cmb_stock.DataSource = s.Compo_Stock();
-            cmb_stock.DisplayMember = "Name_Stock";
-            cmb_stock.ValueMember = "ID_Stock";
+           
 
 
         }
@@ -41,6 +39,7 @@ namespace Laboratory.PL
 
         private void cmb_employeeName_SelectionChangeCommitted(object sender, EventArgs e)
         {
+            DataTable dt3 = new DataTable();
             if (cmb_employeeName.Text != "")
             {
                 dt.Clear();
@@ -51,6 +50,15 @@ namespace Laboratory.PL
                     Txt_salary.Text = dt.Rows[0][2].ToString();
                     txt_salf.Text = dt.Rows[0][3].ToString();
                     txt_total.Text = dt.Rows[0][4].ToString();
+                }
+                else
+                {
+                    dt3.Clear();
+                    dt3 = E.SelectSalaryEmployee(Convert.ToInt32(cmb_employeeName.SelectedValue));
+                    txt_branches.Text = txt_branches.Text = dt3.Rows[0][1].ToString();
+                    Txt_salary.Text = dt3.Rows[0][2].ToString();
+                    txt_salf.Text = "0";
+                    txt_total.Text = Txt_salary.Text;
                 }
             }
         }
@@ -69,35 +77,19 @@ namespace Laboratory.PL
 
             }
            
-            if (cmb_stock.Text == "")
-            {
-                MessageBox.Show("قم بااختيار اسم الخزنة");
-                return;
-
-            }
+          
             if (Txt_salary.Text == "")
             {
                 MessageBox.Show("قم بااختيار اسم الموظف ");
                 return;
 
             }
-            dt.Clear();
-            dt = s.Select_moneyStock(Convert.ToInt32(cmb_stock.SelectedValue));
-            if (dt.Rows.Count>0)
-            {
-                if (Convert.ToDecimal(txt_total.Text)>Convert.ToDecimal(dt.Rows[0][0]))
-                {
-                    MessageBox.Show("عزيزي المستخدم المبلغ الموجود في المخزن غير كافي لاجراء العملية");
-                    return;
-                }
-                
-            }
+          
            
                 E.AddEmp_Salary(Convert.ToInt32(cmb_employeeName.SelectedValue), Convert.ToDecimal(Txt_salary.Text),
                    Convert.ToDecimal(txt_salf.Text), Convert.ToDecimal(txt_total.Text), dateTimePicker1.Value,
-                   txt_note.Text, Convert.ToInt32(cmb_stock.SelectedValue));
-                s.Add_StockPull(Convert.ToInt32(cmb_stock.SelectedValue), Convert.ToDecimal(txt_total.Text),
-                dateTimePicker1.Value, "admin", cmb_employeeName.Text);
+                   txt_note.Text);
+              
                 E.UpdateEMPSalaryMins(Convert.ToInt32(cmb_employeeName.SelectedValue), "true");
                 MessageBox.Show("تم الحفظ بنجاح");
                 txt_branches.Clear();

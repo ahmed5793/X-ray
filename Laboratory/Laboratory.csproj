@@ -119,6 +119,7 @@
     <Compile Include="BL\CategoryXRaya.cs" />
     <Compile Include="BL\Company.cs" />
     <Compile Include="BL\Customer.cs" />
+    <Compile Include="BL\DoctorOfCenter.cs" />
     <Compile Include="BL\Doctors.cs" />
     <Compile Include="BL\Employee.cs" />
     <Compile Include="BL\ItemsXRaya.cs" />
@@ -127,6 +128,7 @@
     <Compile Include="BL\Stock.cs" />
     <Compile Include="BL\Store.cs" />
     <Compile Include="BL\Suppliers.cs" />
+    <Compile Include="BL\Techincal.cs" />
     <Compile Include="BL\Tickets.cs" />
     <Compile Include="BL\Users.cs" />
     <Compile Include="DAL\DataAccessLayer.cs" />
