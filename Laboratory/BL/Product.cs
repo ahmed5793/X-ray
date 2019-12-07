@@ -249,20 +249,18 @@ namespace Laboratory.BL
             da.excutequery("add_TransFairProduct", param);
             da.close();
         }
-        internal void Add_TransfairDetails(int id_transfair, string from_store, string To_store, int id_product,int quantity)
-
+        internal void Add_TransfairDetails(int id_transfair, int from_store, int To_store, int id_product,int quantity)
         {
             DataAccessLayer da = new DataAccessLayer();
-
             SqlParameter[] param = new SqlParameter[5];
             da.open();
-            param[0] = new SqlParameter("@Id_Transfair", SqlDbType.Int);
+            param[0] = new SqlParameter("@id_transfair", SqlDbType.Int);
             param[0].Value = id_transfair;
-            param[1] = new SqlParameter("@From_Stock", SqlDbType.NVarChar, 100);
+            param[1] = new SqlParameter("@From_Store", SqlDbType.Int);
             param[1].Value = from_store;
-            param[2] = new SqlParameter("@To_Stock", SqlDbType.NVarChar, 100);
+            param[2] = new SqlParameter("@To_Store", SqlDbType.Int);
             param[2].Value = To_store;
-            param[3] = new SqlParameter("@id_product", SqlDbType.Int);
+            param[3] = new SqlParameter("@Id_product", SqlDbType.Int);
             param[3].Value = id_product;
             param[4] = new SqlParameter("@Quantity", SqlDbType.Int);
             param[4].Value = quantity;
@@ -275,7 +273,6 @@ namespace Laboratory.BL
             try
             {
                 DataAccessLayer da = new DataAccessLayer();
-
                 da.open();
                 SqlParameter[] param = new SqlParameter[1];
                 param[0] = new SqlParameter("@id", SqlDbType.Int);
@@ -319,5 +316,79 @@ namespace Laboratory.BL
                 dt.Dispose();
             }
         }
+        internal DataTable Validate_Quantity(int id_product , int id_Store ,int Quantity)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                DataAccessLayer da = new DataAccessLayer();
+                da.open();
+                SqlParameter[] param = new SqlParameter[3];
+                param[0] = new SqlParameter("@id_product", SqlDbType.Int);
+                param[0].Value = id_product;
+                param[1] = new SqlParameter("@id_store", SqlDbType.Int);
+                param[1].Value = id_Store;
+                param[2] = new SqlParameter("@Quantity", SqlDbType.Int);
+                param[2].Value = Quantity;
+                dt.Clear();
+                dt = da.selected("Validate_Quantity", param);
+                da.close();
+                return dt;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                dt.Dispose();
+            }
+        }
+        internal void Update_QuantityStoreProduct(int id_Product, decimal Quantity, int Id_Store)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+
+            SqlParameter[] param = new SqlParameter[3];
+            da.open();
+            param[0] = new SqlParameter("@Id_Product", SqlDbType.Int);
+            param[0].Value = id_Product;
+            param[1] = new SqlParameter("@Quantity", SqlDbType.Decimal);
+            param[1].Value = Quantity;
+            param[2] = new SqlParameter("@id_store", SqlDbType.Int);
+            param[2].Value = Id_Store;
+            da.excutequery("Update_QuantityStoreProduct", param);
+            da.close();
+        }
+
+        internal DataTable Validate_StoreProduct(int id_product, int id_Store)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                DataAccessLayer da = new DataAccessLayer();
+                da.open();
+                SqlParameter[] param = new SqlParameter[2];
+                param[0] = new SqlParameter("@id_product", SqlDbType.Int);
+                param[0].Value = id_product;
+                param[1] = new SqlParameter("@id_Store", SqlDbType.Int);
+                param[1].Value = id_Store;
+                dt.Clear();
+                dt = da.selected("Validate_StoreProduct", param);
+                da.close();
+                return dt;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                dt.Dispose();
+            }
+        }
+
+
     }
 }

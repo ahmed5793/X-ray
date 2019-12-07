@@ -204,6 +204,24 @@
     <Compile Include="PL\Frm_DoctorOfCenter.Designer.cs">
       <DependentUpon>Frm_DoctorOfCenter.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Frm_EditDiscount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_EditDiscount.Designer.cs">
+      <DependentUpon>Frm_EditDiscount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Frm_EditPrice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_EditPrice.Designer.cs">
+      <DependentUpon>Frm_EditPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Frm_EditQantity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_EditQantity.Designer.cs">
+      <DependentUpon>Frm_EditQantity.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_Employee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -264,6 +282,18 @@
     <Compile Include="PL\Frm_PayClient.Designer.cs">
       <DependentUpon>Frm_PayClient.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Frm_ProductList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_ProductList.Designer.cs">
+      <DependentUpon>Frm_ProductList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Frm_Purshasing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_Purshasing.Designer.cs">
+      <DependentUpon>Frm_Purshasing.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_Salf.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -299,6 +329,12 @@
     </Compile>
     <Compile Include="PL\Frm_Tickets.Designer.cs">
       <DependentUpon>Frm_Tickets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Frm_TransProductList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_TransProductList.Designer.cs">
+      <DependentUpon>Frm_TransProductList.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Tranfair_product.cs">
       <SubType>Form</SubType>
@@ -350,6 +386,15 @@
     <EmbeddedResource Include="PL\Frm_DoctorOfCenter.resx">
       <DependentUpon>Frm_DoctorOfCenter.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_EditDiscount.resx">
+      <DependentUpon>Frm_EditDiscount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_EditPrice.resx">
+      <DependentUpon>Frm_EditPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_EditQantity.resx">
+      <DependentUpon>Frm_EditQantity.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Employee.resx">
       <DependentUpon>Frm_Employee.cs</DependentUpon>
     </EmbeddedResource>
@@ -380,6 +425,12 @@
     <EmbeddedResource Include="PL\Frm_PayClient.resx">
       <DependentUpon>Frm_PayClient.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_ProductList.resx">
+      <DependentUpon>Frm_ProductList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_Purshasing.resx">
+      <DependentUpon>Frm_Purshasing.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Salf.resx">
       <DependentUpon>Frm_Salf.cs</DependentUpon>
     </EmbeddedResource>
@@ -397,6 +448,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Tickets.resx">
       <DependentUpon>Frm_Tickets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_TransProductList.resx">
+      <DependentUpon>Frm_TransProductList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Tranfair_product.resx">
       <DependentUpon>Tranfair_product.cs</DependentUpon>
