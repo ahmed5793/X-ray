@@ -28,15 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_new = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Btn_Save = new System.Windows.Forms.Button();
-            this.DataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txt_num = new System.Windows.Forms.TextBox();
+            this.Txt_sales = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.Cmb_FromStore = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,11 +47,9 @@
             this.Cmb_ToStore = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Btn_selectProduct = new System.Windows.Forms.Button();
-            this.Txt_sales = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.Btn_Save = new System.Windows.Forms.Button();
+            this.DataGridView1 = new System.Windows.Forms.DataGridView();
             this.Btn_Print = new System.Windows.Forms.Button();
-            this.Cmb_ProdName = new System.Windows.Forms.ComboBox();
-            this.txt_num = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -72,7 +71,6 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.txt_num);
-            this.groupBox1.Controls.Add(this.Cmb_ProdName);
             this.groupBox1.Controls.Add(this.Txt_sales);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label7);
@@ -91,78 +89,38 @@
             this.groupBox1.TabIndex = 76;
             this.groupBox1.TabStop = false;
             // 
-            // Btn_Save
+            // txt_num
             // 
-            this.Btn_Save.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.Btn_Save.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Save.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Btn_Save.Location = new System.Drawing.Point(280, 442);
-            this.Btn_Save.Name = "Btn_Save";
-            this.Btn_Save.Size = new System.Drawing.Size(190, 65);
-            this.Btn_Save.TabIndex = 72;
-            this.Btn_Save.Text = "حفظ الفاتوره";
-            this.Btn_Save.UseVisualStyleBackColor = true;
-            this.Btn_Save.Click += new System.EventHandler(this.Btn_Save_Click);
+            this.txt_num.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txt_num.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_num.Location = new System.Drawing.Point(359, 24);
+            this.txt_num.Multiline = true;
+            this.txt_num.Name = "txt_num";
+            this.txt_num.ReadOnly = true;
+            this.txt_num.Size = new System.Drawing.Size(57, 30);
+            this.txt_num.TabIndex = 78;
+            this.txt_num.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // DataGridView1
+            // Txt_sales
             // 
-            this.DataGridView1.AllowDrop = true;
-            this.DataGridView1.AllowUserToAddRows = false;
-            this.DataGridView1.AllowUserToResizeColumns = false;
-            this.DataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle36.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle36.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle36.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.Color.Black;
-            this.DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle36;
-            this.DataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DataGridView1.BackgroundColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle37.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle37.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle37.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle37.SelectionBackColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle37.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle37.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle37;
-            this.DataGridView1.ColumnHeadersHeight = 60;
-            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle38.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle38.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle38.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle38.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle38.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGridView1.DefaultCellStyle = dataGridViewCellStyle38;
-            this.DataGridView1.GridColor = System.Drawing.Color.DimGray;
-            this.DataGridView1.Location = new System.Drawing.Point(10, 272);
-            this.DataGridView1.MultiSelect = false;
-            this.DataGridView1.Name = "DataGridView1";
-            this.DataGridView1.ReadOnly = true;
-            this.DataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle39.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle39.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle39.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle39.SelectionBackColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle39.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle39.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle39;
-            this.DataGridView1.RowHeadersWidth = 70;
-            dataGridViewCellStyle40.BackColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle40.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle40.ForeColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle40.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle40.SelectionForeColor = System.Drawing.Color.Yellow;
-            this.DataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle40;
-            this.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataGridView1.Size = new System.Drawing.Size(707, 158);
-            this.DataGridView1.TabIndex = 71;
+            this.Txt_sales.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_sales.Location = new System.Drawing.Point(6, 22);
+            this.Txt_sales.Name = "Txt_sales";
+            this.Txt_sales.ReadOnly = true;
+            this.Txt_sales.Size = new System.Drawing.Size(198, 32);
+            this.Txt_sales.TabIndex = 56;
+            this.Txt_sales.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(209, 28);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(106, 24);
+            this.label4.TabIndex = 55;
+            this.label4.Text = "اسم المستخدم";
             // 
             // label7
             // 
@@ -171,7 +129,7 @@
             this.label7.BackColor = System.Drawing.Color.Yellow;
             this.label7.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(517, 18);
+            this.label7.Location = new System.Drawing.Point(522, 33);
             this.label7.Name = "label7";
             this.label7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label7.Size = new System.Drawing.Size(89, 29);
@@ -186,11 +144,12 @@
             this.Cmb_FromStore.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Cmb_FromStore.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cmb_FromStore.FormattingEnabled = true;
-            this.Cmb_FromStore.Location = new System.Drawing.Point(422, 49);
+            this.Cmb_FromStore.Location = new System.Drawing.Point(427, 64);
             this.Cmb_FromStore.Name = "Cmb_FromStore";
             this.Cmb_FromStore.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Cmb_FromStore.Size = new System.Drawing.Size(272, 37);
             this.Cmb_FromStore.TabIndex = 53;
+            this.Cmb_FromStore.SelectedIndexChanged += new System.EventHandler(this.Cmb_FromStore_SelectedIndexChanged);
             this.Cmb_FromStore.SelectionChangeCommitted += new System.EventHandler(this.Cmb_FromStore_SelectionChangeCommitted);
             // 
             // label3
@@ -242,7 +201,7 @@
             this.Cmb_ToStore.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Cmb_ToStore.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cmb_ToStore.FormattingEnabled = true;
-            this.Cmb_ToStore.Location = new System.Drawing.Point(422, 132);
+            this.Cmb_ToStore.Location = new System.Drawing.Point(428, 154);
             this.Cmb_ToStore.Name = "Cmb_ToStore";
             this.Cmb_ToStore.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Cmb_ToStore.Size = new System.Drawing.Size(272, 32);
@@ -255,7 +214,7 @@
             this.label1.BackColor = System.Drawing.Color.MidnightBlue;
             this.label1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(513, 99);
+            this.label1.Location = new System.Drawing.Point(519, 121);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 29);
             this.label1.TabIndex = 45;
@@ -267,35 +226,87 @@
             this.Btn_selectProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Btn_selectProduct.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_selectProduct.ForeColor = System.Drawing.Color.White;
-            this.Btn_selectProduct.Location = new System.Drawing.Point(485, 182);
+            this.Btn_selectProduct.Location = new System.Drawing.Point(438, 215);
             this.Btn_selectProduct.Name = "Btn_selectProduct";
-            this.Btn_selectProduct.Size = new System.Drawing.Size(140, 44);
+            this.Btn_selectProduct.Size = new System.Drawing.Size(196, 44);
             this.Btn_selectProduct.TabIndex = 48;
             this.Btn_selectProduct.Text = "اختيار صنف";
             this.Btn_selectProduct.UseVisualStyleBackColor = false;
+            this.Btn_selectProduct.Click += new System.EventHandler(this.Btn_selectProduct_Click);
             // 
-            // Txt_sales
+            // Btn_Save
             // 
-            this.Txt_sales.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Txt_sales.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_sales.Location = new System.Drawing.Point(6, 22);
-            this.Txt_sales.Name = "Txt_sales";
-            this.Txt_sales.ReadOnly = true;
-            this.Txt_sales.Size = new System.Drawing.Size(198, 32);
-            this.Txt_sales.TabIndex = 56;
-            this.Txt_sales.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Btn_Save.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.Btn_Save.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Save.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Btn_Save.Location = new System.Drawing.Point(280, 442);
+            this.Btn_Save.Name = "Btn_Save";
+            this.Btn_Save.Size = new System.Drawing.Size(190, 65);
+            this.Btn_Save.TabIndex = 72;
+            this.Btn_Save.Text = "حفظ الفاتوره";
+            this.Btn_Save.UseVisualStyleBackColor = true;
+            this.Btn_Save.Click += new System.EventHandler(this.Btn_Save_Click);
             // 
-            // label4
+            // DataGridView1
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.White;
-            this.label4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(209, 28);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 24);
-            this.label4.TabIndex = 55;
-            this.label4.Text = "اسم المستخدم";
+            this.DataGridView1.AllowDrop = true;
+            this.DataGridView1.AllowUserToAddRows = false;
+            this.DataGridView1.AllowUserToResizeColumns = false;
+            this.DataGridView1.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.DataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DataGridView1.BackgroundColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.DataGridView1.ColumnHeadersHeight = 60;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            this.DataGridView1.GridColor = System.Drawing.Color.DimGray;
+            this.DataGridView1.Location = new System.Drawing.Point(10, 272);
+            this.DataGridView1.MultiSelect = false;
+            this.DataGridView1.Name = "DataGridView1";
+            this.DataGridView1.ReadOnly = true;
+            this.DataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.DataGridView1.RowHeadersWidth = 70;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Yellow;
+            this.DataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DataGridView1.Size = new System.Drawing.Size(707, 158);
+            this.DataGridView1.TabIndex = 71;
+            this.DataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellClick);
             // 
             // Btn_Print
             // 
@@ -306,34 +317,8 @@
             this.Btn_Print.Name = "Btn_Print";
             this.Btn_Print.Size = new System.Drawing.Size(190, 65);
             this.Btn_Print.TabIndex = 77;
-            this.Btn_Print.Text = "حفظ الفاتوره";
+            this.Btn_Print.Text = "طباعة الفاتوره";
             this.Btn_Print.UseVisualStyleBackColor = true;
-            // 
-            // Cmb_ProdName
-            // 
-            this.Cmb_ProdName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.Cmb_ProdName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.Cmb_ProdName.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cmb_ProdName.FormattingEnabled = true;
-            this.Cmb_ProdName.ItemHeight = 24;
-            this.Cmb_ProdName.Location = new System.Drawing.Point(414, 229);
-            this.Cmb_ProdName.Name = "Cmb_ProdName";
-            this.Cmb_ProdName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Cmb_ProdName.Size = new System.Drawing.Size(286, 32);
-            this.Cmb_ProdName.TabIndex = 57;
-            this.Cmb_ProdName.Enter += new System.EventHandler(this.Cmb_ProdName_Enter);
-            // 
-            // txt_num
-            // 
-            this.txt_num.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txt_num.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_num.Location = new System.Drawing.Point(359, 24);
-            this.txt_num.Multiline = true;
-            this.txt_num.Name = "txt_num";
-            this.txt_num.ReadOnly = true;
-            this.txt_num.Size = new System.Drawing.Size(57, 30);
-            this.txt_num.TabIndex = 78;
-            this.txt_num.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Tranfair_product
             // 
@@ -346,6 +331,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Btn_Save);
             this.Controls.Add(this.DataGridView1);
+            this.MinimumSize = new System.Drawing.Size(737, 554);
             this.Name = "Tranfair_product";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "تحويل صنف من مخزن إلى مخزن";
@@ -357,24 +343,22 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btn_new;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox Txt_sales;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox Cmb_FromStore;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox Txt_note;
-        private System.Windows.Forms.DateTimePicker DateTimePicker1;
-        private System.Windows.Forms.Label label2;
         public System.Windows.Forms.ComboBox Cmb_ToStore;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button Btn_selectProduct;
-        private System.Windows.Forms.Button Btn_Save;
         public System.Windows.Forms.DataGridView DataGridView1;
-        private System.Windows.Forms.Button Btn_Print;
-        private System.Windows.Forms.ComboBox Cmb_ProdName;
-        private System.Windows.Forms.TextBox txt_num;
+        public System.Windows.Forms.Button btn_new;
+        public System.Windows.Forms.GroupBox groupBox1;
+        public System.Windows.Forms.TextBox Txt_sales;
+        public System.Windows.Forms.Label label4;
+        public System.Windows.Forms.Label label7;
+        public System.Windows.Forms.ComboBox Cmb_FromStore;
+        public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.TextBox Txt_note;
+        public System.Windows.Forms.DateTimePicker DateTimePicker1;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Button Btn_selectProduct;
+        public System.Windows.Forms.Button Btn_Save;
+        public System.Windows.Forms.Button Btn_Print;
+        public System.Windows.Forms.TextBox txt_num;
     }
 }

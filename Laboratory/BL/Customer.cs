@@ -127,5 +127,25 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
+        internal DataTable LastIdCustomer()
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            dt = da.selected("LastIdCustomer", null);
+            da.close();
+            return dt;
+        }
+        internal DataTable selectClientRent()
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            dt = da.selected("selectClientRent", null);
+            da.close();
+            return dt;
+        }
     }
 }

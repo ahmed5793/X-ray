@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cmb_stock = new System.Windows.Forms.ComboBox();
             this.txt_branches = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -53,8 +51,6 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.cmb_stock);
             this.groupBox1.Controls.Add(this.txt_branches);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label8);
@@ -77,35 +73,10 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(220, 26);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 24);
-            this.label5.TabIndex = 51;
-            this.label5.Text = "الخزينة";
-            // 
-            // cmb_stock
-            // 
-            this.cmb_stock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmb_stock.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cmb_stock.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmb_stock.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_stock.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_stock.FormattingEnabled = true;
-            this.cmb_stock.Location = new System.Drawing.Point(6, 21);
-            this.cmb_stock.Name = "cmb_stock";
-            this.cmb_stock.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmb_stock.Size = new System.Drawing.Size(197, 32);
-            this.cmb_stock.TabIndex = 50;
-            // 
             // txt_branches
             // 
             this.txt_branches.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_branches.Location = new System.Drawing.Point(161, 59);
+            this.txt_branches.Location = new System.Drawing.Point(17, 21);
             this.txt_branches.MaxLength = 11;
             this.txt_branches.Name = "txt_branches";
             this.txt_branches.ReadOnly = true;
@@ -118,7 +89,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(418, 62);
+            this.label1.Location = new System.Drawing.Point(274, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(36, 24);
             this.label1.TabIndex = 49;
@@ -291,8 +262,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label5;
-        public System.Windows.Forms.ComboBox cmb_stock;
         private System.Windows.Forms.TextBox txt_branches;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label8;

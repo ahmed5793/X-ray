@@ -22,7 +22,11 @@ namespace Laboratory.PL
         Stock s = new Stock();
         CategoryXRaya cx = new CategoryXRaya();
         Employee E = new Employee();
-       
+        DataTable dt2 = new DataTable();
+        Tickets t = new Tickets();
+        Techincal tc = new Techincal();
+        DoctorOfCenter dc = new DoctorOfCenter();
+        string names;
 
         public Frm_Tickets()
         {
@@ -30,18 +34,56 @@ namespace Laboratory.PL
             Cmb_customer.Show();
             txt_name.Hide();
             cmb_Company.Enabled = false;
-
+            txt_username.Text = Program.salesman;
             brnches();
             Stock();
             Customer();
             doctor();
-            EmpRole();
+          
 
             txt_phone.Enabled = false;
             txt_age.Enabled = false;
             txt_address.Enabled = false;
+       
 
+        }
+        public void rezizse()
+        {
+
+            dgv_order.RowHeadersWidth = 20;
+
+
+            dgv_order.Columns[1].Width = 180;
+            dgv_order.Columns[2].Width = 90;
          
+
+        
+
+
+
+
+        }
+
+        public void SelectdataTable()
+        {
+          
+            
+            dt2.Columns.Add("رقم الفحص");
+            dt2.Columns.Add("اسم الفحص");
+
+
+            dt2.Columns.Add("قيمة الفحص");
+
+        
+          
+            dgv_order.DataSource = dt2;
+
+            dgv_order.Columns[0].Visible = false;
+
+
+
+
+
 
         }
         void company()
@@ -88,37 +130,139 @@ namespace Laboratory.PL
             Cmb_category.DisplayMember = "الفئات";
             Cmb_category.ValueMember = "ID_CtegoryXrays";
         }
-        void EmpRole()
+        void DoctorOfCenter()
         {
-            cmb_Emprole.DataSource = E.SelectEmpRole();
-            cmb_Emprole.DisplayMember = "Roles";
-            cmb_Emprole.ValueMember = "ID_EmpRole";
+            cmb_DoctorOfCenter.DataSource = dc.SelectDoctor_OFCENTER();
+            cmb_DoctorOfCenter.DisplayMember = "Doc_Name ";
+            cmb_DoctorOfCenter.ValueMember = "Doc_ID";
         }
-
+        void Techincal()
+        {
+            cmb_Techincal.DataSource = tc.SelectTechincal();
+            cmb_Techincal.DisplayMember = "Tech_Name";
+            cmb_Techincal.ValueMember = "Techincal_ID";
+        }
+      
+      
 
         private void Frm_Tickets_Load(object sender, EventArgs e)
         {
             CategoryXraya();
+            SelectdataTable();
+
+            rezizse();
+            txt_idcust.Hide();
+            txt_IdTicket.Hide();
+            totalOrder();
+            DoctorOfCenter();
+            Techincal();
+     
+
 
 
         }
+        void SelectTicketEmployee()
+        {
+            if (rdb_CurrentPatient.Checked==true)
+            {
+                dt.Clear();
+                dt = t.SelectTicketEmployee(Convert.ToInt32(Cmb_customer.SelectedValue));
+                dgv_visit.DataSource = dt;
 
+            }
+          
+        
+        }
+
+        public void totalOrder()
+        {
+
+            decimal total = 0;
+            for (int i = 0; i < dgv_order.Rows.Count; i++)
+            {
+                total += Convert.ToDecimal(dgv_order.Rows[i].Cells[2].Value);
+            }
+            txt_total.Text = Math.Round(total, 2).ToString();
+
+        }
+        public void pay()
+
+        {
+            decimal x = 0;
+            if (txt_afterDiscount.Text != string.Empty && txt_pay.Text != string.Empty)
+            {
+                decimal totainv = Convert.ToDecimal(txt_afterDiscount.Text) - Convert.ToDecimal(txt_pay.Text);
+                txt_rent.Text = totainv.ToString();
+            }
+            else
+            {
+                //txt_pay.Text = "0";
+                decimal totainv = Convert.ToDecimal(txt_afterDiscount.Text) - x;
+                txt_rent.Text = totainv.ToString();
+
+            }
+
+        }
+        public void Discount()
+        {
+            decimal x = 0;
+            if (txt_total.Text != string.Empty &&txt_discount.Text!=string.Empty)
+            {
+                
+
+                decimal discount = Convert.ToDecimal(txt_total.Text) - (Convert.ToDecimal(txt_total.Text) * (Convert.ToDecimal(txt_discount.Text)/100));
+                txt_afterDiscount.Text = discount.ToString();
+            }
+            else
+            {
+                //txt_discount.Text = "0";
+                decimal discount = Convert.ToDecimal(txt_total.Text) - x;
+                txt_afterDiscount.Text = discount.ToString();
+                totalOrder();
+            }
+
+        }
+        public void DiscountMoney()
+        {
+            decimal x = 0;
+            if (txt_total.Text != string.Empty&&txt_discount.Text!=string.Empty)
+            {
+
+
+                decimal discount = Convert.ToDecimal(txt_total.Text) - Convert.ToDecimal(txt_discount.Text) ;
+                txt_afterDiscount.Text = discount.ToString();
+                
+            }
+            else
+            {
+                //txt_discount.Text = "0";
+                decimal discount = Convert.ToDecimal(txt_total.Text) - x;
+                txt_afterDiscount.Text = discount.ToString();
+                totalOrder();
+
+            }
+
+        }
         private void rdb_Compamy_CheckedChanged(object sender, EventArgs e)
         {
             if (rdb_Compamy.Checked == true)
             {
+              
                 cmb_Company.Enabled = true;
                 company();
             }
+            names = "شركات";
         }
-
+      
         private void rdb_client_CheckedChanged(object sender, EventArgs e)
         {
             if (rdb_client.Checked == true)
             {
+             
                 cmb_Company.Enabled = false;
-                cmb_Company.Items.Clear();
+                cmb_Company.DataSource = null;
             }
+            names = "اهالي";
         }
         DataTable dt = new DataTable();
         private void Cmb_category_SelectionChangeCommitted(object sender, EventArgs e)
@@ -159,6 +303,7 @@ namespace Laboratory.PL
 
                     txt_age.Clear();
                 }
+                SelectTicketEmployee();
             }
         }
 
@@ -176,6 +321,7 @@ namespace Laboratory.PL
                 txt_phone.Clear();
                 txt_age.Clear();
                 txt_address.Clear();
+               
             }
         }
 
@@ -244,7 +390,7 @@ namespace Laboratory.PL
 
         private void txt_price_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == '.' && txt_price.Text.ToString().IndexOf('.') > -1)
+            if (e.KeyChar == '.' && txt_total.Text.ToString().IndexOf('.') > -1)
             {
                 e.Handled = true;
             }
@@ -256,7 +402,7 @@ namespace Laboratory.PL
 
         private void text_discount_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == '.' && text_discount.Text.ToString().IndexOf('.') > -1)
+            if (e.KeyChar == '.' && txt_discount.Text.ToString().IndexOf('.') > -1)
             {
                 e.Handled = true;
             }
@@ -310,11 +456,11 @@ namespace Laboratory.PL
 
         private void Cmp_EMPRAOLE_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            Cmb_employee.DataSource = E.SelectCompoRoleEmployee(Convert.ToInt32(cmb_Emprole.SelectedValue));
-            label23.Text = cmb_Emprole.Text;
-            Cmb_employee.DisplayMember = "Emp_Name";
-            Cmb_employee.ValueMember = "Emp_ID";
-            label23.Text = cmb_Emprole.Text;
+            cmb_Techincal.DataSource = E.SelectCompoRoleEmployee(Convert.ToInt32(cmb_DoctorOfCenter.SelectedValue));
+            label23.Text = cmb_DoctorOfCenter.Text;
+            cmb_Techincal.DisplayMember = "Emp_Name";
+            cmb_Techincal.ValueMember = "Emp_ID";
+            label23.Text = cmb_DoctorOfCenter.Text;
 
         }
 
@@ -327,5 +473,344 @@ namespace Laboratory.PL
         {
 
         }
+
+        private void btn_addgrid_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                for (int i = 0; i < dgv_order.Rows.Count; i++)
+                {
+
+
+                    if (Convert.ToInt32(cmb_items.SelectedValue) == Convert.ToInt32(dgv_order.Rows[i].Cells[0].Value))
+                    {
+                        Console.Beep();
+                        MessageBox.Show("هذا الاشعة مسجلة من قبل ", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        return;
+                    }
+                }
+                if (Cmb_category.Text=="")
+                {
+                    MessageBox.Show("من فضلك قم بااختيار فئة الفحص");
+                    return;
+                }
+                if (cmb_items.Text == "")
+                {
+                    MessageBox.Show("من فضلك قم بااختيارنوع الفحص");
+                    return;
+                }
+                else
+                {
+
+                    decimal x;
+                    dt = ix.SelectPriseItem(Convert.ToInt32(cmb_items.SelectedValue));
+                    x = Convert.ToDecimal(dt.Rows[0][0].ToString());
+
+                    DataRow r = dt2.NewRow();
+                    r[0] = cmb_items.SelectedValue;
+                    r[1] = cmb_items.Text;
+                    r[2] = x;
+
+
+                    dt2.Rows.Add(r);
+                    Console.Beep();
+                    dgv_order.DataSource = dt2;
+                    totalOrder();
+                    if (rdb_Discount.Checked == true)
+                    {
+                        Discount();
+                    }
+                    else
+                    {
+                        DiscountMoney();
+                    }
+                    pay();
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            DiscountMoney();
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            Discount();
+        }
+
+        private void txt_discount_Leave(object sender, EventArgs e)
+        {
+            if (txt_discount.Text=="")
+            {
+                txt_discount.Text = "0";
+            }
+        }
+
+        private void txt_pay_KeyUp(object sender, KeyEventArgs e)
+        {
+            pay();
+        }
+
+        private void txt_rent_KeyUp(object sender, KeyEventArgs e)
+        {
+            //pay();
+        }
+
+        private void txt_discount_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (rdb_Discount.Checked==true)
+            {
+                Discount();
+                pay();
+            }
+            else
+            {
+                DiscountMoney();
+                pay();
+            }
+        }
+
+        private void txt_discount_Validated(object sender, EventArgs e)
+        {
+        }
+
+        private void txt_discount_MouseDown(object sender, MouseEventArgs e)
+        {
+            txt_discount.SelectAll();
+        }
+
+        private void txt_pay_MouseDown(object sender, MouseEventArgs e)
+        {
+            txt_pay.SelectAll();
+        }
+
+        private void txt_pay_Leave(object sender, EventArgs e)
+        {
+            if (txt_pay.Text=="")
+            {
+                txt_pay.Text = "0";
+            }
+        }
+
+       
+        private void groupBox4_Enter(object sender, EventArgs e)
+        {
+          
+        }
+        void clear()
+        {
+            txt_address.Clear();
+            txt_afterDiscount.Text="0";
+            txt_age.Clear();
+            txt_compint.Clear();
+            txt_discount.Text = "0";
+            txt_name.Clear();
+            txt_pay.Text = "0";
+            txt_phone.Clear();
+            txt_rent.Text = "0";
+            txt_total.Text = "0";
+            rdb_CurrentPatient.Checked = true;
+            dt2.Clear();
+
+
+        }
+        private void label21_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btn_save_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgv_order.Rows.Count>0)
+                {
+                    if (rdb_client.Checked==false&&rdb_Compamy.Checked==false)
+                    {
+                        MessageBox.Show("من فضلك قم بتحديد نوع الفاتورة اهالي ام شركات");
+                        return;
+                    }
+
+                    if (txt_name.Text==""&& Cmb_customer.Text == "" || txt_address.Text==""||txt_age.Text=="")
+                    {
+                        MessageBox.Show("من فضلك قم باادخال بيانات العميل كاملة");
+                        return;
+                    }
+                    if (txt_compint.Text=="")
+                    {
+                        MessageBox.Show("من فضلك قم باادخال الشكوي");
+
+                        return;
+                    }
+                    if (cmb_Doctor.Text == "")
+                    {
+                        MessageBox.Show("من فضلك قم باادخال الطبيب المعالج للمريض");
+
+                        return;
+                    }
+                    if (cmb_DoctorOfCenter.Text == ""||cmb_Techincal.Text=="")
+                    {
+                        MessageBox.Show("من فضلك قم باادخال طبيب الحالة");
+                        cmb_DoctorOfCenter.Focus();
+
+                        return;
+                    }
+                    if (cmb_Techincal.Text == "" || cmb_Techincal.Text == "")
+                    {
+                        MessageBox.Show("من فضلك قم باادخال الفني");
+                        cmb_Techincal.Focus();
+
+                        return;
+                    }
+                    if (Cmb_category.Text == "")
+                    {
+                        MessageBox.Show("من فضلك قم بااختيار فئة الفحص");
+
+                        return;
+                    }
+                    if (cmb_items.Text == "")
+                    {
+                        MessageBox.Show("من فضلك قم بااختيار نوع الفحص");
+
+                        return;
+                    }
+
+                    if (rdb_client.Checked==true)
+                    {
+                        if (rdb_NewPatient.Checked==true)
+                        {
+                            c.addCustomer(txt_name.Text, txt_address.Text, txt_phone.Text, Convert.ToInt32(txt_age.Text), dtb_visit.Value);
+                            txt_idcust.Text = c.LastIdCustomer().Rows[0][0].ToString();
+
+                            t.AddTickets(dtb_visit.Value, dtp_recive.Value, Convert.ToDecimal(txt_total.Text), Convert.ToDecimal(txt_pay.Text),
+                                Convert.ToDecimal(txt_rent.Text), Convert.ToInt32(txt_idcust.Text), names, Convert.ToInt32(cmb_Doctor.SelectedValue),
+                                Convert.ToInt32(cmb_branches.SelectedValue), Convert.ToInt32(cmb_Stock.SelectedValue), dtb_kashf.Value,
+                                txt_compint.Text, Convert.ToInt32(cmb_DoctorOfCenter.SelectedValue), Convert.ToInt32(cmb_Techincal.SelectedValue), txt_username.Text);
+                            txt_IdTicket.Text = t.LastIdTicket().Rows[0][0].ToString();
+                            for (int i = 0; i < dgv_order.Rows.Count; i++)
+                            {
+                                t.AddTicketDetails(Convert.ToInt32(txt_IdTicket.Text), Convert.ToInt32(dgv_order.Rows[i].Cells[0].Value),
+                                    Convert.ToDecimal(dgv_order.Rows[i].Cells[2].Value));
+                            }
+                            t.AddTickestDiscount(Convert.ToInt32(txt_IdTicket.Text), Convert.ToDecimal(txt_discount.Text));
+                            MessageBox.Show("تم حفظ الفاتورة بنجاح");
+                        }
+                        else if (rdb_CurrentPatient.Checked==true)
+                        {
+
+                            t.AddTickets(dtb_visit.Value, dtp_recive.Value, Convert.ToDecimal(txt_total.Text), Convert.ToDecimal(txt_pay.Text),
+                                Convert.ToDecimal(txt_rent.Text), Convert.ToInt32(Cmb_customer.SelectedValue), names, Convert.ToInt32(cmb_Doctor.SelectedValue),
+                                Convert.ToInt32(cmb_branches.SelectedValue), Convert.ToInt32(cmb_Stock.SelectedValue), dtb_kashf.Value,
+                                txt_compint.Text, Convert.ToInt32(cmb_DoctorOfCenter.SelectedValue), Convert.ToInt32(cmb_Techincal.SelectedValue), txt_username.Text);
+                            txt_IdTicket.Text = t.LastIdTicket().Rows[0][0].ToString();
+                            for (int i = 0; i < dgv_order.Rows.Count; i++)
+                            {
+                                t.AddTicketDetails(Convert.ToInt32(txt_IdTicket.Text), Convert.ToInt32(dgv_order.Rows[i].Cells[0].Value),
+                                    Convert.ToDecimal(dgv_order.Rows[i].Cells[2].Value));
+                            }
+                            t.AddTickestDiscount(Convert.ToInt32(txt_IdTicket.Text), Convert.ToDecimal(txt_discount.Text));
+                            MessageBox.Show("تم حفظ الفاتورة بنجاح");
+                        }
+                       
+                    }
+                    else if (rdb_Compamy.Checked==true)
+                    {
+                        if (cmb_Company.Text=="")
+                        {
+                            MessageBox.Show("من فضلك قم بااختيار شركه");
+                            return;
+                        }
+                        if (rdb_NewPatient.Checked == true)
+                        {
+                            c.addCustomer(txt_name.Text, txt_address.Text, txt_phone.Text, Convert.ToInt32(txt_age.Text), dtb_visit.Value);
+                            txt_idcust.Text = c.LastIdCustomer().Rows[0][0].ToString();
+
+                            t.AddTickets(dtb_visit.Value, dtp_recive.Value, Convert.ToDecimal(txt_total.Text), Convert.ToDecimal(txt_pay.Text),
+                                Convert.ToDecimal(txt_rent.Text), Convert.ToInt32(txt_idcust.Text), names, Convert.ToInt32(cmb_Doctor.SelectedValue),
+                                Convert.ToInt32(cmb_branches.SelectedValue), Convert.ToInt32(cmb_Stock.SelectedValue), dtb_kashf.Value,
+                                txt_compint.Text, Convert.ToInt32(cmb_DoctorOfCenter.SelectedValue), Convert.ToInt32(cmb_Techincal.SelectedValue), txt_username.Text);
+                            txt_IdTicket.Text = t.LastIdTicket().Rows[0][0].ToString();
+                            for (int i = 0; i < dgv_order.Rows.Count; i++)
+                            {
+                                t.AddTicketDetails(Convert.ToInt32(txt_IdTicket.Text), Convert.ToInt32(dgv_order.Rows[i].Cells[0].Value),
+                                    Convert.ToDecimal(dgv_order.Rows[i].Cells[2].Value));
+                            }
+                            t.AddTickestDiscount(Convert.ToInt32(txt_IdTicket.Text), Convert.ToDecimal(txt_discount.Text));
+                            MessageBox.Show("تم حفظ الفاتورة بنجاح");
+                        }
+                        else if (rdb_CurrentPatient.Checked == true)
+                        {
+
+                            t.AddTickets(dtb_visit.Value, dtp_recive.Value, Convert.ToDecimal(txt_total.Text), Convert.ToDecimal(txt_pay.Text),
+                                Convert.ToDecimal(txt_rent.Text), Convert.ToInt32(Cmb_customer.SelectedValue), names, Convert.ToInt32(cmb_Doctor.SelectedValue),
+                                Convert.ToInt32(cmb_branches.SelectedValue), Convert.ToInt32(cmb_Stock.SelectedValue), dtb_kashf.Value,
+                                txt_compint.Text, Convert.ToInt32(cmb_DoctorOfCenter.SelectedValue), Convert.ToInt32(cmb_Techincal.SelectedValue), txt_username.Text);
+                            txt_IdTicket.Text = t.LastIdTicket().Rows[0][0].ToString();
+                            for (int i = 0; i < dgv_order.Rows.Count; i++)
+                            {
+                                t.AddTicketDetails(Convert.ToInt32(txt_IdTicket.Text), Convert.ToInt32(dgv_order.Rows[i].Cells[0].Value),
+                                    Convert.ToDecimal(dgv_order.Rows[i].Cells[2].Value));
+                            }
+                            t.AddTickestDiscount(Convert.ToInt32(txt_IdTicket.Text), Convert.ToDecimal(txt_discount.Text));
+                            MessageBox.Show("تم حفظ الفاتورة بنجاح");
+                        }
+                        t.AddTicketCompany(Convert.ToInt32(txt_IdTicket.Text), Convert.ToInt32(cmb_Company.SelectedValue));
+
+                    }
+
+
+
+                    clear();
+                    SelectTicketEmployee();
+
+                }
+               
+                else
+                {
+                  
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void txt_afterDiscount_KeyUp(object sender, KeyEventArgs e)
+        {
+           
+        }
+
+        private void cmb_Techincal_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgv_order_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            if (rdb_Discount.Checked == true)
+            {
+                Discount();
+                pay();
+            }
+            else
+            {
+                DiscountMoney();
+                pay();
+            }
+            totalOrder();
+        }
     }
-}
+    }
+
