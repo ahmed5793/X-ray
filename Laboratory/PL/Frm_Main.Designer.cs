@@ -304,7 +304,7 @@
             this.Customer_management.Image = ((System.Drawing.Image)(resources.GetObject("Customer_management.Image")));
             this.Customer_management.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Customer_management.Name = "Customer_management";
-            this.Customer_management.Size = new System.Drawing.Size(247, 92);
+            this.Customer_management.Size = new System.Drawing.Size(249, 92);
             this.Customer_management.Text = "إدارة العملاء ";
             this.Customer_management.Click += new System.EventHandler(this.Add_customer_Click);
             // 
@@ -322,6 +322,7 @@
             this.Pay_Customer.Name = "Pay_Customer";
             this.Pay_Customer.Size = new System.Drawing.Size(182, 28);
             this.Pay_Customer.Text = "مدفوعات عميل";
+            this.Pay_Customer.Click += new System.EventHandler(this.Pay_Customer_Click);
             // 
             // toolStripSeparator10
             // 

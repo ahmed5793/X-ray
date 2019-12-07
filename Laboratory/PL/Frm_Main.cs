@@ -247,5 +247,12 @@ namespace Laboratory.PL
             Frm_Techincal frm_Techincal = new Frm_Techincal();
             frm_Techincal.ShowDialog();
         }
+
+        private void Pay_Customer_Click(object sender, EventArgs e)
+        {
+            Frm_PayClient frm_PayClient = new Frm_PayClient();
+            frm_PayClient.ShowDialog();
+
+        }
     }
 }
