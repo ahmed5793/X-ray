@@ -88,6 +88,7 @@
             this.btn_search.TabIndex = 3;
             this.btn_search.Text = "بحث";
             this.btn_search.UseVisualStyleBackColor = true;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // RdbOneCustomer
             // 
@@ -100,6 +101,7 @@
             this.RdbOneCustomer.TabIndex = 1;
             this.RdbOneCustomer.Text = "عميل محدد";
             this.RdbOneCustomer.UseVisualStyleBackColor = true;
+            this.RdbOneCustomer.CheckedChanged += new System.EventHandler(this.RdbOneCustomer_CheckedChanged);
             // 
             // RdbAllCustomer
             // 
@@ -151,6 +153,7 @@
             this.btn_client.TabIndex = 65;
             this.btn_client.Text = "دفع ";
             this.btn_client.UseVisualStyleBackColor = true;
+            this.btn_client.Click += new System.EventHandler(this.btn_client_Click);
             // 
             // txt_prise
             // 
@@ -162,6 +165,7 @@
             this.txt_prise.TabIndex = 63;
             this.txt_prise.Text = "0";
             this.txt_prise.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_prise.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_prise_KeyPress);
             // 
             // txt_rent
             // 
@@ -195,6 +199,7 @@
             this.rdbPartPay.TabIndex = 1;
             this.rdbPartPay.Text = "تسديد جزء منه";
             this.rdbPartPay.UseVisualStyleBackColor = true;
+            this.rdbPartPay.CheckedChanged += new System.EventHandler(this.rdbPartPay_CheckedChanged);
             // 
             // RdbAllPay
             // 
@@ -209,6 +214,7 @@
             this.RdbAllPay.TabStop = true;
             this.RdbAllPay.Text = "تسديد المبلغ بالكامل";
             this.RdbAllPay.UseVisualStyleBackColor = true;
+            this.RdbAllPay.CheckedChanged += new System.EventHandler(this.RdbAllPay_CheckedChanged);
             // 
             // label3
             // 

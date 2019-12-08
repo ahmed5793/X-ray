@@ -132,13 +132,13 @@ namespace Laboratory.PL
         }
         void DoctorOfCenter()
         {
-            cmb_DoctorOfCenter.DataSource = dc.SelectDoctor_OFCENTER();
-            cmb_DoctorOfCenter.DisplayMember = "Doc_Name ";
+            cmb_DoctorOfCenter.DataSource = dc.CompoDoctor_OFCENTER();
+            cmb_DoctorOfCenter.DisplayMember = "Doc_Name";
             cmb_DoctorOfCenter.ValueMember = "Doc_ID";
         }
         void Techincal()
         {
-            cmb_Techincal.DataSource = tc.SelectTechincal();
+            cmb_Techincal.DataSource = tc.CompoTechibncal();
             cmb_Techincal.DisplayMember = "Tech_Name";
             cmb_Techincal.ValueMember = "Techincal_ID";
         }
@@ -168,6 +168,7 @@ namespace Laboratory.PL
                 dt.Clear();
                 dt = t.SelectTicketEmployee(Convert.ToInt32(Cmb_customer.SelectedValue));
                 dgv_visit.DataSource = dt;
+                dgv_visit.Columns[0].Visible = false;
 
             }
           
@@ -293,7 +294,7 @@ namespace Laboratory.PL
                     txt_phone.Text = dt.Rows[0][0].ToString();
                     txt_address.Text = dt.Rows[0][1].ToString();
                     txt_age.Text = dt.Rows[0][2].ToString();
-
+                    SelectTicketEmployee();
                 }
                 else
                 {
@@ -303,7 +304,7 @@ namespace Laboratory.PL
 
                     txt_age.Clear();
                 }
-                SelectTicketEmployee();
+           
             }
         }
 
@@ -321,6 +322,7 @@ namespace Laboratory.PL
                 txt_phone.Clear();
                 txt_age.Clear();
                 txt_address.Clear();
+                dgv_visit.DataSource = null;
                
             }
         }
@@ -358,6 +360,7 @@ namespace Laboratory.PL
                     txt_phone.Text = dt.Rows[0][0].ToString();
                     txt_address.Text = dt.Rows[0][1].ToString();
                     txt_age.Text = dt.Rows[0][2].ToString();
+                    SelectTicketEmployee();
 
                 }
                 else
@@ -768,6 +771,7 @@ namespace Laboratory.PL
                     }
 
 
+                    s.add_insertStock(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_pay.Text), dtb_visit.Value, txt_username.Text, "فاتورة حجز اشعة رقم "+txt_IdTicket.Text);
 
                     clear();
                     SelectTicketEmployee();
@@ -810,6 +814,19 @@ namespace Laboratory.PL
                 pay();
             }
             totalOrder();
+        }
+
+        private void txt_discount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (e.KeyChar == '.' && txt_discount.Text.ToString().IndexOf('.') > -1)
+            {
+                e.Handled = true;
+            }
+            else if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != Convert.ToChar((System.Globalization.CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator)))
+            {
+                e.Handled = true;
+            }
         }
     }
     }

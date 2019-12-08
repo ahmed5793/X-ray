@@ -99,11 +99,11 @@ namespace Laboratory.BL
             da.close();
         }
 
-        internal void add_insertStock(int id, decimal money, DateTime date, string name, string type, string reason)
+        internal void add_insertStock(int id, decimal money, DateTime date, string name, string reason)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[6];
+            SqlParameter[] param = new SqlParameter[5];
             param[0] = new SqlParameter("@id_Treasury", SqlDbType.Int);
             param[0].Value = id;
             param[1] = new SqlParameter("@Money", SqlDbType.Real);
@@ -112,10 +112,9 @@ namespace Laboratory.BL
             param[2].Value = date;
             param[3] = new SqlParameter("@Name", SqlDbType.NVarChar, 250);
             param[3].Value = name;
-            param[4] = new SqlParameter("@Type", SqlDbType.NVarChar, 250);
-            param[4].Value = type;
-            param[5] = new SqlParameter("@Reason", SqlDbType.NVarChar, 250);
-            param[5].Value = reason;
+      
+            param[4] = new SqlParameter("@Reason", SqlDbType.NVarChar, 250);
+            param[4].Value = reason;
             da.excutequery("add_insertStock", param);
             da.close();
         }

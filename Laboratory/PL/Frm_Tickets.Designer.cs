@@ -632,6 +632,7 @@
             this.txt_discount.TabIndex = 107;
             this.txt_discount.Text = "0";
             this.txt_discount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_discount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_discount_KeyPress);
             this.txt_discount.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_discount_KeyUp);
             this.txt_discount.Leave += new System.EventHandler(this.txt_discount_Leave);
             this.txt_discount.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txt_discount_MouseDown);
