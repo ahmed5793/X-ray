@@ -186,6 +186,12 @@
     <Compile Include="PL\Frm_Customer.designer.cs">
       <DependentUpon>Frm_Customer.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Frm_DebitSuppliers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_DebitSuppliers.Designer.cs">
+      <DependentUpon>Frm_DebitSuppliers.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_Doctor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -282,6 +288,12 @@
     <Compile Include="PL\Frm_PayClient.Designer.cs">
       <DependentUpon>Frm_PayClient.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Frm_PaySuppliers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_PaySuppliers.Designer.cs">
+      <DependentUpon>Frm_PaySuppliers.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_ProductList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -293,6 +305,12 @@
     </Compile>
     <Compile Include="PL\Frm_Purshasing.Designer.cs">
       <DependentUpon>Frm_Purshasing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Frm_ReportPaySuppliers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_ReportPaySuppliers.Designer.cs">
+      <DependentUpon>Frm_ReportPaySuppliers.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Frm_Salf.cs">
       <SubType>Form</SubType>
@@ -377,6 +395,9 @@
     <EmbeddedResource Include="PL\Frm_Customer.resx">
       <DependentUpon>Frm_Customer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_DebitSuppliers.resx">
+      <DependentUpon>Frm_DebitSuppliers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Doctor.resx">
       <DependentUpon>Frm_Doctor.cs</DependentUpon>
     </EmbeddedResource>
@@ -425,11 +446,17 @@
     <EmbeddedResource Include="PL\Frm_PayClient.resx">
       <DependentUpon>Frm_PayClient.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_PaySuppliers.resx">
+      <DependentUpon>Frm_PaySuppliers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_ProductList.resx">
       <DependentUpon>Frm_ProductList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Purshasing.resx">
       <DependentUpon>Frm_Purshasing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_ReportPaySuppliers.resx">
+      <DependentUpon>Frm_ReportPaySuppliers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Salf.resx">
       <DependentUpon>Frm_Salf.cs</DependentUpon>
