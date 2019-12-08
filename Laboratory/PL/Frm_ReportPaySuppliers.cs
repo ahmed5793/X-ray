@@ -1,0 +1,42 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Laboratory.BL;
+
+namespace Laboratory.PL
+{
+    public partial class Frm_ReportPaySuppliers : Form
+    {
+        public Frm_ReportPaySuppliers()
+        {
+            Suppliers suppliers = new Suppliers();
+            InitializeComponent();
+            dataGridViewList.DataSource = suppliers.Report_PaySupplier();
+            Calc();
+        }
+
+        void Calc()
+        {
+            Decimal total = 0;
+            for (int i = 0; i < dataGridViewList.Rows.Count; i++)
+            {
+                total += Convert.ToDecimal(dataGridViewList.Rows[i].Cells[2].Value);
+            }
+            txt_TotalPurshacing.Text = Math.Round(total, 2).ToString();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = s.Search_PaySupplier(textBox1.Text);
+            dataGridViewList.DataSource = dt;
+            calc();
+        }
+    }
+}

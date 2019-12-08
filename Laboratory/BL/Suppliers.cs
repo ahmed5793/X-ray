@@ -152,5 +152,74 @@ namespace Laboratory.BL
             da.close();
 
         }
+        internal DataTable Combo_SupplierRent()
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            dt.Clear();
+            dt = da.selected("Combo_SupplierRent", null);
+            da.close();
+            return dt;
+        }
+        internal DataTable SelectSuppliersMony()
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            DataTable dt = new DataTable();
+            dt.Clear();
+            dt = da.selected("SelectSuppliersMony", null);
+            da.close();
+            return dt;
+
+        }
+        internal DataTable SelectOneSuppliersMony(int Sup_id)
+        {
+            DataTable dt = new DataTable();
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@Sup_id", SqlDbType.Int);
+            param[0].Value = Sup_id;
+            dt.Clear();
+            dt = da.selected("SelectOneSuppliersMony", param);
+            da.close();
+            return dt;
+        }
+        internal void AddPaySuppliers(int id_Inform, int id_sup, decimal pay, DateTime date)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[4];
+            param[0] = new SqlParameter("@id_Information", SqlDbType.Int);
+            param[0].Value = id_Inform;
+            param[1] = new SqlParameter("@id_Supp", SqlDbType.Int);
+            param[1].Value = id_sup;
+            param[2] = new SqlParameter("@pay", SqlDbType.Decimal);
+            param[2].Value = pay;
+
+            param[3] = new SqlParameter("@date", SqlDbType.DateTime);
+            param[3].Value = date;
+            da.excutequery("AddPaySuppliers", param);
+            da.close();
+
+        }
+        internal DataTable Select_DepitSupplier()
+        {
+            DataTable dt = new DataTable();
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            dt = da.selected("Select_DepitSupplier", null);
+            return dt;
+        }
+        internal DataTable Report_PaySupplier()
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+
+            dt = da.selected("Report_PaySupplier", null);
+            da.close();
+            return dt;
+        }
     }
 }

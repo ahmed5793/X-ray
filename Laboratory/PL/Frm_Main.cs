@@ -254,5 +254,23 @@ namespace Laboratory.PL
             frm_PayClient.ShowDialog();
 
         }
+
+        private void Pay_Suppliers_Click(object sender, EventArgs e)
+        {
+            Frm_PaySuppliers frm_PaySuppliers = new Frm_PaySuppliers();
+            frm_PaySuppliers.ShowDialog();
+        }
+
+        private void مديونيةالموردينToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_DebitSuppliers frm_Debit = new Frm_DebitSuppliers();
+            frm_Debit.ShowDialog();
+        }
+
+        private void Report_PaySupplier_Click(object sender, EventArgs e)
+        {
+            Frm_ReportPaySuppliers frm_ReportPaySuppliers = new Frm_ReportPaySuppliers();
+            frm_ReportPaySuppliers.ShowDialog();
+        }
     }
 }
