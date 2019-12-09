@@ -144,6 +144,12 @@
     <Compile Include="PL\Add_StoreProduct.Designer.cs">
       <DependentUpon>Add_StoreProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Frm_AddEmployeeBranch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_AddEmployeeBranch.Designer.cs">
+      <DependentUpon>Frm_AddEmployeeBranch.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\frm_AddStock.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -379,6 +385,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Add_StoreProduct.resx">
       <DependentUpon>Add_StoreProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_AddEmployeeBranch.resx">
+      <DependentUpon>Frm_AddEmployeeBranch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\frm_AddStock.resx">
       <DependentUpon>frm_AddStock.cs</DependentUpon>

@@ -7,14 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Laboratory.BL;
 
 namespace Laboratory.PL
 {
     public partial class Frm_Main : Form
     {
+        Users u = new Users();
         public Frm_Main()
         {
             InitializeComponent();
+      
+         
         }
 
         private void hghjvmToolStripMenuItem_Click(object sender, EventArgs e)
@@ -167,10 +171,10 @@ namespace Laboratory.PL
         {
 
         }
-
+        
         private void Frm_Main_Load(object sender, EventArgs e)
         {
-
+            label2.Text = Program.salesman;
         }
 
         private void AddStore_Click(object sender, EventArgs e)
@@ -277,6 +281,17 @@ namespace Laboratory.PL
         {
             Frm_PayCompany pc = new Frm_PayCompany();
             pc.ShowDialog();
+        }
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void اضافةالموظفينللفروعToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_AddEmployeeBranch adb = new Frm_AddEmployeeBranch();
+            adb.ShowDialog();
         }
     }
 }
