@@ -33,10 +33,12 @@ namespace Laboratory.PL
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            dt = s.Search_PaySupplier(textBox1.Text);
-            dataGridViewList.DataSource = dt;
-            calc();
+
+        }
+
+        private void Frm_ReportPaySuppliers_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -272,5 +272,11 @@ namespace Laboratory.PL
             Frm_ReportPaySuppliers frm_ReportPaySuppliers = new Frm_ReportPaySuppliers();
             frm_ReportPaySuppliers.ShowDialog();
         }
+
+        private void pay_company_Click(object sender, EventArgs e)
+        {
+            Frm_PayCompany pc = new Frm_PayCompany();
+            pc.ShowDialog();
+        }
     }
 }

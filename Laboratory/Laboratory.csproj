@@ -288,6 +288,12 @@
     <Compile Include="PL\Frm_PayClient.Designer.cs">
       <DependentUpon>Frm_PayClient.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Frm_PayCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_PayCompany.Designer.cs">
+      <DependentUpon>Frm_PayCompany.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_PaySuppliers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -445,6 +451,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_PayClient.resx">
       <DependentUpon>Frm_PayClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_PayCompany.resx">
+      <DependentUpon>Frm_PayCompany.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_PaySuppliers.resx">
       <DependentUpon>Frm_PaySuppliers.cs</DependentUpon>

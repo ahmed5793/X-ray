@@ -17,7 +17,7 @@ namespace Laboratory.PL
         public Frm_DebitSuppliers()
         {
             InitializeComponent();
-            dataGridViewDebit.DataSource = s.Select_DepitSupplier();
+            dataGridViewDebit.DataSource = Suppliers.Select_DepitSupplier();
             Calc();
         }
         void Calc()
@@ -29,6 +29,11 @@ namespace Laboratory.PL
 
             }
             txt_reb7h.Text = Math.Round(total, 2).ToString();
+
+        }
+
+        private void Frm_DebitSuppliers_Load(object sender, EventArgs e)
+        {
 
         }
     }

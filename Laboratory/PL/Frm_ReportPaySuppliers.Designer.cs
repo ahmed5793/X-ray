@@ -134,6 +134,7 @@
             this.Name = "Frm_ReportPaySuppliers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "تقرير عن كل مدفوعات الموردين";
+            this.Load += new System.EventHandler(this.Frm_ReportPaySuppliers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

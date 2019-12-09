@@ -211,5 +211,10 @@ namespace Laboratory.PL
                 e.Handled = true;
             }
         }
+
+        private void Frm_PayClient_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
