@@ -34,8 +34,7 @@ namespace Laboratory.PL
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
-           
+         
         }
 
         private void Frm_ReportPaySuppliers_Load(object sender, EventArgs e)
