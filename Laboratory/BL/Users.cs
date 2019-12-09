@@ -126,8 +126,22 @@ namespace Laboratory.BL
             return dt;
 
         }
+        internal DataTable SelectUserBranch(string UserName)
+        {
+            DataAccessLayer da = new DataAccessLayer();
 
-   
+            da.open();
+            DataTable dt = new DataTable();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@userName",SqlDbType.NVarChar,100);
+            param[0].Value = UserName;
+            dt = da.selected("SelectUserBranch", param);
+
+            return dt;
+
+        }
+
+
 
 
 

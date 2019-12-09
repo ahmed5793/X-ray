@@ -73,9 +73,9 @@ namespace Laboratory.PL
         private void Frm_Employee_Load(object sender, EventArgs e)
         {
 
-            cmb_branches.DataSource = b.SelectCompBranches();
-            cmb_branches.DisplayMember = "Name";
-            cmb_branches.ValueMember = "Branch_ID";
+            //cmb_branches.DataSource = b.SelectCompBranches();
+            //cmb_branches.DisplayMember = "Name";
+            //cmb_branches.ValueMember = "Branch_ID";
            
 
         }
@@ -111,16 +111,11 @@ namespace Laboratory.PL
                     return;
                    
                 }
-                if (cmb_branches.Text == "")
-                {
-                    MessageBox.Show("من فضلك قم بااختيار الفرع");
-                    return;
-
-                }
+              
                 else
                 {
                     E.AddEmployee(txt_name.Text, Convert.ToDecimal(Txt_Salary.Text), dateTimePicker2.Value,
-                        txt_NationalID.Text, txt_phone.Text, txt_address.Text, dateTimePicker1.Value,Convert.ToInt32(cmb_department.SelectedValue),Convert.ToInt32(cmb_branches.SelectedValue));
+                        txt_NationalID.Text, txt_phone.Text, txt_address.Text, dateTimePicker1.Value,Convert.ToInt32(cmb_department.SelectedValue));
                     MessageBox.Show("تم تسجيل الموظف بنجاح");
                     clears();
                     dataGridView1.DataSource = E.SelectEmployee();
@@ -159,17 +154,11 @@ namespace Laboratory.PL
                     return;
 
                 }
-                if (cmb_branches.Text == "")
-                {
-                    MessageBox.Show("من فضلك قم بااختيار الفرع");
-                    return;
-
-                }
+              
                 else
                 {
                     E.UpdateEmployee(txt_name.Text, Convert.ToDecimal(Txt_Salary.Text), dateTimePicker2.Value,
-                        txt_NationalID.Text, txt_phone.Text, txt_address.Text, dateTimePicker1.Value,Convert.ToInt32(cmb_department.SelectedValue),Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value),
-                        Convert.ToInt32(cmb_branches.SelectedValue));
+                        txt_NationalID.Text, txt_phone.Text, txt_address.Text, dateTimePicker1.Value,Convert.ToInt32(cmb_department.SelectedValue),Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
                     MessageBox.Show("تم تعديل بيانات الموظف بنجاح");
                     clears();
               

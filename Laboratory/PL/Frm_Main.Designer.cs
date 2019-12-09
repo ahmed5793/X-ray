@@ -48,6 +48,8 @@
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.Sarf_Mortbat = new System.Windows.Forms.ToolStripMenuItem();
             this.Add_Account = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator26 = new System.Windows.Forms.ToolStripSeparator();
+            this.اضافةالموظفينللفروعToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
             this.Doctors_Center = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
@@ -105,6 +107,11 @@
             this.Receiption = new System.Windows.Forms.ToolStripDropDownButton();
             this.Teicket = new System.Windows.Forms.ToolStripMenuItem();
             this.Btn_Exit = new System.Windows.Forms.ToolStripButton();
+
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -129,6 +136,7 @@
             this.toolStrip1.Size = new System.Drawing.Size(1080, 116);
             this.toolStrip1.TabIndex = 6;
             this.toolStrip1.Text = "toolStrip1";
+            //this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
             // 
             // Main_data
             // 
@@ -235,7 +243,9 @@
             this.السلفياتToolStripMenuItem,
             this.toolStripSeparator8,
             this.Sarf_Mortbat,
-            this.Add_Account});
+            this.Add_Account,
+            this.toolStripSeparator26,
+            this.اضافةالموظفينللفروعToolStripMenuItem});
             this.Employee_manage.Image = ((System.Drawing.Image)(resources.GetObject("Employee_manage.Image")));
             this.Employee_manage.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Employee_manage.Name = "Employee_manage";
@@ -283,6 +293,18 @@
             this.Add_Account.Size = new System.Drawing.Size(255, 28);
             this.Add_Account.Text = "إنشاء حساب للموظفين";
             this.Add_Account.Click += new System.EventHandler(this.إنشاءحسابللموظفينToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator26
+            // 
+            this.toolStripSeparator26.Name = "toolStripSeparator26";
+            this.toolStripSeparator26.Size = new System.Drawing.Size(252, 6);
+            // 
+            // اضافةالموظفينللفروعToolStripMenuItem
+            // 
+            this.اضافةالموظفينللفروعToolStripMenuItem.Name = "اضافةالموظفينللفروعToolStripMenuItem";
+            this.اضافةالموظفينللفروعToolStripMenuItem.Size = new System.Drawing.Size(255, 28);
+            this.اضافةالموظفينللفروعToolStripMenuItem.Text = "اضافة الموظفين للفروع";
+            //this.اضافةالموظفينللفروعToolStripMenuItem.Click += new System.EventHandler(this.اضافةالموظفينللفروعToolStripMenuItem_Click);
             // 
             // toolStripSeparator14
             // 
@@ -770,6 +792,39 @@
             this.Btn_Exit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.Btn_Exit.Click += new System.EventHandler(this.Btn_Exit_Click);
             // 
+
+
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(206, 480);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(93, 32);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "label2";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(668, 474);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(281, 32);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "welcome to branche";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(12, 483);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(177, 32);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "USER NAME";
+            // 
+
             // Frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -777,6 +832,9 @@
             this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(1080, 515);
             this.ControlBox = false;
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.toolStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Frm_Main";
@@ -868,5 +926,10 @@
         private System.Windows.Forms.ToolStripMenuItem Report_PaySupplier;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator25;
         public System.Windows.Forms.ToolStripMenuItem pay_company;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator26;
+        private System.Windows.Forms.ToolStripMenuItem اضافةالموظفينللفروعToolStripMenuItem;
     }
 }
