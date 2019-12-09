@@ -13,11 +13,12 @@ namespace Laboratory.PL
 {
     public partial class Frm_ReportPaySuppliers : Form
     {
+        Suppliers Suppliers = new Suppliers();
+
         public Frm_ReportPaySuppliers()
         {
-            Suppliers suppliers = new Suppliers();
             InitializeComponent();
-            dataGridViewList.DataSource = suppliers.Report_PaySupplier();
+            dataGridViewList.DataSource = Suppliers.Report_PaySupplier();
             Calc();
         }
 
@@ -34,9 +35,24 @@ namespace Laboratory.PL
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
-            dt = s.Search_PaySupplier(textBox1.Text);
-            dataGridViewList.DataSource = dt;
-            calc();
+
+            try
+            {
+                dt.Clear();
+                dt = Suppliers.Search_PaySupplier(textBox1.Text);
+                dataGridViewList.DataSource = dt;
+                Calc();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                dt.Dispose();
+            }
         }
     }
 }
