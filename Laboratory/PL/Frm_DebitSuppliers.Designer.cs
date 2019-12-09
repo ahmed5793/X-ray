@@ -54,11 +54,11 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Yellow;
             this.label2.Location = new System.Drawing.Point(220, 409);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(240, 32);
+            this.label2.Size = new System.Drawing.Size(239, 31);
             this.label2.TabIndex = 28;
             this.label2.Text = "إجمالى المديونية الموردين";
             // 
@@ -93,6 +93,7 @@
             this.Name = "Frm_DebitSuppliers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "مدوينية الموردين";
+            this.Load += new System.EventHandler(this.Frm_DebitSuppliers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDebit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

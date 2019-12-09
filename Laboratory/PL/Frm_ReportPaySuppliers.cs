@@ -34,25 +34,13 @@ namespace Laboratory.PL
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
 
-            try
-            {
-                dt.Clear();
-                dt = Suppliers.Search_PaySupplier(textBox1.Text);
-                dataGridViewList.DataSource = dt;
-                Calc();
+           
+        }
 
-            }
-            catch (Exception ex)
-            {
+        private void Frm_ReportPaySuppliers_Load(object sender, EventArgs e)
+        {
 
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                dt.Dispose();
-            }
         }
     }
 }

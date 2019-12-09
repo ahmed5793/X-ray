@@ -90,5 +90,77 @@ namespace Laboratory.BL
 
 
         }
+        internal DataTable selectCompanyRent()
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            dt = da.selected("selectCompanyRent", null);
+            da.close();
+            return dt;
+        }
+        internal void addPayCompany(int ID_company, decimal pay, decimal rent, DateTime pay_date, int id_ticket, int IDStock)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[6];
+            param[0] = new SqlParameter("@ID_company", SqlDbType.Int);
+            param[0].Value = ID_company;
+
+            param[1] = new SqlParameter("@pay", SqlDbType.Decimal);
+            param[1].Value = pay;
+            param[2] = new SqlParameter("@rent", SqlDbType.Decimal);
+            param[2].Value = rent;
+            param[3] = new SqlParameter("@date_pay", SqlDbType.DateTime);
+            param[3].Value = pay_date;
+            param[4] = new SqlParameter("@id_ticket", SqlDbType.Int);
+            param[4].Value = id_ticket;
+            param[5] = new SqlParameter("@IDStock", SqlDbType.Int);
+            param[5].Value = IDStock;
+
+            da.excutequery("addPayCompany", param);
+            da.close();
+        }
+        internal DataTable selectOneCompanytRent(int id_company)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            DataTable dt = new DataTable();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@id_company", SqlDbType.Int);
+            param[0].Value = id_company;
+            dt = da.selected("selectOneCompanytRent", param);
+            da.close();
+            return dt;
+
+
+        }
+        internal DataTable SelectRentCompoCompany()
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            dt = da.selected("SelectRentCompoCompany", null);
+            da.close();
+            return dt;
+        }
+        internal DataTable searchOneCompanytRent(string id ,int id_company)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            DataTable dt = new DataTable();
+            da.open();
+            SqlParameter[] param = new SqlParameter[2];
+            param[0] = new SqlParameter("@id", SqlDbType.NVarChar,50);
+            param[0].Value = id;
+            param[1] = new SqlParameter("@id_company", SqlDbType.Int);
+            param[1].Value = id_company;
+            dt = da.selected("searchOneCompanytRent", param);
+            da.close();
+            return dt;
+
+
+        }
     }
 }
