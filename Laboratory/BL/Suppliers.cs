@@ -185,20 +185,23 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
-        internal void AddPaySuppliers(int id_Inform, int id_sup, decimal pay, DateTime date)
+        internal void AddPaySuppliers(int id_Inform, int id_sup, decimal pay, DateTime date, int Id_stock , string salesMan)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[4];
+            SqlParameter[] param = new SqlParameter[6];
             param[0] = new SqlParameter("@id_Information", SqlDbType.Int);
             param[0].Value = id_Inform;
             param[1] = new SqlParameter("@id_Supp", SqlDbType.Int);
             param[1].Value = id_sup;
             param[2] = new SqlParameter("@pay", SqlDbType.Decimal);
             param[2].Value = pay;
-
             param[3] = new SqlParameter("@date", SqlDbType.DateTime);
             param[3].Value = date;
+            param[4] = new SqlParameter("@Id_stock", SqlDbType.Int);
+            param[4].Value = Id_stock;
+            param[5] = new SqlParameter("@sales_man", SqlDbType.NVarChar,50);
+            param[5].Value = salesMan;
             da.excutequery("AddPaySuppliers", param);
             da.close();
 

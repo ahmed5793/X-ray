@@ -124,6 +124,7 @@
     <Compile Include="BL\Employee.cs" />
     <Compile Include="BL\ItemsXRaya.cs" />
     <Compile Include="BL\Masrofat.cs" />
+    <Compile Include="BL\Orders.cs" />
     <Compile Include="BL\Product.cs" />
     <Compile Include="BL\Stock.cs" />
     <Compile Include="BL\Store.cs" />
@@ -281,6 +282,12 @@
     </Compile>
     <Compile Include="PL\Frm_MasrofGender.designer.cs">
       <DependentUpon>Frm_MasrofGender.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Frm_Order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_Order.Designer.cs">
+      <DependentUpon>Frm_Order.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Frm_PayClient.cs">
       <SubType>Form</SubType>
@@ -448,6 +455,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_MasrofGender.resx">
       <DependentUpon>Frm_MasrofGender.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_Order.resx">
+      <DependentUpon>Frm_Order.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_PayClient.resx">
       <DependentUpon>Frm_PayClient.cs</DependentUpon>

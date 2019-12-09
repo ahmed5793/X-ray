@@ -31,6 +31,7 @@ namespace Laboratory.PL
             comboBox1.DataSource = Suppliers.Combo_SupplierRent();
             comboBox1.DisplayMember = "Name";
             comboBox1.ValueMember = "Sup_id";
+            Txt_sales.Text = Program.salesman;
 
             txt_prise.Enabled = false;
             comboBox1.Enabled = false;
@@ -139,8 +140,9 @@ namespace Laboratory.PL
                                 MessageBox.Show("رصيد الخزنة الحالى غير كافى لشراء هذه الفاتورة");
                                 return;
                             }
-                            Suppliers.AddPaySuppliers(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value), Convert.ToInt32(comboBox1.SelectedValue), Convert.ToDecimal(dataGridView1.CurrentRow.Cells[2].Value)
-                               , dateTimePicker1.Value);
+                            Suppliers.AddPaySuppliers(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value),
+                                Convert.ToInt32(comboBox1.SelectedValue), Convert.ToDecimal(dataGridView1.CurrentRow.Cells[2].Value)
+                               , dateTimePicker1.Value,Convert.ToInt32(cmb_Stock.SelectedValue),Txt_sales.Text);
                             Stock.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(dataGridView1.CurrentRow.Cells[2].Value), dateTimePicker1.Value, comboBox1.Text, comboBox1.Text + " مدفوعات مورد");
 
                             MessageBox.Show("تم دفع المبلغ بنجاح");
@@ -177,10 +179,13 @@ namespace Laboratory.PL
                                 return;
                             }
 
-                            Suppliers.AddPaySuppliers(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value), Convert.ToInt32(comboBox1.SelectedValue), Convert.ToDecimal(txt_prise.Text)
-                               , dateTimePicker1.Value);
+                            Suppliers.AddPaySuppliers(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value),
+                                Convert.ToInt32(comboBox1.SelectedValue), Convert.ToDecimal(dataGridView1.CurrentRow.Cells[2].Value)
+                               , dateTimePicker1.Value, Convert.ToInt32(cmb_Stock.SelectedValue), Txt_sales.Text);
                             MessageBox.Show("تم دفع المبلغ بنجاح");
-                            Stock.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_prise.Text), dateTimePicker1.Value, comboBox1.Text,  comboBox1.Text + " مدفوعات مورد");
+
+                            Stock.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_prise.Text), 
+                                dateTimePicker1.Value, Txt_sales.Text,  comboBox1.Text + " مدفوعات مورد");
                             
                             dataGridView1.DataSource = Suppliers.SelectOneSuppliersMony(Convert.ToInt32(comboBox1.SelectedValue));
 
@@ -222,6 +227,10 @@ namespace Laboratory.PL
                 e.Handled = true;
 
             }
+        }
+
+        private void Frm_PaySuppliers_Load(object sender, EventArgs e)
+        {
         }
     }
 }

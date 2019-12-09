@@ -278,5 +278,11 @@ namespace Laboratory.PL
             Frm_PayCompany pc = new Frm_PayCompany();
             pc.ShowDialog();
         }
+
+        private void ConsumingProduct_Click(object sender, EventArgs e)
+        {
+            Frm_Order frm_Order = new Frm_Order();
+            frm_Order.ShowDialog();
+        }
     }
 }
