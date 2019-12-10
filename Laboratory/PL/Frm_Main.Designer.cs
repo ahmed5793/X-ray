@@ -47,6 +47,7 @@
             this.السلفياتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.Sarf_Mortbat = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator27 = new System.Windows.Forms.ToolStripSeparator();
             this.Add_Account = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator26 = new System.Windows.Forms.ToolStripSeparator();
             this.AddEmployeeBranches = new System.Windows.Forms.ToolStripMenuItem();
@@ -110,7 +111,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.toolStripSeparator27 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -284,6 +284,11 @@
             this.Sarf_Mortbat.Size = new System.Drawing.Size(255, 28);
             this.Sarf_Mortbat.Text = "صرف المرتبات للموظفين";
             this.Sarf_Mortbat.Click += new System.EventHandler(this.Sarf_Mortbat_Click);
+            // 
+            // toolStripSeparator27
+            // 
+            this.toolStripSeparator27.Name = "toolStripSeparator27";
+            this.toolStripSeparator27.Size = new System.Drawing.Size(252, 6);
             // 
             // Add_Account
             // 
@@ -674,6 +679,7 @@
             this.PurshaseProduct.Name = "PurshaseProduct";
             this.PurshaseProduct.Size = new System.Drawing.Size(311, 28);
             this.PurshaseProduct.Text = "شراء أصناف";
+            this.PurshaseProduct.Click += new System.EventHandler(this.PurshaseProduct_Click);
             // 
             // toolStripSeparator20
             // 
@@ -776,7 +782,7 @@
             this.Teicket.Image = ((System.Drawing.Image)(resources.GetObject("Teicket.Image")));
             this.Teicket.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Teicket.Name = "Teicket";
-            this.Teicket.Size = new System.Drawing.Size(239, 82);
+            this.Teicket.Size = new System.Drawing.Size(226, 82);
             this.Teicket.Text = "شاشة الحجز";
             this.Teicket.Click += new System.EventHandler(this.Teicket_Click);
             // 
@@ -821,11 +827,6 @@
             this.label4.Size = new System.Drawing.Size(177, 32);
             this.label4.TabIndex = 10;
             this.label4.Text = "USER NAME";
-            // 
-            // toolStripSeparator27
-            // 
-            this.toolStripSeparator27.Name = "toolStripSeparator27";
-            this.toolStripSeparator27.Size = new System.Drawing.Size(252, 6);
             // 
             // Frm_Main
             // 

@@ -296,5 +296,11 @@ namespace Laboratory.PL
             Frm_AddEmployeeBranch employeeBranch = new Frm_AddEmployeeBranch();
             employeeBranch.ShowDialog();
         }
+
+        private void PurshaseProduct_Click(object sender, EventArgs e)
+        {
+            Frm_Purshasing frm_Purshasing = new Frm_Purshasing();
+            frm_Purshasing.ShowDialog();
+        }
     }
 }

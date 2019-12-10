@@ -142,7 +142,7 @@ namespace Laboratory.PL
                 else if(DataGridView1.Rows.Count>0)
                 {
                     Orders.Add_Order(dateTimePicker1.Value,txt_note.Text,txt_sales.Text);
-                    txt_num.Text = Orders.Last_IdOrder().ToString(); ;
+                    txt_num.Text = (Orders.Last_IdOrder().Rows[0][0]).ToString(); 
                     for (int i = 0; i < DataGridView1.Rows.Count; i++)
                     {
                         Orders.Add_OrderDetails(Convert.ToInt32(txt_num.Text),Convert.ToInt32(cmb_Store.SelectedValue),
@@ -153,10 +153,10 @@ namespace Laboratory.PL
                 } 
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                MessageBox.Show(ex.Message);
             }
         }
 
