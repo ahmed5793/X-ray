@@ -175,6 +175,7 @@ namespace Laboratory.PL
         private void Frm_Main_Load(object sender, EventArgs e)
         {
             label2.Text = Program.salesman;
+            label1.Text = u.SelectUserBranch(label2.Text).Rows[0][1].ToString();
         }
 
         private void AddStore_Click(object sender, EventArgs e)
