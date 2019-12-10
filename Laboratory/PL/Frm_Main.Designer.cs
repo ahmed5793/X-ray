@@ -44,13 +44,14 @@
             this.Employee_manage = new System.Windows.Forms.ToolStripMenuItem();
             this.Add_Employee = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
-            this.السلفياتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
-            this.Sarf_Mortbat = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator27 = new System.Windows.Forms.ToolStripSeparator();
-            this.Add_Account = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator26 = new System.Windows.Forms.ToolStripSeparator();
             this.AddEmployeeBranches = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator28 = new System.Windows.Forms.ToolStripSeparator();
+            this.Add_Account = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator29 = new System.Windows.Forms.ToolStripSeparator();
+            this.Sarf_Mortbat = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator30 = new System.Windows.Forms.ToolStripSeparator();
+            this.السلفياتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator27 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
             this.Doctors_Center = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
@@ -112,6 +113,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.Management_Ticket = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -162,7 +165,7 @@
             this.Branches_Manage.Image = ((System.Drawing.Image)(resources.GetObject("Branches_Manage.Image")));
             this.Branches_Manage.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Branches_Manage.Name = "Branches_Manage";
-            this.Branches_Manage.Size = new System.Drawing.Size(238, 82);
+            this.Branches_Manage.Size = new System.Drawing.Size(239, 82);
             this.Branches_Manage.Text = "إدارة الفروع";
             // 
             // Add_Branche
@@ -239,13 +242,14 @@
             this.Employee_manage.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Add_Employee,
             this.toolStripSeparator13,
-            this.السلفياتToolStripMenuItem,
-            this.toolStripSeparator8,
-            this.Sarf_Mortbat,
-            this.toolStripSeparator27,
+            this.AddEmployeeBranches,
+            this.toolStripSeparator28,
             this.Add_Account,
-            this.toolStripSeparator26,
-            this.AddEmployeeBranches});
+            this.toolStripSeparator29,
+            this.Sarf_Mortbat,
+            this.toolStripSeparator30,
+            this.السلفياتToolStripMenuItem,
+            this.toolStripSeparator27});
             this.Employee_manage.Image = ((System.Drawing.Image)(resources.GetObject("Employee_manage.Image")));
             this.Employee_manage.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Employee_manage.Name = "Employee_manage";
@@ -265,31 +269,18 @@
             this.toolStripSeparator13.Name = "toolStripSeparator13";
             this.toolStripSeparator13.Size = new System.Drawing.Size(252, 6);
             // 
-            // السلفياتToolStripMenuItem
+            // AddEmployeeBranches
             // 
-            this.السلفياتToolStripMenuItem.BackColor = System.Drawing.Color.SandyBrown;
-            this.السلفياتToolStripMenuItem.Name = "السلفياتToolStripMenuItem";
-            this.السلفياتToolStripMenuItem.Size = new System.Drawing.Size(255, 28);
-            this.السلفياتToolStripMenuItem.Text = "السلفيات";
-            this.السلفياتToolStripMenuItem.Click += new System.EventHandler(this.السلفياتToolStripMenuItem_Click);
+            this.AddEmployeeBranches.BackColor = System.Drawing.Color.Chocolate;
+            this.AddEmployeeBranches.Name = "AddEmployeeBranches";
+            this.AddEmployeeBranches.Size = new System.Drawing.Size(255, 28);
+            this.AddEmployeeBranches.Text = "اضافة الموظفين للفروع";
+            this.AddEmployeeBranches.Click += new System.EventHandler(this.اضافةالموظفينللفروعToolStripMenuItem_Click);
             // 
-            // toolStripSeparator8
+            // toolStripSeparator28
             // 
-            this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(252, 6);
-            // 
-            // Sarf_Mortbat
-            // 
-            this.Sarf_Mortbat.BackColor = System.Drawing.Color.SandyBrown;
-            this.Sarf_Mortbat.Name = "Sarf_Mortbat";
-            this.Sarf_Mortbat.Size = new System.Drawing.Size(255, 28);
-            this.Sarf_Mortbat.Text = "صرف المرتبات للموظفين";
-            this.Sarf_Mortbat.Click += new System.EventHandler(this.Sarf_Mortbat_Click);
-            // 
-            // toolStripSeparator27
-            // 
-            this.toolStripSeparator27.Name = "toolStripSeparator27";
-            this.toolStripSeparator27.Size = new System.Drawing.Size(252, 6);
+            this.toolStripSeparator28.Name = "toolStripSeparator28";
+            this.toolStripSeparator28.Size = new System.Drawing.Size(252, 6);
             // 
             // Add_Account
             // 
@@ -299,18 +290,36 @@
             this.Add_Account.Text = "إنشاء حساب للموظفين";
             this.Add_Account.Click += new System.EventHandler(this.إنشاءحسابللموظفينToolStripMenuItem_Click);
             // 
-            // toolStripSeparator26
+            // toolStripSeparator29
             // 
-            this.toolStripSeparator26.Name = "toolStripSeparator26";
-            this.toolStripSeparator26.Size = new System.Drawing.Size(252, 6);
+            this.toolStripSeparator29.Name = "toolStripSeparator29";
+            this.toolStripSeparator29.Size = new System.Drawing.Size(252, 6);
             // 
-            // AddEmployeeBranches
+            // Sarf_Mortbat
             // 
-            this.AddEmployeeBranches.BackColor = System.Drawing.Color.Chocolate;
-            this.AddEmployeeBranches.Name = "AddEmployeeBranches";
-            this.AddEmployeeBranches.Size = new System.Drawing.Size(255, 28);
-            this.AddEmployeeBranches.Text = "اضافة الموظفين للفروع";
-            this.AddEmployeeBranches.Click += new System.EventHandler(this.اضافةالموظفينللفروعToolStripMenuItem_Click);
+            this.Sarf_Mortbat.BackColor = System.Drawing.Color.SandyBrown;
+            this.Sarf_Mortbat.Name = "Sarf_Mortbat";
+            this.Sarf_Mortbat.Size = new System.Drawing.Size(255, 28);
+            this.Sarf_Mortbat.Text = "صرف المرتبات للموظفين";
+            this.Sarf_Mortbat.Click += new System.EventHandler(this.Sarf_Mortbat_Click);
+            // 
+            // toolStripSeparator30
+            // 
+            this.toolStripSeparator30.Name = "toolStripSeparator30";
+            this.toolStripSeparator30.Size = new System.Drawing.Size(252, 6);
+            // 
+            // السلفياتToolStripMenuItem
+            // 
+            this.السلفياتToolStripMenuItem.BackColor = System.Drawing.Color.SandyBrown;
+            this.السلفياتToolStripMenuItem.Name = "السلفياتToolStripMenuItem";
+            this.السلفياتToolStripMenuItem.Size = new System.Drawing.Size(255, 28);
+            this.السلفياتToolStripMenuItem.Text = "السلفيات";
+            this.السلفياتToolStripMenuItem.Click += new System.EventHandler(this.السلفياتToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator27
+            // 
+            this.toolStripSeparator27.Name = "toolStripSeparator27";
+            this.toolStripSeparator27.Size = new System.Drawing.Size(252, 6);
             // 
             // toolStripSeparator14
             // 
@@ -767,7 +776,9 @@
             // Receiption
             // 
             this.Receiption.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.Teicket});
+            this.Teicket,
+            this.toolStripSeparator8,
+            this.Management_Ticket});
             this.Receiption.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Receiption.Image = ((System.Drawing.Image)(resources.GetObject("Receiption.Image")));
             this.Receiption.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
@@ -783,7 +794,7 @@
             this.Teicket.Image = ((System.Drawing.Image)(resources.GetObject("Teicket.Image")));
             this.Teicket.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Teicket.Name = "Teicket";
-            this.Teicket.Size = new System.Drawing.Size(226, 82);
+            this.Teicket.Size = new System.Drawing.Size(239, 82);
             this.Teicket.Text = "شاشة الحجز";
             this.Teicket.Click += new System.EventHandler(this.Teicket_Click);
             // 
@@ -838,6 +849,22 @@
             this.label1.Size = new System.Drawing.Size(58, 32);
             this.label1.TabIndex = 11;
             this.label1.Text = "bra";
+            // 
+            // Management_Ticket
+            // 
+            this.Management_Ticket.BackColor = System.Drawing.Color.Brown;
+            this.Management_Ticket.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Management_Ticket.Image = ((System.Drawing.Image)(resources.GetObject("Management_Ticket.Image")));
+            this.Management_Ticket.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.Management_Ticket.Name = "Management_Ticket";
+            this.Management_Ticket.Size = new System.Drawing.Size(239, 82);
+            this.Management_Ticket.Text = "إدارة الحجز";
+            this.Management_Ticket.Click += new System.EventHandler(this.Management_Ticket_Click);
+            // 
+            // toolStripSeparator8
+            // 
+            this.toolStripSeparator8.Name = "toolStripSeparator8";
+            this.toolStripSeparator8.Size = new System.Drawing.Size(236, 6);
             // 
             // Frm_Main
             // 
@@ -927,7 +954,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripMenuItem AddSupplier;
         private System.Windows.Forms.ToolStripButton Btn_Exit;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
         public System.Windows.Forms.ToolStripMenuItem Sarf_Mortbat;
         public System.Windows.Forms.ToolStripMenuItem Add_Account;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
@@ -944,9 +970,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator26;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator27;
         public System.Windows.Forms.ToolStripMenuItem AddEmployeeBranches;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator28;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator29;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator30;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
+        public System.Windows.Forms.ToolStripMenuItem Management_Ticket;
     }
 }
