@@ -396,18 +396,27 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
-        internal DataTable VildateEmployeeBranch(int id_branch, int idemployee)
+        internal DataTable SelectEmpRoleCompo()
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            dt = da.selected("SelectEmpRoleCompo", null);
+            da.close();
+            return dt;
+        }
+        internal DataTable VildateEmployeeBranch( int idemployee)
         {
             DataAccessLayer da = new DataAccessLayer();
             DataTable dt = new DataTable();
             da.open();
      
-            SqlParameter[] param = new SqlParameter[2];
-            param[0] = new SqlParameter("@id_branch", SqlDbType.Int);
-            param[0].Value = id_branch;
+            SqlParameter[] param = new SqlParameter[1];
+     
 
-            param[1] = new SqlParameter("@id_employee", SqlDbType.Int);
-            param[1].Value = idemployee;
+            param[0] = new SqlParameter("@id_employee", SqlDbType.Int);
+            param[0].Value = idemployee;
 
 
             dt = da.selected("VildateEmployeeBranch", param);

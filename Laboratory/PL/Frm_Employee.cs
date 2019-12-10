@@ -44,7 +44,7 @@ namespace Laboratory.PL
             }
             clears();
             dataGridView1.DataSource = E.SelectEmployee();
-            cmb_department.DataSource = E.SelectEmpRole();
+            cmb_department.DataSource = E.SelectEmpRoleCompo();
             cmb_department.DisplayMember = "Roles";
             cmb_department.ValueMember = "ID_EmpRole";
             
@@ -66,7 +66,10 @@ namespace Laboratory.PL
         {
             Frm_GenderJob fg = new Frm_GenderJob();
             fg.ShowDialog();
+           
             cmb_department.DataSource = E.SelectEmpRole();
+            cmb_department.DisplayMember = "Roles";
+            cmb_department.ValueMember = "ID_EmpRole";
             fg.Dispose();
         }
 

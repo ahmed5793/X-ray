@@ -45,7 +45,7 @@ namespace Laboratory.PL
                 return;
             }
             dt.Clear();
-            dt = E.VildateEmployeeBranch(Convert.ToInt32(cmb_branch.SelectedValue), Convert.ToInt32(cmb_employee.SelectedValue));
+            dt = E.VildateEmployeeBranch( Convert.ToInt32(cmb_employee.SelectedValue));
             if (dt.Rows.Count>0)
             {
                 MessageBox.Show("لايمكن تسجيل الموظف اكثر من فرع");
