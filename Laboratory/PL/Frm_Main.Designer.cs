@@ -32,6 +32,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Main));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.Main_data = new System.Windows.Forms.ToolStripDropDownButton();
             this.Branches_Manage = new System.Windows.Forms.ToolStripMenuItem();
             this.Add_Branche = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,13 +48,11 @@
             this.Employee_manage = new System.Windows.Forms.ToolStripMenuItem();
             this.Add_Employee = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
+            this.AddEmployeeBranches = new System.Windows.Forms.ToolStripMenuItem();
             this.السلفياتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.Sarf_Mortbat = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator27 = new System.Windows.Forms.ToolStripSeparator();
             this.Add_Account = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator26 = new System.Windows.Forms.ToolStripSeparator();
-            this.AddEmployeeBranches = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
             this.Doctors_Center = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
@@ -108,10 +110,9 @@
             this.Receiption = new System.Windows.Forms.ToolStripDropDownButton();
             this.Teicket = new System.Windows.Forms.ToolStripMenuItem();
             this.Btn_Exit = new System.Windows.Forms.ToolStripButton();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.toolStripSeparator28 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator29 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator30 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -136,6 +137,46 @@
             this.toolStrip1.Size = new System.Drawing.Size(1080, 116);
             this.toolStrip1.TabIndex = 6;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(206, 480);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(93, 32);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "label2";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(668, 474);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(281, 32);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "welcome to branche";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(12, 483);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(177, 32);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "USER NAME";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(993, 474);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 32);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "bra";
             // 
             // Main_data
             // 
@@ -239,13 +280,14 @@
             this.Employee_manage.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Add_Employee,
             this.toolStripSeparator13,
-            this.السلفياتToolStripMenuItem,
-            this.toolStripSeparator8,
-            this.Sarf_Mortbat,
-            this.toolStripSeparator27,
+            this.AddEmployeeBranches,
+            this.toolStripSeparator28,
             this.Add_Account,
-            this.toolStripSeparator26,
-            this.AddEmployeeBranches});
+            this.toolStripSeparator29,
+            this.Sarf_Mortbat,
+            this.toolStripSeparator30,
+            this.السلفياتToolStripMenuItem,
+            this.toolStripSeparator27});
             this.Employee_manage.Image = ((System.Drawing.Image)(resources.GetObject("Employee_manage.Image")));
             this.Employee_manage.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Employee_manage.Name = "Employee_manage";
@@ -265,6 +307,14 @@
             this.toolStripSeparator13.Name = "toolStripSeparator13";
             this.toolStripSeparator13.Size = new System.Drawing.Size(252, 6);
             // 
+            // AddEmployeeBranches
+            // 
+            this.AddEmployeeBranches.BackColor = System.Drawing.Color.Chocolate;
+            this.AddEmployeeBranches.Name = "AddEmployeeBranches";
+            this.AddEmployeeBranches.Size = new System.Drawing.Size(255, 28);
+            this.AddEmployeeBranches.Text = "اضافة الموظفين للفروع";
+            this.AddEmployeeBranches.Click += new System.EventHandler(this.اضافةالموظفينللفروعToolStripMenuItem_Click);
+            // 
             // السلفياتToolStripMenuItem
             // 
             this.السلفياتToolStripMenuItem.BackColor = System.Drawing.Color.SandyBrown;
@@ -272,11 +322,6 @@
             this.السلفياتToolStripMenuItem.Size = new System.Drawing.Size(255, 28);
             this.السلفياتToolStripMenuItem.Text = "السلفيات";
             this.السلفياتToolStripMenuItem.Click += new System.EventHandler(this.السلفياتToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator8
-            // 
-            this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(252, 6);
             // 
             // Sarf_Mortbat
             // 
@@ -298,19 +343,6 @@
             this.Add_Account.Size = new System.Drawing.Size(255, 28);
             this.Add_Account.Text = "إنشاء حساب للموظفين";
             this.Add_Account.Click += new System.EventHandler(this.إنشاءحسابللموظفينToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator26
-            // 
-            this.toolStripSeparator26.Name = "toolStripSeparator26";
-            this.toolStripSeparator26.Size = new System.Drawing.Size(252, 6);
-            // 
-            // AddEmployeeBranches
-            // 
-            this.AddEmployeeBranches.BackColor = System.Drawing.Color.Chocolate;
-            this.AddEmployeeBranches.Name = "AddEmployeeBranches";
-            this.AddEmployeeBranches.Size = new System.Drawing.Size(255, 28);
-            this.AddEmployeeBranches.Text = "اضافة الموظفين للفروع";
-            this.AddEmployeeBranches.Click += new System.EventHandler(this.اضافةالموظفينللفروعToolStripMenuItem_Click);
             // 
             // toolStripSeparator14
             // 
@@ -799,45 +831,20 @@
             this.Btn_Exit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.Btn_Exit.Click += new System.EventHandler(this.Btn_Exit_Click);
             // 
-            // label2
+            // toolStripSeparator28
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(206, 480);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 32);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "label2";
+            this.toolStripSeparator28.Name = "toolStripSeparator28";
+            this.toolStripSeparator28.Size = new System.Drawing.Size(252, 6);
             // 
-            // label3
+            // toolStripSeparator29
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(668, 474);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(281, 32);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "welcome to branche";
+            this.toolStripSeparator29.Name = "toolStripSeparator29";
+            this.toolStripSeparator29.Size = new System.Drawing.Size(252, 6);
             // 
-            // label4
+            // toolStripSeparator30
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 483);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(177, 32);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "USER NAME";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(993, 474);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 32);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "bra";
+            this.toolStripSeparator30.Name = "toolStripSeparator30";
+            this.toolStripSeparator30.Size = new System.Drawing.Size(252, 6);
             // 
             // Frm_Main
             // 
@@ -927,7 +934,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripMenuItem AddSupplier;
         private System.Windows.Forms.ToolStripButton Btn_Exit;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
         public System.Windows.Forms.ToolStripMenuItem Sarf_Mortbat;
         public System.Windows.Forms.ToolStripMenuItem Add_Account;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
@@ -944,9 +950,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator26;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator27;
         public System.Windows.Forms.ToolStripMenuItem AddEmployeeBranches;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator28;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator29;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator30;
     }
 }
