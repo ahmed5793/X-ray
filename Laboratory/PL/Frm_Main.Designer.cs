@@ -49,7 +49,7 @@
             this.Sarf_Mortbat = new System.Windows.Forms.ToolStripMenuItem();
             this.Add_Account = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator26 = new System.Windows.Forms.ToolStripSeparator();
-            this.اضافةالموظفينللفروعToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AddEmployeeBranches = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
             this.Doctors_Center = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
@@ -107,11 +107,10 @@
             this.Receiption = new System.Windows.Forms.ToolStripDropDownButton();
             this.Teicket = new System.Windows.Forms.ToolStripMenuItem();
             this.Btn_Exit = new System.Windows.Forms.ToolStripButton();
-
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-
+            this.toolStripSeparator27 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -136,7 +135,6 @@
             this.toolStrip1.Size = new System.Drawing.Size(1080, 116);
             this.toolStrip1.TabIndex = 6;
             this.toolStrip1.Text = "toolStrip1";
-            //this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
             // 
             // Main_data
             // 
@@ -243,9 +241,10 @@
             this.السلفياتToolStripMenuItem,
             this.toolStripSeparator8,
             this.Sarf_Mortbat,
+            this.toolStripSeparator27,
             this.Add_Account,
             this.toolStripSeparator26,
-            this.اضافةالموظفينللفروعToolStripMenuItem});
+            this.AddEmployeeBranches});
             this.Employee_manage.Image = ((System.Drawing.Image)(resources.GetObject("Employee_manage.Image")));
             this.Employee_manage.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Employee_manage.Name = "Employee_manage";
@@ -299,12 +298,13 @@
             this.toolStripSeparator26.Name = "toolStripSeparator26";
             this.toolStripSeparator26.Size = new System.Drawing.Size(252, 6);
             // 
-            // اضافةالموظفينللفروعToolStripMenuItem
+            // AddEmployeeBranches
             // 
-            this.اضافةالموظفينللفروعToolStripMenuItem.Name = "اضافةالموظفينللفروعToolStripMenuItem";
-            this.اضافةالموظفينللفروعToolStripMenuItem.Size = new System.Drawing.Size(255, 28);
-            this.اضافةالموظفينللفروعToolStripMenuItem.Text = "اضافة الموظفين للفروع";
-            //this.اضافةالموظفينللفروعToolStripMenuItem.Click += new System.EventHandler(this.اضافةالموظفينللفروعToolStripMenuItem_Click);
+            this.AddEmployeeBranches.BackColor = System.Drawing.Color.Chocolate;
+            this.AddEmployeeBranches.Name = "AddEmployeeBranches";
+            this.AddEmployeeBranches.Size = new System.Drawing.Size(255, 28);
+            this.AddEmployeeBranches.Text = "اضافة الموظفين للفروع";
+            this.AddEmployeeBranches.Click += new System.EventHandler(this.اضافةالموظفينللفروعToolStripMenuItem_Click);
             // 
             // toolStripSeparator14
             // 
@@ -776,7 +776,7 @@
             this.Teicket.Image = ((System.Drawing.Image)(resources.GetObject("Teicket.Image")));
             this.Teicket.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Teicket.Name = "Teicket";
-            this.Teicket.Size = new System.Drawing.Size(226, 82);
+            this.Teicket.Size = new System.Drawing.Size(239, 82);
             this.Teicket.Text = "شاشة الحجز";
             this.Teicket.Click += new System.EventHandler(this.Teicket_Click);
             // 
@@ -792,8 +792,6 @@
             this.Btn_Exit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.Btn_Exit.Click += new System.EventHandler(this.Btn_Exit_Click);
             // 
-
-
             // label2
             // 
             this.label2.AutoSize = true;
@@ -824,7 +822,11 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "USER NAME";
             // 
-
+            // toolStripSeparator27
+            // 
+            this.toolStripSeparator27.Name = "toolStripSeparator27";
+            this.toolStripSeparator27.Size = new System.Drawing.Size(252, 6);
+            // 
             // Frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -930,6 +932,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator26;
-        private System.Windows.Forms.ToolStripMenuItem اضافةالموظفينللفروعToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator27;
+        public System.Windows.Forms.ToolStripMenuItem AddEmployeeBranches;
     }
 }

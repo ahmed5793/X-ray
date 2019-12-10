@@ -290,5 +290,11 @@ namespace Laboratory.PL
 
 
         }
+
+        private void اضافةالموظفينللفروعToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_AddEmployeeBranch employeeBranch = new Frm_AddEmployeeBranch();
+            employeeBranch.ShowDialog();
+        }
     }
 }
