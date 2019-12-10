@@ -14,7 +14,7 @@ namespace Laboratory.BL
         {
             DataAccessLayer DA = new DataAccessLayer();
             DA.open();
-            SqlParameter[] Param = new SqlParameter[4];
+            SqlParameter[] Param = new SqlParameter[3];
             Param[0] = new SqlParameter("@Date_Order", SqlDbType.DateTime);
             Param[0].Value = Date;
             Param[1] = new SqlParameter("@Discraption", SqlDbType.NVarChar,250);
