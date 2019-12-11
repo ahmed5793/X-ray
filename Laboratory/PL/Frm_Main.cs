@@ -175,7 +175,6 @@ namespace Laboratory.PL
         private void Frm_Main_Load(object sender, EventArgs e)
         {
             label2.Text = Program.salesman;
-            label1.Text = u.SelectUserBranch(label2.Text).Rows[0][1].ToString();
         }
 
         private void AddStore_Click(object sender, EventArgs e)
@@ -243,14 +242,12 @@ namespace Laboratory.PL
 
         private void Doctors_Center_Click(object sender, EventArgs e)
         {
-            Frm_DoctorOfCenter frm_DoctorOfCenter = new Frm_DoctorOfCenter();
-            frm_DoctorOfCenter.ShowDialog();
+ 
         }
 
         private void Techniqual_Click(object sender, EventArgs e)
         {
-            Frm_Techincal frm_Techincal = new Frm_Techincal();
-            frm_Techincal.ShowDialog();
+         
         }
 
         private void Pay_Customer_Click(object sender, EventArgs e)
@@ -308,6 +305,24 @@ namespace Laboratory.PL
         {
             Frm_ManagmentTickets frm_Managment = new Frm_ManagmentTickets();
             frm_Managment.ShowDialog();
+        }
+
+        private void إضافةدكتورToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_DoctorOfCenter frm_DoctorOfCenter = new Frm_DoctorOfCenter();
+            frm_DoctorOfCenter.ShowDialog();
+        }
+
+        private void Add_Technical_Click(object sender, EventArgs e)
+        {
+            Frm_Techincal frm_Techincal = new Frm_Techincal();
+            frm_Techincal.ShowDialog();
+        }
+
+        private void Validate_Users_Click(object sender, EventArgs e)
+        {
+            Validate_Users validate = new Validate_Users();
+            validate.ShowDialog();
         }
     }
 }

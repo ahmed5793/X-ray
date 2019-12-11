@@ -33,7 +33,7 @@ namespace Laboratory.PL
         {
             if (txt_name.Text == "")
             {
-                MessageBox.Show("");
+                MessageBox.Show("لا بد من كتابة التخصص");
                 return;
             }
             E.AddEmployeeRole(txt_name.Text);

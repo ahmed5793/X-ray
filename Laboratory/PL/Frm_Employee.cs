@@ -66,11 +66,7 @@ namespace Laboratory.PL
         {
             Frm_GenderJob fg = new Frm_GenderJob();
             fg.ShowDialog();
-           
-            cmb_department.DataSource = E.SelectEmpRole();
-            cmb_department.DisplayMember = "Roles";
-            cmb_department.ValueMember = "ID_EmpRole";
-            fg.Dispose();
+            cmb_department.DataSource = E.SelectEmpRoleCompo();
         }
 
         private void Frm_Employee_Load(object sender, EventArgs e)
@@ -114,7 +110,12 @@ namespace Laboratory.PL
                     return;
                    
                 }
-              
+                if (Txt_Salary.Text=="")
+                {
+                    MessageBox.Show("من فضلك قم بتحديد المرتب");
+                    Txt_Salary.Focus();
+                    return;
+                }
                 else
                 {
                     E.AddEmployee(txt_name.Text, Convert.ToDecimal(Txt_Salary.Text), dateTimePicker2.Value,
@@ -125,10 +126,10 @@ namespace Laboratory.PL
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                MessageBox.Show(ex.Message);
             }
         }
 
