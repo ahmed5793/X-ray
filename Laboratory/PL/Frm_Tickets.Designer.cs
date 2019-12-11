@@ -62,7 +62,6 @@
             this.cmb_items = new System.Windows.Forms.ComboBox();
             this.txt_IdTicket = new System.Windows.Forms.TextBox();
             this.txt_idcust = new System.Windows.Forms.TextBox();
-            this.dtb_visit = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dtb_kashf = new System.Windows.Forms.DateTimePicker();
@@ -97,6 +96,7 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.btn_print = new System.Windows.Forms.Button();
             this.btn_save = new System.Windows.Forms.Button();
+            this.dtb_visit = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -517,17 +517,6 @@
             this.txt_idcust.Text = "0";
             this.txt_idcust.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // dtb_visit
-            // 
-            this.dtb_visit.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtb_visit.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtb_visit.Location = new System.Drawing.Point(40, 15);
-            this.dtb_visit.Name = "dtb_visit";
-            this.dtb_visit.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dtb_visit.Size = new System.Drawing.Size(142, 26);
-            this.dtb_visit.TabIndex = 75;
-            this.dtb_visit.Value = new System.DateTime(2019, 12, 5, 0, 36, 0, 0);
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -805,12 +794,12 @@
             // 
             this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox4.Controls.Add(this.dtb_visit);
             this.groupBox4.Controls.Add(this.rdb_Compamy);
             this.groupBox4.Controls.Add(this.rdb_client);
             this.groupBox4.Controls.Add(this.cmb_Company);
             this.groupBox4.Controls.Add(this.label21);
             this.groupBox4.Controls.Add(this.label1);
-            this.groupBox4.Controls.Add(this.dtb_visit);
             this.groupBox4.Controls.Add(this.label6);
             this.groupBox4.Location = new System.Drawing.Point(18, 39);
             this.groupBox4.Name = "groupBox4";
@@ -962,6 +951,16 @@
             this.btn_save.UseVisualStyleBackColor = true;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
+            // dtb_visit
+            // 
+            this.dtb_visit.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtb_visit.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtb_visit.Location = new System.Drawing.Point(6, 18);
+            this.dtb_visit.Name = "dtb_visit";
+            this.dtb_visit.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dtb_visit.Size = new System.Drawing.Size(181, 26);
+            this.dtb_visit.TabIndex = 95;
+            // 
             // Frm_Tickets
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1024,7 +1023,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         public System.Windows.Forms.ComboBox cmb_items;
-        private System.Windows.Forms.DateTimePicker dtb_visit;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label17;
@@ -1075,5 +1073,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DateTimePicker dtb_visit;
     }
 }
