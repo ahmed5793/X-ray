@@ -208,6 +208,18 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
-     
+        internal DataTable TicketDetailsSelectTickets(int IDTickets)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@idTicket", SqlDbType.Int);
+            param[0].Value = IDTickets;
+            dt = da.selected("TicketDetailsSelectTickets", param);
+            da.close();
+            return dt;
+        }
     }
 }

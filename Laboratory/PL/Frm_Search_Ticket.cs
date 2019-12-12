@@ -24,10 +24,26 @@ namespace Laboratory.PL
             txt_username.Text = Program.salesman;
             dt = u.SelectUserBranch(txt_username.Text);
 
-             cmb_branches.DataSource = u.SelectUserBranch(txt_username.Text);
+            if (dt.Rows.Count > 0)
+            {
+                cmb_branches.DataSource = u.SelectUserBranch(txt_username.Text);
                 cmb_branches.DisplayMember = "Name";
                 cmb_branches.ValueMember = "Branch_ID";
+
+                 
+
             }
+            else
+            {
+                cmb_branches.DataSource = b.SelectCompBranches();
+                cmb_branches.DisplayMember = "Name";
+                cmb_branches.ValueMember = "Branch_ID";
+              
+
+
+
+            }
+        }
 
         private void Frm_Search_Ticket_Load(object sender, EventArgs e)
         {
