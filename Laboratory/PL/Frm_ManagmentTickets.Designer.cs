@@ -30,29 +30,23 @@
         {
             this.dgv_visit = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label_day = new System.Windows.Forms.Label();
             this.cmb_branches = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txt_username = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.ToDate = new System.Windows.Forms.DateTimePicker();
             this.FromDate = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txt_search = new System.Windows.Forms.TextBox();
             this.txt_rent = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label_day = new System.Windows.Forms.Label();
             this.txt_pay = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.rdb_NewPatient = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_visit)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -90,6 +84,18 @@
             this.groupBox1.Size = new System.Drawing.Size(932, 51);
             this.groupBox1.TabIndex = 99;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // label_day
+            // 
+            this.label_day.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label_day.AutoSize = true;
+            this.label_day.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_day.Location = new System.Drawing.Point(449, 12);
+            this.label_day.Name = "label_day";
+            this.label_day.Size = new System.Drawing.Size(36, 24);
+            this.label_day.TabIndex = 85;
+            this.label_day.Text = "فرع";
             // 
             // cmb_branches
             // 
@@ -140,24 +146,19 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.radioButton3);
-            this.groupBox2.Controls.Add(this.radioButton2);
-            this.groupBox2.Controls.Add(this.radioButton1);
-            this.groupBox2.Controls.Add(this.rdb_NewPatient);
             this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.ToDate);
             this.groupBox2.Controls.Add(this.FromDate);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.comboBox1);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.txt_search);
             this.groupBox2.Location = new System.Drawing.Point(12, 69);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(932, 150);
             this.groupBox2.TabIndex = 100;
             this.groupBox2.TabStop = false;
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // button1
             // 
@@ -171,17 +172,6 @@
             this.button1.Text = "بحث ";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(614, 21);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(94, 24);
-            this.label4.TabIndex = 112;
-            this.label4.Text = "بحث بالااسم";
             // 
             // ToDate
             // 
@@ -270,18 +260,6 @@
             this.label1.TabIndex = 106;
             this.label1.Text = "الشيفت";
             // 
-            // txt_search
-            // 
-            this.txt_search.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_search.Location = new System.Drawing.Point(365, 15);
-            this.txt_search.MaxLength = 3000;
-            this.txt_search.Name = "txt_search";
-            this.txt_search.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txt_search.Size = new System.Drawing.Size(233, 32);
-            this.txt_search.TabIndex = 104;
-            this.txt_search.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_search.TextChanged += new System.EventHandler(this.txt_phone_TextChanged);
-            // 
             // txt_rent
             // 
             this.txt_rent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -310,17 +288,6 @@
             this.label5.Text = "إجمالى المبيعات";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label_day
-            // 
-            this.label_day.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label_day.AutoSize = true;
-            this.label_day.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_day.Location = new System.Drawing.Point(449, 12);
-            this.label_day.Name = "label_day";
-            this.label_day.Size = new System.Drawing.Size(36, 24);
-            this.label_day.TabIndex = 85;
-            this.label_day.Text = "فرع";
-            // 
             // txt_pay
             // 
             this.txt_pay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -348,51 +315,6 @@
             this.label6.TabIndex = 103;
             this.label6.Text = "إجمالى النقدية";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // rdb_NewPatient
-            // 
-            this.rdb_NewPatient.AutoSize = true;
-            this.rdb_NewPatient.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdb_NewPatient.Location = new System.Drawing.Point(849, 15);
-            this.rdb_NewPatient.Name = "rdb_NewPatient";
-            this.rdb_NewPatient.Size = new System.Drawing.Size(76, 28);
-            this.rdb_NewPatient.TabIndex = 114;
-            this.rdb_NewPatient.Text = "التاريخ";
-            this.rdb_NewPatient.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(847, 79);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(78, 28);
-            this.radioButton1.TabIndex = 115;
-            this.radioButton1.Text = "الشيفت";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(825, 47);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(102, 28);
-            this.radioButton2.TabIndex = 116;
-            this.radioButton2.Text = "اسم العميل";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton3.Location = new System.Drawing.Point(798, 113);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(127, 28);
-            this.radioButton3.TabIndex = 117;
-            this.radioButton3.Text = "اجمالي الفروع";
-            this.radioButton3.UseVisualStyleBackColor = true;
             // 
             // Frm_ManagmentTickets
             // 
@@ -429,22 +351,16 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker ToDate;
         private System.Windows.Forms.DateTimePicker FromDate;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txt_search;
         public System.Windows.Forms.TextBox txt_rent;
         public System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label_day;
         public System.Windows.Forms.TextBox txt_pay;
         public System.Windows.Forms.Label label6;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton rdb_NewPatient;
-        private System.Windows.Forms.RadioButton radioButton3;
     }
 }

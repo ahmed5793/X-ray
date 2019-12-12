@@ -19,6 +19,11 @@ namespace Laboratory.PL
         public Frm_ManagmentTickets()
         {
             InitializeComponent();
+         
+
+
+
+
         }
 
         private void dgv_visit_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -36,11 +41,18 @@ namespace Laboratory.PL
                 cmb_branches.DataSource = u.SelectUserBranch(txt_username.Text);
                 cmb_branches.DisplayMember = "Name";
                 cmb_branches.ValueMember = "Branch_ID";
+
+                label1.Show();
+                comboBox1.Show();
+
                 label2.Hide();
                 label3.Hide();
                 FromDate.Hide();
                 ToDate.Hide();
                 button1.Hide();
+
+             
+
 
             }
             else
@@ -53,6 +65,12 @@ namespace Laboratory.PL
                 FromDate.Show();
                 ToDate.Show();
                 button1.Show();
+             
+                label1.Show();
+                comboBox1.Show();
+              
+           
+
             }
             label_day.Text = DateTime.Now.ToShortDateString();
      
@@ -114,25 +132,6 @@ namespace Laboratory.PL
         private void txt_phone_TextChanged(object sender, EventArgs e)
         {
             
-                dt.Clear();
-                dt = t.SearchManagmentTicketsBranch(txt_search.Text,Convert.ToInt32(cmb_branches.SelectedValue));
-                dgv_visit.DataSource = dt;
-                decimal total = 0;
-                for (int i = 0; i <= dgv_visit.Rows.Count - 1; i++)
-                {
-                    total += Convert.ToDecimal(dgv_visit.Rows[i].Cells[5].Value);
-
-                }
-                txt_rent.Text = Math.Round(total, 2).ToString();
-
-                decimal totall = 0;
-                for (int i = 0; i <= dgv_visit.Rows.Count - 1; i++)
-                {
-                    totall += Convert.ToDecimal(dgv_visit.Rows[i].Cells[4].Value);
-
-                }
-                txt_pay.Text = Math.Round(totall, 2).ToString();
-         
 
         }
 
@@ -142,6 +141,52 @@ namespace Laboratory.PL
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            
+
+            label2.Hide();
+            label3.Hide();
+            FromDate.Hide();
+            ToDate.Hide();
+            button1.Hide();
+
+
+
+          
+           
+           
+            label1.Hide();
+            comboBox1.Hide();
+        
+         
+
+         
+           
+
+
+        }
+
+        private void rdb_NewPatient_CheckedChanged(object sender, EventArgs e)
+        {
+            
+           
+        
+           
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            
+          
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }

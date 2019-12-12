@@ -168,7 +168,7 @@ namespace Laboratory.BL
             param[0] = new SqlParameter("@id_Branche", SqlDbType.Int);
             param[0].Value = IDBranch;
             param[1] = new SqlParameter("@date_day", SqlDbType.NVarChar,50);
-            param[1].Value = @date_day;
+            param[1].Value = date_day;
             dt = da.selected("SelectManagmentTicketsBranchFullDay", param);
             da.close();
             return dt;
@@ -208,5 +208,6 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
+     
     }
 }
