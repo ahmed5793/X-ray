@@ -13,9 +13,31 @@ namespace Laboratory.PL
 {
     public partial class Frm_Main : Form
     {
+        private static Frm_Main farm;
+
+        static void STATUESCllosed(object sender, FormClosedEventArgs e)
+        {
+            farm = null;
+        }
+        public static Frm_Main getmain
+        {
+            get
+            {
+                if (farm == null)
+                {
+                    farm = new Frm_Main();
+                    farm.FormClosed += new FormClosedEventHandler(STATUESCllosed);
+                }
+                return farm;
+            }
+        }
         Users u = new Users();
         public Frm_Main()
         {
+            if (farm == null)
+            {
+                farm = this;
+            }
             InitializeComponent();
 
 
@@ -174,7 +196,6 @@ namespace Laboratory.PL
 
         private void Frm_Main_Load(object sender, EventArgs e)
         {
-            label2.Text = Program.salesman;
         }
 
         private void AddStore_Click(object sender, EventArgs e)

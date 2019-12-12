@@ -125,6 +125,7 @@
     <Compile Include="BL\ItemsXRaya.cs" />
     <Compile Include="BL\Masrofat.cs" />
     <Compile Include="BL\Orders.cs" />
+    <Compile Include="BL\Permession.cs" />
     <Compile Include="BL\Product.cs" />
     <Compile Include="BL\Stock.cs" />
     <Compile Include="BL\Store.cs" />
