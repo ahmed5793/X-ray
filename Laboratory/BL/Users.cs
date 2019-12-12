@@ -136,12 +136,20 @@ namespace Laboratory.BL
             param[0] = new SqlParameter("@userName",SqlDbType.NVarChar,100);
             param[0].Value = UserName;
             dt = da.selected("SelectUserBranch", param);
-
             return dt;
-
         }
 
-
+        internal DataTable Select_UserName(int Id_Emp)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            DataTable dt = new DataTable();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@id_Emp", SqlDbType.Int);
+            param[0].Value = Id_Emp;
+            dt = da.selected("Select_UserName", param);
+            return dt;
+        }
 
 
 
