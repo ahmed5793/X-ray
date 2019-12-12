@@ -117,6 +117,7 @@ namespace Laboratory.PL
             {
                 total += Convert.ToDecimal(dgv_visit.Rows[i].Cells[5].Value);
 
+
             }
             txt_rent.Text = Math.Round(total, 2).ToString();
 
