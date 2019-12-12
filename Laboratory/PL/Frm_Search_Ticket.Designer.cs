@@ -31,12 +31,15 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label_day = new System.Windows.Forms.Label();
             this.cmb_branches = new System.Windows.Forms.ComboBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.txt_username = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
             this.dgv_visit = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_search = new System.Windows.Forms.TextBox();
+            this.btn_print = new System.Windows.Forms.Button();
+            this.btn_save = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_visit)).BeginInit();
             this.SuspendLayout();
@@ -79,6 +82,17 @@
             this.cmb_branches.Size = new System.Drawing.Size(233, 32);
             this.cmb_branches.TabIndex = 84;
             // 
+            // label18
+            // 
+            this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(877, 16);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(106, 24);
+            this.label18.TabIndex = 57;
+            this.label18.Text = "اسم المستخدم";
+            // 
             // label13
             // 
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -101,17 +115,6 @@
             this.txt_username.TabIndex = 56;
             this.txt_username.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label18
-            // 
-            this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(877, 16);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(106, 24);
-            this.label18.TabIndex = 57;
-            this.label18.Text = "اسم المستخدم";
-            // 
             // dgv_visit
             // 
             this.dgv_visit.AllowUserToAddRows = false;
@@ -128,7 +131,7 @@
             this.dgv_visit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgv_visit.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_visit.ShowEditingIcon = false;
-            this.dgv_visit.Size = new System.Drawing.Size(987, 403);
+            this.dgv_visit.Size = new System.Drawing.Size(987, 332);
             this.dgv_visit.TabIndex = 99;
             // 
             // label1
@@ -153,11 +156,47 @@
             this.txt_search.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_search.TextChanged += new System.EventHandler(this.txt_search_TextChanged);
             // 
+            // btn_print
+            // 
+            this.btn_print.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btn_print.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_print.Location = new System.Drawing.Point(324, 475);
+            this.btn_print.Name = "btn_print";
+            this.btn_print.Size = new System.Drawing.Size(200, 40);
+            this.btn_print.TabIndex = 103;
+            this.btn_print.Text = "طباعة فاتورة";
+            this.btn_print.UseVisualStyleBackColor = true;
+            // 
+            // btn_save
+            // 
+            this.btn_save.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btn_save.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_save.Location = new System.Drawing.Point(559, 475);
+            this.btn_save.Name = "btn_save";
+            this.btn_save.Size = new System.Drawing.Size(200, 40);
+            this.btn_save.TabIndex = 102;
+            this.btn_save.Text = "عرض  تفاصيل الفاتورة";
+            this.btn_save.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(106, 475);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(200, 40);
+            this.button1.TabIndex = 104;
+            this.button1.Text = "طباعة باركود";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Frm_Search_Ticket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1011, 527);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_print);
+            this.Controls.Add(this.btn_save);
             this.Controls.Add(this.txt_search);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgv_visit);
@@ -184,5 +223,8 @@
         public System.Windows.Forms.DataGridView dgv_visit;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_search;
+        private System.Windows.Forms.Button btn_print;
+        private System.Windows.Forms.Button btn_save;
+        private System.Windows.Forms.Button button1;
     }
 }
