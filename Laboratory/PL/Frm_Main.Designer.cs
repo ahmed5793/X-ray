@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Main));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.Main_data = new System.Windows.Forms.ToolStripDropDownButton();
             this.Branches_Manage = new System.Windows.Forms.ToolStripMenuItem();
             this.Add_Branche = new System.Windows.Forms.ToolStripMenuItem();
@@ -142,9 +144,9 @@
             this.Teicket = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.Management_Ticket = new System.Windows.Forms.ToolStripMenuItem();
+            this.Search_Ticket = new System.Windows.Forms.ToolStripMenuItem();
             this.Btn_Exit = new System.Windows.Forms.ToolStripButton();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.toolStripSeparator44 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -169,6 +171,26 @@
             this.toolStrip1.Size = new System.Drawing.Size(1080, 116);
             this.toolStrip1.TabIndex = 6;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(206, 480);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(93, 32);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "label2";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(12, 483);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(177, 32);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "USER NAME";
             // 
             // Main_data
             // 
@@ -197,7 +219,7 @@
             this.Branches_Manage.Image = ((System.Drawing.Image)(resources.GetObject("Branches_Manage.Image")));
             this.Branches_Manage.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Branches_Manage.Name = "Branches_Manage";
-            this.Branches_Manage.Size = new System.Drawing.Size(239, 82);
+            this.Branches_Manage.Size = new System.Drawing.Size(238, 82);
             this.Branches_Manage.Text = "إدارة الفروع";
             // 
             // Add_Branche
@@ -226,7 +248,7 @@
             // toolStripSeparator15
             // 
             this.toolStripSeparator15.Name = "toolStripSeparator15";
-            this.toolStripSeparator15.Size = new System.Drawing.Size(236, 6);
+            this.toolStripSeparator15.Size = new System.Drawing.Size(235, 6);
             // 
             // إدارةالاشعةToolStripMenuItem
             // 
@@ -240,7 +262,7 @@
             this.إدارةالاشعةToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("إدارةالاشعةToolStripMenuItem.Image")));
             this.إدارةالاشعةToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.إدارةالاشعةToolStripMenuItem.Name = "إدارةالاشعةToolStripMenuItem";
-            this.إدارةالاشعةToolStripMenuItem.Size = new System.Drawing.Size(239, 82);
+            this.إدارةالاشعةToolStripMenuItem.Size = new System.Drawing.Size(238, 82);
             this.إدارةالاشعةToolStripMenuItem.Text = "قسم الاشعة";
             // 
             // Category_XRay
@@ -429,6 +451,7 @@
             this.Report_DoctorOfCenter.Name = "Report_DoctorOfCenter";
             this.Report_DoctorOfCenter.Size = new System.Drawing.Size(302, 28);
             this.Report_DoctorOfCenter.Text = "تقرير بعدد الحالات التى عمل بها";
+            this.Report_DoctorOfCenter.Click += new System.EventHandler(this.Report_DoctorOfCenter_Click);
             // 
             // toolStripSeparator9
             // 
@@ -1054,7 +1077,9 @@
             this.Receiption.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Teicket,
             this.toolStripSeparator8,
-            this.Management_Ticket});
+            this.Management_Ticket,
+            this.toolStripSeparator44,
+            this.Search_Ticket});
             this.Receiption.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Receiption.Image = ((System.Drawing.Image)(resources.GetObject("Receiption.Image")));
             this.Receiption.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
@@ -1070,14 +1095,14 @@
             this.Teicket.Image = ((System.Drawing.Image)(resources.GetObject("Teicket.Image")));
             this.Teicket.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Teicket.Name = "Teicket";
-            this.Teicket.Size = new System.Drawing.Size(232, 82);
+            this.Teicket.Size = new System.Drawing.Size(282, 82);
             this.Teicket.Text = "شاشة الحجز";
             this.Teicket.Click += new System.EventHandler(this.Teicket_Click);
             // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(229, 6);
+            this.toolStripSeparator8.Size = new System.Drawing.Size(279, 6);
             // 
             // Management_Ticket
             // 
@@ -1086,9 +1111,21 @@
             this.Management_Ticket.Image = ((System.Drawing.Image)(resources.GetObject("Management_Ticket.Image")));
             this.Management_Ticket.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Management_Ticket.Name = "Management_Ticket";
-            this.Management_Ticket.Size = new System.Drawing.Size(232, 82);
+            this.Management_Ticket.Size = new System.Drawing.Size(282, 82);
             this.Management_Ticket.Text = "إدارة الحجز";
             this.Management_Ticket.Click += new System.EventHandler(this.Management_Ticket_Click);
+            // 
+            // Search_Ticket
+            // 
+            this.Search_Ticket.BackColor = System.Drawing.Color.Red;
+            this.Search_Ticket.ForeColor = System.Drawing.Color.Black;
+            this.Search_Ticket.Image = ((System.Drawing.Image)(resources.GetObject("Search_Ticket.Image")));
+            this.Search_Ticket.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.Search_Ticket.Name = "Search_Ticket";
+            this.Search_Ticket.ShowShortcutKeys = false;
+            this.Search_Ticket.Size = new System.Drawing.Size(282, 82);
+            this.Search_Ticket.Text = "بحث فى كل الحجوزات";
+            this.Search_Ticket.Click += new System.EventHandler(this.بحثفىكلالحجوزاتToolStripMenuItem_Click);
             // 
             // Btn_Exit
             // 
@@ -1102,25 +1139,10 @@
             this.Btn_Exit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.Btn_Exit.Click += new System.EventHandler(this.Btn_Exit_Click);
             // 
-            // label2
+            // toolStripSeparator44
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(206, 480);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 32);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "label2";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 483);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(177, 32);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "USER NAME";
+            this.toolStripSeparator44.Name = "toolStripSeparator44";
+            this.toolStripSeparator44.Size = new System.Drawing.Size(279, 6);
             // 
             // Frm_Main
             // 
@@ -1261,5 +1283,7 @@
         public System.Windows.Forms.ToolStripSeparator toolStripSeparator42;
         public System.Windows.Forms.ToolStripSeparator toolStripSeparator43;
         public System.Windows.Forms.ToolStripMenuItem Validate_Users;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator44;
+        public System.Windows.Forms.ToolStripMenuItem Search_Ticket;
     }
 }
