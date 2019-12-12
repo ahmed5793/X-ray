@@ -345,5 +345,11 @@ namespace Laboratory.PL
             Validate_Users validate = new Validate_Users();
             validate.ShowDialog();
         }
+
+        private void Report_DoctorOfCenter_Click(object sender, EventArgs e)
+        {
+            Frm_ReportOfDoctorOfCenter frm_ReportOfDoctorOfCenter = new Frm_ReportOfDoctorOfCenter();
+            frm_ReportOfDoctorOfCenter.ShowDialog();
+        }
     }
 }

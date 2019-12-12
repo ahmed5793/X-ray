@@ -429,6 +429,7 @@
             this.Report_DoctorOfCenter.Name = "Report_DoctorOfCenter";
             this.Report_DoctorOfCenter.Size = new System.Drawing.Size(302, 28);
             this.Report_DoctorOfCenter.Text = "تقرير بعدد الحالات التى عمل بها";
+            this.Report_DoctorOfCenter.Click += new System.EventHandler(this.Report_DoctorOfCenter_Click);
             // 
             // toolStripSeparator9
             // 
