@@ -351,5 +351,11 @@ namespace Laboratory.PL
             Frm_ReportOfDoctorOfCenter frm_ReportOfDoctorOfCenter = new Frm_ReportOfDoctorOfCenter();
             frm_ReportOfDoctorOfCenter.ShowDialog();
         }
+
+        private void بحثفىكلالحجوزاتToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_Search_Ticket frm_Search_Ticket = new Frm_Search_Ticket();
+            frm_Search_Ticket.ShowDialog();
+        }
     }
 }

@@ -350,6 +350,12 @@
     <Compile Include="PL\Frm_Salf.Designer.cs">
       <DependentUpon>Frm_Salf.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Frm_Search_Ticket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_Search_Ticket.Designer.cs">
+      <DependentUpon>Frm_Search_Ticket.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_StockPull.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -513,6 +519,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Salf.resx">
       <DependentUpon>Frm_Salf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_Search_Ticket.resx">
+      <DependentUpon>Frm_Search_Ticket.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_StockPull.resx">
       <DependentUpon>Frm_StockPull.cs</DependentUpon>
