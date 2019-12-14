@@ -357,5 +357,17 @@ namespace Laboratory.PL
             Frm_Search_Ticket frm_Search_Ticket = new Frm_Search_Ticket();
             frm_Search_Ticket.ShowDialog();
         }
+
+        private void Report_Technical_Click(object sender, EventArgs e)
+        {
+            Frm_Report_Technical frm_Report_Technical = new Frm_Report_Technical();
+            frm_Report_Technical.ShowDialog();
+        }
+
+        private void Report_Doctor_Click(object sender, EventArgs e)
+        {
+            Frm_ReportDoctor frm_ReportDoctor = new Frm_ReportDoctor();
+            frm_ReportDoctor.ShowDialog();
+        }
     }
 }
