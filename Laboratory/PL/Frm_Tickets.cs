@@ -459,11 +459,11 @@ namespace Laboratory.PL
 
         private void Cmp_EMPRAOLE_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            cmb_Techincal.DataSource = E.SelectCompoRoleEmployee(Convert.ToInt32(cmb_DoctorOfCenter.SelectedValue));
-            label23.Text = cmb_DoctorOfCenter.Text;
-            cmb_Techincal.DisplayMember = "Emp_Name";
-            cmb_Techincal.ValueMember = "Emp_ID";
-            label23.Text = cmb_DoctorOfCenter.Text;
+            //cmb_Techincal.DataSource = E.SelectCompoRoleEmployee(Convert.ToInt32(cmb_DoctorOfCenter.SelectedValue));
+            //label23.Text = cmb_DoctorOfCenter.Text;
+            //cmb_Techincal.DisplayMember = "Emp_Name";
+            //cmb_Techincal.ValueMember = "Emp_ID";
+        
 
         }
 
@@ -827,6 +827,28 @@ namespace Laboratory.PL
             {
                 e.Handled = true;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Frm_DoctorOfCenter dc = new Frm_DoctorOfCenter();
+            dc.ShowDialog();
+            DoctorOfCenter();
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Frm_Techincal ft = new Frm_Techincal();
+            ft.ShowDialog();
+            Techincal();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Frm_Doctor fd = new Frm_Doctor();
+            fd.ShowDialog();
+            doctor();
         }
     }
     }

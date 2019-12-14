@@ -85,6 +85,7 @@
             this.txt_username = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.dtb_visit = new System.Windows.Forms.DateTimePicker();
             this.rdb_Compamy = new System.Windows.Forms.RadioButton();
             this.rdb_client = new System.Windows.Forms.RadioButton();
             this.cmb_Company = new System.Windows.Forms.ComboBox();
@@ -96,7 +97,6 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.btn_print = new System.Windows.Forms.Button();
             this.btn_save = new System.Windows.Forms.Button();
-            this.dtb_visit = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -201,6 +201,7 @@
             this.button2.TabIndex = 54;
             this.button2.Text = "---------------";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label19
             // 
@@ -387,6 +388,7 @@
             this.button3.TabIndex = 99;
             this.button3.Text = "---------------";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button1
             // 
@@ -397,6 +399,7 @@
             this.button1.TabIndex = 95;
             this.button1.Text = "---------------";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label12
             // 
@@ -809,6 +812,16 @@
             this.groupBox4.Text = "حالة الفاتورة";
             this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
             // 
+            // dtb_visit
+            // 
+            this.dtb_visit.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtb_visit.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtb_visit.Location = new System.Drawing.Point(6, 18);
+            this.dtb_visit.Name = "dtb_visit";
+            this.dtb_visit.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dtb_visit.Size = new System.Drawing.Size(181, 26);
+            this.dtb_visit.TabIndex = 95;
+            // 
             // rdb_Compamy
             // 
             this.rdb_Compamy.AutoSize = true;
@@ -950,16 +963,6 @@
             this.btn_save.Text = "حفظ";
             this.btn_save.UseVisualStyleBackColor = true;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
-            // 
-            // dtb_visit
-            // 
-            this.dtb_visit.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtb_visit.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtb_visit.Location = new System.Drawing.Point(6, 18);
-            this.dtb_visit.Name = "dtb_visit";
-            this.dtb_visit.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dtb_visit.Size = new System.Drawing.Size(181, 26);
-            this.dtb_visit.TabIndex = 95;
             // 
             // Frm_Tickets
             // 

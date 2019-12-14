@@ -208,6 +208,73 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
-     
+        internal DataTable TicketDetailsSelectTickets(int IDTickets)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@idTicket", SqlDbType.Int);
+            param[0].Value = IDTickets;
+            dt = da.selected("TicketDetailsSelectTickets", param);
+            da.close();
+            return dt;
+        }
+        internal DataTable SelecthManagmentTicketsBranch(int IDTickets)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+
+            param[0] = new SqlParameter("@id_Branch", SqlDbType.Int);
+            param[0].Value = IDTickets;
+            dt = da.selected("SelecthManagmentTicketsBranch", param);
+            da.close();
+            return dt;
+        }
+        internal DataTable TicketDetailsSelectTicketsDetAILS(int IDTickets)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+
+            param[0] = new SqlParameter("@idTicket", SqlDbType.Int);
+            param[0].Value = IDTickets;
+            dt = da.selected("TicketDetailsSelectTicketsDetAILS", param);
+            da.close();
+            return dt;
+        }
+        internal DataTable vildateTicketCompany(int IDTickets)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+
+            param[0] = new SqlParameter("@id_ticket", SqlDbType.Int);
+            param[0].Value = IDTickets;
+            dt = da.selected("vildateTicketCompany", param);
+            da.close();
+            return dt;
+        }
+        internal DataTable TicketDetailsSelectTicketsCompany(int IDTickets)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@idTicket", SqlDbType.Int);
+            param[0].Value = IDTickets;
+            dt = da.selected("TicketDetailsSelectTicketsCompany", param);
+            da.close();
+            return dt;
+        }
     }
 }
