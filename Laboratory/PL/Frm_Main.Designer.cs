@@ -32,8 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Main));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.Main_data = new System.Windows.Forms.ToolStripDropDownButton();
             this.Branches_Manage = new System.Windows.Forms.ToolStripMenuItem();
             this.Add_Branche = new System.Windows.Forms.ToolStripMenuItem();
@@ -144,9 +142,11 @@
             this.Teicket = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.Management_Ticket = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator44 = new System.Windows.Forms.ToolStripSeparator();
             this.Search_Ticket = new System.Windows.Forms.ToolStripMenuItem();
             this.Btn_Exit = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator44 = new System.Windows.Forms.ToolStripSeparator();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -171,26 +171,6 @@
             this.toolStrip1.Size = new System.Drawing.Size(1080, 116);
             this.toolStrip1.TabIndex = 6;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(206, 480);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 32);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "label2";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 483);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(177, 32);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "USER NAME";
             // 
             // Main_data
             // 
@@ -494,6 +474,7 @@
             this.Report_Technical.ShowShortcutKeys = false;
             this.Report_Technical.Size = new System.Drawing.Size(292, 28);
             this.Report_Technical.Text = "تقرير بعدد الحالات التى عمل بها";
+            this.Report_Technical.Click += new System.EventHandler(this.Report_Technical_Click);
             // 
             // Company_Customer
             // 
@@ -527,7 +508,7 @@
             this.Customer_management.Image = ((System.Drawing.Image)(resources.GetObject("Customer_management.Image")));
             this.Customer_management.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Customer_management.Name = "Customer_management";
-            this.Customer_management.Size = new System.Drawing.Size(247, 92);
+            this.Customer_management.Size = new System.Drawing.Size(249, 92);
             this.Customer_management.Text = "إدارة العملاء ";
             this.Customer_management.Click += new System.EventHandler(this.Add_customer_Click);
             // 
@@ -579,7 +560,7 @@
             // toolStripSeparator10
             // 
             this.toolStripSeparator10.Name = "toolStripSeparator10";
-            this.toolStripSeparator10.Size = new System.Drawing.Size(244, 6);
+            this.toolStripSeparator10.Size = new System.Drawing.Size(246, 6);
             // 
             // Company_Managemet
             // 
@@ -595,7 +576,7 @@
             this.Company_Managemet.Image = ((System.Drawing.Image)(resources.GetObject("Company_Managemet.Image")));
             this.Company_Managemet.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Company_Managemet.Name = "Company_Managemet";
-            this.Company_Managemet.Size = new System.Drawing.Size(247, 92);
+            this.Company_Managemet.Size = new System.Drawing.Size(249, 92);
             this.Company_Managemet.Text = "إدارة الشركات";
             // 
             // Add_Company
@@ -646,7 +627,7 @@
             // toolStripSeparator11
             // 
             this.toolStripSeparator11.Name = "toolStripSeparator11";
-            this.toolStripSeparator11.Size = new System.Drawing.Size(244, 6);
+            this.toolStripSeparator11.Size = new System.Drawing.Size(246, 6);
             // 
             // Doctoer_Management
             // 
@@ -658,7 +639,7 @@
             this.Doctoer_Management.Image = ((System.Drawing.Image)(resources.GetObject("Doctoer_Management.Image")));
             this.Doctoer_Management.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Doctoer_Management.Name = "Doctoer_Management";
-            this.Doctoer_Management.Size = new System.Drawing.Size(247, 92);
+            this.Doctoer_Management.Size = new System.Drawing.Size(249, 92);
             this.Doctoer_Management.Text = "إدارة الدكاترة";
             this.Doctoer_Management.Click += new System.EventHandler(this.Doctoer_Management_Click);
             // 
@@ -681,6 +662,7 @@
             this.Report_Doctor.Name = "Report_Doctor";
             this.Report_Doctor.Size = new System.Drawing.Size(344, 28);
             this.Report_Doctor.Text = "تقرير بعدد الحالات القادمة من الدكاترة";
+            this.Report_Doctor.Click += new System.EventHandler(this.Report_Doctor_Click);
             // 
             // Masrofat_Stock
             // 
@@ -1115,6 +1097,11 @@
             this.Management_Ticket.Text = "إدارة الحجز";
             this.Management_Ticket.Click += new System.EventHandler(this.Management_Ticket_Click);
             // 
+            // toolStripSeparator44
+            // 
+            this.toolStripSeparator44.Name = "toolStripSeparator44";
+            this.toolStripSeparator44.Size = new System.Drawing.Size(279, 6);
+            // 
             // Search_Ticket
             // 
             this.Search_Ticket.BackColor = System.Drawing.Color.Red;
@@ -1139,10 +1126,25 @@
             this.Btn_Exit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.Btn_Exit.Click += new System.EventHandler(this.Btn_Exit_Click);
             // 
-            // toolStripSeparator44
+            // label2
             // 
-            this.toolStripSeparator44.Name = "toolStripSeparator44";
-            this.toolStripSeparator44.Size = new System.Drawing.Size(279, 6);
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(206, 480);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(93, 32);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "label2";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(12, 483);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(177, 32);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "USER NAME";
             // 
             // Frm_Main
             // 

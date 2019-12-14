@@ -89,8 +89,46 @@ namespace Laboratory.BL
 
             da.excutequery("UpdateTechincal", param);
             da.close();
-
-
+        }
+        internal DataTable Select_ComboTechnical()
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            DataTable dt = new DataTable();
+            dt.Clear();
+            dt = da.selected("Select_ComboTechnical", null);
+            da.close();
+            return dt;
+        }
+        internal DataTable Select_ReportTechnical(int id)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@id", SqlDbType.Int);
+            param[0].Value = id;
+            da.open();
+            DataTable dt = new DataTable();
+            dt.Clear();
+            dt = da.selected("Select_ReportTechnical", param);
+            da.close();
+            return dt;
+        }
+        internal DataTable Search_ReportTechnical(int id, DateTime Date_From, DateTime Date_To)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[3];
+            param[0] = new SqlParameter("@id", SqlDbType.Int);
+            param[0].Value = id;
+            param[1] = new SqlParameter("@Date_From", SqlDbType.DateTime);
+            param[1].Value = Date_From;
+            param[2] = new SqlParameter("@Date_To", SqlDbType.DateTime);
+            param[2].Value = Date_To;
+            da.open();
+            DataTable dt = new DataTable();
+            dt.Clear();
+            dt = da.selected("Search_ReportTechnical", param);
+            da.close();
+            return dt;
         }
     }
 }

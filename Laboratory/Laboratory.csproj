@@ -332,6 +332,12 @@
     <Compile Include="PL\Frm_Purshasing.Designer.cs">
       <DependentUpon>Frm_Purshasing.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Frm_ReportDoctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_ReportDoctor.Designer.cs">
+      <DependentUpon>Frm_ReportDoctor.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_ReportOfDoctorOfCenter.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -391,6 +397,12 @@
     </Compile>
     <Compile Include="PL\Frm_TransProductList.Designer.cs">
       <DependentUpon>Frm_TransProductList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Frm_Report_Technical.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_Report_Technical.Designer.cs">
+      <DependentUpon>Frm_Report_Technical.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Tranfair_product.cs">
       <SubType>Form</SubType>
@@ -511,6 +523,9 @@
     <EmbeddedResource Include="PL\Frm_Purshasing.resx">
       <DependentUpon>Frm_Purshasing.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_ReportDoctor.resx">
+      <DependentUpon>Frm_ReportDoctor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_ReportOfDoctorOfCenter.resx">
       <DependentUpon>Frm_ReportOfDoctorOfCenter.cs</DependentUpon>
     </EmbeddedResource>
@@ -540,6 +555,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_TransProductList.resx">
       <DependentUpon>Frm_TransProductList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_Report_Technical.resx">
+      <DependentUpon>Frm_Report_Technical.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Tranfair_product.resx">
       <DependentUpon>Tranfair_product.cs</DependentUpon>
