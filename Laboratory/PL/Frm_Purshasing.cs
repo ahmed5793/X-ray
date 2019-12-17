@@ -146,12 +146,12 @@ namespace Laboratory.PL
                             return;
                         }
                     }
+
                     DataRow r = dt.NewRow();
                     r[0] = frm_ProductList.dataGridView1.CurrentRow.Cells[0].Value.ToString();
                     r[1] = frm_ProductList.dataGridView1.CurrentRow.Cells[1].Value.ToString();
                     r[2] = frm_ProductList.dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                    r[3] = 1;
-                   
+                    r[3] = 1;                   
                     r[5] = 0;
                     //r[6] = txt_amount.Text;
                     dt.Rows.Add(r);
@@ -161,14 +161,12 @@ namespace Laboratory.PL
                     Total_Amount();
                     Totalinvoicesup();
                     Pay();
-             
                 }
-
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -190,16 +188,12 @@ namespace Laboratory.PL
                         qs.ShowDialog();
                         if (qs.textBox1.Text != "" && qs.textBox1.Text != "0")
                         {
-
-
                             dataGridView1.CurrentRow.Cells[3].Value = qs.textBox1.Text;
                             Calc_Amount();
                             Total_Amount();
                             Totalinvoicesup();
                             Pay();
                             qs.textBox1.Clear();
-
-
                         }
 
                     }
@@ -217,7 +211,6 @@ namespace Laboratory.PL
                             Totalinvoicesup();
                             Pay();
                             fp.txt_prise.Clear();
-
                         }
 
                     }
@@ -226,8 +219,6 @@ namespace Laboratory.PL
                         fed.ShowDialog();
                         if (fed.textBox1.Text != "" && fed.textBox1.Text != "0")
                         {
-
-
                             dataGridView1.CurrentRow.Cells[5].Value = fed.textBox1.Text;
                            Calc_Amount();
                            Total_Amount();
