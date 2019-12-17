@@ -283,9 +283,12 @@ namespace Laboratory.PL
                  Suppliers.ADDSuppliersINFORMARION(Convert.ToInt32(txt_num.Text), Convert.ToInt32(Cmb_Suppliers.SelectedValue), 
                   dateTimePicker1.Value,txt_note.Text, txt_sales.Text, Convert.ToDecimal(txt_invo.Text), 
                   Convert.ToDecimal(txt_pay.Text), Convert.ToDecimal(txt_mark.Text), Convert.ToInt32(cmb_Stock.SelectedValue));
+                    if (Convert.ToDecimal(txt_pay.Text)>0)
+                    {
+                        Stock.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_pay.Text), dateTimePicker1.Value, txt_sales.Text, Cmb_Suppliers.Text + "فاتورة مشتريات");
 
+                    }
 
-                    Stock.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_pay.Text), dateTimePicker1.Value, txt_sales.Text, Cmb_Suppliers.Text + "فاتورة مشتريات");
 
                     for (int i = 0; i < dataGridView1.Rows.Count; i++)
                     {
