@@ -35,6 +35,7 @@
             this.label16 = new System.Windows.Forms.Label();
             this.dgv_order = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.txt_statues = new System.Windows.Forms.TextBox();
             this.txt_company = new System.Windows.Forms.TextBox();
             this.txt_dateVisit = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
@@ -46,6 +47,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txt_total = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.txt_pay = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_doctor = new System.Windows.Forms.TextBox();
@@ -67,14 +69,12 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txt_timeKa4f = new System.Windows.Forms.TextBox();
             this.txt_techincal = new System.Windows.Forms.TextBox();
             this.txt_doctorOfCenter = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.txt_branch = new System.Windows.Forms.TextBox();
             this.txt_stock = new System.Windows.Forms.TextBox();
-            this.txt_statues = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.txt_timeKa4f = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_order)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -169,11 +169,22 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "حالة الفاتورة";
             // 
+            // txt_statues
+            // 
+            this.txt_statues.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_statues.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_statues.Location = new System.Drawing.Point(719, 10);
+            this.txt_statues.Name = "txt_statues";
+            this.txt_statues.ReadOnly = true;
+            this.txt_statues.Size = new System.Drawing.Size(182, 32);
+            this.txt_statues.TabIndex = 133;
+            this.txt_statues.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // txt_company
             // 
             this.txt_company.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_company.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_company.Location = new System.Drawing.Point(331, 10);
+            this.txt_company.Location = new System.Drawing.Point(383, 9);
             this.txt_company.Name = "txt_company";
             this.txt_company.ReadOnly = true;
             this.txt_company.Size = new System.Drawing.Size(233, 32);
@@ -187,7 +198,7 @@
             this.txt_dateVisit.Location = new System.Drawing.Point(6, 14);
             this.txt_dateVisit.Name = "txt_dateVisit";
             this.txt_dateVisit.ReadOnly = true;
-            this.txt_dateVisit.Size = new System.Drawing.Size(190, 32);
+            this.txt_dateVisit.Size = new System.Drawing.Size(255, 32);
             this.txt_dateVisit.TabIndex = 131;
             this.txt_dateVisit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -195,7 +206,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(567, 16);
+            this.label21.Location = new System.Drawing.Point(622, 16);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(91, 24);
             this.label21.TabIndex = 87;
@@ -216,7 +227,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(202, 17);
+            this.label6.Location = new System.Drawing.Point(267, 17);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(100, 24);
             this.label6.TabIndex = 74;
@@ -293,6 +304,16 @@
             this.groupBox3.TabIndex = 120;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "الحسابات";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(473, 71);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(55, 24);
+            this.label9.TabIndex = 108;
+            this.label9.Text = "الخصم";
             // 
             // txt_pay
             // 
@@ -537,6 +558,17 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "بيانات الاشعة";
             // 
+            // txt_timeKa4f
+            // 
+            this.txt_timeKa4f.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_timeKa4f.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_timeKa4f.Location = new System.Drawing.Point(80, 101);
+            this.txt_timeKa4f.Name = "txt_timeKa4f";
+            this.txt_timeKa4f.ReadOnly = true;
+            this.txt_timeKa4f.Size = new System.Drawing.Size(300, 32);
+            this.txt_timeKa4f.TabIndex = 121;
+            this.txt_timeKa4f.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // txt_techincal
             // 
             this.txt_techincal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -559,6 +591,17 @@
             this.txt_doctorOfCenter.TabIndex = 134;
             this.txt_doctorOfCenter.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.Color.White;
+            this.label17.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(446, 109);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(92, 24);
+            this.label17.TabIndex = 104;
+            this.label17.Text = "وقت الكشف";
+            // 
             // txt_branch
             // 
             this.txt_branch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -580,49 +623,6 @@
             this.txt_stock.Size = new System.Drawing.Size(233, 32);
             this.txt_stock.TabIndex = 132;
             this.txt_stock.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txt_statues
-            // 
-            this.txt_statues.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_statues.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_statues.Location = new System.Drawing.Point(665, 10);
-            this.txt_statues.Name = "txt_statues";
-            this.txt_statues.ReadOnly = true;
-            this.txt_statues.Size = new System.Drawing.Size(214, 32);
-            this.txt_statues.TabIndex = 133;
-            this.txt_statues.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.White;
-            this.label17.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(446, 109);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(92, 24);
-            this.label17.TabIndex = 104;
-            this.label17.Text = "وقت الكشف";
-            // 
-            // txt_timeKa4f
-            // 
-            this.txt_timeKa4f.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_timeKa4f.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_timeKa4f.Location = new System.Drawing.Point(80, 101);
-            this.txt_timeKa4f.Name = "txt_timeKa4f";
-            this.txt_timeKa4f.ReadOnly = true;
-            this.txt_timeKa4f.Size = new System.Drawing.Size(300, 32);
-            this.txt_timeKa4f.TabIndex = 121;
-            this.txt_timeKa4f.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(473, 71);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(55, 24);
-            this.label9.TabIndex = 108;
-            this.label9.Text = "الخصم";
             // 
             // Frm_DetailsTickets
             // 
