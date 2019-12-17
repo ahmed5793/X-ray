@@ -128,7 +128,7 @@
             // 
             this.Txt_Price.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Txt_Price.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_Price.Location = new System.Drawing.Point(465, 150);
+            this.Txt_Price.Location = new System.Drawing.Point(471, 150);
             this.Txt_Price.Name = "Txt_Price";
             this.Txt_Price.Size = new System.Drawing.Size(127, 32);
             this.Txt_Price.TabIndex = 3;
