@@ -858,6 +858,7 @@
             this.cmb_Company.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmb_Company.Size = new System.Drawing.Size(256, 32);
             this.cmb_Company.TabIndex = 88;
+            this.cmb_Company.SelectionChangeCommitted += new System.EventHandler(this.cmb_Company_SelectionChangeCommitted);
             // 
             // label21
             // 
@@ -949,8 +950,9 @@
             this.btn_print.Name = "btn_print";
             this.btn_print.Size = new System.Drawing.Size(200, 40);
             this.btn_print.TabIndex = 101;
-            this.btn_print.Text = "طباعة فاتورة";
+            this.btn_print.Text = "فاتورة جديدة";
             this.btn_print.UseVisualStyleBackColor = true;
+            this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
             // 
             // btn_save
             // 

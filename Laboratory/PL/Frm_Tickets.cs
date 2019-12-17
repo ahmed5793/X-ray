@@ -611,6 +611,8 @@ namespace Laboratory.PL
         }
         void clear()
         {
+            rdb_money.Enabled = true;
+            rdb_Discount.Enabled = true;
             txt_address.Clear();
             txt_afterDiscount.Text="0";
             txt_age.Clear();
@@ -623,6 +625,7 @@ namespace Laboratory.PL
             txt_total.Text = "0";
             rdb_CurrentPatient.Checked = true;
             dt2.Clear();
+            txt_discount.Enabled = true;
 
 
         }
@@ -849,6 +852,32 @@ namespace Laboratory.PL
             Frm_Doctor fd = new Frm_Doctor();
             fd.ShowDialog();
             doctor();
+        }
+
+        private void cmb_Company_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+          
+            if (cmb_Company.Text!="")
+            {
+                rdb_Discount.Checked = true;
+                txt_discount.Enabled = false;
+                rdb_money.Enabled = false;
+                rdb_Discount.Enabled = false;
+
+                dt.Clear();
+                dt = cm.SelectDiscount(Convert.ToInt32(cmb_Company.SelectedValue));
+                txt_discount.Text = dt.Rows[0][0].ToString();
+
+                totalOrder();
+                Discount();
+                pay();
+ 
+            }
+        }
+
+        private void btn_print_Click(object sender, EventArgs e)
+        {
+            clear();
         }
     }
     }

@@ -11,11 +11,11 @@ namespace Laboratory.BL
 {
     class Company
     {
-        internal void AddCompany(string name, string phone,string address,DateTime StartDate )
+        internal void AddCompany(string name, string phone,string address,DateTime StartDate,decimal discount,string notes )
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[4];
+            SqlParameter[] param = new SqlParameter[6];
             param[0] = new SqlParameter("@name", SqlDbType.NVarChar, 250);
             param[0].Value = name;
 
@@ -27,6 +27,10 @@ namespace Laboratory.BL
 
             param[3] = new SqlParameter("@StartDate", SqlDbType.DateTime);
             param[3].Value = StartDate;
+            param[4] = new SqlParameter("@Discount", SqlDbType.Decimal);
+            param[4].Value = discount;
+            param[5] = new SqlParameter("@notes", SqlDbType.NVarChar,750);
+            param[5].Value = notes;
 
 
 
@@ -70,11 +74,11 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
-        internal void UpdateCompany(string name, string phone, int id, string address)
+        internal void UpdateCompany(string name, string phone, int id, string address,decimal Discount, string notes)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[4];
+            SqlParameter[] param = new SqlParameter[6];
             param[0] = new SqlParameter("@name", SqlDbType.NVarChar, 300);
             param[0].Value = name;
 
@@ -85,6 +89,10 @@ namespace Laboratory.BL
             param[2].Value = id;
             param[3] = new SqlParameter("@address", SqlDbType.NVarChar, 250);
             param[3].Value = address;
+            param[4] = new SqlParameter("@Discount", SqlDbType.Decimal);
+            param[4].Value = Discount;
+            param[5] = new SqlParameter("@notes", SqlDbType.NVarChar, 750);
+            param[5].Value = notes;
             da.excutequery("UpdateCompany", param);
             da.close();
 
@@ -157,6 +165,20 @@ namespace Laboratory.BL
             param[1] = new SqlParameter("@id_company", SqlDbType.Int);
             param[1].Value = id_company;
             dt = da.selected("searchOneCompanytRent", param);
+            da.close();
+            return dt;
+
+
+        }
+        internal DataTable SelectDiscount(int id_company)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            DataTable dt = new DataTable();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@idcompany", SqlDbType.Int);
+            param[0].Value = id_company;
+            dt = da.selected("SelectDiscount", param);
             da.close();
             return dt;
 
