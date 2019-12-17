@@ -86,13 +86,6 @@ namespace Laboratory.PL
 
             dgv_order.Columns[1].Width = 180;
             dgv_order.Columns[2].Width = 90;
-         
-
-        
-
-
-
-
         }
 
         public void SelectdataTable()
@@ -103,18 +96,9 @@ namespace Laboratory.PL
             dt2.Columns.Add("اسم الفحص");
 
 
-            dt2.Columns.Add("قيمة الفحص");
-
-        
-          
+            dt2.Columns.Add("قيمة الفحص");                  
             dgv_order.DataSource = dt2;
-
             dgv_order.Columns[0].Visible = false;
-
-
-
-
-
 
         }
         void company()

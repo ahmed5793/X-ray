@@ -376,5 +376,11 @@ namespace Laboratory.PL
             Frm_ReportStockPull frm_ReportStock = new Frm_ReportStockPull();
             frm_ReportStock.ShowDialog();
         }
+
+        private void Add_CompanyXrays_Click(object sender, EventArgs e)
+        {
+            Frm_CompanyItemXray frm_CompanyItem = new Frm_CompanyItemXray();
+            frm_CompanyItem.ShowDialog();
+        }
     }
 }
