@@ -25,6 +25,7 @@ namespace Laboratory.PL
             Cmb_StrockTo.DataSource = s.Compo_Stock();
             Cmb_StrockTo.DisplayMember = "Name_Stock";
             Cmb_StrockTo.ValueMember = "ID_Stock";
+            txt_name.Text = Program.salesman;
             dt.Clear();
             dt = s.Select_moneyStock(Convert.ToInt32(cmb_StockFrom.SelectedValue));
             if (dt.Rows.Count > 0)

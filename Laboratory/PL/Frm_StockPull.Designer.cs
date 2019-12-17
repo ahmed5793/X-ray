@@ -46,9 +46,10 @@
             // 
             // btn_save
             // 
-            this.btn_save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_save.BackColor = System.Drawing.Color.Black;
             this.btn_save.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_save.Location = new System.Drawing.Point(122, 381);
+            this.btn_save.ForeColor = System.Drawing.Color.White;
+            this.btn_save.Location = new System.Drawing.Point(120, 354);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(132, 40);
             this.btn_save.TabIndex = 60;
@@ -87,7 +88,7 @@
             this.label7.BackColor = System.Drawing.Color.Yellow;
             this.label7.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(213, 305);
+            this.label7.Location = new System.Drawing.Point(216, 267);
             this.label7.Name = "label7";
             this.label7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label7.Size = new System.Drawing.Size(93, 22);
@@ -100,7 +101,7 @@
             this.label6.BackColor = System.Drawing.Color.Yellow;
             this.label6.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(218, 187);
+            this.label6.Location = new System.Drawing.Point(218, 190);
             this.label6.Name = "label6";
             this.label6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label6.Size = new System.Drawing.Size(91, 22);
@@ -110,7 +111,7 @@
             // txt_reason
             // 
             this.txt_reason.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_reason.Location = new System.Drawing.Point(12, 281);
+            this.txt_reason.Location = new System.Drawing.Point(11, 240);
             this.txt_reason.Multiline = true;
             this.txt_reason.Name = "txt_reason";
             this.txt_reason.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -121,9 +122,10 @@
             // txt_name
             // 
             this.txt_name.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_name.Location = new System.Drawing.Point(12, 183);
+            this.txt_name.Location = new System.Drawing.Point(12, 186);
             this.txt_name.Multiline = true;
             this.txt_name.Name = "txt_name";
+            this.txt_name.ReadOnly = true;
             this.txt_name.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txt_name.Size = new System.Drawing.Size(195, 32);
             this.txt_name.TabIndex = 57;
@@ -218,6 +220,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(380, 435);
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.txt_CurrentBalance);
@@ -233,8 +236,12 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cmb_Stock);
             this.Controls.Add(this.label3);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(396, 473);
+            this.MinimumSize = new System.Drawing.Size(396, 473);
             this.Name = "Frm_StockPull";
-            this.Text = "Frm_StockPull";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "سحب رصيد من الخزنة";
             this.Load += new System.EventHandler(this.Frm_StockPull_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -191,7 +191,8 @@ namespace Laboratory.PL
 
         private void Report_Masrofat_Click(object sender, EventArgs e)
         {
-
+            Frm_ReportMasrofat frm_ReportMasrofat = new Frm_ReportMasrofat();
+            frm_ReportMasrofat.ShowDialog();
         }
 
         private void Frm_Main_Load(object sender, EventArgs e)
@@ -368,6 +369,12 @@ namespace Laboratory.PL
         {
             Frm_ReportDoctor frm_ReportDoctor = new Frm_ReportDoctor();
             frm_ReportDoctor.ShowDialog();
+        }
+
+        private void Report_PullMoneyStock_Click(object sender, EventArgs e)
+        {
+            Frm_ReportStockPull frm_ReportStock = new Frm_ReportStockPull();
+            frm_ReportStock.ShowDialog();
         }
     }
 }

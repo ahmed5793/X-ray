@@ -33,10 +33,10 @@ namespace Laboratory.BL
             return dt;
         }
 
-        internal void AddReserveDetails(int IdReserve, string decription, decimal amount, DateTime date)
+        internal void AddReserveDetails(int IdReserve, string decription, decimal amount, DateTime date, int Id_Stock , string Sales_Man)
         {
             DataAccessLayer da = new DataAccessLayer();
-            SqlParameter[] param = new SqlParameter[4];
+            SqlParameter[] param = new SqlParameter[6];
             da.open();
             param[0] = new SqlParameter("@idReserve", SqlDbType.Int);
             param[0].Value = IdReserve;
@@ -46,6 +46,10 @@ namespace Laboratory.BL
             param[2].Value = amount;
             param[3] = new SqlParameter("@date", SqlDbType.DateTime);
             param[3].Value = date;
+            param[4] = new SqlParameter("@ID_Stock", SqlDbType.Int);
+            param[4].Value = Id_Stock;
+            param[5] = new SqlParameter("@Sales_man", SqlDbType.NVarChar,100);
+            param[5].Value = Sales_Man;
 
             da.excutequery("AddReserveDetails", param);
             da.close();
@@ -63,10 +67,10 @@ namespace Laboratory.BL
             da.close();
         }
 
-        internal void UpdateResrveDetails(int id, int IdReserve, string decription, decimal amount, DateTime date)
+        internal void UpdateResrveDetails(int id, int IdReserve, string decription, decimal amount, DateTime date, int Id_Stock , string Sales_Man)
         {
             DataAccessLayer da = new DataAccessLayer();
-            SqlParameter[] param = new SqlParameter[5];
+            SqlParameter[] param = new SqlParameter[7];
             da.open();
             param[0] = new SqlParameter("@idReserve", SqlDbType.Int);
             param[0].Value = IdReserve;
@@ -78,6 +82,10 @@ namespace Laboratory.BL
             param[3].Value = date;
             param[4] = new SqlParameter("@id", SqlDbType.Int);
             param[4].Value = id;
+            param[5] = new SqlParameter("@ID_Stock", SqlDbType.Int);
+            param[5].Value = Id_Stock;
+            param[6] = new SqlParameter("@Sales_man", SqlDbType.Int);
+            param[6].Value = Sales_Man;
 
             da.excutequery("UpdateResrveDetails", param);
             da.close();
@@ -102,18 +110,28 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
-        internal DataTable SearchFromDate(DateTime FromDate, DateTime ToDate)
+        internal DataTable search_Masrofat(DateTime FromDate, DateTime ToDate)
         {
             DataAccessLayer da = new DataAccessLayer();
             SqlParameter[] param = new SqlParameter[2];
             DataTable dt = new DataTable();
-            param[0] = new SqlParameter("@FromDate", SqlDbType.DateTime);
+            param[0] = new SqlParameter("@Date_From", SqlDbType.DateTime);
             param[0].Value = FromDate;
-            param[1] = new SqlParameter("@ToDate", SqlDbType.DateTime);
+            param[1] = new SqlParameter("@Date_to", SqlDbType.DateTime);
             param[1].Value = ToDate;
-            dt = da.selected("SearchFromDate", param);
+            dt = da.selected("search_Masrofat", param);
             return dt;
 
+        }
+        internal DataTable select_Masrofat()
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+
+            dt = da.selected("select_Masrofat", null);
+            da.close();
+            return dt;
         }
 
     }

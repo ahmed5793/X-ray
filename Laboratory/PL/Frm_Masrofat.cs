@@ -14,8 +14,9 @@ namespace Laboratory.PL
     public partial class Frm_Masrofat : Form
     {
         Masrofat m = new Masrofat();
-        private static Frm_Masrofat farm;
+        Stock Stock = new Stock();
 
+        private static Frm_Masrofat farm;
         static void STATUESCllosed(object sender, FormClosedEventArgs e)
         {
             farm = null;
@@ -35,16 +36,26 @@ namespace Laboratory.PL
         public Frm_Masrofat()
         {
             InitializeComponent();
+
             if (farm == null)
             {
                 farm = this;
             }
+            txt_username.Text = Program.salesman;
+            comboBox1.DataSource = m.SelectReserve();
+            comboBox1.DisplayMember = "masrof_type";
+            comboBox1.ValueMember = "ID_masrof";
+            cmb_Stock.DataSource = Stock.Compo_Stock();
+            cmb_Stock.DisplayMember = "Name_Stock";
+            cmb_Stock.ValueMember = "ID_Stock";
         }
+
 
         private void btn_GenderJob_Click(object sender, EventArgs e)
         {
             Frm_MasrofGender g = new Frm_MasrofGender();
             g.ShowDialog();
+            comboBox1.DataSource = m.SelectReserve();
             g.Dispose();
         }
 
@@ -58,17 +69,13 @@ namespace Laboratory.PL
             }
             if (comboBox1.Text != string.Empty)
             {
-
                 m.AddReserveDetails(Convert.ToInt32(comboBox1.SelectedValue), txt_notes.Text,
-                    Convert.ToDecimal(txt_amount.Text), dateTimePicker1.Value);
+                Convert.ToDecimal(txt_amount.Text), dateTimePicker1.Value,Convert.ToInt32(cmb_Stock.SelectedValue),txt_username.Text);
+                Stock.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_amount.Text), dateTimePicker1.Value, txt_username.Text, "مصروفات ");
                 MessageBox.Show("تم التسجيل بنجاح", "عمليه التسجيل");
                 dataGridView1.DataSource = m.SelectReserveDetails();
                 txt_notes.Clear();
                 txt_amount.Clear();
-
-
-
-
             }
             else
             {
@@ -97,6 +104,16 @@ namespace Laboratory.PL
             {
                 e.Handled = true;
             }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+
         }
     }
 }

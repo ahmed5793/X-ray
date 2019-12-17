@@ -21,6 +21,7 @@ namespace Laboratory.PL
             cmb_Stock.DataSource = s.Compo_Stock();
             cmb_Stock.DisplayMember = "Name_Stock";
             cmb_Stock.ValueMember = "ID_Stock";
+            txt_name.Text = Program.salesman;
             dt.Clear();
             dt = s.Select_moneyStock(Convert.ToInt32(cmb_Stock.SelectedValue));
             if (dt.Rows.Count > 0)

@@ -161,29 +161,6 @@ namespace Laboratory.BL
             da.close();
         }
 
-
-
-        internal void AddTransfairBankToStock(decimal money, DateTime date, string from, string to, string name)
-        {
-            DataAccessLayer da = new DataAccessLayer();
-            da.open();
-            SqlParameter[] param = new SqlParameter[5];
-            param[0] = new SqlParameter("@Money", SqlDbType.Real);
-            param[0].Value = money;
-            param[1] = new SqlParameter("@Date", SqlDbType.DateTime);
-            param[1].Value = date;
-            param[2] = new SqlParameter("@From_", SqlDbType.NVarChar, 150);
-            param[2].Value = from;
-            param[3] = new SqlParameter("@To_", SqlDbType.NVarChar, 150);
-            param[3].Value = to;
-            param[4] = new SqlParameter("@Name", SqlDbType.NVarChar, 75);
-            param[4].Value = name;
-
-
-            da.excutequery("AddTransfairBankToStock", param);
-            da.close();
-        }
-
         internal DataTable Insert_Stock()
         {
             DataAccessLayer da = new DataAccessLayer();
@@ -191,8 +168,6 @@ namespace Laboratory.BL
             DataTable dt = new DataTable();
             dt = da.selected("Insert_Stock", null);
             return dt;
-
-
         }
         internal DataTable Search_Insert_Stock(DateTime dateFrom, DateTime DateTo)
         {
@@ -206,35 +181,34 @@ namespace Laboratory.BL
             param[1].Value = DateTo;
             dt = da.selected("Search_Insert_Stock", param);
             return dt;
-
-
         }
 
-        internal DataTable Report_PullStock()
+        internal DataTable Reprot_StockPull(int Id_Stock)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@id_Stock", SqlDbType.Int);
+            param[0].Value = Id_Stock;
+            da.open();
+            DataTable dt = new DataTable();
+            dt = da.selected("Reprot_StockPull", param);
+            return dt;
+        }
+
+        internal DataTable Search_ReprotStockPull(int Id_Stock,DateTime dateFrom, DateTime DateTo)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
             DataTable dt = new DataTable();
-            dt = da.selected("Report_PullStock", null);
+            SqlParameter[] param = new SqlParameter[3];
+            param[0] = new SqlParameter("@id_Stock", SqlDbType.Int);
+            param[0].Value = Id_Stock;
+            param[1] = new SqlParameter("@Date_From", SqlDbType.DateTime);
+            param[1].Value = dateFrom;
+            param[2] = new SqlParameter("@Date_to", SqlDbType.DateTime);
+            param[2].Value = DateTo;
+            dt = da.selected("Search_ReprotStockPull", param);
             return dt;
-
-
-        }
-
-        internal DataTable Search_PullStock(DateTime dateFrom, DateTime DateTo)
-        {
-            DataAccessLayer da = new DataAccessLayer();
-            da.open();
-            DataTable dt = new DataTable();
-            SqlParameter[] param = new SqlParameter[2];
-            param[0] = new SqlParameter("@data_from", SqlDbType.DateTime);
-            param[0].Value = dateFrom;
-            param[1] = new SqlParameter("@data_to", SqlDbType.DateTime);
-            param[1].Value = DateTo;
-            dt = da.selected("Search_PullStock", param);
-            return dt;
-
-
         }
 
         internal void DeletePullStock(int id_stock, DateTime date, decimal money)

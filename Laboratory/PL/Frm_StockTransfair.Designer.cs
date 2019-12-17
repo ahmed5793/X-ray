@@ -53,7 +53,7 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(218, 127);
+            this.label2.Location = new System.Drawing.Point(218, 132);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label2.Size = new System.Drawing.Size(159, 24);
@@ -63,10 +63,10 @@
             // txt_addbalance
             // 
             this.txt_addbalance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_addbalance.Location = new System.Drawing.Point(12, 171);
+            this.txt_addbalance.Location = new System.Drawing.Point(12, 172);
             this.txt_addbalance.Multiline = true;
             this.txt_addbalance.Name = "txt_addbalance";
-            this.txt_addbalance.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txt_addbalance.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txt_addbalance.Size = new System.Drawing.Size(195, 28);
             this.txt_addbalance.TabIndex = 86;
             this.txt_addbalance.Text = "0";
@@ -79,7 +79,7 @@
             this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.label8.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(221, 175);
+            this.label8.Location = new System.Drawing.Point(217, 176);
             this.label8.Name = "label8";
             this.label8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label8.Size = new System.Drawing.Size(130, 22);
@@ -89,11 +89,10 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(12, 125);
+            this.textBox1.Location = new System.Drawing.Point(12, 128);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.textBox1.Size = new System.Drawing.Size(195, 31);
             this.textBox1.TabIndex = 84;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -105,7 +104,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.label1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(222, 90);
+            this.label1.Location = new System.Drawing.Point(251, 93);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label1.Size = new System.Drawing.Size(116, 22);
@@ -119,10 +118,10 @@
             this.Cmb_StrockTo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Cmb_StrockTo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cmb_StrockTo.FormattingEnabled = true;
-            this.Cmb_StrockTo.Location = new System.Drawing.Point(12, 87);
+            this.Cmb_StrockTo.Location = new System.Drawing.Point(12, 90);
             this.Cmb_StrockTo.Name = "Cmb_StrockTo";
             this.Cmb_StrockTo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Cmb_StrockTo.Size = new System.Drawing.Size(195, 27);
+            this.Cmb_StrockTo.Size = new System.Drawing.Size(228, 27);
             this.Cmb_StrockTo.TabIndex = 82;
             this.Cmb_StrockTo.SelectedIndexChanged += new System.EventHandler(this.Cmb_StrockTo_SelectedIndexChanged);
             this.Cmb_StrockTo.SelectionChangeCommitted += new System.EventHandler(this.Cmb_StrockTo_SelectionChangeCommitted);
@@ -131,7 +130,7 @@
             // 
             this.btn_save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btn_save.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_save.Location = new System.Drawing.Point(102, 412);
+            this.btn_save.Location = new System.Drawing.Point(118, 412);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(143, 51);
             this.btn_save.TabIndex = 81;
@@ -146,7 +145,6 @@
             this.txt_CurrentBalance1.Multiline = true;
             this.txt_CurrentBalance1.Name = "txt_CurrentBalance1";
             this.txt_CurrentBalance1.ReadOnly = true;
-            this.txt_CurrentBalance1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txt_CurrentBalance1.Size = new System.Drawing.Size(195, 31);
             this.txt_CurrentBalance1.TabIndex = 80;
             this.txt_CurrentBalance1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -157,7 +155,7 @@
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.label7.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(213, 339);
+            this.label7.Location = new System.Drawing.Point(215, 336);
             this.label7.Name = "label7";
             this.label7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label7.Size = new System.Drawing.Size(97, 22);
@@ -173,9 +171,9 @@
             this.label6.Location = new System.Drawing.Point(221, 268);
             this.label6.Name = "label6";
             this.label6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label6.Size = new System.Drawing.Size(87, 22);
+            this.label6.Size = new System.Drawing.Size(94, 22);
             this.label6.TabIndex = 78;
-            this.label6.Text = "اسم المودع:";
+            this.label6.Text = "اسم الموظف:";
             // 
             // txt_reason
             // 
@@ -194,6 +192,7 @@
             this.txt_name.Location = new System.Drawing.Point(12, 262);
             this.txt_name.Multiline = true;
             this.txt_name.Name = "txt_name";
+            this.txt_name.ReadOnly = true;
             this.txt_name.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txt_name.Size = new System.Drawing.Size(195, 32);
             this.txt_name.TabIndex = 76;
@@ -205,7 +204,7 @@
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.label4.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(221, 217);
+            this.label4.Location = new System.Drawing.Point(218, 220);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label4.Size = new System.Drawing.Size(101, 22);
@@ -228,7 +227,7 @@
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.label5.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(222, 15);
+            this.label5.Location = new System.Drawing.Point(256, 12);
             this.label5.Name = "label5";
             this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label5.Size = new System.Drawing.Size(115, 22);
@@ -242,10 +241,10 @@
             this.cmb_StockFrom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_StockFrom.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_StockFrom.FormattingEnabled = true;
-            this.cmb_StockFrom.Location = new System.Drawing.Point(12, 12);
+            this.cmb_StockFrom.Location = new System.Drawing.Point(9, 12);
             this.cmb_StockFrom.Name = "cmb_StockFrom";
             this.cmb_StockFrom.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmb_StockFrom.Size = new System.Drawing.Size(195, 27);
+            this.cmb_StockFrom.Size = new System.Drawing.Size(238, 27);
             this.cmb_StockFrom.TabIndex = 72;
             this.cmb_StockFrom.SelectedIndexChanged += new System.EventHandler(this.cmb_StockFrom_SelectedIndexChanged);
             this.cmb_StockFrom.SelectionChangeCommitted += new System.EventHandler(this.cmb_StockFrom_SelectionChangeCommitted);
@@ -267,7 +266,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(386, 512);
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.ClientSize = new System.Drawing.Size(386, 475);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txt_addbalance);
             this.Controls.Add(this.label8);
@@ -285,8 +285,12 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cmb_StockFrom);
             this.Controls.Add(this.label3);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(402, 513);
+            this.MinimumSize = new System.Drawing.Size(402, 513);
             this.Name = "Frm_StockTransfair";
-            this.Text = "Frm_StockTransfair";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "تحويل رصيد من خزنة إلى خزنة";
             this.Load += new System.EventHandler(this.Frm_StockTransfair_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

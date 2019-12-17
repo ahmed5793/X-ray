@@ -344,6 +344,12 @@
     <Compile Include="PL\Frm_ReportDoctor.Designer.cs">
       <DependentUpon>Frm_ReportDoctor.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Frm_ReportMasrofat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_ReportMasrofat.Designer.cs">
+      <DependentUpon>Frm_ReportMasrofat.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_ReportOfDoctorOfCenter.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -355,6 +361,12 @@
     </Compile>
     <Compile Include="PL\Frm_ReportPaySuppliers.Designer.cs">
       <DependentUpon>Frm_ReportPaySuppliers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Frm_ReportStockPull.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_ReportStockPull.Designer.cs">
+      <DependentUpon>Frm_ReportStockPull.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Frm_Salf.cs">
       <SubType>Form</SubType>
@@ -535,11 +547,17 @@
     <EmbeddedResource Include="PL\Frm_ReportDoctor.resx">
       <DependentUpon>Frm_ReportDoctor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_ReportMasrofat.resx">
+      <DependentUpon>Frm_ReportMasrofat.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_ReportOfDoctorOfCenter.resx">
       <DependentUpon>Frm_ReportOfDoctorOfCenter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_ReportPaySuppliers.resx">
       <DependentUpon>Frm_ReportPaySuppliers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_ReportStockPull.resx">
+      <DependentUpon>Frm_ReportStockPull.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Salf.resx">
       <DependentUpon>Frm_Salf.cs</DependentUpon>

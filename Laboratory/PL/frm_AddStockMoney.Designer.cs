@@ -65,6 +65,7 @@
             this.textBox1.Location = new System.Drawing.Point(35, 243);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.textBox1.Size = new System.Drawing.Size(195, 32);
             this.textBox1.TabIndex = 53;
@@ -72,8 +73,9 @@
             // 
             // btn_save
             // 
-            this.btn_save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_save.BackColor = System.Drawing.Color.Black;
             this.btn_save.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_save.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_save.Location = new System.Drawing.Point(101, 391);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(132, 40);
@@ -89,7 +91,6 @@
             this.txt_CurrentBalance.Multiline = true;
             this.txt_CurrentBalance.Name = "txt_CurrentBalance";
             this.txt_CurrentBalance.ReadOnly = true;
-            this.txt_CurrentBalance.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txt_CurrentBalance.Size = new System.Drawing.Size(195, 31);
             this.txt_CurrentBalance.TabIndex = 51;
             this.txt_CurrentBalance.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -100,7 +101,6 @@
             this.txt_addbalance.Location = new System.Drawing.Point(35, 105);
             this.txt_addbalance.Multiline = true;
             this.txt_addbalance.Name = "txt_addbalance";
-            this.txt_addbalance.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txt_addbalance.Size = new System.Drawing.Size(195, 28);
             this.txt_addbalance.TabIndex = 50;
             this.txt_addbalance.Text = "0";
@@ -150,6 +150,7 @@
             this.txt_name.Location = new System.Drawing.Point(35, 193);
             this.txt_name.Multiline = true;
             this.txt_name.Name = "txt_name";
+            this.txt_name.ReadOnly = true;
             this.txt_name.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txt_name.Size = new System.Drawing.Size(195, 32);
             this.txt_name.TabIndex = 46;
@@ -207,7 +208,7 @@
             this.label5.BackColor = System.Drawing.Color.Yellow;
             this.label5.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(245, 25);
+            this.label5.Location = new System.Drawing.Point(292, 27);
             this.label5.Name = "label5";
             this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label5.Size = new System.Drawing.Size(80, 22);
@@ -221,10 +222,10 @@
             this.cmb_Stock.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Stock.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_Stock.FormattingEnabled = true;
-            this.cmb_Stock.Location = new System.Drawing.Point(35, 22);
+            this.cmb_Stock.Location = new System.Drawing.Point(12, 22);
             this.cmb_Stock.Name = "cmb_Stock";
             this.cmb_Stock.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmb_Stock.Size = new System.Drawing.Size(195, 27);
+            this.cmb_Stock.Size = new System.Drawing.Size(251, 27);
             this.cmb_Stock.TabIndex = 40;
             this.cmb_Stock.SelectedIndexChanged += new System.EventHandler(this.cmb_Stock_SelectedIndexChanged);
             this.cmb_Stock.SelectionChangeCommitted += new System.EventHandler(this.cmb_Stock_SelectionChangeCommitted);
@@ -246,6 +247,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(403, 444);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
@@ -263,8 +265,12 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cmb_Stock);
             this.Controls.Add(this.label3);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(419, 482);
+            this.MinimumSize = new System.Drawing.Size(419, 482);
             this.Name = "frm_AddStockMoney";
-            this.Text = "frm_AddStockMoney";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "إيداع رصيد ف الخزنة";
             this.Load += new System.EventHandler(this.frm_AddStockMoney_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
