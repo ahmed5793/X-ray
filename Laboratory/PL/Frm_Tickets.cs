@@ -26,7 +26,7 @@ namespace Laboratory.PL
         Tickets t = new Tickets();
         Techincal tc = new Techincal();
         DoctorOfCenter dc = new DoctorOfCenter();
-        string names;
+    
 
         public Frm_Tickets()
         {
@@ -36,16 +36,47 @@ namespace Laboratory.PL
             cmb_Company.Enabled = false;
             txt_username.Text = Program.salesman;
             brnches();
-            Stock();
+          
             Customer();
             doctor();
           
-
+          
             txt_phone.Enabled = false;
             txt_age.Enabled = false;
             txt_address.Enabled = false;
        
 
+        }
+        void Permision()
+        {
+            dt.Clear();
+            dt = u.SelectUserBranch(txt_username.Text);
+
+            if (dt.Rows.Count > 0)
+            {
+                cmb_UserBranch.DataSource = u.SelectUserBranch(txt_username.Text);
+                cmb_UserBranch.DisplayMember = "Name";
+                cmb_UserBranch.ValueMember = "Branch_ID";
+
+                cmb_Stock.DataSource = s.SelectStockBranch(Convert.ToInt32(cmb_UserBranch.SelectedValue));
+                cmb_Stock.DisplayMember = "Name_Stock";
+                cmb_Stock.ValueMember = "ID_Stock";
+
+
+
+
+            }
+            else
+            {
+                cmb_UserBranch.DataSource = b.SelectCompBranches();
+                cmb_UserBranch.DisplayMember = "Name";
+                cmb_UserBranch.ValueMember = "Branch_ID";
+
+                Stock();
+
+
+
+            }
         }
         public void rezizse()
         {
@@ -142,11 +173,15 @@ namespace Laboratory.PL
             cmb_Techincal.DisplayMember = "Tech_Name";
             cmb_Techincal.ValueMember = "Techincal_ID";
         }
-      
-      
 
+
+        Users u = new Users();
         private void Frm_Tickets_Load(object sender, EventArgs e)
         {
+            Permision();
+
+
+
             CategoryXraya();
             SelectdataTable();
 
@@ -156,6 +191,8 @@ namespace Laboratory.PL
             totalOrder();
             DoctorOfCenter();
             Techincal();
+            txt_idntational.Enabled = false;
+            comboBox1.Enabled = false;
      
 
 
@@ -246,24 +283,12 @@ namespace Laboratory.PL
         }
         private void rdb_Compamy_CheckedChanged(object sender, EventArgs e)
         {
-            if (rdb_Compamy.Checked == true)
-            {
-              
-                cmb_Company.Enabled = true;
-                company();
-            }
-            names = "شركات";
+            
         }
       
         private void rdb_client_CheckedChanged(object sender, EventArgs e)
         {
-            if (rdb_client.Checked == true)
-            {
-             
-                cmb_Company.Enabled = false;
-                cmb_Company.DataSource = null;
-            }
-            names = "اهالي";
+          
         }
         DataTable dt = new DataTable();
         private void Cmb_category_SelectionChangeCommitted(object sender, EventArgs e)
@@ -294,6 +319,8 @@ namespace Laboratory.PL
                     txt_phone.Text = dt.Rows[0][0].ToString();
                     txt_address.Text = dt.Rows[0][1].ToString();
                     txt_age.Text = dt.Rows[0][2].ToString();
+                    comboBox1.Text = dt.Rows[0][3].ToString();
+                    txt_idntational.Text = dt.Rows[0][4].ToString();
                     SelectTicketEmployee();
                 }
                 else
@@ -322,8 +349,11 @@ namespace Laboratory.PL
                 txt_phone.Clear();
                 txt_age.Clear();
                 txt_address.Clear();
+                txt_idntational.Clear();
                 dgv_visit.DataSource = null;
-               
+                txt_idntational.Enabled = true;
+                comboBox1.Enabled = true;
+
             }
         }
 
@@ -337,6 +367,8 @@ namespace Laboratory.PL
                 txt_phone.Enabled = false;
                 txt_age.Enabled = false;
                 txt_address.Enabled = false;
+                txt_idntational.Enabled = false;
+                comboBox1.Enabled = false;
 
                 txt_phone.Clear();
                 txt_age.Clear();
@@ -640,9 +672,9 @@ namespace Laboratory.PL
             {
                 if (dgv_order.Rows.Count>0)
                 {
-                    if (rdb_client.Checked==false&&rdb_Compamy.Checked==false)
+                    if (cmb_statues.Text=="")
                     {
-                        MessageBox.Show("من فضلك قم بتحديد نوع الفاتورة اهالي ام شركات");
+                        MessageBox.Show("من فضلك قم بتحديد طريقة التعامل");
                         return;
                     }
 
@@ -690,15 +722,15 @@ namespace Laboratory.PL
                         return;
                     }
 
-                    if (rdb_client.Checked==true)
+                    if (cmb_statues.Text=="نقدى")
                     {
                         if (rdb_NewPatient.Checked==true)
                         {
-                            c.addCustomer(txt_name.Text, txt_address.Text, txt_phone.Text, Convert.ToInt32(txt_age.Text), dtb_visit.Value);
+                            c.addCustomer(txt_name.Text, txt_address.Text, txt_phone.Text, Convert.ToInt32(txt_age.Text), dtb_visit.Value, comboBox1.Text, txt_idntational.Text);
                             txt_idcust.Text = c.LastIdCustomer().Rows[0][0].ToString();
 
                             t.AddTickets(dtb_visit.Value, dtp_recive.Value, Convert.ToDecimal(txt_total.Text), Convert.ToDecimal(txt_pay.Text),
-                                Convert.ToDecimal(txt_rent.Text), Convert.ToInt32(txt_idcust.Text), names, Convert.ToInt32(cmb_Doctor.SelectedValue),
+                                Convert.ToDecimal(txt_rent.Text), Convert.ToInt32(txt_idcust.Text), cmb_statues.Text, Convert.ToInt32(cmb_Doctor.SelectedValue),
                                 Convert.ToInt32(cmb_branches.SelectedValue), Convert.ToInt32(cmb_Stock.SelectedValue), dtb_kashf.Value,
                                 txt_compint.Text, Convert.ToInt32(cmb_DoctorOfCenter.SelectedValue), Convert.ToInt32(cmb_Techincal.SelectedValue), txt_username.Text);
                             txt_IdTicket.Text = t.LastIdTicket().Rows[0][0].ToString();
@@ -714,7 +746,7 @@ namespace Laboratory.PL
                         {
 
                             t.AddTickets(dtb_visit.Value, dtp_recive.Value, Convert.ToDecimal(txt_total.Text), Convert.ToDecimal(txt_pay.Text),
-                                Convert.ToDecimal(txt_rent.Text), Convert.ToInt32(Cmb_customer.SelectedValue), names, Convert.ToInt32(cmb_Doctor.SelectedValue),
+                                Convert.ToDecimal(txt_rent.Text), Convert.ToInt32(Cmb_customer.SelectedValue), cmb_statues.Text, Convert.ToInt32(cmb_Doctor.SelectedValue),
                                 Convert.ToInt32(cmb_branches.SelectedValue), Convert.ToInt32(cmb_Stock.SelectedValue), dtb_kashf.Value,
                                 txt_compint.Text, Convert.ToInt32(cmb_DoctorOfCenter.SelectedValue), Convert.ToInt32(cmb_Techincal.SelectedValue), txt_username.Text);
                             txt_IdTicket.Text = t.LastIdTicket().Rows[0][0].ToString();
@@ -728,7 +760,7 @@ namespace Laboratory.PL
                         }
                        
                     }
-                    else if (rdb_Compamy.Checked==true)
+                    else if (cmb_statues.Text == "شركات")
                     {
                         if (cmb_Company.Text=="")
                         {
@@ -737,11 +769,11 @@ namespace Laboratory.PL
                         }
                         if (rdb_NewPatient.Checked == true)
                         {
-                            c.addCustomer(txt_name.Text, txt_address.Text, txt_phone.Text, Convert.ToInt32(txt_age.Text), dtb_visit.Value);
+                            c.addCustomer(txt_name.Text, txt_address.Text, txt_phone.Text, Convert.ToInt32(txt_age.Text), dtb_visit.Value, comboBox1.Text,txt_idntational.Text);
                             txt_idcust.Text = c.LastIdCustomer().Rows[0][0].ToString();
 
                             t.AddTickets(dtb_visit.Value, dtp_recive.Value, Convert.ToDecimal(txt_total.Text), Convert.ToDecimal(txt_pay.Text),
-                                Convert.ToDecimal(txt_rent.Text), Convert.ToInt32(txt_idcust.Text), names, Convert.ToInt32(cmb_Doctor.SelectedValue),
+                                Convert.ToDecimal(txt_rent.Text), Convert.ToInt32(txt_idcust.Text), cmb_statues.Text, Convert.ToInt32(cmb_Doctor.SelectedValue),
                                 Convert.ToInt32(cmb_branches.SelectedValue), Convert.ToInt32(cmb_Stock.SelectedValue), dtb_kashf.Value,
                                 txt_compint.Text, Convert.ToInt32(cmb_DoctorOfCenter.SelectedValue), Convert.ToInt32(cmb_Techincal.SelectedValue), txt_username.Text);
                             txt_IdTicket.Text = t.LastIdTicket().Rows[0][0].ToString();
@@ -757,7 +789,7 @@ namespace Laboratory.PL
                         {
 
                             t.AddTickets(dtb_visit.Value, dtp_recive.Value, Convert.ToDecimal(txt_total.Text), Convert.ToDecimal(txt_pay.Text),
-                                Convert.ToDecimal(txt_rent.Text), Convert.ToInt32(Cmb_customer.SelectedValue), names, Convert.ToInt32(cmb_Doctor.SelectedValue),
+                                Convert.ToDecimal(txt_rent.Text), Convert.ToInt32(Cmb_customer.SelectedValue), cmb_statues.Text, Convert.ToInt32(cmb_Doctor.SelectedValue),
                                 Convert.ToInt32(cmb_branches.SelectedValue), Convert.ToInt32(cmb_Stock.SelectedValue), dtb_kashf.Value,
                                 txt_compint.Text, Convert.ToInt32(cmb_DoctorOfCenter.SelectedValue), Convert.ToInt32(cmb_Techincal.SelectedValue), txt_username.Text);
                             txt_IdTicket.Text = t.LastIdTicket().Rows[0][0].ToString();
@@ -878,6 +910,23 @@ namespace Laboratory.PL
         private void btn_print_Click(object sender, EventArgs e)
         {
             clear();
+        }
+
+        private void cmb_statues_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+               if (cmb_statues.Text == "شركات")
+            {
+                cmb_Company.Enabled = true;
+                company();
+
+            }
+           else if (cmb_statues.Text== "نقدى")
+            {
+                cmb_Company.DataSource = null;
+                cmb_Company.Enabled = false;
+            }
+
+         
         }
     }
     }

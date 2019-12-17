@@ -11,11 +11,11 @@ namespace Laboratory.BL
 {
     class Customer
     {
-        internal void addCustomer(string name, string address, string phone,int age,DateTime Start_Date)
+        internal void addCustomer(string name, string address, string phone,int age,DateTime Start_Date,string gender,string ID_Ntional)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[5];
+            SqlParameter[] param = new SqlParameter[7];
             param[0] = new SqlParameter("@name", SqlDbType.NVarChar, 150);
             param[0].Value = name;
             param[1] = new SqlParameter("@address", SqlDbType.NVarChar, 100);
@@ -27,7 +27,10 @@ namespace Laboratory.BL
             param[3].Value = age;
             param[4] = new SqlParameter("@Start_Date", SqlDbType.DateTime);
             param[4].Value = Start_Date;
-
+            param[5] = new SqlParameter("@gender", SqlDbType.NVarChar,50);
+            param[5].Value = gender;
+            param[6] = new SqlParameter("@ID_Ntional", SqlDbType.VarChar, 100);
+            param[6].Value = ID_Ntional;
 
             da.excutequery("AddCustomer", param);
             da.close();
@@ -81,11 +84,11 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
-        internal void UpdateCustomer(string name, string address, string phone, int age, int id)
+        internal void UpdateCustomer(string name, string address, string phone, int age, int id,string gender,string ID_Ntional)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[5];
+            SqlParameter[] param = new SqlParameter[7];
             param[0] = new SqlParameter("@name", SqlDbType.NVarChar, 150);
             param[0].Value = name;
             param[1] = new SqlParameter("@address", SqlDbType.NVarChar, 100);
@@ -97,6 +100,10 @@ namespace Laboratory.BL
             param[3].Value = age;
             param[4] = new SqlParameter("@id", SqlDbType.Int);
             param[4].Value = id;
+            param[5] = new SqlParameter("@gender", SqlDbType.NVarChar, 50);
+            param[5].Value = gender;
+            param[6] = new SqlParameter("@ID_Ntional", SqlDbType.VarChar, 100);
+            param[6].Value = ID_Ntional;
             da.excutequery("UpdateCustomer", param);
             da.close();
 

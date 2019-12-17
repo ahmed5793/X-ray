@@ -33,7 +33,11 @@
             this.txt_search = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txt_idnational = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txt_age = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -55,7 +59,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(502, 20);
+            this.label6.Location = new System.Drawing.Point(512, 27);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(41, 24);
             this.label6.TabIndex = 13;
@@ -66,16 +70,16 @@
             this.groupBox2.Controls.Add(this.txt_search);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Location = new System.Drawing.Point(12, 188);
+            this.groupBox2.Location = new System.Drawing.Point(12, 244);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(785, 301);
+            this.groupBox2.Size = new System.Drawing.Size(785, 237);
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
             // 
             // txt_search
             // 
             this.txt_search.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_search.Location = new System.Drawing.Point(234, 17);
+            this.txt_search.Location = new System.Drawing.Point(232, 19);
             this.txt_search.Name = "txt_search";
             this.txt_search.Size = new System.Drawing.Size(262, 32);
             this.txt_search.TabIndex = 0;
@@ -89,19 +93,23 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Maroon;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 55);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 57);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.ShowEditingIcon = false;
-            this.dataGridView1.Size = new System.Drawing.Size(767, 240);
+            this.dataGridView1.Size = new System.Drawing.Size(767, 174);
             this.dataGridView1.TabIndex = 12;
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txt_idnational);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.label22);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txt_age);
             this.groupBox1.Controls.Add(this.label4);
@@ -117,9 +125,41 @@
             this.groupBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(785, 170);
+            this.groupBox1.Size = new System.Drawing.Size(785, 226);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
+            // 
+            // txt_idnational
+            // 
+            this.txt_idnational.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_idnational.Location = new System.Drawing.Point(6, 117);
+            this.txt_idnational.MaxLength = 3000;
+            this.txt_idnational.Name = "txt_idnational";
+            this.txt_idnational.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txt_idnational.Size = new System.Drawing.Size(264, 32);
+            this.txt_idnational.TabIndex = 99;
+            this.txt_idnational.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_idnational.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_idnational_KeyPress);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(275, 121);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(96, 24);
+            this.label1.TabIndex = 100;
+            this.label1.Text = "الرقم القومي";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(155, 25);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(46, 24);
+            this.label22.TabIndex = 98;
+            this.label22.Text = "النوع";
             // 
             // dateTimePicker1
             // 
@@ -129,6 +169,23 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(196, 26);
             this.dateTimePicker1.TabIndex = 32;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "ذكر",
+            "انثي"});
+            this.comboBox1.Location = new System.Drawing.Point(9, 19);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.comboBox1.Size = new System.Drawing.Size(143, 32);
+            this.comboBox1.TabIndex = 97;
             // 
             // label7
             // 
@@ -144,7 +201,7 @@
             // txt_age
             // 
             this.txt_age.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_age.Location = new System.Drawing.Point(193, 22);
+            this.txt_age.Location = new System.Drawing.Point(210, 22);
             this.txt_age.MaxLength = 11;
             this.txt_age.Name = "txt_age";
             this.txt_age.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -157,7 +214,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(289, 27);
+            this.label4.Location = new System.Drawing.Point(305, 27);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 24);
             this.label4.TabIndex = 26;
@@ -166,7 +223,7 @@
             // btn_new
             // 
             this.btn_new.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_new.Location = new System.Drawing.Point(168, 117);
+            this.btn_new.Location = new System.Drawing.Point(421, 168);
             this.btn_new.Name = "btn_new";
             this.btn_new.Size = new System.Drawing.Size(132, 40);
             this.btn_new.TabIndex = 12;
@@ -186,7 +243,7 @@
             // btn_update
             // 
             this.btn_update.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_update.Location = new System.Drawing.Point(10, 117);
+            this.btn_update.Location = new System.Drawing.Point(273, 168);
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(118, 40);
             this.btn_update.TabIndex = 4;
@@ -197,7 +254,7 @@
             // btn_save
             // 
             this.btn_save.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_save.Location = new System.Drawing.Point(168, 117);
+            this.btn_save.Location = new System.Drawing.Point(431, 168);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(132, 40);
             this.btn_save.TabIndex = 21;
@@ -208,11 +265,11 @@
             // txt_phone
             // 
             this.txt_phone.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_phone.Location = new System.Drawing.Point(362, 70);
+            this.txt_phone.Location = new System.Drawing.Point(382, 70);
             this.txt_phone.MaxLength = 3000;
             this.txt_phone.Name = "txt_phone";
             this.txt_phone.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txt_phone.Size = new System.Drawing.Size(311, 32);
+            this.txt_phone.Size = new System.Drawing.Size(291, 32);
             this.txt_phone.TabIndex = 2;
             this.txt_phone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_phone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_phone_KeyPress);
@@ -240,9 +297,9 @@
             // txt_address
             // 
             this.txt_address.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_address.Location = new System.Drawing.Point(362, 117);
+            this.txt_address.Location = new System.Drawing.Point(382, 117);
             this.txt_address.Name = "txt_address";
-            this.txt_address.Size = new System.Drawing.Size(312, 32);
+            this.txt_address.Size = new System.Drawing.Size(292, 32);
             this.txt_address.TabIndex = 1;
             this.txt_address.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -298,5 +355,9 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txt_age;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label22;
+        public System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txt_idnational;
+        private System.Windows.Forms.Label label1;
     }
 }

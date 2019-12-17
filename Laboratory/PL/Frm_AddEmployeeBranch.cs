@@ -78,17 +78,19 @@ namespace Laboratory.PL
             dataGridView1.DataSource = E.SelectEmployeeBranch();
             btn_save.Enabled = true;
             btn_update.Enabled = false;
+            cmb_branch.Enabled = true ;
         }
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
             if (dataGridView1.Rows.Count>0)
             {
+                cmb_branch.Enabled = false;
                 btn_save.Enabled = false;
                 btn_update.Enabled = true;
-                cmb_branch.ValueMember = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+              
                 cmb_branch.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                cmb_employee.ValueMember = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+          
                 cmb_employee.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
             }
         }

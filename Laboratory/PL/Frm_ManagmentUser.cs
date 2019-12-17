@@ -90,10 +90,11 @@ namespace Laboratory.PL
                     return;
                 }
                     u.AddUser(Convert.ToInt32(comboBox1.SelectedValue), txt_User.Text, txt_Pass.Text);
-                    P.Add_UserBAsicInformation(txt_User.Text, 0, 0, 0, 0);
+                dataGridViewList.DataSource = u.SelectUsers();
+                P.Add_UserBAsicInformation(txt_User.Text, 0, 0, 0, 0);
                     P.Add_UserEmployee(txt_User.Text, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
                 MessageBox.Show("Registration saved successfully");
-                dataGridViewList.DataSource = u.SelectUsers();
+          
 
                 txt_Pass.Clear();
                 txt_User.Clear();

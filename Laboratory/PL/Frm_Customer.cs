@@ -36,7 +36,8 @@ namespace Laboratory.PL
             txt_age.Clear();
             txt_name.Clear();
             txt_phone.Clear();
-           
+            txt_idnational.Clear();
+
         }
         
         private void Btn_save_Click(object sender, EventArgs e)
@@ -49,6 +50,11 @@ namespace Laboratory.PL
                 if (txt_name.Text == "")
                 {
                     MessageBox.Show("يرجي التاكد من اسم العميل");
+                    return;
+                }
+                if (comboBox1.Text == "")
+                {
+                    MessageBox.Show("يرجي التاكد من نوع ");
                     return;
                 }
                 if (txt_age.Text == "")
@@ -66,7 +72,7 @@ namespace Laboratory.PL
 
                         c.addCustomer(txt_name.Text, txt_address.Text, txt_phone.Text,
                           
-                            Convert.ToInt32(txt_age.Text),dateTimePicker1.Value);
+                            Convert.ToInt32(txt_age.Text),dateTimePicker1.Value,comboBox1.Text,txt_idnational.Text);
                         MessageBox.Show("تم اضافه العميل بنجاح", "عمليه الاضافه", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                         dataGridView1.DataSource = c.SelectCustomer();
@@ -101,6 +107,11 @@ namespace Laboratory.PL
                     MessageBox.Show("يرجي التاكد من اسم العميل");
                     return;
                 }
+                if (comboBox1.Text == "")
+                {
+                    MessageBox.Show("يرجي التاكد من نوع ");
+                    return;
+                }
                 if (txt_age.Text == "")
                 {
                     MessageBox.Show("يرجي التاكد من ألسن");
@@ -118,7 +129,7 @@ namespace Laboratory.PL
                 {
 
                     c.UpdateCustomer(txt_name.Text, txt_address.Text, txt_phone.Text, 
-                            Convert.ToInt32(txt_age.Text), int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString()));
+                            Convert.ToInt32(txt_age.Text), int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString()), comboBox1.Text,txt_idnational.Text);
                     MessageBox.Show("تم تعديل بيانات العميل بنجاح", "عمليه التعديل", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     dataGridView1.DataSource = c.SelectCustomer();
                     clear();
@@ -184,15 +195,15 @@ namespace Laboratory.PL
             {
                 dateTimePicker1.Enabled = false;
 
-                txt_name.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString(); 
-              
+                txt_name.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                comboBox1.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
 
-           
-                txt_age.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                txt_address.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                txt_phone.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
 
+                txt_age.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                txt_address.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                txt_phone.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                txt_idnational.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
                 btn_save.Hide();
                 btn_new.Show();
                 btn_update.Enabled = true;
@@ -205,6 +216,7 @@ namespace Laboratory.PL
             clear();
             btn_save.Show();
             btn_new.Hide();
+          
             btn_update.Enabled = false;
         }
 
@@ -228,6 +240,14 @@ namespace Laboratory.PL
         {
         
            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 )
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_idnational_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
             {
                 e.Handled = true;
             }
