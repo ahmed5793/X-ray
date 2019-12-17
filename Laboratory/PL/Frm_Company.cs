@@ -48,7 +48,7 @@ namespace Laboratory.PL
                 else
                 {
 
-                    co.AddCompany(txt_name.Text, txt_phone.Text,txt_address.Text,dateTimePicker1.Value,Convert.ToDecimal(txt_discount.Text),richTextBox1.Text);
+                    co.AddCompany(txt_name.Text, txt_phone.Text,txt_address.Text,dateTimePicker1.Value,richTextBox1.Text);
 
                     MessageBox.Show("تم اضافه بيانات الشركة بنجاح", "عمليه الاضافه", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
@@ -83,7 +83,7 @@ namespace Laboratory.PL
 
                 if (MessageBox.Show("هل تريد تعديل بيانات الشركة", "عمليه التعديل", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
                 {
-                    co.UpdateCompany(txt_name.Text, txt_phone.Text, Convert.ToInt32(dataGridView1.CurrentRow.Cells[3].Value),txt_address.Text, Convert.ToDecimal(txt_discount.Text), richTextBox1.Text);
+                    co.UpdateCompany(txt_name.Text, txt_phone.Text, Convert.ToInt32(dataGridView1.CurrentRow.Cells[3].Value),txt_address.Text, richTextBox1.Text);
 
                     MessageBox.Show("تم تعديل بيانات الشركة بنجاح", "عمليه التعديل", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     dataGridView1.DataSource = co.SelectCompany();
@@ -93,7 +93,6 @@ namespace Laboratory.PL
                     btn_update.Enabled = false;
                     btn_new.Hide();
                     btn_save.Show();
-                    txt_discount.Clear();
                     richTextBox1.Clear();
 
                 }
@@ -106,7 +105,6 @@ namespace Laboratory.PL
                     btn_update.Enabled = false;
                     btn_new.Hide();
                     btn_save.Show();
-                    txt_discount.Clear();
                     richTextBox1.Clear();
                 }
             
@@ -131,9 +129,7 @@ namespace Laboratory.PL
 
                 dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
 
-                txt_discount.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-
-                richTextBox1.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                richTextBox1.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
                 btn_save.Hide();
                 btn_new.Show();
                 btn_update.Enabled = true;
@@ -149,7 +145,6 @@ namespace Laboratory.PL
             btn_update.Enabled = false;
             txt_name.Clear();
             txt_phone.Clear();
-            txt_discount.Clear();
             richTextBox1.Clear();
         }
       

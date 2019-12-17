@@ -122,6 +122,12 @@
     <Compile Include="BL\DoctorOfCenter.cs" />
     <Compile Include="BL\Doctors.cs" />
     <Compile Include="BL\Employee.cs" />
+    <Compile Include="PL\Frm_CompanyItemXray.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_CompanyItemXray.Designer.cs">
+      <DependentUpon>Frm_CompanyItemXray.cs</DependentUpon>
+    </Compile>
     <Compile Include="BL\ItemsXRaya.cs" />
     <Compile Include="BL\Masrofat.cs" />
     <Compile Include="BL\Orders.cs" />
@@ -442,6 +448,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="PL\Frm_CompanyItemXray.resx">
+      <DependentUpon>Frm_CompanyItemXray.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\Add_Product.resx">
       <DependentUpon>Add_Product.cs</DependentUpon>
     </EmbeddedResource>

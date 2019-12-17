@@ -11,11 +11,11 @@ namespace Laboratory.BL
 {
     class Company
     {
-        internal void AddCompany(string name, string phone,string address,DateTime StartDate,decimal discount,string notes )
+        internal void AddCompany(string name, string phone,string address,DateTime StartDate,string notes )
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[6];
+            SqlParameter[] param = new SqlParameter[5];
             param[0] = new SqlParameter("@name", SqlDbType.NVarChar, 250);
             param[0].Value = name;
 
@@ -27,17 +27,11 @@ namespace Laboratory.BL
 
             param[3] = new SqlParameter("@StartDate", SqlDbType.DateTime);
             param[3].Value = StartDate;
-            param[4] = new SqlParameter("@Discount", SqlDbType.Decimal);
-            param[4].Value = discount;
-            param[5] = new SqlParameter("@notes", SqlDbType.NVarChar,750);
-            param[5].Value = notes;
 
-
-
-            da.excutequery("AddCompany", param);
-           
+            param[4] = new SqlParameter("@notes", SqlDbType.NVarChar,750);
+            param[4].Value = notes;
+            da.excutequery("AddCompany", param);           
             da.close();
-
         }
         internal DataTable SelectCompany()
         {
@@ -74,7 +68,7 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
-        internal void UpdateCompany(string name, string phone, int id, string address,decimal Discount, string notes)
+        internal void UpdateCompany(string name, string phone, int id, string address,string notes)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
@@ -89,10 +83,8 @@ namespace Laboratory.BL
             param[2].Value = id;
             param[3] = new SqlParameter("@address", SqlDbType.NVarChar, 250);
             param[3].Value = address;
-            param[4] = new SqlParameter("@Discount", SqlDbType.Decimal);
-            param[4].Value = Discount;
-            param[5] = new SqlParameter("@notes", SqlDbType.NVarChar, 750);
-            param[5].Value = notes;
+            param[4] = new SqlParameter("@notes", SqlDbType.NVarChar, 750);
+            param[4].Value = notes;
             da.excutequery("UpdateCompany", param);
             da.close();
 
@@ -181,8 +173,60 @@ namespace Laboratory.BL
             dt = da.selected("SelectDiscount", param);
             da.close();
             return dt;
+        }
+        internal void Add_Company_ItemsXray(int ID_Company, int ID_Item, decimal Price, decimal patient_Payment)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[4];
+            param[0] = new SqlParameter("@Id_Company", SqlDbType.Int);
+            param[0].Value = ID_Company;
+            param[1] = new SqlParameter("@Id_ItemXrays", SqlDbType.Int);
+            param[1].Value = ID_Item;
+            param[2] = new SqlParameter("@Price", SqlDbType.Decimal);
+            param[2].Value = Price;
+            param[3] = new SqlParameter("@Patient_payment", SqlDbType.Decimal);
+            param[3].Value = patient_Payment;
+            da.excutequery("Add_Company_ItemsXray", param);
+            da.close();
+        }
+        internal void Update_Company_Xray(int ID_Company, int ID_Item, decimal Price, decimal patient_Payment)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[4];
+            param[0] = new SqlParameter("@Id_Company", SqlDbType.Int);
+            param[0].Value = ID_Company;
+            param[1] = new SqlParameter("@Id_ItemXrays", SqlDbType.Int);
+            param[1].Value = ID_Item;
+            param[2] = new SqlParameter("@Price", SqlDbType.Decimal);
+            param[2].Value = Price;
+            param[3] = new SqlParameter("@Patient_payment", SqlDbType.Decimal);
+            param[3].Value = patient_Payment;
+            da.excutequery("Update_Company_Xray", param);
+            da.close();
+        }
+        internal DataTable Select_Company_Xray()
+        {
+            DataTable dt = new DataTable();
 
-
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            dt = da.selected("Select_Company_Xray", null);
+            da.close();
+            return dt;
+        }
+        internal DataTable Search_Company_Xray(string id_company)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            DataTable dt = new DataTable();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@id", SqlDbType.NVarChar,100);
+            param[0].Value = id_company;
+            dt = da.selected("Search_Company_Xray", param);
+            da.close();
+            return dt;
         }
     }
 }
