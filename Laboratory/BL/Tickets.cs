@@ -164,7 +164,7 @@ namespace Laboratory.BL
             SqlParameter[] param = new SqlParameter[2];
             param[0] = new SqlParameter("@id_Branche", SqlDbType.Int);
             param[0].Value = IDBranch;
-            param[1] = new SqlParameter("@date_day", SqlDbType.NVarChar);
+            param[1] = new SqlParameter("@date_day", SqlDbType.NVarChar,50);
             param[1].Value = date_day;
             dt = da.selected("SelectManagmentTicketsBranchEvening", param);
             da.close();
