@@ -716,7 +716,8 @@ namespace Laboratory.PL
                             t.AddTickets(dtb_visit.Value, dtp_recive.Value, Convert.ToDecimal(txt_total.Text), Convert.ToDecimal(txt_pay.Text),
                                 Convert.ToDecimal(txt_rent.Text), Convert.ToInt32(txt_idcust.Text), cmb_statues.Text, Convert.ToInt32(cmb_Doctor.SelectedValue),
                                 Convert.ToInt32(cmb_branches.SelectedValue), Convert.ToInt32(cmb_Stock.SelectedValue), dtb_kashf.Value,
-                                txt_compint.Text, Convert.ToInt32(cmb_DoctorOfCenter.SelectedValue), Convert.ToInt32(cmb_Techincal.SelectedValue), txt_username.Text);
+                                txt_compint.Text, Convert.ToInt32(cmb_DoctorOfCenter.SelectedValue), Convert.ToInt32(cmb_Techincal.SelectedValue), txt_username.Text,
+                                cmb_UserBranch.Text,Convert.ToDecimal(txt_addition.Text),txt_reasonAddition.Text,Convert.ToDecimal(txt_afterDiscount.Text));
                             txt_IdTicket.Text = t.LastIdTicket().Rows[0][0].ToString();
                             for (int i = 0; i < dgv_order.Rows.Count; i++)
                             {
@@ -732,7 +733,8 @@ namespace Laboratory.PL
                             t.AddTickets(dtb_visit.Value, dtp_recive.Value, Convert.ToDecimal(txt_total.Text), Convert.ToDecimal(txt_pay.Text),
                                 Convert.ToDecimal(txt_rent.Text), Convert.ToInt32(Cmb_customer.SelectedValue), cmb_statues.Text, Convert.ToInt32(cmb_Doctor.SelectedValue),
                                 Convert.ToInt32(cmb_branches.SelectedValue), Convert.ToInt32(cmb_Stock.SelectedValue), dtb_kashf.Value,
-                                txt_compint.Text, Convert.ToInt32(cmb_DoctorOfCenter.SelectedValue), Convert.ToInt32(cmb_Techincal.SelectedValue), txt_username.Text);
+                                txt_compint.Text, Convert.ToInt32(cmb_DoctorOfCenter.SelectedValue), Convert.ToInt32(cmb_Techincal.SelectedValue), txt_username.Text,
+                                    cmb_UserBranch.Text, Convert.ToDecimal(txt_addition.Text), txt_reasonAddition.Text, Convert.ToDecimal(txt_afterDiscount.Text));
                             txt_IdTicket.Text = t.LastIdTicket().Rows[0][0].ToString();
                             for (int i = 0; i < dgv_order.Rows.Count; i++)
                             {
@@ -759,7 +761,8 @@ namespace Laboratory.PL
                             t.AddTickets(dtb_visit.Value, dtp_recive.Value, Convert.ToDecimal(txt_total.Text), Convert.ToDecimal(txt_pay.Text),
                                 Convert.ToDecimal(txt_rent.Text), Convert.ToInt32(txt_idcust.Text), cmb_statues.Text, Convert.ToInt32(cmb_Doctor.SelectedValue),
                                 Convert.ToInt32(cmb_branches.SelectedValue), Convert.ToInt32(cmb_Stock.SelectedValue), dtb_kashf.Value,
-                                txt_compint.Text, Convert.ToInt32(cmb_DoctorOfCenter.SelectedValue), Convert.ToInt32(cmb_Techincal.SelectedValue), txt_username.Text);
+                                txt_compint.Text, Convert.ToInt32(cmb_DoctorOfCenter.SelectedValue), Convert.ToInt32(cmb_Techincal.SelectedValue), txt_username.Text,
+                                    cmb_UserBranch.Text, Convert.ToDecimal(txt_addition.Text), txt_reasonAddition.Text, Convert.ToDecimal(txt_afterDiscount.Text));
                             txt_IdTicket.Text = t.LastIdTicket().Rows[0][0].ToString();
                             for (int i = 0; i < dgv_order.Rows.Count; i++)
                             {
@@ -775,7 +778,8 @@ namespace Laboratory.PL
                             t.AddTickets(dtb_visit.Value, dtp_recive.Value, Convert.ToDecimal(txt_total.Text), Convert.ToDecimal(txt_pay.Text),
                                 Convert.ToDecimal(txt_rent.Text), Convert.ToInt32(Cmb_customer.SelectedValue), cmb_statues.Text, Convert.ToInt32(cmb_Doctor.SelectedValue),
                                 Convert.ToInt32(cmb_branches.SelectedValue), Convert.ToInt32(cmb_Stock.SelectedValue), dtb_kashf.Value,
-                                txt_compint.Text, Convert.ToInt32(cmb_DoctorOfCenter.SelectedValue), Convert.ToInt32(cmb_Techincal.SelectedValue), txt_username.Text);
+                                txt_compint.Text, Convert.ToInt32(cmb_DoctorOfCenter.SelectedValue), Convert.ToInt32(cmb_Techincal.SelectedValue), txt_username.Text,
+                                    cmb_UserBranch.Text, Convert.ToDecimal(txt_addition.Text), txt_reasonAddition.Text, Convert.ToDecimal(txt_afterDiscount.Text));
                             txt_IdTicket.Text = t.LastIdTicket().Rows[0][0].ToString();
                             for (int i = 0; i < dgv_order.Rows.Count; i++)
                             {
@@ -911,6 +915,18 @@ namespace Laboratory.PL
             }
 
          
+        }
+
+        private void txt_addition_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '.' && txt_addition.Text.ToString().IndexOf('.') > -1)
+            {
+                e.Handled = true;
+            }
+            else if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != Convert.ToChar((System.Globalization.CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator)))
+            {
+                e.Handled = true;
+            }
         }
     }
     }

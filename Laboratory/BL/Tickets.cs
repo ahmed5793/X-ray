@@ -13,11 +13,12 @@ namespace Laboratory.BL
     {
         internal void AddTickets(DateTime Visite_Date, DateTime Receive_Date, decimal Total, decimal Pay, decimal Rent, 
             int Cust_ID, string Statues, int Doctor_ID, int ID_Branches,int ID_Stock,DateTime Date_revelation,string Complain,
-            int ID_Doctorofcenter,int ID_Techincal, string userName)
+            int ID_Doctorofcenter,int ID_Techincal, string userName,String PlaceToCheck,decimal Additions, string ReasonForAdding,
+            decimal TotalAfterDiscount)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[15];
+            SqlParameter[] param = new SqlParameter[19];
             param[0] = new SqlParameter("@Visite_Date", SqlDbType.DateTime);
             param[0].Value = Visite_Date;
             param[1] = new SqlParameter("@Receive_Date", SqlDbType.DateTime);
@@ -48,6 +49,15 @@ namespace Laboratory.BL
             param[13].Value = ID_Techincal;
             param[14] = new SqlParameter("@userName", SqlDbType.NVarChar,150);
             param[14].Value = userName;
+
+            param[15] = new SqlParameter("@PlaceToCheck", SqlDbType.NVarChar, 50);
+            param[15].Value = PlaceToCheck;
+            param[16] = new SqlParameter("@Additions", SqlDbType.Decimal);
+            param[16].Value = Additions;
+            param[17] = new SqlParameter("@ReasonForAdding", SqlDbType.NVarChar, 150);
+            param[17].Value = ReasonForAdding;
+            param[18] = new SqlParameter("@TotalAfterDiscount", SqlDbType.Decimal);
+            param[18].Value = TotalAfterDiscount;
 
 
             da.excutequery("AddTickets", param);

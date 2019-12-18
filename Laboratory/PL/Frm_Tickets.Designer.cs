@@ -99,6 +99,9 @@
             this.cmb_statues = new System.Windows.Forms.ComboBox();
             this.label21 = new System.Windows.Forms.Label();
             this.cmb_UserBranch = new System.Windows.Forms.ComboBox();
+            this.txt_addition = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.txt_reasonAddition = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -596,6 +599,9 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.txt_reasonAddition);
+            this.groupBox3.Controls.Add(this.txt_addition);
+            this.groupBox3.Controls.Add(this.label26);
             this.groupBox3.Controls.Add(this.rdb_Discount);
             this.groupBox3.Controls.Add(this.txt_afterDiscount);
             this.groupBox3.Controls.Add(this.rdb_money);
@@ -680,7 +686,7 @@
             // txt_rent
             // 
             this.txt_rent.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_rent.Location = new System.Drawing.Point(6, 57);
+            this.txt_rent.Location = new System.Drawing.Point(5, 51);
             this.txt_rent.Name = "txt_rent";
             this.txt_rent.ReadOnly = true;
             this.txt_rent.Size = new System.Drawing.Size(134, 32);
@@ -694,7 +700,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(139, 61);
+            this.label16.Location = new System.Drawing.Point(139, 56);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(60, 24);
             this.label16.TabIndex = 103;
@@ -994,6 +1000,38 @@
             this.cmb_UserBranch.Size = new System.Drawing.Size(233, 32);
             this.cmb_UserBranch.TabIndex = 118;
             // 
+            // txt_addition
+            // 
+            this.txt_addition.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_addition.Location = new System.Drawing.Point(311, 121);
+            this.txt_addition.Name = "txt_addition";
+            this.txt_addition.Size = new System.Drawing.Size(134, 32);
+            this.txt_addition.TabIndex = 113;
+            this.txt_addition.Text = "0";
+            this.txt_addition.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_addition.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_addition_KeyPress);
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(506, 129);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(71, 24);
+            this.label26.TabIndex = 114;
+            this.label26.Text = "الاضافات";
+            // 
+            // txt_reasonAddition
+            // 
+            this.txt_reasonAddition.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_reasonAddition.Location = new System.Drawing.Point(5, 121);
+            this.txt_reasonAddition.MaxLength = 3000;
+            this.txt_reasonAddition.Name = "txt_reasonAddition";
+            this.txt_reasonAddition.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txt_reasonAddition.Size = new System.Drawing.Size(288, 32);
+            this.txt_reasonAddition.TabIndex = 99;
+            this.txt_reasonAddition.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // Frm_Tickets
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1114,5 +1152,8 @@
         public System.Windows.Forms.ComboBox cmb_statues;
         private System.Windows.Forms.Label label21;
         public System.Windows.Forms.ComboBox cmb_UserBranch;
+        private System.Windows.Forms.TextBox txt_reasonAddition;
+        private System.Windows.Forms.TextBox txt_addition;
+        private System.Windows.Forms.Label label26;
     }
 }
