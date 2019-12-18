@@ -280,11 +280,21 @@ namespace Laboratory.PL
 
             if (Cmb_category.Text != "")
             {
+                dt.Clear();
+                dt= ix.SelectCtegoryItems(Convert.ToInt32(Cmb_category.SelectedValue));
+                if (dt.Rows.Count>0)
+                {
+                    cmb_items.DataSource = ix.SelectCtegoryItems(Convert.ToInt32(Cmb_category.SelectedValue));
+                    cmb_items.DisplayMember = "Name";
+                    cmb_items.ValueMember = "ID_ItemsXrays";
+                }
+                else
+                {
+                    cmb_items.Text = "";
+                }
               
-                cmb_items.DataSource = ix.SelectCtegoryItems(Convert.ToInt32(Cmb_category.SelectedValue));
-                cmb_items.DisplayMember = "Name";
-                cmb_items.ValueMember = "ID_ItemsXrays";
-
+                
+               
             }
         }
 
@@ -964,6 +974,26 @@ namespace Laboratory.PL
                 }
 
             }
+        }
+
+        private void cmb_items_Leave(object sender, EventArgs e)
+        {
+            if (Cmb_category.Text!=""&&cmb_items.Text!="")
+            {
+
+            
+            dt.Clear();
+            dt = ix.VildateItem(Convert.ToInt32(Cmb_category.SelectedValue), Convert.ToInt32(cmb_items.SelectedValue));
+                if (dt.Rows.Count == 0)
+                {
+                    MessageBox.Show("يرجي العلم بان الاشعة المسجلة غير مسجلة في هذت القسم");
+                    cmb_items.Text = "";
+                    return;
+
+
+                }
+            }
+         
         }
     }
     }

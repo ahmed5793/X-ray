@@ -563,6 +563,7 @@
             this.cmb_items.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmb_items.Size = new System.Drawing.Size(480, 32);
             this.cmb_items.TabIndex = 76;
+            this.cmb_items.Leave += new System.EventHandler(this.cmb_items_Leave);
             // 
             // txt_IdTicket
             // 
