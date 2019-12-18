@@ -22,6 +22,20 @@ namespace Laboratory.BL
             CategoryXraya();
             dgv_visit.DataSource = cm.Select_Company_Xray();
             btn_print.Enabled = false;
+            Txt_Discount.Enabled = false;
+            Txt_PriceDiscount.Enabled = false;
+
+        }
+        void Total()
+        {
+            if (Txt_Price.Text != string.Empty && Txt_Discount.Text != string.Empty)
+            {
+                decimal price = Convert.ToDecimal(Txt_Price.Text);
+                decimal discount = Convert.ToDecimal(Txt_Discount.Text);
+                decimal total = price - (price * (discount / 100));
+                Txt_PriceDiscount.Text = total.ToString();
+            }
+
 
         }
         void company()
@@ -83,10 +97,14 @@ namespace Laboratory.BL
                             return;
                         }
                     }
-                    cm.Add_Company_ItemsXray(Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToInt32(cmb_items.SelectedValue)
-                       , Convert.ToDecimal(Txt_Price.Text),Convert.ToDecimal(textBox1.Text));
-                    Txt_Price.Clear();
-                    textBox1.Clear();
+                    cm.Add_Company_ItemsXray(Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToInt32(cmb_items.SelectedValue),Convert.ToDecimal(Txt_Discount.Text)
+                       , Convert.ToDecimal(Txt_PriceDiscount.Text),Convert.ToDecimal(textBox1.Text));
+                    Txt_Price.Text="0";
+                    textBox1.Text="0";
+                    Txt_Discount.Text = "0";
+                    Txt_PriceDiscount.Text = "0";
+                    Txt_PriceDiscount.Enabled = false;
+                    Txt_Discount.Enabled = false;
                     MessageBox.Show("تم إضافة الفحص للشركة بنجاح");
                     dgv_visit.DataSource = cm.Select_Company_Xray();
 
@@ -147,8 +165,10 @@ namespace Laboratory.BL
                     cmb_Company.Text = dgv_visit.CurrentRow.Cells[0].Value.ToString();
                     Cmb_category.Text= dgv_visit.CurrentRow.Cells[1].Value.ToString();
                     cmb_items.Text= dgv_visit.CurrentRow.Cells[2].Value.ToString();
-                    Txt_Price.Text= dgv_visit.CurrentRow.Cells[3].Value.ToString();
-                    textBox1.Text= dgv_visit.CurrentRow.Cells[4].Value.ToString();
+                    Txt_Discount.Text= dgv_visit.CurrentRow.Cells[3].Value.ToString();
+                    Txt_PriceDiscount.Text= dgv_visit.CurrentRow.Cells[4].Value.ToString();
+                    textBox1.Text= dgv_visit.CurrentRow.Cells[5].Value.ToString();
+                    Txt_Price.Text= dgv_visit.CurrentRow.Cells[6].Value.ToString();
                     cmb_Company.Enabled = false;
                     Cmb_category.Enabled = false;
                     cmb_items.Enabled = false;
@@ -168,35 +188,34 @@ namespace Laboratory.BL
         {
             try
             {
-                if (Txt_Price.Text =="" && Txt_Price.Text=="0")
+                if (Txt_PriceDiscount.Text =="0" && Txt_Discount.Text=="")
                 {
-                    MessageBox.Show("لا بد من تحديد سعر");
+                    MessageBox.Show("لا بد من تحديد سعر او  نسبة الخصم");
                     return;
                 }
                 else if(MessageBox.Show("هل تريد تعديل البيانات","عملية التعديل",MessageBoxButtons.YesNo , MessageBoxIcon.Question)==DialogResult.Yes)
                 {
-                    cm.Update_Company_Xray(Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToInt32(cmb_items.SelectedValue)
-                       , Convert.ToDecimal(Txt_Price.Text), Convert.ToDecimal(textBox1.Text));
+                    cm.Update_Company_Xray(Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToInt32(cmb_items.SelectedValue),Convert.ToDecimal(Txt_Discount.Text)
+                       , Convert.ToDecimal(Txt_PriceDiscount.Text), Convert.ToDecimal(textBox1.Text));
                     MessageBox.Show("تم التعديل بنجاح ");
-                    btn_print.Enabled = false;
-                    btn_save.Enabled = true;
-                    cmb_Company.Enabled = true;
-                    Cmb_category.Enabled = true;
-                    cmb_items.Enabled = true;
-                    Txt_Price.Clear();
-                    textBox1.Clear();
-                    dgv_visit.DataSource = cm.Select_Company_Xray();
+                
                 }
                 else
                 {
                     MessageBox.Show("لم يتم التعديل  ");
-                    btn_print.Enabled = false;
-                    btn_save.Enabled = true;
-                    cmb_Company.Enabled = true;
-                    Cmb_category.Enabled = true;
-                    cmb_items.Enabled = true;
-                    dgv_visit.DataSource = cm.Select_Company_Xray();
                 }
+                btn_print.Enabled = false;
+                btn_save.Enabled = true;
+                cmb_Company.Enabled = true;
+                Cmb_category.Enabled = true;
+                cmb_items.Enabled = true;
+                Txt_Price.Text = "0";
+                textBox1.Text = "0";
+                Txt_Discount.Text = "0";
+                Txt_PriceDiscount.Text = "0";
+                Txt_PriceDiscount.Enabled = false;
+                Txt_Discount.Enabled = false;
+                dgv_visit.DataSource = cm.Select_Company_Xray();
             }
             catch (Exception ex)
             {
@@ -222,6 +241,103 @@ namespace Laboratory.BL
             {
                 dt.Dispose();
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Txt_Discount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '.' && Txt_Price.Text.ToString().IndexOf('.') > -1)
+            {
+                e.Handled = true;
+            }
+            else if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != Convert.ToChar((System.Globalization.CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator)))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (comboBox1.Text!="")
+                {
+                    if (comboBox1.Text== "خصم ")
+                    {
+                        Txt_Discount.Enabled = true;
+                        Txt_PriceDiscount.Enabled = false;
+                        //Txt_Discount.Text = "0";
+                        //Txt_PriceDiscount.Text = "0";
+                    }
+                    else if(comboBox1.Text== "أسعار متفق عليها")
+                    {
+                        Txt_Discount.Enabled = false;
+                        Txt_PriceDiscount.Enabled = true;
+                        //Txt_Discount.Text = "0";
+                        //Txt_PriceDiscount.Text = "0";
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void Txt_PriceDiscount_MouseMove(object sender, MouseEventArgs e)
+        {
+
+            if (Txt_PriceDiscount.Text == "")
+            {
+                Txt_PriceDiscount.Text = "0";
+            }
+        }
+
+        private void Txt_Discount_MouseLeave(object sender, EventArgs e)
+        {
+            if (Txt_Discount.Text == "")
+            {
+                Txt_Discount.Text = "0";
+            }
+            Total();
+        }
+
+        private void Txt_Discount_KeyUp(object sender, KeyEventArgs e)
+        {
+          
+        }
+
+        private void Txt_PriceDiscount_KeyUp(object sender, KeyEventArgs e)
+        {
+           
+        }
+
+        private void Txt_PriceDiscount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '.' && Txt_PriceDiscount.Text.ToString().IndexOf('.') > -1)
+            {
+                e.Handled = true;
+            }
+            else if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != Convert.ToChar((System.Globalization.CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator)))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Txt_Discount_TextChanged(object sender, EventArgs e)
+        {
+            Total();
+        }
+
+        private void Txt_PriceDiscount_TextChanged(object sender, EventArgs e)
+        {
+            //Total();
         }
     }
 }
