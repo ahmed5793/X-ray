@@ -277,9 +277,10 @@ namespace Laboratory.PL
         DataTable dt = new DataTable();
         private void Cmb_category_SelectionChangeCommitted(object sender, EventArgs e)
         {
+
             if (Cmb_category.Text != "")
             {
-
+              
                 cmb_items.DataSource = ix.SelectCtegoryItems(Convert.ToInt32(Cmb_category.SelectedValue));
                 cmb_items.DisplayMember = "Name";
                 cmb_items.ValueMember = "ID_ItemsXrays";
@@ -926,6 +927,42 @@ namespace Laboratory.PL
             else if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != Convert.ToChar((System.Globalization.CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator)))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void cmb_Techincal_Leave(object sender, EventArgs e)
+        {
+            if (cmb_Techincal.Text!="")
+            {
+                dt.Clear();
+                dt = tc.vildateTechincal(Convert.ToInt32(cmb_Techincal.SelectedValue));
+                if (dt.Rows.Count==0)
+                {
+                    MessageBox.Show("يرجي العلم بان اسم الفني غير مسجل من قبل يرجي تسجيل هذا الاسم في شاشه الفني", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error,MessageBoxDefaultButton.Button1);
+                 
+                    cmb_Techincal.Focus();
+                    cmb_Techincal.SelectAll();
+                    return;
+                }
+               
+            }
+        }
+
+        private void cmb_DoctorOfCenter_Leave(object sender, EventArgs e)
+        {
+            if (cmb_DoctorOfCenter.Text != "")
+            {
+                dt.Clear();
+                dt = dc.vildateDoctorOfCenter(Convert.ToInt32(cmb_DoctorOfCenter.SelectedValue));
+                if (dt.Rows.Count == 0)
+                {
+                    MessageBox.Show("يرجي العلم بان اسم طبيب الاشعة غير مسجل من قبل ", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                    cmb_DoctorOfCenter.Focus();
+                    cmb_DoctorOfCenter.SelectAll();
+                    return;
+                }
+
             }
         }
     }

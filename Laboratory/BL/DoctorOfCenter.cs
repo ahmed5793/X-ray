@@ -129,5 +129,18 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
+        internal DataTable vildateDoctorOfCenter(int id)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@id", SqlDbType.Int);
+            param[0].Value = id;
+            da.open();
+            DataTable dt = new DataTable();
+            dt.Clear();
+            dt = da.selected("vildateDoctorOfCenter", param);
+            da.close();
+            return dt;
+        }
     }
 }

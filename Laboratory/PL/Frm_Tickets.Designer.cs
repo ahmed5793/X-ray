@@ -69,6 +69,9 @@
             this.txt_idcust = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txt_reasonAddition = new System.Windows.Forms.TextBox();
+            this.txt_addition = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
             this.rdb_Discount = new System.Windows.Forms.RadioButton();
             this.txt_afterDiscount = new System.Windows.Forms.TextBox();
             this.rdb_money = new System.Windows.Forms.RadioButton();
@@ -99,9 +102,6 @@
             this.cmb_statues = new System.Windows.Forms.ComboBox();
             this.label21 = new System.Windows.Forms.Label();
             this.cmb_UserBranch = new System.Windows.Forms.ComboBox();
-            this.txt_addition = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.txt_reasonAddition = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -470,7 +470,6 @@
             // 
             this.cmb_DoctorOfCenter.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cmb_DoctorOfCenter.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmb_DoctorOfCenter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_DoctorOfCenter.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_DoctorOfCenter.FormattingEnabled = true;
             this.cmb_DoctorOfCenter.Location = new System.Drawing.Point(45, 57);
@@ -480,12 +479,12 @@
             this.cmb_DoctorOfCenter.TabIndex = 97;
             this.cmb_DoctorOfCenter.SelectedIndexChanged += new System.EventHandler(this.cmb_Emprole_SelectedIndexChanged);
             this.cmb_DoctorOfCenter.SelectionChangeCommitted += new System.EventHandler(this.Cmp_EMPRAOLE_SelectionChangeCommitted);
+            this.cmb_DoctorOfCenter.Leave += new System.EventHandler(this.cmb_DoctorOfCenter_Leave);
             // 
             // cmb_Techincal
             // 
             this.cmb_Techincal.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cmb_Techincal.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmb_Techincal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Techincal.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_Techincal.FormattingEnabled = true;
             this.cmb_Techincal.Location = new System.Drawing.Point(45, 19);
@@ -494,6 +493,7 @@
             this.cmb_Techincal.Size = new System.Drawing.Size(453, 32);
             this.cmb_Techincal.TabIndex = 92;
             this.cmb_Techincal.SelectedIndexChanged += new System.EventHandler(this.cmb_Techincal_SelectedIndexChanged);
+            this.cmb_Techincal.Leave += new System.EventHandler(this.cmb_Techincal_Leave);
             // 
             // btn_addgrid
             // 
@@ -521,7 +521,6 @@
             this.Cmb_category.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Cmb_category.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.Cmb_category.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.Cmb_category.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Cmb_category.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cmb_category.FormattingEnabled = true;
             this.Cmb_category.Location = new System.Drawing.Point(14, 95);
@@ -557,7 +556,6 @@
             this.cmb_items.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmb_items.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cmb_items.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmb_items.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_items.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_items.FormattingEnabled = true;
             this.cmb_items.Location = new System.Drawing.Point(17, 133);
@@ -619,6 +617,38 @@
             this.groupBox3.TabIndex = 80;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "الحسابات";
+            // 
+            // txt_reasonAddition
+            // 
+            this.txt_reasonAddition.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_reasonAddition.Location = new System.Drawing.Point(5, 121);
+            this.txt_reasonAddition.MaxLength = 3000;
+            this.txt_reasonAddition.Name = "txt_reasonAddition";
+            this.txt_reasonAddition.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txt_reasonAddition.Size = new System.Drawing.Size(288, 32);
+            this.txt_reasonAddition.TabIndex = 99;
+            this.txt_reasonAddition.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txt_addition
+            // 
+            this.txt_addition.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_addition.Location = new System.Drawing.Point(311, 121);
+            this.txt_addition.Name = "txt_addition";
+            this.txt_addition.Size = new System.Drawing.Size(134, 32);
+            this.txt_addition.TabIndex = 113;
+            this.txt_addition.Text = "0";
+            this.txt_addition.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_addition.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_addition_KeyPress);
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(506, 129);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(71, 24);
+            this.label26.TabIndex = 114;
+            this.label26.Text = "الاضافات";
             // 
             // rdb_Discount
             // 
@@ -999,38 +1029,6 @@
             this.cmb_UserBranch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmb_UserBranch.Size = new System.Drawing.Size(233, 32);
             this.cmb_UserBranch.TabIndex = 118;
-            // 
-            // txt_addition
-            // 
-            this.txt_addition.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_addition.Location = new System.Drawing.Point(311, 121);
-            this.txt_addition.Name = "txt_addition";
-            this.txt_addition.Size = new System.Drawing.Size(134, 32);
-            this.txt_addition.TabIndex = 113;
-            this.txt_addition.Text = "0";
-            this.txt_addition.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_addition.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_addition_KeyPress);
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(506, 129);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(71, 24);
-            this.label26.TabIndex = 114;
-            this.label26.Text = "الاضافات";
-            // 
-            // txt_reasonAddition
-            // 
-            this.txt_reasonAddition.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_reasonAddition.Location = new System.Drawing.Point(5, 121);
-            this.txt_reasonAddition.MaxLength = 3000;
-            this.txt_reasonAddition.Name = "txt_reasonAddition";
-            this.txt_reasonAddition.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txt_reasonAddition.Size = new System.Drawing.Size(288, 32);
-            this.txt_reasonAddition.TabIndex = 99;
-            this.txt_reasonAddition.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Frm_Tickets
             // 
