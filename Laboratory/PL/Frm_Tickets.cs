@@ -290,7 +290,7 @@ namespace Laboratory.PL
                 }
                 else
                 {
-                    cmb_items.Text = "";
+                    cmb_items.DataSource = null;
                 }
               
                 
@@ -986,7 +986,7 @@ namespace Laboratory.PL
             dt = ix.VildateItem(Convert.ToInt32(Cmb_category.SelectedValue), Convert.ToInt32(cmb_items.SelectedValue));
                 if (dt.Rows.Count == 0)
                 {
-                    MessageBox.Show("يرجي العلم بان الاشعة المسجلة غير مسجلة في هذت القسم");
+                    MessageBox.Show("يرجي العلم بان الاشعة المسجلة غير مسجلة في هذا القسم");
                     cmb_items.Text = "";
                     return;
 
@@ -994,6 +994,33 @@ namespace Laboratory.PL
                 }
             }
          
+        }
+
+        private void Cmb_category_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (Cmb_category.Text != "")
+            {
+
+
+                dt.Clear();
+                dt = cx.Validate_CategoryXray(Convert.ToInt32(Cmb_category.SelectedValue));
+                if (dt.Rows.Count==0)
+                {
+                    cmb_items.DataSource = null;
+                }
+            }
+        }
+
+        private void Cmb_category_Leave(object sender, EventArgs e)
+        {
+
+            dt.Clear();
+            dt = cx.Validate_CategoryXray(Convert.ToInt32(Cmb_category.SelectedValue));
+            if (dt.Rows.Count == 0)
+            {
+                cmb_items.DataSource = null;
+                MessageBox.Show("عزيزيى المستخدم يرجي العلم بان اسم الجهاز غير مسجل ");
+            }
         }
     }
     }

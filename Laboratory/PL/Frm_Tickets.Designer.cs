@@ -530,6 +530,8 @@
             this.Cmb_category.TabIndex = 79;
             this.Cmb_category.SelectedIndexChanged += new System.EventHandler(this.Cmb_category_SelectedIndexChanged);
             this.Cmb_category.SelectionChangeCommitted += new System.EventHandler(this.Cmb_category_SelectionChangeCommitted);
+            this.Cmb_category.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Cmb_category_KeyDown);
+            this.Cmb_category.Leave += new System.EventHandler(this.Cmb_category_Leave);
             // 
             // label9
             // 
