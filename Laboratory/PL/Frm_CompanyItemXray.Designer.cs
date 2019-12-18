@@ -65,9 +65,11 @@
             this.Cmb_category.Location = new System.Drawing.Point(155, 94);
             this.Cmb_category.Name = "Cmb_category";
             this.Cmb_category.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Cmb_category.Size = new System.Drawing.Size(367, 32);
+            this.Cmb_category.Size = new System.Drawing.Size(366, 32);
             this.Cmb_category.TabIndex = 1;
+            this.Cmb_category.SelectedIndexChanged += new System.EventHandler(this.Cmb_category_SelectedIndexChanged);
             this.Cmb_category.SelectionChangeCommitted += new System.EventHandler(this.Cmb_category_SelectionChangeCommitted);
+            this.Cmb_category.Leave += new System.EventHandler(this.Cmb_category_Leave);
             // 
             // label9
             // 
@@ -106,15 +108,17 @@
             this.cmb_items.Location = new System.Drawing.Point(155, 137);
             this.cmb_items.Name = "cmb_items";
             this.cmb_items.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmb_items.Size = new System.Drawing.Size(367, 32);
+            this.cmb_items.Size = new System.Drawing.Size(366, 32);
             this.cmb_items.TabIndex = 2;
             this.cmb_items.SelectionChangeCommitted += new System.EventHandler(this.cmb_items_SelectionChangeCommitted);
+            this.cmb_items.Leave += new System.EventHandler(this.cmb_items_Leave);
             // 
             // cmb_Company
             // 
             this.cmb_Company.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cmb_Company.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmb_Company.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmb_Company.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmb_Company.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Company.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_Company.FormattingEnabled = true;
             this.cmb_Company.Location = new System.Drawing.Point(155, 50);
@@ -122,6 +126,7 @@
             this.cmb_Company.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmb_Company.Size = new System.Drawing.Size(366, 32);
             this.cmb_Company.TabIndex = 0;
+            this.cmb_Company.SelectedIndexChanged += new System.EventHandler(this.cmb_Company_SelectedIndexChanged);
             // 
             // label21
             // 

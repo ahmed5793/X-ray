@@ -54,14 +54,8 @@ namespace Laboratory.BL
 
         private void Cmb_category_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            if (Cmb_category.Text != "")
-            {
+           
 
-                cmb_items.DataSource = ix.SelectCtegoryItems(Convert.ToInt32(Cmb_category.SelectedValue));
-                cmb_items.DisplayMember = "Name";
-                cmb_items.ValueMember = "ID_ItemsXrays";
-
-            }
         }
 
         private void cmb_items_SelectionChangeCommitted(object sender, EventArgs e)
@@ -281,7 +275,6 @@ namespace Laboratory.BL
                         //Txt_PriceDiscount.Text = "0";
                     }
                 }
-
             }
             catch (Exception ex)
             {
@@ -338,6 +331,90 @@ namespace Laboratory.BL
         private void Txt_PriceDiscount_TextChanged(object sender, EventArgs e)
         {
             //Total();
+        }
+
+        private void cmb_Company_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Cmb_category_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+
+                if (Cmb_category.Text != "")
+                {
+                    cmb_items.DataSource = ix.SelectCtegoryItems(Convert.ToInt32(Cmb_category.SelectedValue));
+                    cmb_items.DisplayMember = "Name";
+                    cmb_items.ValueMember = "ID_ItemsXrays";
+
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+         
+        }
+
+        private void Cmb_category_Leave(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                if (Cmb_category.Text != "")
+                {
+                    dt.Clear();
+                    dt = cx.Validate_CategoryXray(Convert.ToInt32(Cmb_category.SelectedValue));
+                    if (dt.Rows.Count == 0)
+                    {
+                        MessageBox.Show("إسم الجهاز غير موجود لا بد من إختيار إسم الجهاز من القائمة");
+                        Cmb_category.Focus();
+                        cmb_items.DataSource = null;
+                        return;
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                dt.Dispose();
+            }
+        }
+
+        private void cmb_items_Leave(object sender, EventArgs e)
+        {
+            DataTable dt2 = new DataTable();
+            try
+            {
+                if (cmb_items.Text != "")
+                {
+                    dt2.Clear();
+                    dt2 = ix.VildateItem(Convert.ToInt32(Cmb_category.SelectedValue), Convert.ToInt32(cmb_items.SelectedValue));
+                    if (dt2.Rows.Count == 0)
+                    {
+                        MessageBox.Show("إسم الفحص غير موجود لا بد من إختيار إسم الفحص من القائمة");
+                        cmb_items.Focus();
+                        return;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                dt2.Dispose();
+            }
         }
     }
 }
