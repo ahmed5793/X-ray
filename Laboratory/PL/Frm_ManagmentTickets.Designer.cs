@@ -186,6 +186,7 @@
             this.ToDate.Size = new System.Drawing.Size(370, 34);
             this.ToDate.TabIndex = 111;
             this.ToDate.Value = new System.DateTime(2019, 10, 14, 0, 0, 0, 0);
+            this.ToDate.ValueChanged += new System.EventHandler(this.ToDate_ValueChanged);
             // 
             // FromDate
             // 
@@ -200,6 +201,7 @@
             this.FromDate.Size = new System.Drawing.Size(370, 34);
             this.FromDate.TabIndex = 110;
             this.FromDate.Value = new System.DateTime(2019, 10, 14, 0, 0, 0, 0);
+            this.FromDate.ValueChanged += new System.EventHandler(this.FromDate_ValueChanged);
             // 
             // label3
             // 
@@ -214,6 +216,7 @@
             this.label3.Size = new System.Drawing.Size(43, 32);
             this.label3.TabIndex = 109;
             this.label3.Text = "الي";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -228,6 +231,7 @@
             this.label2.Size = new System.Drawing.Size(41, 32);
             this.label2.TabIndex = 108;
             this.label2.Text = "من";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // comboBox1
             // 

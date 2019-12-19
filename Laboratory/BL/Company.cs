@@ -232,5 +232,19 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
+        internal DataTable Select_PriceXrayCompany(int id_company , int Id_Xray )
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            DataTable dt = new DataTable();
+            da.open();
+            SqlParameter[] param = new SqlParameter[2];
+            param[0] = new SqlParameter("@id_Compnay", SqlDbType.Int);
+            param[0].Value = id_company;
+            param[1] = new SqlParameter("@id_Xray", SqlDbType.Int);
+            param[1].Value = Id_Xray;
+            dt = da.selected("Select_PriceXrayCompany", param);
+            da.close();
+            return dt;
+        }
     }
 }

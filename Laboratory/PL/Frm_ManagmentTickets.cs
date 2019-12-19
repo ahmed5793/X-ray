@@ -191,5 +191,25 @@ namespace Laboratory.PL
         {
 
         }
+
+        private void ToDate_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FromDate_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
