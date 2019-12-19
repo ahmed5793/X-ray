@@ -139,24 +139,27 @@ namespace Laboratory.BL
             da.close();
         }
 
-        internal void Add_StockTransfair(decimal money, DateTime date, string from, string to, string name, string reason)
+        internal void Add_StockTransfair(decimal money, DateTime date,int Id_StockFrom ,string from,int Id_StockTo, string to, string name, string reason)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[6];
+            SqlParameter[] param = new SqlParameter[8];
             param[0] = new SqlParameter("@Money", SqlDbType.Real);
             param[0].Value = money;
-            param[1] = new SqlParameter("@Date", SqlDbType.NVarChar, 50);
+            param[1] = new SqlParameter("@Date", SqlDbType.DateTime);
             param[1].Value = date;
-            param[2] = new SqlParameter("@From_", SqlDbType.NVarChar, 50);
-            param[2].Value = from;
-            param[3] = new SqlParameter("@To_", SqlDbType.NVarChar, 50);
-            param[3].Value = to;
-            param[4] = new SqlParameter("@Name", SqlDbType.NVarChar, 75);
-            param[4].Value = name;
-
-            param[5] = new SqlParameter("@Reason", SqlDbType.NVarChar, 150);
-            param[5].Value = reason;
+            param[2] = new SqlParameter("@Id_StockFroms", SqlDbType.Int);
+            param[2].Value = Id_StockFrom;
+            param[3] = new SqlParameter("@From_", SqlDbType.NVarChar, 50);
+            param[3].Value = from;
+            param[4] = new SqlParameter("@Id_StockTo", SqlDbType.Int);
+            param[4].Value = Id_StockTo;
+            param[5] = new SqlParameter("@To_", SqlDbType.NVarChar, 50);
+            param[5].Value = to;
+            param[6] = new SqlParameter("@Name", SqlDbType.NVarChar, 75);
+            param[6].Value = name;
+            param[7] = new SqlParameter("@Reason", SqlDbType.NVarChar, 150);
+            param[7].Value = reason;
             da.excutequery("Add_StockTransfair", param);
             da.close();
         }
@@ -239,5 +242,55 @@ namespace Laboratory.BL
             dt = da.selected("SelectStockBranch", param);
             return dt;
         }
+        internal DataTable Report_InsertStock(int Id_Stock)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            DataTable dt = new DataTable();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@id_Stock", SqlDbType.Int);
+            param[0].Value = Id_Stock;
+            
+            dt = da.selected("Report_InsertStock", param);
+            return dt;
+        }
+        internal DataTable Search_Report_InsertStock(int Id_Stock, DateTime dateFrom, DateTime DateTo)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            DataTable dt = new DataTable();
+            SqlParameter[] param = new SqlParameter[3];
+            param[0] = new SqlParameter("@id_Stock", SqlDbType.Int);
+            param[0].Value = Id_Stock;
+            param[1] = new SqlParameter("@Date_From", SqlDbType.DateTime);
+            param[1].Value = dateFrom;
+            param[2] = new SqlParameter("@Date_to", SqlDbType.DateTime);
+            param[2].Value = DateTo;
+            dt = da.selected("Search_Report_InsertStock", param);
+            return dt;
+        }
+        internal DataTable Report_TransfairStock()
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            DataTable dt = new DataTable();
+     
+            dt = da.selected("Report_TransfairStock",null);
+            return dt;
+        }
+        internal DataTable Search_Report_TransfairStock(DateTime dateFrom, DateTime DateTo)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            DataTable dt = new DataTable();
+            SqlParameter[] param = new SqlParameter[2];
+            param[1] = new SqlParameter("@Date_From", SqlDbType.DateTime);
+            param[1].Value = dateFrom;
+            param[2] = new SqlParameter("@Date_to", SqlDbType.DateTime);
+            param[2].Value = DateTo;
+            dt = da.selected("Search_Report_TransfairStock", param);
+            return dt;
+        }
+
     }
 }

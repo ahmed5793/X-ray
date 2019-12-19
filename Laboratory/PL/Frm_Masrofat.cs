@@ -42,9 +42,12 @@ namespace Laboratory.PL
                 farm = this;
             }
             txt_username.Text = Program.salesman;
+            dataGridView1.DataSource = m.SelectReserveDetails();
+
             comboBox1.DataSource = m.SelectReserve();
             comboBox1.DisplayMember = "masrof_type";
             comboBox1.ValueMember = "ID_masrof";
+
             cmb_Stock.DataSource = Stock.Compo_Stock();
             cmb_Stock.DisplayMember = "Name_Stock";
             cmb_Stock.ValueMember = "ID_Stock";
@@ -65,7 +68,6 @@ namespace Laboratory.PL
             {
                 MessageBox.Show("من فضلك ادخال المبلغ ");
                 return;
-
             }
             if (comboBox1.Text != string.Empty)
             {

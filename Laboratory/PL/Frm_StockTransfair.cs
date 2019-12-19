@@ -74,7 +74,7 @@ namespace Laboratory.PL
                 }
                  if (MessageBox.Show("هل تريد حفظ التحويل", "عملية التحويل", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    s.Add_StockTransfair(Convert.ToDecimal(txt_addbalance.Text), Date_insert.Value, cmb_StockFrom.SelectedValue.ToString(), Cmb_StrockTo.SelectedValue.ToString(), txt_name.Text, txt_reason.Text);
+                    s.Add_StockTransfair(Convert.ToDecimal(txt_addbalance.Text), Date_insert.Value, Convert.ToInt32(cmb_StockFrom.SelectedValue),cmb_StockFrom.Text, Convert.ToInt32(Cmb_StrockTo.SelectedValue),Cmb_StrockTo.Text, txt_name.Text, txt_reason.Text);
 
                     MessageBox.Show("تم إضافة الرصيد للخزنة المحددة");
 
@@ -157,9 +157,8 @@ namespace Laboratory.PL
             dt = s.Select_moneyStock(Convert.ToInt32(Cmb_StrockTo.SelectedValue));
             if (dt.Rows.Count > 0)
             {
-
+                textBox1.Text = dt.Rows[0][0].ToString();
             }
-            textBox1.Text = dt.Rows[0][0].ToString();
         }
     }
 }

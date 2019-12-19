@@ -382,5 +382,17 @@ namespace Laboratory.PL
             Frm_CompanyItemXray frm_CompanyItem = new Frm_CompanyItemXray();
             frm_CompanyItem.ShowDialog();
         }
+
+        private void Report_InsertStock_Click(object sender, EventArgs e)
+        {
+            Frm_ReportInsertStock frm_Is = new Frm_ReportInsertStock();
+            frm_Is.ShowDialog();
+        }
+
+        private void Report_TransfairMoney_Click(object sender, EventArgs e)
+        {
+            Frm_ReportTransfairStock frts = new Frm_ReportTransfairStock();
+            frts.ShowDialog();
+        }
     }
 }

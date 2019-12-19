@@ -350,6 +350,12 @@
     <Compile Include="PL\Frm_ReportDoctor.Designer.cs">
       <DependentUpon>Frm_ReportDoctor.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Frm_ReportInsertStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_ReportInsertStock.Designer.cs">
+      <DependentUpon>Frm_ReportInsertStock.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_ReportMasrofat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -373,6 +379,12 @@
     </Compile>
     <Compile Include="PL\Frm_ReportStockPull.Designer.cs">
       <DependentUpon>Frm_ReportStockPull.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Frm_ReportTransfairStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_ReportTransfairStock.Designer.cs">
+      <DependentUpon>Frm_ReportTransfairStock.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Frm_Salf.cs">
       <SubType>Form</SubType>
@@ -556,6 +568,9 @@
     <EmbeddedResource Include="PL\Frm_ReportDoctor.resx">
       <DependentUpon>Frm_ReportDoctor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_ReportInsertStock.resx">
+      <DependentUpon>Frm_ReportInsertStock.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_ReportMasrofat.resx">
       <DependentUpon>Frm_ReportMasrofat.cs</DependentUpon>
     </EmbeddedResource>
@@ -567,6 +582,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_ReportStockPull.resx">
       <DependentUpon>Frm_ReportStockPull.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_ReportTransfairStock.resx">
+      <DependentUpon>Frm_ReportTransfairStock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Salf.resx">
       <DependentUpon>Frm_Salf.cs</DependentUpon>

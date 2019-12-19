@@ -10,25 +10,13 @@ using System.Windows.Forms;
 using Laboratory.BL;
 namespace Laboratory.PL
 {
-    public partial class Frm_ReportMasrofat : Form
+    public partial class Frm_ReportTransfairStock : Form
     {
-        Masrofat M = new Masrofat();
-        public Frm_ReportMasrofat()
+        Stock S = new Stock();
+        public Frm_ReportTransfairStock()
         {
             InitializeComponent();
-            dataGridView1.DataSource = M.select_Masrofat();
-            Calc_Total();
-        }
-        void Calc_Total()
-        {
-            decimal Total = 0;
-         
-                for (int i = 0; i < dataGridView1.Rows.Count; i++)
-                {
-                    Total += Convert.ToDecimal(dataGridView1.Rows[i].Cells[1].Value);
-                }
-                textBox1.Text = Math.Round(Total, 2).ToString();
-          
+            dataGridView1.DataSource = S.Report_TransfairStock();
         }
 
         private void btn_search_Click(object sender, EventArgs e)
@@ -37,9 +25,9 @@ namespace Laboratory.PL
             try
             {
                 dt.Clear();
-                dt = M.search_Masrofat(DateFrom.Value, DateTo.Value);
+                dt = S.Search_Report_TransfairStock( DateFrom.Value, DateTo.Value);
                 dataGridView1.DataSource = dt;
-                Calc_Total();
+            
             }
             catch (Exception ex)
             {
@@ -49,7 +37,7 @@ namespace Laboratory.PL
             finally
             {
                 dt.Dispose();
-            }
+            }9
         }
     }
 }
