@@ -45,40 +45,35 @@ namespace Laboratory.PL
                 farm = this;
             }
             txt_username.Text = Program.salesman;
-            dt = u.SelectUserBranch(txt_username.Text);
 
-           
 
-            if (dt.Rows.Count > 0)
-            {
-                cmb_branches.DataSource = u.SelectUserBranch(txt_username.Text);
-                cmb_branches.DisplayMember = "Name";
-                cmb_branches.ValueMember = "Branch_ID";
 
-                 
-
-            }
-            else
-            {
-                cmb_branches.DataSource = b.SelectCompBranches();
-                cmb_branches.DisplayMember = "Name";
-                cmb_branches.ValueMember = "Branch_ID";
+            txt_search.Hide();
+            FromDate.Hide();
+            ToDate.Hide();
+            button2.Hide();
+            cmb_branches.DataSource = null;
+            cmb_branches.Enabled = false;
+            checkBox1.Hide();
+            label2.Hide();
+            label3.Hide();
+          
               
 
 
 
-            }
+          
         }
 
         private void Frm_Search_Ticket_Load(object sender, EventArgs e)
         {
-            dgv_visit.DataSource =t.SelecthManagmentTicketsBranch(Convert.ToInt32(cmb_branches.SelectedValue));
+        
         }
 
         private void txt_search_TextChanged(object sender, EventArgs e)
         {
             dt.Clear();
-            dt = t.SearchManagmentTicketsBranch(txt_search.Text, Convert.ToInt32(cmb_branches.SelectedValue));
+            dt = t.SearchManagmentTicketsBranch(txt_search.Text);
             dgv_visit.DataSource = dt;
         }
 
@@ -89,6 +84,76 @@ namespace Laboratory.PL
                 Frm_DetailsTickets dt = new Frm_DetailsTickets();
                 dt.ShowDialog();
 
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked==true)
+            {
+                cmb_branches.Enabled = true;
+                cmb_branches.DataSource = b.SelectCompBranches();
+                cmb_branches.DisplayMember = "Name";
+                cmb_branches.ValueMember = "Branch_ID";
+
+            }
+            else
+            {
+                cmb_branches.Enabled = false;
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
+            {
+                cmb_branches.Enabled = true;
+                dgv_visit.DataSource = t.SelectSearchticketsBranchDate(Convert.ToInt32(cmb_branches.SelectedValue), FromDate.Value, ToDate.Value);
+
+
+            }
+            else
+            {
+                cmb_branches.DataSource = null;
+                cmb_branches.Enabled = false;
+                dgv_visit.DataSource = t.SelectSearchticketsDate( FromDate.Value, ToDate.Value);
+
+            }
+
+        }
+
+        private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (comboBox1.Text== "ألاسم او رقم الحجز")
+            {
+            
+                txt_search.Clear();
+                label2.Hide();
+                label3.Hide();
+                txt_search.Show();
+                FromDate.Hide();
+                ToDate.Hide();
+                button2.Hide();
+                cmb_branches.DataSource = null;
+                cmb_branches.Enabled = false;
+                checkBox1.Hide();
+                dgv_visit.DataSource = t.SelecthManagmentTicketsBranch();
+
+            }
+            else if(comboBox1.Text== "بالتاريخ")
+            {
+                txt_search.Clear();
+                dgv_visit.DataSource = null;
+              
+                label2.Show();
+                label3.Show();
+                txt_search.Hide();
+                FromDate.Show();
+                ToDate.Show();
+                button2.Show();
+               
+                cmb_branches.Enabled = false;
+                checkBox1.Show();
             }
         }
     }

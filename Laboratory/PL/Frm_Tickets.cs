@@ -44,7 +44,7 @@ namespace Laboratory.PL
             txt_phone.Enabled = false;
             txt_age.Enabled = false;
             txt_address.Enabled = false;
-       
+
 
         }
         void Permision()
@@ -94,11 +94,11 @@ namespace Laboratory.PL
             
             dt2.Columns.Add("رقم الفحص");
             dt2.Columns.Add("اسم الفحص");
-
-
-            dt2.Columns.Add("قيمة الفحص");                  
+            dt2.Columns.Add("قيمة الفحص");
+            dt2.Columns.Add("الخصم");
             dgv_order.DataSource = dt2;
             dgv_order.Columns[0].Visible = false;
+   
 
         }
         void company()
@@ -165,8 +165,8 @@ namespace Laboratory.PL
             Permision();
 
             Txt_addtionPayment.Enabled = false;
-            cmb_statues.Text = "نقدى";
-
+          
+      
             CategoryXraya();
             SelectdataTable();
 
@@ -532,6 +532,13 @@ namespace Laboratory.PL
         {
             try
             {
+                if (cmb_statues.Text=="")
+                {
+                    MessageBox.Show("من فضلك قم بتحديد طريقة التعامل للفاتورة");
+                    cmb_statues.Focus();
+                    
+                    return;
+                }
                 for (int i = 0; i < dgv_order.Rows.Count; i++)
                 {
 
@@ -556,20 +563,47 @@ namespace Laboratory.PL
                 }
                 else
                 {
+                    if (cmb_statues.Text=="نقدى")
+                    {
+                        decimal x;
+                        dt.Clear();
+                        dt = ix.SelectPriseItem(Convert.ToInt32(cmb_items.SelectedValue));
+                        x = Convert.ToDecimal(dt.Rows[0][0].ToString());
 
-                    decimal x;
-                    dt = ix.SelectPriseItem(Convert.ToInt32(cmb_items.SelectedValue));
-                    x = Convert.ToDecimal(dt.Rows[0][0].ToString());
+                        DataRow r = dt2.NewRow();
+                        r[0] = cmb_items.SelectedValue;
+                        r[1] = cmb_items.Text;
+                        r[2] = x;
+                        r[3] = 0;
 
-                    DataRow r = dt2.NewRow();
-                    r[0] = cmb_items.SelectedValue;
-                    r[1] = cmb_items.Text;
-                    r[2] = x;
+                        dt2.Rows.Add(r);
+                        Console.Beep();
+                        dgv_order.DataSource = dt2;
+                        dgv_order.Columns[3].Visible = false;
+
+                    }
+                  else  if (cmb_statues.Text== "شركات")
+                    {
+                        dt.Clear();
+                        dt = cm.Select_PriceXrayCompany(Convert.ToInt32(cmb_Company.SelectedValue),Convert.ToInt32(cmb_items.SelectedValue));
+                        decimal x;
+                        decimal y;
+                   
+                        x = Convert.ToDecimal(dt.Rows[0][0].ToString());
+                        y = Convert.ToDecimal(dt.Rows[0][1].ToString());
+                        DataRow r = dt2.NewRow();
+                        r[0] = cmb_items.SelectedValue;
+                        r[1] = cmb_items.Text;
+                        r[2] = x;
+                        r[3] = y;
 
 
-                    dt2.Rows.Add(r);
-                    Console.Beep();
-                    dgv_order.DataSource = dt2;
+
+                        dt2.Rows.Add(r);
+                        Console.Beep();
+                        dgv_order.DataSource = dt2;
+                        dgv_order.Columns[3].Visible = true ;
+                    }
                     totalOrder();
                     if (rdb_Discount.Checked == true)
                     {
@@ -669,12 +703,11 @@ namespace Laboratory.PL
             txt_afterDiscount.Text="0";
             txt_age.Clear();
             txt_compint.Clear();
-            txt_discount.Text = "0";
+          
             txt_name.Clear();
-            txt_pay.Text = "0";
+         
             txt_phone.Clear();
-            txt_rent.Text = "0";
-            txt_total.Text = "0";
+           
             rdb_CurrentPatient.Checked = true;
             dt2.Clear();
             txt_discount.Enabled = true;
@@ -682,7 +715,10 @@ namespace Laboratory.PL
             Txt_addtionPayment.Text = "0";
             Txt_rentCompany.Text = "0";
             txt_reasonAddition.Clear();
-
+            txt_discount.Text = "0";
+            txt_rent.Text = "0";
+            txt_total.Text = "0";
+            txt_pay.Text = "0";
         }
         private void label21_Click(object sender, EventArgs e)
         {
@@ -866,17 +902,23 @@ namespace Laboratory.PL
 
         private void dgv_order_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
+            totalOrder();
+
             if (rdb_Discount.Checked == true)
             {
                 Discount();
-                pay();
+            
             }
             else
             {
                 DiscountMoney();
-                pay();
+              
             }
-            totalOrder();
+            
+            Patient_PaymentRate();
+            Rent_Company();
+            pay();
+            
         }
 
         private void txt_discount_KeyPress(object sender, KeyPressEventArgs e)
@@ -941,6 +983,23 @@ namespace Laboratory.PL
         {
                if (cmb_statues.Text == "شركات")
             {
+             
+                label24.Hide();
+                rdb_Discount.Hide();
+                rdb_money.Hide();
+                txt_afterDiscount.Hide();
+                txt_discount.Hide();
+
+               
+                dt2.Clear();
+                Txt_PricePayment.Text = "0";
+                Txt_addtionPayment.Text = "0";
+                Txt_rentCompany.Text = "0";
+                txt_reasonAddition.Clear();
+                txt_discount.Text = "0";
+                txt_rent.Text = "0";
+                txt_total.Text = "0";
+                txt_pay.Text = "0";
                 cmb_Company.Enabled = true;
                 company();
                 Txt_PricePayment.Enabled = true;
@@ -949,6 +1008,23 @@ namespace Laboratory.PL
             }
            else if (cmb_statues.Text== "نقدى")
             {
+               
+                label24.Show();
+                rdb_Discount.Show();
+                rdb_money.Show();
+                txt_afterDiscount.Show();
+                txt_discount.Show();
+
+                dgv_order.Columns[3].Visible = false;
+                dt2.Clear();
+                Txt_PricePayment.Text = "0";
+                Txt_addtionPayment.Text = "0";
+                Txt_rentCompany.Text = "0";
+                txt_reasonAddition.Clear();
+                txt_discount.Text = "0";
+                txt_rent.Text = "0";
+                txt_total.Text = "0";
+                txt_pay.Text = "0";
                 cmb_Company.DataSource = null;
                 cmb_Company.Enabled = false;
                 Txt_PricePayment.Enabled = false;

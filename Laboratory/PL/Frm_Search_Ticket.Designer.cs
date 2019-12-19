@@ -29,24 +29,30 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label_day = new System.Windows.Forms.Label();
             this.cmb_branches = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.txt_username = new System.Windows.Forms.TextBox();
             this.dgv_visit = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
             this.txt_search = new System.Windows.Forms.TextBox();
             this.btn_print = new System.Windows.Forms.Button();
             this.btn_save = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.ToDate = new System.Windows.Forms.DateTimePicker();
+            this.FromDate = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_visit)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label_day);
+            this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.cmb_branches);
             this.groupBox1.Controls.Add(this.label18);
             this.groupBox1.Controls.Add(this.label13);
@@ -56,17 +62,6 @@
             this.groupBox1.Size = new System.Drawing.Size(987, 51);
             this.groupBox1.TabIndex = 100;
             this.groupBox1.TabStop = false;
-            // 
-            // label_day
-            // 
-            this.label_day.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label_day.AutoSize = true;
-            this.label_day.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_day.Location = new System.Drawing.Point(476, 12);
-            this.label_day.Name = "label_day";
-            this.label_day.Size = new System.Drawing.Size(36, 24);
-            this.label_day.TabIndex = 85;
-            this.label_day.Text = "فرع";
             // 
             // cmb_branches
             // 
@@ -100,9 +95,9 @@
             this.label13.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(272, 12);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(36, 24);
+            this.label13.Size = new System.Drawing.Size(99, 24);
             this.label13.TabIndex = 83;
-            this.label13.Text = "فرع";
+            this.label13.Text = "مكان الفحص";
             // 
             // txt_username
             // 
@@ -125,31 +120,20 @@
             this.dgv_visit.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_visit.BackgroundColor = System.Drawing.Color.Maroon;
             this.dgv_visit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_visit.Location = new System.Drawing.Point(12, 112);
+            this.dgv_visit.Location = new System.Drawing.Point(12, 168);
             this.dgv_visit.Name = "dgv_visit";
             this.dgv_visit.ReadOnly = true;
             this.dgv_visit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgv_visit.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_visit.ShowEditingIcon = false;
-            this.dgv_visit.Size = new System.Drawing.Size(987, 332);
+            this.dgv_visit.Size = new System.Drawing.Size(987, 298);
             this.dgv_visit.TabIndex = 99;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(636, 76);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 24);
-            this.label1.TabIndex = 86;
-            this.label1.Text = "اسم المستخدم";
             // 
             // txt_search
             // 
-            this.txt_search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_search.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txt_search.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_search.Location = new System.Drawing.Point(252, 68);
+            this.txt_search.Location = new System.Drawing.Point(208, 69);
             this.txt_search.Name = "txt_search";
             this.txt_search.Size = new System.Drawing.Size(378, 32);
             this.txt_search.TabIndex = 86;
@@ -190,16 +174,128 @@
             this.button1.Text = "طباعة باركود";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "ألاسم او رقم الحجز",
+            "بالتاريخ"});
+            this.comboBox1.Location = new System.Drawing.Point(592, 69);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.comboBox1.Size = new System.Drawing.Size(233, 32);
+            this.comboBox1.TabIndex = 85;
+            this.comboBox1.SelectionChangeCommitted += new System.EventHandler(this.comboBox1_SelectionChangeCommitted);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(846, 72);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(120, 24);
+            this.label1.TabIndex = 85;
+            this.label1.Text = "اختر نوع البحث";
+            // 
+            // button2
+            // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button2.Font = new System.Drawing.Font("Arial Black", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(12, 89);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(124, 73);
+            this.button2.TabIndex = 118;
+            this.button2.Text = "بحث ";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // ToDate
+            // 
+            this.ToDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ToDate.CustomFormat = "dd/MM/yyyy           *      tt  mm:hh     ";
+            this.ToDate.Font = new System.Drawing.Font("Arial Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ToDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.ToDate.Location = new System.Drawing.Point(153, 116);
+            this.ToDate.Name = "ToDate";
+            this.ToDate.ShowUpDown = true;
+            this.ToDate.Size = new System.Drawing.Size(370, 34);
+            this.ToDate.TabIndex = 117;
+            this.ToDate.Value = new System.DateTime(2019, 10, 14, 0, 0, 0, 0);
+            // 
+            // FromDate
+            // 
+            this.FromDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.FromDate.CustomFormat = "dd/MM/yyyy          *      tt  mm:hh     ";
+            this.FromDate.Font = new System.Drawing.Font("Arial Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FromDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.FromDate.Location = new System.Drawing.Point(578, 116);
+            this.FromDate.Name = "FromDate";
+            this.FromDate.ShowUpDown = true;
+            this.FromDate.Size = new System.Drawing.Size(370, 34);
+            this.FromDate.TabIndex = 116;
+            this.FromDate.Value = new System.DateTime(2019, 10, 14, 0, 0, 0, 0);
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Black;
+            this.label3.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(529, 118);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(43, 32);
+            this.label3.TabIndex = 115;
+            this.label3.Text = "الي";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Black;
+            this.label2.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(954, 118);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(41, 32);
+            this.label2.TabIndex = 114;
+            this.label2.Text = "من";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.Location = new System.Drawing.Point(377, 16);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(15, 14);
+            this.checkBox1.TabIndex = 85;
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // Frm_Search_Ticket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1011, 527);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.ToDate);
+            this.Controls.Add(this.FromDate);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_print);
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.txt_search);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.dgv_visit);
             this.Controls.Add(this.groupBox1);
             this.Name = "Frm_Search_Ticket";
@@ -216,16 +312,22 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label_day;
         public System.Windows.Forms.ComboBox cmb_branches;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txt_username;
         private System.Windows.Forms.Label label18;
         public System.Windows.Forms.DataGridView dgv_visit;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_search;
         private System.Windows.Forms.Button btn_print;
         private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DateTimePicker ToDate;
+        private System.Windows.Forms.DateTimePicker FromDate;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
     }
 }
