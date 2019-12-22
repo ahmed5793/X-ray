@@ -326,6 +326,12 @@
     <Compile Include="PL\Frm_PayCompany.Designer.cs">
       <DependentUpon>Frm_PayCompany.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Frm_Payouts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_Payouts.designer.cs">
+      <DependentUpon>Frm_Payouts.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_PaySuppliers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -555,6 +561,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_PayCompany.resx">
       <DependentUpon>Frm_PayCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_Payouts.resx">
+      <DependentUpon>Frm_Payouts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_PaySuppliers.resx">
       <DependentUpon>Frm_PaySuppliers.cs</DependentUpon>

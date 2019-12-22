@@ -394,5 +394,12 @@ namespace Laboratory.PL
             Frm_ReportTransfairStock frts = new Frm_ReportTransfairStock();
             frts.ShowDialog();
         }
+
+        private void Mardodat_Click(object sender, EventArgs e)
+        {
+            Frm_Payouts fpo = new Frm_Payouts();
+            fpo.ShowDialog();
+
+        }
     }
 }

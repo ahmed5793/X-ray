@@ -149,6 +149,8 @@
             this.Btn_Exit = new System.Windows.Forms.ToolStripButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.Mardodat = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator46 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -201,7 +203,7 @@
             this.Branches_Manage.Image = ((System.Drawing.Image)(resources.GetObject("Branches_Manage.Image")));
             this.Branches_Manage.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Branches_Manage.Name = "Branches_Manage";
-            this.Branches_Manage.Size = new System.Drawing.Size(238, 82);
+            this.Branches_Manage.Size = new System.Drawing.Size(239, 82);
             this.Branches_Manage.Text = "إدارة الفروع";
             // 
             // Add_Branche
@@ -230,7 +232,7 @@
             // toolStripSeparator15
             // 
             this.toolStripSeparator15.Name = "toolStripSeparator15";
-            this.toolStripSeparator15.Size = new System.Drawing.Size(235, 6);
+            this.toolStripSeparator15.Size = new System.Drawing.Size(236, 6);
             // 
             // إدارةالاشعةToolStripMenuItem
             // 
@@ -244,7 +246,7 @@
             this.إدارةالاشعةToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("إدارةالاشعةToolStripMenuItem.Image")));
             this.إدارةالاشعةToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.إدارةالاشعةToolStripMenuItem.Name = "إدارةالاشعةToolStripMenuItem";
-            this.إدارةالاشعةToolStripMenuItem.Size = new System.Drawing.Size(238, 82);
+            this.إدارةالاشعةToolStripMenuItem.Size = new System.Drawing.Size(239, 82);
             this.إدارةالاشعةToolStripMenuItem.Text = "قسم الاشعة";
             // 
             // Category_XRay
@@ -510,7 +512,7 @@
             this.Customer_management.Image = ((System.Drawing.Image)(resources.GetObject("Customer_management.Image")));
             this.Customer_management.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Customer_management.Name = "Customer_management";
-            this.Customer_management.Size = new System.Drawing.Size(247, 92);
+            this.Customer_management.Size = new System.Drawing.Size(249, 92);
             this.Customer_management.Text = "إدارة العملاء ";
             this.Customer_management.Click += new System.EventHandler(this.Add_customer_Click);
             // 
@@ -562,7 +564,7 @@
             // toolStripSeparator10
             // 
             this.toolStripSeparator10.Name = "toolStripSeparator10";
-            this.toolStripSeparator10.Size = new System.Drawing.Size(244, 6);
+            this.toolStripSeparator10.Size = new System.Drawing.Size(246, 6);
             // 
             // Company_Managemet
             // 
@@ -580,7 +582,7 @@
             this.Company_Managemet.Image = ((System.Drawing.Image)(resources.GetObject("Company_Managemet.Image")));
             this.Company_Managemet.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Company_Managemet.Name = "Company_Managemet";
-            this.Company_Managemet.Size = new System.Drawing.Size(247, 92);
+            this.Company_Managemet.Size = new System.Drawing.Size(249, 92);
             this.Company_Managemet.Text = "إدارة الشركات";
             // 
             // Add_Company
@@ -644,7 +646,7 @@
             // toolStripSeparator11
             // 
             this.toolStripSeparator11.Name = "toolStripSeparator11";
-            this.toolStripSeparator11.Size = new System.Drawing.Size(244, 6);
+            this.toolStripSeparator11.Size = new System.Drawing.Size(246, 6);
             // 
             // Doctoer_Management
             // 
@@ -656,7 +658,7 @@
             this.Doctoer_Management.Image = ((System.Drawing.Image)(resources.GetObject("Doctoer_Management.Image")));
             this.Doctoer_Management.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Doctoer_Management.Name = "Doctoer_Management";
-            this.Doctoer_Management.Size = new System.Drawing.Size(247, 92);
+            this.Doctoer_Management.Size = new System.Drawing.Size(249, 92);
             this.Doctoer_Management.Text = "إدارة الدكاترة";
             this.Doctoer_Management.Click += new System.EventHandler(this.Doctoer_Management_Click);
             // 
@@ -1081,7 +1083,9 @@
             this.toolStripSeparator8,
             this.Management_Ticket,
             this.toolStripSeparator44,
-            this.Search_Ticket});
+            this.Search_Ticket,
+            this.toolStripSeparator46,
+            this.Mardodat});
             this.Receiption.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Receiption.Image = ((System.Drawing.Image)(resources.GetObject("Receiption.Image")));
             this.Receiption.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
@@ -1165,6 +1169,19 @@
             this.label4.Size = new System.Drawing.Size(177, 32);
             this.label4.TabIndex = 10;
             this.label4.Text = "USER NAME";
+            // 
+            // Mardodat
+            // 
+            this.Mardodat.BackColor = System.Drawing.Color.Tomato;
+            this.Mardodat.Name = "Mardodat";
+            this.Mardodat.Size = new System.Drawing.Size(282, 82);
+            this.Mardodat.Text = "شاشة المردودات";
+            this.Mardodat.Click += new System.EventHandler(this.Mardodat_Click);
+            // 
+            // toolStripSeparator46
+            // 
+            this.toolStripSeparator46.Name = "toolStripSeparator46";
+            this.toolStripSeparator46.Size = new System.Drawing.Size(279, 6);
             // 
             // Frm_Main
             // 
@@ -1309,5 +1326,7 @@
         public System.Windows.Forms.ToolStripMenuItem Search_Ticket;
         public System.Windows.Forms.ToolStripMenuItem Add_CompanyXrays;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator45;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator46;
+        public System.Windows.Forms.ToolStripMenuItem Mardodat;
     }
 }
