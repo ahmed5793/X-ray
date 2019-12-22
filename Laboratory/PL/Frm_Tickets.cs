@@ -201,6 +201,7 @@ namespace Laboratory.PL
             {
                 if (Txt_addtionPayment.Text=="0")
                 {
+                    Txt_addtionPayment.Text = "0";
                     Txt_PricePayment.Text = txt_afterDiscount.Text;
                 }
                 else
@@ -210,6 +211,12 @@ namespace Laboratory.PL
                     decimal Total = Amount * (Discount / 100);
                     Txt_PricePayment.Text = Total.ToString();
                 }
+            }
+            else
+            {
+
+                Txt_addtionPayment.Text = "0";
+                Txt_PricePayment.Text = txt_afterDiscount.Text;
             }
         }
         void Rent_Company()
@@ -532,6 +539,7 @@ namespace Laboratory.PL
         {
             try
             {
+                
                 if (cmb_statues.Text=="")
                 {
                     MessageBox.Show("من فضلك قم بتحديد طريقة التعامل للفاتورة");
@@ -561,19 +569,19 @@ namespace Laboratory.PL
                     MessageBox.Show("من فضلك قم بااختيارنوع الفحص");
                     return;
                 }
+      
                 else
                 {
                     if (cmb_statues.Text=="نقدى")
                     {
-                        decimal x;
+                        decimal x1;
                         dt.Clear();
                         dt = ix.SelectPriseItem(Convert.ToInt32(cmb_items.SelectedValue));
-                        x = Convert.ToDecimal(dt.Rows[0][0].ToString());
-
+                        x1 = Convert.ToDecimal(dt.Rows[0][0].ToString());
                         DataRow r = dt2.NewRow();
                         r[0] = cmb_items.SelectedValue;
                         r[1] = cmb_items.Text;
-                        r[2] = x;
+                        r[2] = x1;
                         r[3] = 0;
 
                         dt2.Rows.Add(r);
@@ -582,20 +590,40 @@ namespace Laboratory.PL
                         dgv_order.Columns[3].Visible = false;
 
                     }
+
                   else  if (cmb_statues.Text== "شركات")
                     {
-                        dt.Clear();
-                        dt = cm.Select_PriceXrayCompany(Convert.ToInt32(cmb_Company.SelectedValue),Convert.ToInt32(cmb_items.SelectedValue));
-                        decimal x;
-                        decimal y;
-                   
-                        x = Convert.ToDecimal(dt.Rows[0][0].ToString());
-                        y = Convert.ToDecimal(dt.Rows[0][1].ToString());
+                        DataTable dt12 = new DataTable();
+               
                         DataRow r = dt2.NewRow();
-                        r[0] = cmb_items.SelectedValue;
-                        r[1] = cmb_items.Text;
-                        r[2] = x;
-                        r[3] = y;
+
+                        dt12 = t.VildateXrayCompany(Convert.ToInt32(cmb_items.SelectedValue), Convert.ToInt32(cmb_Company.SelectedValue));
+                        if (dt12.Rows.Count > 0)
+                        {
+                            dt.Clear();
+                            dt = cm.Select_PriceXrayCompany(Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToInt32(cmb_items.SelectedValue));
+                            decimal y;
+                            decimal x;
+                            x = Convert.ToDecimal(dt.Rows[0][0].ToString());
+                            y = Convert.ToDecimal(dt.Rows[0][1].ToString());
+                            r[0] = cmb_items.SelectedValue;
+                            r[1] = cmb_items.Text;
+                            r[2] = x;
+                            r[3] = y;
+                        }
+                        else if(dt12.Rows.Count == 0)
+                        {
+                            decimal x1;
+                            dt.Clear();
+                            dt = ix.SelectPriseItem(Convert.ToInt32(cmb_items.SelectedValue));
+                            x1 = Convert.ToDecimal(dt.Rows[0][0].ToString());
+                            r[0] = cmb_items.SelectedValue;
+                            r[1] = cmb_items.Text;
+                            r[2] = x1;
+                            r[3] = 0;
+                        }
+
+
 
 
 
@@ -1176,6 +1204,9 @@ namespace Laboratory.PL
             {
                 Txt_addtionPayment.Text = "0";
             }
+            Patient_PaymentRate();
+            Rent_Company();
+            pay();
         }
     }
     }
