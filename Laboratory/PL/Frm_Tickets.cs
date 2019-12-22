@@ -202,7 +202,7 @@ namespace Laboratory.PL
                 if (Txt_addtionPayment.Text=="0")
                 {
                     Txt_addtionPayment.Text = "0";
-                    Txt_PricePayment.Text = txt_afterDiscount.Text;
+                    Txt_PricePayment.Text = "0";
                 }
                 else
                 {
@@ -216,7 +216,7 @@ namespace Laboratory.PL
             {
 
                 Txt_addtionPayment.Text = "0";
-                Txt_PricePayment.Text = txt_afterDiscount.Text;
+                Txt_PricePayment.Text = "0";
             }
         }
         void Rent_Company()
