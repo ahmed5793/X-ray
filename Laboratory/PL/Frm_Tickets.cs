@@ -705,7 +705,8 @@ namespace Laboratory.PL
             txt_compint.Clear();
           
             txt_name.Clear();
-         
+            txt_idntational.Clear();
+            comboBox1.Text = "";
             txt_phone.Clear();
            
             rdb_CurrentPatient.Checked = true;

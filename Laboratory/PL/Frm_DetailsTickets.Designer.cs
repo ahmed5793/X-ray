@@ -75,6 +75,17 @@
             this.label17 = new System.Windows.Forms.Label();
             this.txt_branch = new System.Windows.Forms.TextBox();
             this.txt_stock = new System.Windows.Forms.TextBox();
+            this.Txt_PricePayment = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.Txt_addtionPayment = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.txt_reasonAddition = new System.Windows.Forms.TextBox();
+            this.txt_afterDiscount = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.txt_place = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txt_idnationa = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_order)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -85,7 +96,7 @@
             // txt_discount
             // 
             this.txt_discount.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_discount.Location = new System.Drawing.Point(258, 63);
+            this.txt_discount.Location = new System.Drawing.Point(331, 71);
             this.txt_discount.Name = "txt_discount";
             this.txt_discount.ReadOnly = true;
             this.txt_discount.Size = new System.Drawing.Size(134, 32);
@@ -96,7 +107,7 @@
             // txt_rent
             // 
             this.txt_rent.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_rent.Location = new System.Drawing.Point(259, 139);
+            this.txt_rent.Location = new System.Drawing.Point(10, 147);
             this.txt_rent.Name = "txt_rent";
             this.txt_rent.ReadOnly = true;
             this.txt_rent.Size = new System.Drawing.Size(134, 32);
@@ -108,7 +119,7 @@
             // 
             this.txt_username.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_username.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_username.Location = new System.Drawing.Point(673, 7);
+            this.txt_username.Location = new System.Drawing.Point(673, 2);
             this.txt_username.Name = "txt_username";
             this.txt_username.ReadOnly = true;
             this.txt_username.Size = new System.Drawing.Size(233, 32);
@@ -119,7 +130,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(272, 10);
+            this.label14.Location = new System.Drawing.Point(213, 9);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(51, 24);
             this.label14.TabIndex = 123;
@@ -129,7 +140,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(473, 144);
+            this.label16.Location = new System.Drawing.Point(189, 150);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(60, 24);
             this.label16.TabIndex = 103;
@@ -143,13 +154,13 @@
             this.dgv_order.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_order.BackgroundColor = System.Drawing.Color.Maroon;
             this.dgv_order.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_order.Location = new System.Drawing.Point(27, 428);
+            this.dgv_order.Location = new System.Drawing.Point(27, 453);
             this.dgv_order.Name = "dgv_order";
             this.dgv_order.ReadOnly = true;
             this.dgv_order.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgv_order.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_order.ShowEditingIcon = false;
-            this.dgv_order.Size = new System.Drawing.Size(991, 99);
+            this.dgv_order.Size = new System.Drawing.Size(991, 74);
             this.dgv_order.TabIndex = 126;
             // 
             // groupBox4
@@ -162,9 +173,9 @@
             this.groupBox4.Controls.Add(this.label21);
             this.groupBox4.Controls.Add(this.label1);
             this.groupBox4.Controls.Add(this.label6);
-            this.groupBox4.Location = new System.Drawing.Point(27, 37);
+            this.groupBox4.Location = new System.Drawing.Point(4, 63);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(990, 50);
+            this.groupBox4.Size = new System.Drawing.Size(1013, 50);
             this.groupBox4.TabIndex = 125;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "حالة الفاتورة";
@@ -173,7 +184,7 @@
             // 
             this.txt_statues.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_statues.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_statues.Location = new System.Drawing.Point(719, 10);
+            this.txt_statues.Location = new System.Drawing.Point(719, 9);
             this.txt_statues.Name = "txt_statues";
             this.txt_statues.ReadOnly = true;
             this.txt_statues.Size = new System.Drawing.Size(182, 32);
@@ -184,7 +195,7 @@
             // 
             this.txt_company.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_company.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_company.Location = new System.Drawing.Point(383, 9);
+            this.txt_company.Location = new System.Drawing.Point(383, 8);
             this.txt_company.Name = "txt_company";
             this.txt_company.ReadOnly = true;
             this.txt_company.Size = new System.Drawing.Size(233, 32);
@@ -195,7 +206,7 @@
             // 
             this.txt_dateVisit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_dateVisit.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_dateVisit.Location = new System.Drawing.Point(6, 14);
+            this.txt_dateVisit.Location = new System.Drawing.Point(5, 14);
             this.txt_dateVisit.Name = "txt_dateVisit";
             this.txt_dateVisit.ReadOnly = true;
             this.txt_dateVisit.Size = new System.Drawing.Size(255, 32);
@@ -216,11 +227,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(902, 14);
+            this.label1.Location = new System.Drawing.Point(904, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 24);
+            this.label1.Size = new System.Drawing.Size(105, 24);
             this.label1.TabIndex = 89;
-            this.label1.Text = "نوع الحالة";
+            this.label1.Text = "طريقه التعامل";
             // 
             // label6
             // 
@@ -238,7 +249,7 @@
             this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(911, 9);
+            this.label18.Location = new System.Drawing.Point(911, 5);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(106, 24);
             this.label18.TabIndex = 119;
@@ -249,17 +260,17 @@
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(597, 11);
+            this.label13.Location = new System.Drawing.Point(919, 36);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(36, 24);
+            this.label13.Size = new System.Drawing.Size(99, 24);
             this.label13.TabIndex = 121;
-            this.label13.Text = "فرع";
+            this.label13.Text = "مكان الفحص";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(473, 109);
+            this.label15.Location = new System.Drawing.Point(199, 109);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(62, 24);
             this.label15.TabIndex = 101;
@@ -278,7 +289,7 @@
             // txt_total
             // 
             this.txt_total.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_total.Location = new System.Drawing.Point(258, 23);
+            this.txt_total.Location = new System.Drawing.Point(331, 25);
             this.txt_total.MaxLength = 11;
             this.txt_total.Name = "txt_total";
             this.txt_total.ReadOnly = true;
@@ -290,15 +301,22 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.txt_afterDiscount);
+            this.groupBox3.Controls.Add(this.label24);
+            this.groupBox3.Controls.Add(this.Txt_PricePayment);
             this.groupBox3.Controls.Add(this.label9);
+            this.groupBox3.Controls.Add(this.label27);
             this.groupBox3.Controls.Add(this.txt_discount);
+            this.groupBox3.Controls.Add(this.Txt_addtionPayment);
             this.groupBox3.Controls.Add(this.txt_rent);
+            this.groupBox3.Controls.Add(this.label26);
             this.groupBox3.Controls.Add(this.label16);
+            this.groupBox3.Controls.Add(this.txt_reasonAddition);
             this.groupBox3.Controls.Add(this.txt_pay);
             this.groupBox3.Controls.Add(this.label15);
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.txt_total);
-            this.groupBox3.Location = new System.Drawing.Point(27, 233);
+            this.groupBox3.Location = new System.Drawing.Point(27, 256);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(552, 189);
             this.groupBox3.TabIndex = 120;
@@ -318,7 +336,7 @@
             // txt_pay
             // 
             this.txt_pay.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_pay.Location = new System.Drawing.Point(259, 101);
+            this.txt_pay.Location = new System.Drawing.Point(10, 109);
             this.txt_pay.Name = "txt_pay";
             this.txt_pay.ReadOnly = true;
             this.txt_pay.Size = new System.Drawing.Size(134, 32);
@@ -329,6 +347,8 @@
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.txt_idnationa);
+            this.groupBox1.Controls.Add(this.label22);
             this.groupBox1.Controls.Add(this.txt_doctor);
             this.groupBox1.Controls.Add(this.txt_dateRecive);
             this.groupBox1.Controls.Add(this.comboBox7);
@@ -345,7 +365,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txt_address);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(585, 93);
+            this.groupBox1.Location = new System.Drawing.Point(585, 119);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(432, 329);
             this.groupBox1.TabIndex = 116;
@@ -356,7 +376,7 @@
             // 
             this.txt_doctor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_doctor.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_doctor.Location = new System.Drawing.Point(16, 172);
+            this.txt_doctor.Location = new System.Drawing.Point(6, 217);
             this.txt_doctor.Name = "txt_doctor";
             this.txt_doctor.ReadOnly = true;
             this.txt_doctor.Size = new System.Drawing.Size(278, 32);
@@ -367,7 +387,7 @@
             // 
             this.txt_dateRecive.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_dateRecive.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_dateRecive.Location = new System.Drawing.Point(16, 219);
+            this.txt_dateRecive.Location = new System.Drawing.Point(6, 255);
             this.txt_dateRecive.Name = "txt_dateRecive";
             this.txt_dateRecive.ReadOnly = true;
             this.txt_dateRecive.Size = new System.Drawing.Size(299, 32);
@@ -401,7 +421,7 @@
             // txt_compint
             // 
             this.txt_compint.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_compint.Location = new System.Drawing.Point(6, 276);
+            this.txt_compint.Location = new System.Drawing.Point(6, 289);
             this.txt_compint.Name = "txt_compint";
             this.txt_compint.ReadOnly = true;
             this.txt_compint.Size = new System.Drawing.Size(350, 32);
@@ -412,7 +432,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(362, 279);
+            this.label20.Location = new System.Drawing.Point(361, 292);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(64, 24);
             this.label20.TabIndex = 88;
@@ -423,7 +443,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.White;
             this.label7.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(321, 224);
+            this.label7.Location = new System.Drawing.Point(311, 260);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(107, 24);
             this.label7.TabIndex = 52;
@@ -433,7 +453,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(314, 180);
+            this.label8.Location = new System.Drawing.Point(304, 216);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(112, 24);
             this.label8.TabIndex = 49;
@@ -551,7 +571,7 @@
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label23);
             this.groupBox2.Controls.Add(this.label17);
-            this.groupBox2.Location = new System.Drawing.Point(14, 91);
+            this.groupBox2.Location = new System.Drawing.Point(14, 114);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(565, 139);
             this.groupBox2.TabIndex = 117;
@@ -606,10 +626,10 @@
             // 
             this.txt_branch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_branch.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_branch.Location = new System.Drawing.Point(358, 7);
+            this.txt_branch.Location = new System.Drawing.Point(673, 36);
             this.txt_branch.Name = "txt_branch";
             this.txt_branch.ReadOnly = true;
-            this.txt_branch.Size = new System.Drawing.Size(233, 32);
+            this.txt_branch.Size = new System.Drawing.Size(232, 32);
             this.txt_branch.TabIndex = 130;
             this.txt_branch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -617,18 +637,140 @@
             // 
             this.txt_stock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_stock.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_stock.Location = new System.Drawing.Point(33, 4);
+            this.txt_stock.Location = new System.Drawing.Point(11, 4);
             this.txt_stock.Name = "txt_stock";
             this.txt_stock.ReadOnly = true;
-            this.txt_stock.Size = new System.Drawing.Size(233, 32);
+            this.txt_stock.Size = new System.Drawing.Size(193, 32);
             this.txt_stock.TabIndex = 132;
             this.txt_stock.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // Txt_PricePayment
+            // 
+            this.Txt_PricePayment.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_PricePayment.Location = new System.Drawing.Point(10, 68);
+            this.Txt_PricePayment.Name = "Txt_PricePayment";
+            this.Txt_PricePayment.ReadOnly = true;
+            this.Txt_PricePayment.Size = new System.Drawing.Size(134, 32);
+            this.Txt_PricePayment.TabIndex = 138;
+            this.Txt_PricePayment.Text = "0";
+            this.Txt_PricePayment.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(166, 71);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(143, 24);
+            this.label27.TabIndex = 139;
+            this.label27.Text = "مبلغ تحمل المريض";
+            // 
+            // Txt_addtionPayment
+            // 
+            this.Txt_addtionPayment.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_addtionPayment.Location = new System.Drawing.Point(10, 25);
+            this.Txt_addtionPayment.Name = "Txt_addtionPayment";
+            this.Txt_addtionPayment.ReadOnly = true;
+            this.Txt_addtionPayment.Size = new System.Drawing.Size(134, 32);
+            this.Txt_addtionPayment.TabIndex = 136;
+            this.Txt_addtionPayment.Text = "0";
+            this.Txt_addtionPayment.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(163, 30);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(147, 24);
+            this.label26.TabIndex = 137;
+            this.label26.Text = "نسبة تحمل المريض";
+            // 
+            // txt_reasonAddition
+            // 
+            this.txt_reasonAddition.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_reasonAddition.Location = new System.Drawing.Point(271, 150);
+            this.txt_reasonAddition.MaxLength = 3000;
+            this.txt_reasonAddition.Multiline = true;
+            this.txt_reasonAddition.Name = "txt_reasonAddition";
+            this.txt_reasonAddition.ReadOnly = true;
+            this.txt_reasonAddition.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txt_reasonAddition.Size = new System.Drawing.Size(275, 33);
+            this.txt_reasonAddition.TabIndex = 135;
+            this.txt_reasonAddition.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txt_afterDiscount
+            // 
+            this.txt_afterDiscount.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_afterDiscount.Location = new System.Drawing.Point(269, 109);
+            this.txt_afterDiscount.Name = "txt_afterDiscount";
+            this.txt_afterDiscount.ReadOnly = true;
+            this.txt_afterDiscount.Size = new System.Drawing.Size(134, 32);
+            this.txt_afterDiscount.TabIndex = 140;
+            this.txt_afterDiscount.Text = "0";
+            this.txt_afterDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(407, 112);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(145, 24);
+            this.label24.TabIndex = 141;
+            this.label24.Text = "الاجمالي بعد الخصم";
+            // 
+            // txt_place
+            // 
+            this.txt_place.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_place.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_place.Location = new System.Drawing.Point(307, 5);
+            this.txt_place.Name = "txt_place";
+            this.txt_place.ReadOnly = true;
+            this.txt_place.Size = new System.Drawing.Size(232, 32);
+            this.txt_place.TabIndex = 134;
+            this.txt_place.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(551, 8);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(36, 24);
+            this.label10.TabIndex = 133;
+            this.label10.Text = "فرع";
+            // 
+            // txt_idnationa
+            // 
+            this.txt_idnationa.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_idnationa.Location = new System.Drawing.Point(7, 174);
+            this.txt_idnationa.MaxLength = 11;
+            this.txt_idnationa.Name = "txt_idnationa";
+            this.txt_idnationa.ReadOnly = true;
+            this.txt_idnationa.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txt_idnationa.Size = new System.Drawing.Size(314, 32);
+            this.txt_idnationa.TabIndex = 121;
+            this.txt_idnationa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(371, 180);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(30, 24);
+            this.label22.TabIndex = 122;
+            this.label22.Text = "ID";
             // 
             // Frm_DetailsTickets
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1030, 539);
+            this.Controls.Add(this.txt_place);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.txt_stock);
             this.Controls.Add(this.txt_branch);
             this.Controls.Add(this.txt_username);
@@ -658,53 +800,63 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txt_discount;
-        private System.Windows.Forms.TextBox txt_rent;
-        private System.Windows.Forms.TextBox txt_username;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label16;
         public System.Windows.Forms.DataGridView dgv_order;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox txt_company;
-        private System.Windows.Forms.TextBox txt_dateVisit;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txt_total;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox txt_pay;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txt_doctor;
-        private System.Windows.Forms.TextBox txt_dateRecive;
         public System.Windows.Forms.ComboBox comboBox7;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox txt_compint;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txt_age;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txt_name;
-        private System.Windows.Forms.TextBox txt_phone;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txt_address;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox txt_techincal;
-        private System.Windows.Forms.TextBox txt_doctorOfCenter;
-        private System.Windows.Forms.TextBox txt_branch;
-        private System.Windows.Forms.TextBox txt_stock;
-        private System.Windows.Forms.TextBox txt_statues;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txt_timeKa4f;
-        private System.Windows.Forms.Label label17;
+        public System.Windows.Forms.TextBox txt_discount;
+        public System.Windows.Forms.TextBox txt_rent;
+        public System.Windows.Forms.TextBox txt_username;
+        public System.Windows.Forms.Label label14;
+        public System.Windows.Forms.Label label16;
+        public System.Windows.Forms.GroupBox groupBox4;
+        public System.Windows.Forms.TextBox txt_company;
+        public System.Windows.Forms.TextBox txt_dateVisit;
+        public System.Windows.Forms.Label label21;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label label6;
+        public System.Windows.Forms.Label label18;
+        public System.Windows.Forms.Label label13;
+        public System.Windows.Forms.Label label15;
+        public System.Windows.Forms.Label label11;
+        public System.Windows.Forms.TextBox txt_total;
+        public System.Windows.Forms.GroupBox groupBox3;
+        public System.Windows.Forms.TextBox txt_pay;
+        public System.Windows.Forms.GroupBox groupBox1;
+        public System.Windows.Forms.TextBox txt_doctor;
+        public System.Windows.Forms.TextBox txt_dateRecive;
+        public System.Windows.Forms.Label label19;
+        public System.Windows.Forms.TextBox txt_compint;
+        public System.Windows.Forms.Label label20;
+        public System.Windows.Forms.Label label7;
+        public System.Windows.Forms.Label label8;
+        public System.Windows.Forms.TextBox txt_age;
+        public System.Windows.Forms.Label label4;
+        public System.Windows.Forms.TextBox txt_name;
+        public System.Windows.Forms.TextBox txt_phone;
+        public System.Windows.Forms.Label label5;
+        public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.TextBox txt_address;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label label12;
+        public System.Windows.Forms.Label label23;
+        public System.Windows.Forms.GroupBox groupBox2;
+        public System.Windows.Forms.TextBox txt_techincal;
+        public System.Windows.Forms.TextBox txt_doctorOfCenter;
+        public System.Windows.Forms.TextBox txt_branch;
+        public System.Windows.Forms.TextBox txt_stock;
+        public System.Windows.Forms.TextBox txt_statues;
+        public System.Windows.Forms.Label label9;
+        public System.Windows.Forms.Label label17;
+        public System.Windows.Forms.TextBox txt_timeKa4f;
+        public System.Windows.Forms.TextBox Txt_PricePayment;
+        public System.Windows.Forms.TextBox Txt_addtionPayment;
+        public System.Windows.Forms.TextBox txt_reasonAddition;
+        public System.Windows.Forms.TextBox txt_afterDiscount;
+        public System.Windows.Forms.TextBox txt_place;
+        public System.Windows.Forms.Label label10;
+        public System.Windows.Forms.Label label27;
+        public System.Windows.Forms.Label label26;
+        public System.Windows.Forms.Label label24;
+        public System.Windows.Forms.TextBox txt_idnationa;
+        public System.Windows.Forms.Label label22;
     }
 }

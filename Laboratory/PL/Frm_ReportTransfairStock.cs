@@ -37,7 +37,7 @@ namespace Laboratory.PL
             finally
             {
                 dt.Dispose();
-            }9
+            }
         }
     }
 }
