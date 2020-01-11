@@ -110,20 +110,17 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
-        internal void AddTicketCompany(int ID_Tickets, int idcompany)
+        internal void AddTicketCompany(int ID_Tickets, int idcompany , decimal Total_Company)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[2];
+            SqlParameter[] param = new SqlParameter[3];
             param[0] = new SqlParameter("@idticket", SqlDbType.Int);
             param[0].Value = ID_Tickets;
             param[1] = new SqlParameter("@idCompany", SqlDbType.Int);
             param[1].Value = idcompany;
-           
-
-
-
-
+            param[2] = new SqlParameter("@TOTal_Company", SqlDbType.Decimal);
+            param[2].Value = Total_Company;
             da.excutequery("AddTicketCompany", param);
             da.close();
         }

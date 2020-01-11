@@ -19,8 +19,7 @@ namespace Laboratory.PL
             comboBox1.DataSource = Doctors.Select_ComboDoctor();
             comboBox1.DisplayMember = "Doc_Name";
             comboBox1.ValueMember = "Doc_ID";
-            dataGridView1.DataSource = Doctors.Select_ReportDoctor(Convert.ToInt32(comboBox1.SelectedValue));
-            textBox1.Text = dataGridView1.Rows.Count.ToString();
+        
         }
 
         private void btn_search_Click(object sender, EventArgs e)
@@ -63,6 +62,25 @@ namespace Laboratory.PL
             {
 
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void comboBox1_Leave(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            if (comboBox1.Text != "")
+            {
+                dt.Clear();
+                dt = Doctors.vildateOutDoctor(Convert.ToInt32(comboBox1.SelectedValue));
+                if (dt.Rows.Count == 0)
+                {
+                    MessageBox.Show("يرجي العلم بان اسم الطبيب غير مسجل من قبل ", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                    comboBox1.Focus();
+                    comboBox1.SelectAll();
+                    return;
+                }
+                dt.Dispose();
             }
         }
     }

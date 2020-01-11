@@ -42,6 +42,7 @@
             this.Category_XRay = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
             this.Add_XRays = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator54 = new System.Windows.Forms.ToolStripSeparator();
             this.Employee = new System.Windows.Forms.ToolStripDropDownButton();
             this.Employee_manage = new System.Windows.Forms.ToolStripMenuItem();
             this.Add_Employee = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,11 +63,16 @@
             this.Add_DoctorOfCenters = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator35 = new System.Windows.Forms.ToolStripSeparator();
             this.Report_DoctorOfCenter = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator57 = new System.Windows.Forms.ToolStripSeparator();
+            this.Report_AllCasesDoctorOFCenter = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
             this.Techniqual = new System.Windows.Forms.ToolStripMenuItem();
             this.Add_Technical = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator34 = new System.Windows.Forms.ToolStripSeparator();
-            this.Report_Technical = new System.Windows.Forms.ToolStripMenuItem();
+            this.Report_DetailsTechnical = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator56 = new System.Windows.Forms.ToolStripSeparator();
+            this.Report_TotalXrayTechnical = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator53 = new System.Windows.Forms.ToolStripSeparator();
             this.Company_Customer = new System.Windows.Forms.ToolStripDropDownButton();
             this.Customer_management = new System.Windows.Forms.ToolStripMenuItem();
             this.Add_Customer = new System.Windows.Forms.ToolStripMenuItem();
@@ -82,16 +88,23 @@
             this.toolStripSeparator25 = new System.Windows.Forms.ToolStripSeparator();
             this.Add_CompanyXrays = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator45 = new System.Windows.Forms.ToolStripSeparator();
-            this.pay_company = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator39 = new System.Windows.Forms.ToolStripSeparator();
-            this.Debit_Company = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator38 = new System.Windows.Forms.ToolStripSeparator();
+            this.Pay_Company = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator47 = new System.Windows.Forms.ToolStripSeparator();
             this.Report_PayCompany = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator38 = new System.Windows.Forms.ToolStripSeparator();
+            this.Debit_Company = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator39 = new System.Windows.Forms.ToolStripSeparator();
+            this.pay_companyCustomer = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator48 = new System.Windows.Forms.ToolStripSeparator();
+            this.Report_PayCutomerCompany = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
             this.Doctoer_Management = new System.Windows.Forms.ToolStripMenuItem();
             this.Add_Doctor = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator40 = new System.Windows.Forms.ToolStripSeparator();
             this.Report_Doctor = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator58 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator52 = new System.Windows.Forms.ToolStripSeparator();
             this.Masrofat_Stock = new System.Windows.Forms.ToolStripDropDownButton();
             this.Msrofat_Manage = new System.Windows.Forms.ToolStripMenuItem();
             this.Add_Masrof = new System.Windows.Forms.ToolStripMenuItem();
@@ -112,6 +125,7 @@
             this.Report_InsertStock = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator32 = new System.Windows.Forms.ToolStripSeparator();
             this.Report_TransfairMoney = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator51 = new System.Windows.Forms.ToolStripSeparator();
             this.Store_Manage = new System.Windows.Forms.ToolStripDropDownButton();
             this.AddStore = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
@@ -140,17 +154,23 @@
             this.مديونيةالموردينToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator24 = new System.Windows.Forms.ToolStripSeparator();
             this.Report_PaySupplier = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator50 = new System.Windows.Forms.ToolStripSeparator();
             this.Receiption = new System.Windows.Forms.ToolStripDropDownButton();
             this.Teicket = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.Management_Ticket = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator44 = new System.Windows.Forms.ToolStripSeparator();
             this.Search_Ticket = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator46 = new System.Windows.Forms.ToolStripSeparator();
+            this.Mardodat = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator49 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.toolStripSeparator55 = new System.Windows.Forms.ToolStripSeparator();
             this.Btn_Exit = new System.Windows.Forms.ToolStripButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.Mardodat = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator46 = new System.Windows.Forms.ToolStripSeparator();
+            this.Add_TechnicalShift = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator59 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -163,11 +183,19 @@
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Main_data,
+            this.toolStripSeparator54,
             this.Employee,
+            this.toolStripSeparator53,
             this.Company_Customer,
+            this.toolStripSeparator52,
             this.Masrofat_Stock,
+            this.toolStripSeparator51,
             this.Store_Manage,
+            this.toolStripSeparator50,
             this.Receiption,
+            this.toolStripSeparator49,
+            this.toolStripDropDownButton1,
+            this.toolStripSeparator55,
             this.Btn_Exit});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
@@ -203,7 +231,7 @@
             this.Branches_Manage.Image = ((System.Drawing.Image)(resources.GetObject("Branches_Manage.Image")));
             this.Branches_Manage.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Branches_Manage.Name = "Branches_Manage";
-            this.Branches_Manage.Size = new System.Drawing.Size(239, 82);
+            this.Branches_Manage.Size = new System.Drawing.Size(238, 82);
             this.Branches_Manage.Text = "إدارة الفروع";
             // 
             // Add_Branche
@@ -232,7 +260,7 @@
             // toolStripSeparator15
             // 
             this.toolStripSeparator15.Name = "toolStripSeparator15";
-            this.toolStripSeparator15.Size = new System.Drawing.Size(236, 6);
+            this.toolStripSeparator15.Size = new System.Drawing.Size(235, 6);
             // 
             // إدارةالاشعةToolStripMenuItem
             // 
@@ -246,7 +274,7 @@
             this.إدارةالاشعةToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("إدارةالاشعةToolStripMenuItem.Image")));
             this.إدارةالاشعةToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.إدارةالاشعةToolStripMenuItem.Name = "إدارةالاشعةToolStripMenuItem";
-            this.إدارةالاشعةToolStripMenuItem.Size = new System.Drawing.Size(239, 82);
+            this.إدارةالاشعةToolStripMenuItem.Size = new System.Drawing.Size(238, 82);
             this.إدارةالاشعةToolStripMenuItem.Text = "قسم الاشعة";
             // 
             // Category_XRay
@@ -269,6 +297,11 @@
             this.Add_XRays.Size = new System.Drawing.Size(234, 34);
             this.Add_XRays.Text = "إضافة الاشعة";
             this.Add_XRays.Click += new System.EventHandler(this.Add_XRays_Click);
+            // 
+            // toolStripSeparator54
+            // 
+            this.toolStripSeparator54.Name = "toolStripSeparator54";
+            this.toolStripSeparator54.Size = new System.Drawing.Size(6, 116);
             // 
             // Employee
             // 
@@ -408,34 +441,49 @@
             this.Doctors_Center.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Add_DoctorOfCenters,
             this.toolStripSeparator35,
-            this.Report_DoctorOfCenter});
+            this.Report_DoctorOfCenter,
+            this.toolStripSeparator57,
+            this.Report_AllCasesDoctorOFCenter});
             this.Doctors_Center.Image = ((System.Drawing.Image)(resources.GetObject("Doctors_Center.Image")));
             this.Doctors_Center.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Doctors_Center.Name = "Doctors_Center";
             this.Doctors_Center.Size = new System.Drawing.Size(247, 82);
-            this.Doctors_Center.Text = "دكاترة المركز";
+            this.Doctors_Center.Text = "أطباء المركز";
             this.Doctors_Center.Click += new System.EventHandler(this.Doctors_Center_Click);
             // 
             // Add_DoctorOfCenters
             // 
             this.Add_DoctorOfCenters.BackColor = System.Drawing.Color.OrangeRed;
             this.Add_DoctorOfCenters.Name = "Add_DoctorOfCenters";
-            this.Add_DoctorOfCenters.Size = new System.Drawing.Size(302, 28);
+            this.Add_DoctorOfCenters.Size = new System.Drawing.Size(394, 28);
             this.Add_DoctorOfCenters.Text = "إضافة دكتور ";
             this.Add_DoctorOfCenters.Click += new System.EventHandler(this.إضافةدكتورToolStripMenuItem_Click);
             // 
             // toolStripSeparator35
             // 
             this.toolStripSeparator35.Name = "toolStripSeparator35";
-            this.toolStripSeparator35.Size = new System.Drawing.Size(299, 6);
+            this.toolStripSeparator35.Size = new System.Drawing.Size(391, 6);
             // 
             // Report_DoctorOfCenter
             // 
             this.Report_DoctorOfCenter.BackColor = System.Drawing.Color.OrangeRed;
             this.Report_DoctorOfCenter.Name = "Report_DoctorOfCenter";
-            this.Report_DoctorOfCenter.Size = new System.Drawing.Size(302, 28);
-            this.Report_DoctorOfCenter.Text = "تقرير بعدد الحالات التى عمل بها";
+            this.Report_DoctorOfCenter.Size = new System.Drawing.Size(394, 28);
+            this.Report_DoctorOfCenter.Text = "تقرير تفصيلي بعدد الحالات التى عمل بها";
             this.Report_DoctorOfCenter.Click += new System.EventHandler(this.Report_DoctorOfCenter_Click);
+            // 
+            // toolStripSeparator57
+            // 
+            this.toolStripSeparator57.Name = "toolStripSeparator57";
+            this.toolStripSeparator57.Size = new System.Drawing.Size(391, 6);
+            // 
+            // Report_AllCasesDoctorOFCenter
+            // 
+            this.Report_AllCasesDoctorOFCenter.BackColor = System.Drawing.Color.OrangeRed;
+            this.Report_AllCasesDoctorOFCenter.Name = "Report_AllCasesDoctorOFCenter";
+            this.Report_AllCasesDoctorOFCenter.Size = new System.Drawing.Size(394, 28);
+            this.Report_AllCasesDoctorOFCenter.Text = "تقرير مجمع لكل الحالات التى عمل بها الاطباء";
+            this.Report_AllCasesDoctorOFCenter.Click += new System.EventHandler(this.Report_AllCasesDoctorOFCenter_Click);
             // 
             // toolStripSeparator9
             // 
@@ -449,7 +497,11 @@
             this.Techniqual.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Add_Technical,
             this.toolStripSeparator34,
-            this.Report_Technical});
+            this.Add_TechnicalShift,
+            this.toolStripSeparator59,
+            this.Report_DetailsTechnical,
+            this.toolStripSeparator56,
+            this.Report_TotalXrayTechnical});
             this.Techniqual.Image = ((System.Drawing.Image)(resources.GetObject("Techniqual.Image")));
             this.Techniqual.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Techniqual.Name = "Techniqual";
@@ -461,7 +513,7 @@
             // 
             this.Add_Technical.BackColor = System.Drawing.Color.IndianRed;
             this.Add_Technical.Name = "Add_Technical";
-            this.Add_Technical.Size = new System.Drawing.Size(292, 28);
+            this.Add_Technical.Size = new System.Drawing.Size(408, 28);
             this.Add_Technical.Text = "إضافة فني";
             this.Add_Technical.Click += new System.EventHandler(this.Add_Technical_Click);
             // 
@@ -469,16 +521,34 @@
             // 
             this.toolStripSeparator34.BackColor = System.Drawing.Color.IndianRed;
             this.toolStripSeparator34.Name = "toolStripSeparator34";
-            this.toolStripSeparator34.Size = new System.Drawing.Size(289, 6);
+            this.toolStripSeparator34.Size = new System.Drawing.Size(405, 6);
             // 
-            // Report_Technical
+            // Report_DetailsTechnical
             // 
-            this.Report_Technical.BackColor = System.Drawing.Color.IndianRed;
-            this.Report_Technical.Name = "Report_Technical";
-            this.Report_Technical.ShowShortcutKeys = false;
-            this.Report_Technical.Size = new System.Drawing.Size(292, 28);
-            this.Report_Technical.Text = "تقرير بعدد الحالات التى عمل بها";
-            this.Report_Technical.Click += new System.EventHandler(this.Report_Technical_Click);
+            this.Report_DetailsTechnical.BackColor = System.Drawing.Color.IndianRed;
+            this.Report_DetailsTechnical.Name = "Report_DetailsTechnical";
+            this.Report_DetailsTechnical.ShowShortcutKeys = false;
+            this.Report_DetailsTechnical.Size = new System.Drawing.Size(408, 28);
+            this.Report_DetailsTechnical.Text = "تقرير تفصيلي  بعدد الحالات التى عمل بها الفنيين";
+            this.Report_DetailsTechnical.Click += new System.EventHandler(this.Report_Technical_Click);
+            // 
+            // toolStripSeparator56
+            // 
+            this.toolStripSeparator56.Name = "toolStripSeparator56";
+            this.toolStripSeparator56.Size = new System.Drawing.Size(405, 6);
+            // 
+            // Report_TotalXrayTechnical
+            // 
+            this.Report_TotalXrayTechnical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Report_TotalXrayTechnical.Name = "Report_TotalXrayTechnical";
+            this.Report_TotalXrayTechnical.Size = new System.Drawing.Size(408, 28);
+            this.Report_TotalXrayTechnical.Text = "تقرير مجمع لكل الحالات التى عمل بها لفنيين ";
+            this.Report_TotalXrayTechnical.Click += new System.EventHandler(this.Report_TotalXrayTechnical_Click);
+            // 
+            // toolStripSeparator53
+            // 
+            this.toolStripSeparator53.Name = "toolStripSeparator53";
+            this.toolStripSeparator53.Size = new System.Drawing.Size(6, 116);
             // 
             // Company_Customer
             // 
@@ -512,7 +582,7 @@
             this.Customer_management.Image = ((System.Drawing.Image)(resources.GetObject("Customer_management.Image")));
             this.Customer_management.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Customer_management.Name = "Customer_management";
-            this.Customer_management.Size = new System.Drawing.Size(249, 92);
+            this.Customer_management.Size = new System.Drawing.Size(302, 92);
             this.Customer_management.Text = "إدارة العملاء ";
             this.Customer_management.Click += new System.EventHandler(this.Add_customer_Click);
             // 
@@ -548,6 +618,7 @@
             this.Debit_Customer.Name = "Debit_Customer";
             this.Debit_Customer.Size = new System.Drawing.Size(238, 28);
             this.Debit_Customer.Text = "مديونية العملاء";
+            this.Debit_Customer.Click += new System.EventHandler(this.Debit_Customer_Click);
             // 
             // toolStripSeparator36
             // 
@@ -560,11 +631,12 @@
             this.Report_PAyCustomer.Name = "Report_PAyCustomer";
             this.Report_PAyCustomer.Size = new System.Drawing.Size(238, 28);
             this.Report_PAyCustomer.Text = "تقرير مدفوعات العملاء";
+            this.Report_PAyCustomer.Click += new System.EventHandler(this.Report_PAyCustomer_Click);
             // 
             // toolStripSeparator10
             // 
             this.toolStripSeparator10.Name = "toolStripSeparator10";
-            this.toolStripSeparator10.Size = new System.Drawing.Size(246, 6);
+            this.toolStripSeparator10.Size = new System.Drawing.Size(299, 6);
             // 
             // Company_Managemet
             // 
@@ -574,79 +646,111 @@
             this.toolStripSeparator25,
             this.Add_CompanyXrays,
             this.toolStripSeparator45,
-            this.pay_company,
-            this.toolStripSeparator39,
-            this.Debit_Company,
+            this.Pay_Company,
+            this.toolStripSeparator47,
+            this.Report_PayCompany,
             this.toolStripSeparator38,
-            this.Report_PayCompany});
+            this.Debit_Company,
+            this.toolStripSeparator39,
+            this.pay_companyCustomer,
+            this.toolStripSeparator48,
+            this.Report_PayCutomerCompany});
             this.Company_Managemet.Image = ((System.Drawing.Image)(resources.GetObject("Company_Managemet.Image")));
             this.Company_Managemet.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Company_Managemet.Name = "Company_Managemet";
-            this.Company_Managemet.Size = new System.Drawing.Size(249, 92);
+            this.Company_Managemet.Size = new System.Drawing.Size(302, 92);
             this.Company_Managemet.Text = "إدارة الشركات";
             // 
             // Add_Company
             // 
             this.Add_Company.BackColor = System.Drawing.Color.SpringGreen;
             this.Add_Company.Name = "Add_Company";
-            this.Add_Company.Size = new System.Drawing.Size(264, 28);
+            this.Add_Company.Size = new System.Drawing.Size(372, 28);
             this.Add_Company.Text = "إضافة شركة ";
             this.Add_Company.Click += new System.EventHandler(this.إضافةشركةToolStripMenuItem_Click);
             // 
             // toolStripSeparator25
             // 
             this.toolStripSeparator25.Name = "toolStripSeparator25";
-            this.toolStripSeparator25.Size = new System.Drawing.Size(261, 6);
+            this.toolStripSeparator25.Size = new System.Drawing.Size(369, 6);
             // 
             // Add_CompanyXrays
             // 
             this.Add_CompanyXrays.BackColor = System.Drawing.Color.SpringGreen;
             this.Add_CompanyXrays.Name = "Add_CompanyXrays";
-            this.Add_CompanyXrays.Size = new System.Drawing.Size(264, 28);
+            this.Add_CompanyXrays.Size = new System.Drawing.Size(372, 28);
             this.Add_CompanyXrays.Text = "إضافة الفحوصات للشركات";
             this.Add_CompanyXrays.Click += new System.EventHandler(this.Add_CompanyXrays_Click);
             // 
             // toolStripSeparator45
             // 
             this.toolStripSeparator45.Name = "toolStripSeparator45";
-            this.toolStripSeparator45.Size = new System.Drawing.Size(261, 6);
+            this.toolStripSeparator45.Size = new System.Drawing.Size(369, 6);
             // 
-            // pay_company
+            // Pay_Company
             // 
-            this.pay_company.BackColor = System.Drawing.Color.SpringGreen;
-            this.pay_company.Name = "pay_company";
-            this.pay_company.Size = new System.Drawing.Size(264, 28);
-            this.pay_company.Text = "مدفوعات الشركات";
-            this.pay_company.Click += new System.EventHandler(this.pay_company_Click);
+            this.Pay_Company.BackColor = System.Drawing.Color.PaleGreen;
+            this.Pay_Company.Name = "Pay_Company";
+            this.Pay_Company.Size = new System.Drawing.Size(372, 28);
+            this.Pay_Company.Text = "مدفوعات الشركات";
+            this.Pay_Company.Click += new System.EventHandler(this.Pay_Company_Click_1);
             // 
-            // toolStripSeparator39
+            // toolStripSeparator47
             // 
-            this.toolStripSeparator39.Name = "toolStripSeparator39";
-            this.toolStripSeparator39.Size = new System.Drawing.Size(261, 6);
-            // 
-            // Debit_Company
-            // 
-            this.Debit_Company.BackColor = System.Drawing.Color.SpringGreen;
-            this.Debit_Company.Name = "Debit_Company";
-            this.Debit_Company.Size = new System.Drawing.Size(264, 28);
-            this.Debit_Company.Text = "مديونية الشركات";
-            // 
-            // toolStripSeparator38
-            // 
-            this.toolStripSeparator38.Name = "toolStripSeparator38";
-            this.toolStripSeparator38.Size = new System.Drawing.Size(261, 6);
+            this.toolStripSeparator47.Name = "toolStripSeparator47";
+            this.toolStripSeparator47.Size = new System.Drawing.Size(369, 6);
             // 
             // Report_PayCompany
             // 
             this.Report_PayCompany.BackColor = System.Drawing.Color.SpringGreen;
             this.Report_PayCompany.Name = "Report_PayCompany";
-            this.Report_PayCompany.Size = new System.Drawing.Size(264, 28);
+            this.Report_PayCompany.Size = new System.Drawing.Size(372, 28);
             this.Report_PayCompany.Text = "تقرير مدفوعات الشركات";
+            this.Report_PayCompany.Click += new System.EventHandler(this.Report_PayCompany_Click);
+            // 
+            // toolStripSeparator38
+            // 
+            this.toolStripSeparator38.Name = "toolStripSeparator38";
+            this.toolStripSeparator38.Size = new System.Drawing.Size(369, 6);
+            // 
+            // Debit_Company
+            // 
+            this.Debit_Company.BackColor = System.Drawing.Color.SpringGreen;
+            this.Debit_Company.Name = "Debit_Company";
+            this.Debit_Company.Size = new System.Drawing.Size(372, 28);
+            this.Debit_Company.Text = "مديونية الشركات";
+            this.Debit_Company.Click += new System.EventHandler(this.Debit_Company_Click);
+            // 
+            // toolStripSeparator39
+            // 
+            this.toolStripSeparator39.Name = "toolStripSeparator39";
+            this.toolStripSeparator39.Size = new System.Drawing.Size(369, 6);
+            // 
+            // pay_companyCustomer
+            // 
+            this.pay_companyCustomer.BackColor = System.Drawing.Color.SpringGreen;
+            this.pay_companyCustomer.Name = "pay_companyCustomer";
+            this.pay_companyCustomer.Size = new System.Drawing.Size(372, 28);
+            this.pay_companyCustomer.Text = "مدفوعات العملاء الخاصة بالشركات";
+            this.pay_companyCustomer.Click += new System.EventHandler(this.pay_company_Click);
+            // 
+            // toolStripSeparator48
+            // 
+            this.toolStripSeparator48.Name = "toolStripSeparator48";
+            this.toolStripSeparator48.Size = new System.Drawing.Size(369, 6);
+            // 
+            // Report_PayCutomerCompany
+            // 
+            this.Report_PayCutomerCompany.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.Report_PayCutomerCompany.Name = "Report_PayCutomerCompany";
+            this.Report_PayCutomerCompany.Size = new System.Drawing.Size(372, 28);
+            this.Report_PayCutomerCompany.Text = "تقرير بمدفوعات العملاء الخاصة بالشركات";
+            this.Report_PayCutomerCompany.Click += new System.EventHandler(this.Report_PayCutomerCompany_Click);
             // 
             // toolStripSeparator11
             // 
             this.toolStripSeparator11.Name = "toolStripSeparator11";
-            this.toolStripSeparator11.Size = new System.Drawing.Size(246, 6);
+            this.toolStripSeparator11.Size = new System.Drawing.Size(299, 6);
             // 
             // Doctoer_Management
             // 
@@ -654,34 +758,54 @@
             this.Doctoer_Management.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Add_Doctor,
             this.toolStripSeparator40,
-            this.Report_Doctor});
+            this.Report_Doctor,
+            this.toolStripSeparator58,
+            this.toolStripMenuItem1});
             this.Doctoer_Management.Image = ((System.Drawing.Image)(resources.GetObject("Doctoer_Management.Image")));
             this.Doctoer_Management.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Doctoer_Management.Name = "Doctoer_Management";
-            this.Doctoer_Management.Size = new System.Drawing.Size(249, 92);
-            this.Doctoer_Management.Text = "إدارة الدكاترة";
+            this.Doctoer_Management.Size = new System.Drawing.Size(302, 92);
+            this.Doctoer_Management.Text = "إدارة الاطباء الخارجية";
             this.Doctoer_Management.Click += new System.EventHandler(this.Doctoer_Management_Click);
             // 
             // Add_Doctor
             // 
             this.Add_Doctor.BackColor = System.Drawing.Color.Teal;
             this.Add_Doctor.Name = "Add_Doctor";
-            this.Add_Doctor.Size = new System.Drawing.Size(344, 28);
+            this.Add_Doctor.Size = new System.Drawing.Size(394, 28);
             this.Add_Doctor.Text = "إضافة دكتور";
             this.Add_Doctor.Click += new System.EventHandler(this.Add_Doctor_Click);
             // 
             // toolStripSeparator40
             // 
             this.toolStripSeparator40.Name = "toolStripSeparator40";
-            this.toolStripSeparator40.Size = new System.Drawing.Size(341, 6);
+            this.toolStripSeparator40.Size = new System.Drawing.Size(391, 6);
             // 
             // Report_Doctor
             // 
             this.Report_Doctor.BackColor = System.Drawing.Color.Teal;
             this.Report_Doctor.Name = "Report_Doctor";
-            this.Report_Doctor.Size = new System.Drawing.Size(344, 28);
+            this.Report_Doctor.Size = new System.Drawing.Size(394, 28);
             this.Report_Doctor.Text = "تقرير بعدد الحالات القادمة من الدكاترة";
             this.Report_Doctor.Click += new System.EventHandler(this.Report_Doctor_Click);
+            // 
+            // toolStripSeparator58
+            // 
+            this.toolStripSeparator58.Name = "toolStripSeparator58";
+            this.toolStripSeparator58.Size = new System.Drawing.Size(391, 6);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.BackColor = System.Drawing.Color.Teal;
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(394, 28);
+            this.toolStripMenuItem1.Text = "تقرير مجمع لكل الحالات التى عمل بها الاطباء";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
+            // toolStripSeparator52
+            // 
+            this.toolStripSeparator52.Name = "toolStripSeparator52";
+            this.toolStripSeparator52.Size = new System.Drawing.Size(6, 116);
             // 
             // Masrofat_Stock
             // 
@@ -847,6 +971,11 @@
             this.Report_TransfairMoney.Size = new System.Drawing.Size(360, 28);
             this.Report_TransfairMoney.Text = "تقرير تحويل الارصدة من خزنة إلى خزنة";
             this.Report_TransfairMoney.Click += new System.EventHandler(this.Report_TransfairMoney_Click);
+            // 
+            // toolStripSeparator51
+            // 
+            this.toolStripSeparator51.Name = "toolStripSeparator51";
+            this.toolStripSeparator51.Size = new System.Drawing.Size(6, 116);
             // 
             // Store_Manage
             // 
@@ -1076,6 +1205,11 @@
             this.Report_PaySupplier.Text = "تقرير كل مدفوعات الموردين";
             this.Report_PaySupplier.Click += new System.EventHandler(this.Report_PaySupplier_Click);
             // 
+            // toolStripSeparator50
+            // 
+            this.toolStripSeparator50.Name = "toolStripSeparator50";
+            this.toolStripSeparator50.Size = new System.Drawing.Size(6, 116);
+            // 
             // Receiption
             // 
             this.Receiption.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1138,6 +1272,42 @@
             this.Search_Ticket.Text = "بحث فى كل الحجوزات";
             this.Search_Ticket.Click += new System.EventHandler(this.بحثفىكلالحجوزاتToolStripMenuItem_Click);
             // 
+            // toolStripSeparator46
+            // 
+            this.toolStripSeparator46.Name = "toolStripSeparator46";
+            this.toolStripSeparator46.Size = new System.Drawing.Size(279, 6);
+            // 
+            // Mardodat
+            // 
+            this.Mardodat.BackColor = System.Drawing.Color.Tomato;
+            this.Mardodat.Name = "Mardodat";
+            this.Mardodat.Size = new System.Drawing.Size(282, 82);
+            this.Mardodat.Text = "شاشة المردودات";
+            this.Mardodat.Click += new System.EventHandler(this.Mardodat_Click);
+            // 
+            // toolStripSeparator49
+            // 
+            this.toolStripSeparator49.Name = "toolStripSeparator49";
+            this.toolStripSeparator49.Size = new System.Drawing.Size(6, 116);
+            // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+            this.toolStripDropDownButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(88, 113);
+            this.toolStripDropDownButton1.Text = "الاقساط";
+            this.toolStripDropDownButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // toolStripSeparator55
+            // 
+            this.toolStripSeparator55.BackColor = System.Drawing.Color.Black;
+            this.toolStripSeparator55.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.toolStripSeparator55.Name = "toolStripSeparator55";
+            this.toolStripSeparator55.Size = new System.Drawing.Size(6, 116);
+            // 
             // Btn_Exit
             // 
             this.Btn_Exit.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1170,18 +1340,18 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "USER NAME";
             // 
-            // Mardodat
+            // Add_TechnicalShift
             // 
-            this.Mardodat.BackColor = System.Drawing.Color.Tomato;
-            this.Mardodat.Name = "Mardodat";
-            this.Mardodat.Size = new System.Drawing.Size(282, 82);
-            this.Mardodat.Text = "شاشة المردودات";
-            this.Mardodat.Click += new System.EventHandler(this.Mardodat_Click);
+            this.Add_TechnicalShift.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.Add_TechnicalShift.Name = "Add_TechnicalShift";
+            this.Add_TechnicalShift.Size = new System.Drawing.Size(408, 28);
+            this.Add_TechnicalShift.Text = "إضافة شيفت للفنيين";
+            this.Add_TechnicalShift.Click += new System.EventHandler(this.Add_TechnicalShift_Click);
             // 
-            // toolStripSeparator46
+            // toolStripSeparator59
             // 
-            this.toolStripSeparator46.Name = "toolStripSeparator46";
-            this.toolStripSeparator46.Size = new System.Drawing.Size(279, 6);
+            this.toolStripSeparator59.Name = "toolStripSeparator59";
+            this.toolStripSeparator59.Size = new System.Drawing.Size(405, 6);
             // 
             // Frm_Main
             // 
@@ -1245,7 +1415,7 @@
         public System.Windows.Forms.ToolStripMenuItem Doctors_Center;
         public System.Windows.Forms.ToolStripMenuItem Pay_Suppliers;
         public System.Windows.Forms.ToolStripMenuItem مديونيةالموردينToolStripMenuItem;
-        public System.Windows.Forms.ToolStripMenuItem pay_company;
+        public System.Windows.Forms.ToolStripMenuItem pay_companyCustomer;
         public System.Windows.Forms.ToolStripMenuItem AddEmployeeBranches;
         public System.Windows.Forms.ToolStripMenuItem Management_Ticket;
         public System.Windows.Forms.ToolStripMenuItem Report_PullMoneyStock;
@@ -1255,7 +1425,7 @@
         public System.Windows.Forms.ToolStripMenuItem Report_Salf;
         public System.Windows.Forms.ToolStripMenuItem Add_Technical;
         public System.Windows.Forms.ToolStripSeparator toolStripSeparator34;
-        public System.Windows.Forms.ToolStripMenuItem Report_Technical;
+        public System.Windows.Forms.ToolStripMenuItem Report_DetailsTechnical;
         public System.Windows.Forms.ToolStripMenuItem Debit_Customer;
         public System.Windows.Forms.ToolStripMenuItem Report_PAyCustomer;
         public System.Windows.Forms.ToolStripMenuItem Debit_Company;
@@ -1328,5 +1498,25 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator45;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator46;
         public System.Windows.Forms.ToolStripMenuItem Mardodat;
+        public System.Windows.Forms.ToolStripMenuItem Pay_Company;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator47;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator48;
+        public System.Windows.Forms.ToolStripMenuItem Report_PayCutomerCompany;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator54;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator53;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator52;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator51;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator50;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator49;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator55;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator56;
+        public System.Windows.Forms.ToolStripMenuItem Report_TotalXrayTechnical;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator57;
+        public System.Windows.Forms.ToolStripMenuItem Report_AllCasesDoctorOFCenter;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator58;
+        public System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        public System.Windows.Forms.ToolStripMenuItem Add_TechnicalShift;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator59;
     }
 }

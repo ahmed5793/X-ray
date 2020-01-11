@@ -100,14 +100,14 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
-        internal void addPayCompany(int ID_company, decimal pay, decimal rent, DateTime pay_date, int id_ticket, int IDStock)
+        internal void addPayCustomerCompany(int ID_company, decimal pay, decimal rent, DateTime pay_date, int id_ticket,
+                                            int IDStock,string Sales_man , int Id_Branch , string Cust_Name)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[6];
+            SqlParameter[] param = new SqlParameter[9];
             param[0] = new SqlParameter("@ID_company", SqlDbType.Int);
             param[0].Value = ID_company;
-
             param[1] = new SqlParameter("@pay", SqlDbType.Decimal);
             param[1].Value = pay;
             param[2] = new SqlParameter("@rent", SqlDbType.Decimal);
@@ -118,8 +118,13 @@ namespace Laboratory.BL
             param[4].Value = id_ticket;
             param[5] = new SqlParameter("@IDStock", SqlDbType.Int);
             param[5].Value = IDStock;
-
-            da.excutequery("addPayCompany", param);
+            param[6] = new SqlParameter("@sales_Man", SqlDbType.NVarChar, 100);
+            param[6].Value = Sales_man;
+            param[7] = new SqlParameter("@Id_Branch", SqlDbType.Int);
+            param[7].Value = Id_Branch;
+            param[8] = new SqlParameter("@Cust_Name", SqlDbType.NVarChar,100);
+            param[8].Value = Cust_Name;
+            da.excutequery("addPayCustomerCompany", param);
             da.close();
         }
         internal DataTable selectOneCompanytRent(int id_company)
@@ -243,6 +248,155 @@ namespace Laboratory.BL
             param[1] = new SqlParameter("@id_Xray", SqlDbType.Int);
             param[1].Value = Id_Xray;
             dt = da.selected("Select_PriceXrayCompany", param);
+            da.close();
+            return dt;
+        }
+        internal DataTable Select_DebitCompany(int id_company)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            DataTable dt = new DataTable();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@id_Company", SqlDbType.Int);
+            param[0].Value = id_company;
+
+            dt = da.selected("Select_DebitCompany", param);
+            da.close();
+            return dt;
+        }
+        internal DataTable Search_DebitCompany(int id_company ,DateTime Date_From , DateTime Date_To)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            DataTable dt = new DataTable();
+            da.open();
+            SqlParameter[] param = new SqlParameter[3];
+            param[0] = new SqlParameter("@id_Company", SqlDbType.Int);
+            param[0].Value = id_company;
+            param[1] = new SqlParameter("@Date_From", SqlDbType.DateTime);
+            param[1].Value = Date_From;
+            param[2] = new SqlParameter("@Date_To", SqlDbType.DateTime);
+            param[2].Value = Date_To;
+            dt = da.selected("Search_DebitCompany", param);
+            da.close();
+            return dt;
+        }
+        internal void Add_CompanyTotalMoney(int Id_company)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@id_Company", SqlDbType.Int);
+            param[0].Value = Id_company;
+            da.excutequery("Add_CompanyTotalMoney", param);
+            da.close();
+        }
+        internal void Update_CompanyTotalMoney(int Id_company,decimal Total_money)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[2];
+            param[0] = new SqlParameter("@id_Company", SqlDbType.Int);
+            param[0].Value = Id_company;
+            param[1] = new SqlParameter("@Total_money", SqlDbType.Decimal);
+            param[1].Value = Total_money;
+            da.excutequery("Update_CompanyTotalMoney", param);
+            da.close();
+        }
+        internal DataTable select_LastIdCompany()
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            dt = da.selected("select_LastIdCompany", null);
+            da.close();
+            return dt;
+        }
+        internal DataTable SelectAllCompanyMoney()
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            dt = da.selected("SelectAllCompanyMoney", null);
+            da.close();
+            return dt;
+        }
+        internal DataTable SelectOneCompanyMoney(int Id_Company)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("Id_Company", SqlDbType.Int);
+            param[0].Value = Id_Company;
+            dt = da.selected("SelectOneCompanyMoney", param);
+            da.close();
+            return dt;
+        }
+        internal void ADD_Company_TotalRent(int ID_company, decimal pay, decimal rent, DateTime pay_date, 
+                                          int IDStock, string Sales_man, int Id_Branch)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[7];
+            param[0] = new SqlParameter("@ID_Company", SqlDbType.Int);
+            param[0].Value = ID_company;
+            param[1] = new SqlParameter("@pay", SqlDbType.Decimal);
+            param[1].Value = pay;
+            param[2] = new SqlParameter("@rent", SqlDbType.Decimal);
+            param[2].Value = rent;
+            param[3] = new SqlParameter("@date_pay", SqlDbType.DateTime);
+            param[3].Value = pay_date;
+            param[4] = new SqlParameter("@id_Stock", SqlDbType.Int);
+            param[4].Value = IDStock;
+            param[5] = new SqlParameter("@sales_Man", SqlDbType.NVarChar, 100);
+            param[5].Value = Sales_man;
+            param[6] = new SqlParameter("@Id_Branch", SqlDbType.Int);
+            param[6].Value = Id_Branch;
+            da.excutequery("ADD_Company_TotalRent", param);
+            da.close();
+        }
+        internal DataTable Validate_CompanyNAme(int Id_Company)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@Id_Company", SqlDbType.Int);
+            param[0].Value = Id_Company;
+            dt = da.selected("Validate_CompanyNAme", param);
+            da.close();
+            return dt;
+        }
+        internal DataTable Select_AllpAyOfCompany(int id_company)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            DataTable dt = new DataTable();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@Id_Company", SqlDbType.Int);
+            param[0].Value = id_company;
+            dt = da.selected("Select_AllpAyOfCompany", param);
+            da.close();
+            return dt;        
+        }
+        internal DataTable Search_AllpAyOfCompany(int id_company, DateTime Date_From, DateTime Date_To)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            DataTable dt = new DataTable();
+            da.open();
+            SqlParameter[] param = new SqlParameter[3];
+            param[0] = new SqlParameter("@Id_Company", SqlDbType.Int);
+            param[0].Value = id_company;
+            param[1] = new SqlParameter("@Date_From", SqlDbType.DateTime);
+            param[1].Value = Date_From;
+            param[2] = new SqlParameter("@Date_To", SqlDbType.DateTime);
+            param[2].Value = Date_To;
+            dt = da.selected("Search_AllpAyOfCompany", param);
             da.close();
             return dt;
         }

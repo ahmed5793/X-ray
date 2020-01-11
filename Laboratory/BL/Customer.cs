@@ -154,14 +154,13 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
-        internal void addPayClient(int id_client, decimal pay, decimal rent, DateTime pay_date, int id_ticket,int IDStock)
+        internal void addPayClient(int id_client, decimal pay, decimal rent, DateTime pay_date, int id_ticket,int IDStock ,string Sales_Man , int Id_Branch)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[6];
+            SqlParameter[] param = new SqlParameter[8];
             param[0] = new SqlParameter("@ID_client", SqlDbType.Int);
             param[0].Value = id_client;
-
             param[1] = new SqlParameter("@pay", SqlDbType.Decimal);
             param[1].Value = pay;
             param[2] = new SqlParameter("@rent", SqlDbType.Decimal);
@@ -172,7 +171,10 @@ namespace Laboratory.BL
             param[4].Value = id_ticket;
             param[5] = new SqlParameter("@IDStock", SqlDbType.Int);
             param[5].Value = IDStock;
-
+            param[6] = new SqlParameter("@sales_Man", SqlDbType.NVarChar,100);
+            param[6].Value = Sales_Man;
+            param[7] = new SqlParameter("@Id_Branch", SqlDbType.Int);
+            param[7].Value = Id_Branch;
             da.excutequery("addPayClient", param);
             da.close();
         }
@@ -197,6 +199,63 @@ namespace Laboratory.BL
             DataAccessLayer da = new DataAccessLayer();
             da.open();
             dt = da.selected("SelectRentCompoCustomer", null);
+            da.close();
+            return dt;
+        }
+        internal DataTable Select_AllPayCustomerCompany()
+        {
+            DataTable dt = new DataTable();
+            DataAccessLayer da = new DataAccessLayer();
+            dt.Clear();
+            da.open();
+            dt = da.selected("Select_AllPayCustomerCompany", null);
+            da.close();
+            return dt;
+        }
+
+        internal DataTable Search_AllPayCustomerCompany(string id)
+        {
+            DataTable dt = new DataTable();
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@Id", SqlDbType.NVarChar,100);
+            param[0].Value = id;
+            dt = da.selected("Search_AllPayCustomerCompany", param);
+            da.close();
+            return dt;
+        }
+        internal DataTable Select_AllPayCustomer()
+        {
+            DataTable dt = new DataTable();
+            DataAccessLayer da = new DataAccessLayer();
+            dt.Clear();
+            da.open();
+            dt = da.selected("Select_AllPayCustomer", null);
+            da.close();
+            return dt;
+        }
+        internal DataTable Search_AllPayCustomer(string id)
+        {
+            DataTable dt = new DataTable();
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@Id", SqlDbType.NVarChar, 100);
+            param[0].Value = id;
+            dt = da.selected("Search_AllPayCustomer", param);
+            da.close();
+            return dt;
+        }
+        internal DataTable validate_CustomerName(int id)
+        {
+            DataTable dt = new DataTable();
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@Id_Cust", SqlDbType.Int);
+            param[0].Value = id;
+            dt = da.selected("validate_CustomerName", param);
             da.close();
             return dt;
         }

@@ -1,6 +1,6 @@
 ﻿namespace Laboratory.PL
 {
-    partial class Frm_Report_Technical
+    partial class Frm_Report_DetailsTechnical
     {
         /// <summary>
         /// Required designer variable.
@@ -39,6 +39,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,17 +60,17 @@
             // comboBox1
             // 
             this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(282, 53);
+            this.comboBox1.Location = new System.Drawing.Point(206, 53);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.comboBox1.Size = new System.Drawing.Size(244, 32);
+            this.comboBox1.Size = new System.Drawing.Size(320, 32);
             this.comboBox1.TabIndex = 99;
             this.comboBox1.SelectionChangeCommitted += new System.EventHandler(this.comboBox1_SelectionChangeCommitted);
+            this.comboBox1.Leave += new System.EventHandler(this.comboBox1_Leave);
             // 
             // label1
             // 
@@ -77,7 +78,7 @@
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.Font = new System.Drawing.Font("Arial", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Yellow;
-            this.label1.Location = new System.Drawing.Point(470, 492);
+            this.label1.Location = new System.Drawing.Point(206, 491);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label1.Size = new System.Drawing.Size(263, 39);
@@ -91,7 +92,7 @@
             this.textBox1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.textBox1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.Color.Yellow;
-            this.textBox1.Location = new System.Drawing.Point(295, 492);
+            this.textBox1.Location = new System.Drawing.Point(31, 491);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
@@ -174,7 +175,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(398, 32);
             this.label2.TabIndex = 91;
-            this.label2.Text = "عرض الحالات التى عمل بها الفنى ";
+            this.label2.Text = "عرض تفصيلي للحالات التى عمل بها الفنى ";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dataGridView1
@@ -195,12 +196,26 @@
             this.dataGridView1.Size = new System.Drawing.Size(944, 277);
             this.dataGridView1.TabIndex = 90;
             // 
-            // Frm_Report_Technical
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button1.BackColor = System.Drawing.Color.Black;
+            this.button1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Yellow;
+            this.button1.Location = new System.Drawing.Point(675, 488);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(217, 42);
+            this.button1.TabIndex = 113;
+            this.button1.Text = "طباعة تقرير للفنى المحدد";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // Frm_Report_DetailsTechnical
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkBlue;
             this.ClientSize = new System.Drawing.Size(951, 542);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
@@ -213,9 +228,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
             this.MinimumSize = new System.Drawing.Size(967, 580);
-            this.Name = "Frm_Report_Technical";
+            this.Name = "Frm_Report_DetailsTechnical";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "تقرير بعدد الحالات التى عمل بها الفنى ";
+            this.Text = "تقرير تفصيلي بعدد الحالات التى عمل بها الفنى ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -236,5 +251,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button1;
     }
 }

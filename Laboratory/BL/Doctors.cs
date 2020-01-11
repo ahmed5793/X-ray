@@ -159,5 +159,48 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
+        internal DataTable Select_AllCasesOfOutDoctor(int id)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@ID_Doctor", SqlDbType.Int);
+            param[0].Value = id;
+            da.open();
+            DataTable dt = new DataTable();
+            dt.Clear();
+            dt = da.selected("Select_AllCasesOfOutDoctor", param);
+            da.close();
+            return dt;
+        }
+        internal DataTable Search_AllCasesOfOutDoctor(int id, DateTime Date_From, DateTime Date_To)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[3];
+            param[0] = new SqlParameter("@ID_Doctor", SqlDbType.Int);
+            param[0].Value = id;
+            param[1] = new SqlParameter("@Date_From", SqlDbType.DateTime);
+            param[1].Value = Date_From;
+            param[2] = new SqlParameter("@Date_To", SqlDbType.DateTime);
+            param[2].Value = Date_To;
+            da.open();
+            DataTable dt = new DataTable();
+            dt.Clear();
+            dt = da.selected("Search_AllCasesOfOutDoctor", param);
+            da.close();
+            return dt;
+        }
+        internal DataTable vildateOutDoctor(int id)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@id", SqlDbType.Int);
+            param[0].Value = id;
+            da.open();
+            DataTable dt = new DataTable();
+            dt.Clear();
+            dt = da.selected("vildateOutDoctor", param);
+            da.close();
+            return dt;
+        }
     }
 }

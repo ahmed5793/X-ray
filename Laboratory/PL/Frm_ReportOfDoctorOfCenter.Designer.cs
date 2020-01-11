@@ -39,6 +39,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,7 +50,7 @@
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.Font = new System.Drawing.Font("Arial", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(483, 486);
+            this.label1.Location = new System.Drawing.Point(237, 488);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label1.Size = new System.Drawing.Size(263, 49);
@@ -63,7 +64,7 @@
             this.textBox1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.textBox1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.Color.Yellow;
-            this.textBox1.Location = new System.Drawing.Point(306, 486);
+            this.textBox1.Location = new System.Drawing.Point(48, 488);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
@@ -139,14 +140,15 @@
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.BackColor = System.Drawing.Color.LightGoldenrodYellow;
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label2.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(284, 3);
+            this.label2.Location = new System.Drawing.Point(237, 7);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(398, 32);
+            this.label2.Size = new System.Drawing.Size(476, 32);
             this.label2.TabIndex = 80;
-            this.label2.Text = "عرض الحالات التى عمل بها الطبيب ";
+            this.label2.Text = "عرض تفصيلي للحالات التى عمل بها الطبيب ";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dataGridView1
@@ -170,17 +172,17 @@
             // comboBox1
             // 
             this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(284, 52);
+            this.comboBox1.Location = new System.Drawing.Point(213, 52);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.comboBox1.Size = new System.Drawing.Size(244, 32);
+            this.comboBox1.Size = new System.Drawing.Size(315, 32);
             this.comboBox1.TabIndex = 88;
             this.comboBox1.SelectionChangeCommitted += new System.EventHandler(this.comboBox1_SelectionChangeCommitted);
+            this.comboBox1.Leave += new System.EventHandler(this.comboBox1_Leave);
             // 
             // label7
             // 
@@ -196,12 +198,26 @@
             this.label7.TabIndex = 89;
             this.label7.Text = "إسم الطبيب";
             // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button1.BackColor = System.Drawing.Color.Black;
+            this.button1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Yellow;
+            this.button1.Location = new System.Drawing.Point(651, 493);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(264, 42);
+            this.button1.TabIndex = 114;
+            this.button1.Text = "طباعة تقرير للطبيب المحدد";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // Frm_ReportOfDoctorOfCenter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.YellowGreen;
             this.ClientSize = new System.Drawing.Size(951, 542);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
@@ -238,5 +254,6 @@
         public System.Windows.Forms.DataGridView dataGridView1;
         public System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button1;
     }
 }

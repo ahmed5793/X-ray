@@ -115,7 +115,7 @@
             // btn_update
             // 
             this.btn_update.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_update.Location = new System.Drawing.Point(26, 193);
+            this.btn_update.Location = new System.Drawing.Point(67, 178);
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(118, 40);
             this.btn_update.TabIndex = 44;
@@ -126,7 +126,7 @@
             // btn_save
             // 
             this.btn_save.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_save.Location = new System.Drawing.Point(184, 193);
+            this.btn_save.Location = new System.Drawing.Point(249, 178);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(132, 40);
             this.btn_save.TabIndex = 46;
@@ -197,8 +197,12 @@
             this.ClientSize = new System.Drawing.Size(468, 517);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(484, 555);
+            this.MinimumSize = new System.Drawing.Size(484, 555);
             this.Name = "Frm_AddEmployeeBranch";
-            this.Text = "Frm_AddEmployeeBranch";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "شاشة إضافة الموظفين للفروع";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

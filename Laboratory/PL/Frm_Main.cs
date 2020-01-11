@@ -361,7 +361,7 @@ namespace Laboratory.PL
 
         private void Report_Technical_Click(object sender, EventArgs e)
         {
-            Frm_Report_Technical frm_Report_Technical = new Frm_Report_Technical();
+            Frm_Report_DetailsTechnical frm_Report_Technical = new Frm_Report_DetailsTechnical();
             frm_Report_Technical.ShowDialog();
         }
 
@@ -400,6 +400,66 @@ namespace Laboratory.PL
             Frm_Payouts fpo = new Frm_Payouts();
             fpo.ShowDialog();
 
+        }
+
+        private void Debit_Company_Click(object sender, EventArgs e)
+        {
+            Frm_DebitCompany fdcas = new Frm_DebitCompany();
+            fdcas.ShowDialog();
+        }
+
+        private void Pay_Company_Click_1(object sender, EventArgs e)
+        {
+            Frm_PayCompanyMoney fpcm = new Frm_PayCompanyMoney();
+            fpcm.ShowDialog();
+        }
+
+        private void Report_PayCompany_Click(object sender, EventArgs e)
+        {
+            Frm_AllPAyCompsny fapc = new Frm_AllPAyCompsny();
+            fapc.ShowDialog();
+        }
+
+        private void Report_PayCutomerCompany_Click(object sender, EventArgs e)
+        {
+            Frm_ReportPAyCustomerCompany frpcc = new Frm_ReportPAyCustomerCompany();
+            frpcc.ShowDialog();
+        }
+
+        private void Report_PAyCustomer_Click(object sender, EventArgs e)
+        {
+            Frm_ReportAllPayOfCustomer frapc = new Frm_ReportAllPayOfCustomer();
+            frapc.ShowDialog();
+        }
+
+        private void Debit_Customer_Click(object sender, EventArgs e)
+        {
+            Frm_DebitCustomer fdc = new Frm_DebitCustomer();
+            fdc.ShowDialog();
+        }
+
+        private void Report_TotalXrayTechnical_Click(object sender, EventArgs e)
+        {
+            Frm_AllXrayTechnical faxt = new Frm_AllXrayTechnical();
+            faxt.ShowDialog();
+        }
+
+        private void Report_AllCasesDoctorOFCenter_Click(object sender, EventArgs e)
+        {
+            Frm_AllCasesDoctorOfCenter facdoc = new Frm_AllCasesDoctorOfCenter();
+            facdoc.ShowDialog();
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Frm_AllCasesOFOutDoctor facod = new Frm_AllCasesOFOutDoctor();
+            facod.ShowDialog();
+        }
+
+        private void Add_TechnicalShift_Click(object sender, EventArgs e)
+        {
+            Frm_AddTechnicalShift fats = new Frm_AddTechnicalShift();
+            fats.ShowDialog();
         }
     }
 }
