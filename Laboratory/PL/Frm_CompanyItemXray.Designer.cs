@@ -118,7 +118,6 @@
             this.cmb_Company.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cmb_Company.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmb_Company.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmb_Company.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Company.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_Company.FormattingEnabled = true;
             this.cmb_Company.Location = new System.Drawing.Point(155, 50);
@@ -127,6 +126,7 @@
             this.cmb_Company.Size = new System.Drawing.Size(366, 32);
             this.cmb_Company.TabIndex = 0;
             this.cmb_Company.SelectedIndexChanged += new System.EventHandler(this.cmb_Company_SelectedIndexChanged);
+            this.cmb_Company.Leave += new System.EventHandler(this.cmb_Company_Leave);
             // 
             // label21
             // 

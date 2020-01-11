@@ -394,14 +394,15 @@ namespace Laboratory.BL
             DataTable dt2 = new DataTable();
             try
             {
-                if (cmb_items.Text != "")
+                if (cmb_Company.Text != "")
                 {
                     dt2.Clear();
-                    dt2 = ix.VildateItem(Convert.ToInt32(Cmb_category.SelectedValue), Convert.ToInt32(cmb_items.SelectedValue));
+                    dt2 = cm.Validate_CompanyNAme(Convert.ToInt32(cmb_Company.SelectedValue));
                     if (dt2.Rows.Count == 0)
                     {
-                        MessageBox.Show("إسم الفحص غير موجود لا بد من إختيار إسم الفحص من القائمة");
-                        cmb_items.Focus();
+                        MessageBox.Show("إسم الشركة غير صحيح");
+                        cmb_Company.Focus();
+                        cmb_Company.SelectAll();
                         return;
                     }
                 }
@@ -414,6 +415,35 @@ namespace Laboratory.BL
             finally
             {
                 dt2.Dispose();
+            }
+        }
+
+        private void cmb_Company_Leave(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                if (cmb_Company.Text != "")
+                {
+                    dt.Clear();
+                    dt = cm.Validate_CompanyNAme(Convert.ToInt32(cmb_Company.SelectedValue));
+                    if (dt.Rows.Count == 0)
+                    {
+                        MessageBox.Show("إسم الشركة غير موجود لا بد من إختيار إسم لشركة من القائمة");
+                        cmb_Company.Focus();
+                        return;
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                dt.Dispose();
             }
         }
     }

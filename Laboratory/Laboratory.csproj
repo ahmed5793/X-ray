@@ -122,6 +122,36 @@
     <Compile Include="BL\DoctorOfCenter.cs" />
     <Compile Include="BL\Doctors.cs" />
     <Compile Include="BL\Employee.cs" />
+    <Compile Include="PL\Frm_AddTechnicalShift.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_AddTechnicalShift.Designer.cs">
+      <DependentUpon>Frm_AddTechnicalShift.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Frm_AllCasesDoctorOfCenter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_AllCasesDoctorOfCenter.Designer.cs">
+      <DependentUpon>Frm_AllCasesDoctorOfCenter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Frm_AllCasesOFOutDoctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_AllCasesOFOutDoctor.Designer.cs">
+      <DependentUpon>Frm_AllCasesOFOutDoctor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Frm_AllPAyCompsny.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_AllPAyCompsny.Designer.cs">
+      <DependentUpon>Frm_AllPAyCompsny.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Frm_AllXrayTechnical.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_AllXrayTechnical.Designer.cs">
+      <DependentUpon>Frm_AllXrayTechnical.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_CompanyItemXray.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,6 +229,18 @@
     </Compile>
     <Compile Include="PL\Frm_Customer.designer.cs">
       <DependentUpon>Frm_Customer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Frm_DebitCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_DebitCompany.Designer.cs">
+      <DependentUpon>Frm_DebitCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Frm_DebitCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_DebitCustomer.Designer.cs">
+      <DependentUpon>Frm_DebitCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Frm_DebitSuppliers.cs">
       <SubType>Form</SubType>
@@ -326,6 +368,12 @@
     <Compile Include="PL\Frm_PayCompany.Designer.cs">
       <DependentUpon>Frm_PayCompany.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Frm_PayCompanyMoney.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_PayCompanyMoney.Designer.cs">
+      <DependentUpon>Frm_PayCompanyMoney.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_Payouts.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -350,6 +398,12 @@
     <Compile Include="PL\Frm_Purshasing.Designer.cs">
       <DependentUpon>Frm_Purshasing.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Frm_ReportAllPayOfCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_ReportAllPayOfCustomer.Designer.cs">
+      <DependentUpon>Frm_ReportAllPayOfCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_ReportDoctor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -373,6 +427,12 @@
     </Compile>
     <Compile Include="PL\Frm_ReportOfDoctorOfCenter.Designer.cs">
       <DependentUpon>Frm_ReportOfDoctorOfCenter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Frm_ReportPAyCustomerCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_ReportPAyCustomerCompany.Designer.cs">
+      <DependentUpon>Frm_ReportPAyCustomerCompany.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Frm_ReportPaySuppliers.cs">
       <SubType>Form</SubType>
@@ -446,6 +506,12 @@
     <Compile Include="PL\Frm_Report_Technical.Designer.cs">
       <DependentUpon>Frm_Report_Technical.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Frm_TypeShift.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_TypeShift.Designer.cs">
+      <DependentUpon>Frm_TypeShift.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Tranfair_product.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -466,6 +532,21 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="PL\Frm_AddTechnicalShift.resx">
+      <DependentUpon>Frm_AddTechnicalShift.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_AllCasesDoctorOfCenter.resx">
+      <DependentUpon>Frm_AllCasesDoctorOfCenter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_AllCasesOFOutDoctor.resx">
+      <DependentUpon>Frm_AllCasesOFOutDoctor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_AllPAyCompsny.resx">
+      <DependentUpon>Frm_AllPAyCompsny.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_AllXrayTechnical.resx">
+      <DependentUpon>Frm_AllXrayTechnical.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_CompanyItemXray.resx">
       <DependentUpon>Frm_CompanyItemXray.cs</DependentUpon>
     </EmbeddedResource>
@@ -498,6 +579,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Customer.resx">
       <DependentUpon>Frm_Customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_DebitCompany.resx">
+      <DependentUpon>Frm_DebitCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_DebitCustomer.resx">
+      <DependentUpon>Frm_DebitCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_DebitSuppliers.resx">
       <DependentUpon>Frm_DebitSuppliers.cs</DependentUpon>
@@ -562,6 +649,9 @@
     <EmbeddedResource Include="PL\Frm_PayCompany.resx">
       <DependentUpon>Frm_PayCompany.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_PayCompanyMoney.resx">
+      <DependentUpon>Frm_PayCompanyMoney.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Payouts.resx">
       <DependentUpon>Frm_Payouts.cs</DependentUpon>
     </EmbeddedResource>
@@ -574,6 +664,9 @@
     <EmbeddedResource Include="PL\Frm_Purshasing.resx">
       <DependentUpon>Frm_Purshasing.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_ReportAllPayOfCustomer.resx">
+      <DependentUpon>Frm_ReportAllPayOfCustomer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_ReportDoctor.resx">
       <DependentUpon>Frm_ReportDoctor.cs</DependentUpon>
     </EmbeddedResource>
@@ -585,6 +678,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_ReportOfDoctorOfCenter.resx">
       <DependentUpon>Frm_ReportOfDoctorOfCenter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_ReportPAyCustomerCompany.resx">
+      <DependentUpon>Frm_ReportPAyCustomerCompany.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_ReportPaySuppliers.resx">
       <DependentUpon>Frm_ReportPaySuppliers.cs</DependentUpon>
@@ -621,6 +717,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Report_Technical.resx">
       <DependentUpon>Frm_Report_Technical.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_TypeShift.resx">
+      <DependentUpon>Frm_TypeShift.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Tranfair_product.resx">
       <DependentUpon>Tranfair_product.cs</DependentUpon>

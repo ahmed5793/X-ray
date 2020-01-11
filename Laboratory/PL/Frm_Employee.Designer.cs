@@ -373,8 +373,10 @@
             this.ClientSize = new System.Drawing.Size(863, 523);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.MinimumSize = new System.Drawing.Size(879, 561);
             this.Name = "Frm_Employee";
-            this.Text = "Frm_Employee";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "شاشة تسجيل بيانات الموظفين";
             this.Load += new System.EventHandler(this.Frm_Employee_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);

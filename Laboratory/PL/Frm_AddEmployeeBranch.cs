@@ -83,15 +83,23 @@ namespace Laboratory.PL
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
-            if (dataGridView1.Rows.Count>0)
+            try
             {
-                cmb_branch.Enabled = false;
-                btn_save.Enabled = false;
-                btn_update.Enabled = true;
-              
-                cmb_branch.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-          
-                cmb_employee.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                if (dataGridView1.Rows.Count > 0)
+                {
+                    cmb_branch.Enabled = true;
+                    btn_save.Enabled = false;
+                    btn_update.Enabled = true;
+                    cmb_employee.Enabled = false;
+                    cmb_branch.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                    cmb_employee.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message) ;
             }
         }
 

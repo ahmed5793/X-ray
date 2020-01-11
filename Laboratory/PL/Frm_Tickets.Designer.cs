@@ -69,6 +69,7 @@
             this.txt_idcust = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label29 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.Txt_rentCompany = new System.Windows.Forms.TextBox();
             this.Txt_PricePayment = new System.Windows.Forms.TextBox();
@@ -80,13 +81,13 @@
             this.txt_afterDiscount = new System.Windows.Forms.TextBox();
             this.rdb_money = new System.Windows.Forms.RadioButton();
             this.label24 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txt_total = new System.Windows.Forms.TextBox();
             this.txt_discount = new System.Windows.Forms.TextBox();
             this.txt_rent = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.txt_pay = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txt_total = new System.Windows.Forms.TextBox();
             this.dtb_kashf = new System.Windows.Forms.DateTimePicker();
             this.label17 = new System.Windows.Forms.Label();
             this.cmb_branches = new System.Windows.Forms.ComboBox();
@@ -143,13 +144,14 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "بيانات العملاء";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // txt_idntational
             // 
             this.txt_idntational.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_idntational.Location = new System.Drawing.Point(6, 122);
             this.txt_idntational.Name = "txt_idntational";
-            this.txt_idntational.Size = new System.Drawing.Size(314, 32);
+            this.txt_idntational.Size = new System.Drawing.Size(353, 32);
             this.txt_idntational.TabIndex = 97;
             this.txt_idntational.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -157,7 +159,7 @@
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(401, 127);
+            this.label25.Location = new System.Drawing.Point(369, 125);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(30, 24);
             this.label25.TabIndex = 98;
@@ -196,10 +198,10 @@
             this.Cmb_customer.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.Cmb_customer.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cmb_customer.FormattingEnabled = true;
-            this.Cmb_customer.Location = new System.Drawing.Point(3, 44);
+            this.Cmb_customer.Location = new System.Drawing.Point(6, 45);
             this.Cmb_customer.Name = "Cmb_customer";
             this.Cmb_customer.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Cmb_customer.Size = new System.Drawing.Size(320, 32);
+            this.Cmb_customer.Size = new System.Drawing.Size(353, 32);
             this.Cmb_customer.TabIndex = 92;
             this.Cmb_customer.SelectedIndexChanged += new System.EventHandler(this.Cmb_customer_SelectedIndexChanged);
             this.Cmb_customer.SelectionChangeCommitted += new System.EventHandler(this.Cmb_customer_SelectionChangeCommitted);
@@ -210,7 +212,7 @@
             // 
             this.rdb_NewPatient.AutoSize = true;
             this.rdb_NewPatient.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdb_NewPatient.Location = new System.Drawing.Point(198, 12);
+            this.rdb_NewPatient.Location = new System.Drawing.Point(244, 12);
             this.rdb_NewPatient.Name = "rdb_NewPatient";
             this.rdb_NewPatient.Size = new System.Drawing.Size(111, 28);
             this.rdb_NewPatient.TabIndex = 94;
@@ -237,7 +239,7 @@
             this.rdb_CurrentPatient.AutoSize = true;
             this.rdb_CurrentPatient.Checked = true;
             this.rdb_CurrentPatient.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdb_CurrentPatient.Location = new System.Drawing.Point(58, 11);
+            this.rdb_CurrentPatient.Location = new System.Drawing.Point(92, 12);
             this.rdb_CurrentPatient.Name = "rdb_CurrentPatient";
             this.rdb_CurrentPatient.Size = new System.Drawing.Size(122, 28);
             this.rdb_CurrentPatient.TabIndex = 92;
@@ -322,7 +324,6 @@
             this.cmb_Doctor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmb_Doctor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cmb_Doctor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmb_Doctor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Doctor.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_Doctor.FormattingEnabled = true;
             this.cmb_Doctor.Location = new System.Drawing.Point(106, 235);
@@ -330,15 +331,16 @@
             this.cmb_Doctor.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmb_Doctor.Size = new System.Drawing.Size(253, 32);
             this.cmb_Doctor.TabIndex = 48;
+            this.cmb_Doctor.Leave += new System.EventHandler(this.cmb_Doctor_Leave);
             // 
             // txt_age
             // 
             this.txt_age.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_age.Location = new System.Drawing.Point(356, 158);
+            this.txt_age.Location = new System.Drawing.Point(358, 160);
             this.txt_age.MaxLength = 11;
             this.txt_age.Name = "txt_age";
             this.txt_age.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txt_age.Size = new System.Drawing.Size(57, 32);
+            this.txt_age.Size = new System.Drawing.Size(68, 32);
             this.txt_age.TabIndex = 46;
             this.txt_age.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_age.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_age_KeyPress);
@@ -347,7 +349,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(421, 163);
+            this.label4.Location = new System.Drawing.Point(428, 165);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 24);
             this.label4.TabIndex = 47;
@@ -358,7 +360,7 @@
             this.txt_name.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_name.Location = new System.Drawing.Point(4, 45);
             this.txt_name.Name = "txt_name";
-            this.txt_name.Size = new System.Drawing.Size(316, 32);
+            this.txt_name.Size = new System.Drawing.Size(355, 32);
             this.txt_name.TabIndex = 40;
             this.txt_name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -369,7 +371,7 @@
             this.txt_phone.MaxLength = 3000;
             this.txt_phone.Name = "txt_phone";
             this.txt_phone.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txt_phone.Size = new System.Drawing.Size(314, 32);
+            this.txt_phone.Size = new System.Drawing.Size(353, 32);
             this.txt_phone.TabIndex = 42;
             this.txt_phone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_phone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_phone_KeyPress);
@@ -378,7 +380,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(371, 52);
+            this.label5.Location = new System.Drawing.Point(364, 49);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(98, 24);
             this.label5.TabIndex = 45;
@@ -388,7 +390,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(371, 90);
+            this.label3.Location = new System.Drawing.Point(365, 88);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(99, 24);
             this.label3.TabIndex = 44;
@@ -397,9 +399,9 @@
             // txt_address
             // 
             this.txt_address.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_address.Location = new System.Drawing.Point(0, 159);
+            this.txt_address.Location = new System.Drawing.Point(6, 159);
             this.txt_address.Name = "txt_address";
-            this.txt_address.Size = new System.Drawing.Size(285, 32);
+            this.txt_address.Size = new System.Drawing.Size(279, 32);
             this.txt_address.TabIndex = 41;
             this.txt_address.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -407,7 +409,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(291, 166);
+            this.label2.Location = new System.Drawing.Point(290, 164);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 24);
             this.label2.TabIndex = 43;
@@ -602,7 +604,8 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox3.Controls.Add(this.label29);
             this.groupBox3.Controls.Add(this.label28);
             this.groupBox3.Controls.Add(this.Txt_rentCompany);
             this.groupBox3.Controls.Add(this.Txt_PricePayment);
@@ -614,25 +617,37 @@
             this.groupBox3.Controls.Add(this.txt_afterDiscount);
             this.groupBox3.Controls.Add(this.rdb_money);
             this.groupBox3.Controls.Add(this.label24);
+            this.groupBox3.Controls.Add(this.label11);
+            this.groupBox3.Controls.Add(this.txt_total);
             this.groupBox3.Controls.Add(this.txt_discount);
             this.groupBox3.Controls.Add(this.txt_rent);
             this.groupBox3.Controls.Add(this.label16);
             this.groupBox3.Controls.Add(this.txt_pay);
             this.groupBox3.Controls.Add(this.label15);
-            this.groupBox3.Controls.Add(this.label11);
-            this.groupBox3.Controls.Add(this.txt_total);
-            this.groupBox3.Location = new System.Drawing.Point(5, 347);
+            this.groupBox3.Location = new System.Drawing.Point(5, 333);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(601, 217);
+            this.groupBox3.Size = new System.Drawing.Size(601, 236);
             this.groupBox3.TabIndex = 80;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "الحسابات";
             // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.BackColor = System.Drawing.Color.White;
+            this.label29.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(445, 203);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(149, 24);
+            this.label29.TabIndex = 121;
+            this.label29.Text = "المتبقي على الشركة";
+            // 
             // label28
             // 
             this.label28.AutoSize = true;
+            this.label28.BackColor = System.Drawing.Color.White;
             this.label28.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(399, 128);
+            this.label28.Location = new System.Drawing.Point(96, 119);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(71, 24);
             this.label28.TabIndex = 120;
@@ -640,18 +655,22 @@
             // 
             // Txt_rentCompany
             // 
+            this.Txt_rentCompany.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Txt_rentCompany.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_rentCompany.Location = new System.Drawing.Point(10, 179);
+            this.Txt_rentCompany.ForeColor = System.Drawing.SystemColors.Info;
+            this.Txt_rentCompany.Location = new System.Drawing.Point(307, 198);
             this.Txt_rentCompany.Name = "Txt_rentCompany";
             this.Txt_rentCompany.ReadOnly = true;
-            this.Txt_rentCompany.Size = new System.Drawing.Size(119, 32);
+            this.Txt_rentCompany.Size = new System.Drawing.Size(134, 32);
             this.Txt_rentCompany.TabIndex = 119;
             this.Txt_rentCompany.Text = "0";
             this.Txt_rentCompany.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Txt_PricePayment
             // 
+            this.Txt_PricePayment.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Txt_PricePayment.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_PricePayment.ForeColor = System.Drawing.SystemColors.Info;
             this.Txt_PricePayment.Location = new System.Drawing.Point(10, 60);
             this.Txt_PricePayment.Name = "Txt_PricePayment";
             this.Txt_PricePayment.ReadOnly = true;
@@ -664,6 +683,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
+            this.label27.BackColor = System.Drawing.Color.White;
             this.label27.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.Location = new System.Drawing.Point(150, 63);
             this.label27.Name = "label27";
@@ -673,13 +693,16 @@
             // 
             // Txt_addtionPayment
             // 
+            this.Txt_addtionPayment.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Txt_addtionPayment.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_addtionPayment.ForeColor = System.Drawing.SystemColors.Info;
             this.Txt_addtionPayment.Location = new System.Drawing.Point(10, 16);
             this.Txt_addtionPayment.Name = "Txt_addtionPayment";
             this.Txt_addtionPayment.Size = new System.Drawing.Size(134, 32);
             this.Txt_addtionPayment.TabIndex = 115;
             this.Txt_addtionPayment.Text = "0";
             this.Txt_addtionPayment.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Txt_addtionPayment.Click += new System.EventHandler(this.Txt_addtionPayment_Click);
             this.Txt_addtionPayment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_addtionPayment_KeyPress);
             this.Txt_addtionPayment.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txt_addtionPayment_KeyUp);
             this.Txt_addtionPayment.MouseLeave += new System.EventHandler(this.Txt_addtionPayment_MouseLeave);
@@ -687,6 +710,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
+            this.label26.BackColor = System.Drawing.Color.White;
             this.label26.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label26.Location = new System.Drawing.Point(150, 24);
             this.label26.Name = "label26";
@@ -697,31 +721,34 @@
             // txt_reasonAddition
             // 
             this.txt_reasonAddition.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_reasonAddition.Location = new System.Drawing.Point(278, 157);
+            this.txt_reasonAddition.Location = new System.Drawing.Point(11, 150);
             this.txt_reasonAddition.MaxLength = 3000;
             this.txt_reasonAddition.Multiline = true;
             this.txt_reasonAddition.Name = "txt_reasonAddition";
             this.txt_reasonAddition.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txt_reasonAddition.Size = new System.Drawing.Size(309, 53);
+            this.txt_reasonAddition.Size = new System.Drawing.Size(239, 78);
             this.txt_reasonAddition.TabIndex = 99;
             this.txt_reasonAddition.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // rdb_Discount
             // 
             this.rdb_Discount.AutoSize = true;
+            this.rdb_Discount.BackColor = System.Drawing.Color.Yellow;
             this.rdb_Discount.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdb_Discount.Location = new System.Drawing.Point(517, 54);
+            this.rdb_Discount.Location = new System.Drawing.Point(514, 49);
             this.rdb_Discount.Name = "rdb_Discount";
             this.rdb_Discount.Size = new System.Drawing.Size(80, 28);
             this.rdb_Discount.TabIndex = 96;
             this.rdb_Discount.Text = "%خصم";
-            this.rdb_Discount.UseVisualStyleBackColor = true;
+            this.rdb_Discount.UseVisualStyleBackColor = false;
             this.rdb_Discount.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // txt_afterDiscount
             // 
+            this.txt_afterDiscount.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txt_afterDiscount.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_afterDiscount.Location = new System.Drawing.Point(312, 89);
+            this.txt_afterDiscount.ForeColor = System.Drawing.SystemColors.Info;
+            this.txt_afterDiscount.Location = new System.Drawing.Point(308, 85);
             this.txt_afterDiscount.Name = "txt_afterDiscount";
             this.txt_afterDiscount.ReadOnly = true;
             this.txt_afterDiscount.Size = new System.Drawing.Size(134, 32);
@@ -733,94 +760,35 @@
             // rdb_money
             // 
             this.rdb_money.AutoSize = true;
+            this.rdb_money.BackColor = System.Drawing.Color.Yellow;
             this.rdb_money.Checked = true;
             this.rdb_money.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdb_money.Location = new System.Drawing.Point(453, 54);
+            this.rdb_money.Location = new System.Drawing.Point(450, 49);
             this.rdb_money.Name = "rdb_money";
             this.rdb_money.Size = new System.Drawing.Size(58, 28);
             this.rdb_money.TabIndex = 95;
             this.rdb_money.TabStop = true;
             this.rdb_money.Text = "قيمة";
-            this.rdb_money.UseVisualStyleBackColor = true;
+            this.rdb_money.UseVisualStyleBackColor = false;
             this.rdb_money.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // label24
             // 
             this.label24.AutoSize = true;
+            this.label24.BackColor = System.Drawing.Color.White;
             this.label24.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(450, 92);
+            this.label24.Location = new System.Drawing.Point(447, 92);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(145, 24);
             this.label24.TabIndex = 112;
             this.label24.Text = "الاجمالي بعد الخصم";
             // 
-            // txt_discount
-            // 
-            this.txt_discount.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_discount.Location = new System.Drawing.Point(312, 52);
-            this.txt_discount.Name = "txt_discount";
-            this.txt_discount.Size = new System.Drawing.Size(135, 32);
-            this.txt_discount.TabIndex = 107;
-            this.txt_discount.Text = "0";
-            this.txt_discount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_discount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_discount_KeyPress);
-            this.txt_discount.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_discount_KeyUp);
-            this.txt_discount.Leave += new System.EventHandler(this.txt_discount_Leave);
-            this.txt_discount.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txt_discount_MouseDown);
-            this.txt_discount.Validated += new System.EventHandler(this.txt_discount_Validated);
-            // 
-            // txt_rent
-            // 
-            this.txt_rent.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_rent.Location = new System.Drawing.Point(10, 141);
-            this.txt_rent.Name = "txt_rent";
-            this.txt_rent.ReadOnly = true;
-            this.txt_rent.Size = new System.Drawing.Size(134, 32);
-            this.txt_rent.TabIndex = 102;
-            this.txt_rent.Text = "0";
-            this.txt_rent.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_rent.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_rent_KeyPress);
-            this.txt_rent.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_rent_KeyUp);
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(144, 146);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(60, 24);
-            this.label16.TabIndex = 103;
-            this.label16.Text = "المتبقي";
-            // 
-            // txt_pay
-            // 
-            this.txt_pay.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_pay.Location = new System.Drawing.Point(6, 98);
-            this.txt_pay.Name = "txt_pay";
-            this.txt_pay.Size = new System.Drawing.Size(134, 32);
-            this.txt_pay.TabIndex = 100;
-            this.txt_pay.Text = "0";
-            this.txt_pay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_pay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_pay_KeyPress);
-            this.txt_pay.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_pay_KeyUp);
-            this.txt_pay.Leave += new System.EventHandler(this.txt_pay_Leave);
-            this.txt_pay.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txt_pay_MouseDown);
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(146, 104);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(62, 24);
-            this.label15.TabIndex = 101;
-            this.label15.Text = "المدفوع";
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.White;
             this.label11.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(499, 19);
+            this.label11.Location = new System.Drawing.Point(452, 15);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(67, 24);
             this.label11.TabIndex = 99;
@@ -828,8 +796,10 @@
             // 
             // txt_total
             // 
+            this.txt_total.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txt_total.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_total.Location = new System.Drawing.Point(312, 16);
+            this.txt_total.ForeColor = System.Drawing.SystemColors.Info;
+            this.txt_total.Location = new System.Drawing.Point(307, 11);
             this.txt_total.MaxLength = 11;
             this.txt_total.Name = "txt_total";
             this.txt_total.ReadOnly = true;
@@ -840,17 +810,90 @@
             this.txt_total.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_total.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_price_KeyPress);
             // 
+            // txt_discount
+            // 
+            this.txt_discount.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txt_discount.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_discount.ForeColor = System.Drawing.SystemColors.Info;
+            this.txt_discount.Location = new System.Drawing.Point(308, 47);
+            this.txt_discount.Name = "txt_discount";
+            this.txt_discount.Size = new System.Drawing.Size(135, 32);
+            this.txt_discount.TabIndex = 107;
+            this.txt_discount.Text = "0";
+            this.txt_discount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_discount.Click += new System.EventHandler(this.txt_discount_Click);
+            this.txt_discount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_discount_KeyPress);
+            this.txt_discount.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_discount_KeyUp);
+            this.txt_discount.Leave += new System.EventHandler(this.txt_discount_Leave);
+            this.txt_discount.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txt_discount_MouseDown);
+            this.txt_discount.Validated += new System.EventHandler(this.txt_discount_Validated);
+            // 
+            // txt_rent
+            // 
+            this.txt_rent.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txt_rent.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_rent.ForeColor = System.Drawing.SystemColors.Info;
+            this.txt_rent.Location = new System.Drawing.Point(308, 160);
+            this.txt_rent.Name = "txt_rent";
+            this.txt_rent.ReadOnly = true;
+            this.txt_rent.Size = new System.Drawing.Size(134, 32);
+            this.txt_rent.TabIndex = 102;
+            this.txt_rent.Text = "0";
+            this.txt_rent.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_rent.Click += new System.EventHandler(this.txt_rent_Click);
+            this.txt_rent.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_rent_KeyPress);
+            this.txt_rent.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_rent_KeyUp);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.White;
+            this.label16.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(450, 164);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(60, 24);
+            this.label16.TabIndex = 103;
+            this.label16.Text = "المتبقي";
+            // 
+            // txt_pay
+            // 
+            this.txt_pay.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txt_pay.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_pay.ForeColor = System.Drawing.SystemColors.Info;
+            this.txt_pay.Location = new System.Drawing.Point(308, 123);
+            this.txt_pay.Name = "txt_pay";
+            this.txt_pay.Size = new System.Drawing.Size(134, 32);
+            this.txt_pay.TabIndex = 100;
+            this.txt_pay.Text = "0";
+            this.txt_pay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_pay.Click += new System.EventHandler(this.txt_pay_Click);
+            this.txt_pay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_pay_KeyPress);
+            this.txt_pay.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_pay_KeyUp);
+            this.txt_pay.Leave += new System.EventHandler(this.txt_pay_Leave);
+            this.txt_pay.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txt_pay_MouseDown);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.White;
+            this.label15.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(451, 129);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(62, 24);
+            this.label15.TabIndex = 101;
+            this.label15.Text = "المدفوع";
+            // 
             // dtb_kashf
             // 
             this.dtb_kashf.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dtb_kashf.CustomFormat = "   dd/MM/yyyy       *      tt  mm:hh     ";
             this.dtb_kashf.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtb_kashf.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtb_kashf.Location = new System.Drawing.Point(633, 127);
+            this.dtb_kashf.Location = new System.Drawing.Point(696, 128);
             this.dtb_kashf.Name = "dtb_kashf";
             this.dtb_kashf.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dtb_kashf.ShowUpDown = true;
-            this.dtb_kashf.Size = new System.Drawing.Size(350, 22);
+            this.dtb_kashf.Size = new System.Drawing.Size(287, 22);
             this.dtb_kashf.TabIndex = 113;
             // 
             // label17
@@ -900,14 +943,14 @@
             this.cmb_Stock.Location = new System.Drawing.Point(5, 3);
             this.cmb_Stock.Name = "cmb_Stock";
             this.cmb_Stock.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmb_Stock.Size = new System.Drawing.Size(172, 32);
+            this.cmb_Stock.Size = new System.Drawing.Size(213, 32);
             this.cmb_Stock.TabIndex = 84;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(183, 9);
+            this.label14.Location = new System.Drawing.Point(224, 6);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(51, 24);
             this.label14.TabIndex = 83;
@@ -950,7 +993,6 @@
             this.cmb_Company.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmb_Company.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cmb_Company.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmb_Company.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Company.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_Company.FormattingEnabled = true;
             this.cmb_Company.Location = new System.Drawing.Point(617, 87);
@@ -959,6 +1001,7 @@
             this.cmb_Company.Size = new System.Drawing.Size(217, 32);
             this.cmb_Company.TabIndex = 88;
             this.cmb_Company.SelectionChangeCommitted += new System.EventHandler(this.cmb_Company_SelectionChangeCommitted);
+            this.cmb_Company.Leave += new System.EventHandler(this.cmb_Company_Leave);
             // 
             // label1
             // 
@@ -985,7 +1028,7 @@
             this.dgv_order.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgv_order.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_order.ShowEditingIcon = false;
-            this.dgv_order.Size = new System.Drawing.Size(407, 58);
+            this.dgv_order.Size = new System.Drawing.Size(407, 44);
             this.dgv_order.TabIndex = 92;
             this.dgv_order.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgv_order_RowsRemoved);
             // 
@@ -993,7 +1036,7 @@
             // 
             this.btn_print.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_print.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_print.Location = new System.Drawing.Point(962, 531);
+            this.btn_print.Location = new System.Drawing.Point(960, 528);
             this.btn_print.Name = "btn_print";
             this.btn_print.Size = new System.Drawing.Size(119, 40);
             this.btn_print.TabIndex = 101;
@@ -1005,7 +1048,7 @@
             // 
             this.btn_save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_save.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_save.Location = new System.Drawing.Point(840, 531);
+            this.btn_save.Location = new System.Drawing.Point(801, 529);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(119, 40);
             this.btn_save.TabIndex = 100;
@@ -1024,7 +1067,7 @@
             this.cmb_statues.Items.AddRange(new object[] {
             "نقدى",
             "شركات"});
-            this.cmb_statues.Location = new System.Drawing.Point(840, 87);
+            this.cmb_statues.Location = new System.Drawing.Point(840, 88);
             this.cmb_statues.Name = "cmb_statues";
             this.cmb_statues.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmb_statues.Size = new System.Drawing.Size(143, 32);
@@ -1061,6 +1104,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1093, 574);
             this.Controls.Add(this.btn_print);
             this.Controls.Add(this.cmb_UserBranch);
@@ -1087,7 +1131,8 @@
             this.Controls.Add(this.groupBox1);
             this.MinimumSize = new System.Drawing.Size(1029, 581);
             this.Name = "Frm_Tickets";
-            this.Text = "Frm_Tickets";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "شاشة الحجز";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Frm_Tickets_Load);
             this.groupBox1.ResumeLayout(false);
@@ -1180,5 +1225,6 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.TextBox Txt_addtionPayment;
         private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label29;
     }
 }

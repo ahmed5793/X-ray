@@ -49,9 +49,10 @@ namespace Laboratory.PL
                 {
 
                     co.AddCompany(txt_name.Text, txt_phone.Text,txt_address.Text,dateTimePicker1.Value,richTextBox1.Text);
-
+                    dt.Clear();
+                    dt = co.select_LastIdCompany();
+                    co.Add_CompanyTotalMoney(Convert.ToInt32(dt.Rows[0][0]));
                     MessageBox.Show("تم اضافه بيانات الشركة بنجاح", "عمليه الاضافه", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
                     dataGridView1.DataSource = co.SelectCompany();
                     txt_name.Clear();
                     txt_phone.Clear();
@@ -150,7 +151,7 @@ namespace Laboratory.PL
       
         private void txt_search_TextChanged(object sender, EventArgs e)
         {
-         
+            dt.Clear();
             dt = co.SearchCompany(txt_search.Text);
             dataGridView1.DataSource = dt;
 
