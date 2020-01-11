@@ -71,9 +71,10 @@ namespace Laboratory.PL
                 {
                     fd.Txt_PricePayment.Hide();
                     fd.Txt_addtionPayment.Hide();
-                  
-            
-               
+
+                    fd.txt_idcompany.Hide();
+
+
                     fd.label26.Hide();
                     fd.label27.Hide();
                    fd.txt_company.Hide();
@@ -105,7 +106,9 @@ namespace Laboratory.PL
                         fd.txt_afterDiscount.Text = dr[21].ToString();
                         fd.txt_reasonAddition.Text = dr[22].ToString();
                         fd.txt_idnationa.Text = dr[23].ToString();
-
+                        fd.txt_idtickets.Text = dr[24].ToString();
+                        fd.txt_idstock.Text = dr[25].ToString();
+                        fd.txt_idbranche.Text = dr[26].ToString();
                     }
                 }
                 else
@@ -120,6 +123,7 @@ namespace Laboratory.PL
                     fd.label24.Hide();
                     fd.label26.Show();
                     fd.label27.Show();
+                    fd.txt_idcompany.Show();
                     dt = t.TicketDetailsSelectTicketsCompany(Convert.ToInt32(dgv_visit.CurrentRow.Cells[0].Value));
 
                     foreach (DataRow dr in dt.Rows)
@@ -150,6 +154,11 @@ namespace Laboratory.PL
                         fd.Txt_PricePayment.Text = dr[23].ToString();
                         fd.Txt_addtionPayment.Text = dr[24].ToString();
                         fd.txt_idnationa.Text = dr[25].ToString();
+                        fd.txt_idtickets.Text = dr[26].ToString();
+                        fd.txt_idstock.Text = dr[27].ToString();
+                        fd.txt_idbranche.Text = dr[28].ToString();
+                        fd.txt_idcompany.Text = dr[29].ToString();
+
                     }
 
                 }

@@ -47,9 +47,18 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txt_total = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txt_afterDiscount = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.Txt_PricePayment = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.Txt_addtionPayment = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.txt_reasonAddition = new System.Windows.Forms.TextBox();
             this.txt_pay = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txt_idnationa = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
             this.txt_doctor = new System.Windows.Forms.TextBox();
             this.txt_dateRecive = new System.Windows.Forms.TextBox();
             this.comboBox7 = new System.Windows.Forms.ComboBox();
@@ -69,23 +78,19 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txt_idcompany = new System.Windows.Forms.TextBox();
             this.txt_timeKa4f = new System.Windows.Forms.TextBox();
             this.txt_techincal = new System.Windows.Forms.TextBox();
             this.txt_doctorOfCenter = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.txt_branch = new System.Windows.Forms.TextBox();
             this.txt_stock = new System.Windows.Forms.TextBox();
-            this.Txt_PricePayment = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.Txt_addtionPayment = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.txt_reasonAddition = new System.Windows.Forms.TextBox();
-            this.txt_afterDiscount = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
             this.txt_place = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txt_idnationa = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
+            this.txt_idbranche = new System.Windows.Forms.TextBox();
+            this.txt_idstock = new System.Windows.Forms.TextBox();
+            this.txt_idtickets = new System.Windows.Forms.TextBox();
+            this.btn_print = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_order)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -160,7 +165,7 @@
             this.dgv_order.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgv_order.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_order.ShowEditingIcon = false;
-            this.dgv_order.Size = new System.Drawing.Size(991, 74);
+            this.dgv_order.Size = new System.Drawing.Size(552, 74);
             this.dgv_order.TabIndex = 126;
             // 
             // groupBox4
@@ -195,7 +200,7 @@
             // 
             this.txt_company.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_company.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_company.Location = new System.Drawing.Point(383, 8);
+            this.txt_company.Location = new System.Drawing.Point(383, 14);
             this.txt_company.Name = "txt_company";
             this.txt_company.ReadOnly = true;
             this.txt_company.Size = new System.Drawing.Size(233, 32);
@@ -323,6 +328,38 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "الحسابات";
             // 
+            // txt_afterDiscount
+            // 
+            this.txt_afterDiscount.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_afterDiscount.Location = new System.Drawing.Point(269, 109);
+            this.txt_afterDiscount.Name = "txt_afterDiscount";
+            this.txt_afterDiscount.ReadOnly = true;
+            this.txt_afterDiscount.Size = new System.Drawing.Size(134, 32);
+            this.txt_afterDiscount.TabIndex = 140;
+            this.txt_afterDiscount.Text = "0";
+            this.txt_afterDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(407, 112);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(145, 24);
+            this.label24.TabIndex = 141;
+            this.label24.Text = "الاجمالي بعد الخصم";
+            // 
+            // Txt_PricePayment
+            // 
+            this.Txt_PricePayment.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_PricePayment.Location = new System.Drawing.Point(10, 68);
+            this.Txt_PricePayment.Name = "Txt_PricePayment";
+            this.Txt_PricePayment.ReadOnly = true;
+            this.Txt_PricePayment.Size = new System.Drawing.Size(134, 32);
+            this.Txt_PricePayment.TabIndex = 138;
+            this.Txt_PricePayment.Text = "0";
+            this.Txt_PricePayment.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -332,6 +369,50 @@
             this.label9.Size = new System.Drawing.Size(55, 24);
             this.label9.TabIndex = 108;
             this.label9.Text = "الخصم";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(166, 71);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(143, 24);
+            this.label27.TabIndex = 139;
+            this.label27.Text = "مبلغ تحمل المريض";
+            // 
+            // Txt_addtionPayment
+            // 
+            this.Txt_addtionPayment.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_addtionPayment.Location = new System.Drawing.Point(10, 25);
+            this.Txt_addtionPayment.Name = "Txt_addtionPayment";
+            this.Txt_addtionPayment.ReadOnly = true;
+            this.Txt_addtionPayment.Size = new System.Drawing.Size(134, 32);
+            this.Txt_addtionPayment.TabIndex = 136;
+            this.Txt_addtionPayment.Text = "0";
+            this.Txt_addtionPayment.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(163, 30);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(147, 24);
+            this.label26.TabIndex = 137;
+            this.label26.Text = "نسبة تحمل المريض";
+            // 
+            // txt_reasonAddition
+            // 
+            this.txt_reasonAddition.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_reasonAddition.Location = new System.Drawing.Point(271, 150);
+            this.txt_reasonAddition.MaxLength = 3000;
+            this.txt_reasonAddition.Multiline = true;
+            this.txt_reasonAddition.Name = "txt_reasonAddition";
+            this.txt_reasonAddition.ReadOnly = true;
+            this.txt_reasonAddition.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txt_reasonAddition.Size = new System.Drawing.Size(275, 33);
+            this.txt_reasonAddition.TabIndex = 135;
+            this.txt_reasonAddition.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_pay
             // 
@@ -371,6 +452,28 @@
             this.groupBox1.TabIndex = 116;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "بيانات العملاء";
+            // 
+            // txt_idnationa
+            // 
+            this.txt_idnationa.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_idnationa.Location = new System.Drawing.Point(7, 174);
+            this.txt_idnationa.MaxLength = 11;
+            this.txt_idnationa.Name = "txt_idnationa";
+            this.txt_idnationa.ReadOnly = true;
+            this.txt_idnationa.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txt_idnationa.Size = new System.Drawing.Size(314, 32);
+            this.txt_idnationa.TabIndex = 121;
+            this.txt_idnationa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(371, 180);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(30, 24);
+            this.label22.TabIndex = 122;
+            this.label22.Text = "ID";
             // 
             // txt_doctor
             // 
@@ -484,7 +587,7 @@
             // txt_name
             // 
             this.txt_name.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_name.Location = new System.Drawing.Point(16, 19);
+            this.txt_name.Location = new System.Drawing.Point(22, 19);
             this.txt_name.Name = "txt_name";
             this.txt_name.ReadOnly = true;
             this.txt_name.Size = new System.Drawing.Size(305, 32);
@@ -565,6 +668,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txt_idcompany);
             this.groupBox2.Controls.Add(this.txt_timeKa4f);
             this.groupBox2.Controls.Add(this.txt_techincal);
             this.groupBox2.Controls.Add(this.txt_doctorOfCenter);
@@ -577,6 +681,18 @@
             this.groupBox2.TabIndex = 117;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "بيانات الاشعة";
+            // 
+            // txt_idcompany
+            // 
+            this.txt_idcompany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_idcompany.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_idcompany.Location = new System.Drawing.Point(506, 27);
+            this.txt_idcompany.Multiline = true;
+            this.txt_idcompany.Name = "txt_idcompany";
+            this.txt_idcompany.ReadOnly = true;
+            this.txt_idcompany.Size = new System.Drawing.Size(53, 41);
+            this.txt_idcompany.TabIndex = 137;
+            this.txt_idcompany.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_timeKa4f
             // 
@@ -644,82 +760,6 @@
             this.txt_stock.TabIndex = 132;
             this.txt_stock.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // Txt_PricePayment
-            // 
-            this.Txt_PricePayment.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_PricePayment.Location = new System.Drawing.Point(10, 68);
-            this.Txt_PricePayment.Name = "Txt_PricePayment";
-            this.Txt_PricePayment.ReadOnly = true;
-            this.Txt_PricePayment.Size = new System.Drawing.Size(134, 32);
-            this.Txt_PricePayment.TabIndex = 138;
-            this.Txt_PricePayment.Text = "0";
-            this.Txt_PricePayment.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(166, 71);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(143, 24);
-            this.label27.TabIndex = 139;
-            this.label27.Text = "مبلغ تحمل المريض";
-            // 
-            // Txt_addtionPayment
-            // 
-            this.Txt_addtionPayment.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_addtionPayment.Location = new System.Drawing.Point(10, 25);
-            this.Txt_addtionPayment.Name = "Txt_addtionPayment";
-            this.Txt_addtionPayment.ReadOnly = true;
-            this.Txt_addtionPayment.Size = new System.Drawing.Size(134, 32);
-            this.Txt_addtionPayment.TabIndex = 136;
-            this.Txt_addtionPayment.Text = "0";
-            this.Txt_addtionPayment.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(163, 30);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(147, 24);
-            this.label26.TabIndex = 137;
-            this.label26.Text = "نسبة تحمل المريض";
-            // 
-            // txt_reasonAddition
-            // 
-            this.txt_reasonAddition.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_reasonAddition.Location = new System.Drawing.Point(271, 150);
-            this.txt_reasonAddition.MaxLength = 3000;
-            this.txt_reasonAddition.Multiline = true;
-            this.txt_reasonAddition.Name = "txt_reasonAddition";
-            this.txt_reasonAddition.ReadOnly = true;
-            this.txt_reasonAddition.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txt_reasonAddition.Size = new System.Drawing.Size(275, 33);
-            this.txt_reasonAddition.TabIndex = 135;
-            this.txt_reasonAddition.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txt_afterDiscount
-            // 
-            this.txt_afterDiscount.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_afterDiscount.Location = new System.Drawing.Point(269, 109);
-            this.txt_afterDiscount.Name = "txt_afterDiscount";
-            this.txt_afterDiscount.ReadOnly = true;
-            this.txt_afterDiscount.Size = new System.Drawing.Size(134, 32);
-            this.txt_afterDiscount.TabIndex = 140;
-            this.txt_afterDiscount.Text = "0";
-            this.txt_afterDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(407, 112);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(145, 24);
-            this.label24.TabIndex = 141;
-            this.label24.Text = "الاجمالي بعد الخصم";
-            // 
             // txt_place
             // 
             this.txt_place.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -742,33 +782,59 @@
             this.label10.TabIndex = 133;
             this.label10.Text = "فرع";
             // 
-            // txt_idnationa
+            // txt_idbranche
             // 
-            this.txt_idnationa.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_idnationa.Location = new System.Drawing.Point(7, 174);
-            this.txt_idnationa.MaxLength = 11;
-            this.txt_idnationa.Name = "txt_idnationa";
-            this.txt_idnationa.ReadOnly = true;
-            this.txt_idnationa.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txt_idnationa.Size = new System.Drawing.Size(314, 32);
-            this.txt_idnationa.TabIndex = 121;
-            this.txt_idnationa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_idbranche.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_idbranche.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_idbranche.Location = new System.Drawing.Point(387, 35);
+            this.txt_idbranche.Name = "txt_idbranche";
+            this.txt_idbranche.ReadOnly = true;
+            this.txt_idbranche.Size = new System.Drawing.Size(68, 32);
+            this.txt_idbranche.TabIndex = 134;
+            this.txt_idbranche.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label22
+            // txt_idstock
             // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(371, 180);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(30, 24);
-            this.label22.TabIndex = 122;
-            this.label22.Text = "ID";
+            this.txt_idstock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_idstock.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_idstock.Location = new System.Drawing.Point(94, 36);
+            this.txt_idstock.Name = "txt_idstock";
+            this.txt_idstock.ReadOnly = true;
+            this.txt_idstock.Size = new System.Drawing.Size(68, 32);
+            this.txt_idstock.TabIndex = 135;
+            this.txt_idstock.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txt_idtickets
+            // 
+            this.txt_idtickets.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_idtickets.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_idtickets.Location = new System.Drawing.Point(598, 6);
+            this.txt_idtickets.Name = "txt_idtickets";
+            this.txt_idtickets.ReadOnly = true;
+            this.txt_idtickets.Size = new System.Drawing.Size(68, 32);
+            this.txt_idtickets.TabIndex = 136;
+            this.txt_idtickets.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btn_print
+            // 
+            this.btn_print.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btn_print.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_print.Location = new System.Drawing.Point(705, 487);
+            this.btn_print.Name = "btn_print";
+            this.btn_print.Size = new System.Drawing.Size(200, 40);
+            this.btn_print.TabIndex = 137;
+            this.btn_print.Text = "مردودات";
+            this.btn_print.UseVisualStyleBackColor = true;
             // 
             // Frm_DetailsTickets
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1030, 539);
+            this.Controls.Add(this.btn_print);
+            this.Controls.Add(this.txt_idtickets);
+            this.Controls.Add(this.txt_idstock);
+            this.Controls.Add(this.txt_idbranche);
             this.Controls.Add(this.txt_place);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txt_stock);
@@ -858,5 +924,10 @@
         public System.Windows.Forms.Label label24;
         public System.Windows.Forms.TextBox txt_idnationa;
         public System.Windows.Forms.Label label22;
+        public System.Windows.Forms.TextBox txt_idbranche;
+        public System.Windows.Forms.TextBox txt_idstock;
+        public System.Windows.Forms.TextBox txt_idtickets;
+        public System.Windows.Forms.TextBox txt_idcompany;
+        private System.Windows.Forms.Button btn_print;
     }
 }
