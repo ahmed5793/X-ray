@@ -423,6 +423,18 @@
     <Compile Include="PL\Frm_ReportDoctor.Designer.cs">
       <DependentUpon>Frm_ReportDoctor.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Frm_ReportDoctorOfCenterData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_ReportDoctorOfCenterData.Designer.cs">
+      <DependentUpon>Frm_ReportDoctorOfCenterData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Frm_ReportEmployeeData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_ReportEmployeeData.Designer.cs">
+      <DependentUpon>Frm_ReportEmployeeData.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_ReportInsertStock.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -441,6 +453,12 @@
     <Compile Include="PL\Frm_ReportOfDoctorOfCenter.Designer.cs">
       <DependentUpon>Frm_ReportOfDoctorOfCenter.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Frm_ReportOutDoctorData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_ReportOutDoctorData.Designer.cs">
+      <DependentUpon>Frm_ReportOutDoctorData.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_ReportPAyCustomerCompany.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -458,6 +476,12 @@
     </Compile>
     <Compile Include="PL\Frm_ReportStockPull.Designer.cs">
       <DependentUpon>Frm_ReportStockPull.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Frm_ReportTechnicalData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_ReportTechnicalData.Designer.cs">
+      <DependentUpon>Frm_ReportTechnicalData.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Frm_ReportTechnicalShift.cs">
       <SubType>Form</SubType>
@@ -695,6 +719,12 @@
     <EmbeddedResource Include="PL\Frm_ReportDoctor.resx">
       <DependentUpon>Frm_ReportDoctor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_ReportDoctorOfCenterData.resx">
+      <DependentUpon>Frm_ReportDoctorOfCenterData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_ReportEmployeeData.resx">
+      <DependentUpon>Frm_ReportEmployeeData.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_ReportInsertStock.resx">
       <DependentUpon>Frm_ReportInsertStock.cs</DependentUpon>
     </EmbeddedResource>
@@ -704,6 +734,9 @@
     <EmbeddedResource Include="PL\Frm_ReportOfDoctorOfCenter.resx">
       <DependentUpon>Frm_ReportOfDoctorOfCenter.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_ReportOutDoctorData.resx">
+      <DependentUpon>Frm_ReportOutDoctorData.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_ReportPAyCustomerCompany.resx">
       <DependentUpon>Frm_ReportPAyCustomerCompany.cs</DependentUpon>
     </EmbeddedResource>
@@ -712,6 +745,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_ReportStockPull.resx">
       <DependentUpon>Frm_ReportStockPull.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_ReportTechnicalData.resx">
+      <DependentUpon>Frm_ReportTechnicalData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_ReportTechnicalShift.resx">
       <DependentUpon>Frm_ReportTechnicalShift.cs</DependentUpon>

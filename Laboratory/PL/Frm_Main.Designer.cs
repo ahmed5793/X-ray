@@ -32,6 +32,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Main));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripSeparator54 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator53 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator52 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator51 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator50 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator49 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator55 = new System.Windows.Forms.ToolStripSeparator();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.Main_data = new System.Windows.Forms.ToolStripDropDownButton();
             this.Branches_Manage = new System.Windows.Forms.ToolStripMenuItem();
             this.Add_Branche = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,11 +51,12 @@
             this.Category_XRay = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
             this.Add_XRays = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator54 = new System.Windows.Forms.ToolStripSeparator();
             this.Employee = new System.Windows.Forms.ToolStripDropDownButton();
             this.Employee_manage = new System.Windows.Forms.ToolStripMenuItem();
             this.Add_Employee = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
+            this.ToolReportEmployeeData = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator61 = new System.Windows.Forms.ToolStripSeparator();
             this.AddEmployeeBranches = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator28 = new System.Windows.Forms.ToolStripSeparator();
             this.Add_Account = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,6 +72,7 @@
             this.Doctors_Center = new System.Windows.Forms.ToolStripMenuItem();
             this.Add_DoctorOfCenters = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator35 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator62 = new System.Windows.Forms.ToolStripSeparator();
             this.Report_DoctorOfCenter = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator57 = new System.Windows.Forms.ToolStripSeparator();
             this.Report_AllCasesDoctorOFCenter = new System.Windows.Forms.ToolStripMenuItem();
@@ -76,7 +87,6 @@
             this.Report_DetailsTechnical = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator56 = new System.Windows.Forms.ToolStripSeparator();
             this.Report_TotalXrayTechnical = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator53 = new System.Windows.Forms.ToolStripSeparator();
             this.Company_Customer = new System.Windows.Forms.ToolStripDropDownButton();
             this.Customer_management = new System.Windows.Forms.ToolStripMenuItem();
             this.Add_Customer = new System.Windows.Forms.ToolStripMenuItem();
@@ -108,7 +118,6 @@
             this.Report_Doctor = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator58 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator52 = new System.Windows.Forms.ToolStripSeparator();
             this.Masrofat_Stock = new System.Windows.Forms.ToolStripDropDownButton();
             this.Msrofat_Manage = new System.Windows.Forms.ToolStripMenuItem();
             this.Add_Masrof = new System.Windows.Forms.ToolStripMenuItem();
@@ -129,7 +138,6 @@
             this.Report_InsertStock = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator32 = new System.Windows.Forms.ToolStripSeparator();
             this.Report_TransfairMoney = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator51 = new System.Windows.Forms.ToolStripSeparator();
             this.Store_Manage = new System.Windows.Forms.ToolStripDropDownButton();
             this.AddStore = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
@@ -158,7 +166,6 @@
             this.مديونيةالموردينToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator24 = new System.Windows.Forms.ToolStripSeparator();
             this.Report_PaySupplier = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator50 = new System.Windows.Forms.ToolStripSeparator();
             this.Receiption = new System.Windows.Forms.ToolStripDropDownButton();
             this.Teicket = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
@@ -167,13 +174,14 @@
             this.Search_Ticket = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator46 = new System.Windows.Forms.ToolStripSeparator();
             this.Mardodat = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator49 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.toolStripSeparator55 = new System.Windows.Forms.ToolStripSeparator();
-            this.Btn_Exit = new System.Windows.Forms.ToolStripButton();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.تسجيلالاقساطToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Btn_Exit = new System.Windows.Forms.ToolStripButton();
+            this.Tool_ReportDoctorOfCenterData = new System.Windows.Forms.ToolStripMenuItem();
+            this.Tool_ReportTechnecalData = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator63 = new System.Windows.Forms.ToolStripSeparator();
+            this.Tool_ReportDoctorData = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator64 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -206,6 +214,63 @@
             this.toolStrip1.Size = new System.Drawing.Size(1080, 116);
             this.toolStrip1.TabIndex = 6;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripSeparator54
+            // 
+            this.toolStripSeparator54.Name = "toolStripSeparator54";
+            this.toolStripSeparator54.Size = new System.Drawing.Size(6, 116);
+            // 
+            // toolStripSeparator53
+            // 
+            this.toolStripSeparator53.Name = "toolStripSeparator53";
+            this.toolStripSeparator53.Size = new System.Drawing.Size(6, 116);
+            // 
+            // toolStripSeparator52
+            // 
+            this.toolStripSeparator52.Name = "toolStripSeparator52";
+            this.toolStripSeparator52.Size = new System.Drawing.Size(6, 116);
+            // 
+            // toolStripSeparator51
+            // 
+            this.toolStripSeparator51.Name = "toolStripSeparator51";
+            this.toolStripSeparator51.Size = new System.Drawing.Size(6, 116);
+            // 
+            // toolStripSeparator50
+            // 
+            this.toolStripSeparator50.Name = "toolStripSeparator50";
+            this.toolStripSeparator50.Size = new System.Drawing.Size(6, 116);
+            // 
+            // toolStripSeparator49
+            // 
+            this.toolStripSeparator49.Name = "toolStripSeparator49";
+            this.toolStripSeparator49.Size = new System.Drawing.Size(6, 116);
+            // 
+            // toolStripSeparator55
+            // 
+            this.toolStripSeparator55.BackColor = System.Drawing.Color.Black;
+            this.toolStripSeparator55.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.toolStripSeparator55.Name = "toolStripSeparator55";
+            this.toolStripSeparator55.Size = new System.Drawing.Size(6, 116);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(206, 480);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(93, 32);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "label2";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(12, 483);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(177, 32);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "USER NAME";
             // 
             // Main_data
             // 
@@ -301,11 +366,6 @@
             this.Add_XRays.Text = "إضافة الاشعة";
             this.Add_XRays.Click += new System.EventHandler(this.Add_XRays_Click);
             // 
-            // toolStripSeparator54
-            // 
-            this.toolStripSeparator54.Name = "toolStripSeparator54";
-            this.toolStripSeparator54.Size = new System.Drawing.Size(6, 116);
-            // 
             // Employee
             // 
             this.Employee.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -330,6 +390,8 @@
             this.Employee_manage.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Add_Employee,
             this.toolStripSeparator13,
+            this.ToolReportEmployeeData,
+            this.toolStripSeparator61,
             this.AddEmployeeBranches,
             this.toolStripSeparator28,
             this.Add_Account,
@@ -359,6 +421,19 @@
             // 
             this.toolStripSeparator13.Name = "toolStripSeparator13";
             this.toolStripSeparator13.Size = new System.Drawing.Size(252, 6);
+            // 
+            // ToolReportEmployeeData
+            // 
+            this.ToolReportEmployeeData.BackColor = System.Drawing.Color.NavajoWhite;
+            this.ToolReportEmployeeData.Name = "ToolReportEmployeeData";
+            this.ToolReportEmployeeData.Size = new System.Drawing.Size(255, 28);
+            this.ToolReportEmployeeData.Text = "تقرير بيانات الموظفين";
+            this.ToolReportEmployeeData.Click += new System.EventHandler(this.ToolReportEmployeeData_Click);
+            // 
+            // toolStripSeparator61
+            // 
+            this.toolStripSeparator61.Name = "toolStripSeparator61";
+            this.toolStripSeparator61.Size = new System.Drawing.Size(252, 6);
             // 
             // AddEmployeeBranches
             // 
@@ -444,6 +519,8 @@
             this.Doctors_Center.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Add_DoctorOfCenters,
             this.toolStripSeparator35,
+            this.Tool_ReportDoctorOfCenterData,
+            this.toolStripSeparator62,
             this.Report_DoctorOfCenter,
             this.toolStripSeparator57,
             this.Report_AllCasesDoctorOFCenter});
@@ -466,6 +543,11 @@
             // 
             this.toolStripSeparator35.Name = "toolStripSeparator35";
             this.toolStripSeparator35.Size = new System.Drawing.Size(391, 6);
+            // 
+            // toolStripSeparator62
+            // 
+            this.toolStripSeparator62.Name = "toolStripSeparator62";
+            this.toolStripSeparator62.Size = new System.Drawing.Size(391, 6);
             // 
             // Report_DoctorOfCenter
             // 
@@ -499,6 +581,8 @@
             this.Techniqual.BackColor = System.Drawing.Color.LightSalmon;
             this.Techniqual.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Add_Technical,
+            this.toolStripSeparator63,
+            this.Tool_ReportTechnecalData,
             this.toolStripSeparator34,
             this.Add_TechnicalShift,
             this.toolStripSeparator59,
@@ -575,11 +659,6 @@
             this.Report_TotalXrayTechnical.Size = new System.Drawing.Size(408, 28);
             this.Report_TotalXrayTechnical.Text = "تقرير مجمع لكل الحالات التى عمل بها لفنيين ";
             this.Report_TotalXrayTechnical.Click += new System.EventHandler(this.Report_TotalXrayTechnical_Click);
-            // 
-            // toolStripSeparator53
-            // 
-            this.toolStripSeparator53.Name = "toolStripSeparator53";
-            this.toolStripSeparator53.Size = new System.Drawing.Size(6, 116);
             // 
             // Company_Customer
             // 
@@ -788,6 +867,8 @@
             this.Doctoer_Management.BackColor = System.Drawing.Color.LightSeaGreen;
             this.Doctoer_Management.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Add_Doctor,
+            this.toolStripSeparator64,
+            this.Tool_ReportDoctorData,
             this.toolStripSeparator40,
             this.Report_Doctor,
             this.toolStripSeparator58,
@@ -832,11 +913,6 @@
             this.toolStripMenuItem1.Size = new System.Drawing.Size(394, 28);
             this.toolStripMenuItem1.Text = "تقرير مجمع لكل الحالات التى عمل بها الاطباء";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
-            // 
-            // toolStripSeparator52
-            // 
-            this.toolStripSeparator52.Name = "toolStripSeparator52";
-            this.toolStripSeparator52.Size = new System.Drawing.Size(6, 116);
             // 
             // Masrofat_Stock
             // 
@@ -1002,11 +1078,6 @@
             this.Report_TransfairMoney.Size = new System.Drawing.Size(360, 28);
             this.Report_TransfairMoney.Text = "تقرير تحويل الارصدة من خزنة إلى خزنة";
             this.Report_TransfairMoney.Click += new System.EventHandler(this.Report_TransfairMoney_Click);
-            // 
-            // toolStripSeparator51
-            // 
-            this.toolStripSeparator51.Name = "toolStripSeparator51";
-            this.toolStripSeparator51.Size = new System.Drawing.Size(6, 116);
             // 
             // Store_Manage
             // 
@@ -1236,11 +1307,6 @@
             this.Report_PaySupplier.Text = "تقرير كل مدفوعات الموردين";
             this.Report_PaySupplier.Click += new System.EventHandler(this.Report_PaySupplier_Click);
             // 
-            // toolStripSeparator50
-            // 
-            this.toolStripSeparator50.Name = "toolStripSeparator50";
-            this.toolStripSeparator50.Size = new System.Drawing.Size(6, 116);
-            // 
             // Receiption
             // 
             this.Receiption.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1316,11 +1382,6 @@
             this.Mardodat.Text = "شاشة المردودات";
             this.Mardodat.Click += new System.EventHandler(this.Mardodat_Click);
             // 
-            // toolStripSeparator49
-            // 
-            this.toolStripSeparator49.Name = "toolStripSeparator49";
-            this.toolStripSeparator49.Size = new System.Drawing.Size(6, 116);
-            // 
             // toolStripDropDownButton1
             // 
             this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1334,12 +1395,12 @@
             this.toolStripDropDownButton1.Text = "الاقساط";
             this.toolStripDropDownButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
-            // toolStripSeparator55
+            // تسجيلالاقساطToolStripMenuItem
             // 
-            this.toolStripSeparator55.BackColor = System.Drawing.Color.Black;
-            this.toolStripSeparator55.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.toolStripSeparator55.Name = "toolStripSeparator55";
-            this.toolStripSeparator55.Size = new System.Drawing.Size(6, 116);
+            this.تسجيلالاقساطToolStripMenuItem.Name = "تسجيلالاقساطToolStripMenuItem";
+            this.تسجيلالاقساطToolStripMenuItem.Size = new System.Drawing.Size(204, 34);
+            this.تسجيلالاقساطToolStripMenuItem.Text = "تسجيل الاقساط";
+            this.تسجيلالاقساطToolStripMenuItem.Click += new System.EventHandler(this.تسجيلالاقساطToolStripMenuItem_Click);
             // 
             // Btn_Exit
             // 
@@ -1353,32 +1414,39 @@
             this.Btn_Exit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.Btn_Exit.Click += new System.EventHandler(this.Btn_Exit_Click);
             // 
-            // label2
+            // Tool_ReportDoctorOfCenterData
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(206, 480);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 32);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "label2";
+            this.Tool_ReportDoctorOfCenterData.BackColor = System.Drawing.Color.OrangeRed;
+            this.Tool_ReportDoctorOfCenterData.Name = "Tool_ReportDoctorOfCenterData";
+            this.Tool_ReportDoctorOfCenterData.Size = new System.Drawing.Size(394, 28);
+            this.Tool_ReportDoctorOfCenterData.Text = "تقرير بيانات أطباء المركز";
+            this.Tool_ReportDoctorOfCenterData.Click += new System.EventHandler(this.Tool_ReportDoctorOfCenterData_Click);
             // 
-            // label4
+            // Tool_ReportTechnecalData
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 483);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(177, 32);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "USER NAME";
+            this.Tool_ReportTechnecalData.BackColor = System.Drawing.Color.IndianRed;
+            this.Tool_ReportTechnecalData.Name = "Tool_ReportTechnecalData";
+            this.Tool_ReportTechnecalData.Size = new System.Drawing.Size(408, 28);
+            this.Tool_ReportTechnecalData.Text = "تقرير بيانات الفنيين";
+            this.Tool_ReportTechnecalData.Click += new System.EventHandler(this.Tool_ReportTechnecalData_Click);
             // 
-            // تسجيلالاقساطToolStripMenuItem
+            // toolStripSeparator63
             // 
-            this.تسجيلالاقساطToolStripMenuItem.Name = "تسجيلالاقساطToolStripMenuItem";
-            this.تسجيلالاقساطToolStripMenuItem.Size = new System.Drawing.Size(204, 34);
-            this.تسجيلالاقساطToolStripMenuItem.Text = "تسجيل الاقساط";
-            this.تسجيلالاقساطToolStripMenuItem.Click += new System.EventHandler(this.تسجيلالاقساطToolStripMenuItem_Click);
+            this.toolStripSeparator63.Name = "toolStripSeparator63";
+            this.toolStripSeparator63.Size = new System.Drawing.Size(405, 6);
+            // 
+            // Tool_ReportDoctorData
+            // 
+            this.Tool_ReportDoctorData.BackColor = System.Drawing.Color.DarkCyan;
+            this.Tool_ReportDoctorData.Name = "Tool_ReportDoctorData";
+            this.Tool_ReportDoctorData.Size = new System.Drawing.Size(394, 28);
+            this.Tool_ReportDoctorData.Text = "تقرير بيانات الاطباء الخارجية";
+            this.Tool_ReportDoctorData.Click += new System.EventHandler(this.Tool_ReportDoctorData_Click);
+            // 
+            // toolStripSeparator64
+            // 
+            this.toolStripSeparator64.Name = "toolStripSeparator64";
+            this.toolStripSeparator64.Size = new System.Drawing.Size(391, 6);
             // 
             // Frm_Main
             // 
@@ -1548,5 +1616,13 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator60;
         public System.Windows.Forms.ToolStripMenuItem Tool_ReprotTechnicalShift;
         private System.Windows.Forms.ToolStripMenuItem تسجيلالاقساطToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator61;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator62;
+        public System.Windows.Forms.ToolStripMenuItem Tool_ReportDoctorOfCenterData;
+        public System.Windows.Forms.ToolStripMenuItem ToolReportEmployeeData;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator63;
+        public System.Windows.Forms.ToolStripMenuItem Tool_ReportTechnecalData;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator64;
+        public System.Windows.Forms.ToolStripMenuItem Tool_ReportDoctorData;
     }
 }

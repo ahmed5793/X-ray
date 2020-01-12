@@ -473,5 +473,29 @@ namespace Laboratory.PL
             Frm_installment i = new Frm_installment();
             i.ShowDialog();
         }
+
+        private void ToolReportEmployeeData_Click(object sender, EventArgs e)
+        {
+            Frm_ReportEmployeeData FRED = new Frm_ReportEmployeeData();
+            FRED.ShowDialog();
+        }
+
+        private void Tool_ReportDoctorOfCenterData_Click(object sender, EventArgs e)
+        {
+            Frm_ReportDoctorOfCenterData frdocd = new Frm_ReportDoctorOfCenterData();
+            frdocd.ShowDialog();
+        }
+
+        private void Tool_ReportTechnecalData_Click(object sender, EventArgs e)
+        {
+            Frm_ReportTechnicalData frtd = new Frm_ReportTechnicalData();
+            frtd.ShowDialog();
+        }
+
+        private void Tool_ReportDoctorData_Click(object sender, EventArgs e)
+        {
+            Frm_ReportOutDoctorData frodd = new Frm_ReportOutDoctorData();
+            frodd.ShowDialog();
+        }
     }
 }
