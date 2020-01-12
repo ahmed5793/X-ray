@@ -117,5 +117,16 @@ namespace Laboratory.PL
                 e.Handled = true;
             }
         }
+
+        private void comboBox1_Leave(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt.Clear();
+            dt = c.Validate_CategoryXray(Convert.ToInt32(comboBox1.SelectedValue));
+            if (dt.Rows.Count == 0)
+            {
+                MessageBox.Show("عزيزيى المستخدم يرجي العلم بان اسم الجهاز غير مسجل ");
+            }
+        }
     }
 }

@@ -44,37 +44,42 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.txt_name);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(7, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(555, 63);
+            this.groupBox1.Size = new System.Drawing.Size(570, 63);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // txt_name
             // 
+            this.txt_name.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txt_name.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_name.Location = new System.Drawing.Point(6, 22);
+            this.txt_name.Location = new System.Drawing.Point(19, 18);
             this.txt_name.Name = "txt_name";
-            this.txt_name.Size = new System.Drawing.Size(443, 32);
+            this.txt_name.Size = new System.Drawing.Size(435, 32);
             this.txt_name.TabIndex = 40;
             this.txt_name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label8
             // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(455, 26);
+            this.label8.Location = new System.Drawing.Point(461, 22);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(88, 24);
+            this.label8.Size = new System.Drawing.Size(102, 24);
             this.label8.TabIndex = 39;
-            this.label8.Text = "قسم الاشعة";
+            this.label8.Text = "أجهزة الاشعة";
             // 
             // btn_Save
             // 
+            this.btn_Save.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_Save.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Save.Location = new System.Drawing.Point(407, 81);
+            this.btn_Save.Location = new System.Drawing.Point(323, 72);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(137, 40);
             this.btn_Save.TabIndex = 40;
@@ -84,19 +89,23 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.txt_search);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Location = new System.Drawing.Point(11, 127);
+            this.groupBox2.Location = new System.Drawing.Point(11, 118);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(556, 232);
+            this.groupBox2.Size = new System.Drawing.Size(571, 247);
             this.groupBox2.TabIndex = 41;
             this.groupBox2.TabStop = false;
             // 
             // txt_search
             // 
+            this.txt_search.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txt_search.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_search.Location = new System.Drawing.Point(126, 11);
+            this.txt_search.Location = new System.Drawing.Point(133, 12);
             this.txt_search.Name = "txt_search";
             this.txt_search.Size = new System.Drawing.Size(262, 32);
             this.txt_search.TabIndex = 0;
@@ -105,9 +114,10 @@
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(411, 14);
+            this.label6.Location = new System.Drawing.Point(403, 16);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(41, 24);
             this.label6.TabIndex = 13;
@@ -117,6 +127,9 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Maroon;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -126,16 +139,17 @@
             this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.ShowEditingIcon = false;
-            this.dataGridView1.Size = new System.Drawing.Size(537, 177);
+            this.dataGridView1.Size = new System.Drawing.Size(558, 192);
             this.dataGridView1.TabIndex = 12;
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
             // btn_Update
             // 
+            this.btn_Update.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_Update.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Update.Location = new System.Drawing.Point(44, 81);
+            this.btn_Update.Location = new System.Drawing.Point(133, 72);
             this.btn_Update.Name = "btn_Update";
-            this.btn_Update.Size = new System.Drawing.Size(234, 40);
+            this.btn_Update.Size = new System.Drawing.Size(153, 40);
             this.btn_Update.TabIndex = 42;
             this.btn_Update.Text = "تعديل";
             this.btn_Update.UseVisualStyleBackColor = true;
@@ -145,13 +159,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(570, 371);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(585, 371);
             this.Controls.Add(this.btn_Update);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btn_Save);
             this.Controls.Add(this.groupBox1);
+            this.MinimumSize = new System.Drawing.Size(586, 409);
             this.Name = "Frm_CategoryXRaya";
-            this.Text = "Frm_CategoryXRaya";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "شاشة إضافة أجهزة الاشعة";
             this.Load += new System.EventHandler(this.Frm_CategoryXRaya_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

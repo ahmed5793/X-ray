@@ -279,6 +279,7 @@
             this.txt_search.Size = new System.Drawing.Size(262, 32);
             this.txt_search.TabIndex = 14;
             this.txt_search.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_search.TextChanged += new System.EventHandler(this.txt_search_TextChanged);
             // 
             // label6
             // 

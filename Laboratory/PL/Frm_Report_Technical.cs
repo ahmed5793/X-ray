@@ -83,5 +83,10 @@ namespace Laboratory.PL
                 }
             }
         }
+
+        private void Frm_Report_DetailsTechnical_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
