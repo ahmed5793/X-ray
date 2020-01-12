@@ -467,5 +467,11 @@ namespace Laboratory.PL
             Frm_ReportTechnicalShift frts = new Frm_ReportTechnicalShift();
             frts.ShowDialog();
         }
+
+        private void تسجيلالاقساطToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_installment i = new Frm_installment();
+            i.ShowDialog();
+        }
     }
 }

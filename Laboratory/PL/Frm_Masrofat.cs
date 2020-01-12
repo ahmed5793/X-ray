@@ -61,13 +61,26 @@ namespace Laboratory.PL
             comboBox1.DataSource = m.SelectReserve();
             g.Dispose();
         }
-
+        DataTable dt = new DataTable();
         private void btn_save_Click(object sender, EventArgs e)
         {
             if (txt_amount.Text == "")
             {
                 MessageBox.Show("من فضلك ادخال المبلغ ");
                 return;
+            }
+            dt.Clear();
+
+            dt = Stock.Select_moneyStock(Convert.ToInt32(cmb_Stock.SelectedValue));
+
+            if (dt.Rows.Count > 0)
+            {
+
+                if (Convert.ToDecimal(txt_amount.Text) > Convert.ToDecimal(dt.Rows[0][0]))
+                {
+                    MessageBox.Show("رصيد الخزنة الحالى غير كافى ");
+                    return;
+                }
             }
             if (comboBox1.Text != string.Empty)
             {

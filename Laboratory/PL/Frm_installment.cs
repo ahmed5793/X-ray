@@ -25,14 +25,16 @@ namespace Laboratory.PL
             cmb_stock.DisplayMember = "Name_Stock";
             cmb_stock.ValueMember = "ID_Stock";
             cmb_instalmenttype.DataSource = i.selectcompoinstallmentType();
-            cmb_instalmenttype.DisplayMember = "ID_installmentType";
-            cmb_instalmenttype.ValueMember = "Name";
+            cmb_instalmenttype.DisplayMember = "Name";
+            cmb_instalmenttype.ValueMember = "ID_installmentType";
+            btn_new.Hide();
+            btn_update.Enabled = false;
 
         }
 
         private void Frm_installment_Load(object sender, EventArgs e)
         {
-
+            dataGridView1.Columns[0].Visible = false;
         }
 
         private void btn_GenderJob_Click(object sender, EventArgs e)
@@ -40,8 +42,8 @@ namespace Laboratory.PL
             Frm_installmentType it = new Frm_installmentType();
             it.ShowDialog();
             cmb_instalmenttype.DataSource = i.selectcompoinstallmentType();
-            cmb_instalmenttype.DisplayMember = "ID_installmentType";
-            cmb_instalmenttype.ValueMember = "Name";
+            cmb_instalmenttype.DisplayMember = "Name";
+            cmb_instalmenttype.ValueMember = "ID_installmentType"; 
         }
 
         private void btn_save_Click(object sender, EventArgs e)
@@ -51,7 +53,7 @@ namespace Laboratory.PL
             {
 
 
-                if (txt_money.Text == "")
+                if (txt_money.Text == ""|| txt_money.Text == "0")
                 {
                     MessageBox.Show("برجاء التاكد من المبلغ");
                     return;
@@ -69,13 +71,26 @@ namespace Laboratory.PL
                     cmb_instalmenttype.Focus();
                     return;
                 }
+                dt.Clear();
 
+                dt = s.Select_moneyStock(Convert.ToInt32(cmb_stock.SelectedValue));
+
+                if (dt.Rows.Count > 0)
+                {
+
+                    if (Convert.ToDecimal(txt_money.Text) > Convert.ToDecimal(dt.Rows[0][0]))
+                    {
+                        MessageBox.Show("رصيد الخزنة الحالى غير كافى ");
+                        return;
+                    }
+                }
 
                 i.Addinstallment(dateTimePicker1.Value, Convert.ToDecimal(txt_money.Text), txt_username.Text, Convert.ToInt32(cmb_stock.SelectedValue), Convert.ToInt32(cmb_instalmenttype.SelectedValue));
 
                 MessageBox.Show("تم اضافه بيانات الطبيب بنجاح", "عمليه الاضافه", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                s.Add_StockPull(Convert.ToInt32(cmb_stock.SelectedValue), Convert.ToDecimal(txt_money.Text), dateTimePicker1.Value, txt_username.Text, cmb_instalmenttype.Text+" "+" دفع قسط");
 
-                dataGridView1.DataSource =i.Selectinstallment(); ;
+                dataGridView1.DataSource =i.Selectinstallment(); 
                 txt_money.Clear();
              
 
@@ -100,6 +115,10 @@ namespace Laboratory.PL
         {
             if (dataGridView1.Rows.Count>0)
             {
+                btn_new.Show();
+                btn_save.Hide();
+                btn_update.Enabled = true;
+                cmb_stock.Enabled = false;
                 txt_username.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
                 cmb_stock.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
                 txt_money.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
@@ -111,12 +130,19 @@ namespace Laboratory.PL
 
         private void btn_new_Click(object sender, EventArgs e)
         {
+            cmb_stock.Enabled = true;
             txt_money.Text = "0";
+            btn_new.Hide();
+            btn_save.Show();
+
+            btn_update.Enabled = false;
+            cmb_stock.Enabled = true;
         }
 
         private void btn_update_Click(object sender, EventArgs e)
         {
-
+           
+             
             try
             {
 
@@ -127,18 +153,45 @@ namespace Laboratory.PL
                     return;
 
                 }
-            
-          
+                dt.Clear();
+
+                dt = s.Select_moneyStock(Convert.ToInt32(cmb_stock.SelectedValue));
+
+                if (dt.Rows.Count > 0)
+                {
+
+                    if (Convert.ToDecimal(txt_money.Text) > Convert.ToDecimal(dt.Rows[0][0]))
+                    {
+                        MessageBox.Show("رصيد الخزنة الحالى غير كافى ");
+                        return;
+                    }
+                }
 
 
-                i.Updateinstallment(dateTimePicker1.Value, Convert.ToDecimal(txt_money.Text), Convert.ToInt32(cmb_instalmenttype.SelectedValue), Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
+                if (MessageBox.Show("هل تريد تعديل بيانات الطبيب", "عمليه التعديل", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                {
+                    s.Add_StockPull(Convert.ToInt32(cmb_stock.SelectedValue), Convert.ToDecimal(dataGridView1.CurrentRow.Cells[3].Value), dateTimePicker1.Value, txt_username.Text, cmb_instalmenttype.Text + " " + " دفع قسط");
 
-                MessageBox.Show("تم التعديل بنجاحو", "عمليه التعديل", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
-                dataGridView1.DataSource = i.Selectinstallment(); 
+                    i.Updateinstallment(dateTimePicker1.Value, Convert.ToDecimal(txt_money.Text), Convert.ToInt32(cmb_instalmenttype.SelectedValue), Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
+                    s.add_insertStock(Convert.ToInt32(cmb_stock.SelectedValue), Convert.ToDecimal(txt_money.Text), dateTimePicker1.Value, txt_username.Text, cmb_instalmenttype.Text + " " + " دفع قسط");
+
+                    MessageBox.Show("تم التعديل بنجاحو", "عمليه التعديل", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                 
+                    dataGridView1.DataSource = i.Selectinstallment(); 
+                     txt_money.Clear();
+
+                }
+            else
+            {
+                MessageBox.Show("تم الغاء عمليه التعديل");
                 txt_money.Clear();
-
-
+             
+                btn_update.Enabled = false;
+                btn_new.Hide();
+                btn_save.Show();
+            }
 
             }
             catch (Exception ex)

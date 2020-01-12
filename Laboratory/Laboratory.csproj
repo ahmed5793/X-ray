@@ -122,6 +122,7 @@
     <Compile Include="BL\DoctorOfCenter.cs" />
     <Compile Include="BL\Doctors.cs" />
     <Compile Include="BL\Employee.cs" />
+    <Compile Include="BL\Installment.cs" />
     <Compile Include="PL\Frm_AddTechnicalShift.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -307,6 +308,18 @@
     </Compile>
     <Compile Include="PL\Frm_GenderJob.Designer.cs">
       <DependentUpon>Frm_GenderJob.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Frm_installment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_installment.Designer.cs">
+      <DependentUpon>Frm_installment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Frm_installmentType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_installmentType.Designer.cs">
+      <DependentUpon>Frm_installmentType.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Frm_ItemsXRaya.cs">
       <SubType>Form</SubType>
@@ -624,6 +637,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_GenderJob.resx">
       <DependentUpon>Frm_GenderJob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_installment.resx">
+      <DependentUpon>Frm_installment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_installmentType.resx">
+      <DependentUpon>Frm_installmentType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_ItemsXRaya.resx">
       <DependentUpon>Frm_ItemsXRaya.cs</DependentUpon>

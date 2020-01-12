@@ -21,7 +21,7 @@ namespace Laboratory.BL
             param[1] = new SqlParameter("@money", SqlDbType.Decimal);
             param[1].Value = money;
             param[2] = new SqlParameter("@userName", SqlDbType.NVarChar, 50);
-            param[2].Value = idstock;
+            param[2].Value = username;
 
             param[3] = new SqlParameter("@idStock", SqlDbType.Int);
             param[3].Value = idstock;
