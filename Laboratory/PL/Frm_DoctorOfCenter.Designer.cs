@@ -60,7 +60,7 @@
             this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.ShowEditingIcon = false;
-            this.dataGridView1.Size = new System.Drawing.Size(484, 200);
+            this.dataGridView1.Size = new System.Drawing.Size(484, 221);
             this.dataGridView1.TabIndex = 12;
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
@@ -69,16 +69,16 @@
             this.groupBox2.Controls.Add(this.txt_search);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Location = new System.Drawing.Point(13, 237);
+            this.groupBox2.Location = new System.Drawing.Point(13, 216);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(496, 262);
+            this.groupBox2.Size = new System.Drawing.Size(496, 283);
             this.groupBox2.TabIndex = 22;
             this.groupBox2.TabStop = false;
             // 
             // txt_search
             // 
             this.txt_search.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_search.Location = new System.Drawing.Point(48, 18);
+            this.txt_search.Location = new System.Drawing.Point(85, 16);
             this.txt_search.Name = "txt_search";
             this.txt_search.Size = new System.Drawing.Size(262, 32);
             this.txt_search.TabIndex = 0;
@@ -89,7 +89,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(316, 21);
+            this.label6.Location = new System.Drawing.Point(353, 19);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(41, 24);
             this.label6.TabIndex = 13;
@@ -98,7 +98,7 @@
             // btn_new
             // 
             this.btn_new.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_new.Location = new System.Drawing.Point(195, 165);
+            this.btn_new.Location = new System.Drawing.Point(278, 158);
             this.btn_new.Name = "btn_new";
             this.btn_new.Size = new System.Drawing.Size(132, 40);
             this.btn_new.TabIndex = 12;
@@ -109,7 +109,7 @@
             // txt_name
             // 
             this.txt_name.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_name.Location = new System.Drawing.Point(6, 21);
+            this.txt_name.Location = new System.Drawing.Point(29, 21);
             this.txt_name.Name = "txt_name";
             this.txt_name.Size = new System.Drawing.Size(343, 32);
             this.txt_name.TabIndex = 0;
@@ -118,7 +118,7 @@
             // btn_update
             // 
             this.btn_update.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_update.Location = new System.Drawing.Point(37, 165);
+            this.btn_update.Location = new System.Drawing.Point(121, 156);
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(118, 40);
             this.btn_update.TabIndex = 4;
@@ -129,7 +129,7 @@
             // txt_phone
             // 
             this.txt_phone.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_phone.Location = new System.Drawing.Point(6, 64);
+            this.txt_phone.Location = new System.Drawing.Point(29, 64);
             this.txt_phone.MaxLength = 3000;
             this.txt_phone.Name = "txt_phone";
             this.txt_phone.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -161,7 +161,7 @@
             // txt_address
             // 
             this.txt_address.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_address.Location = new System.Drawing.Point(6, 106);
+            this.txt_address.Location = new System.Drawing.Point(29, 106);
             this.txt_address.Name = "txt_address";
             this.txt_address.Size = new System.Drawing.Size(343, 32);
             this.txt_address.TabIndex = 1;
@@ -171,7 +171,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(395, 109);
+            this.label2.Location = new System.Drawing.Point(379, 110);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 24);
             this.label2.TabIndex = 14;
@@ -199,7 +199,7 @@
             // btn_save
             // 
             this.btn_save.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_save.Location = new System.Drawing.Point(195, 165);
+            this.btn_save.Location = new System.Drawing.Point(278, 158);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(132, 40);
             this.btn_save.TabIndex = 21;
@@ -211,11 +211,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(514, 503);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(530, 541);
+            this.MinimumSize = new System.Drawing.Size(530, 541);
             this.Name = "Frm_DoctorOfCenter";
-            this.Text = "Frm_DoctorOfCenter";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "شاشة تسجيل أطباء المركز";
             this.Load += new System.EventHandler(this.Frm_DoctorOfCenter_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);

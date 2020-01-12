@@ -62,7 +62,7 @@
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(11, 64);
+            this.dateTimePicker1.Location = new System.Drawing.Point(11, 23);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(196, 26);
             this.dateTimePicker1.TabIndex = 32;
@@ -72,7 +72,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.White;
             this.label7.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(219, 66);
+            this.label7.Location = new System.Drawing.Point(219, 25);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(109, 24);
             this.label7.TabIndex = 31;
@@ -93,7 +93,7 @@
             // 
             this.txt_name.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_name.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_name.Location = new System.Drawing.Point(415, 22);
+            this.txt_name.Location = new System.Drawing.Point(430, 22);
             this.txt_name.Name = "txt_name";
             this.txt_name.Size = new System.Drawing.Size(312, 32);
             this.txt_name.TabIndex = 0;
@@ -125,7 +125,7 @@
             // 
             this.txt_phone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_phone.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_phone.Location = new System.Drawing.Point(416, 123);
+            this.txt_phone.Location = new System.Drawing.Point(431, 113);
             this.txt_phone.MaxLength = 11;
             this.txt_phone.Name = "txt_phone";
             this.txt_phone.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -139,7 +139,7 @@
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(737, 25);
+            this.label5.Location = new System.Drawing.Point(752, 25);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(97, 24);
             this.label5.TabIndex = 17;
@@ -150,7 +150,7 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(734, 126);
+            this.label3.Location = new System.Drawing.Point(749, 116);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(99, 24);
             this.label3.TabIndex = 16;
@@ -160,7 +160,7 @@
             // 
             this.txt_address.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_address.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_address.Location = new System.Drawing.Point(417, 170);
+            this.txt_address.Location = new System.Drawing.Point(432, 160);
             this.txt_address.Name = "txt_address";
             this.txt_address.Size = new System.Drawing.Size(312, 32);
             this.txt_address.TabIndex = 1;
@@ -171,7 +171,7 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(759, 178);
+            this.label2.Location = new System.Drawing.Point(774, 168);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 24);
             this.label2.TabIndex = 14;
@@ -198,13 +198,13 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Maroon;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 56);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 70);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.ShowEditingIcon = false;
-            this.dataGridView1.Size = new System.Drawing.Size(811, 164);
+            this.dataGridView1.Size = new System.Drawing.Size(826, 174);
             this.dataGridView1.TabIndex = 12;
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
@@ -218,7 +218,7 @@
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Location = new System.Drawing.Point(13, 275);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(838, 236);
+            this.groupBox2.Size = new System.Drawing.Size(838, 260);
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
             // 
@@ -258,9 +258,9 @@
             this.groupBox1.Controls.Add(this.txt_address);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(6, -2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(839, 257);
+            this.groupBox1.Size = new System.Drawing.Size(854, 257);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
@@ -268,7 +268,7 @@
             // Txt_Salary
             // 
             this.Txt_Salary.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_Salary.Location = new System.Drawing.Point(26, 113);
+            this.Txt_Salary.Location = new System.Drawing.Point(41, 62);
             this.Txt_Salary.MaxLength = 11;
             this.Txt_Salary.Name = "Txt_Salary";
             this.Txt_Salary.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -281,7 +281,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(217, 121);
+            this.label9.Location = new System.Drawing.Point(217, 70);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(115, 24);
             this.label9.TabIndex = 41;
@@ -291,7 +291,7 @@
             // 
             this.dateTimePicker2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(17, 168);
+            this.dateTimePicker2.Location = new System.Drawing.Point(9, 110);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(196, 26);
             this.dateTimePicker2.TabIndex = 39;
@@ -301,7 +301,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(219, 170);
+            this.label1.Location = new System.Drawing.Point(211, 112);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(124, 24);
             this.label1.TabIndex = 38;
@@ -311,7 +311,7 @@
             // 
             this.btn_GenderJob.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_GenderJob.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_GenderJob.Location = new System.Drawing.Point(364, 70);
+            this.btn_GenderJob.Location = new System.Drawing.Point(379, 70);
             this.btn_GenderJob.Name = "btn_GenderJob";
             this.btn_GenderJob.Size = new System.Drawing.Size(42, 27);
             this.btn_GenderJob.TabIndex = 37;
@@ -323,7 +323,7 @@
             // 
             this.txt_NationalID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_NationalID.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_NationalID.Location = new System.Drawing.Point(414, 219);
+            this.txt_NationalID.Location = new System.Drawing.Point(429, 207);
             this.txt_NationalID.Name = "txt_NationalID";
             this.txt_NationalID.Size = new System.Drawing.Size(312, 32);
             this.txt_NationalID.TabIndex = 35;
@@ -335,7 +335,7 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(737, 222);
+            this.label4.Location = new System.Drawing.Point(752, 210);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(96, 24);
             this.label4.TabIndex = 36;
@@ -346,7 +346,7 @@
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(743, 73);
+            this.label8.Location = new System.Drawing.Point(758, 73);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(75, 24);
             this.label8.TabIndex = 34;
@@ -360,7 +360,7 @@
             this.cmb_department.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_department.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_department.FormattingEnabled = true;
-            this.cmb_department.Location = new System.Drawing.Point(412, 68);
+            this.cmb_department.Location = new System.Drawing.Point(427, 68);
             this.cmb_department.Name = "cmb_department";
             this.cmb_department.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmb_department.Size = new System.Drawing.Size(314, 32);
@@ -370,7 +370,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(863, 523);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.ClientSize = new System.Drawing.Size(863, 547);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.MinimumSize = new System.Drawing.Size(879, 561);

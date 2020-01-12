@@ -71,6 +71,8 @@
             this.toolStripSeparator34 = new System.Windows.Forms.ToolStripSeparator();
             this.Add_TechnicalShift = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator59 = new System.Windows.Forms.ToolStripSeparator();
+            this.Tool_ReprotTechnicalShift = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator60 = new System.Windows.Forms.ToolStripSeparator();
             this.Report_DetailsTechnical = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator56 = new System.Windows.Forms.ToolStripSeparator();
             this.Report_TotalXrayTechnical = new System.Windows.Forms.ToolStripMenuItem();
@@ -171,8 +173,7 @@
             this.Btn_Exit = new System.Windows.Forms.ToolStripButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.Tool_ReprotTechnicalShift = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator60 = new System.Windows.Forms.ToolStripSeparator();
+            this.تسجيلالاقساطToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -539,6 +540,19 @@
             // 
             this.toolStripSeparator59.Name = "toolStripSeparator59";
             this.toolStripSeparator59.Size = new System.Drawing.Size(405, 6);
+            // 
+            // Tool_ReprotTechnicalShift
+            // 
+            this.Tool_ReprotTechnicalShift.BackColor = System.Drawing.Color.Salmon;
+            this.Tool_ReprotTechnicalShift.Name = "Tool_ReprotTechnicalShift";
+            this.Tool_ReprotTechnicalShift.Size = new System.Drawing.Size(408, 28);
+            this.Tool_ReprotTechnicalShift.Text = "تقرير حساب شيفتات الفنيين";
+            this.Tool_ReprotTechnicalShift.Click += new System.EventHandler(this.Tool_ReprotTechnicalShift_Click);
+            // 
+            // toolStripSeparator60
+            // 
+            this.toolStripSeparator60.Name = "toolStripSeparator60";
+            this.toolStripSeparator60.Size = new System.Drawing.Size(405, 6);
             // 
             // Report_DetailsTechnical
             // 
@@ -1309,6 +1323,8 @@
             // 
             // toolStripDropDownButton1
             // 
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.تسجيلالاقساطToolStripMenuItem});
             this.toolStripDropDownButton1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
             this.toolStripDropDownButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
@@ -1357,18 +1373,12 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "USER NAME";
             // 
-            // Tool_ReprotTechnicalShift
+            // تسجيلالاقساطToolStripMenuItem
             // 
-            this.Tool_ReprotTechnicalShift.BackColor = System.Drawing.Color.Salmon;
-            this.Tool_ReprotTechnicalShift.Name = "Tool_ReprotTechnicalShift";
-            this.Tool_ReprotTechnicalShift.Size = new System.Drawing.Size(408, 28);
-            this.Tool_ReprotTechnicalShift.Text = "تقرير حساب شيفتات الفنيين";
-            this.Tool_ReprotTechnicalShift.Click += new System.EventHandler(this.Tool_ReprotTechnicalShift_Click);
-            // 
-            // toolStripSeparator60
-            // 
-            this.toolStripSeparator60.Name = "toolStripSeparator60";
-            this.toolStripSeparator60.Size = new System.Drawing.Size(405, 6);
+            this.تسجيلالاقساطToolStripMenuItem.Name = "تسجيلالاقساطToolStripMenuItem";
+            this.تسجيلالاقساطToolStripMenuItem.Size = new System.Drawing.Size(204, 34);
+            this.تسجيلالاقساطToolStripMenuItem.Text = "تسجيل الاقساط";
+            this.تسجيلالاقساطToolStripMenuItem.Click += new System.EventHandler(this.تسجيلالاقساطToolStripMenuItem_Click);
             // 
             // Frm_Main
             // 
@@ -1537,5 +1547,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator59;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator60;
         public System.Windows.Forms.ToolStripMenuItem Tool_ReprotTechnicalShift;
+        private System.Windows.Forms.ToolStripMenuItem تسجيلالاقساطToolStripMenuItem;
     }
 }

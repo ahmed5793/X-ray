@@ -50,7 +50,7 @@
             // btn_new
             // 
             this.btn_new.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_new.Location = new System.Drawing.Point(195, 165);
+            this.btn_new.Location = new System.Drawing.Point(259, 155);
             this.btn_new.Name = "btn_new";
             this.btn_new.Size = new System.Drawing.Size(132, 40);
             this.btn_new.TabIndex = 12;
@@ -109,7 +109,7 @@
             // txt_name
             // 
             this.txt_name.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_name.Location = new System.Drawing.Point(6, 21);
+            this.txt_name.Location = new System.Drawing.Point(30, 21);
             this.txt_name.Name = "txt_name";
             this.txt_name.Size = new System.Drawing.Size(343, 32);
             this.txt_name.TabIndex = 0;
@@ -118,7 +118,7 @@
             // btn_update
             // 
             this.btn_update.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_update.Location = new System.Drawing.Point(37, 165);
+            this.btn_update.Location = new System.Drawing.Point(104, 155);
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(118, 40);
             this.btn_update.TabIndex = 4;
@@ -129,7 +129,7 @@
             // txt_phone
             // 
             this.txt_phone.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_phone.Location = new System.Drawing.Point(6, 64);
+            this.txt_phone.Location = new System.Drawing.Point(30, 64);
             this.txt_phone.MaxLength = 3000;
             this.txt_phone.Name = "txt_phone";
             this.txt_phone.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -161,7 +161,7 @@
             // txt_address
             // 
             this.txt_address.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_address.Location = new System.Drawing.Point(6, 106);
+            this.txt_address.Location = new System.Drawing.Point(30, 106);
             this.txt_address.Name = "txt_address";
             this.txt_address.Size = new System.Drawing.Size(343, 32);
             this.txt_address.TabIndex = 1;
@@ -198,7 +198,7 @@
             // btn_save
             // 
             this.btn_save.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_save.Location = new System.Drawing.Point(195, 165);
+            this.btn_save.Location = new System.Drawing.Point(259, 155);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(132, 40);
             this.btn_save.TabIndex = 21;
@@ -210,11 +210,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(523, 518);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.MaximumSize = new System.Drawing.Size(539, 556);
+            this.MinimumSize = new System.Drawing.Size(539, 556);
             this.Name = "Frm_Techincal";
-            this.Text = "Frm_Techincal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "شاشة تسجيل الفنيين";
             this.Load += new System.EventHandler(this.Frm_Techincal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
