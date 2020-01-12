@@ -461,5 +461,11 @@ namespace Laboratory.PL
             Frm_AddTechnicalShift fats = new Frm_AddTechnicalShift();
             fats.ShowDialog();
         }
+
+        private void Tool_ReprotTechnicalShift_Click(object sender, EventArgs e)
+        {
+            Frm_ReportTechnicalShift frts = new Frm_ReportTechnicalShift();
+            frts.ShowDialog();
+        }
     }
 }

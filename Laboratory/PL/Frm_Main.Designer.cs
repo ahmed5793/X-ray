@@ -69,6 +69,8 @@
             this.Techniqual = new System.Windows.Forms.ToolStripMenuItem();
             this.Add_Technical = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator34 = new System.Windows.Forms.ToolStripSeparator();
+            this.Add_TechnicalShift = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator59 = new System.Windows.Forms.ToolStripSeparator();
             this.Report_DetailsTechnical = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator56 = new System.Windows.Forms.ToolStripSeparator();
             this.Report_TotalXrayTechnical = new System.Windows.Forms.ToolStripMenuItem();
@@ -169,8 +171,8 @@
             this.Btn_Exit = new System.Windows.Forms.ToolStripButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.Add_TechnicalShift = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator59 = new System.Windows.Forms.ToolStripSeparator();
+            this.Tool_ReprotTechnicalShift = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator60 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -499,6 +501,8 @@
             this.toolStripSeparator34,
             this.Add_TechnicalShift,
             this.toolStripSeparator59,
+            this.Tool_ReprotTechnicalShift,
+            this.toolStripSeparator60,
             this.Report_DetailsTechnical,
             this.toolStripSeparator56,
             this.Report_TotalXrayTechnical});
@@ -522,6 +526,19 @@
             this.toolStripSeparator34.BackColor = System.Drawing.Color.IndianRed;
             this.toolStripSeparator34.Name = "toolStripSeparator34";
             this.toolStripSeparator34.Size = new System.Drawing.Size(405, 6);
+            // 
+            // Add_TechnicalShift
+            // 
+            this.Add_TechnicalShift.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.Add_TechnicalShift.Name = "Add_TechnicalShift";
+            this.Add_TechnicalShift.Size = new System.Drawing.Size(408, 28);
+            this.Add_TechnicalShift.Text = "إضافة شيفت للفنيين";
+            this.Add_TechnicalShift.Click += new System.EventHandler(this.Add_TechnicalShift_Click);
+            // 
+            // toolStripSeparator59
+            // 
+            this.toolStripSeparator59.Name = "toolStripSeparator59";
+            this.toolStripSeparator59.Size = new System.Drawing.Size(405, 6);
             // 
             // Report_DetailsTechnical
             // 
@@ -1340,18 +1357,18 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "USER NAME";
             // 
-            // Add_TechnicalShift
+            // Tool_ReprotTechnicalShift
             // 
-            this.Add_TechnicalShift.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.Add_TechnicalShift.Name = "Add_TechnicalShift";
-            this.Add_TechnicalShift.Size = new System.Drawing.Size(408, 28);
-            this.Add_TechnicalShift.Text = "إضافة شيفت للفنيين";
-            this.Add_TechnicalShift.Click += new System.EventHandler(this.Add_TechnicalShift_Click);
+            this.Tool_ReprotTechnicalShift.BackColor = System.Drawing.Color.Salmon;
+            this.Tool_ReprotTechnicalShift.Name = "Tool_ReprotTechnicalShift";
+            this.Tool_ReprotTechnicalShift.Size = new System.Drawing.Size(408, 28);
+            this.Tool_ReprotTechnicalShift.Text = "تقرير حساب شيفتات الفنيين";
+            this.Tool_ReprotTechnicalShift.Click += new System.EventHandler(this.Tool_ReprotTechnicalShift_Click);
             // 
-            // toolStripSeparator59
+            // toolStripSeparator60
             // 
-            this.toolStripSeparator59.Name = "toolStripSeparator59";
-            this.toolStripSeparator59.Size = new System.Drawing.Size(405, 6);
+            this.toolStripSeparator60.Name = "toolStripSeparator60";
+            this.toolStripSeparator60.Size = new System.Drawing.Size(405, 6);
             // 
             // Frm_Main
             // 
@@ -1518,5 +1535,7 @@
         public System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         public System.Windows.Forms.ToolStripMenuItem Add_TechnicalShift;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator59;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator60;
+        public System.Windows.Forms.ToolStripMenuItem Tool_ReprotTechnicalShift;
     }
 }

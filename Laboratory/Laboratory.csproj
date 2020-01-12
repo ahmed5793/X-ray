@@ -446,6 +446,12 @@
     <Compile Include="PL\Frm_ReportStockPull.Designer.cs">
       <DependentUpon>Frm_ReportStockPull.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Frm_ReportTechnicalShift.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_ReportTechnicalShift.Designer.cs">
+      <DependentUpon>Frm_ReportTechnicalShift.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_ReportTransfairStock.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -687,6 +693,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_ReportStockPull.resx">
       <DependentUpon>Frm_ReportStockPull.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_ReportTechnicalShift.resx">
+      <DependentUpon>Frm_ReportTechnicalShift.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_ReportTransfairStock.resx">
       <DependentUpon>Frm_ReportTransfairStock.cs</DependentUpon>

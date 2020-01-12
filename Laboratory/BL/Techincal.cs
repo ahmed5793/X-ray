@@ -248,6 +248,19 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
+        internal DataTable Search_TechnicalShift(string id)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@id", SqlDbType.NVarChar,50);
+            param[0].Value = id;
+            da.open();
+            DataTable dt = new DataTable();
+            dt.Clear();
+            dt = da.selected("Search_TechnicalShift", param);
+            da.close();
+            return dt;
+        }
         internal DataTable Validate_TypeShift(int id)
         {
             DataAccessLayer da = new DataAccessLayer();
@@ -258,6 +271,23 @@ namespace Laboratory.BL
             DataTable dt = new DataTable();
             dt.Clear();
             dt = da.selected("Validate_TypeShift", param);
+            da.close();
+            return dt;
+        }
+        internal DataTable Report_TechnicalShift(string Id_Technical , DateTime Date_From ,DateTime Date_To)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[3];
+            param[0] = new SqlParameter("@id_Technical", SqlDbType.NVarChar, 100);
+            param[0].Value = Id_Technical;
+            param[1] = new SqlParameter("@Date_from", SqlDbType.Date);
+            param[1].Value = Date_From;
+            param[2] = new SqlParameter("@Date_to", SqlDbType.Date);
+            param[2].Value = Date_To;
+            da.open();
+            DataTable dt = new DataTable();
+            dt.Clear();
+            dt = da.selected("Report_TechnicalShift", param);
             da.close();
             return dt;
         }

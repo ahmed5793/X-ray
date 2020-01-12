@@ -206,5 +206,27 @@ namespace Laboratory.PL
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void txt_search_TextChanged(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+
+            try
+            {
+                dt.Clear();
+                dt = Techincal.Search_TechnicalShift(txt_search.Text);
+                dataGridView1.DataSource = dt;
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            finally 
+            {
+                dt.Dispose();
+            }
+        }
     }
 }
