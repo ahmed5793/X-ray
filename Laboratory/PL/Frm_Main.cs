@@ -497,5 +497,11 @@ namespace Laboratory.PL
             Frm_ReportOutDoctorData frodd = new Frm_ReportOutDoctorData();
             frodd.ShowDialog();
         }
+
+        private void Tool_ReportInstallment_Click(object sender, EventArgs e)
+        {
+            Frm_Mansgmentinstallment fmi = new Frm_Mansgmentinstallment();
+            fmi.ShowDialog();
+        }
     }
 }
