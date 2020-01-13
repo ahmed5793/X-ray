@@ -60,12 +60,14 @@ namespace Laboratory.PL
         private void btn_save_Click(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
-            DataTable dt1 = new DataTable();
+          
             DataTable dt10 = new DataTable();
+            DataTable dt5 = new DataTable();
             Tickets t = new Tickets();
             Frm_DetailsTickets fd = new Frm_DetailsTickets();
             if (dgv_visit.Rows.Count>0)
             {
+
                 dt10 = t.vildateTicketCompany(Convert.ToInt32(dgv_visit.CurrentRow.Cells[0].Value));
                 if (dt10.Rows.Count > 0)
                 {
@@ -79,9 +81,10 @@ namespace Laboratory.PL
                     fd.label27.Hide();
                    fd.txt_company.Hide();
                     fd.label21.Hide();
-                    dt = t.TicketDetailsSelectTickets(Convert.ToInt32(dgv_visit.CurrentRow.Cells[0].Value));
+                    dt5.Clear();
+                    dt5 = t.TicketDetailsSelectTickets(Convert.ToInt32(dgv_visit.CurrentRow.Cells[0].Value));
 
-                    foreach (DataRow dr in dt.Rows)
+                    foreach (DataRow dr in dt5.Rows)
                     {
                         fd.txt_name.Text = dr[1].ToString();
                         fd.txt_phone.Text = dr[2].ToString();
@@ -106,62 +109,64 @@ namespace Laboratory.PL
                         fd.txt_afterDiscount.Text = dr[21].ToString();
                         fd.txt_reasonAddition.Text = dr[22].ToString();
                         fd.txt_idnationa.Text = dr[23].ToString();
-                        fd.txt_idtickets.Text = dr[24].ToString();
-                        fd.txt_idstock.Text = dr[25].ToString();
-                        fd.txt_idbranche.Text = dr[26].ToString();
-                    }
+                        fd.txt_idtickets.Text = dr[0].ToString();
+                        fd.txt_idstock.Text = dr[24].ToString();
+                        fd.txt_idbranche.Text = dr[25].ToString();
                 }
-                else
+            }
+            else
+            {
+                fd.txt_company.Show();
+                fd.label21.Show();
+                fd.Txt_PricePayment.Show();
+                fd.Txt_addtionPayment.Show();
+                fd.txt_afterDiscount.Hide();
+                fd.txt_discount.Hide();
+                fd.label9.Hide();
+                fd.label24.Hide();
+                fd.label26.Show();
+                fd.label27.Show();
+                fd.txt_idcompany.Show();
+                dt.Clear();
+                dt = t.TicketDetailsSelectTicketsCompany(Convert.ToInt32(dgv_visit.CurrentRow.Cells[0].Value));
+
+                foreach (DataRow dr in dt.Rows)
                 {
-                    fd.txt_company.Show();
-                    fd.label21.Show();
-                    fd.Txt_PricePayment.Show();
-                    fd.Txt_addtionPayment.Show();
-                    fd.txt_afterDiscount.Hide();
-                    fd.txt_discount.Hide();
-                    fd.label9.Hide();
-                    fd.label24.Hide();
-                    fd.label26.Show();
-                    fd.label27.Show();
-                    fd.txt_idcompany.Show();
-                    dt = t.TicketDetailsSelectTicketsCompany(Convert.ToInt32(dgv_visit.CurrentRow.Cells[0].Value));
+                    fd.txt_name.Text = dr[1].ToString();
+                    fd.txt_phone.Text = dr[2].ToString();
+                    fd.txt_address.Text = dr[3].ToString();
+                    fd.txt_age.Text = dr[4].ToString();
+                    fd.txt_dateVisit.Text = dr[5].ToString();
+                    fd.txt_dateRecive.Text = dr[6].ToString();
+                    fd.txt_doctorOfCenter.Text = dr[7].ToString();
+                    fd.txt_doctor.Text = dr[8].ToString();
+                    fd.txt_branch.Text = dr[9].ToString();
+                    fd.txt_techincal.Text = dr[10].ToString();
+                    fd.txt_stock.Text = dr[11].ToString();
+                    fd.txt_total.Text = dr[12].ToString();
+                    fd.txt_pay.Text = dr[13].ToString();
+                    fd.txt_rent.Text = dr[14].ToString();
+                    fd.txt_statues.Text = dr[15].ToString();
+                    fd.txt_username.Text = dr[16].ToString();
+                    fd.txt_company.Text = dr[17].ToString();
+                    fd.txt_compint.Text = dr[18].ToString();
+                    fd.txt_timeKa4f.Text = dr[19].ToString();
 
-                    foreach (DataRow dr in dt.Rows)
-                    {
-                        fd.txt_name.Text = dr[1].ToString();
-                        fd.txt_phone.Text = dr[2].ToString();
-                        fd.txt_address.Text = dr[3].ToString();
-                        fd.txt_age.Text = dr[4].ToString();
-                        fd.txt_dateVisit.Text = dr[5].ToString();
-                        fd.txt_dateRecive.Text = dr[6].ToString();
-                        fd.txt_doctorOfCenter.Text = dr[7].ToString();
-                        fd.txt_doctor.Text = dr[8].ToString();
-                        fd.txt_branch.Text = dr[9].ToString();
-                        fd.txt_techincal.Text = dr[10].ToString();
-                        fd.txt_stock.Text = dr[11].ToString();
-                        fd.txt_total.Text = dr[12].ToString();
-                        fd.txt_pay.Text = dr[13].ToString();
-                        fd.txt_rent.Text = dr[14].ToString();
-                        fd.txt_statues.Text = dr[15].ToString();
-                        fd.txt_username.Text = dr[16].ToString();
-                        fd.txt_company.Text = dr[17].ToString();
-                        fd.txt_compint.Text = dr[18].ToString();
-                        fd.txt_timeKa4f.Text = dr[19].ToString();
-                  
-                        fd.txt_place.Text = dr[20].ToString();
-                        fd.txt_afterDiscount.Text = dr[21].ToString();
-                        fd.txt_reasonAddition.Text = dr[22].ToString();
-                        fd.Txt_PricePayment.Text = dr[23].ToString();
-                        fd.Txt_addtionPayment.Text = dr[24].ToString();
-                        fd.txt_idnationa.Text = dr[25].ToString();
-                        fd.txt_idtickets.Text = dr[26].ToString();
-                        fd.txt_idstock.Text = dr[27].ToString();
-                        fd.txt_idbranche.Text = dr[28].ToString();
-                        fd.txt_idcompany.Text = dr[29].ToString();
-
-                    }
+                    fd.txt_place.Text = dr[20].ToString();
+                    fd.txt_afterDiscount.Text = dr[21].ToString();
+                    fd.txt_reasonAddition.Text = dr[22].ToString();
+                    fd.Txt_PricePayment.Text = dr[23].ToString();
+                    fd.Txt_addtionPayment.Text = dr[24].ToString();
+                    fd.txt_idnationa.Text = dr[25].ToString();
+                    fd.txt_idtickets.Text = dr[0].ToString();
+                    fd.txt_idstock.Text = dr[26].ToString();
+                    fd.txt_idbranche.Text = dr[27].ToString();
+                    fd.txt_idcompany.Text = dr[28].ToString();
 
                 }
+
+            }
+                DataTable dt1 = new DataTable();
                 dt1 = t.TicketDetailsSelectTicketsDetAILS(Convert.ToInt32(dgv_visit.CurrentRow.Cells[0].Value));
                 fd.dgv_order.DataSource = dt1;
 

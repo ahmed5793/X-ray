@@ -137,7 +137,7 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
-        internal DataTable SelectManagmentTicketsBranchMorning(int IDBranch, string date_day)
+        internal DataTable SelectManagmentTicketsBranchMorning(int IDBranch, DateTime date_day)
         {
             DataTable dt = new DataTable();
 
@@ -146,13 +146,13 @@ namespace Laboratory.BL
             SqlParameter[] param = new SqlParameter[2];
             param[0] = new SqlParameter("@id_Branche", SqlDbType.Int);
             param[0].Value = IDBranch;
-            param[1] = new SqlParameter("@date_day", SqlDbType.NVarChar,50);
+            param[1] = new SqlParameter("@date_day", SqlDbType.Date);
             param[1].Value = date_day;
             dt = da.selected("SelectManagmentTicketsBranchMorning", param);
             da.close();
             return dt;
         }
-        internal DataTable SelectManagmentTicketsBranchEvening(int IDBranch, string date_day)
+        internal DataTable SelectManagmentTicketsBranchEvening(int IDBranch, DateTime date_day)
         {
             DataTable dt = new DataTable();
 
@@ -161,13 +161,13 @@ namespace Laboratory.BL
             SqlParameter[] param = new SqlParameter[2];
             param[0] = new SqlParameter("@id_Branche", SqlDbType.Int);
             param[0].Value = IDBranch;
-            param[1] = new SqlParameter("@date_day", SqlDbType.NVarChar,50);
+            param[1] = new SqlParameter("@date_day", SqlDbType.Date);
             param[1].Value = date_day;
             dt = da.selected("SelectManagmentTicketsBranchEvening", param);
             da.close();
             return dt;
         }
-        internal DataTable SelectManagmentTicketsBranchFullDay(int IDBranch,string date_day)
+        internal DataTable SelectManagmentTicketsBranchFullDay(int IDBranch,DateTime date_day)
         {
             DataTable dt = new DataTable();
 
@@ -176,7 +176,7 @@ namespace Laboratory.BL
             SqlParameter[] param = new SqlParameter[2];
             param[0] = new SqlParameter("@id_Branche", SqlDbType.Int);
             param[0].Value = IDBranch;
-            param[1] = new SqlParameter("@date_day", SqlDbType.NVarChar,50);
+            param[1] = new SqlParameter("@date_day", SqlDbType.Date);
             param[1].Value = date_day;
             dt = da.selected("SelectManagmentTicketsBranchFullDay", param);
             da.close();
