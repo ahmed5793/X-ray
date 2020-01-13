@@ -43,10 +43,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txt_rent = new System.Windows.Forms.TextBox();
+            this.txt_totalinvoice = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txt_pay = new System.Windows.Forms.TextBox();
+            this.txt_totalpay = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_visit)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -68,7 +70,7 @@
             this.dgv_visit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgv_visit.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_visit.ShowEditingIcon = false;
-            this.dgv_visit.Size = new System.Drawing.Size(970, 262);
+            this.dgv_visit.Size = new System.Drawing.Size(1019, 262);
             this.dgv_visit.TabIndex = 98;
             this.dgv_visit.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_visit_CellContentClick);
             // 
@@ -264,19 +266,19 @@
             this.label1.TabIndex = 106;
             this.label1.Text = "الشيفت";
             // 
-            // txt_rent
+            // txt_totalinvoice
             // 
-            this.txt_rent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_rent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_rent.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_rent.Location = new System.Drawing.Point(603, 500);
-            this.txt_rent.Name = "txt_rent";
-            this.txt_rent.ReadOnly = true;
-            this.txt_rent.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txt_rent.Size = new System.Drawing.Size(192, 29);
-            this.txt_rent.TabIndex = 102;
-            this.txt_rent.Text = "0";
-            this.txt_rent.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_totalinvoice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_totalinvoice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_totalinvoice.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_totalinvoice.Location = new System.Drawing.Point(687, 500);
+            this.txt_totalinvoice.Name = "txt_totalinvoice";
+            this.txt_totalinvoice.ReadOnly = true;
+            this.txt_totalinvoice.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txt_totalinvoice.Size = new System.Drawing.Size(175, 29);
+            this.txt_totalinvoice.TabIndex = 102;
+            this.txt_totalinvoice.Text = "0";
+            this.txt_totalinvoice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
             // 
@@ -284,7 +286,7 @@
             this.label5.BackColor = System.Drawing.Color.Black;
             this.label5.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(819, 490);
+            this.label5.Location = new System.Drawing.Point(868, 490);
             this.label5.Name = "label5";
             this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label5.Size = new System.Drawing.Size(163, 41);
@@ -292,19 +294,19 @@
             this.label5.Text = "إجمالى المبيعات";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txt_pay
+            // txt_totalpay
             // 
-            this.txt_pay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_pay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_pay.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_pay.Location = new System.Drawing.Point(194, 500);
-            this.txt_pay.Name = "txt_pay";
-            this.txt_pay.ReadOnly = true;
-            this.txt_pay.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txt_pay.Size = new System.Drawing.Size(192, 29);
-            this.txt_pay.TabIndex = 104;
-            this.txt_pay.Text = "0";
-            this.txt_pay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_totalpay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_totalpay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_totalpay.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_totalpay.Location = new System.Drawing.Point(340, 500);
+            this.txt_totalpay.Name = "txt_totalpay";
+            this.txt_totalpay.ReadOnly = true;
+            this.txt_totalpay.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txt_totalpay.Size = new System.Drawing.Size(172, 29);
+            this.txt_totalpay.TabIndex = 104;
+            this.txt_totalpay.Text = "0";
+            this.txt_totalpay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label6
             // 
@@ -312,7 +314,7 @@
             this.label6.BackColor = System.Drawing.Color.Black;
             this.label6.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(410, 492);
+            this.label6.Location = new System.Drawing.Point(518, 493);
             this.label6.Name = "label6";
             this.label6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label6.Size = new System.Drawing.Size(163, 41);
@@ -320,14 +322,44 @@
             this.label6.Text = "إجمالى النقدية";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(2, 503);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.textBox1.Size = new System.Drawing.Size(153, 29);
+            this.textBox1.TabIndex = 106;
+            this.textBox1.Text = "0";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.BackColor = System.Drawing.Color.Black;
+            this.label4.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(161, 493);
+            this.label4.Name = "label4";
+            this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label4.Size = new System.Drawing.Size(163, 41);
+            this.label4.TabIndex = 105;
+            this.label4.Text = "العجز";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Frm_ManagmentTickets
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(988, 538);
-            this.Controls.Add(this.txt_pay);
+            this.ClientSize = new System.Drawing.Size(1037, 538);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txt_totalpay);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txt_rent);
+            this.Controls.Add(this.txt_totalinvoice);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -361,10 +393,12 @@
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.TextBox txt_rent;
+        public System.Windows.Forms.TextBox txt_totalinvoice;
         public System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label_day;
-        public System.Windows.Forms.TextBox txt_pay;
+        public System.Windows.Forms.TextBox txt_totalpay;
         public System.Windows.Forms.Label label6;
+        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.Label label4;
     }
 }

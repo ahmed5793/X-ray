@@ -30,12 +30,20 @@ namespace Laboratory.PL
         {
 
         }
+      public  void rent()
+        {
+            if (txt_totalinvoice.Text != "" || txt_totalpay.Text != "")
+            {
+                decimal x = Convert.ToDecimal(txt_totalinvoice.Text) - Convert.ToDecimal(txt_totalpay.Text);
+                textBox1.Text = x.ToString();
+            }
+        }
         DataTable dt = new DataTable();
         private void Frm_ManagmentTickets_Load(object sender, EventArgs e)
         {
             txt_username.Text = Program.salesman;
             dt = u.SelectUserBranch(txt_username.Text);
-
+         
             if (dt.Rows.Count>0)
             {
                 cmb_branches.DataSource = u.SelectUserBranch(txt_username.Text);
@@ -81,16 +89,17 @@ namespace Laboratory.PL
             if (comboBox1.Text=="AM")
             {
                 dgv_visit.DataSource = t.SelectManagmentTicketsBranchMorning(Convert.ToInt32(cmb_branches.SelectedValue),Convert.ToDateTime(label_day.Text));
+                rent();
             }
            else if (comboBox1.Text=="PM")
             {
                 dgv_visit.DataSource = t.SelectManagmentTicketsBranchEvening(Convert.ToInt32(cmb_branches.SelectedValue), Convert.ToDateTime (label_day.Text));
-
+                rent();
             }
             else   if (comboBox1.Text=="FULLDAY")
             {
                 dgv_visit.DataSource = t.SelectManagmentTicketsBranchFullDay(Convert.ToInt32(cmb_branches.SelectedValue), Convert.ToDateTime(label_day.Text));
-
+                rent();
             }
             decimal total = 0;
             for (int i = 0; i <= dgv_visit.Rows.Count - 1; i++)
@@ -98,7 +107,7 @@ namespace Laboratory.PL
                 total += Convert.ToDecimal(dgv_visit.Rows[i].Cells[5].Value);
 
             }
-            txt_rent.Text = Math.Round(total, 2).ToString();
+            txt_totalinvoice.Text = Math.Round(total, 2).ToString();
 
             decimal totall = 0;
             for (int i = 0; i <= dgv_visit.Rows.Count - 1; i++)
@@ -106,7 +115,8 @@ namespace Laboratory.PL
                 totall += Convert.ToDecimal(dgv_visit.Rows[i].Cells[4].Value);
 
             }
-            txt_pay.Text = Math.Round(totall, 2).ToString();
+            txt_totalpay.Text = Math.Round(totall, 2).ToString();
+            rent();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -119,7 +129,7 @@ namespace Laboratory.PL
 
 
             }
-            txt_rent.Text = Math.Round(total, 2).ToString();
+            txt_totalinvoice.Text = Math.Round(total, 2).ToString();
 
             decimal totall = 0;
             for (int i = 0; i <= dgv_visit.Rows.Count - 1; i++)
@@ -127,8 +137,11 @@ namespace Laboratory.PL
                 totall += Convert.ToDecimal(dgv_visit.Rows[i].Cells[4].Value);
 
             }
-            txt_pay.Text = Math.Round(totall, 2).ToString();
+            txt_totalpay.Text = Math.Round(totall, 2).ToString();
+            rent();
         }
+ 
+
 
         private void txt_phone_TextChanged(object sender, EventArgs e)
         {
