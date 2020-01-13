@@ -28,7 +28,6 @@ namespace Laboratory.PL
             txt_name.Text = "";
             txt_seeling.Text = "0";
             txt_phr.Text = "0";
-            Txt_Minimum.Text = "0";
         }
 
 
@@ -51,8 +50,7 @@ namespace Laboratory.PL
                 else
                 {
                     int x = Convert.ToInt32(Product.Select_LastIdProduct().Rows[0][0].ToString());
-                    Product.Add_Product(x, txt_name.Text,Convert.ToDecimal(txt_seeling.Text),decimal.Parse(txt_phr.Text),
-                                        Convert.ToInt32(Txt_Minimum.Text));
+                    Product.Add_Product(x, txt_name.Text,Convert.ToDecimal(txt_seeling.Text),decimal.Parse(txt_phr.Text));
                     MessageBox.Show("تم اضافه الصنف بنجاح", "عمليه الاضافه", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                     dataGridViewPR.DataSource = Product.Select_Product();
                     Clear();
@@ -83,7 +81,7 @@ namespace Laboratory.PL
                 {
 
                     Product.Update_Product(int.Parse(dataGridViewPR.CurrentRow.Cells[0].Value.ToString()),  txt_name.Text,
-                       Convert.ToDecimal(txt_seeling.Text), decimal.Parse(txt_phr.Text), Convert.ToInt32(Txt_Minimum.Text));
+                       Convert.ToDecimal(txt_seeling.Text), decimal.Parse(txt_phr.Text));
                     MessageBox.Show("تم تعديل الصنف بنجاح", "عمليه التعديل", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
 
@@ -112,7 +110,6 @@ namespace Laboratory.PL
                     txt_name.Text = dataGridViewPR.CurrentRow.Cells[1].Value.ToString();
                     txt_seeling.Text = dataGridViewPR.CurrentRow.Cells[2].Value.ToString();
                     txt_phr.Text = dataGridViewPR.CurrentRow.Cells[3].Value.ToString();
-                    Txt_Minimum.Text = dataGridViewPR.CurrentRow.Cells[4].Value.ToString();
                     btn_add.Hide();
                     btn_update.Enabled = true;
                     btn_new.Show();
@@ -190,18 +187,12 @@ namespace Laboratory.PL
 
         private void txt_phr_TextChanged(object sender, EventArgs e)
         {
-            if (txt_phr.Text == "")
-            {
-                txt_phr.Text = "0";
-            }
+           
         }
 
         private void txt_seeling_TextChanged(object sender, EventArgs e)
         {
-            if (txt_seeling.Text == "")
-            {
-                txt_seeling.Text = "0";
-            }
+           
         }
 
         private void txt_quantity_TextChanged(object sender, EventArgs e)
@@ -239,15 +230,11 @@ namespace Laboratory.PL
 
         private void Txt_Minimum_TextChanged(object sender, EventArgs e)
         {
-            if (Txt_Minimum.Text == "")
-            {
-                Txt_Minimum.Text = "0";
-            }
+            
         }
 
         private void Txt_Minimum_MouseClick(object sender, MouseEventArgs e)
         {
-            Txt_Minimum.SelectAll();
         }
 
         private void label9_Click(object sender, EventArgs e)
@@ -258,6 +245,43 @@ namespace Laboratory.PL
         private void Cmb_Store_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txt_name_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_phr_Leave(object sender, EventArgs e)
+        {
+            if (txt_phr.Text == "")
+            {
+                txt_phr.Text = "0";
+            }
+        }
+
+        private void txt_phr_Click(object sender, EventArgs e)
+        {
+            if (txt_phr.Text == "0")
+            {
+                txt_phr.Text = "";
+            }
+        }
+
+        private void txt_seeling_Leave(object sender, EventArgs e)
+        {
+            if (txt_seeling.Text == "")
+            {
+                txt_seeling.Text = "0";
+            }
+        }
+
+        private void txt_seeling_Click(object sender, EventArgs e)
+        {
+            if (txt_seeling.Text == "0")
+            {
+                txt_seeling.Text = "";
+            }
         }
     }
 }

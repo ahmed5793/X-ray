@@ -44,7 +44,7 @@ namespace Laboratory.PL
             txt_phone.Enabled = false;
             txt_age.Enabled = false;
             txt_address.Enabled = false;
-
+            Btn_DetailsCompany.Hide();
 
         }
         void Permision()
@@ -872,7 +872,7 @@ namespace Laboratory.PL
                                 Convert.ToDecimal(txt_rent.Text), Convert.ToInt32(txt_idcust.Text), cmb_statues.Text, Convert.ToInt32(cmb_Doctor.SelectedValue),
                                 Convert.ToInt32(cmb_branches.SelectedValue), Convert.ToInt32(cmb_Stock.SelectedValue), dtb_kashf.Value,
                                 txt_compint.Text, Convert.ToInt32(cmb_DoctorOfCenter.SelectedValue), Convert.ToInt32(cmb_Techincal.SelectedValue), txt_username.Text,
-                                    cmb_UserBranch.Text, Convert.ToDecimal(Txt_addtionPayment.Text), txt_reasonAddition.Text, Convert.ToDecimal(txt_afterDiscount.Text), Convert.ToDecimal(txt_afterDiscount.Text));
+                                    cmb_UserBranch.Text, Convert.ToDecimal(Txt_addtionPayment.Text), txt_reasonAddition.Text, Convert.ToDecimal(txt_afterDiscount.Text), Convert.ToDecimal(Txt_PricePayment.Text));
                             txt_IdTicket.Text = t.LastIdTicket().Rows[0][0].ToString();
                             for (int i = 0; i < dgv_order.Rows.Count; i++)
                             {
@@ -889,7 +889,7 @@ namespace Laboratory.PL
                                 Convert.ToDecimal(txt_rent.Text), Convert.ToInt32(Cmb_customer.SelectedValue), cmb_statues.Text, Convert.ToInt32(cmb_Doctor.SelectedValue),
                                 Convert.ToInt32(cmb_branches.SelectedValue), Convert.ToInt32(cmb_Stock.SelectedValue), dtb_kashf.Value,
                                 txt_compint.Text, Convert.ToInt32(cmb_DoctorOfCenter.SelectedValue), Convert.ToInt32(cmb_Techincal.SelectedValue), txt_username.Text,
-                                    cmb_UserBranch.Text, Convert.ToDecimal(Txt_addtionPayment.Text), txt_reasonAddition.Text, Convert.ToDecimal(txt_afterDiscount.Text), Convert.ToDecimal(txt_afterDiscount.Text));
+                                    cmb_UserBranch.Text, Convert.ToDecimal(Txt_addtionPayment.Text), txt_reasonAddition.Text, Convert.ToDecimal(txt_afterDiscount.Text), Convert.ToDecimal(Txt_PricePayment.Text));
                             txt_IdTicket.Text = t.LastIdTicket().Rows[0][0].ToString();
                             for (int i = 0; i < dgv_order.Rows.Count; i++)
                             {
@@ -1042,7 +1042,7 @@ namespace Laboratory.PL
 
                 company();
                 Patient_PaymentRate();
-
+                Btn_DetailsCompany.Show();
             }
             else if (cmb_statues.Text== "نقدى")
             {
@@ -1070,6 +1070,7 @@ namespace Laboratory.PL
                 cmb_Company.Enabled = false;
                 Txt_PricePayment.Enabled = false;
                 Txt_addtionPayment.Enabled = false;
+                Btn_DetailsCompany.Hide();
             }
         }
 
@@ -1287,6 +1288,31 @@ namespace Laboratory.PL
                     cmb_Doctor.SelectAll();
                     return;
                 }
+                dt.Dispose();
+            }
+        }
+
+        private void Btn_DetailsCompany_Click(object sender, EventArgs e)
+        { DataTable dt = new DataTable();
+            try
+            {
+                Frm_DetailsCompay frmdc = new Frm_DetailsCompay();
+                if (cmb_Company.Text != string.Empty)
+                {
+                    dt.Clear();
+                    dt = cm.Select_DetailsCompany(Convert.ToInt32(cmb_Company.SelectedValue));
+                    frmdc.txt_prise.Text = dt.Rows[0][0].ToString(); 
+                    frmdc.ShowDialog();
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
                 dt.Dispose();
             }
         }

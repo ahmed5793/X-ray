@@ -77,8 +77,7 @@ namespace Laboratory.PL
 
         private void Add_masrof_Click(object sender, EventArgs e)
         {
-            Frm_Masrofat fm = new Frm_Masrofat();
-            fm.ShowDialog();
+          
         }
 
         private void Add_Stock_Click(object sender, EventArgs e)

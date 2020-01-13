@@ -105,6 +105,7 @@
             this.cmb_statues = new System.Windows.Forms.ComboBox();
             this.label21 = new System.Windows.Forms.Label();
             this.cmb_UserBranch = new System.Windows.Forms.ComboBox();
+            this.Btn_DetailsCompany = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -313,7 +314,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(365, 241);
+            this.label8.Location = new System.Drawing.Point(361, 241);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(112, 24);
             this.label8.TabIndex = 49;
@@ -1036,7 +1037,7 @@
             // 
             this.btn_print.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_print.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_print.Location = new System.Drawing.Point(960, 528);
+            this.btn_print.Location = new System.Drawing.Point(956, 526);
             this.btn_print.Name = "btn_print";
             this.btn_print.Size = new System.Drawing.Size(119, 40);
             this.btn_print.TabIndex = 101;
@@ -1048,9 +1049,9 @@
             // 
             this.btn_save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_save.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_save.Location = new System.Drawing.Point(801, 529);
+            this.btn_save.Location = new System.Drawing.Point(830, 527);
             this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(119, 40);
+            this.btn_save.Size = new System.Drawing.Size(119, 38);
             this.btn_save.TabIndex = 100;
             this.btn_save.Text = "حفظ";
             this.btn_save.UseVisualStyleBackColor = true;
@@ -1100,12 +1101,25 @@
             this.cmb_UserBranch.Size = new System.Drawing.Size(233, 32);
             this.cmb_UserBranch.TabIndex = 118;
             // 
+            // Btn_DetailsCompany
+            // 
+            this.Btn_DetailsCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Btn_DetailsCompany.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_DetailsCompany.Location = new System.Drawing.Point(461, 85);
+            this.Btn_DetailsCompany.Name = "Btn_DetailsCompany";
+            this.Btn_DetailsCompany.Size = new System.Drawing.Size(150, 38);
+            this.Btn_DetailsCompany.TabIndex = 119;
+            this.Btn_DetailsCompany.Text = "الاوراق المطلوبة للشركة";
+            this.Btn_DetailsCompany.UseVisualStyleBackColor = true;
+            this.Btn_DetailsCompany.Click += new System.EventHandler(this.Btn_DetailsCompany_Click);
+            // 
             // Frm_Tickets
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1093, 574);
+            this.Controls.Add(this.Btn_DetailsCompany);
             this.Controls.Add(this.btn_print);
             this.Controls.Add(this.cmb_UserBranch);
             this.Controls.Add(this.btn_save);
@@ -1226,5 +1240,6 @@
         private System.Windows.Forms.TextBox Txt_addtionPayment;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Button Btn_DetailsCompany;
     }
 }
