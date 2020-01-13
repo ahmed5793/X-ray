@@ -83,6 +83,9 @@
     <Reference Include="Carbon.Versioning, Version=1.6.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Carbon.Versioning.1.6.0\lib\netstandard2.0\Carbon.Versioning.dll</HintPath>
     </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
@@ -123,6 +126,14 @@
     <Compile Include="BL\Doctors.cs" />
     <Compile Include="BL\Employee.cs" />
     <Compile Include="BL\Installment.cs" />
+    <Compile Include="DataSet1.cs">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_AddTechnicalShift.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -351,6 +362,12 @@
     <Compile Include="PL\Frm_ManagmentUser.Designer.cs">
       <DependentUpon>Frm_ManagmentUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Frm_Mansgmentinstallment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_Mansgmentinstallment.Designer.cs">
+      <DependentUpon>Frm_Mansgmentinstallment.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_Masrofat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -575,6 +592,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RPT\RPT_BARCODE.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPT_BARCODE.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="PL\Frm_AddTechnicalShift.resx">
       <DependentUpon>Frm_AddTechnicalShift.cs</DependentUpon>
     </EmbeddedResource>
@@ -682,6 +705,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_ManagmentUser.resx">
       <DependentUpon>Frm_ManagmentUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_Mansgmentinstallment.resx">
+      <DependentUpon>Frm_Mansgmentinstallment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Masrofat.resx">
       <DependentUpon>Frm_Masrofat.cs</DependentUpon>
@@ -804,6 +830,21 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RPT\RPT_BARCODE.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPT_BARCODE.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -829,6 +870,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\CLOSE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

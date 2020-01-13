@@ -80,16 +80,16 @@ namespace Laboratory.PL
         {
             if (comboBox1.Text=="AM")
             {
-                dgv_visit.DataSource = t.SelectManagmentTicketsBranchMorning(Convert.ToInt32(cmb_branches.SelectedValue),label_day.Text);
+                dgv_visit.DataSource = t.SelectManagmentTicketsBranchMorning(Convert.ToInt32(cmb_branches.SelectedValue),Convert.ToDateTime(label_day.Text));
             }
            else if (comboBox1.Text=="PM")
             {
-                dgv_visit.DataSource = t.SelectManagmentTicketsBranchEvening(Convert.ToInt32(cmb_branches.SelectedValue), label_day.Text);
+                dgv_visit.DataSource = t.SelectManagmentTicketsBranchEvening(Convert.ToInt32(cmb_branches.SelectedValue), Convert.ToDateTime (label_day.Text));
 
             }
             else   if (comboBox1.Text=="FULLDAY")
             {
-                dgv_visit.DataSource = t.SelectManagmentTicketsBranchFullDay(Convert.ToInt32(cmb_branches.SelectedValue), label_day.Text);
+                dgv_visit.DataSource = t.SelectManagmentTicketsBranchFullDay(Convert.ToInt32(cmb_branches.SelectedValue), Convert.ToDateTime(label_day.Text));
 
             }
             decimal total = 0;

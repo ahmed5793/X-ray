@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_Customer" msprop:Generator_ColumnVarNameInTable="columnID_Customer" msprop:Generator_ColumnPropNameInRow="ID_Customer" msprop:Generator_ColumnPropNameInTable="ID_CustomerColumn" msprop:Generator_UserColumnName="ID_Customer" type="xs:string" minOccurs="0" />
+              <xs:element name="NAME_CUSTOMER" msprop:Generator_ColumnVarNameInTable="columnNAME_CUSTOMER" msprop:Generator_ColumnPropNameInRow="NAME_CUSTOMER" msprop:Generator_ColumnPropNameInTable="NAME_CUSTOMERColumn" msprop:Generator_UserColumnName="NAME_CUSTOMER" type="xs:string" minOccurs="0" />
+              <xs:element name="ITEM_NAME" msprop:Generator_ColumnVarNameInTable="columnITEM_NAME" msprop:Generator_ColumnPropNameInRow="ITEM_NAME" msprop:Generator_ColumnPropNameInTable="ITEM_NAMEColumn" msprop:Generator_UserColumnName="ITEM_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="DOCTOR_OFPatient" msprop:Generator_ColumnVarNameInTable="columnDOCTOR_OFPatient" msprop:Generator_ColumnPropNameInRow="DOCTOR_OFPatient" msprop:Generator_ColumnPropNameInTable="DOCTOR_OFPatientColumn" msprop:Generator_UserColumnName="DOCTOR_OFPatient" type="xs:string" minOccurs="0" />
+              <xs:element name="date_reseve" msprop:Generator_ColumnVarNameInTable="columndate_reseve" msprop:Generator_ColumnPropNameInRow="date_reseve" msprop:Generator_ColumnPropNameInTable="date_reseveColumn" msprop:Generator_UserColumnName="date_reseve" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
