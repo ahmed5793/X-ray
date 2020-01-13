@@ -35,7 +35,8 @@ namespace Laboratory.PL
         {
             dt.Columns.Add("رقم الصنف");
             dt.Columns.Add("اسم الصنف");
-            dt.Columns.Add("الكميه المحولة");   
+            dt.Columns.Add("الكميه المحولة");
+            dt.Columns.Add("الحد الادنى");
             DataGridView1.DataSource = dt;
         }
         void Rezizse()
@@ -50,8 +51,8 @@ namespace Laboratory.PL
 
         private void Cmb_FromStore_SelectionChangeCommitted(object sender, EventArgs e)
         {
-      
-
+            dt.Clear();
+            DataGridView1.DataSource = null;
         }
 
         private void Cmb_ProdName_Enter(object sender, EventArgs e)
@@ -104,7 +105,7 @@ namespace Laboratory.PL
                         else if (dt5.Rows.Count == 0)
                         {
                             Product.Add_StoreProduct(Convert.ToInt32(DataGridView1.Rows[i].Cells[0].Value), Convert.ToInt32(Cmb_ToStore.SelectedValue),
-                                   Convert.ToDecimal(DataGridView1.Rows[i].Cells[2].Value));
+                                   Convert.ToDecimal(DataGridView1.Rows[i].Cells[2].Value),Convert.ToInt32(DataGridView1.Rows[i].Cells[3].Value));
                    
 
                         }
@@ -129,7 +130,7 @@ namespace Laboratory.PL
 
         private void Cmb_FromStore_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+          
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -175,6 +176,7 @@ namespace Laboratory.PL
                     dr[0] = frm_TransProductList.dataGridView1.CurrentRow.Cells[0].Value;
                     dr[1] = frm_TransProductList.dataGridView1.CurrentRow.Cells[1].Value;
                     dr[2] = 1;
+                    dr[3] = frm_TransProductList.dataGridView1.CurrentRow.Cells[5].Value;
                     dt.Rows.Add(dr);
                     DataGridView1.DataSource = dt;
                     Console.Beep();

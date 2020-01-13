@@ -123,6 +123,7 @@
             this.Name = "Frm_EditPrice";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "تعديل السعر ";
+            this.Load += new System.EventHandler(this.Frm_EditPrice_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

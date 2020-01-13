@@ -51,5 +51,10 @@ namespace Laboratory.PL
                 e.Handled = true;
             }
         }
+
+        private void Frm_EditPrice_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

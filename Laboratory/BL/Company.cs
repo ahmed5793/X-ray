@@ -72,7 +72,7 @@ namespace Laboratory.BL
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[6];
+            SqlParameter[] param = new SqlParameter[5];
             param[0] = new SqlParameter("@name", SqlDbType.NVarChar, 300);
             param[0].Value = name;
 
@@ -397,6 +397,18 @@ namespace Laboratory.BL
             param[2] = new SqlParameter("@Date_To", SqlDbType.DateTime);
             param[2].Value = Date_To;
             dt = da.selected("Search_AllpAyOfCompany", param);
+            da.close();
+            return dt;
+        }
+        internal DataTable Select_DetailsCompany(int id_company)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            DataTable dt = new DataTable();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@id_Company", SqlDbType.Int);
+            param[0].Value = id_company;
+            dt = da.selected("Select_DetailsCompany", param);
             da.close();
             return dt;
         }

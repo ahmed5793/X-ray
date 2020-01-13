@@ -32,8 +32,6 @@
             this.btn_update = new System.Windows.Forms.Button();
             this.btn_add = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.Txt_Minimum = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.txt_seeling = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -90,8 +88,6 @@
             // 
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox3.Controls.Add(this.Txt_Minimum);
-            this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.txt_seeling);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.label11);
@@ -104,54 +100,29 @@
             this.groupBox3.TabIndex = 18;
             this.groupBox3.TabStop = false;
             // 
-            // Txt_Minimum
-            // 
-            this.Txt_Minimum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Txt_Minimum.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_Minimum.Location = new System.Drawing.Point(28, 134);
-            this.Txt_Minimum.Name = "Txt_Minimum";
-            this.Txt_Minimum.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Txt_Minimum.Size = new System.Drawing.Size(157, 29);
-            this.Txt_Minimum.TabIndex = 3;
-            this.Txt_Minimum.Text = "0";
-            this.Txt_Minimum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Txt_Minimum.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Txt_Minimum_MouseClick);
-            this.Txt_Minimum.TextChanged += new System.EventHandler(this.Txt_Minimum_TextChanged);
-            this.Txt_Minimum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Minimum_KeyPress);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(32, 102);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(158, 29);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "الحد الادنى للطلب ";
-            // 
             // txt_seeling
             // 
             this.txt_seeling.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_seeling.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_seeling.Location = new System.Drawing.Point(227, 134);
+            this.txt_seeling.Location = new System.Drawing.Point(99, 136);
             this.txt_seeling.Name = "txt_seeling";
             this.txt_seeling.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txt_seeling.Size = new System.Drawing.Size(157, 29);
             this.txt_seeling.TabIndex = 2;
             this.txt_seeling.Text = "0";
             this.txt_seeling.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_seeling.Click += new System.EventHandler(this.txt_seeling_Click);
             this.txt_seeling.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_seeling_MouseClick);
             this.txt_seeling.TextChanged += new System.EventHandler(this.txt_seeling_TextChanged);
             this.txt_seeling.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_seeling_KeyPress);
+            this.txt_seeling.Leave += new System.EventHandler(this.txt_seeling_Leave);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(465, 102);
+            this.label10.Location = new System.Drawing.Point(375, 101);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(106, 29);
             this.label10.TabIndex = 7;
@@ -163,7 +134,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(252, 101);
+            this.label11.Location = new System.Drawing.Point(136, 104);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(90, 29);
             this.label11.TabIndex = 5;
@@ -173,13 +144,14 @@
             // 
             this.txt_name.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_name.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_name.Location = new System.Drawing.Point(154, 48);
+            this.txt_name.Location = new System.Drawing.Point(123, 45);
             this.txt_name.Multiline = true;
             this.txt_name.Name = "txt_name";
             this.txt_name.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txt_name.Size = new System.Drawing.Size(316, 36);
             this.txt_name.TabIndex = 0;
             this.txt_name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_name.TextChanged += new System.EventHandler(this.txt_name_TextChanged);
             // 
             // label13
             // 
@@ -187,7 +159,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(257, 15);
+            this.label13.Location = new System.Drawing.Point(245, 13);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(97, 29);
             this.label13.TabIndex = 1;
@@ -196,16 +168,18 @@
             // txt_phr
             // 
             this.txt_phr.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_phr.Location = new System.Drawing.Point(428, 134);
+            this.txt_phr.Location = new System.Drawing.Point(353, 133);
             this.txt_phr.Name = "txt_phr";
             this.txt_phr.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txt_phr.Size = new System.Drawing.Size(157, 29);
             this.txt_phr.TabIndex = 1;
             this.txt_phr.Text = "0";
             this.txt_phr.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_phr.Click += new System.EventHandler(this.txt_phr_Click);
             this.txt_phr.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_phr_MouseClick);
             this.txt_phr.TextChanged += new System.EventHandler(this.txt_phr_TextChanged);
             this.txt_phr.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_phr_KeyPress);
+            this.txt_phr.Leave += new System.EventHandler(this.txt_phr_Leave);
             // 
             // dataGridViewPR
             // 
@@ -292,7 +266,5 @@
         private System.Windows.Forms.DataGridView dataGridViewPR;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txt_search;
-        public System.Windows.Forms.TextBox Txt_Minimum;
-        private System.Windows.Forms.Label label1;
     }
 }
