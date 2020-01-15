@@ -26,6 +26,7 @@ namespace Laboratory.PL
             Cmb_Store.ValueMember = "id_store";
             dataGridViewPR.DataSource = Product.Select_StoreProduct();
             btn_update.Enabled = false;
+            Btn_Delete.Enabled = false;
             btn_new.Hide();
             dataGridViewPR.Columns[0].Visible = false;
         }
@@ -66,7 +67,7 @@ namespace Laboratory.PL
         {
             try
             {
-                if (Cmb_ProdName.Text == string.Empty )
+                if (Cmb_ProdName.Text == string.Empty)
                 {
                     MessageBox.Show("لابد من وجود صنف");
                     Cmb_ProdName.Focus();
@@ -78,26 +79,26 @@ namespace Laboratory.PL
                     Cmb_Store.Focus();
                     return;
                 }
-                if (txt_quantity.Text =="0")
+                if (txt_quantity.Text == "0")
                 {
                     MessageBox.Show("لا بدان تكون الكمية أكبر من الصفر");
                     txt_quantity.Focus();
                     return;
                 }
                 dt5 = Product.Validate_StoreProduct(Convert.ToInt32(Cmb_ProdName.SelectedValue), Convert.ToInt32(Cmb_Store.SelectedValue));
-                if (dt5.Rows.Count>0)
+                if (dt5.Rows.Count > 0)
                 {
                     Product.Update_QuantityStoreProduct(Convert.ToInt32(Cmb_ProdName.SelectedValue),
-                        Convert.ToDecimal(txt_quantity.Text),Convert.ToInt32(Cmb_Store.SelectedValue));
+                        Convert.ToDecimal(txt_quantity.Text), Convert.ToInt32(Cmb_Store.SelectedValue));
                     MessageBox.Show("تم إضافة الصنف للمخزن بنجاح");
                     txt_quantity.Text = "0";
                     Txt_Minimum.Text = "0";
 
                 }
-                else if(dt5.Rows.Count ==0)
+                else if (dt5.Rows.Count == 0)
                 {
                     Product.Add_StoreProduct(Convert.ToInt32(Cmb_ProdName.SelectedValue), Convert.ToInt32(Cmb_Store.SelectedValue),
-                        Convert.ToDecimal(txt_quantity.Text),Convert.ToInt32(Txt_Minimum.Text));
+                        Convert.ToDecimal(txt_quantity.Text), Convert.ToInt32(Txt_Minimum.Text));
                     MessageBox.Show("تم إضافة الصنف للمخزن بنجاح");
                     txt_quantity.Text = "0";
                     Txt_Minimum.Text = "0";
@@ -107,10 +108,10 @@ namespace Laboratory.PL
                 dataGridViewPR.DataSource = Product.Select_StoreProduct();
 
             }
-            catch (Exception ex )
+            catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message) ;
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -136,33 +137,29 @@ namespace Laboratory.PL
                     txt_quantity.Focus();
                     return;
                 }
-                else if (MessageBox.Show("هل تريد التعديل","عملية التعديل",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
-                {   
-                        Product.Update_StoreProduct(Convert.ToInt32(dataGridViewPR.CurrentRow.Cells[0].Value), Convert.ToInt32(Cmb_ProdName.SelectedValue),
-                            Convert.ToDecimal(txt_quantity.Text), Convert.ToInt32(Cmb_Store.SelectedValue), Convert.ToInt32(Txt_Minimum.Text));
-                        MessageBox.Show("تم تعديل الصنف للمخزن بنجاح");
-                        txt_quantity.Text = "0";
-                        Txt_Minimum.Text = "0";
-                        btn_new.Hide();
-                        btn_add.Show();
-                        btn_update.Enabled = false;
-                        button1.Enabled = true;
-                        Cmb_ProdName.Enabled = true;
-                  
+                else if (MessageBox.Show("هل تريد التعديل", "عملية التعديل", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Product.Update_StoreProduct(Convert.ToInt32(dataGridViewPR.CurrentRow.Cells[0].Value), Convert.ToInt32(Cmb_ProdName.SelectedValue),
+                        Convert.ToDecimal(txt_quantity.Text), Convert.ToInt32(Cmb_Store.SelectedValue), Convert.ToInt32(Txt_Minimum.Text));
+                    MessageBox.Show("تم تعديل الصنف للمخزن بنجاح");
+                
+
                 }
                 else
                 {
                     MessageBox.Show("تم إلغاء التعديل");
-                    btn_new.Hide();
-                    btn_add.Show();
-                    btn_update.Enabled = false;
-                    txt_quantity.Text = "0";
-                    Txt_Minimum.Text = "0";
-                    button1.Enabled = true;
-                    Cmb_ProdName.Enabled = true;
+      
 
                 }
                 dataGridViewPR.DataSource = Product.Select_StoreProduct();
+                btn_new.Hide();
+                btn_add.Show();
+                btn_update.Enabled = false;
+                Btn_Delete.Enabled = false;
+                txt_quantity.Text = "0";
+                Txt_Minimum.Text = "0";
+                button1.Enabled = true;
+                Cmb_ProdName.Enabled = true;
 
             }
             catch (Exception ex)
@@ -187,21 +184,24 @@ namespace Laboratory.PL
         {
             try
             {
-                if (dataGridViewPR.Rows.Count>0)
+                if (dataGridViewPR.Rows.Count > 0)
                 {
-                    if (dataGridViewPR.CurrentRow.Cells[6].Value ==null)
-                    {
-                        Txt_Minimum.Text = "0";
-                    }
+
                     Cmb_ProdName.Text = dataGridViewPR.CurrentRow.Cells[2].Value.ToString();
                     Cmb_Store.Text = dataGridViewPR.CurrentRow.Cells[4].Value.ToString();
                     txt_quantity.Text = dataGridViewPR.CurrentRow.Cells[5].Value.ToString();
                     Txt_Minimum.Text = dataGridViewPR.CurrentRow.Cells[6].Value.ToString();
+                    if (dataGridViewPR.CurrentRow.Cells[6].Value.ToString() == string.Empty)
+                    {
+                        Txt_Minimum.Text = "0";
+                    }
                     btn_new.Show();
                     btn_add.Hide();
                     btn_update.Enabled = true;
+                    Btn_Delete.Enabled = true;
                     button1.Enabled = false;
                     Cmb_ProdName.Enabled = false;
+                    Cmb_Store.Enabled = false;
                 }
             }
             catch (Exception ex)
@@ -234,7 +234,7 @@ namespace Laboratory.PL
 
         private void txt_quantity_Click(object sender, EventArgs e)
         {
-            if (txt_quantity.Text=="0")
+            if (txt_quantity.Text == "0")
             {
                 txt_quantity.Text = "";
             }
@@ -242,7 +242,7 @@ namespace Laboratory.PL
 
         private void txt_quantity_Leave(object sender, EventArgs e)
         {
-            if (txt_quantity.Text=="")
+            if (txt_quantity.Text == "")
             {
                 txt_quantity.Text = "0";
             }
@@ -250,7 +250,7 @@ namespace Laboratory.PL
 
         private void Txt_Minimum_Click(object sender, EventArgs e)
         {
-            if (Txt_Minimum.Text=="0")
+            if (Txt_Minimum.Text == "0")
             {
                 Txt_Minimum.Text = "";
             }
@@ -266,8 +266,8 @@ namespace Laboratory.PL
 
         private void Txt_Minimum_KeyPress(object sender, KeyPressEventArgs e)
         {
-         
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 )
+
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
             {
 
                 e.Handled = true;
@@ -279,7 +279,7 @@ namespace Laboratory.PL
             try
             {
                 DataTable dt = new DataTable();
-                if (Cmb_ProdName.Text!="")
+                if (Cmb_ProdName.Text != "")
                 {
                     dt.Clear();
                     dt = Product.Validate_ProductNAme(Convert.ToInt32(Cmb_ProdName.SelectedValue));
@@ -293,6 +293,57 @@ namespace Laboratory.PL
                     }
                     dt.Dispose();
                 }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void txt_search_TextChanged(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                dt = Product.Search_StoreProduct(txt_search.Text);
+                dataGridViewPR.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                dt.Dispose();
+            }
+        }
+
+        private void Btn_Delete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("هل تريد حذف الصنف من المخزن المحدد","عملية الحذف", MessageBoxButtons.YesNo , MessageBoxIcon.Question)== DialogResult.Yes)
+                {
+                    Product.Delete_StoreProduct(Convert.ToInt32(dataGridViewPR.CurrentRow.Cells[0].Value));
+                    MessageBox.Show("تم مسح الصنف من المخزن المحدد بنجاح");
+                }
+                else
+                {
+                    MessageBox.Show("تم إلغاء مسح الصنف من المخزن المحدد ");
+
+                }
+
+                dataGridViewPR.DataSource = Product.Select_StoreProduct();
+                btn_new.Hide();
+                btn_add.Show();
+                btn_update.Enabled = false;
+                Btn_Delete.Enabled = false;
+                txt_quantity.Text = "0";
+                Txt_Minimum.Text = "0";
+                button1.Enabled = true;
+                Cmb_ProdName.Enabled = true;
             }
             catch (Exception ex)
             {

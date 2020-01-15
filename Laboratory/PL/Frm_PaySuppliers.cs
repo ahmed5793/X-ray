@@ -52,13 +52,7 @@ namespace Laboratory.PL
                     btnPay.Hide();
                     txt_prise.Hide();
                     dataGridView1.DataSource = Suppliers.SelectSuppliersMony();
-                    decimal total = 0;
-                    for (int i = 0; i <= dataGridView1.Rows.Count - 1; i++)
-                    {
-                        total += Convert.ToDecimal(dataGridView1.Rows[i].Cells[2].Value);
-
-                    }
-                    txt_rent.Text = Math.Round(total, 2).ToString();
+               
 
                 }
                 else if (RdbOneSuppliers.Checked == true)
@@ -68,17 +62,16 @@ namespace Laboratory.PL
                     btnPay.Show();
                     txt_prise.Show();
                     dataGridView1.DataSource = Suppliers.SelectOneSuppliersMony(Convert.ToInt32(comboBox1.SelectedValue));
-                    decimal total = 0;
-                    for (int i = 0; i <= dataGridView1.Rows.Count - 1; i++)
-                    {
-                        total += Convert.ToDecimal(dataGridView1.Rows[i].Cells[2].Value);
-
-                    }
-                    txt_rent.Text = Math.Round(total, 2).ToString();
+       
                 }
 
+                decimal total = 0;
+                for (int i = 0; i <= dataGridView1.Rows.Count - 1; i++)
+                {
+                    total += Convert.ToDecimal(dataGridView1.Rows[i].Cells[2].Value);
 
-
+                }
+                txt_rent.Text = Math.Round(total, 1).ToString();
             }
             catch (Exception ex)
             {
@@ -140,7 +133,7 @@ namespace Laboratory.PL
                                 MessageBox.Show("رصيد الخزنة الحالى غير كافى لشراء هذه الفاتورة");
                                 return;
                             }
-                            Suppliers.AddPaySuppliers(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value),
+                            Suppliers.AddPaySuppliers(
                                 Convert.ToInt32(comboBox1.SelectedValue), Convert.ToDecimal(dataGridView1.CurrentRow.Cells[2].Value)
                                , dateTimePicker1.Value,Convert.ToInt32(cmb_Stock.SelectedValue),Txt_sales.Text);
                             Stock.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(dataGridView1.CurrentRow.Cells[2].Value), dateTimePicker1.Value, comboBox1.Text, comboBox1.Text + " مدفوعات مورد");
@@ -179,7 +172,7 @@ namespace Laboratory.PL
                                 return;
                             }
 
-                            Suppliers.AddPaySuppliers(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value),
+                            Suppliers.AddPaySuppliers(
                                 Convert.ToInt32(comboBox1.SelectedValue), Convert.ToDecimal(dataGridView1.CurrentRow.Cells[2].Value)
                                , dateTimePicker1.Value, Convert.ToInt32(cmb_Stock.SelectedValue), Txt_sales.Text);
                             MessageBox.Show("تم دفع المبلغ بنجاح");
@@ -204,7 +197,7 @@ namespace Laboratory.PL
                         total += Convert.ToDecimal(dataGridView1.Rows[i].Cells[2].Value);
 
                     }
-                    txt_rent.Text = Math.Round(total, 2).ToString();
+                    txt_rent.Text = Math.Round(total, 1).ToString();
                 }
             }
 

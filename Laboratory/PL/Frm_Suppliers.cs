@@ -30,6 +30,7 @@ namespace Laboratory.PL
         }
         private void Btn_save_Click(object sender, EventArgs e)
         {
+            DataTable dt2 = new DataTable();
             try
             {
 
@@ -41,6 +42,9 @@ namespace Laboratory.PL
                 else
                 {
                     S.addSuppliers(Txt_name.Text, txt_address.Text, txt_phone.Text);
+                    dt2.Clear();
+                    dt2= S.select_LastIdSupplier();
+                    S.Add_SupplierTotalMoney(Convert.ToInt32(dt2.Rows[0][0]));
                     MessageBox.Show("تم اضافه المورد بنجاح", "عمليه الاضافه", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     Clear();
                     dataGridView1.DataSource = S.SelectSuppliers();

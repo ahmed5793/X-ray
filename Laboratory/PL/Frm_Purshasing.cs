@@ -271,9 +271,9 @@ namespace Laboratory.PL
                         }
                     }
 
-                 Suppliers.ADDSuppliersINFORMARION(Convert.ToInt32(txt_num.Text), Convert.ToInt32(Cmb_Suppliers.SelectedValue), 
-                  dateTimePicker1.Value,txt_note.Text, txt_sales.Text, Convert.ToDecimal(txt_invo.Text), 
-                  Convert.ToDecimal(txt_pay.Text), Convert.ToDecimal(txt_mark.Text), Convert.ToInt32(cmb_Stock.SelectedValue));
+                    Suppliers.ADDSuppliersINFORMARION(Convert.ToInt32(txt_num.Text), Convert.ToInt32(Cmb_Suppliers.SelectedValue),
+                     dateTimePicker1.Value, txt_note.Text, txt_sales.Text, Convert.ToDecimal(txt_invo.Text),
+                     Convert.ToDecimal(txt_pay.Text), Convert.ToDecimal(txt_mark.Text), Convert.ToInt32(cmb_Stock.SelectedValue));
                     if (Convert.ToDecimal(txt_pay.Text)>0)
                     {
                         Stock.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_pay.Text), dateTimePicker1.Value, txt_sales.Text, Cmb_Suppliers.Text + "فاتورة مشتريات");
@@ -293,11 +293,10 @@ namespace Laboratory.PL
                             , Convert.ToDecimal(dataGridView1.Rows[i].Cells[6].Value));
 
                     }
-                    //s.addMoneySupplier(Convert.ToInt32(txt_num.Text), Convert.ToDecimal(txt_mark.Text), Convert.ToInt32(comboBox1.SelectedValue));
-
+                    Suppliers.Update_SupplierTotalMoney(Convert.ToInt32(Cmb_Suppliers.SelectedValue),Convert.ToDecimal(txt_mark.Text));
                     MessageBox.Show("تم اضافه الفاتوره بنجاح", "عمليه الاضافه", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
 
-                    Data();
+                    //Data();
                     txt_num.Text = Suppliers.LastSuppliersDetalis().Rows[0][0].ToString();
                     Btn_Print.Enabled = true;
                 

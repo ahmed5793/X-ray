@@ -151,6 +151,9 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txt_address);
             this.Controls.Add(this.label2);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(544, 488);
+            this.MinimumSize = new System.Drawing.Size(544, 488);
             this.Name = "Frm_AddStore";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "إضافة مخزن";

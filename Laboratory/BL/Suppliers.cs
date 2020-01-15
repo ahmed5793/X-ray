@@ -28,6 +28,31 @@ namespace Laboratory.BL
             da.excutequery("addSuppliers", param);
             da.close();
         }
+        internal void Add_SupplierTotalMoney(int Id_Supplier)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+
+            param[0] = new SqlParameter("@Id_Suppliers", SqlDbType.Int);
+            param[0].Value = Id_Supplier;
+       
+            da.excutequery("Add_SupplierTotalMoney", param);
+            da.close();
+
+        }
+        internal void Update_SupplierTotalMoney(int Id_Supplier , decimal Total_Money)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[2];
+            param[0] = new SqlParameter("@Id_Suppliers", SqlDbType.Int);
+            param[0].Value = Id_Supplier;
+            param[1] = new SqlParameter("@Total_Money", SqlDbType.Decimal);
+            param[1].Value = Total_Money;
+            da.excutequery("Update_SupplierTotalMoney", param);
+            da.close();
+        }
         internal DataTable SelectSuppliers()
         {
             DataTable dt = new DataTable();
@@ -35,6 +60,16 @@ namespace Laboratory.BL
             DataAccessLayer da = new DataAccessLayer();
 
             dt = da.selected("SelectSuppliers", null);
+            da.close();
+            return dt;
+        }
+        internal DataTable select_LastIdSupplier()
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+
+            dt = da.selected("select_LastIdSupplier", null);
             da.close();
             return dt;
         }
@@ -106,7 +141,6 @@ namespace Laboratory.BL
             param[6].Value = pay;
             param[7] = new SqlParameter("@rent", SqlDbType.Decimal);
             param[7].Value = rent;
-
             param[8] = new SqlParameter("@id_stock", SqlDbType.Int);
             param[8].Value = Id_Stock;
 
@@ -126,10 +160,7 @@ namespace Laboratory.BL
         internal void addSuppliersDetails(int id,int Id_Store , int IDProudect, int quantity,
          decimal prise, decimal amount, decimal discount, decimal totalAmount)
         {
-
             DataAccessLayer da = new DataAccessLayer();
-
-
             da.open();
             SqlParameter[] param = new SqlParameter[8];
             param[0] = new SqlParameter("@ID", SqlDbType.Int);
@@ -150,7 +181,6 @@ namespace Laboratory.BL
             param[7].Value = totalAmount;
             da.excutequery("addSuppliersDetails", param);
             da.close();
-
         }
         internal DataTable Combo_SupplierRent()
         {
@@ -185,26 +215,23 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
-        internal void AddPaySuppliers(int id_Inform, int id_sup, decimal pay, DateTime date, int Id_stock , string salesMan)
+        internal void AddPaySuppliers( int id_sup, decimal pay, DateTime date, int Id_stock , string salesMan)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[6];
-            param[0] = new SqlParameter("@id_Information", SqlDbType.Int);
-            param[0].Value = id_Inform;
-            param[1] = new SqlParameter("@id_Supp", SqlDbType.Int);
-            param[1].Value = id_sup;
-            param[2] = new SqlParameter("@pay", SqlDbType.Decimal);
-            param[2].Value = pay;
-            param[3] = new SqlParameter("@date", SqlDbType.DateTime);
-            param[3].Value = date;
-            param[4] = new SqlParameter("@Id_stock", SqlDbType.Int);
-            param[4].Value = Id_stock;
-            param[5] = new SqlParameter("@sales_man", SqlDbType.NVarChar,50);
-            param[5].Value = salesMan;
+            SqlParameter[] param = new SqlParameter[5];
+            param[0] = new SqlParameter("@id_Supp", SqlDbType.Int);
+            param[0].Value = id_sup;
+            param[1] = new SqlParameter("@pay", SqlDbType.Decimal);
+            param[1].Value = pay;
+            param[2] = new SqlParameter("@date", SqlDbType.DateTime);
+            param[2].Value = date;
+            param[3] = new SqlParameter("@Id_stock", SqlDbType.Int);
+            param[3].Value = Id_stock;
+            param[4] = new SqlParameter("@sales_man", SqlDbType.NVarChar,50);
+            param[4].Value = salesMan;
             da.excutequery("AddPaySuppliers", param);
             da.close();
-
         }
         internal DataTable Select_DepitSupplier()
         {

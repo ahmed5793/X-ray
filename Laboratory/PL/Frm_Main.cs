@@ -502,5 +502,10 @@ namespace Laboratory.PL
             Frm_Mansgmentinstallment fmi = new Frm_Mansgmentinstallment();
             fmi.ShowDialog();
         }
+
+        private void ProductManage_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

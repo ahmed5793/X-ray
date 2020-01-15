@@ -159,6 +159,18 @@ namespace Laboratory.BL
             da.excutequery("Update_StoreProduct", param);
             da.close();
         }
+        internal void Delete_StoreProduct(int Id_StoreProduct)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+
+            SqlParameter[] param = new SqlParameter[1];
+            da.open();
+            param[0] = new SqlParameter("@ID_StoreProduct", SqlDbType.Int);
+            param[0].Value = Id_StoreProduct;
+ 
+            da.excutequery("Delete_StoreProduct", param);
+            da.close();
+        }
         internal DataTable Select_ComboProduct()
         {
             DataAccessLayer da = new DataAccessLayer();
