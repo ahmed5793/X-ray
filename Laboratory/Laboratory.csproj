@@ -260,6 +260,12 @@
     <Compile Include="PL\Frm_DebitSuppliers.Designer.cs">
       <DependentUpon>Frm_DebitSuppliers.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Frm_DetailsCompay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_DetailsCompay.designer.cs">
+      <DependentUpon>Frm_DetailsCompay.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_DetailsTickets.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -654,6 +660,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_DebitSuppliers.resx">
       <DependentUpon>Frm_DebitSuppliers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_DetailsCompay.resx">
+      <DependentUpon>Frm_DetailsCompay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_DetailsTickets.resx">
       <DependentUpon>Frm_DetailsTickets.cs</DependentUpon>
