@@ -119,6 +119,7 @@
             this.RdbOneSuppliers.TabIndex = 1;
             this.RdbOneSuppliers.Text = "مورد محدد";
             this.RdbOneSuppliers.UseVisualStyleBackColor = false;
+            this.RdbOneSuppliers.CheckedChanged += new System.EventHandler(this.RdbOneSuppliers_CheckedChanged);
             // 
             // RdbAllSuppliers
             // 
@@ -324,7 +325,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkRed;
-            this.ClientSize = new System.Drawing.Size(907, 480);
+            this.ClientSize = new System.Drawing.Size(907, 481);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.dataGridView1);

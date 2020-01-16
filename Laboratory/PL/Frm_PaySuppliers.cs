@@ -171,17 +171,26 @@ namespace Laboratory.PL
                                 MessageBox.Show("رصيد الخزنة الحالى غير كافى لشراء هذه الفاتورة");
                                 return;
                             }
-
+                            else if (Convert.ToDecimal(txt_prise.Text)> Convert.ToDecimal(dataGridView1.CurrentRow.Cells[2].Value))
+                            {
+                                MessageBox.Show("المبلغ المراد تسديده اكبر من المبلغ المتبقى للمورد");
+                                txt_prise.Focus();
+                                return;
+                            }
                             Suppliers.AddPaySuppliers(
-                                Convert.ToInt32(comboBox1.SelectedValue), Convert.ToDecimal(dataGridView1.CurrentRow.Cells[2].Value)
+                                Convert.ToInt32(comboBox1.SelectedValue), Convert.ToDecimal(txt_prise.Text)
                                , dateTimePicker1.Value, Convert.ToInt32(cmb_Stock.SelectedValue), Txt_sales.Text);
-                            MessageBox.Show("تم دفع المبلغ بنجاح");
-
-                            Stock.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_prise.Text), 
-                                dateTimePicker1.Value, Txt_sales.Text,  comboBox1.Text + " مدفوعات مورد");
+                            if (Convert.ToDecimal(txt_prise.Text)>0)
+                            {
+                                Stock.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_prise.Text),
+                             dateTimePicker1.Value, Txt_sales.Text, comboBox1.Text +" "+ "مدفوعات مورد");
+                            }
+                         
                             
                             dataGridView1.DataSource = Suppliers.SelectOneSuppliersMony(Convert.ToInt32(comboBox1.SelectedValue));
 
+                            txt_prise.Text = "0";
+                            MessageBox.Show("تم دفع المبلغ بنجاح");
 
                         }
                         else
@@ -198,6 +207,7 @@ namespace Laboratory.PL
 
                     }
                     txt_rent.Text = Math.Round(total, 1).ToString();
+                    txt_prise.Text = "0";
                 }
             }
 
@@ -224,6 +234,11 @@ namespace Laboratory.PL
 
         private void Frm_PaySuppliers_Load(object sender, EventArgs e)
         {
+        }
+
+        private void RdbOneSuppliers_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
