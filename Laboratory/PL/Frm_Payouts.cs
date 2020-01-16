@@ -62,7 +62,7 @@ namespace Laboratory.PL
 
         private void rdbPartPay_CheckedChanged(object sender, EventArgs e)
         {
-            if (rdbPartPay.Checked==true)
+            if (rdbPartPay.Checked == true)
             {
                 txt_prise.Enabled = true;
             }
@@ -73,6 +73,110 @@ namespace Laboratory.PL
             if (RdbAllPay.Checked == true)
             {
                 txt_prise.Enabled = false;
+            }
+        }
+
+        private void btnPay_Click(object sender, EventArgs e)
+        {
+
+            DataTable dt4 = new DataTable();
+            Tickets t = new Tickets();
+            try
+            {
+                dt4 = s.Select_moneyStock(Convert.ToInt32(cmb_Stock.SelectedValue));
+                if (cmb_Stock.Text == "")
+                {
+                    MessageBox.Show("لا بد من تحديد خزنة");
+                    return;
+
+                }
+                if (dataGridView1.Rows.Count >= 1)
+                {
+
+                    if (RdbAllPay.Checked == true)
+                    {
+
+
+                        if (Convert.ToDecimal(dataGridView1.CurrentRow.Cells[2].Value) > Convert.ToDecimal(dt4.Rows[0][0]))
+                        {
+                            MessageBox.Show("رصيد الخزنة الحالى غير كافى لسحب هذه المبلغ");
+                            return;
+                        }
+
+                        if (MessageBox.Show("هل تريد سحب المبلغ بالكامل", "عمليه السحب", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+
+                        {
+                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            {
+
+
+
+                     
+                                t.addticketsReturn(Convert.ToInt32(txt_num.Text), Convert.ToInt32(cmb_Stock.SelectedValue), comboBox1.Text,
+                                    txt_name.Text, txt_statues.Text, dataGridView1.Rows[i].Cells[1].Value.ToString(),dateTimePicker2.Value
+                                    ,Convert.ToDecimal(txt_pay.Text),textBox2.Text,Convert.ToDecimal(dataGridView1.Rows[i].Cells[2].Value));
+                            }
+                                s.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_pay.Text), dateTimePicker2.Value, txt_username.Text, txt_name.Text + " مردودات");
+
+                                MessageBox.Show("تم سحب المبلغ بنجاح");
+
+                            
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("تم إلغاء العملية بنجاح");
+
+
+                        }
+                    }
+                    else if (rdbPartPay.Checked == true)
+                    {
+
+
+                        if (Convert.ToDecimal(txt_prise.Text) > Convert.ToDecimal(dt4.Rows[0][0]))
+                        {
+                            MessageBox.Show("رصيد الخزنة الحالى غير كافى لسحب هذه المبلف");
+                            return;
+                        }
+
+                        if (MessageBox.Show("هل تريد سحب المبلغ المحدد", "عمليه السحب", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+
+                        {
+
+
+                            decimal x = Convert.ToDecimal(dataGridView1.CurrentRow.Cells[2].Value) - Convert.ToDecimal(txt_prise.Text);
+
+                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            {
+
+                                t.addticketsReturn(Convert.ToInt32(txt_num.Text), Convert.ToInt32(cmb_Stock.SelectedValue), comboBox1.Text,
+                   txt_name.Text, txt_statues.Text, dataGridView1.Rows[i].Cells[1].Value.ToString(), dateTimePicker2.Value
+                   , Convert.ToDecimal(txt_prise.Text), textBox2.Text, Convert.ToDecimal(dataGridView1.Rows[i].Cells[2].Value));
+                            }
+                            s.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_prise.Text), dateTimePicker2.Value, txt_username.Text, txt_name.Text + " مردودات");
+
+                            MessageBox.Show("تم سحب المبلغ بنجاح");
+
+
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("تم إلغاء العملية بنجاح");
+
+
+                        }
+                    }
+
+                    txt_prise.Text = "0";
+                }
+            }
+
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
             }
         }
     }

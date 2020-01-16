@@ -286,7 +286,8 @@ namespace Laboratory.PL
                 dt1 = t.TicketDetailsSelectTicketsDetAILS(Convert.ToInt32(dgv_visit.CurrentRow.Cells[0].Value));
                 pa.dataGridView1.DataSource = dt1;
 
-
+                pa.dataGridView1.Columns[0].Visible = false;
+                pa.dataGridView1.Columns[2].Visible = false;
 
                 pa.ShowDialog();
 

@@ -154,7 +154,7 @@ namespace Laboratory.PL
         private void Frm_Tickets_Load(object sender, EventArgs e)
         {
             Permision();
-
+       
             Txt_addtionPayment.Enabled = false;
           
       
@@ -472,6 +472,7 @@ namespace Laboratory.PL
 
         private void txt_pay_KeyPress(object sender, KeyPressEventArgs e)
         {
+           
             if (e.KeyChar == '.' && txt_pay.Text.ToString().IndexOf('.') > -1)
             {
                 e.Handled = true;
@@ -1015,6 +1016,7 @@ namespace Laboratory.PL
         {
                if (cmb_statues.Text == "شركات")
             {
+            
                 //label26.Show();
                 //label27.Show();
                 //Txt_addtionPayment.Show();
@@ -1046,7 +1048,6 @@ namespace Laboratory.PL
             }
             else if (cmb_statues.Text== "نقدى")
             {
-               
                 label24.Show();
                 //label26.Hide();
                 //label27.Hide();
@@ -1185,6 +1186,7 @@ namespace Laboratory.PL
 
         private void Txt_addtionPayment_KeyPress(object sender, KeyPressEventArgs e)
         {
+           
             if (e.KeyChar == '.' && Txt_addtionPayment.Text.ToString().IndexOf('.') > -1)
             {
                 e.Handled = true;
@@ -1193,10 +1195,13 @@ namespace Laboratory.PL
             {
                 e.Handled = true;
             }
+
+        
         }
 
         private void Txt_addtionPayment_KeyUp(object sender, KeyEventArgs e)
         {
+          
             Patient_PaymentRate();
             Rent_Company();
             pay();
@@ -1213,6 +1218,14 @@ namespace Laboratory.PL
             if (Txt_addtionPayment.Text=="")
             {
                 Txt_addtionPayment.Text = "0";
+            }
+            if (Txt_addtionPayment.Text != "0")
+            {
+                txt_pay.Enabled = true;
+            }
+            else
+            {
+                txt_pay.Enabled = false;
             }
             Patient_PaymentRate();
             Rent_Company();
@@ -1315,6 +1328,22 @@ namespace Laboratory.PL
             {
                 dt.Dispose();
             }
+        }
+
+        private void Txt_addtionPayment_KeyDown(object sender, KeyEventArgs e)
+        {
+          
+        }
+
+        private void txt_pay_TextChanged(object sender, EventArgs e)
+        {
+           
+         
+        }
+
+        private void Txt_addtionPayment_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
     }
