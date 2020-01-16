@@ -704,6 +704,8 @@
             this.Txt_addtionPayment.Text = "0";
             this.Txt_addtionPayment.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Txt_addtionPayment.Click += new System.EventHandler(this.Txt_addtionPayment_Click);
+            this.Txt_addtionPayment.TextChanged += new System.EventHandler(this.Txt_addtionPayment_TextChanged);
+            this.Txt_addtionPayment.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txt_addtionPayment_KeyDown);
             this.Txt_addtionPayment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_addtionPayment_KeyPress);
             this.Txt_addtionPayment.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txt_addtionPayment_KeyUp);
             this.Txt_addtionPayment.MouseLeave += new System.EventHandler(this.Txt_addtionPayment_MouseLeave);
@@ -868,6 +870,7 @@
             this.txt_pay.Text = "0";
             this.txt_pay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_pay.Click += new System.EventHandler(this.txt_pay_Click);
+            this.txt_pay.TextChanged += new System.EventHandler(this.txt_pay_TextChanged);
             this.txt_pay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_pay_KeyPress);
             this.txt_pay.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_pay_KeyUp);
             this.txt_pay.Leave += new System.EventHandler(this.txt_pay_Leave);

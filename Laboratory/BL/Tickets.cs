@@ -336,5 +336,38 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
+
+        internal void addticketsReturn(int id_tickets,int id_stock,string branch,string patient_name,
+                                      string statues,string item_name,DateTime date_return,decimal moneyreturn, string note, decimal prise_items)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[10];
+            param[0] = new SqlParameter("@id_tickets", SqlDbType.Int);
+            param[0].Value = id_tickets;
+            param[1] = new SqlParameter("@id_stock", SqlDbType.Int);
+            param[1].Value = id_stock;
+            param[2] = new SqlParameter("@branch", SqlDbType.NVarChar,50);
+            param[2].Value = branch;
+            param[3] = new SqlParameter("@patient_name", SqlDbType.NVarChar,150);
+            param[3].Value = patient_name;
+            param[4] = new SqlParameter("@statues", SqlDbType.NVarChar,50);
+            param[4].Value = statues;
+            param[5] = new SqlParameter("@item_name", SqlDbType.NVarChar,150);
+            param[5].Value = item_name;
+            param[6] = new SqlParameter("@date_return", SqlDbType.DateTime);
+            param[6].Value = date_return;
+            param[7] = new SqlParameter("@moneyreturn", SqlDbType.Decimal);
+            param[7].Value = moneyreturn;
+            param[8] = new SqlParameter("@note", SqlDbType.NVarChar,150);
+            param[8].Value = note;
+            param[9] = new SqlParameter("@prise_items", SqlDbType.Decimal);
+            param[9].Value = prise_items;
+         
+
+
+            da.excutequery("addticketsReturn", param);
+            da.close();
+        }
     }
 }
