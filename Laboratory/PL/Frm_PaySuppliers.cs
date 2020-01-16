@@ -116,7 +116,8 @@ namespace Laboratory.PL
                         MessageBox.Show("لا بد من تحديد خزنة");
                         return;
 
-                    }
+                    }                            dt4 = Stock.Select_moneyStock(Convert.ToInt32(cmb_Stock.SelectedValue));
+
                     if (RdbAllPay.Checked == true)
                     {
 
@@ -156,7 +157,6 @@ namespace Laboratory.PL
                         if (MessageBox.Show("هل تريد دفع المبلغ المحدد", "عمليه الدفع", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
 
                         {
-                            dt4 = Stock.Select_moneyStock(Convert.ToInt32(cmb_Stock.SelectedValue));
 
                             decimal x = Convert.ToDecimal(dataGridView1.CurrentRow.Cells[2].Value) - Convert.ToDecimal(txt_prise.Text);
 
@@ -166,7 +166,7 @@ namespace Laboratory.PL
                                 return;
                             }
 
-                            else if (Convert.ToDecimal(txt_prise.Text) > Convert.ToDecimal(dt4.Rows[0][0]))
+                            if (Convert.ToDecimal(txt_prise.Text) > Convert.ToDecimal(dt4.Rows[0][0]))
                             {
                                 MessageBox.Show("رصيد الخزنة الحالى غير كافى لشراء هذه الفاتورة");
                                 return;
