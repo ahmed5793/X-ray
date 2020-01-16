@@ -116,7 +116,8 @@ namespace Laboratory.PL
                         MessageBox.Show("لا بد من تحديد خزنة");
                         return;
 
-                    }                            dt4 = Stock.Select_moneyStock(Convert.ToInt32(cmb_Stock.SelectedValue));
+                    }    
+                    dt4 = Stock.Select_moneyStock(Convert.ToInt32(cmb_Stock.SelectedValue));
 
                     if (RdbAllPay.Checked == true)
                     {
