@@ -58,6 +58,7 @@ namespace Laboratory.PL
         {
             txt_prise.Enabled = false;
             txt_username.Text = Program.salesman;
+            Permision();
         }
 
         private void rdbPartPay_CheckedChanged(object sender, EventArgs e)
@@ -80,9 +81,38 @@ namespace Laboratory.PL
         {
 
             DataTable dt4 = new DataTable();
+            DataTable dt5 = new DataTable();
+            DataTable dt6 = new DataTable();
             Tickets t = new Tickets();
             try
             {
+        
+                if (Convert.ToDecimal(txt_prise.Text)>Convert.ToDecimal(txt_pay.Text))
+                {
+                    MessageBox.Show("عزيزى المستخدم يرجي العلم باان المبلغ المراد سحبة اكبر من المدفوع  ", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                       return;
+                }
+                //dt6.Clear();
+                //dt6 = t.vildateIDReturnTickets(Convert.ToInt32(txt_num.Text));
+                //if (dt6.Rows.Count > 0)
+                //{
+                //    MessageBox.Show("عزيزى المستخدم يرجي العلم باان تم استرداد مبلغ الفاتورة من قبل لايمكن استرداها مرة اخرى   ", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                //    return;
+                //}
+                dt5.Clear();
+                dt5 = t.vildateReturnTickets(Convert.ToInt32(txt_num.Text));
+                if (dt5.Rows.Count > 0)
+                {
+                    if (Convert.ToDecimal(txt_prise.Text) >(Convert.ToDecimal(txt_pay.Text)- Convert.ToDecimal(dt5.Rows[0][1])))
+                    {
+                        MessageBox.Show("عزيزى المستخدم يرجي العلم باان المبلغ المردود اكبر من المدفوع  ", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                        return;
+                    }
+                   
+
+
+
+                }
                 dt4 = s.Select_moneyStock(Convert.ToInt32(cmb_Stock.SelectedValue));
                 if (cmb_Stock.Text == "")
                 {
@@ -96,6 +126,19 @@ namespace Laboratory.PL
                     if (RdbAllPay.Checked == true)
                     {
 
+                        if (dt5.Rows.Count > 0 )
+                        {
+                            if (Convert.ToDecimal(dt5.Rows[0][1]) == Convert.ToDecimal(txt_pay.Text))
+                            {
+                                MessageBox.Show("عزيزى المستخدم يرجي العلم باان تم استرداد مبلغ الفاتورة من قبل لايمكن استرداها مرة اخرى   ", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                                return;
+                            }
+                            if (Convert.ToDecimal(dt5.Rows[0][1]) > 0)
+                            {
+                                MessageBox.Show("عزيزى المستخدم يرجي العلم بانه تم استرداد مبلغ" + "("+Convert.ToDecimal(dt5.Rows[0][1])+")" + "لهذه الفاتورة من قبل", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                                return;
+                            }
+                        }
 
                         if (Convert.ToDecimal(dataGridView1.CurrentRow.Cells[2].Value) > Convert.ToDecimal(dt4.Rows[0][0]))
                         {
@@ -114,7 +157,7 @@ namespace Laboratory.PL
                      
                                 t.addticketsReturn(Convert.ToInt32(txt_num.Text), Convert.ToInt32(cmb_Stock.SelectedValue), comboBox1.Text,
                                     txt_name.Text, txt_statues.Text, dataGridView1.Rows[i].Cells[1].Value.ToString(),dateTimePicker2.Value
-                                    ,Convert.ToDecimal(txt_pay.Text),textBox2.Text,Convert.ToDecimal(dataGridView1.Rows[i].Cells[2].Value));
+                                    ,Convert.ToDecimal(txt_pay.Text),textBox2.Text,Convert.ToDecimal(dataGridView1.Rows[i].Cells[2].Value),Convert.ToDecimal(txt_pay.Text));
                             }
                                 s.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_pay.Text), dateTimePicker2.Value, txt_username.Text, txt_name.Text + " مردودات");
 
@@ -152,7 +195,7 @@ namespace Laboratory.PL
 
                                 t.addticketsReturn(Convert.ToInt32(txt_num.Text), Convert.ToInt32(cmb_Stock.SelectedValue), comboBox1.Text,
                    txt_name.Text, txt_statues.Text, dataGridView1.Rows[i].Cells[1].Value.ToString(), dateTimePicker2.Value
-                   , Convert.ToDecimal(txt_prise.Text), textBox2.Text, Convert.ToDecimal(dataGridView1.Rows[i].Cells[2].Value));
+                   , Convert.ToDecimal(txt_prise.Text), textBox2.Text, Convert.ToDecimal(dataGridView1.Rows[i].Cells[2].Value), Convert.ToDecimal(txt_pay.Text));
                             }
                             s.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_prise.Text), dateTimePicker2.Value, txt_username.Text, txt_name.Text + " مردودات");
 
@@ -170,6 +213,7 @@ namespace Laboratory.PL
                     }
 
                     txt_prise.Text = "0";
+                    this.Close();
                 }
             }
 
@@ -178,6 +222,16 @@ namespace Laboratory.PL
 
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
