@@ -507,5 +507,11 @@ namespace Laboratory.PL
         {
 
         }
+
+        private void Tool_ReturnPurshasing_Click(object sender, EventArgs e)
+        {
+            Frm_ReturnSupplier frs = new Frm_ReturnSupplier();
+            frs.ShowDialog();
+        }
     }
 }

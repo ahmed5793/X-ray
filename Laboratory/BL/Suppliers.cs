@@ -296,5 +296,67 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
+        internal DataTable select_IdPurshasing()
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            DataTable dt = new DataTable();
+            dt = da.selected("select_IdPurshasing", null);
+            da.close();
+            return dt;
+
+        }
+        internal DataTable Select_SupplierInformation(int Id_Information)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@ID_Information", SqlDbType.Int);
+            param[0].Value = Id_Information;
+
+            dt = da.selected("Select_SupplierInformation", param);
+            da.close();
+            return dt;
+        }
+        internal DataTable Select_SupplierDetailsForReturn(int Id_Information)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@ID_Information", SqlDbType.Int);
+            param[0].Value = Id_Information;
+
+            dt = da.selected("Select_SupplierDetailsForReturn", param);
+            da.close();
+            return dt;
+        }
+        internal void Add_SupplierReturn(int Id_Information, int Id_Product, decimal Price,Decimal Quantity, DateTime Date,
+                                         Decimal  Total_Return, string salesMan , int Id_Store)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[8];
+            param[0] = new SqlParameter("@Id_Information", SqlDbType.Int);
+            param[0].Value = Id_Information;
+            param[1] = new SqlParameter("@Id_product", SqlDbType.Int);
+            param[1].Value = Id_Product;
+            param[2] = new SqlParameter("@price", SqlDbType.Decimal);
+            param[2].Value = Price;
+            param[3] = new SqlParameter("@return_quantity", SqlDbType.Decimal);
+            param[3].Value = Quantity;
+            param[4] = new SqlParameter("@date_return", SqlDbType.DateTime);
+            param[4].Value = Date;
+            param[5] = new SqlParameter("@Total_Return", SqlDbType.Decimal);
+            param[5].Value = Total_Return;
+            param[6] = new SqlParameter("@Sales_Man", SqlDbType.NVarChar, 100);
+            param[6].Value = salesMan;
+            param[7] = new SqlParameter("@Id_Store", SqlDbType.Int);
+            param[7].Value = Id_Store;
+            da.excutequery("Add_SupplierReturn", param);
+            da.close();
+        }
     }
 }
