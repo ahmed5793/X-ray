@@ -338,11 +338,11 @@ namespace Laboratory.BL
         }
 
         internal void addticketsReturn(int id_tickets,int id_stock,string branch,string patient_name,
-                                      string statues,string item_name,DateTime date_return,decimal moneyreturn, string note, decimal prise_items)
+                                      string statues,string item_name,DateTime date_return,decimal moneyreturn, string note, decimal prise_items,decimal Pay, string UserName)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[10];
+            SqlParameter[] param = new SqlParameter[12];
             param[0] = new SqlParameter("@id_tickets", SqlDbType.Int);
             param[0].Value = id_tickets;
             param[1] = new SqlParameter("@id_stock", SqlDbType.Int);
@@ -363,11 +363,78 @@ namespace Laboratory.BL
             param[8].Value = note;
             param[9] = new SqlParameter("@prise_items", SqlDbType.Decimal);
             param[9].Value = prise_items;
-         
 
+            param[10] = new SqlParameter("@Pay", SqlDbType.Decimal);
+            param[10].Value = prise_items;
+            param[11] = new SqlParameter("@UserName", SqlDbType.NVarChar,50);
+            param[11].Value = UserName;
 
             da.excutequery("addticketsReturn", param);
             da.close();
         }
+
+        internal DataTable vildateReturnTickets( int idtickets)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@idtickets", SqlDbType.Int);
+            param[0].Value = idtickets;
+         
+            dt = da.selected("vildateReturnTickets", param);
+            da.close();
+            return dt;
+        }
+
+        internal DataTable vildateIDReturnTickets(int idtickets)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@idtickets", SqlDbType.Int);
+            param[0].Value = idtickets;
+
+            dt = da.selected("vildateIDReturnTickets", param);
+            da.close();
+            return dt;
+        }
+        internal DataTable searchdateTicketsReturn( DateTime from, DateTime to)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[2];
+
+        
+            param[1] = new SqlParameter("@FromDate", SqlDbType.DateTime);
+            param[1].Value = from;
+            param[2] = new SqlParameter("@ToDate", SqlDbType.DateTime);
+            param[2].Value = to;
+
+
+            dt = da.selected("searchdateTicketsReturn", param);
+            da.close();
+            return dt;
+        }
+
+        internal DataTable selectTicketsReturn()
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+        
+          
+
+            dt = da.selected("selectTicketsReturn", null);
+            da.close();
+            return dt;
+        }
+
     }
 }

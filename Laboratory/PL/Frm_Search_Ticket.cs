@@ -255,10 +255,21 @@ namespace Laboratory.PL
             DataTable dt10 = new DataTable();
             DataTable dt5 = new DataTable();
             Tickets t = new Tickets();
+
             Frm_DetailsTickets fd = new Frm_DetailsTickets();
             if (dgv_visit.Rows.Count > 0)
             {
+                dt5.Clear();
+                dt5 = t.vildateReturnTickets(Convert.ToInt32(dgv_visit.CurrentRow.Cells[0].Value));
+                if (dt5.Rows.Count > 0)
+                {
+                    if (Convert.ToDecimal(dgv_visit.CurrentRow.Cells[10].Value) == Convert.ToDecimal(dt5.Rows[0][1]))
+                    {
+                          MessageBox.Show("عزيزى المستخدم يرجي العلم باان تم استرداد مبلغ الفاتورة من قبل لايمكن استرداها مرة اخرى   ", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                        return;
+                    }
 
+                }
 
                 dt5.Clear();
                 dt5 = t.TicketDetailsSelectTickets(Convert.ToInt32(dgv_visit.CurrentRow.Cells[0].Value));
