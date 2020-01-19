@@ -28,6 +28,13 @@ namespace Laboratory.PL
             label3.Hide();
             button1.Hide();
             dgv_visit.DataSource = t.selectTicketsReturn();
+            decimal totall = 0;
+            for (int i = 0; i <= dgv_visit.Rows.Count - 1; i++)
+            {
+                totall += Convert.ToDecimal(dgv_visit.Rows[i].Cells[7].Value);
+
+            }
+            textBox1.Text = Math.Round(totall, 2).ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
