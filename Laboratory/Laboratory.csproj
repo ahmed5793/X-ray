@@ -362,6 +362,12 @@
     <Compile Include="PL\Frm_ManagmentTickets.Designer.cs">
       <DependentUpon>Frm_ManagmentTickets.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Frm_ManagmentTicketsReturn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_ManagmentTicketsReturn.Designer.cs">
+      <DependentUpon>Frm_ManagmentTicketsReturn.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_ManagmentUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -518,12 +524,6 @@
     <Compile Include="PL\Frm_ReportTransfairStock.Designer.cs">
       <DependentUpon>Frm_ReportTransfairStock.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_ReturnSupplier.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PL\Frm_ReturnSupplier.Designer.cs">
-      <DependentUpon>Frm_ReturnSupplier.cs</DependentUpon>
-    </Compile>
     <Compile Include="PL\Frm_Salf.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -565,6 +565,12 @@
     </Compile>
     <Compile Include="PL\Frm_Tickets.Designer.cs">
       <DependentUpon>Frm_Tickets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Frm_TransferToCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_TransferToCompany.Designer.cs">
+      <DependentUpon>Frm_TransferToCompany.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Frm_TransProductList.cs">
       <SubType>Form</SubType>
@@ -718,6 +724,9 @@
     <EmbeddedResource Include="PL\Frm_ManagmentTickets.resx">
       <DependentUpon>Frm_ManagmentTickets.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_ManagmentTicketsReturn.resx">
+      <DependentUpon>Frm_ManagmentTicketsReturn.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_ManagmentUser.resx">
       <DependentUpon>Frm_ManagmentUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -796,9 +805,6 @@
     <EmbeddedResource Include="PL\Frm_ReportTransfairStock.resx">
       <DependentUpon>Frm_ReportTransfairStock.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PL\Frm_ReturnSupplier.resx">
-      <DependentUpon>Frm_ReturnSupplier.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Salf.resx">
       <DependentUpon>Frm_Salf.cs</DependentUpon>
     </EmbeddedResource>
@@ -819,6 +825,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Tickets.resx">
       <DependentUpon>Frm_Tickets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_TransferToCompany.resx">
+      <DependentUpon>Frm_TransferToCompany.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_TransProductList.resx">
       <DependentUpon>Frm_TransProductList.cs</DependentUpon>
