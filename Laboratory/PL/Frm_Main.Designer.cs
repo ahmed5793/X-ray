@@ -179,7 +179,7 @@
             this.toolStripSeparator44 = new System.Windows.Forms.ToolStripSeparator();
             this.Search_Ticket = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator46 = new System.Windows.Forms.ToolStripSeparator();
-            this.Mardodat = new System.Windows.Forms.ToolStripMenuItem();
+            this.Tool_ReportMardodat = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator49 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.تسجيلالاقساطToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -1375,7 +1375,7 @@
             this.toolStripSeparator44,
             this.Search_Ticket,
             this.toolStripSeparator46,
-            this.Mardodat});
+            this.Tool_ReportMardodat});
             this.Receiption.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Receiption.Image = ((System.Drawing.Image)(resources.GetObject("Receiption.Image")));
             this.Receiption.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
@@ -1433,13 +1433,15 @@
             this.toolStripSeparator46.Name = "toolStripSeparator46";
             this.toolStripSeparator46.Size = new System.Drawing.Size(279, 6);
             // 
-            // Mardodat
+            // Tool_ReportMardodat
             // 
-            this.Mardodat.BackColor = System.Drawing.Color.Tomato;
-            this.Mardodat.Name = "Mardodat";
-            this.Mardodat.Size = new System.Drawing.Size(282, 82);
-            this.Mardodat.Text = "شاشة المردودات";
-            this.Mardodat.Click += new System.EventHandler(this.Mardodat_Click);
+            this.Tool_ReportMardodat.BackColor = System.Drawing.Color.Tomato;
+            this.Tool_ReportMardodat.Image = ((System.Drawing.Image)(resources.GetObject("Tool_ReportMardodat.Image")));
+            this.Tool_ReportMardodat.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.Tool_ReportMardodat.Name = "Tool_ReportMardodat";
+            this.Tool_ReportMardodat.Size = new System.Drawing.Size(292, 92);
+            this.Tool_ReportMardodat.Text = "تقرير المردودات";
+            this.Tool_ReportMardodat.Click += new System.EventHandler(this.Mardodat_Click);
             // 
             // toolStripSeparator49
             // 
@@ -1652,7 +1654,7 @@
         public System.Windows.Forms.ToolStripMenuItem Add_CompanyXrays;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator45;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator46;
-        public System.Windows.Forms.ToolStripMenuItem Mardodat;
+        public System.Windows.Forms.ToolStripMenuItem Tool_ReportMardodat;
         public System.Windows.Forms.ToolStripMenuItem Pay_Company;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator47;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator48;

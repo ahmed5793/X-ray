@@ -396,8 +396,8 @@ namespace Laboratory.PL
 
         private void Mardodat_Click(object sender, EventArgs e)
         {
-            Frm_Payouts fpo = new Frm_Payouts();
-            fpo.ShowDialog();
+            Frm_ManagmentTicketsReturn fmtr = new Frm_ManagmentTicketsReturn();
+            fmtr.ShowDialog();
 
         }
 
