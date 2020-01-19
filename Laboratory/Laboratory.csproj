@@ -362,6 +362,12 @@
     <Compile Include="PL\Frm_ManagmentTickets.Designer.cs">
       <DependentUpon>Frm_ManagmentTickets.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Frm_ManagmentTicketsReturn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_ManagmentTicketsReturn.Designer.cs">
+      <DependentUpon>Frm_ManagmentTicketsReturn.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_ManagmentUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -566,6 +572,12 @@
     <Compile Include="PL\Frm_Tickets.Designer.cs">
       <DependentUpon>Frm_Tickets.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Frm_TransferToCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_TransferToCompany.Designer.cs">
+      <DependentUpon>Frm_TransferToCompany.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_TransProductList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -718,6 +730,9 @@
     <EmbeddedResource Include="PL\Frm_ManagmentTickets.resx">
       <DependentUpon>Frm_ManagmentTickets.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_ManagmentTicketsReturn.resx">
+      <DependentUpon>Frm_ManagmentTicketsReturn.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_ManagmentUser.resx">
       <DependentUpon>Frm_ManagmentUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -819,6 +834,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Tickets.resx">
       <DependentUpon>Frm_Tickets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_TransferToCompany.resx">
+      <DependentUpon>Frm_TransferToCompany.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_TransProductList.resx">
       <DependentUpon>Frm_TransProductList.cs</DependentUpon>

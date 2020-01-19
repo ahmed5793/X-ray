@@ -157,7 +157,7 @@ namespace Laboratory.PL
                      
                                 t.addticketsReturn(Convert.ToInt32(txt_num.Text), Convert.ToInt32(cmb_Stock.SelectedValue), comboBox1.Text,
                                     txt_name.Text, txt_statues.Text, dataGridView1.Rows[i].Cells[1].Value.ToString(),dateTimePicker2.Value
-                                    ,Convert.ToDecimal(txt_pay.Text),textBox2.Text,Convert.ToDecimal(dataGridView1.Rows[i].Cells[2].Value),Convert.ToDecimal(txt_pay.Text));
+                                    ,Convert.ToDecimal(txt_pay.Text),textBox2.Text,Convert.ToDecimal(dataGridView1.Rows[i].Cells[2].Value),Convert.ToDecimal(txt_pay.Text),txt_username.Text);
                             }
                                 s.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_pay.Text), dateTimePicker2.Value, txt_username.Text, txt_name.Text + " مردودات");
 
@@ -195,7 +195,7 @@ namespace Laboratory.PL
 
                                 t.addticketsReturn(Convert.ToInt32(txt_num.Text), Convert.ToInt32(cmb_Stock.SelectedValue), comboBox1.Text,
                    txt_name.Text, txt_statues.Text, dataGridView1.Rows[i].Cells[1].Value.ToString(), dateTimePicker2.Value
-                   , Convert.ToDecimal(txt_prise.Text), textBox2.Text, Convert.ToDecimal(dataGridView1.Rows[i].Cells[2].Value), Convert.ToDecimal(txt_pay.Text));
+                   , Convert.ToDecimal(txt_prise.Text), textBox2.Text, Convert.ToDecimal(dataGridView1.Rows[i].Cells[2].Value), Convert.ToDecimal(txt_pay.Text),txt_username.Text);
                             }
                             s.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_prise.Text), dateTimePicker2.Value, txt_username.Text, txt_name.Text + " مردودات");
 
