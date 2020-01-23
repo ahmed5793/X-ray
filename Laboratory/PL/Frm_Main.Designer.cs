@@ -57,9 +57,14 @@
             this.toolStripSeparator30 = new System.Windows.Forms.ToolStripSeparator();
             this.السلفياتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator27 = new System.Windows.Forms.ToolStripSeparator();
-            this.Report_Mortbat = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator33 = new System.Windows.Forms.ToolStripSeparator();
             this.Report_Salf = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator69 = new System.Windows.Forms.ToolStripSeparator();
+            this.اضافةالشيفتاتللموظفينToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator70 = new System.Windows.Forms.ToolStripSeparator();
+            this.تقريرحسابشيفتاتالفنيينToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator71 = new System.Windows.Forms.ToolStripSeparator();
+            this.تقريرعنصرفمرتباتالموظفينToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
             this.Doctors_Center = new System.Windows.Forms.ToolStripMenuItem();
             this.Add_DoctorOfCenters = new System.Windows.Forms.ToolStripMenuItem();
@@ -338,6 +343,7 @@
             this.Employee.Text = "شئون العاملين";
             this.Employee.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Employee.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.Employee.Click += new System.EventHandler(this.Employee_Click);
             // 
             // Employee_manage
             // 
@@ -350,14 +356,19 @@
             this.AddEmployeeBranches,
             this.toolStripSeparator28,
             this.Add_Account,
+            this.اضافةالشيفتاتللموظفينToolStripMenuItem,
             this.toolStripSeparator29,
             this.Sarf_Mortbat,
             this.toolStripSeparator30,
             this.السلفياتToolStripMenuItem,
             this.toolStripSeparator27,
-            this.Report_Mortbat,
             this.toolStripSeparator33,
-            this.Report_Salf});
+            this.Report_Salf,
+            this.toolStripSeparator69,
+            this.toolStripSeparator70,
+            this.تقريرحسابشيفتاتالفنيينToolStripMenuItem,
+            this.toolStripSeparator71,
+            this.تقريرعنصرفمرتباتالموظفينToolStripMenuItem});
             this.Employee_manage.Image = ((System.Drawing.Image)(resources.GetObject("Employee_manage.Image")));
             this.Employee_manage.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Employee_manage.Name = "Employee_manage";
@@ -368,99 +379,129 @@
             // 
             this.Add_Employee.BackColor = System.Drawing.Color.SandyBrown;
             this.Add_Employee.Name = "Add_Employee";
-            this.Add_Employee.Size = new System.Drawing.Size(255, 28);
+            this.Add_Employee.Size = new System.Drawing.Size(316, 28);
             this.Add_Employee.Text = "إضافة موظف";
             this.Add_Employee.Click += new System.EventHandler(this.Add_Employee_Click);
             // 
             // toolStripSeparator13
             // 
             this.toolStripSeparator13.Name = "toolStripSeparator13";
-            this.toolStripSeparator13.Size = new System.Drawing.Size(252, 6);
+            this.toolStripSeparator13.Size = new System.Drawing.Size(313, 6);
             // 
             // ToolReportEmployeeData
             // 
             this.ToolReportEmployeeData.BackColor = System.Drawing.Color.NavajoWhite;
             this.ToolReportEmployeeData.Name = "ToolReportEmployeeData";
-            this.ToolReportEmployeeData.Size = new System.Drawing.Size(255, 28);
+            this.ToolReportEmployeeData.Size = new System.Drawing.Size(316, 28);
             this.ToolReportEmployeeData.Text = "تقرير بيانات الموظفين";
             this.ToolReportEmployeeData.Click += new System.EventHandler(this.ToolReportEmployeeData_Click);
             // 
             // toolStripSeparator61
             // 
             this.toolStripSeparator61.Name = "toolStripSeparator61";
-            this.toolStripSeparator61.Size = new System.Drawing.Size(252, 6);
+            this.toolStripSeparator61.Size = new System.Drawing.Size(313, 6);
             // 
             // AddEmployeeBranches
             // 
             this.AddEmployeeBranches.BackColor = System.Drawing.Color.SandyBrown;
             this.AddEmployeeBranches.Name = "AddEmployeeBranches";
-            this.AddEmployeeBranches.Size = new System.Drawing.Size(255, 28);
+            this.AddEmployeeBranches.Size = new System.Drawing.Size(316, 28);
             this.AddEmployeeBranches.Text = "اضافة الموظفين للفروع";
             this.AddEmployeeBranches.Click += new System.EventHandler(this.اضافةالموظفينللفروعToolStripMenuItem_Click);
             // 
             // toolStripSeparator28
             // 
             this.toolStripSeparator28.Name = "toolStripSeparator28";
-            this.toolStripSeparator28.Size = new System.Drawing.Size(252, 6);
+            this.toolStripSeparator28.Size = new System.Drawing.Size(313, 6);
             // 
             // Add_Account
             // 
             this.Add_Account.BackColor = System.Drawing.Color.SandyBrown;
             this.Add_Account.Name = "Add_Account";
-            this.Add_Account.Size = new System.Drawing.Size(255, 28);
+            this.Add_Account.Size = new System.Drawing.Size(316, 28);
             this.Add_Account.Text = "إنشاء حساب للموظفين";
             this.Add_Account.Click += new System.EventHandler(this.إنشاءحسابللموظفينToolStripMenuItem_Click);
             // 
             // toolStripSeparator29
             // 
             this.toolStripSeparator29.Name = "toolStripSeparator29";
-            this.toolStripSeparator29.Size = new System.Drawing.Size(252, 6);
+            this.toolStripSeparator29.Size = new System.Drawing.Size(313, 6);
             // 
             // Sarf_Mortbat
             // 
             this.Sarf_Mortbat.BackColor = System.Drawing.Color.SandyBrown;
             this.Sarf_Mortbat.Name = "Sarf_Mortbat";
-            this.Sarf_Mortbat.Size = new System.Drawing.Size(255, 28);
+            this.Sarf_Mortbat.Size = new System.Drawing.Size(316, 28);
             this.Sarf_Mortbat.Text = "صرف المرتبات للموظفين";
             this.Sarf_Mortbat.Click += new System.EventHandler(this.Sarf_Mortbat_Click);
             // 
             // toolStripSeparator30
             // 
             this.toolStripSeparator30.Name = "toolStripSeparator30";
-            this.toolStripSeparator30.Size = new System.Drawing.Size(252, 6);
+            this.toolStripSeparator30.Size = new System.Drawing.Size(313, 6);
             // 
             // السلفياتToolStripMenuItem
             // 
             this.السلفياتToolStripMenuItem.BackColor = System.Drawing.Color.SandyBrown;
             this.السلفياتToolStripMenuItem.Name = "السلفياتToolStripMenuItem";
-            this.السلفياتToolStripMenuItem.Size = new System.Drawing.Size(255, 28);
+            this.السلفياتToolStripMenuItem.Size = new System.Drawing.Size(316, 28);
             this.السلفياتToolStripMenuItem.Text = "السلفيات";
             this.السلفياتToolStripMenuItem.Click += new System.EventHandler(this.السلفياتToolStripMenuItem_Click);
             // 
             // toolStripSeparator27
             // 
             this.toolStripSeparator27.Name = "toolStripSeparator27";
-            this.toolStripSeparator27.Size = new System.Drawing.Size(252, 6);
-            // 
-            // Report_Mortbat
-            // 
-            this.Report_Mortbat.BackColor = System.Drawing.Color.Peru;
-            this.Report_Mortbat.Name = "Report_Mortbat";
-            this.Report_Mortbat.Size = new System.Drawing.Size(255, 28);
-            this.Report_Mortbat.Text = "تقرير صرف المرتبات";
+            this.toolStripSeparator27.Size = new System.Drawing.Size(313, 6);
             // 
             // toolStripSeparator33
             // 
             this.toolStripSeparator33.Name = "toolStripSeparator33";
-            this.toolStripSeparator33.Size = new System.Drawing.Size(252, 6);
+            this.toolStripSeparator33.Size = new System.Drawing.Size(313, 6);
             // 
             // Report_Salf
             // 
             this.Report_Salf.BackColor = System.Drawing.Color.Peru;
             this.Report_Salf.Name = "Report_Salf";
             this.Report_Salf.ShowShortcutKeys = false;
-            this.Report_Salf.Size = new System.Drawing.Size(255, 28);
+            this.Report_Salf.Size = new System.Drawing.Size(316, 28);
             this.Report_Salf.Text = "تقرير السلفيات";
+            this.Report_Salf.Click += new System.EventHandler(this.Report_Salf_Click);
+            // 
+            // toolStripSeparator69
+            // 
+            this.toolStripSeparator69.Name = "toolStripSeparator69";
+            this.toolStripSeparator69.Size = new System.Drawing.Size(313, 6);
+            // 
+            // اضافةالشيفتاتللموظفينToolStripMenuItem
+            // 
+            this.اضافةالشيفتاتللموظفينToolStripMenuItem.Name = "اضافةالشيفتاتللموظفينToolStripMenuItem";
+            this.اضافةالشيفتاتللموظفينToolStripMenuItem.Size = new System.Drawing.Size(316, 28);
+            this.اضافةالشيفتاتللموظفينToolStripMenuItem.Text = "اضافة الشيفتات للموظفين";
+            this.اضافةالشيفتاتللموظفينToolStripMenuItem.Click += new System.EventHandler(this.اضافةالشيفتاتللموظفينToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator70
+            // 
+            this.toolStripSeparator70.Name = "toolStripSeparator70";
+            this.toolStripSeparator70.Size = new System.Drawing.Size(313, 6);
+            // 
+            // تقريرحسابشيفتاتالفنيينToolStripMenuItem
+            // 
+            this.تقريرحسابشيفتاتالفنيينToolStripMenuItem.Name = "تقريرحسابشيفتاتالفنيينToolStripMenuItem";
+            this.تقريرحسابشيفتاتالفنيينToolStripMenuItem.Size = new System.Drawing.Size(316, 28);
+            this.تقريرحسابشيفتاتالفنيينToolStripMenuItem.Text = "تقرير حساب شيفتات الموظفين";
+            this.تقريرحسابشيفتاتالفنيينToolStripMenuItem.Click += new System.EventHandler(this.تقريرحسابشيفتاتالفنيينToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator71
+            // 
+            this.toolStripSeparator71.Name = "toolStripSeparator71";
+            this.toolStripSeparator71.Size = new System.Drawing.Size(313, 6);
+            // 
+            // تقريرعنصرفمرتباتالموظفينToolStripMenuItem
+            // 
+            this.تقريرعنصرفمرتباتالموظفينToolStripMenuItem.Name = "تقريرعنصرفمرتباتالموظفينToolStripMenuItem";
+            this.تقريرعنصرفمرتباتالموظفينToolStripMenuItem.Size = new System.Drawing.Size(316, 28);
+            this.تقريرعنصرفمرتباتالموظفينToolStripMenuItem.Text = "تقرير عن صرف مرتبات الموظفين";
+            this.تقريرعنصرفمرتباتالموظفينToolStripMenuItem.Click += new System.EventHandler(this.تقريرعنصرفمرتباتالموظفينToolStripMenuItem_Click);
             // 
             // toolStripSeparator14
             // 
@@ -1391,14 +1432,14 @@
             this.Teicket.Image = ((System.Drawing.Image)(resources.GetObject("Teicket.Image")));
             this.Teicket.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Teicket.Name = "Teicket";
-            this.Teicket.Size = new System.Drawing.Size(282, 82);
+            this.Teicket.Size = new System.Drawing.Size(292, 92);
             this.Teicket.Text = "شاشة الحجز";
             this.Teicket.Click += new System.EventHandler(this.Teicket_Click);
             // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(279, 6);
+            this.toolStripSeparator8.Size = new System.Drawing.Size(289, 6);
             // 
             // Management_Ticket
             // 
@@ -1407,14 +1448,14 @@
             this.Management_Ticket.Image = ((System.Drawing.Image)(resources.GetObject("Management_Ticket.Image")));
             this.Management_Ticket.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Management_Ticket.Name = "Management_Ticket";
-            this.Management_Ticket.Size = new System.Drawing.Size(282, 82);
+            this.Management_Ticket.Size = new System.Drawing.Size(292, 92);
             this.Management_Ticket.Text = "إدارة الحجز";
             this.Management_Ticket.Click += new System.EventHandler(this.Management_Ticket_Click);
             // 
             // toolStripSeparator44
             // 
             this.toolStripSeparator44.Name = "toolStripSeparator44";
-            this.toolStripSeparator44.Size = new System.Drawing.Size(279, 6);
+            this.toolStripSeparator44.Size = new System.Drawing.Size(289, 6);
             // 
             // Search_Ticket
             // 
@@ -1424,14 +1465,14 @@
             this.Search_Ticket.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Search_Ticket.Name = "Search_Ticket";
             this.Search_Ticket.ShowShortcutKeys = false;
-            this.Search_Ticket.Size = new System.Drawing.Size(282, 82);
+            this.Search_Ticket.Size = new System.Drawing.Size(292, 92);
             this.Search_Ticket.Text = "بحث فى كل الحجوزات";
             this.Search_Ticket.Click += new System.EventHandler(this.بحثفىكلالحجوزاتToolStripMenuItem_Click);
             // 
             // toolStripSeparator46
             // 
             this.toolStripSeparator46.Name = "toolStripSeparator46";
-            this.toolStripSeparator46.Size = new System.Drawing.Size(279, 6);
+            this.toolStripSeparator46.Size = new System.Drawing.Size(289, 6);
             // 
             // Tool_ReportMardodat
             // 
@@ -1586,7 +1627,6 @@
         public System.Windows.Forms.ToolStripMenuItem Report_PullMoneyStock;
         public System.Windows.Forms.ToolStripMenuItem Report_InsertStock;
         public System.Windows.Forms.ToolStripMenuItem Report_TransfairMoney;
-        public System.Windows.Forms.ToolStripMenuItem Report_Mortbat;
         public System.Windows.Forms.ToolStripMenuItem Report_Salf;
         public System.Windows.Forms.ToolStripMenuItem Add_Technical;
         public System.Windows.Forms.ToolStripSeparator toolStripSeparator34;
@@ -1704,5 +1744,11 @@
         public System.Windows.Forms.ToolStripMenuItem Report_Purshasing;
         public System.Windows.Forms.ToolStripMenuItem Tool_ReturnPurshasing;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator68;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator69;
+        private System.Windows.Forms.ToolStripMenuItem اضافةالشيفتاتللموظفينToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator70;
+        private System.Windows.Forms.ToolStripMenuItem تقريرحسابشيفتاتالفنيينToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator71;
+        private System.Windows.Forms.ToolStripMenuItem تقريرعنصرفمرتباتالموظفينToolStripMenuItem;
     }
 }

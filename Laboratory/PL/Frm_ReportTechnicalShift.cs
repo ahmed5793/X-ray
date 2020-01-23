@@ -56,7 +56,7 @@ namespace Laboratory.PL
                 if (comboBox1.Text != string.Empty)
                 {
                     dt.Clear();
-                    dt = Techincal.Report_TechnicalShift(comboBox1.Text, DateFrom.Value, DateTo.Value);
+                    dt = Techincal.Report_TechnicalShift(Convert.ToInt32(comboBox1.SelectedValue), DateFrom.Value, DateTo.Value);
                     dataGridView1.DataSource = dt;
                     textBox1.Text = dataGridView1.Rows.Count.ToString();
                     Calc();
@@ -71,6 +71,11 @@ namespace Laboratory.PL
             {
                 dt.Dispose();
             }
+        }
+
+        private void Frm_ReportTechnicalShift_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

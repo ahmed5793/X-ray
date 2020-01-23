@@ -513,5 +513,34 @@ namespace Laboratory.PL
             Frm_ReturnSupplier frs = new Frm_ReturnSupplier();
             frs.ShowDialog();
         }
+
+        private void اضافةالشيفتاتللموظفينToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_AddEmployeeShift AE = new Frm_AddEmployeeShift();
+            AE.Show();
+        }
+
+        private void تقريرحسابشيفتاتالفنيينToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_ReportEmployeeShift rm = new Frm_ReportEmployeeShift();
+            rm.Show();
+        }
+
+        private void تقريرعنصرفمرتباتالموظفينToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_ReportEmployeeSalary res = new Frm_ReportEmployeeSalary();
+            res.Show();
+        }
+
+        private void Employee_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Report_Salf_Click(object sender, EventArgs e)
+        {
+            Frm_ReportEmployeeSalf ES = new Frm_ReportEmployeeSalf();
+            ES.Show();
+        }
     }
 }

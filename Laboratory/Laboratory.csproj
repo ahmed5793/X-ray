@@ -134,6 +134,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="PL\Frm_AddEmployeeShift.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_AddEmployeeShift.Designer.cs">
+      <DependentUpon>Frm_AddEmployeeShift.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_AddTechnicalShift.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -464,6 +470,24 @@
     <Compile Include="PL\Frm_ReportEmployeeData.Designer.cs">
       <DependentUpon>Frm_ReportEmployeeData.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Frm_ReportEmployeeSalary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_ReportEmployeeSalary.Designer.cs">
+      <DependentUpon>Frm_ReportEmployeeSalary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Frm_ReportEmployeeSalf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_ReportEmployeeSalf.Designer.cs">
+      <DependentUpon>Frm_ReportEmployeeSalf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Frm_ReportEmployeeShift.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_ReportEmployeeShift.Designer.cs">
+      <DependentUpon>Frm_ReportEmployeeShift.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_ReportInsertStock.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -622,6 +646,9 @@
       <DependentUpon>RPT_BARCODE.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="PL\Frm_AddEmployeeShift.resx">
+      <DependentUpon>Frm_AddEmployeeShift.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_AddTechnicalShift.resx">
       <DependentUpon>Frm_AddTechnicalShift.cs</DependentUpon>
     </EmbeddedResource>
@@ -780,6 +807,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_ReportEmployeeData.resx">
       <DependentUpon>Frm_ReportEmployeeData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_ReportEmployeeSalary.resx">
+      <DependentUpon>Frm_ReportEmployeeSalary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_ReportEmployeeSalf.resx">
+      <DependentUpon>Frm_ReportEmployeeSalf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_ReportEmployeeShift.resx">
+      <DependentUpon>Frm_ReportEmployeeShift.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_ReportInsertStock.resx">
       <DependentUpon>Frm_ReportInsertStock.cs</DependentUpon>

@@ -274,11 +274,11 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
-        internal DataTable Report_TechnicalShift(string Id_Technical , DateTime Date_From ,DateTime Date_To)
+        internal DataTable Report_TechnicalShift(int Id_Technical , DateTime Date_From ,DateTime Date_To)
         {
             DataAccessLayer da = new DataAccessLayer();
             SqlParameter[] param = new SqlParameter[3];
-            param[0] = new SqlParameter("@id_Technical", SqlDbType.NVarChar, 100);
+            param[0] = new SqlParameter("@id_Technical", SqlDbType.Int);
             param[0].Value = Id_Technical;
             param[1] = new SqlParameter("@Date_from", SqlDbType.Date);
             param[1].Value = Date_From;

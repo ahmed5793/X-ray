@@ -182,9 +182,9 @@
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.CustomFormat = "tt HH:MM";
+            this.dateTimePicker2.CustomFormat = "";
             this.dateTimePicker2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dateTimePicker2.Location = new System.Drawing.Point(12, 113);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.ShowUpDown = true;
@@ -207,7 +207,7 @@
             // 
             this.dateTimePicker3.CustomFormat = "tt HH:MM";
             this.dateTimePicker3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dateTimePicker3.Location = new System.Drawing.Point(12, 64);
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.ShowUpDown = true;

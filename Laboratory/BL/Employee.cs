@@ -13,7 +13,7 @@ namespace Laboratory.BL
     class Employee
     {
 
-        internal void AddEmployee(string Emp_name, decimal Salary, DateTime salary_date, string National_ID, string phone, string Address, DateTime date, int idEmprole)
+        internal void AddEmployee(string Emp_name, decimal Salary, string Gender_Salary, string National_ID, string phone, string Address, DateTime date, int idEmprole)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
@@ -22,8 +22,8 @@ namespace Laboratory.BL
             param[0].Value = Emp_name;
             param[1] = new SqlParameter("@salary", SqlDbType.Decimal);
             param[1].Value = Salary;
-            param[2] = new SqlParameter("@salary_Date", SqlDbType.DateTime);
-            param[2].Value = salary_date;
+            param[2] = new SqlParameter("@Gender_Salary", SqlDbType.NVarChar,50);
+            param[2].Value = Gender_Salary;
             param[3] = new SqlParameter("@National_ID", SqlDbType.VarChar, 50);
             param[3].Value = National_ID;
             param[4] = new SqlParameter("@Emp_Phone", SqlDbType.VarChar, 100);
@@ -40,7 +40,7 @@ namespace Laboratory.BL
             da.excutequery("AddEmployee", param);
             da.close();
         }
-        internal void UpdateEmployee(string Emp_name, decimal Salary, DateTime salary_date, string National_ID, string phone, string Address, DateTime date, int id_EmpRole, int idemployee)
+        internal void UpdateEmployee(string Emp_name, decimal Salary, string Gender_Salary, string National_ID, string phone, string Address, DateTime date, int id_EmpRole, int idemployee)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
@@ -49,8 +49,8 @@ namespace Laboratory.BL
             param[0].Value = Emp_name;
             param[1] = new SqlParameter("@salary", SqlDbType.Decimal);
             param[1].Value = Salary;
-            param[2] = new SqlParameter("@salary_Date", SqlDbType.DateTime);
-            param[2].Value = salary_date;
+            param[2] = new SqlParameter("@Gender_Salary", SqlDbType.NVarChar, 50);
+            param[2].Value = Gender_Salary;
             param[3] = new SqlParameter("@National_ID", SqlDbType.VarChar, 50);
             param[3].Value = National_ID;
             param[4] = new SqlParameter("@Emp_Phone", SqlDbType.VarChar, 100);
@@ -232,11 +232,11 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
-        internal void AddEmp_Salary(int id_Emp, decimal TotalSalary, decimal TotalSalf, decimal total, DateTime date, string @note)
+        internal void AddEmp_Salary(int id_Emp, decimal TotalSalary, decimal TotalSalf, decimal total, DateTime date, string @note,string User_Name,string MonthSalary)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[6];
+            SqlParameter[] param = new SqlParameter[8];
             param[0] = new SqlParameter("@ID_Emp", SqlDbType.Int);
             param[0].Value = id_Emp;
             param[1] = new SqlParameter("@TotalSalary", SqlDbType.Decimal);
@@ -249,8 +249,10 @@ namespace Laboratory.BL
             param[4].Value = date;
             param[5] = new SqlParameter("@Note", SqlDbType.NVarChar, 150);
             param[5].Value = note;
-
-          
+            param[6] = new SqlParameter("@User_Name", SqlDbType.NVarChar, 50);
+            param[6].Value = User_Name;
+            param[7] = new SqlParameter("@MonthSalary", SqlDbType.NVarChar, 50);
+            param[7].Value = MonthSalary;
 
             da.excutequery("AddEmp_Salary", param);
             da.close();
@@ -436,6 +438,235 @@ namespace Laboratory.BL
 
 
             dt = da.selected("SearchEmployeeBranch", param);
+            da.close();
+            return dt;
+        }
+
+        internal DataTable selectEmployeeGenderSalary()
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            dt = da.selected("selectEmployeeGenderSalary", null);
+            da.close();
+            return dt;
+        }
+
+        internal void Add_EmployeeShift(int Employee_ID,  string Date_shift, string StartTime_Shift, string EndTime_Shift, decimal Amount)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[5];
+            param[0] = new SqlParameter("@Employee_ID", SqlDbType.Int);
+            param[0].Value = Employee_ID;
+            param[1] = new SqlParameter("@Date_Shift", SqlDbType.NVarChar, 100);
+            param[1].Value = Date_shift;
+            param[2] = new SqlParameter("@Start_Time_Shift", SqlDbType.NVarChar, 100);
+            param[2].Value = StartTime_Shift;
+            param[3] = new SqlParameter("@End_Time_Shift", SqlDbType.NVarChar, 100);
+            param[3].Value = EndTime_Shift;
+            param[4] = new SqlParameter("@Amount", SqlDbType.Decimal);
+            param[4].Value = Amount;
+            da.excutequery("Add_EmployeeShift", param);
+            da.close();
+        }
+
+        internal void Update_EmployeeShift(int ID_Shift, int Employee_ID, string Date_shift, string StartTime_Shift, string EndTime_Shift, decimal Amount)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[6];
+            param[0] = new SqlParameter("@ID_Shift", SqlDbType.Int);
+            param[0].Value = ID_Shift;
+            param[1] = new SqlParameter("@Employee_ID", SqlDbType.Int);
+            param[1].Value = Employee_ID;
+            param[2] = new SqlParameter("@Date_Shift", SqlDbType.NVarChar, 100);
+            param[2].Value = Date_shift;
+            param[3] = new SqlParameter("@Start_Time_Shift", SqlDbType.NVarChar, 100);
+            param[3].Value = StartTime_Shift;
+            param[4] = new SqlParameter("@End_Time_Shift", SqlDbType.NVarChar, 100);
+            param[4].Value = EndTime_Shift;
+            param[5] = new SqlParameter("@Amount", SqlDbType.Decimal);
+            param[5].Value = Amount;
+            da.excutequery("Update_EmployeeShift", param);
+            da.close();
+        }
+        internal void Delete_TechnicalShift(int Id_Shift)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@ID_Shift", SqlDbType.Int);
+            param[0].Value = Id_Shift;
+            da.excutequery("Delete_TechnicalShift", param);
+            da.close();
+        }
+        internal DataTable Search_EmployeeShift(string id)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            DataTable dt = new DataTable();
+            da.open();
+
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@id", SqlDbType.NVarChar, 50);
+            param[0].Value = id;
+
+
+
+            dt = da.selected("Search_EmployeeShift", param);
+            da.close();
+            return dt;
+        }
+
+        internal DataTable Select_EmployeeShift()
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            dt = da.selected("Select_EmployeeShift", null);
+            da.close();
+            return dt;
+        }
+
+        internal DataTable selectEmployeeRoleshift(int id)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            DataTable dt = new DataTable();
+            da.open();
+
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@idemployee", SqlDbType.Int);
+            param[0].Value = id;
+
+
+
+            dt = da.selected("selectEmployeeRoleshift", param);
+            da.close();
+            return dt;
+        }
+
+
+        internal DataTable VildateEmployeeShift(int id)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            DataTable dt = new DataTable();
+            da.open();
+
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@id", SqlDbType.Int);
+            param[0].Value = id;
+
+
+
+            dt = da.selected("VildateEmployeeShift", param);
+            da.close();
+            return dt;
+        }
+
+        internal DataTable Report_EmployeeShift(int Id_Technical, DateTime Date_From, DateTime Date_To)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[3];
+            param[0] = new SqlParameter("@id_Employee", SqlDbType.Int);
+            param[0].Value = Id_Technical;
+            param[1] = new SqlParameter("@Date_from", SqlDbType.Date);
+            param[1].Value = Date_From;
+            param[2] = new SqlParameter("@Date_to", SqlDbType.Date);
+            param[2].Value = Date_To;
+            da.open();
+            DataTable dt = new DataTable();
+            dt.Clear();
+            dt = da.selected("Report_EmployeeShift", param);
+            da.close();
+            return dt;
+        }
+
+        internal DataTable selectEmployeeGenderSalaryMonthe()
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            dt = da.selected("selectEmployeeGenderSalaryMonthe", null);
+            da.close();
+            return dt;
+        }
+        internal DataTable selectEmployeeGenderSalaryShift()
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            dt = da.selected("selectEmployeeGenderSalaryShift", null);
+            da.close();
+            return dt;
+        }
+
+        internal DataTable vildateEmployeeSalary(int Id_employee ,string date)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            DataTable dt = new DataTable();
+            da.open();
+            SqlParameter[] param = new SqlParameter[2];
+            param[0] = new SqlParameter("@idemployee", SqlDbType.Int);
+            param[0].Value = Id_employee;
+            param[1] = new SqlParameter("@date", SqlDbType.NVarChar,50);
+            param[1].Value = date;
+            dt = da.selected("vildateEmployeeSalary", param);
+            da.close();
+            return dt;
+        }
+
+        internal DataTable RrportEmployeeSalary(int Id_employee,string fromdate,string todate)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            DataTable dt = new DataTable();
+            da.open();
+            SqlParameter[] param = new SqlParameter[3];
+            param[0] = new SqlParameter("@idemployee", SqlDbType.Int);
+            param[0].Value = Id_employee;
+            param[1] = new SqlParameter("@fromdate", SqlDbType.NVarChar,50);
+            param[1].Value = fromdate;
+            param[2] = new SqlParameter("@todate", SqlDbType.NVarChar,50);
+            param[2].Value = todate;
+            dt = da.selected("RrportEmployeeSalary", param);
+            da.close();
+            return dt;
+        }
+        internal DataTable RrportEmployeeSalaryDate( string fromdate, string todate)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            DataTable dt = new DataTable();
+            da.open();
+            SqlParameter[] param = new SqlParameter[2];
+          
+            param[0] = new SqlParameter("@fromdate", SqlDbType.NVarChar,50);
+            param[0].Value = fromdate;
+            param[1] = new SqlParameter("@todate", SqlDbType.NVarChar,50);
+            param[1].Value = todate;
+            dt = da.selected("RrportEmployeeSalaryDate", param);
+            da.close();
+            return dt;
+        }
+        internal DataTable ReportEmployeeSalf()
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            dt = da.selected("ReportEmployeeSalf", null);
+            da.close();
+            return dt;
+        }
+        internal DataTable ReportEmployeeSumSalf()
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            dt = da.selected("ReportEmployeeSumSalf", null);
             da.close();
             return dt;
         }

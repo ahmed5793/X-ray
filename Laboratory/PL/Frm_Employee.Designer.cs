@@ -44,10 +44,10 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.Txt_Salary = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
             this.btn_GenderJob = new System.Windows.Forms.Button();
             this.txt_NationalID = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -237,10 +237,10 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.Txt_Salary);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.dateTimePicker2);
-            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btn_GenderJob);
             this.groupBox1.Controls.Add(this.txt_NationalID);
             this.groupBox1.Controls.Add(this.label4);
@@ -265,10 +265,41 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(232, 73);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(86, 24);
+            this.label10.TabIndex = 43;
+            this.label10.Text = "نوع الراتب";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "شيفت",
+            "مرتب شهرى"});
+            this.comboBox1.Location = new System.Drawing.Point(11, 68);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.comboBox1.Size = new System.Drawing.Size(207, 32);
+            this.comboBox1.TabIndex = 42;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboBox1.SelectionChangeCommitted += new System.EventHandler(this.comboBox1_SelectionChangeCommitted);
+            // 
             // Txt_Salary
             // 
             this.Txt_Salary.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_Salary.Location = new System.Drawing.Point(41, 62);
+            this.Txt_Salary.Location = new System.Drawing.Point(26, 113);
             this.Txt_Salary.MaxLength = 11;
             this.Txt_Salary.Name = "Txt_Salary";
             this.Txt_Salary.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -281,31 +312,11 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(217, 70);
+            this.label9.Location = new System.Drawing.Point(247, 121);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(115, 24);
+            this.label9.Size = new System.Drawing.Size(60, 24);
             this.label9.TabIndex = 41;
-            this.label9.Text = "الراتب الشهرى";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(9, 110);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(196, 26);
-            this.dateTimePicker2.TabIndex = 39;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(211, 112);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 24);
-            this.label1.TabIndex = 38;
-            this.label1.Text = "تاريخ الاستحقاق";
+            this.label9.Text = "الراتب ";
             // 
             // btn_GenderJob
             // 
@@ -413,7 +424,7 @@
         public System.Windows.Forms.ComboBox cmb_department;
         private System.Windows.Forms.TextBox Txt_Salary;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label10;
+        public System.Windows.Forms.ComboBox comboBox1;
     }
 }
