@@ -120,6 +120,26 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
+        internal DataTable SelectCompoCustomerN2dy()
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            dt = da.selected("SelectCompoCustomerN2dy", null);
+            da.close();
+            return dt;
+        }
+        internal DataTable SelectCompoCustomerCompany()
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            dt = da.selected("SelectCompoCustomerN2dy", null);
+            da.close();
+            return dt;
+        }
         internal DataTable SelectDataCompoCustomer(int id)
         {
             DataTable dt = new DataTable();
@@ -225,6 +245,37 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
+        internal DataTable Search_AllPayCustomerCompanyDate(DateTime Date_From, DateTime Date_To)
+        {
+            DataTable dt = new DataTable();
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[2];
+            param[0] = new SqlParameter("@From_Date", SqlDbType.DateTime);
+            param[0].Value = Date_From;
+            param[1] = new SqlParameter("@To_Date", SqlDbType.DateTime);
+            param[1].Value = Date_To;
+            dt = da.selected("Search_AllPayCustomerCompanyDate", param);
+            da.close();
+            return dt;
+        }
+        internal DataTable Search_AllPayCustomerCompanyDateAndName(string id, DateTime Date_From, DateTime Date_To)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[3];
+            param[0] = new SqlParameter("@Id", SqlDbType.NVarChar, 100);
+            param[0].Value = id;
+            param[1] = new SqlParameter("@From_Date", SqlDbType.DateTime);
+            param[1].Value = Date_From;
+            param[2] = new SqlParameter("@To_Date", SqlDbType.DateTime);
+            param[2].Value = Date_To;
+            dt = da.selected("Search_AllPayCustomerCompanyDateAndName", param);
+            da.close();
+            return dt;
+        }
         internal DataTable Select_AllPayCustomer()
         {
             DataTable dt = new DataTable();
@@ -244,6 +295,37 @@ namespace Laboratory.BL
             param[0] = new SqlParameter("@Id", SqlDbType.NVarChar, 100);
             param[0].Value = id;
             dt = da.selected("Search_AllPayCustomer", param);
+            da.close();
+            return dt;
+        }
+        internal DataTable Search_AllPayCustomerDate(DateTime Date_From, DateTime Date_To)
+        {
+            DataTable dt = new DataTable();
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[2];
+            param[0] = new SqlParameter("@From_Date", SqlDbType.DateTime);
+            param[0].Value = Date_From;
+            param[1] = new SqlParameter("@To_Date", SqlDbType.DateTime);
+            param[1].Value = Date_To;
+            dt = da.selected("Search_AllPayCustomerDate", param);
+            da.close();
+            return dt;
+        }
+        internal DataTable Search_AllPayCustomerNameanddate(string id, DateTime Date_From, DateTime Date_To)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[3];
+            param[0] = new SqlParameter("@id", SqlDbType.NVarChar, 100);
+            param[0].Value = id;
+            param[1] = new SqlParameter("@From_Date", SqlDbType.DateTime);
+            param[1].Value = Date_From;
+            param[2] = new SqlParameter("@To_Date", SqlDbType.DateTime);
+            param[2].Value = Date_To;
+            dt = da.selected("Search_AllPayCustomerNameanddate", param);
             da.close();
             return dt;
         }

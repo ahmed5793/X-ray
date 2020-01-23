@@ -285,17 +285,13 @@ namespace Laboratory.BL
         internal DataTable SelectSearchticketsDate( DateTime from, DateTime to)
         {
             DataTable dt = new DataTable();
-
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[2];
-        
+            SqlParameter[] param = new SqlParameter[2];        
             param[0] = new SqlParameter("@from", SqlDbType.DateTime);
             param[0].Value = from;
             param[1] = new SqlParameter("@to", SqlDbType.DateTime);
             param[1].Value = to;
-
-
             dt = da.selected("SelectSearchticketsDate", param);
             da.close();
             return dt;
@@ -315,8 +311,25 @@ namespace Laboratory.BL
             param[2] = new SqlParameter("@to", SqlDbType.DateTime);
             param[2].Value = to;
 
-
             dt = da.selected("SelectSearchticketsBranchDate", param);
+            da.close();
+            return dt;
+        }
+        internal DataTable SelectSearchticketsBranchDateandCategory(int branch,int Id_CategoryItem, DateTime from, DateTime to)
+        {
+            DataTable dt = new DataTable();
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[4];
+            param[0] = new SqlParameter("@id_Branche", SqlDbType.Int);
+            param[0].Value = branch;
+            param[1] = new SqlParameter("@Id_CategoryItem", SqlDbType.Int);
+            param[1].Value = Id_CategoryItem;
+            param[2] = new SqlParameter("@from", SqlDbType.DateTime);
+            param[2].Value = from;
+            param[3] = new SqlParameter("@to", SqlDbType.DateTime);
+            param[3].Value = to;
+            dt = da.selected("SelectSearchticketsBranchDateandCategory", param);
             da.close();
             return dt;
         }

@@ -13,11 +13,12 @@ namespace Laboratory.PL
     public partial class Frm_ReturnSupplier : Form
     {
         Suppliers Suppliers = new Suppliers();
+        Store Store = new Store();
         Users u = new Users();
         Branches b = new Branches();
         Stock s = new Stock();
         DataTable dt = new DataTable();
-
+        DataTable dt10 = new DataTable();
         public Frm_ReturnSupplier()
         {
 
@@ -27,12 +28,9 @@ namespace Laboratory.PL
             comboBox1.ValueMember = "ID";
             txt_sales.Text = Program.salesman;
             Permision();
-            txt_pay.Enabled = false;
-            txt_return.Enabled = false;
-            btn_row.Enabled = false;
-            btn_save.Hide();
             txt_iD.Hide();
-            textBox1.Hide();
+            SelectDataTable();
+            Txt_IdStore.Hide();
         }
         void Permision()
         {
@@ -66,63 +64,72 @@ namespace Laboratory.PL
         }
         void Clear()
         {
-            txt_amount.Clear();
-            txt_invo.Clear();
             txt_Name.Clear();
             txt_names.Clear();
-            txt_note.Clear();
             txt_num.Clear();
-            txt_pay.Clear();
             txt_prise.Clear();
             txt_quantity.Clear();
-            txt_rent.Clear();
             txt_sales.Clear();
             txt_total.Clear();
             textBox4.Text = "0";
+            Txt_QuantityStore.Text = "0";
+            dt10.Clear();
         }
-        void Pay()
-        {
-            if (txt_invo.Text != string.Empty && txt_pay.Text != string.Empty)
-            {
-                decimal totainv = Convert.ToDecimal(txt_invo.Text) - Convert.ToDecimal(txt_pay.Text);
-                txt_rent.Text = Math.Round(totainv, 1).ToString();
-            }
-        }
-        void Calcalutor()
-        {
-            if (txt_prise.Text != string.Empty && txt_quantity.Text != string.Empty)
-            {
 
-                decimal mins = Convert.ToDecimal(txt_prise.Text) * Convert.ToInt32(txt_quantity.Text);
-                txt_amount.Text = Math.Round(mins,1).ToString();
-            }
-        }
-        void Total()
+       void SelectDataTable()
         {
-            if (txt_amount.Text != string.Empty && txt_discount.Text != string.Empty)
-            {
-                decimal amount = Convert.ToDecimal(txt_amount.Text);
-                decimal discount = Convert.ToDecimal(txt_discount.Text);
-                decimal total = amount - discount;
-                txt_total.Text = Math.Round(total,1).ToString();
-            }
-        }
-        internal void Sum()
-        {
-            int x = int.Parse(textBox1.Text) - int.Parse(txt_return.Text);
-            txt_quantity.Text = x.ToString();
-        }
-        public void CalctotalinvoOrder()
-        {
-            decimal total = 0;
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
-            {
-                total += Convert.ToDecimal(dataGridView1.Rows[i].Cells[6].Value);
-            }
-            textBox3.Text = Math.Round(total,1).ToString();
-        }
-     
+            dt10.Columns.Add("رقم الصنف");
+            dt10.Columns.Add("إسم الصنف");
+            dt10.Columns.Add("الكمية المرتجعه");
+            dt10.Columns.Add("سعر الشراء");
+            dt10.Columns.Add("إلاجمالى");
+            dt10.Columns.Add("رقم المخزن");
+            dataGridView2.DataSource = dt10;
 
+
+        }
+        //void Calcalutor()
+        //{
+        //    if (txt_prise.Text != string.Empty && txt_quantity.Text != string.Empty)
+        //    {
+
+        //        decimal mins = Convert.ToDecimal(txt_prise.Text) * Convert.ToInt32(txt_quantity.Text);
+        //        txt_amount.Text = Math.Round(mins,1).ToString();
+        //    }
+        //}
+        //void Total()
+        //{
+        //    if (txt_amount.Text != string.Empty && txt_discount.Text != string.Empty)
+        //    {
+        //        decimal amount = Convert.ToDecimal(txt_amount.Text);
+        //        decimal discount = Convert.ToDecimal(txt_discount.Text);
+        //        decimal total = amount - discount;
+        //        txt_total.Text = Math.Round(total,1).ToString();
+        //    }
+        //}
+        //internal void Sum()
+        //{
+        //    int x = int.Parse(textBox1.Text) - int.Parse(txt_return.Text);
+        //    txt_quantity.Text = x.ToString();
+        //}
+        //public void CalctotalinvoOrder()
+        //{
+        //    decimal total = 0;
+        //    for (int i = 0; i < dataGridView1.Rows.Count; i++)
+        //    {
+        //        total += Convert.ToDecimal(dataGridView1.Rows[i].Cells[6].Value);
+        //    }
+        //    txt_invo.Text = Math.Round(total,1).ToString();
+        //}
+        internal void Calc_ReturnValue()
+        {
+            decimal Total = 0;
+            for (int i = 0; i < dataGridView2.Rows.Count; i++)
+            {
+                Total += (Convert.ToDecimal(dataGridView2.Rows[i].Cells[4].Value));
+            }
+            textBox4.Text = Math.Round(Total, 0).ToString();
+        }
         private void txt_sales_TextChanged(object sender, EventArgs e)
         {
         }
@@ -136,27 +143,33 @@ namespace Laboratory.PL
         {
             DataTable dt1 = new DataTable();
             DataTable dt2 = new DataTable();
+            DataTable dt20 = new DataTable();
             try
             {
+                dt20.Clear();
+                dt20= Suppliers.Validate_IdSupplierInformation(Convert.ToInt32(comboBox1.SelectedValue));
+                if (dt20.Rows.Count==0)
+                {
+                    Console.Beep();
+                    MessageBox.Show("لا توجد فاتورة بهذا الرقم");
+                    return;
+                }
                 Clear();
+                dt1.Clear();
+                dt2.Clear();
                 dt1 = Suppliers.Select_SupplierInformation(Convert.ToInt32(comboBox1.SelectedValue));
                 dt2 = Suppliers.Select_SupplierDetailsForReturn(Convert.ToInt32(comboBox1.SelectedValue));
                 foreach (DataRow dr in dt1.Rows)
                 {
                     txt_num.Text = dr["ID"].ToString();
                     txt_Name.Text = dr["Name"].ToString();
-                    txt_sales.Text = Program.salesman;
-                    txt_note.Text = dr["note"].ToString();
-                    txt_invo.Text = dr["Total_Invoic"].ToString();
-                    txt_pay.Text = dr["pay"].ToString();
-                    txt_rent.Text = dr["rent"].ToString();
+                    txt_sales.Text = Program.salesman;            
                 }
                 dataGridView1.DataSource = dt2;
                 dataGridView1.Columns[7].Visible = false;
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
             finally
@@ -178,22 +191,26 @@ namespace Laboratory.PL
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
+            DataTable data = new DataTable();
             try
             {
-                btn_row.Enabled = true;
                 txt_iD.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
                 txt_names.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                 txt_prise.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                textBox1.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                txt_amount.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                txt_discount.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                txt_quantity.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
                 txt_total.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-                Sum();
-                txt_return.Enabled = true;               
+                Txt_IdStore.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+                data.Clear();
+                data = (Store.Select_QuantityProduct(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value), Convert.ToInt32(dataGridView1.CurrentRow.Cells[7].Value)));
+                Txt_QuantityStore.Text = data.Rows[0][0].ToString();       
             }
             catch
             {
                 return;
+            }
+            finally
+            {
+                data.Dispose();
             }
         }
 
@@ -202,50 +219,41 @@ namespace Laboratory.PL
             try
 
             {
-                //btn_close.Enabled=false;
-                btn_save.Show();
-                if (Convert.ToInt32(txt_return.Text) > Convert.ToInt32(textBox1.Text))
+                if (Convert.ToInt32(txt_return.Text) > Convert.ToInt32(txt_quantity.Text))
                 {
                     MessageBox.Show("الكمية المرتجعة أكبر من الكمية المباعة");
-                    txt_return.Text = "0";
-                    Sum();
-                    Calcalutor();
-                    Total();
+                    txt_return.Focus();               
                     return;
                 }
-                if (txt_iD.Text != string.Empty)
+                 if (Convert.ToInt32(txt_return.Text) > Convert.ToInt32(Txt_QuantityStore.Text))
+                 {
+                    MessageBox.Show("الكمية المرتجعة أكبر من الكمية بالمخزن", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txt_return.Focus();
+                    return;
+                 }
+                if (txt_iD.Text != string.Empty && Convert.ToInt32(txt_return.Text)>0)
                 {
+                  
+                    DataRow r = dt10.NewRow();
+                    r[0] = txt_iD.Text;
+                    r[1] = txt_names.Text;
+                    r[2] = txt_return.Text;
+                    r[3] = txt_prise.Text;
+                    r[4] = (Convert.ToInt32(txt_return.Text)*Convert.ToDecimal(txt_prise.Text));
+                    r[5] = Txt_IdStore.Text;
 
-                    dataGridView1.CurrentRow.Cells[2].Value = txt_prise.Text;
-                    dataGridView1.CurrentRow.Cells[3].Value = txt_quantity.Text;
-                    dataGridView1.CurrentRow.Cells[4].Value = txt_amount.Text;
-                    dataGridView1.CurrentRow.Cells[5].Value = txt_discount.Text;
-                    dataGridView1.CurrentRow.Cells[6].Value = txt_total.Text;
+                    dt10.Rows.Add(r);
+                    dataGridView2.DataSource = dt10;
+                    Calc_ReturnValue();
 
-                    Suppliers.Add_SupplierReturn(Convert.ToInt32(txt_num.Text), Convert.ToInt32(txt_iD.Text),Convert.ToDecimal(txt_prise.Text)
-                        ,Convert.ToDecimal(txt_return.Text),dateTimePicker1.Value,Convert.ToDecimal(txt_prise.Text)* Convert.ToDecimal(txt_return.Text)
-                        ,txt_sales.Text,Convert.ToInt32(dataGridView1.CurrentRow.Cells[7].Value));
-
-                    MessageBox.Show("تم تعديل الصنف بنجاح");
-
-
-                    CalctotalinvoOrder();
-                    Pay();
-                    //textBox3.Text= dataGridView2.CurrentRow.Cells[0].Value.ToString();
-
-                    txt_pay.Enabled = true;
-                    txt_amount.Clear();
                     txt_names.Clear();
                     txt_prise.Clear();
                     txt_quantity.Clear();
                     txt_iD.Clear();
-                    txt_discount.Text = "0";
-                    txt_return.Text = "0";
+                    Txt_IdStore.Clear();
                     txt_total.Clear();
-                    textBox4.Text = "0";
-                    textBox1.Text = "0";
-                    txt_pay.Focus();
-                    txt_pay.SelectAll();
+                    txt_return.Text = "0";
+                   
                 }
                 else
                 {
@@ -261,13 +269,7 @@ namespace Laboratory.PL
 
         private void txt_return_KeyUp(object sender, KeyEventArgs e)
         {
-            if (Convert.ToInt32(txt_return.Text) > 0)
-            {
-                txt_discount.Text = "0";
-            }
-            Sum();
-            Calcalutor();
-            Total();
+          
         }
 
         private void txt_return_TextChanged(object sender, EventArgs e)
@@ -275,12 +277,12 @@ namespace Laboratory.PL
             if (txt_return.Text == "")
             {
                 txt_return.Text = "0";
-            }
+            }     
         }
 
         private void textBox1_KeyUp(object sender, KeyEventArgs e)
         {
-            Sum();
+
         }
 
         private void txt_return_KeyPress(object sender, KeyPressEventArgs e)
@@ -293,21 +295,172 @@ namespace Laboratory.PL
 
         private void txt_pay_Leave(object sender, EventArgs e)
         {
-            if (txt_pay.Text == "")
-            {
-                txt_pay.Text = "0";
-                Pay();
-            }
+           
         }
 
         private void txt_invo_KeyUp(object sender, KeyEventArgs e)
         {
-            Pay();
+         
         }
 
         private void txt_rent_KeyUp(object sender, KeyEventArgs e)
         {
-            Pay();
+          
+        }
+
+        private void btn_save_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void txt_amount_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Cmb_Stock_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_SaveReturn_Click(object sender, EventArgs e)
+        {
+            try
+            {               
+                dt.Clear();
+                dt = s.Select_moneyStock(Convert.ToInt32(Cmb_Stock.SelectedValue));
+                if (dt.Rows.Count > 0 )
+                {
+                    if (Convert.ToDecimal(Txt_Pay.Text) > Convert.ToDecimal(dt.Rows[0][0]))
+                    {
+                        MessageBox.Show("رصيد الخزنة الحالى غير كافى ");
+                        return;
+                    }        
+                }
+                if (dataGridView2.Rows.Count>0)
+                {
+                    if (Convert.ToInt32(Txt_Pay.Text)>0)
+                    {
+                        s.add_insertStock(Convert.ToInt32(Cmb_Stock.SelectedValue), Convert.ToDecimal(Txt_Pay.Text), dateTimePicker1.Value, txt_sales.Text, "مرتجع فاتورة مستريات رقم " + txt_num.Text);
+                    }
+                    for (int i = 0; i < dataGridView2.Rows.Count; i++)
+                    {
+                        Suppliers.Add_SupplierReturn(Convert.ToInt32(txt_num.Text), Convert.ToInt32(dataGridView2.Rows[i].Cells[0].Value)
+                            ,Convert.ToDecimal(dataGridView2.Rows[i].Cells[3].Value)
+                         ,Convert.ToDecimal(dataGridView2.Rows[i].Cells[2].Value),dateTimePicker1.Value,
+                         Convert.ToDecimal(dataGridView2.Rows[i].Cells[4].Value)
+                        ,txt_sales.Text,Convert.ToInt32(dataGridView1.CurrentRow.Cells[5].Value));
+                        MessageBox.Show("تح حفظ المرتجع للفاتورة المحددة");
+                        Clear();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+               MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void Txt_Pay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '.' && Txt_Pay.Text.ToString().IndexOf('.') > -1)
+            {
+                e.Handled = true;
+            }
+            else if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != Convert.ToChar(System.Globalization.CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Txt_Pay_TextChanged(object sender, EventArgs e)
+        {
+            if (Txt_Pay.Text=="")
+            {
+                Txt_Pay.Text = "0";
+            }
+        }
+
+        private void Txt_Pay_Click(object sender, EventArgs e)
+        {
+            if (Txt_Pay.Text == "0")
+            {
+                Txt_Pay.Text = "";
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Frm_SearchSupplierInformation frm = new Frm_SearchSupplierInformation();
+
+            try
+            {
+                frm.ShowDialog();
+                DataTable dt1 = new DataTable();
+                DataTable dt2 = new DataTable();
+                try
+                {
+                    if (frm.dataGridView1.SelectedRows.Count>0 && frm.dataGridView1.Rows.Count>0)
+                    {
+                        Clear();
+                        dt1.Clear();
+                        dt2.Clear();
+                        dt1 = Suppliers.Select_SupplierInformation(Convert.ToInt32(frm.dataGridView1.CurrentRow.Cells[0].Value));
+                        dt2 = Suppliers.Select_SupplierDetailsForReturn(Convert.ToInt32(frm.dataGridView1.CurrentRow.Cells[0].Value));
+                        foreach (DataRow dr in dt1.Rows)
+                        {
+                            txt_num.Text = dr["ID"].ToString();
+                            txt_Name.Text = dr["Name"].ToString();
+                            txt_sales.Text = Program.salesman;
+
+                        }
+                        dataGridView1.DataSource = dt2;
+                        dataGridView1.Columns[7].Visible = false;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    dt1.Dispose();
+                    dt2.Dispose();
+                }
+            }
+            catch (Exception ex )
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void View_OldReturn_Click(object sender, EventArgs e)
+        {
+            Frm_ShowOldReturn frm_show = new Frm_ShowOldReturn();
+            DataTable data5 = new DataTable();
+            try
+            {
+                data5.Clear();
+                data5 = Suppliers.Select_SupplierReturn(Convert.ToInt32(txt_num.Text));
+                frm_show.dataGridView1.DataSource = data5;
+                frm_show.ShowDialog();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

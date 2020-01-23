@@ -107,6 +107,7 @@
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.3\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -560,11 +561,23 @@
     <Compile Include="PL\Frm_Salf.Designer.cs">
       <DependentUpon>Frm_Salf.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Frm_SearchSupplierInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_SearchSupplierInformation.Designer.cs">
+      <DependentUpon>Frm_SearchSupplierInformation.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_Search_Ticket.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PL\Frm_Search_Ticket.Designer.cs">
       <DependentUpon>Frm_Search_Ticket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Frm_ShowOldReturn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_ShowOldReturn.Designer.cs">
+      <DependentUpon>Frm_ShowOldReturn.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Frm_StockPull.cs">
       <SubType>Form</SubType>
@@ -853,8 +866,14 @@
     <EmbeddedResource Include="PL\Frm_Salf.resx">
       <DependentUpon>Frm_Salf.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_SearchSupplierInformation.resx">
+      <DependentUpon>Frm_SearchSupplierInformation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Search_Ticket.resx">
       <DependentUpon>Frm_Search_Ticket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_ShowOldReturn.resx">
+      <DependentUpon>Frm_ShowOldReturn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_StockPull.resx">
       <DependentUpon>Frm_StockPull.cs</DependentUpon>

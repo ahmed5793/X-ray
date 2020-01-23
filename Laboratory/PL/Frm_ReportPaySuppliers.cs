@@ -122,6 +122,8 @@ namespace Laboratory.PL
             comboBox2.Hide();
             DateFrom.Hide();
             DateTo.Hide();
+            btn_search.Hide();
+
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
@@ -151,6 +153,37 @@ namespace Laboratory.PL
             DateFrom.Show();
             DateTo.Show();
             btn_search.Show();
+        }
+
+        private void comboBox2_Leave(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                if (comboBox2.Text != "")
+                {
+                    dt.Clear();
+                    dt = Suppliers.Validate_SuppliersName(Convert.ToInt32(comboBox2.SelectedValue));
+                    if (dt.Rows.Count == 0)
+                    {
+                        Console.Beep();
+                        MessageBox.Show("هذا الاسم غير موجود فى قائمة الموردين");
+                        comboBox2.Focus();
+                        comboBox2.SelectAll();
+                        return;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

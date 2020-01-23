@@ -28,7 +28,7 @@ namespace Laboratory.PL
             {
                 Total += Convert.ToDecimal(dataGridView1.Rows[i].Cells[3].Value);
             }
-            textBox1.Text = Math.Round(Total, 2).ToString();
+            textBox1.Text = Math.Round(Total, 1).ToString();
 
         }
 

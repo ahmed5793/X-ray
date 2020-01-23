@@ -358,5 +358,53 @@ namespace Laboratory.BL
             da.excutequery("Add_SupplierReturn", param);
             da.close();
         }
+        internal DataTable Validate_SuppliersName(int Id_Supplier)
+        {
+            DataTable dt = new DataTable();
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@ID_Sup", SqlDbType.Int);
+            param[0].Value = Id_Supplier;
+            dt = da.selected("Validate_SuppliersName", param);
+            da.close();
+            return dt;
+        }
+        internal DataTable SelectSupplierInovice(int Id_Supplier)
+        {
+            DataTable dt = new DataTable();
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@Id_Sup", SqlDbType.Int);
+            param[0].Value = Id_Supplier;
+            dt = da.selected("SelectSupplierInovice", param);
+            da.close();
+            return dt;
+        }
+        internal DataTable Select_SupplierReturn(int Id_information)
+        {
+            DataTable dt = new DataTable();
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@ID_Information", SqlDbType.Int);
+            param[0].Value = Id_information;
+            dt = da.selected("Select_SupplierReturn", param);
+            da.close();
+            return dt;
+        }
+        internal DataTable Validate_IdSupplierInformation(int Id_information)
+        {
+            DataTable dt = new DataTable();
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@Id_Infromation", SqlDbType.Int);
+            param[0].Value = Id_information;
+            dt = da.selected("Validate_IdSupplierInformation", param);
+            da.close();
+            return dt;
+        }
     }
 }

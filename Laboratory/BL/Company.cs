@@ -412,5 +412,18 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
+        internal void Delect_CompanyItem(int ID_company, int Id_Item)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[2];
+            param[0] = new SqlParameter("@ID_Company", SqlDbType.Int);
+            param[0].Value = ID_company;
+            param[1] = new SqlParameter("@Id_Item", SqlDbType.Int);
+            param[1].Value = Id_Item;
+
+            da.excutequery("Delect_CompanyItem", param);
+            da.close();
+        }
     }
 }

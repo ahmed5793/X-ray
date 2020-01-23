@@ -35,10 +35,21 @@ namespace Laboratory.BL
             param[1].Value = name;
             da.excutequery("Update_Stock", param);
             da.close();
+        }
+        internal void Update_StockMoney(int id, decimal amount)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[2];
+            param[0] = new SqlParameter("@id_Stock", SqlDbType.Int);
+            param[0].Value = id;
+            param[1] = new SqlParameter("@Amount", SqlDbType.Decimal);
+            param[1].Value = amount;
+            da.excutequery("Update_StockMoney", param);
+            da.close();
 
 
         }
-
         internal void Delete_Stock(int id)
         {
             DataAccessLayer da = new DataAccessLayer();

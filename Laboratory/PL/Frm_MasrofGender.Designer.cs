@@ -40,7 +40,7 @@
             // 
             this.groupBox1.Controls.Add(this.txt_name);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(10, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(443, 60);
             this.groupBox1.TabIndex = 40;
@@ -97,7 +97,8 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_save);
             this.Name = "Frm_MasrofGender";
-            this.Text = "Frm_MasrofGender";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "شاشة إضافة نوع المصروف";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
