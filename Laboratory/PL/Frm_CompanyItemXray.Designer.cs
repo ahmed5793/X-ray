@@ -42,7 +42,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.dgv_visit = new System.Windows.Forms.DataGridView();
             this.label22 = new System.Windows.Forms.Label();
-            this.btn_print = new System.Windows.Forms.Button();
+            this.btn_Update = new System.Windows.Forms.Button();
             this.btn_save = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -50,6 +50,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.Txt_PriceDiscount = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.Btn_New = new System.Windows.Forms.Button();
+            this.Btn_Delete = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_visit)).BeginInit();
             this.SuspendLayout();
@@ -252,23 +254,23 @@
             this.label22.TabIndex = 101;
             this.label22.Text = "بحث بأسم الشركة أو نوع الفحص";
             // 
-            // btn_print
+            // btn_Update
             // 
-            this.btn_print.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btn_print.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_print.Location = new System.Drawing.Point(143, 269);
-            this.btn_print.Name = "btn_print";
-            this.btn_print.Size = new System.Drawing.Size(200, 40);
-            this.btn_print.TabIndex = 103;
-            this.btn_print.Text = "تعديل البيانات";
-            this.btn_print.UseVisualStyleBackColor = true;
-            this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
+            this.btn_Update.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btn_Update.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Update.Location = new System.Drawing.Point(188, 269);
+            this.btn_Update.Name = "btn_Update";
+            this.btn_Update.Size = new System.Drawing.Size(200, 40);
+            this.btn_Update.TabIndex = 103;
+            this.btn_Update.Text = "تعديل البيانات";
+            this.btn_Update.UseVisualStyleBackColor = true;
+            this.btn_Update.Click += new System.EventHandler(this.btn_print_Click);
             // 
             // btn_save
             // 
             this.btn_save.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_save.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_save.Location = new System.Drawing.Point(403, 270);
+            this.btn_save.Location = new System.Drawing.Point(413, 269);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(200, 40);
             this.btn_save.TabIndex = 5;
@@ -363,19 +365,45 @@
             this.label5.TabIndex = 109;
             this.label5.Text = "سعر الشركة بعد الخصم";
             // 
+            // Btn_New
+            // 
+            this.Btn_New.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Btn_New.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_New.Location = new System.Drawing.Point(436, 270);
+            this.Btn_New.Name = "Btn_New";
+            this.Btn_New.Size = new System.Drawing.Size(154, 40);
+            this.Btn_New.TabIndex = 110;
+            this.Btn_New.Text = "جديد";
+            this.Btn_New.UseVisualStyleBackColor = true;
+            this.Btn_New.Click += new System.EventHandler(this.Btn_New_Click);
+            // 
+            // Btn_Delete
+            // 
+            this.Btn_Delete.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Btn_Delete.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Delete.Location = new System.Drawing.Point(12, 269);
+            this.Btn_Delete.Name = "Btn_Delete";
+            this.Btn_Delete.Size = new System.Drawing.Size(154, 40);
+            this.Btn_Delete.TabIndex = 111;
+            this.Btn_Delete.Text = "مسح ";
+            this.Btn_Delete.UseVisualStyleBackColor = true;
+            this.Btn_Delete.Click += new System.EventHandler(this.Btn_Delete_Click);
+            // 
             // Frm_CompanyItemXray
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Peru;
             this.ClientSize = new System.Drawing.Size(713, 554);
+            this.Controls.Add(this.Btn_Delete);
+            this.Controls.Add(this.Btn_New);
             this.Controls.Add(this.Txt_PriceDiscount);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.Txt_Discount);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.btn_print);
+            this.Controls.Add(this.btn_Update);
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.textBox1);
@@ -416,7 +444,7 @@
         private System.Windows.Forms.TextBox textBox2;
         public System.Windows.Forms.DataGridView dgv_visit;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Button btn_print;
+        private System.Windows.Forms.Button btn_Update;
         private System.Windows.Forms.Button btn_save;
         public System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label3;
@@ -424,5 +452,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox Txt_PriceDiscount;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button Btn_New;
+        private System.Windows.Forms.Button Btn_Delete;
     }
 }

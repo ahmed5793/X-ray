@@ -173,9 +173,12 @@ namespace Laboratory.PL
         {
 
             btn_new.Hide();
+
             btn_add.Show();
             btn_update.Enabled = false;
+            Btn_Delete.Enabled = false;
             txt_quantity.Text = "0";
+            Txt_Minimum.Text = "0";
             button1.Enabled = true;
             Cmb_ProdName.Enabled = true;
         }

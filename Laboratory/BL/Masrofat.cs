@@ -60,13 +60,11 @@ namespace Laboratory.BL
             DataAccessLayer da = new DataAccessLayer();
             SqlParameter[] param = new SqlParameter[1];
             da.open();
-            param[0] = new SqlParameter("@id", SqlDbType.Int);
+            param[0] = new SqlParameter("@id_ReserveDetails", SqlDbType.Int);
             param[0].Value = id;
-
             da.excutequery("DeleteReserveDetails", param);
             da.close();
         }
-
         internal void UpdateResrveDetails(int id, int IdReserve, string decription, decimal amount, DateTime date, int Id_Stock , string Sales_Man)
         {
             DataAccessLayer da = new DataAccessLayer();
@@ -86,7 +84,6 @@ namespace Laboratory.BL
             param[5].Value = Id_Stock;
             param[6] = new SqlParameter("@Sales_man", SqlDbType.Int);
             param[6].Value = Sales_Man;
-
             da.excutequery("UpdateResrveDetails", param);
             da.close();
         }

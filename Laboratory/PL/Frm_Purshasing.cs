@@ -13,6 +13,7 @@ namespace Laboratory.PL
 {
     public partial class Frm_Purshasing : Form
     {
+        Product Product = new Product();
         Store Store = new Store();
         Stock Stock = new Stock();
         Suppliers Suppliers = new Suppliers();
@@ -247,6 +248,7 @@ namespace Laboratory.PL
 
         private void btn_save_Click(object sender, EventArgs e)
         {
+            DataTable dt5 = new DataTable();
             try
             {
 
@@ -263,26 +265,32 @@ namespace Laboratory.PL
 
                     if (dt4.Rows.Count > 0)
                     {
-
                         if (Convert.ToDecimal(txt_pay.Text) > Convert.ToDecimal(dt4.Rows[0][0]))
                         {
                             MessageBox.Show("رصيد الخزنة الحالى غير كافى لشراء هذه الفاتورة");
                             return;
                         }
                     }
-
                     Suppliers.ADDSuppliersINFORMARION(Convert.ToInt32(txt_num.Text), Convert.ToInt32(Cmb_Suppliers.SelectedValue),
                      dateTimePicker1.Value, txt_note.Text, txt_sales.Text, Convert.ToDecimal(txt_invo.Text),
                      Convert.ToDecimal(txt_pay.Text), Convert.ToDecimal(txt_mark.Text), Convert.ToInt32(cmb_Stock.SelectedValue));
                     if (Convert.ToDecimal(txt_pay.Text)>0)
                     {
                         Stock.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_pay.Text), dateTimePicker1.Value, txt_sales.Text, Cmb_Suppliers.Text + "فاتورة مشتريات");
-
                     }
-
-
                     for (int i = 0; i < dataGridView1.Rows.Count; i++)
                     {
+                        dt5 = Product.Validate_StoreProduct(Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value),Convert.ToInt32(Cmb_Store.SelectedValue));
+                        if (dt5.Rows.Count > 0)
+                        {
+                            Product.Update_QuantityStoreProduct(Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value),
+                                 Convert.ToInt32(dataGridView1.Rows[i].Cells[3].Value), Convert.ToInt32(Cmb_Store.SelectedValue));
+                        }
+                        else if (dt5.Rows.Count == 0)
+                        {
+                            Product.Add_StoreProduct(Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value), Convert.ToInt32(Cmb_Store.SelectedValue),
+                                Convert.ToInt32(dataGridView1.Rows[i].Cells[3].Value),0);
+                        }
                         Suppliers.addSuppliersDetails(Convert.ToInt32(txt_num.Text),
                             Convert.ToInt32(Cmb_Store.SelectedValue),
                             Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value),
@@ -362,6 +370,30 @@ namespace Laboratory.PL
             //rs.SetParameterValue("@id", Convert.ToInt32(txt_num.Text));
             //fr.crystalReportViewer1.ReportSource = rs;
             //fr.Show();
+        }
+
+        private void txt_pay_Click(object sender, EventArgs e)
+        {
+            if (txt_pay.Text=="0")
+            {
+                txt_pay.Text ="";
+            }
+        }
+
+        private void txt_pay_Leave(object sender, EventArgs e)
+        {
+            if (txt_pay.Text=="")
+            {
+                txt_pay.Text = "0";
+            }
+        }
+
+        private void txt_pay_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_pay.Text=="")
+            {
+                txt_pay.Text = "0";
+            }
         }
     }
 }

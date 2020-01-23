@@ -105,9 +105,7 @@ namespace Laboratory.PL
 
         private void RdbOneCustomer_CheckedChanged(object sender, EventArgs e)
         {
-            txt_prise.Enabled = true;
-
-          
+            txt_prise.Enabled = true;         
             cmb_company.Show();
             cmb_company.DataSource = c.SelectCompany();
             cmb_company.DisplayMember = "اسم الشركه";

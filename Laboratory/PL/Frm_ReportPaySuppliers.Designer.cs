@@ -45,18 +45,20 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewList)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.BackColor = System.Drawing.Color.White;
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label3.Location = new System.Drawing.Point(212, 503);
+            this.label3.Location = new System.Drawing.Point(217, 495);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(239, 32);
+            this.label3.Size = new System.Drawing.Size(199, 32);
             this.label3.TabIndex = 67;
             this.label3.Text = "إجمالى مدفوعات الموردين";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -65,7 +67,7 @@
             // 
             this.txt_TotalPurshacing.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_TotalPurshacing.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_TotalPurshacing.Location = new System.Drawing.Point(7, 503);
+            this.txt_TotalPurshacing.Location = new System.Drawing.Point(12, 495);
             this.txt_TotalPurshacing.Name = "txt_TotalPurshacing";
             this.txt_TotalPurshacing.Size = new System.Drawing.Size(199, 32);
             this.txt_TotalPurshacing.TabIndex = 66;
@@ -100,12 +102,13 @@
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Arial", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label1.Location = new System.Drawing.Point(252, 1);
+            this.label1.Location = new System.Drawing.Point(252, 3);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label1.Size = new System.Drawing.Size(395, 43);
+            this.label1.Size = new System.Drawing.Size(395, 41);
             this.label1.TabIndex = 63;
             this.label1.Text = "تقرير عن مدفوعات الموردين";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -126,7 +129,7 @@
             this.dataGridViewList.ReadOnly = true;
             this.dataGridViewList.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dataGridViewList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewList.Size = new System.Drawing.Size(950, 311);
+            this.dataGridViewList.Size = new System.Drawing.Size(950, 294);
             this.dataGridViewList.TabIndex = 62;
             // 
             // label7
@@ -142,13 +145,14 @@
             this.label7.Size = new System.Drawing.Size(99, 29);
             this.label7.TabIndex = 106;
             this.label7.Text = "إسم المورد";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            this.label7.Leave += new System.EventHandler(this.comboBox2_Leave);
             // 
             // comboBox2
             // 
             this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.comboBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(192, 52);
@@ -156,6 +160,7 @@
             this.comboBox2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.comboBox2.Size = new System.Drawing.Size(298, 32);
             this.comboBox2.TabIndex = 105;
+            this.comboBox2.Leave += new System.EventHandler(this.comboBox2_Leave);
             // 
             // DateTo
             // 
@@ -168,6 +173,7 @@
             this.DateTo.ShowUpDown = true;
             this.DateTo.Size = new System.Drawing.Size(403, 32);
             this.DateTo.TabIndex = 104;
+            this.DateTo.Leave += new System.EventHandler(this.comboBox2_Leave);
             // 
             // DateFrom
             // 
@@ -180,6 +186,7 @@
             this.DateFrom.ShowUpDown = true;
             this.DateFrom.Size = new System.Drawing.Size(403, 32);
             this.DateFrom.TabIndex = 103;
+            this.DateFrom.Leave += new System.EventHandler(this.comboBox2_Leave);
             // 
             // label4
             // 
@@ -194,6 +201,7 @@
             this.label4.TabIndex = 102;
             this.label4.Text = "إلى :";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label4.Leave += new System.EventHandler(this.comboBox2_Leave);
             // 
             // label5
             // 
@@ -208,6 +216,7 @@
             this.label5.TabIndex = 101;
             this.label5.Text = " : من";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label5.Leave += new System.EventHandler(this.comboBox2_Leave);
             // 
             // label6
             // 
@@ -215,7 +224,7 @@
             this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label6.Location = new System.Drawing.Point(740, 6);
+            this.label6.Location = new System.Drawing.Point(761, 9);
             this.label6.Name = "label6";
             this.label6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label6.Size = new System.Drawing.Size(181, 36);
@@ -236,6 +245,7 @@
             this.btn_search.Text = "بحث";
             this.btn_search.UseVisualStyleBackColor = false;
             this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
+            this.btn_search.Leave += new System.EventHandler(this.comboBox2_Leave);
             // 
             // radioButton1
             // 
@@ -285,12 +295,26 @@
             this.radioButton3.UseVisualStyleBackColor = false;
             this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
             // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button1.BackColor = System.Drawing.Color.Black;
+            this.button1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Yellow;
+            this.button1.Location = new System.Drawing.Point(601, 488);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(273, 43);
+            this.button1.TabIndex = 112;
+            this.button1.Text = "طباعة تقرير بالمدفوعات";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // Frm_ReportPaySuppliers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(954, 543);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.radioButton3);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
@@ -338,5 +362,6 @@
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.Button button1;
     }
 }

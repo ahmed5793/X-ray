@@ -82,5 +82,33 @@ namespace Laboratory.BL
             }
 
         }
+        internal DataTable Select_QuantityProduct( int Id_Product , int Id_Store)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                DataAccessLayer DA = new DataAccessLayer();
+                SqlParameter[] param = new SqlParameter[2];
+                param[0] = new SqlParameter("@ID_Product", SqlDbType.Int);
+                param[0].Value = Id_Product;
+                param[1] = new SqlParameter("@Id_Store", SqlDbType.Int);
+                param[1].Value = Id_Store;
+                DA.open();
+                dt.Clear();
+                dt = DA.selected("Select_QuantityProduct", param);
+                return dt;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                dt.Dispose();
+            }
+
+        }
     }
 }

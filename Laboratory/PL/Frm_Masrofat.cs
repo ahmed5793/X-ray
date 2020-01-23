@@ -51,6 +51,8 @@ namespace Laboratory.PL
             cmb_Stock.DataSource = Stock.Compo_Stock();
             cmb_Stock.DisplayMember = "Name_Stock";
             cmb_Stock.ValueMember = "ID_Stock";
+            textBox1.Hide();
+            Btn_Delete.Enabled = false;
         }
 
 
@@ -86,7 +88,7 @@ namespace Laboratory.PL
             {
                 m.AddReserveDetails(Convert.ToInt32(comboBox1.SelectedValue), txt_notes.Text,
                 Convert.ToDecimal(txt_amount.Text), dateTimePicker1.Value,Convert.ToInt32(cmb_Stock.SelectedValue),txt_username.Text);
-                Stock.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_amount.Text), dateTimePicker1.Value, txt_username.Text, "مصروفات ");
+                Stock.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_amount.Text), dateTimePicker1.Value, txt_username.Text, "مصروفات " +"لل"+ comboBox1.Text);
                 MessageBox.Show("تم التسجيل بنجاح", "عمليه التسجيل");
                 dataGridView1.DataSource = m.SelectReserveDetails();
                 txt_notes.Clear();
@@ -105,8 +107,7 @@ namespace Laboratory.PL
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
-            label4.Hide();
-            textBox1.Hide();
+        
         }
 
         private void txt_amount_KeyPress(object sender, KeyPressEventArgs e)
@@ -128,7 +129,94 @@ namespace Laboratory.PL
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
+            try
+            {
+                if (dataGridView1.Rows.Count>0)
+                {
+                    Btn_Delete.Enabled = true;
+                    btn_save.Enabled = false;
+                    cmb_Stock.Enabled = false;
+                    comboBox1.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                    txt_notes.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                    txt_amount.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                    //dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                    textBox1.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
 
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void Btn_Update_Click(object sender, EventArgs e)
+        {
+            //try
+            //{
+            //    if (MessageBox.Show("هل تريد تعديل المصروف","تعديل المصروف",MessageBoxButtons.YesNo , MessageBoxIcon.Question)==DialogResult.Yes)
+            //    {
+            //        m.UpdateResrveDetails(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value),Convert.ToInt32(comboBox1.SelectedValue),
+            //            txt_notes.Text, Convert.ToDecimal(txt_amount.Text),dateTimePicker1.Value,Convert.ToInt32(cmb_Stock.SelectedValue),txt_username.Text);
+            //        MessageBox.Show("تم تعديل المصروف بنجاح");
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("تم إلغاء تعديل المصروف ");
+            //    }
+            //    dataGridView1.DataSource = m.SelectReserveDetails();
+            //    txt_notes.Clear();
+            //    txt_amount.Clear();
+            //    textBox1.Clear();
+            //    Btn_Delete.Enabled = false;
+            //    Btn_Update.Enabled = false;
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+        }
+
+        private void Btn_New_Click(object sender, EventArgs e)
+        {
+            txt_notes.Clear();
+            txt_amount.Clear();
+            textBox1.Clear();
+            Btn_Delete.Enabled = false;
+            btn_save.Enabled = true;
+            cmb_Stock.Enabled = true;
+            dateTimePicker1.Value = DateTime.Now;
+
+        }
+
+        private void Btn_Delete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("هل تريد مسح المصروف", "مسح المصروف", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Stock.add_insertStock(Convert.ToInt32(textBox1.Text),Convert.ToDecimal(txt_amount.Text),DateTime.Now,txt_notes.Text,"مسح مصروف " +" "+   comboBox1.Text  +" "+"من شاشة المصروفات");
+                    m.DeleteReserveDetails(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
+                    MessageBox.Show("تم مسح المصروف بنجاح");
+                }
+                else
+                {
+                    MessageBox.Show("تم إلغاء مسح المصروف ");
+                }
+                dataGridView1.DataSource = m.SelectReserveDetails();
+                txt_notes.Clear();
+                txt_amount.Clear();
+                textBox1.Clear();
+                Btn_Delete.Enabled = false;
+                btn_save.Enabled = true;
+                cmb_Stock.Enabled = true;
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

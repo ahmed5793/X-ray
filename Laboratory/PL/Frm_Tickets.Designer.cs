@@ -337,7 +337,7 @@
             // txt_age
             // 
             this.txt_age.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_age.Location = new System.Drawing.Point(358, 160);
+            this.txt_age.Location = new System.Drawing.Point(356, 160);
             this.txt_age.MaxLength = 11;
             this.txt_age.Name = "txt_age";
             this.txt_age.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -368,7 +368,7 @@
             // txt_phone
             // 
             this.txt_phone.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_phone.Location = new System.Drawing.Point(6, 83);
+            this.txt_phone.Location = new System.Drawing.Point(11, 83);
             this.txt_phone.MaxLength = 3000;
             this.txt_phone.Name = "txt_phone";
             this.txt_phone.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -381,7 +381,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(364, 49);
+            this.label5.Location = new System.Drawing.Point(370, 49);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(98, 24);
             this.label5.TabIndex = 45;
@@ -391,7 +391,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(365, 88);
+            this.label3.Location = new System.Drawing.Point(372, 88);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(99, 24);
             this.label3.TabIndex = 44;

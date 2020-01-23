@@ -126,7 +126,7 @@
             this.btn_add.BackColor = System.Drawing.Color.Black;
             this.btn_add.Font = new System.Drawing.Font("Arial", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_add.ForeColor = System.Drawing.Color.White;
-            this.btn_add.Location = new System.Drawing.Point(389, 204);
+            this.btn_add.Location = new System.Drawing.Point(389, 203);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(175, 42);
             this.btn_add.TabIndex = 23;
@@ -286,7 +286,7 @@
             this.Btn_Delete.ForeColor = System.Drawing.Color.White;
             this.Btn_Delete.Location = new System.Drawing.Point(14, 205);
             this.Btn_Delete.Name = "Btn_Delete";
-            this.Btn_Delete.Size = new System.Drawing.Size(142, 42);
+            this.Btn_Delete.Size = new System.Drawing.Size(151, 42);
             this.Btn_Delete.TabIndex = 30;
             this.Btn_Delete.Text = "حذف الصنف ";
             this.Btn_Delete.UseVisualStyleBackColor = false;
