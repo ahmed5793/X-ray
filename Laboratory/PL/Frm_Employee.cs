@@ -246,8 +246,9 @@ namespace Laboratory.PL
         {
             if (comboBox1.Text == "شيفت")
             {
-                label9.Show();
-                Txt_Salary.Show();
+                label9.Hide();
+                Txt_Salary.Hide();
+                Txt_Salary.Text = "0";
             }
             else if (comboBox1.Text == "مرتب شهرى")
             {

@@ -41,7 +41,7 @@ namespace Laboratory.PL
             decimal total = 0;
             for (int i = 0; i <= dataGridView1.Rows.Count - 1; i++)
             {
-                total += Convert.ToDecimal(dataGridView1.Rows[i].Cells[4].Value);
+                total += Convert.ToDecimal(dataGridView1.Rows[i].Cells[5].Value);
 
             }
             textBox1.Text = Math.Round(total, 1).ToString();
@@ -63,6 +63,25 @@ namespace Laboratory.PL
 
                 comboBox1.DataSource = null;
                 dataGridView1.DataSource = null;
+            }
+        }
+
+        private void comboBox1_Leave(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            if (comboBox1.Text != "")
+            {
+                dt.Clear();
+                dt = E.VildateEmployeeShift(Convert.ToInt32(comboBox1.SelectedValue));
+                if (dt.Rows.Count == 0)
+                {
+                    MessageBox.Show("يرجي العلم بان اسم الموظف غير مسجل من قبل يرجي تسجيل هذا الاسم في شاشه الموظفين", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                    comboBox1.Focus();
+                    comboBox1.SelectAll();
+                    return;
+                }
+                dt.Dispose();
             }
         }
     }

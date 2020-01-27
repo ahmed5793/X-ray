@@ -321,6 +321,12 @@
     <Compile Include="PL\Frm_Employee.designer.cs">
       <DependentUpon>Frm_Employee.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Frm_EmployeeDiscount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_EmployeeDiscount.Designer.cs">
+      <DependentUpon>Frm_EmployeeDiscount.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_EmpSarf.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -470,6 +476,12 @@
     </Compile>
     <Compile Include="PL\Frm_ReportEmployeeData.Designer.cs">
       <DependentUpon>Frm_ReportEmployeeData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Frm_ReportEmployeeDiscount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_ReportEmployeeDiscount.Designer.cs">
+      <DependentUpon>Frm_ReportEmployeeDiscount.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Frm_ReportEmployeeSalary.cs">
       <SubType>Form</SubType>
@@ -746,6 +758,9 @@
     <EmbeddedResource Include="PL\Frm_Employee.resx">
       <DependentUpon>Frm_Employee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_EmployeeDiscount.resx">
+      <DependentUpon>Frm_EmployeeDiscount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_EmpSarf.resx">
       <DependentUpon>Frm_EmpSarf.cs</DependentUpon>
     </EmbeddedResource>
@@ -820,6 +835,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_ReportEmployeeData.resx">
       <DependentUpon>Frm_ReportEmployeeData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_ReportEmployeeDiscount.resx">
+      <DependentUpon>Frm_ReportEmployeeDiscount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_ReportEmployeeSalary.resx">
       <DependentUpon>Frm_ReportEmployeeSalary.cs</DependentUpon>

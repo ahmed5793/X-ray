@@ -11,10 +11,10 @@ using Laboratory.BL;
 
 namespace Laboratory.PL
 {
-    public partial class Frm_ReportEmployeeSalf : Form
+    public partial class Frm_ReportEmployeeDiscount : Form
     {
         Employee E = new Employee();
-        public Frm_ReportEmployeeSalf()
+        public Frm_ReportEmployeeDiscount()
         {
             InitializeComponent();
             checkBox1.Checked = true;
@@ -22,27 +22,28 @@ namespace Laboratory.PL
             comboBox1.DataSource = E.SelectCompoEmployee();
             comboBox1.DisplayMember = "Emp_Name";
             comboBox1.ValueMember = "Emp_ID";
-
-
         }
 
-        private void Frm_ReportEmployeeSalf_Load(object sender, EventArgs e)
+        private void btn_search_Click(object sender, EventArgs e)
         {
-         
 
-        }
+            if (checkBox1.Checked == true)
+            {
+                dataGridView1.DataSource = E.ReportselecEmployeetDiscount(Convert.ToInt32(comboBox1.SelectedValue), DateFrom.Value, DateTo.Value);
 
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-          
-            
-        }
+            }
+            else
+            {
+                dataGridView1.DataSource = E.ReportselecDateEmployeetDiscount(DateFrom.Value, DateTo.Value);
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-           
-            
-           
+            }
+            decimal total = 0;
+            for (int i = 0; i <= dataGridView1.Rows.Count - 1; i++)
+            {
+                total += Convert.ToDecimal(dataGridView1.Rows[i].Cells[1].Value);
+
+            }
+            txt_totalpay.Text = Math.Round(total, 2).ToString();
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -64,26 +65,9 @@ namespace Laboratory.PL
             }
         }
 
-        private void btn_search_Click(object sender, EventArgs e)
+        private void Frm_ReportEmployeeDiscount_Load(object sender, EventArgs e)
         {
 
-            if (checkBox1.Checked == true)
-            {
-                dataGridView1.DataSource = E.ReportSearchEmployeeSalf(Convert.ToInt32(comboBox1.SelectedValue), DateFrom.Value, DateTo.Value);
-              
-            }
-            else
-            {
-                dataGridView1.DataSource = E.ReportSearchDateEmployeeSalf(DateFrom.Value, DateTo.Value);
-
-            }
-            decimal total = 0;
-            for (int i = 0; i <= dataGridView1.Rows.Count - 1; i++)
-            {
-                total += Convert.ToDecimal(dataGridView1.Rows[i].Cells[3].Value);
-
-            }
-            txt_totalpay.Text = Math.Round(total, 2).ToString();
         }
 
         private void comboBox1_Leave(object sender, EventArgs e)
@@ -105,4 +89,4 @@ namespace Laboratory.PL
             }
         }
     }
-    }
+}

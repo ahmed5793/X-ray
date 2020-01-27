@@ -42,6 +42,7 @@
             this.Category_XRay = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
             this.Add_XRays = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator73 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator54 = new System.Windows.Forms.ToolStripSeparator();
             this.Employee = new System.Windows.Forms.ToolStripDropDownButton();
             this.Employee_manage = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,6 +53,7 @@
             this.AddEmployeeBranches = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator28 = new System.Windows.Forms.ToolStripSeparator();
             this.Add_Account = new System.Windows.Forms.ToolStripMenuItem();
+            this.اضافةالشيفتاتللموظفينToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator29 = new System.Windows.Forms.ToolStripSeparator();
             this.Sarf_Mortbat = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator30 = new System.Windows.Forms.ToolStripSeparator();
@@ -60,11 +62,12 @@
             this.toolStripSeparator33 = new System.Windows.Forms.ToolStripSeparator();
             this.Report_Salf = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator69 = new System.Windows.Forms.ToolStripSeparator();
-            this.اضافةالشيفتاتللموظفينToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator70 = new System.Windows.Forms.ToolStripSeparator();
             this.تقريرحسابشيفتاتالفنيينToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator71 = new System.Windows.Forms.ToolStripSeparator();
             this.تقريرعنصرفمرتباتالموظفينToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator72 = new System.Windows.Forms.ToolStripSeparator();
+            this.خصوماتالموظفينToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
             this.Doctors_Center = new System.Windows.Forms.ToolStripMenuItem();
             this.Add_DoctorOfCenters = new System.Windows.Forms.ToolStripMenuItem();
@@ -194,6 +197,8 @@
             this.Btn_Exit = new System.Windows.Forms.ToolStripButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.toolStripSeparator74 = new System.Windows.Forms.ToolStripSeparator();
+            this.تقريرعنخصوماتالموظفينToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -232,7 +237,8 @@
             this.Main_data.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Branches_Manage,
             this.toolStripSeparator15,
-            this.إدارةالاشعةToolStripMenuItem});
+            this.إدارةالاشعةToolStripMenuItem,
+            this.toolStripSeparator73});
             this.Main_data.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Main_data.Image = ((System.Drawing.Image)(resources.GetObject("Main_data.Image")));
             this.Main_data.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
@@ -321,6 +327,11 @@
             this.Add_XRays.Text = "إضافة الاشعة";
             this.Add_XRays.Click += new System.EventHandler(this.Add_XRays_Click);
             // 
+            // toolStripSeparator73
+            // 
+            this.toolStripSeparator73.Name = "toolStripSeparator73";
+            this.toolStripSeparator73.Size = new System.Drawing.Size(235, 6);
+            // 
             // toolStripSeparator54
             // 
             this.toolStripSeparator54.Name = "toolStripSeparator54";
@@ -368,7 +379,11 @@
             this.toolStripSeparator70,
             this.تقريرحسابشيفتاتالفنيينToolStripMenuItem,
             this.toolStripSeparator71,
-            this.تقريرعنصرفمرتباتالموظفينToolStripMenuItem});
+            this.تقريرعنصرفمرتباتالموظفينToolStripMenuItem,
+            this.toolStripSeparator72,
+            this.خصوماتالموظفينToolStripMenuItem,
+            this.toolStripSeparator74,
+            this.تقريرعنخصوماتالموظفينToolStripMenuItem});
             this.Employee_manage.Image = ((System.Drawing.Image)(resources.GetObject("Employee_manage.Image")));
             this.Employee_manage.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Employee_manage.Name = "Employee_manage";
@@ -422,6 +437,13 @@
             this.Add_Account.Text = "إنشاء حساب للموظفين";
             this.Add_Account.Click += new System.EventHandler(this.إنشاءحسابللموظفينToolStripMenuItem_Click);
             // 
+            // اضافةالشيفتاتللموظفينToolStripMenuItem
+            // 
+            this.اضافةالشيفتاتللموظفينToolStripMenuItem.Name = "اضافةالشيفتاتللموظفينToolStripMenuItem";
+            this.اضافةالشيفتاتللموظفينToolStripMenuItem.Size = new System.Drawing.Size(316, 28);
+            this.اضافةالشيفتاتللموظفينToolStripMenuItem.Text = "اضافة الشيفتات للموظفين";
+            this.اضافةالشيفتاتللموظفينToolStripMenuItem.Click += new System.EventHandler(this.اضافةالشيفتاتللموظفينToolStripMenuItem_Click);
+            // 
             // toolStripSeparator29
             // 
             this.toolStripSeparator29.Name = "toolStripSeparator29";
@@ -472,13 +494,6 @@
             this.toolStripSeparator69.Name = "toolStripSeparator69";
             this.toolStripSeparator69.Size = new System.Drawing.Size(313, 6);
             // 
-            // اضافةالشيفتاتللموظفينToolStripMenuItem
-            // 
-            this.اضافةالشيفتاتللموظفينToolStripMenuItem.Name = "اضافةالشيفتاتللموظفينToolStripMenuItem";
-            this.اضافةالشيفتاتللموظفينToolStripMenuItem.Size = new System.Drawing.Size(316, 28);
-            this.اضافةالشيفتاتللموظفينToolStripMenuItem.Text = "اضافة الشيفتات للموظفين";
-            this.اضافةالشيفتاتللموظفينToolStripMenuItem.Click += new System.EventHandler(this.اضافةالشيفتاتللموظفينToolStripMenuItem_Click);
-            // 
             // toolStripSeparator70
             // 
             this.toolStripSeparator70.Name = "toolStripSeparator70";
@@ -502,6 +517,18 @@
             this.تقريرعنصرفمرتباتالموظفينToolStripMenuItem.Size = new System.Drawing.Size(316, 28);
             this.تقريرعنصرفمرتباتالموظفينToolStripMenuItem.Text = "تقرير عن صرف مرتبات الموظفين";
             this.تقريرعنصرفمرتباتالموظفينToolStripMenuItem.Click += new System.EventHandler(this.تقريرعنصرفمرتباتالموظفينToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator72
+            // 
+            this.toolStripSeparator72.Name = "toolStripSeparator72";
+            this.toolStripSeparator72.Size = new System.Drawing.Size(313, 6);
+            // 
+            // خصوماتالموظفينToolStripMenuItem
+            // 
+            this.خصوماتالموظفينToolStripMenuItem.Name = "خصوماتالموظفينToolStripMenuItem";
+            this.خصوماتالموظفينToolStripMenuItem.Size = new System.Drawing.Size(316, 28);
+            this.خصوماتالموظفينToolStripMenuItem.Text = "خصومات الموظفين";
+            this.خصوماتالموظفينToolStripMenuItem.Click += new System.EventHandler(this.خصوماتالموظفينToolStripMenuItem_Click);
             // 
             // toolStripSeparator14
             // 
@@ -1562,6 +1589,18 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "USER NAME";
             // 
+            // toolStripSeparator74
+            // 
+            this.toolStripSeparator74.Name = "toolStripSeparator74";
+            this.toolStripSeparator74.Size = new System.Drawing.Size(313, 6);
+            // 
+            // تقريرعنخصوماتالموظفينToolStripMenuItem
+            // 
+            this.تقريرعنخصوماتالموظفينToolStripMenuItem.Name = "تقريرعنخصوماتالموظفينToolStripMenuItem";
+            this.تقريرعنخصوماتالموظفينToolStripMenuItem.Size = new System.Drawing.Size(316, 28);
+            this.تقريرعنخصوماتالموظفينToolStripMenuItem.Text = "تقرير عن خصومات الموظفين";
+            this.تقريرعنخصوماتالموظفينToolStripMenuItem.Click += new System.EventHandler(this.تقريرعنخصوماتالموظفينToolStripMenuItem_Click);
+            // 
             // Frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1750,5 +1789,10 @@
         private System.Windows.Forms.ToolStripMenuItem تقريرحسابشيفتاتالفنيينToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator71;
         private System.Windows.Forms.ToolStripMenuItem تقريرعنصرفمرتباتالموظفينToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator72;
+        private System.Windows.Forms.ToolStripMenuItem خصوماتالموظفينToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator73;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator74;
+        private System.Windows.Forms.ToolStripMenuItem تقريرعنخصوماتالموظفينToolStripMenuItem;
     }
 }

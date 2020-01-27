@@ -425,5 +425,20 @@ namespace Laboratory.BL
             da.excutequery("Delect_CompanyItem", param);
             da.close();
         }
+
+        internal DataTable selectXrayCompanyTransfer(int Id_company, int idItem)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            DataTable dt = new DataTable();
+            da.open();
+            SqlParameter[] param = new SqlParameter[2];
+            param[0] = new SqlParameter("@idcompany", SqlDbType.Int);
+            param[0].Value = Id_company;
+            param[1] = new SqlParameter("@idItem", SqlDbType.Int);
+            param[1].Value = idItem;
+            dt = da.selected("selectXrayCompanyTransfer", param);
+            da.close();
+            return dt;
+        }
     }
 }

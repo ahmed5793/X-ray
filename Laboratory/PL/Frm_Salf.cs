@@ -69,16 +69,15 @@ namespace Laboratory.PL
 
             //}
 
-            dt.Clear();
-            dt = E.SelectSalary(Convert.ToInt32(cmb_employeeName.SelectedValue), Convert.ToDecimal(Txt_money.Text));
+            //dt.Clear();
+            //dt = E.SelectSalary(Convert.ToInt32(cmb_employeeName.SelectedValue), Convert.ToDecimal(Txt_money.Text));
 
-            if (dt.Rows.Count > 0)
-            {
+            //if (dt.Rows.Count > 0)
+            //{
 
                 E.AddEmployee_Salf(txt_NameDaen.Text, dateTimePicker1.Value, dateTimePicker2.Value, txt_note.Text, Convert.ToDecimal(Txt_money.Text), Convert.ToInt32(cmb_employeeName.SelectedValue));
                 MessageBox.Show("تم التسجيل بنجاح");
-                E.AddEMPSalaryMins(Convert.ToInt32(cmb_employeeName.SelectedValue), dateTimePicker1.Value,
-                  Convert.ToDecimal(Txt_money.Text), "false");
+         
                 dataGridView1.DataSource = E.SelectEmployeeSalf();
                 txt_note.Clear();
                 txt_NameDaen.Clear();
@@ -91,15 +90,15 @@ namespace Laboratory.PL
                 btn_save.Show();
 
 
-            }
+           // }
 
-            else
-            {
-                MessageBox.Show("عزيزى المستخدم يرجي العلم بان مبلغ الاستلاف اكبر من الراتب الشهرى للموظف لايسمح بقيام العمليه");
+            //else
+            //{
+            //    MessageBox.Show("عزيزى المستخدم يرجي العلم بان مبلغ الاستلاف اكبر من الراتب الشهرى للموظف لايسمح بقيام العمليه");
 
 
 
-            }
+            //}
 
 
 
@@ -255,6 +254,25 @@ namespace Laboratory.PL
         private void Txt_money_KeyUp(object sender, KeyEventArgs e)
         {
            
+        }
+
+        private void cmb_employeeName_Leave(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            if (cmb_employeeName.Text != "")
+            {
+                dt.Clear();
+                dt = E.VildateEmployeeShift(Convert.ToInt32(cmb_employeeName.SelectedValue));
+                if (dt.Rows.Count == 0)
+                {
+                    MessageBox.Show("يرجي العلم بان اسم الموظف غير مسجل من قبل يرجي تسجيل هذا الاسم في شاشه الموظفين", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                    cmb_employeeName.Focus();
+                    cmb_employeeName.SelectAll();
+                    return;
+                }
+                dt.Dispose();
+            }
         }
     }
     }

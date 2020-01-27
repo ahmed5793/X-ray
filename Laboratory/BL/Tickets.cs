@@ -449,5 +449,22 @@ namespace Laboratory.BL
             return dt;
         }
 
+
+        internal DataTable VildateselectItemXrayCompany( int idcompany,int ID_CATEGORY)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[2];
+            param[0] = new SqlParameter("@idcompany", SqlDbType.Int);
+            param[0].Value = idcompany;
+            param[1] = new SqlParameter("@ID_CATEGORY", SqlDbType.Int);
+            param[1].Value = ID_CATEGORY;
+            dt = da.selected("VildateselectItemXrayCompany", param);
+            da.close();
+            return dt;
+        }
+
     }
 }

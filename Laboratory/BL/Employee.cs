@@ -232,11 +232,12 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
-        internal void AddEmp_Salary(int id_Emp, decimal TotalSalary, decimal TotalSalf, decimal total, DateTime date, string @note,string User_Name,string MonthSalary)
+        internal void AddEmp_Salary(int id_Emp, decimal TotalSalary, decimal TotalSalf, decimal total, DateTime date,
+            string @note,string User_Name,string MonthSalary,decimal Total_DiscountEmployee)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[8];
+            SqlParameter[] param = new SqlParameter[9];
             param[0] = new SqlParameter("@ID_Emp", SqlDbType.Int);
             param[0].Value = id_Emp;
             param[1] = new SqlParameter("@TotalSalary", SqlDbType.Decimal);
@@ -253,6 +254,8 @@ namespace Laboratory.BL
             param[6].Value = User_Name;
             param[7] = new SqlParameter("@MonthSalary", SqlDbType.NVarChar, 50);
             param[7].Value = MonthSalary;
+            param[8] = new SqlParameter("@Total_DiscountEmployee", SqlDbType.Decimal);
+            param[8].Value = Total_DiscountEmployee;
 
             da.excutequery("AddEmp_Salary", param);
             da.close();
@@ -660,13 +663,99 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
-        internal DataTable ReportEmployeeSumSalf()
-        {
-            DataTable dt = new DataTable();
+    
 
+        internal void AddEmployeeDiscount(int Employee_ID, decimal money, string Reasson, DateTime Date_Discount, string User_Name)
+        {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            dt = da.selected("ReportEmployeeSumSalf", null);
+            SqlParameter[] param = new SqlParameter[5];
+            param[0] = new SqlParameter("@id_employee", SqlDbType.Int);
+            param[0].Value = Employee_ID;
+            param[1] = new SqlParameter("@money", SqlDbType.Decimal);
+            param[1].Value = money;
+            param[2] = new SqlParameter("@Reasson", SqlDbType.NVarChar, 100);
+            param[2].Value = Reasson;
+            param[3] = new SqlParameter("@Date_Discount", SqlDbType.DateTime);
+            param[3].Value = Date_Discount;
+          
+            param[4] = new SqlParameter("@User_Name", SqlDbType.NVarChar, 50);
+            param[4].Value = User_Name;
+          
+            da.excutequery("AddEmployeeDiscount", param);
+            da.close();
+        }
+
+
+     
+
+
+        internal DataTable ReportSearchEmployeeSalf(int Id_Employee, DateTime Date_From, DateTime Date_To)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[3];
+            param[0] = new SqlParameter("@id_Employee", SqlDbType.Int);
+            param[0].Value = Id_Employee;
+            param[1] = new SqlParameter("@Date_from", SqlDbType.DateTime);
+            param[1].Value = Date_From;
+            param[2] = new SqlParameter("@Date_to", SqlDbType.DateTime);
+            param[2].Value = Date_To;
+            da.open();
+            DataTable dt = new DataTable();
+            dt.Clear();
+            dt = da.selected("ReportSearchEmployeeSalf", param);
+            da.close();
+            return dt;
+        }
+
+        internal DataTable ReportSearchDateEmployeeSalf( DateTime Date_From, DateTime Date_To)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[2];
+         
+            param[0] = new SqlParameter("@Date_from", SqlDbType.DateTime);
+            param[0].Value = Date_From;
+            param[1] = new SqlParameter("@Date_to", SqlDbType.DateTime);
+            param[1].Value = Date_To;
+            da.open();
+            DataTable dt = new DataTable();
+            dt.Clear();
+            dt = da.selected("ReportSearchDateEmployeeSalf", param);
+            da.close();
+            return dt;
+        }
+
+        internal DataTable ReportselecEmployeetDiscount(int Id_Employee, DateTime Date_From, DateTime Date_To)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[3];
+            param[0] = new SqlParameter("@idEmployee", SqlDbType.Int);
+            param[0].Value = Id_Employee;
+            param[1] = new SqlParameter("@fromdate", SqlDbType.DateTime);
+            param[1].Value = Date_From;
+            param[2] = new SqlParameter("@todate", SqlDbType.DateTime);
+            param[2].Value = Date_To;
+            da.open();
+            DataTable dt = new DataTable();
+            dt.Clear();
+            dt = da.selected("ReportselecEmployeetDiscount", param);
+            da.close();
+            return dt;
+        }
+
+        internal DataTable ReportselecDateEmployeetDiscount(DateTime Date_From, DateTime Date_To)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[2];
+
+            param[0] = new SqlParameter("@fromdate", SqlDbType.DateTime);
+            param[0].Value = Date_From;
+            param[1] = new SqlParameter("@todate", SqlDbType.DateTime);
+            param[1].Value = Date_To;
+            da.open();
+            DataTable dt = new DataTable();
+            dt.Clear();
+            dt = da.selected("ReportselecDateEmployeetDiscount", param);
             da.close();
             return dt;
         }

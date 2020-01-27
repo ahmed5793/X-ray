@@ -542,5 +542,22 @@ namespace Laboratory.PL
             Frm_ReportEmployeeSalf ES = new Frm_ReportEmployeeSalf();
             ES.Show();
         }
+
+        private void خصوماتالموظفينToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_EmployeeDiscount fd = new Frm_EmployeeDiscount();
+            fd.Show();
+        }
+
+        private void ارسالالرسايلToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void تقريرعنخصوماتالموظفينToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_ReportEmployeeDiscount ed = new Frm_ReportEmployeeDiscount();
+            ed.Show();
+        }
     }
 }

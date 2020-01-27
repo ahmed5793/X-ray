@@ -17,7 +17,9 @@ namespace Laboratory.PL
         Users u = new Users();
         Branches b = new Branches();
         Stock s = new Stock();
+        Tickets t = new Tickets();
         public Frm_Payouts()
+           
         {
             InitializeComponent();
             Permision();
@@ -230,6 +232,30 @@ namespace Laboratory.PL
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+            DataTable dt1 = new DataTable();
+            Frm_TransferToCompany tc = new Frm_TransferToCompany();
+            dt1 = t.TicketDetailsSelectTicketsDetAILS(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
+
+            dt1.Clear();
+            dt1 = t.TicketDetailsSelectTicketsDetAILS(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
+            tc.dataGridView2.DataSource = dt1;
+
+            tc.dataGridView2.Columns[0].Visible = false;
+            tc.dataGridView2.Columns[3].Visible = false;
+
+
+
+            tc.Show();
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
         {
 
         }

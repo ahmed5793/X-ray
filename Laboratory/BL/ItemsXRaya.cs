@@ -139,6 +139,21 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
+        internal DataTable SelectPriseItemTransfer(int idItem)
+        {
+            DataTable dt = new DataTable();
 
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+
+            param[0] = new SqlParameter("@id_Item", SqlDbType.Int);
+            param[0].Value = idItem;
+
+
+            dt = da.selected("SelectPriseItemTransfer", param);
+            da.close();
+            return dt;
+        }
     }
 }

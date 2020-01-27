@@ -83,6 +83,7 @@
             this.comboBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.comboBox1.Size = new System.Drawing.Size(320, 32);
             this.comboBox1.TabIndex = 149;
+            this.comboBox1.Leave += new System.EventHandler(this.comboBox1_Leave);
             // 
             // label1
             // 

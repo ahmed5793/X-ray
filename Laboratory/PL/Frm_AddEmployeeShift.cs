@@ -65,7 +65,11 @@ namespace Laboratory.PL
             comboBox1.DataSource = E.selectEmployeeGenderSalary();
             comboBox1.DisplayMember = "Emp_Name";
             comboBox1.ValueMember = "Emp_ID";
-            textBox1.Text = E.selectEmployeeRoleshift(Convert.ToInt32(comboBox1.SelectedValue)).Rows[0][0].ToString();
+            if (comboBox1.Text!="")
+            {
+                textBox1.Text = E.selectEmployeeRoleshift(Convert.ToInt32(comboBox1.SelectedValue)).Rows[0][0].ToString();
+
+            }
 
         }
 
