@@ -44,9 +44,7 @@ namespace Laboratory.PL
             DataGridView1.RowHeadersWidth = 20;
             DataGridView1.Columns[0].Width = 60;
             DataGridView1.Columns[1].Width = 250;
-            DataGridView1.Columns[2].Width = 158;
-
-    
+            DataGridView1.Columns[2].Width = 158;    
         }
 
         private void Cmb_FromStore_SelectionChangeCommitted(object sender, EventArgs e)
@@ -54,12 +52,9 @@ namespace Laboratory.PL
             dt.Clear();
             DataGridView1.DataSource = null;
         }
-
         private void Cmb_ProdName_Enter(object sender, EventArgs e)
-        {
-           
+        {          
         }
-
         private void btn_new_Click(object sender, EventArgs e)
         {
             txt_num.Text = Product.Select_LastIdTransfair().Rows[0][0].ToString();
@@ -89,12 +84,11 @@ namespace Laboratory.PL
                 }
                 else
                 {
-
                  Product.add_TransFairProduct(Convert.ToInt32(txt_num.Text), Txt_sales.Text,DateTimePicker1.Value, Txt_note.Text);
                     for (int i = 0; i < DataGridView1.Rows.Count; i++)
                     {
-                        Product.Add_TransfairDetails(Convert.ToInt32(txt_num.Text),Convert.ToInt32(Cmb_FromStore.SelectedValue),
-                            Convert.ToInt32(Cmb_ToStore.SelectedValue),Convert.ToInt32(DataGridView1.Rows[i].Cells[0].Value),
+                        Product.Add_TransfairDetails(Convert.ToInt32(txt_num.Text),Convert.ToInt32(Cmb_FromStore.SelectedValue),Cmb_FromStore.Text,
+                            Convert.ToInt32(Cmb_ToStore.SelectedValue),Cmb_ToStore.Text,Convert.ToInt32(DataGridView1.Rows[i].Cells[0].Value),
                             Convert.ToInt32(DataGridView1.Rows[i].Cells[2].Value));
                         dt5 = Product.Validate_StoreProduct(Convert.ToInt32(DataGridView1.Rows[i].Cells[0].Value), Convert.ToInt32(Cmb_ToStore.SelectedValue));
                         if (dt5.Rows.Count > 0)
@@ -106,8 +100,6 @@ namespace Laboratory.PL
                         {
                             Product.Add_StoreProduct(Convert.ToInt32(DataGridView1.Rows[i].Cells[0].Value), Convert.ToInt32(Cmb_ToStore.SelectedValue),
                                    Convert.ToDecimal(DataGridView1.Rows[i].Cells[2].Value),Convert.ToInt32(DataGridView1.Rows[i].Cells[3].Value));
-                   
-
                         }
                     }
                     MessageBox.Show("تم إضافة التحويل بنجاح");

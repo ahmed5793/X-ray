@@ -29,10 +29,12 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Cmb_CategoryItem = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.cmb_branches = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.dgv_visit = new System.Windows.Forms.DataGridView();
             this.txt_search = new System.Windows.Forms.TextBox();
+            this.dgv_visit = new System.Windows.Forms.DataGridView();
             this.btn_print = new System.Windows.Forms.Button();
             this.btn_save = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -44,8 +46,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
-            this.Cmb_CategoryItem = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
@@ -66,6 +66,31 @@
             this.groupBox1.Size = new System.Drawing.Size(998, 118);
             this.groupBox1.TabIndex = 100;
             this.groupBox1.TabStop = false;
+            // 
+            // Cmb_CategoryItem
+            // 
+            this.Cmb_CategoryItem.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Cmb_CategoryItem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.Cmb_CategoryItem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.Cmb_CategoryItem.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cmb_CategoryItem.FormattingEnabled = true;
+            this.Cmb_CategoryItem.Location = new System.Drawing.Point(584, 15);
+            this.Cmb_CategoryItem.Name = "Cmb_CategoryItem";
+            this.Cmb_CategoryItem.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Cmb_CategoryItem.Size = new System.Drawing.Size(308, 32);
+            this.Cmb_CategoryItem.TabIndex = 86;
+            this.Cmb_CategoryItem.Leave += new System.EventHandler(this.Cmb_CategoryItem_Leave);
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(898, 18);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(92, 24);
+            this.label4.TabIndex = 85;
+            this.label4.Text = "نوع الفحص";
             // 
             // cmb_branches
             // 
@@ -92,6 +117,17 @@
             this.label13.TabIndex = 83;
             this.label13.Text = "مكان الفحص";
             // 
+            // txt_search
+            // 
+            this.txt_search.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txt_search.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_search.Location = new System.Drawing.Point(315, 41);
+            this.txt_search.Name = "txt_search";
+            this.txt_search.Size = new System.Drawing.Size(378, 32);
+            this.txt_search.TabIndex = 86;
+            this.txt_search.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_search.TextChanged += new System.EventHandler(this.txt_search_TextChanged);
+            // 
             // dgv_visit
             // 
             this.dgv_visit.AllowUserToAddRows = false;
@@ -110,17 +146,6 @@
             this.dgv_visit.ShowEditingIcon = false;
             this.dgv_visit.Size = new System.Drawing.Size(995, 294);
             this.dgv_visit.TabIndex = 99;
-            // 
-            // txt_search
-            // 
-            this.txt_search.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txt_search.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_search.Location = new System.Drawing.Point(315, 41);
-            this.txt_search.Name = "txt_search";
-            this.txt_search.Size = new System.Drawing.Size(378, 32);
-            this.txt_search.TabIndex = 86;
-            this.txt_search.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_search.TextChanged += new System.EventHandler(this.txt_search_TextChanged);
             // 
             // btn_print
             // 
@@ -266,34 +291,9 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // Cmb_CategoryItem
-            // 
-            this.Cmb_CategoryItem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Cmb_CategoryItem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.Cmb_CategoryItem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.Cmb_CategoryItem.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cmb_CategoryItem.FormattingEnabled = true;
-            this.Cmb_CategoryItem.Location = new System.Drawing.Point(584, 15);
-            this.Cmb_CategoryItem.Name = "Cmb_CategoryItem";
-            this.Cmb_CategoryItem.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Cmb_CategoryItem.Size = new System.Drawing.Size(308, 32);
-            this.Cmb_CategoryItem.TabIndex = 86;
-            this.Cmb_CategoryItem.Leave += new System.EventHandler(this.Cmb_CategoryItem_Leave);
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(898, 18);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 24);
-            this.label4.TabIndex = 85;
-            this.label4.Text = "نوع الفحص";
-            // 
             // label5
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(27, 472);
@@ -304,7 +304,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(9, 499);
             this.textBox1.Name = "textBox1";
