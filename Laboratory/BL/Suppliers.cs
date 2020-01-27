@@ -406,5 +406,27 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
+        internal DataTable Report_PurshasesInvoice()
+        {
+            DataTable dt = new DataTable();
+            DataAccessLayer da = new DataAccessLayer();
+            dt = da.selected("Report_PurshasesInvoice", null);
+            da.close();
+            return dt;
+        }
+        internal DataTable SearchReport_PurshasesInvoice(DateTime Date_From , DateTime Date_To)
+        {
+            DataTable dt = new DataTable();
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[2];
+            param[0] = new SqlParameter("@Id_Sup", SqlDbType.Int);
+            param[0].Value = Date_From;
+            param[1] = new SqlParameter("@Id_Sup", SqlDbType.Int);
+            param[1].Value = Date_To;
+            dt = da.selected("SearchReport_PurshasesInvoice", param);
+            da.close();
+            return dt;
+        }
     }
 }

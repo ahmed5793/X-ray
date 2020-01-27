@@ -537,6 +537,12 @@
     <Compile Include="PL\Frm_ReportPaySuppliers.Designer.cs">
       <DependentUpon>Frm_ReportPaySuppliers.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Frm_ReportPurshasesInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_ReportPurshasesInvoice.Designer.cs">
+      <DependentUpon>Frm_ReportPurshasesInvoice.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_ReportStockPull.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -554,6 +560,12 @@
     </Compile>
     <Compile Include="PL\Frm_ReportTechnicalShift.Designer.cs">
       <DependentUpon>Frm_ReportTechnicalShift.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Frm_ReportTransfairProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_ReportTransfairProduct.Designer.cs">
+      <DependentUpon>Frm_ReportTransfairProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Frm_ReportTransfairStock.cs">
       <SubType>Form</SubType>
@@ -866,6 +878,9 @@
     <EmbeddedResource Include="PL\Frm_ReportPaySuppliers.resx">
       <DependentUpon>Frm_ReportPaySuppliers.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_ReportPurshasesInvoice.resx">
+      <DependentUpon>Frm_ReportPurshasesInvoice.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_ReportStockPull.resx">
       <DependentUpon>Frm_ReportStockPull.cs</DependentUpon>
     </EmbeddedResource>
@@ -874,6 +889,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_ReportTechnicalShift.resx">
       <DependentUpon>Frm_ReportTechnicalShift.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_ReportTransfairProduct.resx">
+      <DependentUpon>Frm_ReportTransfairProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_ReportTransfairStock.resx">
       <DependentUpon>Frm_ReportTransfairStock.cs</DependentUpon>

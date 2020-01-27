@@ -251,7 +251,6 @@ namespace Laboratory.BL
 
         {
             DataAccessLayer da = new DataAccessLayer();
-
             SqlParameter[] param = new SqlParameter[4];
             da.open();
             param[0] = new SqlParameter("@Id_Transfair", SqlDbType.Int);
@@ -265,21 +264,25 @@ namespace Laboratory.BL
             da.excutequery("add_TransFairProduct", param);
             da.close();
         }
-        internal void Add_TransfairDetails(int id_transfair, int from_store, int To_store, int id_product,int quantity)
+        internal void Add_TransfairDetails(int id_transfair, int from_store,string From_NameStore, int To_store,string To_NameStore, int id_product,int quantity)
         {
             DataAccessLayer da = new DataAccessLayer();
-            SqlParameter[] param = new SqlParameter[5];
+            SqlParameter[] param = new SqlParameter[7];
             da.open();
             param[0] = new SqlParameter("@id_transfair", SqlDbType.Int);
             param[0].Value = id_transfair;
             param[1] = new SqlParameter("@From_Store", SqlDbType.Int);
             param[1].Value = from_store;
-            param[2] = new SqlParameter("@To_Store", SqlDbType.Int);
-            param[2].Value = To_store;
-            param[3] = new SqlParameter("@Id_product", SqlDbType.Int);
-            param[3].Value = id_product;
-            param[4] = new SqlParameter("@Quantity", SqlDbType.Int);
-            param[4].Value = quantity;
+            param[2] = new SqlParameter("@From_NameStore", SqlDbType.NVarChar,50);
+            param[2].Value = From_NameStore;
+            param[3] = new SqlParameter("@To_Store", SqlDbType.Int);
+            param[3].Value = To_store;
+            param[4] = new SqlParameter("@To_NameStore", SqlDbType.NVarChar,50);
+            param[4].Value = To_NameStore;
+            param[5] = new SqlParameter("@Id_product", SqlDbType.Int);
+            param[5].Value = id_product;
+            param[6] = new SqlParameter("@Quantity", SqlDbType.Int);
+            param[6].Value = quantity;
             da.excutequery("Add_TransfairDetails", param);
             da.close();
         }
@@ -417,6 +420,57 @@ namespace Laboratory.BL
                 param[0].Value = id_product;
                 dt.Clear();
                 dt = da.selected("Validate_ProductNAme", param);
+                da.close();
+                return dt;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                dt.Dispose();
+            }
+        }
+        internal DataTable Report_TransfairProduct()
+        {
+            DataAccessLayer da = new DataAccessLayer();
+
+            DataTable dt = new DataTable();
+            try
+            {
+                da.open();
+                dt.Clear();
+                dt = da.selected("Report_TransfairProduct", null);
+                da.close();
+                return dt;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                dt.Dispose();
+            }
+        }
+        internal DataTable SearchReport_TransfairProduct(DateTime Date_From , DateTime Date_To)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                DataAccessLayer da = new DataAccessLayer();
+                da.open();
+                SqlParameter[] param = new SqlParameter[2];
+                param[0] = new SqlParameter("@Date_From", SqlDbType.Int);
+                param[0].Value = Date_From;
+                param[1] = new SqlParameter("@Date_To", SqlDbType.Int);
+                param[1].Value = Date_To;
+                dt.Clear();
+                dt = da.selected("SearchReport_TransfairProduct", param);
                 da.close();
                 return dt;
             }

@@ -45,6 +45,8 @@ namespace Laboratory.PL
             Cmb_CategoryItem.DataSource = c.selectCategoryXRaya();
             Cmb_CategoryItem.DisplayMember = "الفئات";
             Cmb_CategoryItem.ValueMember = "ID_CtegoryXrays";
+            FromDate.Value = DateTime.Now;
+            ToDate.Value = DateTime.Now;
         }
         private void Frm_Search_Ticket_Load(object sender, EventArgs e)
         {
