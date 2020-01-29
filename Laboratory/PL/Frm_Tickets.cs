@@ -233,7 +233,7 @@ namespace Laboratory.PL
         public void pay()
         {
             decimal x = 0;
-            if (txt_afterDiscount.Text != string.Empty && txt_pay.Text != string.Empty)
+            if (txt_afterDiscount.Text != string.Empty ||  txt_pay.Text != string.Empty)
             {
                 if (cmb_statues.Text == "شركات")
                 {
@@ -248,9 +248,17 @@ namespace Laboratory.PL
             }
             else
             {
+                if (cmb_statues.Text == "شركات")
+                {
+                    decimal totainv = Convert.ToDecimal(Txt_PricePayment.Text) - x;
+                    txt_rent.Text = Math.Round(totainv, 1).ToString();
+                }
+                if (cmb_statues.Text == "نقدى")
+                {
+                    decimal totainv = Convert.ToDecimal(txt_afterDiscount.Text) - x;
+                    txt_rent.Text = Math.Round(totainv, 1).ToString();
+                }
                 //txt_pay.Text = "0";
-                decimal totainv = Convert.ToDecimal(txt_afterDiscount.Text) - x;
-                txt_rent.Text = Math.Round(totainv, 1).ToString();
             }
 
         }
@@ -519,12 +527,12 @@ namespace Laboratory.PL
 
         private void txt_pay_KeyPress(object sender, KeyPressEventArgs e)
         {
-           
+
             if (e.KeyChar == '.' && txt_pay.Text.ToString().IndexOf('.') > -1)
             {
                 e.Handled = true;
             }
-            else if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != Convert.ToChar((System.Globalization.CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator)))
+            else if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != Convert.ToChar(System.Globalization.CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator))
             {
                 e.Handled = true;
             }
@@ -584,7 +592,11 @@ namespace Laboratory.PL
         {
             try
             {
-                
+                if (dgv_order.Rows.Count>0)
+                {
+                    MessageBox.Show("لايمكن عمل اكثر من فحص في نفس الفاتورة","",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                    return;
+                }
                 if (cmb_statues.Text=="")
                 {
                     MessageBox.Show("من فضلك قم بتحديد طريقة التعامل للفاتورة");
@@ -1007,12 +1019,11 @@ namespace Laboratory.PL
 
         private void txt_discount_KeyPress(object sender, KeyPressEventArgs e)
         {
-
             if (e.KeyChar == '.' && txt_discount.Text.ToString().IndexOf('.') > -1)
             {
                 e.Handled = true;
             }
-            else if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != Convert.ToChar((System.Globalization.CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator)))
+            else if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != Convert.ToChar(System.Globalization.CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator))
             {
                 e.Handled = true;
             }
@@ -1410,16 +1421,39 @@ namespace Laboratory.PL
           
         }
 
-        private void txt_pay_TextChanged(object sender, EventArgs e)
-        {
-           
-         
-        }
-
         private void Txt_addtionPayment_TextChanged(object sender, EventArgs e)
         {
-            
+            if (Txt_addtionPayment.Text == ".")
+            {
+                Txt_addtionPayment.Text = "";
+            }
         }
+
+        private void txt_pay_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_pay.Text==".")
+            {
+                txt_pay.Text = "";
+            }
+        }
+
+        private void txt_total_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_discount_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_discount.Text == ".")
+            {
+                txt_discount.Text = "";
+            }
+        }
+
+        //private void ؤ(object sender, EventArgs e)
+        //{
+
+        //}
     }
     }
 

@@ -466,5 +466,80 @@ namespace Laboratory.BL
             return dt;
         }
 
+
+
+        internal void AddTransferForCompany(int ID_Company, decimal Patient_Rate, decimal Patient_Amont, decimal Total, decimal Customer_Rent,
+            decimal Rent_OfCompany, DateTime Date_Transfer, string Note, int ID_Item, int ID_Tickets, string name_Customer,
+            int ID_Stock,string User_Name, string Branche_Name)
+
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[14];
+            param[0] = new SqlParameter("@ID_Company", SqlDbType.Int);
+            param[0].Value = ID_Company;
+            param[1] = new SqlParameter("@Patient_Rate", SqlDbType.Decimal);
+            param[1].Value = Patient_Rate;
+            param[2] = new SqlParameter("@Patient_Amont", SqlDbType.Decimal);
+            param[2].Value = Patient_Amont;
+            param[3] = new SqlParameter("@Total", SqlDbType.Decimal);
+            param[3].Value = Total;
+            param[4] = new SqlParameter("@Customer_Rent", SqlDbType.Decimal);
+            param[4].Value = Customer_Rent;
+            param[5] = new SqlParameter("@Rent_OfCompany", SqlDbType.Decimal);
+            param[5].Value = Rent_OfCompany;
+            param[6] = new SqlParameter("@Date_Transfer", SqlDbType.DateTime);
+            param[6].Value = Date_Transfer;
+            param[7] = new SqlParameter("@Note", SqlDbType.NVarChar, 150);
+            param[7].Value = Note;
+            param[8] = new SqlParameter("@ID_Item", SqlDbType.Int);
+            param[8].Value = ID_Item;
+            param[9] = new SqlParameter("@ID_Tickets", SqlDbType.Int);
+            param[9].Value = ID_Tickets;
+            param[10]= new SqlParameter("@name_Customer", SqlDbType.NVarChar,100);
+            param[10].Value = name_Customer;
+            param[11] = new SqlParameter("@ID_Stock", SqlDbType.Int);
+            param[11].Value = ID_Stock;
+            param[12] = new SqlParameter("@User_Name", SqlDbType.NVarChar,50);
+            param[12].Value = User_Name;
+            param[13] = new SqlParameter("@Branche_Name", SqlDbType.NVarChar, 50);
+            param[13].Value = Branche_Name;
+            da.excutequery("AddTransferForCompany", param);
+            da.close();
+        }
+
+
+        internal DataTable vildateTransferForCompany(int idtickets)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@idtickets", SqlDbType.Int);
+            param[0].Value = idtickets;
+
+            dt = da.selected("vildateTransferForCompany", param);
+            da.close();
+            return dt;
+        }
+
+        internal DataTable ReportSelectTransferCompany(DateTime Date_From, DateTime Date_To)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[2];
+
+            param[0] = new SqlParameter("@Date_from", SqlDbType.DateTime);
+            param[0].Value = Date_From;
+            param[1] = new SqlParameter("@Date_to", SqlDbType.DateTime);
+            param[1].Value = Date_To;
+            da.open();
+            DataTable dt = new DataTable();
+            dt.Clear();
+            dt = da.selected("ReportSelectTransferCompany", param);
+            da.close();
+            return dt;
+        }
+
     }
 }

@@ -446,6 +446,8 @@
             this.txt_prise.TabIndex = 65;
             this.txt_prise.Text = "0";
             this.txt_prise.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_prise.TextChanged += new System.EventHandler(this.txt_prise_TextChanged);
+            this.txt_prise.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_prise_KeyPress);
             // 
             // rdbPartPay
             // 

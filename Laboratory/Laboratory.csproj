@@ -86,6 +86,10 @@
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Interop.zkemkeeper">
+      <HintPath>E:\ZK SDK\Demo-Ver1.1.15\new\bin\x64\Release\Interop.zkemkeeper.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
@@ -126,6 +130,7 @@
     <Compile Include="BL\DoctorOfCenter.cs" />
     <Compile Include="BL\Doctors.cs" />
     <Compile Include="BL\Employee.cs" />
+    <Compile Include="BL\Finger.cs" />
     <Compile Include="BL\Installment.cs" />
     <Compile Include="DataSet1.cs">
       <DependentUpon>DataSet1.xsd</DependentUpon>
@@ -134,6 +139,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FingerPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FingerPrint.Designer.cs">
+      <DependentUpon>FingerPrint.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Frm_AddEmployeeShift.cs">
       <SubType>Form</SubType>
@@ -573,6 +584,12 @@
     <Compile Include="PL\Frm_ReportTransfairStock.Designer.cs">
       <DependentUpon>Frm_ReportTransfairStock.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Frm_ReportTransferForCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_ReportTransferForCompany.Designer.cs">
+      <DependentUpon>Frm_ReportTransferForCompany.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_ReturnSupplier.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -683,6 +700,9 @@
       <DependentUpon>RPT_BARCODE.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="PL\FingerPrint.resx">
+      <DependentUpon>FingerPrint.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_AddEmployeeShift.resx">
       <DependentUpon>Frm_AddEmployeeShift.cs</DependentUpon>
     </EmbeddedResource>
@@ -895,6 +915,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_ReportTransfairStock.resx">
       <DependentUpon>Frm_ReportTransfairStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_ReportTransferForCompany.resx">
+      <DependentUpon>Frm_ReportTransferForCompany.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_ReturnSupplier.resx">
       <DependentUpon>Frm_ReturnSupplier.cs</DependentUpon>

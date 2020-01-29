@@ -264,6 +264,9 @@ namespace Laboratory.PL
             {
                 dt5.Clear();
                 dt5 = t.vildateReturnTickets(Convert.ToInt32(dgv_visit.CurrentRow.Cells[0].Value));
+                dt10.Clear();
+                dt10 = t.vildateTransferForCompany(Convert.ToInt32(dgv_visit.CurrentRow.Cells[0].Value));
+
                 if (dt5.Rows.Count > 0)
                 {
                     if (Convert.ToDecimal(dgv_visit.CurrentRow.Cells[10].Value) == Convert.ToDecimal(dt5.Rows[0][1]))
@@ -272,7 +275,11 @@ namespace Laboratory.PL
                         return;
                     }
                 }
-
+                else if(dt10.Rows.Count>0)
+                {
+                    MessageBox.Show("عزيزى المستخدم يرجي العلم باان تم تحويل الفاتورة الي جةة اخري واسترداد المبلغ   ", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                    return;
+                }
                 dt5.Clear();
                 dt5 = t.TicketDetailsSelectTickets(Convert.ToInt32(dgv_visit.CurrentRow.Cells[0].Value));
 

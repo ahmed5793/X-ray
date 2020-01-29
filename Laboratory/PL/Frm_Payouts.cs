@@ -235,29 +235,60 @@ namespace Laboratory.PL
         {
 
         }
-
+        DataTable dt10 = new DataTable();
         private void button1_Click(object sender, EventArgs e)
         {
             
             DataTable dt1 = new DataTable();
             Frm_TransferToCompany tc = new Frm_TransferToCompany();
-            dt1 = t.TicketDetailsSelectTicketsDetAILS(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
-
             dt1.Clear();
-            dt1 = t.TicketDetailsSelectTicketsDetAILS(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
-            tc.dataGridView2.DataSource = dt1;
 
-            tc.dataGridView2.Columns[0].Visible = false;
-            tc.dataGridView2.Columns[3].Visible = false;
+            dt1 = t.TicketDetailsSelectTicketsDetAILS(Convert.ToInt32(txt_num.Text));
+
+            tc.dataGridView1.DataSource = dt1;
+
+            tc.dataGridView1.Columns[0].Visible = false;
+            tc.dataGridView1.Columns[3].Visible = false;
+
+            dt10.Clear();
+            dt10 = t.TicketDetailsSelectTickets(Convert.ToInt32(txt_num.Text));
+
+            foreach (DataRow dr in dt10.Rows)
+            {
+               
+                tc.txt_payLat.Text = dr[13].ToString();
+                tc.txt_patientname.Text = dr[1].ToString();
 
 
+            }
 
-            tc.Show();
+            tc.ShowDialog();
+            this.Close();
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void txt_prise_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '.' && txt_prise.Text.ToString().IndexOf('.') > -1)
+            {
+                e.Handled = true;
+            }
+            else if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != Convert.ToChar(System.Globalization.CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_prise_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_prise.Text==".")
+            {
+                txt_prise.Text = "";
+            }
         }
     }
 }

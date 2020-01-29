@@ -811,6 +811,7 @@
             this.txt_total.TabIndex = 98;
             this.txt_total.Text = "0";
             this.txt_total.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_total.TextChanged += new System.EventHandler(this.txt_total_TextChanged);
             this.txt_total.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_price_KeyPress);
             // 
             // txt_discount
@@ -825,6 +826,7 @@
             this.txt_discount.Text = "0";
             this.txt_discount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_discount.Click += new System.EventHandler(this.txt_discount_Click);
+            this.txt_discount.TextChanged += new System.EventHandler(this.txt_discount_TextChanged);
             this.txt_discount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_discount_KeyPress);
             this.txt_discount.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_discount_KeyUp);
             this.txt_discount.Leave += new System.EventHandler(this.txt_discount_Leave);

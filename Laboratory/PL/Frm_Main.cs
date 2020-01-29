@@ -396,8 +396,8 @@ namespace Laboratory.PL
 
         private void Mardodat_Click(object sender, EventArgs e)
         {
-            Frm_ManagmentTicketsReturn fmtr = new Frm_ManagmentTicketsReturn();
-            fmtr.ShowDialog();
+            Frm_ReportTransferForCompany tc = new Frm_ReportTransferForCompany();
+            tc.ShowDialog();
 
         }
 
@@ -558,6 +558,12 @@ namespace Laboratory.PL
         {
             Frm_ReportEmployeeDiscount ed = new Frm_ReportEmployeeDiscount();
             ed.Show();
+        }
+
+        private void التحكمفيجهازالبصمةToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FingerPrint fp = new FingerPrint();
+            fp.ShowDialog();
         }
     }
 }

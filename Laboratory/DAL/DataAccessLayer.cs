@@ -15,7 +15,9 @@ namespace Laboratory.DAL
 
         public DataAccessLayer()
         {
-            con = new SqlConnection(@"server =.; database=Laboratory;integrated security=true");
+            //con = new SqlConnection(@"server =.; database=Laboratory;integrated security=true");
+            con = new SqlConnection("Data Source=SQL5050.site4now.net; database=DB_A54A03_Laboratory;User Id=DB_A54A03_Laboratory_admin;Password=Titonasser1994;");
+
 
         }
         internal void open()
