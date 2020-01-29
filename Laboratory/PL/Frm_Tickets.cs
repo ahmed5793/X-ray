@@ -962,7 +962,7 @@ namespace Laboratory.PL
 
 
                     s.add_insertStock(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_pay.Text), dtb_visit.Value, txt_username.Text, "فاتورة حجز اشعة رقم "+txt_IdTicket.Text);
-                    t.AddTickestDiscount(Convert.ToInt32(txt_IdTicket.Text), Convert.ToDecimal(txt_discount.Text));
+                    //t.AddTickestDiscount(Convert.ToInt32(txt_IdTicket.Text), Convert.ToDecimal(txt_discount.Text));
 
                     clear();
                     SelectTicketEmployee();
