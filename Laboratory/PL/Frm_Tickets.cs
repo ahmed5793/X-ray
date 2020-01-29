@@ -895,7 +895,6 @@ namespace Laboratory.PL
                                 t.AddTicketDetails(Convert.ToInt32(txt_IdTicket.Text), Convert.ToInt32(dgv_order.Rows[i].Cells[0].Value),
                                     Convert.ToDecimal(dgv_order.Rows[i].Cells[2].Value));
                             }
-                            t.AddTickestDiscount(Convert.ToInt32(txt_IdTicket.Text), Convert.ToDecimal(txt_discount.Text));
                             MessageBox.Show("تم حفظ الفاتورة بنجاح");
                         }
                         else if (rdb_CurrentPatient.Checked==true)
@@ -912,7 +911,6 @@ namespace Laboratory.PL
                                 t.AddTicketDetails(Convert.ToInt32(txt_IdTicket.Text), Convert.ToInt32(dgv_order.Rows[i].Cells[0].Value),
                                     Convert.ToDecimal(dgv_order.Rows[i].Cells[2].Value));
                             }
-                            t.AddTickestDiscount(Convert.ToInt32(txt_IdTicket.Text), Convert.ToDecimal(txt_discount.Text));
                             MessageBox.Show("تم حفظ الفاتورة بنجاح");
                         }
                        
@@ -940,7 +938,6 @@ namespace Laboratory.PL
                                 t.AddTicketDetails(Convert.ToInt32(txt_IdTicket.Text), Convert.ToInt32(dgv_order.Rows[i].Cells[0].Value),
                                     Convert.ToDecimal(dgv_order.Rows[i].Cells[2].Value));
                             }
-                            t.AddTickestDiscount(Convert.ToInt32(txt_IdTicket.Text), Convert.ToDecimal(txt_discount.Text));
                             MessageBox.Show("تم حفظ الفاتورة بنجاح");
                         }
                         else if (rdb_CurrentPatient.Checked == true)
@@ -957,7 +954,6 @@ namespace Laboratory.PL
                                 t.AddTicketDetails(Convert.ToInt32(txt_IdTicket.Text), Convert.ToInt32(dgv_order.Rows[i].Cells[0].Value),
                                     Convert.ToDecimal(dgv_order.Rows[i].Cells[2].Value));
                             }
-                            t.AddTickestDiscount(Convert.ToInt32(txt_IdTicket.Text), Convert.ToDecimal(txt_discount.Text));
                             MessageBox.Show("تم حفظ الفاتورة بنجاح");
                         }
                         t.AddTicketCompany(Convert.ToInt32(txt_IdTicket.Text), Convert.ToInt32(cmb_Company.SelectedValue),Convert.ToDecimal(Txt_rentCompany.Text));
@@ -966,6 +962,7 @@ namespace Laboratory.PL
 
 
                     s.add_insertStock(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_pay.Text), dtb_visit.Value, txt_username.Text, "فاتورة حجز اشعة رقم "+txt_IdTicket.Text);
+                    t.AddTickestDiscount(Convert.ToInt32(txt_IdTicket.Text), Convert.ToDecimal(txt_discount.Text));
 
                     clear();
                     SelectTicketEmployee();
