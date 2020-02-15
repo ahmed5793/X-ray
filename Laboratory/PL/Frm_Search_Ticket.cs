@@ -8,6 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Laboratory.BL;
+using DevExpress.XtraReports.UI;
+using DevExpress.XtraPrinting.Drawing;
+using Laboratory.RPT_Order;
+using DevExpress.XtraReports.Design;
+using DevExpress.DataAccess.ConnectionParameters;
+using DevExpress.Utils.OAuth;
 
 namespace Laboratory.PL
 {
@@ -311,7 +317,64 @@ namespace Laboratory.PL
 
         private void btn_print_Click(object sender, EventArgs e)
         {
+            if (dgv_visit.Rows.Count > 0)
+            {
+                frm_SingelReport s = new frm_SingelReport();
+                if (dgv_visit.CurrentRow.Cells[3].Value.ToString()== "نقدى")
+                {
+                   
+                    Rpt_OrderPay report = new Rpt_OrderPay();
 
+                    s.documentViewer1.Refresh();
+
+                    DataTable dt5 = new DataTable();
+                    dt5.Clear();
+                    dt5 = t.ReportInvoiceTicketPay(Convert.ToInt32(dgv_visit.CurrentRow.Cells[0].Value));
+                    report.Parameters["idTicket"].Value = Convert.ToInt32(dgv_visit.CurrentRow.Cells[0].Value);
+                    report.DataSource = dt5;
+
+                    s.documentViewer1.DocumentSource = report;
+                    report.Parameters["idTicket"].Visible = false;
+                    s.ShowDialog();
+                   
+
+
+                }
+              else  if (dgv_visit.CurrentRow.Cells[3].Value.ToString() == "شركات")
+                {
+                    Rpt_OrderCompany oc = new Rpt_OrderCompany();
+
+                    s.documentViewer1.Refresh();
+
+                    oc.DataSource = t.ReportInvoiceTicketCompany(Convert.ToInt32(dgv_visit.CurrentRow.Cells[0].Value));
+
+                    oc.Parameters["idTicket"].Value = Convert.ToInt32(dgv_visit.CurrentRow.Cells[0].Value);
+                
+                   
+
+                    s.documentViewer1.DocumentSource = oc;
+                    oc.Parameters["idTicket"].Visible = false;
+                    s.ShowDialog();
+
+
+                }
+
+
+                // ReportPrintTool tool = new ReportPrintTool(report);
+                //tool.ShowRibbonPreview();
+                //  report.RequestParameters = false;
+                //XtraReport1 x = new XtraReport1();
+                //s.documentViewer1.Refresh();
+                //    x.Parameters["@idTicket"].Value = Convert.ToInt32(dgv_visit.CurrentRow.Cells[0].Value);
+                //x.DataSource = t.ReportInvoiceTicketPay(Convert.ToInt32(dgv_visit.CurrentRow.Cells[0].Value));
+                //s.documentViewer1.DocumentSource = x;
+                //x.Parameters["@idTicket"].Visible = false;
+                //  x.RequestParameters = false;
+                //s.ShowDialog();
+
+
+
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

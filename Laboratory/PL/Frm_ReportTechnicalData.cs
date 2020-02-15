@@ -18,7 +18,17 @@ namespace Laboratory.PL
         public Frm_ReportTechnicalData()
         {
             InitializeComponent();
-            dataGridView1.DataSource = t.SelectTechincal();
+            gridControl1.DataSource = t.SelectTechincal();
+
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            gridControl1.ShowRibbonPrintPreview();
+        }
+
+        private void Frm_ReportTechnicalData_Load(object sender, EventArgs e)
+        {
 
         }
     }

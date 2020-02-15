@@ -70,6 +70,8 @@
             this.خصوماتالموظفينToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator74 = new System.Windows.Forms.ToolStripSeparator();
             this.تقريرعنخصوماتالموظفينToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator76 = new System.Windows.Forms.ToolStripSeparator();
+            this.التحكمفيجهازالبصمةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
             this.Doctors_Center = new System.Windows.Forms.ToolStripMenuItem();
             this.Add_DoctorOfCenters = new System.Windows.Forms.ToolStripMenuItem();
@@ -144,7 +146,6 @@
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.Stock_Transfair = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator41 = new System.Windows.Forms.ToolStripSeparator();
-            this.Report_PullMoneyStock = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator31 = new System.Windows.Forms.ToolStripSeparator();
             this.Report_InsertStock = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator32 = new System.Windows.Forms.ToolStripSeparator();
@@ -201,8 +202,6 @@
             this.Btn_Exit = new System.Windows.Forms.ToolStripButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.toolStripSeparator76 = new System.Windows.Forms.ToolStripSeparator();
-            this.التحكمفيجهازالبصمةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -547,6 +546,18 @@
             this.تقريرعنخصوماتالموظفينToolStripMenuItem.Size = new System.Drawing.Size(316, 28);
             this.تقريرعنخصوماتالموظفينToolStripMenuItem.Text = "تقرير عن خصومات الموظفين";
             this.تقريرعنخصوماتالموظفينToolStripMenuItem.Click += new System.EventHandler(this.تقريرعنخصوماتالموظفينToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator76
+            // 
+            this.toolStripSeparator76.Name = "toolStripSeparator76";
+            this.toolStripSeparator76.Size = new System.Drawing.Size(313, 6);
+            // 
+            // التحكمفيجهازالبصمةToolStripMenuItem
+            // 
+            this.التحكمفيجهازالبصمةToolStripMenuItem.Name = "التحكمفيجهازالبصمةToolStripMenuItem";
+            this.التحكمفيجهازالبصمةToolStripMenuItem.Size = new System.Drawing.Size(316, 28);
+            this.التحكمفيجهازالبصمةToolStripMenuItem.Text = "التحكم في جهاز البصمة";
+            this.التحكمفيجهازالبصمةToolStripMenuItem.Click += new System.EventHandler(this.التحكمفيجهازالبصمةToolStripMenuItem_Click);
             // 
             // toolStripSeparator14
             // 
@@ -1080,7 +1091,6 @@
             this.toolStripSeparator4,
             this.Stock_Transfair,
             this.toolStripSeparator41,
-            this.Report_PullMoneyStock,
             this.toolStripSeparator31,
             this.Report_InsertStock,
             this.toolStripSeparator32,
@@ -1143,14 +1153,6 @@
             this.toolStripSeparator41.Name = "toolStripSeparator41";
             this.toolStripSeparator41.Size = new System.Drawing.Size(357, 6);
             // 
-            // Report_PullMoneyStock
-            // 
-            this.Report_PullMoneyStock.BackColor = System.Drawing.Color.OrangeRed;
-            this.Report_PullMoneyStock.Name = "Report_PullMoneyStock";
-            this.Report_PullMoneyStock.Size = new System.Drawing.Size(360, 28);
-            this.Report_PullMoneyStock.Text = "تقرير سحب الارصدة من الخزنة";
-            this.Report_PullMoneyStock.Click += new System.EventHandler(this.Report_PullMoneyStock_Click);
-            // 
             // toolStripSeparator31
             // 
             this.toolStripSeparator31.Name = "toolStripSeparator31";
@@ -1161,7 +1163,7 @@
             this.Report_InsertStock.BackColor = System.Drawing.Color.OrangeRed;
             this.Report_InsertStock.Name = "Report_InsertStock";
             this.Report_InsertStock.Size = new System.Drawing.Size(360, 28);
-            this.Report_InsertStock.Text = "تقرير إيداع الرصيد للخزنة";
+            this.Report_InsertStock.Text = "تقرير عن حركه الخزينة";
             this.Report_InsertStock.Click += new System.EventHandler(this.Report_InsertStock_Click);
             // 
             // toolStripSeparator32
@@ -1490,14 +1492,14 @@
             this.Teicket.Image = ((System.Drawing.Image)(resources.GetObject("Teicket.Image")));
             this.Teicket.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Teicket.Name = "Teicket";
-            this.Teicket.Size = new System.Drawing.Size(292, 92);
+            this.Teicket.Size = new System.Drawing.Size(395, 92);
             this.Teicket.Text = "شاشة الحجز";
             this.Teicket.Click += new System.EventHandler(this.Teicket_Click);
             // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(289, 6);
+            this.toolStripSeparator8.Size = new System.Drawing.Size(392, 6);
             // 
             // Management_Ticket
             // 
@@ -1506,14 +1508,14 @@
             this.Management_Ticket.Image = ((System.Drawing.Image)(resources.GetObject("Management_Ticket.Image")));
             this.Management_Ticket.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Management_Ticket.Name = "Management_Ticket";
-            this.Management_Ticket.Size = new System.Drawing.Size(292, 92);
+            this.Management_Ticket.Size = new System.Drawing.Size(395, 92);
             this.Management_Ticket.Text = "إدارة الحجز";
             this.Management_Ticket.Click += new System.EventHandler(this.Management_Ticket_Click);
             // 
             // toolStripSeparator44
             // 
             this.toolStripSeparator44.Name = "toolStripSeparator44";
-            this.toolStripSeparator44.Size = new System.Drawing.Size(289, 6);
+            this.toolStripSeparator44.Size = new System.Drawing.Size(392, 6);
             // 
             // Search_Ticket
             // 
@@ -1523,14 +1525,14 @@
             this.Search_Ticket.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Search_Ticket.Name = "Search_Ticket";
             this.Search_Ticket.ShowShortcutKeys = false;
-            this.Search_Ticket.Size = new System.Drawing.Size(292, 92);
+            this.Search_Ticket.Size = new System.Drawing.Size(395, 92);
             this.Search_Ticket.Text = "بحث فى كل الحجوزات";
             this.Search_Ticket.Click += new System.EventHandler(this.بحثفىكلالحجوزاتToolStripMenuItem_Click);
             // 
             // toolStripSeparator46
             // 
             this.toolStripSeparator46.Name = "toolStripSeparator46";
-            this.toolStripSeparator46.Size = new System.Drawing.Size(289, 6);
+            this.toolStripSeparator46.Size = new System.Drawing.Size(392, 6);
             // 
             // Tool_ReportMardodat
             // 
@@ -1620,18 +1622,6 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "USER NAME";
             // 
-            // toolStripSeparator76
-            // 
-            this.toolStripSeparator76.Name = "toolStripSeparator76";
-            this.toolStripSeparator76.Size = new System.Drawing.Size(313, 6);
-            // 
-            // التحكمفيجهازالبصمةToolStripMenuItem
-            // 
-            this.التحكمفيجهازالبصمةToolStripMenuItem.Name = "التحكمفيجهازالبصمةToolStripMenuItem";
-            this.التحكمفيجهازالبصمةToolStripMenuItem.Size = new System.Drawing.Size(316, 28);
-            this.التحكمفيجهازالبصمةToolStripMenuItem.Text = "التحكم في جهاز البصمة";
-            this.التحكمفيجهازالبصمةToolStripMenuItem.Click += new System.EventHandler(this.التحكمفيجهازالبصمةToolStripMenuItem_Click);
-            // 
             // Frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1694,7 +1684,6 @@
         public System.Windows.Forms.ToolStripMenuItem pay_companyCustomer;
         public System.Windows.Forms.ToolStripMenuItem AddEmployeeBranches;
         public System.Windows.Forms.ToolStripMenuItem Management_Ticket;
-        public System.Windows.Forms.ToolStripMenuItem Report_PullMoneyStock;
         public System.Windows.Forms.ToolStripMenuItem Report_InsertStock;
         public System.Windows.Forms.ToolStripMenuItem Report_TransfairMoney;
         public System.Windows.Forms.ToolStripMenuItem Report_Salf;

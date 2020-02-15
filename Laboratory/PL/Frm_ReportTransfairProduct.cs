@@ -16,7 +16,7 @@ namespace Laboratory.PL
         public Frm_ReportTransfairProduct()
         {
             InitializeComponent();
-            dataGridView1.DataSource = Product.Report_TransfairProduct();
+            gridControl1.DataSource = Product.Report_TransfairProduct();
         }
 
         private void btn_search_Click(object sender, EventArgs e)
@@ -25,7 +25,7 @@ namespace Laboratory.PL
             try
             {
                 dt = Product.SearchReport_TransfairProduct(DateFrom.Value, DateTo.Value);
-                dataGridView1.DataSource = dt;
+                gridControl1.DataSource = dt;
             }
             catch (Exception ex)
             {
@@ -36,6 +36,16 @@ namespace Laboratory.PL
             {
                 dt.Dispose(); 
             }
+        }
+
+        private void Frm_ReportTransfairProduct_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            gridControl1.ShowRibbonPrintPreview();
         }
     }
 }

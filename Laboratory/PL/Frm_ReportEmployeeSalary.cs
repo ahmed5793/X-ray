@@ -31,20 +31,21 @@ namespace Laboratory.PL
         {
             if (checkBox1.Checked==true)
             {
-                dataGridView1.DataSource = E.RrportEmployeeSalary(Convert.ToInt32(comboBox1.SelectedValue),dateTimePicker1.Text,dateTimePicker2.Text);
+                gridControl1.DataSource = E.RrportEmployeeSalary(Convert.ToInt32(comboBox1.SelectedValue),dateTimePicker1.Text,dateTimePicker2.Text);
             }
             else
             {
-                dataGridView1.DataSource = E.RrportEmployeeSalaryDate( dateTimePicker1.Text, dateTimePicker2.Text);
+                gridControl1.DataSource = E.RrportEmployeeSalaryDate( dateTimePicker1.Text, dateTimePicker2.Text);
 
             }
             decimal total = 0;
-            for (int i = 0; i <= dataGridView1.Rows.Count - 1; i++)
+            for (int i = 0; i < gridView1.RowCount; i++)
             {
-                total += Convert.ToDecimal(dataGridView1.Rows[i].Cells[5].Value);
+                DataRow row = gridView1.GetDataRow(i);
+                total += Convert.ToDecimal(row[5].ToString());
 
             }
-            textBox1.Text = Math.Round(total, 1).ToString();
+            textBox1.Text = total.ToString("₱ #,##0.0");
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -62,7 +63,7 @@ namespace Laboratory.PL
                 comboBox1.Enabled = false;
 
                 comboBox1.DataSource = null;
-                dataGridView1.DataSource = null;
+                gridControl1.DataSource = null;
             }
         }
 

@@ -111,9 +111,9 @@ namespace Laboratory.BL
             SqlParameter[] param = new SqlParameter[3];
             param[0] = new SqlParameter("@id", SqlDbType.Int);
             param[0].Value = id;
-            param[1] = new SqlParameter("@Date_From", SqlDbType.DateTime);
+            param[1] = new SqlParameter("@Date_From", SqlDbType.Date);
             param[1].Value = Date_From;
-            param[2] = new SqlParameter("@Date_To", SqlDbType.DateTime);
+            param[2] = new SqlParameter("@Date_To", SqlDbType.Date);
             param[2].Value = Date_To;
             da.open();
             DataTable dt = new DataTable();
@@ -154,9 +154,9 @@ namespace Laboratory.BL
             SqlParameter[] param = new SqlParameter[3];
             param[0] = new SqlParameter("@id_Technical", SqlDbType.Int);
             param[0].Value = id;
-            param[1] = new SqlParameter("@Date_from", SqlDbType.DateTime);
+            param[1] = new SqlParameter("@Date_from", SqlDbType.Date);
             param[1].Value = Date_From;
-            param[2] = new SqlParameter("@Date_To", SqlDbType.DateTime);
+            param[2] = new SqlParameter("@Date_To", SqlDbType.Date);
             param[2].Value = Date_To;
             da.open();
             DataTable dt = new DataTable();

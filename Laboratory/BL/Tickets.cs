@@ -541,5 +541,36 @@ namespace Laboratory.BL
             return dt;
         }
 
+
+        internal DataTable ReportInvoiceTicketPay(int idtickets)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@idTicket", SqlDbType.Int);
+            param[0].Value = idtickets;
+
+            dt = da.selected("ReportInvoiceTicketPay", param);
+            da.close();
+            return dt;
+        }
+
+        internal DataTable ReportInvoiceTicketCompany(int idtickets)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@idTicket", SqlDbType.Int);
+            param[0].Value = idtickets;
+
+            dt = da.selected("ReportInvoiceTicketCompany", param);
+            da.close();
+            return dt;
+        }
+
     }
 }

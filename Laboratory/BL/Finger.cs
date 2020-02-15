@@ -30,9 +30,10 @@ namespace Laboratory.BL
         }
         internal DataTable vildateHRINOUT(int IDEMPLOYEE, DateTime datet)
         {
-            DataTable dt = new DataTable();
 
             DataAccessLayer da = new DataAccessLayer();
+            DataTable dt = new DataTable();
+
 
             da.open();
             SqlParameter[] param = new SqlParameter[2];
@@ -47,14 +48,32 @@ namespace Laboratory.BL
         }
         internal DataTable selectcountidfinger()
         {
-            DataTable dt = new DataTable();
 
             DataAccessLayer da = new DataAccessLayer();
+            DataTable dt = new DataTable();
 
             da.open();
          
 
             dt = da.selected("selectcountidfinger", null);
+            da.close();
+            return dt;
+        }
+        internal DataTable vildateLastDate(int IDEMPLOYEE, DateTime datet)
+        {
+
+            DataAccessLayer da = new DataAccessLayer();
+            DataTable dt = new DataTable();
+
+
+            da.open();
+            SqlParameter[] param = new SqlParameter[2];
+            param[0] = new SqlParameter("@IDEMPLOYEE", SqlDbType.Int);
+            param[0].Value = IDEMPLOYEE;
+            param[1] = new SqlParameter("@datetime", SqlDbType.Date);
+            param[1].Value = datet;
+
+            dt = da.selected("vildateLastDate", param);
             da.close();
             return dt;
         }

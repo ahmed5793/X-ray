@@ -44,11 +44,11 @@
             this.DateTo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.DateTo.CustomFormat = "   dd/MM/yyyy       *      tt  mm:hh    ";
             this.DateTo.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DateTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DateTo.Location = new System.Drawing.Point(292, 109);
+            this.DateTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DateTo.Location = new System.Drawing.Point(248, 64);
             this.DateTo.Name = "DateTo";
             this.DateTo.ShowUpDown = true;
-            this.DateTo.Size = new System.Drawing.Size(403, 32);
+            this.DateTo.Size = new System.Drawing.Size(148, 32);
             this.DateTo.TabIndex = 163;
             // 
             // DateFrom
@@ -56,11 +56,11 @@
             this.DateFrom.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.DateFrom.CustomFormat = "   dd/MM/yyyy       *      tt  mm:hh    ";
             this.DateFrom.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DateFrom.Location = new System.Drawing.Point(293, 65);
+            this.DateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DateFrom.Location = new System.Drawing.Point(483, 64);
             this.DateFrom.Name = "DateFrom";
             this.DateFrom.ShowUpDown = true;
-            this.DateFrom.Size = new System.Drawing.Size(403, 32);
+            this.DateFrom.Size = new System.Drawing.Size(147, 32);
             this.DateFrom.TabIndex = 162;
             // 
             // button1
@@ -69,7 +69,7 @@
             this.button1.BackColor = System.Drawing.Color.Black;
             this.button1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Yellow;
-            this.button1.Location = new System.Drawing.Point(413, 481);
+            this.button1.Location = new System.Drawing.Point(375, 481);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(200, 42);
             this.button1.TabIndex = 161;
@@ -82,7 +82,7 @@
             this.btn_search.BackColor = System.Drawing.Color.Black;
             this.btn_search.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_search.ForeColor = System.Drawing.Color.Yellow;
-            this.btn_search.Location = new System.Drawing.Point(122, 76);
+            this.btn_search.Location = new System.Drawing.Point(84, 54);
             this.btn_search.Name = "btn_search";
             this.btn_search.Size = new System.Drawing.Size(158, 52);
             this.btn_search.TabIndex = 160;
@@ -96,7 +96,7 @@
             this.label4.BackColor = System.Drawing.Color.Black;
             this.label4.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Yellow;
-            this.label4.Location = new System.Drawing.Point(701, 111);
+            this.label4.Location = new System.Drawing.Point(409, 65);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label4.Size = new System.Drawing.Size(68, 31);
@@ -110,7 +110,7 @@
             this.label3.BackColor = System.Drawing.Color.Black;
             this.label3.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Yellow;
-            this.label3.Location = new System.Drawing.Point(701, 65);
+            this.label3.Location = new System.Drawing.Point(636, 65);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label3.Size = new System.Drawing.Size(70, 31);
@@ -125,7 +125,7 @@
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label2.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(386, 9);
+            this.label2.Location = new System.Drawing.Point(348, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(282, 43);
             this.label2.TabIndex = 157;
@@ -142,19 +142,19 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 152);
+            this.dataGridView1.Location = new System.Drawing.Point(7, 112);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dataGridView1.Size = new System.Drawing.Size(971, 322);
+            this.dataGridView1.Size = new System.Drawing.Size(896, 362);
             this.dataGridView1.TabIndex = 156;
             // 
             // Frm_ReportPurshasesInvoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 526);
+            this.ClientSize = new System.Drawing.Size(909, 526);
             this.Controls.Add(this.DateTo);
             this.Controls.Add(this.DateFrom);
             this.Controls.Add(this.button1);

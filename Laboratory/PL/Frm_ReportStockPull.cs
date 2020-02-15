@@ -68,5 +68,10 @@ namespace Laboratory.PL
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void cmb_Stock_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

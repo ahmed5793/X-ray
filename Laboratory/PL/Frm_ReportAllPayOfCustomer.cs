@@ -16,45 +16,44 @@ namespace Laboratory.PL
         public Frm_ReportAllPayOfCustomer()
         {
             InitializeComponent();
-            label2.Hide();
+            
             label7.Hide();
-            label4.Hide();
-            label5.Hide();
-            textBox1.Hide();
+         
             comboBox2.Hide();
-            DateFrom.Hide();
-            DateTo.Hide();
+          
             btn_search.Hide();
-            dataGridViewList.DataSource = C.Select_AllPayCustomer();
+            //gridControl1.DataSource = C.Select_AllPayCustomer();
             Calc();
         }
         void Calc()
         {
             Decimal total = 0;
-            for (int i = 0; i < dataGridViewList.Rows.Count; i++)
+            for (int i = 0; i < gridView1.DataRowCount; i++)
             {
-                total += Convert.ToDecimal(dataGridViewList.Rows[i].Cells[2].Value);
+                DataRow row = gridView1.GetDataRow(i);
+
+                total += Convert.ToDecimal(row[2].ToString());
             }
             txt_TotalPurshacing.Text = Math.Round(total, 1).ToString();
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            try
-            {
-                dt.Clear();
-                dt = C.Search_AllPayCustomer(textBox1.Text);
-                dataGridViewList.DataSource = dt;
-                Calc();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                dt.Dispose();
-            }
+        //    DataTable dt = new DataTable();
+        //    try
+        //    {
+        //        dt.Clear();
+        //        dt = C.Search_AllPayCustomer(textBox1.Text);
+        //        gridControl1.DataSource = dt;
+        //        Calc();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+        //    }
+        //    finally
+        //    {
+        //        dt.Dispose();
+        //    }
         }
 
         private void label6_Click(object sender, EventArgs e)
@@ -64,9 +63,7 @@ namespace Laboratory.PL
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            textBox1.Show();
-            textBox1.Clear();
-            label2.Show();
+          
             label7.Hide();
             label4.Hide();
             label5.Hide();
@@ -79,8 +76,7 @@ namespace Laboratory.PL
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            textBox1.Hide();
-            label2.Hide();
+           
             label7.Hide();
             label4.Show();
             label5.Show();
@@ -95,8 +91,7 @@ namespace Laboratory.PL
             comboBox2.DataSource = C.SelectCompoCustomerN2dy();
             comboBox2.DisplayMember = "Cust_Name";
             comboBox2.ValueMember = "Cust_ID";
-            textBox1.Hide();
-            label2.Hide();
+         
             label7.Show();
             label4.Show();
             label5.Show();
@@ -158,7 +153,7 @@ namespace Laboratory.PL
                 {
                     dt5.Clear();
                     dt5 = C.Search_AllPayCustomerDate(DateFrom.Value, DateTo.Value);
-                    dataGridViewList.DataSource = dt5;
+                    gridControl1.DataSource = dt5;
                 }
                 else if (radioButton3.Checked == true)
                 {
@@ -166,7 +161,7 @@ namespace Laboratory.PL
                     {
                         dt5.Clear();
                         dt5 = C.Search_AllPayCustomerNameanddate(comboBox2.Text, DateFrom.Value, DateTo.Value);
-                        dataGridViewList.DataSource = dt5;
+                        gridControl1.DataSource = dt5;
                     }
                 }
                 Calc();
@@ -176,6 +171,16 @@ namespace Laboratory.PL
 
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            gridControl1.ShowRibbonPrintPreview();
+        }
+
+        private void Frm_ReportAllPayOfCustomer_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -31,8 +31,8 @@ namespace Laboratory.PL
                 {
                     dt.Clear();
                     dt = Doctors.Search_ReportDoctor(Convert.ToInt32(comboBox1.SelectedValue), DateFrom.Value, DateTo.Value);
-                    dataGridView1.DataSource = dt;
-                    textBox1.Text = dataGridView1.Rows.Count.ToString();
+                    gridControl1.DataSource = dt;
+                    textBox1.Text = gridView1.RowCount.ToString();
 
                 }
             }
@@ -53,8 +53,8 @@ namespace Laboratory.PL
             {
                 if (comboBox1.Text != String.Empty)
                 {
-                    dataGridView1.DataSource = Doctors.Select_ReportDoctor(Convert.ToInt32(comboBox1.SelectedValue));
-                    textBox1.Text = dataGridView1.Rows.Count.ToString();
+                    gridControl1.DataSource = Doctors.Select_ReportDoctor(Convert.ToInt32(comboBox1.SelectedValue));
+                    textBox1.Text = gridView1.RowCount.ToString();
 
                 }
             }
@@ -82,6 +82,11 @@ namespace Laboratory.PL
                 }
                 dt.Dispose();
             }
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            gridControl1.ShowRibbonPrintPreview();
         }
     }
 }

@@ -27,7 +27,7 @@ namespace Laboratory.PL
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            if (button1.Text == "Connect")
+            if (button1.Text == "Connect In Device")
             {
                 FPConnect(textBox1.Text, int.Parse(textBox2.Text));
                 button2.Enabled = true;
@@ -39,12 +39,12 @@ namespace Laboratory.PL
                 if (bIsConnect == true)
                 {
                     zk.Disconnect();
-                    button1.Text = "Connect";
+                    button1.Text = "Connect In Device";
 
                 }
                 else
                 {
-                    button1.Text = "Connect";
+                    button1.Text = "Connect In Device";
                 }
             }
 
@@ -130,60 +130,142 @@ namespace Laboratory.PL
 
         private void FingerPrint_Load(object sender, EventArgs e)
         {
-            button3.Enabled = true;
+            progressBar1.Hide();
+
         }
-        
+        Finger f = new Finger();
+        DataTable dt = new DataTable();
+        DataTable dt10 = new DataTable();
         private void button3_Click(object sender, EventArgs e)
         {
-            Finger f = new Finger();
-            DataTable dt = new DataTable();
-            DataTable dt10 = new DataTable();
+
+        }
+
+        private void Btn_AddShift_Click(object sender, EventArgs e)
+        {
+            progressBar1.Show();
+
+
+            progressBar1.Maximum = dataGridView1.RowCount;
 
 
 
-            if (dataGridView1.Rows.Count > 0)
+            if (backgroundWorker1.IsBusy)
             {
-              
+                MessageBox.Show("جارى حفظ البينات ");
+            }
+            else
+            {
 
-                  for (int i = 0; i < dataGridView1.Rows.Count; i++)
-                  {
 
-                    dt10.Clear();
-                    dt10 = f.selectcountidfinger();
 
-                        if (dt10.Rows.Count>0)
+                backgroundWorker1.RunWorkerAsync();
+
+            }
+
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+
+            try
+            {
+
+                //label1.Invoke( (MethodInvoker)delegate()
+
+                //{ 
+
+
+
+                //});
+
+
+                if (dataGridView1.Rows.Count > 0)
+                {
+
+
+                    for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                    {
+
+                        dt10.Clear();
+                        dt10 = f.selectcountidfinger();
+
+                        if (dt10.Rows.Count > 0)
                         {
+
                             f.AddHrInOut(Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value), Convert.ToDateTime(dataGridView1.Rows[i].Cells[1].Value), Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value));
 
                         }
-                    dt.Clear();
-                    dt = f.vildateHRINOUT(Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value), Convert.ToDateTime(dataGridView1.Rows[i].Cells[1].Value));
+                        dt.Clear();
+                        dt = f.vildateHRINOUT(Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value), Convert.ToDateTime(dataGridView1.Rows[i].Cells[1].Value));
 
 
-                    if (dt.Rows.Count==0)
-                     {
+                        if (dt.Rows.Count == 0)
+                        {
+                            DataTable dt5 = new DataTable();
+                            dt5 = f.vildateLastDate(Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value), Convert.ToDateTime(dataGridView1.Rows[i].Cells[1].Value));
+                            if (dt5.Rows.Count>0)
+                            {
+                                f.AddHrInOut(Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value), Convert.ToDateTime(dataGridView1.Rows[i].Cells[1].Value), 1);
+                            }
+                            else
+                            {
+                                f.AddHrInOut(Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value), 
+                                    Convert.ToDateTime(dataGridView1.Rows[i].Cells[1].Value), 0);
 
-                            f.AddHrInOut(Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value), Convert.ToDateTime(dataGridView1.Rows[i].Cells[1].Value), 1);
-                     }
+                            }
+                        }
 
-                    //else if (dt.Rows.Count > 0)
-                    //{
-                    //    f.AddHrInOut(Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value), Convert.ToDateTime(dataGridView1.Rows[i].Cells[1].Value), 0);
+                        backgroundWorker1.ReportProgress(i);
 
-                    //}
+                        if (progressBar1.Value < dataGridView1.RowCount)
+                        {
+                            progressBar1.Value += 1;
+
+                            label3.Text = progressBar1.Value.ToString();
+
+                        }
+
+
+                    }
+
+
+
+
 
 
 
 
                 }
-                MessageBox.Show("done");
-
-
-
-
-
-
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Source);
+                MessageBox.Show(ex.StackTrace);
+            }
+
+        }
+
+        private void progressBar1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            progressBar1.Value = e.ProgressPercentage;
+           
+        }
+
+        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            MessageBox.Show("done");
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
         }
     }
 }

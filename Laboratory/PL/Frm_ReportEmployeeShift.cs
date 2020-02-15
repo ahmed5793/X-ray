@@ -30,16 +30,18 @@ namespace Laboratory.PL
         void Calc()
         {
             decimal total = 0;
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            for (int i = 0; i < gridView1.DataRowCount; i++)
             {
-                total += Convert.ToDecimal(dataGridView1.Rows[i].Cells[6].Value);
+                DataRow row = gridView1.GetDataRow(i);
+                total += Convert.ToDecimal(row[6].ToString());
+
             }
-            textBox1.Text = Math.Round(total, 1).ToString();
+            textBox1.Text = total.ToString("₱ #,##0.0");
         }
         void CalcCount()
         {
 
-            label5.Text = dataGridView1.Rows.Count.ToString();
+            label5.Text = gridView1.RowCount.ToString();
           
           
         }
@@ -52,8 +54,8 @@ namespace Laboratory.PL
                 {
                     dt.Clear();
                     dt = E.Report_EmployeeShift(Convert.ToInt32(comboBox1.SelectedValue), DateFrom.Value, DateTo.Value);
-                    dataGridView1.DataSource = dt;
-                    textBox1.Text = dataGridView1.Rows.Count.ToString();
+                    gridControl1.DataSource = dt;
+                    textBox1.Text = gridView1.RowCount.ToString();
                     Calc();
                     CalcCount();
                 }
@@ -86,6 +88,11 @@ namespace Laboratory.PL
                 }
                 dt.Dispose();
             }
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            gridControl1.ShowRibbonPrintPreview();
         }
     }
 }

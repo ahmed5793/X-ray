@@ -18,7 +18,17 @@ namespace Laboratory.PL
         public Frm_ReportOutDoctorData()
         {
             InitializeComponent();
-            dataGridView1.DataSource = d.SelectDoctor();
+            gridControl1.DataSource = d.SelectDoctor();
+        }
+
+        private void Frm_ReportOutDoctorData_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            gridControl1.ShowRibbonPrintPreview();
         }
     }
 }

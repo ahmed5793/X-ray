@@ -112,9 +112,9 @@ namespace Laboratory.BL
             DataAccessLayer da = new DataAccessLayer();
             SqlParameter[] param = new SqlParameter[2];
             DataTable dt = new DataTable();
-            param[0] = new SqlParameter("@Date_From", SqlDbType.DateTime);
+            param[0] = new SqlParameter("@Date_From", SqlDbType.Date);
             param[0].Value = FromDate;
-            param[1] = new SqlParameter("@Date_to", SqlDbType.DateTime);
+            param[1] = new SqlParameter("@Date_to", SqlDbType.Date);
             param[1].Value = ToDate;
             dt = da.selected("search_Masrofat", param);
             return dt;

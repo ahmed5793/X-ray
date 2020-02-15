@@ -18,8 +18,18 @@ namespace Laboratory.PL
         public Frm_ReportDoctorOfCenterData()
         {
             InitializeComponent();
-            dataGridView1.DataSource = d.SelectDoctor_OFCENTER();
+            gridControl1.DataSource = d.SelectDoctor_OFCENTER();
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            gridControl1.ShowRibbonPrintPreview();
         }
     }
 }

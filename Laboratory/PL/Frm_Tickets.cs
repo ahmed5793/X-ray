@@ -7,7 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraPrinting.Control;
 using Laboratory.BL;
+using Laboratory.RPT_Order;
+using DevExpress.XtraReports.UI;
+using DevExpress.XtraPrinting;
+
 
 namespace Laboratory.PL
 {
@@ -823,6 +828,43 @@ namespace Laboratory.PL
 
         private void btn_save_Click(object sender, EventArgs e)
         {
+
+            frm_SingelReport sr = new frm_SingelReport();
+         
+            //    Rpt_OrderPay report = new Rpt_OrderPay();
+
+            //    s.documentViewer1.Refresh();
+
+            //    DataTable dt5 = new DataTable();
+            //    dt5.Clear();
+            //    dt5 = t.ReportInvoiceTicketPay(Convert.ToInt32(dgv_visit.CurrentRow.Cells[0].Value));
+            //    report.Parameters["@idTicket"].Value = Convert.ToInt32(dgv_visit.CurrentRow.Cells[0].Value);
+            //    report.DataSource = dt5;
+
+            //    s.documentViewer1.DocumentSource = report;
+            //    report.Parameters["@idTicket"].Visible = false;
+            //    s.ShowDialog();
+
+
+
+            
+           
+                //Rpt_OrderCompany oc = new Rpt_OrderCompany();
+
+                //s.documentViewer1.Refresh();
+
+                //oc.DataSource = t.ReportInvoiceTicketCompany(Convert.ToInt32(dgv_visit.CurrentRow.Cells[0].Value));
+
+                //oc.Parameters["@idTicket"].Value = Convert.ToInt32(dgv_visit.CurrentRow.Cells[0].Value);
+
+
+
+                //s.documentViewer1.DocumentSource = oc;
+                //oc.Parameters["@idTicket"].Visible = false;
+                //s.ShowDialog();
+
+
+            
             try
             {
                 if (dgv_order.Rows.Count>0)
@@ -917,7 +959,22 @@ namespace Laboratory.PL
                             }
                             MessageBox.Show("تم حفظ الفاتورة بنجاح");
                         }
-                       
+
+             
+
+                        Rpt_OrderPay report = new Rpt_OrderPay();
+
+                        sr.documentViewer1.Refresh();
+
+                        DataTable dt5 = new DataTable();
+                        dt5.Clear();
+                        dt5 = t.ReportInvoiceTicketPay(Convert.ToInt32(txt_IdTicket.Text));
+                        report.Parameters["idTicket"].Value = Convert.ToInt32(txt_IdTicket.Text);
+                        report.DataSource = dt5;
+
+                        sr.documentViewer1.DocumentSource = report;
+                        report.Parameters["idTicket"].Visible = false;
+                        sr.ShowDialog();
                     }
                     else if (cmb_statues.Text == "شركات")
                     {
@@ -965,11 +1022,30 @@ namespace Laboratory.PL
                             MessageBox.Show("تم حفظ الفاتورة بنجاح");
                         }
                         t.AddTicketCompany(Convert.ToInt32(txt_IdTicket.Text), Convert.ToInt32(cmb_Company.SelectedValue),Convert.ToDecimal(Txt_rentCompany.Text));
-                        cm.Update_CompanyTotalMoney(Convert.ToInt32(cmb_Company.SelectedValue),Convert.ToDecimal(Txt_rentCompany.Text)); 
+                        cm.Update_CompanyTotalMoney(Convert.ToInt32(cmb_Company.SelectedValue),Convert.ToDecimal(Txt_rentCompany.Text));
+
+                        Rpt_OrderCompany oc = new Rpt_OrderCompany();
+
+                        sr.documentViewer1.Refresh();
+
+                        oc.DataSource = t.ReportInvoiceTicketCompany(Convert.ToInt32(txt_IdTicket.Text));
+
+                        oc.Parameters["idTicket"].Value = Convert.ToInt32(txt_IdTicket.Text);
+
+
+
+                        sr.documentViewer1.DocumentSource = oc;
+                        oc.Parameters["idTicket"].Visible = false;
+                        sr.ShowDialog();
+
                     }
 
 
                     s.add_insertStock(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_pay.Text), dtb_visit.Value, txt_username.Text, "فاتورة حجز اشعة رقم "+txt_IdTicket.Text);
+
+
+                 
+                  
 
                     clear();
                     SelectTicketEmployee();
@@ -989,6 +1065,7 @@ namespace Laboratory.PL
             }
         }
 
+     
         private void txt_afterDiscount_KeyUp(object sender, KeyEventArgs e)
         {
             Patient_PaymentRate();

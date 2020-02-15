@@ -22,45 +22,46 @@ namespace Laboratory.PL
             label7.Hide();
             label4.Hide();
             label5.Hide();
-            textBox1.Hide();
             comboBox2.Hide();
             DateFrom.Hide();
             DateTo.Hide();
             btn_search.Hide();
-            dataGridViewList.DataSource = Suppliers.Report_PaySupplier();
+            gridControl1.DataSource = Suppliers.Report_PaySupplier();
             Calc();
         }
         void Calc()
         {
-            Decimal total = 0;
-            for (int i = 0; i < dataGridViewList.Rows.Count; i++)
+            decimal total = 0;
+            for (int i = 0; i < gridView1.RowCount; i++)
             {
-                total += Convert.ToDecimal(dataGridViewList.Rows[i].Cells[1].Value);
+                DataRow row = gridView1.GetDataRow(i);
+                total += Convert.ToDecimal(row[1].ToString());
+
             }
-            txt_TotalPurshacing.Text = Math.Round(total, 1).ToString();
+            txt_TotalPurshacing.Text = total.ToString("₱ #,##0.0");
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
+        //    DataTable dt = new DataTable();
 
-            try
-            {
-                dt.Clear();
-                dt = Suppliers.Search_PaySupplier(textBox1.Text);
-                dataGridViewList.DataSource = dt;
-                Calc();
+        //    try
+        //    {
+        //        dt.Clear();
+        //        dt = Suppliers.Search_PaySupplier(textBox1.Text);
+        //        gridControl1.DataSource = dt;
+        //        Calc();
 
-            }
-            catch (Exception ex)
-            {
+        //    }
+        //    catch (Exception ex)
+        //    {
 
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                dt.Dispose();
-            }
+        //        MessageBox.Show(ex.Message);
+        //    }
+        //    finally
+        //    {
+        //        dt.Dispose();
+        //    }
 
 
 
@@ -86,7 +87,7 @@ namespace Laboratory.PL
                 {
                     dt5.Clear();
                     dt5 = Suppliers.Search_PaySupplierDate(DateFrom.Value, DateTo.Value);
-                    dataGridViewList.DataSource = dt5;
+                    gridControl1.DataSource = dt5;
                 }
                 else if (radioButton3.Checked==true)
                 {
@@ -94,7 +95,7 @@ namespace Laboratory.PL
                     {
                         dt5.Clear();
                         dt5 = Suppliers.Search_PaySupplierDateAndName(comboBox2.Text, DateFrom.Value, DateTo.Value);
-                        dataGridViewList.DataSource = dt5;
+                        gridControl1.DataSource = dt5;
                     }
                 }
                 Calc();
@@ -113,8 +114,7 @@ namespace Laboratory.PL
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            textBox1.Show();
-            textBox1.Clear();
+          
             label2.Show();
             label7.Hide();
             label4.Hide();
@@ -128,7 +128,6 @@ namespace Laboratory.PL
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            textBox1.Hide();
             label2.Hide();
             label7.Hide();
             label4.Show();
@@ -144,7 +143,6 @@ namespace Laboratory.PL
             comboBox2.DataSource = Suppliers.CompoBoxSuppliers();
             comboBox2.DisplayMember = "Name";
             comboBox2.ValueMember = "Sup_id";
-            textBox1.Hide();
             label2.Hide();
             label7.Show();
             label4.Show();
@@ -184,6 +182,11 @@ namespace Laboratory.PL
         private void label7_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            gridControl1.ShowRibbonPrintPreview();
         }
     }
 }

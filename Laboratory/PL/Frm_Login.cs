@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Laboratory.BL;
@@ -19,13 +20,22 @@ namespace Laboratory.PL
         public Frm_Login()
         {
             InitializeComponent();
+            Thread t = new Thread(new ThreadStart(startForm));
+            t.Start();
+            Thread.Sleep(5000);
+            t.Abort();
+
+        }
+        public void startForm()
+        {
+            Application.Run(new Frm_Splash());
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
+     
         private void btn_save_Click(object sender, EventArgs e)
         {
             DataTable dt2 = new DataTable();
@@ -108,6 +118,11 @@ namespace Laboratory.PL
 
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void Frm_Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

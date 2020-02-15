@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraGrid.Views.Grid;
 using Laboratory.BL;
 namespace Laboratory.PL
 {
@@ -48,7 +49,7 @@ namespace Laboratory.PL
             {
                 if (comboBox1.Text != String.Empty)
                 {
-                    dataGridView1.DataSource = Doctors.Select_AllCasesOfOutDoctor(Convert.ToInt32(comboBox1.SelectedValue));
+                    gridControl1.DataSource = Doctors.Select_AllCasesOfOutDoctor(Convert.ToInt32(comboBox1.SelectedValue));
 
                 }
             }
@@ -68,7 +69,7 @@ namespace Laboratory.PL
                 {
                     dt.Clear();
                     dt = Doctors.Search_AllCasesOfOutDoctor(Convert.ToInt32(comboBox1.SelectedValue), DateFrom.Value, DateTo.Value);
-                    dataGridView1.DataSource = dt;
+                    gridControl1.DataSource = dt;
 
                 }
             }
@@ -81,6 +82,35 @@ namespace Laboratory.PL
             {
                 dt.Dispose();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            gridControl1.ShowRibbonPrintPreview();
+        }
+
+        private void gridView1_RowStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowStyleEventArgs e)
+        {
+            GridView gView = (GridView)sender;
+            if (!gView.IsValidRowHandle(e.RowHandle)) return;
+            int parent = gView.GetParentRowHandle(e.RowHandle);
+            if (gView.IsGroupRow(parent))
+            {
+                for (int i = 0; i < gView.GetChildRowCount(parent); i++)
+                    if (gView.GetChildRowHandle(parent, i) == e.RowHandle)
+                        e.Appearance.BackColor = i % 2 == 0 ? Color.White : Color.Blue;
+            }
+            else e.Appearance.BackColor = e.RowHandle % 2 == 0 ? Color.White : Color.Blue;
+        }
+
+        private void Frm_AllCasesOFOutDoctor_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

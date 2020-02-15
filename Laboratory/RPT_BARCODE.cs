@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Laboratory.RPT {
+namespace Laboratory {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -41,7 +41,7 @@ namespace Laboratory.RPT {
         
         public override string FullResourceName {
             get {
-                return "Laboratory.RPT.RPT_BARCODE.rpt";
+                return "Laboratory.RPT_BARCODE.rpt";
             }
             set {
                 // Do nothing

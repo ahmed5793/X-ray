@@ -696,9 +696,9 @@ namespace Laboratory.BL
             SqlParameter[] param = new SqlParameter[3];
             param[0] = new SqlParameter("@id_Employee", SqlDbType.Int);
             param[0].Value = Id_Employee;
-            param[1] = new SqlParameter("@Date_from", SqlDbType.DateTime);
+            param[1] = new SqlParameter("@Date_from", SqlDbType.Date);
             param[1].Value = Date_From;
-            param[2] = new SqlParameter("@Date_to", SqlDbType.DateTime);
+            param[2] = new SqlParameter("@Date_to", SqlDbType.Date);
             param[2].Value = Date_To;
             da.open();
             DataTable dt = new DataTable();
@@ -713,9 +713,9 @@ namespace Laboratory.BL
             DataAccessLayer da = new DataAccessLayer();
             SqlParameter[] param = new SqlParameter[2];
          
-            param[0] = new SqlParameter("@Date_from", SqlDbType.DateTime);
+            param[0] = new SqlParameter("@Date_from", SqlDbType.Date);
             param[0].Value = Date_From;
-            param[1] = new SqlParameter("@Date_to", SqlDbType.DateTime);
+            param[1] = new SqlParameter("@Date_to", SqlDbType.Date);
             param[1].Value = Date_To;
             da.open();
             DataTable dt = new DataTable();
@@ -731,9 +731,9 @@ namespace Laboratory.BL
             SqlParameter[] param = new SqlParameter[3];
             param[0] = new SqlParameter("@idEmployee", SqlDbType.Int);
             param[0].Value = Id_Employee;
-            param[1] = new SqlParameter("@fromdate", SqlDbType.DateTime);
+            param[1] = new SqlParameter("@fromdate", SqlDbType.Date);
             param[1].Value = Date_From;
-            param[2] = new SqlParameter("@todate", SqlDbType.DateTime);
+            param[2] = new SqlParameter("@todate", SqlDbType.Date);
             param[2].Value = Date_To;
             da.open();
             DataTable dt = new DataTable();
@@ -748,9 +748,9 @@ namespace Laboratory.BL
             DataAccessLayer da = new DataAccessLayer();
             SqlParameter[] param = new SqlParameter[2];
 
-            param[0] = new SqlParameter("@fromdate", SqlDbType.DateTime);
+            param[0] = new SqlParameter("@fromdate", SqlDbType.Date);
             param[0].Value = Date_From;
-            param[1] = new SqlParameter("@todate", SqlDbType.DateTime);
+            param[1] = new SqlParameter("@todate", SqlDbType.Date);
             param[1].Value = Date_To;
             da.open();
             DataTable dt = new DataTable();

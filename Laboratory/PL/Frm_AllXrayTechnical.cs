@@ -30,7 +30,7 @@ namespace Laboratory.PL
             {
                 if (comboBox1.Text!="")
                 {
-                    dataGridView1.DataSource = Techincal.Technical_ItemXray(Convert.ToInt32(comboBox1.SelectedValue));
+                    gridControl1.DataSource = Techincal.Technical_ItemXray(Convert.ToInt32(comboBox1.SelectedValue));
 
                 }
 
@@ -52,7 +52,7 @@ namespace Laboratory.PL
                 {
                     dt.Clear();
                     dt = Techincal.Search_Technical_ItemXray(Convert.ToInt32(comboBox1.SelectedValue), DateFrom.Value, DateTo.Value);
-                    dataGridView1.DataSource = dt;
+                    gridControl1.DataSource = dt;
 
                 }
             }
@@ -96,6 +96,16 @@ namespace Laboratory.PL
                 dt.Dispose();
             }
        
+        }
+
+        private void DateFrom_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            gridControl1.ShowRibbonPrintPreview();
         }
     }
 }

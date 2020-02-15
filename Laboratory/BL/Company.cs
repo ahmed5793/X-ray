@@ -392,9 +392,9 @@ namespace Laboratory.BL
             SqlParameter[] param = new SqlParameter[3];
             param[0] = new SqlParameter("@Id_Company", SqlDbType.Int);
             param[0].Value = id_company;
-            param[1] = new SqlParameter("@Date_From", SqlDbType.DateTime);
+            param[1] = new SqlParameter("@Date_From", SqlDbType.Date);
             param[1].Value = Date_From;
-            param[2] = new SqlParameter("@Date_To", SqlDbType.DateTime);
+            param[2] = new SqlParameter("@Date_To", SqlDbType.Date);
             param[2].Value = Date_To;
             dt = da.selected("Search_AllpAyOfCompany", param);
             da.close();

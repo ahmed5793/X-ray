@@ -36,15 +36,21 @@ namespace Laboratory.PL
             DataTable dt = new DataTable();
             dt.Clear();
             dt = T.ReportSelectTransferCompany(DateFrom.Value, DateTo.Value);
-            dataGridView1.DataSource = dt;
-                
+            gridControl1.DataSource = dt;
+
             decimal total = 0;
-            for (int i = 0; i <= dataGridView1.Rows.Count - 1; i++)
+            for (int i = 0; i < gridView1.RowCount; i++)
             {
-                total += Convert.ToDecimal(dataGridView1.Rows[i].Cells[8].Value);
+                DataRow row = gridView1.GetDataRow(i);
+                total += Convert.ToDecimal(row[8].ToString());
 
             }
-            textBox1.Text = Math.Round(total, 2).ToString();
+            textBox1.Text = total.ToString("₱ #,##0.0");
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            gridControl1.ShowRibbonPrintPreview();
         }
     }
 }

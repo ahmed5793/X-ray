@@ -16,19 +16,20 @@ namespace Laboratory.PL
         public Frm_ReportMasrofat()
         {
             InitializeComponent();
-            dataGridView1.DataSource = M.select_Masrofat();
+            gridControl1.DataSource = M.select_Masrofat();
             Calc_Total();
         }
         void Calc_Total()
         {
-            decimal Total = 0;
-         
-                for (int i = 0; i < dataGridView1.Rows.Count; i++)
-                {
-                    Total += Convert.ToDecimal(dataGridView1.Rows[i].Cells[1].Value);
-                }
-                textBox1.Text = Math.Round(Total, 2).ToString();
-          
+            decimal total = 0;
+            for (int i = 0; i < gridView1.RowCount; i++)
+            {
+                DataRow row = gridView1.GetDataRow(i);
+                total += Convert.ToDecimal(row[1].ToString());
+
+            }
+            textBox1.Text = total.ToString("₱ #,##0.0");
+
         }
 
         private void btn_search_Click(object sender, EventArgs e)
@@ -38,7 +39,7 @@ namespace Laboratory.PL
             {
                 dt.Clear();
                 dt = M.search_Masrofat(DateFrom.Value, DateTo.Value);
-                dataGridView1.DataSource = dt;
+                gridControl1.DataSource = dt;
                 Calc_Total();
             }
             catch (Exception ex)
@@ -50,6 +51,16 @@ namespace Laboratory.PL
             {
                 dt.Dispose();
             }
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            gridControl1.ShowRibbonPrintPreview();
+        }
+
+        private void Frm_ReportMasrofat_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

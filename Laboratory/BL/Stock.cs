@@ -217,9 +217,9 @@ namespace Laboratory.BL
             SqlParameter[] param = new SqlParameter[3];
             param[0] = new SqlParameter("@id_Stock", SqlDbType.Int);
             param[0].Value = Id_Stock;
-            param[1] = new SqlParameter("@Date_From", SqlDbType.DateTime);
+            param[1] = new SqlParameter("@Date_From", SqlDbType.Date);
             param[1].Value = dateFrom;
-            param[2] = new SqlParameter("@Date_to", SqlDbType.DateTime);
+            param[2] = new SqlParameter("@Date_to", SqlDbType.Date);
             param[2].Value = DateTo;
             dt = da.selected("Search_ReprotStockPull", param);
             return dt;
@@ -273,9 +273,9 @@ namespace Laboratory.BL
             SqlParameter[] param = new SqlParameter[3];
             param[0] = new SqlParameter("@id_Stock", SqlDbType.Int);
             param[0].Value = Id_Stock;
-            param[1] = new SqlParameter("@Date_From", SqlDbType.DateTime);
+            param[1] = new SqlParameter("@Date_From", SqlDbType.Date);
             param[1].Value = dateFrom;
-            param[2] = new SqlParameter("@Date_to", SqlDbType.DateTime);
+            param[2] = new SqlParameter("@Date_to", SqlDbType.Date);
             param[2].Value = DateTo;
             dt = da.selected("Search_Report_InsertStock", param);
             return dt;
@@ -295,9 +295,9 @@ namespace Laboratory.BL
             da.open();
             DataTable dt = new DataTable();
             SqlParameter[] param = new SqlParameter[2];
-            param[1] = new SqlParameter("@Date_From", SqlDbType.DateTime);
+            param[1] = new SqlParameter("@Date_From", SqlDbType.Date);
             param[1].Value = dateFrom;
-            param[2] = new SqlParameter("@Date_to", SqlDbType.DateTime);
+            param[2] = new SqlParameter("@Date_to", SqlDbType.Date);
             param[2].Value = DateTo;
             dt = da.selected("Search_Report_TransfairStock", param);
             return dt;

@@ -16,45 +16,43 @@ namespace Laboratory.PL
         public Frm_ReportPAyCustomerCompany()
         {
             InitializeComponent();
-            label2.Hide();
             label7.Hide();
-            label4.Hide();
-            label5.Hide();
-            textBox1.Hide();
+          
             comboBox2.Hide();
-            DateFrom.Hide();
-            DateTo.Hide();
+          
             btn_search.Hide();
-            dataGridViewList.DataSource = C.Select_AllPayCustomerCompany();
+            gridControl1.DataSource = C.Select_AllPayCustomerCompany();
             Calc();
         }
         void Calc()
         {
-            Decimal total = 0;
-            for (int i = 0; i < dataGridViewList.Rows.Count; i++)
+            decimal total = 0;
+            for (int i = 0; i < gridView1.RowCount; i++)
             {
-                total += Convert.ToDecimal(dataGridViewList.Rows[i].Cells[3].Value);
+                DataRow row = gridView1.GetDataRow(i);
+                total += Convert.ToDecimal(row[3].ToString());
+
             }
-            txt_TotalPurshacing.Text = Math.Round(total,1).ToString();
+            txt_TotalPurshacing.Text = total.ToString("₱ #,##0.0");
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            try
-            {
-                dt.Clear();
-                dt = C.Search_AllPayCustomerCompany(textBox1.Text);
-                dataGridViewList.DataSource = dt;
-                Calc();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                dt.Dispose();
-            }
+            //DataTable dt = new DataTable();
+            //try
+            //{
+            //    dt.Clear();
+            //    dt = C.Search_AllPayCustomerCompany(textBox1.Text);
+            //    gridControl1.DataSource = dt;
+            //    Calc();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+            //finally
+            //{
+            //    dt.Dispose();
+            //}
         }
 
         private void Frm_ReportPAyCustomerCompany_Load(object sender, EventArgs e)
@@ -91,9 +89,7 @@ namespace Laboratory.PL
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            textBox1.Show();
-            textBox1.Clear();
-            label2.Show();
+           
             label7.Hide();
             label4.Hide();
             label5.Hide();
@@ -105,8 +101,7 @@ namespace Laboratory.PL
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            textBox1.Hide();
-            label2.Hide();
+            
             label7.Hide();
             label4.Show();
             label5.Show();
@@ -121,8 +116,7 @@ namespace Laboratory.PL
             comboBox2.DataSource = C.SelectCompoCustomerCompany();
             comboBox2.DisplayMember = "Cust_Name";
             comboBox2.ValueMember = "Cust_ID";
-            textBox1.Hide();
-            label2.Hide();
+         
             label7.Show();
             label4.Show();
             label5.Show();
@@ -141,7 +135,7 @@ namespace Laboratory.PL
                 {
                     dt5.Clear();
                     dt5 = C.Search_AllPayCustomerCompanyDate(DateFrom.Value, DateTo.Value);
-                    dataGridViewList.DataSource = dt5;
+                    gridControl1.DataSource = dt5;
                 }
                 else if (radioButton3.Checked == true)
                 {
@@ -149,7 +143,7 @@ namespace Laboratory.PL
                     {
                         dt5.Clear();
                         dt5 = C.Search_AllPayCustomerCompanyDateAndName(comboBox2.Text, DateFrom.Value, DateTo.Value);
-                        dataGridViewList.DataSource = dt5;
+                        gridControl1.DataSource = dt5;
                     }
                 }
                 Calc();
@@ -159,6 +153,11 @@ namespace Laboratory.PL
 
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            gridControl1.ShowRibbonPrintPreview();
         }
     }
 }

@@ -20,8 +20,8 @@ namespace Laboratory.PL
             comboBox1.DataSource = Techincal.Select_ComboTechnical();
             comboBox1.DisplayMember = "Tech_Name";
             comboBox1.ValueMember = "Techincal_ID";
-            dataGridView1.DataSource = Techincal.Select_ReportTechnical(Convert.ToInt32(comboBox1.SelectedValue));
-            textBox1.Text = dataGridView1.Rows.Count.ToString();
+            gridControl1.DataSource = Techincal.Select_ReportTechnical(Convert.ToInt32(comboBox1.SelectedValue));
+            textBox1.Text = gridView1.RowCount.ToString();
         }
         DataTable dt = new DataTable();
 
@@ -33,8 +33,8 @@ namespace Laboratory.PL
                 {
                     dt.Clear();
                     dt = Techincal.Search_ReportTechnical(Convert.ToInt32(comboBox1.SelectedValue), DateFrom.Value, DateTo.Value);
-                    dataGridView1.DataSource = dt;
-                    textBox1.Text = dataGridView1.Rows.Count.ToString();
+                    gridControl1.DataSource = dt;
+                    textBox1.Text = gridView1.RowCount.ToString();
 
                 }
             }
@@ -55,8 +55,8 @@ namespace Laboratory.PL
             {
                 if (comboBox1.Text != String.Empty)
                 {
-                    dataGridView1.DataSource = Techincal.Select_ReportTechnical(Convert.ToInt32(comboBox1.SelectedValue));
-                    textBox1.Text = dataGridView1.Rows.Count.ToString();
+                    gridControl1.DataSource = Techincal.Select_ReportTechnical(Convert.ToInt32(comboBox1.SelectedValue));
+                    textBox1.Text = gridView1.RowCount.ToString();
 
                 }
             }
@@ -87,6 +87,11 @@ namespace Laboratory.PL
         private void Frm_Report_DetailsTechnical_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            gridControl1.ShowRibbonPrintPreview();
         }
     }
 }

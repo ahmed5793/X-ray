@@ -18,7 +18,7 @@ namespace Laboratory.PL
         {
             InitializeComponent();
             company();
-            button1.Hide();
+        
         }
         void company()
         {
@@ -28,12 +28,25 @@ namespace Laboratory.PL
         }
         void Calc()
         {
-            decimal Total = 0;
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            double sumNetPrice = 0;
+            for (int i = 0; i < gridView1.DataRowCount; ++i)
             {
-                Total += Convert.ToDecimal(dataGridView1.Rows[i].Cells[2].Value);
+                DataRow row = gridView1.GetDataRow(i);
+                sumNetPrice += Convert.ToDouble(row[1].ToString());
             }
-            textBox1.Text = Math.Round(Total, 1).ToString();
+            textBox1.Text = sumNetPrice.ToString("₱ #,##0.0");
+
+
+
+
+
+
+            //decimal Total = 0;
+            //for (int i = 0; i < gridView1.RowCount; i++)
+            //{
+            //    Total += Convert.ToDecimal(grid)
+            //}
+            //textBox1.Text = Math.Round(Total, 1).ToString();
         }
         private void btn_search_Click(object sender, EventArgs e)
         {
@@ -44,16 +57,9 @@ namespace Laboratory.PL
                 {
                     dt.Clear();
                     dt = cm.Search_AllpAyOfCompany(Convert.ToInt32(cmb_Company.SelectedValue), DateFrom.Value, DateTo.Value);
-                    dataGridView1.DataSource = dt;
+                    gridControl1.DataSource = dt;
                     Calc();
-                    if (dataGridView1.Rows.Count == 0)
-                    {
-                        button1.Hide();
-                    }
-                    else
-                    {
-                        button1.Show();
-                    }
+                   
                 }
      
             }
@@ -101,7 +107,7 @@ namespace Laboratory.PL
                 {
                     dt.Clear();
                     dt = cm.Select_AllpAyOfCompany(Convert.ToInt32(cmb_Company.SelectedValue));
-                    dataGridView1.DataSource = dt;
+                    gridControl1.DataSource = dt;
                     Calc();
                 }
             }
@@ -110,6 +116,11 @@ namespace Laboratory.PL
 
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            gridControl1.ShowRibbonPrintPreview();
         }
     }
 }

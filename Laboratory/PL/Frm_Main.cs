@@ -372,8 +372,8 @@ namespace Laboratory.PL
 
         private void Report_PullMoneyStock_Click(object sender, EventArgs e)
         {
-            Frm_ReportStockPull frm_ReportStock = new Frm_ReportStockPull();
-            frm_ReportStock.ShowDialog();
+            //Frm_ReportStockPull frm_ReportStock = new Frm_ReportStockPull();
+            //frm_ReportStock.ShowDialog();
         }
 
         private void Add_CompanyXrays_Click(object sender, EventArgs e)

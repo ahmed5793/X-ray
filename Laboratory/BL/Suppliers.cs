@@ -274,9 +274,9 @@ namespace Laboratory.BL
             SqlParameter[] param = new SqlParameter[3];
             param[0] = new SqlParameter("@id", SqlDbType.NVarChar, 100);
             param[0].Value = id;
-            param[1] = new SqlParameter("@date_from", SqlDbType.DateTime);
+            param[1] = new SqlParameter("@date_from", SqlDbType.Date);
             param[1].Value = Date_From;
-            param[2] = new SqlParameter("@date_to", SqlDbType.DateTime);
+            param[2] = new SqlParameter("@date_to", SqlDbType.Date);
             param[2].Value = Date_To;
             dt = da.selected("Search_PaySupplierDateAndName", param);
             da.close();
@@ -288,9 +288,9 @@ namespace Laboratory.BL
             DataAccessLayer da = new DataAccessLayer();
             da.open();
             SqlParameter[] param = new SqlParameter[2];        
-            param[0] = new SqlParameter("@date_from", SqlDbType.DateTime);
+            param[0] = new SqlParameter("@date_from", SqlDbType.Date);
             param[0].Value = Date_From;
-            param[1] = new SqlParameter("@date_to", SqlDbType.DateTime);
+            param[1] = new SqlParameter("@date_to", SqlDbType.Date);
             param[1].Value = Date_To;
             dt = da.selected("Search_PaySupplierDate", param);
             da.close();

@@ -193,7 +193,7 @@
             // txt_iD
             // 
             this.txt_iD.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_iD.Location = new System.Drawing.Point(927, 19);
+            this.txt_iD.Location = new System.Drawing.Point(917, 19);
             this.txt_iD.Margin = new System.Windows.Forms.Padding(4);
             this.txt_iD.Name = "txt_iD";
             this.txt_iD.ReadOnly = true;
@@ -282,7 +282,7 @@
             this.label10.BackColor = System.Drawing.Color.White;
             this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(904, 19);
+            this.label10.Location = new System.Drawing.Point(908, 19);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(83, 27);

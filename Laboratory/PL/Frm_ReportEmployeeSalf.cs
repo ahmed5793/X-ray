@@ -60,7 +60,7 @@ namespace Laboratory.PL
                 comboBox1.Enabled = false;
 
                 comboBox1.DataSource = null;
-                dataGridView1.DataSource = null;
+                gridControl1.DataSource = null;
             }
         }
 
@@ -69,21 +69,22 @@ namespace Laboratory.PL
 
             if (checkBox1.Checked == true)
             {
-                dataGridView1.DataSource = E.ReportSearchEmployeeSalf(Convert.ToInt32(comboBox1.SelectedValue), DateFrom.Value, DateTo.Value);
+                gridControl1.DataSource = E.ReportSearchEmployeeSalf(Convert.ToInt32(comboBox1.SelectedValue), DateFrom.Value, DateTo.Value);
               
             }
             else
             {
-                dataGridView1.DataSource = E.ReportSearchDateEmployeeSalf(DateFrom.Value, DateTo.Value);
+                gridControl1.DataSource = E.ReportSearchDateEmployeeSalf(DateFrom.Value, DateTo.Value);
 
             }
             decimal total = 0;
-            for (int i = 0; i <= dataGridView1.Rows.Count - 1; i++)
+            for (int i = 0; i < gridView1.DataRowCount; i++)
             {
-                total += Convert.ToDecimal(dataGridView1.Rows[i].Cells[3].Value);
+                DataRow row = gridView1.GetDataRow(i);
+                total += Convert.ToDecimal(row[3].ToString());
 
             }
-            txt_totalpay.Text = Math.Round(total, 2).ToString();
+            txt_totalpay.Text = total.ToString("₱ #,##0.0");
         }
 
         private void comboBox1_Leave(object sender, EventArgs e)
@@ -103,6 +104,11 @@ namespace Laboratory.PL
                 }
                 dt.Dispose();
             }
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            gridControl1.ShowRibbonPrintPreview();
         }
     }
     }
