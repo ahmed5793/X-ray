@@ -41,7 +41,7 @@ namespace Laboratory.PL
             DataTable dt2 = new DataTable();
             try
             {
-                Frm_Main fm = new Frm_Main();
+                Main fm = new Main();
 
                 if (txt_User.Text == "")
                 {

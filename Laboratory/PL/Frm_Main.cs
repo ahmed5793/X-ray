@@ -565,5 +565,24 @@ namespace Laboratory.PL
             FingerPrint fp = new FingerPrint();
             fp.ShowDialog();
         }
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void Report_TransProduct_Click(object sender, EventArgs e)
+        {
+      }
+
+        private void Report_Order_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Report_Purshasing_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

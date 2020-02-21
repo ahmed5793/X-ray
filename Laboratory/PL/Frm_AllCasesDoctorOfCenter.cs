@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Laboratory.BL;
-using Laboratory.RPT.DoctorOfCenter;
+
 using Laboratory.RPT_Order;
 using DevExpress.XtraGrid.Views.Grid;
 
@@ -97,30 +97,30 @@ namespace Laboratory.PL
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frm_SingelReport s = new frm_SingelReport();
-            Rpt_NumberCases nc = new Rpt_NumberCases();
+            //frm_SingelReport s = new frm_SingelReport();
+            //Rpt_NumberCases nc = new Rpt_NumberCases();
 
           
 
 
           
 
-                s.documentViewer1.Refresh();
-            nc.Parameters["DateFrom"].Value = DateFrom.Value;
+            //    s.documentViewer1.Refresh();
+            //nc.Parameters["DateFrom"].Value = DateFrom.Value;
 
-            nc.Parameters["DateTo"].Value = DateTo.Value;
+            //nc.Parameters["DateTo"].Value = DateTo.Value;
             //nc.Parameters["Id_DoctorOfCenter"].Value = Convert.ToInt32(comboBox1.SelectedValue);
 
-           nc.DataSource = DoctorOfCenter.Search_NumberCases_DoctorOfCenter(Convert.ToInt32(comboBox1.SelectedValue), DateFrom.Value, DateTo.Value);
-            nc.Parameters["DateFrom"].Visible = false;
-            nc.Parameters["DateTo"].Visible = false;
-            //nc.Parameters["Id_DoctorOfCenter"].Visible = false;
+           //nc.DataSource = DoctorOfCenter.Search_NumberCases_DoctorOfCenter(Convert.ToInt32(comboBox1.SelectedValue), DateFrom.Value, DateTo.Value);
+           // nc.Parameters["DateFrom"].Visible = false;
+           // nc.Parameters["DateTo"].Visible = false;
+           // //nc.Parameters["Id_DoctorOfCenter"].Visible = false;
         
 
-            s.documentViewer1.DocumentSource = nc;
+           // s.documentViewer1.DocumentSource = nc;
           
 
-                s.ShowDialog();
+           //     s.ShowDialog();
 
 
             

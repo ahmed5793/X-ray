@@ -75,6 +75,62 @@ namespace Laboratory.BL
 
             dt = da.selected("vildateLastDate", param);
             da.close();
+           
+            return dt;
+        }
+        internal DataTable selectidfingeremployee()
+        {
+
+            DataAccessLayer da = new DataAccessLayer();
+            DataTable dt = new DataTable();
+
+
+            da.open();
+       
+            dt = da.selected("selectidfingeremployee", null);
+            da.close();
+            return dt;
+        }
+        internal DataTable SELECTFingerIDemployee(int idemployee)
+        {
+
+            DataAccessLayer da = new DataAccessLayer();
+            DataTable dt = new DataTable();
+
+
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@idemployee", SqlDbType.Int);
+            param[0].Value = idemployee;
+            //param[1] = new SqlParameter("@From_date", SqlDbType.DateTime2);
+            //param[1].Value = fromdate;
+            //param[2] = new SqlParameter("@to_date", SqlDbType.DateTime2);
+            //param[2].Value = todate;
+
+            dt = da.selected("SELECTFingerIDemployee", param);
+            da.close();
+
+            return dt;
+        }
+        internal DataTable SELECTFingerIDemployeeOut(int idemployee)
+        {
+
+            DataAccessLayer da = new DataAccessLayer();
+            DataTable dt = new DataTable();
+
+
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@idemployee", SqlDbType.Int);
+            param[0].Value = idemployee;
+            //param[1] = new SqlParameter("@From_date", SqlDbType.DateTime2);
+            //param[1].Value = fromdate;
+            //param[2] = new SqlParameter("@to_date", SqlDbType.DateTime2);
+            //param[2].Value = todate;
+
+            dt = da.selected("SELECTFingerIDemployeeOut", param);
+            da.close();
+
             return dt;
         }
     }

@@ -34,6 +34,9 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == '64|AnyCPU'">
     <OutputPath>bin\64\</OutputPath>
+    <Optimize>true</Optimize>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DefineConstants>TRACE</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -87,6 +90,7 @@
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.BonusSkins.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Charts.v19.2.Core, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.CodeParser.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -119,6 +123,7 @@
     <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
     </Reference>
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
@@ -137,6 +142,7 @@
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.3\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -165,6 +171,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LaboratoryDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LaboratoryDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="PL\FingerPrint.cs">
       <SubType>Form</SubType>
@@ -538,6 +549,12 @@
     <Compile Include="PL\Frm_ReportEmployeeShift.Designer.cs">
       <DependentUpon>Frm_ReportEmployeeShift.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Frm_reportFinger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_reportFinger.Designer.cs">
+      <DependentUpon>Frm_reportFinger.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_ReportInsertStock.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -706,6 +723,12 @@
     <Compile Include="PL\Frm_TypeShift.Designer.cs">
       <DependentUpon>Frm_TypeShift.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Tranfair_product.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -726,12 +749,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RPT\DoctorOfCenter\Rpt_NumberCases.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="RPT\DoctorOfCenter\Rpt_NumberCases.Designer.cs">
-      <DependentUpon>Rpt_NumberCases.cs</DependentUpon>
-    </Compile>
     <Compile Include="RPT\Order\DataSetOrderPay.cs">
       <DependentUpon>DataSetOrderPay.xsd</DependentUpon>
     </Compile>
@@ -745,12 +762,6 @@
     </Compile>
     <Compile Include="frm_SingelReport.Designer.cs">
       <DependentUpon>frm_SingelReport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="RPT_BARCODE.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RPT_BARCODE.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="RPT\Order\Rpt_OrderCompany.cs">
       <SubType>Component</SubType>
@@ -944,6 +955,9 @@
     <EmbeddedResource Include="PL\Frm_ReportEmployeeShift.resx">
       <DependentUpon>Frm_ReportEmployeeShift.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_reportFinger.resx">
+      <DependentUpon>Frm_reportFinger.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_ReportInsertStock.resx">
       <DependentUpon>Frm_ReportInsertStock.cs</DependentUpon>
     </EmbeddedResource>
@@ -1028,6 +1042,9 @@
     <EmbeddedResource Include="PL\Frm_TypeShift.resx">
       <DependentUpon>Frm_TypeShift.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\Tranfair_product.resx">
       <DependentUpon>Tranfair_product.cs</DependentUpon>
     </EmbeddedResource>
@@ -1051,13 +1068,6 @@
     <EmbeddedResource Include="frm_SingelReport.resx">
       <DependentUpon>frm_SingelReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RPT\DoctorOfCenter\Rpt_NumberCases.resx">
-      <DependentUpon>Rpt_NumberCases.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RPT_BARCODE.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>RPT_BARCODE.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="RPT\Order\Rpt_OrderCompany.resx">
       <DependentUpon>Rpt_OrderCompany.cs</DependentUpon>
     </EmbeddedResource>
@@ -1074,6 +1084,17 @@
     </None>
     <None Include="DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="LaboratoryDataSet.xsc">
+      <DependentUpon>LaboratoryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="LaboratoryDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LaboratoryDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LaboratoryDataSet.xss">
+      <DependentUpon>LaboratoryDataSet.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -1118,6 +1139,8 @@
   <ItemGroup>
     <None Include="Resources\home_clinic_.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

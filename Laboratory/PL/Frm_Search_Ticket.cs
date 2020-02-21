@@ -56,12 +56,13 @@ namespace Laboratory.PL
         }
         private void Frm_Search_Ticket_Load(object sender, EventArgs e)
         {
+
         }
         private void txt_search_TextChanged(object sender, EventArgs e)
         {
             dt.Clear();
             dt = t.SearchManagmentTicketsBranch(txt_search.Text);
-            dgv_visit.DataSource = dt;
+            gridControl1.DataSource = dt;
         }
 
         private void btn_save_Click(object sender, EventArgs e)
@@ -71,9 +72,9 @@ namespace Laboratory.PL
             DataTable dt5 = new DataTable();
             Tickets t = new Tickets();
             Frm_DetailsTickets fd = new Frm_DetailsTickets();
-            if (dgv_visit.Rows.Count > 0)
+            if (gridView1.RowCount > 0)
             {
-                dt10 = t.vildateTicketCompany(Convert.ToInt32(dgv_visit.CurrentRow.Cells[0].Value));
+                dt10 = t.vildateTicketCompany(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
                 if (dt10.Rows.Count > 0)
                 {
                     fd.Txt_PricePayment.Hide();
@@ -84,7 +85,7 @@ namespace Laboratory.PL
                     fd.txt_company.Hide();
                     fd.label21.Hide();
                     dt5.Clear();
-                    dt5 = t.TicketDetailsSelectTickets(Convert.ToInt32(dgv_visit.CurrentRow.Cells[0].Value));
+                    dt5 = t.TicketDetailsSelectTickets(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
                     foreach (DataRow dr in dt5.Rows)
                     {
                         fd.txt_name.Text = dr[1].ToString();
@@ -129,7 +130,7 @@ namespace Laboratory.PL
                     fd.label27.Show();
                     fd.txt_idcompany.Show();
                     dt.Clear();
-                    dt = t.TicketDetailsSelectTicketsCompany(Convert.ToInt32(dgv_visit.CurrentRow.Cells[0].Value));
+                    dt = t.TicketDetailsSelectTicketsCompany(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
 
                     foreach (DataRow dr in dt.Rows)
                     {
@@ -167,7 +168,7 @@ namespace Laboratory.PL
                     }
                 }
                 DataTable dt1 = new DataTable();
-                dt1 = t.TicketDetailsSelectTicketsDetAILS(Convert.ToInt32(dgv_visit.CurrentRow.Cells[0].Value));
+                dt1 = t.TicketDetailsSelectTicketsDetAILS(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
                 fd.dgv_order.DataSource = dt1;
                 fd.ShowDialog();
             }
@@ -181,13 +182,13 @@ namespace Laboratory.PL
         {
             if (comboBox1.Text == "بحث بالتاريخ + مكان الفحص")
             {
-                dgv_visit.DataSource = t.SelectSearchticketsBranchDate(Convert.ToInt32(cmb_branches.SelectedValue), FromDate.Value, ToDate.Value);
-                textBox1.Text = dgv_visit.Rows.Count.ToString() ;
+                gridControl1.DataSource = t.SelectSearchticketsBranchDate(Convert.ToInt32(cmb_branches.SelectedValue), FromDate.Value, ToDate.Value);
+                textBox1.Text = gridView1.RowCount.ToString() ;
             }
             else if (comboBox1.Text == "بحث بالتاريخ + مكان الفحص+نوع الفحص")
             {
-                dgv_visit.DataSource = t.SelectSearchticketsBranchDateandCategory(Convert.ToInt32(cmb_branches.SelectedValue),Convert.ToInt32(Cmb_CategoryItem.SelectedValue), FromDate.Value, ToDate.Value);
-                textBox1.Text = dgv_visit.Rows.Count.ToString();
+                gridControl1.DataSource = t.SelectSearchticketsBranchDateandCategory(Convert.ToInt32(cmb_branches.SelectedValue),Convert.ToInt32(Cmb_CategoryItem.SelectedValue), FromDate.Value, ToDate.Value);
+                textBox1.Text = gridView1.RowCount.ToString();
 
             }
 
@@ -212,7 +213,9 @@ namespace Laboratory.PL
                 textBox1.Hide();
                 Cmb_CategoryItem.Hide();
                 cmb_branches.Hide();
-                dgv_visit.DataSource = t.SelecthManagmentTicketsBranch();
+                gridControl1.DataSource = t.SelecthManagmentTicketsBranch();
+                textBox1.Text = gridView1.RowCount.ToString();
+
 
             }
             else if (comboBox1.Text == "بحث بالتاريخ + مكان الفحص")
@@ -266,16 +269,16 @@ namespace Laboratory.PL
             Tickets t = new Tickets();
 
             Frm_DetailsTickets fd = new Frm_DetailsTickets();
-            if (dgv_visit.Rows.Count > 0)
+            if (gridView1.RowCount> 0)
             {
                 dt5.Clear();
-                dt5 = t.vildateReturnTickets(Convert.ToInt32(dgv_visit.CurrentRow.Cells[0].Value));
+                dt5 = t.vildateReturnTickets(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
                 dt10.Clear();
-                dt10 = t.vildateTransferForCompany(Convert.ToInt32(dgv_visit.CurrentRow.Cells[0].Value));
+                dt10 = t.vildateTransferForCompany(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
 
                 if (dt5.Rows.Count > 0)
                 {
-                    if (Convert.ToDecimal(dgv_visit.CurrentRow.Cells[10].Value) == Convert.ToDecimal(dt5.Rows[0][1]))
+                    if (Convert.ToDecimal(gridView1.GetFocusedRowCellValue("المدفوع")) == Convert.ToDecimal(dt5.Rows[0][1]))
                     {
                           MessageBox.Show("عزيزى المستخدم يرجي العلم باان تم استرداد مبلغ الفاتورة من قبل لايمكن استرداها مرة اخرى   ", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
                         return;
@@ -287,7 +290,7 @@ namespace Laboratory.PL
                     return;
                 }
                 dt5.Clear();
-                dt5 = t.TicketDetailsSelectTickets(Convert.ToInt32(dgv_visit.CurrentRow.Cells[0].Value));
+                dt5 = t.TicketDetailsSelectTickets(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
 
                 foreach (DataRow dr in dt5.Rows)
                 {
@@ -302,7 +305,7 @@ namespace Laboratory.PL
                 }
                 DataTable dt1 = new DataTable();
                 dt1.Clear();
-                dt1 = t.TicketDetailsSelectTicketsDetAILS(Convert.ToInt32(dgv_visit.CurrentRow.Cells[0].Value));
+                dt1 = t.TicketDetailsSelectTicketsDetAILS(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
                 pa.dataGridView1.DataSource = dt1;
 
                 pa.dataGridView1.Columns[0].Visible = false;
@@ -317,10 +320,10 @@ namespace Laboratory.PL
 
         private void btn_print_Click(object sender, EventArgs e)
         {
-            if (dgv_visit.Rows.Count > 0)
+            if (gridView1.RowCount > 0)
             {
                 frm_SingelReport s = new frm_SingelReport();
-                if (dgv_visit.CurrentRow.Cells[3].Value.ToString()== "نقدى")
+                if (gridView1.GetFocusedRowCellValue("طريقه التعامل").ToString()== "نقدى")
                 {
                    
                     Rpt_OrderPay report = new Rpt_OrderPay();
@@ -329,8 +332,8 @@ namespace Laboratory.PL
 
                     DataTable dt5 = new DataTable();
                     dt5.Clear();
-                    dt5 = t.ReportInvoiceTicketPay(Convert.ToInt32(dgv_visit.CurrentRow.Cells[0].Value));
-                    report.Parameters["idTicket"].Value = Convert.ToInt32(dgv_visit.CurrentRow.Cells[0].Value);
+                    dt5 = t.ReportInvoiceTicketPay(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
+                    report.Parameters["idTicket"].Value = Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة"));
                     report.DataSource = dt5;
 
                     s.documentViewer1.DocumentSource = report;
@@ -340,15 +343,15 @@ namespace Laboratory.PL
 
 
                 }
-              else  if (dgv_visit.CurrentRow.Cells[3].Value.ToString() == "شركات")
+              else  if (gridView1.GetFocusedRowCellValue("طريقه التعامل").ToString() == "شركات")
                 {
                     Rpt_OrderCompany oc = new Rpt_OrderCompany();
 
                     s.documentViewer1.Refresh();
 
-                    oc.DataSource = t.ReportInvoiceTicketCompany(Convert.ToInt32(dgv_visit.CurrentRow.Cells[0].Value));
+                    oc.DataSource = t.ReportInvoiceTicketCompany(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
 
-                    oc.Parameters["idTicket"].Value = Convert.ToInt32(dgv_visit.CurrentRow.Cells[0].Value);
+                    oc.Parameters["idTicket"].Value = Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة"));
                 
                    
 
@@ -391,6 +394,11 @@ namespace Laboratory.PL
             {
                 MessageBox.Show("عزيزيى المستخدم يرجي العلم بان اسم الجهاز غير مسجل ");
             }
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            gridControl1.ShowRibbonPrintPreview();
         }
     }
 }

@@ -32,7 +32,7 @@ namespace Laboratory.PL
         }
       public  void rent()
         {
-            if (txt_totalinvoice.Text != "" || txt_totalpay.Text != "")
+            if (txt_totalinvoice.Text != "" && txt_totalpay.Text != "")
             {
                 decimal x = Convert.ToDecimal(txt_totalinvoice.Text) - Convert.ToDecimal(txt_totalpay.Text);
                 textBox1.Text = x.ToString();
@@ -57,7 +57,6 @@ namespace Laboratory.PL
                 label3.Hide();
                 FromDate.Hide();
                 ToDate.Hide();
-                button1.Hide();
 
              
 
@@ -72,7 +71,7 @@ namespace Laboratory.PL
                 label3.Show();
                 FromDate.Show();
                 ToDate.Show();
-                button1.Show();
+               
              
                 label1.Show();
                 comboBox1.Show();
@@ -88,57 +87,60 @@ namespace Laboratory.PL
         {
             if (comboBox1.Text=="AM")
             {
-                dgv_visit.DataSource = t.SelectManagmentTicketsBranchMorning(Convert.ToInt32(cmb_branches.SelectedValue),Convert.ToDateTime(label_day.Text));
-                rent();
+                gridControl1.DataSource = t.SelectManagmentTicketsBranchMorning(Convert.ToInt32(cmb_branches.SelectedValue),Convert.ToDateTime(label_day.Text));
+                //rent();
             }
            else if (comboBox1.Text=="PM")
             {
-                dgv_visit.DataSource = t.SelectManagmentTicketsBranchEvening(Convert.ToInt32(cmb_branches.SelectedValue), Convert.ToDateTime (label_day.Text));
-                rent();
+                gridControl1.DataSource = t.SelectManagmentTicketsBranchEvening(Convert.ToInt32(cmb_branches.SelectedValue), Convert.ToDateTime (label_day.Text));
+                //rent();
             }
             else   if (comboBox1.Text=="FULLDAY")
             {
-                dgv_visit.DataSource = t.SelectManagmentTicketsBranchFullDay(Convert.ToInt32(cmb_branches.SelectedValue), Convert.ToDateTime(label_day.Text));
-                rent();
+                gridControl1.DataSource = t.SelectManagmentTicketsBranchFullDay(Convert.ToInt32(cmb_branches.SelectedValue), Convert.ToDateTime(label_day.Text));
+                //rent();
             }
             decimal total = 0;
-            for (int i = 0; i <= dgv_visit.Rows.Count - 1; i++)
+            for (int i = 0; i < gridView1.RowCount; i++)
             {
-                total += Convert.ToDecimal(dgv_visit.Rows[i].Cells[5].Value);
+                DataRow row = gridView1.GetDataRow(i);
+                total += Convert.ToDecimal(row[5].ToString());
 
             }
-            txt_totalinvoice.Text = Math.Round(total, 2).ToString();
+            txt_totalinvoice.Text = total.ToString("₱ #,##0.0");
 
             decimal totall = 0;
-            for (int i = 0; i <= dgv_visit.Rows.Count - 1; i++)
+            for (int i = 0; i < gridView1.RowCount; i++)
             {
-                totall += Convert.ToDecimal(dgv_visit.Rows[i].Cells[4].Value);
+                DataRow row = gridView1.GetDataRow(i);
+                totall += Convert.ToDecimal(row[4].ToString());
 
             }
-            txt_totalpay.Text = Math.Round(totall, 2).ToString();
-            rent();
+            txt_totalpay.Text = totall.ToString("₱ #,##0.0");
+            //rent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-           dgv_visit.DataSource= t.SelectManagmentTicketsBranchDate(Convert.ToInt32(cmb_branches.SelectedValue), FromDate.Value, ToDate.Value);
-            decimal total = 0;
-            for (int i = 0; i <= dgv_visit.Rows.Count - 1; i++)
-            {
-                total += Convert.ToDecimal(dgv_visit.Rows[i].Cells[5].Value);
+           //gridControl1.DataSource= t.SelectManagmentTicketsBranchDate(Convert.ToInt32(cmb_branches.SelectedValue), FromDate.Value, ToDate.Value);
+           // decimal total = 0;
+           // for (int i = 0; i < gridView1.RowCount; i++)
+           // {
+           //     DataRow row = gridView1.GetDataRow(i);
+           //     total += Convert.ToDecimal(row[5].ToString());
 
+           // }
+           // txt_totalpay.Text = total.ToString("₱ #,##0.0");
 
-            }
-            txt_totalinvoice.Text = Math.Round(total, 2).ToString();
+           // decimal totall = 0;
+           // for (int i = 0; i < gridView1.RowCount; i++)
+           // {
+           //     DataRow row = gridView1.GetDataRow(i);
+           //     totall += Convert.ToDecimal(row[4].ToString());
 
-            decimal totall = 0;
-            for (int i = 0; i <= dgv_visit.Rows.Count - 1; i++)
-            {
-                totall += Convert.ToDecimal(dgv_visit.Rows[i].Cells[4].Value);
-
-            }
-            txt_totalpay.Text = Math.Round(totall, 2).ToString();
-            rent();
+           // }
+           // txt_totalpay.Text = totall.ToString("₱ #,##0.0");
+           // rent();
         }
  
 
@@ -162,7 +164,7 @@ namespace Laboratory.PL
             label3.Hide();
             FromDate.Hide();
             ToDate.Hide();
-            button1.Hide();
+          
 
 
 
@@ -223,6 +225,35 @@ namespace Laboratory.PL
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+
+            gridControl1.DataSource = t.SelectManagmentTicketsBranchDate(Convert.ToInt32(cmb_branches.SelectedValue), FromDate.Value, ToDate.Value);
+            decimal total = 0;
+            for (int i = 0; i < gridView1.RowCount; i++)
+            {
+                DataRow row = gridView1.GetDataRow(i);
+                total += Convert.ToDecimal(row[5].ToString());
+
+            }
+            txt_totalinvoice.Text = total.ToString("₱ #,##0.0");
+
+            decimal totall = 0;
+            for (int i = 0; i < gridView1.RowCount; i++)
+            {
+                DataRow row = gridView1.GetDataRow(i);
+                totall += Convert.ToDecimal(row[4].ToString());
+
+            }
+            txt_totalpay.Text = totall.ToString("₱ #,##0.0");
+            //rent();
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            gridControl1.ShowRibbonPrintPreview();
         }
     }
 }

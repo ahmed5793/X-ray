@@ -234,6 +234,7 @@
             this.toolStrip1.Size = new System.Drawing.Size(1080, 116);
             this.toolStrip1.TabIndex = 6;
             this.toolStrip1.Text = "toolStrip1";
+            this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
             // 
             // Main_data
             // 
@@ -1353,6 +1354,7 @@
             this.Report_TransProduct.Name = "Report_TransProduct";
             this.Report_TransProduct.Size = new System.Drawing.Size(349, 34);
             this.Report_TransProduct.Text = "تقرير بالأصناف المحولة للمخازن";
+            this.Report_TransProduct.Click += new System.EventHandler(this.Report_TransProduct_Click);
             // 
             // toolStripSeparator66
             // 
@@ -1366,6 +1368,7 @@
             this.Report_Order.Name = "Report_Order";
             this.Report_Order.Size = new System.Drawing.Size(349, 34);
             this.Report_Order.Text = "تقرير بالاصناف المستهلكة";
+            this.Report_Order.Click += new System.EventHandler(this.Report_Order_Click);
             // 
             // toolStripSeparator67
             // 
@@ -1379,6 +1382,7 @@
             this.Report_Purshasing.Name = "Report_Purshasing";
             this.Report_Purshasing.Size = new System.Drawing.Size(349, 34);
             this.Report_Purshasing.Text = "تقرير بالمشتريات";
+            this.Report_Purshasing.Click += new System.EventHandler(this.Report_Purshasing_Click);
             // 
             // toolStripSeparator21
             // 
