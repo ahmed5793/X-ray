@@ -161,7 +161,7 @@ namespace Laboratory.PL
             Permision();
 
             Txt_addtionPayment.Enabled = false;
-
+            Txt_rentCompany.Hide();
 
             CategoryXraya();
             SelectdataTable();
@@ -1150,7 +1150,7 @@ namespace Laboratory.PL
             //label27.Show();
             //Txt_addtionPayment.Show();
             //Txt_PricePayment.Show();
-            label29.Show();
+            //label29.Show();
             Txt_rentCompany.Show();
             // label24.Hide();
             txt_discount.Enabled = false;
@@ -1187,7 +1187,7 @@ namespace Laboratory.PL
                 //label27.Show();
                 //Txt_addtionPayment.Show();
                 //Txt_PricePayment.Show();
-                label29.Show();
+                //label29.Show();
                 Txt_rentCompany.Show();
                // label24.Hide();
                 txt_discount.Enabled=false;
@@ -1218,7 +1218,7 @@ namespace Laboratory.PL
                 label24.Show();
                 //label26.Hide();
                 //label27.Hide();
-                label29.Hide();
+                //label29.Hide();
                 Txt_rentCompany.Hide();
                 rdb_Discount.Enabled = true;
                 rdb_money.Enabled = true;
