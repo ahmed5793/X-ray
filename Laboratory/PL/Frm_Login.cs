@@ -35,7 +35,7 @@ namespace Laboratory.PL
         {
             this.Close();
         }
-     
+
         private void btn_save_Click(object sender, EventArgs e)
         {
             DataTable dt2 = new DataTable();
@@ -56,70 +56,614 @@ namespace Laboratory.PL
                 else
                 {
                     DataTable dt = U.Logins(txt_User.Text, txt_Pass.Text);
-                 
+
                     if (dt.Rows.Count > 0)
                     {
-                       
+
+
                         dt2.Clear();
                         dt2 = p.Select_UserBAsicInformation(txt_User.Text);
-                        if (dt2.Rows.Count>=1)
+                        if (dt2.Rows.Count >= 1)
                         {
-                            if (Convert.ToInt32(dt2.Rows[0][0])==0)
+                            if (Convert.ToInt32(dt2.Rows[0][0]) == 0)
                             {
-                                Frm_Main.getmain.Add_Branche.Enabled=false;
+                                Main.getmain.add_employee.Enabled = false;
                             }
-                           else if (Convert.ToInt32(dt2.Rows[0][0]) == 1)
+                            else if (Convert.ToInt32(dt2.Rows[0][0]) == 1)
                             {
-                                Frm_Main.getmain.Add_Branche.Enabled = true;
+                                Main.getmain.add_employee.Enabled = true;
                             }
                             ///////
                             if (Convert.ToInt32(dt2.Rows[0][1]) == 0)
                             {
-                                Frm_Main.getmain.Validate_Users.Enabled = false;
+                                Main.getmain.add_employeeBranche.Enabled = false;
                             }
                             else if (Convert.ToInt32(dt2.Rows[0][1]) == 1)
                             {
-                                Frm_Main.getmain.Validate_Users.Enabled = true;
+                                Main.getmain.add_employeeBranche.Enabled = true;
                             }
-                            ///////
+                            ////////
                             if (Convert.ToInt32(dt2.Rows[0][2]) == 0)
                             {
-                                Frm_Main.getmain.Category_XRay.Enabled = false;
+                                Main.getmain.add_branch.Enabled = false;
                             }
                             else if (Convert.ToInt32(dt2.Rows[0][2]) == 1)
                             {
-                                Frm_Main.getmain.Category_XRay.Enabled = true;
+                                Main.getmain.add_branch.Enabled = true;
                             }
-                            /////////
+
+                            ///////
                             if (Convert.ToInt32(dt2.Rows[0][3]) == 0)
                             {
-                                Frm_Main.getmain.Add_XRays.Enabled = false;
+                                Main.getmain.Xray_Category.Enabled = false;
                             }
                             else if (Convert.ToInt32(dt2.Rows[0][3]) == 1)
                             {
-                                Frm_Main.getmain.Add_XRays.Enabled = true;
+                                Main.getmain.Xray_Category.Enabled = true;
+                            }
+                            /////////
+                            if (Convert.ToInt32(dt2.Rows[0][4]) == 0)
+                            {
+                                Main.getmain.XrayName.Enabled = false;
+                            }
+                            else if (Convert.ToInt32(dt2.Rows[0][4]) == 1)
+                            {
+                                Main.getmain.XrayName.Enabled = true;
+                            }
+                            ///////
+                            if (Convert.ToInt32(dt2.Rows[0][5]) == 0)
+                            {
+                                Main.getmain.Download_finger.Enabled = false;
+                            }
+                            else if (Convert.ToInt32(dt2.Rows[0][5]) == 1)
+                            {
+                                Main.getmain.Download_finger.Enabled = true;
+                            }
+                            ///////
+                            if (Convert.ToInt32(dt2.Rows[0][6]) == 0)
+                            {
+                                Main.getmain.report_finger.Enabled = false;
+                            }
+                            else if (Convert.ToInt32(dt2.Rows[0][6]) == 1)
+                            {
+                                Main.getmain.report_finger.Enabled = true;
+                            }
+                            ////
+                        }  ///
+                        DataTable dt3 = new DataTable();
+                        dt3.Clear();
+                        dt3 = p.Select_UserEmployee(txt_User.Text);
+                        if (dt3.Rows.Count >= 1)
+                        {
+                            if (Convert.ToInt32(dt3.Rows[0][0]) == 0)
+                            {
+                                Main.getmain.add_shiftEmployee.Enabled = false;
+                            }
+                            else if (Convert.ToInt32(dt3.Rows[0][0]) == 1)
+                            {
+                                Main.getmain.add_shiftEmployee.Enabled = true;
+                            }
+                            ///////
+                            if (Convert.ToInt32(dt3.Rows[0][1]) == 0)
+                            {
+                                Main.getmain.discountEmployee.Enabled = false;
+                            }
+                            else if (Convert.ToInt32(dt3.Rows[0][1]) == 1)
+                            {
+                                Main.getmain.discountEmployee.Enabled = true;
+                            }
+                            ////////
+                            if (Convert.ToInt32(dt3.Rows[0][2]) == 0)
+                            {
+                                Main.getmain.add_salfEmployee.Enabled = false;
+                            }
+                            else if (Convert.ToInt32(dt3.Rows[0][2]) == 1)
+                            {
+                                Main.getmain.add_salfEmployee.Enabled = true;
+                            }
+
+                            ///////
+                          
+                            /////////
+                            if (Convert.ToInt32(dt3.Rows[0][3]) == 0)
+                            {
+                                Main.getmain.sarf_SalaryEmployee.Enabled = false;
+                            }
+                            else if (Convert.ToInt32(dt3.Rows[0][3]) == 1)
+                            {
+                                Main.getmain.sarf_SalaryEmployee.Enabled = true;
+                            }
+                            ///////
+                            if (Convert.ToInt32(dt3.Rows[0][4]) == 0)
+                            {
+                                Main.getmain.Report_Employee.Enabled = false;
+                            }
+                            else if (Convert.ToInt32(dt3.Rows[0][4]) == 1)
+                            {
+                                Main.getmain.Report_Employee.Enabled = true;
+                            }
+                            ///////
+                            if (Convert.ToInt32(dt3.Rows[0][5]) == 0)
+                            {
+                                Main.getmain.add_DoctortCenter.Enabled = false;
+                            }
+                            else if (Convert.ToInt32(dt3.Rows[0][5]) == 1)
+                            {
+                                Main.getmain.add_DoctortCenter.Enabled = true;
+                            }
+                            //////
+                            if (Convert.ToInt32(dt3.Rows[0][6]) == 0)
+                            {
+                                Main.getmain.Report_DoctorCenter.Enabled = false;
+                            }
+                            else if (Convert.ToInt32(dt3.Rows[0][6]) == 1)
+                            {
+                                Main.getmain.Report_DoctorCenter.Enabled = true;
+                            }
+                            ///
+                            if (Convert.ToInt32(dt3.Rows[0][7]) == 0)
+                            {
+                                Main.getmain.add_Techincal.Enabled = false;
+                            }
+                            else if (Convert.ToInt32(dt3.Rows[0][7]) == 1)
+                            {
+                                Main.getmain.add_Techincal.Enabled = true;
+                            }
+                            ///
+                            if (Convert.ToInt32(dt3.Rows[0][8]) == 0)
+                            {
+                                Main.getmain.add_shiftTechincal.Enabled = false;
+                            }
+                            else if (Convert.ToInt32(dt3.Rows[0][8]) == 1)
+                            {
+                                Main.getmain.add_shiftTechincal.Enabled = true;
+                            }
+                            if (Convert.ToInt32(dt3.Rows[0][9]) == 0)
+                            {
+                                Main.getmain.report_Techincal.Enabled = false;
+                            }
+                            else if (Convert.ToInt32(dt3.Rows[0][9]) == 1)
+                            {
+                                Main.getmain.report_Techincal.Enabled = true;
                             }
                         }
+                        DataTable dt4 = new DataTable();
+                        dt4.Clear();
+                        dt4 = p.SelectUserCompany(txt_User.Text);
+                        if (dt4.Rows.Count >= 1)
+                        {
+                            if (Convert.ToInt32(dt4.Rows[0][0]) == 0)
+                            {
+                                Main.getmain.add_company.Enabled = false;
+                            }
+                            else if (Convert.ToInt32(dt4.Rows[0][0]) == 1)
+                            {
+                                Main.getmain.add_company.Enabled = true;
+                            }
+                            ///////
+                            if (Convert.ToInt32(dt4.Rows[0][1]) == 0)
+                            {
+                                Main.getmain.add_XrayCompany.Enabled = false;
+                            }
+                            else if (Convert.ToInt32(dt4.Rows[0][1]) == 1)
+                            {
+                                Main.getmain.add_XrayCompany.Enabled = true;
+                            }
+                            ////////
+                            if (Convert.ToInt32(dt4.Rows[0][2]) == 0)
+                            {
+                                Main.getmain.Depit_Company.Enabled = false;
+
+                            }
+                            else if (Convert.ToInt32(dt4.Rows[0][2]) == 1)
+                            {
+                                Main.getmain.Depit_Company.Enabled = true;
+                            }
+
+                            ///////
+                            if (Convert.ToInt32(dt4.Rows[0][3]) == 0)
+                            {
+                                Main.getmain.pay_Company.Enabled = false;
+                            }
+                            else if (Convert.ToInt32(dt4.Rows[0][3]) == 1)
+                            {
+                                Main.getmain.pay_Company.Enabled = true;
+                            }
+                            /////////
+                            if (Convert.ToInt32(dt4.Rows[0][4]) == 0)
+                            {
+                                Main.getmain.Report_Company.Enabled = false;
+                            }
+                            else if (Convert.ToInt32(dt4.Rows[0][4]) == 1)
+                            {
+                                Main.getmain.Report_Company.Enabled = true;
+                            }
+                            ///////
+                            if (Convert.ToInt32(dt4.Rows[0][5]) == 0)
+                            {
+                                Main.getmain.add_doctorOut.Enabled = false;
+                            }
+                            else if (Convert.ToInt32(dt4.Rows[0][5]) == 1)
+                            {
+                                Main.getmain.add_doctorOut.Enabled = true;
+                            }
+                            ///////
+                            if (Convert.ToInt32(dt4.Rows[0][6]) == 0)
+                            {
+                                Main.getmain.report_DoctorOut.Enabled = false;
+                            }
+                            else if (Convert.ToInt32(dt4.Rows[0][6]) == 1)
+                            {
+                                Main.getmain.report_DoctorOut.Enabled = true;
+                            }
+                        }
+                        DataTable dt5 = new DataTable();
+                        dt5.Clear();
+
+                        dt5 = p.SelectUserAccount(txt_User.Text);
+                        if (dt5.Rows.Count >= 1)
+                        {
+                            if (Convert.ToInt32(dt5.Rows[0][0]) == 0)
+                            {
+                                Main.getmain.add_masrof.Enabled = false;
+                            }
+                            else if (Convert.ToInt32(dt5.Rows[0][0]) == 1)
+                            {
+                                Main.getmain.add_masrof.Enabled = true;
+                            }
+                            ///////
+                            if (Convert.ToInt32(dt5.Rows[0][1]) == 0)
+                            {
+                                Main.getmain.report_masrof.Enabled = false;
+                            }
+                            else if (Convert.ToInt32(dt5.Rows[0][1]) == 1)
+                            {
+                                Main.getmain.report_masrof.Enabled = true;
+                            }
+                            ////////
+                            if (Convert.ToInt32(dt5.Rows[0][2]) == 0)
+                            {
+                                Main.getmain.add_stock.Enabled = false;
+                            }
+                            else if (Convert.ToInt32(dt5.Rows[0][2]) == 1)
+                            {
+                                Main.getmain.add_stock.Enabled = true;
+                            }
+
+                            ///////
+                            if (Convert.ToInt32(dt5.Rows[0][3]) == 0)
+                            {
+                                Main.getmain.pull_stock.Enabled = false;
+                            }
+                            else if (Convert.ToInt32(dt5.Rows[0][3]) == 1)
+                            {
+
+                                Main.getmain.pull_stock.Enabled = true;
+                            }
+                            /////////
+                            if (Convert.ToInt32(dt5.Rows[0][4]) == 0)
+                            {
+                                Main.getmain.insert_stock.Enabled = false;
+                            }
+                            else if (Convert.ToInt32(dt5.Rows[0][4]) == 1)
+                            {
+                                Main.getmain.insert_stock.Enabled = true;
+                            }
+                            ///////
+                            if (Convert.ToInt32(dt5.Rows[0][5]) == 0)
+                            {
+                                Main.getmain.transfer_stock.Enabled = false;
+                            }
+                            else if (Convert.ToInt32(dt5.Rows[0][5]) == 1)
+                            {
+                                Main.getmain.transfer_stock.Enabled = true;
+                            }
+                            ///////
+                            if (Convert.ToInt32(dt5.Rows[0][6]) == 0)
+                            {
+                                Main.getmain.report_stock.Enabled = false;
+                            }
+                            else if (Convert.ToInt32(dt5.Rows[0][6]) == 1)
+                            {
+                                Main.getmain.report_stock.Enabled = true;
+                            }
+
+                            if (Convert.ToInt32(dt5.Rows[0][7]) == 0)
+                            {
+                                Main.getmain.add_installment.Enabled = false;
+                            }
+                            else if (Convert.ToInt32(dt5.Rows[0][7]) == 1)
+                            {
+                                Main.getmain.add_installment.Enabled = true;
+                            }
+                            if (Convert.ToInt32(dt5.Rows[0][8]) == 0)
+                            {
+                                Main.getmain.report_installment.Enabled = false;
+                            }
+                            else if (Convert.ToInt32(dt5.Rows[0][8]) == 1)
+                            {
+                                Main.getmain.report_installment.Enabled = true;
+                            }
+                        }
+
+                        DataTable dt6 = new DataTable();
+                        dt6.Clear();
+
+                        dt6 = p.selectUser_Store(txt_User.Text);
+                        if (dt6.Rows.Count >= 1)
+                        {
+                            if (Convert.ToInt32(dt6.Rows[0][0]) == 0)
+                            {
+                                Main.getmain.add_store.Enabled = false;
+                            }
+                            else if (Convert.ToInt32(dt6.Rows[0][0]) == 1)
+                            {
+                                Main.getmain.add_store.Enabled = true;
+                            }
+                            ///////
+                            if (Convert.ToInt32(dt6.Rows[0][1]) == 0)
+                            {
+                                Main.getmain.add_items.Enabled = false;
+                            }
+                            else if (Convert.ToInt32(dt6.Rows[0][1]) == 1)
+                            {
+                                Main.getmain.add_items.Enabled = true;
+                            }
+                            ////////
+                            if (Convert.ToInt32(dt6.Rows[0][2]) == 0)
+                            {
+                                Main.getmain.add_ItemStore.Enabled = false;
+                            }
+                            else if (Convert.ToInt32(dt6.Rows[0][2]) == 1)
+                            {
+                                Main.getmain.add_ItemStore.Enabled = true;
+                            }
+
+                            ///////
+                            if (Convert.ToInt32(dt6.Rows[0][3]) == 0)
+                            {
+                                Main.getmain.trnasferStore.Enabled = false;
+                            }
+                            else if (Convert.ToInt32(dt6.Rows[0][3]) == 1)
+                            {
+                                Main.getmain.trnasferStore.Enabled = true;
+                            }
+                            /////////
+                            if (Convert.ToInt32(dt6.Rows[0][4]) == 0)
+                            {
+                                Main.getmain.items_consumption.Enabled = false;
+                            }
+                            else if (Convert.ToInt32(dt6.Rows[0][4]) == 1)
+                            {
+                                Main.getmain.items_consumption.Enabled = true;
+                            }
+                            ///////
+                            if (Convert.ToInt32(dt6.Rows[0][5]) == 0)
+                            {
+                                Main.getmain.report_items.Enabled = false;
+                            }
+                            else if (Convert.ToInt32(dt6.Rows[0][5]) == 1)
+                            {
+                                Main.getmain.report_items.Enabled = true;
+                            }
+                            ///////
+                            if (Convert.ToInt32(dt6.Rows[0][6]) == 0)
+                            {
+                                Main.getmain.add_invoiceSuppliers.Enabled = false;
+                            }
+                            else if (Convert.ToInt32(dt6.Rows[0][6]) == 1)
+                            {
+                                Main.getmain.add_invoiceSuppliers.Enabled = true;
+                            }
+
+                            if (Convert.ToInt32(dt6.Rows[0][7]) == 0)
+                            {
+                                Main.getmain.return_suppliers.Enabled = false;
+                            }
+                            else if (Convert.ToInt32(dt6.Rows[0][7]) == 1)
+                            {
+                                Main.getmain.return_suppliers.Enabled = true;
+                            }
+                            if (Convert.ToInt32(dt6.Rows[0][8]) == 0)
+                            {
+                                Main.getmain.report_invoicePurchise.Enabled = false;
+                            }
+                            else if (Convert.ToInt32(dt6.Rows[0][8]) == 1)
+                            {
+                                Main.getmain.report_invoicePurchise.Enabled = true;
+                            }
+
+                            if (Convert.ToInt32(dt6.Rows[0][9]) == 0)
+                            {
+                                Main.getmain.add_suppliers.Enabled = false;
+                            }
+                            else if (Convert.ToInt32(dt6.Rows[0][9]) == 1)
+                            {
+                                Main.getmain.add_suppliers.Enabled = true;
+                            }
+                            if (Convert.ToInt32(dt6.Rows[0][10]) == 0)
+                            {
+                                Main.getmain.pay_suppliers.Enabled = false;
+                            }
+                            else if (Convert.ToInt32(dt6.Rows[0][10]) == 1)
+                            {
+                                Main.getmain.pay_suppliers.Enabled = true;
+                            }
+                            if (Convert.ToInt32(dt6.Rows[0][11]) == 0)
+                            {
+                                Main.getmain.Depit_suppliers.Enabled = false;
+                            }
+                            else if (Convert.ToInt32(dt6.Rows[0][11]) == 1)
+                            {
+                                Main.getmain.Depit_suppliers.Enabled = true;
+                            }
+
+
+                            if (Convert.ToInt32(dt6.Rows[0][12]) == 0)
+                            {
+                                Main.getmain.report_suppliers.Enabled = false;
+                            }
+                            else if (Convert.ToInt32(dt6.Rows[0][12]) == 1)
+                            {
+                                Main.getmain.report_suppliers.Enabled = true;
+                            }
+                        }
+                        DataTable dt7 = new DataTable();
+                        dt7.Clear();
+                        dt7 = p.selecTUserTickets(txt_User.Text);
+                        if (dt7.Rows.Count >= 1)
+                        {
+                            if (Convert.ToInt32(dt7.Rows[0][0]) == 0)
+                            {
+                                Main.getmain.add_tickets.Enabled = false;
+                                Main.getmain.accordion_Tickets.Enabled = false;
+
+                            }
+                            else if (Convert.ToInt32(dt7.Rows[0][0]) == 1)
+                            {
+                                Main.getmain.add_tickets.Enabled = true;
+                                Main.getmain.accordion_Tickets.Enabled = true;
+
+                            }
+                            ///////
+                            if (Convert.ToInt32(dt7.Rows[0][1]) == 0)
+                            {
+                                Main.getmain.managment_tickets.Enabled = false;
+                            }
+                            else if (Convert.ToInt32(dt7.Rows[0][1]) == 1)
+                            {
+                                Main.getmain.managment_tickets.Enabled = true;
+                            }
+                            ////////
+                            if (Convert.ToInt32(dt7.Rows[0][2]) == 0)
+                            {
+                                Main.getmain.search_tickets.Enabled = false;
+                                Main.getmain.accordion_SerachTickrets.Enabled = false;
+
+                            }
+                            else if (Convert.ToInt32(dt7.Rows[0][2]) == 1)
+                            {
+                                Main.getmain.search_tickets.Enabled = true;
+                                Main.getmain.accordion_SerachTickrets.Enabled = true;
+
+                            }
+
+                            ///////
+                            if (Convert.ToInt32(dt7.Rows[0][3]) == 0)
+                            {
+                                Main.getmain.add_patient.Enabled = false;
+                                Main.getmain.accordion_AddClient.Enabled = false;
+
+                            }
+                            else if (Convert.ToInt32(dt7.Rows[0][3]) == 1)
+                            {
+                                Main.getmain.add_patient.Enabled = true;
+                                Main.getmain.accordion_AddClient.Enabled = true;
+
+                            }
+                            /////////
+                            if (Convert.ToInt32(dt7.Rows[0][4]) == 0)
+                            {
+                                Main.getmain.pay_patient.Enabled = false;
+                                Main.getmain.accordion_PayClient.Enabled = false;
+
+                            }
+                            else if (Convert.ToInt32(dt7.Rows[0][4]) == 1)
+                            {
+                                Main.getmain.pay_patient.Enabled = true;
+                                Main.getmain.accordion_PayClient.Enabled = true;
+                            }
+                            ///////
+                            if (Convert.ToInt32(dt7.Rows[0][5]) == 0)
+                            {
+                                Main.getmain.pay_patientCompany.Enabled = false;
+                                Main.getmain.accordion_PayCompany.Enabled = false;
+
+                            }
+                            else if (Convert.ToInt32(dt7.Rows[0][5]) == 1)
+                            {
+                                Main.getmain.pay_patientCompany.Enabled = true;
+                                Main.getmain.accordion_PayCompany.Enabled = true;
+                            }
+                            ///////
+                            if (Convert.ToInt32(dt2.Rows[0][6]) == 0)
+                            {
+                                Main.getmain.depit_client.Enabled = false;
+
+                            }
+                            else if (Convert.ToInt32(dt7.Rows[0][6]) == 1)
+                            {
+                                Main.getmain.depit_client.Enabled = true;
+                            }
+
+                            if (Convert.ToInt32(dt7.Rows[0][7]) == 0)
+                            {
+                                Main.getmain.report_patient.Enabled = false;
+
+                            }
+                            else if (Convert.ToInt32(dt7.Rows[0][7]) == 1)
+                            {
+
+                                Main.getmain.report_patient.Enabled = true;
+                            }
+                        }
+                        DataTable dt8 = new DataTable();
+                        dt8.Clear();
+
+                        dt8 = p.selectUser_Permission(txt_User.Text);
+                        if (dt8.Rows.Count >= 1)
+                        {
+                            if (Convert.ToInt32(dt8.Rows[0][0]) == 0)
+                            {
+                                Main.getmain.Create_Account.Enabled = false;
+
+                            }
+                            else if (Convert.ToInt32(dt8.Rows[0][0]) == 1)
+                            {
+                                Main.getmain.Create_Account.Enabled = true;
+
+                            }
+                            ///////
+                            if (Convert.ToInt32(dt8.Rows[0][1]) == 0)
+                            {
+                                Main.getmain.Permisson.Enabled = false;
+                            }
+                            else if (Convert.ToInt32(dt8.Rows[0][1]) == 1)
+                            {
+                                Main.getmain.Permisson.Enabled = true;
+                            }
+
+
+                        }
+
+
                         Program.salesman = dt.Rows[0][1].ToString();
                         Console.Beep();
                         this.Hide();
                         fm.ShowDialog();
+
+
+
                     }
 
                     else
                     {
                         MessageBox.Show("Incorrect password or username");
                     }
-                }
 
+
+
+
+                }
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
             }
         }
-
+    
         private void Frm_Login_Load(object sender, EventArgs e)
         {
 

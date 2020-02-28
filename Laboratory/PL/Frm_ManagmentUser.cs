@@ -89,10 +89,31 @@ namespace Laboratory.PL
 
                     return;
                 }
-                    u.AddUser(Convert.ToInt32(comboBox1.SelectedValue), txt_User.Text, txt_Pass.Text);
+                Permession p = new Permession();
+               
+          
+
+                p.Add_UserBAsicInformation(txt_User.Text, 0, 0, 0, 0, 0, 0, 0);
+
+
+                p.AddUser_Permission(txt_User.Text, 0, 0);
+
+
+                p.AddUser_Tickets(txt_User.Text, 0, 0, 0, 0, 0,0, 0, 0);
+
+
+                p.AddUser_Store(txt_User.Text, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+
+
+
+                p.AddUserAccount(txt_User.Text, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+
+
+                p.AddUserCompany(txt_User.Text, 0, 0, 0, 0, 0, 0, 0);
+
+                p.Add_UserEmployee(txt_User.Text, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                u.AddUser(Convert.ToInt32(comboBox1.SelectedValue), txt_User.Text, txt_Pass.Text);
                 dataGridViewList.DataSource = u.SelectUsers();
-                P.Add_UserBAsicInformation(txt_User.Text, 0, 0, 0, 0);
-                    P.Add_UserEmployee(txt_User.Text, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
                 MessageBox.Show("Registration saved successfully");
           
 
@@ -111,6 +132,7 @@ namespace Laboratory.PL
 
         private void dataGridViewList_DoubleClick(object sender, EventArgs e)
         {
+            ; ;
             comboBox1.Enabled = false;
             txt_User.Text = dataGridViewList.CurrentRow.Cells[2].Value.ToString();
             txt_Pass.Text = dataGridViewList.CurrentRow.Cells[3].Value.ToString();

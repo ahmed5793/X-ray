@@ -429,7 +429,7 @@
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.cmb_items);
-            this.groupBox2.Location = new System.Drawing.Point(5, 73);
+            this.groupBox2.Location = new System.Drawing.Point(5, 42);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(414, 204);
             this.groupBox2.TabIndex = 1;
@@ -597,7 +597,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(198, 43);
+            this.label6.Location = new System.Drawing.Point(577, 54);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(100, 24);
             this.label6.TabIndex = 74;
@@ -988,10 +988,10 @@
             // 
             this.dtb_visit.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtb_visit.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtb_visit.Location = new System.Drawing.Point(11, 41);
+            this.dtb_visit.Location = new System.Drawing.Point(455, 53);
             this.dtb_visit.Name = "dtb_visit";
             this.dtb_visit.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dtb_visit.Size = new System.Drawing.Size(181, 26);
+            this.dtb_visit.Size = new System.Drawing.Size(115, 26);
             this.dtb_visit.TabIndex = 95;
             // 
             // cmb_Company
@@ -1028,13 +1028,13 @@
             this.dgv_order.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_order.BackgroundColor = System.Drawing.Color.Maroon;
             this.dgv_order.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_order.Location = new System.Drawing.Point(12, 283);
+            this.dgv_order.Location = new System.Drawing.Point(12, 251);
             this.dgv_order.Name = "dgv_order";
             this.dgv_order.ReadOnly = true;
             this.dgv_order.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgv_order.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_order.ShowEditingIcon = false;
-            this.dgv_order.Size = new System.Drawing.Size(407, 44);
+            this.dgv_order.Size = new System.Drawing.Size(407, 83);
             this.dgv_order.TabIndex = 92;
             this.dgv_order.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgv_order_RowsRemoved);
             // 
@@ -1042,7 +1042,7 @@
             // 
             this.btn_print.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_print.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_print.Location = new System.Drawing.Point(956, 526);
+            this.btn_print.Location = new System.Drawing.Point(939, 528);
             this.btn_print.Name = "btn_print";
             this.btn_print.Size = new System.Drawing.Size(119, 40);
             this.btn_print.TabIndex = 101;
@@ -1054,7 +1054,7 @@
             // 
             this.btn_save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_save.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_save.Location = new System.Drawing.Point(830, 527);
+            this.btn_save.Location = new System.Drawing.Point(814, 527);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(119, 38);
             this.btn_save.TabIndex = 100;
@@ -1122,7 +1122,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(1093, 574);
             this.Controls.Add(this.Btn_DetailsCompany);
             this.Controls.Add(this.btn_print);

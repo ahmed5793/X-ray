@@ -133,5 +133,27 @@ namespace Laboratory.BL
 
             return dt;
         }
+
+
+        internal DataTable Attendance(int idemployee,DateTime Date)
+        {
+
+            DataAccessLayer da = new DataAccessLayer();
+            DataTable dt = new DataTable();
+
+
+            da.open();
+            SqlParameter[] param = new SqlParameter[2];
+            param[0] = new SqlParameter("@ID", SqlDbType.Int);
+            param[0].Value = idemployee;
+            param[1] = new SqlParameter("@Date", SqlDbType.DateTime);
+            param[1].Value = Date;
+
+
+            dt = da.selected("Attendance", param);
+            da.close();
+
+            return dt;
+        }
     }
 }

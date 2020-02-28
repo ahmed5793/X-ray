@@ -18,11 +18,78 @@ namespace Laboratory.PL
         public Frm_reportFinger()
         {
             InitializeComponent();
-            comboBox2.DataSource = f.selectidfingeremployee();
-            comboBox2.DisplayMember = "IDEmployee";
-            comboBox2.ValueMember = "IDEmployee";
-        }
+            cmcb_clients.DataSource = f.selectidfingeremployee();
+            cmcb_clients.DisplayMember = "IDEmployee";
+            cmcb_clients.ValueMember = "IDEmployee";
+            monthe();
+            year();
+            //dataGridView1.Columns[0].DefaultCellStyle.Format = "dd/MM/yyyy";
+            //dataGridView1.Columns[1].DefaultCellStyle.Format = "hh:mm tt";
+            //dataGridView1.Columns[2].DefaultCellStyle.Format = "hh:mm tt";
 
+        }
+        void year()
+        {
+            for (int i = 2010; i <= DateTime.Now.Year; i++)
+            {
+           
+                cmb_year.Items.Add(i);
+                cmb_year.SelectedIndex = 0;
+
+            }
+        }
+        void monthe()
+        {
+            this.cmb_month.DisplayMember = "Text";
+            this.cmb_month.ValueMember = "Value";
+
+            var months = new[]
+            {
+            new { Text = "January", Value = 01 },
+            new { Text = "February", Value = 02 },
+            new { Text = "March", Value = 03 },
+            new { Text = "April", Value = 04 },
+            new { Text = "May", Value = 05 },
+            new { Text = "June", Value = 06 },
+            new { Text = "July", Value = 07 },
+            new { Text = "Aughust", Value = 08 },
+            new { Text = "September", Value = 09 },
+            new { Text = "October", Value = 10 },
+            new { Text = "November", Value = 11 },
+            new { Text = "December", Value = 12 }
+        };
+            this.cmb_month.DataSource = months;
+
+            DateTime now = DateTime.Now;
+            int monthValue = now.Month;
+            cmb_month.SelectedIndex = monthValue - 1;
+
+
+        }
+        public DataTable getatt(int EmpID, string year, string month)
+        {
+            DataTable dt = new DataTable();
+            DataTable dt2 = new DataTable();
+            dt.Columns.Add("Day");
+            dt.Columns.Add("CheckIN");
+            dt.Columns.Add("Checkout");
+
+
+            int day = DateTime.DaysInMonth(Convert.ToInt32(cmb_year.Text), Convert.ToInt32(cmb_month.SelectedValue));
+            for (int i = 0; i < day; i++)
+            {
+                DateTime daydate = new DateTime(int.Parse(year) , int.Parse(month) , i+1);
+
+
+                dt2 = f.Attendance(Convert.ToInt32(cmcb_clients.SelectedValue), daydate);
+
+                dt.Rows.Add(daydate.ToString(), dt2.Rows[0][0].ToString(), dt2.Rows[0][1].ToString());
+
+               
+
+            }
+            return dt;
+        }
         private void Frm_reportFinger_Load(object sender, EventArgs e)
         {
 
@@ -30,14 +97,37 @@ namespace Laboratory.PL
 
         private void Btn_AddShift_Click(object sender, EventArgs e)
         {
+            dataGridView1.Rows.Clear();
             DataTable dt = new DataTable();
-            DataTable dt1 = new DataTable();
-            DataTable dtall = new DataTable();
-            dt  = f.SELECTFingerIDemployee(Convert.ToInt32(comboBox2.SelectedValue));
-            dt1= f.SELECTFingerIDemployeeOut(Convert.ToInt32(comboBox2.SelectedValue));
-            dtall = dt.Copy();
-            dtall.Merge(dt1);
-            gridControl1.DataSource = dtall;
+            dt = getatt(int.Parse(cmcb_clients.Text) ,cmb_year.Text, cmb_month.SelectedValue.ToString());
+           
+ 
+            if (dt.Rows.Count > 0)
+            {
+                int n = 0;
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    n = dataGridView1.Rows.Add();
+                    dataGridView1.Rows[n].Cells[0].Value = dt.Rows[i][0].ToString();
+                    dataGridView1.Rows[n].Cells[1].Value = dt.Rows[i][1].ToString();
+                    dataGridView1.Rows[n].Cells[2].Value = dt.Rows[i][2].ToString();
+                }
+                
+
+            }
+
+
+            //try
+            //{
+            //    dataGridView1.DataSource = getatt(Convert.ToInt32(cmcb_clients.SelectedValue), cmb_year.Text, cmb_month.SelectedValue.ToString());
+
+            //}
+            //catch (Exception ex)
+            //{
+
+            //    MessageBox.Show(ex.Message);
+            //    MessageBox.Show(ex.StackTrace);
+            //}
 
         }
     }
