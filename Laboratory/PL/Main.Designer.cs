@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.fluentDesignFormContainer1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
             this.add_branch = new DevExpress.XtraBars.BarButtonItem();
             this.add_employee = new DevExpress.XtraBars.BarButtonItem();
             this.add_shiftEmployee = new DevExpress.XtraBars.BarButtonItem();
@@ -132,6 +133,8 @@
             this.barStaticItem7 = new DevExpress.XtraBars.BarStaticItem();
             this.Download_finger = new DevExpress.XtraBars.BarButtonItem();
             this.report_finger = new DevExpress.XtraBars.BarButtonItem();
+            this.data_Revelation = new DevExpress.XtraBars.BarButtonItem();
+            this.Data_Redvelation = new DevExpress.XtraBars.BarButtonItem();
             this.basic_information = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -162,12 +165,11 @@
             this.ribbonPageGroup18 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.fluentDesignFormContainer1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
             this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
             this.accordionControl1 = new DevExpress.XtraBars.Navigation.AccordionControl();
+            this.accordionContentContainer1 = new DevExpress.XtraBars.Navigation.AccordionContentContainer();
             this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordion_AddClient = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordion_PayClient = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -175,8 +177,8 @@
             this.accordionControlElement7 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordion_Tickets = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordion_SerachTickrets = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionContentContainer1 = new DevExpress.XtraBars.Navigation.AccordionContentContainer();
             this.accordionControlElement10 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageEdit1)).BeginInit();
@@ -293,9 +295,11 @@
             this.barStaticItem6,
             this.barStaticItem7,
             this.Download_finger,
-            this.report_finger});
+            this.report_finger,
+            this.data_Revelation,
+            this.Data_Redvelation});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 109;
+            this.ribbon.MaxItemId = 112;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.basic_information,
@@ -312,6 +316,15 @@
             this.ribbon.Size = new System.Drawing.Size(719, 161);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.Click += new System.EventHandler(this.ribbon_Click);
+            // 
+            // fluentDesignFormContainer1
+            // 
+            this.fluentDesignFormContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fluentDesignFormContainer1.Location = new System.Drawing.Point(0, 161);
+            this.fluentDesignFormContainer1.Name = "fluentDesignFormContainer1";
+            this.fluentDesignFormContainer1.Size = new System.Drawing.Size(719, 416);
+            this.fluentDesignFormContainer1.TabIndex = 2;
+            this.fluentDesignFormContainer1.Click += new System.EventHandler(this.fluentDesignFormContainer1_Click);
             // 
             // add_branch
             // 
@@ -575,8 +588,8 @@
             // 
             this.Depit_Company.Caption = "مديونية الشركات";
             this.Depit_Company.Id = 33;
-            this.Depit_Company.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Credit_Company.ImageOptions.Image")));
-            this.Depit_Company.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("Credit_Company.ImageOptions.LargeImage")));
+            this.Depit_Company.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Depit_Company.ImageOptions.Image")));
+            this.Depit_Company.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("Depit_Company.ImageOptions.LargeImage")));
             this.Depit_Company.Name = "Depit_Company";
             this.Depit_Company.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem15_ItemClick_1);
             // 
@@ -821,8 +834,8 @@
             // 
             this.report_invoicePurchise.Caption = "تقارير";
             this.report_invoicePurchise.Id = 61;
-            this.report_invoicePurchise.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("report_invoice.ImageOptions.Image")));
-            this.report_invoicePurchise.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("report_invoice.ImageOptions.LargeImage")));
+            this.report_invoicePurchise.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("report_invoicePurchise.ImageOptions.Image")));
+            this.report_invoicePurchise.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("report_invoicePurchise.ImageOptions.LargeImage")));
             this.report_invoicePurchise.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barHeaderItem21)});
             this.report_invoicePurchise.Name = "report_invoicePurchise";
@@ -890,8 +903,8 @@
             // 
             this.Depit_suppliers.Caption = "مديونية الموردين";
             this.Depit_suppliers.Id = 70;
-            this.Depit_suppliers.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("credit_suppliers.ImageOptions.Image")));
-            this.Depit_suppliers.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("credit_suppliers.ImageOptions.LargeImage")));
+            this.Depit_suppliers.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Depit_suppliers.ImageOptions.Image")));
+            this.Depit_suppliers.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("Depit_suppliers.ImageOptions.LargeImage")));
             this.Depit_suppliers.Name = "Depit_suppliers";
             this.Depit_suppliers.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem33_ItemClick);
             // 
@@ -986,7 +999,7 @@
             // 
             this.depit_client.Caption = "مديونيه المرضي";
             this.depit_client.Id = 82;
-            this.depit_client.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("credit_patient.ImageOptions.SvgImage")));
+            this.depit_client.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("depit_client.ImageOptions.SvgImage")));
             this.depit_client.Name = "depit_client";
             this.depit_client.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem40_ItemClick);
             // 
@@ -1028,8 +1041,8 @@
             // 
             this.Create_Account.Caption = "create account";
             this.Create_Account.Id = 89;
-            this.Create_Account.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem42.ImageOptions.Image")));
-            this.Create_Account.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem42.ImageOptions.LargeImage")));
+            this.Create_Account.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Create_Account.ImageOptions.Image")));
+            this.Create_Account.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("Create_Account.ImageOptions.LargeImage")));
             this.Create_Account.Name = "Create_Account";
             this.Create_Account.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem42_ItemClick);
             // 
@@ -1037,7 +1050,7 @@
             // 
             this.Permisson.Caption = "Permission to access";
             this.Permisson.Id = 90;
-            this.Permisson.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem43.ImageOptions.SvgImage")));
+            this.Permisson.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("Permisson.ImageOptions.SvgImage")));
             this.Permisson.Name = "Permisson";
             this.Permisson.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem43_ItemClick);
             // 
@@ -1130,8 +1143,8 @@
             // 
             this.Download_finger.Caption = "تحميل الداتا من جهاز البصمة";
             this.Download_finger.Id = 107;
-            this.Download_finger.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
-            this.Download_finger.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
+            this.Download_finger.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Download_finger.ImageOptions.Image")));
+            this.Download_finger.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("Download_finger.ImageOptions.LargeImage")));
             this.Download_finger.Name = "Download_finger";
             this.Download_finger.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick_1);
             // 
@@ -1139,10 +1152,27 @@
             // 
             this.report_finger.Caption = "تقارير عن الحضور والانصراف";
             this.report_finger.Id = 108;
-            this.report_finger.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
-            this.report_finger.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.LargeImage")));
+            this.report_finger.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("report_finger.ImageOptions.Image")));
+            this.report_finger.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("report_finger.ImageOptions.LargeImage")));
             this.report_finger.Name = "report_finger";
             this.report_finger.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick_1);
+            // 
+            // data_Revelation
+            // 
+            this.data_Revelation.Caption = "مواعيد الحجوزات";
+            this.data_Revelation.Id = 109;
+            this.data_Revelation.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("data_Revelation.ImageOptions.Image")));
+            this.data_Revelation.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("data_Revelation.ImageOptions.LargeImage")));
+            this.data_Revelation.Name = "data_Revelation";
+            // 
+            // Data_Redvelation
+            // 
+            this.Data_Redvelation.Caption = "مواعيد الحجوزات";
+            this.Data_Redvelation.Id = 111;
+            this.Data_Redvelation.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Data_Redvelation.ImageOptions.Image")));
+            this.Data_Redvelation.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("Data_Redvelation.ImageOptions.LargeImage")));
+            this.Data_Redvelation.Name = "Data_Redvelation";
+            this.Data_Redvelation.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Data_Redvelation_ItemClick);
             // 
             // basic_information
             // 
@@ -1332,6 +1362,7 @@
             this.ribbonPageGroup15.ItemLinks.Add(this.add_tickets);
             this.ribbonPageGroup15.ItemLinks.Add(this.managment_tickets);
             this.ribbonPageGroup15.ItemLinks.Add(this.search_tickets);
+            this.ribbonPageGroup15.ItemLinks.Add(this.Data_Redvelation);
             this.ribbonPageGroup15.Name = "ribbonPageGroup15";
             this.ribbonPageGroup15.Text = "ادارة الحجوزات";
             // 
@@ -1393,15 +1424,6 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // fluentDesignFormContainer1
-            // 
-            this.fluentDesignFormContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fluentDesignFormContainer1.Location = new System.Drawing.Point(0, 161);
-            this.fluentDesignFormContainer1.Name = "fluentDesignFormContainer1";
-            this.fluentDesignFormContainer1.Size = new System.Drawing.Size(719, 416);
-            this.fluentDesignFormContainer1.TabIndex = 2;
-            this.fluentDesignFormContainer1.Click += new System.EventHandler(this.fluentDesignFormContainer1_Click);
-            // 
             // checkEdit1
             // 
             this.checkEdit1.Location = new System.Drawing.Point(59, 73);
@@ -1431,6 +1453,12 @@
             this.accordionControl1.TabIndex = 4;
             this.accordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
             // 
+            // accordionContentContainer1
+            // 
+            this.accordionContentContainer1.Name = "accordionContentContainer1";
+            this.accordionContentContainer1.Size = new System.Drawing.Size(172, 73);
+            this.accordionContentContainer1.TabIndex = 2;
+            // 
             // accordionControlElement1
             // 
             this.accordionControlElement1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
@@ -1439,7 +1467,6 @@
             this.accordionControlElement1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement1.ImageOptions.Image")));
             this.accordionControlElement1.Name = "accordionControlElement1";
             this.accordionControlElement1.Text = "User Name";
-            this.accordionControlElement1.Click += new System.EventHandler(this.accordionControlElement1_Click_1);
             // 
             // accordionControlElement2
             // 
@@ -1449,14 +1476,6 @@
             this.accordionControlElement2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement2.ImageOptions.Image")));
             this.accordionControlElement2.Name = "accordionControlElement2";
             this.accordionControlElement2.Text = "Online";
-            // 
-            // documentManager1
-            // 
-            this.documentManager1.MdiParent = this;
-            this.documentManager1.MenuManager = this.ribbon;
-            this.documentManager1.View = this.tabbedView1;
-            this.documentManager1.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
-            this.tabbedView1});
             // 
             // accordionControlElement3
             // 
@@ -1470,11 +1489,10 @@
             this.accordionControlElement3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement3.ImageOptions.Image")));
             this.accordionControlElement3.Name = "accordionControlElement3";
             this.accordionControlElement3.Text = "القائمة الرئيسية";
-            this.accordionControlElement3.Click += new System.EventHandler(this.accordionControlElement3_Click);
             // 
             // accordion_AddClient
             // 
-            this.accordion_AddClient.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement4.ImageOptions.Image")));
+            this.accordion_AddClient.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordion_AddClient.ImageOptions.Image")));
             this.accordion_AddClient.Name = "accordion_AddClient";
             this.accordion_AddClient.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordion_AddClient.Text = "تسجيل مريض";
@@ -1482,14 +1500,14 @@
             // 
             // accordion_PayClient
             // 
-            this.accordion_PayClient.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement5.ImageOptions.Image")));
+            this.accordion_PayClient.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordion_PayClient.ImageOptions.Image")));
             this.accordion_PayClient.Name = "accordion_PayClient";
             this.accordion_PayClient.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordion_PayClient.Text = "مدفوعات  النقدي";
             // 
             // accordion_PayCompany
             // 
-            this.accordion_PayCompany.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement6.ImageOptions.Image")));
+            this.accordion_PayCompany.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordion_PayCompany.ImageOptions.Image")));
             this.accordion_PayCompany.Name = "accordion_PayCompany";
             this.accordion_PayCompany.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordion_PayCompany.Text = "مدفوعات الشركات";
@@ -1507,7 +1525,7 @@
             // 
             // accordion_Tickets
             // 
-            this.accordion_Tickets.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement8.ImageOptions.Image")));
+            this.accordion_Tickets.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordion_Tickets.ImageOptions.Image")));
             this.accordion_Tickets.Name = "accordion_Tickets";
             this.accordion_Tickets.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordion_Tickets.Text = "شاشة الحجز";
@@ -1516,23 +1534,25 @@
             // accordion_SerachTickrets
             // 
             this.accordion_SerachTickrets.ContentContainer = this.accordionContentContainer1;
-            this.accordion_SerachTickrets.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement9.ImageOptions.Image")));
+            this.accordion_SerachTickrets.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordion_SerachTickrets.ImageOptions.Image")));
             this.accordion_SerachTickrets.Name = "accordion_SerachTickrets";
             this.accordion_SerachTickrets.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordion_SerachTickrets.Text = "ادارة الحجز";
             this.accordion_SerachTickrets.Click += new System.EventHandler(this.accordionControlElement9_Click);
-            // 
-            // accordionContentContainer1
-            // 
-            this.accordionContentContainer1.Name = "accordionContentContainer1";
-            this.accordionContentContainer1.Size = new System.Drawing.Size(172, 73);
-            this.accordionContentContainer1.TabIndex = 2;
             // 
             // accordionControlElement10
             // 
             this.accordionControlElement10.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement10.ImageOptions.Image")));
             this.accordionControlElement10.Name = "accordionControlElement10";
             this.accordionControlElement10.Text = "اتصل بنا";
+            // 
+            // documentManager1
+            // 
+            this.documentManager1.MdiParent = this;
+            this.documentManager1.MenuManager = this.ribbon;
+            this.documentManager1.View = this.tabbedView1;
+            this.documentManager1.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
+            this.tabbedView1});
             // 
             // tabbedView1
             // 
@@ -1548,6 +1568,7 @@
             this.Controls.Add(this.ribbon);
             this.Controls.Add(this.accordionControl1);
             this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("Main.IconOptions.LargeImage")));
+            this.IsMdiContainer = true;
             this.Name = "Main";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "الشاشة الرئيسيه";
@@ -1717,5 +1738,7 @@
         public DevExpress.XtraBars.BarButtonItem Download_finger;
         public DevExpress.XtraBars.BarButtonItem report_finger;
         private DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView tabbedView1;
+        public DevExpress.XtraBars.BarButtonItem data_Revelation;
+        private DevExpress.XtraBars.BarButtonItem Data_Redvelation;
     }
 }

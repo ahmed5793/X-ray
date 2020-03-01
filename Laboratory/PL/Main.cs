@@ -598,13 +598,15 @@ namespace Laboratory.PL
         private void barButtonItem4_ItemClick_1(object sender, ItemClickEventArgs e)
         {
             FingerPrint fs = new FingerPrint();
-            fs.ShowDialog();
+            fs.MdiParent = this;
+            fs.Show();
         }
 
         private void barButtonItem5_ItemClick_1(object sender, ItemClickEventArgs e)
         {
             Frm_reportFinger rp = new Frm_reportFinger();
-            rp.ShowDialog();
+            rp.MdiParent = this;
+            rp.Show();
         }
 
         private void accordionControlElement6_Click_1(object sender, EventArgs e)
@@ -635,14 +637,12 @@ namespace Laboratory.PL
             frm_Managment.Show();
         }
 
-        private void accordionControlElement3_Click(object sender, EventArgs e)
+        private void Data_Redvelation_ItemClick(object sender, ItemClickEventArgs e)
         {
-
-        }
-
-        private void accordionControlElement1_Click_1(object sender, EventArgs e)
-        {
-
+            Frm_DataRevaltionTicket dts = new Frm_DataRevaltionTicket();
+            dts.MdiParent = this;
+            dts.Show();
+            
         }
     }
     }

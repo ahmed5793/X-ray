@@ -1044,12 +1044,13 @@ namespace Laboratory.PL
                     s.add_insertStock(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_pay.Text), dtb_visit.Value, txt_username.Text, "فاتورة حجز اشعة رقم "+txt_IdTicket.Text);
 
 
-                 
-                  
 
+
+                    string x = DateTime.Now.ToShortDateString();
                     clear();
-                    SelectTicketEmployee();
+                    Customer();
 
+                    Frm_DataRevaltionTicket.getmain.dataGridView1.DataSource = t.selectDataRevlation(Convert.ToInt32(Frm_DataRevaltionTicket.getmain.comboBox1.SelectedValue), Convert.ToDateTime(x));
                 }
                
                 else

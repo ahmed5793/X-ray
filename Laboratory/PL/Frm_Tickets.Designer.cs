@@ -69,13 +69,11 @@
             this.txt_idcust = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label28 = new System.Windows.Forms.Label();
             this.Txt_rentCompany = new System.Windows.Forms.TextBox();
             this.Txt_PricePayment = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.Txt_addtionPayment = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.txt_reasonAddition = new System.Windows.Forms.TextBox();
             this.rdb_Discount = new System.Windows.Forms.RadioButton();
             this.txt_afterDiscount = new System.Windows.Forms.TextBox();
             this.rdb_money = new System.Windows.Forms.RadioButton();
@@ -87,6 +85,8 @@
             this.label16 = new System.Windows.Forms.Label();
             this.txt_pay = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.txt_reasonAddition = new System.Windows.Forms.TextBox();
             this.dtb_kashf = new System.Windows.Forms.DateTimePicker();
             this.label17 = new System.Windows.Forms.Label();
             this.cmb_branches = new System.Windows.Forms.ComboBox();
@@ -639,6 +639,7 @@
             // groupBox3
             // 
             this.groupBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.groupBox3.Controls.Add(this.Txt_rentCompany);
             this.groupBox3.Controls.Add(this.Txt_PricePayment);
             this.groupBox3.Controls.Add(this.label27);
             this.groupBox3.Controls.Add(this.Txt_addtionPayment);
@@ -661,25 +662,13 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "الحسابات";
             // 
-            // label28
-            // 
-            this.label28.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label28.AutoSize = true;
-            this.label28.BackColor = System.Drawing.Color.White;
-            this.label28.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(476, 202);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(71, 24);
-            this.label28.TabIndex = 120;
-            this.label28.Text = "ملاحظات";
-            // 
             // Txt_rentCompany
             // 
             this.Txt_rentCompany.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Txt_rentCompany.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Txt_rentCompany.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_rentCompany.ForeColor = System.Drawing.SystemColors.Info;
-            this.Txt_rentCompany.Location = new System.Drawing.Point(622, 527);
+            this.Txt_rentCompany.Location = new System.Drawing.Point(358, 122);
             this.Txt_rentCompany.Name = "Txt_rentCompany";
             this.Txt_rentCompany.ReadOnly = true;
             this.Txt_rentCompany.Size = new System.Drawing.Size(51, 32);
@@ -744,19 +733,6 @@
             this.label26.Size = new System.Drawing.Size(147, 24);
             this.label26.TabIndex = 116;
             this.label26.Text = "نسبة تحمل المريض";
-            // 
-            // txt_reasonAddition
-            // 
-            this.txt_reasonAddition.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txt_reasonAddition.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_reasonAddition.Location = new System.Drawing.Point(424, 232);
-            this.txt_reasonAddition.MaxLength = 3000;
-            this.txt_reasonAddition.Multiline = true;
-            this.txt_reasonAddition.Name = "txt_reasonAddition";
-            this.txt_reasonAddition.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txt_reasonAddition.Size = new System.Drawing.Size(180, 78);
-            this.txt_reasonAddition.TabIndex = 99;
-            this.txt_reasonAddition.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // rdb_Discount
             // 
@@ -924,6 +900,31 @@
             this.label15.Size = new System.Drawing.Size(62, 24);
             this.label15.TabIndex = 101;
             this.label15.Text = "المدفوع";
+            // 
+            // label28
+            // 
+            this.label28.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label28.AutoSize = true;
+            this.label28.BackColor = System.Drawing.Color.White;
+            this.label28.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(476, 202);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(71, 24);
+            this.label28.TabIndex = 120;
+            this.label28.Text = "ملاحظات";
+            // 
+            // txt_reasonAddition
+            // 
+            this.txt_reasonAddition.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txt_reasonAddition.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_reasonAddition.Location = new System.Drawing.Point(424, 232);
+            this.txt_reasonAddition.MaxLength = 3000;
+            this.txt_reasonAddition.Multiline = true;
+            this.txt_reasonAddition.Name = "txt_reasonAddition";
+            this.txt_reasonAddition.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txt_reasonAddition.Size = new System.Drawing.Size(180, 78);
+            this.txt_reasonAddition.TabIndex = 99;
+            this.txt_reasonAddition.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // dtb_kashf
             // 
@@ -1161,7 +1162,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(1093, 581);
-            this.Controls.Add(this.Txt_rentCompany);
             this.Controls.Add(this.Btn_DetailsCompany);
             this.Controls.Add(this.label28);
             this.Controls.Add(this.btn_print);

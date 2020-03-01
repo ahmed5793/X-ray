@@ -572,5 +572,23 @@ namespace Laboratory.BL
             return dt;
         }
 
+        internal DataTable selectDataRevlation(int idBranch, DateTime date)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[2];
+
+            param[0] = new SqlParameter("@idBranch", SqlDbType.Int);
+            param[0].Value = idBranch;
+            param[1] = new SqlParameter("@date", SqlDbType.Date);
+            param[1].Value = date;
+            da.open();
+            DataTable dt = new DataTable();
+            dt.Clear();
+            dt = da.selected("selectDataRevlation", param);
+            da.close();
+            return dt;
+        }
+
+
     }
 }

@@ -100,8 +100,8 @@ namespace Laboratory.PL
             dataGridView1.Rows.Clear();
             DataTable dt = new DataTable();
             dt = getatt(int.Parse(cmcb_clients.Text) ,cmb_year.Text, cmb_month.SelectedValue.ToString());
-           
- 
+          
+
             if (dt.Rows.Count > 0)
             {
                 int n = 0;
@@ -112,7 +112,8 @@ namespace Laboratory.PL
                     dataGridView1.Rows[n].Cells[1].Value = dt.Rows[i][1].ToString();
                     dataGridView1.Rows[n].Cells[2].Value = dt.Rows[i][2].ToString();
                 }
-                
+
+              
 
             }
 
