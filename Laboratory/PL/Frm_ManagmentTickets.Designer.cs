@@ -114,9 +114,9 @@
             this.label13.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(240, 12);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(36, 24);
+            this.label13.Size = new System.Drawing.Size(99, 24);
             this.label13.TabIndex = 83;
-            this.label13.Text = "فرع";
+            this.label13.Text = "مكان الفحص";
             // 
             // txt_username
             // 
