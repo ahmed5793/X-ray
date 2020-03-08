@@ -123,5 +123,11 @@ namespace Laboratory.PL
                 Cmb_Users.SelectedIndex = -1;
             }
         }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            Frm_ReportEmployeeDiscount frm_Dis = new Frm_ReportEmployeeDiscount();
+            frm_Dis.ShowDialog();
+        }
     }
 }
