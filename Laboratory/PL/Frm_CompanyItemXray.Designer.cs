@@ -1,4 +1,4 @@
-﻿namespace Laboratory.BL
+﻿namespace Laboratory.PL
 {
     partial class Frm_CompanyItemXray
     {
@@ -36,8 +36,6 @@
             this.label21 = new System.Windows.Forms.Label();
             this.Txt_Price = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.dgv_visit = new System.Windows.Forms.DataGridView();
@@ -59,7 +57,7 @@
             // Cmb_category
             // 
             this.Cmb_category.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Cmb_category.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.Cmb_category.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.Cmb_category.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.Cmb_category.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cmb_category.FormattingEnabled = true;
@@ -80,7 +78,7 @@
             this.label9.BackColor = System.Drawing.Color.Black;
             this.label9.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label9.Location = new System.Drawing.Point(545, 140);
+            this.label9.Location = new System.Drawing.Point(527, 141);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(92, 24);
             this.label9.TabIndex = 90;
@@ -93,7 +91,7 @@
             this.label10.BackColor = System.Drawing.Color.Black;
             this.label10.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label10.Location = new System.Drawing.Point(559, 97);
+            this.label10.Location = new System.Drawing.Point(527, 100);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(54, 24);
             this.label10.TabIndex = 91;
@@ -102,7 +100,7 @@
             // cmb_items
             // 
             this.cmb_items.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cmb_items.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmb_items.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmb_items.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmb_items.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_items.FormattingEnabled = true;
@@ -118,7 +116,7 @@
             // cmb_Company
             // 
             this.cmb_Company.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cmb_Company.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmb_Company.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cmb_Company.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmb_Company.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_Company.FormattingEnabled = true;
@@ -137,7 +135,7 @@
             this.label21.BackColor = System.Drawing.Color.Black;
             this.label21.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label21.Location = new System.Drawing.Point(545, 58);
+            this.label21.Location = new System.Drawing.Point(526, 56);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(91, 24);
             this.label21.TabIndex = 93;
@@ -147,7 +145,7 @@
             // 
             this.Txt_Price.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Txt_Price.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_Price.Location = new System.Drawing.Point(523, 207);
+            this.Txt_Price.Location = new System.Drawing.Point(489, 207);
             this.Txt_Price.Name = "Txt_Price";
             this.Txt_Price.ReadOnly = true;
             this.Txt_Price.Size = new System.Drawing.Size(165, 32);
@@ -164,38 +162,12 @@
             this.label2.BackColor = System.Drawing.Color.Black;
             this.label2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(519, 180);
+            this.label2.Location = new System.Drawing.Point(486, 180);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(169, 24);
             this.label2.TabIndex = 96;
             this.label2.Text = "السعر للمستهلك العادى";
             this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(35, 207);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(174, 32);
-            this.textBox1.TabIndex = 4;
-            this.textBox1.Text = "0";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
-            this.textBox1.MouseLeave += new System.EventHandler(this.textBox1_MouseLeave);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Black;
-            this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(18, 180);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(207, 24);
-            this.label1.TabIndex = 98;
-            this.label1.Text = "القيمة الذى يتحملها المريض";
             // 
             // groupBox1
             // 
@@ -260,7 +232,7 @@
             this.btn_Update.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Update.Location = new System.Drawing.Point(188, 269);
             this.btn_Update.Name = "btn_Update";
-            this.btn_Update.Size = new System.Drawing.Size(200, 40);
+            this.btn_Update.Size = new System.Drawing.Size(146, 40);
             this.btn_Update.TabIndex = 103;
             this.btn_Update.Text = "تعديل البيانات";
             this.btn_Update.UseVisualStyleBackColor = true;
@@ -270,9 +242,9 @@
             // 
             this.btn_save.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_save.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_save.Location = new System.Drawing.Point(413, 269);
+            this.btn_save.Location = new System.Drawing.Point(355, 270);
             this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(200, 40);
+            this.btn_save.Size = new System.Drawing.Size(151, 40);
             this.btn_save.TabIndex = 5;
             this.btn_save.Text = "حفظ";
             this.btn_save.UseVisualStyleBackColor = true;
@@ -289,7 +261,7 @@
             this.comboBox1.Items.AddRange(new object[] {
             "خصم ",
             "أسعار متفق عليها"});
-            this.comboBox1.Location = new System.Drawing.Point(327, 5);
+            this.comboBox1.Location = new System.Drawing.Point(232, 9);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.comboBox1.Size = new System.Drawing.Size(199, 32);
@@ -303,7 +275,7 @@
             this.label3.BackColor = System.Drawing.Color.Black;
             this.label3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(532, 9);
+            this.label3.Location = new System.Drawing.Point(437, 13);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(169, 24);
             this.label3.TabIndex = 105;
@@ -313,12 +285,13 @@
             // 
             this.Txt_Discount.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Txt_Discount.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_Discount.Location = new System.Drawing.Point(51, 5);
+            this.Txt_Discount.Location = new System.Drawing.Point(304, 207);
             this.Txt_Discount.Name = "Txt_Discount";
             this.Txt_Discount.Size = new System.Drawing.Size(127, 32);
             this.Txt_Discount.TabIndex = 106;
             this.Txt_Discount.Text = "0";
             this.Txt_Discount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Txt_Discount.Click += new System.EventHandler(this.Txt_Discount_Click);
             this.Txt_Discount.TextChanged += new System.EventHandler(this.Txt_Discount_TextChanged);
             this.Txt_Discount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Discount_KeyPress);
             this.Txt_Discount.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txt_Discount_KeyUp);
@@ -331,7 +304,7 @@
             this.label4.BackColor = System.Drawing.Color.Black;
             this.label4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(184, 9);
+            this.label4.Location = new System.Drawing.Point(320, 180);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(95, 24);
             this.label4.TabIndex = 107;
@@ -341,15 +314,18 @@
             // 
             this.Txt_PriceDiscount.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Txt_PriceDiscount.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_PriceDiscount.Location = new System.Drawing.Point(275, 208);
+            this.Txt_PriceDiscount.Location = new System.Drawing.Point(74, 207);
             this.Txt_PriceDiscount.Name = "Txt_PriceDiscount";
             this.Txt_PriceDiscount.Size = new System.Drawing.Size(169, 32);
             this.Txt_PriceDiscount.TabIndex = 108;
             this.Txt_PriceDiscount.Text = "0";
             this.Txt_PriceDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Txt_PriceDiscount.Click += new System.EventHandler(this.Txt_PriceDiscount_Click);
             this.Txt_PriceDiscount.TextChanged += new System.EventHandler(this.Txt_PriceDiscount_TextChanged);
             this.Txt_PriceDiscount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_PriceDiscount_KeyPress);
             this.Txt_PriceDiscount.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txt_PriceDiscount_KeyUp);
+            this.Txt_PriceDiscount.Layout += new System.Windows.Forms.LayoutEventHandler(this.Txt_PriceDiscount_Layout);
+            this.Txt_PriceDiscount.Leave += new System.EventHandler(this.Txt_PriceDiscount_Leave);
             this.Txt_PriceDiscount.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Txt_PriceDiscount_MouseMove);
             // 
             // label5
@@ -359,7 +335,7 @@
             this.label5.BackColor = System.Drawing.Color.Black;
             this.label5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Location = new System.Drawing.Point(272, 181);
+            this.label5.Location = new System.Drawing.Point(71, 180);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(173, 24);
             this.label5.TabIndex = 109;
@@ -369,7 +345,7 @@
             // 
             this.Btn_New.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Btn_New.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_New.Location = new System.Drawing.Point(436, 270);
+            this.Btn_New.Location = new System.Drawing.Point(523, 270);
             this.Btn_New.Name = "Btn_New";
             this.Btn_New.Size = new System.Drawing.Size(154, 40);
             this.Btn_New.TabIndex = 110;
@@ -381,9 +357,9 @@
             // 
             this.Btn_Delete.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Btn_Delete.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Delete.Location = new System.Drawing.Point(12, 269);
+            this.Btn_Delete.Location = new System.Drawing.Point(36, 269);
             this.Btn_Delete.Name = "Btn_Delete";
-            this.Btn_Delete.Size = new System.Drawing.Size(154, 40);
+            this.Btn_Delete.Size = new System.Drawing.Size(131, 40);
             this.Btn_Delete.TabIndex = 111;
             this.Btn_Delete.Text = "مسح ";
             this.Btn_Delete.UseVisualStyleBackColor = true;
@@ -391,9 +367,8 @@
             // 
             // Frm_CompanyItemXray
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Peru;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(713, 554);
             this.Controls.Add(this.Btn_Delete);
             this.Controls.Add(this.Btn_New);
@@ -406,8 +381,6 @@
             this.Controls.Add(this.btn_Update);
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.Txt_Price);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Cmb_category);
@@ -416,10 +389,12 @@
             this.Controls.Add(this.cmb_items);
             this.Controls.Add(this.cmb_Company);
             this.Controls.Add(this.label21);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MinimumSize = new System.Drawing.Size(687, 533);
             this.Name = "Frm_CompanyItemXray";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "إضافة الفحوصات للشركات";
+            this.Load += new System.EventHandler(this.Frm_CompanyItemXray_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_visit)).EndInit();
@@ -438,8 +413,6 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox Txt_Price;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox textBox2;
         public System.Windows.Forms.DataGridView dgv_visit;

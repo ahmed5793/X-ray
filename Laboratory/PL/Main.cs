@@ -326,8 +326,9 @@ namespace Laboratory.PL
 
         private void barButtonItem14_ItemClick_1(object sender, ItemClickEventArgs e)
         {
-        //Frm_CompanyItemXray frm_CompanyItem = new Frm_CompanyItemXray();
-        //   frm_CompanyItem.ShowDialog();
+            Frm_CompanyItemXray frm_CompanyItem = new Frm_CompanyItemXray();
+            frm_CompanyItem.MdiParent = this;
+            frm_CompanyItem.Show();
         }
 
         private void barButtonItem15_ItemClick_1(object sender, ItemClickEventArgs e)
@@ -643,6 +644,13 @@ namespace Laboratory.PL
             dts.MdiParent = this;
             dts.Show();
             
+        }
+
+        private void Btn_ReciveaMoney_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frm_RceiveMoney frm_Recive = new frm_RceiveMoney();
+            frm_Recive.MdiParent = this;
+            frm_Recive.Show();
         }
     }
     }
