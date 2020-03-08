@@ -140,6 +140,7 @@ namespace Laboratory.PL
             Cmb_category.DataSource = cx.selectCategoryXRaya();
             Cmb_category.DisplayMember = "الفئات";
             Cmb_category.ValueMember = "ID_CtegoryXrays";
+            Cmb_category.SelectedIndex = -1;
         }
         void DoctorOfCenter()
         {
@@ -237,9 +238,17 @@ namespace Laboratory.PL
         }
         public void pay()
         {
-            decimal x = 0;
-            if (txt_afterDiscount.Text != string.Empty ||  txt_pay.Text != string.Empty)
+            try
             {
+
+            decimal x = 0;
+            
+            if (txt_afterDiscount.Text != "" &&  txt_pay.Text != "")
+            {
+                //if (txt_pay.Text=="")
+                //{
+                //    txt_pay.Text = "0";
+                //}
                 if (cmb_statues.Text == "شركات")
                 {
                     decimal totainv = Convert.ToDecimal(Txt_PricePayment.Text) - Convert.ToDecimal(txt_pay.Text);
@@ -251,7 +260,7 @@ namespace Laboratory.PL
                     txt_rent.Text = Math.Round(totainv, 1).ToString();
                 }
             }
-            else
+            else if (txt_pay.Text=="" && Txt_addtionPayment.Text=="")
             {
                 if (cmb_statues.Text == "شركات")
                 {
@@ -263,7 +272,14 @@ namespace Laboratory.PL
                     decimal totainv = Convert.ToDecimal(txt_afterDiscount.Text) - x;
                     txt_rent.Text = Math.Round(totainv, 1).ToString();
                 }
-                //txt_pay.Text = "0";
+            }
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
             }
 
         }
@@ -742,10 +758,21 @@ namespace Laboratory.PL
             {
                 txt_discount.Text = "0";
             }
+            if (rdb_Discount.Checked == true)
+            {
+                Discount();
+                pay();
+            }
+            else
+            {
+                DiscountMoney();
+                pay();
+            }
         }
 
         private void txt_pay_KeyUp(object sender, KeyEventArgs e)
         {
+
             pay();
         }
 
@@ -779,7 +806,6 @@ namespace Laboratory.PL
 
         private void txt_pay_MouseDown(object sender, MouseEventArgs e)
         {
-            txt_pay.SelectAll();
         }
 
         private void txt_pay_Leave(object sender, EventArgs e)
@@ -1387,7 +1413,7 @@ namespace Laboratory.PL
             {
                 Txt_addtionPayment.Text = "0";
             }
-            if (Txt_addtionPayment.Text != "0")
+            if (Convert.ToDecimal(Txt_addtionPayment.Text )> 0 || Txt_addtionPayment.Text=="")
             {
                 txt_pay.Enabled = true;
             }
@@ -1517,19 +1543,27 @@ namespace Laboratory.PL
             {
                 txt_pay.Text = "";
             }
+
         }
 
         private void txt_total_TextChanged(object sender, EventArgs e)
         {
-
         }
-
         private void txt_discount_TextChanged(object sender, EventArgs e)
         {
             if (txt_discount.Text == ".")
             {
                 txt_discount.Text = "";
             }
+        }
+
+        private void txt_pay_MouseLeave(object sender, EventArgs e)
+        {
+            if (txt_pay.Text=="")
+            {
+                txt_pay.Text = "0";
+            }
+            pay();
         }
 
         //private void ؤ(object sender, EventArgs e)

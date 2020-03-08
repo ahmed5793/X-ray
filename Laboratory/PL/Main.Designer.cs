@@ -180,6 +180,7 @@
             this.accordionControlElement10 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
+            this.Btn_ReciveaMoney = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
@@ -297,9 +298,10 @@
             this.Download_finger,
             this.report_finger,
             this.data_Revelation,
-            this.Data_Redvelation});
-            this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 112;
+            this.Data_Redvelation,
+            this.Btn_ReciveaMoney});
+            this.ribbon.Location = new System.Drawing.Point(197, 0);
+            this.ribbon.MaxItemId = 113;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.basic_information,
@@ -313,16 +315,16 @@
             this.repositoryItemImageEdit1});
             this.ribbon.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2007;
             this.ribbon.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ribbon.Size = new System.Drawing.Size(719, 161);
+            this.ribbon.Size = new System.Drawing.Size(783, 161);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.Click += new System.EventHandler(this.ribbon_Click);
             // 
             // fluentDesignFormContainer1
             // 
             this.fluentDesignFormContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fluentDesignFormContainer1.Location = new System.Drawing.Point(0, 161);
+            this.fluentDesignFormContainer1.Location = new System.Drawing.Point(197, 161);
             this.fluentDesignFormContainer1.Name = "fluentDesignFormContainer1";
-            this.fluentDesignFormContainer1.Size = new System.Drawing.Size(719, 416);
+            this.fluentDesignFormContainer1.Size = new System.Drawing.Size(783, 416);
             this.fluentDesignFormContainer1.TabIndex = 2;
             this.fluentDesignFormContainer1.Click += new System.EventHandler(this.fluentDesignFormContainer1_Click);
             // 
@@ -1292,6 +1294,7 @@
             this.ribbonPageGroup9.ItemLinks.Add(this.insert_stock);
             this.ribbonPageGroup9.ItemLinks.Add(this.transfer_stock);
             this.ribbonPageGroup9.ItemLinks.Add(this.report_stock);
+            this.ribbonPageGroup9.ItemLinks.Add(this.Btn_ReciveaMoney);
             this.ribbonPageGroup9.Name = "ribbonPageGroup9";
             this.ribbonPageGroup9.Text = "ادارة الخزينة";
             // 
@@ -1401,10 +1404,10 @@
             this.ribbonStatusBar.ItemLinks.Add(this.barStaticItem3);
             this.ribbonStatusBar.ItemLinks.Add(this.barStaticItem6);
             this.ribbonStatusBar.ItemLinks.Add(this.barStaticItem7);
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 555);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(197, 555);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(719, 22);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(783, 22);
             // 
             // ribbonPageGroup18
             // 
@@ -1443,20 +1446,21 @@
             this.accordionControl1.Appearance.AccordionControl.Options.UseBorderColor = true;
             this.accordionControl1.Appearance.AccordionControl.Options.UseForeColor = true;
             this.accordionControl1.Controls.Add(this.accordionContentContainer1);
-            this.accordionControl1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.accordionControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.accordionControl1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accordionControlElement1});
-            this.accordionControl1.Location = new System.Drawing.Point(719, 0);
+            this.accordionControl1.Location = new System.Drawing.Point(0, 0);
             this.accordionControl1.Name = "accordionControl1";
+            this.accordionControl1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
-            this.accordionControl1.Size = new System.Drawing.Size(261, 577);
+            this.accordionControl1.Size = new System.Drawing.Size(197, 577);
             this.accordionControl1.TabIndex = 4;
             this.accordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
             // 
             // accordionContentContainer1
             // 
             this.accordionContentContainer1.Name = "accordionContentContainer1";
-            this.accordionContentContainer1.Size = new System.Drawing.Size(172, 73);
+            this.accordionContentContainer1.Size = new System.Drawing.Size(108, 73);
             this.accordionContentContainer1.TabIndex = 2;
             // 
             // accordionControlElement1
@@ -1558,19 +1562,28 @@
             // 
             this.tabbedView1.Style = DevExpress.XtraBars.Docking2010.Views.DockingViewStyle.Light;
             // 
+            // Btn_ReciveaMoney
+            // 
+            this.Btn_ReciveaMoney.Caption = "إستلام نقدية";
+            this.Btn_ReciveaMoney.Id = 112;
+            this.Btn_ReciveaMoney.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("Btn_ReciveaMoney.ImageOptions.SvgImage")));
+            this.Btn_ReciveaMoney.Name = "Btn_ReciveaMoney";
+            this.Btn_ReciveaMoney.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_ReciveaMoney_ItemClick);
+            // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(980, 577);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.fluentDesignFormContainer1);
             this.Controls.Add(this.ribbon);
             this.Controls.Add(this.accordionControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("Main.IconOptions.LargeImage")));
             this.IsMdiContainer = true;
             this.Name = "Main";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.RightToLeftLayout = true;
             this.Text = "الشاشة الرئيسيه";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
@@ -1740,5 +1753,6 @@
         private DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView tabbedView1;
         public DevExpress.XtraBars.BarButtonItem data_Revelation;
         private DevExpress.XtraBars.BarButtonItem Data_Redvelation;
+        public DevExpress.XtraBars.BarButtonItem Btn_ReciveaMoney;
     }
 }

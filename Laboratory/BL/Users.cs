@@ -150,7 +150,53 @@ namespace Laboratory.BL
             dt = da.selected("Select_UserName", param);
             return dt;
         }
+        internal DataTable Select_MoneyForUser(string User_name , DateTime Date , TimeSpan Time_From , TimeSpan Time_To)
+        {
 
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            DataTable dt = new DataTable();
+            SqlParameter[] param = new SqlParameter[4];
+            param[0] = new SqlParameter("@UserName", SqlDbType.NVarChar,100);
+            param[0].Value = User_name;
+            param[1] = new SqlParameter("@Date", SqlDbType.Date);
+            param[1].Value = Date;
+            param[2] = new SqlParameter("@Time_From", SqlDbType.Time);
+            param[2].Value = Time_From;
+            param[3] = new SqlParameter("@Time_to", SqlDbType.Time);
+            param[3].Value = Time_To;
+            dt = da.selected("Select_MoneyForUser", param);
+            return dt;
+        }
+        internal DataTable Select_PullMoneyForUser(string User_name, DateTime Date, TimeSpan Time_From, TimeSpan Time_To)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            DataTable dt = new DataTable();
+            SqlParameter[] param = new SqlParameter[4];
+            param[0] = new SqlParameter("@UserName", SqlDbType.NVarChar, 100);
+            param[0].Value = User_name;
+            param[1] = new SqlParameter("@Date", SqlDbType.Date);
+            param[1].Value = Date;
+            param[2] = new SqlParameter("@Time_From", SqlDbType.Time);
+            param[2].Value = Time_From;
+            param[3] = new SqlParameter("@Time_to", SqlDbType.Time);
+            param[3].Value = Time_To;
+            dt = da.selected("Select_PullMoneyForUser", param);
+            return dt;
+        }
+        internal DataTable Select_UserForBranch(int Id_Baranch)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            DataTable dt = new DataTable();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@id_Branch", SqlDbType.Int);
+            param[0].Value = Id_Baranch;
+
+            dt = da.selected("Select_UserForBranch", param);
+            return dt;
+        }
 
 
     }
