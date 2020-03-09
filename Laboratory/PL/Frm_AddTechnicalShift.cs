@@ -17,8 +17,8 @@ namespace Laboratory.PL
         public Frm_AddTechnicalShift()
         {
             InitializeComponent();
-            Btn_DeleteShift.Enabled = false;
             Btn_UpdateShift.Enabled = false;
+            Btn_DeleteShift.Enabled = false;
             comboBox1.DataSource = Techincal.Select_ComboTechnical();
             comboBox1.DisplayMember = "Tech_Name";
             comboBox1.ValueMember = "Techincal_ID";
@@ -89,6 +89,27 @@ namespace Laboratory.PL
 
         private void Btn_AddShift_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (Txt_Cost.Text=="0" && Txt_Cost.Text== "")
+                {
+                    MessageBox.Show("يرجى تحديد سعر الشيفت");
+                    return;
+                }
+                if (comboBox1.Text!="" && comboBox2.Text!="")
+                {
+                    Techincal.Add_TechnicalShift(Convert.ToInt32(comboBox1.SelectedValue), Convert.ToInt32(comboBox2.SelectedValue),
+                       (dateTimePicker1.Text),(dateTimePicker3.Text), (dateTimePicker2.Text),Convert.ToDecimal(Txt_Cost.Text)) ;
+                    MessageBox.Show("تم إضافة الشيفت بنجاح");
+                    Txt_Cost.Text = "0";
+                    dataGridView1.DataSource = Techincal.Select_TechnicalShift();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
@@ -120,7 +141,7 @@ namespace Laboratory.PL
         {
             try
             {
-                if (comboBox1.Text == "")
+                if (comboBox1.Text=="")
                 {
                     MessageBox.Show("لا بد من تحديد إسم الفنى ");
                     return;
@@ -131,12 +152,12 @@ namespace Laboratory.PL
                     return;
                 }
 
-                if (MessageBox.Show("هل تريد تعديل الشيفت", "عملية التعديل", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("هل تريد تعديل الشيفت","عملية التعديل",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
                 {
                     Techincal.Update_TechnicalShift(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value), Convert.ToInt32(comboBox1.SelectedValue),
-                        Convert.ToInt32(comboBox2.SelectedValue), (dateTimePicker1.Text), (dateTimePicker3.Text),
+                        Convert.ToInt32(comboBox2.SelectedValue),(dateTimePicker1.Text), (dateTimePicker3.Text), 
                         (dateTimePicker2.Text), Convert.ToDecimal(Txt_Cost.Text));
-                    MessageBox.Show("تم تعديل الشيفت بنجاح", "عملية التعديل");
+                    MessageBox.Show("تم تعديل الشيفت بنجاح","عملية التعديل");
                     Txt_Cost.Text = "0";
                     dataGridView1.DataSource = Techincal.Select_TechnicalShift();
                 }
@@ -158,64 +179,6 @@ namespace Laboratory.PL
         }
 
         private void Btn_DeleteShift_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void txt_search_TextChanged(object sender, EventArgs e)
-        {
-            DataTable dt = new DataTable();
-
-            try
-            {
-                dt.Clear();
-                dt = Techincal.Search_TechnicalShift(txt_search.Text);
-                dataGridView1.DataSource = dt;
-
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
-            finally 
-            {
-                dt.Dispose();
-            }
-        }
-
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-
-            try
-            {
-                if (Txt_Cost.Text == "0" && Txt_Cost.Text == "")
-                {
-                    MessageBox.Show("يرجى تحديد سعر الشيفت");
-                    return;
-                }
-                if (comboBox1.Text != "" && comboBox2.Text != "")
-                {
-                    Techincal.Add_TechnicalShift(Convert.ToInt32(comboBox1.SelectedValue), Convert.ToInt32(comboBox2.SelectedValue),
-                       (dateTimePicker1.Text), (dateTimePicker3.Text), (dateTimePicker2.Text), Convert.ToDecimal(Txt_Cost.Text));
-                    MessageBox.Show("تم إضافة الشيفت بنجاح");
-                    Txt_Cost.Text = "0";
-                    dataGridView1.DataSource = Techincal.Select_TechnicalShift();
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void simpleButton1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void simpleButton1_Click_2(object sender, EventArgs e)
         {
             try
             {
@@ -241,6 +204,28 @@ namespace Laboratory.PL
             {
 
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void txt_search_TextChanged(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+
+            try
+            {
+                dt.Clear();
+                dt = Techincal.Search_TechnicalShift(txt_search.Text);
+                dataGridView1.DataSource = dt;
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            finally 
+            {
+                dt.Dispose();
             }
         }
     }

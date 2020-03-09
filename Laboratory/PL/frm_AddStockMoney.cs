@@ -35,11 +35,46 @@ namespace Laboratory.PL
             txt_addbalance.Clear();
             txt_CurrentBalance.Text = "0";
             txt_name.Clear();
+            textBox1.Clear();
             txt_reason.Clear();
         }
         private void btn_save_Click(object sender, EventArgs e)
         {
-            
+            if (cmb_Stock.Items.Count >= 1)
+            {
+                try
+                {
+                    if (txt_addbalance.Text == "")
+                    {
+                        MessageBox.Show("لا بد من ان يكون الايداع اكبر من الصفر");
+                        txt_addbalance.Focus();
+                    }
+                    else if (txt_name.Text == "")
+                    {
+                        MessageBox.Show("يرجى تحديد إسم المودع");
+                        txt_name.Focus();
+                    }
+                    else if (MessageBox.Show("هل تريد حفظ الايداع", "عملية الايداع", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        s.add_insertStock(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_addbalance.Text), Date_insert.Value, txt_name.Text, txt_reason.Text);
+                        MessageBox.Show("تم إضافة الرصيد للخزنة المحددة");
+                        clear();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("تم إلغاء الايداع");
+                        clear();
+
+                    }
+
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
         }
 
         private void cmb_Stock_SelectedIndexChanged(object sender, EventArgs e)
@@ -75,46 +110,6 @@ namespace Laboratory.PL
                 txt_CurrentBalance.Text = dt.Rows[0][0].ToString();
 
             }
-        }
-
-        private void Btn_UpdateShift_Click(object sender, EventArgs e)
-        {            
-                try
-                {
-                if (cmb_Stock.Items.Count >= 1)
-                {
-                    if (txt_addbalance.Text == "")
-                    {
-                        MessageBox.Show("لا بد من ان يكون الايداع اكبر من الصفر");
-                        txt_addbalance.Focus();
-                    }
-                    else if (txt_name.Text == "")
-                    {
-                        MessageBox.Show("يرجى تحديد إسم المودع");
-                        txt_name.Focus();
-                    }
-                    else if (MessageBox.Show("هل تريد حفظ الايداع", "عملية الايداع", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        s.add_insertStock(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_addbalance.Text), Date_insert.Value, txt_name.Text, txt_reason.Text);
-                        MessageBox.Show("تم إضافة الرصيد للخزنة المحددة");
-                        clear();
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("تم إلغاء الايداع");
-                        clear();
-
-                    }
-                }
-
-                }
-                catch (Exception ex)
-                {
-
-                    MessageBox.Show(ex.Message);
-                }
-            
         }
     }
    

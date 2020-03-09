@@ -84,6 +84,42 @@ namespace Laboratory.PL
         private void btn_save_Click(object sender, EventArgs e)
         {
           
+            if (cmb_employeeName.Text=="")
+            {
+                MessageBox.Show("قم بااختيار اسم الموظف");
+                return;
+
+            }
+           
+          
+            if (Txt_salary.Text == "0"|| Txt_salary.Text == "")
+            {
+                MessageBox.Show("قم بكتابه المرتب الذي تريد صرفة ");
+                return;
+
+            }
+            dt.Clear();
+            dt = E.vildateEmployeeSalary(Convert.ToInt32(cmb_employeeName.SelectedValue), dateTimePicker2.Text);
+            if (dt.Rows.Count>0)
+            {
+                MessageBox.Show("عزيزي المستخدم يرجي العلم بان هذا الموظف تم صرف مرتبة في هذا الشهر لايمكن اتمام العمليه","",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                return;
+            }
+           
+                E.AddEmp_Salary(Convert.ToInt32(cmb_employeeName.SelectedValue), Convert.ToDecimal(Txt_salary.Text),
+                   Convert.ToDecimal(txt_salf.Text), Convert.ToDecimal(label6.Text), dateTimePicker1.Value,
+                   txt_note.Text,textBox1.Text,dateTimePicker2.Text,Convert.ToDecimal(txt_discount.Text));
+
+            MessageBox.Show("تم تسجيل البيانات بنجاح", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+            txt_note.Clear();
+                Txt_salary.Text="0";
+                txt_salf.Text="0";
+            txt_discount.Text = "0";
+            label6.Text = "0.00";
+
+
             
         }
 
@@ -202,63 +238,6 @@ namespace Laboratory.PL
                     return;
                 }
                 dt.Dispose();
-            }
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Btn_Add_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (cmb_employeeName.Text == "")
-                {
-                    MessageBox.Show("قم بااختيار اسم الموظف");
-                    return;
-                }
-                if (Txt_salary.Text == "0" || Txt_salary.Text == "")
-                {
-                    MessageBox.Show("قم بكتابه المرتب الذي تريد صرفة ");
-                    return;
-                }
-                dt.Clear();
-                dt = E.vildateEmployeeSalary(Convert.ToInt32(cmb_employeeName.SelectedValue), dateTimePicker2.Text);
-                if (dt.Rows.Count > 0)
-                {
-                    MessageBox.Show("عزيزي المستخدم يرجي العلم بان هذا الموظف تم صرف مرتبة في هذا الشهر لايمكن اتمام العمليه", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                E.AddEmp_Salary(Convert.ToInt32(cmb_employeeName.SelectedValue), Convert.ToDecimal(Txt_salary.Text),
-                   Convert.ToDecimal(txt_salf.Text), Convert.ToDecimal(label6.Text), dateTimePicker1.Value,
-                   txt_note.Text, textBox1.Text, dateTimePicker2.Text, Convert.ToDecimal(txt_discount.Text));
-
-                MessageBox.Show("تم تسجيل البيانات بنجاح", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
-                txt_note.Clear();
-                Txt_salary.Text = "0";
-                txt_salf.Text = "0";
-                txt_discount.Text = "0";
-                label6.Text = "0.00";
-
-
-
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-                MessageBox.Show(ex.StackTrace);
-
             }
         }
     }

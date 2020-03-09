@@ -19,8 +19,10 @@ namespace Laboratory.PL
         public Frm_ManagmentTickets()
         {
             InitializeComponent();
-            label1.Hide();
-            comboBox1.Hide();
+         
+
+
+
 
         }
 
@@ -28,14 +30,14 @@ namespace Laboratory.PL
         {
 
         }
-      //public  void rent()
-      //  {
-      //      if (txt_totalinvoice.Text != "" && txt_totalpay.Text != "")
-      //      {
-      //          decimal x = Convert.ToDecimal(txt_totalinvoice.Text) - Convert.ToDecimal(txt_totalpay.Text);
-      //          textBox1.Text = x.ToString();
-      //      }
-      //  }
+      public  void rent()
+        {
+            if (txt_totalinvoice.Text != "" && txt_totalpay.Text != "")
+            {
+                decimal x = Convert.ToDecimal(txt_totalinvoice.Text) - Convert.ToDecimal(txt_totalpay.Text);
+                textBox1.Text = x.ToString();
+            }
+        }
         DataTable dt = new DataTable();
         private void Frm_ManagmentTickets_Load(object sender, EventArgs e)
         {
@@ -114,7 +116,7 @@ namespace Laboratory.PL
                 totall += Convert.ToDecimal(row[4].ToString());
 
             }
-            //txt_totalpay.Text = totall.ToString("₱ #,##0.0");
+            txt_totalpay.Text = totall.ToString("₱ #,##0.0");
             //rent();
         }
 
@@ -245,7 +247,7 @@ namespace Laboratory.PL
                 totall += Convert.ToDecimal(row[4].ToString());
 
             }
-            //txt_totalpay.Text = totall.ToString("₱ #,##0.0");
+            txt_totalpay.Text = totall.ToString("₱ #,##0.0");
             //rent();
         }
 

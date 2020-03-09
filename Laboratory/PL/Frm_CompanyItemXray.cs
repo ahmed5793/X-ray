@@ -21,8 +21,7 @@ namespace Laboratory.PL
             company();
             CategoryXraya();
             dgv_visit.DataSource = cm.Select_Company_Xray();
-            Btn_Update.Enabled = false;
-            Btn_Delete.Hide();
+            btn_Update.Enabled = false;
             Btn_Delete.Enabled = false;
             Txt_Discount.Enabled = false;
             Txt_PriceDiscount.Enabled = false;
@@ -103,7 +102,40 @@ namespace Laboratory.PL
         }
         private void btn_save_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                if (cmb_Company.Text==""){MessageBox.Show("لا بد من إختيار إسم الشركة");return; }
+                if (Cmb_category.Text==""){MessageBox.Show("لا بد من إختيار نوع الجهاز");return; }
+                if (cmb_items.Text==""){MessageBox.Show("لا بد من إختيار نوع الفحص");return; }
+                if (comboBox1.Text==""){MessageBox.Show("لا بد من إختيار نوع التعامل مع الشركة");return; }
+                
+                if (cmb_Company.Text!=string.Empty && cmb_items.Text!=string.Empty)
+                {
+                    for (int i = 0; i < dgv_visit.Rows.Count; i++)
+                    {
+                        if (cmb_Company.Text==dgv_visit.Rows[i].Cells[0].Value.ToString() && cmb_items.Text==dgv_visit.Rows[i].Cells[2].Value.ToString())
+                        {
+                            MessageBox.Show(" تم إضافة نوع الفحص من قبل إلى نفس الشركة","", MessageBoxButtons.OK , MessageBoxIcon.Exclamation) ;
+                            return;
+                        }
+                    }
+                    cm.Add_Company_ItemsXray(Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToInt32(cmb_items.SelectedValue),Convert.ToDecimal(Txt_Discount.Text)
+                       , Convert.ToDecimal(Txt_PriceDiscount.Text));
+                    Txt_Price.Text="0";
+                    Txt_Discount.Text = "0";
+                    Txt_PriceDiscount.Text = "0";
+                    Txt_PriceDiscount.Enabled = false;
+                    Txt_Discount.Enabled = false;
+                    MessageBox.Show("تم إضافة الفحص للشركة بنجاح");
+                    dgv_visit.DataSource = cm.Select_Company_Xray();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
+            }
         }
 
         private void Txt_Price_KeyPress(object sender, KeyPressEventArgs e)
@@ -150,7 +182,7 @@ namespace Laboratory.PL
                     Cmb_category.Enabled = false;
                     cmb_items.Enabled = false;
                     Btn_Delete.Enabled = true;
-                    Btn_Update.Enabled = true;
+                    btn_Update.Enabled = true;
                 }
             }
             catch (Exception ex)
@@ -162,7 +194,41 @@ namespace Laboratory.PL
 
         private void btn_print_Click(object sender, EventArgs e)
         {
-           
+            try
+            {
+                if (Txt_PriceDiscount.Text =="0" && Txt_Discount.Text=="")
+                {
+                    MessageBox.Show("لا بد من تحديد سعر او  نسبة الخصم");
+                    return;
+                }
+                else if(MessageBox.Show("هل تريد تعديل البيانات","عملية التعديل",MessageBoxButtons.YesNo , MessageBoxIcon.Question)==DialogResult.Yes)
+                {
+                    cm.Update_Company_Xray(Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToInt32(cmb_items.SelectedValue),Convert.ToDecimal(Txt_Discount.Text)
+                       , Convert.ToDecimal(Txt_PriceDiscount.Text));
+                    MessageBox.Show("تم التعديل بنجاح ");                
+                }
+                else
+                {
+                    MessageBox.Show("لم يتم التعديل  ");
+                }
+                btn_Update.Enabled = false;
+                Btn_Delete.Enabled = false;
+                btn_save.Show();
+                cmb_Company.Enabled = true;
+                Cmb_category.Enabled = true;
+                cmb_items.Enabled = true;
+                Txt_Price.Text = "0";
+                Txt_Discount.Text = "0";
+                Txt_PriceDiscount.Text = "0";
+                Txt_PriceDiscount.Enabled = false;
+                Txt_Discount.Enabled = false;
+                dgv_visit.DataSource = cm.Select_Company_Xray();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -369,6 +435,17 @@ namespace Laboratory.PL
 
         private void Btn_New_Click(object sender, EventArgs e)
         {
+            Txt_Price.Text = "0";
+            Txt_Discount.Text = "0";
+            Txt_PriceDiscount.Text = "0";
+            Btn_Delete.Enabled = false;
+            btn_Update.Enabled = false;        
+            cmb_Company.Enabled = true;
+            Cmb_category.Enabled = true;
+            cmb_items.Enabled = true;
+            Txt_PriceDiscount.Enabled = false;
+            Txt_Discount.Enabled = false;
+            dgv_visit.DataSource = cm.Select_Company_Xray();
         }
 
         private void Btn_Delete_Click(object sender, EventArgs e)
@@ -387,7 +464,7 @@ namespace Laboratory.PL
                     {
                         MessageBox.Show("تم إلغاء المسح");
                     }
-                    Btn_Update.Enabled = false;
+                    btn_Update.Enabled = false;
                     Btn_Delete.Enabled = false;
                 
                     cmb_Company.Enabled = true;
@@ -441,99 +518,6 @@ namespace Laboratory.PL
             if (Txt_PriceDiscount.Text=="")
             {
                 Txt_PriceDiscount.Text = "0";
-            }
-        }
-
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-
-            Txt_Price.Text = "0";
-            Txt_Discount.Text = "0";
-            Txt_PriceDiscount.Text = "0";
-            Btn_Delete.Enabled = false;
-            Btn_Update.Enabled = false;
-            cmb_Company.Enabled = true;
-            Cmb_category.Enabled = true;
-            cmb_items.Enabled = true;
-            Txt_PriceDiscount.Enabled = false;
-            Txt_Discount.Enabled = false;
-            dgv_visit.DataSource = cm.Select_Company_Xray();
-        }
-
-        private void Btn_Add_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (cmb_Company.Text == "") { MessageBox.Show("لا بد من إختيار إسم الشركة"); return; }
-                if (Cmb_category.Text == "") { MessageBox.Show("لا بد من إختيار نوع الجهاز"); return; }
-                if (cmb_items.Text == "") { MessageBox.Show("لا بد من إختيار نوع الفحص"); return; }
-                if (comboBox1.Text == "") { MessageBox.Show("لا بد من إختيار نوع التعامل مع الشركة"); return; }
-
-                if (cmb_Company.Text != string.Empty && cmb_items.Text != string.Empty)
-                {
-                    for (int i = 0; i < dgv_visit.Rows.Count; i++)
-                    {
-                        if (cmb_Company.Text == dgv_visit.Rows[i].Cells[0].Value.ToString() && cmb_items.Text == dgv_visit.Rows[i].Cells[2].Value.ToString())
-                        {
-                            MessageBox.Show(" تم إضافة نوع الفحص من قبل إلى نفس الشركة", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            return;
-                        }
-                    }
-                    cm.Add_Company_ItemsXray(Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToInt32(cmb_items.SelectedValue), Convert.ToDecimal(Txt_Discount.Text)
-                       , Convert.ToDecimal(Txt_PriceDiscount.Text));
-                    Txt_Price.Text = "0";
-                    Txt_Discount.Text = "0";
-                    Txt_PriceDiscount.Text = "0";
-                    Txt_PriceDiscount.Enabled = false;
-                    Txt_Discount.Enabled = false;
-                    MessageBox.Show("تم إضافة الفحص للشركة بنجاح");
-                    dgv_visit.DataSource = cm.Select_Company_Xray();
-
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                MessageBox.Show(ex.StackTrace);
-            }
-        }
-
-        private void simpleButton2_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (Txt_PriceDiscount.Text == "0" && Txt_Discount.Text == "")
-                {
-                    MessageBox.Show("لا بد من تحديد سعر او  نسبة الخصم");
-                    return;
-                }
-                else if (MessageBox.Show("هل تريد تعديل البيانات", "عملية التعديل", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    cm.Update_Company_Xray(Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToInt32(cmb_items.SelectedValue), Convert.ToDecimal(Txt_Discount.Text)
-                       , Convert.ToDecimal(Txt_PriceDiscount.Text));
-                    MessageBox.Show("تم التعديل بنجاح ");
-                }
-                else
-                {
-                    MessageBox.Show("لم يتم التعديل  ");
-                }
-                Btn_Update.Enabled = false;
-                Btn_Delete.Enabled = false;
-                Btn_Add.Show();
-                cmb_Company.Enabled = true;
-                Cmb_category.Enabled = true;
-                cmb_items.Enabled = true;
-                Txt_Price.Text = "0";
-                Txt_Discount.Text = "0";
-                Txt_PriceDiscount.Text = "0";
-                Txt_PriceDiscount.Enabled = false;
-                Txt_Discount.Enabled = false;
-                dgv_visit.DataSource = cm.Select_Company_Xray();
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
             }
         }
     }

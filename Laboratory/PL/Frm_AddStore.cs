@@ -19,7 +19,8 @@ namespace Laboratory.PL
             InitializeComponent();
             dataGridView1.DataSource = store.Select_Store();
 
-            Btn_Add.Show();
+            btn_new.Hide();
+            btn_save.Show();
             btn_update.Enabled = false;
         }
         void Clear()
@@ -30,7 +31,25 @@ namespace Laboratory.PL
         }
         private void btn_save_Click(object sender, EventArgs e)
         {
-           
+            try
+            {
+                if (txt_name.Text== string.Empty)
+                {
+                    MessageBox.Show("يرجى التأكد من إسم المخزن");
+                    return; 
+                }
+                else
+                {
+                    store.add_Store(txt_name.Text , txt_address.Text);
+                    MessageBox.Show("تم حفظ المخزن");
+                    Clear();
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         private void Frm_AddStore_Load(object sender, EventArgs e)
@@ -46,6 +65,9 @@ namespace Laboratory.PL
                 {
                     txt_name.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                     txt_address.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+
+                    btn_new.Show();
+                    btn_save.Hide();
                     btn_update.Enabled = true;
                 }
             }
@@ -53,22 +75,11 @@ namespace Laboratory.PL
             {
 
                 MessageBox.Show(ex.Message);
-                MessageBox.Show(ex.StackTrace);
             }
         }
 
         private void btn_update_Click(object sender, EventArgs e)
         {
-            
-        }
-
-        private void btn_new_Click(object sender, EventArgs e)
-        {
-       
-        }
-
-        private void Btn_Add_Click(object sender, EventArgs e)
-        {
             try
             {
                 if (txt_name.Text == string.Empty)
@@ -76,64 +87,47 @@ namespace Laboratory.PL
                     MessageBox.Show("يرجى التأكد من إسم المخزن");
                     return;
                 }
-                else
+                else if (MessageBox.Show("","",MessageBoxButtons.YesNo ,MessageBoxIcon.Exclamation)==DialogResult.Yes)
                 {
-                    store.add_Store(txt_name.Text, txt_address.Text);
-                    MessageBox.Show("تم حفظ المخزن");
+                    store.Update_Store(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value),txt_name.Text,txt_address.Text);
+                    MessageBox.Show("تم تعديل البيانات بنجاح");
                     Clear();
-                }
-            }
-            catch (Exception ex)
-            {
 
-                MessageBox.Show(ex.Message);
-                MessageBox.Show(ex.StackTrace);
-            }
-        }
-
-        private void btn_new_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                Btn_Add.Show();
-                btn_update.Enabled = false;
-
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void btn_update_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                if (txt_name.Text == string.Empty)
-                {
-                    MessageBox.Show("يرجى التأكد من إسم المخزن");
-                    return;
-                }
-                else if (MessageBox.Show("", "", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
-                {
-                    store.Update_Store(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value), txt_name.Text, txt_address.Text);
-
+                    btn_new.Hide();
+                    btn_save.Show();
+                    btn_update.Enabled = false;
                 }
                 else
                 {
                     MessageBox.Show("لم تم تعديل البيانات بنجاح  ");
+                    Clear();
 
+                    btn_new.Hide();
+                    btn_save.Show();
+                    btn_update.Enabled = false;
                 }
-                Clear();
 
-                btn_update.Enabled = false;
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message);
-                MessageBox.Show(ex.StackTrace);
+            }
+        }
+
+        private void btn_new_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                btn_new.Hide();
+                btn_save.Show();
+                btn_update.Enabled = false;
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
             }
         }
     }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_EmpSarf));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txt_discount = new System.Windows.Forms.TextBox();
@@ -46,10 +45,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
+            this.btn_save = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.Btn_Add = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,7 +56,6 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.txt_discount);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label1);
@@ -75,7 +72,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 50);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(873, 419);
+            this.groupBox1.Size = new System.Drawing.Size(863, 373);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
@@ -85,7 +82,7 @@
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial Black", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(344, 251);
+            this.label6.Location = new System.Drawing.Point(503, 240);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(110, 52);
             this.label6.TabIndex = 56;
@@ -94,7 +91,7 @@
             // txt_discount
             // 
             this.txt_discount.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_discount.Location = new System.Drawing.Point(300, 205);
+            this.txt_discount.Location = new System.Drawing.Point(312, 155);
             this.txt_discount.MaxLength = 11;
             this.txt_discount.Name = "txt_discount";
             this.txt_discount.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -109,11 +106,10 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.White;
-            this.label10.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(470, 205);
+            this.label10.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(482, 154);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(99, 29);
+            this.label10.Size = new System.Drawing.Size(116, 34);
             this.label10.TabIndex = 55;
             this.label10.Text = "الخصومات";
             // 
@@ -121,23 +117,22 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(470, 65);
+            this.label1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(201, 100);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(153, 29);
+            this.label1.Size = new System.Drawing.Size(172, 32);
             this.label1.TabIndex = 53;
             this.label1.Text = "صرف مرتب شهر";
             // 
             // dateTimePicker2
             // 
             this.dateTimePicker2.CustomFormat = "MM/yyyy";
-            this.dateTimePicker2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker2.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(300, 63);
+            this.dateTimePicker2.Location = new System.Drawing.Point(51, 93);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.ShowUpDown = true;
-            this.dateTimePicker2.Size = new System.Drawing.Size(163, 32);
+            this.dateTimePicker2.Size = new System.Drawing.Size(136, 41);
             this.dateTimePicker2.TabIndex = 52;
             this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
@@ -145,9 +140,8 @@
             // 
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label8.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(586, 19);
+            this.label8.Location = new System.Drawing.Point(508, 31);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(132, 34);
             this.label8.TabIndex = 47;
@@ -160,7 +154,7 @@
             this.cmb_employeeName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmb_employeeName.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_employeeName.FormattingEnabled = true;
-            this.cmb_employeeName.Location = new System.Drawing.Point(217, 19);
+            this.cmb_employeeName.Location = new System.Drawing.Point(139, 31);
             this.cmb_employeeName.Name = "cmb_employeeName";
             this.cmb_employeeName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmb_employeeName.Size = new System.Drawing.Size(363, 32);
@@ -172,18 +166,17 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(470, 265);
+            this.label3.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(684, 251);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(120, 29);
+            this.label3.Size = new System.Drawing.Size(159, 37);
             this.label3.TabIndex = 45;
             this.label3.Text = "صافي المرتب";
             // 
             // txt_salf
             // 
             this.txt_salf.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_salf.Location = new System.Drawing.Point(299, 158);
+            this.txt_salf.Location = new System.Drawing.Point(604, 155);
             this.txt_salf.MaxLength = 11;
             this.txt_salf.Name = "txt_salf";
             this.txt_salf.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -198,19 +191,17 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(470, 161);
+            this.label2.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(774, 154);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 29);
+            this.label2.Size = new System.Drawing.Size(75, 34);
             this.label2.TabIndex = 43;
             this.label2.Text = "السلف";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // Txt_salary
             // 
             this.Txt_salary.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_salary.Location = new System.Drawing.Point(299, 110);
+            this.Txt_salary.Location = new System.Drawing.Point(462, 97);
             this.Txt_salary.MaxLength = 11;
             this.Txt_salary.Name = "Txt_salary";
             this.Txt_salary.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -226,23 +217,21 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.White;
-            this.label9.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(470, 113);
+            this.label9.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(641, 100);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(74, 29);
+            this.label9.Size = new System.Drawing.Size(88, 34);
             this.label9.TabIndex = 41;
             this.label9.Text = "المرتب ";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // txt_note
             // 
             this.txt_note.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_note.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_note.Location = new System.Drawing.Point(207, 321);
+            this.txt_note.Location = new System.Drawing.Point(6, 186);
             this.txt_note.Multiline = true;
             this.txt_note.Name = "txt_note";
-            this.txt_note.Size = new System.Drawing.Size(373, 92);
+            this.txt_note.Size = new System.Drawing.Size(300, 181);
             this.txt_note.TabIndex = 35;
             this.txt_note.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -250,11 +239,10 @@
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.White;
-            this.label4.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(587, 352);
+            this.label4.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(312, 281);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 29);
+            this.label4.Size = new System.Drawing.Size(110, 37);
             this.label4.TabIndex = 36;
             this.label4.Text = "ملاحظات";
             // 
@@ -274,86 +262,61 @@
             this.label7.BackColor = System.Drawing.Color.White;
             this.label7.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(205, 17);
+            this.label7.Location = new System.Drawing.Point(237, 19);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(134, 24);
             this.label7.TabIndex = 31;
             this.label7.Text = "تاريخ اذن الصرف";
             // 
+            // btn_save
+            // 
+            this.btn_save.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_save.ForeColor = System.Drawing.Color.Black;
+            this.btn_save.Location = new System.Drawing.Point(436, 429);
+            this.btn_save.Name = "btn_save";
+            this.btn_save.Size = new System.Drawing.Size(132, 40);
+            this.btn_save.TabIndex = 21;
+            this.btn_save.Text = "تسجيل بيانات العميل";
+            this.btn_save.UseVisualStyleBackColor = true;
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
+            // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(569, 10);
+            this.textBox1.Location = new System.Drawing.Point(501, 12);
             this.textBox1.MaxLength = 11;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBox1.Size = new System.Drawing.Size(215, 32);
+            this.textBox1.Size = new System.Drawing.Size(244, 32);
             this.textBox1.TabIndex = 50;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.White;
-            this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(790, 17);
+            this.label5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(748, 15);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(81, 19);
+            this.label5.Size = new System.Drawing.Size(106, 24);
             this.label5.TabIndex = 51;
             this.label5.Text = "اسم المستخدم";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(757, -31);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(81, 19);
-            this.label11.TabIndex = 51;
-            this.label11.Text = "اسم المستخدم";
-            // 
-            // Btn_Add
-            // 
-            this.Btn_Add.Appearance.BackColor = System.Drawing.Color.Black;
-            this.Btn_Add.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Add.Appearance.ForeColor = System.Drawing.Color.White;
-            this.Btn_Add.Appearance.Options.UseBackColor = true;
-            this.Btn_Add.Appearance.Options.UseFont = true;
-            this.Btn_Add.Appearance.Options.UseForeColor = true;
-            this.Btn_Add.Appearance.Options.UseTextOptions = true;
-            this.Btn_Add.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.Btn_Add.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.Btn_Add.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.Btn_Add.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Add.ImageOptions.Image")));
-            this.Btn_Add.Location = new System.Drawing.Point(387, 483);
-            this.Btn_Add.MinimumSize = new System.Drawing.Size(169, 32);
-            this.Btn_Add.Name = "Btn_Add";
-            this.Btn_Add.Size = new System.Drawing.Size(169, 32);
-            this.Btn_Add.TabIndex = 179;
-            this.Btn_Add.Text = "تاكيد الصرف";
-            this.Btn_Add.Click += new System.EventHandler(this.Btn_Add_Click);
             // 
             // Frm_EmpSarf
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(887, 527);
-            this.Controls.Add(this.Btn_Add);
+            this.BackColor = System.Drawing.Color.Salmon;
+            this.ClientSize = new System.Drawing.Size(887, 481);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.btn_save);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.dateTimePicker1);
             this.ForeColor = System.Drawing.Color.Black;
-            this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(903, 565);
-            this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(903, 565);
             this.Name = "Frm_EmpSarf";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "شاشة صرف المرتبات";
+            this.Text = "Frm_EmpSarf";
             this.Load += new System.EventHandler(this.Frm_EmpSarf_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -376,6 +339,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
@@ -383,7 +347,5 @@
         private System.Windows.Forms.TextBox txt_discount;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label11;
-        private DevExpress.XtraEditors.SimpleButton Btn_Add;
     }
 }

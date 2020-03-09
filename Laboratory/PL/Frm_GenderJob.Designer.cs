@@ -97,8 +97,7 @@
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.groupBox1);
             this.Name = "Frm_GenderJob";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "شاشة إضافة نوع الوظيفة";
+            this.Text = "Frm_GenderJob";
             this.Load += new System.EventHandler(this.Frm_GenderJob_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

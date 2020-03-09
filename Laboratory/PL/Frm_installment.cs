@@ -27,7 +27,8 @@ namespace Laboratory.PL
             cmb_instalmenttype.DataSource = i.selectcompoinstallmentType();
             cmb_instalmenttype.DisplayMember = "Name";
             cmb_instalmenttype.ValueMember = "ID_installmentType";
-            Btn_Update.Enabled = false;
+            btn_new.Hide();
+            btn_update.Enabled = false;
 
         }
 
@@ -48,72 +49,15 @@ namespace Laboratory.PL
         private void btn_save_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void txt_search_TextChanged(object sender, EventArgs e)
-        {
-            dt.Clear();
-            dt = i.Searchinstallment(txt_search.Text);
-            dataGridView1.DataSource = dt;
-        }
-
-        private void dataGridView1_DoubleClick(object sender, EventArgs e)
-        {
-            if (dataGridView1.Rows.Count>0)
-            {
-       
-                Btn_Update.Enabled = true;
-                cmb_stock.Enabled = false;
-                txt_username.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                cmb_stock.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                txt_money.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                cmb_instalmenttype.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-              
-            }
-        }
-
-        private void btn_new_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btn_update_Click(object sender, EventArgs e)
-        {
-           
-             
-           
-        }
-
-        private void txt_money_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != Convert.ToChar(System.Globalization.CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator))
-            {
-                e.Handled = true;
-            }
-            if (e.KeyChar == '.' && txt_money.Text.ToString().IndexOf('.') > -1)
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-            cmb_stock.Enabled = true;
-            txt_money.Text = "0";
-            Btn_Update.Enabled = false;
-            cmb_stock.Enabled = true;
-        }
-
-        private void Btn_Add_Click(object sender, EventArgs e)
-        {
-
             try
             {
-                if (txt_money.Text == "" || txt_money.Text == "0")
+
+
+                if (txt_money.Text == ""|| txt_money.Text == "0")
                 {
                     MessageBox.Show("برجاء التاكد من المبلغ");
                     return;
+
                 }
                 if (cmb_stock.Text == "")
                 {
@@ -144,22 +88,61 @@ namespace Laboratory.PL
                 i.Addinstallment(dateTimePicker1.Value, Convert.ToDecimal(txt_money.Text), txt_username.Text, Convert.ToInt32(cmb_stock.SelectedValue), Convert.ToInt32(cmb_instalmenttype.SelectedValue));
 
                 MessageBox.Show("تم اضافه بيانات الطبيب بنجاح", "عمليه الاضافه", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                s.Add_StockPull(Convert.ToInt32(cmb_stock.SelectedValue), Convert.ToDecimal(txt_money.Text), dateTimePicker1.Value, txt_username.Text, cmb_instalmenttype.Text + " " + " دفع قسط");
+                s.Add_StockPull(Convert.ToInt32(cmb_stock.SelectedValue), Convert.ToDecimal(txt_money.Text), dateTimePicker1.Value, txt_username.Text, cmb_instalmenttype.Text+" "+" دفع قسط");
 
-                dataGridView1.DataSource = i.Selectinstallment();
+                dataGridView1.DataSource =i.Selectinstallment(); 
                 txt_money.Clear();
+             
+
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                MessageBox.Show(ex.StackTrace);
             }
 
 
         }
 
-        private void simpleButton2_Click(object sender, EventArgs e)
+        private void txt_search_TextChanged(object sender, EventArgs e)
         {
+            dt.Clear();
+            dt = i.Searchinstallment(txt_search.Text);
+            dataGridView1.DataSource = dt;
+        }
+
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+            if (dataGridView1.Rows.Count>0)
+            {
+                btn_new.Show();
+                btn_save.Hide();
+                btn_update.Enabled = true;
+                cmb_stock.Enabled = false;
+                txt_username.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                cmb_stock.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                txt_money.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                cmb_instalmenttype.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+              
+            }
+        }
+
+        private void btn_new_Click(object sender, EventArgs e)
+        {
+            cmb_stock.Enabled = true;
+            txt_money.Text = "0";
+            btn_new.Hide();
+            btn_save.Show();
+
+            btn_update.Enabled = false;
+            cmb_stock.Enabled = true;
+        }
+
+        private void btn_update_Click(object sender, EventArgs e)
+        {
+           
+             
             try
             {
 
@@ -195,19 +178,20 @@ namespace Laboratory.PL
 
                     MessageBox.Show("تم التعديل بنجاحو", "عمليه التعديل", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
-
-                    dataGridView1.DataSource = i.Selectinstallment();
-                    txt_money.Clear();
+                 
+                    dataGridView1.DataSource = i.Selectinstallment(); 
+                     txt_money.Clear();
 
                 }
-                else
-                {
-                    MessageBox.Show("تم الغاء عمليه التعديل");
-                    txt_money.Clear();
-
-                    Btn_Update.Enabled = false;
-              
-                }
+            else
+            {
+                MessageBox.Show("تم الغاء عمليه التعديل");
+                txt_money.Clear();
+             
+                btn_update.Enabled = false;
+                btn_new.Hide();
+                btn_save.Show();
+            }
 
             }
             catch (Exception ex)
@@ -219,14 +203,16 @@ namespace Laboratory.PL
 
         }
 
-        private void txt_username_TextChanged(object sender, EventArgs e)
+        private void txt_money_KeyPress(object sender, KeyPressEventArgs e)
         {
-
-        }
-
-        private void txt_money_TextChanged(object sender, EventArgs e)
-        {
-
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != Convert.ToChar(System.Globalization.CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator))
+            {
+                e.Handled = true;
+            }
+            if (e.KeyChar == '.' && txt_money.Text.ToString().IndexOf('.') > -1)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

@@ -14,9 +14,8 @@ namespace Laboratory.PL
     public partial class Frm_Masrofat : Form
     {
         Masrofat m = new Masrofat();
-        Stock s = new Stock();
-        Users u = new Users();
-        Branches b = new Branches();
+        Stock Stock = new Stock();
+
         private static Frm_Masrofat farm;
         static void STATUESCllosed(object sender, FormClosedEventArgs e)
         {
@@ -34,47 +33,6 @@ namespace Laboratory.PL
                 return farm;
             }
         }
-        void Permision()
-        {
-            dt.Clear();
-            dt = u.SelectUserBranch(txt_username.Text);
-
-            if (dt.Rows.Count > 0)
-            {
-                cmb_UserBranch.DataSource = u.SelectUserBranch(txt_username.Text);
-                cmb_UserBranch.DisplayMember = "Name";
-                cmb_UserBranch.ValueMember = "Branch_ID";
-                cmb_UserBranch.SelectedIndex = -1;
-
-                cmb_Stock.DataSource = s.SelectStockBranch(Convert.ToInt32(cmb_UserBranch.SelectedValue));
-                cmb_Stock.DisplayMember = "Name_Stock";
-                cmb_Stock.ValueMember = "ID_Stock";
-            }
-            else
-            {
-                cmb_UserBranch.DataSource = b.SelectCompBranches();
-                cmb_UserBranch.DisplayMember = "Name";
-                cmb_UserBranch.ValueMember = "Branch_ID";
-                cmb_UserBranch.SelectedIndex = -1;
-                //Stock();
-            }
-        }
-        void Stock()
-        {
-
-            cmb_Stock.DataSource = s.Compo_Stock();
-            cmb_Stock.DisplayMember = "Name_Stock";
-            cmb_Stock.ValueMember = "ID_Stock";
-            cmb_Stock.SelectedIndex = -1;
-
-        }
-        void SelectMasrofatType()
-        {
-            comboBox1.DataSource = m.SelectReserve();
-            comboBox1.DisplayMember = "masrof_type";
-            comboBox1.ValueMember = "ID_masrof";
-
-        }
         public Frm_Masrofat()
         {
             InitializeComponent();
@@ -84,12 +42,15 @@ namespace Laboratory.PL
                 farm = this;
             }
             txt_username.Text = Program.salesman;
-            SelectMasrofatType();
-            Permision();
-
             dataGridView1.DataSource = m.SelectReserveDetails();
 
-   
+            comboBox1.DataSource = m.SelectReserve();
+            comboBox1.DisplayMember = "masrof_type";
+            comboBox1.ValueMember = "ID_masrof";
+
+            cmb_Stock.DataSource = Stock.Compo_Stock();
+            cmb_Stock.DisplayMember = "Name_Stock";
+            cmb_Stock.ValueMember = "ID_Stock";
             textBox1.Hide();
             Btn_Delete.Enabled = false;
         }
@@ -105,7 +66,38 @@ namespace Laboratory.PL
         DataTable dt = new DataTable();
         private void btn_save_Click(object sender, EventArgs e)
         {
-           
+            if (txt_amount.Text == "")
+            {
+                MessageBox.Show("من فضلك ادخال المبلغ ");
+                return;
+            }
+            dt.Clear();
+
+            dt = Stock.Select_moneyStock(Convert.ToInt32(cmb_Stock.SelectedValue));
+
+            if (dt.Rows.Count > 0)
+            {
+
+                if (Convert.ToDecimal(txt_amount.Text) > Convert.ToDecimal(dt.Rows[0][0]))
+                {
+                    MessageBox.Show("رصيد الخزنة الحالى غير كافى ");
+                    return;
+                }
+            }
+            if (comboBox1.Text != string.Empty)
+            {
+                m.AddReserveDetails(Convert.ToInt32(comboBox1.SelectedValue), txt_notes.Text,
+                Convert.ToDecimal(txt_amount.Text), dateTimePicker1.Value,Convert.ToInt32(cmb_Stock.SelectedValue),txt_username.Text);
+                Stock.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_amount.Text), dateTimePicker1.Value, txt_username.Text, "مصروفات " +"لل"+ comboBox1.Text);
+                MessageBox.Show("تم التسجيل بنجاح", "عمليه التسجيل");
+                dataGridView1.DataSource = m.SelectReserveDetails();
+                txt_notes.Clear();
+                txt_amount.Clear();
+            }
+            else
+            {
+                MessageBox.Show("من فضلك قم بااختيار نوع المصروف");
+            }
         }
 
         private void Frm_Masrofat_Load(object sender, EventArgs e)
@@ -142,16 +134,13 @@ namespace Laboratory.PL
                 if (dataGridView1.Rows.Count>0)
                 {
                     Btn_Delete.Enabled = true;
-                    Btn_Add.Enabled = false;
+                    btn_save.Enabled = false;
                     cmb_Stock.Enabled = false;
-                    cmb_UserBranch.Enabled = false;
-                    textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
                     comboBox1.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                     txt_notes.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
                     txt_amount.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                    cmb_Stock.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-                    cmb_UserBranch.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
                     //dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                    textBox1.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
                 }
             }
             catch (Exception ex)
@@ -190,112 +179,23 @@ namespace Laboratory.PL
 
         private void Btn_New_Click(object sender, EventArgs e)
         {
-            
+            txt_notes.Clear();
+            txt_amount.Clear();
+            textBox1.Clear();
+            Btn_Delete.Enabled = false;
+            btn_save.Enabled = true;
+            cmb_Stock.Enabled = true;
+            dateTimePicker1.Value = DateTime.Now;
 
         }
 
         private void Btn_Delete_Click(object sender, EventArgs e)
         {
-           
-        }
-
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-            txt_notes.Clear();
-            txt_amount.Clear();
-            textBox1.Clear();
-            Btn_Delete.Enabled = false;
-            Btn_Add.Enabled = true;
-            cmb_Stock.Enabled = true;
-            dateTimePicker1.Value = DateTime.Now;
-        }
-
-        private void Btn_Add_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (txt_amount.Text == "" || txt_amount.Text=="0")
-                {
-                    MessageBox.Show("من فضلك ادخال المبلغ ");
-                    return;
-                }
-                if (cmb_UserBranch.Text=="")
-                {
-                    MessageBox.Show("لا بد من تحديد الفرع ");
-                    return;
-                }
-                if (cmb_Stock.Text == "")
-                {
-                    MessageBox.Show("لا بد من تحديد الخزنة ");
-                    return;
-                }
-                if (comboBox1.Text == "")
-                {
-                    MessageBox.Show("لا بد من تحديد نوع المصروف ");
-                    return;
-                }
-                dt.Clear();
-                dt = s.Select_moneyStock(Convert.ToInt32(cmb_Stock.SelectedValue));
-                if (dt.Rows.Count > 0)
-                {
-                    if (Convert.ToDecimal(txt_amount.Text) > Convert.ToDecimal(dt.Rows[0][0]))
-                    {
-                        MessageBox.Show("رصيد الخزنة الحالى غير كافى ");
-                        return;
-                    }
-                }
-                if (comboBox1.Text != string.Empty)
-                {
-                    m.AddReserveDetails(Convert.ToInt32(comboBox1.SelectedValue), txt_notes.Text,
-                    Convert.ToDecimal(txt_amount.Text), dateTimePicker1.Value, Convert.ToInt32(cmb_Stock.SelectedValue),
-                    txt_username.Text , Convert.ToInt32(cmb_UserBranch.SelectedValue));
-                    s.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_amount.Text), dateTimePicker1.Value, txt_username.Text, "مصروفات " + "لل" + comboBox1.Text);
-                    MessageBox.Show("تم التسجيل بنجاح", "عمليه التسجيل");
-                    dataGridView1.DataSource = m.SelectReserveDetails();
-                    txt_notes.Clear();
-                    txt_amount.Clear();
-                }
-                else
-                {
-                    MessageBox.Show("من فضلك قم بااختيار نوع المصروف");
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-                MessageBox.Show(ex.StackTrace);
-            }
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmb_UserBranch_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-
-            cmb_Stock.DataSource = s.SelectStockBranch(Convert.ToInt32(cmb_UserBranch.SelectedValue));
-            cmb_Stock.DisplayMember = "Name_Stock";
-            cmb_Stock.ValueMember = "ID_Stock";
-        }
-
-        private void cmb_UserBranch_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            cmb_Stock.DataSource = s.SelectStockBranch(Convert.ToInt32(cmb_UserBranch.SelectedValue));
-            cmb_Stock.DisplayMember = "Name_Stock";
-            cmb_Stock.ValueMember = "ID_Stock";
-        }
-
-        private void Btn_Update_Click_1(object sender, EventArgs e)
-        {
             try
             {
                 if (MessageBox.Show("هل تريد مسح المصروف", "مسح المصروف", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    s.add_insertStock(Convert.ToInt32(textBox1.Text), Convert.ToDecimal(txt_amount.Text), DateTime.Now, txt_username.Text, "مسح مصروف " + " " + comboBox1.Text + " " + "من شاشة المصروفات");
+                    Stock.add_insertStock(Convert.ToInt32(textBox1.Text),Convert.ToDecimal(txt_amount.Text),DateTime.Now,txt_notes.Text,"مسح مصروف " +" "+   comboBox1.Text  +" "+"من شاشة المصروفات");
                     m.DeleteReserveDetails(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
                     MessageBox.Show("تم مسح المصروف بنجاح");
                 }
@@ -308,7 +208,7 @@ namespace Laboratory.PL
                 txt_amount.Clear();
                 textBox1.Clear();
                 Btn_Delete.Enabled = false;
-                Btn_Add.Enabled = true;
+                btn_save.Enabled = true;
                 cmb_Stock.Enabled = true;
 
             }
@@ -316,7 +216,6 @@ namespace Laboratory.PL
             {
 
                 MessageBox.Show(ex.Message);
-                MessageBox.Show(ex.StackTrace);
             }
         }
     }

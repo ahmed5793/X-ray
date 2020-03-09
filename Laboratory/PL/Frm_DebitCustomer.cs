@@ -16,16 +16,16 @@ namespace Laboratory.PL
         public Frm_DebitCustomer()
         {
             InitializeComponent();
-            gridControl1.DataSource = C.selectClientRent();
+            dataGridViewList.DataSource = C.selectClientRent();
             Calc();
         }
         void Calc()
         {
             decimal total = 0;
-            for (int i = 0; i <= gridView1.RowCount - 1; i++)
+            for (int i = 0; i <= dataGridViewList.Rows.Count - 1; i++)
             {
-                DataRow r = gridView1.GetDataRow(i);
-                total += Convert.ToDecimal(r[2].ToString());
+                total += Convert.ToDecimal(dataGridViewList.Rows[i].Cells[2].Value);
+
             }
             txt_TotalPurshacing.Text = Math.Round(total, 1).ToString();
         }
@@ -33,16 +33,6 @@ namespace Laboratory.PL
         private void Frm_DebitCustomer_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Btn_Print_Click(object sender, EventArgs e)
-        {
-            gridControl1.ShowRibbonPrintPreview();
         }
     }
 }

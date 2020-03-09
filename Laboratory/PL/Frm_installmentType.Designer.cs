@@ -91,8 +91,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(480, 112);
+            this.ClientSize = new System.Drawing.Size(480, 111);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);
@@ -100,8 +99,7 @@
             this.MaximumSize = new System.Drawing.Size(496, 150);
             this.MinimumSize = new System.Drawing.Size(496, 150);
             this.Name = "Frm_installmentType";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "تسجيل نوع الاقساط";
+            this.Text = "Frm_installmentType";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

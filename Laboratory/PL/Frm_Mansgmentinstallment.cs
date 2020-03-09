@@ -13,11 +13,10 @@ namespace Laboratory.PL
     public partial class Frm_Mansgmentinstallment : Form
     {
         Installment i = new Installment();
-        DataTable dt = new DataTable();
         public Frm_Mansgmentinstallment()
         {
             InitializeComponent();
-            gridControl1.DataSource = i.Selectinstallment();
+            dgv_visit.DataSource = i.Selectinstallment();
         }
 
         private void Frm_Mansgmentinstallment_Load(object sender, EventArgs e)
@@ -27,19 +26,10 @@ namespace Laboratory.PL
 
         private void button1_Click(object sender, EventArgs e)
         {
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-
+            DataTable dt = new DataTable();
             dt.Clear();
-            dt = i.SelectFromDateinstallment(DateFrom.Value, DateTo.Value);
-            gridControl1.DataSource = dt;
+            dt = i.SelectFromDateinstallment(FromDate.Value, ToDate.Value);
+            dgv_visit.DataSource = dt;
         }
     }
 }
