@@ -168,6 +168,7 @@
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.fluentDesignFormContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageEdit1)).BeginInit();
@@ -283,9 +284,10 @@
             this.report_finger,
             this.data_Revelation,
             this.Data_Redvelation,
-            this.Btn_ReciveaMoney});
+            this.Btn_ReciveaMoney,
+            this.barButtonItem4});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 113;
+            this.ribbon.MaxItemId = 114;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.basic_information,
@@ -322,6 +324,7 @@
             this.tileControl1.Size = new System.Drawing.Size(980, 405);
             this.tileControl1.TabIndex = 0;
             this.tileControl1.Text = "tileControl1";
+            this.tileControl1.Click += new System.EventHandler(this.tileControl1_Click);
             // 
             // add_branch
             // 
@@ -1211,6 +1214,7 @@
             // 
             this.ribbonPageGroup20.ItemLinks.Add(this.Download_finger);
             this.ribbonPageGroup20.ItemLinks.Add(this.report_finger);
+            this.ribbonPageGroup20.ItemLinks.Add(this.barButtonItem4);
             this.ribbonPageGroup20.Name = "ribbonPageGroup20";
             this.ribbonPageGroup20.Text = "ادارة التحكم في اجهزة البصمة";
             // 
@@ -1465,6 +1469,13 @@
             this.checkEdit1.Size = new System.Drawing.Size(75, 18);
             this.checkEdit1.TabIndex = 1;
             // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "barButtonItem4";
+            this.barButtonItem4.Id = 113;
+            this.barButtonItem4.Name = "barButtonItem4";
+            this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick_2);
+            // 
             // Main
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
@@ -1637,5 +1648,6 @@
         private DevExpress.XtraBars.BarButtonItem Data_Redvelation;
         public DevExpress.XtraBars.BarButtonItem Btn_ReciveaMoney;
         private DevExpress.XtraEditors.TileControl tileControl1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
     }
 }

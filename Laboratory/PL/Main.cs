@@ -584,6 +584,17 @@ namespace Laboratory.PL
         {
 
         }
+
+        private void tileControl1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void barButtonItem4_ItemClick_2(object sender, ItemClickEventArgs e)
+        {
+            Frm_ExportExell ex = new Frm_ExportExell();
+            ex.Show();
+        }
     }
     }
     
