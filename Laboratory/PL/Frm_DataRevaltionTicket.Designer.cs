@@ -43,45 +43,39 @@
             this.label7.BackColor = System.Drawing.Color.Yellow;
             this.label7.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+
             this.label7.Location = new System.Drawing.Point(489, 10);
-=======
+
             this.label7.Location = new System.Drawing.Point(413, 69);
->>>>>>> 44f4f1ba1dc3c98a8df1de3e696a6ec4028b752a
-=======
+
+
             this.label7.Location = new System.Drawing.Point(413, 69);
->>>>>>> 44f4f1ba1dc3c98a8df1de3e696a6ec4028b752a
-=======
+
+
             this.label7.Location = new System.Drawing.Point(410, 33);
->>>>>>> parent of c26123d... ij
+
             this.label7.Name = "label7";
             this.label7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label7.Size = new System.Drawing.Size(116, 29);
             this.label7.TabIndex = 164;
             this.label7.Text = "مكان الفحص";
-            // 
-            // comboBox1
-            // 
+           
             this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+
+
             this.comboBox1.Location = new System.Drawing.Point(238, 9);
-=======
+
             this.comboBox1.Location = new System.Drawing.Point(162, 69);
->>>>>>> 44f4f1ba1dc3c98a8df1de3e696a6ec4028b752a
-=======
-            this.comboBox1.Location = new System.Drawing.Point(162, 69);
->>>>>>> 44f4f1ba1dc3c98a8df1de3e696a6ec4028b752a
-=======
+
+     this.comboBox1.Location = new System.Drawing.Point(162, 69);
+
+
             this.comboBox1.Location = new System.Drawing.Point(159, 33);
->>>>>>> parent of c26123d... ij
+
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.comboBox1.Size = new System.Drawing.Size(245, 32);
@@ -99,7 +93,7 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-<<<<<<< HEAD
+
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Beige;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 8.25F);
@@ -109,7 +103,7 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.Location = new System.Drawing.Point(12, 51);
-=======
+
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.Beige;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -118,15 +112,14 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Blue;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-<<<<<<< HEAD
+
             this.dataGridView1.Location = new System.Drawing.Point(12, 121);
-<<<<<<< HEAD
->>>>>>> 44f4f1ba1dc3c98a8df1de3e696a6ec4028b752a
-=======
->>>>>>> 44f4f1ba1dc3c98a8df1de3e696a6ec4028b752a
-=======
+
+
+
+
             this.dataGridView1.Location = new System.Drawing.Point(12, 76);
->>>>>>> parent of c26123d... ij
+
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -142,19 +135,15 @@
             this.dataGridView1.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.dataGridView1.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Blue;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+
             this.dataGridView1.Size = new System.Drawing.Size(844, 425);
-=======
+
             this.dataGridView1.Size = new System.Drawing.Size(714, 355);
->>>>>>> 44f4f1ba1dc3c98a8df1de3e696a6ec4028b752a
-=======
+
             this.dataGridView1.Size = new System.Drawing.Size(714, 355);
->>>>>>> 44f4f1ba1dc3c98a8df1de3e696a6ec4028b752a
-=======
+
             this.dataGridView1.Size = new System.Drawing.Size(714, 400);
->>>>>>> parent of c26123d... ij
+
             this.dataGridView1.TabIndex = 165;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -162,21 +151,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< HEAD
+
             this.ClientSize = new System.Drawing.Size(861, 482);
-=======
+
             this.ClientSize = new System.Drawing.Size(731, 482);
-<<<<<<< HEAD
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label2);
-<<<<<<< HEAD
->>>>>>> 44f4f1ba1dc3c98a8df1de3e696a6ec4028b752a
-=======
->>>>>>> 44f4f1ba1dc3c98a8df1de3e696a6ec4028b752a
-=======
->>>>>>> parent of c26123d... ij
+
+            //this.Controls.Add(this.label4);
+            //this.Controls.Add(this.label3);
+            //this.Controls.Add(this.label1);
+            //this.Controls.Add(this.label2);
+
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.comboBox1);
