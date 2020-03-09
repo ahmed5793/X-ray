@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using CsvHelper;
 using Microsoft.Office.Interop.Excel;
 using Application = System.Windows.Forms.Application;
+using Laboratory.BL;
 
 namespace Laboratory.PL
 {
@@ -17,16 +18,43 @@ namespace Laboratory.PL
         //OleDbConnection con;
         //OleDbDataAdapter da;
         //DataTable dt;
-
+        Branches b = new Branches();
+        Users u = new Users();
         public Frm_ExportExell()
         {
             InitializeComponent();
+            Permision();
+
 
         }
+        System.Data.DataTable dt = new System.Data.DataTable();
 
+        void Permision()
+        {
+            dt.Clear();
+            dt = u.SelectUserBranch(txt_username.Text);
+
+            if (dt.Rows.Count > 0)
+            {
+                cmb_UserBranch.DataSource = u.SelectUserBranch(txt_username.Text);
+                cmb_UserBranch.DisplayMember = "Name";
+                cmb_UserBranch.ValueMember = "Branch_ID";
+
+               
+            }
+            else
+            {
+                cmb_UserBranch.DataSource = b.SelectCompBranches();
+                cmb_UserBranch.DisplayMember = "Name";
+                cmb_UserBranch.ValueMember = "Branch_ID";
+
+                
+            }
+        }
         private void Frm_ExportExell_Load(object sender, EventArgs e)
         {
             dataGridView1.RowTemplate.Height = 50;
+            txt_username.Text = Program.salesman;
         }
 
         private void btn_update_Click(object sender, EventArgs e)
@@ -139,7 +167,9 @@ namespace Laboratory.PL
                     for (int excelWorkSheetRowIndex = 2; excelWorkSheetRowIndex < importExcelToDataGridViewRange.Rows.Count ; excelWorkSheetRowIndex++)
                     {
                         //Convert The Path to image and display it in datagridviewimagecolumn
-                        dataGridView1.Rows.Add(importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 1].Value, importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 2].Value, importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 3].Value, importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 4].Value, importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 5].Value, importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 6].Value, importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 7].Value, importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 8].Value, importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 9].Value);
+                       dataGridView1.Rows.Add(importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 1].Value, importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 2].Value, importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 3].Value, importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 4].Value, importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 5].Value, importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 6].Value, importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 7].Value, importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 8].Value, importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 9].Value);
+                       
+
                     }
                 }
 
@@ -155,35 +185,122 @@ namespace Laboratory.PL
         {
 
         }
-        //private void binddataCsv(string Filepath)
-        //{
-        //    DataTable dt = new DataTable();
-        //    string[] lines = File.ReadAllLines(Filepath);
-        //    if (lines.Length>0)
-        //    {
-        //        string FIRSTLINES = lines[0];
-        //        string[] HEADERLABLES = FIRSTLINES.Split(',');
-        //        foreach (string HEADERWORD in HEADERLABLES)
-        //        {
-        //            dt.Columns.Add(new DataColumn(HEADERWORD));
-        //        }
-        //        for (int i = 1; i < lines.Length; i++)
-        //        {
-        //            string[] datawords = lines[i].Split(',');
-        //            DataRow dr = dt.NewRow();
-        //            int columnindex = 0;
-        //            foreach (string HEADERWORD in HEADERLABLES)
-        //            {
-        //                dr[HEADERWORD] = datawords[columnindex ++].Replace("\"", "").Replace("'", ""); ;  
-        //            }
-        //            dt.Rows.Add(dr);
-        //        }
-        //    }
-        //    if (dt.Rows.Count>0)
-        //    {
-        //        dataGridView1.DataSource = dt;
-        //    }
-        //}
+        System.Data.DataTable dt10 = new System.Data.DataTable();
+        Finger f = new Finger();
+        private void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+
+            try
+            {
+
+                //label1.Invoke( (MethodInvoker)delegate()
+
+                //{ 
+
+
+
+                //});
+
+                
+                if (dataGridView1.Rows.Count > 0)
+                {
+
+
+                    for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                    {
+
+                        dt10.Clear();
+                        dt10 = f.selectcountidfingerExcel();
+
+                        if (dt10.Rows.Count > 0)
+                        {
+                            if (dataGridView1.Rows[i].Cells[2].Value.ToString()!="")
+                            {
+                                f.AddFingeerExcel(Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), dataGridView1.Rows[i].Cells[3].Value.ToString(), Convert.ToDateTime(dataGridView1.Rows[i].Cells[8].Value), Convert.ToInt32(cmb_UserBranch.SelectedValue), txt_username.Text);
+
+                            }
+
+                        }
+                        dt.Clear();
+                        dt = f.vildateHRINOUTExcel(Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), Convert.ToDateTime(dataGridView1.Rows[i].Cells[8].Value));
+
+
+                        if (dt.Rows.Count == 0)
+                        {
+                          System.Data.DataTable dt5 = new System.Data.DataTable();
+                            dt5 = f.vildateLastDateExcel(Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), Convert.ToDateTime(dataGridView1.Rows[i].Cells[8].Value));
+                            if (dt5.Rows.Count > 0)
+                            {
+                                if (dataGridView1.Rows[i].Cells[2].Value.ToString() != "")
+                                {
+                                    f.AddFingeerExcel(Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), dataGridView1.Rows[i].Cells[3].Value.ToString(), Convert.ToDateTime(dataGridView1.Rows[i].Cells[8].Value), Convert.ToInt32(cmb_UserBranch.SelectedValue), txt_username.Text);
+
+                                }
+                            }
+                            else
+                            {
+                                if (dataGridView1.Rows[i].Cells[2].Value.ToString() != "")
+                                {
+                                    f.AddFingeerExcel(Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), dataGridView1.Rows[i].Cells[3].Value.ToString(), Convert.ToDateTime(dataGridView1.Rows[i].Cells[8].Value), Convert.ToInt32(cmb_UserBranch.SelectedValue), txt_username.Text);
+
+                                }
+
+                            }
+                        }
+
+                        backgroundWorker1.ReportProgress(i);
+
+                        if (progressBar1.Value < dataGridView1.RowCount)
+                        {
+                            progressBar1.Value += 1;
+
+                            label3.Text = progressBar1.Value.ToString();
+
+                        }
+
+
+                    }
+
+
+
+
+
+
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Source);
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            progressBar1.Show();
+
+
+            progressBar1.Maximum = dataGridView1.RowCount;
+
+
+
+            if (backgroundWorker1.IsBusy)
+            {
+                MessageBox.Show("جارى حفظ البينات ");
+            }
+            else
+            {
+
+
+
+                backgroundWorker1.RunWorkerAsync();
+
+            }
+
+        }
     }
 }
 
