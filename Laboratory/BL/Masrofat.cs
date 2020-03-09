@@ -33,10 +33,10 @@ namespace Laboratory.BL
             return dt;
         }
 
-        internal void AddReserveDetails(int IdReserve, string decription, decimal amount, DateTime date, int Id_Stock , string Sales_Man)
+        internal void AddReserveDetails(int IdReserve, string decription, decimal amount, DateTime date, int Id_Stock , string Sales_Man, int Id_Branch )
         {
             DataAccessLayer da = new DataAccessLayer();
-            SqlParameter[] param = new SqlParameter[6];
+            SqlParameter[] param = new SqlParameter[7];
             da.open();
             param[0] = new SqlParameter("@idReserve", SqlDbType.Int);
             param[0].Value = IdReserve;
@@ -50,7 +50,8 @@ namespace Laboratory.BL
             param[4].Value = Id_Stock;
             param[5] = new SqlParameter("@Sales_man", SqlDbType.NVarChar,100);
             param[5].Value = Sales_Man;
-
+            param[6] = new SqlParameter("@Id_Branch", SqlDbType.Int);
+            param[6].Value = Id_Branch;
             da.excutequery("AddReserveDetails", param);
             da.close();
         }

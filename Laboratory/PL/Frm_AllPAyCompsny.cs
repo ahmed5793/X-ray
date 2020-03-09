@@ -35,12 +35,6 @@ namespace Laboratory.PL
                 sumNetPrice += Convert.ToDouble(row[1].ToString());
             }
             textBox1.Text = sumNetPrice.ToString("₱ #,##0.0");
-
-
-
-
-
-
             //decimal Total = 0;
             //for (int i = 0; i < gridView1.RowCount; i++)
             //{
@@ -50,24 +44,7 @@ namespace Laboratory.PL
         }
         private void btn_search_Click(object sender, EventArgs e)
         {
-            try
-            {
-               
-                if (cmb_Company.Text != ""  )
-                {
-                    dt.Clear();
-                    dt = cm.Search_AllpAyOfCompany(Convert.ToInt32(cmb_Company.SelectedValue), DateFrom.Value, DateTo.Value);
-                    gridControl1.DataSource = dt;
-                    Calc();
-                   
-                }
-     
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
+          
         }
 
         private void cmb_Company_Leave(object sender, EventArgs e)
@@ -119,6 +96,30 @@ namespace Laboratory.PL
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            gridControl1.ShowRibbonPrintPreview();
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cmb_Company.Text != "")
+                {
+                    dt.Clear();
+                    dt = cm.Search_AllpAyOfCompany(Convert.ToInt32(cmb_Company.SelectedValue), DateFrom.Value, DateTo.Value);
+                    gridControl1.DataSource = dt;
+                    Calc();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void Btn_Print_Click(object sender, EventArgs e)
         {
             gridControl1.ShowRibbonPrintPreview();
         }

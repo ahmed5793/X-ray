@@ -20,7 +20,6 @@ namespace Laboratory.PL
         {
             InitializeComponent();
             company();
-            button1.Hide();
         }
         void company()
         {
@@ -47,30 +46,7 @@ namespace Laboratory.PL
 
         private void btn_search_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (cmb_Company.Text != "")
-                {
-                    dt.Clear();
-                    dt = cm.Search_DebitCompany(Convert.ToInt32(cmb_Company.SelectedValue), DateFrom.Value, DateTo.Value);
-                    dataGridView1.DataSource = dt;
-                    if (dataGridView1.Rows.Count == 0)
-                    {
-                        button1.Hide();
-                    }
-                    else
-                    {
-                        button1.Show();
-                    }
-
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
-
+          
         }
 
         private void cmb_Company_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -90,14 +66,14 @@ namespace Laboratory.PL
                 {
                     dt.Clear();
                     dt = cm.Select_DebitCompany(Convert.ToInt32(cmb_Company.SelectedValue));
-                    dataGridView1.DataSource = dt;
-
+                    gridControl1.DataSource = dt;
                 }
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
             }
         }
 
@@ -128,6 +104,31 @@ namespace Laboratory.PL
             {
                 dt2.Dispose();
             }
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cmb_Company.Text != "")
+                {
+                    dt.Clear();
+                    dt = cm.Search_DebitCompany(Convert.ToInt32(cmb_Company.SelectedValue), DateFrom.Value, DateTo.Value);
+                    gridControl1.DataSource = dt;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
+            }
+
+        }
+
+        private void Btn_Print_Click(object sender, EventArgs e)
+        {
+            gridControl1.ShowRibbonPrintPreview();
         }
     }
 }

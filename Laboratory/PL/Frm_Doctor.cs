@@ -46,9 +46,7 @@ namespace Laboratory.PL
             {
                 farm = this;
             }
-
-            btn_new.Hide();
-            btn_update.Enabled = false;
+            Btn_Update.Enabled = false;
             dataGridView1.DataSource = d.SelectDoctor();
             dataGridView1.Columns[4].Visible = false;
            
@@ -58,51 +56,16 @@ namespace Laboratory.PL
         {
 
         }
+        Frm_DoctorJob j = new Frm_DoctorJob();
 
         private void btn_GenderJob_Click(object sender, EventArgs e)
         {
-            Frm_DoctorJob j = new Frm_DoctorJob();
             j.ShowDialog();
-            j.Dispose();
+            comboBox1.DataSource = d.CompoDoctorDepatrtment();
         }
 
         private void btn_save_Click(object sender, EventArgs e)
-        {
-          
-            try
-            {
-
-
-                if (txt_name.Text == "")
-                {
-                    MessageBox.Show("يرجي التاكد من اسم الطبيب");
-                    return;
-
-                }
-                if (comboBox1.Text == "")
-                {
-                    MessageBox.Show("يرجي التاكد من تخصص الطبيب");
-                    comboBox1.Focus();
-                    return;
-                }
-              
-
-                    d.AddDoctor(txt_name.Text, txt_phone.Text, txt_address.Text, dateTimePicker1.Value,Convert.ToInt32(comboBox1.SelectedValue));
-
-                    MessageBox.Show("تم اضافه بيانات الطبيب بنجاح", "عمليه الاضافه", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                    dataGridView1.DataSource = d.SelectDoctor();
-                    txt_name.Clear();
-                    txt_phone.Clear();
-                    txt_address.Clear();
-             
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        
+        {        
         }
 
         private void Frm_Doctor_Load(object sender, EventArgs e)
@@ -114,68 +77,11 @@ namespace Laboratory.PL
 
         private void btn_update_Click(object sender, EventArgs e)
         {
-            try
-            {
-
-
-                if (txt_name.Text == "")
-                {
-                    MessageBox.Show("يرجي التاكد من اسم الطبيب");
-                    txt_name.Focus();
-                    return;
-                }
-
-                if (comboBox1.Text == "")
-                {
-                    MessageBox.Show("يرجي التاكد من تخصص الطبيب");
-                    comboBox1.Focus();
-                    return;
-                }
-
-
-
-                if (MessageBox.Show("هل تريد تعديل بيانات الطبيب", "عمليه التعديل", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
-                {
-                    d.UpdateDoctor(txt_name.Text, txt_phone.Text, Convert.ToInt32(dataGridView1.CurrentRow.Cells[4].Value), txt_address.Text, Convert.ToInt32(comboBox1.SelectedValue));
-
-                    MessageBox.Show("تم تعديل بيانات الطبيب بنجاح", "عمليه التعديل", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    dataGridView1.DataSource = d.SelectDoctor();
-                    txt_name.Clear();
-                    txt_phone.Clear();
-                    txt_address.Clear();
-                    btn_update.Enabled = false;
-                    btn_new.Hide();
-                    btn_save.Show();
-
-
-                }
-                else
-                {
-                    MessageBox.Show("تم الغاء عمليه التعديل");
-                    txt_name.Clear();
-                    txt_phone.Clear();
-                    txt_address.Clear();
-                    btn_update.Enabled = false;
-                    btn_new.Hide();
-                    btn_save.Show();
-                }
-
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+                   }
 
         private void btn_new_Click(object sender, EventArgs e)
         {
-            btn_new.Hide();
-            btn_save.Show();
-
-            btn_update.Enabled = false;
-            txt_name.Clear();
-            txt_phone.Clear();
+           
         }
 
         private void txt_search_TextChanged(object sender, EventArgs e)
@@ -200,9 +106,8 @@ namespace Laboratory.PL
                 txt_address.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
 
                 dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                btn_save.Hide();
-                btn_new.Show();
-                btn_update.Enabled = true;
+               
+                Btn_Update.Enabled = true;
             }
 
         }
@@ -213,6 +118,79 @@ namespace Laboratory.PL
             {
                 e.Handled = true;
             }
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            Btn_Update.Enabled = false;
+            txt_name.Clear();
+            txt_phone.Clear();
+        }
+
+        private void Btn_Add_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txt_name.Text == "")
+                {
+                    MessageBox.Show("يرجي التاكد من اسم الطبيب");
+                    return;
+                }
+                if (comboBox1.Text == "")
+                {
+                    MessageBox.Show("يرجي التاكد من تخصص الطبيب");
+                    comboBox1.Focus();
+                    return;
+                }
+                d.AddDoctor(txt_name.Text, txt_phone.Text, txt_address.Text, dateTimePicker1.Value, Convert.ToInt32(comboBox1.SelectedValue));
+                MessageBox.Show("تم اضافه بيانات الطبيب بنجاح", "عمليه الاضافه", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                dataGridView1.DataSource = d.SelectDoctor();
+                txt_name.Clear();
+                txt_phone.Clear();
+                txt_address.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txt_name.Text == "")
+                {
+                    MessageBox.Show("يرجي التاكد من اسم الطبيب");
+                    txt_name.Focus();
+                    return;
+                }
+                if (comboBox1.Text == "")
+                {
+                    MessageBox.Show("يرجي التاكد من تخصص الطبيب");
+                    comboBox1.Focus();
+                    return;
+                }
+                if (MessageBox.Show("هل تريد تعديل بيانات الطبيب", "عمليه التعديل", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                {
+                    d.UpdateDoctor(txt_name.Text, txt_phone.Text, Convert.ToInt32(dataGridView1.CurrentRow.Cells[4].Value), txt_address.Text, Convert.ToInt32(comboBox1.SelectedValue));
+                    MessageBox.Show("تم تعديل بيانات الطبيب بنجاح", "عمليه التعديل", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+                    MessageBox.Show("تم الغاء عمليه التعديل");                 
+                }
+                dataGridView1.DataSource = d.SelectDoctor();
+                txt_name.Clear();
+                txt_phone.Clear();
+                txt_address.Clear();
+                Btn_Update.Enabled = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

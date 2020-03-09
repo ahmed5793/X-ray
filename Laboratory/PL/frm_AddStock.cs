@@ -20,8 +20,8 @@ namespace Laboratory.PL
             textBox1.Text = s.Select_LastIdStock().Rows[0][0].ToString();
             dataGridView1.DataSource = s.select_Stock();
             btn_delete.Enabled = false;
-            btn_new.Hide();
             btn_update.Enabled = false;
+            btn_delete.Hide();
             textBox1.Text = s.Select_LastIdStock().Rows[0][0].ToString();
             if (textBox1.Text == "")
             {
@@ -37,9 +37,88 @@ namespace Laboratory.PL
         private void btn_save_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_update_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            //if (txt_name.Text == "")
+            //{
+            //    MessageBox.Show("يرجى التاكد من إسم الخزنة");
+
+            //    z.Hide();
+            //    Btn_Add.Show();
+            //    a.Enabled = false;
+            //    btn_delete.Enabled = false;
+            //}
+            //else if (MessageBox.Show("هل تريد مسح الخزنة المحدده", "عملية المسح", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            //{
+            //    s.Delete_Stock(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
+            //    MessageBox.Show("تم مسح الخزنة");
+            //    z.Hide();
+            //    Btn_Add.Show();
+            //    a.Enabled = false;
+            //    btn_delete.Enabled = false;
+            //    txt_name.Clear();
+            //    dataGridView1.DataSource = s.select_Stock();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("لم يتم مسح الخزنة");
+            //    z.Hide();
+            //    Btn_Add.Show();
+            //    a.Enabled = false;
+            //    btn_delete.Enabled = false;
+            //    txt_name.Clear();
+            //    dataGridView1.DataSource = s.select_Stock();
+
+            //}
+            //textBox1.Text = s.Select_LastIdStock().Rows[0][0].ToString();
+
+        }
+
+        private void btn_new_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+            if (dataGridView1.Rows.Count>0)
+            {
+                textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                txt_name.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                btn_update.Enabled = true;
+                btn_delete.Enabled = true;
+            }
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_name_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_Add_Click(object sender, EventArgs e)
+        {
+
             if (txt_name.Text == "")
             {
                 MessageBox.Show("يرحى كتابة إسم الخزنة");
+                txt_name.Focus();
+                return;
 
             }
             else
@@ -54,111 +133,42 @@ namespace Laboratory.PL
             }
         }
 
-        private void btn_update_Click(object sender, EventArgs e)
+        private void simpleButton1_Click(object sender, EventArgs e)
         {
             if (txt_name.Text == "")
             {
                 MessageBox.Show("يرجى التاكد من إسم الخزنة");
-                txt_name.Clear();
-                btn_new.Hide();
-                btn_save.Show();
-                btn_update.Enabled = false;
-                btn_delete.Enabled = false;
-                dataGridView1.DataSource = s.select_Stock();
+
             }
-             if (MessageBox.Show("هل تريد تعديل بيانات الخزنة", "عمليه التعديل", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+            if (MessageBox.Show("هل تريد تعديل بيانات الخزنة", "عمليه التعديل", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
             {
 
                 s.Update_Stock(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value), txt_name.Text);
                 MessageBox.Show("تم تعديل الاسم");
-                txt_name.Clear();
-                btn_new.Hide();
-                btn_save.Show();
-                btn_update.Enabled = false;
-                btn_delete.Enabled = false;
-                dataGridView1.DataSource = s.select_Stock();
-
-
             }
             else
             {
                 MessageBox.Show("لم يتم التعديل", "عملية التعديل", MessageBoxButtons.OK);
-                txt_name.Clear();
-                btn_new.Hide();
-                btn_save.Show();
-                btn_update.Enabled = false;
-                btn_delete.Enabled = false;
-                dataGridView1.DataSource = s.select_Stock();
-            }
-            textBox1.Text = s.Select_LastIdStock().Rows[0][0].ToString();
-
-
-        }
-
-        private void btn_delete_Click(object sender, EventArgs e)
-        {
-            if (txt_name.Text == "")
-            {
-                MessageBox.Show("يرجى التاكد من إسم الخزنة");
-
-                btn_new.Hide();
-                btn_save.Show();
-                btn_update.Enabled = false;
-                btn_delete.Enabled = false;
-            }
-            else if (MessageBox.Show("هل تريد مسح الخزنة المحدده", "عملية المسح", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
-            {
-                s.Delete_Stock(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
-                MessageBox.Show("تم مسح الخزنة");
-                btn_new.Hide();
-                btn_save.Show();
-                btn_update.Enabled = false;
-                btn_delete.Enabled = false;
-                txt_name.Clear();
-                dataGridView1.DataSource = s.select_Stock();
-            }
-            else
-            {
-                MessageBox.Show("لم يتم مسح الخزنة");
-                btn_new.Hide();
-                btn_save.Show();
-                btn_update.Enabled = false;
-                btn_delete.Enabled = false;
-                txt_name.Clear();
-                dataGridView1.DataSource = s.select_Stock();
 
             }
             textBox1.Text = s.Select_LastIdStock().Rows[0][0].ToString();
+            txt_name.Clear();
+            Btn_Add.Show();
+            btn_update.Enabled = false;
+            btn_delete.Enabled = false;
+            dataGridView1.DataSource = s.select_Stock();
 
         }
 
-        private void btn_new_Click(object sender, EventArgs e)
+        private void btn_new_Click_1(object sender, EventArgs e)
         {
-            btn_new.Hide();
-            btn_save.Show();
+
+            Btn_Add.Show();
             btn_update.Enabled = false;
             btn_delete.Enabled = false;
             txt_name.Clear();
             textBox1.Text = s.Select_LastIdStock().Rows[0][0].ToString();
 
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_DoubleClick(object sender, EventArgs e)
-        {
-            if (dataGridView1.Rows.Count>0)
-            {
-                textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                txt_name.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                btn_save.Hide();
-                btn_new.Show();
-                btn_update.Enabled = true;
-                btn_delete.Enabled = true;
-            }
         }
     }
 }

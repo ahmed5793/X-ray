@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_CompanyItemXray));
             this.Cmb_category = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -40,16 +41,16 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.dgv_visit = new System.Windows.Forms.DataGridView();
             this.label22 = new System.Windows.Forms.Label();
-            this.btn_Update = new System.Windows.Forms.Button();
-            this.btn_save = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.Txt_Discount = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.Txt_PriceDiscount = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.Btn_New = new System.Windows.Forms.Button();
             this.Btn_Delete = new System.Windows.Forms.Button();
+            this.Btn_New = new DevExpress.XtraEditors.SimpleButton();
+            this.Btn_Update = new DevExpress.XtraEditors.SimpleButton();
+            this.Btn_Add = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_visit)).BeginInit();
             this.SuspendLayout();
@@ -226,30 +227,6 @@
             this.label22.TabIndex = 101;
             this.label22.Text = "بحث بأسم الشركة أو نوع الفحص";
             // 
-            // btn_Update
-            // 
-            this.btn_Update.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btn_Update.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Update.Location = new System.Drawing.Point(188, 269);
-            this.btn_Update.Name = "btn_Update";
-            this.btn_Update.Size = new System.Drawing.Size(146, 40);
-            this.btn_Update.TabIndex = 103;
-            this.btn_Update.Text = "تعديل البيانات";
-            this.btn_Update.UseVisualStyleBackColor = true;
-            this.btn_Update.Click += new System.EventHandler(this.btn_print_Click);
-            // 
-            // btn_save
-            // 
-            this.btn_save.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btn_save.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_save.Location = new System.Drawing.Point(355, 270);
-            this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(151, 40);
-            this.btn_save.TabIndex = 5;
-            this.btn_save.Text = "حفظ";
-            this.btn_save.UseVisualStyleBackColor = true;
-            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
-            // 
             // comboBox1
             // 
             this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -341,45 +318,93 @@
             this.label5.TabIndex = 109;
             this.label5.Text = "سعر الشركة بعد الخصم";
             // 
-            // Btn_New
-            // 
-            this.Btn_New.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Btn_New.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_New.Location = new System.Drawing.Point(523, 270);
-            this.Btn_New.Name = "Btn_New";
-            this.Btn_New.Size = new System.Drawing.Size(154, 40);
-            this.Btn_New.TabIndex = 110;
-            this.Btn_New.Text = "جديد";
-            this.Btn_New.UseVisualStyleBackColor = true;
-            this.Btn_New.Click += new System.EventHandler(this.Btn_New_Click);
-            // 
             // Btn_Delete
             // 
             this.Btn_Delete.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Btn_Delete.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Delete.Location = new System.Drawing.Point(36, 269);
+            this.Btn_Delete.Location = new System.Drawing.Point(22, 12);
             this.Btn_Delete.Name = "Btn_Delete";
-            this.Btn_Delete.Size = new System.Drawing.Size(131, 40);
+            this.Btn_Delete.Size = new System.Drawing.Size(54, 40);
             this.Btn_Delete.TabIndex = 111;
             this.Btn_Delete.Text = "مسح ";
             this.Btn_Delete.UseVisualStyleBackColor = true;
             this.Btn_Delete.Click += new System.EventHandler(this.Btn_Delete_Click);
+            // 
+            // Btn_New
+            // 
+            this.Btn_New.Appearance.BackColor = System.Drawing.Color.Black;
+            this.Btn_New.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_New.Appearance.ForeColor = System.Drawing.Color.White;
+            this.Btn_New.Appearance.Options.UseBackColor = true;
+            this.Btn_New.Appearance.Options.UseFont = true;
+            this.Btn_New.Appearance.Options.UseForeColor = true;
+            this.Btn_New.Appearance.Options.UseTextOptions = true;
+            this.Btn_New.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Btn_New.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.Btn_New.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.Btn_New.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.Btn_New.Location = new System.Drawing.Point(509, 270);
+            this.Btn_New.Name = "Btn_New";
+            this.Btn_New.Size = new System.Drawing.Size(129, 32);
+            this.Btn_New.TabIndex = 177;
+            this.Btn_New.Text = "تسجيل جديد";
+            this.Btn_New.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
+            // Btn_Update
+            // 
+            this.Btn_Update.Appearance.BackColor = System.Drawing.Color.Black;
+            this.Btn_Update.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Update.Appearance.ForeColor = System.Drawing.Color.White;
+            this.Btn_Update.Appearance.Options.UseBackColor = true;
+            this.Btn_Update.Appearance.Options.UseFont = true;
+            this.Btn_Update.Appearance.Options.UseForeColor = true;
+            this.Btn_Update.Appearance.Options.UseTextOptions = true;
+            this.Btn_Update.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Btn_Update.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.Btn_Update.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.Btn_Update.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.Btn_Update.Location = new System.Drawing.Point(105, 270);
+            this.Btn_Update.Name = "Btn_Update";
+            this.Btn_Update.Size = new System.Drawing.Size(138, 32);
+            this.Btn_Update.TabIndex = 176;
+            this.Btn_Update.Text = "تعديل بيانات ";
+            this.Btn_Update.Click += new System.EventHandler(this.simpleButton2_Click);
+            // 
+            // Btn_Add
+            // 
+            this.Btn_Add.Appearance.BackColor = System.Drawing.Color.Black;
+            this.Btn_Add.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Add.Appearance.ForeColor = System.Drawing.Color.White;
+            this.Btn_Add.Appearance.Options.UseBackColor = true;
+            this.Btn_Add.Appearance.Options.UseFont = true;
+            this.Btn_Add.Appearance.Options.UseForeColor = true;
+            this.Btn_Add.Appearance.Options.UseTextOptions = true;
+            this.Btn_Add.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Btn_Add.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.Btn_Add.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.Btn_Add.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Add.ImageOptions.Image")));
+            this.Btn_Add.Location = new System.Drawing.Point(313, 270);
+            this.Btn_Add.Name = "Btn_Add";
+            this.Btn_Add.Size = new System.Drawing.Size(136, 32);
+            this.Btn_Add.TabIndex = 175;
+            this.Btn_Add.Text = "حفظ";
+            this.Btn_Add.Click += new System.EventHandler(this.Btn_Add_Click);
             // 
             // Frm_CompanyItemXray
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(713, 554);
-            this.Controls.Add(this.Btn_Delete);
             this.Controls.Add(this.Btn_New);
+            this.Controls.Add(this.Btn_Update);
+            this.Controls.Add(this.Btn_Add);
+            this.Controls.Add(this.Btn_Delete);
             this.Controls.Add(this.Txt_PriceDiscount);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.Txt_Discount);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.btn_Update);
-            this.Controls.Add(this.btn_save);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Txt_Price);
             this.Controls.Add(this.label2);
@@ -417,15 +442,15 @@
         private System.Windows.Forms.TextBox textBox2;
         public System.Windows.Forms.DataGridView dgv_visit;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Button btn_Update;
-        private System.Windows.Forms.Button btn_save;
         public System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox Txt_Discount;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox Txt_PriceDiscount;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button Btn_New;
         private System.Windows.Forms.Button Btn_Delete;
+        private DevExpress.XtraEditors.SimpleButton Btn_New;
+        private DevExpress.XtraEditors.SimpleButton Btn_Update;
+        private DevExpress.XtraEditors.SimpleButton Btn_Add;
     }
 }

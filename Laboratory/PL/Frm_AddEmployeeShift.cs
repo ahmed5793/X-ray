@@ -17,47 +17,15 @@ namespace Laboratory.PL
         public Frm_AddEmployeeShift()
         {
             InitializeComponent();
-            Btn_UpdateShift.Enabled = false;
             Btn_DeleteShift.Enabled = false;
+            Btn_UpdateShift.Enabled = false;
             dataGridView1.DataSource = E.Select_EmployeeShift();
 
         }
 
         private void Btn_UpdateShift_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (comboBox1.Text == "")
-                {
-                    MessageBox.Show("لا بد من تحديد إسم الموظف ");
-                    return;
-                }
-             
-
-                if (MessageBox.Show("هل تريد تعديل الشيفت", "عملية التعديل", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    E.Update_EmployeeShift(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value), Convert.ToInt32(comboBox1.SelectedValue),
-                         (dateTimePicker1.Text), (dateTimePicker3.Text),
-                        (dateTimePicker2.Text), Convert.ToDecimal(Txt_Cost.Text));
-                    MessageBox.Show("تم تعديل الشيفت بنجاح", "عملية التعديل");
-                    Txt_Cost.Text = "0";
-                    dataGridView1.DataSource = E.Select_EmployeeShift();
-                }
-                else
-                {
-                    MessageBox.Show("تم إلغاء تعديل الشيفت ", "عملية التعديل");
-                    Txt_Cost.Text = "0";
-                    dataGridView1.DataSource = E.Select_EmployeeShift();
-                }
-                comboBox1.Enabled = true;
-                Btn_AddShift.Enabled = true;
-                Btn_UpdateShift.Enabled = false;
-                Btn_DeleteShift.Enabled = false;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+           
         }
 
         private void Frm_AddEmployeeShift_Load(object sender, EventArgs e)
@@ -84,56 +52,10 @@ namespace Laboratory.PL
 
         private void Btn_DeleteShift_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (MessageBox.Show("هل تريد مسح الشيفت", "عملية المسح", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    E.Delete_TechnicalShift(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
-                    MessageBox.Show("تم مسح الشيفت بنجاح");
-                    Txt_Cost.Text = "0";
-                    dataGridView1.DataSource = E.Select_EmployeeShift();
-                }
-                else
-                {
-                    MessageBox.Show("تم إلغاء مسح الشيفت ");
-                    Txt_Cost.Text = "0";
-                    dataGridView1.DataSource = E.Select_EmployeeShift();
-                }
-                comboBox1.Enabled = true;
-                Btn_AddShift.Enabled = true;
-                Btn_UpdateShift.Enabled = false;
-                Btn_DeleteShift.Enabled = false;
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
         }
 
         private void Btn_AddShift_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (Txt_Cost.Text == "0" && Txt_Cost.Text == "")
-                {
-                    MessageBox.Show("يرجى تحديد سعر الشيفت");
-                    return;
-                }
-                if (comboBox1.Text != "" )
-                {
-                    E.Add_EmployeeShift(Convert.ToInt32(comboBox1.SelectedValue),
-                       (dateTimePicker1.Text), (dateTimePicker3.Text), (dateTimePicker2.Text), Convert.ToDecimal(Txt_Cost.Text));
-                    MessageBox.Show("تم إضافة الشيفت بنجاح");
-                    Txt_Cost.Text = "0";
-                    dataGridView1.DataSource = E.Select_EmployeeShift();
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
         }
 
         private void txt_search_TextChanged(object sender, EventArgs e)
@@ -186,6 +108,99 @@ namespace Laboratory.PL
                     return;
                 }
                 dt.Dispose();
+            }
+        }
+
+        private void Btn_AddShift_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Txt_Cost.Text == "0" && Txt_Cost.Text == "")
+                {
+                    MessageBox.Show("يرجى تحديد سعر الشيفت");
+                    return;
+                }
+                if (comboBox1.Text != "")
+                {
+                    E.Add_EmployeeShift(Convert.ToInt32(comboBox1.SelectedValue),
+                       (dateTimePicker1.Text), (dateTimePicker3.Text), (dateTimePicker2.Text), Convert.ToDecimal(Txt_Cost.Text));
+                    MessageBox.Show("تم إضافة الشيفت بنجاح");
+                    Txt_Cost.Text = "0";
+                    dataGridView1.DataSource = E.Select_EmployeeShift();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (comboBox1.Text == "")
+                {
+                    MessageBox.Show("لا بد من تحديد إسم الموظف ");
+                    return;
+                }
+
+
+                if (MessageBox.Show("هل تريد تعديل الشيفت", "عملية التعديل", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    E.Update_EmployeeShift(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value), Convert.ToInt32(comboBox1.SelectedValue),
+                         (dateTimePicker1.Text), (dateTimePicker3.Text),
+                        (dateTimePicker2.Text), Convert.ToDecimal(Txt_Cost.Text));
+                    MessageBox.Show("تم تعديل الشيفت بنجاح", "عملية التعديل");
+                    Txt_Cost.Text = "0";
+                    dataGridView1.DataSource = E.Select_EmployeeShift();
+                }
+                else
+                {
+                    MessageBox.Show("تم إلغاء تعديل الشيفت ", "عملية التعديل");
+                    Txt_Cost.Text = "0";
+                    dataGridView1.DataSource = E.Select_EmployeeShift();
+                }
+                comboBox1.Enabled = true;
+                Btn_AddShift.Enabled = true;
+                Btn_UpdateShift.Enabled = false;
+                Btn_DeleteShift.Enabled = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void Btn_DeleteShift_Click_1(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (MessageBox.Show("هل تريد مسح الشيفت", "عملية المسح", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    E.Delete_TechnicalShift(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
+                    MessageBox.Show("تم مسح الشيفت بنجاح");
+                    Txt_Cost.Text = "0";
+                    dataGridView1.DataSource = E.Select_EmployeeShift();
+                }
+                else
+                {
+                    MessageBox.Show("تم إلغاء مسح الشيفت ");
+                    Txt_Cost.Text = "0";
+                    dataGridView1.DataSource = E.Select_EmployeeShift();
+                }
+                comboBox1.Enabled = true;
+                Btn_AddShift.Enabled = true;
+                Btn_UpdateShift.Enabled = false;
+                Btn_DeleteShift.Enabled = false;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
             }
         }
     }

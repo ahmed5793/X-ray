@@ -18,17 +18,12 @@ namespace Laboratory.PL
         public Frm_Customer()
         {
             InitializeComponent();
-            dataGridView1.DataSource = c.SelectCustomer();
-           
-            btn_update.Enabled = false;
-            btn_new.Hide();
-            btn_save.Show();
-          
+            dataGridView1.DataSource = c.SelectCustomer();          
+            Btn_Update.Enabled = false;          
         }
 
         private void Frm_Customer_Load(object sender, EventArgs e)
         {
-
         }
         void clear()
         {
@@ -37,130 +32,13 @@ namespace Laboratory.PL
             txt_name.Clear();
             txt_phone.Clear();
             txt_idnational.Clear();
-
-        }
-        
+        }        
         private void Btn_save_Click(object sender, EventArgs e)
-        {
-
-            try
-            {
-
-
-                if (txt_name.Text == "")
-                {
-                    MessageBox.Show("يرجي التاكد من اسم العميل");
-                    return;
-                }
-                if (comboBox1.Text == "")
-                {
-                    MessageBox.Show("يرجي التاكد من نوع ");
-                    return;
-                }
-                if (txt_age.Text == "")
-                {
-                    MessageBox.Show("يرجي التاكد من ألسن");
-                    return;
-                }
-                if (txt_phone.Text == "")
-                {
-                    MessageBox.Show("يرجي التاكد رقم العميل");
-                    return;
-                }
-              
-
-
-                        c.addCustomer(txt_name.Text, txt_address.Text, txt_phone.Text,
-                          
-                            Convert.ToInt32(txt_age.Text),dateTimePicker1.Value,comboBox1.Text,txt_idnational.Text);
-                        MessageBox.Show("تم اضافه العميل بنجاح", "عمليه الاضافه", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                        dataGridView1.DataSource = c.SelectCustomer();
-
-                    clear();
-
-              
-
-
-
-
-
-
-
-
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
+        {  
         }
 
         private void Btn_update_Click(object sender, EventArgs e)
-        {
-
-            try
-            {
-
-                if (txt_name.Text == "")
-                {
-                    MessageBox.Show("يرجي التاكد من اسم العميل");
-                    return;
-                }
-                if (comboBox1.Text == "")
-                {
-                    MessageBox.Show("يرجي التاكد من نوع ");
-                    return;
-                }
-                if (txt_age.Text == "")
-                {
-                    MessageBox.Show("يرجي التاكد من ألسن");
-                    return;
-                }
-                if (txt_phone.Text == "")
-                {
-                    MessageBox.Show("يرجي التاكد رقم موبايل العميل");
-                    return;
-                }
-
-
-
-                if (MessageBox.Show("هل تريد تعديل بيانات العميل", "عمليه التعديل", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
-                {
-
-                    c.UpdateCustomer(txt_name.Text, txt_address.Text, txt_phone.Text, 
-                            Convert.ToInt32(txt_age.Text), int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString()), comboBox1.Text,txt_idnational.Text);
-                    MessageBox.Show("تم تعديل بيانات العميل بنجاح", "عمليه التعديل", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    dataGridView1.DataSource = c.SelectCustomer();
-                    clear();
-                    btn_new.Hide();
-                    btn_save.Show();
-           
-                    btn_update.Enabled = false;
-                }
-                else
-                {
-                    MessageBox.Show("لم يتم تعديل بيانات العميل بنجاح", "عمليه التعديل", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    clear();
-
-                    btn_new.Hide();
-                    btn_save.Show();
-                
-                    btn_update.Enabled = false;
-
-
-                }
-
-
-             
-
-
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+        {           
         }
 
         private void Txt_search_TextChanged(object sender, EventArgs e)
@@ -194,30 +72,19 @@ namespace Laboratory.PL
             if (dataGridView1.Rows.Count > 0)
             {
                 dateTimePicker1.Enabled = false;
-
                 txt_name.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                 comboBox1.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-
-
                 txt_age.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
                 txt_address.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
                 txt_phone.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
                 dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
                 txt_idnational.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-                btn_save.Hide();
-                btn_new.Show();
-                btn_update.Enabled = true;
-
+                Btn_Update.Enabled = true;
             }
         }
 
         private void btn_new_Click(object sender, EventArgs e)
         {
-            clear();
-            btn_save.Show();
-            btn_new.Hide();
-          
-            btn_update.Enabled = false;
         }
 
         private void txt_search_TextChanged_1(object sender, EventArgs e)
@@ -250,6 +117,96 @@ namespace Laboratory.PL
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
             {
                 e.Handled = true;
+            }
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            clear();    
+            Btn_Update.Enabled = false;
+        }
+
+        private void Btn_Add_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txt_name.Text == "")
+                {
+                    MessageBox.Show("يرجي التاكد من اسم العميل");
+                    return;
+                }
+                if (comboBox1.Text == "")
+                {
+                    MessageBox.Show("يرجي التاكد من نوع ");
+                    return;
+                }
+                if (txt_age.Text == "")
+                {
+                    MessageBox.Show("يرجي التاكد من ألسن");
+                    return;
+                }
+                if (txt_phone.Text == "")
+                {
+                    MessageBox.Show("يرجي التاكد رقم العميل");
+                    return;
+                }
+                c.addCustomer(txt_name.Text, txt_address.Text, txt_phone.Text,
+                    Convert.ToInt32(txt_age.Text), dateTimePicker1.Value, comboBox1.Text, txt_idnational.Text);
+                MessageBox.Show("تم اضافه العميل بنجاح", "عمليه الاضافه", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                dataGridView1.DataSource = c.SelectCustomer();
+                clear();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                if (txt_name.Text == "")
+                {
+                    MessageBox.Show("يرجي التاكد من اسم العميل");
+                    return;
+                }
+                if (comboBox1.Text == "")
+                {
+                    MessageBox.Show("يرجي التاكد من نوع ");
+                    return;
+                }
+                if (txt_age.Text == "")
+                {
+                    MessageBox.Show("يرجي التاكد من ألسن");
+                    return;
+                }
+                if (txt_phone.Text == "")
+                {
+                    MessageBox.Show("يرجي التاكد رقم موبايل العميل");
+                    return;
+                }
+                if (MessageBox.Show("هل تريد تعديل بيانات العميل", "عمليه التعديل", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                {
+
+                    c.UpdateCustomer(txt_name.Text, txt_address.Text, txt_phone.Text,
+                            Convert.ToInt32(txt_age.Text), int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString()), comboBox1.Text, txt_idnational.Text);
+                    MessageBox.Show("تم تعديل بيانات العميل بنجاح", "عمليه التعديل", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            
+                }
+                else
+                {
+                    MessageBox.Show("لم يتم تعديل بيانات العميل بنجاح", "عمليه التعديل", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                dataGridView1.DataSource = c.SelectCustomer();
+                clear();
+                Btn_Update.Enabled = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

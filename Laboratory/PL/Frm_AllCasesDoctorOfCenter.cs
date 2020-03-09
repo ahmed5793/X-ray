@@ -47,28 +47,7 @@ namespace Laboratory.PL
 
         private void btn_search_Click(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-          
-            try
-            {
-                if (comboBox1.Text != string.Empty)
-                {
-                    dt.Clear();
-                    dt = DoctorOfCenter.Search_NumberCases_DoctorOfCenter(Convert.ToInt32(comboBox1.SelectedValue), DateFrom.Value, DateTo.Value);
-                    gridControl1.DataSource = dt;
-                
-
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                dt.Dispose();
-            }
+           
         }
 
         private void comboBox1_Leave(object sender, EventArgs e)
@@ -152,6 +131,37 @@ namespace Laboratory.PL
                         e.Appearance.BackColor = i % 2 == 0 ? Color.LightPink : Color.Red;
             }
             else e.Appearance.BackColor = e.RowHandle % 2 == 0 ? Color.Gold : Color.Green;
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+
+            try
+            {
+                if (comboBox1.Text != string.Empty)
+                {
+                    dt.Clear();
+                    dt = DoctorOfCenter.Search_NumberCases_DoctorOfCenter(Convert.ToInt32(comboBox1.SelectedValue), DateFrom.Value, DateTo.Value);
+                    gridControl1.DataSource = dt;
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                dt.Dispose();
+            }
+        }
+
+        private void Btn_Print_Click(object sender, EventArgs e)
+        {
+            gridControl1.ShowRibbonPrintPreview();
         }
     }
 }

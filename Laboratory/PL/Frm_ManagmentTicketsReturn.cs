@@ -15,9 +15,22 @@ namespace Laboratory.PL
     {
 
         Tickets t = new Tickets();
+        DataTable dt = new DataTable();
+
         public Frm_ManagmentTicketsReturn()
         {
             InitializeComponent();
+        }
+        void calc()
+        {
+            decimal totall = 0;
+            for (int i = 0; i <= gridView1.RowCount - 1; i++)
+            {
+                DataRow row = gridView1.GetDataRow(i);
+                totall += Convert.ToDecimal(row[7]);
+
+            }
+            textBox1.Text = Math.Round(totall, 2).ToString();
         }
 
         private void Frm_ManagmentTicketsReturn_Load(object sender, EventArgs e)
@@ -26,29 +39,14 @@ namespace Laboratory.PL
             ToDate.Hide();
             label2.Hide();
             label3.Hide();
-            button1.Hide();
-            dgv_visit.DataSource = t.selectTicketsReturn();
-            decimal totall = 0;
-            for (int i = 0; i <= dgv_visit.Rows.Count - 1; i++)
-            {
-                totall += Convert.ToDecimal(dgv_visit.Rows[i].Cells[7].Value);
-
-            }
-            textBox1.Text = Math.Round(totall, 2).ToString();
+            Btn_Search.Hide();
+            gridControl1.DataSource = t.selectTicketsReturn();
+            calc();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            dt = t.SelectSearchticketsDate(FromDate.Value, ToDate.Value);
-            dgv_visit.DataSource = dt;
-            decimal totall = 0;
-            for (int i = 0; i <= dgv_visit.Rows.Count - 1; i++)
-            {
-                totall += Convert.ToDecimal(dgv_visit.Rows[i].Cells[7].Value);
-
-            }
-            textBox1.Text = Math.Round(totall, 2).ToString();
+           
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -57,26 +55,28 @@ namespace Laboratory.PL
             ToDate.Hide();
             label2.Hide();
             label3.Hide();
-            button1.Hide();
-            dgv_visit.DataSource = t.selectTicketsReturn();
-            decimal totall = 0;
-            for (int i = 0; i <= dgv_visit.Rows.Count - 1; i++)
-            {
-                totall += Convert.ToDecimal(dgv_visit.Rows[i].Cells[7].Value);
-
-            }
-            textBox1.Text = Math.Round(totall, 2).ToString();
+            Btn_Search.Hide();
+            gridControl1.DataSource = t.selectTicketsReturn();
+            calc();
 
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            dgv_visit.DataSource = null;
+            gridControl1.DataSource = null;
             FromDate.Show();
             ToDate.Show();
             label2.Show();
             label3.Show();
-            button1.Show();
+            Btn_Search.Show();
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            dt.Clear();
+            dt = t.SelectSearchticketsDate(FromDate.Value, ToDate.Value);
+            gridControl1.DataSource = dt;
+            calc();
         }
     }
 }

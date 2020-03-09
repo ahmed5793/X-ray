@@ -52,9 +52,8 @@ namespace Laboratory.PL
         }
         void clears()
         {
-            btn_new.Hide();
-            btn_save.Show();
-            btn_update.Enabled = false;
+      
+            Btn_Update.Enabled = false;
             txt_address.Clear();
             txt_name.Clear();
             txt_NationalID.Clear();
@@ -83,93 +82,17 @@ namespace Laboratory.PL
 
         private void btn_new_Click(object sender, EventArgs e)
         {
-            clears();
 
         }
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (comboBox1.Text=="")
-                {
-                    MessageBox.Show("من فضلك قم بااختيار نوع الراتب");
-                    return;
-                }
-            
-                if (txt_name.Text=="")
-                {
-                    MessageBox.Show("من فضلك قم بكتابة اسم الموظف");
-                    return;
-                }
-              
-                if (cmb_department.Text == "")
-                {
-                    MessageBox.Show("من فضلك قم بااختيار التخصص");
-                    return;
-                   
-                }
-                if (Txt_Salary.Text=="")
-                {
-                    MessageBox.Show("من فضلك قم بتحديد المرتب");
-                    Txt_Salary.Focus();
-                    return;
-                }
-                else
-                {
-                    E.AddEmployee(txt_name.Text, Convert.ToDecimal(Txt_Salary.Text), comboBox1.Text,
-                        txt_NationalID.Text, txt_phone.Text, txt_address.Text, dateTimePicker1.Value,Convert.ToInt32(cmb_department.SelectedValue));
-                    MessageBox.Show("تم تسجيل الموظف بنجاح");
-                    clears();
-                    dataGridView1.DataSource = E.SelectEmployee();
-                }
-
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
+           
         }
 
         private void btn_update_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (comboBox1.Text == "")
-                {
-                    MessageBox.Show("من فضلك قم بااختيار نوع الراتب");
-                    return;
-                }
-                if (txt_name.Text == "")
-                {
-                    MessageBox.Show("من فضلك قم بكتابة اسم الموظف");
-                    return;
-                }
-            
-                if (cmb_department.Text == "")
-                {
-                    MessageBox.Show("من فضلك قم بااختيار التخصص");
-                    return;
-
-                }
-              
-                else
-                {
-                    E.UpdateEmployee(txt_name.Text, Convert.ToDecimal(Txt_Salary.Text), comboBox1.Text,
-                        txt_NationalID.Text, txt_phone.Text, txt_address.Text, dateTimePicker1.Value,Convert.ToInt32(cmb_department.SelectedValue),Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
-                    MessageBox.Show("تم تعديل بيانات الموظف بنجاح");
-                    clears();
-              
-                    dataGridView1.DataSource = E.SelectEmployee();
-                }
-
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
+           
         }
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
@@ -177,10 +100,8 @@ namespace Laboratory.PL
             if (dataGridView1.Rows.Count>0)
             {
                 label9.Show();
-                Txt_Salary.Show();
-                btn_new.Show();
-                btn_save.Hide();
-                btn_update.Enabled = true;
+                Txt_Salary.Show();           
+                Btn_Update.Enabled = true;
                 txt_name.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                 cmb_department.Text= dataGridView1.CurrentRow.Cells[2].Value.ToString();
                 dateTimePicker1.Text= dataGridView1.CurrentRow.Cells[3].Value.ToString();
@@ -254,6 +175,96 @@ namespace Laboratory.PL
             {
                 label9.Show();
                 Txt_Salary.Show();
+            }
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            clears();
+        }
+
+        private void Btn_Add_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (comboBox1.Text == "")
+                {
+                    MessageBox.Show("من فضلك قم بااختيار نوع الراتب");
+                    return;
+                }
+
+                if (txt_name.Text == "")
+                {
+                    MessageBox.Show("من فضلك قم بكتابة اسم الموظف");
+                    return;
+                }
+
+                if (cmb_department.Text == "")
+                {
+                    MessageBox.Show("من فضلك قم بااختيار التخصص");
+                    return;
+
+                }
+                if (Txt_Salary.Text == "")
+                {
+                    MessageBox.Show("من فضلك قم بتحديد المرتب");
+                    Txt_Salary.Focus();
+                    return;
+                }
+                else
+                {
+                    E.AddEmployee(txt_name.Text, Convert.ToDecimal(Txt_Salary.Text), comboBox1.Text,
+                        txt_NationalID.Text, txt_phone.Text, txt_address.Text, dateTimePicker1.Value, Convert.ToInt32(cmb_department.SelectedValue));
+                    MessageBox.Show("تم تسجيل الموظف بنجاح");
+                    clears();
+                    dataGridView1.DataSource = E.SelectEmployee();
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (comboBox1.Text == "")
+                {
+                    MessageBox.Show("من فضلك قم بااختيار نوع الراتب");
+                    return;
+                }
+                if (txt_name.Text == "")
+                {
+                    MessageBox.Show("من فضلك قم بكتابة اسم الموظف");
+                    return;
+                }
+
+                if (cmb_department.Text == "")
+                {
+                    MessageBox.Show("من فضلك قم بااختيار التخصص");
+                    return;
+
+                }
+
+                else
+                {
+                    E.UpdateEmployee(txt_name.Text, Convert.ToDecimal(Txt_Salary.Text), comboBox1.Text,
+                        txt_NationalID.Text, txt_phone.Text, txt_address.Text, dateTimePicker1.Value, Convert.ToInt32(cmb_department.SelectedValue), Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
+                    MessageBox.Show("تم تعديل بيانات الموظف بنجاح");
+                    clears();
+
+                    dataGridView1.DataSource = E.SelectEmployee();
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
     }
