@@ -28,23 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_PaySuppliers));
             this.label7 = new System.Windows.Forms.Label();
             this.cmb_Stock = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.btn_search = new System.Windows.Forms.Button();
             this.RdbOneSuppliers = new System.Windows.Forms.RadioButton();
             this.RdbAllSuppliers = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnPay = new DevExpress.XtraEditors.SimpleButton();
             this.txt_prise = new System.Windows.Forms.TextBox();
             this.txt_rent = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnPay = new System.Windows.Forms.Button();
             this.rdbPartPay = new System.Windows.Forms.RadioButton();
             this.RdbAllPay = new System.Windows.Forms.RadioButton();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button2 = new DevExpress.XtraEditors.SimpleButton();
             this.Txt_sales = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -95,17 +96,6 @@
             this.comboBox1.Size = new System.Drawing.Size(244, 32);
             this.comboBox1.TabIndex = 29;
             // 
-            // btn_search
-            // 
-            this.btn_search.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_search.Location = new System.Drawing.Point(290, 74);
-            this.btn_search.Name = "btn_search";
-            this.btn_search.Size = new System.Drawing.Size(103, 30);
-            this.btn_search.TabIndex = 3;
-            this.btn_search.Text = "بحث";
-            this.btn_search.UseVisualStyleBackColor = true;
-            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
-            // 
             // RdbOneSuppliers
             // 
             this.RdbOneSuppliers.AutoSize = true;
@@ -140,10 +130,10 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnPay);
             this.groupBox2.Controls.Add(this.txt_prise);
             this.groupBox2.Controls.Add(this.txt_rent);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.btnPay);
             this.groupBox2.Controls.Add(this.rdbPartPay);
             this.groupBox2.Controls.Add(this.RdbAllPay);
             this.groupBox2.Location = new System.Drawing.Point(4, 389);
@@ -151,6 +141,19 @@
             this.groupBox2.Size = new System.Drawing.Size(894, 87);
             this.groupBox2.TabIndex = 73;
             this.groupBox2.TabStop = false;
+            // 
+            // btnPay
+            // 
+            this.btnPay.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnPay.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPay.Appearance.Options.UseFont = true;
+            this.btnPay.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnPay.Location = new System.Drawing.Point(264, 24);
+            this.btnPay.Name = "btnPay";
+            this.btnPay.Size = new System.Drawing.Size(165, 35);
+            this.btnPay.TabIndex = 213;
+            this.btnPay.Text = "تسديد المحدد";
+            this.btnPay.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // txt_prise
             // 
@@ -186,17 +189,6 @@
             this.label2.Size = new System.Drawing.Size(144, 22);
             this.label2.TabIndex = 61;
             this.label2.Text = "اجمالي المبالغ المتبقيه";
-            // 
-            // btnPay
-            // 
-            this.btnPay.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPay.Location = new System.Drawing.Point(296, 19);
-            this.btnPay.Name = "btnPay";
-            this.btnPay.Size = new System.Drawing.Size(126, 46);
-            this.btnPay.TabIndex = 3;
-            this.btnPay.Text = "تسديد المحدد";
-            this.btnPay.UseVisualStyleBackColor = true;
-            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
             // rdbPartPay
             // 
@@ -246,9 +238,9 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(453, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(216, 29);
+            this.label1.Size = new System.Drawing.Size(161, 29);
             this.label1.TabIndex = 72;
-            this.label1.Text = "المبالغ المتبقيه للموردين ";
+            this.label1.Text = "مدفوعات الموردين";
             // 
             // dataGridView1
             // 
@@ -274,12 +266,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.Txt_sales);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.cmb_Stock);
             this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.btn_search);
             this.groupBox1.Controls.Add(this.RdbOneSuppliers);
             this.groupBox1.Controls.Add(this.RdbAllSuppliers);
             this.groupBox1.Location = new System.Drawing.Point(10, 38);
@@ -287,6 +279,19 @@
             this.groupBox1.Size = new System.Drawing.Size(885, 123);
             this.groupBox1.TabIndex = 71;
             this.groupBox1.TabStop = false;
+            // 
+            // button2
+            // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button2.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Appearance.Options.UseFont = true;
+            this.button2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("button2.ImageOptions.Image")));
+            this.button2.Location = new System.Drawing.Point(276, 73);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(110, 35);
+            this.button2.TabIndex = 212;
+            this.button2.Text = "بحث";
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Txt_sales
             // 
@@ -325,7 +330,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkRed;
-            this.ClientSize = new System.Drawing.Size(907, 481);
+            this.ClientSize = new System.Drawing.Size(907, 480);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.dataGridView1);
@@ -354,14 +359,12 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cmb_Stock;
         public System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button btn_search;
         private System.Windows.Forms.RadioButton RdbOneSuppliers;
         private System.Windows.Forms.RadioButton RdbAllSuppliers;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txt_prise;
         private System.Windows.Forms.TextBox txt_rent;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnPay;
         private System.Windows.Forms.RadioButton rdbPartPay;
         private System.Windows.Forms.RadioButton RdbAllPay;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
@@ -371,5 +374,7 @@
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox Txt_sales;
         public System.Windows.Forms.Label label4;
+        private DevExpress.XtraEditors.SimpleButton button2;
+        private DevExpress.XtraEditors.SimpleButton btnPay;
     }
 }

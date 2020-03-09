@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_MasrofGender));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_name = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btn_save = new System.Windows.Forms.Button();
+            this.btn_save = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_prod = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,27 +66,31 @@
             this.label5.TabIndex = 21;
             this.label5.Text = "نوع المصروف";
             // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(50, 78);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(142, 27);
-            this.button1.TabIndex = 42;
-            this.button1.Text = "الغاء";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // btn_save
             // 
-            this.btn_save.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_save.Location = new System.Drawing.Point(264, 78);
+            this.btn_save.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btn_save.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_save.Appearance.Options.UseFont = true;
+            this.btn_save.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btn_save.Location = new System.Drawing.Point(255, 68);
             this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(142, 27);
-            this.btn_save.TabIndex = 41;
-            this.btn_save.Text = "حفظ";
-            this.btn_save.UseVisualStyleBackColor = true;
-            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
+            this.btn_save.Size = new System.Drawing.Size(150, 36);
+            this.btn_save.TabIndex = 218;
+            this.btn_save.Text = "اضافة";
+            this.btn_save.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
+            // btn_prod
+            // 
+            this.btn_prod.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btn_prod.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_prod.Appearance.Options.UseFont = true;
+            this.btn_prod.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_prod.ImageOptions.Image")));
+            this.btn_prod.Location = new System.Drawing.Point(58, 65);
+            this.btn_prod.Name = "btn_prod";
+            this.btn_prod.Size = new System.Drawing.Size(152, 41);
+            this.btn_prod.TabIndex = 219;
+            this.btn_prod.Text = "خروج";
+            this.btn_prod.Click += new System.EventHandler(this.btn_prod_Click);
             // 
             // Frm_MasrofGender
             // 
@@ -93,9 +98,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(464, 114);
             this.ControlBox = false;
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_prod);
             this.Controls.Add(this.btn_save);
+            this.Controls.Add(this.groupBox1);
+            this.MaximumSize = new System.Drawing.Size(480, 153);
+            this.MinimumSize = new System.Drawing.Size(480, 153);
             this.Name = "Frm_MasrofGender";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "شاشة إضافة نوع المصروف";
@@ -110,7 +117,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txt_name;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btn_save;
+        private DevExpress.XtraEditors.SimpleButton btn_save;
+        private DevExpress.XtraEditors.SimpleButton btn_prod;
     }
 }

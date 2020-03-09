@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_PayClient));
             this.cmb_Stock = new System.Windows.Forms.ComboBox();
             this.cmb_client = new System.Windows.Forms.ComboBox();
-            this.btn_search = new System.Windows.Forms.Button();
             this.RdbOneCustomer = new System.Windows.Forms.RadioButton();
             this.RdbAllCustomer = new System.Windows.Forms.RadioButton();
             this.label19 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btn_client = new System.Windows.Forms.Button();
+            this.btn_client = new DevExpress.XtraEditors.SimpleButton();
             this.txt_prise = new System.Windows.Forms.TextBox();
             this.txt_rent = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,6 +50,7 @@
             this.Txt_SalesMAn = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.Cmb_Branch = new System.Windows.Forms.ComboBox();
+            this.btn_search = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -82,17 +83,6 @@
             this.cmb_client.TabIndex = 29;
             this.cmb_client.SelectionChangeCommitted += new System.EventHandler(this.cmb_client_SelectionChangeCommitted);
             this.cmb_client.Leave += new System.EventHandler(this.cmb_client_Leave);
-            // 
-            // btn_search
-            // 
-            this.btn_search.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_search.Location = new System.Drawing.Point(113, 19);
-            this.btn_search.Name = "btn_search";
-            this.btn_search.Size = new System.Drawing.Size(179, 30);
-            this.btn_search.TabIndex = 3;
-            this.btn_search.Text = "بحث";
-            this.btn_search.UseVisualStyleBackColor = true;
-            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // RdbOneCustomer
             // 
@@ -153,15 +143,16 @@
             // 
             // btn_client
             // 
-            this.btn_client.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btn_client.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_client.Location = new System.Drawing.Point(361, 21);
+            this.btn_client.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_client.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_client.Appearance.Options.UseFont = true;
+            this.btn_client.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_client.ImageOptions.Image")));
+            this.btn_client.Location = new System.Drawing.Point(359, 14);
             this.btn_client.Name = "btn_client";
-            this.btn_client.Size = new System.Drawing.Size(126, 46);
-            this.btn_client.TabIndex = 65;
-            this.btn_client.Text = "دفع ";
-            this.btn_client.UseVisualStyleBackColor = true;
-            this.btn_client.Click += new System.EventHandler(this.btn_client_Click);
+            this.btn_client.Size = new System.Drawing.Size(150, 49);
+            this.btn_client.TabIndex = 219;
+            this.btn_client.Text = "دفع";
+            this.btn_client.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // txt_prise
             // 
@@ -269,8 +260,8 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.cmb_client);
             this.groupBox1.Controls.Add(this.btn_search);
+            this.groupBox1.Controls.Add(this.cmb_client);
             this.groupBox1.Controls.Add(this.RdbOneCustomer);
             this.groupBox1.Controls.Add(this.RdbAllCustomer);
             this.groupBox1.Location = new System.Drawing.Point(6, 123);
@@ -351,6 +342,19 @@
             this.Cmb_Branch.Size = new System.Drawing.Size(220, 30);
             this.Cmb_Branch.TabIndex = 98;
             // 
+            // btn_search
+            // 
+            this.btn_search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_search.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_search.Appearance.Options.UseFont = true;
+            this.btn_search.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_search.ImageOptions.Image")));
+            this.btn_search.Location = new System.Drawing.Point(86, 19);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.Size = new System.Drawing.Size(150, 36);
+            this.btn_search.TabIndex = 220;
+            this.btn_search.Text = "بحث";
+            this.btn_search.Click += new System.EventHandler(this.simpleButton2_Click);
+            // 
             // Frm_PayClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -369,6 +373,8 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(997, 544);
             this.Name = "Frm_PayClient";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -388,12 +394,10 @@
 
         public System.Windows.Forms.ComboBox cmb_Stock;
         public System.Windows.Forms.ComboBox cmb_client;
-        private System.Windows.Forms.Button btn_search;
         private System.Windows.Forms.RadioButton RdbOneCustomer;
         private System.Windows.Forms.RadioButton RdbAllCustomer;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btn_client;
         private System.Windows.Forms.TextBox txt_prise;
         private System.Windows.Forms.TextBox txt_rent;
         private System.Windows.Forms.Label label2;
@@ -408,5 +412,7 @@
         private System.Windows.Forms.TextBox Txt_SalesMAn;
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.ComboBox Cmb_Branch;
+        private DevExpress.XtraEditors.SimpleButton btn_client;
+        private DevExpress.XtraEditors.SimpleButton btn_search;
     }
 }

@@ -16,16 +16,36 @@ namespace Laboratory.PL
         public Frm_ReportPurshasesInvoice()
         {
             InitializeComponent();
-            dataGridView1.DataSource = Suppliers.Report_PurshasesInvoice();
+            gridControl1.DataSource = Suppliers.Report_PurshasesInvoice();
         }
 
         private void btn_search_Click(object sender, EventArgs e)
         {
+            //DataTable dt = new DataTable();
+            //try
+            //{
+            //    dt = Suppliers.SearchReport_PurshasesInvoice(DateFrom.Value, DateTo.Value);
+            //    gridControl1.DataSource = dt;
+            //}
+            //catch (Exception ex)
+            //{
+
+            //    MessageBox.Show(ex.Message);
+            //}
+            //finally
+            //{
+            //    dt.Dispose();
+            //}
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
             DataTable dt = new DataTable();
             try
             {
                 dt = Suppliers.SearchReport_PurshasesInvoice(DateFrom.Value, DateTo.Value);
-                dataGridView1.DataSource = dt;
+                gridControl1.DataSource = dt;
             }
             catch (Exception ex)
             {
@@ -36,6 +56,16 @@ namespace Laboratory.PL
             {
                 dt.Dispose();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            gridControl1.ShowRibbonPrintPreview();
         }
     }
 }

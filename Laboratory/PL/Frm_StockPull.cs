@@ -103,5 +103,54 @@ namespace Laboratory.PL
         {
 
         }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (cmb_Stock.Items.Count >= 1)
+                {
+
+
+                    if (txt_addbalance.Text == "0")
+                    {
+                        MessageBox.Show("لا بد من ان يكون السحب اكبر من الصفر");
+                        txt_addbalance.Focus();
+                    }
+                    if (txt_name.Text == "")
+                    {
+                        MessageBox.Show("يرجى تحديد إسم الساحب");
+                        txt_name.Focus();
+                        return;
+                    }
+                    if (Convert.ToDecimal(txt_addbalance.Text) > Convert.ToDecimal(txt_CurrentBalance.Text))
+                    {
+                        MessageBox.Show("هذا المبلغ اكبر من الرصيد الحالى");
+                        txt_addbalance.Focus();
+                        return;
+
+                    }
+                    if (MessageBox.Show("هل تريد حفظ السحب", "عملية السحب", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        s.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_addbalance.Text), Date_insert.Value, txt_name.Text, txt_reason.Text);
+                        MessageBox.Show("تم سحب الرصيد من البنك المحدد");
+                        clear();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("تم إلغاء السحب");
+                        clear();
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

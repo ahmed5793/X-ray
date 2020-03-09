@@ -44,5 +44,26 @@ namespace Laboratory.PL
         {
             gridControl1.ShowRibbonPrintPreview();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                dt.Clear();
+                dt = S.Search_Report_TransfairStock(DateFrom.Value, DateTo.Value);
+                gridControl1.DataSource = dt;
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                dt.Dispose();
+            }
+        }
     }
 }

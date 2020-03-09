@@ -40,13 +40,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.FromDate = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
-            this.btn_print = new System.Windows.Forms.Button();
-            this.btn_save = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -59,6 +54,11 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.button2 = new DevExpress.XtraEditors.SimpleButton();
+            this.button3 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_save = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_print = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -70,6 +70,7 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.Cmb_CategoryItem);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.cmb_branches);
@@ -198,42 +199,6 @@
             this.label3.TabIndex = 115;
             this.label3.Text = "الي";
             // 
-            // btn_print
-            // 
-            this.btn_print.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btn_print.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_print.Location = new System.Drawing.Point(452, 487);
-            this.btn_print.Name = "btn_print";
-            this.btn_print.Size = new System.Drawing.Size(168, 40);
-            this.btn_print.TabIndex = 103;
-            this.btn_print.Text = "طباعة فاتورة";
-            this.btn_print.UseVisualStyleBackColor = true;
-            this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
-            // 
-            // btn_save
-            // 
-            this.btn_save.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btn_save.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_save.Location = new System.Drawing.Point(635, 487);
-            this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(200, 40);
-            this.btn_save.TabIndex = 102;
-            this.btn_save.Text = "عرض  تفاصيل الفاتورة";
-            this.btn_save.UseVisualStyleBackColor = true;
-            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
-            // 
-            // button1
-            // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(275, 486);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(161, 40);
-            this.button1.TabIndex = 104;
-            this.button1.Text = "طباعة باركود";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // comboBox1
             // 
             this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -263,32 +228,6 @@
             this.label1.Size = new System.Drawing.Size(120, 24);
             this.label1.TabIndex = 85;
             this.label1.Text = "اختر نوع البحث";
-            // 
-            // button2
-            // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button2.Font = new System.Drawing.Font("Arial Black", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(17, 91);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(124, 62);
-            this.button2.TabIndex = 118;
-            this.button2.Text = "بحث ";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(854, 487);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(153, 40);
-            this.button3.TabIndex = 119;
-            this.button3.Text = "مردوات";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label5
             // 
@@ -441,27 +380,86 @@
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 513);
             // 
+            // button2
+            // 
+            this.button2.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Appearance.Options.UseFont = true;
+            this.button2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.button2.Location = new System.Drawing.Point(22, 41);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(101, 53);
+            this.button2.TabIndex = 200;
+            this.button2.Text = "بحث";
+            this.button2.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
+            // button3
+            // 
+            this.button3.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Appearance.Options.UseFont = true;
+            this.button3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image3")));
+            this.button3.Location = new System.Drawing.Point(858, 478);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(138, 53);
+            this.button3.TabIndex = 201;
+            this.button3.Text = "مردودات";
+            this.button3.Click += new System.EventHandler(this.simpleButton2_Click);
+            // 
+            // btn_save
+            // 
+            this.btn_save.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_save.Appearance.Options.UseFont = true;
+            this.btn_save.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image2")));
+            this.btn_save.Location = new System.Drawing.Point(602, 478);
+            this.btn_save.Name = "btn_save";
+            this.btn_save.Size = new System.Drawing.Size(226, 53);
+            this.btn_save.TabIndex = 202;
+            this.btn_save.Text = "عرض  تفاصيل الفاتورة";
+            this.btn_save.Click += new System.EventHandler(this.simpleButton2_Click_1);
+            // 
+            // btn_print
+            // 
+            this.btn_print.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_print.Appearance.Options.UseFont = true;
+            this.btn_print.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image1")));
+            this.btn_print.Location = new System.Drawing.Point(411, 478);
+            this.btn_print.Name = "btn_print";
+            this.btn_print.Size = new System.Drawing.Size(152, 53);
+            this.btn_print.TabIndex = 203;
+            this.btn_print.Text = "طباعة فاتورة";
+            this.btn_print.Click += new System.EventHandler(this.simpleButton2_Click_2);
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton2.Appearance.Options.UseFont = true;
+            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.simpleButton2.Location = new System.Drawing.Point(225, 478);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(152, 53);
+            this.simpleButton2.TabIndex = 204;
+            this.simpleButton2.Text = "طباعة باركود";
+            // 
             // Frm_Search_Ticket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1011, 539);
+            this.Controls.Add(this.simpleButton2);
+            this.Controls.Add(this.btn_print);
+            this.Controls.Add(this.btn_save);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btn_print);
-            this.Controls.Add(this.btn_save);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.MinimumSize = new System.Drawing.Size(1027, 578);
             this.Name = "Frm_Search_Ticket";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "شاشة البحث فى كل الحجوزات";
@@ -483,17 +481,12 @@
         public System.Windows.Forms.ComboBox cmb_branches;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txt_search;
-        private System.Windows.Forms.Button btn_print;
-        private System.Windows.Forms.Button btn_save;
-        private System.Windows.Forms.Button button1;
         public System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DateTimePicker ToDate;
         private System.Windows.Forms.DateTimePicker FromDate;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button3;
         public System.Windows.Forms.ComboBox Cmb_CategoryItem;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -508,5 +501,10 @@
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private DevExpress.XtraEditors.SimpleButton button2;
+        private DevExpress.XtraEditors.SimpleButton button3;
+        private DevExpress.XtraEditors.SimpleButton btn_save;
+        private DevExpress.XtraEditors.SimpleButton btn_print;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
     }
 }

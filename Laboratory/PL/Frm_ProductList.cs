@@ -28,8 +28,7 @@ namespace Laboratory.PL
 
         private void Btn_selectProduct_MouseClick(object sender, MouseEventArgs e)
         {
-            dataGridView1.DataSource = null;
-            this.Close();
+           
         }
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
@@ -55,6 +54,17 @@ namespace Laboratory.PL
             {
                 dt.Dispose();
             }
+        }
+
+        private void Frm_ProductList_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_prod_MouseClick(object sender, MouseEventArgs e)
+        {
+            dataGridView1.DataSource = null;
+            this.Close();
         }
     }
 }

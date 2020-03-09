@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_StockTransfair));
             this.label2 = new System.Windows.Forms.Label();
             this.txt_addbalance = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Cmb_StrockTo = new System.Windows.Forms.ComboBox();
-            this.btn_save = new System.Windows.Forms.Button();
             this.txt_CurrentBalance1 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -45,6 +45,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.cmb_StockFrom = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.btn_save = new DevExpress.XtraEditors.SimpleButton();
             this.SuspendLayout();
             // 
             // label2
@@ -125,18 +126,6 @@
             this.Cmb_StrockTo.TabIndex = 82;
             this.Cmb_StrockTo.SelectedIndexChanged += new System.EventHandler(this.Cmb_StrockTo_SelectedIndexChanged);
             this.Cmb_StrockTo.SelectionChangeCommitted += new System.EventHandler(this.Cmb_StrockTo_SelectionChangeCommitted);
-            // 
-            // btn_save
-            // 
-            this.btn_save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btn_save.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_save.Location = new System.Drawing.Point(118, 412);
-            this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(143, 51);
-            this.btn_save.TabIndex = 81;
-            this.btn_save.Text = "حفظ العملية";
-            this.btn_save.UseVisualStyleBackColor = false;
-            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
             // txt_CurrentBalance1
             // 
@@ -262,19 +251,31 @@
             this.label3.TabIndex = 71;
             this.label3.Text = "رصيد الخزنة الحالى هو:";
             // 
+            // btn_save
+            // 
+            this.btn_save.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_save.Appearance.Options.UseFont = true;
+            this.btn_save.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btn_save.Location = new System.Drawing.Point(129, 408);
+            this.btn_save.Name = "btn_save";
+            this.btn_save.Size = new System.Drawing.Size(152, 45);
+            this.btn_save.TabIndex = 88;
+            this.btn_save.Text = " حفظ";
+            this.btn_save.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
             // Frm_StockTransfair
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(386, 475);
+            this.ClientSize = new System.Drawing.Size(386, 474);
+            this.Controls.Add(this.btn_save);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txt_addbalance);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Cmb_StrockTo);
-            this.Controls.Add(this.btn_save);
             this.Controls.Add(this.txt_CurrentBalance1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -287,6 +288,7 @@
             this.Controls.Add(this.label3);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(402, 513);
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(402, 513);
             this.Name = "Frm_StockTransfair";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -305,7 +307,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox Cmb_StrockTo;
-        private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.TextBox txt_CurrentBalance1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -316,5 +317,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cmb_StockFrom;
         private System.Windows.Forms.Label label3;
+        private DevExpress.XtraEditors.SimpleButton btn_save;
     }
 }

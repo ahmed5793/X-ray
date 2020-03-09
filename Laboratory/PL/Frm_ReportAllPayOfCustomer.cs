@@ -146,6 +146,21 @@ namespace Laboratory.PL
 
         private void btn_search_Click(object sender, EventArgs e)
         {
+          
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            gridControl1.ShowRibbonPrintPreview();
+        }
+
+        private void Frm_ReportAllPayOfCustomer_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
             DataTable dt5 = new DataTable();
             try
             {
@@ -171,16 +186,6 @@ namespace Laboratory.PL
 
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            gridControl1.ShowRibbonPrintPreview();
-        }
-
-        private void Frm_ReportAllPayOfCustomer_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

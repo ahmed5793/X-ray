@@ -160,5 +160,66 @@ namespace Laboratory.PL
                 textBox1.Text = dt.Rows[0][0].ToString();
             }
         }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (cmb_StockFrom.Text == "")
+                {
+                    return;
+                }
+                if (Cmb_StrockTo.Text == "")
+                {
+                    return;
+                }
+                if (txt_addbalance.Text == "")
+                {
+                    MessageBox.Show("لا بد من ان يكون التحويل اكبر من الصفر");
+                    txt_addbalance.Focus();
+                    return;
+                }
+                if (txt_name.Text == "")
+                {
+                    MessageBox.Show("يرجى تحديد إسم ");
+                    txt_name.Focus();
+                    return;
+                }
+                if (Convert.ToDecimal(txt_addbalance.Text) > Convert.ToDecimal(txt_CurrentBalance1.Text))
+                {
+                    MessageBox.Show("   المبلغ المراد تحويلة اكبر من الرصيد الحالى");
+                    txt_addbalance.Focus();
+                    return;
+
+                }
+                if (MessageBox.Show("هل تريد حفظ التحويل", "عملية التحويل", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    s.Add_StockTransfair(Convert.ToDecimal(txt_addbalance.Text), Date_insert.Value, Convert.ToInt32(cmb_StockFrom.SelectedValue), cmb_StockFrom.Text, Convert.ToInt32(Cmb_StrockTo.SelectedValue), Cmb_StrockTo.Text, txt_name.Text, txt_reason.Text);
+
+                    MessageBox.Show("تم إضافة الرصيد للخزنة المحددة");
+
+                    clear();
+                    //updateMoneyFrom();
+                    //UpdateMoneyTo();
+
+                }
+                else
+                {
+                    MessageBox.Show("تم إلغاء التحويل");
+                    clear();
+                    //updateMoneyFrom();
+                    //UpdateMoneyTo();
+
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
     }
 }

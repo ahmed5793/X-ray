@@ -27,26 +27,7 @@ namespace Laboratory.PL
 
         private void btn_search_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (comboBox1.Text != string.Empty)
-                {
-                    dt.Clear();
-                    dt = Techincal.Search_ReportTechnical(Convert.ToInt32(comboBox1.SelectedValue), DateFrom.Value, DateTo.Value);
-                    gridControl1.DataSource = dt;
-                    textBox1.Text = gridView1.RowCount.ToString();
-
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                dt.Dispose();
-            }
+           
         }
 
         private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
@@ -92,6 +73,30 @@ namespace Laboratory.PL
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             gridControl1.ShowRibbonPrintPreview();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (comboBox1.Text != string.Empty)
+                {
+                    dt.Clear();
+                    dt = Techincal.Search_ReportTechnical(Convert.ToInt32(comboBox1.SelectedValue), DateFrom.Value, DateTo.Value);
+                    gridControl1.DataSource = dt;
+                    textBox1.Text = gridView1.RowCount.ToString();
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                dt.Dispose();
+            }
         }
     }
 }

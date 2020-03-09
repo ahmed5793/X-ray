@@ -34,6 +34,21 @@ namespace Laboratory.PL
 
         private void btn_search_Click(object sender, EventArgs e)
         {
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            gridControl1.ShowRibbonPrintPreview();
+        }
+
+        private void Frm_ReportMasrofat_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
             DataTable dt = new DataTable();
             try
             {
@@ -51,16 +66,6 @@ namespace Laboratory.PL
             {
                 dt.Dispose();
             }
-        }
-
-        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            gridControl1.ShowRibbonPrintPreview();
-        }
-
-        private void Frm_ReportMasrofat_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

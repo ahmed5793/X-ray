@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_TransferToCompany));
             this.cmb_Company = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -47,7 +48,6 @@
             this.Txt_addtionPayment = new System.Windows.Forms.TextBox();
             this.txt_payLat = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.btn_save = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.cmb_Stock = new System.Windows.Forms.ComboBox();
             this.txt_username = new System.Windows.Forms.TextBox();
@@ -57,6 +57,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.txt_patientname = new System.Windows.Forms.TextBox();
+            this.btn_prod = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -308,18 +309,6 @@
             this.label4.TabIndex = 128;
             this.label4.Text = "المدفوع مسبقا";
             // 
-            // btn_save
-            // 
-            this.btn_save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_save.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_save.Location = new System.Drawing.Point(178, 441);
-            this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(298, 38);
-            this.btn_save.TabIndex = 126;
-            this.btn_save.Text = "حفظ";
-            this.btn_save.UseVisualStyleBackColor = true;
-            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -422,12 +411,25 @@
             this.txt_patientname.TabIndex = 139;
             this.txt_patientname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // btn_prod
+            // 
+            this.btn_prod.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_prod.Appearance.Options.UseFont = true;
+            this.btn_prod.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_prod.ImageOptions.Image")));
+            this.btn_prod.Location = new System.Drawing.Point(285, 438);
+            this.btn_prod.Name = "btn_prod";
+            this.btn_prod.Size = new System.Drawing.Size(166, 45);
+            this.btn_prod.TabIndex = 140;
+            this.btn_prod.Text = "حفظ";
+            this.btn_prod.Click += new System.EventHandler(this.btn_prod_Click);
+            // 
             // Frm_TransferToCompany
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(699, 486);
+            this.Controls.Add(this.btn_prod);
             this.Controls.Add(this.txt_patientname);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.comboBox1);
@@ -437,7 +439,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cmb_Stock);
-            this.Controls.Add(this.btn_save);
             this.Controls.Add(this.txt_payLat);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dataGridView2);
@@ -446,6 +447,10 @@
             this.Controls.Add(this.cmb_Company);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.Black;
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(715, 525);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(715, 525);
             this.Name = "Frm_TransferToCompany";
             this.Text = "شاشة تحويل إلى جهة أخرى";
             this.Load += new System.EventHandler(this.Frm_TransferToCompany_Load);
@@ -479,7 +484,6 @@
         private System.Windows.Forms.Label txt_rentCust;
         private System.Windows.Forms.Label Txt_PricePayment;
         private System.Windows.Forms.TextBox Txt_addtionPayment;
-        private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cmb_Stock;
         public System.Windows.Forms.TextBox txt_username;
@@ -489,5 +493,6 @@
         public System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         public System.Windows.Forms.TextBox txt_patientname;
+        private DevExpress.XtraEditors.SimpleButton btn_prod;
     }
 }

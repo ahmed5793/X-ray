@@ -73,5 +73,24 @@ namespace Laboratory.PL
                 e.Handled = true;
             }
         }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            if (Txt_UpdateSalary.Text == "" || Txt_UpdateSalary.Text == "0")
+            {
+                MessageBox.Show("من فضلك قم باادخال مبلغ الاستلاف");
+                return;
+            }
+            else
+            {
+                E.UpdateSSalaryMins(Convert.ToInt32(cmb_employeeName.SelectedValue), Convert.ToDecimal(Txt_UpdateSalary.Text));
+                MessageBox.Show("تم تعديل الباينات بنجاح");
+                txt_date.Clear();
+                txt_salf.Clear();
+
+                Txt_UpdateSalary.Clear();
+
+            }
+        }
     }
 }

@@ -21,10 +21,16 @@ namespace Laboratory.PL
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+          
         }
 
         private void btn_save_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
         {
 
             if (txt_name.Text != string.Empty)
@@ -43,7 +49,11 @@ namespace Laboratory.PL
             {
                 MessageBox.Show("من فضلك لابد من كتابه نوع المصروف");
             }
+        }
 
+        private void btn_prod_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

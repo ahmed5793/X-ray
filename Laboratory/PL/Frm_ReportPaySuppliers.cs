@@ -80,31 +80,7 @@ namespace Laboratory.PL
 
         private void btn_search_Click(object sender, EventArgs e)
         {
-            DataTable dt5 = new DataTable();
-            try
-            {
-                if (radioButton2.Checked==true)
-                {
-                    dt5.Clear();
-                    dt5 = Suppliers.Search_PaySupplierDate(DateFrom.Value, DateTo.Value);
-                    gridControl1.DataSource = dt5;
-                }
-                else if (radioButton3.Checked==true)
-                {
-                    if (comboBox2.Text!="")
-                    {
-                        dt5.Clear();
-                        dt5 = Suppliers.Search_PaySupplierDateAndName(comboBox2.Text, DateFrom.Value, DateTo.Value);
-                        gridControl1.DataSource = dt5;
-                    }
-                }
-                Calc();
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
+           
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -187,6 +163,37 @@ namespace Laboratory.PL
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             gridControl1.ShowRibbonPrintPreview();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            DataTable dt5 = new DataTable();
+            try
+            {
+                if (radioButton2.Checked == true)
+                {
+                    dt5.Clear();
+                    dt5 = Suppliers.Search_PaySupplierDate(DateFrom.Value, DateTo.Value);
+                    gridControl1.DataSource = dt5;
+                }
+                else if (radioButton3.Checked == true)
+                {
+                    if (comboBox2.Text != "")
+                    {
+                        dt5.Clear();
+                        dt5 = Suppliers.Search_PaySupplierDateAndName(comboBox2.Text, DateFrom.Value, DateTo.Value);
+                        gridControl1.DataSource = dt5;
+                    }
+                }
+                Calc();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

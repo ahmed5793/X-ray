@@ -37,5 +37,25 @@ namespace Laboratory.PL
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void btn_prod_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (Txt_Salary.Text != "")
+                {
+                    Techincal.Add_TypeShift(Txt_Salary.Text);
+                    MessageBox.Show("تمت  الاضافة بنجاح");
+                    Txt_Salary.Clear();
+                    Txt_Salary.Focus();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

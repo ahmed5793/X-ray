@@ -89,5 +89,30 @@ namespace Laboratory.PL
         {
             gridControl1.ShowRibbonPrintPreview();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (comboBox1.Text != string.Empty)
+                {
+                    dt.Clear();
+                    dt = Techincal.Report_TechnicalShift(Convert.ToInt32(comboBox1.SelectedValue), DateFrom.Value, DateTo.Value);
+                    gridControl1.DataSource = dt;
+                    textBox1.Text = gridView1.RowCount.ToString();
+                    Calc();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                dt.Dispose();
+            }
+        }
     }
 }

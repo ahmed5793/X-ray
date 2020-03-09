@@ -28,27 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Btn_selectProduct = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_ProductList));
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btn_prod = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // Btn_selectProduct
-            // 
-            this.Btn_selectProduct.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Btn_selectProduct.BackColor = System.Drawing.Color.Yellow;
-            this.Btn_selectProduct.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_selectProduct.ForeColor = System.Drawing.Color.Black;
-            this.Btn_selectProduct.Location = new System.Drawing.Point(521, 6);
-            this.Btn_selectProduct.Name = "Btn_selectProduct";
-            this.Btn_selectProduct.Size = new System.Drawing.Size(126, 42);
-            this.Btn_selectProduct.TabIndex = 35;
-            this.Btn_selectProduct.Text = "خروج";
-            this.Btn_selectProduct.UseVisualStyleBackColor = false;
-            this.Btn_selectProduct.Click += new System.EventHandler(this.Btn_selectProduct_Click);
-            this.Btn_selectProduct.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Btn_selectProduct_MouseClick);
             // 
             // label1
             // 
@@ -91,14 +77,27 @@
             this.dataGridView1.TabIndex = 32;
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
+            // btn_prod
+            // 
+            this.btn_prod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_prod.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_prod.Appearance.Options.UseFont = true;
+            this.btn_prod.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_prod.ImageOptions.Image")));
+            this.btn_prod.Location = new System.Drawing.Point(517, 7);
+            this.btn_prod.Name = "btn_prod";
+            this.btn_prod.Size = new System.Drawing.Size(152, 45);
+            this.btn_prod.TabIndex = 80;
+            this.btn_prod.Text = "خروج";
+            this.btn_prod.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btn_prod_MouseClick);
+            // 
             // Frm_ProductList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(697, 362);
+            this.ClientSize = new System.Drawing.Size(697, 361);
             this.ControlBox = false;
-            this.Controls.Add(this.Btn_selectProduct);
+            this.Controls.Add(this.btn_prod);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView1);
@@ -107,6 +106,7 @@
             this.Name = "Frm_ProductList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "قائمة الاصناف";
+            this.Load += new System.EventHandler(this.Frm_ProductList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -114,10 +114,9 @@
         }
 
         #endregion
-
-        public System.Windows.Forms.Button Btn_selectProduct;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         public System.Windows.Forms.DataGridView dataGridView1;
+        private DevExpress.XtraEditors.SimpleButton btn_prod;
     }
 }

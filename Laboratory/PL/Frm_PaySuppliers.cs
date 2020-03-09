@@ -43,41 +43,7 @@ namespace Laboratory.PL
 
         private void btn_search_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (RdbAllSuppliers.Checked == true)
-                {
-                    rdbPartPay.Hide();
-                    RdbAllPay.Hide();
-                    btnPay.Hide();
-                    txt_prise.Hide();
-                    dataGridView1.DataSource = Suppliers.SelectSuppliersMony();
-               
-
-                }
-                else if (RdbOneSuppliers.Checked == true)
-                {
-                    rdbPartPay.Show();
-                    RdbAllPay.Show();
-                    btnPay.Show();
-                    txt_prise.Show();
-                    dataGridView1.DataSource = Suppliers.SelectOneSuppliersMony(Convert.ToInt32(comboBox1.SelectedValue));
-       
-                }
-
-                decimal total = 0;
-                for (int i = 0; i <= dataGridView1.Rows.Count - 1; i++)
-                {
-                    total += Convert.ToDecimal(dataGridView1.Rows[i].Cells[2].Value);
-
-                }
-                txt_rent.Text = Math.Round(total, 1).ToString();
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
+           
         }
 
         private void RdbAllSuppliers_CheckedChanged(object sender, EventArgs e)
@@ -107,6 +73,74 @@ namespace Laboratory.PL
 
         private void btnPay_Click(object sender, EventArgs e)
         {
+          
+        }
+
+        private void txt_prise_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '.' && txt_prise.Text.ToString().IndexOf('.') > -1)
+            {
+                e.Handled = true;
+            }
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != Convert.ToChar(System.Globalization.CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator))
+
+            {
+                e.Handled = true;
+
+            }
+        }
+
+        private void Frm_PaySuppliers_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void RdbOneSuppliers_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (RdbAllSuppliers.Checked == true)
+                {
+                    rdbPartPay.Hide();
+                    RdbAllPay.Hide();
+                    btnPay.Hide();
+                    txt_prise.Hide();
+                    dataGridView1.DataSource = Suppliers.SelectSuppliersMony();
+
+
+                }
+                else if (RdbOneSuppliers.Checked == true)
+                {
+                    rdbPartPay.Show();
+                    RdbAllPay.Show();
+                    btnPay.Show();
+                    txt_prise.Show();
+                    dataGridView1.DataSource = Suppliers.SelectOneSuppliersMony(Convert.ToInt32(comboBox1.SelectedValue));
+
+                }
+
+                decimal total = 0;
+                for (int i = 0; i <= dataGridView1.Rows.Count - 1; i++)
+                {
+                    total += Convert.ToDecimal(dataGridView1.Rows[i].Cells[2].Value);
+
+                }
+                txt_rent.Text = Math.Round(total, 1).ToString();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
             try
             {
                 if (dataGridView1.Rows.Count >= 1)
@@ -116,7 +150,7 @@ namespace Laboratory.PL
                         MessageBox.Show("لا بد من تحديد خزنة");
                         return;
 
-                    }    
+                    }
                     dt4 = Stock.Select_moneyStock(Convert.ToInt32(cmb_Stock.SelectedValue));
 
                     if (RdbAllPay.Checked == true)
@@ -137,7 +171,7 @@ namespace Laboratory.PL
                             }
                             Suppliers.AddPaySuppliers(
                                 Convert.ToInt32(comboBox1.SelectedValue), Convert.ToDecimal(dataGridView1.CurrentRow.Cells[2].Value)
-                               , dateTimePicker1.Value,Convert.ToInt32(cmb_Stock.SelectedValue),Txt_sales.Text);
+                               , dateTimePicker1.Value, Convert.ToInt32(cmb_Stock.SelectedValue), Txt_sales.Text);
                             Stock.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(dataGridView1.CurrentRow.Cells[2].Value), dateTimePicker1.Value, comboBox1.Text, comboBox1.Text + " مدفوعات مورد");
 
                             MessageBox.Show("تم دفع المبلغ بنجاح");
@@ -172,7 +206,7 @@ namespace Laboratory.PL
                                 MessageBox.Show("رصيد الخزنة الحالى غير كافى لشراء هذه الفاتورة");
                                 return;
                             }
-                            else if (Convert.ToDecimal(txt_prise.Text)> Convert.ToDecimal(dataGridView1.CurrentRow.Cells[2].Value))
+                            else if (Convert.ToDecimal(txt_prise.Text) > Convert.ToDecimal(dataGridView1.CurrentRow.Cells[2].Value))
                             {
                                 MessageBox.Show("المبلغ المراد تسديده اكبر من المبلغ المتبقى للمورد");
                                 txt_prise.Focus();
@@ -181,13 +215,13 @@ namespace Laboratory.PL
                             Suppliers.AddPaySuppliers(
                                 Convert.ToInt32(comboBox1.SelectedValue), Convert.ToDecimal(txt_prise.Text)
                                , dateTimePicker1.Value, Convert.ToInt32(cmb_Stock.SelectedValue), Txt_sales.Text);
-                            if (Convert.ToDecimal(txt_prise.Text)>0)
+                            if (Convert.ToDecimal(txt_prise.Text) > 0)
                             {
                                 Stock.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_prise.Text),
-                             dateTimePicker1.Value, Txt_sales.Text, comboBox1.Text +" "+ "مدفوعات مورد");
+                             dateTimePicker1.Value, Txt_sales.Text, comboBox1.Text + " " + "مدفوعات مورد");
                             }
-                         
-                            
+
+
                             dataGridView1.DataSource = Suppliers.SelectOneSuppliersMony(Convert.ToInt32(comboBox1.SelectedValue));
 
                             txt_prise.Text = "0";
@@ -217,29 +251,6 @@ namespace Laboratory.PL
 
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void txt_prise_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == '.' && txt_prise.Text.ToString().IndexOf('.') > -1)
-            {
-                e.Handled = true;
-            }
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != Convert.ToChar(System.Globalization.CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator))
-
-            {
-                e.Handled = true;
-
-            }
-        }
-
-        private void Frm_PaySuppliers_Load(object sender, EventArgs e)
-        {
-        }
-
-        private void RdbOneSuppliers_CheckedChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

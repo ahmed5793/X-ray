@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_PayCompanyMoney));
             this.label5 = new System.Windows.Forms.Label();
             this.Txt_SalesMAn = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -35,7 +36,6 @@
             this.label19 = new System.Windows.Forms.Label();
             this.cmb_Stock = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btn_client = new System.Windows.Forms.Button();
             this.txt_prise = new System.Windows.Forms.TextBox();
             this.txt_rent = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,6 +49,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btn_client = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -143,18 +144,6 @@
             this.groupBox2.Size = new System.Drawing.Size(984, 78);
             this.groupBox2.TabIndex = 99;
             this.groupBox2.TabStop = false;
-            // 
-            // btn_client
-            // 
-            this.btn_client.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btn_client.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_client.Location = new System.Drawing.Point(362, 16);
-            this.btn_client.Name = "btn_client";
-            this.btn_client.Size = new System.Drawing.Size(126, 46);
-            this.btn_client.TabIndex = 65;
-            this.btn_client.Text = "دفع ";
-            this.btn_client.UseVisualStyleBackColor = true;
-            this.btn_client.Click += new System.EventHandler(this.btn_client_Click);
             // 
             // txt_prise
             // 
@@ -334,9 +323,22 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Location = new System.Drawing.Point(425, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(245, 29);
+            this.label1.Size = new System.Drawing.Size(158, 29);
             this.label1.TabIndex = 98;
-            this.label1.Text = "المبالغ المتبقيه علي الشركات";
+            this.label1.Text = "مدفوعات الشركات";
+            // 
+            // btn_client
+            // 
+            this.btn_client.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_client.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_client.Appearance.Options.UseFont = true;
+            this.btn_client.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
+            this.btn_client.Location = new System.Drawing.Point(355, 12);
+            this.btn_client.Name = "btn_client";
+            this.btn_client.Size = new System.Drawing.Size(150, 49);
+            this.btn_client.TabIndex = 217;
+            this.btn_client.Text = "دفع";
+            this.btn_client.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // Frm_PayCompanyMoney
             // 
@@ -379,7 +381,6 @@
         private System.Windows.Forms.Label label19;
         public System.Windows.Forms.ComboBox cmb_Stock;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btn_client;
         private System.Windows.Forms.TextBox txt_prise;
         private System.Windows.Forms.TextBox txt_rent;
         private System.Windows.Forms.Label label2;
@@ -393,5 +394,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
+        private DevExpress.XtraEditors.SimpleButton btn_client;
     }
 }

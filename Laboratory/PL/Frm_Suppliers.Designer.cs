@@ -28,15 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Suppliers));
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txt_search = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btn_new = new System.Windows.Forms.Button();
+            this.btn_update = new DevExpress.XtraEditors.SimpleButton();
+            this.Btn_save = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_new = new DevExpress.XtraEditors.SimpleButton();
             this.Txt_name = new System.Windows.Forms.TextBox();
-            this.btn_update = new System.Windows.Forms.Button();
-            this.Btn_save = new System.Windows.Forms.Button();
             this.txt_phone = new System.Windows.Forms.TextBox();
             this.Label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -52,7 +53,7 @@
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(443, 19);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(57, 34);
@@ -108,10 +109,10 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.btn_new);
-            this.groupBox1.Controls.Add(this.Txt_name);
             this.groupBox1.Controls.Add(this.btn_update);
             this.groupBox1.Controls.Add(this.Btn_save);
+            this.groupBox1.Controls.Add(this.btn_new);
+            this.groupBox1.Controls.Add(this.Txt_name);
             this.groupBox1.Controls.Add(this.txt_phone);
             this.groupBox1.Controls.Add(this.Label5);
             this.groupBox1.Controls.Add(this.label3);
@@ -123,19 +124,43 @@
             this.groupBox1.Size = new System.Drawing.Size(695, 214);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // btn_update
+            // 
+            this.btn_update.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_update.Appearance.Options.UseFont = true;
+            this.btn_update.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_update.ImageOptions.Image")));
+            this.btn_update.Location = new System.Drawing.Point(108, 148);
+            this.btn_update.Name = "btn_update";
+            this.btn_update.Size = new System.Drawing.Size(152, 45);
+            this.btn_update.TabIndex = 85;
+            this.btn_update.Text = "تعديل";
+            this.btn_update.Click += new System.EventHandler(this.simpleButton3_Click);
+            // 
+            // Btn_save
+            // 
+            this.Btn_save.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_save.Appearance.Options.UseFont = true;
+            this.Btn_save.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_save.ImageOptions.Image")));
+            this.Btn_save.Location = new System.Drawing.Point(336, 148);
+            this.Btn_save.Name = "Btn_save";
+            this.Btn_save.Size = new System.Drawing.Size(152, 45);
+            this.Btn_save.TabIndex = 86;
+            this.Btn_save.Text = "حفظ";
+            this.Btn_save.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // btn_new
             // 
-            this.btn_new.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btn_new.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_new.ForeColor = System.Drawing.Color.Black;
-            this.btn_new.Location = new System.Drawing.Point(428, 148);
+            this.btn_new.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_new.Appearance.Options.UseFont = true;
+            this.btn_new.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_new.ImageOptions.Image")));
+            this.btn_new.Location = new System.Drawing.Point(336, 148);
             this.btn_new.Name = "btn_new";
-            this.btn_new.Size = new System.Drawing.Size(132, 40);
-            this.btn_new.TabIndex = 12;
+            this.btn_new.Size = new System.Drawing.Size(152, 45);
+            this.btn_new.TabIndex = 84;
             this.btn_new.Text = "جديد";
-            this.btn_new.UseVisualStyleBackColor = true;
-            this.btn_new.Click += new System.EventHandler(this.btn_new_Click);
+            this.btn_new.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // Txt_name
             // 
@@ -147,31 +172,6 @@
             this.Txt_name.Size = new System.Drawing.Size(229, 32);
             this.Txt_name.TabIndex = 0;
             this.Txt_name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // btn_update
-            // 
-            this.btn_update.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btn_update.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_update.ForeColor = System.Drawing.Color.Black;
-            this.btn_update.Location = new System.Drawing.Point(88, 148);
-            this.btn_update.Name = "btn_update";
-            this.btn_update.Size = new System.Drawing.Size(168, 40);
-            this.btn_update.TabIndex = 4;
-            this.btn_update.Text = "تعديل بيانات المورد";
-            this.btn_update.UseVisualStyleBackColor = true;
-            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
-            // 
-            // Btn_save
-            // 
-            this.Btn_save.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Btn_save.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_save.Location = new System.Drawing.Point(411, 148);
-            this.Btn_save.Name = "Btn_save";
-            this.Btn_save.Size = new System.Drawing.Size(169, 40);
-            this.Btn_save.TabIndex = 3;
-            this.Btn_save.Text = "تسجيل بيانات المورد";
-            this.Btn_save.UseVisualStyleBackColor = true;
-            this.Btn_save.Click += new System.EventHandler(this.Btn_save_Click);
             // 
             // txt_phone
             // 
@@ -191,7 +191,7 @@
             this.Label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Label5.AutoSize = true;
             this.Label5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label5.ForeColor = System.Drawing.Color.Black;
+            this.Label5.ForeColor = System.Drawing.Color.White;
             this.Label5.Location = new System.Drawing.Point(600, 39);
             this.Label5.Name = "Label5";
             this.Label5.Size = new System.Drawing.Size(86, 24);
@@ -203,7 +203,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(402, 98);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(99, 24);
@@ -226,7 +226,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(252, 39);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 24);
@@ -237,13 +237,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.BackColor = System.Drawing.Color.Navy;
             this.ClientSize = new System.Drawing.Size(703, 414);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(719, 453);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(719, 453);
             this.Name = "Frm_Suppliers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "إضافة مورد";
+            this.Load += new System.EventHandler(this.Frm_Suppliers_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -260,14 +265,14 @@
         private System.Windows.Forms.TextBox txt_search;
         public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btn_new;
         private System.Windows.Forms.TextBox Txt_name;
-        private System.Windows.Forms.Button btn_update;
-        private System.Windows.Forms.Button Btn_save;
         private System.Windows.Forms.TextBox txt_phone;
         private System.Windows.Forms.Label Label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_address;
         private System.Windows.Forms.Label label2;
+        private DevExpress.XtraEditors.SimpleButton btn_new;
+        private DevExpress.XtraEditors.SimpleButton Btn_save;
+        private DevExpress.XtraEditors.SimpleButton btn_update;
     }
 }

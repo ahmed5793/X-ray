@@ -516,13 +516,11 @@ namespace Laboratory.PL
                             if (Convert.ToInt32(dt7.Rows[0][0]) == 0)
                             {
                                 Main.getmain.add_tickets.Enabled = false;
-                                Main.getmain.accordion_Tickets.Enabled = false;
 
                             }
                             else if (Convert.ToInt32(dt7.Rows[0][0]) == 1)
                             {
                                 Main.getmain.add_tickets.Enabled = true;
-                                Main.getmain.accordion_Tickets.Enabled = true;
 
                             }
                             ///////
@@ -538,13 +536,11 @@ namespace Laboratory.PL
                             if (Convert.ToInt32(dt7.Rows[0][2]) == 0)
                             {
                                 Main.getmain.search_tickets.Enabled = false;
-                                Main.getmain.accordion_SerachTickrets.Enabled = false;
 
                             }
                             else if (Convert.ToInt32(dt7.Rows[0][2]) == 1)
                             {
                                 Main.getmain.search_tickets.Enabled = true;
-                                Main.getmain.accordion_SerachTickrets.Enabled = true;
 
                             }
 
@@ -552,38 +548,32 @@ namespace Laboratory.PL
                             if (Convert.ToInt32(dt7.Rows[0][3]) == 0)
                             {
                                 Main.getmain.add_patient.Enabled = false;
-                                Main.getmain.accordion_AddClient.Enabled = false;
 
                             }
                             else if (Convert.ToInt32(dt7.Rows[0][3]) == 1)
                             {
                                 Main.getmain.add_patient.Enabled = true;
-                                Main.getmain.accordion_AddClient.Enabled = true;
 
                             }
                             /////////
                             if (Convert.ToInt32(dt7.Rows[0][4]) == 0)
                             {
                                 Main.getmain.pay_patient.Enabled = false;
-                                Main.getmain.accordion_PayClient.Enabled = false;
 
                             }
                             else if (Convert.ToInt32(dt7.Rows[0][4]) == 1)
                             {
                                 Main.getmain.pay_patient.Enabled = true;
-                                Main.getmain.accordion_PayClient.Enabled = true;
                             }
                             ///////
                             if (Convert.ToInt32(dt7.Rows[0][5]) == 0)
                             {
                                 Main.getmain.pay_patientCompany.Enabled = false;
-                                Main.getmain.accordion_PayCompany.Enabled = false;
 
                             }
                             else if (Convert.ToInt32(dt7.Rows[0][5]) == 1)
                             {
                                 Main.getmain.pay_patientCompany.Enabled = true;
-                                Main.getmain.accordion_PayCompany.Enabled = true;
                             }
                             ///////
                             if (Convert.ToInt32(dt2.Rows[0][6]) == 0)

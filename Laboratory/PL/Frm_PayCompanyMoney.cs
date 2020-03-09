@@ -116,92 +116,6 @@ namespace Laboratory.PL
 
         private void btn_client_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (txt_prise.Text == "")
-                {
-                    txt_prise.Text = "0";
-                }
-                if (cmb_Stock.Text == "")
-                {
-                    MessageBox.Show("من فضلك قم بااختيار الخزينة");
-                    return;
-                }
-                decimal x = 0;
-                //decimal total = 0;
-                if (dataGridView1.Rows.Count >= 1)
-
-                    if (RdbAllPay.Checked == true)
-                    {
-                        if (MessageBox.Show("هل تريد دفع المبلغ بالكامل", "عمليه الدفع", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
-                        {
-                            if (RdbAllCustomer.Checked == true)
-                            {
-                                MessageBox.Show("من فضلك حدد اسم الشركة", "تاكيد", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                return;
-                            }
-                       
-                            c.ADD_Company_TotalRent(Convert.ToInt32(cmb_company.SelectedValue), Convert.ToDecimal(dataGridView1.CurrentRow.Cells[2].Value)
-                                , x, dateTimePicker1.Value, Convert.ToInt32(cmb_Stock.SelectedValue)
-                                , Txt_SalesMAn.Text, Convert.ToInt32(Cmb_Branch.SelectedValue));
-
-                            s.add_insertStock(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(dataGridView1.CurrentRow.Cells[2].Value),
-                                               dateTimePicker1.Value, Txt_SalesMAn.Text, cmb_company.Text + ""+ "مدفوعات مديونية شركات من الشركة ");
-                            MessageBox.Show("تم دفع المبلغ بنجاح");
-                            dataGridView1.DataSource = c.SelectOneCompanyMoney(Convert.ToInt32(cmb_company.SelectedValue));
-                        }
-                        else
-                        {
-                            MessageBox.Show("تم   الغاء العمليه بنجاح");
-                            return;
-                        }
-
-
-                    }
-                    else if (rdbPartPay.Checked == true)
-                    {
-                        decimal z = Convert.ToInt32(dataGridView1.CurrentRow.Cells[2].Value) - Convert.ToDecimal(txt_prise.Text);
-
-
-                        if (MessageBox.Show("هل تريد جزء من المبلغ ", "عمليه الدفع", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
-
-                        {
-                            if (RdbAllCustomer.Checked == true)
-                            {
-                                MessageBox.Show("من فضلك حدد اسم الشركة", "تاكيد", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                return;
-                            }
-                            if (Convert.ToDecimal(txt_prise.Text) > Convert.ToDecimal(dataGridView1.CurrentRow.Cells[2].Value))
-                            {
-                                MessageBox.Show("المبلغ المدفوع اكبر من المبلغ الموجود حاليا على الشركة  ", "تاكيد", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                txt_prise.Focus();
-                                return;
-                            }
-                            c.ADD_Company_TotalRent(Convert.ToInt32(cmb_company.SelectedValue), Convert.ToDecimal(txt_prise.Text),
-                                                    z, dateTimePicker1.Value,Convert.ToInt32(cmb_Stock.SelectedValue), Txt_SalesMAn.Text, Convert.ToInt32(Cmb_Branch.SelectedValue));
-                            s.add_insertStock(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_prise.Text), dateTimePicker1.Value, cmb_company.Text, "مدفوعات مديونية");
-
-                            MessageBox.Show("تم دفع المبلغ بنجاح");
-                            dataGridView1.DataSource = c.SelectOneCompanyMoney(Convert.ToInt32(cmb_company.SelectedValue));
-
-                        }
-                        else
-                        {
-                            MessageBox.Show("تم   الغاء العمليه بنجاح");
-                            return;
-                        }
-                    }
-
-                Calc();
-
-                txt_prise.Text = "0";
-
-            }
-            catch (Exception EX)
-            {
-
-                MessageBox.Show(EX.Message);
-            }
         }
 
         private void RdbAllCustomer_CheckedChanged(object sender, EventArgs e)
@@ -254,6 +168,97 @@ namespace Laboratory.PL
             finally
             {
                 dt.Dispose();
+            }
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (txt_prise.Text == "")
+                {
+                    txt_prise.Text = "0";
+                }
+                if (cmb_Stock.Text == "")
+                {
+                    MessageBox.Show("من فضلك قم بااختيار الخزينة");
+                    return;
+                }
+                decimal x = 0;
+                //decimal total = 0;
+                if (dataGridView1.Rows.Count >= 1)
+
+                    if (RdbAllPay.Checked == true)
+                    {
+                        if (MessageBox.Show("هل تريد دفع المبلغ بالكامل", "عمليه الدفع", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                        {
+                            if (RdbAllCustomer.Checked == true)
+                            {
+                                MessageBox.Show("من فضلك حدد اسم الشركة", "تاكيد", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                return;
+                            }
+
+                            c.ADD_Company_TotalRent(Convert.ToInt32(cmb_company.SelectedValue), Convert.ToDecimal(dataGridView1.CurrentRow.Cells[2].Value)
+                                , x, dateTimePicker1.Value, Convert.ToInt32(cmb_Stock.SelectedValue)
+                                , Txt_SalesMAn.Text, Convert.ToInt32(Cmb_Branch.SelectedValue));
+
+                            s.add_insertStock(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(dataGridView1.CurrentRow.Cells[2].Value),
+                                               dateTimePicker1.Value, Txt_SalesMAn.Text, cmb_company.Text + "" + "مدفوعات مديونية شركات من الشركة ");
+                            MessageBox.Show("تم دفع المبلغ بنجاح");
+                            dataGridView1.DataSource = c.SelectOneCompanyMoney(Convert.ToInt32(cmb_company.SelectedValue));
+                        }
+                        else
+                        {
+                            MessageBox.Show("تم   الغاء العمليه بنجاح");
+                            return;
+                        }
+
+
+                    }
+                    else if (rdbPartPay.Checked == true)
+                    {
+                        decimal z = Convert.ToInt32(dataGridView1.CurrentRow.Cells[2].Value) - Convert.ToDecimal(txt_prise.Text);
+
+
+                        if (MessageBox.Show("هل تريد جزء من المبلغ ", "عمليه الدفع", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+
+                        {
+                            if (RdbAllCustomer.Checked == true)
+                            {
+                                MessageBox.Show("من فضلك حدد اسم الشركة", "تاكيد", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                return;
+                            }
+                            if (Convert.ToDecimal(txt_prise.Text) > Convert.ToDecimal(dataGridView1.CurrentRow.Cells[2].Value))
+                            {
+                                MessageBox.Show("المبلغ المدفوع اكبر من المبلغ الموجود حاليا على الشركة  ", "تاكيد", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                txt_prise.Focus();
+                                return;
+                            }
+                            c.ADD_Company_TotalRent(Convert.ToInt32(cmb_company.SelectedValue), Convert.ToDecimal(txt_prise.Text),
+                                                    z, dateTimePicker1.Value, Convert.ToInt32(cmb_Stock.SelectedValue), Txt_SalesMAn.Text, Convert.ToInt32(Cmb_Branch.SelectedValue));
+                            s.add_insertStock(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_prise.Text), dateTimePicker1.Value, cmb_company.Text, "مدفوعات مديونية");
+
+                            MessageBox.Show("تم دفع المبلغ بنجاح");
+                            dataGridView1.DataSource = c.SelectOneCompanyMoney(Convert.ToInt32(cmb_company.SelectedValue));
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("تم   الغاء العمليه بنجاح");
+                            return;
+                        }
+                    }
+
+                Calc();
+
+                txt_prise.Text = "0";
+
+            }
+            catch (Exception EX)
+            {
+
+                MessageBox.Show(EX.Message);
             }
         }
     }

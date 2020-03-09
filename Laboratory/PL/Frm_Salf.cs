@@ -22,7 +22,7 @@ namespace Laboratory.PL
             dataGridView1.Columns[0].Visible = false;
 
 
-            btn_save.Show();
+            //btn_save.Show();
 
         }
         DataTable dt1 = new DataTable();
@@ -87,7 +87,7 @@ namespace Laboratory.PL
                 txt_NameDaen.Clear();
                 Txt_money.Clear();
 
-                btn_save.Show();
+                //btn_save.Show();
 
 
            // }
@@ -120,40 +120,40 @@ namespace Laboratory.PL
 
         private void btn_update_Click(object sender, EventArgs e)
         {
-            if (cmb_employeeName.Text == "")
-            {
-                MessageBox.Show("قم بااختيار اسم الموظف");
-                return;
+            //if (cmb_employeeName.Text == "")
+            //{
+            //    MessageBox.Show("قم بااختيار اسم الموظف");
+            //    return;
 
-            }
+            //}
 
-            if (txt_NameDaen.Text == "")
-            {
-                MessageBox.Show("قم بااختيار اسم الداين");
-                return;
+            //if (txt_NameDaen.Text == "")
+            //{
+            //    MessageBox.Show("قم بااختيار اسم الداين");
+            //    return;
 
-            }
+            //}
 
-            if (Txt_money.Text == "")
-            {
-                MessageBox.Show("من فضلك قم بكتابة المبلغ");
-                return;
+            //if (Txt_money.Text == "")
+            //{
+            //    MessageBox.Show("من فضلك قم بكتابة المبلغ");
+            //    return;
 
-            }
-            else
-            {
-                E.UpdateEmployee_Salf(txt_NameDaen.Text, dateTimePicker1.Value, dateTimePicker2.Value, txt_note.Text, Convert.ToDecimal(Txt_money.Text), Convert.ToInt32(cmb_employeeName.SelectedValue)
-                    ,Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
-                MessageBox.Show("تم التعديل بنجاح");
-                txt_note.Clear();
-                txt_NameDaen.Clear();
-                Txt_money.Clear();
+            //}
+            //else
+            //{
+            //    E.UpdateEmployee_Salf(txt_NameDaen.Text, dateTimePicker1.Value, dateTimePicker2.Value, txt_note.Text, Convert.ToDecimal(Txt_money.Text), Convert.ToInt32(cmb_employeeName.SelectedValue)
+            //        ,Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
+            //    MessageBox.Show("تم التعديل بنجاح");
+            //    txt_note.Clear();
+            //    txt_NameDaen.Clear();
+            //    Txt_money.Clear();
           
-                btn_save.Show();
+            //    btn_save.Show();
            
 
 
-            }
+            //}
         }
 
         private void btn_new_Click(object sender, EventArgs e)
@@ -162,7 +162,7 @@ namespace Laboratory.PL
             txt_NameDaen.Clear();
             Txt_money.Clear();
      
-            btn_save.Show();
+            //btn_save.Show();
          
         }
 
@@ -273,6 +273,65 @@ namespace Laboratory.PL
                 }
                 dt.Dispose();
             }
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+
+            if (Txt_money.Text == "" || Txt_money.Text == "0")
+            {
+                MessageBox.Show("من فضلك قم بكتابة المبلغ");
+                return;
+
+            }
+
+
+
+
+            if (cmb_employeeName.Text == "")
+            {
+                MessageBox.Show("قم بااختيار اسم الموظف");
+                return;
+
+            }
+
+            if (txt_NameDaen.Text == "")
+            {
+                MessageBox.Show("قم بااختيار اسم الداين");
+                return;
+
+            }
+
+
+         
+
+            E.AddEmployee_Salf(txt_NameDaen.Text, dateTimePicker1.Value, dateTimePicker2.Value, txt_note.Text, Convert.ToDecimal(Txt_money.Text), Convert.ToInt32(cmb_employeeName.SelectedValue));
+            MessageBox.Show("تم التسجيل بنجاح");
+
+            dataGridView1.DataSource = E.SelectEmployeeSalf();
+            txt_note.Clear();
+            txt_NameDaen.Clear();
+            Txt_money.Clear();
+
+            txt_note.Clear();
+            txt_NameDaen.Clear();
+            Txt_money.Clear();
+
+            //btn_save.Show();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         }
     }
     }

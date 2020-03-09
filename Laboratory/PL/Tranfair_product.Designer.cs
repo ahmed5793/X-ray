@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tranfair_product));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btn_new = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_prod = new DevExpress.XtraEditors.SimpleButton();
             this.txt_num = new System.Windows.Forms.TextBox();
             this.Txt_sales = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -46,30 +47,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.Cmb_ToStore = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.Btn_selectProduct = new System.Windows.Forms.Button();
-            this.Btn_Save = new System.Windows.Forms.Button();
             this.DataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Btn_Print = new System.Windows.Forms.Button();
+            this.btn_new = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_transfer = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btn_new
-            // 
-            this.btn_new.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btn_new.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_new.Location = new System.Drawing.Point(527, 446);
-            this.btn_new.Name = "btn_new";
-            this.btn_new.Size = new System.Drawing.Size(176, 58);
-            this.btn_new.TabIndex = 73;
-            this.btn_new.Text = "فاتورة جديدة";
-            this.btn_new.UseVisualStyleBackColor = true;
-            this.btn_new.Click += new System.EventHandler(this.btn_new_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.btn_prod);
             this.groupBox1.Controls.Add(this.txt_num);
             this.groupBox1.Controls.Add(this.Txt_sales);
             this.groupBox1.Controls.Add(this.label4);
@@ -81,13 +70,24 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.Cmb_ToStore);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.Btn_selectProduct);
             this.groupBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(9, -9);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(707, 275);
             this.groupBox1.TabIndex = 76;
             this.groupBox1.TabStop = false;
+            // 
+            // btn_prod
+            // 
+            this.btn_prod.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_prod.Appearance.Options.UseFont = true;
+            this.btn_prod.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_prod.ImageOptions.Image")));
+            this.btn_prod.Location = new System.Drawing.Point(359, 216);
+            this.btn_prod.Name = "btn_prod";
+            this.btn_prod.Size = new System.Drawing.Size(152, 45);
+            this.btn_prod.TabIndex = 78;
+            this.btn_prod.Text = "اختيار صنف";
+            this.btn_prod.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // txt_num
             // 
@@ -220,33 +220,6 @@
             this.label1.TabIndex = 45;
             this.label1.Text = "إلى مخزن";
             // 
-            // Btn_selectProduct
-            // 
-            this.Btn_selectProduct.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Btn_selectProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Btn_selectProduct.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_selectProduct.ForeColor = System.Drawing.Color.White;
-            this.Btn_selectProduct.Location = new System.Drawing.Point(438, 215);
-            this.Btn_selectProduct.Name = "Btn_selectProduct";
-            this.Btn_selectProduct.Size = new System.Drawing.Size(196, 44);
-            this.Btn_selectProduct.TabIndex = 48;
-            this.Btn_selectProduct.Text = "اختيار صنف";
-            this.Btn_selectProduct.UseVisualStyleBackColor = false;
-            this.Btn_selectProduct.Click += new System.EventHandler(this.Btn_selectProduct_Click);
-            // 
-            // Btn_Save
-            // 
-            this.Btn_Save.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.Btn_Save.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Save.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Btn_Save.Location = new System.Drawing.Point(280, 442);
-            this.Btn_Save.Name = "Btn_Save";
-            this.Btn_Save.Size = new System.Drawing.Size(190, 65);
-            this.Btn_Save.TabIndex = 72;
-            this.Btn_Save.Text = "حفظ الفاتوره";
-            this.Btn_Save.UseVisualStyleBackColor = true;
-            this.Btn_Save.Click += new System.EventHandler(this.Btn_Save_Click);
-            // 
             // DataGridView1
             // 
             this.DataGridView1.AllowDrop = true;
@@ -304,33 +277,45 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Yellow;
             this.DataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataGridView1.Size = new System.Drawing.Size(707, 158);
+            this.DataGridView1.Size = new System.Drawing.Size(707, 157);
             this.DataGridView1.TabIndex = 71;
             this.DataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellClick);
             // 
-            // Btn_Print
+            // btn_new
             // 
-            this.Btn_Print.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.Btn_Print.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Print.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Btn_Print.Location = new System.Drawing.Point(29, 441);
-            this.Btn_Print.Name = "Btn_Print";
-            this.Btn_Print.Size = new System.Drawing.Size(190, 65);
-            this.Btn_Print.TabIndex = 77;
-            this.Btn_Print.Text = "طباعة الفاتوره";
-            this.Btn_Print.UseVisualStyleBackColor = true;
+            this.btn_new.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_new.Appearance.Options.UseFont = true;
+            this.btn_new.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_new.ImageOptions.Image")));
+            this.btn_new.Location = new System.Drawing.Point(463, 451);
+            this.btn_new.Name = "btn_new";
+            this.btn_new.Size = new System.Drawing.Size(152, 45);
+            this.btn_new.TabIndex = 79;
+            this.btn_new.Text = "جديد";
+            this.btn_new.Click += new System.EventHandler(this.simpleButton2_Click);
+            // 
+            // btn_transfer
+            // 
+            this.btn_transfer.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_transfer.Appearance.Options.UseFont = true;
+            this.btn_transfer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_transfer.ImageOptions.Image")));
+            this.btn_transfer.Location = new System.Drawing.Point(152, 451);
+            this.btn_transfer.Name = "btn_transfer";
+            this.btn_transfer.Size = new System.Drawing.Size(152, 45);
+            this.btn_transfer.TabIndex = 80;
+            this.btn_transfer.Text = "تحويل";
+            this.btn_transfer.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // Tranfair_product
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Orange;
-            this.ClientSize = new System.Drawing.Size(721, 516);
-            this.Controls.Add(this.Btn_Print);
+            this.BackColor = System.Drawing.Color.Navy;
+            this.ClientSize = new System.Drawing.Size(721, 515);
+            this.Controls.Add(this.btn_transfer);
             this.Controls.Add(this.btn_new);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.Btn_Save);
             this.Controls.Add(this.DataGridView1);
+            this.MaximumSize = new System.Drawing.Size(737, 554);
             this.MinimumSize = new System.Drawing.Size(737, 554);
             this.Name = "Tranfair_product";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -345,7 +330,6 @@
         #endregion
         public System.Windows.Forms.ComboBox Cmb_ToStore;
         public System.Windows.Forms.DataGridView DataGridView1;
-        public System.Windows.Forms.Button btn_new;
         public System.Windows.Forms.GroupBox groupBox1;
         public System.Windows.Forms.TextBox Txt_sales;
         public System.Windows.Forms.Label label4;
@@ -356,9 +340,9 @@
         public System.Windows.Forms.DateTimePicker DateTimePicker1;
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.Label label1;
-        public System.Windows.Forms.Button Btn_selectProduct;
-        public System.Windows.Forms.Button Btn_Save;
-        public System.Windows.Forms.Button Btn_Print;
         public System.Windows.Forms.TextBox txt_num;
+        private DevExpress.XtraEditors.SimpleButton btn_prod;
+        private DevExpress.XtraEditors.SimpleButton btn_new;
+        private DevExpress.XtraEditors.SimpleButton btn_transfer;
     }
 }

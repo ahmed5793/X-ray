@@ -137,5 +137,91 @@ namespace Laboratory.PL
             dataGridView1.DataSource = S.SearchSuppliers(txt_search.Text);
 
         }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+
+            btn_new.Hide();
+            Btn_save.Show();
+            btn_update.Enabled = false;
+            Clear();
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            DataTable dt2 = new DataTable();
+            try
+            {
+
+                if (Txt_name.Text == "")
+                {
+                    MessageBox.Show("يرجي التاكد من اسم المورد");
+
+                }
+                else
+                {
+                    S.addSuppliers(Txt_name.Text, txt_address.Text, txt_phone.Text);
+                    dt2.Clear();
+                    dt2 = S.select_LastIdSupplier();
+                    S.Add_SupplierTotalMoney(Convert.ToInt32(dt2.Rows[0][0]));
+                    MessageBox.Show("تم اضافه المورد بنجاح", "عمليه الاضافه", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    Clear();
+                    dataGridView1.DataSource = S.SelectSuppliers();
+                    btn_new.Hide();
+                    Btn_save.Show();
+                    btn_update.Enabled = false;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+
+
+                if (Txt_name.Text == "")
+                {
+                    MessageBox.Show("يرجي التاكد من اسم المورد");
+                }
+
+
+
+                else if (MessageBox.Show("هل تريد تعديل بيانات المورد", "عمليه التعديل", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                {
+
+                    S.UpdateSuppliers(Txt_name.Text, txt_address.Text, txt_phone.Text, int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString()));
+                    MessageBox.Show("تم تعديل بيانات العميل بنجاح", "عمليه التعديل", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    dataGridView1.DataSource = S.SelectSuppliers();
+                    Clear();
+                    Btn_save.Show();
+                    btn_new.Hide();
+                    btn_update.Enabled = false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void Frm_Suppliers_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

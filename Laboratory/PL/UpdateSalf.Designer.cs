@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_save = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateSalf));
             this.label8 = new System.Windows.Forms.Label();
             this.cmb_employeeName = new System.Windows.Forms.ComboBox();
             this.txt_date = new System.Windows.Forms.TextBox();
@@ -38,19 +38,9 @@
             this.Txt_UpdateSalary = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btn_save
-            // 
-            this.btn_save.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_save.Location = new System.Drawing.Point(310, 165);
-            this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(132, 40);
-            this.btn_save.TabIndex = 25;
-            this.btn_save.Text = "تعديل";
-            this.btn_save.UseVisualStyleBackColor = true;
-            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
             // label8
             // 
@@ -159,20 +149,35 @@
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.MaximumSize = new System.Drawing.Size(728, 147);
+            this.groupBox1.MinimumSize = new System.Drawing.Size(728, 147);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(728, 147);
             this.groupBox1.TabIndex = 26;
             this.groupBox1.TabStop = false;
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(298, 174);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(129, 34);
+            this.simpleButton1.TabIndex = 48;
+            this.simpleButton1.Text = "تعديل";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
             // UpdateSalf
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(752, 211);
-            this.Controls.Add(this.btn_save);
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.groupBox1);
             this.Name = "UpdateSalf";
-            this.Text = "UpdateSalf";
+            this.Text = "تعديل علي السلف";
             this.Load += new System.EventHandler(this.UpdateSalf_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -181,8 +186,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.Label label8;
         public System.Windows.Forms.ComboBox cmb_employeeName;
         private System.Windows.Forms.TextBox txt_date;
@@ -192,5 +195,6 @@
         private System.Windows.Forms.TextBox Txt_UpdateSalary;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

@@ -160,5 +160,101 @@ namespace Laboratory.PL
                 e.Handled = true;
             }
         }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            btn_new.Hide();
+            btn_save.Show();
+
+            btn_update.Enabled = false;
+            txt_name.Clear();
+            txt_phone.Clear();
+        }
+
+        private void btn_transfer_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+
+
+                if (txt_name.Text == "")
+                {
+                    MessageBox.Show("يرجي التاكد من اسم الطبيب");
+                    txt_name.Focus();
+                    return;
+                }
+
+
+
+
+
+                if (MessageBox.Show("هل تريد تعديل بيانات الطبيب", "عمليه التعديل", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                {
+                    t.UpdateTechincal(txt_name.Text, txt_phone.Text, Convert.ToInt32(dataGridView1.CurrentRow.Cells[4].Value), txt_address.Text);
+
+                    MessageBox.Show("تم تعديل بيانات الطبيب بنجاح", "عمليه التعديل", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    dataGridView1.DataSource = t.SelectTechincal();
+                    txt_name.Clear();
+                    txt_phone.Clear();
+                    txt_address.Clear();
+                    btn_update.Enabled = false;
+                    btn_new.Hide();
+                    btn_save.Show();
+
+
+                }
+                else
+                {
+                    MessageBox.Show("تم الغاء عمليه التعديل");
+                    txt_name.Clear();
+                    txt_phone.Clear();
+                    txt_address.Clear();
+                    btn_update.Enabled = false;
+                    btn_new.Hide();
+                    btn_save.Show();
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void simpleButton1_Click_1(object sender, EventArgs e)
+        {
+
+            try
+            {
+
+
+                if (txt_name.Text == "")
+                {
+                    MessageBox.Show("يرجي التاكد من اسم الطبيب");
+                    return;
+
+                }
+
+
+
+                t.AddTechincal(txt_name.Text, txt_phone.Text, txt_address.Text);
+
+                MessageBox.Show("تم اضافه بيانات الطبيب بنجاح", "عمليه الاضافه", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                dataGridView1.DataSource = t.SelectTechincal();
+                txt_name.Clear();
+                txt_phone.Clear();
+                txt_address.Clear();
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

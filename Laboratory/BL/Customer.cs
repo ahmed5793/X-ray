@@ -174,6 +174,16 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
+        internal DataTable selectClientRentComopany()
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            dt = da.selected("selectClientRentComopany", null);
+            da.close();
+            return dt;
+        }
         internal void addPayClient(int id_client, decimal pay, decimal rent, DateTime pay_date, int id_ticket,int IDStock ,string Sales_Man , int Id_Branch)
         {
             DataAccessLayer da = new DataAccessLayer();

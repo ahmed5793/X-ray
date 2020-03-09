@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_save = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_StockPull));
             this.txt_CurrentBalance = new System.Windows.Forms.TextBox();
             this.txt_addbalance = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -42,20 +42,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.cmb_Stock = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.SuspendLayout();
-            // 
-            // btn_save
-            // 
-            this.btn_save.BackColor = System.Drawing.Color.Black;
-            this.btn_save.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_save.ForeColor = System.Drawing.Color.White;
-            this.btn_save.Location = new System.Drawing.Point(120, 354);
-            this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(132, 40);
-            this.btn_save.TabIndex = 60;
-            this.btn_save.Text = "تاكيد السحب";
-            this.btn_save.UseVisualStyleBackColor = false;
-            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
             // txt_CurrentBalance
             // 
@@ -173,7 +161,7 @@
             this.lblMoney.ForeColor = System.Drawing.Color.Red;
             this.lblMoney.Location = new System.Drawing.Point(80, 51);
             this.lblMoney.Name = "lblMoney";
-            this.lblMoney.Size = new System.Drawing.Size(16, 13);
+            this.lblMoney.Size = new System.Drawing.Size(19, 13);
             this.lblMoney.TabIndex = 63;
             this.lblMoney.Text = "...";
             // 
@@ -216,13 +204,25 @@
             this.label3.TabIndex = 61;
             this.label3.Text = "رصيد الخزنة الحالى هو:";
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(83, 357);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(152, 45);
+            this.simpleButton1.TabIndex = 89;
+            this.simpleButton1.Text = "تاكيد السحب";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
             // Frm_StockPull
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(380, 435);
-            this.Controls.Add(this.btn_save);
+            this.ClientSize = new System.Drawing.Size(380, 434);
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.txt_CurrentBalance);
             this.Controls.Add(this.txt_addbalance);
             this.Controls.Add(this.label7);
@@ -238,6 +238,7 @@
             this.Controls.Add(this.label3);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(396, 473);
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(396, 473);
             this.Name = "Frm_StockPull";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -249,7 +250,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.TextBox txt_CurrentBalance;
         private System.Windows.Forms.TextBox txt_addbalance;
         private System.Windows.Forms.Label label7;
@@ -263,5 +263,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cmb_Stock;
         private System.Windows.Forms.Label label3;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

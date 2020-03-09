@@ -209,7 +209,6 @@
     <Compile Include="BL\DoctorOfCenter.cs" />
     <Compile Include="BL\Doctors.cs" />
     <Compile Include="BL\Employee.cs" />
-    <Compile Include="BL\FileExcel.cs" />
     <Compile Include="BL\Finger.cs" />
     <Compile Include="BL\Installment.cs" />
     <Compile Include="BL\whats.cs" />
@@ -220,11 +219,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="LaboratoryDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LaboratoryDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="PL\FingerPrint.cs">
       <SubType>Form</SubType>
@@ -363,6 +357,12 @@
     </Compile>
     <Compile Include="PL\Frm_DebitCustomer.Designer.cs">
       <DependentUpon>Frm_DebitCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\frm_DebitCustomerCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\frm_DebitCustomerCompany.Designer.cs">
+      <DependentUpon>frm_DebitCustomerCompany.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Frm_DebitSuppliers.cs">
       <SubType>Form</SubType>
@@ -860,6 +860,12 @@
     <Compile Include="RPT\Order\Rpt_OrderPay.Designer.cs">
       <DependentUpon>Rpt_OrderPay.cs</DependentUpon>
     </Compile>
+    <Compile Include="RPT\Rpt_Barcode.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPT\Rpt_Barcode.Designer.cs">
+      <DependentUpon>Rpt_Barcode.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="PL\FingerPrint.resx">
       <DependentUpon>FingerPrint.cs</DependentUpon>
     </EmbeddedResource>
@@ -922,6 +928,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_DebitCustomer.resx">
       <DependentUpon>Frm_DebitCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\frm_DebitCustomerCompany.resx">
+      <DependentUpon>frm_DebitCustomerCompany.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_DebitSuppliers.resx">
       <DependentUpon>Frm_DebitSuppliers.cs</DependentUpon>
@@ -1177,6 +1186,9 @@
     <EmbeddedResource Include="RPT\Order\Rpt_OrderPay.resx">
       <DependentUpon>Rpt_OrderPay.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RPT\Rpt_Barcode.resx">
+      <DependentUpon>Rpt_Barcode.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
@@ -1188,19 +1200,7 @@
     <None Include="DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
-    <None Include="LaboratoryDataSet.xsc">
-      <DependentUpon>LaboratoryDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="LaboratoryDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>LaboratoryDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="LaboratoryDataSet.xss">
-      <DependentUpon>LaboratoryDataSet.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\Laboratory.BL.FileExcel.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

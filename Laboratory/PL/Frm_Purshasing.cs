@@ -132,43 +132,6 @@ namespace Laboratory.PL
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Frm_ProductList frm_ProductList = new Frm_ProductList();
-            try
-            {
-                frm_ProductList.ShowDialog();
-                if (frm_ProductList.dataGridView1.Rows.Count > 0 && frm_ProductList.dataGridView1.SelectedRows.Count > 0)
-                {
-                    for (int i = 0; i < dataGridView1.Rows.Count; i++)
-                    {
-                        if (dataGridView1.Rows[i].Cells[0].Value.ToString() == frm_ProductList.dataGridView1.CurrentRow.Cells[0].Value.ToString())
-                        {
-                            Console.Beep();
-                            MessageBox.Show("هذا الصنف مسجل من قبل ", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return;
-                        }
-                    }
-
-                    DataRow r = dt.NewRow();
-                    r[0] = frm_ProductList.dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                    r[1] = frm_ProductList.dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                    r[2] = frm_ProductList.dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                    r[3] = 1;                   
-                    r[5] = 0;
-                    //r[6] = txt_amount.Text;
-                    dt.Rows.Add(r);
-                    Console.Beep();
-                    dataGridView1.DataSource = dt;
-                    Calc_Amount();
-                    Total_Amount();
-                    Totalinvoicesup();
-                    Pay();
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -248,77 +211,7 @@ namespace Laboratory.PL
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-            DataTable dt5 = new DataTable();
-            try
-            {
-
-
-                if (dataGridView1.Rows.Count > 0)
-                {
-                    if (cmb_Stock.Text == "")
-                    {
-                        MessageBox.Show("لا بد من تحديد خزنة");
-                        return;
-
-                    }
-                    dt4 = Stock.Select_moneyStock(Convert.ToInt32(cmb_Stock.SelectedValue));
-
-                    if (dt4.Rows.Count > 0)
-                    {
-                        if (Convert.ToDecimal(txt_pay.Text) > Convert.ToDecimal(dt4.Rows[0][0]))
-                        {
-                            MessageBox.Show("رصيد الخزنة الحالى غير كافى لشراء هذه الفاتورة");
-                            return;
-                        }
-                    }
-                    Suppliers.ADDSuppliersINFORMARION(Convert.ToInt32(txt_num.Text), Convert.ToInt32(Cmb_Suppliers.SelectedValue),
-                     dateTimePicker1.Value, txt_note.Text, txt_sales.Text, Convert.ToDecimal(txt_invo.Text),
-                     Convert.ToDecimal(txt_pay.Text), Convert.ToDecimal(txt_mark.Text), Convert.ToInt32(cmb_Stock.SelectedValue));
-                    if (Convert.ToDecimal(txt_pay.Text)>0)
-                    {
-                        Stock.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_pay.Text), dateTimePicker1.Value, txt_sales.Text, Cmb_Suppliers.Text + "فاتورة مشتريات");
-                    }
-                    for (int i = 0; i < dataGridView1.Rows.Count; i++)
-                    {
-                        dt5 = Product.Validate_StoreProduct(Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value),Convert.ToInt32(Cmb_Store.SelectedValue));
-                        if (dt5.Rows.Count > 0)
-                        {
-                            Product.Update_QuantityStoreProduct(Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value),
-                                 Convert.ToInt32(dataGridView1.Rows[i].Cells[3].Value), Convert.ToInt32(Cmb_Store.SelectedValue));
-                        }
-                        else if (dt5.Rows.Count == 0)
-                        {
-                            Product.Add_StoreProduct(Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value), Convert.ToInt32(Cmb_Store.SelectedValue),
-                                Convert.ToInt32(dataGridView1.Rows[i].Cells[3].Value),0);
-                        }
-                        Suppliers.addSuppliersDetails(Convert.ToInt32(txt_num.Text),
-                            Convert.ToInt32(Cmb_Store.SelectedValue),
-                            Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value),
-                            Convert.ToInt32(dataGridView1.Rows[i].Cells[3].Value)
-                            , Convert.ToDecimal(dataGridView1.Rows[i].Cells[2].Value),
-                            Convert.ToDecimal(dataGridView1.Rows[i].Cells[4].Value),
-                            Convert.ToDecimal(dataGridView1.Rows[i].Cells[5].Value)
-                            , Convert.ToDecimal(dataGridView1.Rows[i].Cells[6].Value));
-
-                    }
-                    Suppliers.Update_SupplierTotalMoney(Convert.ToInt32(Cmb_Suppliers.SelectedValue),Convert.ToDecimal(txt_mark.Text));
-                    MessageBox.Show("تم اضافه الفاتوره بنجاح", "عمليه الاضافه", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-
-                    //Data();
-                    txt_num.Text = Suppliers.LastSuppliersDetalis().Rows[0][0].ToString();
-                    Btn_Print.Enabled = true;
-                
-                }
-                else
-                {
-                    MessageBox.Show("من فضلك قم بااختيار صنف واحد علي الاقل ");
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+           
         }
 
         private void txt_pay_KeyPress(object sender, KeyPressEventArgs e)
@@ -364,12 +257,7 @@ namespace Laboratory.PL
 
         private void Btn_Print_Click(object sender, EventArgs e)
         {
-            //Rpt.rptsupplier rs = new Rpt.rptsupplier();
-            //Rpt.FrmSingleReport fr = new Rpt.FrmSingleReport();
-
-            //rs.SetParameterValue("@id", Convert.ToInt32(txt_num.Text));
-            //fr.crystalReportViewer1.ReportSource = rs;
-            //fr.Show();
+            
         }
 
         private void txt_pay_Click(object sender, EventArgs e)
@@ -393,6 +281,133 @@ namespace Laboratory.PL
             if (txt_pay.Text=="")
             {
                 txt_pay.Text = "0";
+            }
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+
+            Frm_ProductList frm_ProductList = new Frm_ProductList();
+            try
+            {
+                frm_ProductList.ShowDialog();
+                if (frm_ProductList.dataGridView1.Rows.Count > 0 && frm_ProductList.dataGridView1.SelectedRows.Count > 0)
+                {
+                    for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                    {
+                        if (dataGridView1.Rows[i].Cells[0].Value.ToString() == frm_ProductList.dataGridView1.CurrentRow.Cells[0].Value.ToString())
+                        {
+                            Console.Beep();
+                            MessageBox.Show("هذا الصنف مسجل من قبل ", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                    }
+
+                    DataRow r = dt.NewRow();
+                    r[0] = frm_ProductList.dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                    r[1] = frm_ProductList.dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                    r[2] = frm_ProductList.dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                    r[3] = 1;
+                    r[5] = 0;
+                    //r[6] = txt_amount.Text;
+                    dt.Rows.Add(r);
+                    Console.Beep();
+                    dataGridView1.DataSource = dt;
+                    Calc_Amount();
+                    Total_Amount();
+                    Totalinvoicesup();
+                    Pay();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            //Rpt.rptsupplier rs = new Rpt.rptsupplier();
+            //Rpt.FrmSingleReport fr = new Rpt.FrmSingleReport();
+
+            //rs.SetParameterValue("@id", Convert.ToInt32(txt_num.Text));
+            //fr.crystalReportViewer1.ReportSource = rs;
+            //fr.Show();
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+            DataTable dt5 = new DataTable();
+            try
+            {
+
+
+                if (dataGridView1.Rows.Count > 0)
+                {
+                    if (cmb_Stock.Text == "")
+                    {
+                        MessageBox.Show("لا بد من تحديد خزنة");
+                        return;
+
+                    }
+                    dt4 = Stock.Select_moneyStock(Convert.ToInt32(cmb_Stock.SelectedValue));
+
+                    if (dt4.Rows.Count > 0)
+                    {
+                        if (Convert.ToDecimal(txt_pay.Text) > Convert.ToDecimal(dt4.Rows[0][0]))
+                        {
+                            MessageBox.Show("رصيد الخزنة الحالى غير كافى لشراء هذه الفاتورة");
+                            return;
+                        }
+                    }
+                    Suppliers.ADDSuppliersINFORMARION(Convert.ToInt32(txt_num.Text), Convert.ToInt32(Cmb_Suppliers.SelectedValue),
+                     dateTimePicker1.Value, txt_note.Text, txt_sales.Text, Convert.ToDecimal(txt_invo.Text),
+                     Convert.ToDecimal(txt_pay.Text), Convert.ToDecimal(txt_mark.Text), Convert.ToInt32(cmb_Stock.SelectedValue));
+                    if (Convert.ToDecimal(txt_pay.Text) > 0)
+                    {
+                        Stock.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_pay.Text), dateTimePicker1.Value, txt_sales.Text, Cmb_Suppliers.Text + "فاتورة مشتريات");
+                    }
+                    for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                    {
+                        dt5 = Product.Validate_StoreProduct(Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value), Convert.ToInt32(Cmb_Store.SelectedValue));
+                        if (dt5.Rows.Count > 0)
+                        {
+                            Product.Update_QuantityStoreProduct(Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value),
+                                 Convert.ToInt32(dataGridView1.Rows[i].Cells[3].Value), Convert.ToInt32(Cmb_Store.SelectedValue));
+                        }
+                        else if (dt5.Rows.Count == 0)
+                        {
+                            Product.Add_StoreProduct(Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value), Convert.ToInt32(Cmb_Store.SelectedValue),
+                                Convert.ToInt32(dataGridView1.Rows[i].Cells[3].Value), 0);
+                        }
+                        Suppliers.addSuppliersDetails(Convert.ToInt32(txt_num.Text),
+                            Convert.ToInt32(Cmb_Store.SelectedValue),
+                            Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value),
+                            Convert.ToInt32(dataGridView1.Rows[i].Cells[3].Value)
+                            , Convert.ToDecimal(dataGridView1.Rows[i].Cells[2].Value),
+                            Convert.ToDecimal(dataGridView1.Rows[i].Cells[4].Value),
+                            Convert.ToDecimal(dataGridView1.Rows[i].Cells[5].Value)
+                            , Convert.ToDecimal(dataGridView1.Rows[i].Cells[6].Value));
+
+                    }
+                    Suppliers.Update_SupplierTotalMoney(Convert.ToInt32(Cmb_Suppliers.SelectedValue), Convert.ToDecimal(txt_mark.Text));
+                    MessageBox.Show("تم اضافه الفاتوره بنجاح", "عمليه الاضافه", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+
+                    //Data();
+                    txt_num.Text = Suppliers.LastSuppliersDetalis().Rows[0][0].ToString();
+                    btn_print.Enabled = true;
+
+                }
+                else
+                {
+                    MessageBox.Show("من فضلك قم بااختيار صنف واحد علي الاقل ");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

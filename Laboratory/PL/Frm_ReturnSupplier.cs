@@ -462,5 +462,203 @@ namespace Laboratory.PL
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void btn_prod_Click(object sender, EventArgs e)
+        {
+
+            DataTable dt1 = new DataTable();
+            DataTable dt2 = new DataTable();
+            DataTable dt20 = new DataTable();
+            try
+            {
+                dt20.Clear();
+                dt20 = Suppliers.Validate_IdSupplierInformation(Convert.ToInt32(comboBox1.SelectedValue));
+                if (dt20.Rows.Count == 0)
+                {
+                    Console.Beep();
+                    MessageBox.Show("لا توجد فاتورة بهذا الرقم");
+                    return;
+                }
+                Clear();
+                dt1.Clear();
+                dt2.Clear();
+                dt1 = Suppliers.Select_SupplierInformation(Convert.ToInt32(comboBox1.SelectedValue));
+                dt2 = Suppliers.Select_SupplierDetailsForReturn(Convert.ToInt32(comboBox1.SelectedValue));
+                foreach (DataRow dr in dt1.Rows)
+                {
+                    txt_num.Text = dr["ID"].ToString();
+                    txt_Name.Text = dr["Name"].ToString();
+                    txt_sales.Text = Program.salesman;
+                }
+                dataGridView1.DataSource = dt2;
+                dataGridView1.Columns[7].Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                dt1.Dispose();
+                dt2.Dispose();
+            }
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+
+            Frm_SearchSupplierInformation frm = new Frm_SearchSupplierInformation();
+
+            try
+            {
+                frm.ShowDialog();
+                DataTable dt1 = new DataTable();
+                DataTable dt2 = new DataTable();
+                try
+                {
+                    if (frm.dataGridView1.SelectedRows.Count > 0 && frm.dataGridView1.Rows.Count > 0)
+                    {
+                        Clear();
+                        dt1.Clear();
+                        dt2.Clear();
+                        dt1 = Suppliers.Select_SupplierInformation(Convert.ToInt32(frm.dataGridView1.CurrentRow.Cells[0].Value));
+                        dt2 = Suppliers.Select_SupplierDetailsForReturn(Convert.ToInt32(frm.dataGridView1.CurrentRow.Cells[0].Value));
+                        foreach (DataRow dr in dt1.Rows)
+                        {
+                            txt_num.Text = dr["ID"].ToString();
+                            txt_Name.Text = dr["Name"].ToString();
+                            txt_sales.Text = Program.salesman;
+
+                        }
+                        dataGridView1.DataSource = dt2;
+                        dataGridView1.Columns[7].Visible = false;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    dt1.Dispose();
+                    dt2.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void simpleButton1_Click_1(object sender, EventArgs e)
+        {
+            Frm_ShowOldReturn frm_show = new Frm_ShowOldReturn();
+            DataTable data5 = new DataTable();
+            try
+            {
+                data5.Clear();
+                data5 = Suppliers.Select_SupplierReturn(Convert.ToInt32(txt_num.Text));
+                frm_show.dataGridView1.DataSource = data5;
+                frm_show.ShowDialog();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void simpleButton1_Click_2(object sender, EventArgs e)
+        {
+            try
+
+            {
+                if (Convert.ToInt32(txt_return.Text) > Convert.ToInt32(txt_quantity.Text))
+                {
+                    MessageBox.Show("الكمية المرتجعة أكبر من الكمية المباعة");
+                    txt_return.Focus();
+                    return;
+                }
+                if (Convert.ToInt32(txt_return.Text) > Convert.ToInt32(Txt_QuantityStore.Text))
+                {
+                    MessageBox.Show("الكمية المرتجعة أكبر من الكمية بالمخزن", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txt_return.Focus();
+                    return;
+                }
+                if (txt_iD.Text != string.Empty && Convert.ToInt32(txt_return.Text) > 0)
+                {
+
+                    DataRow r = dt10.NewRow();
+                    r[0] = txt_iD.Text;
+                    r[1] = txt_names.Text;
+                    r[2] = txt_return.Text;
+                    r[3] = txt_prise.Text;
+                    r[4] = (Convert.ToInt32(txt_return.Text) * Convert.ToDecimal(txt_prise.Text));
+                    r[5] = Txt_IdStore.Text;
+
+                    dt10.Rows.Add(r);
+                    dataGridView2.DataSource = dt10;
+                    Calc_ReturnValue();
+
+                    txt_names.Clear();
+                    txt_prise.Clear();
+                    txt_quantity.Clear();
+                    txt_iD.Clear();
+                    Txt_IdStore.Clear();
+                    txt_total.Clear();
+                    txt_return.Text = "0";
+
+                }
+                else
+                {
+                    MessageBox.Show("من فضلك قم بتحديد الكميه المرتجعه");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void simpleButton1_Click_3(object sender, EventArgs e)
+        {
+
+            try
+            {
+                dt.Clear();
+                dt = s.Select_moneyStock(Convert.ToInt32(Cmb_Stock.SelectedValue));
+                if (dt.Rows.Count > 0)
+                {
+                    if (Convert.ToDecimal(Txt_Pay.Text) > Convert.ToDecimal(dt.Rows[0][0]))
+                    {
+                        MessageBox.Show("رصيد الخزنة الحالى غير كافى ");
+                        return;
+                    }
+                }
+                if (dataGridView2.Rows.Count > 0)
+                {
+                    if (Convert.ToInt32(Txt_Pay.Text) > 0)
+                    {
+                        s.add_insertStock(Convert.ToInt32(Cmb_Stock.SelectedValue), Convert.ToDecimal(Txt_Pay.Text), dateTimePicker1.Value, txt_sales.Text, "مرتجع فاتورة مستريات رقم " + txt_num.Text);
+                    }
+                    for (int i = 0; i < dataGridView2.Rows.Count; i++)
+                    {
+                        Suppliers.Add_SupplierReturn(Convert.ToInt32(txt_num.Text), Convert.ToInt32(dataGridView2.Rows[i].Cells[0].Value)
+                            , Convert.ToDecimal(dataGridView2.Rows[i].Cells[3].Value)
+                         , Convert.ToDecimal(dataGridView2.Rows[i].Cells[2].Value), dateTimePicker1.Value,
+                         Convert.ToDecimal(dataGridView2.Rows[i].Cells[4].Value)
+                        , txt_sales.Text, Convert.ToInt32(dataGridView1.CurrentRow.Cells[5].Value));
+                        MessageBox.Show("تح حفظ المرتجع للفاتورة المحددة");
+                        Clear();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

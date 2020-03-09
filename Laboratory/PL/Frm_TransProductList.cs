@@ -34,5 +34,16 @@ namespace Laboratory.PL
             dataGridView1.DataSource = null;
             this.Close();
         }
+
+        private void Btn_selectProduct_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_prod_MouseClick(object sender, MouseEventArgs e)
+        {
+            dataGridView1.DataSource = null;
+            this.Close();
+        }
     }
 }

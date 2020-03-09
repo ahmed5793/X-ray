@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_ReturnSupplier));
             this.txt_Name = new System.Windows.Forms.TextBox();
             this.txt_sales = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -39,7 +40,6 @@
             this.txt_iD = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txt_return = new System.Windows.Forms.TextBox();
-            this.Btn_AddReturn = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.txt_total = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -50,14 +50,12 @@
             this.txt_names = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.Cmb_Bransh = new System.Windows.Forms.ComboBox();
             this.Cmb_Stock = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -66,10 +64,13 @@
             this.Txt_IdStore = new System.Windows.Forms.TextBox();
             this.Txt_QuantityStore = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.View_OldReturn = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.Btn_SaveReturn = new System.Windows.Forms.Button();
+            this.button2 = new DevExpress.XtraEditors.SimpleButton();
+            this.button1 = new DevExpress.XtraEditors.SimpleButton();
+            this.View_OldReturn = new DevExpress.XtraEditors.SimpleButton();
+            this.Btn_AddReturn = new DevExpress.XtraEditors.SimpleButton();
+            this.Btn_SaveReturn = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -233,21 +234,6 @@
             this.txt_return.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_return_KeyPress);
             this.txt_return.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_return_KeyUp);
             // 
-            // Btn_AddReturn
-            // 
-            this.Btn_AddReturn.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Btn_AddReturn.BackColor = System.Drawing.Color.Black;
-            this.Btn_AddReturn.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_AddReturn.ForeColor = System.Drawing.Color.Yellow;
-            this.Btn_AddReturn.Location = new System.Drawing.Point(394, 354);
-            this.Btn_AddReturn.Margin = new System.Windows.Forms.Padding(4);
-            this.Btn_AddReturn.Name = "Btn_AddReturn";
-            this.Btn_AddReturn.Size = new System.Drawing.Size(143, 36);
-            this.Btn_AddReturn.TabIndex = 184;
-            this.Btn_AddReturn.Text = "إضافة للمرتجع";
-            this.Btn_AddReturn.UseVisualStyleBackColor = false;
-            this.Btn_AddReturn.Click += new System.EventHandler(this.btn_row_Click);
-            // 
             // label14
             // 
             this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -387,6 +373,7 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.Cmb_Bransh);
             this.groupBox1.Controls.Add(this.txt_Name);
             this.groupBox1.Controls.Add(this.txt_sales);
@@ -395,7 +382,6 @@
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.comboBox1);
@@ -411,19 +397,6 @@
             this.groupBox1.TabIndex = 161;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "بيانات الفاتورة";
-            // 
-            // button1
-            // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(405, 81);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(209, 35);
-            this.button1.TabIndex = 192;
-            this.button1.Text = "بحث بأسم المورد ";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Cmb_Bransh
             // 
@@ -507,19 +480,6 @@
             this.label2.Size = new System.Drawing.Size(96, 22);
             this.label2.TabIndex = 183;
             this.label2.Text = "تاريخ المرتجع";
-            // 
-            // button2
-            // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(387, 39);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 35);
-            this.button2.TabIndex = 187;
-            this.button2.Text = "بحث";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // comboBox1
             // 
@@ -642,21 +602,6 @@
             this.label3.Text = "كمية المخزن";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // View_OldReturn
-            // 
-            this.View_OldReturn.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.View_OldReturn.BackColor = System.Drawing.Color.Black;
-            this.View_OldReturn.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.View_OldReturn.ForeColor = System.Drawing.Color.Yellow;
-            this.View_OldReturn.Location = new System.Drawing.Point(570, 354);
-            this.View_OldReturn.Margin = new System.Windows.Forms.Padding(4);
-            this.View_OldReturn.Name = "View_OldReturn";
-            this.View_OldReturn.Size = new System.Drawing.Size(184, 36);
-            this.View_OldReturn.TabIndex = 195;
-            this.View_OldReturn.Text = "عرض المرتجع السابق";
-            this.View_OldReturn.UseVisualStyleBackColor = false;
-            this.View_OldReturn.Click += new System.EventHandler(this.View_OldReturn_Click);
-            // 
             // groupBox3
             // 
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -695,20 +640,65 @@
             this.dataGridView2.Size = new System.Drawing.Size(985, 115);
             this.dataGridView2.TabIndex = 199;
             // 
+            // button2
+            // 
+            this.button2.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Appearance.Options.UseFont = true;
+            this.button2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_prod.ImageOptions.Image")));
+            this.button2.Location = new System.Drawing.Point(387, 40);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(101, 35);
+            this.button2.TabIndex = 199;
+            this.button2.Text = "بحث";
+            this.button2.Click += new System.EventHandler(this.btn_prod_Click);
+            // 
+            // button1
+            // 
+            this.button1.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Appearance.Options.UseFont = true;
+            this.button1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.button1.Location = new System.Drawing.Point(437, 81);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(182, 35);
+            this.button1.TabIndex = 200;
+            this.button1.Text = "بحث بااسم المورد";
+            this.button1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
+            // View_OldReturn
+            // 
+            this.View_OldReturn.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.View_OldReturn.Appearance.Options.UseFont = true;
+            this.View_OldReturn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image1")));
+            this.View_OldReturn.Location = new System.Drawing.Point(550, 353);
+            this.View_OldReturn.Name = "View_OldReturn";
+            this.View_OldReturn.Size = new System.Drawing.Size(238, 35);
+            this.View_OldReturn.TabIndex = 201;
+            this.View_OldReturn.Text = "عرض المرتجع السابق";
+            this.View_OldReturn.Click += new System.EventHandler(this.simpleButton1_Click_1);
+            // 
+            // Btn_AddReturn
+            // 
+            this.Btn_AddReturn.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_AddReturn.Appearance.Options.UseFont = true;
+            this.Btn_AddReturn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image2")));
+            this.Btn_AddReturn.Location = new System.Drawing.Point(259, 354);
+            this.Btn_AddReturn.Name = "Btn_AddReturn";
+            this.Btn_AddReturn.Size = new System.Drawing.Size(238, 35);
+            this.Btn_AddReturn.TabIndex = 202;
+            this.Btn_AddReturn.Text = "اضافة للمرتجع";
+            this.Btn_AddReturn.Click += new System.EventHandler(this.simpleButton1_Click_2);
+            // 
             // Btn_SaveReturn
             // 
-            this.Btn_SaveReturn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.Btn_SaveReturn.BackColor = System.Drawing.Color.Black;
-            this.Btn_SaveReturn.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_SaveReturn.ForeColor = System.Drawing.Color.Yellow;
-            this.Btn_SaveReturn.Location = new System.Drawing.Point(453, 573);
-            this.Btn_SaveReturn.Margin = new System.Windows.Forms.Padding(4);
+            this.Btn_SaveReturn.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_SaveReturn.Appearance.Options.UseFont = true;
+            this.Btn_SaveReturn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image3")));
+            this.Btn_SaveReturn.Location = new System.Drawing.Point(394, 572);
             this.Btn_SaveReturn.Name = "Btn_SaveReturn";
-            this.Btn_SaveReturn.Size = new System.Drawing.Size(192, 33);
-            this.Btn_SaveReturn.TabIndex = 196;
+            this.Btn_SaveReturn.Size = new System.Drawing.Size(238, 35);
+            this.Btn_SaveReturn.TabIndex = 203;
             this.Btn_SaveReturn.Text = "حفظ المرتجعات";
-            this.Btn_SaveReturn.UseVisualStyleBackColor = false;
-            this.Btn_SaveReturn.Click += new System.EventHandler(this.Btn_SaveReturn_Click);
+            this.Btn_SaveReturn.Click += new System.EventHandler(this.simpleButton1_Click_3);
             // 
             // Frm_ReturnSupplier
             // 
@@ -716,13 +706,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(1000, 611);
-            this.Controls.Add(this.View_OldReturn);
-            this.Controls.Add(this.Btn_AddReturn);
             this.Controls.Add(this.Btn_SaveReturn);
+            this.Controls.Add(this.Btn_AddReturn);
+            this.Controls.Add(this.View_OldReturn);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
+            this.MinimumSize = new System.Drawing.Size(1016, 650);
             this.Name = "Frm_ReturnSupplier";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "مرتجع مشتريات";
@@ -751,7 +742,6 @@
         public System.Windows.Forms.TextBox txt_iD;
         public System.Windows.Forms.Label label6;
         public System.Windows.Forms.TextBox txt_return;
-        public System.Windows.Forms.Button Btn_AddReturn;
         public System.Windows.Forms.Label label14;
         public System.Windows.Forms.TextBox txt_total;
         public System.Windows.Forms.Label label10;
@@ -770,17 +760,18 @@
         public System.Windows.Forms.Label label15;
         public System.Windows.Forms.DateTimePicker dateTimePicker1;
         public System.Windows.Forms.Label label2;
-        public System.Windows.Forms.Button button2;
         public System.Windows.Forms.Label label20;
         public System.Windows.Forms.ComboBox comboBox1;
-        public System.Windows.Forms.Button button1;
         public System.Windows.Forms.GroupBox groupBox2;
-        public System.Windows.Forms.Button View_OldReturn;
         public System.Windows.Forms.GroupBox groupBox3;
         public System.Windows.Forms.DataGridView dataGridView2;
-        public System.Windows.Forms.Button Btn_SaveReturn;
         public System.Windows.Forms.TextBox Txt_QuantityStore;
         public System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox Txt_IdStore;
+        private DevExpress.XtraEditors.SimpleButton button2;
+        private DevExpress.XtraEditors.SimpleButton button1;
+        private DevExpress.XtraEditors.SimpleButton View_OldReturn;
+        private DevExpress.XtraEditors.SimpleButton Btn_AddReturn;
+        private DevExpress.XtraEditors.SimpleButton Btn_SaveReturn;
     }
 }

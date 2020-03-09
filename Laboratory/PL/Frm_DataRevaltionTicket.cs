@@ -71,6 +71,12 @@ namespace Laboratory.PL
 
         private void Frm_DataRevaltionTicket_Load(object sender, EventArgs e)
         {
+            //label3.Text = DateTime.Now.ToString("yyyy/MM/dd"+""+"dddd",new System.Globalization.CultureInfo("ar-SA"));//عرض التاريخ الهجرى
+            //label3.Text = DateTime.Now.ToString("yyyy/MM/dd" + "" + "dddd", new System.Globalization.CultureInfo("en-US"));//عرض تاريخ الميلادي باالانجلش
+            label1.Text = DateTime.Now.ToString( "dddd", new System.Globalization.CultureInfo("ar-SA"));//عرض تاريخ الميلادي بالعربي
+            label4.Text = DateTime.Now.ToShortDateString();
+
+
 
         }
 
