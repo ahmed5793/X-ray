@@ -50,6 +50,57 @@ namespace Laboratory.PL
 
         private void Btn_selectProduct_Click(object sender, EventArgs e)
         {
+           
+        }
+
+        private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Frm_EditQantity frm_EditQantity = new Frm_EditQantity();
+            DataTable dt2 = new DataTable();
+            try
+            {
+                if (DataGridView1.Rows.Count > 0)
+                {
+                    if (e.ColumnIndex == 2)
+                    {
+                        frm_EditQantity.ShowDialog();
+                        if (frm_EditQantity.textBox1.Text != "" && frm_EditQantity.textBox1.Text != "0")
+                        {
+                            dt2.Clear();
+                            dt2 = Product.Validate_Quantity(Convert.ToInt32(DataGridView1.CurrentRow.Cells[0].Value), Convert.ToInt32(cmb_Store.SelectedValue), Convert.ToInt32(frm_EditQantity.textBox1.Text));
+                            if (dt2.Rows.Count > 0)
+                            {
+                                MessageBox.Show("الكمية المحددة أكبر من الكمية الموجود حاليا بالمخزن");
+                                return;
+                            }
+                            DataGridView1.CurrentRow.Cells[2].Value = frm_EditQantity.textBox1.Text;
+                            frm_EditQantity.textBox1.Clear();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                dt2.Dispose();
+            }
+        }
+
+        private void btn_save_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btn_new_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
             Frm_TransProductList frm_TransProductList = new Frm_TransProductList();
             try
             {
@@ -93,64 +144,33 @@ namespace Laboratory.PL
             }
         }
 
-        private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void simpleButton1_Click_1(object sender, EventArgs e)
         {
-            Frm_EditQantity frm_EditQantity = new Frm_EditQantity();
-            DataTable dt2 = new DataTable();
-            try
-            {
-                if (DataGridView1.Rows.Count > 0)
-                {
-                    if (e.ColumnIndex == 2)
-                    {
-                        frm_EditQantity.ShowDialog();
-                        if (frm_EditQantity.textBox1.Text != "" && frm_EditQantity.textBox1.Text != "0")
-                        {
-                            dt2.Clear();
-                            dt2 = Product.Validate_Quantity(Convert.ToInt32(DataGridView1.CurrentRow.Cells[0].Value), Convert.ToInt32(cmb_Store.SelectedValue), Convert.ToInt32(frm_EditQantity.textBox1.Text));
-                            if (dt2.Rows.Count > 0)
-                            {
-                                MessageBox.Show("الكمية المحددة أكبر من الكمية الموجود حاليا بالمخزن");
-                                return;
-                            }
-                            DataGridView1.CurrentRow.Cells[2].Value = frm_EditQantity.textBox1.Text;
-                            frm_EditQantity.textBox1.Clear();
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
+            Data();
 
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                dt2.Dispose();
-            }
         }
 
-        private void btn_save_Click(object sender, EventArgs e)
+        private void simpleButton2_Click(object sender, EventArgs e)
         {
             try
             {
-                if (cmb_Store.Text=="" && DataGridView1.Rows.Count<0)
+                if (cmb_Store.Text == "" && DataGridView1.Rows.Count < 0)
                 {
                     MessageBox.Show("");
                     return;
                 }
-                else if(DataGridView1.Rows.Count>0)
+                else if (DataGridView1.Rows.Count > 0)
                 {
-                    Orders.Add_Order(dateTimePicker1.Value,txt_note.Text,txt_sales.Text);
-                    txt_num.Text = (Orders.Last_IdOrder().Rows[0][0]).ToString(); 
+                    Orders.Add_Order(dateTimePicker1.Value, txt_note.Text, txt_sales.Text);
+                    txt_num.Text = (Orders.Last_IdOrder().Rows[0][0]).ToString();
                     for (int i = 0; i < DataGridView1.Rows.Count; i++)
                     {
-                        Orders.Add_OrderDetails(Convert.ToInt32(txt_num.Text),Convert.ToInt32(cmb_Store.SelectedValue),
+                        Orders.Add_OrderDetails(Convert.ToInt32(txt_num.Text), Convert.ToInt32(cmb_Store.SelectedValue),
                             Convert.ToInt32(DataGridView1.Rows[i].Cells[0].Value), Convert.ToInt32(DataGridView1.Rows[i].Cells[2].Value));
                     }
                     MessageBox.Show("تم حفظ الفاتورة بنجاح");
                     Data();
-                } 
+                }
 
             }
             catch (Exception ex)
@@ -158,11 +178,6 @@ namespace Laboratory.PL
 
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void btn_new_Click(object sender, EventArgs e)
-        {
-            Data();
         }
     }
 }
