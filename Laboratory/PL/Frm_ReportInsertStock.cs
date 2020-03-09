@@ -13,48 +13,15 @@ namespace Laboratory.PL
     public partial class Frm_ReportInsertStock : Form
     {
         Stock S = new Stock();
-        Users u = new Users();
-        Branches b = new Branches();
-        DataTable dt = new DataTable();
         public Frm_ReportInsertStock()
         {
             InitializeComponent();
-            txt_UserName.Text = Program.salesman;
-            Permision();
-            Calc_Amount();
-            Calc_AmountPull();
-        }
-        void Permision()
-        {
-            dt.Clear();
-            dt = u.SelectUserBranch(txt_UserName.Text);
-
-            if (dt.Rows.Count > 0)
-            {
-                cmb_UserBranch.DataSource = u.SelectUserBranch(txt_UserName.Text);
-                cmb_UserBranch.DisplayMember = "Name";
-                cmb_UserBranch.ValueMember = "Branch_ID";
-
-                cmb_Stock.DataSource = S.SelectStockBranch(Convert.ToInt32(cmb_UserBranch.SelectedValue));
-                cmb_Stock.DisplayMember = "Name_Stock";
-                cmb_Stock.ValueMember = "ID_Stock";
-            }
-            else
-            {
-                cmb_UserBranch.DataSource = b.SelectCompBranches();
-                cmb_UserBranch.DisplayMember = "Name";
-                cmb_UserBranch.ValueMember = "Branch_ID";
-
-                Stock();
-            }
-        }
-        void Stock()
-            {
             cmb_Stock.DataSource = S.Compo_Stock();
             cmb_Stock.DisplayMember = "Name_Stock";
             cmb_Stock.ValueMember = "ID_Stock";
+            Calc_Amount();
+            Calc_AmountPull();
         }
-
         void Calc_Amount()
         {
             decimal total = 0;
@@ -81,7 +48,10 @@ namespace Laboratory.PL
         }
         private void btn_search_Click(object sender, EventArgs e)
         {
-            DataTable dt2 = new DataTable();         
+            DataTable dt2 = new DataTable();
+          
+            
+         
             DataTable dt = new DataTable();
             try
             {
@@ -153,14 +123,6 @@ namespace Laboratory.PL
         private void groupBox2_Enter(object sender, EventArgs e)
         {
 
-        }
-
-        private void cmb_UserBranch_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-
-            cmb_Stock.DataSource = S.SelectStockBranch(Convert.ToInt32(cmb_UserBranch.SelectedValue));
-            cmb_Stock.DisplayMember = "Name_Stock";
-            cmb_Stock.ValueMember = "ID_Stock";
         }
     }
 }

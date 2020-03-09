@@ -41,6 +41,7 @@
             this.gridViewInsert = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Btn_Search = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -56,7 +57,6 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlInsert)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewInsert)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -75,7 +75,7 @@
             this.Cmb_Users.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Cmb_Users.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cmb_Users.FormattingEnabled = true;
-            this.Cmb_Users.Location = new System.Drawing.Point(366, 10);
+            this.Cmb_Users.Location = new System.Drawing.Point(416, 10);
             this.Cmb_Users.Name = "Cmb_Users";
             this.Cmb_Users.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Cmb_Users.Size = new System.Drawing.Size(224, 26);
@@ -88,7 +88,7 @@
             this.label7.BackColor = System.Drawing.Color.Yellow;
             this.label7.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(596, 14);
+            this.label7.Location = new System.Drawing.Point(646, 13);
             this.label7.Name = "label7";
             this.label7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label7.Size = new System.Drawing.Size(75, 18);
@@ -101,7 +101,7 @@
             this.Time_To.CustomFormat = "tt  mm:hh:ss   ";
             this.Time_To.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Time_To.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.Time_To.Location = new System.Drawing.Point(330, 84);
+            this.Time_To.Location = new System.Drawing.Point(261, 52);
             this.Time_To.Name = "Time_To";
             this.Time_To.ShowUpDown = true;
             this.Time_To.Size = new System.Drawing.Size(107, 25);
@@ -114,7 +114,7 @@
             this.DateFrom.CustomFormat = "   dd/MM/yyyy ";
             this.DateFrom.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DateFrom.Location = new System.Drawing.Point(443, 47);
+            this.DateFrom.Location = new System.Drawing.Point(238, 11);
             this.DateFrom.Name = "DateFrom";
             this.DateFrom.ShowUpDown = true;
             this.DateFrom.Size = new System.Drawing.Size(110, 25);
@@ -127,7 +127,7 @@
             this.label4.BackColor = System.Drawing.Color.Black;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Yellow;
-            this.label4.Location = new System.Drawing.Point(443, 86);
+            this.label4.Location = new System.Drawing.Point(374, 54);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label4.Size = new System.Drawing.Size(83, 23);
@@ -141,7 +141,7 @@
             this.label3.BackColor = System.Drawing.Color.Black;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Yellow;
-            this.label3.Location = new System.Drawing.Point(661, 85);
+            this.label3.Location = new System.Drawing.Point(592, 53);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label3.Size = new System.Drawing.Size(82, 26);
@@ -155,7 +155,7 @@
             this.Time_From.CustomFormat = "  tt  mm:hh:ss  ";
             this.Time_From.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Time_From.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.Time_From.Location = new System.Drawing.Point(549, 85);
+            this.Time_From.Location = new System.Drawing.Point(480, 53);
             this.Time_From.Name = "Time_From";
             this.Time_From.ShowUpDown = true;
             this.Time_From.Size = new System.Drawing.Size(106, 25);
@@ -166,27 +166,27 @@
             // 
             this.txt_UserName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_UserName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_UserName.Location = new System.Drawing.Point(801, 7);
+            this.txt_UserName.Location = new System.Drawing.Point(780, 11);
             this.txt_UserName.Multiline = true;
             this.txt_UserName.Name = "txt_UserName";
             this.txt_UserName.ReadOnly = true;
             this.txt_UserName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txt_UserName.Size = new System.Drawing.Size(203, 25);
+            this.txt_UserName.Size = new System.Drawing.Size(224, 25);
             this.txt_UserName.TabIndex = 121;
             this.txt_UserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // gridControlInsert
             // 
-            this.gridControlInsert.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.gridControlInsert.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControlInsert.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridControlInsert.Location = new System.Drawing.Point(13, 138);
+            this.gridControlInsert.Location = new System.Drawing.Point(537, 139);
             this.gridControlInsert.LookAndFeel.SkinName = "DevExpress Dark Style";
             this.gridControlInsert.LookAndFeel.UseDefaultLookAndFeel = false;
             this.gridControlInsert.MainView = this.gridViewInsert;
             this.gridControlInsert.Name = "gridControlInsert";
             this.gridControlInsert.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.gridControlInsert.Size = new System.Drawing.Size(1036, 131);
+            this.gridControlInsert.Size = new System.Drawing.Size(512, 292);
             this.gridControlInsert.TabIndex = 161;
             this.gridControlInsert.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewInsert});
@@ -232,11 +232,11 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Location = new System.Drawing.Point(7, 125);
+            this.groupBox1.Location = new System.Drawing.Point(531, 126);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1048, 150);
+            this.groupBox1.Size = new System.Drawing.Size(525, 314);
             this.groupBox1.TabIndex = 162;
             this.groupBox1.TabStop = false;
             // 
@@ -253,38 +253,55 @@
             this.Btn_Search.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_Search.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.Btn_Search.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Search.ImageOptions.Image")));
-            this.Btn_Search.Location = new System.Drawing.Point(188, 47);
+            this.Btn_Search.Location = new System.Drawing.Point(95, 6);
             this.Btn_Search.Name = "Btn_Search";
             this.Btn_Search.Size = new System.Drawing.Size(119, 32);
             this.Btn_Search.TabIndex = 163;
             this.Btn_Search.Text = "بحث";
             this.Btn_Search.Click += new System.EventHandler(this.Btn_Search_Click);
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.Black;
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton1.Appearance.ForeColor = System.Drawing.Color.White;
+            this.simpleButton1.Appearance.Options.UseBackColor = true;
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.Appearance.Options.UseForeColor = true;
+            this.simpleButton1.Appearance.Options.UseTextOptions = true;
+            this.simpleButton1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.simpleButton1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.simpleButton1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(12, 44);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(136, 32);
+            this.simpleButton1.TabIndex = 164;
+            this.simpleButton1.Text = "طباعة التقرير";
+            // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox2.Controls.Add(this.gridControl1);
-            this.groupBox2.Location = new System.Drawing.Point(7, 301);
+            this.groupBox2.Location = new System.Drawing.Point(1, 124);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1049, 138);
+            this.groupBox2.Size = new System.Drawing.Size(524, 314);
             this.groupBox2.TabIndex = 163;
             this.groupBox2.TabStop = false;
             // 
             // gridControl1
             // 
-            this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.gridControl1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridControl1.Location = new System.Drawing.Point(6, 14);
+            this.gridControl1.Location = new System.Drawing.Point(6, 15);
             this.gridControl1.LookAndFeel.SkinName = "DevExpress Dark Style";
             this.gridControl1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.gridControl1.Size = new System.Drawing.Size(1037, 118);
+            this.gridControl1.Size = new System.Drawing.Size(504, 293);
             this.gridControl1.TabIndex = 165;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -334,7 +351,7 @@
             this.textBox1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.textBox1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.Color.Yellow;
-            this.textBox1.Location = new System.Drawing.Point(29, 22);
+            this.textBox1.Location = new System.Drawing.Point(29, 24);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
@@ -345,13 +362,12 @@
             // 
             // label6
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.BackColor = System.Drawing.Color.Ivory;
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(830, 108);
+            this.label6.Location = new System.Drawing.Point(735, 112);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(214, 19);
             this.label6.TabIndex = 170;
@@ -360,14 +376,11 @@
             // 
             // label8
             // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.BackColor = System.Drawing.Color.Ivory;
             this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(824, 280);
+            this.label8.Location = new System.Drawing.Point(128, 105);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(220, 23);
             this.label8.TabIndex = 167;
@@ -395,7 +408,7 @@
             this.label2.BackColor = System.Drawing.Color.Black;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Yellow;
-            this.label2.Location = new System.Drawing.Point(559, 48);
+            this.label2.Location = new System.Drawing.Point(354, 12);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label2.Size = new System.Drawing.Size(48, 22);
@@ -425,7 +438,7 @@
             this.label10.BackColor = System.Drawing.Color.Yellow;
             this.label10.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(1010, 12);
+            this.label10.Location = new System.Drawing.Point(1010, 16);
             this.label10.Name = "label10";
             this.label10.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label10.Size = new System.Drawing.Size(44, 18);
@@ -440,10 +453,10 @@
             this.cmb_UserBranch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_UserBranch.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_UserBranch.FormattingEnabled = true;
-            this.cmb_UserBranch.Location = new System.Drawing.Point(801, 40);
+            this.cmb_UserBranch.Location = new System.Drawing.Point(780, 44);
             this.cmb_UserBranch.Name = "cmb_UserBranch";
             this.cmb_UserBranch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmb_UserBranch.Size = new System.Drawing.Size(203, 26);
+            this.cmb_UserBranch.Size = new System.Drawing.Size(224, 26);
             this.cmb_UserBranch.TabIndex = 177;
             this.cmb_UserBranch.SelectedIndexChanged += new System.EventHandler(this.cmb_UserBranch_SelectedIndexChanged);
             this.cmb_UserBranch.SelectionChangeCommitted += new System.EventHandler(this.cmb_UserBranch_SelectionChangeCommitted);
@@ -455,7 +468,7 @@
             this.label13.BackColor = System.Drawing.Color.Yellow;
             this.label13.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(1015, 43);
+            this.label13.Location = new System.Drawing.Point(1015, 47);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(35, 18);
             this.label13.TabIndex = 176;
@@ -466,7 +479,7 @@
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.textBox1);
             this.groupBox3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(821, 444);
+            this.groupBox3.Location = new System.Drawing.Point(772, 444);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(200, 57);
             this.groupBox3.TabIndex = 178;
@@ -478,7 +491,7 @@
             this.groupBox4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.groupBox4.Controls.Add(this.textBox3);
             this.groupBox4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(475, 445);
+            this.groupBox4.Location = new System.Drawing.Point(431, 446);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(200, 57);
             this.groupBox4.TabIndex = 179;
@@ -490,40 +503,20 @@
             this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox5.Controls.Add(this.textBox2);
             this.groupBox5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox5.Location = new System.Drawing.Point(104, 446);
+            this.groupBox5.Location = new System.Drawing.Point(80, 446);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(200, 57);
             this.groupBox5.TabIndex = 180;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "الرصيد المسحوب من الخزنة";
             // 
-            // simpleButton2
-            // 
-            this.simpleButton2.Appearance.BackColor = System.Drawing.Color.Black;
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton2.Appearance.ForeColor = System.Drawing.Color.White;
-            this.simpleButton2.Appearance.Options.UseBackColor = true;
-            this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.Appearance.Options.UseForeColor = true;
-            this.simpleButton2.Appearance.Options.UseTextOptions = true;
-            this.simpleButton2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.simpleButton2.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.simpleButton2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(493, 535);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(175, 32);
-            this.simpleButton2.TabIndex = 181;
-            this.simpleButton2.Text = "إضافة عجز";
-            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
-            // 
             // frm_RceiveMoney
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.Appearance.Options.UseBackColor = true;
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1061, 593);
-            this.Controls.Add(this.simpleButton2);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.ClientSize = new System.Drawing.Size(1061, 543);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -534,6 +527,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.Btn_Search);
             this.Controls.Add(this.gridControlInsert);
             this.Controls.Add(this.groupBox1);
@@ -549,7 +543,6 @@
             this.Name = "frm_RceiveMoney";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "شاشة إستلام نقدية";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.gridControlInsert)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewInsert)).EndInit();
             this.groupBox2.ResumeLayout(false);
@@ -580,6 +573,7 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewInsert;
         private System.Windows.Forms.GroupBox groupBox1;
         private DevExpress.XtraEditors.SimpleButton Btn_Search;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private System.Windows.Forms.GroupBox groupBox2;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
@@ -595,6 +589,5 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox5;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
     }
 }
