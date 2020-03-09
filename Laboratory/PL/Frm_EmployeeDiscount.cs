@@ -14,13 +14,37 @@ namespace Laboratory.PL
     public partial class Frm_EmployeeDiscount : Form
     {
         Employee E = new Employee();
+        DataTable dt = new DataTable();
+        Users U = new Users();
+        Branches b = new Branches();
         public Frm_EmployeeDiscount()
         {
             InitializeComponent();
             txt_UserName.Text = Program.salesman;
-            cmb_Employee.DataSource = E.SelectCompoEmployee();
+            Permision();
+            cmb_Employee.DataSource = E.Select_EmployeeFromBranch(Convert.ToInt32(cmb_UserBranch.SelectedValue));
             cmb_Employee.DisplayMember = "Emp_Name";
             cmb_Employee.ValueMember = "Emp_ID";
+            cmb_Employee.SelectedIndex = -1;
+        }
+        void Permision()
+        {
+            dt.Clear();
+            dt = U.SelectUserBranch(txt_UserName.Text);
+            if (dt.Rows.Count > 0)
+            {
+                cmb_UserBranch.DataSource = U.SelectUserBranch(txt_UserName.Text);
+                cmb_UserBranch.DisplayMember = "Name";
+                cmb_UserBranch.ValueMember = "Branch_ID";
+                cmb_UserBranch.SelectedIndex = -1;
+            }
+            else
+            {
+                cmb_UserBranch.DataSource = b.SelectCompBranches();
+                cmb_UserBranch.DisplayMember = "Name";
+                cmb_UserBranch.ValueMember = "Branch_ID";
+                cmb_UserBranch.SelectedIndex = -1;
+            }
         }
 
         private void Frm_EmployeeDiscount_Load(object sender, EventArgs e)
@@ -30,25 +54,6 @@ namespace Laboratory.PL
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-            if (cmb_Employee.Text=="")
-            {
-                MessageBox.Show("من فضلك قم بااختيار اسم العميل");
-                return;
-            }
-            if (txt_Money.Text==""||txt_Money.Text=="0")
-            {
-                MessageBox.Show("من فضلك قم باادخال المبلغ الذى تريد خصمة");
-                return;
-            }
-            if (txt_reason.Text=="")
-            {
-                MessageBox.Show("من فضلك قم باادخال سبب الخصم");
-                return;
-            }
-            E.AddEmployeeDiscount(Convert.ToInt32(cmb_Employee.SelectedValue), Convert.ToDecimal(txt_Money.Text), txt_reason.Text, Date_insert.Value, txt_UserName.Text);
-            MessageBox.Show("تم الحفظ بنجاح");
-            txt_reason.Clear();
-            txt_Money.Text = "0";
 
         }
 
@@ -80,6 +85,39 @@ namespace Laboratory.PL
                     return;
                 }
                 dt.Dispose();
+            }
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                if (cmb_Employee.Text == "")
+                {
+                    MessageBox.Show("من فضلك قم بااختيار اسم العميل");
+                    return;
+                }
+                if (txt_Money.Text == "" || txt_Money.Text == "0")
+                {
+                    MessageBox.Show("من فضلك قم باادخال المبلغ الذى تريد خصمة");
+                    return;
+                }
+                if (txt_reason.Text == "")
+                {
+                    MessageBox.Show("من فضلك قم باادخال سبب الخصم");
+                    return;
+                }
+                E.AddEmployeeDiscount(Convert.ToInt32(cmb_Employee.SelectedValue), Convert.ToDecimal(txt_Money.Text), txt_reason.Text, Date_insert.Value, txt_UserName.Text);
+                MessageBox.Show("تم الحفظ بنجاح");
+                txt_reason.Clear();
+                txt_Money.Text = "0";
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
             }
         }
     }
