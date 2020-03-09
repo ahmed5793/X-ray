@@ -17,24 +17,33 @@ namespace Laboratory.PL
         public Frm_DebitSuppliers()
         {
             InitializeComponent();
-            dataGridViewDebit.DataSource = Suppliers.Select_DepitSupplier();
+            gridControl1.DataSource = Suppliers.Select_DepitSupplier();
             Calc();
         }
         void Calc()
         {
             decimal total = 0;
-            for (int i = 0; i < dataGridViewDebit.Rows.Count; i++)
+            for (int i = 0; i < gridView1.RowCount; i++)
             {
-                total += Convert.ToDecimal(dataGridViewDebit.Rows[i].Cells[2].Value);
-
+                DataRow r = gridView1.GetDataRow(i);
+                total += Convert.ToDecimal(r[2].ToString());
             }
             txt_reb7h.Text = Math.Round(total, 2).ToString();
-
         }
 
         private void Frm_DebitSuppliers_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_Print_Click(object sender, EventArgs e)
+        {
+            gridControl1.ShowRibbonPrintPreview();
         }
     }
 }

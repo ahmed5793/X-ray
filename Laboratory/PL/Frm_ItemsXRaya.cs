@@ -15,6 +15,7 @@ namespace Laboratory.PL
     {
         ItemsXRaya i = new ItemsXRaya();
         CategoryXRaya c = new CategoryXRaya();
+        DataTable dt = new DataTable();
         public Frm_ItemsXRaya()
         {
             InitializeComponent();
@@ -22,76 +23,15 @@ namespace Laboratory.PL
             comboBox1.DisplayMember = "الفئات";
             comboBox1.ValueMember = "ID_CtegoryXrays";
             dataGridView1.DataSource = i.SelectItemXRaya();
-            btn_update.Enabled = false;
+            Btn_add.Enabled = false;
             dataGridView1.Columns[0].Visible = false;
         }
-
-        private void btn_add_Click(object sender, EventArgs e)
-        {
-
-            if (txt_name.Text == "")
-            {
-                MessageBox.Show("من فضلك يرجي ادخال اسم الاشعة");
-                txt_name.Focus();
-                return;
-
-            }
-             if (comboBox1.Text == "")
-            {
-
-                MessageBox.Show("من فضلك يرجي ادخال الفئه");
-                comboBox1.Focus();
-                return;
-            }
-            if (txt_price.Text == "")
-            {
-
-                MessageBox.Show("من فضلك يرجي ادخال سعر الاشعة");
-                txt_price.Focus();
-                return;
-            }
-            i.AddItemXRaya(txt_name.Text, Convert.ToDecimal(txt_price.Text), Convert.ToInt32(comboBox1.SelectedValue));
-            MessageBox.Show("تم الاضافه  بنجاح", "عمليه الاضافه", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-            txt_name.Clear();
-            txt_price.Clear();
-            dataGridView1.DataSource = i.SelectItemXRaya();
-        }
-
-        private void btn_update_Click(object sender, EventArgs e)
-        {
-
-            if (txt_name.Text == "")
-            {
-                MessageBox.Show("من فضلك يرجي ادخال اسم الصنف");
-                return;
-
-            }
-            if (comboBox1.Text == "")
-            {
-
-                MessageBox.Show("من فضلك يرجي ادخال الفئه");
-                comboBox1.Focus();
-                return;
-            }
-
-            i.UpdateItemXRaya(txt_name.Text, Convert.ToDecimal(txt_price.Text), Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value), Convert.ToInt32(comboBox1.SelectedValue));
-            MessageBox.Show("تم التعديل  بنجاح", "عمليه التعديل", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-            txt_name.Clear();
-            txt_price.Clear();
-            dataGridView1.DataSource = i.SelectItemXRaya();
-            btn_update.Enabled = false;
-            btn_add.Enabled = true;
-            comboBox1.Enabled = true;
-        }
-
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
             if (dataGridView1.Rows.Count > 0)
             {
-
-
-                btn_add.Enabled = false;
-                btn_update.Enabled = true;
+                Btn_add.Enabled = false;
+                Btn_Update.Enabled = true;
                 comboBox1.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                 txt_name.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
                 txt_price.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
@@ -100,7 +40,7 @@ namespace Laboratory.PL
 
         private void txt_search_TextChanged(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
+            dt.Clear();
             dt = i.SearchItemXRaya(txt_search.Text);
             dataGridView1.DataSource = dt;
             dt.Dispose();
@@ -120,12 +60,83 @@ namespace Laboratory.PL
 
         private void comboBox1_Leave(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
             dt.Clear();
             dt = c.Validate_CategoryXray(Convert.ToInt32(comboBox1.SelectedValue));
             if (dt.Rows.Count == 0)
             {
                 MessageBox.Show("عزيزيى المستخدم يرجي العلم بان اسم الجهاز غير مسجل ");
+                return;
+            }
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txt_name.Text == "")
+                {
+                    MessageBox.Show("من فضلك يرجي ادخال اسم الاشعة");
+                    txt_name.Focus();
+                    return;
+
+                }
+                if (comboBox1.Text == "")
+                {
+
+                    MessageBox.Show("من فضلك يرجي ادخال الفئه");
+                    comboBox1.Focus();
+                    return;
+                }
+                if (txt_price.Text == "")
+                {
+
+                    MessageBox.Show("من فضلك يرجي ادخال سعر الاشعة");
+                    txt_price.Focus();
+                    return;
+                }
+                i.AddItemXRaya(txt_name.Text, Convert.ToDecimal(txt_price.Text), Convert.ToInt32(comboBox1.SelectedValue));
+                MessageBox.Show("تم الاضافه  بنجاح", "عمليه الاضافه", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                txt_name.Clear();
+                txt_price.Clear();
+                dataGridView1.DataSource = i.SelectItemXRaya();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txt_name.Text == "")
+                {
+                    MessageBox.Show("من فضلك يرجي ادخال اسم الصنف");
+                    return;
+                }
+                if (comboBox1.Text == "")
+                {
+                    MessageBox.Show("من فضلك يرجي ادخال الفئه");
+                    comboBox1.Focus();
+                    return;
+                }
+
+                i.UpdateItemXRaya(txt_name.Text, Convert.ToDecimal(txt_price.Text), Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value), Convert.ToInt32(comboBox1.SelectedValue));
+                MessageBox.Show("تم التعديل  بنجاح", "عمليه التعديل", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                txt_name.Clear();
+                txt_price.Clear();
+                dataGridView1.DataSource = i.SelectItemXRaya();
+                Btn_Update.Enabled = false;
+                Btn_add.Enabled = true;
+                comboBox1.Enabled = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
             }
         }
     }

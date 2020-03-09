@@ -26,59 +26,20 @@ namespace Laboratory.PL
             cmb_employee.DisplayMember = "Emp_Name";
             cmb_employee.ValueMember = "Emp_ID";
             dataGridView1.DataSource = E.SelectEmployeeBranch();
-            btn_save.Enabled = true;
-            btn_update.Enabled = false;
+            Btn_Add.Enabled = true;
+            Btn_Update.Enabled = false;
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[2].Visible = false;
         }
         DataTable dt = new DataTable();
         private void btn_save_Click(object sender, EventArgs e)
         {
-            if (cmb_employee.Text=="")
-            {
-                MessageBox.Show("من فضلك قم بااختيار الموظف");
-                return;
-            }
-            if (cmb_branch.Text == "")
-            {
-                MessageBox.Show("من فضلك قم بااختيار الفرع");
-                return;
-            }
-            dt.Clear();
-            dt = E.VildateEmployeeBranch( Convert.ToInt32(cmb_employee.SelectedValue));
-            if (dt.Rows.Count>0)
-            {
-                MessageBox.Show("لايمكن تسجيل الموظف اكثر من فرع");
-                dataGridView1.DataSource = E.SelectEmployeeBranch();
-
-                return;
-            }
-            E.AddEmployeeBranch(Convert.ToInt32(cmb_branch.SelectedValue), Convert.ToInt32(cmb_employee.SelectedValue));
-            MessageBox.Show("تم الاضافة بنجاح");
-            dataGridView1.DataSource = E.SelectEmployeeBranch();
-
-            btn_save.Enabled = true;
-            btn_update.Enabled = false;
+           
         }
 
         private void btn_update_Click(object sender, EventArgs e)
         {
-            if (cmb_employee.Text == "")
-            {
-                MessageBox.Show("من فضلك قم بااختيار الموظف");
-                return;
-            }
-            if (cmb_branch.Text == "")
-            {
-                MessageBox.Show("من فضلك قم بااختيار الفرع");
-                return;
-            }
-            E.UpdateEmployeeBranch(Convert.ToInt32(cmb_branch.SelectedValue), Convert.ToInt32(cmb_employee.SelectedValue));
-            MessageBox.Show("تم التعديل بنجاح");
-            dataGridView1.DataSource = E.SelectEmployeeBranch();
-            btn_save.Enabled = true;
-            btn_update.Enabled = false;
-            cmb_branch.Enabled = true ;
+            
         }
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
@@ -88,8 +49,8 @@ namespace Laboratory.PL
                 if (dataGridView1.Rows.Count > 0)
                 {
                     cmb_branch.Enabled = true;
-                    btn_save.Enabled = false;
-                    btn_update.Enabled = true;
+                    Btn_Add.Enabled = false;
+                    Btn_Update.Enabled = true;
                     cmb_employee.Enabled = false;
                     cmb_branch.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
                     cmb_employee.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
@@ -100,6 +61,7 @@ namespace Laboratory.PL
             {
 
                 MessageBox.Show(ex.Message) ;
+                MessageBox.Show(ex.StackTrace) ;
             }
         }
 
@@ -113,6 +75,64 @@ namespace Laboratory.PL
             dt.Clear();
             dt = E.SearchEmployeeBranch(txt_search.Text);
             dataGridView1.DataSource = dt;
+        }
+
+        private void Btn_Add_Click(object sender, EventArgs e)
+        {
+            if (cmb_employee.Text == "")
+            {
+                MessageBox.Show("من فضلك قم بااختيار الموظف");
+                return;
+            }
+            if (cmb_branch.Text == "")
+            {
+                MessageBox.Show("من فضلك قم بااختيار الفرع");
+                return;
+            }
+            dt.Clear();
+            dt = E.VildateEmployeeBranch(Convert.ToInt32(cmb_employee.SelectedValue));
+            if (dt.Rows.Count > 0)
+            {
+                MessageBox.Show("لايمكن تسجيل الموظف اكثر من فرع");
+                dataGridView1.DataSource = E.SelectEmployeeBranch();
+
+                return;
+            }
+            E.AddEmployeeBranch(Convert.ToInt32(cmb_branch.SelectedValue), Convert.ToInt32(cmb_employee.SelectedValue));
+            MessageBox.Show("تم الاضافة بنجاح");
+            dataGridView1.DataSource = E.SelectEmployeeBranch();
+
+            Btn_Add.Enabled = true;
+            Btn_Update.Enabled = false;
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cmb_employee.Text == "")
+                {
+                    MessageBox.Show("من فضلك قم بااختيار الموظف");
+                    return;
+                }
+                if (cmb_branch.Text == "")
+                {
+                    MessageBox.Show("من فضلك قم بااختيار الفرع");
+                    return;
+                }
+                E.UpdateEmployeeBranch(Convert.ToInt32(cmb_branch.SelectedValue), Convert.ToInt32(cmb_employee.SelectedValue));
+                MessageBox.Show("تم التعديل بنجاح");
+                dataGridView1.DataSource = E.SelectEmployeeBranch();
+                Btn_Add.Enabled = true;
+                Btn_Update.Enabled = false;
+                cmb_branch.Enabled = true;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
+            }
         }
     }
 }

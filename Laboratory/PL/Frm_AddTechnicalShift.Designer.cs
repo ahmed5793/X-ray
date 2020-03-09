@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_AddTechnicalShift));
             this.label7 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,13 +42,13 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.Btn_AddShift = new System.Windows.Forms.Button();
-            this.Btn_UpdateShift = new System.Windows.Forms.Button();
-            this.Btn_DeleteShift = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txt_search = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Btn_AddShift = new DevExpress.XtraEditors.SimpleButton();
+            this.Btn_UpdateShift = new DevExpress.XtraEditors.SimpleButton();
+            this.Btn_DeleteShift = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -73,10 +74,10 @@
             this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(507, 13);
+            this.comboBox1.Location = new System.Drawing.Point(577, 13);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.comboBox1.Size = new System.Drawing.Size(319, 32);
+            this.comboBox1.Size = new System.Drawing.Size(249, 32);
             this.comboBox1.TabIndex = 101;
             this.comboBox1.Leave += new System.EventHandler(this.comboBox1_Leave);
             // 
@@ -101,10 +102,10 @@
             this.comboBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBox2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(507, 75);
+            this.comboBox2.Location = new System.Drawing.Point(577, 75);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.comboBox2.Size = new System.Drawing.Size(318, 32);
+            this.comboBox2.Size = new System.Drawing.Size(248, 32);
             this.comboBox2.TabIndex = 103;
             this.comboBox2.Leave += new System.EventHandler(this.comboBox2_Leave);
             // 
@@ -114,7 +115,7 @@
             this.button1.BackColor = System.Drawing.Color.Black;
             this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Yellow;
-            this.button1.Location = new System.Drawing.Point(449, 77);
+            this.button1.Location = new System.Drawing.Point(519, 76);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(52, 30);
             this.button1.TabIndex = 105;
@@ -126,11 +127,11 @@
             // 
             this.Txt_Cost.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Txt_Cost.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_Cost.Location = new System.Drawing.Point(624, 135);
+            this.Txt_Cost.Location = new System.Drawing.Point(664, 135);
             this.Txt_Cost.MaxLength = 11;
             this.Txt_Cost.Name = "Txt_Cost";
             this.Txt_Cost.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Txt_Cost.Size = new System.Drawing.Size(200, 32);
+            this.Txt_Cost.Size = new System.Drawing.Size(160, 32);
             this.Txt_Cost.TabIndex = 116;
             this.Txt_Cost.Text = "0";
             this.Txt_Cost.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -215,47 +216,6 @@
             this.dateTimePicker3.TabIndex = 122;
             this.dateTimePicker3.Value = new System.DateTime(2020, 1, 2, 18, 43, 0, 0);
             // 
-            // Btn_AddShift
-            // 
-            this.Btn_AddShift.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Btn_AddShift.BackColor = System.Drawing.Color.Black;
-            this.Btn_AddShift.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_AddShift.ForeColor = System.Drawing.Color.Yellow;
-            this.Btn_AddShift.Location = new System.Drawing.Point(701, 212);
-            this.Btn_AddShift.Name = "Btn_AddShift";
-            this.Btn_AddShift.Size = new System.Drawing.Size(167, 45);
-            this.Btn_AddShift.TabIndex = 124;
-            this.Btn_AddShift.Text = "إضافة الشيفت للفنى";
-            this.Btn_AddShift.UseVisualStyleBackColor = false;
-            this.Btn_AddShift.Click += new System.EventHandler(this.Btn_AddShift_Click);
-            // 
-            // Btn_UpdateShift
-            // 
-            this.Btn_UpdateShift.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Btn_UpdateShift.BackColor = System.Drawing.Color.Black;
-            this.Btn_UpdateShift.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_UpdateShift.ForeColor = System.Drawing.Color.Yellow;
-            this.Btn_UpdateShift.Location = new System.Drawing.Point(423, 212);
-            this.Btn_UpdateShift.Name = "Btn_UpdateShift";
-            this.Btn_UpdateShift.Size = new System.Drawing.Size(167, 45);
-            this.Btn_UpdateShift.TabIndex = 125;
-            this.Btn_UpdateShift.Text = "تعديل الشيفت للفنى";
-            this.Btn_UpdateShift.UseVisualStyleBackColor = false;
-            this.Btn_UpdateShift.Click += new System.EventHandler(this.Btn_UpdateShift_Click);
-            // 
-            // Btn_DeleteShift
-            // 
-            this.Btn_DeleteShift.BackColor = System.Drawing.Color.Black;
-            this.Btn_DeleteShift.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_DeleteShift.ForeColor = System.Drawing.Color.Yellow;
-            this.Btn_DeleteShift.Location = new System.Drawing.Point(151, 212);
-            this.Btn_DeleteShift.Name = "Btn_DeleteShift";
-            this.Btn_DeleteShift.Size = new System.Drawing.Size(167, 45);
-            this.Btn_DeleteShift.TabIndex = 126;
-            this.Btn_DeleteShift.Text = "مسح الشيفت للفنى";
-            this.Btn_DeleteShift.UseVisualStyleBackColor = false;
-            this.Btn_DeleteShift.Click += new System.EventHandler(this.Btn_DeleteShift_Click);
-            // 
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -264,9 +224,9 @@
             this.groupBox2.Controls.Add(this.txt_search);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Location = new System.Drawing.Point(3, 270);
+            this.groupBox2.Location = new System.Drawing.Point(3, 247);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(946, 275);
+            this.groupBox2.Size = new System.Drawing.Size(946, 298);
             this.groupBox2.TabIndex = 127;
             this.groupBox2.TabStop = false;
             // 
@@ -308,9 +268,69 @@
             this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.ShowEditingIcon = false;
-            this.dataGridView1.Size = new System.Drawing.Size(934, 212);
+            this.dataGridView1.Size = new System.Drawing.Size(934, 235);
             this.dataGridView1.TabIndex = 15;
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
+            // 
+            // Btn_AddShift
+            // 
+            this.Btn_AddShift.Appearance.BackColor = System.Drawing.Color.Black;
+            this.Btn_AddShift.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_AddShift.Appearance.ForeColor = System.Drawing.Color.White;
+            this.Btn_AddShift.Appearance.Options.UseBackColor = true;
+            this.Btn_AddShift.Appearance.Options.UseFont = true;
+            this.Btn_AddShift.Appearance.Options.UseForeColor = true;
+            this.Btn_AddShift.Appearance.Options.UseTextOptions = true;
+            this.Btn_AddShift.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Btn_AddShift.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.Btn_AddShift.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.Btn_AddShift.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.Btn_AddShift.Location = new System.Drawing.Point(658, 195);
+            this.Btn_AddShift.Name = "Btn_AddShift";
+            this.Btn_AddShift.Size = new System.Drawing.Size(167, 32);
+            this.Btn_AddShift.TabIndex = 165;
+            this.Btn_AddShift.Text = "إضافة الشيفت للفنى";
+            this.Btn_AddShift.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
+            // Btn_UpdateShift
+            // 
+            this.Btn_UpdateShift.Appearance.BackColor = System.Drawing.Color.Black;
+            this.Btn_UpdateShift.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_UpdateShift.Appearance.ForeColor = System.Drawing.Color.White;
+            this.Btn_UpdateShift.Appearance.Options.UseBackColor = true;
+            this.Btn_UpdateShift.Appearance.Options.UseFont = true;
+            this.Btn_UpdateShift.Appearance.Options.UseForeColor = true;
+            this.Btn_UpdateShift.Appearance.Options.UseTextOptions = true;
+            this.Btn_UpdateShift.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Btn_UpdateShift.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.Btn_UpdateShift.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.Btn_UpdateShift.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image1")));
+            this.Btn_UpdateShift.Location = new System.Drawing.Point(447, 195);
+            this.Btn_UpdateShift.Name = "Btn_UpdateShift";
+            this.Btn_UpdateShift.Size = new System.Drawing.Size(167, 32);
+            this.Btn_UpdateShift.TabIndex = 166;
+            this.Btn_UpdateShift.Text = "تعديل الشيفت للفنى";
+            this.Btn_UpdateShift.Click += new System.EventHandler(this.simpleButton1_Click_1);
+            // 
+            // Btn_DeleteShift
+            // 
+            this.Btn_DeleteShift.Appearance.BackColor = System.Drawing.Color.Black;
+            this.Btn_DeleteShift.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_DeleteShift.Appearance.ForeColor = System.Drawing.Color.White;
+            this.Btn_DeleteShift.Appearance.Options.UseBackColor = true;
+            this.Btn_DeleteShift.Appearance.Options.UseFont = true;
+            this.Btn_DeleteShift.Appearance.Options.UseForeColor = true;
+            this.Btn_DeleteShift.Appearance.Options.UseTextOptions = true;
+            this.Btn_DeleteShift.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Btn_DeleteShift.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.Btn_DeleteShift.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.Btn_DeleteShift.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image2")));
+            this.Btn_DeleteShift.Location = new System.Drawing.Point(228, 195);
+            this.Btn_DeleteShift.Name = "Btn_DeleteShift";
+            this.Btn_DeleteShift.Size = new System.Drawing.Size(167, 32);
+            this.Btn_DeleteShift.TabIndex = 167;
+            this.Btn_DeleteShift.Text = "مسح الشيفت للفنى";
+            this.Btn_DeleteShift.Click += new System.EventHandler(this.simpleButton1_Click_2);
             // 
             // Frm_AddTechnicalShift
             // 
@@ -318,10 +338,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.ClientSize = new System.Drawing.Size(951, 542);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.Btn_DeleteShift);
             this.Controls.Add(this.Btn_UpdateShift);
             this.Controls.Add(this.Btn_AddShift);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dateTimePicker3);
             this.Controls.Add(this.label3);
@@ -362,12 +382,12 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.Button Btn_AddShift;
-        private System.Windows.Forms.Button Btn_UpdateShift;
-        private System.Windows.Forms.Button Btn_DeleteShift;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txt_search;
         private System.Windows.Forms.Label label6;
         public System.Windows.Forms.DataGridView dataGridView1;
+        private DevExpress.XtraEditors.SimpleButton Btn_AddShift;
+        private DevExpress.XtraEditors.SimpleButton Btn_UpdateShift;
+        private DevExpress.XtraEditors.SimpleButton Btn_DeleteShift;
     }
 }

@@ -28,15 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_CategoryXRaya));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_name = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.btn_Save = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txt_search = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btn_Update = new System.Windows.Forms.Button();
+            this.Btn_Update = new DevExpress.XtraEditors.SimpleButton();
+            this.Btn_Add = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -74,18 +75,6 @@
             this.label8.Size = new System.Drawing.Size(102, 24);
             this.label8.TabIndex = 39;
             this.label8.Text = "أجهزة الاشعة";
-            // 
-            // btn_Save
-            // 
-            this.btn_Save.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btn_Save.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Save.Location = new System.Drawing.Point(323, 72);
-            this.btn_Save.Name = "btn_Save";
-            this.btn_Save.Size = new System.Drawing.Size(137, 40);
-            this.btn_Save.TabIndex = 40;
-            this.btn_Save.Text = "حفظ";
-            this.btn_Save.UseVisualStyleBackColor = true;
-            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
             // groupBox2
             // 
@@ -143,17 +132,45 @@
             this.dataGridView1.TabIndex = 12;
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
-            // btn_Update
+            // Btn_Update
             // 
-            this.btn_Update.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btn_Update.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Update.Location = new System.Drawing.Point(133, 72);
-            this.btn_Update.Name = "btn_Update";
-            this.btn_Update.Size = new System.Drawing.Size(153, 40);
-            this.btn_Update.TabIndex = 42;
-            this.btn_Update.Text = "تعديل";
-            this.btn_Update.UseVisualStyleBackColor = true;
-            this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
+            this.Btn_Update.Appearance.BackColor = System.Drawing.Color.Black;
+            this.Btn_Update.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Update.Appearance.ForeColor = System.Drawing.Color.White;
+            this.Btn_Update.Appearance.Options.UseBackColor = true;
+            this.Btn_Update.Appearance.Options.UseFont = true;
+            this.Btn_Update.Appearance.Options.UseForeColor = true;
+            this.Btn_Update.Appearance.Options.UseTextOptions = true;
+            this.Btn_Update.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Btn_Update.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.Btn_Update.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.Btn_Update.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.Btn_Update.Location = new System.Drawing.Point(144, 77);
+            this.Btn_Update.Name = "Btn_Update";
+            this.Btn_Update.Size = new System.Drawing.Size(129, 32);
+            this.Btn_Update.TabIndex = 176;
+            this.Btn_Update.Text = "تعديل بيانات ";
+            this.Btn_Update.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
+            // Btn_Add
+            // 
+            this.Btn_Add.Appearance.BackColor = System.Drawing.Color.Black;
+            this.Btn_Add.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Add.Appearance.ForeColor = System.Drawing.Color.White;
+            this.Btn_Add.Appearance.Options.UseBackColor = true;
+            this.Btn_Add.Appearance.Options.UseFont = true;
+            this.Btn_Add.Appearance.Options.UseForeColor = true;
+            this.Btn_Add.Appearance.Options.UseTextOptions = true;
+            this.Btn_Add.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Btn_Add.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.Btn_Add.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.Btn_Add.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Add.ImageOptions.Image")));
+            this.Btn_Add.Location = new System.Drawing.Point(349, 77);
+            this.Btn_Add.Name = "Btn_Add";
+            this.Btn_Add.Size = new System.Drawing.Size(129, 32);
+            this.Btn_Add.TabIndex = 175;
+            this.Btn_Add.Text = "حفظ";
+            this.Btn_Add.Click += new System.EventHandler(this.Btn_Add_Click);
             // 
             // Frm_CategoryXRaya
             // 
@@ -161,9 +178,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(585, 371);
-            this.Controls.Add(this.btn_Update);
+            this.Controls.Add(this.Btn_Update);
+            this.Controls.Add(this.Btn_Add);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.btn_Save);
             this.Controls.Add(this.groupBox1);
             this.MinimumSize = new System.Drawing.Size(586, 409);
             this.Name = "Frm_CategoryXRaya";
@@ -182,13 +199,13 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btn_Save;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txt_name;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txt_search;
         private System.Windows.Forms.Label label6;
         public System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btn_Update;
+        private DevExpress.XtraEditors.SimpleButton Btn_Update;
+        private DevExpress.XtraEditors.SimpleButton Btn_Add;
     }
 }

@@ -28,13 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_AddEmployeeShift));
             this.txt_search = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.Btn_DeleteShift = new System.Windows.Forms.Button();
-            this.Btn_UpdateShift = new System.Windows.Forms.Button();
-            this.Btn_AddShift = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
@@ -47,6 +45,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Btn_AddShift = new DevExpress.XtraEditors.SimpleButton();
+            this.Btn_UpdateShift = new DevExpress.XtraEditors.SimpleButton();
+            this.Btn_DeleteShift = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -55,7 +56,7 @@
             // 
             this.txt_search.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txt_search.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_search.Location = new System.Drawing.Point(302, 17);
+            this.txt_search.Location = new System.Drawing.Point(323, 17);
             this.txt_search.Name = "txt_search";
             this.txt_search.Size = new System.Drawing.Size(262, 32);
             this.txt_search.TabIndex = 14;
@@ -78,7 +79,7 @@
             this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.ShowEditingIcon = false;
-            this.dataGridView1.Size = new System.Drawing.Size(934, 212);
+            this.dataGridView1.Size = new System.Drawing.Size(934, 258);
             this.dataGridView1.TabIndex = 15;
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
@@ -90,9 +91,9 @@
             this.groupBox2.Controls.Add(this.txt_search);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Location = new System.Drawing.Point(7, 253);
+            this.groupBox2.Location = new System.Drawing.Point(7, 200);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(946, 275);
+            this.groupBox2.Size = new System.Drawing.Size(946, 320);
             this.groupBox2.TabIndex = 144;
             this.groupBox2.TabStop = false;
             // 
@@ -101,52 +102,11 @@
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(570, 20);
+            this.label6.Location = new System.Drawing.Point(591, 20);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(41, 24);
             this.label6.TabIndex = 16;
             this.label6.Text = "بحث";
-            // 
-            // Btn_DeleteShift
-            // 
-            this.Btn_DeleteShift.BackColor = System.Drawing.Color.Black;
-            this.Btn_DeleteShift.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_DeleteShift.ForeColor = System.Drawing.Color.White;
-            this.Btn_DeleteShift.Location = new System.Drawing.Point(138, 195);
-            this.Btn_DeleteShift.Name = "Btn_DeleteShift";
-            this.Btn_DeleteShift.Size = new System.Drawing.Size(167, 45);
-            this.Btn_DeleteShift.TabIndex = 143;
-            this.Btn_DeleteShift.Text = "مسح الشيفت";
-            this.Btn_DeleteShift.UseVisualStyleBackColor = false;
-            this.Btn_DeleteShift.Click += new System.EventHandler(this.Btn_DeleteShift_Click);
-            // 
-            // Btn_UpdateShift
-            // 
-            this.Btn_UpdateShift.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Btn_UpdateShift.BackColor = System.Drawing.Color.Black;
-            this.Btn_UpdateShift.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_UpdateShift.ForeColor = System.Drawing.Color.White;
-            this.Btn_UpdateShift.Location = new System.Drawing.Point(442, 195);
-            this.Btn_UpdateShift.Name = "Btn_UpdateShift";
-            this.Btn_UpdateShift.Size = new System.Drawing.Size(167, 45);
-            this.Btn_UpdateShift.TabIndex = 142;
-            this.Btn_UpdateShift.Text = "تعديل الشيفت ";
-            this.Btn_UpdateShift.UseVisualStyleBackColor = false;
-            this.Btn_UpdateShift.Click += new System.EventHandler(this.Btn_UpdateShift_Click);
-            // 
-            // Btn_AddShift
-            // 
-            this.Btn_AddShift.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Btn_AddShift.BackColor = System.Drawing.Color.Black;
-            this.Btn_AddShift.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_AddShift.ForeColor = System.Drawing.Color.White;
-            this.Btn_AddShift.Location = new System.Drawing.Point(740, 195);
-            this.Btn_AddShift.Name = "Btn_AddShift";
-            this.Btn_AddShift.Size = new System.Drawing.Size(167, 45);
-            this.Btn_AddShift.TabIndex = 141;
-            this.Btn_AddShift.Text = "إضافة الشيفت ";
-            this.Btn_AddShift.UseVisualStyleBackColor = false;
-            this.Btn_AddShift.Click += new System.EventHandler(this.Btn_AddShift_Click);
             // 
             // label4
             // 
@@ -154,7 +114,7 @@
             this.label4.BackColor = System.Drawing.Color.Black;
             this.label4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(172, 63);
+            this.label4.Location = new System.Drawing.Point(165, 48);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 24);
             this.label4.TabIndex = 140;
@@ -165,7 +125,7 @@
             this.dateTimePicker3.CustomFormat = "";
             this.dateTimePicker3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker3.Location = new System.Drawing.Point(16, 61);
+            this.dateTimePicker3.Location = new System.Drawing.Point(16, 46);
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.ShowUpDown = true;
             this.dateTimePicker3.Size = new System.Drawing.Size(143, 26);
@@ -178,7 +138,7 @@
             this.label3.BackColor = System.Drawing.Color.Black;
             this.label3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(170, 110);
+            this.label3.Location = new System.Drawing.Point(165, 93);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 24);
             this.label3.TabIndex = 138;
@@ -189,7 +149,7 @@
             this.dateTimePicker2.CustomFormat = "";
             this.dateTimePicker2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker2.Location = new System.Drawing.Point(16, 110);
+            this.dateTimePicker2.Location = new System.Drawing.Point(16, 91);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.ShowUpDown = true;
             this.dateTimePicker2.Size = new System.Drawing.Size(143, 26);
@@ -202,7 +162,7 @@
             this.label2.BackColor = System.Drawing.Color.Black;
             this.label2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(172, 18);
+            this.label2.Location = new System.Drawing.Point(165, 10);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 24);
             this.label2.TabIndex = 136;
@@ -213,7 +173,7 @@
             this.dateTimePicker1.CustomFormat = "   dd/MM/yyyy    ";
             this.dateTimePicker1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(13, 16);
+            this.dateTimePicker1.Location = new System.Drawing.Point(13, 9);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.ShowUpDown = true;
             this.dateTimePicker1.Size = new System.Drawing.Size(146, 26);
@@ -223,7 +183,7 @@
             // 
             this.Txt_Cost.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Txt_Cost.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_Cost.Location = new System.Drawing.Point(611, 133);
+            this.Txt_Cost.Location = new System.Drawing.Point(661, 97);
             this.Txt_Cost.MaxLength = 11;
             this.Txt_Cost.Name = "Txt_Cost";
             this.Txt_Cost.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -239,7 +199,7 @@
             this.label5.BackColor = System.Drawing.Color.Black;
             this.label5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(840, 136);
+            this.label5.Location = new System.Drawing.Point(836, 100);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(96, 24);
             this.label5.TabIndex = 134;
@@ -252,7 +212,7 @@
             this.label1.BackColor = System.Drawing.Color.Black;
             this.label1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(852, 75);
+            this.label1.Location = new System.Drawing.Point(839, 55);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label1.Size = new System.Drawing.Size(89, 29);
@@ -292,14 +252,74 @@
             // 
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(511, 75);
+            this.textBox1.Location = new System.Drawing.Point(594, 55);
             this.textBox1.MaxLength = 11;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBox1.Size = new System.Drawing.Size(317, 32);
+            this.textBox1.Size = new System.Drawing.Size(236, 32);
             this.textBox1.TabIndex = 145;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // Btn_AddShift
+            // 
+            this.Btn_AddShift.Appearance.BackColor = System.Drawing.Color.Black;
+            this.Btn_AddShift.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_AddShift.Appearance.ForeColor = System.Drawing.Color.White;
+            this.Btn_AddShift.Appearance.Options.UseBackColor = true;
+            this.Btn_AddShift.Appearance.Options.UseFont = true;
+            this.Btn_AddShift.Appearance.Options.UseForeColor = true;
+            this.Btn_AddShift.Appearance.Options.UseTextOptions = true;
+            this.Btn_AddShift.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Btn_AddShift.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.Btn_AddShift.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.Btn_AddShift.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.Btn_AddShift.Location = new System.Drawing.Point(691, 151);
+            this.Btn_AddShift.Name = "Btn_AddShift";
+            this.Btn_AddShift.Size = new System.Drawing.Size(167, 32);
+            this.Btn_AddShift.TabIndex = 168;
+            this.Btn_AddShift.Text = "إضافة الشيفت ";
+            this.Btn_AddShift.Click += new System.EventHandler(this.Btn_AddShift_Click_1);
+            // 
+            // Btn_UpdateShift
+            // 
+            this.Btn_UpdateShift.Appearance.BackColor = System.Drawing.Color.Black;
+            this.Btn_UpdateShift.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_UpdateShift.Appearance.ForeColor = System.Drawing.Color.White;
+            this.Btn_UpdateShift.Appearance.Options.UseBackColor = true;
+            this.Btn_UpdateShift.Appearance.Options.UseFont = true;
+            this.Btn_UpdateShift.Appearance.Options.UseForeColor = true;
+            this.Btn_UpdateShift.Appearance.Options.UseTextOptions = true;
+            this.Btn_UpdateShift.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Btn_UpdateShift.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.Btn_UpdateShift.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.Btn_UpdateShift.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image1")));
+            this.Btn_UpdateShift.Location = new System.Drawing.Point(441, 151);
+            this.Btn_UpdateShift.Name = "Btn_UpdateShift";
+            this.Btn_UpdateShift.Size = new System.Drawing.Size(167, 32);
+            this.Btn_UpdateShift.TabIndex = 169;
+            this.Btn_UpdateShift.Text = "تعديل الشيفت ";
+            this.Btn_UpdateShift.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
+            // Btn_DeleteShift
+            // 
+            this.Btn_DeleteShift.Appearance.BackColor = System.Drawing.Color.Black;
+            this.Btn_DeleteShift.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_DeleteShift.Appearance.ForeColor = System.Drawing.Color.White;
+            this.Btn_DeleteShift.Appearance.Options.UseBackColor = true;
+            this.Btn_DeleteShift.Appearance.Options.UseFont = true;
+            this.Btn_DeleteShift.Appearance.Options.UseForeColor = true;
+            this.Btn_DeleteShift.Appearance.Options.UseTextOptions = true;
+            this.Btn_DeleteShift.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Btn_DeleteShift.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.Btn_DeleteShift.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.Btn_DeleteShift.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image2")));
+            this.Btn_DeleteShift.Location = new System.Drawing.Point(166, 151);
+            this.Btn_DeleteShift.Name = "Btn_DeleteShift";
+            this.Btn_DeleteShift.Size = new System.Drawing.Size(167, 32);
+            this.Btn_DeleteShift.TabIndex = 170;
+            this.Btn_DeleteShift.Text = "مسح الشيفت";
+            this.Btn_DeleteShift.Click += new System.EventHandler(this.Btn_DeleteShift_Click_1);
             // 
             // Frm_AddEmployeeShift
             // 
@@ -307,11 +327,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Olive;
             this.ClientSize = new System.Drawing.Size(960, 525);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.Btn_DeleteShift);
             this.Controls.Add(this.Btn_UpdateShift);
             this.Controls.Add(this.Btn_AddShift);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dateTimePicker3);
             this.Controls.Add(this.label3);
@@ -323,8 +343,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.comboBox1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Frm_AddEmployeeShift";
-            this.Text = "Frm_AddEmployeeShift";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "إضافة شيفتات الموظفين";
             this.Load += new System.EventHandler(this.Frm_AddEmployeeShift_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
@@ -340,9 +363,6 @@
         public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button Btn_DeleteShift;
-        private System.Windows.Forms.Button Btn_UpdateShift;
-        private System.Windows.Forms.Button Btn_AddShift;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
         private System.Windows.Forms.Label label3;
@@ -355,5 +375,8 @@
         private System.Windows.Forms.Label label7;
         public System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox textBox1;
+        private DevExpress.XtraEditors.SimpleButton Btn_AddShift;
+        private DevExpress.XtraEditors.SimpleButton Btn_UpdateShift;
+        private DevExpress.XtraEditors.SimpleButton Btn_DeleteShift;
     }
 }
