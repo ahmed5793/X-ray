@@ -627,6 +627,12 @@
     <Compile Include="PL\Frm_reportFinger.Designer.cs">
       <DependentUpon>Frm_reportFinger.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\frm_ReportFingerExcell.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\frm_ReportFingerExcell.Designer.cs">
+      <DependentUpon>frm_ReportFingerExcell.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_ReportInsertStock.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -859,6 +865,12 @@
     <Compile Include="RPT\Order\Rpt_OrderPay.Designer.cs">
       <DependentUpon>Rpt_OrderPay.cs</DependentUpon>
     </Compile>
+    <Compile Include="RPT\RPT_Barcode.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPT\RPT_Barcode.Designer.cs">
+      <DependentUpon>RPT_Barcode.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="PL\FingerPrint.resx">
       <DependentUpon>FingerPrint.cs</DependentUpon>
     </EmbeddedResource>
@@ -1054,6 +1066,9 @@
     <EmbeddedResource Include="PL\Frm_reportFinger.resx">
       <DependentUpon>Frm_reportFinger.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\frm_ReportFingerExcell.resx">
+      <DependentUpon>frm_ReportFingerExcell.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_ReportInsertStock.resx">
       <DependentUpon>Frm_ReportInsertStock.cs</DependentUpon>
     </EmbeddedResource>
@@ -1175,6 +1190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RPT\Order\Rpt_OrderPay.resx">
       <DependentUpon>Rpt_OrderPay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\RPT_Barcode.resx">
+      <DependentUpon>RPT_Barcode.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>

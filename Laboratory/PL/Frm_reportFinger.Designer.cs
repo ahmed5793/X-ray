@@ -37,10 +37,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.cmcb_clients = new System.Windows.Forms.ComboBox();
             this.Btn_AddShift = new System.Windows.Forms.Button();
-            this.DateTo = new System.Windows.Forms.DateTimePicker();
-            this.DateFrom = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.cmb_month = new System.Windows.Forms.ComboBox();
             this.cmb_year = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -48,6 +44,10 @@
             this.Day = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AttIN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AttOUT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateTo = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.DateFrom = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -92,56 +92,6 @@
             this.Btn_AddShift.Text = "search";
             this.Btn_AddShift.UseVisualStyleBackColor = false;
             this.Btn_AddShift.Click += new System.EventHandler(this.Btn_AddShift_Click);
-            // 
-            // DateTo
-            // 
-            this.DateTo.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.DateTo.CustomFormat = "   dd/MM/yyyy       *      tt  mm:hh    ";
-            this.DateTo.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DateTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DateTo.Location = new System.Drawing.Point(91, 66);
-            this.DateTo.Name = "DateTo";
-            this.DateTo.ShowUpDown = true;
-            this.DateTo.Size = new System.Drawing.Size(145, 32);
-            this.DateTo.TabIndex = 165;
-            // 
-            // DateFrom
-            // 
-            this.DateFrom.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.DateFrom.CustomFormat = "   dd/MM/yyyy       *      tt  mm:hh    ";
-            this.DateFrom.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DateFrom.Location = new System.Drawing.Point(320, 67);
-            this.DateFrom.Name = "DateFrom";
-            this.DateFrom.ShowUpDown = true;
-            this.DateFrom.Size = new System.Drawing.Size(145, 32);
-            this.DateFrom.TabIndex = 164;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label4.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(246, 67);
-            this.label4.Name = "label4";
-            this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label4.Size = new System.Drawing.Size(68, 31);
-            this.label4.TabIndex = 163;
-            this.label4.Text = "إلى :";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label3.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(471, 69);
-            this.label3.Name = "label3";
-            this.label3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label3.Size = new System.Drawing.Size(70, 31);
-            this.label3.TabIndex = 162;
-            this.label3.Text = " : من";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cmb_month
             // 
@@ -206,7 +156,7 @@
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -251,6 +201,56 @@
             this.AttOUT.HeaderText = "AttOUT";
             this.AttOUT.Name = "AttOUT";
             // 
+            // DateTo
+            // 
+            this.DateTo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.DateTo.CustomFormat = "   dd/MM/yyyy       *      tt  mm:hh    ";
+            this.DateTo.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DateTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DateTo.Location = new System.Drawing.Point(91, 66);
+            this.DateTo.Name = "DateTo";
+            this.DateTo.ShowUpDown = true;
+            this.DateTo.Size = new System.Drawing.Size(145, 32);
+            this.DateTo.TabIndex = 165;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label4.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(246, 67);
+            this.label4.Name = "label4";
+            this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label4.Size = new System.Drawing.Size(68, 31);
+            this.label4.TabIndex = 163;
+            this.label4.Text = "إلى :";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // DateFrom
+            // 
+            this.DateFrom.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.DateFrom.CustomFormat = "   dd/MM/yyyy       *      tt  mm:hh    ";
+            this.DateFrom.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DateFrom.Location = new System.Drawing.Point(320, 67);
+            this.DateFrom.Name = "DateFrom";
+            this.DateFrom.ShowUpDown = true;
+            this.DateFrom.Size = new System.Drawing.Size(145, 32);
+            this.DateFrom.TabIndex = 164;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(471, 69);
+            this.label3.Name = "label3";
+            this.label3.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label3.Size = new System.Drawing.Size(70, 31);
+            this.label3.TabIndex = 162;
+            this.label3.Text = " : من";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Frm_reportFinger
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -280,10 +280,6 @@
         private System.Windows.Forms.Label label7;
         public System.Windows.Forms.ComboBox cmcb_clients;
         private System.Windows.Forms.Button Btn_AddShift;
-        private System.Windows.Forms.DateTimePicker DateTo;
-        private System.Windows.Forms.DateTimePicker DateFrom;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         public System.Windows.Forms.ComboBox cmb_month;
         public System.Windows.Forms.ComboBox cmb_year;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -291,5 +287,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Day;
         private System.Windows.Forms.DataGridViewTextBoxColumn AttIN;
         private System.Windows.Forms.DataGridViewTextBoxColumn AttOUT;
+        private System.Windows.Forms.DateTimePicker DateTo;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DateTimePicker DateFrom;
+        private System.Windows.Forms.Label label3;
     }
 }

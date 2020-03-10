@@ -55,6 +55,18 @@ namespace Laboratory.PL
         {
             dataGridView1.RowTemplate.Height = 50;
             txt_username.Text = Program.salesman;
+            dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns[1].Visible = false;
+
+            dataGridView1.Columns[4].Visible = false;
+            dataGridView1.Columns[5].Visible = false;
+
+            dataGridView1.Columns[6].Visible = false;
+            dataGridView1.Columns[7].Visible = false;
+
+
+
+
         }
 
         private void btn_update_Click(object sender, EventArgs e)
@@ -164,11 +176,11 @@ namespace Laboratory.PL
                     importExcelToDataGridViewRange = importExcelToDataGridViewWorksheet.UsedRange;
 
                     //Start Importing from the second row.Since the first row is column header
-                    for (int excelWorkSheetRowIndex = 2; excelWorkSheetRowIndex < importExcelToDataGridViewRange.Rows.Count ; excelWorkSheetRowIndex++)
+                    for (int excelWorkSheetRowIndex = 2; excelWorkSheetRowIndex < importExcelToDataGridViewRange.Rows.Count; excelWorkSheetRowIndex++)
                     {
                         //Convert The Path to image and display it in datagridviewimagecolumn
-                       dataGridView1.Rows.Add(importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 1].Value, importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 2].Value, importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 3].Value, importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 4].Value, importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 5].Value, importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 6].Value, importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 7].Value, importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 8].Value, importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 9].Value);
-                       
+                        dataGridView1.Rows.Add(importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 1].Value, importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 2].Value, importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 3].Value, importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 4].Value, importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 5].Value, importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 6].Value, importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 7].Value, importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 8].Value, importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 9].Value);
+
 
                     }
                 }
@@ -178,6 +190,8 @@ namespace Laboratory.PL
             {
                 MessageBox.Show("Error" + importExcelToDataGridViewException);
             }
+
+
 
         }
 
@@ -222,30 +236,30 @@ namespace Laboratory.PL
 
                         }
                         dt.Clear();
-                        dt = f.vildateHRINOUTExcel(Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), Convert.ToDateTime(dataGridView1.Rows[i].Cells[8].Value));
+                        dt = f.vildateHRINOUTExcel(Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), Convert.ToDateTime(dataGridView1.Rows[i].Cells[8].Value),Convert.ToInt32(cmb_UserBranch.SelectedValue));
 
 
                         if (dt.Rows.Count == 0)
                         {
-                          System.Data.DataTable dt5 = new System.Data.DataTable();
-                            dt5 = f.vildateLastDateExcel(Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), Convert.ToDateTime(dataGridView1.Rows[i].Cells[8].Value));
-                            if (dt5.Rows.Count > 0)
-                            {
+                          //System.Data.DataTable dt5 = new System.Data.DataTable();
+                          //  dt5 = f.vildateLastDateExcel(Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), Convert.ToDateTime(dataGridView1.Rows[i].Cells[8].Value));
+                          //  if (dt5.Rows.Count > 0)
+                          //  {
                                 if (dataGridView1.Rows[i].Cells[2].Value.ToString() != "")
                                 {
                                     f.AddFingeerExcel(Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), dataGridView1.Rows[i].Cells[3].Value.ToString(), Convert.ToDateTime(dataGridView1.Rows[i].Cells[8].Value), Convert.ToInt32(cmb_UserBranch.SelectedValue), txt_username.Text);
 
                                 }
-                            }
-                            else
-                            {
-                                if (dataGridView1.Rows[i].Cells[2].Value.ToString() != "")
-                                {
-                                    f.AddFingeerExcel(Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), dataGridView1.Rows[i].Cells[3].Value.ToString(), Convert.ToDateTime(dataGridView1.Rows[i].Cells[8].Value), Convert.ToInt32(cmb_UserBranch.SelectedValue), txt_username.Text);
+                            //}
+                            //else
+                            //{
+                            //    if (dataGridView1.Rows[i].Cells[2].Value.ToString() != "")
+                            //    {
+                            //        f.AddFingeerExcel(Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), dataGridView1.Rows[i].Cells[3].Value.ToString(), Convert.ToDateTime(dataGridView1.Rows[i].Cells[8].Value), Convert.ToInt32(cmb_UserBranch.SelectedValue), txt_username.Text);
 
-                                }
+                            //    }
 
-                            }
+                            //}
                         }
 
                         backgroundWorker1.ReportProgress(i);
@@ -300,6 +314,21 @@ namespace Laboratory.PL
 
             }
 
+        }
+
+        private void backgroundWorker1_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
+        {
+            MessageBox.Show("done");
+        }
+
+        private void backgroundWorker1_ProgressChanged(object sender, System.ComponentModel.ProgressChangedEventArgs e)
+        {
+            progressBar1.Value = e.ProgressPercentage;
+        }
+
+        private void backgroundWorker2_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+           
         }
     }
 }
