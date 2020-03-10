@@ -287,7 +287,7 @@ namespace Laboratory {
             
             private global::System.Data.DataColumn columnDOCTOR_OFPatient;
             
-            private global::System.Data.DataColumn columndate_reseve;
+            private global::System.Data.DataColumn columndate_Visit;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -356,9 +356,9 @@ namespace Laboratory {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn date_reseveColumn {
+            public global::System.Data.DataColumn date_VisitColumn {
                 get {
-                    return this.columndate_reseve;
+                    return this.columndate_Visit;
                 }
             }
             
@@ -399,14 +399,14 @@ namespace Laboratory {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DataTable1Row AddDataTable1Row(string ID_Customer, string NAME_CUSTOMER, string ITEM_NAME, string DOCTOR_OFPatient, string date_reseve) {
+            public DataTable1Row AddDataTable1Row(string ID_Customer, string NAME_CUSTOMER, string ITEM_NAME, string DOCTOR_OFPatient, string date_Visit) {
                 DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID_Customer,
                         NAME_CUSTOMER,
                         ITEM_NAME,
                         DOCTOR_OFPatient,
-                        date_reseve};
+                        date_Visit};
                 rowDataTable1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable1Row);
                 return rowDataTable1Row;
@@ -433,7 +433,7 @@ namespace Laboratory {
                 this.columnNAME_CUSTOMER = base.Columns["NAME_CUSTOMER"];
                 this.columnITEM_NAME = base.Columns["ITEM_NAME"];
                 this.columnDOCTOR_OFPatient = base.Columns["DOCTOR_OFPatient"];
-                this.columndate_reseve = base.Columns["date_reseve"];
+                this.columndate_Visit = base.Columns["date_Visit"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -447,8 +447,8 @@ namespace Laboratory {
                 base.Columns.Add(this.columnITEM_NAME);
                 this.columnDOCTOR_OFPatient = new global::System.Data.DataColumn("DOCTOR_OFPatient", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDOCTOR_OFPatient);
-                this.columndate_reseve = new global::System.Data.DataColumn("date_reseve", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndate_reseve);
+                this.columndate_Visit = new global::System.Data.DataColumn("date_Visit", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndate_Visit);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -655,17 +655,17 @@ namespace Laboratory {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string date_reseve {
+            public string date_Visit {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTable1.date_reseveColumn]));
+                        return ((string)(this[this.tableDataTable1.date_VisitColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'date_reseve\' in table \'DataTable1\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'date_Visit\' in table \'DataTable1\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable1.date_reseveColumn] = value;
+                    this[this.tableDataTable1.date_VisitColumn] = value;
                 }
             }
             
@@ -719,14 +719,14 @@ namespace Laboratory {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isdate_reseveNull() {
-                return this.IsNull(this.tableDataTable1.date_reseveColumn);
+            public bool Isdate_VisitNull() {
+                return this.IsNull(this.tableDataTable1.date_VisitColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setdate_reseveNull() {
-                this[this.tableDataTable1.date_reseveColumn] = global::System.Convert.DBNull;
+            public void Setdate_VisitNull() {
+                this[this.tableDataTable1.date_VisitColumn] = global::System.Convert.DBNull;
             }
         }
         

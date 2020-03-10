@@ -237,7 +237,7 @@
             this.btn_new.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btn_new.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.btn_new.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_new.ImageOptions.Image")));
-            this.btn_new.Location = new System.Drawing.Point(702, 184);
+            this.btn_new.Location = new System.Drawing.Point(702, 192);
             this.btn_new.Name = "btn_new";
             this.btn_new.Size = new System.Drawing.Size(148, 32);
             this.btn_new.TabIndex = 177;
@@ -256,8 +256,8 @@
             this.Btn_update.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Btn_update.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_update.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.Btn_update.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.Btn_update.Location = new System.Drawing.Point(242, 184);
+            this.Btn_update.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_update.ImageOptions.Image")));
+            this.Btn_update.Location = new System.Drawing.Point(243, 192);
             this.Btn_update.Name = "Btn_update";
             this.Btn_update.Size = new System.Drawing.Size(169, 32);
             this.Btn_update.TabIndex = 176;
@@ -277,7 +277,7 @@
             this.Btn_Add.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_Add.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.Btn_Add.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Add.ImageOptions.Image")));
-            this.Btn_Add.Location = new System.Drawing.Point(484, 184);
+            this.Btn_Add.Location = new System.Drawing.Point(487, 192);
             this.Btn_Add.Name = "Btn_Add";
             this.Btn_Add.Size = new System.Drawing.Size(150, 32);
             this.Btn_Add.TabIndex = 175;

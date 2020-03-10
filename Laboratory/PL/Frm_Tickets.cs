@@ -855,241 +855,6 @@ namespace Laboratory.PL
         private void btn_save_Click(object sender, EventArgs e)
         {
 
-            frm_SingelReport sr = new frm_SingelReport();
-         
-            //    Rpt_OrderPay report = new Rpt_OrderPay();
-
-            //    s.documentViewer1.Refresh();
-
-            //    DataTable dt5 = new DataTable();
-            //    dt5.Clear();
-            //    dt5 = t.ReportInvoiceTicketPay(Convert.ToInt32(dgv_visit.CurrentRow.Cells[0].Value));
-            //    report.Parameters["@idTicket"].Value = Convert.ToInt32(dgv_visit.CurrentRow.Cells[0].Value);
-            //    report.DataSource = dt5;
-
-            //    s.documentViewer1.DocumentSource = report;
-            //    report.Parameters["@idTicket"].Visible = false;
-            //    s.ShowDialog();
-
-
-
-            
-           
-                //Rpt_OrderCompany oc = new Rpt_OrderCompany();
-
-                //s.documentViewer1.Refresh();
-
-                //oc.DataSource = t.ReportInvoiceTicketCompany(Convert.ToInt32(dgv_visit.CurrentRow.Cells[0].Value));
-
-                //oc.Parameters["@idTicket"].Value = Convert.ToInt32(dgv_visit.CurrentRow.Cells[0].Value);
-
-
-
-                //s.documentViewer1.DocumentSource = oc;
-                //oc.Parameters["@idTicket"].Visible = false;
-                //s.ShowDialog();
-
-
-            
-            try
-            {
-                if (dgv_order.Rows.Count>0)
-                {
-                    if (cmb_statues.Text=="")
-                    {
-                        MessageBox.Show("من فضلك قم بتحديد طريقة التعامل");
-                        return;
-                    }
-
-                    if (txt_name.Text==""&& Cmb_customer.Text == "" || txt_address.Text==""||txt_age.Text=="")
-                    {
-                        MessageBox.Show("من فضلك قم باادخال بيانات العميل كاملة");
-                        return;
-                    }
-                    if (txt_compint.Text=="")
-                    {
-                        MessageBox.Show("من فضلك قم باادخال الشكوي");
-
-                        return;
-                    }
-                    if (cmb_Doctor.Text == "")
-                    {
-                        MessageBox.Show("من فضلك قم باادخال الطبيب المعالج للمريض");
-
-                        return;
-                    }
-                    if (cmb_DoctorOfCenter.Text == ""||cmb_Techincal.Text=="")
-                    {
-                        MessageBox.Show("من فضلك قم باادخال طبيب الحالة");
-                        cmb_DoctorOfCenter.Focus();
-
-                        return;
-                    }
-                    if (cmb_Techincal.Text == "" || cmb_Techincal.Text == "")
-                    {
-                        MessageBox.Show("من فضلك قم باادخال الفني");
-                        cmb_Techincal.Focus();
-
-                        return;
-                    }
-                    if (Cmb_category.Text == "")
-                    {
-                        MessageBox.Show("من فضلك قم بااختيار فئة الفحص");
-
-                        return;
-                    }
-                    if (cmb_items.Text == "")
-                    {
-                        MessageBox.Show("من فضلك قم بااختيار نوع الفحص");
-
-                        return;
-                    }
-
-                    if (cmb_statues.Text=="نقدى")
-                    {
-                        if (rdb_NewPatient.Checked==true)
-                        {
-                            c.addCustomer(txt_name.Text, txt_address.Text, txt_phone.Text, Convert.ToInt32(txt_age.Text), dtb_visit.Value, comboBox1.Text, txt_idntational.Text);
-                            txt_idcust.Text = c.LastIdCustomer().Rows[0][0].ToString();
-
-                            t.AddTickets(dtb_visit.Value, dtp_recive.Value, Convert.ToDecimal(txt_total.Text), Convert.ToDecimal(txt_pay.Text),
-                                Convert.ToDecimal(txt_rent.Text), Convert.ToInt32(txt_idcust.Text), cmb_statues.Text, Convert.ToInt32(cmb_Doctor.SelectedValue),
-                                Convert.ToInt32(cmb_branches.SelectedValue), Convert.ToInt32(cmb_Stock.SelectedValue), dtb_kashf.Value,
-                                txt_compint.Text, Convert.ToInt32(cmb_DoctorOfCenter.SelectedValue), Convert.ToInt32(cmb_Techincal.SelectedValue), txt_username.Text,
-                                cmb_UserBranch.Text,Convert.ToDecimal(Txt_addtionPayment.Text),txt_reasonAddition.Text,Convert.ToDecimal(txt_afterDiscount.Text),Convert.ToDecimal(Txt_PricePayment.Text));
-                            txt_IdTicket.Text = t.LastIdTicket().Rows[0][0].ToString();
-                            t.AddTickestDiscount(Convert.ToInt32(txt_IdTicket.Text), Convert.ToDecimal(txt_discount.Text));
-
-                            for (int i = 0; i < dgv_order.Rows.Count; i++)
-                            {
-                                t.AddTicketDetails(Convert.ToInt32(txt_IdTicket.Text), Convert.ToInt32(dgv_order.Rows[i].Cells[0].Value),
-                                    Convert.ToDecimal(dgv_order.Rows[i].Cells[2].Value));
-                            }
-                            MessageBox.Show("تم حفظ الفاتورة بنجاح");
-                        }
-                        else if (rdb_CurrentPatient.Checked==true)
-                        {
-
-                            t.AddTickets(dtb_visit.Value, dtp_recive.Value, Convert.ToDecimal(txt_total.Text), Convert.ToDecimal(txt_pay.Text),
-                                Convert.ToDecimal(txt_rent.Text), Convert.ToInt32(Cmb_customer.SelectedValue), cmb_statues.Text, Convert.ToInt32(cmb_Doctor.SelectedValue),
-                                Convert.ToInt32(cmb_branches.SelectedValue), Convert.ToInt32(cmb_Stock.SelectedValue), dtb_kashf.Value,
-                                txt_compint.Text, Convert.ToInt32(cmb_DoctorOfCenter.SelectedValue), Convert.ToInt32(cmb_Techincal.SelectedValue), txt_username.Text,
-                                    cmb_UserBranch.Text, Convert.ToDecimal(Txt_addtionPayment.Text), txt_reasonAddition.Text, Convert.ToDecimal(txt_afterDiscount.Text), Convert.ToDecimal(Txt_PricePayment.Text));
-                            txt_IdTicket.Text = t.LastIdTicket().Rows[0][0].ToString();
-                            t.AddTickestDiscount(Convert.ToInt32(txt_IdTicket.Text), Convert.ToDecimal(txt_discount.Text));
-
-                            for (int i = 0; i < dgv_order.Rows.Count; i++)
-                            {
-                                t.AddTicketDetails(Convert.ToInt32(txt_IdTicket.Text), Convert.ToInt32(dgv_order.Rows[i].Cells[0].Value),
-                                    Convert.ToDecimal(dgv_order.Rows[i].Cells[2].Value));
-                            }
-                            MessageBox.Show("تم حفظ الفاتورة بنجاح");
-                        }
-
-             
-
-                        Rpt_OrderPay report = new Rpt_OrderPay();
-
-                        sr.documentViewer1.Refresh();
-
-                        DataTable dt5 = new DataTable();
-                        dt5.Clear();
-                        dt5 = t.ReportInvoiceTicketPay(Convert.ToInt32(txt_IdTicket.Text));
-                        report.Parameters["idTicket"].Value = Convert.ToInt32(txt_IdTicket.Text);
-                        report.DataSource = dt5;
-
-                        sr.documentViewer1.DocumentSource = report;
-                        report.Parameters["idTicket"].Visible = false;
-                        sr.ShowDialog();
-                    }
-                    else if (cmb_statues.Text == "شركات")
-                    {
-                        if (cmb_Company.Text=="")
-                        {
-                            MessageBox.Show("من فضلك قم بااختيار شركه");
-                            return;
-                        }
-                        if (rdb_NewPatient.Checked == true)
-                        {
-                            c.addCustomer(txt_name.Text, txt_address.Text, txt_phone.Text, Convert.ToInt32(txt_age.Text), dtb_visit.Value, comboBox1.Text,txt_idntational.Text);
-                            txt_idcust.Text = c.LastIdCustomer().Rows[0][0].ToString();
-
-                            t.AddTickets(dtb_visit.Value, dtp_recive.Value, Convert.ToDecimal(txt_total.Text), Convert.ToDecimal(txt_pay.Text),
-                                Convert.ToDecimal(txt_rent.Text), Convert.ToInt32(txt_idcust.Text), cmb_statues.Text, Convert.ToInt32(cmb_Doctor.SelectedValue),
-                                Convert.ToInt32(cmb_branches.SelectedValue), Convert.ToInt32(cmb_Stock.SelectedValue), dtb_kashf.Value,
-                                txt_compint.Text, Convert.ToInt32(cmb_DoctorOfCenter.SelectedValue), Convert.ToInt32(cmb_Techincal.SelectedValue), txt_username.Text,
-                                    cmb_UserBranch.Text, Convert.ToDecimal(Txt_addtionPayment.Text), txt_reasonAddition.Text, Convert.ToDecimal(txt_afterDiscount.Text), Convert.ToDecimal(Txt_PricePayment.Text));
-                            txt_IdTicket.Text = t.LastIdTicket().Rows[0][0].ToString();
-                            t.AddTickestDiscount(Convert.ToInt32(txt_IdTicket.Text), Convert.ToDecimal(txt_discount.Text));
-
-                            for (int i = 0; i < dgv_order.Rows.Count; i++)
-                            {
-                                t.AddTicketDetails(Convert.ToInt32(txt_IdTicket.Text), Convert.ToInt32(dgv_order.Rows[i].Cells[0].Value),
-                                    Convert.ToDecimal(dgv_order.Rows[i].Cells[2].Value));
-                            }
-                            MessageBox.Show("تم حفظ الفاتورة بنجاح");
-                        }
-                        else if (rdb_CurrentPatient.Checked == true)
-                        {
-
-                            t.AddTickets(dtb_visit.Value, dtp_recive.Value, Convert.ToDecimal(txt_total.Text), Convert.ToDecimal(txt_pay.Text),
-                                Convert.ToDecimal(txt_rent.Text), Convert.ToInt32(Cmb_customer.SelectedValue), cmb_statues.Text, Convert.ToInt32(cmb_Doctor.SelectedValue),
-                                Convert.ToInt32(cmb_branches.SelectedValue), Convert.ToInt32(cmb_Stock.SelectedValue), dtb_kashf.Value,
-                                txt_compint.Text, Convert.ToInt32(cmb_DoctorOfCenter.SelectedValue), Convert.ToInt32(cmb_Techincal.SelectedValue), txt_username.Text,
-                                    cmb_UserBranch.Text, Convert.ToDecimal(Txt_addtionPayment.Text), txt_reasonAddition.Text, Convert.ToDecimal(txt_afterDiscount.Text), Convert.ToDecimal(Txt_PricePayment.Text));
-                            txt_IdTicket.Text = t.LastIdTicket().Rows[0][0].ToString();
-                            t.AddTickestDiscount(Convert.ToInt32(txt_IdTicket.Text), Convert.ToDecimal(txt_discount.Text));
-
-                            for (int i = 0; i < dgv_order.Rows.Count; i++)
-                            {
-                                t.AddTicketDetails(Convert.ToInt32(txt_IdTicket.Text), Convert.ToInt32(dgv_order.Rows[i].Cells[0].Value),
-                                    Convert.ToDecimal(dgv_order.Rows[i].Cells[2].Value));
-                            }
-                            MessageBox.Show("تم حفظ الفاتورة بنجاح");
-                        }
-                        t.AddTicketCompany(Convert.ToInt32(txt_IdTicket.Text), Convert.ToInt32(cmb_Company.SelectedValue),Convert.ToDecimal(Txt_rentCompany.Text));
-                        cm.Update_CompanyTotalMoney(Convert.ToInt32(cmb_Company.SelectedValue),Convert.ToDecimal(Txt_rentCompany.Text));
-
-                        Rpt_OrderCompany oc = new Rpt_OrderCompany();
-
-                        sr.documentViewer1.Refresh();
-
-                        oc.DataSource = t.ReportInvoiceTicketCompany(Convert.ToInt32(txt_IdTicket.Text));
-
-                        oc.Parameters["idTicket"].Value = Convert.ToInt32(txt_IdTicket.Text);
-
-
-
-                        sr.documentViewer1.DocumentSource = oc;
-                        oc.Parameters["idTicket"].Visible = false;
-                        sr.ShowDialog();
-
-                    }
-
-
-                    s.add_insertStock(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_pay.Text), dtb_visit.Value, txt_username.Text, "فاتورة حجز اشعة رقم "+txt_IdTicket.Text);
-
-
-
-
-                    string x = DateTime.Now.ToShortDateString();
-                    clear();
-                    Customer();
-
-                    Frm_DataRevaltionTicket.getmain.dataGridView1.DataSource = t.selectDataRevlation(Convert.ToInt32(Frm_DataRevaltionTicket.getmain.comboBox1.SelectedValue), Convert.ToDateTime(x));
-                }
-               
-                else
-                {
-                  
-                }
-
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
         }
 
      
@@ -1202,7 +967,6 @@ namespace Laboratory.PL
 
         private void btn_print_Click(object sender, EventArgs e)
         {
-            clear();
         }
 
         private void cmb_statues_SelectionChangeCommitted(object sender, EventArgs e)
@@ -1564,6 +1328,257 @@ namespace Laboratory.PL
                 txt_pay.Text = "0";
             }
             pay();
+        }
+
+        private void Btn_Add_Click(object sender, EventArgs e)
+        {
+            clear();
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+
+            frm_SingelReport sr = new frm_SingelReport();
+
+            //    Rpt_OrderPay report = new Rpt_OrderPay();
+
+            //    s.documentViewer1.Refresh();
+
+            //    DataTable dt5 = new DataTable();
+            //    dt5.Clear();
+            //    dt5 = t.ReportInvoiceTicketPay(Convert.ToInt32(dgv_visit.CurrentRow.Cells[0].Value));
+            //    report.Parameters["@idTicket"].Value = Convert.ToInt32(dgv_visit.CurrentRow.Cells[0].Value);
+            //    report.DataSource = dt5;
+
+            //    s.documentViewer1.DocumentSource = report;
+            //    report.Parameters["@idTicket"].Visible = false;
+            //    s.ShowDialog();
+
+
+
+
+
+            //Rpt_OrderCompany oc = new Rpt_OrderCompany();
+
+            //s.documentViewer1.Refresh();
+
+            //oc.DataSource = t.ReportInvoiceTicketCompany(Convert.ToInt32(dgv_visit.CurrentRow.Cells[0].Value));
+
+            //oc.Parameters["@idTicket"].Value = Convert.ToInt32(dgv_visit.CurrentRow.Cells[0].Value);
+
+
+
+            //s.documentViewer1.DocumentSource = oc;
+            //oc.Parameters["@idTicket"].Visible = false;
+            //s.ShowDialog();
+
+
+
+            try
+            {
+                if (dgv_order.Rows.Count > 0)
+                {
+                    if (cmb_statues.Text == "")
+                    {
+                        MessageBox.Show("من فضلك قم بتحديد طريقة التعامل");
+                        return;
+                    }
+
+                    if (txt_name.Text == "" && Cmb_customer.Text == "" || txt_address.Text == "" || txt_age.Text == "")
+                    {
+                        MessageBox.Show("من فضلك قم باادخال بيانات العميل كاملة");
+                        return;
+                    }
+                    if (txt_compint.Text == "")
+                    {
+                        MessageBox.Show("من فضلك قم باادخال الشكوي");
+
+                        return;
+                    }
+                    if (cmb_Doctor.Text == "")
+                    {
+                        MessageBox.Show("من فضلك قم باادخال الطبيب المعالج للمريض");
+
+                        return;
+                    }
+                    if (cmb_DoctorOfCenter.Text == "" || cmb_Techincal.Text == "")
+                    {
+                        MessageBox.Show("من فضلك قم باادخال طبيب الحالة");
+                        cmb_DoctorOfCenter.Focus();
+
+                        return;
+                    }
+                    if (cmb_Techincal.Text == "" || cmb_Techincal.Text == "")
+                    {
+                        MessageBox.Show("من فضلك قم باادخال الفني");
+                        cmb_Techincal.Focus();
+
+                        return;
+                    }
+                    if (Cmb_category.Text == "")
+                    {
+                        MessageBox.Show("من فضلك قم بااختيار فئة الفحص");
+
+                        return;
+                    }
+                    if (cmb_items.Text == "")
+                    {
+                        MessageBox.Show("من فضلك قم بااختيار نوع الفحص");
+
+                        return;
+                    }
+
+                    if (cmb_statues.Text == "نقدى")
+                    {
+                        if (rdb_NewPatient.Checked == true)
+                        {
+                            c.addCustomer(txt_name.Text, txt_address.Text, txt_phone.Text, Convert.ToInt32(txt_age.Text), dtb_visit.Value, comboBox1.Text, txt_idntational.Text);
+                            txt_idcust.Text = c.LastIdCustomer().Rows[0][0].ToString();
+
+                            t.AddTickets(dtb_visit.Value, dtp_recive.Value, Convert.ToDecimal(txt_total.Text), Convert.ToDecimal(txt_pay.Text),
+                                Convert.ToDecimal(txt_rent.Text), Convert.ToInt32(txt_idcust.Text), cmb_statues.Text, Convert.ToInt32(cmb_Doctor.SelectedValue),
+                                Convert.ToInt32(cmb_branches.SelectedValue), Convert.ToInt32(cmb_Stock.SelectedValue), dtb_kashf.Value,
+                                txt_compint.Text, Convert.ToInt32(cmb_DoctorOfCenter.SelectedValue), Convert.ToInt32(cmb_Techincal.SelectedValue), txt_username.Text,
+                                cmb_UserBranch.Text, Convert.ToDecimal(Txt_addtionPayment.Text), txt_reasonAddition.Text, Convert.ToDecimal(txt_afterDiscount.Text), Convert.ToDecimal(Txt_PricePayment.Text));
+                            txt_IdTicket.Text = t.LastIdTicket().Rows[0][0].ToString();
+                            t.AddTickestDiscount(Convert.ToInt32(txt_IdTicket.Text), Convert.ToDecimal(txt_discount.Text));
+
+                            for (int i = 0; i < dgv_order.Rows.Count; i++)
+                            {
+                                t.AddTicketDetails(Convert.ToInt32(txt_IdTicket.Text), Convert.ToInt32(dgv_order.Rows[i].Cells[0].Value),
+                                    Convert.ToDecimal(dgv_order.Rows[i].Cells[2].Value));
+                            }
+                            MessageBox.Show("تم حفظ الفاتورة بنجاح");
+                        }
+                        else if (rdb_CurrentPatient.Checked == true)
+                        {
+
+                            t.AddTickets(dtb_visit.Value, dtp_recive.Value, Convert.ToDecimal(txt_total.Text), Convert.ToDecimal(txt_pay.Text),
+                                Convert.ToDecimal(txt_rent.Text), Convert.ToInt32(Cmb_customer.SelectedValue), cmb_statues.Text, Convert.ToInt32(cmb_Doctor.SelectedValue),
+                                Convert.ToInt32(cmb_branches.SelectedValue), Convert.ToInt32(cmb_Stock.SelectedValue), dtb_kashf.Value,
+                                txt_compint.Text, Convert.ToInt32(cmb_DoctorOfCenter.SelectedValue), Convert.ToInt32(cmb_Techincal.SelectedValue), txt_username.Text,
+                                    cmb_UserBranch.Text, Convert.ToDecimal(Txt_addtionPayment.Text), txt_reasonAddition.Text, Convert.ToDecimal(txt_afterDiscount.Text), Convert.ToDecimal(Txt_PricePayment.Text));
+                            txt_IdTicket.Text = t.LastIdTicket().Rows[0][0].ToString();
+                            t.AddTickestDiscount(Convert.ToInt32(txt_IdTicket.Text), Convert.ToDecimal(txt_discount.Text));
+
+                            for (int i = 0; i < dgv_order.Rows.Count; i++)
+                            {
+                                t.AddTicketDetails(Convert.ToInt32(txt_IdTicket.Text), Convert.ToInt32(dgv_order.Rows[i].Cells[0].Value),
+                                    Convert.ToDecimal(dgv_order.Rows[i].Cells[2].Value));
+                            }
+                            MessageBox.Show("تم حفظ الفاتورة بنجاح");
+                        }
+
+
+
+                        Rpt_OrderPay report = new Rpt_OrderPay();
+
+                        sr.documentViewer1.Refresh();
+
+                        DataTable dt5 = new DataTable();
+                        dt5.Clear();
+                        dt5 = t.ReportInvoiceTicketPay(Convert.ToInt32(txt_IdTicket.Text));
+                        report.Parameters["idTicket"].Value = Convert.ToInt32(txt_IdTicket.Text);
+                        report.DataSource = dt5;
+
+                        sr.documentViewer1.DocumentSource = report;
+                        report.Parameters["idTicket"].Visible = false;
+                        sr.ShowDialog();
+                    }
+                    else if (cmb_statues.Text == "شركات")
+                    {
+                        if (cmb_Company.Text == "")
+                        {
+                            MessageBox.Show("من فضلك قم بااختيار شركه");
+                            return;
+                        }
+                        if (rdb_NewPatient.Checked == true)
+                        {
+                            c.addCustomer(txt_name.Text, txt_address.Text, txt_phone.Text, Convert.ToInt32(txt_age.Text), dtb_visit.Value, comboBox1.Text, txt_idntational.Text);
+                            txt_idcust.Text = c.LastIdCustomer().Rows[0][0].ToString();
+
+                            t.AddTickets(dtb_visit.Value, dtp_recive.Value, Convert.ToDecimal(txt_total.Text), Convert.ToDecimal(txt_pay.Text),
+                                Convert.ToDecimal(txt_rent.Text), Convert.ToInt32(txt_idcust.Text), cmb_statues.Text, Convert.ToInt32(cmb_Doctor.SelectedValue),
+                                Convert.ToInt32(cmb_branches.SelectedValue), Convert.ToInt32(cmb_Stock.SelectedValue), dtb_kashf.Value,
+                                txt_compint.Text, Convert.ToInt32(cmb_DoctorOfCenter.SelectedValue), Convert.ToInt32(cmb_Techincal.SelectedValue), txt_username.Text,
+                                    cmb_UserBranch.Text, Convert.ToDecimal(Txt_addtionPayment.Text), txt_reasonAddition.Text, Convert.ToDecimal(txt_afterDiscount.Text), Convert.ToDecimal(Txt_PricePayment.Text));
+                            txt_IdTicket.Text = t.LastIdTicket().Rows[0][0].ToString();
+                            t.AddTickestDiscount(Convert.ToInt32(txt_IdTicket.Text), Convert.ToDecimal(txt_discount.Text));
+
+                            for (int i = 0; i < dgv_order.Rows.Count; i++)
+                            {
+                                t.AddTicketDetails(Convert.ToInt32(txt_IdTicket.Text), Convert.ToInt32(dgv_order.Rows[i].Cells[0].Value),
+                                    Convert.ToDecimal(dgv_order.Rows[i].Cells[2].Value));
+                            }
+                            MessageBox.Show("تم حفظ الفاتورة بنجاح");
+                        }
+                        else if (rdb_CurrentPatient.Checked == true)
+                        {
+
+                            t.AddTickets(dtb_visit.Value, dtp_recive.Value, Convert.ToDecimal(txt_total.Text), Convert.ToDecimal(txt_pay.Text),
+                                Convert.ToDecimal(txt_rent.Text), Convert.ToInt32(Cmb_customer.SelectedValue), cmb_statues.Text, Convert.ToInt32(cmb_Doctor.SelectedValue),
+                                Convert.ToInt32(cmb_branches.SelectedValue), Convert.ToInt32(cmb_Stock.SelectedValue), dtb_kashf.Value,
+                                txt_compint.Text, Convert.ToInt32(cmb_DoctorOfCenter.SelectedValue), Convert.ToInt32(cmb_Techincal.SelectedValue), txt_username.Text,
+                                    cmb_UserBranch.Text, Convert.ToDecimal(Txt_addtionPayment.Text), txt_reasonAddition.Text, Convert.ToDecimal(txt_afterDiscount.Text), Convert.ToDecimal(Txt_PricePayment.Text));
+                            txt_IdTicket.Text = t.LastIdTicket().Rows[0][0].ToString();
+                            t.AddTickestDiscount(Convert.ToInt32(txt_IdTicket.Text), Convert.ToDecimal(txt_discount.Text));
+
+                            for (int i = 0; i < dgv_order.Rows.Count; i++)
+                            {
+                                t.AddTicketDetails(Convert.ToInt32(txt_IdTicket.Text), Convert.ToInt32(dgv_order.Rows[i].Cells[0].Value),
+                                    Convert.ToDecimal(dgv_order.Rows[i].Cells[2].Value));
+                            }
+                            MessageBox.Show("تم حفظ الفاتورة بنجاح");
+                        }
+                        t.AddTicketCompany(Convert.ToInt32(txt_IdTicket.Text), Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToDecimal(Txt_rentCompany.Text));
+                        dt.Clear();
+                        dt= cm.Select_CompanyTotalMoney(Convert.ToInt32(cmb_Company.SelectedValue));
+                        decimal mno = Convert.ToDecimal(dt.Rows[0][0]) + Convert.ToDecimal(Txt_rentCompany.Text); 
+                        cm.Update_CompanyTotalMoney(Convert.ToInt32(cmb_Company.SelectedValue),mno);
+                        cm.ADD_Company_TotalRent(Convert.ToInt32(cmb_Company.SelectedValue),0, Convert.ToDecimal(Txt_rentCompany.Text)
+                             ,dtb_visit.Value, mno , "حجز أشعة ورقم الحجز   "+" "+ txt_IdTicket.Text,Convert.ToInt32(cmb_Stock.SelectedValue)
+                             ,Convert.ToInt32(cmb_UserBranch.SelectedValue),txt_username.Text);
+
+                        Rpt_OrderCompany oc = new Rpt_OrderCompany();
+
+                        sr.documentViewer1.Refresh();
+
+                        oc.DataSource = t.ReportInvoiceTicketCompany(Convert.ToInt32(txt_IdTicket.Text));
+
+                        oc.Parameters["idTicket"].Value = Convert.ToInt32(txt_IdTicket.Text);
+
+
+
+                        sr.documentViewer1.DocumentSource = oc;
+                        oc.Parameters["idTicket"].Visible = false;
+                        sr.ShowDialog();
+
+                    }
+
+                    if (Convert.ToDecimal(txt_pay.Text)>0)
+                    {
+                        s.add_insertStock(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_pay.Text), dtb_visit.Value, 
+                                          txt_username.Text, "فاتورة حجز اشعة رقم " + txt_IdTicket.Text);
+                    }
+                    string x = DateTime.Now.ToShortDateString();
+                    clear();
+                    Customer();
+
+                    Frm_DataRevaltionTicket.getmain.dataGridView1.DataSource = t.selectDataRevlation(Convert.ToInt32(Frm_DataRevaltionTicket.getmain.comboBox1.SelectedValue), Convert.ToDateTime(x));
+                }
+
+                else
+                {
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
+            }
         }
 
         //private void ؤ(object sender, EventArgs e)

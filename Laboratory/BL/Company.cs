@@ -326,32 +326,50 @@ namespace Laboratory.BL
             da.open();
 
             SqlParameter[] param = new SqlParameter[1];
-            param[0] = new SqlParameter("Id_Company", SqlDbType.Int);
+            param[0] = new SqlParameter("@Id_Company", SqlDbType.Int);
             param[0].Value = Id_Company;
             dt = da.selected("SelectOneCompanyMoney", param);
             da.close();
             return dt;
         }
-        internal void ADD_Company_TotalRent(int ID_company, decimal pay, decimal rent, DateTime pay_date, 
-                                          int IDStock, string Sales_man, int Id_Branch)
+        internal DataTable Select_CompanyTotalMoney(int Id_Company)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@Id_Company", SqlDbType.Int);
+            param[0].Value = Id_Company;
+            dt = da.selected("Select_CompanyTotalMoney", param);
+            da.close();
+            return dt;
+        }
+        internal void ADD_Company_TotalRent(int ID_company, decimal Da2n, decimal Maden, DateTime pay_date, 
+                                         decimal Balance, string Elbyan, int IDStock, int Id_Branch, string Sales_man)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[7];
+            SqlParameter[] param = new SqlParameter[9];
             param[0] = new SqlParameter("@ID_Company", SqlDbType.Int);
             param[0].Value = ID_company;
-            param[1] = new SqlParameter("@pay", SqlDbType.Decimal);
-            param[1].Value = pay;
-            param[2] = new SqlParameter("@rent", SqlDbType.Decimal);
-            param[2].Value = rent;
+            param[1] = new SqlParameter("@Da2n", SqlDbType.Decimal);
+            param[1].Value = Da2n;
+            param[2] = new SqlParameter("@Maden", SqlDbType.Decimal);
+            param[2].Value = Maden;
             param[3] = new SqlParameter("@date_pay", SqlDbType.DateTime);
             param[3].Value = pay_date;
-            param[4] = new SqlParameter("@id_Stock", SqlDbType.Int);
-            param[4].Value = IDStock;
-            param[5] = new SqlParameter("@sales_Man", SqlDbType.NVarChar, 100);
-            param[5].Value = Sales_man;
-            param[6] = new SqlParameter("@Id_Branch", SqlDbType.Int);
-            param[6].Value = Id_Branch;
+            param[4] = new SqlParameter("@Balance", SqlDbType.Decimal);
+            param[4].Value = Balance;
+            param[5] = new SqlParameter("@Elbyan", SqlDbType.NVarChar, 200);
+            param[5].Value = Elbyan;
+            param[6] = new SqlParameter("@Id_Stock", SqlDbType.Int);
+            param[6].Value = IDStock;
+            param[7] = new SqlParameter("@Id_Branch", SqlDbType.Int);
+            param[7].Value = Id_Branch;
+            param[8] = new SqlParameter("@Sales_Man", SqlDbType.NVarChar,100);
+            param[8].Value = Sales_man;
             da.excutequery("ADD_Company_TotalRent", param);
             da.close();
         }

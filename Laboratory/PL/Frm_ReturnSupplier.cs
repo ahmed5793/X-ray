@@ -19,6 +19,10 @@ namespace Laboratory.PL
         Stock s = new Stock();
         DataTable dt = new DataTable();
         DataTable dt10 = new DataTable();
+        DataTable dt5 = new DataTable();
+        DataTable dt1 = new DataTable();
+        DataTable dt2 = new DataTable();
+        DataTable dt20 = new DataTable();
         public Frm_ReturnSupplier()
         {
 
@@ -72,6 +76,7 @@ namespace Laboratory.PL
             txt_sales.Clear();
             txt_total.Clear();
             textBox4.Text = "0";
+            textBox1.Clear();
             Txt_QuantityStore.Text = "0";
             dt10.Clear();
         }
@@ -141,9 +146,7 @@ namespace Laboratory.PL
         }
         private void button2_Click_1(object sender, EventArgs e)
         {
-            DataTable dt1 = new DataTable();
-            DataTable dt2 = new DataTable();
-            DataTable dt20 = new DataTable();
+     
             try
             {
                 dt20.Clear();
@@ -163,6 +166,7 @@ namespace Laboratory.PL
                 {
                     txt_num.Text = dr["ID"].ToString();
                     txt_Name.Text = dr["Name"].ToString();
+                    textBox1.Text = dr["sup_id"].ToString();
                     txt_sales.Text = Program.salesman;            
                 }
                 dataGridView1.DataSource = dt2;
@@ -231,6 +235,14 @@ namespace Laboratory.PL
                     txt_return.Focus();
                     return;
                  }
+                for (int i = 0; i < dataGridView2.Rows.Count; i++)
+                {
+                    if (txt_iD.Text == dataGridView2.Rows[i].Cells[0].Value.ToString())
+                    {
+                        MessageBox.Show("لا يسمح بأضافة هذا الصنف مرتين للمرتجع فى نفس الفاتورة ");
+                        return;
+                    }
+                }
                 if (txt_iD.Text != string.Empty && Convert.ToInt32(txt_return.Text)>0)
                 {
                   
@@ -352,6 +364,13 @@ namespace Laboratory.PL
                     {
                         s.add_insertStock(Convert.ToInt32(Cmb_Stock.SelectedValue), Convert.ToDecimal(Txt_Pay.Text), dateTimePicker1.Value, txt_sales.Text, "مرتجع فاتورة مستريات رقم " + txt_num.Text);
                     }
+
+                    dt5.Clear();
+                    dt5 = Suppliers.Select_SupplierTotalMoney(Convert.ToInt32(textBox1.Text));
+                    decimal mno = Convert.ToDecimal(dt5.Rows[0][0]) - (Convert.ToDecimal(textBox4.Text)- Convert.ToDecimal(Txt_Pay.Text));
+                    Suppliers.Update_SupplierTotalMoney(Convert.ToInt32(textBox1.Text), mno);
+                    Suppliers.Add_SupplierStatmentACCount(Convert.ToInt32(textBox1.Text), Convert.ToDecimal(Txt_Pay.Text)
+                        , Convert.ToDecimal(textBox4.Text), mno, "فاتورة مرتجع مشتريات رقم" + " " + txt_num.Text, dateTimePicker1.Value);
                     for (int i = 0; i < dataGridView2.Rows.Count; i++)
                     {
                         Suppliers.Add_SupplierReturn(Convert.ToInt32(txt_num.Text), Convert.ToInt32(dataGridView2.Rows[i].Cells[0].Value)
@@ -359,9 +378,10 @@ namespace Laboratory.PL
                          ,Convert.ToDecimal(dataGridView2.Rows[i].Cells[2].Value),dateTimePicker1.Value,
                          Convert.ToDecimal(dataGridView2.Rows[i].Cells[4].Value)
                         ,txt_sales.Text,Convert.ToInt32(dataGridView1.CurrentRow.Cells[5].Value));
-                        MessageBox.Show("تح حفظ المرتجع للفاتورة المحددة");
-                        Clear();
+                   
                     }
+                    MessageBox.Show("تح حفظ المرتجع للفاتورة المحددة");
+                        Clear();
                 }
             }
             catch (Exception ex)
@@ -420,6 +440,7 @@ namespace Laboratory.PL
                         {
                             txt_num.Text = dr["ID"].ToString();
                             txt_Name.Text = dr["Name"].ToString();
+                            textBox1.Text = dr["sup_id"].ToString();
                             txt_sales.Text = Program.salesman;
 
                         }

@@ -96,7 +96,7 @@ namespace Laboratory.PL
                 if (txt_name.Text == "")
                 {
                     MessageBox.Show("يرجي التاكد من اسم الشركة");
-
+                    return;
                 }
                 else
                 {
@@ -115,6 +115,7 @@ namespace Laboratory.PL
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
             }
         }
 
@@ -152,6 +153,7 @@ namespace Laboratory.PL
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
             }
         }
     }
