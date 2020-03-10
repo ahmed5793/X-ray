@@ -101,13 +101,13 @@
             this.dtb_visit = new System.Windows.Forms.DateTimePicker();
             this.cmb_Company = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btn_print = new System.Windows.Forms.Button();
-            this.btn_save = new System.Windows.Forms.Button();
             this.cmb_statues = new System.Windows.Forms.ComboBox();
             this.label21 = new System.Windows.Forms.Label();
             this.cmb_UserBranch = new System.Windows.Forms.ComboBox();
             this.Btn_DetailsCompany = new System.Windows.Forms.Button();
-            this.Btn_Add = new DevExpress.XtraEditors.SimpleButton();
+            this.Btn_NewOrder = new DevExpress.XtraEditors.SimpleButton();
+            this.Btn_Save = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_order)).BeginInit();
@@ -207,7 +207,7 @@
             this.Cmb_customer.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.Cmb_customer.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cmb_customer.FormattingEnabled = true;
-            this.Cmb_customer.Location = new System.Drawing.Point(137, 42);
+            this.Cmb_customer.Location = new System.Drawing.Point(136, 43);
             this.Cmb_customer.Name = "Cmb_customer";
             this.Cmb_customer.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Cmb_customer.Size = new System.Drawing.Size(257, 26);
@@ -454,7 +454,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Controls.Add(this.button1);
@@ -679,7 +679,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.label29);
             this.groupBox3.Controls.Add(this.Txt_rentCompany);
             this.groupBox3.Controls.Add(this.label28);
@@ -1124,30 +1124,6 @@
             this.label1.TabIndex = 89;
             this.label1.Text = "طريقة التعامل";
             // 
-            // btn_print
-            // 
-            this.btn_print.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btn_print.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_print.Location = new System.Drawing.Point(946, 473);
-            this.btn_print.Name = "btn_print";
-            this.btn_print.Size = new System.Drawing.Size(119, 34);
-            this.btn_print.TabIndex = 101;
-            this.btn_print.Text = "فاتورة جديدة";
-            this.btn_print.UseVisualStyleBackColor = true;
-            this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
-            // 
-            // btn_save
-            // 
-            this.btn_save.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btn_save.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_save.Location = new System.Drawing.Point(809, 474);
-            this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(119, 33);
-            this.btn_save.TabIndex = 100;
-            this.btn_save.Text = "حفظ";
-            this.btn_save.UseVisualStyleBackColor = true;
-            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
-            // 
             // cmb_statues
             // 
             this.cmb_statues.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -1205,35 +1181,78 @@
             this.Btn_DetailsCompany.UseVisualStyleBackColor = true;
             this.Btn_DetailsCompany.Click += new System.EventHandler(this.Btn_DetailsCompany_Click);
             // 
-            // Btn_Add
+            // Btn_NewOrder
             // 
-            this.Btn_Add.Appearance.BackColor = System.Drawing.Color.Black;
-            this.Btn_Add.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Add.Appearance.ForeColor = System.Drawing.Color.White;
-            this.Btn_Add.Appearance.Options.UseBackColor = true;
-            this.Btn_Add.Appearance.Options.UseFont = true;
-            this.Btn_Add.Appearance.Options.UseForeColor = true;
-            this.Btn_Add.Appearance.Options.UseTextOptions = true;
-            this.Btn_Add.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.Btn_Add.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.Btn_Add.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.Btn_Add.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Add.ImageOptions.Image")));
-            this.Btn_Add.Location = new System.Drawing.Point(664, 474);
-            this.Btn_Add.Name = "Btn_Add";
-            this.Btn_Add.Size = new System.Drawing.Size(129, 32);
-            this.Btn_Add.TabIndex = 179;
-            this.Btn_Add.Text = "حفظ";
+            this.Btn_NewOrder.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.Btn_NewOrder.Appearance.BackColor = System.Drawing.Color.Black;
+            this.Btn_NewOrder.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_NewOrder.Appearance.ForeColor = System.Drawing.Color.White;
+            this.Btn_NewOrder.Appearance.Options.UseBackColor = true;
+            this.Btn_NewOrder.Appearance.Options.UseFont = true;
+            this.Btn_NewOrder.Appearance.Options.UseForeColor = true;
+            this.Btn_NewOrder.Appearance.Options.UseTextOptions = true;
+            this.Btn_NewOrder.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Btn_NewOrder.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.Btn_NewOrder.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.Btn_NewOrder.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_NewOrder.ImageOptions.Image")));
+            this.Btn_NewOrder.Location = new System.Drawing.Point(940, 471);
+            this.Btn_NewOrder.Name = "Btn_NewOrder";
+            this.Btn_NewOrder.Size = new System.Drawing.Size(141, 32);
+            this.Btn_NewOrder.TabIndex = 179;
+            this.Btn_NewOrder.Text = "فاتورة جديدة";
+            this.Btn_NewOrder.Click += new System.EventHandler(this.Btn_Add_Click);
+            // 
+            // Btn_Save
+            // 
+            this.Btn_Save.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.Btn_Save.Appearance.BackColor = System.Drawing.Color.Black;
+            this.Btn_Save.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Save.Appearance.ForeColor = System.Drawing.Color.White;
+            this.Btn_Save.Appearance.Options.UseBackColor = true;
+            this.Btn_Save.Appearance.Options.UseFont = true;
+            this.Btn_Save.Appearance.Options.UseForeColor = true;
+            this.Btn_Save.Appearance.Options.UseTextOptions = true;
+            this.Btn_Save.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Btn_Save.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.Btn_Save.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.Btn_Save.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Save.ImageOptions.Image")));
+            this.Btn_Save.Location = new System.Drawing.Point(771, 469);
+            this.Btn_Save.Name = "Btn_Save";
+            this.Btn_Save.Size = new System.Drawing.Size(141, 32);
+            this.Btn_Save.TabIndex = 180;
+            this.Btn_Save.Text = "حفظ الفاتورة";
+            this.Btn_Save.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.Black;
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton1.Appearance.ForeColor = System.Drawing.Color.White;
+            this.simpleButton1.Appearance.Options.UseBackColor = true;
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.Appearance.Options.UseForeColor = true;
+            this.simpleButton1.Appearance.Options.UseTextOptions = true;
+            this.simpleButton1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.simpleButton1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.simpleButton1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(593, 469);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(144, 32);
+            this.simpleButton1.TabIndex = 181;
+            this.simpleButton1.Text = "طباعة الباركود";
             // 
             // Frm_Tickets
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(1093, 523);
-            this.Controls.Add(this.Btn_Add);
+            this.Controls.Add(this.simpleButton1);
+            this.Controls.Add(this.Btn_Save);
+            this.Controls.Add(this.Btn_NewOrder);
             this.Controls.Add(this.Btn_DetailsCompany);
-            this.Controls.Add(this.btn_print);
             this.Controls.Add(this.cmb_UserBranch);
-            this.Controls.Add(this.btn_save);
             this.Controls.Add(this.dtb_kashf);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.dtb_visit);
@@ -1259,7 +1278,7 @@
             this.Name = "Frm_Tickets";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "شاشة الحجز";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.Load += new System.EventHandler(this.Frm_Tickets_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -1317,8 +1336,6 @@
         public System.Windows.Forms.ComboBox cmb_Company;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.DataGridView dgv_order;
-        private System.Windows.Forms.Button btn_print;
-        private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.RadioButton rdb_NewPatient;
         private System.Windows.Forms.RadioButton rdb_CurrentPatient;
         public System.Windows.Forms.ComboBox cmb_Techincal;
@@ -1353,6 +1370,8 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Button Btn_DetailsCompany;
         private System.Windows.Forms.Label label29;
-        private DevExpress.XtraEditors.SimpleButton Btn_Add;
+        private DevExpress.XtraEditors.SimpleButton Btn_NewOrder;
+        private DevExpress.XtraEditors.SimpleButton Btn_Save;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

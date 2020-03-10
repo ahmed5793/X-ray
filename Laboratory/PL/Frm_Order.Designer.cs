@@ -42,10 +42,10 @@
             this.txt_note = new System.Windows.Forms.TextBox();
             this.DataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Btn_SelectProduct = new DevExpress.XtraEditors.SimpleButton();
             this.txt_num = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
-            this.Btn_SelectProduct = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView1)).BeginInit();
@@ -108,7 +108,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(263, 110);
+            this.label3.Location = new System.Drawing.Point(260, 99);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(71, 24);
             this.label3.TabIndex = 32;
@@ -117,7 +117,7 @@
             // txt_note
             // 
             this.txt_note.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_note.Location = new System.Drawing.Point(10, 70);
+            this.txt_note.Location = new System.Drawing.Point(10, 55);
             this.txt_note.Multiline = true;
             this.txt_note.Name = "txt_note";
             this.txt_note.Size = new System.Drawing.Size(244, 123);
@@ -206,6 +206,27 @@
             this.groupBox1.TabIndex = 84;
             this.groupBox1.TabStop = false;
             // 
+            // Btn_SelectProduct
+            // 
+            this.Btn_SelectProduct.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Btn_SelectProduct.Appearance.BackColor = System.Drawing.Color.Black;
+            this.Btn_SelectProduct.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_SelectProduct.Appearance.ForeColor = System.Drawing.Color.White;
+            this.Btn_SelectProduct.Appearance.Options.UseBackColor = true;
+            this.Btn_SelectProduct.Appearance.Options.UseFont = true;
+            this.Btn_SelectProduct.Appearance.Options.UseForeColor = true;
+            this.Btn_SelectProduct.Appearance.Options.UseTextOptions = true;
+            this.Btn_SelectProduct.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Btn_SelectProduct.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.Btn_SelectProduct.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.Btn_SelectProduct.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_SelectProduct.ImageOptions.Image")));
+            this.Btn_SelectProduct.Location = new System.Drawing.Point(431, 143);
+            this.Btn_SelectProduct.Name = "Btn_SelectProduct";
+            this.Btn_SelectProduct.Size = new System.Drawing.Size(160, 35);
+            this.Btn_SelectProduct.TabIndex = 115;
+            this.Btn_SelectProduct.Text = "إختيار صنف";
+            this.Btn_SelectProduct.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
             // txt_num
             // 
             this.txt_num.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -222,7 +243,7 @@
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(10, 31);
+            this.dateTimePicker1.Location = new System.Drawing.Point(10, 22);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(218, 26);
             this.dateTimePicker1.TabIndex = 84;
@@ -232,32 +253,11 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(245, 31);
+            this.label2.Location = new System.Drawing.Point(234, 24);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(107, 24);
             this.label2.TabIndex = 83;
             this.label2.Text = "تاريخ الفاتوره";
-            // 
-            // Btn_SelectProduct
-            // 
-            this.Btn_SelectProduct.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Btn_SelectProduct.Appearance.BackColor = System.Drawing.Color.Black;
-            this.Btn_SelectProduct.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_SelectProduct.Appearance.ForeColor = System.Drawing.Color.White;
-            this.Btn_SelectProduct.Appearance.Options.UseBackColor = true;
-            this.Btn_SelectProduct.Appearance.Options.UseFont = true;
-            this.Btn_SelectProduct.Appearance.Options.UseForeColor = true;
-            this.Btn_SelectProduct.Appearance.Options.UseTextOptions = true;
-            this.Btn_SelectProduct.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.Btn_SelectProduct.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.Btn_SelectProduct.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.Btn_SelectProduct.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.Btn_SelectProduct.Location = new System.Drawing.Point(512, 143);
-            this.Btn_SelectProduct.Name = "Btn_SelectProduct";
-            this.Btn_SelectProduct.Size = new System.Drawing.Size(160, 35);
-            this.Btn_SelectProduct.TabIndex = 115;
-            this.Btn_SelectProduct.Text = "إختيار صنف";
-            this.Btn_SelectProduct.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // simpleButton1
             // 
@@ -272,7 +272,7 @@
             this.simpleButton1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.simpleButton1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.simpleButton1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image1")));
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
             this.simpleButton1.Location = new System.Drawing.Point(464, 388);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(160, 35);

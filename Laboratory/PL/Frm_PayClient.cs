@@ -308,5 +308,20 @@ namespace Laboratory.PL
                 dt.Dispose();
             }
         }
+
+        private void label19_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmb_Stock_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
