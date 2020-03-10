@@ -177,7 +177,7 @@
             // 
             // ribbon
             // 
-            this.ribbon.ApplicationButtonDropDownControl = this.fluentDesignFormContainer1;
+            this.ribbon.ApplicationButtonDropDownControl = this.checkEdit1;
             this.ribbon.ExpandCollapseItem.Id = 0;
             this.ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbon.ExpandCollapseItem,
@@ -317,6 +317,8 @@
             // 
             // tileControl1
             // 
+            this.tileControl1.BackgroundImage = global::Laboratory.Properties.Resources.home_clinic_;
+            this.tileControl1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tileControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tileControl1.Location = new System.Drawing.Point(0, 0);
             this.tileControl1.MaxId = 11;
