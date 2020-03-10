@@ -211,7 +211,7 @@ namespace Laboratory.BL
             return dt;
         }
 
-        internal DataTable vildateHRINOUTExcel(int IDEMPLOYEE, DateTime datet)
+        internal DataTable vildateHRINOUTExcel(int IDEMPLOYEE, DateTime datet,int IDBranche)
         {
 
             DataAccessLayer da = new DataAccessLayer();
@@ -219,12 +219,13 @@ namespace Laboratory.BL
 
 
             da.open();
-            SqlParameter[] param = new SqlParameter[2];
+            SqlParameter[] param = new SqlParameter[3];
             param[0] = new SqlParameter("@IDEMPLOYEE", SqlDbType.Int);
             param[0].Value = IDEMPLOYEE;
             param[1] = new SqlParameter("@datetime", SqlDbType.DateTime);
             param[1].Value = datet;
-
+            param[2] = new SqlParameter("@IDBranche", SqlDbType.Int);
+            param[2].Value = IDBranche;
             dt = da.selected("vildateHRINOUTExcel", param);
             da.close();
             return dt;
