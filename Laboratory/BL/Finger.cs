@@ -28,26 +28,7 @@ namespace Laboratory.BL
             da.excutequery("AddHrInOut", param);
             da.close();
         }
-        internal void AddFingeerExcel(int IDEmployee,string Name_Employee, DateTime CHECKTIME, int ID_Branches, string User_Name)
-        {
-            DataAccessLayer da = new DataAccessLayer();
-            da.open();
-            SqlParameter[] param = new SqlParameter[5];
-            param[0] = new SqlParameter("@IDEmployee", SqlDbType.Int);
-            param[0].Value = IDEmployee;
-            param[1] = new SqlParameter("@Name_Employee", SqlDbType.NVarChar, 50);
-            param[1].Value = Name_Employee;
-            param[2] = new SqlParameter("@CHECKTIME", SqlDbType.DateTime);
-            param[2].Value = CHECKTIME;
-
-            param[3] = new SqlParameter("@ID_Branches", SqlDbType.Int);
-            param[3].Value = ID_Branches;
-            param[4] = new SqlParameter("@User_Name", SqlDbType.NVarChar,50);
-            param[4].Value = User_Name;
-
-            da.excutequery("AddFingeerExcel", param);
-            da.close();
-        }
+  
         internal DataTable vildateHRINOUT(int IDEMPLOYEE, DateTime datet)
         {
 
@@ -178,6 +159,26 @@ namespace Laboratory.BL
         }
         /*------------------------------------------------- FILE EXCEL  */
 
+        internal void AddFingeerExcel(int IDEmployee, string Name_Employee, DateTime CHECKTIME, int ID_Branches, string User_Name)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[5];
+            param[0] = new SqlParameter("@IDEmployee", SqlDbType.Int);
+            param[0].Value = IDEmployee;
+            param[1] = new SqlParameter("@Name_Employee", SqlDbType.NVarChar, 50);
+            param[1].Value = Name_Employee;
+            param[2] = new SqlParameter("@CHECKTIME", SqlDbType.DateTime);
+            param[2].Value = CHECKTIME;
+
+            param[3] = new SqlParameter("@ID_Branches", SqlDbType.Int);
+            param[3].Value = ID_Branches;
+            param[4] = new SqlParameter("@User_Name", SqlDbType.NVarChar, 50);
+            param[4].Value = User_Name;
+
+            da.excutequery("AddFingeerExcel", param);
+            da.close();
+        }
         internal DataTable selectcountidfingerExcel()
         {
 
@@ -228,6 +229,47 @@ namespace Laboratory.BL
             param[2].Value = IDBranche;
             dt = da.selected("vildateHRINOUTExcel", param);
             da.close();
+            return dt;
+        }
+
+        internal DataTable selectIDfingeremployeeExcell(int idbranche)
+        {
+
+            DataAccessLayer da = new DataAccessLayer();
+            DataTable dt = new DataTable();
+
+
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@idbranche", SqlDbType.Int);
+            param[0].Value = idbranche;
+           
+
+            dt = da.selected("selectIDfingeremployeeExcell", param);
+            da.close();
+
+            return dt;
+        }
+        internal DataTable AttendanceExcell(int idemployee, DateTime Date, int idbranch)
+        {
+
+            DataAccessLayer da = new DataAccessLayer();
+            DataTable dt = new DataTable();
+
+
+            da.open();
+            SqlParameter[] param = new SqlParameter[3];
+            param[0] = new SqlParameter("@ID", SqlDbType.Int);
+            param[0].Value = idemployee;
+            param[1] = new SqlParameter("@Date", SqlDbType.DateTime);
+            param[1].Value = Date;
+            param[2] = new SqlParameter("@idbranch", SqlDbType.Int);
+            param[2].Value = idbranch;
+
+
+            dt = da.selected("AttendanceExcell", param);
+            da.close();
+
             return dt;
         }
 

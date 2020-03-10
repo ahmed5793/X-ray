@@ -10,6 +10,7 @@ using CsvHelper;
 using Microsoft.Office.Interop.Excel;
 using Application = System.Windows.Forms.Application;
 using Laboratory.BL;
+using System.Threading;
 
 namespace Laboratory.PL
 {
@@ -228,11 +229,10 @@ namespace Laboratory.PL
 
                         if (dt10.Rows.Count > 0)
                         {
-                            if (dataGridView1.Rows[i].Cells[2].Value.ToString()!="")
-                            {
+                         
                                 f.AddFingeerExcel(Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), dataGridView1.Rows[i].Cells[3].Value.ToString(), Convert.ToDateTime(dataGridView1.Rows[i].Cells[8].Value), Convert.ToInt32(cmb_UserBranch.SelectedValue), txt_username.Text);
 
-                            }
+                           
 
                         }
                         dt.Clear();
@@ -245,11 +245,12 @@ namespace Laboratory.PL
                           //  dt5 = f.vildateLastDateExcel(Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), Convert.ToDateTime(dataGridView1.Rows[i].Cells[8].Value));
                           //  if (dt5.Rows.Count > 0)
                           //  {
-                                if (dataGridView1.Rows[i].Cells[2].Value.ToString() != "")
-                                {
+                                //if (dataGridView1.Rows[i].Cells[2].Value.ToString() != "")
+                                //{
                                     f.AddFingeerExcel(Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), dataGridView1.Rows[i].Cells[3].Value.ToString(), Convert.ToDateTime(dataGridView1.Rows[i].Cells[8].Value), Convert.ToInt32(cmb_UserBranch.SelectedValue), txt_username.Text);
 
-                                }
+                               // }
+                         
                             //}
                             //else
                             //{
@@ -261,16 +262,8 @@ namespace Laboratory.PL
 
                             //}
                         }
+                      
 
-                        backgroundWorker1.ReportProgress(i);
-
-                        if (progressBar1.Value < dataGridView1.RowCount)
-                        {
-                            progressBar1.Value += 1;
-
-                            label3.Text = progressBar1.Value.ToString();
-
-                        }
 
 
                     }
@@ -278,6 +271,17 @@ namespace Laboratory.PL
 
 
 
+                    //backgroundWorker1.ReportProgress(i);
+
+                    //if (progressBar1.Value < dataGridView1.RowCount)
+                    //{
+
+                    //progressBar1.Value += 1;
+
+                    //label3.Text = progressBar1.Value.ToString();
+
+
+                    //  }
 
 
 
@@ -287,22 +291,28 @@ namespace Laboratory.PL
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                MessageBox.Show(ex.Source);
                 MessageBox.Show(ex.StackTrace);
+              
             }
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            progressBar1.Show();
+            //progressBar1.Show();
 
 
-            progressBar1.Maximum = dataGridView1.RowCount;
+            
+            
+            //    progressBar1.Maximum =dataGridView1.Rows.Count;
+
+            
+
 
 
 
             if (backgroundWorker1.IsBusy)
             {
+               
                 MessageBox.Show("جارى حفظ البينات ");
             }
             else
@@ -311,6 +321,7 @@ namespace Laboratory.PL
 
 
                 backgroundWorker1.RunWorkerAsync();
+             
 
             }
 
@@ -318,12 +329,12 @@ namespace Laboratory.PL
 
         private void backgroundWorker1_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
         {
-            MessageBox.Show("done");
+            //MessageBox.Show("تم حفظ الداتا بنجاح");
         }
 
         private void backgroundWorker1_ProgressChanged(object sender, System.ComponentModel.ProgressChangedEventArgs e)
         {
-            progressBar1.Value = e.ProgressPercentage;
+            //progressBar1.Value = e.ProgressPercentage;
         }
 
         private void backgroundWorker2_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)

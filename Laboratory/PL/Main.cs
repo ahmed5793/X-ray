@@ -528,14 +528,19 @@ namespace Laboratory.PL
 
         private void barButtonItem4_ItemClick_1(object sender, ItemClickEventArgs e)
         {
-            FingerPrint fs = new FingerPrint();
-            fs.Show();
+            Frm_ExportExell ex = new Frm_ExportExell();
+            ex.Show();
+
+            //FingerPrint fs = new FingerPrint();
+            //fs.Show();
         }
 
         private void barButtonItem5_ItemClick_1(object sender, ItemClickEventArgs e)
         {
-            Frm_reportFinger rp = new Frm_reportFinger();
-            rp.Show();
+            frm_ReportFingerExcell rf = new frm_ReportFingerExcell();
+            rf.Show();
+            //Frm_reportFinger rp = new Frm_reportFinger();
+            //rp.Show();
         }
 
         private void accordionControlElement6_Click_1(object sender, EventArgs e)
@@ -592,8 +597,7 @@ namespace Laboratory.PL
 
         private void barButtonItem4_ItemClick_2(object sender, ItemClickEventArgs e)
         {
-            Frm_ExportExell ex = new Frm_ExportExell();
-            ex.Show();
+          
         }
     }
     }

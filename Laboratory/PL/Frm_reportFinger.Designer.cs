@@ -65,6 +65,7 @@
             this.label7.Size = new System.Drawing.Size(97, 29);
             this.label7.TabIndex = 135;
             this.label7.Text = "إسم العميل";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // cmcb_clients
             // 
@@ -78,6 +79,7 @@
             this.cmcb_clients.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmcb_clients.Size = new System.Drawing.Size(264, 32);
             this.cmcb_clients.TabIndex = 134;
+            this.cmcb_clients.SelectedIndexChanged += new System.EventHandler(this.cmcb_clients_SelectedIndexChanged);
             // 
             // Btn_AddShift
             // 
@@ -106,6 +108,7 @@
             this.cmb_month.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmb_month.Size = new System.Drawing.Size(131, 32);
             this.cmb_month.TabIndex = 166;
+            this.cmb_month.SelectedIndexChanged += new System.EventHandler(this.cmb_month_SelectedIndexChanged);
             // 
             // cmb_year
             // 
@@ -120,6 +123,7 @@
             this.cmb_year.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmb_year.Size = new System.Drawing.Size(132, 32);
             this.cmb_year.TabIndex = 167;
+            this.cmb_year.SelectedIndexChanged += new System.EventHandler(this.cmb_year_SelectedIndexChanged);
             // 
             // groupBox1
             // 
@@ -132,6 +136,7 @@
             this.groupBox1.Size = new System.Drawing.Size(835, 361);
             this.groupBox1.TabIndex = 197;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // dataGridView1
             // 
@@ -173,6 +178,7 @@
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.Size = new System.Drawing.Size(823, 343);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Day
             // 
@@ -212,6 +218,7 @@
             this.DateTo.ShowUpDown = true;
             this.DateTo.Size = new System.Drawing.Size(145, 32);
             this.DateTo.TabIndex = 165;
+            this.DateTo.ValueChanged += new System.EventHandler(this.DateTo_ValueChanged);
             // 
             // label4
             // 
@@ -225,6 +232,7 @@
             this.label4.TabIndex = 163;
             this.label4.Text = "إلى :";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // DateFrom
             // 
@@ -237,6 +245,7 @@
             this.DateFrom.ShowUpDown = true;
             this.DateFrom.Size = new System.Drawing.Size(145, 32);
             this.DateFrom.TabIndex = 164;
+            this.DateFrom.ValueChanged += new System.EventHandler(this.DateFrom_ValueChanged);
             // 
             // label3
             // 
@@ -250,6 +259,7 @@
             this.label3.TabIndex = 162;
             this.label3.Text = " : من";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // Frm_reportFinger
             // 

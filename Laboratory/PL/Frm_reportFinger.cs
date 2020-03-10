@@ -80,7 +80,7 @@ namespace Laboratory.PL
             {
                 DateTime daydate = new DateTime(int.Parse(year) , int.Parse(month) , i+1);
 
-
+               
                 dt2 = f.Attendance(Convert.ToInt32(cmcb_clients.SelectedValue), daydate);
 
                 dt.Rows.Add(daydate.ToString(), dt2.Rows[0][0].ToString(), dt2.Rows[0][1].ToString());
@@ -129,6 +129,56 @@ namespace Laboratory.PL
             //    MessageBox.Show(ex.Message);
             //    MessageBox.Show(ex.StackTrace);
             //}
+
+        }
+
+        private void DateTo_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmcb_clients_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmb_month_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmb_year_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DateFrom_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
 
         }
     }
