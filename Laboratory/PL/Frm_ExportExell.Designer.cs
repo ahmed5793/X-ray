@@ -276,9 +276,9 @@
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(621, 78);
+            this.simpleButton1.Location = new System.Drawing.Point(608, 79);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(188, 39);
+            this.simpleButton1.Size = new System.Drawing.Size(203, 39);
             this.simpleButton1.TabIndex = 21;
             this.simpleButton1.Text = "LOAD IN EXCEL";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);

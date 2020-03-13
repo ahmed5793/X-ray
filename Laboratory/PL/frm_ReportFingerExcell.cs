@@ -103,7 +103,7 @@ namespace Laboratory.PL
 
         private void frm_ReportFingerExcell_Load(object sender, EventArgs e)
         {
-        
+            cmb_clients.SelectedIndex = -1;
         }
 
 
@@ -183,6 +183,7 @@ namespace Laboratory.PL
                cmb_clients.DataSource= F.selectIDfingeremployeeExcell(Convert.ToInt32(cmb_user_branch.SelectedValue));
                 cmb_clients.DisplayMember = "Name_Employee";
                 cmb_clients.ValueMember = "IDEmployee";
+           
 
             }
         }
