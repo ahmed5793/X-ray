@@ -434,7 +434,7 @@
             this.dtp_recive.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dtp_recive.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_recive.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_recive.Location = new System.Drawing.Point(552, 71);
+            this.dtp_recive.Location = new System.Drawing.Point(552, 75);
             this.dtp_recive.Name = "dtp_recive";
             this.dtp_recive.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dtp_recive.Size = new System.Drawing.Size(118, 25);
@@ -446,7 +446,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.White;
             this.label7.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(676, 74);
+            this.label7.Location = new System.Drawing.Point(676, 78);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(75, 18);
             this.label7.TabIndex = 52;
@@ -647,9 +647,9 @@
             // 
             this.txt_IdTicket.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_IdTicket.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_IdTicket.Location = new System.Drawing.Point(593, 5);
+            this.txt_IdTicket.Location = new System.Drawing.Point(552, 6);
             this.txt_IdTicket.Name = "txt_IdTicket";
-            this.txt_IdTicket.Size = new System.Drawing.Size(37, 25);
+            this.txt_IdTicket.Size = new System.Drawing.Size(92, 25);
             this.txt_IdTicket.TabIndex = 115;
             this.txt_IdTicket.Text = "0";
             this.txt_IdTicket.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -658,9 +658,9 @@
             // 
             this.txt_idcust.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_idcust.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_idcust.Location = new System.Drawing.Point(636, 5);
+            this.txt_idcust.Location = new System.Drawing.Point(656, 6);
             this.txt_idcust.Name = "txt_idcust";
-            this.txt_idcust.Size = new System.Drawing.Size(37, 25);
+            this.txt_idcust.Size = new System.Drawing.Size(85, 25);
             this.txt_idcust.TabIndex = 114;
             this.txt_idcust.Text = "0";
             this.txt_idcust.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -671,7 +671,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(677, 40);
+            this.label6.Location = new System.Drawing.Point(677, 44);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(71, 18);
             this.label6.TabIndex = 74;
@@ -992,7 +992,7 @@
             this.dtb_kashf.CustomFormat = "   dd/MM/yyyy       *      tt  mm:hh     ";
             this.dtb_kashf.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtb_kashf.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtb_kashf.Location = new System.Drawing.Point(717, 170);
+            this.dtb_kashf.Location = new System.Drawing.Point(717, 190);
             this.dtb_kashf.Name = "dtb_kashf";
             this.dtb_kashf.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dtb_kashf.ShowUpDown = true;
@@ -1005,7 +1005,7 @@
             this.label17.AutoSize = true;
             this.label17.BackColor = System.Drawing.Color.White;
             this.label17.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(1014, 173);
+            this.label17.Location = new System.Drawing.Point(1014, 193);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(67, 18);
             this.label17.TabIndex = 104;
@@ -1019,7 +1019,7 @@
             this.cmb_branches.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_branches.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_branches.FormattingEnabled = true;
-            this.cmb_branches.Location = new System.Drawing.Point(771, 100);
+            this.cmb_branches.Location = new System.Drawing.Point(771, 111);
             this.cmb_branches.Name = "cmb_branches";
             this.cmb_branches.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmb_branches.Size = new System.Drawing.Size(233, 26);
@@ -1031,7 +1031,7 @@
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.White;
             this.label13.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(1010, 41);
+            this.label13.Location = new System.Drawing.Point(1010, 45);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(35, 18);
             this.label13.TabIndex = 81;
@@ -1045,7 +1045,7 @@
             this.cmb_Stock.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Stock.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_Stock.FormattingEnabled = true;
-            this.cmb_Stock.Location = new System.Drawing.Point(771, 70);
+            this.cmb_Stock.Location = new System.Drawing.Point(771, 75);
             this.cmb_Stock.Name = "cmb_Stock";
             this.cmb_Stock.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmb_Stock.Size = new System.Drawing.Size(233, 26);
@@ -1057,7 +1057,7 @@
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.White;
             this.label14.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(1010, 73);
+            this.label14.Location = new System.Drawing.Point(1010, 78);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(36, 18);
             this.label14.TabIndex = 83;
@@ -1091,10 +1091,10 @@
             this.dtb_visit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dtb_visit.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtb_visit.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtb_visit.Location = new System.Drawing.Point(553, 36);
+            this.dtb_visit.Location = new System.Drawing.Point(552, 40);
             this.dtb_visit.Name = "dtb_visit";
             this.dtb_visit.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dtb_visit.Size = new System.Drawing.Size(117, 25);
+            this.dtb_visit.Size = new System.Drawing.Size(118, 25);
             this.dtb_visit.TabIndex = 95;
             // 
             // cmb_Company
@@ -1104,7 +1104,7 @@
             this.cmb_Company.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmb_Company.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_Company.FormattingEnabled = true;
-            this.cmb_Company.Location = new System.Drawing.Point(647, 137);
+            this.cmb_Company.Location = new System.Drawing.Point(650, 150);
             this.cmb_Company.Name = "cmb_Company";
             this.cmb_Company.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmb_Company.Size = new System.Drawing.Size(217, 26);
@@ -1118,7 +1118,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1011, 140);
+            this.label1.Location = new System.Drawing.Point(1014, 154);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 18);
             this.label1.TabIndex = 89;
@@ -1135,7 +1135,7 @@
             this.cmb_statues.Items.AddRange(new object[] {
             "نقدى",
             "شركات"});
-            this.cmb_statues.Location = new System.Drawing.Point(872, 137);
+            this.cmb_statues.Location = new System.Drawing.Point(875, 151);
             this.cmb_statues.Name = "cmb_statues";
             this.cmb_statues.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmb_statues.Size = new System.Drawing.Size(132, 26);
@@ -1149,7 +1149,7 @@
             this.label21.AutoSize = true;
             this.label21.BackColor = System.Drawing.Color.White;
             this.label21.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(1010, 104);
+            this.label21.Location = new System.Drawing.Point(1010, 115);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(72, 18);
             this.label21.TabIndex = 117;
@@ -1163,7 +1163,7 @@
             this.cmb_UserBranch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_UserBranch.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_UserBranch.FormattingEnabled = true;
-            this.cmb_UserBranch.Location = new System.Drawing.Point(771, 38);
+            this.cmb_UserBranch.Location = new System.Drawing.Point(771, 42);
             this.cmb_UserBranch.Name = "cmb_UserBranch";
             this.cmb_UserBranch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmb_UserBranch.Size = new System.Drawing.Size(233, 26);
@@ -1173,7 +1173,7 @@
             // 
             this.Btn_DetailsCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Btn_DetailsCompany.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_DetailsCompany.Location = new System.Drawing.Point(497, 137);
+            this.Btn_DetailsCompany.Location = new System.Drawing.Point(501, 150);
             this.Btn_DetailsCompany.Name = "Btn_DetailsCompany";
             this.Btn_DetailsCompany.Size = new System.Drawing.Size(143, 26);
             this.Btn_DetailsCompany.TabIndex = 119;
@@ -1195,7 +1195,7 @@
             this.Btn_NewOrder.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_NewOrder.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.Btn_NewOrder.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_NewOrder.ImageOptions.Image")));
-            this.Btn_NewOrder.Location = new System.Drawing.Point(940, 471);
+            this.Btn_NewOrder.Location = new System.Drawing.Point(845, 479);
             this.Btn_NewOrder.Name = "Btn_NewOrder";
             this.Btn_NewOrder.Size = new System.Drawing.Size(141, 32);
             this.Btn_NewOrder.TabIndex = 179;
@@ -1216,7 +1216,7 @@
             this.Btn_Save.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_Save.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.Btn_Save.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Save.ImageOptions.Image")));
-            this.Btn_Save.Location = new System.Drawing.Point(771, 469);
+            this.Btn_Save.Location = new System.Drawing.Point(680, 479);
             this.Btn_Save.Name = "Btn_Save";
             this.Btn_Save.Size = new System.Drawing.Size(141, 32);
             this.Btn_Save.TabIndex = 180;
@@ -1237,7 +1237,7 @@
             this.simpleButton1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.simpleButton1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(593, 469);
+            this.simpleButton1.Location = new System.Drawing.Point(495, 479);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(144, 32);
             this.simpleButton1.TabIndex = 181;

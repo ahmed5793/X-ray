@@ -19,9 +19,8 @@ namespace Laboratory.PL
         {
             InitializeComponent();
             dataGridView1.DataSource = c.SelectCustomer();          
-            Btn_Update.Enabled = false;          
+            Btn_Update.Enabled = false;           
         }
-
         private void Frm_Customer_Load(object sender, EventArgs e)
         {
         }
@@ -36,37 +35,22 @@ namespace Laboratory.PL
         private void Btn_save_Click(object sender, EventArgs e)
         {  
         }
-
         private void Btn_update_Click(object sender, EventArgs e)
         {           
         }
-
         private void Txt_search_TextChanged(object sender, EventArgs e)
         {
             dataGridView1.DataSource = c.SearchCustomer(txt_search.Text);
-
         }
-
         private void Rdb_male_CheckedChanged(object sender, EventArgs e)
-        {
-
-        
-             
+        {   
         }
-
         private void Rdb_female_CheckedChanged(object sender, EventArgs e)
         {
-
-           
-           
-           
         }
-
         private void Label1_Click(object sender, EventArgs e)
         {
-
         }
-
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
             if (dataGridView1.Rows.Count > 0)
@@ -82,36 +66,29 @@ namespace Laboratory.PL
                 Btn_Update.Enabled = true;
             }
         }
-
         private void btn_new_Click(object sender, EventArgs e)
         {
         }
-
         private void txt_search_TextChanged_1(object sender, EventArgs e)
         {
             dt.Clear();
             dt = c.SearchCustomer(txt_search.Text);
             dataGridView1.DataSource = dt;
         }
-
         private void txt_age_KeyPress(object sender, KeyPressEventArgs e)
         {
-
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
             {
                 e.Handled = true;
             }
         }
-
         private void txt_phone_KeyPress(object sender, KeyPressEventArgs e)
-        {
-        
+        {        
            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 )
             {
                 e.Handled = true;
             }
         }
-
         private void txt_idnational_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
@@ -119,13 +96,11 @@ namespace Laboratory.PL
                 e.Handled = true;
             }
         }
-
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             clear();    
             Btn_Update.Enabled = false;
         }
-
         private void Btn_Add_Click(object sender, EventArgs e)
         {
             try
@@ -142,7 +117,7 @@ namespace Laboratory.PL
                 }
                 if (txt_age.Text == "")
                 {
-                    MessageBox.Show("يرجي التاكد من ألسن");
+                    MessageBox.Show("يرجي التاكد من السن");
                     return;
                 }
                 if (txt_phone.Text == "")
@@ -152,14 +127,17 @@ namespace Laboratory.PL
                 }
                 c.addCustomer(txt_name.Text, txt_address.Text, txt_phone.Text,
                     Convert.ToInt32(txt_age.Text), dateTimePicker1.Value, comboBox1.Text, txt_idnational.Text);
+                dt.Clear();
+                dt= c.LastIdCustomer();
+                c.Add_CustomerTotalBalance(Convert.ToInt32(dt.Rows[0][0]));
                 MessageBox.Show("تم اضافه العميل بنجاح", "عمليه الاضافه", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 dataGridView1.DataSource = c.SelectCustomer();
                 clear();
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
             }
         }
 

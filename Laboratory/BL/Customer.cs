@@ -106,8 +106,6 @@ namespace Laboratory.BL
             param[6].Value = ID_Ntional;
             da.excutequery("UpdateCustomer", param);
             da.close();
-
-
         }
 
         internal DataTable SelectCompoCustomer()
@@ -157,7 +155,6 @@ namespace Laboratory.BL
         internal DataTable LastIdCustomer()
         {
             DataTable dt = new DataTable();
-
             DataAccessLayer da = new DataAccessLayer();
             da.open();
             dt = da.selected("LastIdCustomer", null);
@@ -198,6 +195,67 @@ namespace Laboratory.BL
             da.excutequery("addPayClient", param);
             da.close();
         }
+        internal void Add_CustomerTotalBalance(int Id_Customer)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@Id_Customer", SqlDbType.Int);
+            param[0].Value = Id_Customer;          
+            da.excutequery("Add_CustomerTotalBalance", param);
+            da.close();
+        }
+        internal void Update_CustomerTotalBalance(int  Id_Customer, decimal Total_Rent)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[2];
+            param[0] = new SqlParameter("@Id_Customer", SqlDbType.Int);
+            param[0].Value = Id_Customer;
+            param[1] = new SqlParameter("@Total_Balance", SqlDbType.Decimal);
+            param[1].Value = Total_Rent;
+            da.excutequery("Update_CustomerTotalBalance", param);
+            da.close();
+        }
+        internal void Add_CustomerAccountStatment(int id_client, decimal Da2n, decimal Maden, DateTime pay_date, decimal Balance,
+                                                    int IDStock, string Sales_Man, int Id_Branch,string ElByan)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[9];
+            param[0] = new SqlParameter("@Id_Customer", SqlDbType.Int);
+            param[0].Value = id_client;
+            param[1] = new SqlParameter("@Da2n", SqlDbType.Decimal);
+            param[1].Value = Da2n;
+            param[2] = new SqlParameter("@Maden", SqlDbType.Decimal);
+            param[2].Value = Maden;
+            param[3] = new SqlParameter("@date_pay", SqlDbType.DateTime);
+            param[3].Value = pay_date;
+            param[4] = new SqlParameter("@Balance", SqlDbType.Decimal);
+            param[4].Value = Balance;
+            param[5] = new SqlParameter("@IDStock", SqlDbType.Int);
+            param[5].Value = IDStock;
+            param[6] = new SqlParameter("@sales_Man", SqlDbType.NVarChar, 100);
+            param[6].Value = Sales_Man;
+            param[7] = new SqlParameter("@Id_Branch", SqlDbType.Int);
+            param[7].Value = Id_Branch;
+            param[8] = new SqlParameter("@El_Byan", SqlDbType.NVarChar,250);
+            param[8].Value = ElByan;
+            da.excutequery("Add_CustomerAccountStatment", param);
+            da.close();
+        }
+        internal DataTable Select_CustomertotalBAlance(int Id_Customer)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            DataTable dt = new DataTable();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@id_Customer", SqlDbType.Int);
+            param[0].Value = Id_Customer;
+            dt = da.selected("Select_CustomertotalBAlance", param);
+            da.close();
+            return dt;
+        }
         internal DataTable selectOneClientRent(int id)
         {
             DataAccessLayer da = new DataAccessLayer();
@@ -209,8 +267,6 @@ namespace Laboratory.BL
             dt = da.selected("selectOneClientRent", param);
             da.close();
             return dt;
-
-
         }
         internal DataTable SelectRentCompoCustomer()
         {

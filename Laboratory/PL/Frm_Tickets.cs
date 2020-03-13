@@ -1354,10 +1354,6 @@ namespace Laboratory.PL
             //    report.Parameters["@idTicket"].Visible = false;
             //    s.ShowDialog();
 
-
-
-
-
             //Rpt_OrderCompany oc = new Rpt_OrderCompany();
 
             //s.documentViewer1.Refresh();
@@ -1366,14 +1362,9 @@ namespace Laboratory.PL
 
             //oc.Parameters["@idTicket"].Value = Convert.ToInt32(dgv_visit.CurrentRow.Cells[0].Value);
 
-
-
             //s.documentViewer1.DocumentSource = oc;
             //oc.Parameters["@idTicket"].Visible = false;
             //s.ShowDialog();
-
-
-
             try
             {
                 if (dgv_order.Rows.Count > 0)
@@ -1442,7 +1433,14 @@ namespace Laboratory.PL
                                 cmb_UserBranch.Text, Convert.ToDecimal(Txt_addtionPayment.Text), txt_reasonAddition.Text, Convert.ToDecimal(txt_afterDiscount.Text), Convert.ToDecimal(Txt_PricePayment.Text));
                             txt_IdTicket.Text = t.LastIdTicket().Rows[0][0].ToString();
                             t.AddTickestDiscount(Convert.ToInt32(txt_IdTicket.Text), Convert.ToDecimal(txt_discount.Text));
-
+                            dt.Clear();
+                            dt = c.Select_CustomertotalBAlance(Convert.ToInt32(txt_idcust.Text));
+                            decimal mno = Convert.ToDecimal(dt.Rows[0][0]) + Convert.ToDecimal(txt_rent.Text);
+                            c.Update_CustomerTotalBalance(Convert.ToInt32(txt_idcust.Text), mno);
+                            c.Add_CustomerAccountStatment(Convert.ToInt32(txt_idcust.Text), Convert.ToDecimal(txt_pay.Text), 
+                                Convert.ToDecimal(Txt_PricePayment.Text)
+                                 , dtb_visit.Value, mno, Convert.ToInt32(cmb_Stock.SelectedValue)
+                                 , txt_username.Text, Convert.ToInt32(cmb_UserBranch.SelectedValue), "حجز أشعة ورقم الحجز" + " " + txt_IdTicket.Text);
                             for (int i = 0; i < dgv_order.Rows.Count; i++)
                             {
                                 t.AddTicketDetails(Convert.ToInt32(txt_IdTicket.Text), Convert.ToInt32(dgv_order.Rows[i].Cells[0].Value),
@@ -1460,6 +1458,15 @@ namespace Laboratory.PL
                                     cmb_UserBranch.Text, Convert.ToDecimal(Txt_addtionPayment.Text), txt_reasonAddition.Text, Convert.ToDecimal(txt_afterDiscount.Text), Convert.ToDecimal(Txt_PricePayment.Text));
                             txt_IdTicket.Text = t.LastIdTicket().Rows[0][0].ToString();
                             t.AddTickestDiscount(Convert.ToInt32(txt_IdTicket.Text), Convert.ToDecimal(txt_discount.Text));
+
+                            dt.Clear();
+                            dt = c.Select_CustomertotalBAlance(Convert.ToInt32(Cmb_customer.SelectedValue));
+                            decimal mno = Convert.ToDecimal(dt.Rows[0][0]) + Convert.ToDecimal(txt_rent.Text);
+                            c.Update_CustomerTotalBalance(Convert.ToInt32(Cmb_customer.SelectedValue), mno);
+                            c.Add_CustomerAccountStatment(Convert.ToInt32(Cmb_customer.SelectedValue), Convert.ToDecimal(txt_pay.Text),
+                                Convert.ToDecimal(Txt_PricePayment.Text)
+                                 , dtb_visit.Value, mno, Convert.ToInt32(cmb_Stock.SelectedValue)
+                                 , txt_username.Text, Convert.ToInt32(cmb_UserBranch.SelectedValue), "حجز أشعة ورقم الحجز" + " " + txt_IdTicket.Text);
 
                             for (int i = 0; i < dgv_order.Rows.Count; i++)
                             {
@@ -1505,6 +1512,14 @@ namespace Laboratory.PL
                             txt_IdTicket.Text = t.LastIdTicket().Rows[0][0].ToString();
                             t.AddTickestDiscount(Convert.ToInt32(txt_IdTicket.Text), Convert.ToDecimal(txt_discount.Text));
 
+                            dt.Clear();
+                            dt = c.Select_CustomertotalBAlance(Convert.ToInt32(txt_idcust.Text));
+                            decimal mno1 = Convert.ToDecimal(dt.Rows[0][0]) + Convert.ToDecimal(txt_rent.Text);
+                            c.Update_CustomerTotalBalance(Convert.ToInt32(txt_idcust.Text), mno1);
+                            c.Add_CustomerAccountStatment(Convert.ToInt32(txt_idcust.Text), Convert.ToDecimal(txt_pay.Text),
+                                Convert.ToDecimal(Txt_PricePayment.Text)
+                                 , dtb_visit.Value, mno1, Convert.ToInt32(cmb_Stock.SelectedValue)
+                                 , txt_username.Text, Convert.ToInt32(cmb_UserBranch.SelectedValue), "حجز أشعة ورقم الحجز" + " " + txt_IdTicket.Text);
                             for (int i = 0; i < dgv_order.Rows.Count; i++)
                             {
                                 t.AddTicketDetails(Convert.ToInt32(txt_IdTicket.Text), Convert.ToInt32(dgv_order.Rows[i].Cells[0].Value),
@@ -1523,6 +1538,14 @@ namespace Laboratory.PL
                             txt_IdTicket.Text = t.LastIdTicket().Rows[0][0].ToString();
                             t.AddTickestDiscount(Convert.ToInt32(txt_IdTicket.Text), Convert.ToDecimal(txt_discount.Text));
 
+                            dt.Clear();
+                            dt = c.Select_CustomertotalBAlance(Convert.ToInt32(Cmb_customer.SelectedValue));
+                            decimal mno2 = Convert.ToDecimal(dt.Rows[0][0]) + Convert.ToDecimal(txt_rent.Text);
+                            c.Update_CustomerTotalBalance(Convert.ToInt32(Cmb_customer.SelectedValue), mno2);
+                            c.Add_CustomerAccountStatment(Convert.ToInt32(Cmb_customer.SelectedValue), Convert.ToDecimal(txt_pay.Text),
+                                Convert.ToDecimal(Txt_PricePayment.Text)
+                                 , dtb_visit.Value, mno2, Convert.ToInt32(cmb_Stock.SelectedValue)
+                                 , txt_username.Text, Convert.ToInt32(cmb_UserBranch.SelectedValue), "حجز أشعة ورقم الحجز" + " " + txt_IdTicket.Text);
                             for (int i = 0; i < dgv_order.Rows.Count; i++)
                             {
                                 t.AddTicketDetails(Convert.ToInt32(txt_IdTicket.Text), Convert.ToInt32(dgv_order.Rows[i].Cells[0].Value),
@@ -1531,6 +1554,7 @@ namespace Laboratory.PL
                             MessageBox.Show("تم حفظ الفاتورة بنجاح");
                         }
                         t.AddTicketCompany(Convert.ToInt32(txt_IdTicket.Text), Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToDecimal(Txt_rentCompany.Text));
+                       
                         dt.Clear();
                         dt= cm.Select_CompanyTotalMoney(Convert.ToInt32(cmb_Company.SelectedValue));
                         decimal mno = Convert.ToDecimal(dt.Rows[0][0]) + Convert.ToDecimal(Txt_rentCompany.Text); 
