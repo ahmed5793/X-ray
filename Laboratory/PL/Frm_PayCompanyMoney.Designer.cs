@@ -36,6 +36,7 @@
             this.label19 = new System.Windows.Forms.Label();
             this.cmb_Stock = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.txt_prise = new System.Windows.Forms.TextBox();
             this.rdbPartPay = new System.Windows.Forms.RadioButton();
             this.RdbAllPay = new System.Windows.Forms.RadioButton();
@@ -44,9 +45,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -136,21 +136,41 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.simpleButton1);
             this.groupBox2.Controls.Add(this.txt_prise);
             this.groupBox2.Controls.Add(this.rdbPartPay);
             this.groupBox2.Controls.Add(this.RdbAllPay);
-            this.groupBox2.Location = new System.Drawing.Point(39, 284);
+            this.groupBox2.Location = new System.Drawing.Point(39, 305);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(633, 97);
+            this.groupBox2.Size = new System.Drawing.Size(633, 71);
             this.groupBox2.TabIndex = 99;
             this.groupBox2.TabStop = false;
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.Black;
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton1.Appearance.ForeColor = System.Drawing.Color.White;
+            this.simpleButton1.Appearance.Options.UseBackColor = true;
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.Appearance.Options.UseForeColor = true;
+            this.simpleButton1.Appearance.Options.UseTextOptions = true;
+            this.simpleButton1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.simpleButton1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.simpleButton1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(293, 392);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(179, 37);
+            this.simpleButton1.TabIndex = 171;
+            this.simpleButton1.Text = "حفظ المدفوع";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // txt_prise
             // 
             this.txt_prise.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.txt_prise.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_prise.Location = new System.Drawing.Point(346, 60);
+            this.txt_prise.Location = new System.Drawing.Point(112, 21);
             this.txt_prise.MaxLength = 8;
             this.txt_prise.Name = "txt_prise";
             this.txt_prise.Size = new System.Drawing.Size(136, 27);
@@ -166,7 +186,7 @@
             this.rdbPartPay.AutoSize = true;
             this.rdbPartPay.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.rdbPartPay.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbPartPay.Location = new System.Drawing.Point(505, 61);
+            this.rdbPartPay.Location = new System.Drawing.Point(254, 21);
             this.rdbPartPay.Name = "rdbPartPay";
             this.rdbPartPay.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.rdbPartPay.Size = new System.Drawing.Size(122, 26);
@@ -182,7 +202,7 @@
             this.RdbAllPay.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.RdbAllPay.Checked = true;
             this.RdbAllPay.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RdbAllPay.Location = new System.Drawing.Point(478, 19);
+            this.RdbAllPay.Location = new System.Drawing.Point(404, 22);
             this.RdbAllPay.Name = "RdbAllPay";
             this.RdbAllPay.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RdbAllPay.Size = new System.Drawing.Size(149, 26);
@@ -249,7 +269,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(633, 82);
+            this.dataGridView1.Size = new System.Drawing.Size(633, 100);
             this.dataGridView1.TabIndex = 100;
             // 
             // groupBox1
@@ -264,39 +284,6 @@
             this.groupBox1.Size = new System.Drawing.Size(633, 61);
             this.groupBox1.TabIndex = 97;
             this.groupBox1.TabStop = false;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.White;
-            this.label6.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(515, 24);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(91, 24);
-            this.label6.TabIndex = 102;
-            this.label6.Text = "إسم الشركة";
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.Black;
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton1.Appearance.ForeColor = System.Drawing.Color.White;
-            this.simpleButton1.Appearance.Options.UseBackColor = true;
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.Appearance.Options.UseForeColor = true;
-            this.simpleButton1.Appearance.Options.UseTextOptions = true;
-            this.simpleButton1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.simpleButton1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.simpleButton1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(86, 34);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(179, 37);
-            this.simpleButton1.TabIndex = 171;
-            this.simpleButton1.Text = "حفظ المدفوع";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // simpleButton2
             // 
@@ -319,6 +306,18 @@
             this.simpleButton2.Text = "بحث";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.White;
+            this.label6.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(515, 24);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(91, 24);
+            this.label6.TabIndex = 102;
+            this.label6.Text = "إسم الشركة";
+            // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -337,7 +336,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(738, 393);
+            this.ClientSize = new System.Drawing.Size(738, 450);
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.Txt_SalesMAn);
             this.Controls.Add(this.label4);

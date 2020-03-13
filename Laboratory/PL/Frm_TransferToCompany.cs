@@ -178,47 +178,6 @@ namespace Laboratory.PL
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-
-            //if (dataGridView2.Rows.Count>=0)
-            //{
-            dt5.Clear();
-            dt5 = s.Select_moneyStock(Convert.ToInt32(cmb_Stock.SelectedValue));
-                if (cmb_Stock.Text == "")
-                {
-                    MessageBox.Show("لا بد من تحديد خزنة");
-                    return;
-
-                }
-      
-
-                if (Convert.ToDecimal(txt_rentCust.Text) > Convert.ToDecimal(dt5.Rows[0][0]))
-                {
-                    MessageBox.Show("رصيد الخزنة الحالى غير كافى لسحب هذه المبلغ");
-                    return;
-                }
-
-            dt.Clear();
-            dt = c.Select_CompanyTotalMoney(Convert.ToInt32(cmb_Company.SelectedValue));
-            decimal mno = Convert.ToDecimal(dt.Rows[0][0]) - Convert.ToDecimal(Txt_rentCompany.Text);
-            c.Update_CompanyTotalMoney(Convert.ToInt32(cmb_Company.SelectedValue), mno);
-            c.ADD_Company_TotalRent(Convert.ToInt32(cmb_Company.SelectedValue),0
-                , Convert.ToDecimal(Txt_rentCompany.Text), dateTimePicker1.Value, mno, " حجز اشعة للموظف", Convert.ToInt32(cmb_Stock.SelectedValue)
-             , Convert.ToInt32(comboBox1.SelectedValue), txt_username.Text);
-            t.AddTransferForCompany(Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToDecimal(Txt_addtionPayment.Text),
-            Convert.ToDecimal(Txt_PricePayment.Text), Convert.ToDecimal(txt_total.Text), Convert.ToDecimal(txt_rentCust.Text),
-            Convert.ToDecimal(Txt_rentCompany.Text), dateTimePicker1.Value, txt_reasonAddition.Text,
-            Convert.ToInt32(dataGridView2.Rows[0].Cells[0].Value), Convert.ToInt32(dataGridView1.Rows[0].Cells[0].Value),
-            txt_patientname.Text, Convert.ToInt32(cmb_Stock.SelectedValue), txt_username.Text,comboBox1.Text);
-                
-            
-                cm.Update_CompanyTotalMoney(Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToDecimal(Txt_rentCompany.Text));
-
-                s.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_rentCust.Text), dateTimePicker1.Value, txt_username.Text, "مردودات وتحولها الي جهه  "+cmb_Company.Text);
-            MessageBox.Show("تم التسجيل بنجاح");
-            this.Close();
-                       
-
-            //}
         }
 
         private void Txt_addtionPayment_KeyPress(object sender, KeyPressEventArgs e)
@@ -254,6 +213,67 @@ namespace Laboratory.PL
             if (Txt_addtionPayment.Text == ".")
             {
                 Txt_addtionPayment.Text = "";
+            }
+        }
+
+        private void cmb_Company_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_total_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                //if (dataGridView2.Rows.Count>=0)
+                //{
+                dt5.Clear();
+                dt5 = s.Select_moneyStock(Convert.ToInt32(cmb_Stock.SelectedValue));
+                if (cmb_Stock.Text == "")
+                {
+                    MessageBox.Show("لا بد من تحديد خزنة");
+                    return;
+                }
+                if (Convert.ToDecimal(txt_rentCust.Text) > Convert.ToDecimal(dt5.Rows[0][0]))
+                {
+                    MessageBox.Show("رصيد الخزنة الحالى غير كافى لسحب هذه المبلغ");
+                    return;
+                }
+                dt.Clear();
+                dt = c.Select_CompanyTotalMoney(Convert.ToInt32(cmb_Company.SelectedValue));
+                decimal mno = Convert.ToDecimal(dt.Rows[0][0]) - Convert.ToDecimal(Txt_rentCompany.Text);
+                c.Update_CompanyTotalMoney(Convert.ToInt32(cmb_Company.SelectedValue), mno);
+                c.ADD_Company_TotalRent(Convert.ToInt32(cmb_Company.SelectedValue), 0
+                    , Convert.ToDecimal(Txt_rentCompany.Text), dateTimePicker1.Value, mno, " حجز اشعة للموظف", Convert.ToInt32(cmb_Stock.SelectedValue)
+                 , Convert.ToInt32(comboBox1.SelectedValue), txt_username.Text);
+                t.AddTransferForCompany(Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToDecimal(Txt_addtionPayment.Text),
+                Convert.ToDecimal(Txt_PricePayment.Text), Convert.ToDecimal(txt_total.Text), Convert.ToDecimal(txt_rentCust.Text),
+                Convert.ToDecimal(Txt_rentCompany.Text), dateTimePicker1.Value, txt_reasonAddition.Text,
+                Convert.ToInt32(dataGridView2.Rows[0].Cells[0].Value), Convert.ToInt32(dataGridView1.Rows[0].Cells[0].Value),
+                txt_patientname.Text, Convert.ToInt32(cmb_Stock.SelectedValue), txt_username.Text, comboBox1.Text);
+
+                //cm.Update_CompanyTotalMoney(Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToDecimal(Txt_rentCompany.Text));
+
+                s.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_rentCust.Text), dateTimePicker1.Value, txt_username.Text, "مردودات وتحولها الي جهه  " + cmb_Company.Text);
+                MessageBox.Show("تم التسجيل بنجاح");
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
             }
         }
     }
