@@ -302,6 +302,7 @@ namespace Laboratory.PL
                     pa.txt_statues.Text = dr[15].ToString();
                     pa.textBox1.Text = dr[20].ToString();
                     pa.txt_num.Text = dr[0].ToString();
+                    pa.Txt_IdCust.Text = dr[26].ToString();
                 }
                 DataTable dt1 = new DataTable();
                 dt1.Clear();

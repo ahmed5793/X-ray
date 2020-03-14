@@ -18,7 +18,10 @@ namespace Laboratory.PL
         Branches b = new Branches();
         Stock s = new Stock();
         Users u = new Users();
-
+        DataTable dt = new DataTable();
+        DataTable dt12 = new DataTable();
+        Tickets t = new Tickets();
+        Customer cu = new Customer();
         public Frm_TransferToCompany()
         {
             InitializeComponent();
@@ -111,9 +114,7 @@ namespace Laboratory.PL
             Program.salesman = txt_username.Text;
             txt_patientname.Hide();
         }
-        DataTable dt = new DataTable();
-        DataTable dt12 = new DataTable();
-        Tickets t = new Tickets();
+
         private void cmb_Company_SelectionChangeCommitted(object sender, EventArgs e)
         {
            
@@ -264,7 +265,14 @@ namespace Laboratory.PL
                 txt_patientname.Text, Convert.ToInt32(cmb_Stock.SelectedValue), txt_username.Text, comboBox1.Text);
 
                 //cm.Update_CompanyTotalMoney(Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToDecimal(Txt_rentCompany.Text));
-
+                dt.Clear();
+                dt = cu.Select_CustomertotalBAlance(Convert.ToInt32(textBox1.Text));
+                decimal mno1 = Convert.ToDecimal(dt.Rows[0][0]) - Convert.ToDecimal(txt_rentCust.Text);
+                cu.Update_CustomerTotalBalance(Convert.ToInt32(textBox1.Text), mno1);
+                cu.Add_CustomerAccountStatment(Convert.ToInt32(textBox1.Text), Convert.ToDecimal(txt_rentCust.Text),
+                    Convert.ToDecimal(txt_rentCust.Text)
+                     , dateTimePicker1.Value, mno1, Convert.ToInt32(cmb_Stock.SelectedValue)
+                     , txt_username.Text, Convert.ToInt32(comboBox1.SelectedValue), " مردود  أشعة و تحويلها إلى شركة "+" "+ cmb_Company.Text);
                 s.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_rentCust.Text), dateTimePicker1.Value, txt_username.Text, "مردودات وتحولها الي جهه  " + cmb_Company.Text);
                 MessageBox.Show("تم التسجيل بنجاح");
                 this.Close();
