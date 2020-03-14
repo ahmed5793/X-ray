@@ -159,7 +159,7 @@ namespace Laboratory.BL
         }
         /*------------------------------------------------- FILE EXCEL  */
 
-        internal void AddFingeerExcel(int IDEmployee, string Name_Employee, DateTime CHECKTIME, int ID_Branches, string User_Name)
+        internal void AddFingeerExcel(int IDEmployee, string Name_Employee, string CHECKTIME, int ID_Branches, string User_Name)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
@@ -168,7 +168,7 @@ namespace Laboratory.BL
             param[0].Value = IDEmployee;
             param[1] = new SqlParameter("@Name_Employee", SqlDbType.NVarChar, 50);
             param[1].Value = Name_Employee;
-            param[2] = new SqlParameter("@CHECKTIME", SqlDbType.DateTime);
+            param[2] = new SqlParameter("@CHECKTIME", SqlDbType.NVarChar,100);
             param[2].Value = CHECKTIME;
 
             param[3] = new SqlParameter("@ID_Branches", SqlDbType.Int);
@@ -212,7 +212,7 @@ namespace Laboratory.BL
             return dt;
         }
 
-        internal DataTable vildateHRINOUTExcel(int IDEMPLOYEE, DateTime datet,int IDBranche)
+        internal DataTable vildateHRINOUTExcel(int IDEMPLOYEE, string datet,int IDBranche)
         {
 
             DataAccessLayer da = new DataAccessLayer();
@@ -223,7 +223,7 @@ namespace Laboratory.BL
             SqlParameter[] param = new SqlParameter[3];
             param[0] = new SqlParameter("@IDEMPLOYEE", SqlDbType.Int);
             param[0].Value = IDEMPLOYEE;
-            param[1] = new SqlParameter("@datetime", SqlDbType.DateTime);
+            param[1] = new SqlParameter("@datetime", SqlDbType.NVarChar,100);
             param[1].Value = datet;
             param[2] = new SqlParameter("@IDBranche", SqlDbType.Int);
             param[2].Value = IDBranche;

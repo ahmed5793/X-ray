@@ -26,6 +26,8 @@ namespace Laboratory.PL
         {
             InitializeComponent();
             Permision();
+            //dataGridView1.Columns[8].DefaultCellStyle.Format = "MM/dd/yyyy hh:mm:ss tt";
+
 
 
         }
@@ -205,6 +207,7 @@ namespace Laboratory.PL
                              importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 7].Value,
                              importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 8].Value,
                              importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 9].Value);
+                      
                         }
 
 
@@ -260,7 +263,7 @@ namespace Laboratory.PL
         {
 
             try
-            {
+            {//
 
                 //label1.Invoke( (MethodInvoker)delegate()
 
@@ -273,7 +276,7 @@ namespace Laboratory.PL
                 
                 if (dataGridView1.Rows.Count > 0)
                 {
-
+                    
 
                     for (int i = 0; i < dataGridView1.Rows.Count; i++)
                     {
@@ -283,20 +286,22 @@ namespace Laboratory.PL
 
                         if (dt10.Rows.Count > 0)
                         {
-                         
-                                f.AddFingeerExcel(Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), dataGridView1.Rows[i].Cells[3].Value.ToString(), Convert.ToDateTime(dataGridView1.Rows[i].Cells[8].Value), Convert.ToInt32(cmb_UserBranch.SelectedValue), txt_username.Text);
+                            //ToString("dd-MM-YYYY hh:mm tt")
+                           
+
+                                f.AddFingeerExcel(Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), dataGridView1.Rows[i].Cells[3].Value.ToString(), Convert.ToDateTime(dataGridView1.Rows[i].Cells[8].Value).ToString("dd-MM-YYYY hh:mm tt"), Convert.ToInt32(cmb_UserBranch.SelectedValue), txt_username.Text);
 
                            
 
                         }
                         dt2.Clear();
-                        dt2 = f.vildateHRINOUTExcel(Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), Convert.ToDateTime(dataGridView1.Rows[i].Cells[8].Value),Convert.ToInt32(cmb_UserBranch.SelectedValue));
+                        dt2 = f.vildateHRINOUTExcel(Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), Convert.ToDateTime(dataGridView1.Rows[i].Cells[8].Value).ToString("dd-MM-YYYY hh:mm tt"),Convert.ToInt32(cmb_UserBranch.SelectedValue));
 
 
                         if (dt2.Rows.Count == 0)
                         {
                          
-                                    f.AddFingeerExcel(Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), dataGridView1.Rows[i].Cells[3].Value.ToString(), Convert.ToDateTime(dataGridView1.Rows[i].Cells[8].Value), Convert.ToInt32(cmb_UserBranch.SelectedValue), txt_username.Text);
+                                    f.AddFingeerExcel(Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), dataGridView1.Rows[i].Cells[3].Value.ToString(), Convert.ToDateTime(dataGridView1.Rows[i].Cells[8].Value).ToString("dd-MM-YYYY hh:mm tt"), Convert.ToInt32(cmb_UserBranch.SelectedValue), txt_username.Text);
 
                                
                          
@@ -335,7 +340,7 @@ namespace Laboratory.PL
             }
             catch (Exception ex)
             {
-                return;
+                //return;
                // MessageBox.Show(ex.Message);
                 //MessageBox.Show(ex.StackTrace);
                 
@@ -383,7 +388,7 @@ namespace Laboratory.PL
                 label3.Text = "0";
                 dataGridView1.Rows.Clear();
             progressBar1.Value = 0;
-            textBox1.Clear();
+          //  textBox1.Clear();
 
 
           
