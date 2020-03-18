@@ -332,13 +332,15 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
-        internal DataTable Select_AllPayCustomer()
+        internal DataTable Select_AllPayCustomer(int Id_Customer)
         {
             DataTable dt = new DataTable();
             DataAccessLayer da = new DataAccessLayer();
-            dt.Clear();
             da.open();
-            dt = da.selected("Select_AllPayCustomer", null);
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@Id_Cust", SqlDbType.Int);
+            param[0].Value = Id_Customer;
+            dt = da.selected("Select_AllPayCustomer", param);
             da.close();
             return dt;
         }
@@ -368,15 +370,15 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
-        internal DataTable Search_AllPayCustomerNameanddate(string id, DateTime Date_From, DateTime Date_To)
+
+        internal DataTable Search_AllPayCustomerNameanddate(int Id_Customer, DateTime Date_From, DateTime Date_To)
         {
             DataTable dt = new DataTable();
-
             DataAccessLayer da = new DataAccessLayer();
             da.open();
             SqlParameter[] param = new SqlParameter[3];
-            param[0] = new SqlParameter("@id", SqlDbType.NVarChar, 100);
-            param[0].Value = id;
+            param[0] = new SqlParameter("@Id_Customer", SqlDbType.Int);
+            param[0].Value = Id_Customer;
             param[1] = new SqlParameter("@From_Date", SqlDbType.Date);
             param[1].Value = Date_From;
             param[2] = new SqlParameter("@To_Date", SqlDbType.Date);

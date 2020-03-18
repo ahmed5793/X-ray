@@ -40,6 +40,28 @@ namespace Laboratory.PL
         private void btn_save_Click(object sender, EventArgs e)
         {
 
+        }
+        
+        private void txt_addbalance_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != Convert.ToChar(System.Globalization.CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator))
+            {
+                e.Handled = true;
+            }
+            else if (e.KeyChar == '.' && txt_addbalance.Text.ToString().IndexOf('.') > -1)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Frm_StockPull_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+
             try
             {
                 if (cmb_Stock.Items.Count >= 1)
@@ -84,23 +106,6 @@ namespace Laboratory.PL
 
                 MessageBox.Show(ex.Message);
             }
-           
-        }
-        
-        private void txt_addbalance_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != Convert.ToChar(System.Globalization.CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator))
-            {
-                e.Handled = true;
-            }
-            else if (e.KeyChar == '.' && txt_addbalance.Text.ToString().IndexOf('.') > -1)
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void Frm_StockPull_Load(object sender, EventArgs e)
-        {
 
         }
     }

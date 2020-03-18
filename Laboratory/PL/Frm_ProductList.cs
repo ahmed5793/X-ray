@@ -56,5 +56,11 @@ namespace Laboratory.PL
                 dt.Dispose();
             }
         }
+
+        private void Btn_Update_MouseClick(object sender, MouseEventArgs e)
+        {
+            dataGridView1.DataSource = null;
+            this.Close();
+        }
     }
 }

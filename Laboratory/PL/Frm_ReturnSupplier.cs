@@ -141,9 +141,6 @@ namespace Laboratory.PL
         private void label3_Click(object sender, EventArgs e)
         {
         }
-        private void button2_Click(object sender, EventArgs e)
-        {           
-        }
         private void button2_Click_1(object sender, EventArgs e)
         {
      
@@ -220,63 +217,6 @@ namespace Laboratory.PL
 
         private void btn_row_Click(object sender, EventArgs e)
         {
-            try
-
-            {
-                if (Convert.ToInt32(txt_return.Text) > Convert.ToInt32(txt_quantity.Text))
-                {
-                    MessageBox.Show("الكمية المرتجعة أكبر من الكمية المباعة");
-                    txt_return.Focus();               
-                    return;
-                }
-                 if (Convert.ToInt32(txt_return.Text) > Convert.ToInt32(Txt_QuantityStore.Text))
-                 {
-                    MessageBox.Show("الكمية المرتجعة أكبر من الكمية بالمخزن", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txt_return.Focus();
-                    return;
-                 }
-                for (int i = 0; i < dataGridView2.Rows.Count; i++)
-                {
-                    if (txt_iD.Text == dataGridView2.Rows[i].Cells[0].Value.ToString())
-                    {
-                        MessageBox.Show("لا يسمح بأضافة هذا الصنف مرتين للمرتجع فى نفس الفاتورة ");
-                        return;
-                    }
-                }
-                if (txt_iD.Text != string.Empty && Convert.ToInt32(txt_return.Text)>0)
-                {
-                  
-                    DataRow r = dt10.NewRow();
-                    r[0] = txt_iD.Text;
-                    r[1] = txt_names.Text;
-                    r[2] = txt_return.Text;
-                    r[3] = txt_prise.Text;
-                    r[4] = (Convert.ToInt32(txt_return.Text)*Convert.ToDecimal(txt_prise.Text));
-                    r[5] = Txt_IdStore.Text;
-
-                    dt10.Rows.Add(r);
-                    dataGridView2.DataSource = dt10;
-                    Calc_ReturnValue();
-
-                    txt_names.Clear();
-                    txt_prise.Clear();
-                    txt_quantity.Clear();
-                    txt_iD.Clear();
-                    Txt_IdStore.Clear();
-                    txt_total.Clear();
-                    txt_return.Text = "0";
-                   
-                }
-                else
-                {
-                    MessageBox.Show("من فضلك قم بتحديد الكميه المرتجعه");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
         }
 
         private void txt_return_KeyUp(object sender, KeyEventArgs e)
@@ -346,48 +286,6 @@ namespace Laboratory.PL
 
         private void Btn_SaveReturn_Click(object sender, EventArgs e)
         {
-            try
-            {               
-                dt.Clear();
-                dt = s.Select_moneyStock(Convert.ToInt32(Cmb_Stock.SelectedValue));
-                if (dt.Rows.Count > 0 )
-                {
-                    if (Convert.ToDecimal(Txt_Pay.Text) > Convert.ToDecimal(dt.Rows[0][0]))
-                    {
-                        MessageBox.Show("رصيد الخزنة الحالى غير كافى ");
-                        return;
-                    }        
-                }
-                if (dataGridView2.Rows.Count>0)
-                {
-                    if (Convert.ToInt32(Txt_Pay.Text)>0)
-                    {
-                        s.add_insertStock(Convert.ToInt32(Cmb_Stock.SelectedValue), Convert.ToDecimal(Txt_Pay.Text), dateTimePicker1.Value, txt_sales.Text, "مرتجع فاتورة مستريات رقم " + txt_num.Text);
-                    }
-
-                    dt5.Clear();
-                    dt5 = Suppliers.Select_SupplierTotalMoney(Convert.ToInt32(textBox1.Text));
-                    decimal mno = Convert.ToDecimal(dt5.Rows[0][0]) - (Convert.ToDecimal(textBox4.Text)- Convert.ToDecimal(Txt_Pay.Text));
-                    Suppliers.Update_SupplierTotalMoney(Convert.ToInt32(textBox1.Text), mno);
-                    Suppliers.Add_SupplierStatmentACCount(Convert.ToInt32(textBox1.Text), Convert.ToDecimal(Txt_Pay.Text)
-                        , Convert.ToDecimal(textBox4.Text), mno, "فاتورة مرتجع مشتريات رقم" + " " + txt_num.Text, dateTimePicker1.Value);
-                    for (int i = 0; i < dataGridView2.Rows.Count; i++)
-                    {
-                        Suppliers.Add_SupplierReturn(Convert.ToInt32(txt_num.Text), Convert.ToInt32(dataGridView2.Rows[i].Cells[0].Value)
-                            ,Convert.ToDecimal(dataGridView2.Rows[i].Cells[3].Value)
-                         ,Convert.ToDecimal(dataGridView2.Rows[i].Cells[2].Value),dateTimePicker1.Value,
-                         Convert.ToDecimal(dataGridView2.Rows[i].Cells[4].Value)
-                        ,txt_sales.Text,Convert.ToInt32(dataGridView1.CurrentRow.Cells[5].Value));
-                   
-                    }
-                    MessageBox.Show("تح حفظ المرتجع للفاتورة المحددة");
-                        Clear();
-                }
-            }
-            catch (Exception ex)
-            {
-               MessageBox.Show(ex.Message);
-            }
         }
 
         private void Txt_Pay_KeyPress(object sender, KeyPressEventArgs e)
@@ -420,6 +318,15 @@ namespace Laboratory.PL
 
         private void button1_Click(object sender, EventArgs e)
         {
+        }
+
+        private void View_OldReturn_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btn_save_Click_1(object sender, EventArgs e)
+        {
+
             Frm_SearchSupplierInformation frm = new Frm_SearchSupplierInformation();
 
             try
@@ -429,7 +336,7 @@ namespace Laboratory.PL
                 DataTable dt2 = new DataTable();
                 try
                 {
-                    if (frm.dataGridView1.SelectedRows.Count>0 && frm.dataGridView1.Rows.Count>0)
+                    if (frm.dataGridView1.SelectedRows.Count > 0 && frm.dataGridView1.Rows.Count > 0)
                     {
                         Clear();
                         dt1.Clear();
@@ -458,15 +365,16 @@ namespace Laboratory.PL
                     dt2.Dispose();
                 }
             }
-            catch (Exception ex )
+            catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message);
             }
         }
 
-        private void View_OldReturn_Click(object sender, EventArgs e)
+        private void simpleButton1_Click(object sender, EventArgs e)
         {
+
             Frm_ShowOldReturn frm_show = new Frm_ShowOldReturn();
             DataTable data5 = new DataTable();
             try
@@ -480,6 +388,115 @@ namespace Laboratory.PL
             catch (Exception ex)
             {
 
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+
+            try
+
+            {
+                if (Convert.ToInt32(txt_return.Text) > Convert.ToInt32(txt_quantity.Text))
+                {
+                    MessageBox.Show("الكمية المرتجعة أكبر من الكمية المباعة");
+                    txt_return.Focus();
+                    return;
+                }
+                if (Convert.ToInt32(txt_return.Text) > Convert.ToInt32(Txt_QuantityStore.Text))
+                {
+                    MessageBox.Show("الكمية المرتجعة أكبر من الكمية بالمخزن", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txt_return.Focus();
+                    return;
+                }
+                for (int i = 0; i < dataGridView2.Rows.Count; i++)
+                {
+                    if (txt_iD.Text == dataGridView2.Rows[i].Cells[0].Value.ToString())
+                    {
+                        MessageBox.Show("لا يسمح بأضافة هذا الصنف مرتين للمرتجع فى نفس الفاتورة ");
+                        return;
+                    }
+                }
+                if (txt_iD.Text != string.Empty && Convert.ToInt32(txt_return.Text) > 0)
+                {
+
+                    DataRow r = dt10.NewRow();
+                    r[0] = txt_iD.Text;
+                    r[1] = txt_names.Text;
+                    r[2] = txt_return.Text;
+                    r[3] = txt_prise.Text;
+                    r[4] = (Convert.ToInt32(txt_return.Text) * Convert.ToDecimal(txt_prise.Text));
+                    r[5] = Txt_IdStore.Text;
+
+                    dt10.Rows.Add(r);
+                    dataGridView2.DataSource = dt10;
+                    Calc_ReturnValue();
+
+                    txt_names.Clear();
+                    txt_prise.Clear();
+                    txt_quantity.Clear();
+                    txt_iD.Clear();
+                    Txt_IdStore.Clear();
+                    txt_total.Clear();
+                    txt_return.Text = "0";
+
+                }
+                else
+                {
+                    MessageBox.Show("من فضلك قم بتحديد الكميه المرتجعه");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void simpleButton1_Click_1(object sender, EventArgs e)
+        {
+
+            try
+            {
+                dt.Clear();
+                dt = s.Select_moneyStock(Convert.ToInt32(Cmb_Stock.SelectedValue));
+                if (dt.Rows.Count > 0)
+                {
+                    if (Convert.ToDecimal(Txt_Pay.Text) > Convert.ToDecimal(dt.Rows[0][0]))
+                    {
+                        MessageBox.Show("رصيد الخزنة الحالى غير كافى ");
+                        return;
+                    }
+                }
+                if (dataGridView2.Rows.Count > 0)
+                {
+                    if (Convert.ToInt32(Txt_Pay.Text) > 0)
+                    {
+                        s.add_insertStock(Convert.ToInt32(Cmb_Stock.SelectedValue), Convert.ToDecimal(Txt_Pay.Text), dateTimePicker1.Value, txt_sales.Text, "مرتجع فاتورة مستريات رقم " + txt_num.Text);
+                    }
+
+                    dt5.Clear();
+                    dt5 = Suppliers.Select_SupplierTotalMoney(Convert.ToInt32(textBox1.Text));
+                    decimal mno = Convert.ToDecimal(dt5.Rows[0][0]) - (Convert.ToDecimal(textBox4.Text) - Convert.ToDecimal(Txt_Pay.Text));
+                    Suppliers.Update_SupplierTotalMoney(Convert.ToInt32(textBox1.Text), mno);
+                    Suppliers.Add_SupplierStatmentACCount(Convert.ToInt32(textBox1.Text), Convert.ToDecimal(Txt_Pay.Text)
+                        , Convert.ToDecimal(textBox4.Text), mno, "فاتورة مرتجع مشتريات رقم" + " " + txt_num.Text, dateTimePicker1.Value);
+                    for (int i = 0; i < dataGridView2.Rows.Count; i++)
+                    {
+                        Suppliers.Add_SupplierReturn(Convert.ToInt32(txt_num.Text), Convert.ToInt32(dataGridView2.Rows[i].Cells[0].Value)
+                            , Convert.ToDecimal(dataGridView2.Rows[i].Cells[3].Value)
+                         , Convert.ToDecimal(dataGridView2.Rows[i].Cells[2].Value), dateTimePicker1.Value,
+                         Convert.ToDecimal(dataGridView2.Rows[i].Cells[4].Value)
+                        , txt_sales.Text, Convert.ToInt32(dataGridView1.CurrentRow.Cells[5].Value));
+
+                    }
+                    MessageBox.Show("تح حفظ المرتجع للفاتورة المحددة");
+                    Clear();
+                }
+            }
+            catch (Exception ex)
+            {
                 MessageBox.Show(ex.Message);
             }
         }

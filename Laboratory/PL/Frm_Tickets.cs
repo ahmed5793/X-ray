@@ -1433,12 +1433,13 @@ namespace Laboratory.PL
                                 cmb_UserBranch.Text, Convert.ToDecimal(Txt_addtionPayment.Text), txt_reasonAddition.Text, Convert.ToDecimal(txt_afterDiscount.Text), Convert.ToDecimal(Txt_PricePayment.Text));
                             txt_IdTicket.Text = t.LastIdTicket().Rows[0][0].ToString();
                             t.AddTickestDiscount(Convert.ToInt32(txt_IdTicket.Text), Convert.ToDecimal(txt_discount.Text));
+
                             dt.Clear();
                             dt = c.Select_CustomertotalBAlance(Convert.ToInt32(txt_idcust.Text));
                             decimal mno = Convert.ToDecimal(dt.Rows[0][0]) + Convert.ToDecimal(txt_rent.Text);
                             c.Update_CustomerTotalBalance(Convert.ToInt32(txt_idcust.Text), mno);
                             c.Add_CustomerAccountStatment(Convert.ToInt32(txt_idcust.Text), Convert.ToDecimal(txt_pay.Text), 
-                                Convert.ToDecimal(Txt_PricePayment.Text)
+                                Convert.ToDecimal(txt_afterDiscount.Text)
                                  , dtb_visit.Value, mno, Convert.ToInt32(cmb_Stock.SelectedValue)
                                  , txt_username.Text, Convert.ToInt32(cmb_UserBranch.SelectedValue), "حجز أشعة ورقم الحجز" + " " + txt_IdTicket.Text);
                             for (int i = 0; i < dgv_order.Rows.Count; i++)
@@ -1464,7 +1465,7 @@ namespace Laboratory.PL
                             decimal mno = Convert.ToDecimal(dt.Rows[0][0]) + Convert.ToDecimal(txt_rent.Text);
                             c.Update_CustomerTotalBalance(Convert.ToInt32(Cmb_customer.SelectedValue), mno);
                             c.Add_CustomerAccountStatment(Convert.ToInt32(Cmb_customer.SelectedValue), Convert.ToDecimal(txt_pay.Text),
-                                Convert.ToDecimal(Txt_PricePayment.Text)
+                                Convert.ToDecimal(txt_afterDiscount.Text)
                                  , dtb_visit.Value, mno, Convert.ToInt32(cmb_Stock.SelectedValue)
                                  , txt_username.Text, Convert.ToInt32(cmb_UserBranch.SelectedValue), "حجز أشعة ورقم الحجز" + " " + txt_IdTicket.Text);
 

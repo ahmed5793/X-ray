@@ -32,6 +32,67 @@ namespace Laboratory.PL
         private void btn_save_Click(object sender, EventArgs e)
         {
 
+
+        }
+
+        private void btn_update_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void btn_new_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void txt_search_TextChanged(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = t.SearchTechincal(txt_search.Text);
+            dataGridView1.DataSource = dt;
+
+            dt.Dispose();
+        }
+
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+            if (dataGridView1.Rows.Count > 0)
+            {
+
+
+
+                txt_name.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                txt_phone.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                txt_address.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+
+                btn_save.Hide();
+                btn_new.Show();
+                btn_update.Enabled = true;
+            }
+        }
+
+        private void txt_phone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+
+            btn_new.Hide();
+            btn_save.Show();
+
+            btn_update.Enabled = false;
+            txt_name.Clear();
+            txt_phone.Clear();
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+
             try
             {
 
@@ -60,10 +121,9 @@ namespace Laboratory.PL
             {
                 MessageBox.Show(ex.Message);
             }
-
         }
 
-        private void btn_update_Click(object sender, EventArgs e)
+        private void simpleButton3_Click(object sender, EventArgs e)
         {
 
             try
@@ -114,51 +174,6 @@ namespace Laboratory.PL
                 MessageBox.Show(ex.Message);
             }
 
-
-        }
-
-        private void btn_new_Click(object sender, EventArgs e)
-        {
-            btn_new.Hide();
-            btn_save.Show();
-
-            btn_update.Enabled = false;
-            txt_name.Clear();
-            txt_phone.Clear();
-        }
-
-        private void txt_search_TextChanged(object sender, EventArgs e)
-        {
-            DataTable dt = new DataTable();
-            dt = t.SearchTechincal(txt_search.Text);
-            dataGridView1.DataSource = dt;
-
-            dt.Dispose();
-        }
-
-        private void dataGridView1_DoubleClick(object sender, EventArgs e)
-        {
-            if (dataGridView1.Rows.Count > 0)
-            {
-
-
-
-                txt_name.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                txt_phone.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                txt_address.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-
-                btn_save.Hide();
-                btn_new.Show();
-                btn_update.Enabled = true;
-            }
-        }
-
-        private void txt_phone_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
-            {
-                e.Handled = true;
-            }
         }
     }
 }

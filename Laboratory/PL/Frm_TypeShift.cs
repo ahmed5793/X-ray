@@ -21,9 +21,14 @@ namespace Laboratory.PL
 
         private void button1_Click(object sender, EventArgs e)
         {
+        }
+
+        private void Btn_Save_Click(object sender, EventArgs e)
+        {
+
             try
             {
-                if (Txt_Salary.Text!="")
+                if (Txt_Salary.Text != "")
                 {
                     Techincal.Add_TypeShift(Txt_Salary.Text);
                     MessageBox.Show("تمت  الاضافة بنجاح");

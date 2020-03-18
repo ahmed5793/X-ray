@@ -69,8 +69,11 @@ namespace Laboratory.PL
 
             dataGridView1.Columns[6].Visible = false;
             dataGridView1.Columns[7].Visible = false;
-           
 
+            //dataGridView1.DefaultCellStyle.Format = "yyyy-MM-dd   hh:mm tt";
+
+
+            //dataGridView1.Columns["DATETIME"].DefaultCellStyle.Format = "yyyy-MM-dd   hh:mm tt";
 
 
         }
@@ -185,37 +188,64 @@ namespace Laboratory.PL
                     importExcelToDataGridViewRange = importExcelToDataGridViewWorksheet.UsedRange;
 
 
-
+                    //System.Data.DataTable dt7 = new System.Data.DataTable();
+                    //dt7.Columns.Add("NO", typeof(String));
+                    //dt7.Columns.Add("DN", typeof(String));
+                    //dt7.Columns.Add("UID", typeof(String));
+                    //dt7.Columns.Add("po", typeof(String));
+                    //dt7.Columns.Add("cfe", typeof(String));
+                    //dt7.Columns.Add("sw", typeof(String));
+                    //dt7.Columns.Add("aq", typeof(String));
+                    //dt7.Columns.Add("DSF", typeof(String));
+                    //dt7.Columns.Add("DATETIME", typeof(DateTime));
                     //Start Importing from the second row.Since the first row is column header
                     //for (int excelWorkSheetRowIndex = 2; excelWorkSheetRowIndex  < importExcelToDataGridViewRange.Rows.Count; excelWorkSheetRowIndex++)
                     //{
                     for (int excelWorkSheetRowIndex = 2; excelWorkSheetRowIndex < importExcelToDataGridViewRange.Rows.Count ; excelWorkSheetRowIndex++)
                     {
+
                         if (importExcelToDataGridViewRange.Item[excelWorkSheetRowIndex, 2].Value == null)
                         {
 
                         }
                         else
                         {
-
+                            //this.dataGridView1.Columns[8].DefaultCellStyle.Format =  "yyyy-MM-dd   hh:mm tt";
+                            //if (importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 9].NumberFormat != "yyyy-MM-dd   hh:mm tt")
+                            //    {
+                            
                             dataGridView1.Rows.Add(importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 1].Value,
-                             importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 2].Value,
-                             importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 3].Value,
-                             importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 4].Value,
-                             importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 5].Value,
-                             importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 6].Value,
-                             importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 7].Value,
-                             importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 8].Value,
-                             importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 9].Value);
-                      
+                          importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 2].Value,
+                          importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 3].Value,
+                          importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 4].Value,
+                          importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 5].Value,
+                          importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 6].Value,
+                          importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 7].Value,
+                          importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 8].Value,
+                          importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 9].Value);
+                            //  .ToString("dddd" + "  " + "  " + "yyyy-MM-dd   hh:mm tt", new System.Globalization.CultureInfo("ar-EG"))); 
+                      //      }
+                  
+
+
                         }
 
-
-                           
-                        
-                        //if (importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 2].Value !=null )
+                        //if (dt7.Rows.Count>0)
                         //{
-                             
+                        //    int n = 0;
+                        //    for (int i = 0; i < dt7.Rows.Count; i++)
+                        //    {
+                        //        n = dataGridView1.Rows.Add();
+                        //        dataGridView1.Rows[n].Cells[0].Value = dt7.Rows[i][0].ToString();
+                        //        dataGridView1.Rows[n].Cells[1].Value = dt7.Rows[i][1].ToString();
+                        //        dataGridView1.Rows[n].Cells[2].Value = dt7.Rows[i][2].ToString();
+                        //        dataGridView1.Rows[n].Cells[3].Value = dt7.Rows[i][3].ToString();
+                        //        dataGridView1.Rows[n].Cells[4].Value = dt7.Rows[i][4].ToString();
+                        //        dataGridView1.Rows[n].Cells[5].Value = dt7.Rows[i][5].ToString();
+                        //        dataGridView1.Rows[n].Cells[6].Value = dt7.Rows[i][6].ToString();
+                        //        dataGridView1.Rows[n].Cells[7].Value = dt7.Rows[i][7].ToString();
+                        //        dataGridView1.Rows[n].Cells[8].Value = DateTime.Parse(dt7.Rows[i][8].ToString()).ToString("dd-MM-yyyy hh:mm tt");
+                        //    }
                         //}
 
 
@@ -224,22 +254,10 @@ namespace Laboratory.PL
 
 
 
-                    }
-                    //    int numberOfRows = importExcelToDataGridViewRange.Rows.Count;
-                    //    int numberOfCols = importExcelToDataGridViewRange.Columns.Count;
 
-                    //    for (int i = 0; i < numberOfRows; i++)
-                    //    {
-                    //        for (int j = 0; j < numberOfCols; j++)
-                    //        {
-                    //            dataGridView1.Rows.Add(importExcelToDataGridViewWorksheet.Cells[i , j].Value, importExcelToDataGridViewWorksheet.Cells[i, j].Value,
-                    //                importExcelToDataGridViewWorksheet.Cells[i ,j].Value, importExcelToDataGridViewWorksheet.Cells[ i, j].Value,
-                    //                importExcelToDataGridViewWorksheet.Cells[i, j].Value, importExcelToDataGridViewWorksheet.Cells[ i, j].Value,
-                    //                importExcelToDataGridViewWorksheet.Cells[i, j].Value, importExcelToDataGridViewWorksheet.Cells[i, j].Value,
-                    //                importExcelToDataGridViewWorksheet.Cells[i, j].Value);
-                    //        }
-                    //    }
-                    //}
+
+                    }
+                
 
                 }
             }
@@ -276,8 +294,6 @@ namespace Laboratory.PL
                 
                 if (dataGridView1.Rows.Count > 0)
                 {
-                    
-
                     for (int i = 0; i < dataGridView1.Rows.Count; i++)
                     {
 
@@ -289,19 +305,20 @@ namespace Laboratory.PL
                             //ToString("dd-MM-YYYY hh:mm tt")
                            
 
-                                f.AddFingeerExcel(Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), dataGridView1.Rows[i].Cells[3].Value.ToString(), Convert.ToDateTime(dataGridView1.Rows[i].Cells[8].Value).ToString("dd-MM-YYYY hh:mm tt"), Convert.ToInt32(cmb_UserBranch.SelectedValue), txt_username.Text);
+                                f.AddFingeerExcel(Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), dataGridView1.Rows[i].Cells[3].Value.ToString(), Convert.ToDateTime(dataGridView1.Rows[i].Cells[8].Value), Convert.ToInt32(cmb_UserBranch.SelectedValue), txt_username.Text);
 
-                           
+
+
 
                         }
                         dt2.Clear();
-                        dt2 = f.vildateHRINOUTExcel(Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), Convert.ToDateTime(dataGridView1.Rows[i].Cells[8].Value).ToString("dd-MM-YYYY hh:mm tt"),Convert.ToInt32(cmb_UserBranch.SelectedValue));
+                        dt2 = f.vildateHRINOUTExcel(Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), Convert.ToDateTime(dataGridView1.Rows[i].Cells[8].Value),Convert.ToInt32(cmb_UserBranch.SelectedValue));
 
 
                         if (dt2.Rows.Count == 0)
                         {
                          
-                                    f.AddFingeerExcel(Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), dataGridView1.Rows[i].Cells[3].Value.ToString(), Convert.ToDateTime(dataGridView1.Rows[i].Cells[8].Value).ToString("dd-MM-YYYY hh:mm tt"), Convert.ToInt32(cmb_UserBranch.SelectedValue), txt_username.Text);
+                                    f.AddFingeerExcel(Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), dataGridView1.Rows[i].Cells[3].Value.ToString(), Convert.ToDateTime(dataGridView1.Rows[i].Cells[8].Value), Convert.ToInt32(cmb_UserBranch.SelectedValue), txt_username.Text);
 
                                
                          

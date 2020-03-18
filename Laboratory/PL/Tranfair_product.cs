@@ -57,67 +57,11 @@ namespace Laboratory.PL
         }
         private void btn_new_Click(object sender, EventArgs e)
         {
-            txt_num.Text = Product.Select_LastIdTransfair().Rows[0][0].ToString();
-            Txt_note.Clear();
-            dt.Clear();
-            Btn_selectProduct.Enabled = true;
-            Cmb_FromStore.Enabled = true;
-            Cmb_ToStore.Enabled = true;
-            DataGridView1.Enabled = true;
-            Btn_Save.Enabled = true;
+          
         }
 
         private void Btn_Save_Click(object sender, EventArgs e)
         {
-            DataTable dt5 = new DataTable();
-            try
-            {
-                if (Cmb_FromStore.Text==string.Empty && Cmb_ToStore.Text==string.Empty)
-                {
-                    MessageBox.Show("لا بد من وجود مخزن للتحويل");
-                    return; 
-                }
-                if ( DataGridView1.Rows.Count<1)
-                {
-                    MessageBox.Show("لابد من وجود صنف واحد على الاقل ");
-                    return;
-                }
-                else
-                {
-                 Product.add_TransFairProduct(Convert.ToInt32(txt_num.Text), Txt_sales.Text,DateTimePicker1.Value, Txt_note.Text);
-                    for (int i = 0; i < DataGridView1.Rows.Count; i++)
-                    {
-                        Product.Add_TransfairDetails(Convert.ToInt32(txt_num.Text),Convert.ToInt32(Cmb_FromStore.SelectedValue),Cmb_FromStore.Text,
-                            Convert.ToInt32(Cmb_ToStore.SelectedValue),Cmb_ToStore.Text,Convert.ToInt32(DataGridView1.Rows[i].Cells[0].Value),
-                            Convert.ToInt32(DataGridView1.Rows[i].Cells[2].Value));
-                        dt5 = Product.Validate_StoreProduct(Convert.ToInt32(DataGridView1.Rows[i].Cells[0].Value), Convert.ToInt32(Cmb_ToStore.SelectedValue));
-                        if (dt5.Rows.Count > 0)
-                        {
-                            Product.Update_QuantityStoreProduct(Convert.ToInt32(DataGridView1.Rows[i].Cells[0].Value),
-                                Convert.ToDecimal(DataGridView1.Rows[i].Cells[2].Value), Convert.ToInt32(Cmb_ToStore.SelectedValue));
-                        }
-                        else if (dt5.Rows.Count == 0)
-                        {
-                            Product.Add_StoreProduct(Convert.ToInt32(DataGridView1.Rows[i].Cells[0].Value), Convert.ToInt32(Cmb_ToStore.SelectedValue),
-                                   Convert.ToDecimal(DataGridView1.Rows[i].Cells[2].Value),Convert.ToInt32(DataGridView1.Rows[i].Cells[3].Value));
-                        }
-                    }
-                    MessageBox.Show("تم إضافة التحويل بنجاح");
-                    Btn_selectProduct.Enabled = false;
-                    Cmb_FromStore.Enabled = false;
-                    Cmb_ToStore.Enabled = false;
-                    DataGridView1.Enabled = false;
-                    Btn_Save.Enabled = false;
-
-
-
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
         }
 
         private void Cmb_FromStore_SelectedIndexChanged(object sender, EventArgs e)
@@ -132,55 +76,7 @@ namespace Laboratory.PL
 
         private void Btn_selectProduct_Click(object sender, EventArgs e)
         {
-            Frm_TransProductList frm_TransProductList = new Frm_TransProductList();
-            try
-            {
-                frm_TransProductList.dataGridView1.DataSource = Product.Select_ComboTransfairProductT(Convert.ToInt32(Cmb_FromStore.SelectedValue));
-
-                frm_TransProductList.ShowDialog();
-
-                if (frm_TransProductList.dataGridView1.Rows.Count>0 && frm_TransProductList.dataGridView1.SelectedRows.Count>0)
-                {
-                    for (int i = 0; i < DataGridView1.Rows.Count; i++)
-                    {
-
-
-                        if (DataGridView1.Rows[i].Cells[0].Value.ToString() == frm_TransProductList.dataGridView1.CurrentRow.Cells[0].Value.ToString())
-                        {
-
-                            if (Convert.ToInt32(DataGridView1.CurrentRow.Cells[2].Value) >= Convert.ToInt32(frm_TransProductList.dataGridView1.CurrentRow.Cells[4].Value))
-                            {
-
-                                MessageBox.Show(" الكميه المدخله لهذا الصنف غير متاحه", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                return;
-                            }
-                            else
-                            {
-                                int x = 1;
-                                DataGridView1.CurrentRow.Cells[2].Value = Convert.ToInt32(DataGridView1.CurrentRow.Cells[2].Value) + x;
-                                Console.Beep();
-                                return;
-                            }
-
-                        }
-                    }
-                    DataRow dr = dt.NewRow();
-                    dr[0] = frm_TransProductList.dataGridView1.CurrentRow.Cells[0].Value;
-                    dr[1] = frm_TransProductList.dataGridView1.CurrentRow.Cells[1].Value;
-                    dr[2] = 1;
-                    dr[3] = frm_TransProductList.dataGridView1.CurrentRow.Cells[5].Value;
-                    dt.Rows.Add(dr);
-                    DataGridView1.DataSource = dt;
-                    Console.Beep();
-                }
-            
-
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
+          
         }
 
         private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -220,6 +116,130 @@ namespace Laboratory.PL
             {
                 dt2.Dispose();
             }
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            txt_num.Text = Product.Select_LastIdTransfair().Rows[0][0].ToString();
+            Txt_note.Clear();
+            dt.Clear();
+            Btn_selectProduct.Enabled = true;
+            Cmb_FromStore.Enabled = true;
+            Cmb_ToStore.Enabled = true;
+            DataGridView1.Enabled = true;
+            Btn_Save.Enabled = true;
+        }
+
+        private void simpleButton1_Click_1(object sender, EventArgs e)
+        {
+            Frm_TransProductList frm_TransProductList = new Frm_TransProductList();
+            try
+            {
+                frm_TransProductList.dataGridView1.DataSource = Product.Select_ComboTransfairProductT(Convert.ToInt32(Cmb_FromStore.SelectedValue));
+
+                frm_TransProductList.ShowDialog();
+
+                if (frm_TransProductList.dataGridView1.Rows.Count > 0 && frm_TransProductList.dataGridView1.SelectedRows.Count > 0)
+                {
+                    for (int i = 0; i < DataGridView1.Rows.Count; i++)
+                    {
+
+
+                        if (DataGridView1.Rows[i].Cells[0].Value.ToString() == frm_TransProductList.dataGridView1.CurrentRow.Cells[0].Value.ToString())
+                        {
+
+                            if (Convert.ToInt32(DataGridView1.CurrentRow.Cells[2].Value) >= Convert.ToInt32(frm_TransProductList.dataGridView1.CurrentRow.Cells[4].Value))
+                            {
+
+                                MessageBox.Show(" الكميه المدخله لهذا الصنف غير متاحه", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
+                            else
+                            {
+                                int x = 1;
+                                DataGridView1.CurrentRow.Cells[2].Value = Convert.ToInt32(DataGridView1.CurrentRow.Cells[2].Value) + x;
+                                Console.Beep();
+                                return;
+                            }
+
+                        }
+                    }
+                    DataRow dr = dt.NewRow();
+                    dr[0] = frm_TransProductList.dataGridView1.CurrentRow.Cells[0].Value;
+                    dr[1] = frm_TransProductList.dataGridView1.CurrentRow.Cells[1].Value;
+                    dr[2] = 1;
+                    dr[3] = frm_TransProductList.dataGridView1.CurrentRow.Cells[5].Value;
+                    dt.Rows.Add(dr);
+                    DataGridView1.DataSource = dt;
+                    Console.Beep();
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+
+            DataTable dt5 = new DataTable();
+            try
+            {
+                if (Cmb_FromStore.Text == string.Empty && Cmb_ToStore.Text == string.Empty)
+                {
+                    MessageBox.Show("لا بد من وجود مخزن للتحويل");
+                    return;
+                }
+                if (DataGridView1.Rows.Count < 1)
+                {
+                    MessageBox.Show("لابد من وجود صنف واحد على الاقل ");
+                    return;
+                }
+                else
+                {
+                    Product.add_TransFairProduct(Convert.ToInt32(txt_num.Text), Txt_sales.Text, DateTimePicker1.Value, Txt_note.Text);
+                    for (int i = 0; i < DataGridView1.Rows.Count; i++)
+                    {
+                        Product.Add_TransfairDetails(Convert.ToInt32(txt_num.Text), Convert.ToInt32(Cmb_FromStore.SelectedValue), Cmb_FromStore.Text,
+                            Convert.ToInt32(Cmb_ToStore.SelectedValue), Cmb_ToStore.Text, Convert.ToInt32(DataGridView1.Rows[i].Cells[0].Value),
+                            Convert.ToInt32(DataGridView1.Rows[i].Cells[2].Value));
+                        dt5 = Product.Validate_StoreProduct(Convert.ToInt32(DataGridView1.Rows[i].Cells[0].Value), Convert.ToInt32(Cmb_ToStore.SelectedValue));
+                        if (dt5.Rows.Count > 0)
+                        {
+                            Product.Update_QuantityStoreProduct(Convert.ToInt32(DataGridView1.Rows[i].Cells[0].Value),
+                                Convert.ToDecimal(DataGridView1.Rows[i].Cells[2].Value), Convert.ToInt32(Cmb_ToStore.SelectedValue));
+                        }
+                        else if (dt5.Rows.Count == 0)
+                        {
+                            Product.Add_StoreProduct(Convert.ToInt32(DataGridView1.Rows[i].Cells[0].Value), Convert.ToInt32(Cmb_ToStore.SelectedValue),
+                                   Convert.ToDecimal(DataGridView1.Rows[i].Cells[2].Value), Convert.ToInt32(DataGridView1.Rows[i].Cells[3].Value));
+                        }
+                    }
+                    MessageBox.Show("تم إضافة التحويل بنجاح");
+                    Btn_selectProduct.Enabled = false;
+                    Cmb_FromStore.Enabled = false;
+                    Cmb_ToStore.Enabled = false;
+                    DataGridView1.Enabled = false;
+                    Btn_Save.Enabled = false;
+
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void Btn_Print_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

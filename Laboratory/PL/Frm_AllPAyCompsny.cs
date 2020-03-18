@@ -14,11 +14,17 @@ namespace Laboratory.PL
     {
         Company cm = new Company();
         DataTable dt = new DataTable();
+        DataTable dt2 = new DataTable();
+
         public Frm_AllPAyCompsny()
         {
             InitializeComponent();
             company();
-        
+            dt.Clear();
+            dt = cm.Select_AllpAyOfCompany(Convert.ToInt32(cmb_Company.SelectedValue));
+            dt2.Clear();
+            dt2 = cm.Select_CompanyTotalMoney(Convert.ToInt32(cmb_Company.SelectedValue));
+            textBox1.Text = dt2.Rows[0][0].ToString();
         }
         void company()
         {
@@ -26,22 +32,22 @@ namespace Laboratory.PL
             cmb_Company.DisplayMember = "اسم الشركه";
             cmb_Company.ValueMember = "Comp_ID";
         }
-        void Calc()
-        {
-            double sumNetPrice = 0;
-            for (int i = 0; i < gridView1.DataRowCount; ++i)
-            {
-                DataRow row = gridView1.GetDataRow(i);
-                sumNetPrice += Convert.ToDouble(row[1].ToString());
-            }
-            textBox1.Text = sumNetPrice.ToString("₱ #,##0.0");
-            //decimal Total = 0;
-            //for (int i = 0; i < gridView1.RowCount; i++)
-            //{
-            //    Total += Convert.ToDecimal(grid)
-            //}
-            //textBox1.Text = Math.Round(Total, 1).ToString();
-        }
+        //void Calc()
+        //{
+        //    double sumNetPrice = 0;
+        //    for (int i = 0; i < gridView1.DataRowCount; ++i)
+        //    {
+        //        DataRow row = gridView1.GetDataRow(i);
+        //        sumNetPrice += Convert.ToDouble(row[1].ToString());
+        //    }
+        //    textBox1.Text = sumNetPrice.ToString("₱ #,##0.0");
+        //    //decimal Total = 0;
+        //    //for (int i = 0; i < gridView1.RowCount; i++)
+        //    //{
+        //    //    Total += Convert.ToDecimal(grid)
+        //    //}
+        //    //textBox1.Text = Math.Round(Total, 1).ToString();
+        //}
         private void btn_search_Click(object sender, EventArgs e)
         {
           
@@ -49,7 +55,6 @@ namespace Laboratory.PL
 
         private void cmb_Company_Leave(object sender, EventArgs e)
         {
-            DataTable dt2 = new DataTable();
             try
             {
                 if (cmb_Company.Text != "")
@@ -70,10 +75,7 @@ namespace Laboratory.PL
 
                 MessageBox.Show(ex.Message);
             }
-            finally
-            {
-                dt2.Dispose();
-            }
+          
         }
 
         private void cmb_Company_SelectionChangeCommitted(object sender, EventArgs e)
@@ -85,7 +87,9 @@ namespace Laboratory.PL
                     dt.Clear();
                     dt = cm.Select_AllpAyOfCompany(Convert.ToInt32(cmb_Company.SelectedValue));
                     gridControl1.DataSource = dt;
-                    Calc();
+                    dt2.Clear();
+                    dt2 = cm.Select_CompanyTotalMoney(Convert.ToInt32(cmb_Company.SelectedValue));
+                    textBox1.Text = dt2.Rows[0][0].ToString();
                 }
             }
             catch (Exception ex)
@@ -109,7 +113,6 @@ namespace Laboratory.PL
                     dt.Clear();
                     dt = cm.Search_AllpAyOfCompany(Convert.ToInt32(cmb_Company.SelectedValue), DateFrom.Value, DateTo.Value);
                     gridControl1.DataSource = dt;
-                    Calc();
                 }
             }
             catch (Exception ex)
@@ -122,6 +125,11 @@ namespace Laboratory.PL
         private void Btn_Print_Click(object sender, EventArgs e)
         {
             gridControl1.ShowRibbonPrintPreview();
+        }
+
+        private void Frm_AllPAyCompsny_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
