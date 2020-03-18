@@ -284,5 +284,10 @@ namespace Laboratory.PL
                 MessageBox.Show(ex.StackTrace);
             }
         }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

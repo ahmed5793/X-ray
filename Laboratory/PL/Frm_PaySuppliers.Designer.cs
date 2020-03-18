@@ -33,6 +33,7 @@
             this.cmb_Stock = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.txt_prise = new System.Windows.Forms.TextBox();
             this.rdbPartPay = new System.Windows.Forms.RadioButton();
             this.RdbAllPay = new System.Windows.Forms.RadioButton();
@@ -40,14 +41,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Txt_sales = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.Btn_Save = new DevExpress.XtraEditors.SimpleButton();
-            this.Btn_SelectProduct = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.Btn_SelectProduct = new DevExpress.XtraEditors.SimpleButton();
+            this.label5 = new System.Windows.Forms.Label();
+            this.Txt_sales = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -106,6 +106,27 @@
             this.groupBox2.Size = new System.Drawing.Size(726, 79);
             this.groupBox2.TabIndex = 73;
             this.groupBox2.TabStop = false;
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.Black;
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton1.Appearance.ForeColor = System.Drawing.Color.White;
+            this.simpleButton1.Appearance.Options.UseBackColor = true;
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.Appearance.Options.UseForeColor = true;
+            this.simpleButton1.Appearance.Options.UseTextOptions = true;
+            this.simpleButton1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.simpleButton1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.simpleButton1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(32, 21);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(179, 37);
+            this.simpleButton1.TabIndex = 169;
+            this.simpleButton1.Text = "حفظ المدفوع";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // txt_prise
             // 
@@ -166,7 +187,7 @@
             this.label1.BackColor = System.Drawing.Color.Black;
             this.label1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(356, 5);
+            this.label1.Location = new System.Drawing.Point(320, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(216, 29);
             this.label1.TabIndex = 72;
@@ -213,52 +234,6 @@
             this.groupBox1.TabIndex = 71;
             this.groupBox1.TabStop = false;
             // 
-            // Txt_sales
-            // 
-            this.Txt_sales.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_sales.Location = new System.Drawing.Point(6, 45);
-            this.Txt_sales.Name = "Txt_sales";
-            this.Txt_sales.ReadOnly = true;
-            this.Txt_sales.Size = new System.Drawing.Size(228, 26);
-            this.Txt_sales.TabIndex = 58;
-            this.Txt_sales.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.White;
-            this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(240, 48);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 19);
-            this.label4.TabIndex = 57;
-            this.label4.Text = "اسم المستخدم";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(240, 18);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 19);
-            this.label3.TabIndex = 75;
-            this.label3.Text = "تاريخ الدفع";
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.White;
-            this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(750, 39);
-            this.label5.Name = "label5";
-            this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label5.Size = new System.Drawing.Size(67, 19);
-            this.label5.TabIndex = 59;
-            this.label5.Text = "إسم المورد";
-            // 
             // Btn_Save
             // 
             this.Btn_Save.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -278,47 +253,6 @@
             this.Btn_Save.Size = new System.Drawing.Size(179, 37);
             this.Btn_Save.TabIndex = 169;
             this.Btn_Save.Text = "حفظ الفاتورة";
-            // 
-            // Btn_SelectProduct
-            // 
-            this.Btn_SelectProduct.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Btn_SelectProduct.Appearance.BackColor = System.Drawing.Color.Black;
-            this.Btn_SelectProduct.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_SelectProduct.Appearance.ForeColor = System.Drawing.Color.White;
-            this.Btn_SelectProduct.Appearance.Options.UseBackColor = true;
-            this.Btn_SelectProduct.Appearance.Options.UseFont = true;
-            this.Btn_SelectProduct.Appearance.Options.UseForeColor = true;
-            this.Btn_SelectProduct.Appearance.Options.UseTextOptions = true;
-            this.Btn_SelectProduct.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.Btn_SelectProduct.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.Btn_SelectProduct.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.Btn_SelectProduct.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_SelectProduct.ImageOptions.Image")));
-            this.Btn_SelectProduct.Location = new System.Drawing.Point(271, -115);
-            this.Btn_SelectProduct.Name = "Btn_SelectProduct";
-            this.Btn_SelectProduct.Size = new System.Drawing.Size(158, 32);
-            this.Btn_SelectProduct.TabIndex = 168;
-            this.Btn_SelectProduct.Text = "إختيار صنف";
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.Black;
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton1.Appearance.ForeColor = System.Drawing.Color.White;
-            this.simpleButton1.Appearance.Options.UseBackColor = true;
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.Appearance.Options.UseForeColor = true;
-            this.simpleButton1.Appearance.Options.UseTextOptions = true;
-            this.simpleButton1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.simpleButton1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.simpleButton1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(32, 21);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(179, 37);
-            this.simpleButton1.TabIndex = 169;
-            this.simpleButton1.Text = "حفظ المدفوع";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // simpleButton2
             // 
@@ -340,6 +274,72 @@
             this.simpleButton2.TabIndex = 168;
             this.simpleButton2.Text = "بحث";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
+            // 
+            // Btn_SelectProduct
+            // 
+            this.Btn_SelectProduct.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Btn_SelectProduct.Appearance.BackColor = System.Drawing.Color.Black;
+            this.Btn_SelectProduct.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_SelectProduct.Appearance.ForeColor = System.Drawing.Color.White;
+            this.Btn_SelectProduct.Appearance.Options.UseBackColor = true;
+            this.Btn_SelectProduct.Appearance.Options.UseFont = true;
+            this.Btn_SelectProduct.Appearance.Options.UseForeColor = true;
+            this.Btn_SelectProduct.Appearance.Options.UseTextOptions = true;
+            this.Btn_SelectProduct.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Btn_SelectProduct.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.Btn_SelectProduct.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.Btn_SelectProduct.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_SelectProduct.ImageOptions.Image")));
+            this.Btn_SelectProduct.Location = new System.Drawing.Point(271, -115);
+            this.Btn_SelectProduct.Name = "Btn_SelectProduct";
+            this.Btn_SelectProduct.Size = new System.Drawing.Size(158, 32);
+            this.Btn_SelectProduct.TabIndex = 168;
+            this.Btn_SelectProduct.Text = "إختيار صنف";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.White;
+            this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(750, 39);
+            this.label5.Name = "label5";
+            this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label5.Size = new System.Drawing.Size(67, 19);
+            this.label5.TabIndex = 59;
+            this.label5.Text = "إسم المورد";
+            // 
+            // Txt_sales
+            // 
+            this.Txt_sales.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_sales.Location = new System.Drawing.Point(6, 45);
+            this.Txt_sales.Name = "Txt_sales";
+            this.Txt_sales.ReadOnly = true;
+            this.Txt_sales.Size = new System.Drawing.Size(228, 26);
+            this.Txt_sales.TabIndex = 58;
+            this.Txt_sales.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(240, 18);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 19);
+            this.label3.TabIndex = 75;
+            this.label3.Text = "تاريخ الدفع";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(240, 48);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(81, 19);
+            this.label4.TabIndex = 57;
+            this.label4.Text = "اسم المستخدم";
             // 
             // Frm_PaySuppliers
             // 
