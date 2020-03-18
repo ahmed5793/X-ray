@@ -355,14 +355,11 @@ namespace Laboratory.PL
 
         private void barHeaderItem19_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Frm_ReportInsertStock frm_Is = new Frm_ReportInsertStock();
-            frm_Is.Show();
+         
         }
 
         private void barHeaderItem20_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Frm_ReportTransfairStock frts = new Frm_ReportTransfairStock();
-            frts.Show();
         }
 
         private void barButtonItem34_ItemClick(object sender, ItemClickEventArgs e)
@@ -616,6 +613,18 @@ namespace Laboratory.PL
         {
             Frm_Mansgmentinstallment fmi = new Frm_Mansgmentinstallment();
             fmi.Show();
+        }
+
+        private void barButtonItem4_ItemClick_5(object sender, ItemClickEventArgs e)
+        {
+            Frm_ReportInsertStock frm_Is = new Frm_ReportInsertStock();
+            frm_Is.Show();
+        }
+
+        private void Btn_ReportPullStock_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Frm_ReportStockPull frsp = new Frm_ReportStockPull();
+            frsp.Show();
         }
     }
     }
