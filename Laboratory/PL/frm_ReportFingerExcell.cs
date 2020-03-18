@@ -72,11 +72,11 @@ namespace Laboratory.PL
         {
             DataTable dt = new DataTable();
             DataTable dt2 = new DataTable();
-            dt.Columns.Add("Day");
-           
-         
-            dt.Columns.Add("CheckIN");
-            dt.Columns.Add("Checkout");
+            dt.Columns.Add("التاريخ");
+            dt.Columns.Add("اليوم");
+
+            dt.Columns.Add("حضور");
+            dt.Columns.Add("انصراف");
 
 
             int day = DateTime.DaysInMonth(Convert.ToInt32(cmb_year.Text), Convert.ToInt32(cmb_month.SelectedValue));
@@ -86,7 +86,8 @@ namespace Laboratory.PL
 
                 dt2.Clear();
                 dt2 = F.AttendanceExcell(Convert.ToInt32(cmb_clients.SelectedValue), daydate,Convert.ToInt32(cmb_user_branch.SelectedValue));
-                dt.Rows.Add(daydate.ToString(), dt2.Rows[0][0].ToString(), dt2.Rows[0][1].ToString());
+      
+                dt.Rows.Add(daydate.ToString("dd-MM-yyyy"), daydate.ToString("dddd"), dt2.Rows[0][0],dt2.Rows[0][1]);
 
               
 
@@ -143,9 +144,10 @@ namespace Laboratory.PL
                         n = dataGridView1.Rows.Add();
                         dataGridView1.Rows[n].Cells[0].Value = dt10.Rows[i][0].ToString();
                         dataGridView1.Rows[n].Cells[1].Value = dt10.Rows[i][1].ToString();
-
-
                         dataGridView1.Rows[n].Cells[2].Value = dt10.Rows[i][2].ToString();
+
+
+                        dataGridView1.Rows[n].Cells[3].Value = dt10.Rows[i][3].ToString();
                       
 
                     }
