@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using Microsoft.Office.Interop.Excel;
 using Application = System.Windows.Forms.Application;
 using Laboratory.BL;
-using System.Threading;
+
 
 
 
@@ -222,8 +222,10 @@ namespace Laboratory.PL
                           importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 6].Value,
                           importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 7].Value,
                           importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 8].Value,
-                          importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 9].Value);
-                            //  .ToString("dddd" + "  " + "  " + "yyyy-MM-dd   hh:mm tt", new System.Globalization.CultureInfo("ar-EG"))); 
+                         Convert.ToDateTime( importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 9].Value)
+                           .ToString("dddd", new System.Globalization.CultureInfo("ar-EG")),
+                                     Convert.ToDateTime(importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 9].Value)
+                           .ToString("dd-MM-yyyy  hh:mm tt", new System.Globalization.CultureInfo("ar-EG"))); 
                       //      }
                   
 
@@ -274,12 +276,13 @@ namespace Laboratory.PL
         {
 
         }
-        System.Data.DataTable dt10 = new System.Data.DataTable();
-        System.Data.DataTable dt2 = new System.Data.DataTable();
-        Finger f = new Finger();
+    
         private void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
-
+            cmb_UserBranch.Enabled = false;
+            System.Data.DataTable dt10 = new System.Data.DataTable();
+            System.Data.DataTable dt2 = new System.Data.DataTable();
+            Finger f = new Finger();
             try
             {//
 
@@ -305,20 +308,20 @@ namespace Laboratory.PL
                             //ToString("dd-MM-YYYY hh:mm tt")
                            
 
-                                f.AddFingeerExcel(Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), dataGridView1.Rows[i].Cells[3].Value.ToString(), Convert.ToDateTime(dataGridView1.Rows[i].Cells[8].Value), Convert.ToInt32(cmb_UserBranch.SelectedValue), txt_username.Text);
+                                f.AddFingeerExcel(Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), dataGridView1.Rows[i].Cells[3].Value.ToString(), Convert.ToDateTime(dataGridView1.Rows[i].Cells[9].Value), Convert.ToInt32(cmb_UserBranch.SelectedValue), txt_username.Text);
 
 
 
 
                         }
                         dt2.Clear();
-                        dt2 = f.vildateHRINOUTExcel(Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), Convert.ToDateTime(dataGridView1.Rows[i].Cells[8].Value),Convert.ToInt32(cmb_UserBranch.SelectedValue));
+                        dt2 = f.vildateHRINOUTExcel(Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), Convert.ToDateTime(dataGridView1.Rows[i].Cells[9].Value),Convert.ToInt32(cmb_UserBranch.SelectedValue));
 
 
                         if (dt2.Rows.Count == 0)
                         {
                          
-                                    f.AddFingeerExcel(Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), dataGridView1.Rows[i].Cells[3].Value.ToString(), Convert.ToDateTime(dataGridView1.Rows[i].Cells[8].Value), Convert.ToInt32(cmb_UserBranch.SelectedValue), txt_username.Text);
+                                    f.AddFingeerExcel(Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), dataGridView1.Rows[i].Cells[3].Value.ToString(), Convert.ToDateTime(dataGridView1.Rows[i].Cells[9].Value), Convert.ToInt32(cmb_UserBranch.SelectedValue), txt_username.Text);
 
                                
                          
@@ -405,10 +408,11 @@ namespace Laboratory.PL
                 label3.Text = "0";
                 dataGridView1.Rows.Clear();
             progressBar1.Value = 0;
-          //  textBox1.Clear();
+            textBox1.Clear();
+            cmb_UserBranch.Enabled = true;
 
 
-          
+
 
 
 

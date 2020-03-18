@@ -312,14 +312,14 @@ namespace Laboratory.PL
                                 Main.getmain.add_masrof.Enabled = true;
                             }
                             ///////
-                            if (Convert.ToInt32(dt5.Rows[0][1]) == 0)
-                            {
-                                Main.getmain.report_masrof.Enabled = false;
-                            }
-                            else if (Convert.ToInt32(dt5.Rows[0][1]) == 1)
-                            {
-                                Main.getmain.report_masrof.Enabled = true;
-                            }
+                            //if (Convert.ToInt32(dt5.Rows[0][1]) == 0)
+                            //{
+                            //    Main.getmain.report_masrof.Enabled = false;
+                            //}
+                            //else if (Convert.ToInt32(dt5.Rows[0][1]) == 1)
+                            //{
+                            //    Main.getmain.report_masrof.Enabled = true;
+                            //}
                             ////////
                             if (Convert.ToInt32(dt5.Rows[0][2]) == 0)
                             {
@@ -376,14 +376,14 @@ namespace Laboratory.PL
                             {
                                 Main.getmain.add_installment.Enabled = true;
                             }
-                            if (Convert.ToInt32(dt5.Rows[0][8]) == 0)
-                            {
-                                Main.getmain.report_installment.Enabled = false;
-                            }
-                            else if (Convert.ToInt32(dt5.Rows[0][8]) == 1)
-                            {
-                                Main.getmain.report_installment.Enabled = true;
-                            }
+                            //if (Convert.ToInt32(dt5.Rows[0][8]) == 0)
+                            //{
+                            //    Main.getmain.report_installment.Enabled = false;
+                            //}
+                            //else if (Convert.ToInt32(dt5.Rows[0][8]) == 1)
+                            //{
+                            //    Main.getmain.report_installment.Enabled = true;
+                            //}
                         }
 
                         DataTable dt6 = new DataTable();
