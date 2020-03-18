@@ -447,8 +447,6 @@ namespace Laboratory.PL
 
         private void barHeaderItem24_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Frm_ReportPaySuppliers frm_ReportPaySuppliers = new Frm_ReportPaySuppliers();
-            frm_ReportPaySuppliers.Show();
         }
 
         private void barButtonItem43_ItemClick(object sender, ItemClickEventArgs e)
@@ -625,6 +623,13 @@ namespace Laboratory.PL
         {
             Frm_ReportStockPull frsp = new Frm_ReportStockPull();
             frsp.Show();
+        }
+
+        private void barButtonItem4_ItemClick_6(object sender, ItemClickEventArgs e)
+        {
+
+            Frm_ReportPaySuppliers frm_ReportPaySuppliers = new Frm_ReportPaySuppliers();
+            frm_ReportPaySuppliers.Show();
         }
     }
     }

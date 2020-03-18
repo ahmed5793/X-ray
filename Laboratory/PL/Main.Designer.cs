@@ -98,7 +98,6 @@
             this.add_suppliers = new DevExpress.XtraBars.BarButtonItem();
             this.pay_suppliers = new DevExpress.XtraBars.BarButtonItem();
             this.Depit_suppliers = new DevExpress.XtraBars.BarButtonItem();
-            this.report_suppliers = new DevExpress.XtraBars.BarSubItem();
             this.barHeaderItem24 = new DevExpress.XtraBars.BarHeaderItem();
             this.add_installment = new DevExpress.XtraBars.BarButtonItem();
             this.barHeaderItem25 = new DevExpress.XtraBars.BarHeaderItem();
@@ -168,6 +167,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.Btn_ReportInsertStock = new DevExpress.XtraBars.BarButtonItem();
             this.Btn_ReportPullStock = new DevExpress.XtraBars.BarButtonItem();
+            this.Btn_SuppliersAccountStatment = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageEdit1)).BeginInit();
@@ -246,7 +246,6 @@
             this.add_suppliers,
             this.pay_suppliers,
             this.Depit_suppliers,
-            this.report_suppliers,
             this.barHeaderItem24,
             this.add_installment,
             this.barHeaderItem25,
@@ -283,9 +282,10 @@
             this.Btn_ReportMasrofat,
             this.btn_ReportInstallment,
             this.Btn_ReportInsertStock,
-            this.Btn_ReportPullStock});
+            this.Btn_ReportPullStock,
+            this.Btn_SuppliersAccountStatment});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 120;
+            this.ribbon.MaxItemId = 121;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.basic_information,
@@ -683,7 +683,7 @@
             // 
             // add_stock
             // 
-            this.add_stock.Caption = "اضافة خزينة";
+            this.add_stock.Caption = "اضافة خزنة جديدة";
             this.add_stock.Id = 47;
             this.add_stock.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("add_stock.ImageOptions.Image")));
             this.add_stock.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("add_stock.ImageOptions.LargeImage")));
@@ -878,16 +878,6 @@
             this.Depit_suppliers.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("Depit_suppliers.ImageOptions.LargeImage")));
             this.Depit_suppliers.Name = "Depit_suppliers";
             this.Depit_suppliers.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem33_ItemClick);
-            // 
-            // report_suppliers
-            // 
-            this.report_suppliers.Caption = "تقارير";
-            this.report_suppliers.Id = 71;
-            this.report_suppliers.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("report_suppliers.ImageOptions.Image")));
-            this.report_suppliers.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("report_suppliers.ImageOptions.LargeImage")));
-            this.report_suppliers.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barHeaderItem24)});
-            this.report_suppliers.Name = "report_suppliers";
             // 
             // barHeaderItem24
             // 
@@ -1377,7 +1367,7 @@
             this.ribbonPageGroup13.ItemLinks.Add(this.add_suppliers);
             this.ribbonPageGroup13.ItemLinks.Add(this.pay_suppliers);
             this.ribbonPageGroup13.ItemLinks.Add(this.Depit_suppliers);
-            this.ribbonPageGroup13.ItemLinks.Add(this.report_suppliers);
+            this.ribbonPageGroup13.ItemLinks.Add(this.Btn_SuppliersAccountStatment);
             this.ribbonPageGroup13.Name = "ribbonPageGroup13";
             this.ribbonPageGroup13.Text = "ادارة الموردين";
             // 
@@ -1513,6 +1503,17 @@
             this.Btn_ReportPullStock.Name = "Btn_ReportPullStock";
             this.Btn_ReportPullStock.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_ReportPullStock_ItemClick);
             // 
+            // Btn_SuppliersAccountStatment
+            // 
+            this.Btn_SuppliersAccountStatment.Caption = "كشف حساب مورد";
+            this.Btn_SuppliersAccountStatment.Id = 120;
+            this.Btn_SuppliersAccountStatment.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_SuppliersAccountStatment.ImageOptions.Image")));
+            this.Btn_SuppliersAccountStatment.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("Btn_SuppliersAccountStatment.ImageOptions.LargeImage")));
+            this.Btn_SuppliersAccountStatment.ItemAppearance.Normal.Options.UseTextOptions = true;
+            this.Btn_SuppliersAccountStatment.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.Btn_SuppliersAccountStatment.Name = "Btn_SuppliersAccountStatment";
+            this.Btn_SuppliersAccountStatment.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick_6);
+            // 
             // Main
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
@@ -1631,7 +1632,6 @@
         public DevExpress.XtraBars.BarButtonItem add_suppliers;
         public DevExpress.XtraBars.BarButtonItem pay_suppliers;
         public DevExpress.XtraBars.BarButtonItem Depit_suppliers;
-        public DevExpress.XtraBars.BarSubItem report_suppliers;
         public DevExpress.XtraBars.BarHeaderItem barHeaderItem24;
         public DevExpress.XtraBars.BarButtonItem add_installment;
         public DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup14;
@@ -1685,5 +1685,6 @@
         public DevExpress.XtraBars.BarButtonItem Btn_AccountStatment;
         public DevExpress.XtraBars.BarButtonItem Btn_ReportInsertStock;
         public DevExpress.XtraBars.BarButtonItem Btn_ReportPullStock;
+        public DevExpress.XtraBars.BarButtonItem Btn_SuppliersAccountStatment;
     }
 }
