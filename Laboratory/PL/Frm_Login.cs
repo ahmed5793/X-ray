@@ -270,14 +270,14 @@ namespace Laboratory.PL
                                 Main.getmain.pay_Company.Enabled = true;
                             }
                             /////////
-                            if (Convert.ToInt32(dt4.Rows[0][4]) == 0)
-                            {
-                                Main.getmain.Report_Company.Enabled = false;
-                            }
-                            else if (Convert.ToInt32(dt4.Rows[0][4]) == 1)
-                            {
-                                Main.getmain.Report_Company.Enabled = true;
-                            }
+                            //if (Convert.ToInt32(dt4.Rows[0][4]) == 0)
+                            //{
+                            //    Main.getmain.Report_Company.Enabled = false;
+                            //}
+                            //else if (Convert.ToInt32(dt4.Rows[0][4]) == 1)
+                            //{
+                            //    Main.getmain.Report_Company.Enabled = true;
+                            //}
                             ///////
                             if (Convert.ToInt32(dt4.Rows[0][5]) == 0)
                             {
@@ -558,15 +558,15 @@ namespace Laboratory.PL
 
                             }
                             /////////
-                            if (Convert.ToInt32(dt7.Rows[0][4]) == 0)
-                            {
-                                Main.getmain.pay_patient.Enabled = false;
+                            //if (Convert.ToInt32(dt7.Rows[0][4]) == 0)
+                            //{
+                            //    Main.getmain.pay_patient.Enabled = false;
 
-                            }
-                            else if (Convert.ToInt32(dt7.Rows[0][4]) == 1)
-                            {
-                                Main.getmain.pay_patient.Enabled = true;
-                            }
+                            //}
+                            //else if (Convert.ToInt32(dt7.Rows[0][4]) == 1)
+                            //{
+                            //    Main.getmain.pay_patient.Enabled = true;
+                            //}
                             ///////
                             if (Convert.ToInt32(dt7.Rows[0][5]) == 0)
                             {
@@ -588,16 +588,16 @@ namespace Laboratory.PL
                                 Main.getmain.depit_client.Enabled = true;
                             }
 
-                            if (Convert.ToInt32(dt7.Rows[0][7]) == 0)
-                            {
-                                Main.getmain.report_patient.Enabled = false;
+                            //if (Convert.ToInt32(dt7.Rows[0][7]) == 0)
+                            //{
+                            //    Main.getmain.report_patient.Enabled = false;
 
-                            }
-                            else if (Convert.ToInt32(dt7.Rows[0][7]) == 1)
-                            {
+                            //}
+                            //else if (Convert.ToInt32(dt7.Rows[0][7]) == 1)
+                            //{
 
-                                Main.getmain.report_patient.Enabled = true;
-                            }
+                            //    Main.getmain.report_patient.Enabled = true;
+                            //}
                         }
                         DataTable dt8 = new DataTable();
                         dt8.Clear();

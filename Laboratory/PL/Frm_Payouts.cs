@@ -107,30 +107,7 @@ namespace Laboratory.PL
         DataTable dt10 = new DataTable();
         private void button1_Click(object sender, EventArgs e)
         {
-            
-            dt1.Clear();
-
-            dt1 = t.TicketDetailsSelectTicketsDetAILS(Convert.ToInt32(txt_num.Text));
-
-            tc.dataGridView1.DataSource = dt1;
-
-            tc.dataGridView1.Columns[0].Visible = false;
-            tc.dataGridView1.Columns[3].Visible = false;
-
-            dt10.Clear();
-            dt10 = t.TicketDetailsSelectTickets(Convert.ToInt32(txt_num.Text));
-
-            foreach (DataRow dr in dt10.Rows)
-            {
-               
-                tc.txt_payLat.Text = dr[13].ToString();
-                tc.txt_patientname.Text = dr[1].ToString();
-
-
-            }
-            tc.textBox1.Text = Txt_IdCust.Text;
-            tc.ShowDialog();
-            this.Close();
+           
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
@@ -319,6 +296,34 @@ namespace Laboratory.PL
             cmb_Stock.DataSource = s.SelectStockBranch(Convert.ToInt32(comboBox1.SelectedValue));
             cmb_Stock.DisplayMember = "Name_Stock";
             cmb_Stock.ValueMember = "ID_Stock";
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+
+            dt1.Clear();
+
+            dt1 = t.TicketDetailsSelectTicketsDetAILS(Convert.ToInt32(txt_num.Text));
+
+            tc.dataGridView1.DataSource = dt1;
+
+            tc.dataGridView1.Columns[0].Visible = false;
+            tc.dataGridView1.Columns[3].Visible = false;
+
+            dt10.Clear();
+            dt10 = t.TicketDetailsSelectTickets(Convert.ToInt32(txt_num.Text));
+
+            foreach (DataRow dr in dt10.Rows)
+            {
+
+                tc.txt_payLat.Text = dr[13].ToString();
+                tc.txt_patientname.Text = dr[1].ToString();
+
+
+            }
+            tc.textBox1.Text = Txt_IdCust.Text;
+            tc.ShowDialog();
+            this.Close();
         }
     }
 }

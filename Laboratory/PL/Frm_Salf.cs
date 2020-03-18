@@ -30,85 +30,6 @@ namespace Laboratory.PL
         private void btn_save_Click(object sender, EventArgs e)
         {
 
-            if (Txt_money.Text == "" || Txt_money.Text == "0")
-            {
-                MessageBox.Show("من فضلك قم بكتابة المبلغ");
-                return;
-
-            }
-
-          
-
-
-            if (cmb_employeeName.Text == "")
-            {
-                MessageBox.Show("قم بااختيار اسم الموظف");
-                return;
-
-            }
-
-            if (txt_NameDaen.Text == "")
-            {
-                MessageBox.Show("قم بااختيار اسم الداين");
-                return;
-
-            }
-
-
-            //dt1.Clear();
-            //dt1 = E.SelectCHECKSalaryEmployee(Convert.ToInt32(cmb_employeeName.SelectedValue));
-            //if (dt1.Rows.Count > 0)
-            //{
-            //    MessageBox.Show("عزيزى المستخدم يرجي العلم بان هذا الموظف قام بعمليه استلاف من قبل لايمكن اتمام هذا العمليه مرتين");
-
-
-            //    txt_NameDaen.Clear();
-            //    txt_note.Clear();
-            //    Txt_money.Clear();
-            //    return;
-
-            //}
-
-            //dt.Clear();
-            //dt = E.SelectSalary(Convert.ToInt32(cmb_employeeName.SelectedValue), Convert.ToDecimal(Txt_money.Text));
-
-            //if (dt.Rows.Count > 0)
-            //{
-
-                E.AddEmployee_Salf(txt_NameDaen.Text, dateTimePicker1.Value, dateTimePicker2.Value, txt_note.Text, Convert.ToDecimal(Txt_money.Text), Convert.ToInt32(cmb_employeeName.SelectedValue));
-                MessageBox.Show("تم التسجيل بنجاح");
-         
-                dataGridView1.DataSource = E.SelectEmployeeSalf();
-                txt_note.Clear();
-                txt_NameDaen.Clear();
-                Txt_money.Clear();
-
-                txt_note.Clear();
-                txt_NameDaen.Clear();
-                Txt_money.Clear();
-
-                btn_save.Show();
-
-
-           // }
-
-            //else
-            //{
-            //    MessageBox.Show("عزيزى المستخدم يرجي العلم بان مبلغ الاستلاف اكبر من الراتب الشهرى للموظف لايسمح بقيام العمليه");
-
-
-
-            //}
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -273,6 +194,90 @@ namespace Laboratory.PL
                 }
                 dt.Dispose();
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            if (Txt_money.Text == "" || Txt_money.Text == "0")
+            {
+                MessageBox.Show("من فضلك قم بكتابة المبلغ");
+                return;
+
+            }
+
+
+
+
+            if (cmb_employeeName.Text == "")
+            {
+                MessageBox.Show("قم بااختيار اسم الموظف");
+                return;
+
+            }
+
+            if (txt_NameDaen.Text == "")
+            {
+                MessageBox.Show("قم بااختيار اسم الداين");
+                return;
+
+            }
+
+
+            //dt1.Clear();
+            //dt1 = E.SelectCHECKSalaryEmployee(Convert.ToInt32(cmb_employeeName.SelectedValue));
+            //if (dt1.Rows.Count > 0)
+            //{
+            //    MessageBox.Show("عزيزى المستخدم يرجي العلم بان هذا الموظف قام بعمليه استلاف من قبل لايمكن اتمام هذا العمليه مرتين");
+
+
+            //    txt_NameDaen.Clear();
+            //    txt_note.Clear();
+            //    Txt_money.Clear();
+            //    return;
+
+            //}
+
+            //dt.Clear();
+            //dt = E.SelectSalary(Convert.ToInt32(cmb_employeeName.SelectedValue), Convert.ToDecimal(Txt_money.Text));
+
+            //if (dt.Rows.Count > 0)
+            //{
+
+            E.AddEmployee_Salf(txt_NameDaen.Text, dateTimePicker1.Value, dateTimePicker2.Value, txt_note.Text, Convert.ToDecimal(Txt_money.Text), Convert.ToInt32(cmb_employeeName.SelectedValue));
+            MessageBox.Show("تم التسجيل بنجاح");
+
+            dataGridView1.DataSource = E.SelectEmployeeSalf();
+            txt_note.Clear();
+            txt_NameDaen.Clear();
+            Txt_money.Clear();
+
+            txt_note.Clear();
+            txt_NameDaen.Clear();
+            Txt_money.Clear();
+
+            btn_save.Show();
+
+
+            // }
+
+            //else
+            //{
+            //    MessageBox.Show("عزيزى المستخدم يرجي العلم بان مبلغ الاستلاف اكبر من الراتب الشهرى للموظف لايسمح بقيام العمليه");
+
+
+
+            //}
+
+
+
+
+
+
+
+
+
+
         }
     }
     }

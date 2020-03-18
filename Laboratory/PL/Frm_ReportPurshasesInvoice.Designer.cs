@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_ReportPurshasesInvoice));
             this.DateTo = new System.Windows.Forms.DateTimePicker();
             this.DateFrom = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
-            this.btn_search = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,20 +76,6 @@
             this.button1.TabIndex = 161;
             this.button1.Text = "طباعة تقرير\r\n";
             this.button1.UseVisualStyleBackColor = false;
-            // 
-            // btn_search
-            // 
-            this.btn_search.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btn_search.BackColor = System.Drawing.Color.Black;
-            this.btn_search.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_search.ForeColor = System.Drawing.Color.Yellow;
-            this.btn_search.Location = new System.Drawing.Point(84, 54);
-            this.btn_search.Name = "btn_search";
-            this.btn_search.Size = new System.Drawing.Size(158, 52);
-            this.btn_search.TabIndex = 160;
-            this.btn_search.Text = "بحث";
-            this.btn_search.UseVisualStyleBackColor = false;
-            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // label4
             // 
@@ -150,15 +137,36 @@
             this.dataGridView1.Size = new System.Drawing.Size(896, 362);
             this.dataGridView1.TabIndex = 156;
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.Black;
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton1.Appearance.ForeColor = System.Drawing.Color.White;
+            this.simpleButton1.Appearance.Options.UseBackColor = true;
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.Appearance.Options.UseForeColor = true;
+            this.simpleButton1.Appearance.Options.UseTextOptions = true;
+            this.simpleButton1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.simpleButton1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.simpleButton1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(87, 58);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(134, 38);
+            this.simpleButton1.TabIndex = 204;
+            this.simpleButton1.Text = "بحث  ";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
             // Frm_ReportPurshasesInvoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(909, 526);
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.DateTo);
             this.Controls.Add(this.DateFrom);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.btn_search);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -176,10 +184,10 @@
         private System.Windows.Forms.DateTimePicker DateTo;
         private System.Windows.Forms.DateTimePicker DateFrom;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btn_search;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.DataGridView dataGridView1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

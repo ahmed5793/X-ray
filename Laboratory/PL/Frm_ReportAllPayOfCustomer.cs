@@ -13,112 +13,33 @@ namespace Laboratory.PL
     public partial class Frm_ReportAllPayOfCustomer : Form
     {
         Customer C = new Customer();
+        DataTable dt5 = new DataTable();
+        DataTable dt = new DataTable();
         public Frm_ReportAllPayOfCustomer()
         {
             InitializeComponent();
-            
-            label7.Hide();
-         
-            comboBox2.Hide();
-          
-            btn_search.Hide();
-            //gridControl1.DataSource = C.Select_AllPayCustomer();
-            Calc();
-        }
-        void Calc()
-        {
-            Decimal total = 0;
-            for (int i = 0; i < gridView1.DataRowCount; i++)
-            {
-                DataRow row = gridView1.GetDataRow(i);
-
-                total += Convert.ToDecimal(row[2].ToString());
-            }
-            txt_TotalPurshacing.Text = Math.Round(total, 1).ToString();
-        }
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-        //    DataTable dt = new DataTable();
-        //    try
-        //    {
-        //        dt.Clear();
-        //        dt = C.Search_AllPayCustomer(textBox1.Text);
-        //        gridControl1.DataSource = dt;
-        //        Calc();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message);
-        //    }
-        //    finally
-        //    {
-        //        dt.Dispose();
-        //    }
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-          
-            label7.Hide();
-            label4.Hide();
-            label5.Hide();
-            comboBox2.Hide();
-            DateFrom.Hide();
-            DateTo.Hide();
-            btn_search.Hide();
-
-        }
-
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-           
-            label7.Hide();
-            label4.Show();
-            label5.Show();
-            comboBox2.Hide();
-            DateFrom.Show();
-            DateTo.Show();
-            btn_search.Show();
-        }
-
-        private void radioButton3_CheckedChanged(object sender, EventArgs e)
-        {
             comboBox2.DataSource = C.SelectCompoCustomerN2dy();
             comboBox2.DisplayMember = "Cust_Name";
             comboBox2.ValueMember = "Cust_ID";
-         
-            label7.Show();
-            label4.Show();
-            label5.Show();
-            comboBox2.Show();
-            DateFrom.Show();
-            DateTo.Show();
-            btn_search.Show();
+            gridControl1.DataSource = C.Select_AllPayCustomer(Convert.ToInt32(comboBox2.SelectedValue));
+            dt5.Clear();
+            dt5 = C.Select_CustomertotalBAlance(Convert.ToInt32(comboBox2.SelectedValue));
+            textBox1.Text = dt5.Rows[0][0].ToString();
         }
+        //void Calc()
+        //{
+        //    Decimal total = 0;
+        //    for (int i = 0; i < gridView1.DataRowCount; i++)
+        //    {
+        //        DataRow row = gridView1.GetDataRow(i);
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_TotalPurshacing_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        //        total += Convert.ToDecimal(row[2].ToString());
+        //    }
+        //    txt_TotalPurshacing.Text = Math.Round(total, 1).ToString();
+        //}
+     
         private void comboBox2_Leave(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
             try
             {
                 if (comboBox2.Text != "")
@@ -129,58 +50,54 @@ namespace Laboratory.PL
                     {
                         MessageBox.Show("إسم العميل غير موجود لا بد من إختيار إسم العميل من القائمة");
                         comboBox2.Focus();
+                        textBox1.Clear();
                         return;
                     }
                 }
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
-            finally
-            {
-                dt.Dispose();
-            }
+        }
+        private void comboBox2_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            gridControl1.DataSource = C.Select_AllPayCustomer(Convert.ToInt32(comboBox2.SelectedValue));
+            dt5.Clear();
+            dt5 = C.Select_CustomertotalBAlance(Convert.ToInt32(comboBox2.SelectedValue));
+            textBox1.Text = dt5.Rows[0][0].ToString();
         }
 
-        private void btn_search_Click(object sender, EventArgs e)
+        private void simpleButton1_Click(object sender, EventArgs e)
         {
-            DataTable dt5 = new DataTable();
             try
             {
-                if (radioButton2.Checked == true)
+                if (comboBox2.Text != "")
                 {
                     dt5.Clear();
-                    dt5 = C.Search_AllPayCustomerDate(DateFrom.Value, DateTo.Value);
-                    gridControl1.DataSource = dt5;
-                }
-                else if (radioButton3.Checked == true)
-                {
-                    if (comboBox2.Text != "")
+                    dt5 = C.Search_AllPayCustomerNameanddate(Convert.ToInt32(comboBox2.SelectedValue), DateFrom.Value, DateTo.Value);
+                    if (dt5.Rows.Count > 0)
                     {
-                        dt5.Clear();
-                        dt5 = C.Search_AllPayCustomerNameanddate(comboBox2.Text, DateFrom.Value, DateTo.Value);
                         gridControl1.DataSource = dt5;
                     }
+                    else
+                    {
+                        gridControl1.DataSource = null;
+                        MessageBox.Show("لا يوجد معاملات فى هذه الفتره");
+                        return;
+
+                    }
                 }
-                Calc();
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
         }
 
-        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void Btn_Print_Click(object sender, EventArgs e)
         {
             gridControl1.ShowRibbonPrintPreview();
-        }
-
-        private void Frm_ReportAllPayOfCustomer_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

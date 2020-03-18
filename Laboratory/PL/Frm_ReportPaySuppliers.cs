@@ -14,148 +14,34 @@ namespace Laboratory.PL
     public partial class Frm_ReportPaySuppliers : Form
     {
         Suppliers Suppliers = new Suppliers();
-
+        DataTable dt5 = new DataTable();
+        DataTable dt = new DataTable();
         public Frm_ReportPaySuppliers()
         {
             InitializeComponent();
-            label2.Hide();
-            label7.Hide();
-            label4.Hide();
-            label5.Hide();
-            comboBox2.Hide();
-            DateFrom.Hide();
-            DateTo.Hide();
-            btn_search.Hide();
-            gridControl1.DataSource = Suppliers.Report_PaySupplier();
-            Calc();
-        }
-        void Calc()
-        {
-            decimal total = 0;
-            for (int i = 0; i < gridView1.RowCount; i++)
-            {
-                DataRow row = gridView1.GetDataRow(i);
-                total += Convert.ToDecimal(row[1].ToString());
 
-            }
-            txt_TotalPurshacing.Text = total.ToString("₱ #,##0.0");
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-        //    DataTable dt = new DataTable();
-
-        //    try
-        //    {
-        //        dt.Clear();
-        //        dt = Suppliers.Search_PaySupplier(textBox1.Text);
-        //        gridControl1.DataSource = dt;
-        //        Calc();
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-
-        //        MessageBox.Show(ex.Message);
-        //    }
-        //    finally
-        //    {
-        //        dt.Dispose();
-        //    }
-
-
-
-
-        }
-
-        private void Frm_ReportPaySuppliers_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-        
-        }
-
-        private void btn_search_Click(object sender, EventArgs e)
-        {
-            DataTable dt5 = new DataTable();
-            try
-            {
-                if (radioButton2.Checked==true)
-                {
-                    dt5.Clear();
-                    dt5 = Suppliers.Search_PaySupplierDate(DateFrom.Value, DateTo.Value);
-                    gridControl1.DataSource = dt5;
-                }
-                else if (radioButton3.Checked==true)
-                {
-                    if (comboBox2.Text!="")
-                    {
-                        dt5.Clear();
-                        dt5 = Suppliers.Search_PaySupplierDateAndName(comboBox2.Text, DateFrom.Value, DateTo.Value);
-                        gridControl1.DataSource = dt5;
-                    }
-                }
-                Calc();
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-          
-            label2.Show();
-            label7.Hide();
-            label4.Hide();
-            label5.Hide();
-            comboBox2.Hide();
-            DateFrom.Hide();
-            DateTo.Hide();
-            btn_search.Hide();
-
-        }
-
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-            label2.Hide();
-            label7.Hide();
-            label4.Show();
-            label5.Show();
-            comboBox2.Hide();
-            DateFrom.Show();
-            DateTo.Show();
-            btn_search.Show();
-        }
-
-        private void radioButton3_CheckedChanged(object sender, EventArgs e)
-        {
             comboBox2.DataSource = Suppliers.CompoBoxSuppliers();
             comboBox2.DisplayMember = "Name";
             comboBox2.ValueMember = "Sup_id";
-            label2.Hide();
-            label7.Show();
-            label4.Show();
-            label5.Show();
-            comboBox2.Show();
-            DateFrom.Show();
-            DateTo.Show();
-            btn_search.Show();
+
+            gridControl1.DataSource = Suppliers.Report_PaySupplier(Convert.ToInt32(comboBox2.SelectedValue));
+            dt5.Clear();
+            dt5 = Suppliers.Select_SupplierTotalMoney(Convert.ToInt32(comboBox2.SelectedValue));
+            textBox1.Text = dt5.Rows[0][0].ToString();
         }
+        //void Calc()
+        //{
+        //    decimal total = 0;
+        //    for (int i = 0; i < gridView1.RowCount; i++)
+        //    {
+        //        DataRow row = gridView1.GetDataRow(i);
+        //        total += Convert.ToDecimal(row[1].ToString());
+        //    }
+        //    txt_TotalPurshacing.Text = total.ToString("₱ #,##0.0");
+        //}
 
         private void comboBox2_Leave(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
             try
             {
                 if (comboBox2.Text != "")
@@ -168,23 +54,55 @@ namespace Laboratory.PL
                         MessageBox.Show("هذا الاسم غير موجود فى قائمة الموردين");
                         comboBox2.Focus();
                         comboBox2.SelectAll();
+                        textBox1.Clear();
                         return;
                     }
                 }
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
             }
         }
-
-        private void label7_Click(object sender, EventArgs e)
+        private void comboBox2_SelectionChangeCommitted(object sender, EventArgs e)
         {
+            gridControl1.DataSource = Suppliers.Report_PaySupplier(Convert.ToInt32(comboBox2.SelectedValue));
+            dt5.Clear();
+            dt5 = Suppliers.Select_SupplierTotalMoney(Convert.ToInt32(comboBox2.SelectedValue));
+            textBox1.Text = dt5.Rows[0][0].ToString();
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (comboBox2.Text != "")
+                {
+                    dt5.Clear();
+                    dt5 = Suppliers.Search_PaySupplierDateAndName(Convert.ToInt32(comboBox2.SelectedValue), DateFrom.Value, DateTo.Value);
+                    if (dt5.Rows.Count>0)
+                    {
+                        gridControl1.DataSource = dt5;
+                    }
+                    else
+                    {
+                        gridControl1.DataSource = null;
+                        MessageBox.Show("لا يوجد معاملات فى هذه الفتره");
+                        return;
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
+            }
 
         }
 
-        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void Btn_Print_Click(object sender, EventArgs e)
         {
             gridControl1.ShowRibbonPrintPreview();
         }

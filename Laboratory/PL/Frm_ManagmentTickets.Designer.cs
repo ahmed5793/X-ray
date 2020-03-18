@@ -36,6 +36,7 @@
             this.txt_username = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.ToDate = new System.Windows.Forms.DateTimePicker();
             this.FromDate = new System.Windows.Forms.DateTimePicker();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
@@ -50,7 +51,6 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.bar1 = new DevExpress.XtraBars.Bar();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -136,7 +136,6 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.simpleButton2);
             this.groupBox2.Controls.Add(this.ToDate);
             this.groupBox2.Controls.Add(this.FromDate);
             this.groupBox2.Controls.Add(this.simpleButton1);
@@ -150,6 +149,27 @@
             this.groupBox2.TabIndex = 100;
             this.groupBox2.TabStop = false;
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.simpleButton2.Appearance.BackColor = System.Drawing.Color.Black;
+            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton2.Appearance.ForeColor = System.Drawing.Color.White;
+            this.simpleButton2.Appearance.Options.UseBackColor = true;
+            this.simpleButton2.Appearance.Options.UseFont = true;
+            this.simpleButton2.Appearance.Options.UseForeColor = true;
+            this.simpleButton2.Appearance.Options.UseTextOptions = true;
+            this.simpleButton2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.simpleButton2.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.simpleButton2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.simpleButton2.Location = new System.Drawing.Point(71, 497);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(129, 35);
+            this.simpleButton2.TabIndex = 117;
+            this.simpleButton2.Text = "طباعة التقرير";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // ToDate
             // 
@@ -189,7 +209,7 @@
             this.simpleButton1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.simpleButton1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(416, 31);
+            this.simpleButton1.Location = new System.Drawing.Point(385, 41);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(129, 35);
             this.simpleButton1.TabIndex = 114;
@@ -365,32 +385,13 @@
             this.bar1.OptionsBar.UseWholeRow = true;
             this.bar1.Text = "Main menu";
             // 
-            // simpleButton2
-            // 
-            this.simpleButton2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.simpleButton2.Appearance.BackColor = System.Drawing.Color.Black;
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton2.Appearance.ForeColor = System.Drawing.Color.White;
-            this.simpleButton2.Appearance.Options.UseBackColor = true;
-            this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.Appearance.Options.UseForeColor = true;
-            this.simpleButton2.Appearance.Options.UseTextOptions = true;
-            this.simpleButton2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.simpleButton2.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.simpleButton2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(240, 31);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(129, 35);
-            this.simpleButton2.TabIndex = 117;
-            this.simpleButton2.Text = "طباعة التقرير";
-            // 
             // Frm_ManagmentTickets
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(904, 538);
+            this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.txt_totalinvoice);
             this.Controls.Add(this.label5);

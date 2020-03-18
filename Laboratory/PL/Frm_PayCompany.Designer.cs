@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_PayCompany));
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -37,7 +38,6 @@
             this.RdbAllCustomer = new System.Windows.Forms.RadioButton();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.btn_client = new System.Windows.Forms.Button();
             this.txt_prise = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.txt_rent = new System.Windows.Forms.TextBox();
@@ -50,6 +50,7 @@
             this.Cmb_Branch = new System.Windows.Forms.ComboBox();
             this.Txt_SalesMAn = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.btn_client = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -182,18 +183,6 @@
             this.label1.Size = new System.Drawing.Size(380, 29);
             this.label1.TabIndex = 86;
             this.label1.Text = "المبالغ المتبقيه علي العملاء الخاصة بالشركات";
-            // 
-            // btn_client
-            // 
-            this.btn_client.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btn_client.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_client.Location = new System.Drawing.Point(362, 16);
-            this.btn_client.Name = "btn_client";
-            this.btn_client.Size = new System.Drawing.Size(126, 46);
-            this.btn_client.TabIndex = 65;
-            this.btn_client.Text = "دفع ";
-            this.btn_client.UseVisualStyleBackColor = true;
-            this.btn_client.Click += new System.EventHandler(this.btn_client_Click);
             // 
             // txt_prise
             // 
@@ -352,6 +341,27 @@
             this.label5.TabIndex = 95;
             this.label5.Text = "إسم المستخدم";
             // 
+            // btn_client
+            // 
+            this.btn_client.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btn_client.Appearance.BackColor = System.Drawing.Color.Black;
+            this.btn_client.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_client.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btn_client.Appearance.Options.UseBackColor = true;
+            this.btn_client.Appearance.Options.UseFont = true;
+            this.btn_client.Appearance.Options.UseForeColor = true;
+            this.btn_client.Appearance.Options.UseTextOptions = true;
+            this.btn_client.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btn_client.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.btn_client.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.btn_client.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("button1.ImageOptions.Image")));
+            this.btn_client.Location = new System.Drawing.Point(402, 20);
+            this.btn_client.Name = "btn_client";
+            this.btn_client.Size = new System.Drawing.Size(107, 32);
+            this.btn_client.TabIndex = 184;
+            this.btn_client.Text = "دفع";
+            this.btn_client.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Frm_PayCompany
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -373,7 +383,7 @@
             this.MinimumSize = new System.Drawing.Size(1013, 563);
             this.Name = "Frm_PayCompany";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = " ";
+            this.Text = " المبالغ المتبقيه علي العملاء الخاصة بالشركات";
             this.Load += new System.EventHandler(this.Frm_PayCompany_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -395,7 +405,6 @@
         private System.Windows.Forms.RadioButton RdbAllCustomer;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btn_client;
         private System.Windows.Forms.TextBox txt_prise;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox txt_rent;
@@ -409,5 +418,6 @@
         public System.Windows.Forms.ComboBox Cmb_Branch;
         private System.Windows.Forms.TextBox Txt_SalesMAn;
         private System.Windows.Forms.Label label5;
+        private DevExpress.XtraEditors.SimpleButton btn_client;
     }
 }

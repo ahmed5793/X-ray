@@ -237,12 +237,14 @@ namespace Laboratory.BL
             dt = da.selected("Select_DepitSupplier", null);
             return dt;
         }
-        internal DataTable Report_PaySupplier()
+        internal DataTable Report_PaySupplier(int Id_Suppliers)
         {
             DataTable dt = new DataTable();
 
             DataAccessLayer da = new DataAccessLayer();
-
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@Id_Suppliers", SqlDbType.Int);
+            param[0].Value = Id_Suppliers;
             dt = da.selected("Report_PaySupplier", null);
             da.close();
             return dt;
@@ -261,15 +263,15 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
-        internal DataTable Search_PaySupplierDateAndName(string id ,DateTime Date_From ,DateTime Date_To)
+        internal DataTable Search_PaySupplierDateAndName(int Id_Suppliers ,DateTime Date_From ,DateTime Date_To)
         {
             DataTable dt = new DataTable();
 
             DataAccessLayer da = new DataAccessLayer();
             da.open();
             SqlParameter[] param = new SqlParameter[3];
-            param[0] = new SqlParameter("@id", SqlDbType.NVarChar, 100);
-            param[0].Value = id;
+            param[0] = new SqlParameter("@Id_Suppliers", SqlDbType.Int);
+            param[0].Value = Id_Suppliers;
             param[1] = new SqlParameter("@date_from", SqlDbType.Date);
             param[1].Value = Date_From;
             param[2] = new SqlParameter("@date_to", SqlDbType.Date);

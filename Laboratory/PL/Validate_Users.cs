@@ -75,107 +75,6 @@ namespace Laboratory.PL
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (cmb_Users1.Text == "")
-                {
-                    MessageBox.Show("لا بد من تحديد إسم المستخدم");
-                    return;
-                }
-                else
-                {
-                    int Add_Branch =0, Add_Employee =0,Add_EmployeeBranch=0, Add_CategoryXray =0, Add_Xrays = 0,Downloaad_Finger=0,Report_Finger=0;
-                    if (check_AddBranch.Checked==true)
-                    {
-                        Add_Branch = 1;
-                        //Main.getmain.add_branch.Enabled = true;
-                    }
-                    else if (check_AddBranch.Checked == false)
-                    {
-                        Add_Branch = 0;
-                        //Main.getmain.add_branch.Enabled = false;
-                    }
-                  
-                    if (check_AddEmployee.Checked == true)
-                    {
-                        Add_Employee = 1;
-                        //Main.getmain.add_employee.Enabled = true;
-                    }
-                    else if (check_AddEmployee.Checked == false)
-                    {
-                        Add_Employee = 0;
-                        //Main.getmain.add_employee.Enabled = false;
-                    }
-                    if (check_AddEmployeeBranch.Checked == true)
-                    {
-                        Add_EmployeeBranch = 1;
-                        //Main.getmain.add_employeeBranche.Enabled = true;
-                    }
-                    else if (check_AddEmployeeBranch.Checked == false)
-                    {
-                        Add_EmployeeBranch = 0;
-                        //Main.getmain.add_employee.Enabled = false;
-                    }
-
-                    if (Check_Add_CategoryXray.Checked == true)
-                    {
-                        Add_CategoryXray = 1;
-                        //Main.getmain.Xray_Category.Enabled = true;
-                    }
-                    else if (Check_Add_CategoryXray.Checked == false)
-                    {
-                        Add_CategoryXray = 0;
-                        //Main.getmain.Xray_Category.Enabled = false;
-                    }
-                    ////////
-                    if (Check_Add_Xray.Checked == true)
-                    {
-                        Add_Xrays = 1;
-                        //Main.getmain.XrayName.Enabled = true;
-                    }
-                  else if (Check_Add_Xray.Checked == false)
-                  {
-                        Add_Xrays = 0;
-                        //Main.getmain.XrayName.Enabled = false;
-                  }
-
-
-
-                    if (check_DownloadFinger.Checked == true)
-                    {
-                        Downloaad_Finger = 1;
-                        //Main.getmain.Download_finger.Enabled = true;
-                    }
-                    else if (check_DownloadFinger.Checked == false)
-                    {
-                        Downloaad_Finger = 0;
-                        //Main.getmain.Download_finger.Enabled = false;
-                    }
-
-
-                    if (check_ReportFinger.Checked == true)
-                    {
-                        Report_Finger = 1;
-                        //Main.getmain.report_finger.Enabled = true;
-                    }
-                    else if (check_ReportFinger.Checked == false)
-                    {
-                        Report_Finger = 0;
-                        //Main.getmain.report_finger.Enabled = false;
-                    }
-                    p.Update_UserBAsicInformation(txt_Baisc.Text,Add_Employee,Add_EmployeeBranch, Add_Branch, Add_CategoryXray, Add_Xrays,Downloaad_Finger,Report_Finger);
-
-
-                    
-                    MessageBox.Show(" تم حفظ الصلاحيات للمستخدم");
-
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
         }
 
         private void cmb_Users1_SelectionChangeCommitted(object sender, EventArgs e)
@@ -286,143 +185,7 @@ namespace Laboratory.PL
         private void Btn_save2_Click(object sender, EventArgs e)
         {
     
-            try
-            {
-                if (Cmb_user2.Text == "")
-                {
-                    MessageBox.Show("لا بد من تحديد إسم المستخدم");
-                    return;
-                }
-                else
-                {
-                    int DiscountEmployee = 0, employeeSalary = 0, AddShiftEmployee = 0, AddSalfEmployee = 0, ReportEmployee = 0, 
-                        AddDOCOTOTCenter = 0, ReportDoctorCenter = 0 , addTechincal = 0, AddShiftTecincal = 0,ReportTechincal=0;
-                    if (Check_Discount.Checked == true)
-                    {
-                        DiscountEmployee = 1;
-                        //Main.getmain.discountEmployee.Enabled = true;
-                    }
-                    else if (Check_Discount.Checked == false)
-                    {
-                        DiscountEmployee = 0;
-                        //Main.getmain.discountEmployee.Enabled = false;
-                    }
-
-                    if (Check_Sarf_Mortbat.Checked == true)
-                    {
-                        employeeSalary = 1;
-                        //Main.getmain.sarf_SalaryEmployee.Enabled = true;
-                    }
-                    else if (Check_Sarf_Mortbat.Checked == false)
-                    {
-                        employeeSalary  = 0;
-                        //Main.getmain.sarf_SalaryEmployee.Enabled = false;
-                    }
-                    if (Check_Add_ShiftEmployee.Checked == true)
-                    {
-                        AddShiftEmployee = 1;
-                        //Main.getmain.add_shiftEmployee.Enabled = true;
-                    }
-                    else if (Check_Add_ShiftEmployee.Checked == false)
-                    {
-                        AddShiftEmployee = 0;
-                        //Main.getmain.add_shiftEmployee.Enabled = false;
-                    }
-
-                    if (Check_Salf.Checked == true)
-                    {
-                        AddSalfEmployee = 1;
-                        //Main.getmain.add_salfEmployee.Enabled = true;
-                    }
-                    else if (Check_Salf.Checked == false)
-                    {
-                        AddSalfEmployee = 0;
-                        //Main.getmain.add_salfEmployee.Enabled = false;
-                    }
-                    ////////
-                    if (check_ReportEmployee.Checked == true)
-                    {
-                        ReportEmployee = 1;
-                        //Main.getmain.Report_Employee.Enabled = true;
-                    }
-                    else if (check_ReportEmployee.Checked == false)
-                    {
-                        ReportEmployee = 0;
-                        //Main.getmain.Report_Employee.Enabled = false;
-                    }
-
-
-
-                    if (Check_AddDoctor_Centers.Checked == true)
-                    {
-                        AddDOCOTOTCenter = 1;
-                        //Main.getmain.add_DoctortCenter.Enabled = true;
-                    }
-                    else if (Check_AddDoctor_Centers.Checked == false)
-                    {
-                        AddDOCOTOTCenter = 0;
-                        //Main.getmain.add_DoctortCenter.Enabled = false;
-                    }
-
-
-                    if (check_ReportDoctorOfCenter.Checked == true)
-                    {
-                        ReportDoctorCenter = 1;
-                        //Main.getmain.Report_DoctorCenter.Enabled = true;
-                    }
-                    else if (check_ReportDoctorOfCenter.Checked == false)
-                    {
-                        ReportDoctorCenter = 0;
-                        //Main.getmain.Report_DoctorCenter.Enabled = false;
-                    }
-                    ///////
-
-                    if (check_ReportTechnical.Checked == true)
-                    {
-                        ReportTechincal = 1;
-                        //Main.getmain.report_Techincal.Enabled = true;
-                    }
-                    else if (check_ReportTechnical.Checked == false)
-                    {
-                        ReportTechincal = 0;
-                        //Main.getmain.report_Techincal.Enabled = false;
-                    }
-                    ///////
-
-                    if (Check_AddShiftTechincal.Checked == true)
-                    {
-                        AddShiftTecincal = 1;
-                        //Main.getmain.add_shiftTechincal.Enabled = true;
-                    }
-                    else if (Check_AddShiftTechincal.Checked == false)
-                    {
-                        AddShiftTecincal = 0;
-                        //Main.getmain.add_shiftTechincal.Enabled = false;
-                    }
-                    //////
-
-                    if (check_AddTechnical.Checked == true)
-                    {
-                        addTechincal = 1;
-                        //Main.getmain.add_Techincal.Enabled = true;
-                    }
-                    else if (check_AddTechnical.Checked == false)
-                    {
-                        addTechincal = 0;
-                        //Main.getmain.add_Techincal.Enabled = false;
-                    }
-                    p.Update_UserEmployee(txt_Baisc.Text, AddShiftEmployee, DiscountEmployee,AddSalfEmployee,employeeSalary,ReportEmployee,
-                        AddDOCOTOTCenter,ReportDoctorCenter, addTechincal, AddShiftTecincal,ReportTechincal);
-
-                    MessageBox.Show(" تم حفظ الصلاحيات للمستخدم");
-
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
+            
         }
 
         private void Doctor_Centers_CheckedChanged(object sender, EventArgs e)
@@ -594,111 +357,7 @@ namespace Laboratory.PL
 
         private void btn_save3_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (cmb_user3.Text == "")
-                {
-                    MessageBox.Show("لا بد من تحديد إسم المستخدم");
-                    return;
-                }
-                else
-                {
-                    int AddCompany = 0, AddItemCompany = 0, payCompany = 0, DepitCompany = 0, ReportCompany = 0,
-                        AddDOCOTOTOut = 0, ReportDoctorOut = 0;
-                    if (check_AddCompany.Checked == true)
-                    {
-                        AddCompany = 1;
-                        //Main.getmain.add_company.Enabled = true;
-                    }
-                    else if (check_AddCompany.Checked == false)
-                    {
-                        AddCompany = 0;
-                        //Main.getmain.add_company.Enabled = false;
-                    }
-
-                    if (check_AddItemCompany.Checked == true)
-                    {
-                        AddItemCompany = 1;
-                        //Main.getmain.add_XrayCompany.Enabled = true;
-                    }
-                    else if (check_AddItemCompany.Checked == false)
-                    {
-                        AddItemCompany = 0;
-                        //Main.getmain.add_XrayCompany.Enabled = false;
-                    }
-                    if (check_PayCompany.Checked == true)
-                    {
-                        payCompany = 1;
-                        //Main.getmain.pay_Company.Enabled = true;
-                    }
-                    else if (check_PayCompany.Checked == false)
-                    {
-                        payCompany = 0;
-                        //Main.getmain.pay_Company.Enabled = false;
-                    }
-
-                    if (check_DebitCompany.Checked == true)
-                    {
-                        DepitCompany = 1;
-                        //Main.getmain.Depit_Company.Enabled = true;
-                    }
-                    else if (check_DebitCompany.Checked == false)
-                    {
-                        DepitCompany = 0;
-                        //Main.getmain.Depit_Company.Enabled = false;
-                    }
-                    ////////
-                    if (check_REportCompany.Checked == true)
-                    {
-                        ReportCompany = 1;
-                        //Main.getmain.Report_Company.Enabled = true;
-                    }
-                    else if (check_REportCompany.Checked == false)
-                    {
-                        ReportCompany = 0;
-                        //Main.getmain.Report_Company.Enabled = false;
-                    }
-
-
-
-                    if (Check_AddDoctor.Checked == true)
-                    {
-                        AddDOCOTOTOut = 1;
-                        //Main.getmain.add_doctorOut.Enabled = true;
-                    }
-                    else if (Check_AddDoctor_Centers.Checked == false)
-                    {
-                        AddDOCOTOTOut = 0;
-                        //Main.getmain.add_doctorOut.Enabled = false;
-                        
-
-                            if (check_RepoDoctorOut.Checked == true)
-                            {
-                                ReportDoctorOut = 1;
-                                //Main.getmain.add_Techincal.Enabled = true;
-                            }
-                            else if (check_RepoDoctorOut.Checked == false)
-                            {
-                                ReportDoctorOut = 0;
-                                //Main.getmain.report_DoctorOut.Enabled = false;
-                            }
-
-                        
-
-                    }
-
-                    p.UpdateUserCompany(txt_Baisc.Text, AddCompany, AddItemCompany, payCompany, DepitCompany, ReportCompany,
-                AddDOCOTOTOut, ReportDoctorOut);
-
-
-                    MessageBox.Show(" تم حفظ الصلاحيات للمستخدم");
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
+          
         }
 
         private void cmb_user3_SelectionChangeCommitted(object sender, EventArgs e)
@@ -1824,6 +1483,360 @@ namespace Laboratory.PL
         private void tabPage6_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_save_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (cmb_Users1.Text == "")
+                {
+                    MessageBox.Show("لا بد من تحديد إسم المستخدم");
+                    return;
+                }
+                else
+                {
+                    int Add_Branch = 0, Add_Employee = 0, Add_EmployeeBranch = 0, Add_CategoryXray = 0, Add_Xrays = 0, Downloaad_Finger = 0, Report_Finger = 0;
+                    if (check_AddBranch.Checked == true)
+                    {
+                        Add_Branch = 1;
+                        //Main.getmain.add_branch.Enabled = true;
+                    }
+                    else if (check_AddBranch.Checked == false)
+                    {
+                        Add_Branch = 0;
+                        //Main.getmain.add_branch.Enabled = false;
+                    }
+
+                    if (check_AddEmployee.Checked == true)
+                    {
+                        Add_Employee = 1;
+                        //Main.getmain.add_employee.Enabled = true;
+                    }
+                    else if (check_AddEmployee.Checked == false)
+                    {
+                        Add_Employee = 0;
+                        //Main.getmain.add_employee.Enabled = false;
+                    }
+                    if (check_AddEmployeeBranch.Checked == true)
+                    {
+                        Add_EmployeeBranch = 1;
+                        //Main.getmain.add_employeeBranche.Enabled = true;
+                    }
+                    else if (check_AddEmployeeBranch.Checked == false)
+                    {
+                        Add_EmployeeBranch = 0;
+                        //Main.getmain.add_employee.Enabled = false;
+                    }
+
+                    if (Check_Add_CategoryXray.Checked == true)
+                    {
+                        Add_CategoryXray = 1;
+                        //Main.getmain.Xray_Category.Enabled = true;
+                    }
+                    else if (Check_Add_CategoryXray.Checked == false)
+                    {
+                        Add_CategoryXray = 0;
+                        //Main.getmain.Xray_Category.Enabled = false;
+                    }
+                    ////////
+                    if (Check_Add_Xray.Checked == true)
+                    {
+                        Add_Xrays = 1;
+                        //Main.getmain.XrayName.Enabled = true;
+                    }
+                    else if (Check_Add_Xray.Checked == false)
+                    {
+                        Add_Xrays = 0;
+                        //Main.getmain.XrayName.Enabled = false;
+                    }
+
+
+
+                    if (check_DownloadFinger.Checked == true)
+                    {
+                        Downloaad_Finger = 1;
+                        //Main.getmain.Download_finger.Enabled = true;
+                    }
+                    else if (check_DownloadFinger.Checked == false)
+                    {
+                        Downloaad_Finger = 0;
+                        //Main.getmain.Download_finger.Enabled = false;
+                    }
+
+
+                    if (check_ReportFinger.Checked == true)
+                    {
+                        Report_Finger = 1;
+                        //Main.getmain.report_finger.Enabled = true;
+                    }
+                    else if (check_ReportFinger.Checked == false)
+                    {
+                        Report_Finger = 0;
+                        //Main.getmain.report_finger.Enabled = false;
+                    }
+                    p.Update_UserBAsicInformation(txt_Baisc.Text, Add_Employee, Add_EmployeeBranch, Add_Branch, Add_CategoryXray, Add_Xrays, Downloaad_Finger, Report_Finger);
+
+
+
+                    MessageBox.Show(" تم حفظ الصلاحيات للمستخدم");
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Cmb_user2.Text == "")
+                {
+                    MessageBox.Show("لا بد من تحديد إسم المستخدم");
+                    return;
+                }
+                else
+                {
+                    int DiscountEmployee = 0, employeeSalary = 0, AddShiftEmployee = 0, AddSalfEmployee = 0, ReportEmployee = 0,
+                        AddDOCOTOTCenter = 0, ReportDoctorCenter = 0, addTechincal = 0, AddShiftTecincal = 0, ReportTechincal = 0;
+                    if (Check_Discount.Checked == true)
+                    {
+                        DiscountEmployee = 1;
+                        //Main.getmain.discountEmployee.Enabled = true;
+                    }
+                    else if (Check_Discount.Checked == false)
+                    {
+                        DiscountEmployee = 0;
+                        //Main.getmain.discountEmployee.Enabled = false;
+                    }
+
+                    if (Check_Sarf_Mortbat.Checked == true)
+                    {
+                        employeeSalary = 1;
+                        //Main.getmain.sarf_SalaryEmployee.Enabled = true;
+                    }
+                    else if (Check_Sarf_Mortbat.Checked == false)
+                    {
+                        employeeSalary = 0;
+                        //Main.getmain.sarf_SalaryEmployee.Enabled = false;
+                    }
+                    if (Check_Add_ShiftEmployee.Checked == true)
+                    {
+                        AddShiftEmployee = 1;
+                        //Main.getmain.add_shiftEmployee.Enabled = true;
+                    }
+                    else if (Check_Add_ShiftEmployee.Checked == false)
+                    {
+                        AddShiftEmployee = 0;
+                        //Main.getmain.add_shiftEmployee.Enabled = false;
+                    }
+
+                    if (Check_Salf.Checked == true)
+                    {
+                        AddSalfEmployee = 1;
+                        //Main.getmain.add_salfEmployee.Enabled = true;
+                    }
+                    else if (Check_Salf.Checked == false)
+                    {
+                        AddSalfEmployee = 0;
+                        //Main.getmain.add_salfEmployee.Enabled = false;
+                    }
+                    ////////
+                    if (check_ReportEmployee.Checked == true)
+                    {
+                        ReportEmployee = 1;
+                        //Main.getmain.Report_Employee.Enabled = true;
+                    }
+                    else if (check_ReportEmployee.Checked == false)
+                    {
+                        ReportEmployee = 0;
+                        //Main.getmain.Report_Employee.Enabled = false;
+                    }
+
+
+
+                    if (Check_AddDoctor_Centers.Checked == true)
+                    {
+                        AddDOCOTOTCenter = 1;
+                        //Main.getmain.add_DoctortCenter.Enabled = true;
+                    }
+                    else if (Check_AddDoctor_Centers.Checked == false)
+                    {
+                        AddDOCOTOTCenter = 0;
+                        //Main.getmain.add_DoctortCenter.Enabled = false;
+                    }
+
+
+                    if (check_ReportDoctorOfCenter.Checked == true)
+                    {
+                        ReportDoctorCenter = 1;
+                        //Main.getmain.Report_DoctorCenter.Enabled = true;
+                    }
+                    else if (check_ReportDoctorOfCenter.Checked == false)
+                    {
+                        ReportDoctorCenter = 0;
+                        //Main.getmain.Report_DoctorCenter.Enabled = false;
+                    }
+                    ///////
+
+                    if (check_ReportTechnical.Checked == true)
+                    {
+                        ReportTechincal = 1;
+                        //Main.getmain.report_Techincal.Enabled = true;
+                    }
+                    else if (check_ReportTechnical.Checked == false)
+                    {
+                        ReportTechincal = 0;
+                        //Main.getmain.report_Techincal.Enabled = false;
+                    }
+                    ///////
+
+                    if (Check_AddShiftTechincal.Checked == true)
+                    {
+                        AddShiftTecincal = 1;
+                        //Main.getmain.add_shiftTechincal.Enabled = true;
+                    }
+                    else if (Check_AddShiftTechincal.Checked == false)
+                    {
+                        AddShiftTecincal = 0;
+                        //Main.getmain.add_shiftTechincal.Enabled = false;
+                    }
+                    //////
+
+                    if (check_AddTechnical.Checked == true)
+                    {
+                        addTechincal = 1;
+                        //Main.getmain.add_Techincal.Enabled = true;
+                    }
+                    else if (check_AddTechnical.Checked == false)
+                    {
+                        addTechincal = 0;
+                        //Main.getmain.add_Techincal.Enabled = false;
+                    }
+                    p.Update_UserEmployee(txt_Baisc.Text, AddShiftEmployee, DiscountEmployee, AddSalfEmployee, employeeSalary, ReportEmployee,
+                        AddDOCOTOTCenter, ReportDoctorCenter, addTechincal, AddShiftTecincal, ReportTechincal);
+                    MessageBox.Show(" تم حفظ الصلاحيات للمستخدم");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cmb_user3.Text == "")
+                {
+                    MessageBox.Show("لا بد من تحديد إسم المستخدم");
+                    return;
+                }
+                else
+                {
+                    int AddCompany = 0, AddItemCompany = 0, payCompany = 0, DepitCompany = 0, ReportCompany = 0,
+                        AddDOCOTOTOut = 0, ReportDoctorOut = 0;
+                    if (check_AddCompany.Checked == true)
+                    {
+                        AddCompany = 1;
+                        //Main.getmain.add_company.Enabled = true;
+                    }
+                    else if (check_AddCompany.Checked == false)
+                    {
+                        AddCompany = 0;
+                        //Main.getmain.add_company.Enabled = false;
+                    }
+
+                    if (check_AddItemCompany.Checked == true)
+                    {
+                        AddItemCompany = 1;
+                        //Main.getmain.add_XrayCompany.Enabled = true;
+                    }
+                    else if (check_AddItemCompany.Checked == false)
+                    {
+                        AddItemCompany = 0;
+                        //Main.getmain.add_XrayCompany.Enabled = false;
+                    }
+                    if (check_PayCompany.Checked == true)
+                    {
+                        payCompany = 1;
+                        //Main.getmain.pay_Company.Enabled = true;
+                    }
+                    else if (check_PayCompany.Checked == false)
+                    {
+                        payCompany = 0;
+                        //Main.getmain.pay_Company.Enabled = false;
+                    }
+
+                    if (check_DebitCompany.Checked == true)
+                    {
+                        DepitCompany = 1;
+                        //Main.getmain.Depit_Company.Enabled = true;
+                    }
+                    else if (check_DebitCompany.Checked == false)
+                    {
+                        DepitCompany = 0;
+                        //Main.getmain.Depit_Company.Enabled = false;
+                    }
+                    ////////
+                    if (check_REportCompany.Checked == true)
+                    {
+                        ReportCompany = 1;
+                        //Main.getmain.Report_Company.Enabled = true;
+                    }
+                    else if (check_REportCompany.Checked == false)
+                    {
+                        ReportCompany = 0;
+                        //Main.getmain.Report_Company.Enabled = false;
+                    }
+
+
+
+                    if (Check_AddDoctor.Checked == true)
+                    {
+                        AddDOCOTOTOut = 1;
+                        //Main.getmain.add_doctorOut.Enabled = true;
+                    }
+                    else if (Check_AddDoctor_Centers.Checked == false)
+                    {
+                        AddDOCOTOTOut = 0;
+                        //Main.getmain.add_doctorOut.Enabled = false;
+
+
+                        if (check_RepoDoctorOut.Checked == true)
+                        {
+                            ReportDoctorOut = 1;
+                            //Main.getmain.add_Techincal.Enabled = true;
+                        }
+                        else if (check_RepoDoctorOut.Checked == false)
+                        {
+                            ReportDoctorOut = 0;
+                            //Main.getmain.report_DoctorOut.Enabled = false;
+                        }
+
+
+
+                    }
+
+                    p.UpdateUserCompany(txt_Baisc.Text, AddCompany, AddItemCompany, payCompany, DepitCompany, ReportCompany,
+                AddDOCOTOTOut, ReportDoctorOut);
+
+
+                    MessageBox.Show(" تم حفظ الصلاحيات للمستخدم");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

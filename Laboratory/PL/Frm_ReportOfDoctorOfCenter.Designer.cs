@@ -34,7 +34,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.DateTo = new System.Windows.Forms.DateTimePicker();
             this.DateFrom = new System.Windows.Forms.DateTimePicker();
-            this.btn_search = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,6 +49,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.btn_search = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -109,20 +109,6 @@
             this.DateFrom.ShowUpDown = true;
             this.DateFrom.Size = new System.Drawing.Size(140, 32);
             this.DateFrom.TabIndex = 84;
-            // 
-            // btn_search
-            // 
-            this.btn_search.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btn_search.BackColor = System.Drawing.Color.Black;
-            this.btn_search.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_search.ForeColor = System.Drawing.Color.Yellow;
-            this.btn_search.Location = new System.Drawing.Point(48, 115);
-            this.btn_search.Name = "btn_search";
-            this.btn_search.Size = new System.Drawing.Size(125, 52);
-            this.btn_search.TabIndex = 83;
-            this.btn_search.Text = "بحث";
-            this.btn_search.UseVisualStyleBackColor = false;
-            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // label4
             // 
@@ -319,12 +305,34 @@
             this.gridView1.OptionsPrint.PrintPreview = true;
             this.gridView1.OptionsView.ShowFooter = true;
             // 
+            // btn_search
+            // 
+            this.btn_search.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btn_search.Appearance.BackColor = System.Drawing.Color.Black;
+            this.btn_search.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_search.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btn_search.Appearance.Options.UseBackColor = true;
+            this.btn_search.Appearance.Options.UseFont = true;
+            this.btn_search.Appearance.Options.UseForeColor = true;
+            this.btn_search.Appearance.Options.UseTextOptions = true;
+            this.btn_search.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btn_search.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.btn_search.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.btn_search.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btn_search.Location = new System.Drawing.Point(48, 130);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.Size = new System.Drawing.Size(134, 38);
+            this.btn_search.TabIndex = 206;
+            this.btn_search.Text = "بحث  ";
+            this.btn_search.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
             // Frm_ReportOfDoctorOfCenter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.YellowGreen;
             this.ClientSize = new System.Drawing.Size(891, 459);
+            this.Controls.Add(this.btn_search);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.comboBox1);
@@ -332,7 +340,6 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.DateTo);
             this.Controls.Add(this.DateFrom);
-            this.Controls.Add(this.btn_search);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -360,7 +367,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DateTimePicker DateTo;
         private System.Windows.Forms.DateTimePicker DateFrom;
-        private System.Windows.Forms.Button btn_search;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -376,5 +382,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraEditors.SimpleButton btn_search;
     }
 }

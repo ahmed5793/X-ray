@@ -45,7 +45,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -59,6 +58,7 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.button2 = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -70,6 +70,7 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.Cmb_CategoryItem);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.cmb_branches);
@@ -264,20 +265,6 @@
             this.label1.TabIndex = 85;
             this.label1.Text = "اختر نوع البحث";
             // 
-            // button2
-            // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button2.Font = new System.Drawing.Font("Arial Black", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(17, 91);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(124, 62);
-            this.button2.TabIndex = 118;
-            this.button2.Text = "بحث ";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // button3
             // 
             this.button3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -441,6 +428,27 @@
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 513);
             // 
+            // button2
+            // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button2.Appearance.BackColor = System.Drawing.Color.White;
+            this.button2.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Appearance.ForeColor = System.Drawing.Color.White;
+            this.button2.Appearance.Options.UseBackColor = true;
+            this.button2.Appearance.Options.UseFont = true;
+            this.button2.Appearance.Options.UseForeColor = true;
+            this.button2.Appearance.Options.UseTextOptions = true;
+            this.button2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.button2.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.button2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.button2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.button2.Location = new System.Drawing.Point(6, 64);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(120, 44);
+            this.button2.TabIndex = 195;
+            this.button2.Text = "بحث";
+            this.button2.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
             // Frm_Search_Ticket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -451,7 +459,6 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
@@ -488,7 +495,6 @@
         private System.Windows.Forms.Button button1;
         public System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DateTimePicker ToDate;
         private System.Windows.Forms.DateTimePicker FromDate;
         private System.Windows.Forms.Label label3;
@@ -508,5 +514,6 @@
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private DevExpress.XtraEditors.SimpleButton button2;
     }
 }

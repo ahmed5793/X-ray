@@ -21,13 +21,23 @@ namespace Laboratory.PL
 
         private void btn_search_Click(object sender, EventArgs e)
         {
+           
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            gridControl1.ShowRibbonPrintPreview();
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
             DataTable dt = new DataTable();
             try
             {
                 dt.Clear();
-                dt = S.Search_Report_TransfairStock( DateFrom.Value, DateTo.Value);
+                dt = S.Search_Report_TransfairStock(DateFrom.Value, DateTo.Value);
                 gridControl1.DataSource = dt;
-            
+
             }
             catch (Exception ex)
             {
@@ -38,11 +48,6 @@ namespace Laboratory.PL
             {
                 dt.Dispose();
             }
-        }
-
-        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            gridControl1.ShowRibbonPrintPreview();
         }
     }
 }

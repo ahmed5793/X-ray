@@ -32,6 +32,15 @@ namespace Laboratory.PL
 
         private void btn_search_Click(object sender, EventArgs e)
         {
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            gridControl1.ShowRibbonPrintPreview();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
 
             DataTable dt = new DataTable();
             dt.Clear();
@@ -46,11 +55,7 @@ namespace Laboratory.PL
 
             }
             textBox1.Text = total.ToString("₱ #,##0.0");
-        }
 
-        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            gridControl1.ShowRibbonPrintPreview();
         }
     }
 }

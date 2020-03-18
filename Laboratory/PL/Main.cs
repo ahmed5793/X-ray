@@ -214,9 +214,8 @@ namespace Laboratory.PL
 
         private void barButtonItem41_ItemClick(object sender, ItemClickEventArgs e)
         {
-
-            Frm_PayCompany pc = new Frm_PayCompany();
-            pc.Show();
+            Frm_PayClient frm_PayClient = new Frm_PayClient();
+            frm_PayClient.Show();
         }
 
         private void barHeaderItem29_ItemClick(object sender, ItemClickEventArgs e)
@@ -233,8 +232,7 @@ namespace Laboratory.PL
 
         private void barButtonItem39_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Frm_PayClient frm_PayClient = new Frm_PayClient();
-            frm_PayClient.Show();
+       
         }
 
         private void barButtonItem40_ItemClick(object sender, ItemClickEventArgs e)
@@ -245,8 +243,7 @@ namespace Laboratory.PL
 
         private void barHeaderItem27_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Frm_ReportAllPayOfCustomer frapc = new Frm_ReportAllPayOfCustomer();
-            frapc.Show();
+      
         }
 
         private void barButtonItem35_ItemClick(object sender, ItemClickEventArgs e)
@@ -281,8 +278,7 @@ namespace Laboratory.PL
 
         private void barHeaderItem13_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Frm_AllPAyCompsny fapc = new Frm_AllPAyCompsny();
-            fapc.Show();
+          
         }
 
         private void barButtonItem14_ItemClick_1(object sender, ItemClickEventArgs e)
@@ -330,8 +326,6 @@ namespace Laboratory.PL
         private void barHeaderItem18_ItemClick(object sender, ItemClickEventArgs e)
         {
 
-            Frm_ReportMasrofat frm_ReportMasrofat = new Frm_ReportMasrofat();
-            frm_ReportMasrofat.Show();
         }
 
         private void barButtonItem20_ItemClick(object sender, ItemClickEventArgs e)
@@ -379,8 +373,7 @@ namespace Laboratory.PL
 
         private void barHeaderItem25_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Frm_Mansgmentinstallment fmi = new Frm_Mansgmentinstallment();
-            fmi.Show();
+         
         }
 
         private void barButtonItem24_ItemClick(object sender, ItemClickEventArgs e)
@@ -598,6 +591,31 @@ namespace Laboratory.PL
         private void barButtonItem4_ItemClick_2(object sender, ItemClickEventArgs e)
         {
           
+        }
+
+        private void barButtonItem4_ItemClick_3(object sender, ItemClickEventArgs e)
+        {
+            Frm_AllPAyCompsny fapc = new Frm_AllPAyCompsny();
+            fapc.Show();
+        }
+
+        private void barButtonItem5_ItemClick_2(object sender, ItemClickEventArgs e)
+        {
+            Frm_ReportAllPayOfCustomer frapc = new Frm_ReportAllPayOfCustomer();
+            frapc.Show();
+        }
+
+        private void barButtonItem6_ItemClick_1(object sender, ItemClickEventArgs e)
+        {
+
+            Frm_ReportMasrofat frm_ReportMasrofat = new Frm_ReportMasrofat();
+            frm_ReportMasrofat.Show();
+        }
+
+        private void barButtonItem4_ItemClick_4(object sender, ItemClickEventArgs e)
+        {
+            Frm_Mansgmentinstallment fmi = new Frm_Mansgmentinstallment();
+            fmi.Show();
         }
     }
     }

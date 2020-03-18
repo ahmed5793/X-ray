@@ -48,33 +48,6 @@ namespace Laboratory.PL
         }
         private void btn_search_Click(object sender, EventArgs e)
         {
-            DataTable dt2 = new DataTable();
-          
-            
-         
-            DataTable dt = new DataTable();
-            try
-            {
-                dt.Clear();
-                dt = S.Search_Report_InsertStock(Convert.ToInt32(cmb_Stock.SelectedValue), DateFrom.Value, DateTo.Value);
-                gridControlInsert.DataSource = dt;
-                Calc_Amount();
-
-                dt2.Clear();
-                dt2 = S.Search_ReprotStockPull(Convert.ToInt32(cmb_Stock.SelectedValue), DateFrom.Value, DateTo.Value);
-                gridControlPull.DataSource = dt2;
-                Calc_AmountPull();
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                dt.Dispose();
-                dt2.Dispose();
-            }
         }
 
         private void cmb_Stock_SelectionChangeCommitted(object sender, EventArgs e)
@@ -123,6 +96,44 @@ namespace Laboratory.PL
         private void groupBox2_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+
+            DataTable dt2 = new DataTable();
+
+
+
+            DataTable dt = new DataTable();
+            try
+            {
+                dt.Clear();
+                dt = S.Search_Report_InsertStock(Convert.ToInt32(cmb_Stock.SelectedValue), DateFrom.Value, DateTo.Value);
+                gridControlInsert.DataSource = dt;
+                Calc_Amount();
+
+                dt2.Clear();
+                dt2 = S.Search_ReprotStockPull(Convert.ToInt32(cmb_Stock.SelectedValue), DateFrom.Value, DateTo.Value);
+                gridControlPull.DataSource = dt2;
+                Calc_AmountPull();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                dt.Dispose();
+                dt2.Dispose();
+            }
+        }
+
+        private void barButtonItem1_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            gridControlInsert.ShowRibbonPrintPreview();
+            gridControlPull.ShowRibbonPrintPreview();
         }
     }
 }

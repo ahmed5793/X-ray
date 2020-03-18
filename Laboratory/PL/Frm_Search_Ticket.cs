@@ -180,17 +180,6 @@ namespace Laboratory.PL
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (comboBox1.Text == "بحث بالتاريخ + مكان الفحص")
-            {
-                gridControl1.DataSource = t.SelectSearchticketsBranchDate(Convert.ToInt32(cmb_branches.SelectedValue), FromDate.Value, ToDate.Value);
-                textBox1.Text = gridView1.RowCount.ToString() ;
-            }
-            else if (comboBox1.Text == "بحث بالتاريخ + مكان الفحص+نوع الفحص")
-            {
-                gridControl1.DataSource = t.SelectSearchticketsBranchDateandCategory(Convert.ToInt32(cmb_branches.SelectedValue),Convert.ToInt32(Cmb_CategoryItem.SelectedValue), FromDate.Value, ToDate.Value);
-                textBox1.Text = gridView1.RowCount.ToString();
-
-            }
 
             //dgv_visit.DataSource = t.SelectSearchticketsDate(FromDate.Value, ToDate.Value);
 
@@ -400,6 +389,22 @@ namespace Laboratory.PL
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             gridControl1.ShowRibbonPrintPreview();
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+
+            if (comboBox1.Text == "بحث بالتاريخ + مكان الفحص")
+            {
+                gridControl1.DataSource = t.SelectSearchticketsBranchDate(Convert.ToInt32(cmb_branches.SelectedValue), FromDate.Value, ToDate.Value);
+                textBox1.Text = gridView1.RowCount.ToString();
+            }
+            else if (comboBox1.Text == "بحث بالتاريخ + مكان الفحص+نوع الفحص")
+            {
+                gridControl1.DataSource = t.SelectSearchticketsBranchDateandCategory(Convert.ToInt32(cmb_branches.SelectedValue), Convert.ToInt32(Cmb_CategoryItem.SelectedValue), FromDate.Value, ToDate.Value);
+                textBox1.Text = gridView1.RowCount.ToString();
+
+            }
         }
     }
 }

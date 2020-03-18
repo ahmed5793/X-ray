@@ -27,24 +27,6 @@ namespace Laboratory.PL
         private void btn_search_Click(object sender, EventArgs e)
         {
 
-            if (checkBox1.Checked == true)
-            {
-                gridControl1.DataSource = E.ReportselecEmployeetDiscount(Convert.ToInt32(comboBox1.SelectedValue), DateFrom.Value, DateTo.Value);
-
-            }
-            else
-            {
-                gridControl1.DataSource = E.ReportselecDateEmployeetDiscount(DateFrom.Value, DateTo.Value);
-
-            }
-            decimal total = 0;
-            for (int i = 0; i < gridView1.RowCount; i++)
-            {
-                DataRow row = gridView1.GetDataRow(i);
-                total += Convert.ToDecimal(row[1].ToString());
-
-            }
-            txt_totalpay.Text = total.ToString("₱ #,##0.0");
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -93,6 +75,29 @@ namespace Laboratory.PL
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             gridControl1.ShowRibbonPrintPreview();
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+
+            if (checkBox1.Checked == true)
+            {
+                gridControl1.DataSource = E.ReportselecEmployeetDiscount(Convert.ToInt32(comboBox1.SelectedValue), DateFrom.Value, DateTo.Value);
+
+            }
+            else
+            {
+                gridControl1.DataSource = E.ReportselecDateEmployeetDiscount(DateFrom.Value, DateTo.Value);
+
+            }
+            decimal total = 0;
+            for (int i = 0; i < gridView1.RowCount; i++)
+            {
+                DataRow row = gridView1.GetDataRow(i);
+                total += Convert.ToDecimal(row[1].ToString());
+
+            }
+            txt_totalpay.Text = total.ToString("₱ #,##0.0");
         }
     }
 }

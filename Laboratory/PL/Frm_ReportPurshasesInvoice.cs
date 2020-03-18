@@ -21,6 +21,11 @@ namespace Laboratory.PL
 
         private void btn_search_Click(object sender, EventArgs e)
         {
+           
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
             DataTable dt = new DataTable();
             try
             {

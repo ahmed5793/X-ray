@@ -28,24 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_TypeShift));
             this.Txt_Salary = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.button1 = new DevExpress.XtraEditors.SimpleButton();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button1.BackColor = System.Drawing.Color.Black;
-            this.button1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Yellow;
-            this.button1.Location = new System.Drawing.Point(111, 115);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(161, 44);
-            this.button1.TabIndex = 117;
-            this.button1.Text = "إضافة";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Txt_Salary
             // 
@@ -70,6 +57,27 @@
             this.label5.TabIndex = 115;
             this.label5.Text = "نوع الشيفت";
             // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button1.Appearance.BackColor = System.Drawing.Color.White;
+            this.button1.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Appearance.ForeColor = System.Drawing.Color.White;
+            this.button1.Appearance.Options.UseBackColor = true;
+            this.button1.Appearance.Options.UseFont = true;
+            this.button1.Appearance.Options.UseForeColor = true;
+            this.button1.Appearance.Options.UseTextOptions = true;
+            this.button1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.button1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.button1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.button1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Save.ImageOptions.Image")));
+            this.button1.Location = new System.Drawing.Point(108, 128);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(179, 37);
+            this.button1.TabIndex = 171;
+            this.button1.Text = "إضافة";
+            this.button1.Click += new System.EventHandler(this.Btn_Save_Click);
+            // 
             // Frm_TypeShift
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -90,9 +98,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox Txt_Salary;
         private System.Windows.Forms.Label label5;
+        private DevExpress.XtraEditors.SimpleButton button1;
     }
 }
