@@ -67,6 +67,8 @@
             this.Check_Add_CategoryXray = new System.Windows.Forms.CheckBox();
             this.Check_Add_Xray = new System.Windows.Forms.CheckBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.Check_AddUserAccount = new System.Windows.Forms.CheckBox();
+            this.Check_UserPermession = new System.Windows.Forms.CheckBox();
             this.check_AddEmployeeBranch = new System.Windows.Forms.CheckBox();
             this.check_AddEmployee = new System.Windows.Forms.CheckBox();
             this.check_AddBranch = new System.Windows.Forms.CheckBox();
@@ -111,14 +113,10 @@
             this.check_PayClients = new System.Windows.Forms.CheckBox();
             this.check_AddClients = new System.Windows.Forms.CheckBox();
             this.groupBox18 = new System.Windows.Forms.GroupBox();
+            this.check_BookingTimes = new System.Windows.Forms.CheckBox();
             this.check_AddTickets = new System.Windows.Forms.CheckBox();
             this.check_ManagmentTickets = new System.Windows.Forms.CheckBox();
             this.check_SearchTickets = new System.Windows.Forms.CheckBox();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.button4 = new System.Windows.Forms.Button();
-            this.groupBox17 = new System.Windows.Forms.GroupBox();
-            this.check_CreateAccount = new System.Windows.Forms.CheckBox();
-            this.check_Permission = new System.Windows.Forms.CheckBox();
             this.txt_Baisc = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cmb_Users1 = new System.Windows.Forms.ComboBox();
@@ -126,7 +124,6 @@
             this.Txt_SalesMAn = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.Cmb_Branch = new System.Windows.Forms.ComboBox();
-            this.check_BookingTimes = new System.Windows.Forms.CheckBox();
             this.groupBox4.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.groupBox15.SuspendLayout();
@@ -151,8 +148,6 @@
             this.Reception.SuspendLayout();
             this.groupBox16.SuspendLayout();
             this.groupBox18.SuspendLayout();
-            this.tabPage6.SuspendLayout();
-            this.groupBox17.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox4
@@ -403,7 +398,7 @@
             this.check_ReurnPurchise.BackColor = System.Drawing.Color.Black;
             this.check_ReurnPurchise.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.check_ReurnPurchise.ForeColor = System.Drawing.Color.White;
-            this.check_ReurnPurchise.Location = new System.Drawing.Point(463, 34);
+            this.check_ReurnPurchise.Location = new System.Drawing.Point(484, 34);
             this.check_ReurnPurchise.Name = "check_ReurnPurchise";
             this.check_ReurnPurchise.Size = new System.Drawing.Size(112, 23);
             this.check_ReurnPurchise.TabIndex = 65;
@@ -416,7 +411,7 @@
             this.check_ReportPurshases.BackColor = System.Drawing.Color.Black;
             this.check_ReportPurshases.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.check_ReportPurshases.ForeColor = System.Drawing.Color.White;
-            this.check_ReportPurshases.Location = new System.Drawing.Point(180, 34);
+            this.check_ReportPurshases.Location = new System.Drawing.Point(301, 34);
             this.check_ReportPurshases.Name = "check_ReportPurshases";
             this.check_ReportPurshases.Size = new System.Drawing.Size(113, 23);
             this.check_ReportPurshases.TabIndex = 64;
@@ -429,7 +424,7 @@
             this.check_AddPurshase.BackColor = System.Drawing.Color.Black;
             this.check_AddPurshase.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.check_AddPurshase.ForeColor = System.Drawing.Color.White;
-            this.check_AddPurshase.Location = new System.Drawing.Point(701, 34);
+            this.check_AddPurshase.Location = new System.Drawing.Point(670, 34);
             this.check_AddPurshase.Name = "check_AddPurshase";
             this.check_AddPurshase.Size = new System.Drawing.Size(110, 23);
             this.check_AddPurshase.TabIndex = 63;
@@ -542,7 +537,6 @@
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.Reception);
-            this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(5, 109);
             this.tabControl1.Name = "tabControl1";
@@ -551,7 +545,6 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1028, 416);
             this.tabControl1.TabIndex = 1;
-            this.tabControl1.Click += new System.EventHandler(this.tabControl1_Click);
             // 
             // tabPage1
             // 
@@ -609,7 +602,7 @@
             this.groupBox14.Controls.Add(this.check_DownloadFinger);
             this.groupBox14.Controls.Add(this.check_ReportFinger);
             this.groupBox14.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox14.Location = new System.Drawing.Point(18, 195);
+            this.groupBox14.Location = new System.Drawing.Point(18, 199);
             this.groupBox14.Name = "groupBox14";
             this.groupBox14.Size = new System.Drawing.Size(987, 80);
             this.groupBox14.TabIndex = 60;
@@ -622,7 +615,7 @@
             this.check_DownloadFinger.BackColor = System.Drawing.Color.Black;
             this.check_DownloadFinger.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.check_DownloadFinger.ForeColor = System.Drawing.Color.White;
-            this.check_DownloadFinger.Location = new System.Drawing.Point(422, 32);
+            this.check_DownloadFinger.Location = new System.Drawing.Point(523, 32);
             this.check_DownloadFinger.Name = "check_DownloadFinger";
             this.check_DownloadFinger.Size = new System.Drawing.Size(307, 26);
             this.check_DownloadFinger.TabIndex = 4;
@@ -635,7 +628,7 @@
             this.check_ReportFinger.BackColor = System.Drawing.Color.Black;
             this.check_ReportFinger.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.check_ReportFinger.ForeColor = System.Drawing.Color.White;
-            this.check_ReportFinger.Location = new System.Drawing.Point(154, 32);
+            this.check_ReportFinger.Location = new System.Drawing.Point(223, 32);
             this.check_ReportFinger.Name = "check_ReportFinger";
             this.check_ReportFinger.Size = new System.Drawing.Size(214, 26);
             this.check_ReportFinger.TabIndex = 7;
@@ -648,7 +641,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox7.Controls.Add(this.Check_Add_CategoryXray);
             this.groupBox7.Controls.Add(this.Check_Add_Xray);
-            this.groupBox7.Location = new System.Drawing.Point(16, 114);
+            this.groupBox7.Location = new System.Drawing.Point(16, 116);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(987, 69);
             this.groupBox7.TabIndex = 59;
@@ -685,16 +678,43 @@
             // 
             this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox6.Controls.Add(this.Check_AddUserAccount);
+            this.groupBox6.Controls.Add(this.Check_UserPermession);
             this.groupBox6.Controls.Add(this.check_AddEmployeeBranch);
             this.groupBox6.Controls.Add(this.check_AddEmployee);
             this.groupBox6.Controls.Add(this.check_AddBranch);
             this.groupBox6.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox6.Location = new System.Drawing.Point(15, 38);
+            this.groupBox6.Location = new System.Drawing.Point(15, 36);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(987, 63);
+            this.groupBox6.Size = new System.Drawing.Size(987, 69);
             this.groupBox6.TabIndex = 58;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "إدارة الفروع";
+            // 
+            // Check_AddUserAccount
+            // 
+            this.Check_AddUserAccount.AutoSize = true;
+            this.Check_AddUserAccount.BackColor = System.Drawing.Color.Black;
+            this.Check_AddUserAccount.ForeColor = System.Drawing.Color.White;
+            this.Check_AddUserAccount.Location = new System.Drawing.Point(257, 26);
+            this.Check_AddUserAccount.Name = "Check_AddUserAccount";
+            this.Check_AddUserAccount.Size = new System.Drawing.Size(160, 26);
+            this.Check_AddUserAccount.TabIndex = 62;
+            this.Check_AddUserAccount.Text = "انشاء حساب للموظف";
+            this.Check_AddUserAccount.UseVisualStyleBackColor = false;
+            // 
+            // Check_UserPermession
+            // 
+            this.Check_UserPermession.AutoSize = true;
+            this.Check_UserPermession.BackColor = System.Drawing.Color.Black;
+            this.Check_UserPermession.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Check_UserPermession.ForeColor = System.Drawing.Color.White;
+            this.Check_UserPermession.Location = new System.Drawing.Point(59, 26);
+            this.Check_UserPermession.Name = "Check_UserPermession";
+            this.Check_UserPermession.Size = new System.Drawing.Size(160, 26);
+            this.Check_UserPermession.TabIndex = 63;
+            this.Check_UserPermession.Text = " صلاحية المستخدمين";
+            this.Check_UserPermession.UseVisualStyleBackColor = false;
             // 
             // check_AddEmployeeBranch
             // 
@@ -702,7 +722,7 @@
             this.check_AddEmployeeBranch.BackColor = System.Drawing.Color.Black;
             this.check_AddEmployeeBranch.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.check_AddEmployeeBranch.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.check_AddEmployeeBranch.Location = new System.Drawing.Point(142, 24);
+            this.check_AddEmployeeBranch.Location = new System.Drawing.Point(449, 26);
             this.check_AddEmployeeBranch.Name = "check_AddEmployeeBranch";
             this.check_AddEmployeeBranch.Size = new System.Drawing.Size(173, 26);
             this.check_AddEmployeeBranch.TabIndex = 10;
@@ -715,7 +735,7 @@
             this.check_AddEmployee.BackColor = System.Drawing.Color.Black;
             this.check_AddEmployee.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.check_AddEmployee.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.check_AddEmployee.Location = new System.Drawing.Point(411, 25);
+            this.check_AddEmployee.Location = new System.Drawing.Point(653, 26);
             this.check_AddEmployee.Name = "check_AddEmployee";
             this.check_AddEmployee.Size = new System.Drawing.Size(112, 26);
             this.check_AddEmployee.TabIndex = 9;
@@ -728,7 +748,7 @@
             this.check_AddBranch.BackColor = System.Drawing.Color.Black;
             this.check_AddBranch.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.check_AddBranch.ForeColor = System.Drawing.Color.White;
-            this.check_AddBranch.Location = new System.Drawing.Point(602, 23);
+            this.check_AddBranch.Location = new System.Drawing.Point(791, 26);
             this.check_AddBranch.Name = "check_AddBranch";
             this.check_AddBranch.Size = new System.Drawing.Size(100, 26);
             this.check_AddBranch.TabIndex = 4;
@@ -1040,7 +1060,7 @@
             this.check_REportCompany.BackColor = System.Drawing.Color.Black;
             this.check_REportCompany.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.check_REportCompany.ForeColor = System.Drawing.Color.White;
-            this.check_REportCompany.Location = new System.Drawing.Point(138, 49);
+            this.check_REportCompany.Location = new System.Drawing.Point(132, 49);
             this.check_REportCompany.Name = "check_REportCompany";
             this.check_REportCompany.Size = new System.Drawing.Size(145, 26);
             this.check_REportCompany.TabIndex = 63;
@@ -1053,7 +1073,7 @@
             this.check_DebitCompany.BackColor = System.Drawing.Color.Black;
             this.check_DebitCompany.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.check_DebitCompany.ForeColor = System.Drawing.Color.White;
-            this.check_DebitCompany.Location = new System.Drawing.Point(536, 49);
+            this.check_DebitCompany.Location = new System.Drawing.Point(512, 49);
             this.check_DebitCompany.Name = "check_DebitCompany";
             this.check_DebitCompany.Size = new System.Drawing.Size(132, 26);
             this.check_DebitCompany.TabIndex = 62;
@@ -1066,7 +1086,7 @@
             this.check_AddItemCompany.BackColor = System.Drawing.Color.Black;
             this.check_AddItemCompany.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.check_AddItemCompany.ForeColor = System.Drawing.Color.White;
-            this.check_AddItemCompany.Location = new System.Drawing.Point(702, 49);
+            this.check_AddItemCompany.Location = new System.Drawing.Point(679, 49);
             this.check_AddItemCompany.Name = "check_AddItemCompany";
             this.check_AddItemCompany.Size = new System.Drawing.Size(191, 26);
             this.check_AddItemCompany.TabIndex = 61;
@@ -1079,7 +1099,7 @@
             this.check_AddCompany.BackColor = System.Drawing.Color.Black;
             this.check_AddCompany.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.check_AddCompany.ForeColor = System.Drawing.Color.White;
-            this.check_AddCompany.Location = new System.Drawing.Point(909, 49);
+            this.check_AddCompany.Location = new System.Drawing.Point(899, 49);
             this.check_AddCompany.Name = "check_AddCompany";
             this.check_AddCompany.Size = new System.Drawing.Size(92, 26);
             this.check_AddCompany.TabIndex = 60;
@@ -1100,7 +1120,6 @@
             this.tabPage4.Size = new System.Drawing.Size(1020, 379);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "الحسابات";
-            this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click);
             // 
             // simpleButton3
             // 
@@ -1318,6 +1337,19 @@
             this.groupBox18.TabStop = false;
             this.groupBox18.Text = "صلاحية المستخدمين داخل قائمة إدارة الحجوزات";
             // 
+            // check_BookingTimes
+            // 
+            this.check_BookingTimes.AutoSize = true;
+            this.check_BookingTimes.BackColor = System.Drawing.Color.Black;
+            this.check_BookingTimes.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.check_BookingTimes.ForeColor = System.Drawing.Color.White;
+            this.check_BookingTimes.Location = new System.Drawing.Point(198, 41);
+            this.check_BookingTimes.Name = "check_BookingTimes";
+            this.check_BookingTimes.Size = new System.Drawing.Size(120, 23);
+            this.check_BookingTimes.TabIndex = 62;
+            this.check_BookingTimes.Text = "مواعيد الحجوزات";
+            this.check_BookingTimes.UseVisualStyleBackColor = false;
+            // 
             // check_AddTickets
             // 
             this.check_AddTickets.AutoSize = true;
@@ -1356,71 +1388,6 @@
             this.check_SearchTickets.TabIndex = 58;
             this.check_SearchTickets.Text = "بحث في كل الحجوزات";
             this.check_SearchTickets.UseVisualStyleBackColor = false;
-            // 
-            // tabPage6
-            // 
-            this.tabPage6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.tabPage6.Controls.Add(this.button4);
-            this.tabPage6.Controls.Add(this.groupBox17);
-            this.tabPage6.Location = new System.Drawing.Point(4, 33);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(1020, 379);
-            this.tabPage6.TabIndex = 6;
-            this.tabPage6.Text = "المستخدمون";
-            // 
-            // button4
-            // 
-            this.button4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button4.BackColor = System.Drawing.Color.Gray;
-            this.button4.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Location = new System.Drawing.Point(362, 262);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(246, 43);
-            this.button4.TabIndex = 74;
-            this.button4.Text = "حفظ البيانات للمستخدم";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // groupBox17
-            // 
-            this.groupBox17.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox17.Controls.Add(this.check_CreateAccount);
-            this.groupBox17.Controls.Add(this.check_Permission);
-            this.groupBox17.Location = new System.Drawing.Point(9, 58);
-            this.groupBox17.Name = "groupBox17";
-            this.groupBox17.Size = new System.Drawing.Size(1003, 101);
-            this.groupBox17.TabIndex = 73;
-            this.groupBox17.TabStop = false;
-            this.groupBox17.Text = "صلاحية المستخدمين داخل قائمة إدارة  صلاحية المستخدمين";
-            // 
-            // check_CreateAccount
-            // 
-            this.check_CreateAccount.AutoSize = true;
-            this.check_CreateAccount.BackColor = System.Drawing.Color.Black;
-            this.check_CreateAccount.ForeColor = System.Drawing.Color.White;
-            this.check_CreateAccount.Location = new System.Drawing.Point(594, 42);
-            this.check_CreateAccount.Name = "check_CreateAccount";
-            this.check_CreateAccount.Size = new System.Drawing.Size(117, 28);
-            this.check_CreateAccount.TabIndex = 59;
-            this.check_CreateAccount.Text = "انشاء حساب";
-            this.check_CreateAccount.UseVisualStyleBackColor = false;
-            // 
-            // check_Permission
-            // 
-            this.check_Permission.AutoSize = true;
-            this.check_Permission.BackColor = System.Drawing.Color.Black;
-            this.check_Permission.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.check_Permission.ForeColor = System.Drawing.Color.White;
-            this.check_Permission.Location = new System.Drawing.Point(266, 31);
-            this.check_Permission.Name = "check_Permission";
-            this.check_Permission.Size = new System.Drawing.Size(245, 33);
-            this.check_Permission.TabIndex = 61;
-            this.check_Permission.Text = "تحديد صلاحية المستخدمين";
-            this.check_Permission.UseVisualStyleBackColor = false;
             // 
             // txt_Baisc
             // 
@@ -1508,19 +1475,6 @@
             this.Cmb_Branch.TabIndex = 102;
             this.Cmb_Branch.SelectionChangeCommitted += new System.EventHandler(this.Cmb_Branch_SelectionChangeCommitted);
             // 
-            // check_BookingTimes
-            // 
-            this.check_BookingTimes.AutoSize = true;
-            this.check_BookingTimes.BackColor = System.Drawing.Color.Black;
-            this.check_BookingTimes.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.check_BookingTimes.ForeColor = System.Drawing.Color.White;
-            this.check_BookingTimes.Location = new System.Drawing.Point(198, 41);
-            this.check_BookingTimes.Name = "check_BookingTimes";
-            this.check_BookingTimes.Size = new System.Drawing.Size(120, 23);
-            this.check_BookingTimes.TabIndex = 62;
-            this.check_BookingTimes.Text = "مواعيد الحجوزات";
-            this.check_BookingTimes.UseVisualStyleBackColor = false;
-            // 
             // Validate_Users
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1580,9 +1534,6 @@
             this.groupBox16.PerformLayout();
             this.groupBox18.ResumeLayout(false);
             this.groupBox18.PerformLayout();
-            this.tabPage6.ResumeLayout(false);
-            this.groupBox17.ResumeLayout(false);
-            this.groupBox17.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1667,11 +1618,6 @@
         public System.Windows.Forms.CheckBox check_AddTickets;
         public System.Windows.Forms.CheckBox check_ManagmentTickets;
         public System.Windows.Forms.CheckBox check_SearchTickets;
-        private System.Windows.Forms.TabPage tabPage6;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.GroupBox groupBox17;
-        public System.Windows.Forms.CheckBox check_CreateAccount;
-        public System.Windows.Forms.CheckBox check_Permission;
         private DevExpress.XtraEditors.SimpleButton btn_save;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private System.Windows.Forms.GroupBox groupBox9;
@@ -1688,5 +1634,7 @@
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.ComboBox Cmb_Branch;
         public System.Windows.Forms.CheckBox check_BookingTimes;
+        public System.Windows.Forms.CheckBox Check_AddUserAccount;
+        public System.Windows.Forms.CheckBox Check_UserPermession;
     }
 }

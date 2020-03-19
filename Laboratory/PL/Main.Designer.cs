@@ -110,8 +110,6 @@
             this.barHeaderItem27 = new DevExpress.XtraBars.BarHeaderItem();
             this.pay_patientCompany = new DevExpress.XtraBars.BarButtonItem();
             this.barHeaderItem29 = new DevExpress.XtraBars.BarHeaderItem();
-            this.Create_Account = new DevExpress.XtraBars.BarButtonItem();
-            this.Permisson = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
@@ -130,9 +128,14 @@
             this.Data_Redvelation = new DevExpress.XtraBars.BarButtonItem();
             this.Btn_ReciveaMoney = new DevExpress.XtraBars.BarButtonItem();
             this.Btn_AccountStatment = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.Btn_CustomerAccouantStatment = new DevExpress.XtraBars.BarButtonItem();
             this.Btn_ReportMasrofat = new DevExpress.XtraBars.BarButtonItem();
             this.btn_ReportInstallment = new DevExpress.XtraBars.BarButtonItem();
+            this.Btn_ReportInsertStock = new DevExpress.XtraBars.BarButtonItem();
+            this.Btn_ReportPullStock = new DevExpress.XtraBars.BarButtonItem();
+            this.Btn_SuppliersAccountStatment = new DevExpress.XtraBars.BarButtonItem();
+            this.Btn_AddAccount = new DevExpress.XtraBars.BarButtonItem();
+            this.Btn_UserPermession = new DevExpress.XtraBars.BarButtonItem();
             this.basic_information = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -156,18 +159,12 @@
             this.ribbonPage6 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup15 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup16 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPage7 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup17 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup19 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.fluentDesignFormContainer1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
             this.tileControl1 = new DevExpress.XtraEditors.TileControl();
             this.ribbonPageGroup18 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.Btn_ReportInsertStock = new DevExpress.XtraBars.BarButtonItem();
-            this.Btn_ReportPullStock = new DevExpress.XtraBars.BarButtonItem();
-            this.Btn_SuppliersAccountStatment = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageEdit1)).BeginInit();
@@ -259,8 +256,6 @@
             this.barHeaderItem28,
             this.pay_patientCompany,
             this.barHeaderItem29,
-            this.Create_Account,
-            this.Permisson,
             this.barButtonItem1,
             this.barButtonItem3,
             this.barStaticItem1,
@@ -278,14 +273,16 @@
             this.Data_Redvelation,
             this.Btn_ReciveaMoney,
             this.Btn_AccountStatment,
-            this.barButtonItem5,
+            this.Btn_CustomerAccouantStatment,
             this.Btn_ReportMasrofat,
             this.btn_ReportInstallment,
             this.Btn_ReportInsertStock,
             this.Btn_ReportPullStock,
-            this.Btn_SuppliersAccountStatment});
+            this.Btn_SuppliersAccountStatment,
+            this.Btn_AddAccount,
+            this.Btn_UserPermession});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 121;
+            this.ribbon.MaxItemId = 124;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.basic_information,
@@ -293,8 +290,7 @@
             this.ribbonPage3,
             this.ribbonPage4,
             this.ribbonPage5,
-            this.ribbonPage6,
-            this.ribbonPage7});
+            this.ribbonPage6});
             this.ribbon.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemImageEdit1});
             this.ribbon.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
@@ -986,23 +982,6 @@
             this.barHeaderItem29.Name = "barHeaderItem29";
             this.barHeaderItem29.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barHeaderItem29_ItemClick);
             // 
-            // Create_Account
-            // 
-            this.Create_Account.Caption = "create account";
-            this.Create_Account.Id = 89;
-            this.Create_Account.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Create_Account.ImageOptions.Image")));
-            this.Create_Account.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("Create_Account.ImageOptions.LargeImage")));
-            this.Create_Account.Name = "Create_Account";
-            this.Create_Account.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem42_ItemClick);
-            // 
-            // Permisson
-            // 
-            this.Permisson.Caption = "Permission to access";
-            this.Permisson.Id = 90;
-            this.Permisson.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("Permisson.ImageOptions.SvgImage")));
-            this.Permisson.Name = "Permisson";
-            this.Permisson.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem43_ItemClick);
-            // 
             // barButtonItem1
             // 
             this.barButtonItem1.Caption = "مرتجع مشتريات\r\n";
@@ -1146,18 +1125,18 @@
             this.Btn_AccountStatment.Name = "Btn_AccountStatment";
             this.Btn_AccountStatment.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick_3);
             // 
-            // barButtonItem5
+            // Btn_CustomerAccouantStatment
             // 
-            this.barButtonItem5.Caption = "كشف حساب عميل";
-            this.barButtonItem5.Id = 115;
-            this.barButtonItem5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
-            this.barButtonItem5.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.LargeImage")));
-            this.barButtonItem5.ItemAppearance.Normal.Options.UseTextOptions = true;
-            this.barButtonItem5.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonItem5.ItemInMenuAppearance.Normal.Options.UseTextOptions = true;
-            this.barButtonItem5.ItemInMenuAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonItem5.Name = "barButtonItem5";
-            this.barButtonItem5.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick_2);
+            this.Btn_CustomerAccouantStatment.Caption = "كشف حساب عميل";
+            this.Btn_CustomerAccouantStatment.Id = 115;
+            this.Btn_CustomerAccouantStatment.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
+            this.Btn_CustomerAccouantStatment.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.LargeImage")));
+            this.Btn_CustomerAccouantStatment.ItemAppearance.Normal.Options.UseTextOptions = true;
+            this.Btn_CustomerAccouantStatment.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.Btn_CustomerAccouantStatment.ItemInMenuAppearance.Normal.Options.UseTextOptions = true;
+            this.Btn_CustomerAccouantStatment.ItemInMenuAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.Btn_CustomerAccouantStatment.Name = "Btn_CustomerAccouantStatment";
+            this.Btn_CustomerAccouantStatment.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick_2);
             // 
             // Btn_ReportMasrofat
             // 
@@ -1181,6 +1160,61 @@
             this.btn_ReportInstallment.Name = "btn_ReportInstallment";
             this.btn_ReportInstallment.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick_4);
             // 
+            // Btn_ReportInsertStock
+            // 
+            this.Btn_ReportInsertStock.Caption = "تقرير الارصدة المسحوبة من الخزنة";
+            this.Btn_ReportInsertStock.Id = 118;
+            this.Btn_ReportInsertStock.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ReportInsertStock.ImageOptions.Image")));
+            this.Btn_ReportInsertStock.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("Btn_ReportInsertStock.ImageOptions.LargeImage")));
+            this.Btn_ReportInsertStock.ItemAppearance.Normal.Options.UseTextOptions = true;
+            this.Btn_ReportInsertStock.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.Btn_ReportInsertStock.Name = "Btn_ReportInsertStock";
+            this.Btn_ReportInsertStock.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick_5);
+            // 
+            // Btn_ReportPullStock
+            // 
+            this.Btn_ReportPullStock.Caption = "تقرير الارصدة المسحوبة من الخزنة";
+            this.Btn_ReportPullStock.Id = 119;
+            this.Btn_ReportPullStock.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ReportPullStock.ImageOptions.Image")));
+            this.Btn_ReportPullStock.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("Btn_ReportPullStock.ImageOptions.LargeImage")));
+            this.Btn_ReportPullStock.ItemAppearance.Normal.Options.UseTextOptions = true;
+            this.Btn_ReportPullStock.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.Btn_ReportPullStock.Name = "Btn_ReportPullStock";
+            this.Btn_ReportPullStock.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_ReportPullStock_ItemClick);
+            // 
+            // Btn_SuppliersAccountStatment
+            // 
+            this.Btn_SuppliersAccountStatment.Caption = "كشف حساب مورد";
+            this.Btn_SuppliersAccountStatment.Id = 120;
+            this.Btn_SuppliersAccountStatment.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_SuppliersAccountStatment.ImageOptions.Image")));
+            this.Btn_SuppliersAccountStatment.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("Btn_SuppliersAccountStatment.ImageOptions.LargeImage")));
+            this.Btn_SuppliersAccountStatment.ItemAppearance.Normal.Options.UseTextOptions = true;
+            this.Btn_SuppliersAccountStatment.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.Btn_SuppliersAccountStatment.Name = "Btn_SuppliersAccountStatment";
+            this.Btn_SuppliersAccountStatment.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick_6);
+            // 
+            // Btn_AddAccount
+            // 
+            this.Btn_AddAccount.Caption = "إنشاء حساب للموظف";
+            this.Btn_AddAccount.Id = 122;
+            this.Btn_AddAccount.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_AddAccount.ImageOptions.Image")));
+            this.Btn_AddAccount.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("Btn_AddAccount.ImageOptions.LargeImage")));
+            this.Btn_AddAccount.ItemAppearance.Normal.Options.UseTextOptions = true;
+            this.Btn_AddAccount.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.Btn_AddAccount.Name = "Btn_AddAccount";
+            this.Btn_AddAccount.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_AddAccount_ItemClick);
+            // 
+            // Btn_UserPermession
+            // 
+            this.Btn_UserPermession.Caption = "صلاحية المستخدمين";
+            this.Btn_UserPermession.Id = 123;
+            this.Btn_UserPermession.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_UserPermession.ImageOptions.Image")));
+            this.Btn_UserPermession.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("Btn_UserPermession.ImageOptions.LargeImage")));
+            this.Btn_UserPermession.ItemAppearance.Normal.Options.UseTextOptions = true;
+            this.Btn_UserPermession.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.Btn_UserPermession.Name = "Btn_UserPermession";
+            this.Btn_UserPermession.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_UserPermession_ItemClick);
+            // 
             // basic_information
             // 
             this.basic_information.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1199,6 +1233,8 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.add_branch);
             this.ribbonPageGroup1.ItemLinks.Add(this.add_employee);
             this.ribbonPageGroup1.ItemLinks.Add(this.add_employeeBranche);
+            this.ribbonPageGroup1.ItemLinks.Add(this.Btn_AddAccount);
+            this.ribbonPageGroup1.ItemLinks.Add(this.Btn_UserPermession);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "ادارة الفروع";
             // 
@@ -1400,34 +1436,9 @@
             this.ribbonPageGroup16.ItemLinks.Add(this.add_patient);
             this.ribbonPageGroup16.ItemLinks.Add(this.pay_patientCompany);
             this.ribbonPageGroup16.ItemLinks.Add(this.depit_client);
-            this.ribbonPageGroup16.ItemLinks.Add(this.barButtonItem5);
+            this.ribbonPageGroup16.ItemLinks.Add(this.Btn_CustomerAccouantStatment);
             this.ribbonPageGroup16.Name = "ribbonPageGroup16";
             this.ribbonPageGroup16.Text = "ادارة المرضي";
-            // 
-            // ribbonPage7
-            // 
-            this.ribbonPage7.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F);
-            this.ribbonPage7.Appearance.Options.UseFont = true;
-            this.ribbonPage7.Appearance.Options.UseTextOptions = true;
-            this.ribbonPage7.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.ribbonPage7.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.ribbonPage7.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.ribbonPage7.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup17,
-            this.ribbonPageGroup19});
-            this.ribbonPage7.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPage7.ImageOptions.Image")));
-            this.ribbonPage7.Name = "ribbonPage7";
-            this.ribbonPage7.Text = "المستخدمون";
-            // 
-            // ribbonPageGroup17
-            // 
-            this.ribbonPageGroup17.ItemLinks.Add(this.Create_Account);
-            this.ribbonPageGroup17.Name = "ribbonPageGroup17";
-            // 
-            // ribbonPageGroup19
-            // 
-            this.ribbonPageGroup19.ItemLinks.Add(this.Permisson);
-            this.ribbonPageGroup19.Name = "ribbonPageGroup19";
             // 
             // ribbonStatusBar
             // 
@@ -1480,39 +1491,6 @@
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // Btn_ReportInsertStock
-            // 
-            this.Btn_ReportInsertStock.Caption = "تقرير الارصدة المسحوبة من الخزنة";
-            this.Btn_ReportInsertStock.Id = 118;
-            this.Btn_ReportInsertStock.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ReportInsertStock.ImageOptions.Image")));
-            this.Btn_ReportInsertStock.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("Btn_ReportInsertStock.ImageOptions.LargeImage")));
-            this.Btn_ReportInsertStock.ItemAppearance.Normal.Options.UseTextOptions = true;
-            this.Btn_ReportInsertStock.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.Btn_ReportInsertStock.Name = "Btn_ReportInsertStock";
-            this.Btn_ReportInsertStock.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick_5);
-            // 
-            // Btn_ReportPullStock
-            // 
-            this.Btn_ReportPullStock.Caption = "تقرير الارصدة المسحوبة من الخزنة";
-            this.Btn_ReportPullStock.Id = 119;
-            this.Btn_ReportPullStock.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ReportPullStock.ImageOptions.Image")));
-            this.Btn_ReportPullStock.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("Btn_ReportPullStock.ImageOptions.LargeImage")));
-            this.Btn_ReportPullStock.ItemAppearance.Normal.Options.UseTextOptions = true;
-            this.Btn_ReportPullStock.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.Btn_ReportPullStock.Name = "Btn_ReportPullStock";
-            this.Btn_ReportPullStock.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_ReportPullStock_ItemClick);
-            // 
-            // Btn_SuppliersAccountStatment
-            // 
-            this.Btn_SuppliersAccountStatment.Caption = "كشف حساب مورد";
-            this.Btn_SuppliersAccountStatment.Id = 120;
-            this.Btn_SuppliersAccountStatment.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_SuppliersAccountStatment.ImageOptions.Image")));
-            this.Btn_SuppliersAccountStatment.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("Btn_SuppliersAccountStatment.ImageOptions.LargeImage")));
-            this.Btn_SuppliersAccountStatment.ItemAppearance.Normal.Options.UseTextOptions = true;
-            this.Btn_SuppliersAccountStatment.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.Btn_SuppliersAccountStatment.Name = "Btn_SuppliersAccountStatment";
-            this.Btn_SuppliersAccountStatment.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick_6);
             // 
             // Main
             // 
@@ -1649,12 +1627,7 @@
         public DevExpress.XtraBars.BarHeaderItem barHeaderItem28;
         public DevExpress.XtraBars.BarButtonItem pay_patientCompany;
         public DevExpress.XtraBars.BarHeaderItem barHeaderItem29;
-        public DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage7;
-        public DevExpress.XtraBars.BarButtonItem Create_Account;
-        public DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup17;
         public DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup18;
-        public DevExpress.XtraBars.BarButtonItem Permisson;
-        public DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup19;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         public DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup12;
@@ -1679,12 +1652,14 @@
         private DevExpress.XtraBars.BarButtonItem Data_Redvelation;
         public DevExpress.XtraBars.BarButtonItem Btn_ReciveaMoney;
         private DevExpress.XtraEditors.TileControl tileControl1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         public DevExpress.XtraBars.BarButtonItem Btn_ReportMasrofat;
         public DevExpress.XtraBars.BarButtonItem btn_ReportInstallment;
         public DevExpress.XtraBars.BarButtonItem Btn_AccountStatment;
         public DevExpress.XtraBars.BarButtonItem Btn_ReportInsertStock;
         public DevExpress.XtraBars.BarButtonItem Btn_ReportPullStock;
         public DevExpress.XtraBars.BarButtonItem Btn_SuppliersAccountStatment;
+        public DevExpress.XtraBars.BarButtonItem Btn_AddAccount;
+        public DevExpress.XtraBars.BarButtonItem Btn_UserPermession;
+        public DevExpress.XtraBars.BarButtonItem Btn_CustomerAccouantStatment;
     }
 }

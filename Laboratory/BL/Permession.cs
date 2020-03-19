@@ -11,11 +11,11 @@ namespace Laboratory.BL
     class Permession
     {
         internal void Add_UserBAsicInformation(string User_Name, int Add_Employee, int Add_Employee_Branch, int Add_Branch, 
-            int add_CategoryXray, int Add_Xrays,int Download_Finger,int Report_Finger)
+            int add_CategoryXray, int Add_Xrays,int Download_Finger,int Report_Finger,int Add_UserAccount , int UserPermession )
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[8];
+            SqlParameter[] param = new SqlParameter[10];
             param[0] = new SqlParameter("@User_Name", SqlDbType.NVarChar, 100);
             param[0].Value = User_Name;
             param[1] = new SqlParameter("@Add_Employee", SqlDbType.Int);
@@ -32,6 +32,10 @@ namespace Laboratory.BL
             param[6].Value = Download_Finger;
             param[7] = new SqlParameter("@Report_Finger", SqlDbType.Int);
             param[7].Value = Report_Finger;
+            param[8] = new SqlParameter("@Add_UserAccount", SqlDbType.Int);
+            param[8].Value = Add_UserAccount;
+            param[9] = new SqlParameter("@User_Permession", SqlDbType.Int);
+            param[9].Value = UserPermession;
             da.excutequery("Add_UserBAsicInformation", param);
             da.close();
 
@@ -52,11 +56,11 @@ namespace Laboratory.BL
 
         }
         internal void Update_UserBAsicInformation(string User_Name, int Add_Employee, int Add_Employee_Branch, int Add_Branch,
-              int add_CategoryXray, int Add_Xrays, int Download_Finger, int Report_Finger)
+              int add_CategoryXray, int Add_Xrays, int Download_Finger, int Report_Finger, int Add_UserAccount, int UserPermession)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[8];
+            SqlParameter[] param = new SqlParameter[10];
             param[0] = new SqlParameter("@User_Name", SqlDbType.NVarChar, 100);
             param[0].Value = User_Name;
             param[1] = new SqlParameter("@Add_Employee", SqlDbType.Int);
@@ -73,6 +77,10 @@ namespace Laboratory.BL
             param[6].Value = Download_Finger;
             param[7] = new SqlParameter("@Report_Finger", SqlDbType.Int);
             param[7].Value = Report_Finger;
+            param[8] = new SqlParameter("@Add_UserAccount", SqlDbType.Int);
+            param[8].Value = Add_UserAccount;
+            param[9] = new SqlParameter("@User_Permession", SqlDbType.Int);
+            param[9].Value = UserPermession;
             da.excutequery("Update_UserBAsicInformation", param);
             da.close();
 
@@ -225,11 +233,11 @@ namespace Laboratory.BL
             da.close();
         }
         internal void AddUserAccount(string userName, int Add_Masrofat, int Report_Masrofat, int Add_Stock,
-  int Pull_Stock, int Insert_Stock, int Transfer_Stock, int Report_Stock,int Add_Instalment,int Report_Instalment)
+  int Pull_Stock, int Insert_Stock, int Transfer_Stock, int ReciveMoney , int ReportPullStock , int ReportInsertStock,int Add_Instalment,int Report_Instalment)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[10];
+            SqlParameter[] param = new SqlParameter[12];
             param[0] = new SqlParameter("@userName", SqlDbType.NVarChar, 100);
             param[0].Value = userName;
             param[1] = new SqlParameter("Add_Masrofat", SqlDbType.Int);
@@ -246,24 +254,28 @@ namespace Laboratory.BL
 
             param[6] = new SqlParameter("@Transfer_Stock", SqlDbType.Int);
             param[6].Value = Transfer_Stock;
-            param[7] = new SqlParameter("@Report_Stock", SqlDbType.Int);
-            param[7].Value = Report_Stock;
-            param[8] = new SqlParameter("@Add_Instalment", SqlDbType.Int);
-            param[8].Value = Add_Instalment;
-            param[9] = new SqlParameter("@Report_Instalment", SqlDbType.Int);
-            param[9].Value = Report_Instalment;
+            param[7] = new SqlParameter("@Recive_Money", SqlDbType.Int);
+            param[7].Value = ReciveMoney;
+            param[8] = new SqlParameter("@Report_PullStock", SqlDbType.Int);
+            param[8].Value = ReportPullStock;
+            param[9] = new SqlParameter("@Report_InsertStock", SqlDbType.Int);
+            param[9].Value = ReportInsertStock;
+            param[10] = new SqlParameter("@Add_Instalment", SqlDbType.Int);
+            param[10].Value = Report_Instalment;
+            param[11] = new SqlParameter("@Report_Instalment", SqlDbType.Int);
+            param[11].Value = Report_Instalment;
             da.excutequery("AddUserAccount", param);
             da.close();
         }
         internal void UpdateUserAccount(string userName, int Add_Masrofat, int Report_Masrofat, int Add_Stock,
-int Pull_Stock, int Insert_Stock, int Transfer_Stock, int Report_Stock, int Add_Instalment, int Report_Instalment)
+ int Pull_Stock, int Insert_Stock, int Transfer_Stock, int ReciveMoney, int ReportPullStock, int ReportInsertStock, int Add_Instalment, int Report_Instalment)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[10];
+            SqlParameter[] param = new SqlParameter[12];
             param[0] = new SqlParameter("@userName", SqlDbType.NVarChar, 100);
             param[0].Value = userName;
-            param[1] = new SqlParameter("@Add_Masrofat", SqlDbType.Int);
+            param[1] = new SqlParameter("Add_Masrofat", SqlDbType.Int);
             param[1].Value = Add_Masrofat;
             param[2] = new SqlParameter("@Report_Masrofat", SqlDbType.Int);
             param[2].Value = Report_Masrofat;
@@ -277,12 +289,16 @@ int Pull_Stock, int Insert_Stock, int Transfer_Stock, int Report_Stock, int Add_
 
             param[6] = new SqlParameter("@Transfer_Stock", SqlDbType.Int);
             param[6].Value = Transfer_Stock;
-            param[7] = new SqlParameter("@Report_Stock", SqlDbType.Int);
-            param[7].Value = Report_Stock;
-            param[8] = new SqlParameter("@Add_Instalment", SqlDbType.Int);
-            param[8].Value = Add_Instalment;
-            param[9] = new SqlParameter("@Report_Instalment", SqlDbType.Int);
-            param[9].Value = Report_Instalment;
+            param[7] = new SqlParameter("@Recive_Money", SqlDbType.Int);
+            param[7].Value = ReciveMoney;
+            param[8] = new SqlParameter("@Report_PullStock", SqlDbType.Int);
+            param[8].Value = ReportPullStock;
+            param[9] = new SqlParameter("@Report_InsertStock", SqlDbType.Int);
+            param[9].Value = ReportInsertStock;
+            param[10] = new SqlParameter("@Add_Instalment", SqlDbType.Int);
+            param[10].Value = Report_Instalment;
+            param[11] = new SqlParameter("@Report_Instalment", SqlDbType.Int);
+            param[11].Value = Report_Instalment;
             da.excutequery("UpdateUserAccount", param);
             da.close();
         }
@@ -340,8 +356,9 @@ int Depit_Suppliers, int Report_Suppliers)
             da.close();
         }
         internal void UpdateUser_Store(string User_Name, int Add_Store, int Add_Proudect, int Add_ProudectINStore,
-int Transfer_Store,int @items_consumption, int Report_Store, int INvoice_purchise, int Return_Purchise, int Report_Purchise, int Add_Suppliers, int Pay_Suppliers,
-int Depit_Suppliers, int Report_Suppliers)
+                                      int Transfer_Store,int @items_consumption, int Report_Store, int INvoice_purchise,
+                                      int Return_Purchise, int Report_Purchise, int Add_Suppliers, int Pay_Suppliers,
+                                      int Depit_Suppliers, int Report_Suppliers)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
@@ -394,11 +411,11 @@ int Depit_Suppliers, int Report_Suppliers)
         }
 
         internal void AddUser_Tickets(string User_Name, int Add_Tickets, int Managment_Tickets, int Search_Tickets,
-                                      int Add_Clients, int Pay_Clients,  int Depit_Client, int Report_Depit)
+                                    int BookingTimes, int Add_Clients, int Pay_Clients, int Depit_Client, int Report_Depit)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[8];
+            SqlParameter[] param = new SqlParameter[9];
             param[0] = new SqlParameter("@User_Name", SqlDbType.NVarChar, 100);
             param[0].Value = User_Name;
             param[1] = new SqlParameter("@Add_Tickets", SqlDbType.Int);
@@ -407,17 +424,17 @@ int Depit_Suppliers, int Report_Suppliers)
             param[2].Value = Managment_Tickets;
             param[3] = new SqlParameter("@Search_Tickets", SqlDbType.Int);
             param[3].Value = Search_Tickets;
+            param[4] = new SqlParameter("@Bookink_Times", SqlDbType.Int);
+            param[4].Value = BookingTimes;
+            param[5] = new SqlParameter("@Add_Clients", SqlDbType.Int);
+            param[5].Value = Add_Clients;
+            param[6] = new SqlParameter("@Pay_Clients", SqlDbType.Int);
+            param[6].Value = Pay_Clients;
+            param[7] = new SqlParameter("@Depit_Client", SqlDbType.Int);
+            param[7].Value = Depit_Client;
+            param[8] = new SqlParameter("@Report_Depit", SqlDbType.Int);
+            param[8].Value = Report_Depit;
 
-            param[4] = new SqlParameter("@Add_Clients", SqlDbType.Int);
-            param[4].Value = Add_Clients;
-            param[5] = new SqlParameter("@Pay_Clients", SqlDbType.Int);
-            param[5].Value = Pay_Clients;
-
-            param[6] = new SqlParameter("@Depit_Client", SqlDbType.Int);
-            param[6].Value = Depit_Client;
-            param[7] = new SqlParameter("@Report_Depit", SqlDbType.Int);
-            param[7].Value = Report_Depit;
-       
             da.excutequery("AddUser_Tickets", param);
             da.close();
         }
@@ -434,11 +451,11 @@ int Depit_Suppliers, int Report_Suppliers)
         }
 
         internal void UpdateUser_Tickets(string User_Name, int Add_Tickets, int Managment_Tickets, int Search_Tickets,
-                                         int Add_Clients, int Pay_Clients, int Depit_Client, int Report_Depit)
+                                      int BookingTimes ,int Add_Clients, int Pay_Clients, int Depit_Client, int Report_Depit)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[8];
+            SqlParameter[] param = new SqlParameter[9];
             param[0] = new SqlParameter("@User_Name", SqlDbType.NVarChar, 100);
             param[0].Value = User_Name;
             param[1] = new SqlParameter("@Add_Tickets", SqlDbType.Int);
@@ -447,16 +464,17 @@ int Depit_Suppliers, int Report_Suppliers)
             param[2].Value = Managment_Tickets;
             param[3] = new SqlParameter("@Search_Tickets", SqlDbType.Int);
             param[3].Value = Search_Tickets;
+            param[4] = new SqlParameter("@Bookink_Times", SqlDbType.Int);
+            param[4].Value = BookingTimes;
+            param[5] = new SqlParameter("@Add_Clients", SqlDbType.Int);
+            param[5].Value = Add_Clients;
+            param[6] = new SqlParameter("@Pay_Clients", SqlDbType.Int);
+            param[6].Value = Pay_Clients;
 
-            param[4] = new SqlParameter("@Add_Clients", SqlDbType.Int);
-            param[4].Value = Add_Clients;
-            param[5] = new SqlParameter("@Pay_Clients", SqlDbType.Int);
-            param[5].Value = Pay_Clients;
-
-            param[6] = new SqlParameter("@Depit_Client", SqlDbType.Int);
-            param[6].Value = Depit_Client;
-            param[7] = new SqlParameter("@Report_Depit", SqlDbType.Int);
-            param[7].Value = Report_Depit;
+            param[7] = new SqlParameter("@Depit_Client", SqlDbType.Int);
+            param[7].Value = Depit_Client;
+            param[8] = new SqlParameter("@Report_Depit", SqlDbType.Int);
+            param[8].Value = Report_Depit;
 
 
 
