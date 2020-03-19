@@ -451,15 +451,13 @@ namespace Laboratory.PL
 
         private void barButtonItem43_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Validate_Users validate = new Validate_Users();
-            validate.Show();
+          
         }
 
         private void barButtonItem42_ItemClick(object sender, ItemClickEventArgs e)
         {
 
-            Frm_ManagmentUser frm_ManagmentUser = new Frm_ManagmentUser();
-            frm_ManagmentUser.Show();
+           
         }
 
         private void ribbon_Click(object sender, EventArgs e)
@@ -630,6 +628,18 @@ namespace Laboratory.PL
 
             Frm_ReportPaySuppliers frm_ReportPaySuppliers = new Frm_ReportPaySuppliers();
             frm_ReportPaySuppliers.Show();
+        }
+
+        private void Btn_AddAccount_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Frm_ManagmentUser frm_ManagmentUser = new Frm_ManagmentUser();
+            frm_ManagmentUser.Show();
+        }
+
+        private void Btn_UserPermession_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Validate_Users validate = new Validate_Users();
+            validate.Show();
         }
     }
     }
