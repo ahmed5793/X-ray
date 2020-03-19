@@ -12,66 +12,102 @@ namespace Laboratory.PL
 {
     public partial class Frm_ReportStockPull : Form
     {
-        Stock S = new Stock();
+        Stock s = new Stock();
+        Branches b = new Branches();
+        Users u = new Users();
+        DataTable dt = new DataTable();
         public Frm_ReportStockPull()
         {
             InitializeComponent();
-            cmb_Stock.DataSource = S.Compo_Stock();
-            cmb_Stock.DisplayMember = "Name_Stock";
-            cmb_Stock.ValueMember = "ID_Stock";
-            Calc_Amount();
+            txt_username.Text = Program.salesman;
+            Permision();
+            Calc_AmountPull();
         }
-        void Calc_Amount()
+        void Permision()
         {
-            decimal Total = 0;
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            dt.Clear();
+            dt = u.SelectUserBranch(txt_username.Text);
+
+            if (dt.Rows.Count > 0)
             {
-                Total += Convert.ToDecimal(dataGridView1.Rows[i].Cells[2].Value);
+                cmb_UserBranch.DataSource = u.SelectUserBranch(txt_username.Text);
+                cmb_UserBranch.DisplayMember = "Name";
+                cmb_UserBranch.ValueMember = "Branch_ID";
+
+                cmb_Stock.DataSource = s.SelectStockBranch(Convert.ToInt32(cmb_UserBranch.SelectedValue));
+                cmb_Stock.DisplayMember = "Name_Stock";
+                cmb_Stock.ValueMember = "ID_Stock";
             }
-            textBox1.Text = Math.Round(Total, 2).ToString();
+            else
+            {
+                cmb_UserBranch.DataSource = b.SelectCompBranches();
+                cmb_UserBranch.DisplayMember = "Name";
+                cmb_UserBranch.ValueMember = "Branch_ID";
+
+                cmb_Stock.DataSource = s.SelectStockBranch(Convert.ToInt32(cmb_UserBranch.SelectedValue));
+                cmb_Stock.DisplayMember = "Name_Stock";
+                cmb_Stock.ValueMember = "ID_Stock";
+            }
+        }
+        void Calc_AmountPull()
+        {
+            decimal total = 0;
+            for (int i = 0; i < gridViewPull.DataRowCount; i++)
+            {
+                DataRow row = gridViewPull.GetDataRow(i);
+                total += Convert.ToDecimal(row[1].ToString());
+
+            }
+            textBox2.Text = total.ToString("₱ #,#0.0");
 
         }
-        private void btn_search_Click(object sender, EventArgs e)
+        private void cmb_Stock_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
             try
             {
                 dt.Clear();
-                dt = S.Search_ReprotStockPull(Convert.ToInt32(cmb_Stock.SelectedValue), DateFrom.Value, DateTo.Value);
-                dataGridView1.DataSource = dt;
-                Calc_Amount();
+                dt = s.Reprot_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue));
+                gridControlPull.DataSource = dt;
+                Calc_AmountPull();
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message);
-            }
-            finally 
-            {
-                dt.Dispose();
+                MessageBox.Show(ex.StackTrace);
             }
         }
 
-        private void cmb_Stock_SelectionChangeCommitted(object sender, EventArgs e)
+
+        private void btn_search_Click(object sender, EventArgs e)
         {
-            DataTable dt2 = new DataTable();
             try
             {
-                dt2.Clear();
-                dt2= S.Reprot_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue));
-                dataGridView1.DataSource = dt2;
-                Calc_Amount();
+                dt.Clear();
+                dt = s.Search_ReprotStockPull(Convert.ToInt32(cmb_Stock.SelectedValue), DateFrom.Value, DateTo.Value);
+                gridControlPull.DataSource = dt;
+                Calc_AmountPull();
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
             }
         }
-
-        private void cmb_Stock_SelectedIndexChanged(object sender, EventArgs e)
+        private void simpleButton1_Click(object sender, EventArgs e)
         {
+            gridControlPull.ShowRibbonPrintPreview();
+        }
+        private void cmb_UserBranch_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            cmb_Stock.DataSource = s.SelectStockBranch(Convert.ToInt32(cmb_UserBranch.SelectedValue));
+            cmb_Stock.DisplayMember = "Name_Stock";
+            cmb_Stock.ValueMember = "ID_Stock";
+        }
 
+        private void cmb_Stock_SelectionChangeCommitted_1(object sender, EventArgs e)
+        {
+           
         }
     }
 }

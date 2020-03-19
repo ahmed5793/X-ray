@@ -219,6 +219,19 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
+        internal DataTable Select_EmployeFromBranch(int Id_branch)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@Id_Branch", SqlDbType.Int);
+            param[0].Value = Id_branch;
+            da.open();
+            dt = da.selected("Select_EmployeFromBranch", param);
+            da.close();
+            return dt;
+        }
         internal DataTable SelectCHECKSalaryEmployee(int id)
         {
             DataTable dt = new DataTable();

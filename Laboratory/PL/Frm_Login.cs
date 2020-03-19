@@ -359,14 +359,14 @@ namespace Laboratory.PL
                                 Main.getmain.transfer_stock.Enabled = true;
                             }
                             ///////
-                            if (Convert.ToInt32(dt5.Rows[0][6]) == 0)
-                            {
-                                Main.getmain.report_stock.Enabled = false;
-                            }
-                            else if (Convert.ToInt32(dt5.Rows[0][6]) == 1)
-                            {
-                                Main.getmain.report_stock.Enabled = true;
-                            }
+                            //if (Convert.ToInt32(dt5.Rows[0][6]) == 0)
+                            //{
+                            //    Main.getmain.report_stock.Enabled = false;
+                            //}
+                            //else if (Convert.ToInt32(dt5.Rows[0][6]) == 1)
+                            //{
+                            //    Main.getmain.report_stock.Enabled = true;
+                            //}
 
                             if (Convert.ToInt32(dt5.Rows[0][7]) == 0)
                             {
@@ -499,14 +499,14 @@ namespace Laboratory.PL
                             }
 
 
-                            if (Convert.ToInt32(dt6.Rows[0][12]) == 0)
-                            {
-                                Main.getmain.report_suppliers.Enabled = false;
-                            }
-                            else if (Convert.ToInt32(dt6.Rows[0][12]) == 1)
-                            {
-                                Main.getmain.report_suppliers.Enabled = true;
-                            }
+                            //if (Convert.ToInt32(dt6.Rows[0][12]) == 0)
+                            //{
+                            //    Main.getmain.report_suppliers.Enabled = false;
+                            //}
+                            //else if (Convert.ToInt32(dt6.Rows[0][12]) == 1)
+                            //{
+                            //    Main.getmain.report_suppliers.Enabled = true;
+                            //}
                         }
                         DataTable dt7 = new DataTable();
                         dt7.Clear();
@@ -568,15 +568,15 @@ namespace Laboratory.PL
                             //    Main.getmain.pay_patient.Enabled = true;
                             //}
                             ///////
-                            if (Convert.ToInt32(dt7.Rows[0][5]) == 0)
-                            {
-                                Main.getmain.pay_patientCompany.Enabled = false;
+                            //if (Convert.ToInt32(dt7.Rows[0][5]) == 0)
+                            //{
+                            //    Main.getmain.pay_patientCompany.Enabled = false;
 
-                            }
-                            else if (Convert.ToInt32(dt7.Rows[0][5]) == 1)
-                            {
-                                Main.getmain.pay_patientCompany.Enabled = true;
-                            }
+                            //}
+                            //else if (Convert.ToInt32(dt7.Rows[0][5]) == 1)
+                            //{
+                            //    Main.getmain.pay_patientCompany.Enabled = true;
+                            //}
                             ///////
                             if (Convert.ToInt32(dt2.Rows[0][6]) == 0)
                             {

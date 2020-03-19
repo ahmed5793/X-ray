@@ -394,11 +394,11 @@ int Depit_Suppliers, int Report_Suppliers)
         }
 
         internal void AddUser_Tickets(string User_Name, int Add_Tickets, int Managment_Tickets, int Search_Tickets,
-int Add_Clients, int Pay_Clients, int Pay_clientsCompany,  int Depit_Client, int Report_Depit)
+                                      int Add_Clients, int Pay_Clients,  int Depit_Client, int Report_Depit)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[9];
+            SqlParameter[] param = new SqlParameter[8];
             param[0] = new SqlParameter("@User_Name", SqlDbType.NVarChar, 100);
             param[0].Value = User_Name;
             param[1] = new SqlParameter("@Add_Tickets", SqlDbType.Int);
@@ -413,15 +413,11 @@ int Add_Clients, int Pay_Clients, int Pay_clientsCompany,  int Depit_Client, int
             param[5] = new SqlParameter("@Pay_Clients", SqlDbType.Int);
             param[5].Value = Pay_Clients;
 
-            param[6] = new SqlParameter("@Pay_clientsCompany", SqlDbType.Int);
-            param[6].Value = Pay_clientsCompany;
-            param[7] = new SqlParameter("@Depit_Client", SqlDbType.Int);
-            param[7].Value = Depit_Client;
-            param[8] = new SqlParameter("@Report_Depit", SqlDbType.Int);
-            param[8].Value = Report_Depit;
-        
+            param[6] = new SqlParameter("@Depit_Client", SqlDbType.Int);
+            param[6].Value = Depit_Client;
+            param[7] = new SqlParameter("@Report_Depit", SqlDbType.Int);
+            param[7].Value = Report_Depit;
        
-
             da.excutequery("AddUser_Tickets", param);
             da.close();
         }
@@ -438,11 +434,11 @@ int Add_Clients, int Pay_Clients, int Pay_clientsCompany,  int Depit_Client, int
         }
 
         internal void UpdateUser_Tickets(string User_Name, int Add_Tickets, int Managment_Tickets, int Search_Tickets,
-                                         int Add_Clients, int Pay_Clients, int Pay_clientsCompany, int Depit_Client, int Report_Depit)
+                                         int Add_Clients, int Pay_Clients, int Depit_Client, int Report_Depit)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[9];
+            SqlParameter[] param = new SqlParameter[8];
             param[0] = new SqlParameter("@User_Name", SqlDbType.NVarChar, 100);
             param[0].Value = User_Name;
             param[1] = new SqlParameter("@Add_Tickets", SqlDbType.Int);
@@ -457,12 +453,10 @@ int Add_Clients, int Pay_Clients, int Pay_clientsCompany,  int Depit_Client, int
             param[5] = new SqlParameter("@Pay_Clients", SqlDbType.Int);
             param[5].Value = Pay_Clients;
 
-            param[6] = new SqlParameter("@Pay_clientsCompany", SqlDbType.Int);
-            param[6].Value = Pay_clientsCompany;
-            param[7] = new SqlParameter("@Depit_Client", SqlDbType.Int);
-            param[7].Value = Depit_Client;
-            param[8] = new SqlParameter("@Report_Depit", SqlDbType.Int);
-            param[8].Value = Report_Depit;
+            param[6] = new SqlParameter("@Depit_Client", SqlDbType.Int);
+            param[6].Value = Depit_Client;
+            param[7] = new SqlParameter("@Report_Depit", SqlDbType.Int);
+            param[7].Value = Report_Depit;
 
 
 
