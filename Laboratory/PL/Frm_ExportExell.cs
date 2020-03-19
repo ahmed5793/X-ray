@@ -188,19 +188,8 @@ namespace Laboratory.PL
                     importExcelToDataGridViewRange = importExcelToDataGridViewWorksheet.UsedRange;
 
 
-                    //System.Data.DataTable dt7 = new System.Data.DataTable();
-                    //dt7.Columns.Add("NO", typeof(String));
-                    //dt7.Columns.Add("DN", typeof(String));
-                    //dt7.Columns.Add("UID", typeof(String));
-                    //dt7.Columns.Add("po", typeof(String));
-                    //dt7.Columns.Add("cfe", typeof(String));
-                    //dt7.Columns.Add("sw", typeof(String));
-                    //dt7.Columns.Add("aq", typeof(String));
-                    //dt7.Columns.Add("DSF", typeof(String));
-                    //dt7.Columns.Add("DATETIME", typeof(DateTime));
-                    //Start Importing from the second row.Since the first row is column header
-                    //for (int excelWorkSheetRowIndex = 2; excelWorkSheetRowIndex  < importExcelToDataGridViewRange.Rows.Count; excelWorkSheetRowIndex++)
-                    //{
+                 
+                  
                     for (int excelWorkSheetRowIndex = 2; excelWorkSheetRowIndex < importExcelToDataGridViewRange.Rows.Count ; excelWorkSheetRowIndex++)
                     {
 
@@ -210,9 +199,7 @@ namespace Laboratory.PL
                         }
                         else
                         {
-                            //this.dataGridView1.Columns[8].DefaultCellStyle.Format =  "yyyy-MM-dd   hh:mm tt";
-                            //if (importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 9].NumberFormat != "yyyy-MM-dd   hh:mm tt")
-                            //    {
+                       
                             
                             dataGridView1.Rows.Add(importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 1].Value,
                           importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 2].Value,
@@ -226,37 +213,13 @@ namespace Laboratory.PL
                            .ToString("dddd", new System.Globalization.CultureInfo("ar-EG")),
                                      Convert.ToDateTime(importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 9].Value)
                            .ToString("dd-MM-yyyy  hh:mm tt", new System.Globalization.CultureInfo("ar-EG"))); 
-                      //      }
+                         
                   
 
 
                         }
 
-                        //if (dt7.Rows.Count>0)
-                        //{
-                        //    int n = 0;
-                        //    for (int i = 0; i < dt7.Rows.Count; i++)
-                        //    {
-                        //        n = dataGridView1.Rows.Add();
-                        //        dataGridView1.Rows[n].Cells[0].Value = dt7.Rows[i][0].ToString();
-                        //        dataGridView1.Rows[n].Cells[1].Value = dt7.Rows[i][1].ToString();
-                        //        dataGridView1.Rows[n].Cells[2].Value = dt7.Rows[i][2].ToString();
-                        //        dataGridView1.Rows[n].Cells[3].Value = dt7.Rows[i][3].ToString();
-                        //        dataGridView1.Rows[n].Cells[4].Value = dt7.Rows[i][4].ToString();
-                        //        dataGridView1.Rows[n].Cells[5].Value = dt7.Rows[i][5].ToString();
-                        //        dataGridView1.Rows[n].Cells[6].Value = dt7.Rows[i][6].ToString();
-                        //        dataGridView1.Rows[n].Cells[7].Value = dt7.Rows[i][7].ToString();
-                        //        dataGridView1.Rows[n].Cells[8].Value = DateTime.Parse(dt7.Rows[i][8].ToString()).ToString("dd-MM-yyyy hh:mm tt");
-                        //    }
-                        //}
-
-
-
-
-
-
-
-
+                  
 
                     }
                 
@@ -337,7 +300,7 @@ namespace Laboratory.PL
 
                             progressBar1.Value += 1;
 
-                            label3.Text = progressBar1.Value.ToString();
+                            label3.Text = progressBar1.Value.ToString()+"/"+dataGridView1.Rows.Count;
 
 
                         }

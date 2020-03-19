@@ -273,5 +273,29 @@ namespace Laboratory.BL
             return dt;
         }
 
+        internal DataTable SelectAllAttendanceExcell(DateTime Date, int idbranch)
+        {
+
+            DataAccessLayer da = new DataAccessLayer();
+            DataTable dt = new DataTable();
+
+
+            da.open();
+            SqlParameter[] param = new SqlParameter[2];
+       
+            param[0] = new SqlParameter("@Date", SqlDbType.DateTime);
+            param[0].Value = Date;
+            param[1] = new SqlParameter("@idbranch", SqlDbType.Int);
+            param[1].Value = idbranch;
+
+
+            dt = da.selected("SelectAllAttendanceExcell", param);
+            da.close();
+
+            return dt;
+        }
+
+
+
     }
 }

@@ -170,7 +170,7 @@
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(203, 39);
             this.simpleButton1.TabIndex = 21;
-            this.simpleButton1.Text = "LOAD IN EXCEL";
+            this.simpleButton1.Text = "Select the file";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // dataGridView1
@@ -308,7 +308,7 @@
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.textBox1);
             this.Name = "Frm_ExportExell";
-            this.Text = "Frm_ExportExell";
+            this.Text = "استيراد الحضور والانصراف من ملف الاكسيل";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Frm_ExportExell_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

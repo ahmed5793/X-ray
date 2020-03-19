@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -28,6 +29,18 @@ namespace Laboratory.PL
             cmb_user_branch.ValueMember = "Branch_ID";
             monthe();
             year();
+
+            lable_day.Hide();
+            DateFrom.Hide();
+
+            lable_mothe.Show();
+            cmb_month.Show();
+            cmb_year.Show();
+            lable_year.Show();
+            cmb_clients.Enabled = true;
+        
+            dataGridView1.Show();
+            dataGridView2.Hide();
         }
     
         void year()
@@ -68,6 +81,7 @@ namespace Laboratory.PL
 
 
         }
+      
         public DataTable getatt(int EmpID, string year, string month)
         {
             DataTable dt = new DataTable();
@@ -107,56 +121,64 @@ namespace Laboratory.PL
             cmb_clients.SelectedIndex = -1;
         }
 
-
         private void simpleButton1_Click(object sender, EventArgs e)
         {
+           dataGridView1.Rows.Clear();
+
             try
             {
-
-
-                dataGridView1.Rows.Clear();
-                if (cmb_user_branch.Text == "")
+                if (rdb_monthe.Checked == true)
                 {
-                    MessageBox.Show("من فضلك قم بااختيار الفرع");
-                    return;
-
-
-                }
-                if (cmb_clients.Text == "")
-                {
-                    MessageBox.Show("من فضلك قم بااختيار اسم الموظف");
-                    return;
-
-                }
 
 
 
-                DataTable dt10 = new DataTable();
-                dt10.Clear();
-                dt10 = getatt(Convert.ToInt32(cmb_clients.SelectedValue), cmb_year.Text, cmb_month.SelectedValue.ToString());
-         
-
-                if (dt10.Rows.Count > 0)
-                {
-                    int n = 0;
-                    for (int i = 0; i < dt10.Rows.Count; i++)
+                    if (cmb_user_branch.Text == "")
                     {
-                        n = dataGridView1.Rows.Add();
-                        dataGridView1.Rows[n].Cells[0].Value = dt10.Rows[i][0].ToString();
-                        dataGridView1.Rows[n].Cells[1].Value = dt10.Rows[i][1].ToString();
-                        dataGridView1.Rows[n].Cells[2].Value = dt10.Rows[i][2].ToString();
+                        MessageBox.Show("من فضلك قم بااختيار الفرع");
+                        return;
 
 
-                        dataGridView1.Rows[n].Cells[3].Value = dt10.Rows[i][3].ToString();
-                      
+                    }
+                    if (cmb_clients.Text == "")
+                    {
+                        MessageBox.Show("من فضلك قم بااختيار اسم الموظف");
+                        return;
 
                     }
 
 
+                    DataTable dt10 = new DataTable();
+
+
+                    dt10.Clear();
+                    dt10 = getatt(Convert.ToInt32(cmb_clients.SelectedValue), cmb_year.Text, cmb_month.SelectedValue.ToString());
+
+
+                    if (dt10.Rows.Count > 0)
+                    {
+                        int n = 0;
+                        for (int i = 0; i < dt10.Rows.Count; i++)
+                        {
+                            n = dataGridView1.Rows.Add();
+                            dataGridView1.Rows[n].Cells[0].Value = dt10.Rows[i][0].ToString();
+                            dataGridView1.Rows[n].Cells[1].Value = dt10.Rows[i][1].ToString();
+                            dataGridView1.Rows[n].Cells[2].Value = dt10.Rows[i][2].ToString();
+                            dataGridView1.Rows[n].Cells[3].Value = dt10.Rows[i][3].ToString();
+
+
+
+                        }
+
+
+
+                    }
 
                 }
-            
+                else if (rdb_day.Checked==true)
+                {
+                    dataGridView2.DataSource = F.SelectAllAttendanceExcell(DateFrom.Value, Convert.ToInt32(cmb_user_branch.SelectedValue));
 
+                }
             }
             catch (Exception ex)
             {
@@ -164,17 +186,6 @@ namespace Laboratory.PL
                 MessageBox.Show(ex.StackTrace);
             }
 
-            //try
-            //{
-            //    dataGridView1.DataSource = getatt(Convert.ToInt32(cmcb_clients.SelectedValue), cmb_year.Text, cmb_month.SelectedValue.ToString());
-
-            //}
-            //catch (Exception ex)
-            //{
-
-            //    MessageBox.Show(ex.Message);
-            //    MessageBox.Show(ex.StackTrace);
-            //}
         }
 
         private void cmb_UserBranch_SelectionChangeCommitted(object sender, EventArgs e)
@@ -193,6 +204,73 @@ namespace Laboratory.PL
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+           
+           
+            if (rdb_monthe.Checked==true)
+            {
+               
+                dataGridView2.DataSource = null;
+               
+                lable_day.Hide();
+                DateFrom.Hide();
+
+                lable_mothe.Show();
+                cmb_month.Show();
+                cmb_year.Show();
+                lable_year.Show();
+                cmb_clients.Enabled = true;
+             
+                dataGridView1.Show();
+                dataGridView2.Hide();
+            }
+          
+        }
+
+        private void rdb_day_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdb_day.Checked == true)
+            {
+
+                dataGridView1.Rows.Clear();
+               
+
+                lable_day.Show();
+                DateFrom.Show();
+                lable_mothe.Hide();
+                cmb_month.Hide();
+                cmb_year.Hide();
+                lable_year.Hide();
+                cmb_clients.Enabled = false;
+              
+
+                dataGridView1.Hide();
+                dataGridView2.Show();
+
+            }
+        }
+
+        private void rdb_noIn_CheckedChanged(object sender, EventArgs e)
+        {
+         
+          
+        }
+
+        private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
         }
     }
 }
