@@ -52,7 +52,7 @@ namespace Laboratory.PL
         }
         void clears()
         {
-      
+            Btn_Add.Enabled = true;
             Btn_Update.Enabled = false;
             txt_address.Clear();
             txt_name.Clear();
@@ -102,13 +102,25 @@ namespace Laboratory.PL
                 label9.Show();
                 Txt_Salary.Show();           
                 Btn_Update.Enabled = true;
+                Btn_Add.Enabled = false;
                 txt_name.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                 cmb_department.Text= dataGridView1.CurrentRow.Cells[2].Value.ToString();
                 dateTimePicker1.Text= dataGridView1.CurrentRow.Cells[3].Value.ToString();
                 txt_phone.Text= dataGridView1.CurrentRow.Cells[4].Value.ToString();
                 txt_address.Text= dataGridView1.CurrentRow.Cells[5].Value.ToString();
                 txt_NationalID.Text= dataGridView1.CurrentRow.Cells[6].Value.ToString();
-                Txt_Salary.Text= dataGridView1.CurrentRow.Cells[7].Value.ToString();
+                if (dataGridView1.CurrentRow.Cells[8].Value.ToString()== "شيفت")
+                {
+                    Txt_Salary.Hide();
+                    label9.Hide();
+                }
+                else if(dataGridView1.CurrentRow.Cells[8].Value.ToString() == "مرتب شهرى")
+                {
+                    Txt_Salary.Show();
+                    label9.Show();
+                    Txt_Salary.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+
+                }
                 comboBox1.Text= dataGridView1.CurrentRow.Cells[8].Value.ToString();
             }
         }
@@ -261,10 +273,10 @@ namespace Laboratory.PL
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                MessageBox.Show(ex.StackTrace);
             }
         }
     }
