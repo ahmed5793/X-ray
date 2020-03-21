@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Laboratory.BL;
+using Laboratory.RPT.Order;
+using Laboratory.RPT_Order;
 
 namespace Laboratory.PL
 {
@@ -16,14 +18,14 @@ namespace Laboratory.PL
     {
         Finger F = new Finger();
         Branches b = new Branches();
-        
+
         public frm_ReportFingerExcell()
         {
             InitializeComponent();
             //cmb_clients.DataSource = F.selectIDfingeremployeeExcell();
             //cmb_clients.DisplayMember = "IDEmployee";
             //cmb_clients.ValueMember = "IDEmployee";
-        
+
             cmb_user_branch.DataSource = b.SelectCompBranches();
             cmb_user_branch.DisplayMember = "Name";
             cmb_user_branch.ValueMember = "Branch_ID";
@@ -38,11 +40,11 @@ namespace Laboratory.PL
             cmb_year.Show();
             lable_year.Show();
             cmb_clients.Enabled = true;
-        
+
             dataGridView1.Show();
             dataGridView2.Hide();
         }
-    
+
         void year()
         {
             for (int i = 2020; i <= DateTime.Now.Year; i++)
@@ -81,7 +83,7 @@ namespace Laboratory.PL
 
 
         }
-      
+
         public DataTable getatt(int EmpID, string year, string month)
         {
             DataTable dt = new DataTable();
@@ -99,11 +101,11 @@ namespace Laboratory.PL
                 DateTime daydate = new DateTime(int.Parse(year), int.Parse(month), i + 1);
 
                 dt2.Clear();
-                dt2 = F.AttendanceExcell(Convert.ToInt32(cmb_clients.SelectedValue), daydate,Convert.ToInt32(cmb_user_branch.SelectedValue));
-      
-                dt.Rows.Add(daydate.ToString("dd-MM-yyyy"), daydate.ToString("dddd"), dt2.Rows[0][0],dt2.Rows[0][1]);
+                dt2 = F.AttendanceExcell(Convert.ToInt32(cmb_clients.SelectedValue), daydate, Convert.ToInt32(cmb_user_branch.SelectedValue));
 
-              
+                dt.Rows.Add(daydate.ToString("dd-MM-yyyy"), daydate.ToString("dddd"), dt2.Rows[0][0], dt2.Rows[0][1]);
+
+
 
 
 
@@ -123,30 +125,30 @@ namespace Laboratory.PL
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-           dataGridView1.Rows.Clear();
+            dataGridView1.Rows.Clear();
 
             try
             {
+
+
+                if (cmb_user_branch.Text == "")
+                {
+                    MessageBox.Show("من فضلك قم بااختيار الفرع");
+                    return;
+
+
+                }
+             
+
                 if (rdb_monthe.Checked == true)
                 {
 
-
-
-                    if (cmb_user_branch.Text == "")
-                    {
-                        MessageBox.Show("من فضلك قم بااختيار الفرع");
-                        return;
-
-
-                    }
                     if (cmb_clients.Text == "")
                     {
                         MessageBox.Show("من فضلك قم بااختيار اسم الموظف");
                         return;
 
                     }
-
-
                     DataTable dt10 = new DataTable();
 
 
@@ -170,15 +172,15 @@ namespace Laboratory.PL
                         }
 
 
-
                     }
+
 
                 }
                 else if (rdb_day.Checked==true)
                 {
-                    dataGridView2.DataSource = F.SelectAllAttendanceExcell(DateFrom.Value, Convert.ToInt32(cmb_user_branch.SelectedValue));
-
+                    dataGridView2.DataSource = f.SelectAllAttendanceExcell(Convert.ToDateTime(DateFrom.Value.ToShortDateString()), Convert.ToInt32(cmb_user_branch.SelectedValue));
                 }
+
             }
             catch (Exception ex)
             {
@@ -190,13 +192,13 @@ namespace Laboratory.PL
 
         private void cmb_UserBranch_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            if (cmb_user_branch.Text!="")
+            if (cmb_user_branch.Text != "")
             {
                 dataGridView1.Rows.Clear();
-               cmb_clients.DataSource= F.selectIDfingeremployeeExcell(Convert.ToInt32(cmb_user_branch.SelectedValue));
+                cmb_clients.DataSource = F.selectIDfingeremployeeExcell(Convert.ToInt32(cmb_user_branch.SelectedValue));
                 cmb_clients.DisplayMember = "Name_Employee";
                 cmb_clients.ValueMember = "IDEmployee";
-           
+
 
             }
         }
@@ -213,13 +215,13 @@ namespace Laboratory.PL
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-           
-           
-            if (rdb_monthe.Checked==true)
+
+
+            if (rdb_monthe.Checked == true)
             {
-               
+
                 dataGridView2.DataSource = null;
-               
+
                 lable_day.Hide();
                 DateFrom.Hide();
 
@@ -228,11 +230,11 @@ namespace Laboratory.PL
                 cmb_year.Show();
                 lable_year.Show();
                 cmb_clients.Enabled = true;
-             
+
                 dataGridView1.Show();
                 dataGridView2.Hide();
             }
-          
+
         }
 
         private void rdb_day_CheckedChanged(object sender, EventArgs e)
@@ -241,7 +243,7 @@ namespace Laboratory.PL
             {
 
                 dataGridView1.Rows.Clear();
-               
+
 
                 lable_day.Show();
                 DateFrom.Show();
@@ -250,7 +252,7 @@ namespace Laboratory.PL
                 cmb_year.Hide();
                 lable_year.Hide();
                 cmb_clients.Enabled = false;
-              
+
 
                 dataGridView1.Hide();
                 dataGridView2.Show();
@@ -260,8 +262,8 @@ namespace Laboratory.PL
 
         private void rdb_noIn_CheckedChanged(object sender, EventArgs e)
         {
-         
-          
+
+
         }
 
         private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e)
@@ -272,5 +274,117 @@ namespace Laboratory.PL
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
         }
+        Finger f = new Finger();
+        private void simpleButton1_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+
+                if (rdb_monthe.Checked == true)
+                {
+
+                    if (dataGridView1.Rows.Count > 0)
+                    {
+
+
+
+
+                        DataSetFingerExcell ds1 = new DataSetFingerExcell();
+                        RPT.Order.RPT_FingeerExcell rf = new RPT.Order.RPT_FingeerExcell();
+                        frm_SingelReport sr = new frm_SingelReport();
+
+                        sr.documentViewer1.Refresh();
+                        ds1.Tables["DataTable1"].Clear();
+
+                        for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                        {
+
+
+                            ds1.Tables["DataTable1"].Rows.Add(dataGridView1.Rows[i].Cells[0].Value.ToString(), dataGridView1.Rows[i].Cells[1].Value.ToString(),
+                            dataGridView1.Rows[i].Cells[2].Value.ToString(), dataGridView1.Rows[i].Cells[3].Value.ToString());
+
+
+
+
+
+
+                        }
+
+
+                        rf.DataSource = ds1;
+                        rf.Parameters["Date"].Value = cmb_year.Text + "/" + cmb_month.Text;
+                        rf.Parameters["ID"].Value = Convert.ToInt32(cmb_clients.SelectedValue);
+                        rf.Parameters["idbranch"].Value = Convert.ToInt32(cmb_user_branch.SelectedValue);
+                        rf.Parameters["NameEmployee"].Value = cmb_clients.Text;
+                        rf.Parameters["UserName"].Value = Program.salesman;
+
+
+
+                        sr.documentViewer1.DocumentSource = rf;
+                        rf.Parameters["Date"].Visible = false;
+                        rf.Parameters["ID"].Visible = false;
+                        rf.Parameters["idbranch"].Visible = false;
+                        rf.Parameters["NameEmployee"].Visible = false;
+                        rf.Parameters["UserName"].Visible = false;
+                        sr.ShowDialog();
+                    }
+                }
+
+
+                else if (rdb_day.Checked == true)
+                {
+                    if (dataGridView2.Rows.Count > 0)
+                    {
+
+
+                        DataSetFingerExcelDay ds = new DataSetFingerExcelDay();
+                        RPT_FingerExcellDay rd = new RPT_FingerExcellDay();
+                        frm_SingelReport sr = new frm_SingelReport();
+
+                        sr.documentViewer1.Refresh();
+                        ds.Tables["DataTableDay"].Clear();
+
+                        for (int i = 0; i < dataGridView2.Rows.Count; i++)
+                        {
+
+
+                            ds.Tables["DataTableDay"].Rows.Add(dataGridView2.Rows[i].Cells[0].Value.ToString(), dataGridView2.Rows[i].Cells[1].Value.ToString(),
+                               Convert.ToDateTime(dataGridView2.Rows[i].Cells[2].Value).ToString("hh:mm tt"),
+                            Convert.ToDateTime(dataGridView2.Rows[i].Cells[3].Value).ToString("hh:mm tt"));
+
+
+
+
+
+
+                        }
+
+
+                        rd.DataSource = ds;
+                        rd.Parameters["Date"].Value = Convert.ToDateTime(DateFrom.Value);
+                        rd.Parameters["NameBranch"].Value = cmb_user_branch.Text;
+                        rd.Parameters["UserName"].Value = Program.salesman;
+
+
+
+
+
+                        sr.documentViewer1.DocumentSource = rd;
+                        rd.Parameters["Date"].Visible = false;
+                        rd.Parameters["NameBranch"].Visible = false;
+                        rd.Parameters["UserName"].Visible = false;
+
+
+                        sr.ShowDialog();
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.StackTrace);
+            }
+        } 
     }
 }

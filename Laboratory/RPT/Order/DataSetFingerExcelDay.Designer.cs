@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace Laboratory {
+namespace Laboratory.RPT.Order {
     
     
     /// <summary>
@@ -20,17 +20,17 @@ namespace Laboratory {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("DataSet1")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DataSetFingerExcelDay")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class DataSet1 : global::System.Data.DataSet {
+    public partial class DataSetFingerExcelDay : global::System.Data.DataSet {
         
-        private DataTable1DataTable tableDataTable1;
+        private DataTableDayDataTable tableDataTableDay;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public DataSet1() {
+        public DataSetFingerExcelDay() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace Laboratory {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected DataSet1(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DataSetFingerExcelDay(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace Laboratory {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["DataTable1"] != null)) {
-                    base.Tables.Add(new DataTable1DataTable(ds.Tables["DataTable1"]));
+                if ((ds.Tables["DataTableDay"] != null)) {
+                    base.Tables.Add(new DataTableDayDataTable(ds.Tables["DataTableDay"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace Laboratory {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public DataTable1DataTable DataTable1 {
+        public DataTableDayDataTable DataTableDay {
             get {
-                return this.tableDataTable1;
+                return this.tableDataTableDay;
             }
         }
         
@@ -127,7 +127,7 @@ namespace Laboratory {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            DataSet1 cln = ((DataSet1)(base.Clone()));
+            DataSetFingerExcelDay cln = ((DataSetFingerExcelDay)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace Laboratory {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["DataTable1"] != null)) {
-                    base.Tables.Add(new DataTable1DataTable(ds.Tables["DataTable1"]));
+                if ((ds.Tables["DataTableDay"] != null)) {
+                    base.Tables.Add(new DataTableDayDataTable(ds.Tables["DataTableDay"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace Laboratory {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableDataTable1 = ((DataTable1DataTable)(base.Tables["DataTable1"]));
+            this.tableDataTableDay = ((DataTableDayDataTable)(base.Tables["DataTableDay"]));
             if ((initTable == true)) {
-                if ((this.tableDataTable1 != null)) {
-                    this.tableDataTable1.InitVars();
+                if ((this.tableDataTableDay != null)) {
+                    this.tableDataTableDay.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace Laboratory {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "DataSet1";
+            this.DataSetName = "DataSetFingerExcelDay";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DataSet1.xsd";
+            this.Namespace = "http://tempuri.org/DataSetFingerExcelDay.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableDataTable1 = new DataTable1DataTable();
-            base.Tables.Add(this.tableDataTable1);
+            this.tableDataTableDay = new DataTableDayDataTable();
+            base.Tables.Add(this.tableDataTableDay);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeDataTable1() {
+        private bool ShouldSerializeDataTableDay() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace Laboratory {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            DataSet1 ds = new DataSet1();
+            DataSetFingerExcelDay ds = new DataSetFingerExcelDay();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,29 +270,27 @@ namespace Laboratory {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void DataTable1RowChangeEventHandler(object sender, DataTable1RowChangeEvent e);
+        public delegate void DataTableDayRowChangeEventHandler(object sender, DataTableDayRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class DataTable1DataTable : global::System.Data.TypedTableBase<DataTable1Row> {
+        public partial class DataTableDayDataTable : global::System.Data.TypedTableBase<DataTableDayRow> {
             
-            private global::System.Data.DataColumn columnID_Tickets;
+            private global::System.Data.DataColumn columnID_Empl;
             
-            private global::System.Data.DataColumn columnNAME_CUSTOMER;
+            private global::System.Data.DataColumn columnEmp_Name;
             
-            private global::System.Data.DataColumn columnITEM_NAME;
+            private global::System.Data.DataColumn columnatt_in;
             
-            private global::System.Data.DataColumn columnDOCTOR_OFPatient;
-            
-            private global::System.Data.DataColumn columndate_Visit;
+            private global::System.Data.DataColumn columnatt_Out;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DataTable1DataTable() {
-                this.TableName = "DataTable1";
+            public DataTableDayDataTable() {
+                this.TableName = "DataTableDay";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -300,7 +298,7 @@ namespace Laboratory {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal DataTable1DataTable(global::System.Data.DataTable table) {
+            internal DataTableDayDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -317,48 +315,40 @@ namespace Laboratory {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected DataTable1DataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected DataTableDayDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn ID_TicketsColumn {
+            public global::System.Data.DataColumn ID_EmplColumn {
                 get {
-                    return this.columnID_Tickets;
+                    return this.columnID_Empl;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn NAME_CUSTOMERColumn {
+            public global::System.Data.DataColumn Emp_NameColumn {
                 get {
-                    return this.columnNAME_CUSTOMER;
+                    return this.columnEmp_Name;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn ITEM_NAMEColumn {
+            public global::System.Data.DataColumn att_inColumn {
                 get {
-                    return this.columnITEM_NAME;
+                    return this.columnatt_in;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn DOCTOR_OFPatientColumn {
+            public global::System.Data.DataColumn att_OutColumn {
                 get {
-                    return this.columnDOCTOR_OFPatient;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn date_VisitColumn {
-                get {
-                    return this.columndate_Visit;
+                    return this.columnatt_Out;
                 }
             }
             
@@ -373,49 +363,48 @@ namespace Laboratory {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DataTable1Row this[int index] {
+            public DataTableDayRow this[int index] {
                 get {
-                    return ((DataTable1Row)(this.Rows[index]));
+                    return ((DataTableDayRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event DataTable1RowChangeEventHandler DataTable1RowChanging;
+            public event DataTableDayRowChangeEventHandler DataTableDayRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event DataTable1RowChangeEventHandler DataTable1RowChanged;
+            public event DataTableDayRowChangeEventHandler DataTableDayRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event DataTable1RowChangeEventHandler DataTable1RowDeleting;
+            public event DataTableDayRowChangeEventHandler DataTableDayRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event DataTable1RowChangeEventHandler DataTable1RowDeleted;
+            public event DataTableDayRowChangeEventHandler DataTableDayRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddDataTable1Row(DataTable1Row row) {
+            public void AddDataTableDayRow(DataTableDayRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DataTable1Row AddDataTable1Row(string ID_Tickets, string NAME_CUSTOMER, string ITEM_NAME, string DOCTOR_OFPatient, string date_Visit) {
-                DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
+            public DataTableDayRow AddDataTableDayRow(string ID_Empl, string Emp_Name, string att_in, string att_Out) {
+                DataTableDayRow rowDataTableDayRow = ((DataTableDayRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ID_Tickets,
-                        NAME_CUSTOMER,
-                        ITEM_NAME,
-                        DOCTOR_OFPatient,
-                        date_Visit};
-                rowDataTable1Row.ItemArray = columnValuesArray;
-                this.Rows.Add(rowDataTable1Row);
-                return rowDataTable1Row;
+                        ID_Empl,
+                        Emp_Name,
+                        att_in,
+                        att_Out};
+                rowDataTableDayRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowDataTableDayRow);
+                return rowDataTableDayRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                DataTable1DataTable cln = ((DataTable1DataTable)(base.Clone()));
+                DataTableDayDataTable cln = ((DataTableDayDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -423,58 +412,55 @@ namespace Laboratory {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new DataTable1DataTable();
+                return new DataTableDayDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnID_Tickets = base.Columns["ID_Tickets"];
-                this.columnNAME_CUSTOMER = base.Columns["NAME_CUSTOMER"];
-                this.columnITEM_NAME = base.Columns["ITEM_NAME"];
-                this.columnDOCTOR_OFPatient = base.Columns["DOCTOR_OFPatient"];
-                this.columndate_Visit = base.Columns["date_Visit"];
+                this.columnID_Empl = base.Columns["ID_Empl"];
+                this.columnEmp_Name = base.Columns["Emp_Name"];
+                this.columnatt_in = base.Columns["att_in"];
+                this.columnatt_Out = base.Columns["att_Out"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnID_Tickets = new global::System.Data.DataColumn("ID_Tickets", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID_Tickets);
-                this.columnNAME_CUSTOMER = new global::System.Data.DataColumn("NAME_CUSTOMER", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNAME_CUSTOMER);
-                this.columnITEM_NAME = new global::System.Data.DataColumn("ITEM_NAME", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnITEM_NAME);
-                this.columnDOCTOR_OFPatient = new global::System.Data.DataColumn("DOCTOR_OFPatient", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDOCTOR_OFPatient);
-                this.columndate_Visit = new global::System.Data.DataColumn("date_Visit", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndate_Visit);
+                this.columnID_Empl = new global::System.Data.DataColumn("ID_Empl", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_Empl);
+                this.columnEmp_Name = new global::System.Data.DataColumn("Emp_Name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEmp_Name);
+                this.columnatt_in = new global::System.Data.DataColumn("att_in", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnatt_in);
+                this.columnatt_Out = new global::System.Data.DataColumn("att_Out", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnatt_Out);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DataTable1Row NewDataTable1Row() {
-                return ((DataTable1Row)(this.NewRow()));
+            public DataTableDayRow NewDataTableDayRow() {
+                return ((DataTableDayRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new DataTable1Row(builder);
+                return new DataTableDayRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(DataTable1Row);
+                return typeof(DataTableDayRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.DataTable1RowChanged != null)) {
-                    this.DataTable1RowChanged(this, new DataTable1RowChangeEvent(((DataTable1Row)(e.Row)), e.Action));
+                if ((this.DataTableDayRowChanged != null)) {
+                    this.DataTableDayRowChanged(this, new DataTableDayRowChangeEvent(((DataTableDayRow)(e.Row)), e.Action));
                 }
             }
             
@@ -482,8 +468,8 @@ namespace Laboratory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.DataTable1RowChanging != null)) {
-                    this.DataTable1RowChanging(this, new DataTable1RowChangeEvent(((DataTable1Row)(e.Row)), e.Action));
+                if ((this.DataTableDayRowChanging != null)) {
+                    this.DataTableDayRowChanging(this, new DataTableDayRowChangeEvent(((DataTableDayRow)(e.Row)), e.Action));
                 }
             }
             
@@ -491,8 +477,8 @@ namespace Laboratory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.DataTable1RowDeleted != null)) {
-                    this.DataTable1RowDeleted(this, new DataTable1RowChangeEvent(((DataTable1Row)(e.Row)), e.Action));
+                if ((this.DataTableDayRowDeleted != null)) {
+                    this.DataTableDayRowDeleted(this, new DataTableDayRowChangeEvent(((DataTableDayRow)(e.Row)), e.Action));
                 }
             }
             
@@ -500,14 +486,14 @@ namespace Laboratory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.DataTable1RowDeleting != null)) {
-                    this.DataTable1RowDeleting(this, new DataTable1RowChangeEvent(((DataTable1Row)(e.Row)), e.Action));
+                if ((this.DataTableDayRowDeleting != null)) {
+                    this.DataTableDayRowDeleting(this, new DataTableDayRowChangeEvent(((DataTableDayRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveDataTable1Row(DataTable1Row row) {
+            public void RemoveDataTableDayRow(DataTableDayRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -516,7 +502,7 @@ namespace Laboratory {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSet1 ds = new DataSet1();
+                DataSetFingerExcelDay ds = new DataSetFingerExcelDay();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -534,7 +520,7 @@ namespace Laboratory {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "DataTable1DataTable";
+                attribute2.FixedValue = "DataTableDayDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -578,155 +564,127 @@ namespace Laboratory {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class DataTable1Row : global::System.Data.DataRow {
+        public partial class DataTableDayRow : global::System.Data.DataRow {
             
-            private DataTable1DataTable tableDataTable1;
+            private DataTableDayDataTable tableDataTableDay;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal DataTable1Row(global::System.Data.DataRowBuilder rb) : 
+            internal DataTableDayRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableDataTable1 = ((DataTable1DataTable)(this.Table));
+                this.tableDataTableDay = ((DataTableDayDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string ID_Tickets {
+            public string ID_Empl {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTable1.ID_TicketsColumn]));
+                        return ((string)(this[this.tableDataTableDay.ID_EmplColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ID_Tickets\' in table \'DataTable1\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ID_Empl\' in table \'DataTableDay\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable1.ID_TicketsColumn] = value;
+                    this[this.tableDataTableDay.ID_EmplColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string NAME_CUSTOMER {
+            public string Emp_Name {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTable1.NAME_CUSTOMERColumn]));
+                        return ((string)(this[this.tableDataTableDay.Emp_NameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'NAME_CUSTOMER\' in table \'DataTable1\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Emp_Name\' in table \'DataTableDay\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable1.NAME_CUSTOMERColumn] = value;
+                    this[this.tableDataTableDay.Emp_NameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string ITEM_NAME {
+            public string att_in {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTable1.ITEM_NAMEColumn]));
+                        return ((string)(this[this.tableDataTableDay.att_inColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ITEM_NAME\' in table \'DataTable1\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'att_in\' in table \'DataTableDay\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable1.ITEM_NAMEColumn] = value;
+                    this[this.tableDataTableDay.att_inColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string DOCTOR_OFPatient {
+            public string att_Out {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTable1.DOCTOR_OFPatientColumn]));
+                        return ((string)(this[this.tableDataTableDay.att_OutColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DOCTOR_OFPatient\' in table \'DataTable1\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'att_Out\' in table \'DataTableDay\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable1.DOCTOR_OFPatientColumn] = value;
+                    this[this.tableDataTableDay.att_OutColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string date_Visit {
-                get {
-                    try {
-                        return ((string)(this[this.tableDataTable1.date_VisitColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'date_Visit\' in table \'DataTable1\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDataTable1.date_VisitColumn] = value;
-                }
+            public bool IsID_EmplNull() {
+                return this.IsNull(this.tableDataTableDay.ID_EmplColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsID_TicketsNull() {
-                return this.IsNull(this.tableDataTable1.ID_TicketsColumn);
+            public void SetID_EmplNull() {
+                this[this.tableDataTableDay.ID_EmplColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetID_TicketsNull() {
-                this[this.tableDataTable1.ID_TicketsColumn] = global::System.Convert.DBNull;
+            public bool IsEmp_NameNull() {
+                return this.IsNull(this.tableDataTableDay.Emp_NameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsNAME_CUSTOMERNull() {
-                return this.IsNull(this.tableDataTable1.NAME_CUSTOMERColumn);
+            public void SetEmp_NameNull() {
+                this[this.tableDataTableDay.Emp_NameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetNAME_CUSTOMERNull() {
-                this[this.tableDataTable1.NAME_CUSTOMERColumn] = global::System.Convert.DBNull;
+            public bool Isatt_inNull() {
+                return this.IsNull(this.tableDataTableDay.att_inColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsITEM_NAMENull() {
-                return this.IsNull(this.tableDataTable1.ITEM_NAMEColumn);
+            public void Setatt_inNull() {
+                this[this.tableDataTableDay.att_inColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetITEM_NAMENull() {
-                this[this.tableDataTable1.ITEM_NAMEColumn] = global::System.Convert.DBNull;
+            public bool Isatt_OutNull() {
+                return this.IsNull(this.tableDataTableDay.att_OutColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsDOCTOR_OFPatientNull() {
-                return this.IsNull(this.tableDataTable1.DOCTOR_OFPatientColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetDOCTOR_OFPatientNull() {
-                this[this.tableDataTable1.DOCTOR_OFPatientColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isdate_VisitNull() {
-                return this.IsNull(this.tableDataTable1.date_VisitColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setdate_VisitNull() {
-                this[this.tableDataTable1.date_VisitColumn] = global::System.Convert.DBNull;
+            public void Setatt_OutNull() {
+                this[this.tableDataTableDay.att_OutColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -734,22 +692,22 @@ namespace Laboratory {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class DataTable1RowChangeEvent : global::System.EventArgs {
+        public class DataTableDayRowChangeEvent : global::System.EventArgs {
             
-            private DataTable1Row eventRow;
+            private DataTableDayRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DataTable1RowChangeEvent(DataTable1Row row, global::System.Data.DataRowAction action) {
+            public DataTableDayRowChangeEvent(DataTableDayRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DataTable1Row Row {
+            public DataTableDayRow Row {
                 get {
                     return this.eventRow;
                 }

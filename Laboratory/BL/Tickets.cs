@@ -588,7 +588,20 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
+        internal DataTable PrintBarcode(int idtickets)
+        {
+            DataTable dt = new DataTable();
 
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@idTickets", SqlDbType.Int);
+            param[0].Value = idtickets;
+
+            dt = da.selected("PrintBarcode", param);
+            da.close();
+            return dt;
+        }
 
     }
 }

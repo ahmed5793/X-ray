@@ -611,135 +611,6 @@ namespace Laboratory.PL
 
         private void btn_addgrid_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (dgv_order.Rows.Count>0)
-                {
-                    MessageBox.Show("لايمكن عمل اكثر من فحص في نفس الفاتورة","",MessageBoxButtons.OK,MessageBoxIcon.Warning);
-                    return;
-                }
-                if (cmb_statues.Text=="")
-                {
-                    MessageBox.Show("من فضلك قم بتحديد طريقة التعامل للفاتورة");
-                    cmb_statues.Focus();
-                    
-                    return;
-                }
-                for (int i = 0; i < dgv_order.Rows.Count; i++)
-                {
-
-
-                    if (Convert.ToInt32(cmb_items.SelectedValue) == Convert.ToInt32(dgv_order.Rows[i].Cells[0].Value))
-                    {
-                        Console.Beep();
-                        MessageBox.Show("هذا الاشعة مسجلة من قبل ", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                        return;
-                    }
-                }
-                if (Cmb_category.Text=="")
-                {
-                    MessageBox.Show("من فضلك قم بااختيار فئة الفحص");
-                    return;
-                }
-                if (cmb_items.Text == "")
-                {
-                    MessageBox.Show("من فضلك قم بااختيارنوع الفحص");
-                    return;
-                }
-      
-                else
-                {
-                    if (cmb_statues.Text=="نقدى")
-                    {
-                        decimal x1;
-                        dt.Clear();
-                        dt = ix.SelectPriseItem(Convert.ToInt32(cmb_items.SelectedValue));
-                        x1 = Convert.ToDecimal(dt.Rows[0][0].ToString());
-                        DataRow r = dt2.NewRow();
-                        r[0] = cmb_items.SelectedValue;
-                        r[1] = cmb_items.Text;
-                        r[2] = x1;
-                        r[3] = 0;
-
-                        dt2.Rows.Add(r);
-                        Console.Beep();
-                        dgv_order.DataSource = dt2;
-                        dgv_order.Columns[3].Visible = false;
-                        totalOrder();
-                        if (rdb_Discount.Checked == true)
-                        {
-                            Discount();
-                        }
-                        else
-                        {
-                            DiscountMoney();
-                        }
-                        //Patient_PaymentRate();
-                        //Rent_Company();
-                        pay();
-
-                    }
-
-                  else  if (cmb_statues.Text== "شركات")
-                  {
-                        DataTable dt12 = new DataTable();
-               
-                        DataRow r = dt2.NewRow();
-
-                        dt12 = t.VildateXrayCompany(Convert.ToInt32(cmb_items.SelectedValue), Convert.ToInt32(cmb_Company.SelectedValue));
-                        if (dt12.Rows.Count > 0)
-                        {
-                            dt.Clear();
-                            dt = cm.Select_PriceXrayCompany(Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToInt32(cmb_items.SelectedValue));
-                            decimal y;
-                            decimal x;
-                            x = Convert.ToDecimal(dt.Rows[0][0].ToString());
-                            y = Convert.ToDecimal(dt.Rows[0][1].ToString());
-                            r[0] = cmb_items.SelectedValue;
-                            r[1] = cmb_items.Text;
-                            r[2] = x;
-                            r[3] = y;
-                        }
-
-                        else if (dt12.Rows.Count == 0)
-                        {
-                            decimal x1;
-                            dt.Clear();
-                            dt = ix.SelectPriseItem(Convert.ToInt32(cmb_items.SelectedValue));
-                            x1 = Convert.ToDecimal(dt.Rows[0][0].ToString());
-                            r[0] = cmb_items.SelectedValue;
-                            r[1] = cmb_items.Text;
-                            r[2] = x1;
-                            r[3] = 0;
-                        }
-                        dt2.Rows.Add(r);
-                        Console.Beep();
-                        dgv_order.DataSource = dt2;
-                        dgv_order.Columns[3].Visible = true ;
-                        totalOrder();
-                        if (rdb_Discount.Checked == true)
-                        {
-                            Discount();
-                        }
-                        else
-                        {
-                            DiscountMoney();
-                        }
-                        Patient_PaymentRate();
-                        Rent_Company();
-                        pay();
-
-                    }
-                 
-
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
@@ -904,24 +775,18 @@ namespace Laboratory.PL
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Frm_DoctorOfCenter dc = new Frm_DoctorOfCenter();
-            dc.ShowDialog();
-            DoctorOfCenter();
+            
 
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Frm_Techincal ft = new Frm_Techincal();
-            ft.ShowDialog();
-            Techincal();
+           
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Frm_Doctor fd = new Frm_Doctor();
-            fd.ShowDialog();
-            doctor();
+           
         }
 
         private void cmb_Company_SelectionChangeCommitted(object sender, EventArgs e)
@@ -1264,28 +1129,7 @@ namespace Laboratory.PL
         }
 
         private void Btn_DetailsCompany_Click(object sender, EventArgs e)
-        { DataTable dt = new DataTable();
-            try
-            {
-                Frm_DetailsCompay frmdc = new Frm_DetailsCompay();
-                if (cmb_Company.Text != string.Empty)
-                {
-                    dt.Clear();
-                    dt = cm.Select_DetailsCompany(Convert.ToInt32(cmb_Company.SelectedValue));
-                    frmdc.txt_prise.Text = dt.Rows[0][0].ToString(); 
-                    frmdc.ShowDialog();
-
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                dt.Dispose();
-            }
+        {
         }
 
         private void Txt_addtionPayment_KeyDown(object sender, KeyEventArgs e)
@@ -1334,11 +1178,11 @@ namespace Laboratory.PL
         {
             clear();
         }
-
+        frm_SingelReport sr = new frm_SingelReport();
         private void simpleButton1_Click(object sender, EventArgs e)
         {
 
-            frm_SingelReport sr = new frm_SingelReport();
+         
 
             //    Rpt_OrderPay report = new Rpt_OrderPay();
 
@@ -1477,20 +1321,32 @@ namespace Laboratory.PL
                             MessageBox.Show("تم حفظ الفاتورة بنجاح");
                         }
 
-
-
                         Rpt_OrderPay report = new Rpt_OrderPay();
+                        RPT.Order.DataSetOrderPay dso = new RPT.Order.DataSetOrderPay();
+                        DataTable dt1 = new DataTable();
+                        dt1.Clear();
+                        dt1 = t.ReportInvoiceTicketPay(Convert.ToInt32(txt_IdTicket.Text));
+                        dso.Tables["DataTable1"].Clear();
+                        for (int i = 0; i < dt1.Rows.Count; i++)
+                        {
+                            dso.Tables["DataTable1"].Rows.Add(Convert.ToInt32(dt1.Rows[0][0]), dt1.Rows[0][1], dt1.Rows[0][2],
+                                Convert.ToDecimal(dt1.Rows[0][3]), dt1.Rows[0][4], dt1.Rows[0][5], Convert.ToInt32(dt1.Rows[0][6]), Convert.ToDateTime(dt1.Rows[0][7]),
+                                Convert.ToDateTime(dt1.Rows[0][8]), dt1.Rows[0][9], dt1.Rows[0][10], dt1.Rows[0][11], dt1.Rows[0][12], dt1.Rows[0][13],
+                                Convert.ToDecimal(dt1.Rows[0][14]), Convert.ToDecimal(dt1.Rows[0][15]), Convert.ToDecimal(dt1.Rows[0][16]),
+                                dt1.Rows[0][17], dt1.Rows[0][18], dt1.Rows[0][19], Convert.ToDateTime(dt1.Rows[0][20]), Convert.ToDecimal(dt1.Rows[0][21]),
+                                dt1.Rows[0][22], Convert.ToDecimal(dt1.Rows[0][23]), dt1.Rows[0][24], Convert.ToInt32(dt1.Rows[0][25]), Convert.ToInt32(dt1.Rows[0][26]),
+                                Convert.ToInt32(dt1.Rows[0][27]));
+                        }
 
                         sr.documentViewer1.Refresh();
-
-                        DataTable dt5 = new DataTable();
-                        dt5.Clear();
-                        dt5 = t.ReportInvoiceTicketPay(Convert.ToInt32(txt_IdTicket.Text));
+                        report.DataSource = dso;
                         report.Parameters["idTicket"].Value = Convert.ToInt32(txt_IdTicket.Text);
-                        report.DataSource = dt5;
+                      
 
                         sr.documentViewer1.DocumentSource = report;
                         report.Parameters["idTicket"].Visible = false;
+                        sr.documentViewer1.Enabled = true;
+
                         sr.ShowDialog();
                     }
                     else if (cmb_statues.Text == "شركات")
@@ -1565,10 +1421,25 @@ namespace Laboratory.PL
                              ,Convert.ToInt32(cmb_UserBranch.SelectedValue),txt_username.Text);
 
                         Rpt_OrderCompany oc = new Rpt_OrderCompany();
-
+                        RPT.Order.DataSetOrderPay dso = new RPT.Order.DataSetOrderPay();
+                        DataTable dt1 = new DataTable();
+                        dt1.Clear();
+                        dt1 = t.ReportInvoiceTicketCompany(Convert.ToInt32(txt_IdTicket.Text));
+                        dso.Tables["DataTable1"].Clear();
+                        for (int i = 0; i < dt1.Rows.Count; i++)
+                        {
+                            dso.Tables["DataTable1"].Rows.Add(Convert.ToInt32(dt1.Rows[0][0]), dt1.Rows[0][1], dt1.Rows[0][2],
+                                Convert.ToDecimal(dt1.Rows[0][3]), dt1.Rows[0][4], dt1.Rows[0][5], dt1.Rows[0][6],Convert.ToDateTime(dt1.Rows[0][7]),
+                                Convert.ToDateTime(dt1.Rows[0][8]), dt1.Rows[0][9], dt1.Rows[0][10], dt1.Rows[0][11], dt1.Rows[0][12], dt1.Rows[0][13],
+                                Convert.ToDecimal(dt1.Rows[0][14]), Convert.ToDecimal(dt1.Rows[0][15]), Convert.ToDecimal(dt1.Rows[0][16]),
+                                dt1.Rows[0][17], dt1.Rows[0][18], dt1.Rows[0][19], dt1.Rows[0][20],Convert.ToDateTime(dt1.Rows[0][21]), Convert.ToDecimal(dt1.Rows[0][22]),
+                                dt1.Rows[0][23], Convert.ToDecimal(dt1.Rows[0][24]), dt1.Rows[0][25], Convert.ToDecimal(dt1.Rows[0][26]),
+                                Convert.ToDecimal(dt1.Rows[0][27]), Convert.ToInt32(dt1.Rows[0][28]), Convert.ToInt32(dt1.Rows[0][29]),
+                                Convert.ToInt32(dt1.Rows[0][30]));
+                        }
                         sr.documentViewer1.Refresh();
 
-                        oc.DataSource = t.ReportInvoiceTicketCompany(Convert.ToInt32(txt_IdTicket.Text));
+                        oc.DataSource = dso ;
 
                         oc.Parameters["idTicket"].Value = Convert.ToInt32(txt_IdTicket.Text);
 
@@ -1576,6 +1447,7 @@ namespace Laboratory.PL
 
                         sr.documentViewer1.DocumentSource = oc;
                         oc.Parameters["idTicket"].Visible = false;
+                        sr.documentViewer1.Enabled = true;
                         sr.ShowDialog();
 
                     }
@@ -1603,6 +1475,214 @@ namespace Laboratory.PL
 
                 MessageBox.Show(ex.Message);
                 MessageBox.Show(ex.StackTrace);
+            }
+        }
+
+        private void simpleButton1_Click_1(object sender, EventArgs e)
+        {
+            DataSet1 ds1 = new DataSet1();
+
+            DataTable dt = new DataTable();
+            dt.Clear();
+            dt = t.PrintBarcode(Convert.ToInt32(txt_IdTicket.Text));
+            RPT.RPT_Barcode rb = new RPT.RPT_Barcode();
+
+           sr.documentViewer1.Refresh();
+
+            ds1.Tables["DataTable1"].Clear();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                ds1.Tables["DataTable1"].Rows.Add(Convert.ToInt32(dt.Rows[i][0]),dt.Rows[i][1],dt.Rows[i][2],
+                    dt.Rows[i][3],Convert.ToDateTime(dt.Rows[i][4]));
+            }
+            rb.DataSource = ds1;
+            rb.Parameters["idTicket"].Value = Convert.ToInt32(txt_IdTicket.Text);
+
+
+
+            sr.documentViewer1.DocumentSource = rb;
+            rb.Parameters["idTicket"].Visible = false;
+            sr.ShowDialog();
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                Frm_DetailsCompay frmdc = new Frm_DetailsCompay();
+                if (cmb_Company.Text != string.Empty)
+                {
+                    dt.Clear();
+                    dt = cm.Select_DetailsCompany(Convert.ToInt32(cmb_Company.SelectedValue));
+                    frmdc.txt_prise.Text = dt.Rows[0][0].ToString();
+                    frmdc.ShowDialog();
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                dt.Dispose();
+            }
+        }
+
+        private void simpleButton2_Click_1(object sender, EventArgs e)
+        {
+            Frm_Doctor fd = new Frm_Doctor();
+            fd.ShowDialog();
+            doctor();
+        }
+
+        private void simpleButton4_Click(object sender, EventArgs e)
+        {
+            Frm_Techincal ft = new Frm_Techincal();
+            ft.ShowDialog();
+            Techincal();
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+            Frm_DoctorOfCenter dc = new Frm_DoctorOfCenter();
+            dc.ShowDialog();
+            DoctorOfCenter();
+        }
+
+        private void simpleButton5_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (dgv_order.Rows.Count > 0)
+                {
+                    MessageBox.Show("لايمكن عمل اكثر من فحص في نفس الفاتورة", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (cmb_statues.Text == "")
+                {
+                    MessageBox.Show("من فضلك قم بتحديد طريقة التعامل للفاتورة");
+                    cmb_statues.Focus();
+
+                    return;
+                }
+                for (int i = 0; i < dgv_order.Rows.Count; i++)
+                {
+
+
+                    if (Convert.ToInt32(cmb_items.SelectedValue) == Convert.ToInt32(dgv_order.Rows[i].Cells[0].Value))
+                    {
+                        Console.Beep();
+                        MessageBox.Show("هذا الاشعة مسجلة من قبل ", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        return;
+                    }
+                }
+                if (Cmb_category.Text == "")
+                {
+                    MessageBox.Show("من فضلك قم بااختيار فئة الفحص");
+                    return;
+                }
+                if (cmb_items.Text == "")
+                {
+                    MessageBox.Show("من فضلك قم بااختيارنوع الفحص");
+                    return;
+                }
+
+                else
+                {
+                    if (cmb_statues.Text == "نقدى")
+                    {
+                        decimal x1;
+                        dt.Clear();
+                        dt = ix.SelectPriseItem(Convert.ToInt32(cmb_items.SelectedValue));
+                        x1 = Convert.ToDecimal(dt.Rows[0][0].ToString());
+                        DataRow r = dt2.NewRow();
+                        r[0] = cmb_items.SelectedValue;
+                        r[1] = cmb_items.Text;
+                        r[2] = x1;
+                        r[3] = 0;
+
+                        dt2.Rows.Add(r);
+                        Console.Beep();
+                        dgv_order.DataSource = dt2;
+                        dgv_order.Columns[3].Visible = false;
+                        totalOrder();
+                        if (rdb_Discount.Checked == true)
+                        {
+                            Discount();
+                        }
+                        else
+                        {
+                            DiscountMoney();
+                        }
+                        //Patient_PaymentRate();
+                        //Rent_Company();
+                        pay();
+
+                    }
+
+                    else if (cmb_statues.Text == "شركات")
+                    {
+                        DataTable dt12 = new DataTable();
+
+                        DataRow r = dt2.NewRow();
+
+                        dt12 = t.VildateXrayCompany(Convert.ToInt32(cmb_items.SelectedValue), Convert.ToInt32(cmb_Company.SelectedValue));
+                        if (dt12.Rows.Count > 0)
+                        {
+                            dt.Clear();
+                            dt = cm.Select_PriceXrayCompany(Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToInt32(cmb_items.SelectedValue));
+                            decimal y;
+                            decimal x;
+                            x = Convert.ToDecimal(dt.Rows[0][0].ToString());
+                            y = Convert.ToDecimal(dt.Rows[0][1].ToString());
+                            r[0] = cmb_items.SelectedValue;
+                            r[1] = cmb_items.Text;
+                            r[2] = x;
+                            r[3] = y;
+                        }
+
+                        else if (dt12.Rows.Count == 0)
+                        {
+                            decimal x1;
+                            dt.Clear();
+                            dt = ix.SelectPriseItem(Convert.ToInt32(cmb_items.SelectedValue));
+                            x1 = Convert.ToDecimal(dt.Rows[0][0].ToString());
+                            r[0] = cmb_items.SelectedValue;
+                            r[1] = cmb_items.Text;
+                            r[2] = x1;
+                            r[3] = 0;
+                        }
+                        dt2.Rows.Add(r);
+                        Console.Beep();
+                        dgv_order.DataSource = dt2;
+                        dgv_order.Columns[3].Visible = true;
+                        totalOrder();
+                        if (rdb_Discount.Checked == true)
+                        {
+                            Discount();
+                        }
+                        else
+                        {
+                            DiscountMoney();
+                        }
+                        Patient_PaymentRate();
+                        Rent_Company();
+                        pay();
+
+                    }
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
             }
         }
 

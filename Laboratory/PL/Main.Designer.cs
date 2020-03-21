@@ -165,15 +165,21 @@
             this.ribbonPageGroup18 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.barHeaderItem31 = new DevExpress.XtraBars.BarHeaderItem();
+            this.barStaticItem8 = new DevExpress.XtraBars.BarStaticItem();
+            this.barStaticItem9 = new DevExpress.XtraBars.BarStaticItem();
+            this.barAndDockingController1 = new DevExpress.XtraBars.BarAndDockingController(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageEdit1)).BeginInit();
             this.fluentDesignFormContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.barAndDockingController1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
             // 
             this.ribbon.ApplicationButtonDropDownControl = this.checkEdit1;
+            this.ribbon.Controller = this.barAndDockingController1;
             this.ribbon.ExpandCollapseItem.Id = 0;
             this.ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbon.ExpandCollapseItem,
@@ -280,9 +286,11 @@
             this.Btn_ReportPullStock,
             this.Btn_SuppliersAccountStatment,
             this.Btn_AddAccount,
-            this.Btn_UserPermession});
+            this.Btn_UserPermession,
+            this.barStaticItem8,
+            this.barStaticItem9});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 124;
+            this.ribbon.MaxItemId = 129;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.basic_information,
@@ -295,7 +303,7 @@
             this.repositoryItemImageEdit1});
             this.ribbon.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.ribbon.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ribbon.Size = new System.Drawing.Size(980, 172);
+            this.ribbon.Size = new System.Drawing.Size(980, 169);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.Click += new System.EventHandler(this.ribbon_Click);
             // 
@@ -1037,6 +1045,8 @@
             this.barStaticItem3.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
             this.barStaticItem3.Caption = "Date Today";
             this.barStaticItem3.Id = 101;
+            this.barStaticItem3.ItemAppearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barStaticItem3.ItemAppearance.Normal.Options.UseFont = true;
             this.barStaticItem3.Name = "barStaticItem3";
             // 
             // barStaticItem4
@@ -1048,9 +1058,18 @@
             // barStaticItem5
             // 
             this.barStaticItem5.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.barStaticItem5.Caption = "barStaticItem5";
+            this.barStaticItem5.Caption = "DATE";
             this.barStaticItem5.Id = 103;
+            this.barStaticItem5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barStaticItem5.ImageOptions.Image")));
+            this.barStaticItem5.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barStaticItem5.ImageOptions.LargeImage")));
+            this.barStaticItem5.ItemAppearance.Normal.BackColor = System.Drawing.Color.Black;
+            this.barStaticItem5.ItemAppearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barStaticItem5.ItemAppearance.Normal.ForeColor = System.Drawing.Color.Yellow;
+            this.barStaticItem5.ItemAppearance.Normal.Options.UseBackColor = true;
+            this.barStaticItem5.ItemAppearance.Normal.Options.UseFont = true;
+            this.barStaticItem5.ItemAppearance.Normal.Options.UseForeColor = true;
             this.barStaticItem5.Name = "barStaticItem5";
+            this.barStaticItem5.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
             // barStaticItem6
             // 
@@ -1058,6 +1077,14 @@
             this.barStaticItem6.Id = 104;
             this.barStaticItem6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barStaticItem6.ImageOptions.Image")));
             this.barStaticItem6.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barStaticItem6.ImageOptions.LargeImage")));
+            this.barStaticItem6.ItemAppearance.Disabled.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barStaticItem6.ItemAppearance.Disabled.Options.UseFont = true;
+            this.barStaticItem6.ItemAppearance.Normal.BackColor = System.Drawing.Color.Lime;
+            this.barStaticItem6.ItemAppearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barStaticItem6.ItemAppearance.Normal.ForeColor = System.Drawing.Color.Black;
+            this.barStaticItem6.ItemAppearance.Normal.Options.UseBackColor = true;
+            this.barStaticItem6.ItemAppearance.Normal.Options.UseFont = true;
+            this.barStaticItem6.ItemAppearance.Normal.Options.UseForeColor = true;
             this.barStaticItem6.Name = "barStaticItem6";
             this.barStaticItem6.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
@@ -1065,6 +1092,8 @@
             // 
             this.barStaticItem7.Caption = "barStaticItem7";
             this.barStaticItem7.Id = 105;
+            this.barStaticItem7.ItemAppearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barStaticItem7.ItemAppearance.Normal.Options.UseFont = true;
             this.barStaticItem7.Name = "barStaticItem7";
             // 
             // Download_finger
@@ -1129,8 +1158,8 @@
             // 
             this.Btn_CustomerAccouantStatment.Caption = "كشف حساب عميل";
             this.Btn_CustomerAccouantStatment.Id = 115;
-            this.Btn_CustomerAccouantStatment.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
-            this.Btn_CustomerAccouantStatment.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.LargeImage")));
+            this.Btn_CustomerAccouantStatment.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_CustomerAccouantStatment.ImageOptions.Image")));
+            this.Btn_CustomerAccouantStatment.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("Btn_CustomerAccouantStatment.ImageOptions.LargeImage")));
             this.Btn_CustomerAccouantStatment.ItemAppearance.Normal.Options.UseTextOptions = true;
             this.Btn_CustomerAccouantStatment.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.Btn_CustomerAccouantStatment.ItemInMenuAppearance.Normal.Options.UseTextOptions = true;
@@ -1446,16 +1475,18 @@
             this.ribbonStatusBar.ItemLinks.Add(this.barStaticItem3);
             this.ribbonStatusBar.ItemLinks.Add(this.barStaticItem6);
             this.ribbonStatusBar.ItemLinks.Add(this.barStaticItem7);
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 555);
+            this.ribbonStatusBar.ItemLinks.Add(this.barStaticItem8);
+            this.ribbonStatusBar.ItemLinks.Add(this.barStaticItem9);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 543);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(980, 22);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(980, 31);
             // 
             // fluentDesignFormContainer1
             // 
             this.fluentDesignFormContainer1.Controls.Add(this.tileControl1);
             this.fluentDesignFormContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fluentDesignFormContainer1.Location = new System.Drawing.Point(0, 172);
+            this.fluentDesignFormContainer1.Location = new System.Drawing.Point(0, 169);
             this.fluentDesignFormContainer1.Name = "fluentDesignFormContainer1";
             this.fluentDesignFormContainer1.Size = new System.Drawing.Size(980, 405);
             this.fluentDesignFormContainer1.TabIndex = 2;
@@ -1492,13 +1523,56 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // barHeaderItem31
+            // 
+            this.barHeaderItem31.Caption = "barHeaderItem31";
+            this.barHeaderItem31.Id = 124;
+            this.barHeaderItem31.Name = "barHeaderItem31";
+            // 
+            // barStaticItem8
+            // 
+            this.barStaticItem8.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.barStaticItem8.Caption = "TIME";
+            this.barStaticItem8.Id = 127;
+            this.barStaticItem8.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barStaticItem8.ImageOptions.Image")));
+            this.barStaticItem8.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barStaticItem8.ImageOptions.LargeImage")));
+            this.barStaticItem8.ItemAppearance.Disabled.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.barStaticItem8.ItemAppearance.Disabled.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barStaticItem8.ItemAppearance.Disabled.ForeColor = System.Drawing.Color.Black;
+            this.barStaticItem8.ItemAppearance.Disabled.Options.UseBackColor = true;
+            this.barStaticItem8.ItemAppearance.Disabled.Options.UseFont = true;
+            this.barStaticItem8.ItemAppearance.Disabled.Options.UseForeColor = true;
+            this.barStaticItem8.ItemAppearance.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.barStaticItem8.ItemAppearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barStaticItem8.ItemAppearance.Normal.ForeColor = System.Drawing.Color.Black;
+            this.barStaticItem8.ItemAppearance.Normal.Options.UseBackColor = true;
+            this.barStaticItem8.ItemAppearance.Normal.Options.UseFont = true;
+            this.barStaticItem8.ItemAppearance.Normal.Options.UseForeColor = true;
+            this.barStaticItem8.Name = "barStaticItem8";
+            this.barStaticItem8.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // barStaticItem9
+            // 
+            this.barStaticItem9.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.barStaticItem9.Caption = "barStaticItem9";
+            this.barStaticItem9.Id = 128;
+            this.barStaticItem9.ItemAppearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barStaticItem9.ItemAppearance.Normal.Options.UseFont = true;
+            this.barStaticItem9.Name = "barStaticItem9";
+            // 
+            // barAndDockingController1
+            // 
+            this.barAndDockingController1.LookAndFeel.SkinName = "DevExpress Dark Style";
+            this.barAndDockingController1.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.barAndDockingController1.PropertiesBar.AllowLinkLighting = false;
+            // 
             // Main
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Stretch;
             this.BackgroundImageStore = global::Laboratory.Properties.Resources.home_clinic_;
-            this.ClientSize = new System.Drawing.Size(980, 577);
+            this.ClientSize = new System.Drawing.Size(980, 574);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.fluentDesignFormContainer1);
             this.Controls.Add(this.ribbon);
@@ -1519,6 +1593,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageEdit1)).EndInit();
             this.fluentDesignFormContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.barAndDockingController1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1661,5 +1736,9 @@
         public DevExpress.XtraBars.BarButtonItem Btn_AddAccount;
         public DevExpress.XtraBars.BarButtonItem Btn_UserPermession;
         public DevExpress.XtraBars.BarButtonItem Btn_CustomerAccouantStatment;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem8;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem9;
+        private DevExpress.XtraBars.BarHeaderItem barHeaderItem31;
+        private DevExpress.XtraBars.BarAndDockingController barAndDockingController1;
     }
 }

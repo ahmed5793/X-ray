@@ -473,7 +473,8 @@ namespace Laboratory.PL
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            barStaticItem5.Caption = DateTime.Now.ToString();
+            barStaticItem3.Caption = DateTime.Now.ToShortDateString();
+            barStaticItem9.Caption= DateTime.Now.ToLongTimeString() ;
         }
 
         private void Main_FormClosing(object sender, FormClosingEventArgs e)
