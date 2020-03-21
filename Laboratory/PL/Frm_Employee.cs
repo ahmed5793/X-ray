@@ -76,6 +76,14 @@ namespace Laboratory.PL
         {
             label9.Hide();
             Txt_Salary.Hide();
+            if (checkBox1.Checked == true)
+            {
+                cmb_branch.Enabled = true;
+            }
+            else
+            {
+                cmb_branch.Enabled = false;
+            }
         }
 
         private void btn_new_Click(object sender, EventArgs e)
@@ -234,7 +242,10 @@ namespace Laboratory.PL
                         txt_NationalID.Text, txt_phone.Text, txt_address.Text, dateTimePicker1.Value, Convert.ToInt32(cmb_department.SelectedValue));
                     dt.Clear();
                     dt = E.Select_LastId_Employee();
-                    E.AddEmployeeBranch(Convert.ToInt32(cmb_branch.SelectedValue), Convert.ToInt32(dt.Rows[0][0]));
+                    if (checkBox1.Checked==true)
+                    {
+                        E.AddEmployeeBranch(Convert.ToInt32(cmb_branch.SelectedValue), Convert.ToInt32(dt.Rows[0][0]));
+                    }
 
                     MessageBox.Show("تم تسجيل الموظف بنجاح");
                     clears();
@@ -280,21 +291,32 @@ namespace Laboratory.PL
                 {
                     E.UpdateEmployee(txt_name.Text, Convert.ToDecimal(Txt_Salary.Text), comboBox1.Text,
                         txt_NationalID.Text, txt_phone.Text, txt_address.Text, dateTimePicker1.Value, Convert.ToInt32(cmb_department.SelectedValue), Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
-                  
-                    E.UpdateEmployeeBranch(Convert.ToInt32(cmb_branch.SelectedValue),
-                        Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
+                    if (checkBox1.Checked==true)
+                    {
+                        E.UpdateEmployeeBranch(Convert.ToInt32(cmb_branch.SelectedValue),
+                            Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
+                    }
 
                     MessageBox.Show("تم تعديل بيانات الموظف بنجاح");
                     clears();
-
                     dataGridView1.DataSource = E.SelectEmployee();
                 }
-
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.StackTrace);
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked==true)
+            {
+                cmb_branch.Enabled = true;
+            }
+            else
+            {
+                cmb_branch.Enabled = false;
             }
         }
     }
