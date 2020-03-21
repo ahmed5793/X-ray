@@ -141,19 +141,19 @@ namespace Laboratory.PL
 
 
 
-                p.Add_UserBAsicInformation(txt_User.Text, 0, 0, 0, 0, 0, 0, 0,0,0);
+                p.Add_UserBAsicInformation(txt_User.Text, 1, 1, 1, 1, 1, 1, 1,1,1);
 
-                p.AddUser_Permission(txt_User.Text, 0, 0);
+                p.AddUser_Permission(txt_User.Text, 1, 1);
 
-                p.AddUser_Tickets(txt_User.Text, 0, 0, 0, 0, 0, 0, 0,0);
+                p.AddUser_Tickets(txt_User.Text, 1, 1, 1, 1, 1, 1, 1,1);
 
-                p.AddUser_Store(txt_User.Text, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                p.AddUser_Store(txt_User.Text, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
 
-                p.AddUserAccount(txt_User.Text, 0, 0, 0, 0, 0, 0, 0, 0, 0,0,0);
+                p.AddUserAccount(txt_User.Text, 1, 1, 1, 1, 1, 1, 1, 1, 1,1,1);
 
-                p.AddUserCompany(txt_User.Text, 0, 0, 0, 0, 0, 0, 0);
+                p.AddUserCompany(txt_User.Text, 1, 1, 1, 1, 1, 1, 1);
 
-                p.Add_UserEmployee(txt_User.Text, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                p.Add_UserEmployee(txt_User.Text, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
 
                 u.AddUser(Convert.ToInt32(comboBox1.SelectedValue), txt_User.Text, txt_Pass.Text);
                 dataGridViewList.DataSource = u.SelectUsers();
@@ -223,6 +223,11 @@ namespace Laboratory.PL
         {
             try
             {
+                if (comboBox1.Text=="ADMIN")
+                {
+                    MessageBox.Show("لايمكن مسح المستخدم الرئيسي");
+                    return;
+                }
                 if (MessageBox.Show("do you want remove USER", "", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
                 {
 

@@ -206,7 +206,7 @@
             this.Btn_Update.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Btn_Update.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_Update.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.Btn_Update.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.Btn_Update.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Update.ImageOptions.Image")));
             this.Btn_Update.Location = new System.Drawing.Point(159, 185);
             this.Btn_Update.Name = "Btn_Update";
             this.Btn_Update.Size = new System.Drawing.Size(129, 32);
@@ -226,7 +226,7 @@
             this.Btn_add.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Btn_add.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_add.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.Btn_add.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.Btn_add.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_add.ImageOptions.Image")));
             this.Btn_add.Location = new System.Drawing.Point(363, 185);
             this.Btn_add.Name = "Btn_add";
             this.Btn_add.Size = new System.Drawing.Size(129, 32);
@@ -248,6 +248,7 @@
             this.Name = "Frm_ItemsXRaya";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "شاشة إضافة الفحوصات";
+            this.Load += new System.EventHandler(this.Frm_ItemsXRaya_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
+            this.barAndDockingController1 = new DevExpress.XtraBars.BarAndDockingController(this.components);
             this.add_branch = new DevExpress.XtraBars.BarButtonItem();
             this.add_employee = new DevExpress.XtraBars.BarButtonItem();
             this.add_shiftEmployee = new DevExpress.XtraBars.BarButtonItem();
@@ -136,6 +137,8 @@
             this.Btn_SuppliersAccountStatment = new DevExpress.XtraBars.BarButtonItem();
             this.Btn_AddAccount = new DevExpress.XtraBars.BarButtonItem();
             this.Btn_UserPermession = new DevExpress.XtraBars.BarButtonItem();
+            this.barStaticItem8 = new DevExpress.XtraBars.BarStaticItem();
+            this.barStaticItem9 = new DevExpress.XtraBars.BarStaticItem();
             this.basic_information = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -166,14 +169,11 @@
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.barHeaderItem31 = new DevExpress.XtraBars.BarHeaderItem();
-            this.barStaticItem8 = new DevExpress.XtraBars.BarStaticItem();
-            this.barStaticItem9 = new DevExpress.XtraBars.BarStaticItem();
-            this.barAndDockingController1 = new DevExpress.XtraBars.BarAndDockingController(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barAndDockingController1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageEdit1)).BeginInit();
             this.fluentDesignFormContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.barAndDockingController1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
@@ -315,6 +315,12 @@
             this.checkEdit1.Properties.Caption = "checkEdit1";
             this.checkEdit1.Size = new System.Drawing.Size(75, 18);
             this.checkEdit1.TabIndex = 1;
+            // 
+            // barAndDockingController1
+            // 
+            this.barAndDockingController1.LookAndFeel.SkinName = "DevExpress Dark Style";
+            this.barAndDockingController1.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.barAndDockingController1.PropertiesBar.AllowLinkLighting = false;
             // 
             // add_branch
             // 
@@ -1244,10 +1250,43 @@
             this.Btn_UserPermession.Name = "Btn_UserPermession";
             this.Btn_UserPermession.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_UserPermession_ItemClick);
             // 
+            // barStaticItem8
+            // 
+            this.barStaticItem8.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.barStaticItem8.Caption = "TIME";
+            this.barStaticItem8.Id = 127;
+            this.barStaticItem8.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barStaticItem8.ImageOptions.Image")));
+            this.barStaticItem8.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barStaticItem8.ImageOptions.LargeImage")));
+            this.barStaticItem8.ItemAppearance.Disabled.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.barStaticItem8.ItemAppearance.Disabled.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barStaticItem8.ItemAppearance.Disabled.ForeColor = System.Drawing.Color.Black;
+            this.barStaticItem8.ItemAppearance.Disabled.Options.UseBackColor = true;
+            this.barStaticItem8.ItemAppearance.Disabled.Options.UseFont = true;
+            this.barStaticItem8.ItemAppearance.Disabled.Options.UseForeColor = true;
+            this.barStaticItem8.ItemAppearance.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.barStaticItem8.ItemAppearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barStaticItem8.ItemAppearance.Normal.ForeColor = System.Drawing.Color.Black;
+            this.barStaticItem8.ItemAppearance.Normal.Options.UseBackColor = true;
+            this.barStaticItem8.ItemAppearance.Normal.Options.UseFont = true;
+            this.barStaticItem8.ItemAppearance.Normal.Options.UseForeColor = true;
+            this.barStaticItem8.Name = "barStaticItem8";
+            this.barStaticItem8.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // barStaticItem9
+            // 
+            this.barStaticItem9.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.barStaticItem9.Caption = "barStaticItem9";
+            this.barStaticItem9.Id = 128;
+            this.barStaticItem9.ItemAppearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barStaticItem9.ItemAppearance.Normal.Options.UseFont = true;
+            this.barStaticItem9.Name = "barStaticItem9";
+            // 
             // basic_information
             // 
             this.basic_information.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.basic_information.Appearance.ForeColor = System.Drawing.Color.White;
             this.basic_information.Appearance.Options.UseFont = true;
+            this.basic_information.Appearance.Options.UseForeColor = true;
             this.basic_information.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1,
             this.ribbonPageGroup3,
@@ -1284,7 +1323,9 @@
             // ribbonPage2
             // 
             this.ribbonPage2.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ribbonPage2.Appearance.ForeColor = System.Drawing.Color.White;
             this.ribbonPage2.Appearance.Options.UseFont = true;
+            this.ribbonPage2.Appearance.Options.UseForeColor = true;
             this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup2,
             this.ribbonPageGroup4,
@@ -1321,7 +1362,9 @@
             // ribbonPage3
             // 
             this.ribbonPage3.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ribbonPage3.Appearance.ForeColor = System.Drawing.Color.White;
             this.ribbonPage3.Appearance.Options.UseFont = true;
+            this.ribbonPage3.Appearance.Options.UseForeColor = true;
             this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup6,
             this.ribbonPageGroup7});
@@ -1349,7 +1392,9 @@
             // ribbonPage4
             // 
             this.ribbonPage4.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ribbonPage4.Appearance.ForeColor = System.Drawing.Color.White;
             this.ribbonPage4.Appearance.Options.UseFont = true;
+            this.ribbonPage4.Appearance.Options.UseForeColor = true;
             this.ribbonPage4.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup8,
             this.ribbonPageGroup9,
@@ -1387,7 +1432,9 @@
             // ribbonPage5
             // 
             this.ribbonPage5.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F);
+            this.ribbonPage5.Appearance.ForeColor = System.Drawing.Color.White;
             this.ribbonPage5.Appearance.Options.UseFont = true;
+            this.ribbonPage5.Appearance.Options.UseForeColor = true;
             this.ribbonPage5.Appearance.Options.UseTextOptions = true;
             this.ribbonPage5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.ribbonPage5.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
@@ -1439,7 +1486,9 @@
             // ribbonPage6
             // 
             this.ribbonPage6.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F);
+            this.ribbonPage6.Appearance.ForeColor = System.Drawing.Color.White;
             this.ribbonPage6.Appearance.Options.UseFont = true;
+            this.ribbonPage6.Appearance.Options.UseForeColor = true;
             this.ribbonPage6.Appearance.Options.UseTextOptions = true;
             this.ribbonPage6.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.ribbonPage6.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
@@ -1529,43 +1578,6 @@
             this.barHeaderItem31.Id = 124;
             this.barHeaderItem31.Name = "barHeaderItem31";
             // 
-            // barStaticItem8
-            // 
-            this.barStaticItem8.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.barStaticItem8.Caption = "TIME";
-            this.barStaticItem8.Id = 127;
-            this.barStaticItem8.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barStaticItem8.ImageOptions.Image")));
-            this.barStaticItem8.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barStaticItem8.ImageOptions.LargeImage")));
-            this.barStaticItem8.ItemAppearance.Disabled.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.barStaticItem8.ItemAppearance.Disabled.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.barStaticItem8.ItemAppearance.Disabled.ForeColor = System.Drawing.Color.Black;
-            this.barStaticItem8.ItemAppearance.Disabled.Options.UseBackColor = true;
-            this.barStaticItem8.ItemAppearance.Disabled.Options.UseFont = true;
-            this.barStaticItem8.ItemAppearance.Disabled.Options.UseForeColor = true;
-            this.barStaticItem8.ItemAppearance.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.barStaticItem8.ItemAppearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.barStaticItem8.ItemAppearance.Normal.ForeColor = System.Drawing.Color.Black;
-            this.barStaticItem8.ItemAppearance.Normal.Options.UseBackColor = true;
-            this.barStaticItem8.ItemAppearance.Normal.Options.UseFont = true;
-            this.barStaticItem8.ItemAppearance.Normal.Options.UseForeColor = true;
-            this.barStaticItem8.Name = "barStaticItem8";
-            this.barStaticItem8.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
-            // barStaticItem9
-            // 
-            this.barStaticItem9.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.barStaticItem9.Caption = "barStaticItem9";
-            this.barStaticItem9.Id = 128;
-            this.barStaticItem9.ItemAppearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.barStaticItem9.ItemAppearance.Normal.Options.UseFont = true;
-            this.barStaticItem9.Name = "barStaticItem9";
-            // 
-            // barAndDockingController1
-            // 
-            this.barAndDockingController1.LookAndFeel.SkinName = "DevExpress Dark Style";
-            this.barAndDockingController1.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.barAndDockingController1.PropertiesBar.AllowLinkLighting = false;
-            // 
             // Main
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
@@ -1591,9 +1603,9 @@
             this.Load += new System.EventHandler(this.Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barAndDockingController1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageEdit1)).EndInit();
             this.fluentDesignFormContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.barAndDockingController1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
