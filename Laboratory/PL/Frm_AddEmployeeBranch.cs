@@ -16,12 +16,14 @@ namespace Laboratory.PL
     {
         Employee E = new Employee();
         Branches b = new Branches();
+        Users u = new Users();
         public Frm_AddEmployeeBranch()
         {
             InitializeComponent();
-            cmb_branch.DataSource = b.SelectCompBranches();
-            cmb_branch.DisplayMember = "Name";
-            cmb_branch.ValueMember = "Branch_ID";
+            Permision();
+            //cmb_branch.DataSource = b.SelectCompBranches();
+            //cmb_branch.DisplayMember = "Name";
+            //cmb_branch.ValueMember = "Branch_ID";
             cmb_employee.DataSource = E.SelectCompoEmployee();
             cmb_employee.DisplayMember = "Emp_Name";
             cmb_employee.ValueMember = "Emp_ID";
@@ -30,6 +32,26 @@ namespace Laboratory.PL
             Btn_Update.Enabled = false;
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[2].Visible = false;
+        }
+        void Permision()
+        {
+            dt.Clear();
+            dt = u.SelectUserBranch(Program.salesman);
+
+            if (dt.Rows.Count > 0)
+            {
+                cmb_branch.DataSource = u.SelectUserBranch(Program.salesman);
+                cmb_branch.DisplayMember = "Name";
+                cmb_branch.ValueMember = "Branch_ID";
+
+            }
+            else
+            {
+                cmb_branch.DataSource = b.SelectCompBranches();
+                cmb_branch.DisplayMember = "Name";
+                cmb_branch.ValueMember = "Branch_ID";
+
+            }
         }
         DataTable dt = new DataTable();
         private void btn_save_Click(object sender, EventArgs e)

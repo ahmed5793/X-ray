@@ -44,11 +44,16 @@ namespace Laboratory.PL
             }
             clears();
             dataGridView1.DataSource = E.SelectEmployee();
+
             cmb_department.DataSource = E.SelectEmpRoleCompo();
             cmb_department.DisplayMember = "Roles";
             cmb_department.ValueMember = "ID_EmpRole";
-            
-            
+
+            cmb_branch.DataSource = b.SelectCompBranches();
+            cmb_branch.DisplayMember = "Name";
+            cmb_branch.ValueMember = "Branch_ID";
+
+
         }
         void clears()
         {
@@ -58,8 +63,7 @@ namespace Laboratory.PL
             txt_name.Clear();
             txt_NationalID.Clear();
             txt_phone.Clear();
-            Txt_Salary.Clear();
-           
+            Txt_Salary.Clear();           
         }
         private void btn_GenderJob_Click(object sender, EventArgs e)
         {
@@ -70,14 +74,8 @@ namespace Laboratory.PL
 
         private void Frm_Employee_Load(object sender, EventArgs e)
         {
-
-            //cmb_branches.DataSource = b.SelectCompBranches();
-            //cmb_branches.DisplayMember = "Name";
-            //cmb_branches.ValueMember = "Branch_ID";
             label9.Hide();
             Txt_Salary.Hide();
-           
-
         }
 
         private void btn_new_Click(object sender, EventArgs e)
@@ -122,6 +120,7 @@ namespace Laboratory.PL
 
                 }
                 comboBox1.Text= dataGridView1.CurrentRow.Cells[8].Value.ToString();
+                cmb_branch.Text= dataGridView1.CurrentRow.Cells[9].Value.ToString();
             }
         }
 
@@ -223,10 +222,20 @@ namespace Laboratory.PL
                     Txt_Salary.Focus();
                     return;
                 }
+                if (cmb_branch.Text == "")
+                {
+                    MessageBox.Show("من فضلك قم بتحديد الفرع");
+                    cmb_branch.Focus();
+                    return;
+                }
                 else
                 {
                     E.AddEmployee(txt_name.Text, Convert.ToDecimal(Txt_Salary.Text), comboBox1.Text,
                         txt_NationalID.Text, txt_phone.Text, txt_address.Text, dateTimePicker1.Value, Convert.ToInt32(cmb_department.SelectedValue));
+                    dt.Clear();
+                    dt = E.Select_LastId_Employee();
+                    E.AddEmployeeBranch(Convert.ToInt32(cmb_branch.SelectedValue), Convert.ToInt32(dt.Rows[0][0]));
+
                     MessageBox.Show("تم تسجيل الموظف بنجاح");
                     clears();
                     dataGridView1.DataSource = E.SelectEmployee();
@@ -261,11 +270,20 @@ namespace Laboratory.PL
                     return;
 
                 }
-
+                if (cmb_branch.Text == "")
+                {
+                    MessageBox.Show("من فضلك قم بتحديد الفرع");
+                    cmb_branch.Focus();
+                    return;
+                }
                 else
                 {
                     E.UpdateEmployee(txt_name.Text, Convert.ToDecimal(Txt_Salary.Text), comboBox1.Text,
                         txt_NationalID.Text, txt_phone.Text, txt_address.Text, dateTimePicker1.Value, Convert.ToInt32(cmb_department.SelectedValue), Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
+                  
+                    E.UpdateEmployeeBranch(Convert.ToInt32(cmb_branch.SelectedValue),
+                        Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
+
                     MessageBox.Show("تم تعديل بيانات الموظف بنجاح");
                     clears();
 

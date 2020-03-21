@@ -101,6 +101,16 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
+        internal DataTable Select_LastId_Employee()
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            dt = da.selected("Select_LastId_Employee", null);
+            da.close();
+            return dt;
+        }
         internal DataTable SearchEmployes(string id)
         {
             DataTable dt = new DataTable();
