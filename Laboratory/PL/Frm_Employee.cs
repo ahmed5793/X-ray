@@ -76,17 +76,18 @@ namespace Laboratory.PL
             label9.Hide();
             Txt_Salary.Hide();
             checkBox1.Checked = false;
-            if (checkBox1.Checked == true)
-            {
-                cmb_branch.Enabled = true;
-                cmb_branch.DataSource = b.SelectCompBranches();
+            cmb_branch.DataSource = b.SelectCompBranches();
 
-            }
-            else
-            {
-                cmb_branch.Enabled = false;
-                cmb_branch.SelectedIndex = -1;
-            }
+            //if (checkBox1.Checked == true)
+            //{
+            //    cmb_branch.Enabled = true;
+
+            //}
+            //else
+            //{
+            //    cmb_branch.Enabled = false;
+            //    cmb_branch.SelectedIndex = -1;
+            //}
         }
 
         private void btn_new_Click(object sender, EventArgs e)
@@ -131,13 +132,13 @@ namespace Laboratory.PL
 
                 }
                 comboBox1.Text= dataGridView1.CurrentRow.Cells[8].Value.ToString();
-                if (dataGridView1.CurrentRow.Cells[9].Value==null)
+                if (dataGridView1.CurrentRow.Cells[9].Value.ToString()=="")
                 {
                     cmb_branch.SelectedIndex = -1;
                     checkBox1.Checked = false;
                     cmb_branch.Enabled = false;
                 }
-                else if (dataGridView1.CurrentRow.Cells[9].Value != null)
+                else if (dataGridView1.CurrentRow.Cells[9].Value.ToString() != null)
                 {
                     cmb_branch.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
                     checkBox1.Checked = true;
@@ -246,12 +247,7 @@ namespace Laboratory.PL
                     Txt_Salary.Focus();
                     return;
                 }
-                if (cmb_branch.Text == "")
-                {
-                    MessageBox.Show("من فضلك قم بتحديد الفرع");
-                    cmb_branch.Focus();
-                    return;
-                }
+              
                 else
                 {
                     E.AddEmployee(txt_name.Text, Convert.ToDecimal(Txt_Salary.Text), comboBox1.Text,
@@ -267,12 +263,10 @@ namespace Laboratory.PL
                     clears();
                     dataGridView1.DataSource = E.SelectEmployee();
                 }
-
             }
             catch (Exception ex)
             {
-
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
             }
         }
 
@@ -290,19 +284,12 @@ namespace Laboratory.PL
                     MessageBox.Show("من فضلك قم بكتابة اسم الموظف");
                     return;
                 }
-
                 if (cmb_department.Text == "")
                 {
                     MessageBox.Show("من فضلك قم بااختيار التخصص");
                     return;
-
                 }
-                if (cmb_branch.Text == "")
-                {
-                    MessageBox.Show("من فضلك قم بتحديد الفرع");
-                    cmb_branch.Focus();
-                    return;
-                }
+              
                 else
                 {
                     E.UpdateEmployee(txt_name.Text, Convert.ToDecimal(Txt_Salary.Text), comboBox1.Text,
@@ -328,8 +315,9 @@ namespace Laboratory.PL
             if (checkBox1.Checked==true)
             {
                 cmb_branch.Enabled = true;
+                cmb_branch.DataSource = b.SelectCompBranches();
             }
-            else
+            else if(checkBox1.Checked==false)
             {
                 cmb_branch.Enabled = false;
                 cmb_branch.SelectedIndex = -1;
