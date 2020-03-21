@@ -52,7 +52,6 @@ namespace Laboratory.PL
             cmb_branch.DataSource = b.SelectCompBranches();
             cmb_branch.DisplayMember = "Name";
             cmb_branch.ValueMember = "Branch_ID";
-            cmb_branch.SelectedIndex = -1;
 
         }
         void clears()
@@ -76,9 +75,12 @@ namespace Laboratory.PL
         {
             label9.Hide();
             Txt_Salary.Hide();
+            checkBox1.Checked = false;
             if (checkBox1.Checked == true)
             {
                 cmb_branch.Enabled = true;
+                cmb_branch.DataSource = b.SelectCompBranches();
+
             }
             else
             {
@@ -135,11 +137,13 @@ namespace Laboratory.PL
                     checkBox1.Checked = false;
                     cmb_branch.Enabled = false;
                 }
-                else
+                else if (dataGridView1.CurrentRow.Cells[9].Value != null)
                 {
                     cmb_branch.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
                     checkBox1.Checked = true;
                     cmb_branch.Enabled = true;
+                    cmb_branch.DataSource = b.SelectCompBranches();
+
                 }
             }
         }
