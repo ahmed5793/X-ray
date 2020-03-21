@@ -73,21 +73,9 @@ namespace Laboratory.PL
 
         private void Frm_Employee_Load(object sender, EventArgs e)
         {
-            label9.Hide();
             Txt_Salary.Hide();
             checkBox1.Checked = false;
             cmb_branch.DataSource = b.SelectCompBranches();
-
-            //if (checkBox1.Checked == true)
-            //{
-            //    cmb_branch.Enabled = true;
-
-            //}
-            //else
-            //{
-            //    cmb_branch.Enabled = false;
-            //    cmb_branch.SelectedIndex = -1;
-            //}
         }
 
         private void btn_new_Click(object sender, EventArgs e)
@@ -109,7 +97,6 @@ namespace Laboratory.PL
         {
             if (dataGridView1.Rows.Count>0)
             {
-                label9.Show();
                 Txt_Salary.Show();           
                 Btn_Update.Enabled = true;
                 Btn_Add.Enabled = false;
@@ -122,12 +109,10 @@ namespace Laboratory.PL
                 if (dataGridView1.CurrentRow.Cells[8].Value.ToString()== "شيفت")
                 {
                     Txt_Salary.Hide();
-                    label9.Hide();
                 }
                 else if(dataGridView1.CurrentRow.Cells[8].Value.ToString() == "مرتب شهرى")
                 {
                     Txt_Salary.Show();
-                    label9.Show();
                     Txt_Salary.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
 
                 }
@@ -203,13 +188,11 @@ namespace Laboratory.PL
         {
             if (comboBox1.Text == "شيفت")
             {
-                label9.Hide();
                 Txt_Salary.Hide();
                 Txt_Salary.Text = "0";
             }
             else if (comboBox1.Text == "مرتب شهرى")
             {
-                label9.Show();
                 Txt_Salary.Show();
             }
         }

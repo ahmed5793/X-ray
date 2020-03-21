@@ -45,7 +45,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.Txt_Salary = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.btn_GenderJob = new System.Windows.Forms.Button();
             this.txt_NationalID = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -282,18 +281,6 @@
             this.Txt_Salary.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Txt_Salary.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Salary_KeyPress);
             // 
-            // label9
-            // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.White;
-            this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(835, 192);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(46, 19);
-            this.label9.TabIndex = 41;
-            this.label9.Text = "الراتب ";
-            // 
             // btn_GenderJob
             // 
             this.btn_GenderJob.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -470,7 +457,6 @@
             this.Controls.Add(this.Btn_Add);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label9);
             this.MinimumSize = new System.Drawing.Size(879, 561);
             this.Name = "Frm_Employee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -483,7 +469,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -508,7 +493,6 @@
         private System.Windows.Forms.Label label8;
         public System.Windows.Forms.ComboBox cmb_department;
         private System.Windows.Forms.TextBox Txt_Salary;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         public System.Windows.Forms.ComboBox comboBox1;
         private DevExpress.XtraEditors.SimpleButton Btn_New;
