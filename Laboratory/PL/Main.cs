@@ -54,7 +54,7 @@ namespace Laboratory.PL
         private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
         {
             Frm_Branches frm_Branches = new Frm_Branches();
-            frm_Branches.Show();
+            frm_Branches.ShowDialog();
         }
 
         private void barButtonItem8_ItemClick(object sender, ItemClickEventArgs e)

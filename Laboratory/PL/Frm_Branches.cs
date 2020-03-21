@@ -82,6 +82,11 @@ namespace Laboratory.PL
         {
             try
             {
+                if (dataGridView1.Rows.Count>3)
+                {
+                    MessageBox.Show("ليس لديك صلاحية ان تضيف اكتر من ثلاث فروع الرجاء الرجوع الي مسئول النظام");
+                    return;
+                }
                 if (txt_name.Text == "")
                 {
                     MessageBox.Show("عزيزى المستخدم قم باادخال اسم الفرع");
