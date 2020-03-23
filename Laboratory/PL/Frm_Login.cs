@@ -73,11 +73,7 @@ namespace Laboratory.PL
                         DataTable dt50 = new DataTable();
                         dt50.Clear();
                         dt50 = U.SelectCheckUserName(txt_User.Text);
-                        if (dt50.Rows.Count==0)
-                        {
-                            U.AddCheckUserName(txt_User.Text, "Online", Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy hh:mm tt")),
-                             Convert.ToDateTime(DateTime.Now.ToString()));
-                        }
+                      
                         if (dt50.Rows.Count>0)
                         {
                             if (dt50.Rows[0][1].ToString()=="Online")
@@ -93,7 +89,12 @@ namespace Laboratory.PL
 
                             }
                         }
+                        else
+                        {
 
+                            U.AddCheckUserName(txt_User.Text, "Online", Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy hh:mm tt")),
+                             Convert.ToDateTime(DateTime.Now.ToString()));
+                        }
                      
 
                         dt2.Clear();
