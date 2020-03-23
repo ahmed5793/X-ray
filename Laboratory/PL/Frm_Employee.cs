@@ -62,7 +62,10 @@ namespace Laboratory.PL
             txt_name.Clear();
             txt_NationalID.Clear();
             txt_phone.Clear();
-            Txt_Salary.Clear();           
+            Txt_Salary.Text="0";
+            checkBox1.Checked = false;
+            cmb_branch.Enabled = false;
+            cmb_branch.SelectedIndex = -1;
         }
         private void btn_GenderJob_Click(object sender, EventArgs e)
         {
@@ -75,9 +78,15 @@ namespace Laboratory.PL
         {
             Txt_Salary.Hide();
             checkBox1.Checked = false;
-            cmb_branch.DataSource = b.SelectCompBranches();
             cmb_branch.Enabled = false;
-            cmb_branch.SelectedIndex = -1;
+            if (checkBox1.Checked == false)
+            {
+                cmb_branch.SelectedIndex = -1;
+            }
+            else if (checkBox1.Checked == true)
+            {
+                cmb_branch.DataSource = b.SelectCompBranches();
+            }
         }
 
         private void btn_new_Click(object sender, EventArgs e)
@@ -125,13 +134,12 @@ namespace Laboratory.PL
                     checkBox1.Checked = false;
                     cmb_branch.Enabled = false;
                 }
-                else if (dataGridView1.CurrentRow.Cells[9].Value.ToString() != null)
+                else if (dataGridView1.CurrentRow.Cells[9].Value.ToString() != "")
                 {
+                    cmb_branch.DataSource = b.SelectCompBranches();
                     cmb_branch.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
                     checkBox1.Checked = true;
                     cmb_branch.Enabled = true;
-                    cmb_branch.DataSource = b.SelectCompBranches();
-
                 }
             }
         }
@@ -183,20 +191,20 @@ namespace Laboratory.PL
    
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-          
+         
         }
-
         private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
         {
             if (comboBox1.Text == "شيفت")
             {
                 Txt_Salary.Hide();
-                Txt_Salary.Text = "0";
             }
             else if (comboBox1.Text == "مرتب شهرى")
             {
                 Txt_Salary.Show();
             }
+            Txt_Salary.Text = "0";
+
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -241,7 +249,17 @@ namespace Laboratory.PL
                     dt = E.Select_LastId_Employee();
                     if (checkBox1.Checked==true)
                     {
-                        E.AddEmployeeBranch(Convert.ToInt32(cmb_branch.SelectedValue), Convert.ToInt32(dt.Rows[0][0]));
+                        if (cmb_branch.Text=="")
+                        {
+                            MessageBox.Show("لا بد من تحديد الفرع ");
+                            cmb_branch.Focus();
+                            return;
+                        }
+                        else if (cmb_branch.Text != "")
+
+                        {
+                            E.AddEmployeeBranch(Convert.ToInt32(cmb_branch.SelectedValue), Convert.ToInt32(dt.Rows[0][0]));
+                        }
                     }
                  
                   
@@ -282,10 +300,34 @@ namespace Laboratory.PL
                     E.UpdateEmployee(txt_name.Text, Convert.ToDecimal(Txt_Salary.Text), comboBox1.Text,
                         txt_NationalID.Text, txt_phone.Text, txt_address.Text, dateTimePicker1.Value, 
                         Convert.ToInt32(cmb_department.SelectedValue), Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
+
+                    dt.Clear();
+                    dt = E.VildateEmployeeBranch(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
                     if (checkBox1.Checked==true)
                     {
-                        E.UpdateEmployeeBranch(Convert.ToInt32(cmb_branch.SelectedValue),
-                            Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
+                        if (cmb_branch.Text == "")
+                        {
+                            MessageBox.Show("لا بد من تحديد الفرع ");
+                            cmb_branch.Focus();
+                            return;
+                        }
+                        if (dt.Rows.Count > 0)
+                        {
+                            E.UpdateEmployeeBranch(Convert.ToInt32(cmb_branch.SelectedValue),
+                                Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
+                        }
+                        else
+                        {
+                            E.AddEmployeeBranch(Convert.ToInt32(cmb_branch.SelectedValue), 
+                                Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
+                        }
+                    }
+                    else if(checkBox1.Checked==false)
+                    {
+                        if (dt.Rows.Count > 0)
+                        {
+                            E.Delete_EmployeeBranch(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
+                        }
                     }
                     MessageBox.Show("تم تعديل بيانات الموظف بنجاح");
                     clears();
@@ -305,7 +347,7 @@ namespace Laboratory.PL
             if (checkBox1.Checked==true)
             {
                 cmb_branch.Enabled = true;
-                cmb_branch.DataSource = b.SelectCompBranches();
+                //cmb_branch.DataSource = b.SelectCompBranches();
             }
             else if(checkBox1.Checked==false)
             {
@@ -319,6 +361,22 @@ namespace Laboratory.PL
             if (Txt_Salary.Text=="")
             {
                 Txt_Salary.Text = "0";
+            }
+        }
+
+        private void Txt_Salary_TextChanged(object sender, EventArgs e)
+        {
+            if (Txt_Salary.Text=="")
+            {
+                Txt_Salary.Text = "0";
+            }
+        }
+
+        private void Txt_Salary_Click(object sender, EventArgs e)
+        {
+            if (Txt_Salary.Text == "0")
+            {
+                Txt_Salary.Text = "";
             }
         }
     }

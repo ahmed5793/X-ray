@@ -40,7 +40,8 @@ namespace Laboratory.BL
             da.excutequery("AddEmployee", param);
             da.close();
         }
-        internal void UpdateEmployee(string Emp_name, decimal Salary, string Gender_Salary, string National_ID, string phone, string Address, DateTime date, int id_EmpRole, int idemployee)
+        internal void UpdateEmployee(string Emp_name, decimal Salary, string Gender_Salary, string National_ID,
+                                     string phone, string Address, DateTime date, int id_EmpRole, int idemployee)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
@@ -396,6 +397,17 @@ namespace Laboratory.BL
 
 
             da.excutequery("AddEmployeeBranch", param);
+            da.close();
+        }
+        internal void Delete_EmployeeBranch( int idemployee)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+           
+            param[0] = new SqlParameter("@Id_Employee", SqlDbType.Int);
+            param[0].Value = idemployee;
+            da.excutequery("Delete_EmployeeBranch", param);
             da.close();
         }
         internal void UpdateEmployeeBranch(int id_branch, int idemployee)

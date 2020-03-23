@@ -241,10 +241,10 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.BackColor = System.Drawing.Color.White;
             this.checkBox1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(343, 62);
+            this.checkBox1.Location = new System.Drawing.Point(347, 62);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkBox1.Size = new System.Drawing.Size(181, 20);
+            this.checkBox1.Size = new System.Drawing.Size(177, 20);
             this.checkBox1.TabIndex = 51;
             this.checkBox1.Text = "هل تريد إضافة الموظف لفرع معين";
             this.checkBox1.UseVisualStyleBackColor = false;
@@ -320,6 +320,8 @@
             this.Txt_Salary.TabIndex = 40;
             this.Txt_Salary.Text = "0";
             this.Txt_Salary.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Txt_Salary.Click += new System.EventHandler(this.Txt_Salary_Click);
+            this.Txt_Salary.TextChanged += new System.EventHandler(this.Txt_Salary_TextChanged);
             this.Txt_Salary.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Salary_KeyPress);
             this.Txt_Salary.Leave += new System.EventHandler(this.Txt_Salary_Leave);
             // 
