@@ -76,6 +76,8 @@ namespace Laboratory.PL
             Txt_Salary.Hide();
             checkBox1.Checked = false;
             cmb_branch.DataSource = b.SelectCompBranches();
+            cmb_branch.Enabled = false;
+            cmb_branch.SelectedIndex = -1;
         }
 
         private void btn_new_Click(object sender, EventArgs e)
@@ -241,6 +243,8 @@ namespace Laboratory.PL
                     {
                         E.AddEmployeeBranch(Convert.ToInt32(cmb_branch.SelectedValue), Convert.ToInt32(dt.Rows[0][0]));
                     }
+                 
+                  
 
                     MessageBox.Show("تم تسجيل الموظف بنجاح");
                     clears();
@@ -276,7 +280,8 @@ namespace Laboratory.PL
                 else
                 {
                     E.UpdateEmployee(txt_name.Text, Convert.ToDecimal(Txt_Salary.Text), comboBox1.Text,
-                        txt_NationalID.Text, txt_phone.Text, txt_address.Text, dateTimePicker1.Value, Convert.ToInt32(cmb_department.SelectedValue), Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
+                        txt_NationalID.Text, txt_phone.Text, txt_address.Text, dateTimePicker1.Value, 
+                        Convert.ToInt32(cmb_department.SelectedValue), Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
                     if (checkBox1.Checked==true)
                     {
                         E.UpdateEmployeeBranch(Convert.ToInt32(cmb_branch.SelectedValue),
@@ -289,6 +294,8 @@ namespace Laboratory.PL
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
+
                 MessageBox.Show(ex.StackTrace);
             }
         }
@@ -304,6 +311,14 @@ namespace Laboratory.PL
             {
                 cmb_branch.Enabled = false;
                 cmb_branch.SelectedIndex = -1;
+            }
+        }
+
+        private void Txt_Salary_Leave(object sender, EventArgs e)
+        {
+            if (Txt_Salary.Text=="")
+            {
+                Txt_Salary.Text = "0";
             }
         }
     }
