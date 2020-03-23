@@ -197,7 +197,74 @@ namespace Laboratory.BL
             dt = da.selected("Select_UserForBranch", param);
             return dt;
         }
+        internal void AddCheckUserName(string UserName, string Statues, DateTime OpenDate,DateTime CloseDate)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[4];
+            param[0] = new SqlParameter("@UserName", SqlDbType.NVarChar,50);
+            param[0].Value = UserName;
+            param[1] = new SqlParameter("@Statues", SqlDbType.NVarChar, 50);
+            param[1].Value = Statues;
+            param[2] = new SqlParameter("@OpenDate", SqlDbType.DateTime);
+            param[2].Value = OpenDate;
+            param[3] = new SqlParameter("@CloseDate", SqlDbType.DateTime);
+            param[3].Value = CloseDate;
 
+
+            da.excutequery("AddCheckUserName", param);
+            da.close();
+        }
+        internal void UpdateCheckUserName(string UserName, string Statues, DateTime CloseDate)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[3];
+            param[0] = new SqlParameter("@UserName", SqlDbType.NVarChar, 50);
+            param[0].Value = UserName;
+            param[1] = new SqlParameter("@Statues", SqlDbType.NVarChar, 50);
+            param[1].Value = Statues;
+          
+            param[2] = new SqlParameter("@CloseDate", SqlDbType.DateTime);
+            param[2].Value = CloseDate;
+
+
+            da.excutequery("UpdateCheckUserName", param);
+            da.close();
+        }
+        internal DataTable SelectCheckUserName(string UserName)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            DataTable dt = new DataTable();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@UserName", SqlDbType.NVarChar,50);
+            param[0].Value = UserName;
+
+            dt = da.selected("SelectCheckUserName", param);
+            return dt;
+        }
+        internal DataTable SelectAllCheckUserName()
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            DataTable dt = new DataTable();
+      
+            dt = da.selected("SelectAllCheckUserName", null);
+            return dt;
+        }
+        internal DataTable SelectCheckUserNameOffline(string UserName)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            DataTable dt = new DataTable();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@UserName", SqlDbType.NVarChar, 50);
+            param[0].Value = UserName;
+
+            dt = da.selected("SelectCheckUserNameOffline", param);
+            return dt;
+        }
 
     }
 }

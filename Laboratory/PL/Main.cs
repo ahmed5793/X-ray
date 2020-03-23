@@ -15,7 +15,7 @@ namespace Laboratory.PL
     public partial class Main : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         private static Main farm;
-
+        BL.Users u = new BL.Users();
         static void STATUESCllosed(object sender, FormClosedEventArgs e)
         {
             farm = null;
@@ -43,8 +43,18 @@ namespace Laboratory.PL
                 farm = this;
             }
 
-        }
+            DataTable dt = new DataTable();
+            dt.Clear();
 
+            dt = u.SelectAllCheckUserName();
+            if (dt.Rows.Count>0)
+            {
+                dataGridView2.DataSource = dt;
+                //dataGridView2.Columns[1].Visible = false;
+
+            }
+        }
+       
         private void barHeaderItem2_ItemClick(object sender, ItemClickEventArgs e)
         {
             Frm_ReportEmployeeData FRED = new Frm_ReportEmployeeData();
@@ -485,6 +495,9 @@ namespace Laboratory.PL
 
         private void Main_FormClosed(object sender, FormClosedEventArgs e)
         {
+        
+            u.UpdateCheckUserName(Program.salesman, "Offline", Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy hh:mm tt")));
+
             Application.Exit();
         }
 

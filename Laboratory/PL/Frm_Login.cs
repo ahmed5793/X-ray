@@ -62,6 +62,7 @@ namespace Laboratory.PL
                     MessageBox.Show("PLEASE INSERT PASSWORD");
                     return;
                 }
+              
                 else
                 {
                     dt.Clear();
@@ -69,7 +70,31 @@ namespace Laboratory.PL
 
                     if (dt.Rows.Count > 0)
                     {
+                        DataTable dt50 = new DataTable();
+                        dt50.Clear();
+                        dt50 = U.SelectCheckUserName(txt_User.Text);
+                        if (dt50.Rows.Count==0)
+                        {
+                            U.AddCheckUserName(txt_User.Text, "Online", Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy hh:mm tt")),
+                             Convert.ToDateTime(DateTime.Now.ToString()));
+                        }
+                        if (dt50.Rows.Count>0)
+                        {
+                            if (dt50.Rows[0][1].ToString()=="Online")
+                            {
+                                MessageBox.Show("عفوا هذا الاكونت مفتوح من جهاز اخر يرجي غلق الاكونت ثم اعد فتحه مرة اخرى");
+                                return;
+                            }
+                            else
+                            {
 
+                                U.UpdateCheckUserName(txt_User.Text, "Online", Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy hh:mm tt")));
+
+
+                            }
+                        }
+
+                     
 
                         dt2.Clear();
                         dt2 = p.Select_UserBAsicInformation(txt_User.Text);
