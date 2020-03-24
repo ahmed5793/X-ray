@@ -215,11 +215,11 @@ namespace Laboratory.BL
             da.excutequery("AddCheckUserName", param);
             da.close();
         }
-        internal void UpdateCheckUserName(string UserName, string Statues, DateTime CloseDate)
+        internal void UpdateCheckUserName(string UserName, string Statues, DateTime CloseDate,DateTime OpenDate)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[3];
+            SqlParameter[] param = new SqlParameter[4];
             param[0] = new SqlParameter("@UserName", SqlDbType.NVarChar, 50);
             param[0].Value = UserName;
             param[1] = new SqlParameter("@Statues", SqlDbType.NVarChar, 50);
@@ -227,7 +227,8 @@ namespace Laboratory.BL
           
             param[2] = new SqlParameter("@CloseDate", SqlDbType.DateTime);
             param[2].Value = CloseDate;
-
+            param[3] = new SqlParameter("@OpenDate", SqlDbType.DateTime);
+            param[3].Value = OpenDate;
 
             da.excutequery("UpdateCheckUserName", param);
             da.close();

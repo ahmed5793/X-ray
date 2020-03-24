@@ -86,7 +86,7 @@ namespace Laboratory.PL
                             else
                             {
 
-                                U.UpdateCheckUserName(txt_User.Text, "Online", Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy hh:mm tt")));
+                                U.UpdateCheckUserName(txt_User.Text, "Online", Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy hh:mm tt")), Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy hh:mm tt")));
 
 
                             }
@@ -673,6 +673,15 @@ namespace Laboratory.PL
                         Console.Beep();
                         this.Hide();
                         fm.ShowDialog();
+                        Users u = new Users();
+                         DataTable dt10 = new DataTable();
+                        dt10.Clear();
+
+                        dt10 = u.SelectAllCheckUserName();
+
+                  
+
+                            //dataGridView2.Columns[1].Visible = false;
 
 
 

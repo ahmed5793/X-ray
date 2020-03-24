@@ -8,14 +8,21 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraBars;
+using Laboratory.BL;
 
 
 namespace Laboratory.PL
 {
     public partial class Main : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+
+
+      
+
+
         private static Main farm;
         BL.Users u = new BL.Users();
+       
         static void STATUESCllosed(object sender, FormClosedEventArgs e)
         {
             farm = null;
@@ -32,9 +39,9 @@ namespace Laboratory.PL
                 return farm;
             }
         }
-        
-            
-            public Main()
+     
+
+        public Main()
         {
 
             InitializeComponent();
@@ -42,19 +49,10 @@ namespace Laboratory.PL
             {
                 farm = this;
             }
+         
 
-            DataTable dt = new DataTable();
-            dt.Clear();
-
-            dt = u.SelectAllCheckUserName();
-            if (dt.Rows.Count>0)
-            {
-                dataGridView2.DataSource = dt;
-                //dataGridView2.Columns[1].Visible = false;
-
-            }
         }
-       
+     
         private void barHeaderItem2_ItemClick(object sender, ItemClickEventArgs e)
         {
             Frm_ReportEmployeeData FRED = new Frm_ReportEmployeeData();
@@ -496,7 +494,7 @@ namespace Laboratory.PL
         private void Main_FormClosed(object sender, FormClosedEventArgs e)
         {
         
-            u.UpdateCheckUserName(Program.salesman, "Offline", Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy hh:mm tt")));
+            u.UpdateCheckUserName(Program.salesman, "Offline", Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy hh:mm tt")), Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy hh:mm tt")));
 
             Application.Exit();
         }
@@ -654,6 +652,12 @@ namespace Laboratory.PL
         {
             Validate_Users validate = new Validate_Users();
             validate.Show();
+        }
+
+        private void barButtonItem4_ItemClick_7(object sender, ItemClickEventArgs e)
+        {
+            Frm_checkTimeUserName ct = new Frm_checkTimeUserName();
+            ct.ShowDialog();
         }
     }
     }
