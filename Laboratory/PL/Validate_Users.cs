@@ -41,7 +41,7 @@ namespace Laboratory.PL
             }
             cmb_Users1.DataSource = E.Select_EmployeFromBranch(Convert.ToInt32(Cmb_Branch.SelectedValue));
             cmb_Users1.DisplayMember = "Emp_Name";
-            cmb_Users1.ValueMember = "Emp_ID";
+            cmb_Users1.ValueMember = "id_Emp";
             cmb_Users1.SelectedIndex = -1;
 
             dt2.Clear();
@@ -653,6 +653,7 @@ namespace Laboratory.PL
                 if (cmb_Users1.Text == "")
                 {
                     MessageBox.Show("لا بد من تحديد إسم الموظف");
+                    
                     return;
                 }
                 else
@@ -708,10 +709,78 @@ namespace Laboratory.PL
 
             cmb_Users1.DataSource = E.Select_EmployeFromBranch(Convert.ToInt32(Cmb_Branch.SelectedValue));
             cmb_Users1.DisplayMember = "Emp_Name";
-            cmb_Users1.ValueMember = "Emp_ID";
+            cmb_Users1.ValueMember = "id_Emp";
             cmb_Users1.SelectedIndex = -1;
             dt2.Clear();
             dt2 = p.Select_UserBAsicInformation(txt_Baisc.Text);
+            if (cmb_Users1.Text=="")
+            {
+                Check();
+            }
+        }
+        void Check()
+        {
+            
+            
+            check_AddBranch.Checked = false;
+            check_AddClients.Checked = false;
+            check_AddCompany.Checked = false;
+            check_AddEmployee.Checked = false;
+            check_AddEmployeeBranch.Checked = false;
+            check_AddInstalment.Checked = false;
+            check_AddItemCompany.Checked = false;
+            check_AddMasrof.Checked = false;
+            check_AddProudect.Checked = false;
+            check_AddPurshase.Checked = false;
+            check_AddStock.Checked = false;
+            check_AddStore.Checked = false;
+            check_AddStoreProduct.Checked = false;
+            check_AddSuppliers.Checked = false;
+            check_AddTechnical.Checked = false;
+            check_AddTickets.Checked = false;
+            check_BookingTimes.Checked = false;
+            check_CustomerAccountStatment.Checked = false;
+            check_DebitCompany.Checked = false;
+            check_DepitClients.Checked = false;
+            check_DepitSuppliuers.Checked = false;
+            check_DownloadFinger.Checked = false;
+            check_InsertIntoStock.Checked = false;
+            check_ManagmentTickets.Checked = false;
+            check_Order.Checked = false;
+            check_PayClients.Checked = false;
+            check_PayCompany.Checked = false;
+            check_PaySupplies.Checked = false;
+            check_PullStock.Checked = false;
+            check_RepoDoctorOut.Checked = false;
+            check_REportCompany.Checked = false;
+            check_ReportDoctorOfCenter.Checked = false;
+            check_ReportEmployee.Checked = false;
+            check_ReportFinger.Checked = false;
+            check_ReportInsertStock.Checked = false;
+            check_ReportInstalment.Checked = false;
+            check_ReportMarofat.Checked = false;
+            check_ReportProudect.Checked = false;
+            check_ReportPullStock.Checked = false;
+            check_ReportPurshases.Checked = false;
+            check_ReportSuppliers.Checked = false;
+            check_ReportTechnical.Checked = false;
+            check_ReurnPurchise.Checked = false;
+            check_SearchTickets.Checked = false;
+            check_TranfairStockToStock.Checked = false;
+            check_TransfairProduct.Checked = false;
+            Ckeck_ReciveMoney.Checked = false;
+            Check_AddDoctor.Checked = false;
+            Check_AddDoctor_Centers.Checked = false;
+            Check_AddShiftTechincal.Checked = false;
+            Check_AddUserAccount.Checked = false;
+            Check_Add_CategoryXray.Checked = false;
+            Check_Add_ShiftEmployee.Checked = false;
+            Check_Add_Xray.Checked = false;
+            Check_Discount.Checked = false;
+            Check_Salf.Checked = false;
+            Check_Sarf_Mortbat.Checked = false;
+            Check_UserPermession.Checked = false;
+
         }
 
     }
