@@ -268,6 +268,12 @@
     <Compile Include="PL\Frm_AllXrayTechnical.Designer.cs">
       <DependentUpon>Frm_AllXrayTechnical.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Frm_checkTimeUserName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_checkTimeUserName.Designer.cs">
+      <DependentUpon>Frm_checkTimeUserName.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_CompanyItemXray.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -917,6 +923,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_AllXrayTechnical.resx">
       <DependentUpon>Frm_AllXrayTechnical.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_checkTimeUserName.resx">
+      <DependentUpon>Frm_checkTimeUserName.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_CompanyItemXray.resx">
       <DependentUpon>Frm_CompanyItemXray.cs</DependentUpon>

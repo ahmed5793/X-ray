@@ -19,7 +19,7 @@ namespace Laboratory.PL
         public Frm_checkTimeUserName()
         {
             InitializeComponent();
-            u.SelectAllCheckUserName();
+          gridControl1.DataSource=  u.SelectAllCheckUserName();
         }
 
         private void Frm_checkTimeUserName_Load(object sender, EventArgs e)
