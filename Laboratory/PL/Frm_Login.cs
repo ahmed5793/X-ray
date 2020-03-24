@@ -73,9 +73,7 @@ namespace Laboratory.PL
                         DataTable dt50 = new DataTable();
                         DataTable dt5 = new DataTable();
 
-                        dt5 = U.SelectCheckUserNameOffline(txt_User.Text);
-                        if (dt5.Rows.Count > 0)
-                        {
+                     
                             dt50.Clear();
                             dt50 = U.SelectCheckUserName(txt_User.Text);
                             if (dt50.Rows.Count>0)
@@ -83,22 +81,7 @@ namespace Laboratory.PL
                                 MessageBox.Show("عفوا هذا الاكونت مفتوح من جهاز اخر يرجي غلق الاكونت ثم اعد فتحه مرة اخرى");
                                 return;
                             }
-                            else
-                            {
-
-                                U.UpdateCheckUserName(txt_User.Text, "Online", Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy hh:mm tt")), Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy hh:mm tt")));
-
-
-                            }
-                        }
-
-
-                        else
-                        {
-
-                            U.AddCheckUserName(txt_User.Text, "Online", Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy hh:mm tt")),
-                             Convert.ToDateTime(DateTime.Now.ToString()));
-                        }
+                      
 
 
                         dt2.Clear();
@@ -672,6 +655,26 @@ namespace Laboratory.PL
                         Program.salesman = dt.Rows[0][1].ToString();
                         Console.Beep();
                         this.Hide();
+                        dt5 = U.SelectCheckUserNameOffline(txt_User.Text);
+                        if (dt5.Rows.Count > 0)
+                        {
+                            dt50.Clear();
+                            dt50 = U.SelectCheckUserName(txt_User.Text);
+                            if (dt50.Rows.Count == 0)
+                            {
+                                U.UpdateCheckUserName(txt_User.Text, "Online", Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy hh:mm tt")), Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy hh:mm tt")));
+
+                            }
+
+                        }
+
+
+                        else
+                        {
+
+                            U.AddCheckUserName(txt_User.Text, "Online", Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy hh:mm tt")),
+                             Convert.ToDateTime(DateTime.Now.ToString()));
+                        }
                         fm.ShowDialog();
                         Users u = new Users();
                          DataTable dt10 = new DataTable();
@@ -679,9 +682,10 @@ namespace Laboratory.PL
 
                         dt10 = u.SelectAllCheckUserName();
 
-                  
 
-                            //dataGridView2.Columns[1].Visible = false;
+
+
+             
 
 
 
