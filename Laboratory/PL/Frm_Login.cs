@@ -62,21 +62,23 @@ namespace Laboratory.PL
                     MessageBox.Show("PLEASE INSERT PASSWORD");
                     return;
                 }
-              
+
                 else
                 {
                     dt.Clear();
-                     dt = U.Logins(txt_User.Text, txt_Pass.Text);
+                    dt = U.Logins(txt_User.Text, txt_Pass.Text);
 
                     if (dt.Rows.Count > 0)
                     {
                         DataTable dt50 = new DataTable();
-                        dt50.Clear();
-                        dt50 = U.SelectCheckUserName(txt_User.Text);
-                      
-                        if (dt50.Rows.Count>0)
+                        DataTable dt5 = new DataTable();
+
+                        dt5 = U.SelectCheckUserNameOffline(txt_User.Text);
+                        if (dt5.Rows.Count > 0)
                         {
-                            if (dt50.Rows[0][1].ToString()=="Online")
+                            dt50.Clear();
+                            dt50 = U.SelectCheckUserName(txt_User.Text);
+                            if (dt50.Rows.Count>0)
                             {
                                 MessageBox.Show("عفوا هذا الاكونت مفتوح من جهاز اخر يرجي غلق الاكونت ثم اعد فتحه مرة اخرى");
                                 return;
@@ -89,13 +91,15 @@ namespace Laboratory.PL
 
                             }
                         }
+
+
                         else
                         {
 
                             U.AddCheckUserName(txt_User.Text, "Online", Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy hh:mm tt")),
                              Convert.ToDateTime(DateTime.Now.ToString()));
                         }
-                     
+
 
                         dt2.Clear();
                         dt2 = p.Select_UserBAsicInformation(txt_User.Text);
@@ -183,7 +187,7 @@ namespace Laboratory.PL
                                 Main.getmain.Btn_UserPermession.Enabled = true;
                             }
                             ////
-                        }  
+                        }
                         dt3.Clear();
                         dt3 = p.Select_UserEmployee(txt_User.Text);
                         if (dt3.Rows.Count >= 1)
@@ -216,7 +220,7 @@ namespace Laboratory.PL
                             }
 
                             ///////
-                          
+
                             /////////
                             if (Convert.ToInt32(dt3.Rows[0][3]) == 0)
                             {
@@ -662,34 +666,7 @@ namespace Laboratory.PL
                                 Main.getmain.Btn_CustomerAccouantStatment.Enabled = true;
                             }
                         }
-                        //DataTable dt8 = new DataTable();
-                        //dt8.Clear();
 
-                        //dt8 = p.selectUser_Permission(txt_User.Text);
-                        //if (dt8.Rows.Count >= 1)
-                        //{
-                        //    if (Convert.ToInt32(dt8.Rows[0][0]) == 0)
-                        //    {
-                        //        Main.getmain.Create_Account.Enabled = false;
-
-                        //    }
-                        //    else if (Convert.ToInt32(dt8.Rows[0][0]) == 1)
-                        //    {
-                        //        Main.getmain.Create_Account.Enabled = true;
-
-                        //    }
-                        //    ///////
-                        //    if (Convert.ToInt32(dt8.Rows[0][1]) == 0)
-                        //    {
-                        //        Main.getmain.Permisson.Enabled = false;
-                        //    }
-                        //    else if (Convert.ToInt32(dt8.Rows[0][1]) == 1)
-                        //    {
-                        //        Main.getmain.Permisson.Enabled = true;
-                        //    }
-
-
-                        //}
 
 
                         Program.salesman = dt.Rows[0][1].ToString();
@@ -699,8 +676,11 @@ namespace Laboratory.PL
 
 
 
-                    }
 
+
+
+
+                    }
                     else
                     {
                         MessageBox.Show("Incorrect password or username");
@@ -710,6 +690,8 @@ namespace Laboratory.PL
 
 
                 }
+            
+            
             }
             catch (Exception ex)
             {

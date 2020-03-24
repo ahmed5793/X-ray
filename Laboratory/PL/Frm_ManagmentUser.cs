@@ -239,6 +239,7 @@ namespace Laboratory.PL
                     Btn_Update.Enabled = false;
                     Btn_Add.Enabled = true;
                     Btn_Delete.Enabled = false;
+                    comboBox1.Enabled = true;
 
                     txt_Pass.Clear();
                     txt_PassRealy.Clear();
