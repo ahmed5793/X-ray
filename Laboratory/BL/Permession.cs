@@ -171,7 +171,7 @@ namespace Laboratory.BL
             DataAccessLayer da = new DataAccessLayer();
             da.open();
             SqlParameter[] param = new SqlParameter[8];
-            param[0] = new SqlParameter("@User_Name", SqlDbType.NVarChar, 100);
+            param[0] = new SqlParameter("@userName", SqlDbType.NVarChar, 100);
             param[0].Value = User_Name;
             param[1] = new SqlParameter("@Add_Company", SqlDbType.Int);
             param[1].Value = Add_Company;
@@ -497,7 +497,7 @@ int Depit_Suppliers, int Report_Suppliers)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[9];
+            SqlParameter[] param = new SqlParameter[3];
             param[0] = new SqlParameter("@User_Name", SqlDbType.NVarChar, 100);
             param[0].Value = User_Name;
             param[1] = new SqlParameter("@Create_account", SqlDbType.Int);

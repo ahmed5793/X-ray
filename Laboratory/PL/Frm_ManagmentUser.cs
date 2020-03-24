@@ -170,6 +170,7 @@ namespace Laboratory.PL
             {
 
                 MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
             }
         }
 
