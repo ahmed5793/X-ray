@@ -14,14 +14,39 @@ namespace Laboratory.PL
     public partial class Frm_ReportEmployeeDiscount : Form
     {
         Employee E = new Employee();
+        Users U = new Users();
+        Branches b = new Branches();
+        DataTable dt = new DataTable();
+        void Permision()
+        {
+            dt.Clear();
+            dt = U.SelectUserBranch(txt_UserName.Text);
+            if (dt.Rows.Count > 0)
+            {
+                Cmb_Branch.DataSource = U.SelectUserBranch(txt_UserName.Text);
+                Cmb_Branch.DisplayMember = "Name";
+                Cmb_Branch.ValueMember = "Branch_ID";
+            }
+            else
+            {
+                Cmb_Branch.DataSource = b.SelectCompBranches();
+                Cmb_Branch.DisplayMember = "Name";
+                Cmb_Branch.ValueMember = "Branch_ID";
+            }
+            comboBox1.DataSource = E.Select_EmployeeFromBranchToAddShift(Convert.ToInt32(Cmb_Branch.SelectedValue));
+            comboBox1.DisplayMember = "Emp_Name";
+            comboBox1.ValueMember = "id_employee";
+            comboBox1.SelectedIndex = -1;
+        }
         public Frm_ReportEmployeeDiscount()
         {
             InitializeComponent();
             checkBox1.Checked = true;
-
-            comboBox1.DataSource = E.SelectCompoEmployee();
-            comboBox1.DisplayMember = "Emp_Name";
-            comboBox1.ValueMember = "Emp_ID";
+            txt_UserName.Text = Program.salesman;
+            Permision();
+            //comboBox1.DataSource = E.SelectCompoEmployee();
+            //comboBox1.DisplayMember = "Emp_Name";
+            //comboBox1.ValueMember = "Emp_ID";
         }
 
         private void btn_search_Click(object sender, EventArgs e)
@@ -34,18 +59,17 @@ namespace Laboratory.PL
             if (checkBox1.Checked == true)
             {
                 comboBox1.Enabled = true;
-
-                comboBox1.DataSource = E.SelectCompoEmployee();
+                comboBox1.DataSource = E.Select_EmployeeFromBranchToAddShift(Convert.ToInt32(Cmb_Branch.SelectedValue));
                 comboBox1.DisplayMember = "Emp_Name";
-                comboBox1.ValueMember = "Emp_ID";
+                comboBox1.ValueMember = "id_employee";
+                comboBox1.SelectedIndex = -1;
             }
             else
             {
                 comboBox1.Enabled = false;
-
                 comboBox1.DataSource = null;
-                gridControl1.DataSource = null;
             }
+            gridControl1.DataSource = null;
         }
 
         private void Frm_ReportEmployeeDiscount_Load(object sender, EventArgs e)
@@ -55,7 +79,6 @@ namespace Laboratory.PL
 
         private void comboBox1_Leave(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
             if (comboBox1.Text != "")
             {
                 dt.Clear();
@@ -74,7 +97,6 @@ namespace Laboratory.PL
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            gridControl1.ShowRibbonPrintPreview();
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -82,22 +104,34 @@ namespace Laboratory.PL
 
             if (checkBox1.Checked == true)
             {
-                gridControl1.DataSource = E.ReportselecEmployeetDiscount(Convert.ToInt32(comboBox1.SelectedValue), DateFrom.Value, DateTo.Value);
-
+                gridControl1.DataSource = E.ReportselecEmployeetDiscount(Convert.ToInt32(comboBox1.SelectedValue), 
+                                                                          DateFrom.Value, DateTo.Value);          
             }
-            else
+            else if (checkBox1.Checked == false)
             {
-                gridControl1.DataSource = E.ReportselecDateEmployeetDiscount(DateFrom.Value, DateTo.Value);
-
+                gridControl1.DataSource = E.ReportselecDateEmployeetDiscount(Convert.ToInt32(Cmb_Branch.SelectedValue),
+                                                    DateFrom.Value, DateTo.Value);
             }
             decimal total = 0;
             for (int i = 0; i < gridView1.RowCount; i++)
             {
                 DataRow row = gridView1.GetDataRow(i);
                 total += Convert.ToDecimal(row[1].ToString());
-
             }
             txt_totalpay.Text = total.ToString("₱ #,##0.0");
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Cmb_Branch_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            comboBox1.DataSource = E.Select_EmployeeFromBranchToAddShift(Convert.ToInt32(Cmb_Branch.SelectedValue));
+            comboBox1.DisplayMember = "Emp_Name";
+            comboBox1.ValueMember = "id_employee";
+            comboBox1.SelectedIndex = -1;
         }
     }
 }

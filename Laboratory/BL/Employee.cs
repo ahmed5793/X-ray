@@ -238,6 +238,18 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
+        internal DataTable Select_EmployeeShiftFromBranchToAddShift(int Id_branch)
+        {
+            DataTable dt = new DataTable();
+            DataAccessLayer da = new DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@Id_Baranch",SqlDbType.Int);
+            param[0].Value = Id_branch;
+            da.open();
+            dt = da.selected("Select_EmployeeShiftFromBranchToAddShift", param);
+            da.close();
+            return dt;
+        }
         internal DataTable Select_EmployeFromBranch(int Id_branch  )
         {
             DataTable dt = new DataTable();
@@ -731,11 +743,12 @@ namespace Laboratory.BL
         }
     
 
-        internal void AddEmployeeDiscount(int Employee_ID, decimal money, string Reasson, DateTime Date_Discount, string User_Name)
+        internal void AddEmployeeDiscount(int Employee_ID, decimal money, string Reasson, DateTime Date_Discount,
+                                          string User_Name, int Id_Branch )
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[5];
+            SqlParameter[] param = new SqlParameter[6];
             param[0] = new SqlParameter("@id_employee", SqlDbType.Int);
             param[0].Value = Employee_ID;
             param[1] = new SqlParameter("@money", SqlDbType.Decimal);
@@ -743,11 +756,11 @@ namespace Laboratory.BL
             param[2] = new SqlParameter("@Reasson", SqlDbType.NVarChar, 100);
             param[2].Value = Reasson;
             param[3] = new SqlParameter("@Date_Discount", SqlDbType.DateTime);
-            param[3].Value = Date_Discount;
-          
+            param[3].Value = Date_Discount;          
             param[4] = new SqlParameter("@User_Name", SqlDbType.NVarChar, 50);
             param[4].Value = User_Name;
-          
+            param[5] = new SqlParameter("@Id_Branch", SqlDbType.Int);
+            param[5].Value = Id_Branch;
             da.excutequery("AddEmployeeDiscount", param);
             da.close();
         }
@@ -811,15 +824,17 @@ namespace Laboratory.BL
             return dt;
         }
 
-        internal DataTable ReportselecDateEmployeetDiscount(DateTime Date_From, DateTime Date_To)
+        internal DataTable ReportselecDateEmployeetDiscount(int Id_Branch ,DateTime Date_From, DateTime Date_To)
         {
             DataAccessLayer da = new DataAccessLayer();
-            SqlParameter[] param = new SqlParameter[2];
-
-            param[0] = new SqlParameter("@fromdate", SqlDbType.Date);
-            param[0].Value = Date_From;
-            param[1] = new SqlParameter("@todate", SqlDbType.Date);
-            param[1].Value = Date_To;
+            SqlParameter[] param = new SqlParameter[3];
+            param[0] = new SqlParameter("@Id_Branch", SqlDbType.Int);
+            param[0].Value = Id_Branch;
+            param[1] = new SqlParameter("@fromdate", SqlDbType.Date);
+            param[1].Value = Date_From;
+            param[2] = new SqlParameter("@todate", SqlDbType.Date);
+            param[2].Value = Date_To;
+      
             da.open();
             DataTable dt = new DataTable();
             dt.Clear();

@@ -53,9 +53,9 @@ namespace Laboratory.PL
             cmb_employeeName.DisplayMember = "Emp_Name";
             cmb_employeeName.ValueMember = "id_employee";
             cmb_employeeName.SelectedIndex = -1;
-         
+            gridControl1.DataSource = E.SelectEmployeeSalf(Convert.ToInt32(cmb_branch.SelectedValue));
         }
- 
+
 
         private void btn_new_Click(object sender, EventArgs e)
         {
@@ -137,7 +137,8 @@ namespace Laboratory.PL
                                Convert.ToDecimal(Txt_money.Text), Convert.ToInt32(cmb_employeeName.SelectedValue),
                                Convert.ToInt32(cmb_branch.SelectedValue));
             MessageBox.Show("تم التسجيل بنجاح");
-            gridControl1.DataSource = E.SelectEmployeeSalf(Convert.ToInt32(cmb_branch.SelectedValue)); txt_note.Clear();
+            gridControl1.DataSource = E.SelectEmployeeSalf(Convert.ToInt32(cmb_branch.SelectedValue));
+            txt_note.Clear();
             txt_userName.Clear();
             Txt_money.Clear();
             txt_note.Clear();

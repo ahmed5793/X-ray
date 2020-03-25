@@ -42,7 +42,7 @@ namespace Laboratory.PL
                 Cmb_Branch.DisplayMember = "Name";
                 Cmb_Branch.ValueMember = "Branch_ID";
             }
-            comboBox1.DataSource = E.Select_EmployeeFromBranchToAddShift(Convert.ToInt32(Cmb_Branch.SelectedValue));
+            comboBox1.DataSource = E.Select_EmployeeShiftFromBranchToAddShift(Convert.ToInt32(Cmb_Branch.SelectedValue));
             comboBox1.DisplayMember = "Emp_Name";
             comboBox1.ValueMember = "id_employee";
             comboBox1.SelectedIndex = -1;
@@ -58,7 +58,7 @@ namespace Laboratory.PL
 
         private void Frm_AddEmployeeShift_Load(object sender, EventArgs e)
         {
-            //    comboBox1.DataSource = E.selectEmployeeGenderSalary();
+               //comboBox1.DataSource = E.selectEmployeeGenderSalary();
             //    comboBox1.DisplayMember = "Emp_Name";
             //    comboBox1.ValueMember = "Emp_ID";
 
@@ -237,7 +237,7 @@ namespace Laboratory.PL
         }
         private void Cmb_Branch_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            comboBox1.DataSource = E.Select_EmployeeFromBranchToAddShift(Convert.ToInt32(Cmb_Branch.SelectedValue));
+            comboBox1.DataSource = E.Select_EmployeeShiftFromBranchToAddShift(Convert.ToInt32(Cmb_Branch.SelectedValue));
             comboBox1.DisplayMember = "Emp_Name";
             comboBox1.ValueMember = "id_employee";
             comboBox1.SelectedIndex = -1;
