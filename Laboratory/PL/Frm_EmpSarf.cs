@@ -15,21 +15,47 @@ namespace Laboratory.PL
         Employee E = new Employee();
 
         DataTable dt = new DataTable();
+        Users U = new Users();
+        Branches b = new Branches();
+
         public Frm_EmpSarf()
         {
             InitializeComponent();
-            cmb_employeeName.DataSource = E.SelectCompoEmployee();
-            cmb_employeeName.DisplayMember = "Emp_Name";
-            cmb_employeeName.ValueMember = "Emp_ID";
-
-
+        
+            txt_UserName.Text = Program.salesman;
+            Permision();
+       
 
 
         }
+        void Permision()
+        {
+
+            dt.Clear();
+            dt = U.SelectUserBranch(txt_UserName.Text);
+            if (dt.Rows.Count > 0)
+            {
+                cmb_Branch.DataSource = U.SelectUserBranch(txt_UserName.Text);
+                cmb_Branch.DisplayMember = "Name";
+                cmb_Branch.ValueMember = "Branch_ID";
+            }
+            else
+            {
+                cmb_Branch.DataSource = b.SelectCompBranches();
+                cmb_Branch.DisplayMember = "Name";
+                cmb_Branch.ValueMember = "Branch_ID";
+            }
+            cmb_employeeName.DataSource = E.Select_EmployeeFromBranchToAddShift(Convert.ToInt32(cmb_Branch.SelectedValue));
+            cmb_employeeName.DisplayMember = "Emp_Name";
+            cmb_employeeName.ValueMember = "id_employee";
+            cmb_employeeName.SelectedIndex = -1;
+
+        }
+
 
         private void Frm_EmpSarf_Load(object sender, EventArgs e)
         {
-            textBox1.Text = Program.salesman;
+        
         }
 
         private void cmb_employeeName_SelectedIndexChanged(object sender, EventArgs e)
@@ -239,7 +265,7 @@ namespace Laboratory.PL
 
                 E.AddEmp_Salary(Convert.ToInt32(cmb_employeeName.SelectedValue), Convert.ToDecimal(Txt_salary.Text),
                    Convert.ToDecimal(txt_salf.Text), Convert.ToDecimal(label6.Text), dateTimePicker1.Value,
-                   txt_note.Text, textBox1.Text, dateTimePicker2.Text, Convert.ToDecimal(txt_discount.Text));
+                   txt_note.Text, txt_UserName.Text, dateTimePicker2.Text, Convert.ToDecimal(txt_discount.Text));
 
                 MessageBox.Show("تم تسجيل البيانات بنجاح", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -260,6 +286,19 @@ namespace Laboratory.PL
                 MessageBox.Show(ex.StackTrace);
 
             }
+        }
+
+        private void cmb_Branch_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            txt_note.Clear();
+            Txt_salary.Text = "0";
+            txt_salf.Text = "0";
+            txt_discount.Text = "0";
+            label6.Text = "0.00";
+            cmb_employeeName.DataSource = E.Select_EmployeeFromBranchToAddShift(Convert.ToInt32(cmb_Branch.SelectedValue));
+            cmb_employeeName.DisplayMember = "Emp_Name";
+            cmb_employeeName.ValueMember = "id_employee";
+            cmb_employeeName.SelectedIndex = -1;
         }
     }
 }

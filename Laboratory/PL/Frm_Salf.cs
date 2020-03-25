@@ -211,6 +211,11 @@ namespace Laboratory.PL
                 MessageBox.Show(ex.StackTrace);
             }
         }
+
+        private void Frm_Salf_Load(object sender, EventArgs e)
+        {
+
+        }
     }
     }
 

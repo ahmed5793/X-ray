@@ -714,17 +714,19 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
-        internal DataTable RrportEmployeeSalaryDate( string fromdate, string todate)
+        internal DataTable RrportEmployeeSalaryDate( string fromdate, string todate,int IDBranch)
         {
             DataAccessLayer da = new DataAccessLayer();
             DataTable dt = new DataTable();
             da.open();
-            SqlParameter[] param = new SqlParameter[2];
+            SqlParameter[] param = new SqlParameter[3];
           
             param[0] = new SqlParameter("@fromdate", SqlDbType.NVarChar,50);
             param[0].Value = fromdate;
             param[1] = new SqlParameter("@todate", SqlDbType.NVarChar,50);
             param[1].Value = todate;
+            param[2] = new SqlParameter("@IDBranch", SqlDbType.Int);
+            param[2].Value = IDBranch;
             dt = da.selected("RrportEmployeeSalaryDate", param);
             da.close();
             return dt;
@@ -785,15 +787,17 @@ namespace Laboratory.BL
             return dt;
         }
 
-        internal DataTable ReportSearchDateEmployeeSalf( DateTime Date_From, DateTime Date_To)
+        internal DataTable ReportSearchDateEmployeeSalf( DateTime Date_From, DateTime Date_To,int IDBranch)
         {
             DataAccessLayer da = new DataAccessLayer();
-            SqlParameter[] param = new SqlParameter[2];
+            SqlParameter[] param = new SqlParameter[3];
          
             param[0] = new SqlParameter("@Date_from", SqlDbType.Date);
             param[0].Value = Date_From;
             param[1] = new SqlParameter("@Date_to", SqlDbType.Date);
             param[1].Value = Date_To;
+            param[2] = new SqlParameter("@IDBranch", SqlDbType.Int);
+            param[2].Value = IDBranch;
             da.open();
             DataTable dt = new DataTable();
             dt.Clear();
