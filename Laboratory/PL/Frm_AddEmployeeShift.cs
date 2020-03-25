@@ -14,15 +14,43 @@ namespace Laboratory.PL
     public partial class Frm_AddEmployeeShift : Form
     {
         Employee E = new Employee();
+        Branches b = new Branches();
+        Users U = new Users();
+        DataTable dt = new DataTable();
         public Frm_AddEmployeeShift()
         {
             InitializeComponent();
+            Txt_SalesMAn.Text = Program.salesman;
+            Permision();
             Btn_DeleteShift.Enabled = false;
             Btn_UpdateShift.Enabled = false;
-            dataGridView1.DataSource = E.Select_EmployeeShift();
-
+            gridControl1.DataSource = E.Select_EmployeeShift();
         }
-
+        void Permision()
+        {
+            dt.Clear();
+            dt = U.SelectUserBranch(Txt_SalesMAn.Text);
+            if (dt.Rows.Count > 0)
+            {
+                Cmb_Branch.DataSource = U.SelectUserBranch(Txt_SalesMAn.Text);
+                Cmb_Branch.DisplayMember = "Name";
+                Cmb_Branch.ValueMember = "Branch_ID";
+            }
+            else
+            {
+                Cmb_Branch.DataSource = b.SelectCompBranches();
+                Cmb_Branch.DisplayMember = "Name";
+                Cmb_Branch.ValueMember = "Branch_ID";
+            }
+            comboBox1.DataSource = E.Select_EmployeeFromBranchToAddShift(Convert.ToInt32(Cmb_Branch.SelectedValue));
+            comboBox1.DisplayMember = "Emp_Name";
+            comboBox1.ValueMember = "id_employee";
+            comboBox1.SelectedIndex = -1;
+            if (comboBox1.Text != "")
+            {
+                textBox1.Text = E.selectEmployeeRoleshift(Convert.ToInt32(comboBox1.SelectedValue)).Rows[0][0].ToString();
+            }
+        }
         private void Btn_UpdateShift_Click(object sender, EventArgs e)
         {
            
@@ -30,24 +58,19 @@ namespace Laboratory.PL
 
         private void Frm_AddEmployeeShift_Load(object sender, EventArgs e)
         {
-            comboBox1.DataSource = E.selectEmployeeGenderSalary();
-            comboBox1.DisplayMember = "Emp_Name";
-            comboBox1.ValueMember = "Emp_ID";
-            if (comboBox1.Text!="")
-            {
-                textBox1.Text = E.selectEmployeeRoleshift(Convert.ToInt32(comboBox1.SelectedValue)).Rows[0][0].ToString();
+            //    comboBox1.DataSource = E.selectEmployeeGenderSalary();
+            //    comboBox1.DisplayMember = "Emp_Name";
+            //    comboBox1.ValueMember = "Emp_ID";
 
-            }
 
         }
 
         private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            //comboBox1.DataSource = E.selectEmployeeGenderSalary();
-            //comboBox1.DisplayMember = "Emp_Name";
-            //comboBox1.ValueMember = "Emp_ID";
-
-            textBox1.Text = E.selectEmployeeRoleshift(Convert.ToInt32(comboBox1.SelectedValue)).Rows[0][0].ToString();
+            if (comboBox1.Text != "")
+            {
+                textBox1.Text = E.selectEmployeeRoleshift(Convert.ToInt32(comboBox1.SelectedValue)).Rows[0][0].ToString();
+            }
         }
 
         private void Btn_DeleteShift_Click(object sender, EventArgs e)
@@ -60,41 +83,17 @@ namespace Laboratory.PL
 
         private void txt_search_TextChanged(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-
             dt.Clear();
             dt = E.Search_EmployeeShift(txt_search.Text);
-            dataGridView1.DataSource = dt;
+            gridControl1.DataSource = dt;
         }
-
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
-        {
-            try
-            {
-                if (dataGridView1.Rows.Count > 0 && dataGridView1.SelectedRows.Count > 0)
-                {
-                    comboBox1.Enabled = false;
-                    Btn_AddShift.Enabled = false;
-                    Btn_UpdateShift.Enabled = true;
-                    Btn_DeleteShift.Enabled = true;
-                    comboBox1.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                    textBox1.Text= dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                    Txt_Cost.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-                    dateTimePicker1.Value = Convert.ToDateTime(dataGridView1.CurrentRow.Cells[3].Value);
-                    dateTimePicker3.Value = Convert.ToDateTime(dataGridView1.CurrentRow.Cells[4].Value);
-                    dateTimePicker2.Value = Convert.ToDateTime(dataGridView1.CurrentRow.Cells[5].Value);
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
+        {   
+            
         }
 
         private void comboBox1_Leave(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
             if (comboBox1.Text != "")
             {
                 dt.Clear();
@@ -102,7 +101,6 @@ namespace Laboratory.PL
                 if (dt.Rows.Count == 0)
                 {
                     MessageBox.Show("يرجي العلم بان اسم الموظف غير مسجل من قبل يرجي تسجيل هذا الاسم في شاشه الموظفين", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
                     comboBox1.Focus();
                     comboBox1.SelectAll();
                     return;
@@ -115,54 +113,83 @@ namespace Laboratory.PL
         {
             try
             {
-                if (Txt_Cost.Text == "0" && Txt_Cost.Text == "")
+                if (comboBox1.Text == "")
+                {
+                    MessageBox.Show("لا بد من تحديد إسم الموظف ");
+                    return;
+                }
+                if (Txt_Cost.Text == "0" || Txt_Cost.Text == "")
                 {
                     MessageBox.Show("يرجى تحديد سعر الشيفت");
                     return;
                 }
                 if (comboBox1.Text != "")
                 {
+                    for (int i = 0; i < gridView1.RowCount; i++)
+                    {
+                        DataRow row = gridView1.GetDataRow(i);
+                        if (comboBox1.Text == row[1].ToString() &&
+                            dateTimePicker1.Text == (row[3].ToString())
+                            && dateTimePicker3.Text == (row[4].ToString())
+                            && dateTimePicker2.Text == (row[5].ToString()))
+                        {
+                            MessageBox.Show("تم إضافة هذا الشيفت لنفس الموظف فى نفس الوقت من قبل ");
+                            return;
+                        }
+                    }
                     E.Add_EmployeeShift(Convert.ToInt32(comboBox1.SelectedValue),
                        (dateTimePicker1.Text), (dateTimePicker3.Text), (dateTimePicker2.Text), Convert.ToDecimal(Txt_Cost.Text));
                     MessageBox.Show("تم إضافة الشيفت بنجاح");
                     Txt_Cost.Text = "0";
-                    dataGridView1.DataSource = E.Select_EmployeeShift();
+                    gridControl1.DataSource = E.Select_EmployeeShift();
                 }
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
             }
-
         }
-
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             try
-            {
+            {                
                 if (comboBox1.Text == "")
                 {
                     MessageBox.Show("لا بد من تحديد إسم الموظف ");
                     return;
                 }
-
-
+                if (Txt_Cost.Text == "0" || Txt_Cost.Text == "")
+                {
+                    MessageBox.Show("يرجى تحديد سعر الشيفت");
+                    return;
+                }
                 if (MessageBox.Show("هل تريد تعديل الشيفت", "عملية التعديل", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    E.Update_EmployeeShift(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value), Convert.ToInt32(comboBox1.SelectedValue),
+                    for (int i = 0; i < gridView1.RowCount; i++)
+                    {
+                        DataRow row = gridView1.GetDataRow(i);
+                        if (comboBox1.Text == row[1].ToString() &&
+                            dateTimePicker1.Text == (row[3].ToString())
+                            && dateTimePicker3.Text == (row[4].ToString())
+                            && dateTimePicker2.Text == (row[5].ToString()))
+
+                        {
+                            MessageBox.Show("تم إضافة هذا الشيفت لنفس الموظف فى نفس الوقت من قبل ");
+                            return;
+                        }
+                    }
+                    E.Update_EmployeeShift(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الشيفت")), Convert.ToInt32(comboBox1.SelectedValue),
                          (dateTimePicker1.Text), (dateTimePicker3.Text),
                         (dateTimePicker2.Text), Convert.ToDecimal(Txt_Cost.Text));
                     MessageBox.Show("تم تعديل الشيفت بنجاح", "عملية التعديل");
-                    Txt_Cost.Text = "0";
-                    dataGridView1.DataSource = E.Select_EmployeeShift();
                 }
                 else
                 {
                     MessageBox.Show("تم إلغاء تعديل الشيفت ", "عملية التعديل");
-                    Txt_Cost.Text = "0";
-                    dataGridView1.DataSource = E.Select_EmployeeShift();
                 }
+                Txt_Cost.Text = "0";
+                gridControl1.DataSource = E.Select_EmployeeShift();
                 comboBox1.Enabled = true;
                 Btn_AddShift.Enabled = true;
                 Btn_UpdateShift.Enabled = false;
@@ -171,27 +198,25 @@ namespace Laboratory.PL
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
             }
         }
 
         private void Btn_DeleteShift_Click_1(object sender, EventArgs e)
         {
-
             try
             {
                 if (MessageBox.Show("هل تريد مسح الشيفت", "عملية المسح", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    E.Delete_TechnicalShift(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
+                    E.Delete_EmployeeShift(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الشيفت")));
                     MessageBox.Show("تم مسح الشيفت بنجاح");
-                    Txt_Cost.Text = "0";
-                    dataGridView1.DataSource = E.Select_EmployeeShift();
                 }
                 else
                 {
-                    MessageBox.Show("تم إلغاء مسح الشيفت ");
-                    Txt_Cost.Text = "0";
-                    dataGridView1.DataSource = E.Select_EmployeeShift();
+                    MessageBox.Show("تم إلغاء مسح الشيفت ");            
                 }
+                Txt_Cost.Text = "0";
+                gridControl1.DataSource = E.Select_EmployeeShift();
                 comboBox1.Enabled = true;
                 Btn_AddShift.Enabled = true;
                 Btn_UpdateShift.Enabled = false;
@@ -199,8 +224,43 @@ namespace Laboratory.PL
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+        private void label3_Click(object sender, EventArgs e)
+        {
+        }
+        private void Cmb_Branch_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            comboBox1.DataSource = E.Select_EmployeeFromBranchToAddShift(Convert.ToInt32(Cmb_Branch.SelectedValue));
+            comboBox1.DisplayMember = "Emp_Name";
+            comboBox1.ValueMember = "id_employee";
+            comboBox1.SelectedIndex = -1;
+        }
+
+        private void gridControl1_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                if (gridView1.RowCount > 0 && gridView1.SelectedRowsCount > 0)
+                {
+                    comboBox1.Enabled = false;
+                Btn_AddShift.Enabled = false;
+                Btn_UpdateShift.Enabled = true;
+                Btn_DeleteShift.Enabled = true;
+                comboBox1.Text = gridView1.GetFocusedRowCellValue("إسم الموظف").ToString();
+                textBox1.Text = gridView1.GetFocusedRowCellValue("التخصص").ToString();
+                Txt_Cost.Text = gridView1.GetFocusedRowCellValue("سعر الشيفت").ToString();
+                dateTimePicker1.Value = Convert.ToDateTime(gridView1.GetFocusedRowCellValue("تاريخ الشيفت"));
+                dateTimePicker3.Value = Convert.ToDateTime(gridView1.GetFocusedRowCellValue("من وقت"));
+                dateTimePicker2.Value = Convert.ToDateTime(gridView1.GetFocusedRowCellValue("إلى وقت"));
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
             }
         }
     }
