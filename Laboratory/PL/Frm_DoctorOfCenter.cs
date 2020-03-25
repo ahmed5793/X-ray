@@ -34,10 +34,12 @@ namespace Laboratory.PL
         {
             if (dataGridView1.Rows.Count > 0)
             {
+                Btn_Update.Enabled = true;
+                Btn_Add.Enabled = false;
                 txt_name.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
                 txt_phone.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                 txt_address.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                Btn_Update.Enabled = true;
+              
             }
         }
 
@@ -64,6 +66,7 @@ namespace Laboratory.PL
             Btn_Update.Enabled = false;
             txt_name.Clear();
             txt_phone.Clear();
+            Btn_Add.Enabled = true;
         }
 
         private void Btn_Add_Click(object sender, EventArgs e)
@@ -102,7 +105,7 @@ namespace Laboratory.PL
                 }
                 if (MessageBox.Show("هل تريد تعديل بيانات الطبيب", "عمليه التعديل", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
                 {
-                    d.UpdateDoctor_OFCENTER(txt_name.Text, txt_phone.Text, Convert.ToInt32(dataGridView1.CurrentRow.Cells[4].Value), txt_address.Text);
+                    d.UpdateDoctor_OFCENTER(txt_name.Text, txt_phone.Text, Convert.ToInt32(dataGridView1.CurrentRow.Cells[3].Value), txt_address.Text);
 
                     MessageBox.Show("تم تعديل بيانات الطبيب بنجاح", "عمليه التعديل", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
@@ -115,6 +118,7 @@ namespace Laboratory.PL
                 txt_phone.Clear();
                 txt_address.Clear();
                 Btn_Update.Enabled = false;
+                Btn_Add.Enabled = true;
 
             }
             catch (Exception ex)

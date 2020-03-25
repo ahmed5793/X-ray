@@ -40,9 +40,9 @@
             this.txt_address = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btn_save = new DevExpress.XtraEditors.SimpleButton();
             this.btn_new = new DevExpress.XtraEditors.SimpleButton();
             this.btn_update = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_save = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -174,27 +174,6 @@
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             // 
-            // btn_save
-            // 
-            this.btn_save.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btn_save.Appearance.BackColor = System.Drawing.Color.Black;
-            this.btn_save.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_save.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btn_save.Appearance.Options.UseBackColor = true;
-            this.btn_save.Appearance.Options.UseFont = true;
-            this.btn_save.Appearance.Options.UseForeColor = true;
-            this.btn_save.Appearance.Options.UseTextOptions = true;
-            this.btn_save.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.btn_save.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.btn_save.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.btn_save.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.btn_save.Location = new System.Drawing.Point(247, 159);
-            this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(141, 32);
-            this.btn_save.TabIndex = 181;
-            this.btn_save.Text = "اضافة";
-            this.btn_save.Click += new System.EventHandler(this.simpleButton1_Click);
-            // 
             // btn_new
             // 
             this.btn_new.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -208,7 +187,7 @@
             this.btn_new.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.btn_new.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btn_new.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.btn_new.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.btn_new.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_new.ImageOptions.Image")));
             this.btn_new.Location = new System.Drawing.Point(247, 159);
             this.btn_new.Name = "btn_new";
             this.btn_new.Size = new System.Drawing.Size(141, 32);
@@ -229,13 +208,34 @@
             this.btn_update.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.btn_update.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btn_update.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.btn_update.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
+            this.btn_update.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_update.ImageOptions.Image")));
             this.btn_update.Location = new System.Drawing.Point(31, 159);
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(141, 32);
             this.btn_update.TabIndex = 183;
             this.btn_update.Text = "تعديل";
             this.btn_update.Click += new System.EventHandler(this.simpleButton3_Click);
+            // 
+            // btn_save
+            // 
+            this.btn_save.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btn_save.Appearance.BackColor = System.Drawing.Color.Black;
+            this.btn_save.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_save.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btn_save.Appearance.Options.UseBackColor = true;
+            this.btn_save.Appearance.Options.UseFont = true;
+            this.btn_save.Appearance.Options.UseForeColor = true;
+            this.btn_save.Appearance.Options.UseTextOptions = true;
+            this.btn_save.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btn_save.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.btn_save.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.btn_save.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_save.ImageOptions.Image")));
+            this.btn_save.Location = new System.Drawing.Point(247, 159);
+            this.btn_save.Name = "btn_save";
+            this.btn_save.Size = new System.Drawing.Size(141, 32);
+            this.btn_save.TabIndex = 181;
+            this.btn_save.Text = "اضافة";
+            this.btn_save.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // Frm_Techincal
             // 

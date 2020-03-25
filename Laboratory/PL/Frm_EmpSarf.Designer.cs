@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_EmpSarf));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.txt_discount = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,10 +47,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_UserName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.Btn_Add = new DevExpress.XtraEditors.SimpleButton();
+            this.label12 = new System.Windows.Forms.Label();
+            this.cmb_Branch = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,6 +59,8 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.cmb_Branch);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.txt_discount);
@@ -85,16 +89,26 @@
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial Black", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(344, 251);
+            this.label6.Location = new System.Drawing.Point(344, 304);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(110, 52);
             this.label6.TabIndex = 56;
             this.label6.Text = "0.00";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(757, -31);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(81, 19);
+            this.label11.TabIndex = 51;
+            this.label11.Text = "اسم المستخدم";
+            // 
             // txt_discount
             // 
             this.txt_discount.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_discount.Location = new System.Drawing.Point(300, 205);
+            this.txt_discount.Location = new System.Drawing.Point(300, 267);
             this.txt_discount.MaxLength = 11;
             this.txt_discount.Name = "txt_discount";
             this.txt_discount.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -111,7 +125,7 @@
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.White;
             this.label10.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(470, 205);
+            this.label10.Location = new System.Drawing.Point(470, 267);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(99, 29);
             this.label10.TabIndex = 55;
@@ -123,7 +137,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(470, 65);
+            this.label1.Location = new System.Drawing.Point(470, 127);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(153, 29);
             this.label1.TabIndex = 53;
@@ -134,7 +148,7 @@
             this.dateTimePicker2.CustomFormat = "MM/yyyy";
             this.dateTimePicker2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(300, 63);
+            this.dateTimePicker2.Location = new System.Drawing.Point(300, 125);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.ShowUpDown = true;
             this.dateTimePicker2.Size = new System.Drawing.Size(163, 32);
@@ -147,7 +161,7 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label8.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(586, 19);
+            this.label8.Location = new System.Drawing.Point(586, 81);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(132, 34);
             this.label8.TabIndex = 47;
@@ -160,7 +174,7 @@
             this.cmb_employeeName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmb_employeeName.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_employeeName.FormattingEnabled = true;
-            this.cmb_employeeName.Location = new System.Drawing.Point(217, 19);
+            this.cmb_employeeName.Location = new System.Drawing.Point(217, 81);
             this.cmb_employeeName.Name = "cmb_employeeName";
             this.cmb_employeeName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmb_employeeName.Size = new System.Drawing.Size(363, 32);
@@ -174,7 +188,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(470, 265);
+            this.label3.Location = new System.Drawing.Point(470, 318);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(120, 29);
             this.label3.TabIndex = 45;
@@ -183,7 +197,7 @@
             // txt_salf
             // 
             this.txt_salf.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_salf.Location = new System.Drawing.Point(299, 158);
+            this.txt_salf.Location = new System.Drawing.Point(299, 220);
             this.txt_salf.MaxLength = 11;
             this.txt_salf.Name = "txt_salf";
             this.txt_salf.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -200,7 +214,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(470, 161);
+            this.label2.Location = new System.Drawing.Point(470, 223);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 29);
             this.label2.TabIndex = 43;
@@ -210,7 +224,7 @@
             // Txt_salary
             // 
             this.Txt_salary.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_salary.Location = new System.Drawing.Point(299, 110);
+            this.Txt_salary.Location = new System.Drawing.Point(299, 172);
             this.Txt_salary.MaxLength = 11;
             this.Txt_salary.Name = "Txt_salary";
             this.Txt_salary.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -228,7 +242,7 @@
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.White;
             this.label9.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(470, 113);
+            this.label9.Location = new System.Drawing.Point(470, 175);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(74, 29);
             this.label9.TabIndex = 41;
@@ -239,10 +253,10 @@
             // 
             this.txt_note.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_note.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_note.Location = new System.Drawing.Point(207, 321);
+            this.txt_note.Location = new System.Drawing.Point(207, 370);
             this.txt_note.Multiline = true;
             this.txt_note.Name = "txt_note";
-            this.txt_note.Size = new System.Drawing.Size(373, 92);
+            this.txt_note.Size = new System.Drawing.Size(373, 43);
             this.txt_note.TabIndex = 35;
             this.txt_note.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -252,7 +266,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(587, 352);
+            this.label4.Location = new System.Drawing.Point(587, 384);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(84, 29);
             this.label4.TabIndex = 36;
@@ -280,17 +294,17 @@
             this.label7.TabIndex = 31;
             this.label7.Text = "تاريخ اذن الصرف";
             // 
-            // textBox1
+            // txt_UserName
             // 
-            this.textBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(569, 10);
-            this.textBox1.MaxLength = 11;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBox1.Size = new System.Drawing.Size(215, 32);
-            this.textBox1.TabIndex = 50;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_UserName.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_UserName.Location = new System.Drawing.Point(569, 10);
+            this.txt_UserName.MaxLength = 11;
+            this.txt_UserName.Name = "txt_UserName";
+            this.txt_UserName.ReadOnly = true;
+            this.txt_UserName.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txt_UserName.Size = new System.Drawing.Size(215, 32);
+            this.txt_UserName.TabIndex = 50;
+            this.txt_UserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
             // 
@@ -302,16 +316,6 @@
             this.label5.Size = new System.Drawing.Size(81, 19);
             this.label5.TabIndex = 51;
             this.label5.Text = "اسم المستخدم";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(757, -31);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(81, 19);
-            this.label11.TabIndex = 51;
-            this.label11.Text = "اسم المستخدم";
             // 
             // Btn_Add
             // 
@@ -334,14 +338,41 @@
             this.Btn_Add.Text = "تاكيد الصرف";
             this.Btn_Add.Click += new System.EventHandler(this.Btn_Add_Click);
             // 
+            // label12
+            // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label12.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(605, 31);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(66, 34);
+            this.label12.TabIndex = 58;
+            this.label12.Text = "الفرع";
+            // 
+            // cmb_Branch
+            // 
+            this.cmb_Branch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmb_Branch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmb_Branch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmb_Branch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_Branch.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_Branch.FormattingEnabled = true;
+            this.cmb_Branch.Location = new System.Drawing.Point(288, 31);
+            this.cmb_Branch.Name = "cmb_Branch";
+            this.cmb_Branch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cmb_Branch.Size = new System.Drawing.Size(256, 32);
+            this.cmb_Branch.TabIndex = 57;
+            this.cmb_Branch.SelectionChangeCommitted += new System.EventHandler(this.cmb_Branch_SelectionChangeCommitted);
+            // 
             // Frm_EmpSarf
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(887, 527);
+            this.ClientSize = new System.Drawing.Size(887, 526);
             this.Controls.Add(this.Btn_Add);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_UserName);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label7);
@@ -376,7 +407,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_UserName;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label label1;
@@ -385,5 +416,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label11;
         private DevExpress.XtraEditors.SimpleButton Btn_Add;
+        private System.Windows.Forms.Label label12;
+        public System.Windows.Forms.ComboBox cmb_Branch;
     }
 }

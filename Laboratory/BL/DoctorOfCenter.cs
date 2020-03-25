@@ -75,10 +75,10 @@ namespace Laboratory.BL
             DataAccessLayer da = new DataAccessLayer();
             da.open();
             SqlParameter[] param = new SqlParameter[4];
-            param[0] = new SqlParameter("@name", SqlDbType.NVarChar, 300);
+            param[0] = new SqlParameter("@name", SqlDbType.NVarChar, 250);
             param[0].Value = name;
 
-            param[1] = new SqlParameter("@phone", SqlDbType.VarChar, 100);
+            param[1] = new SqlParameter("@phone", SqlDbType.NVarChar, 50);
             param[1].Value = phone;
 
             param[2] = new SqlParameter("@id", SqlDbType.Int);

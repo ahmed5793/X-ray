@@ -309,7 +309,7 @@
             // 
             // btn_search
             // 
-            this.btn_search.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btn_search.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_search.Appearance.BackColor = System.Drawing.Color.Black;
             this.btn_search.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_search.Appearance.ForeColor = System.Drawing.Color.White;
@@ -320,7 +320,7 @@
             this.btn_search.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.btn_search.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btn_search.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.btn_search.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btn_search.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_search.ImageOptions.Image")));
             this.btn_search.Location = new System.Drawing.Point(15, 132);
             this.btn_search.Name = "btn_search";
             this.btn_search.Size = new System.Drawing.Size(134, 38);
