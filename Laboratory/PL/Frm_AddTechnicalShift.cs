@@ -13,19 +13,27 @@ namespace Laboratory.PL
     public partial class Frm_AddTechnicalShift : Form
     {
         Techincal Techincal = new Techincal();
-
+        Branches b = new Branches();
+        Users U = new Users();
+        DataTable dt = new DataTable();
         public Frm_AddTechnicalShift()
         {
             InitializeComponent();
             Btn_DeleteShift.Enabled = false;
             Btn_UpdateShift.Enabled = false;
+            Txt_SalesMAn.Text = Program.salesman;
             comboBox1.DataSource = Techincal.Select_ComboTechnical();
             comboBox1.DisplayMember = "Tech_Name";
             comboBox1.ValueMember = "Techincal_ID";
             comboBox2.DataSource = Techincal.Select_ComboTypeShift();
             comboBox2.DisplayMember = "Type_Shift";
             comboBox2.ValueMember = "ID_Shift";
-            dataGridView1.DataSource = Techincal.Select_TechnicalShift();
+
+            Cmb_Branch.DataSource = b.SelectCompBranches();
+            Cmb_Branch.DisplayMember = "Name";
+            Cmb_Branch.ValueMember = "Branch_ID";
+            Cmb_Branch.SelectedIndex = -1 ;
+            gridControl1.DataSource = Techincal.Select_TechnicalShift();
         }
 
         private void comboBox1_Leave(object sender, EventArgs e)
@@ -93,20 +101,57 @@ namespace Laboratory.PL
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
+         
+        }
+
+        private void Btn_UpdateShift_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txt_search_TextChanged(object sender, EventArgs e)
+        {
+            //try
+            //{
+            //    dt.Clear();
+            //    dt = Techincal.Search_TechnicalShift(txt_search.Text);
+            //    dataGridView1.DataSource = dt;
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+
             try
             {
-                if (dataGridView1.Rows.Count>0 && dataGridView1.SelectedRows.Count>0 ) 
+                if (Cmb_Branch.Text == "")
                 {
-                    comboBox1.Enabled = false;
-                    Btn_AddShift.Enabled = false;
-                    Btn_UpdateShift.Enabled = true;
-                    Btn_DeleteShift.Enabled = true;
-                    comboBox1.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                    comboBox2.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                    Txt_Cost.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-                    dateTimePicker1.Value = Convert.ToDateTime(dataGridView1.CurrentRow.Cells[3].Value);
-                    dateTimePicker3.Value = Convert.ToDateTime(dataGridView1.CurrentRow.Cells[4].Value);
-                    dateTimePicker2.Value = Convert.ToDateTime(dataGridView1.CurrentRow.Cells[5].Value);
+                    MessageBox.Show("يرجى تحديد الفرع الذى عمل به الفنى فى هذا الشيفت");
+                    return;
+                }
+                if (comboBox2.Text == "")
+                {
+                    MessageBox.Show("يرجى تحديد نوع الشيفت");
+                    return;
+                }
+                if (Txt_Cost.Text == "0" || Txt_Cost.Text == "")
+                {
+                    MessageBox.Show("يرجى تحديد سعر الشيفت");
+                    return;
+                }
+               
+                if (comboBox1.Text != "" && comboBox2.Text != "")
+                {
+                    Techincal.Add_TechnicalShift(Convert.ToInt32(comboBox1.SelectedValue), Convert.ToInt32(comboBox2.SelectedValue),
+                       (dateTimePicker1.Text), (dateTimePicker3.Text), (dateTimePicker2.Text), Convert.ToDecimal(Txt_Cost.Text)
+                         , Txt_SalesMAn.Text, Convert.ToInt32(Cmb_Branch.SelectedValue));
+                    MessageBox.Show("تم إضافة الشيفت بنجاح");
+                    Txt_Cost.Text = "0";
+                    gridControl1.DataSource = Techincal.Select_TechnicalShift();
                 }
             }
             catch (Exception ex)
@@ -116,7 +161,7 @@ namespace Laboratory.PL
             }
         }
 
-        private void Btn_UpdateShift_Click(object sender, EventArgs e)
+        private void simpleButton1_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -130,89 +175,42 @@ namespace Laboratory.PL
                     MessageBox.Show("لا بد من تحديد نوع الشيفت ");
                     return;
                 }
-
+                if (Cmb_Branch.Text == "")
+                {
+                    MessageBox.Show("يرجى تحديد الفرع الذى عمل به الفنى فى هذا الشيفت");
+                    return;
+                }
+                if (Txt_Cost.Text == "0" || Txt_Cost.Text == "")
+                {
+                    MessageBox.Show("يرجى تحديد سعر الشيفت");
+                    return;
+                }
                 if (MessageBox.Show("هل تريد تعديل الشيفت", "عملية التعديل", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    Techincal.Update_TechnicalShift(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value), Convert.ToInt32(comboBox1.SelectedValue),
+                    Techincal.Update_TechnicalShift(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الشيفت")), Convert.ToInt32(comboBox1.SelectedValue),
                         Convert.ToInt32(comboBox2.SelectedValue), (dateTimePicker1.Text), (dateTimePicker3.Text),
-                        (dateTimePicker2.Text), Convert.ToDecimal(Txt_Cost.Text));
+                        (dateTimePicker2.Text), Convert.ToDecimal(Txt_Cost.Text), Txt_SalesMAn.Text, Convert.ToInt32(Cmb_Branch.SelectedValue));
                     MessageBox.Show("تم تعديل الشيفت بنجاح", "عملية التعديل");
-                    Txt_Cost.Text = "0";
-                    dataGridView1.DataSource = Techincal.Select_TechnicalShift();
+
                 }
                 else
                 {
                     MessageBox.Show("تم إلغاء تعديل الشيفت ", "عملية التعديل");
-                    Txt_Cost.Text = "0";
-                    dataGridView1.DataSource = Techincal.Select_TechnicalShift();
+
                 }
+                Txt_Cost.Text = "0";
+                gridControl1.DataSource = Techincal.Select_TechnicalShift();
                 comboBox1.Enabled = true;
                 Btn_AddShift.Enabled = true;
+                gridControl1.Enabled = true;
                 Btn_UpdateShift.Enabled = false;
                 Btn_DeleteShift.Enabled = false;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
             }
-        }
-
-        private void Btn_DeleteShift_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void txt_search_TextChanged(object sender, EventArgs e)
-        {
-            DataTable dt = new DataTable();
-
-            try
-            {
-                dt.Clear();
-                dt = Techincal.Search_TechnicalShift(txt_search.Text);
-                dataGridView1.DataSource = dt;
-
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
-            finally 
-            {
-                dt.Dispose();
-            }
-        }
-
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-
-            try
-            {
-                if (Txt_Cost.Text == "0" && Txt_Cost.Text == "")
-                {
-                    MessageBox.Show("يرجى تحديد سعر الشيفت");
-                    return;
-                }
-                if (comboBox1.Text != "" && comboBox2.Text != "")
-                {
-                    Techincal.Add_TechnicalShift(Convert.ToInt32(comboBox1.SelectedValue), Convert.ToInt32(comboBox2.SelectedValue),
-                       (dateTimePicker1.Text), (dateTimePicker3.Text), (dateTimePicker2.Text), Convert.ToDecimal(Txt_Cost.Text));
-                    MessageBox.Show("تم إضافة الشيفت بنجاح");
-                    Txt_Cost.Text = "0";
-                    dataGridView1.DataSource = Techincal.Select_TechnicalShift();
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void simpleButton1_Click_1(object sender, EventArgs e)
-        {
-
         }
 
         private void simpleButton1_Click_2(object sender, EventArgs e)
@@ -221,21 +219,51 @@ namespace Laboratory.PL
             {
                 if (MessageBox.Show("هل تريد مسح الشيفت", "عملية المسح", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    Techincal.Delete_TechnicalShift(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
+                    Techincal.Delete_TechnicalShift(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الشيفت")));
                     MessageBox.Show("تم مسح الشيفت بنجاح");
-                    Txt_Cost.Text = "0";
-                    dataGridView1.DataSource = Techincal.Select_TechnicalShift();
                 }
                 else
                 {
                     MessageBox.Show("تم إلغاء مسح الشيفت ");
-                    Txt_Cost.Text = "0";
-                    dataGridView1.DataSource = Techincal.Select_TechnicalShift();
                 }
+
+                Txt_Cost.Text = "0";
+                gridControl1.DataSource = Techincal.Select_TechnicalShift();
                 comboBox1.Enabled = true;
                 Btn_AddShift.Enabled = true;
+                gridControl1.Enabled = true;
                 Btn_UpdateShift.Enabled = false;
                 Btn_DeleteShift.Enabled = false;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+
+        private void gridControl1_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                if (gridView1.RowCount > 0 && gridView1.SelectedRowsCount > 0)
+                {
+                    comboBox1.Enabled = false;
+                    Btn_AddShift.Enabled = false;
+                    Btn_UpdateShift.Enabled = true;
+                    Btn_DeleteShift.Enabled = true;
+                    gridControl1.Enabled = false;
+                    
+                    comboBox1.Text = gridView1.GetFocusedRowCellValue("إسم الفنى").ToString();
+                    comboBox2.Text = gridView1.GetFocusedRowCellValue("نوع الشيفت").ToString();
+                    Txt_Cost.Text = gridView1.GetFocusedRowCellValue("سعر الشيفت").ToString();
+                    Cmb_Branch.Text = gridView1.GetFocusedRowCellValue("الفرع").ToString();
+                    dateTimePicker1.Value = Convert.ToDateTime(gridView1.GetFocusedRowCellValue("تاريخ الشيفت"));
+                    dateTimePicker3.Value = Convert.ToDateTime(gridView1.GetFocusedRowCellValue("من وقت"));
+                    dateTimePicker2.Value = Convert.ToDateTime(gridView1.GetFocusedRowCellValue("إلى وقت"));
+
+                }
             }
             catch (Exception ex)
             {

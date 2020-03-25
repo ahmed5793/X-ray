@@ -165,11 +165,12 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
-        internal void Add_TechnicalShift(int Technical_Id, int Id_Shift, string Date_shift , string StartTime_Shift , string EndTime_Shift , decimal Amount)
+        internal void Add_TechnicalShift(int Technical_Id, int Id_Shift, string Date_shift , string StartTime_Shift , 
+                                          string EndTime_Shift , decimal Amount,string Sales_Man , int Id_Branch )
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[6];
+            SqlParameter[] param = new SqlParameter[8];
             param[0] = new SqlParameter("@Techincal_ID", SqlDbType.Int);
             param[0].Value = Technical_Id;
             param[1] = new SqlParameter("@ID_Shift1", SqlDbType.Int);
@@ -182,14 +183,19 @@ namespace Laboratory.BL
             param[4].Value = EndTime_Shift;
             param[5] = new SqlParameter("@Amount", SqlDbType.Decimal);
             param[5].Value = Amount;
+            param[6] = new SqlParameter("@User_Name", SqlDbType.NVarChar,100);
+            param[6].Value = Sales_Man;
+            param[7] = new SqlParameter("@Id_Branch", SqlDbType.Int);
+            param[7].Value = Id_Branch;
             da.excutequery("Add_TechnicalShift", param);
             da.close();
         }
-        internal void Update_TechnicalShift(int ID_Shift,int Technical_Id, int Id_Shift, string Date_shift, string StartTime_Shift, string EndTime_Shift, decimal Amount)
+        internal void Update_TechnicalShift(int ID_Shift,int Technical_Id, int Id_Shift, string Date_shift, 
+            string StartTime_Shift, string EndTime_Shift, decimal Amount ,string Sales_Man , int Id_Branch)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[7];
+            SqlParameter[] param = new SqlParameter[9];
             param[0] = new SqlParameter("@ID_Shift", SqlDbType.Int);
             param[0].Value = ID_Shift;
             param[1] = new SqlParameter("@Techincal_ID", SqlDbType.Int);
@@ -204,6 +210,10 @@ namespace Laboratory.BL
             param[5].Value = EndTime_Shift;
             param[6] = new SqlParameter("@Amount", SqlDbType.Decimal);
             param[6].Value = Amount;
+            param[7] = new SqlParameter("@User_Name", SqlDbType.NVarChar, 100);
+            param[7].Value = Sales_Man;
+            param[8] = new SqlParameter("@Id_Branch", SqlDbType.Int);
+            param[8].Value = Id_Branch;
             da.excutequery("Update_TechnicalShift", param);
             da.close();
         }
