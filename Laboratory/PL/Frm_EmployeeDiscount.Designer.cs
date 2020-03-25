@@ -47,7 +47,7 @@
             // txt_Money
             // 
             this.txt_Money.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Money.Location = new System.Drawing.Point(249, 172);
+            this.txt_Money.Location = new System.Drawing.Point(292, 172);
             this.txt_Money.Multiline = true;
             this.txt_Money.Name = "txt_Money";
             this.txt_Money.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -63,7 +63,7 @@
             this.label7.BackColor = System.Drawing.Color.Yellow;
             this.label7.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(441, 246);
+            this.label7.Location = new System.Drawing.Point(441, 242);
             this.label7.Name = "label7";
             this.label7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label7.Size = new System.Drawing.Size(84, 22);
@@ -86,11 +86,11 @@
             // txt_reason
             // 
             this.txt_reason.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_reason.Location = new System.Drawing.Point(48, 226);
+            this.txt_reason.Location = new System.Drawing.Point(129, 217);
             this.txt_reason.Multiline = true;
             this.txt_reason.Name = "txt_reason";
             this.txt_reason.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txt_reason.Size = new System.Drawing.Size(387, 60);
+            this.txt_reason.Size = new System.Drawing.Size(306, 69);
             this.txt_reason.TabIndex = 73;
             this.txt_reason.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -123,7 +123,7 @@
             // 
             this.Date_insert.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Date_insert.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.Date_insert.Location = new System.Drawing.Point(249, 134);
+            this.Date_insert.Location = new System.Drawing.Point(292, 130);
             this.Date_insert.Name = "Date_insert";
             this.Date_insert.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Date_insert.ShowUpDown = true;

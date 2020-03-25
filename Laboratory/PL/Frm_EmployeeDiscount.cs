@@ -109,11 +109,11 @@ namespace Laboratory.PL
                     MessageBox.Show("من فضلك قم باادخال سبب الخصم");
                     return;
                 }
-                E.AddEmployeeDiscount(Convert.ToInt32(cmb_Employee.SelectedValue), Convert.ToDecimal(txt_Money.Text), txt_reason.Text, Date_insert.Value, txt_UserName.Text);
+                E.AddEmployeeDiscount(Convert.ToInt32(cmb_Employee.SelectedValue), Convert.ToDecimal(txt_Money.Text),
+                    txt_reason.Text, Date_insert.Value, txt_UserName.Text,Convert.ToInt32(Cmb_Branch.SelectedValue));
                 MessageBox.Show("تم الحفظ بنجاح");
                 txt_reason.Clear();
                 txt_Money.Text = "0";
-
             }
             catch (Exception ex)
             {
