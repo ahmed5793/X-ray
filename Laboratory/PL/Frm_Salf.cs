@@ -117,6 +117,7 @@ namespace Laboratory.PL
             cmb_employeeName.DataSource = E.SelectCompoEmployee();
             cmb_employeeName.DisplayMember = "Emp_Name";
             cmb_employeeName.ValueMember = "Emp_ID";
+            txt_NameDaen.Text = Program.salesman;
          
 
         }
@@ -277,6 +278,11 @@ namespace Laboratory.PL
 
 
 
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }
