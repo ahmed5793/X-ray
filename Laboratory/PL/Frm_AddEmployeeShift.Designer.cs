@@ -215,7 +215,7 @@
             this.Btn_AddShift.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_AddShift.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.Btn_AddShift.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_AddShift.ImageOptions.Image")));
-            this.Btn_AddShift.Location = new System.Drawing.Point(691, 170);
+            this.Btn_AddShift.Location = new System.Drawing.Point(666, 170);
             this.Btn_AddShift.Name = "Btn_AddShift";
             this.Btn_AddShift.Size = new System.Drawing.Size(167, 32);
             this.Btn_AddShift.TabIndex = 168;
@@ -236,7 +236,7 @@
             this.Btn_UpdateShift.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_UpdateShift.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.Btn_UpdateShift.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_UpdateShift.ImageOptions.Image")));
-            this.Btn_UpdateShift.Location = new System.Drawing.Point(423, 170);
+            this.Btn_UpdateShift.Location = new System.Drawing.Point(422, 170);
             this.Btn_UpdateShift.Name = "Btn_UpdateShift";
             this.Btn_UpdateShift.Size = new System.Drawing.Size(167, 32);
             this.Btn_UpdateShift.TabIndex = 169;

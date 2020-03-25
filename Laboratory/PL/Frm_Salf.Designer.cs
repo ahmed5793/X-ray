@@ -35,10 +35,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cmb_employeeName = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btn_Update = new DevExpress.XtraEditors.SimpleButton();
             this.label2 = new System.Windows.Forms.Label();
             this.cmb_branch = new System.Windows.Forms.ComboBox();
-            this.btn_save = new DevExpress.XtraEditors.SimpleButton();
             this.txt_note = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -46,6 +44,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txt_userName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.btn_Update = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_save = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -58,7 +58,7 @@
             // Txt_money
             // 
             this.Txt_money.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_money.Location = new System.Drawing.Point(565, 145);
+            this.Txt_money.Location = new System.Drawing.Point(565, 162);
             this.Txt_money.MaxLength = 11;
             this.Txt_money.Name = "Txt_money";
             this.Txt_money.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -66,9 +66,7 @@
             this.Txt_money.TabIndex = 40;
             this.Txt_money.Text = "0";
             this.Txt_money.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Txt_money.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txt_money_KeyDown);
             this.Txt_money.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_money_KeyPress);
-            this.Txt_money.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txt_money_KeyUp);
             this.Txt_money.MouseLeave += new System.EventHandler(this.Txt_money_MouseLeave);
             // 
             // label9
@@ -76,7 +74,7 @@
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.White;
             this.label9.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(767, 148);
+            this.label9.Location = new System.Drawing.Point(767, 165);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(50, 24);
             this.label9.TabIndex = 41;
@@ -109,13 +107,11 @@
             this.cmb_employeeName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmb_employeeName.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_employeeName.FormattingEnabled = true;
-            this.cmb_employeeName.Location = new System.Drawing.Point(447, 104);
+            this.cmb_employeeName.Location = new System.Drawing.Point(447, 114);
             this.cmb_employeeName.Name = "cmb_employeeName";
             this.cmb_employeeName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmb_employeeName.Size = new System.Drawing.Size(314, 32);
             this.cmb_employeeName.TabIndex = 33;
-            this.cmb_employeeName.SelectedIndexChanged += new System.EventHandler(this.cmb_employeeName_SelectedIndexChanged);
-            this.cmb_employeeName.SelectionChangeCommitted += new System.EventHandler(this.cmb_employeeName_SelectionChangeCommitted);
             this.cmb_employeeName.Leave += new System.EventHandler(this.cmb_employeeName_Leave);
             // 
             // groupBox1
@@ -142,28 +138,6 @@
             this.groupBox1.Size = new System.Drawing.Size(879, 210);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
-            // 
-            // btn_Update
-            // 
-            this.btn_Update.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btn_Update.Appearance.BackColor = System.Drawing.Color.Black;
-            this.btn_Update.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Update.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btn_Update.Appearance.Options.UseBackColor = true;
-            this.btn_Update.Appearance.Options.UseFont = true;
-            this.btn_Update.Appearance.Options.UseForeColor = true;
-            this.btn_Update.Appearance.Options.UseTextOptions = true;
-            this.btn_Update.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.btn_Update.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.btn_Update.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.btn_Update.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Update.ImageOptions.Image")));
-            this.btn_Update.Location = new System.Drawing.Point(262, 213);
-            this.btn_Update.Name = "btn_Update";
-            this.btn_Update.Size = new System.Drawing.Size(173, 38);
-            this.btn_Update.TabIndex = 199;
-            this.btn_Update.Text = "تعديل";
-            this.btn_Update.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // label2
             // 
@@ -171,7 +145,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(767, 66);
+            this.label2.Location = new System.Drawing.Point(767, 71);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 24);
             this.label2.TabIndex = 198;
@@ -185,34 +159,12 @@
             this.cmb_branch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_branch.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_branch.FormattingEnabled = true;
-            this.cmb_branch.Location = new System.Drawing.Point(447, 62);
+            this.cmb_branch.Location = new System.Drawing.Point(447, 67);
             this.cmb_branch.Name = "cmb_branch";
             this.cmb_branch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmb_branch.Size = new System.Drawing.Size(314, 32);
             this.cmb_branch.TabIndex = 197;
-            this.cmb_branch.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             this.cmb_branch.SelectionChangeCommitted += new System.EventHandler(this.cmb_branch_SelectionChangeCommitted);
-            // 
-            // btn_save
-            // 
-            this.btn_save.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btn_save.Appearance.BackColor = System.Drawing.Color.Black;
-            this.btn_save.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_save.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btn_save.Appearance.Options.UseBackColor = true;
-            this.btn_save.Appearance.Options.UseFont = true;
-            this.btn_save.Appearance.Options.UseForeColor = true;
-            this.btn_save.Appearance.Options.UseTextOptions = true;
-            this.btn_save.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.btn_save.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.btn_save.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.btn_save.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_save.ImageOptions.Image")));
-            this.btn_save.Location = new System.Drawing.Point(512, 213);
-            this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(173, 38);
-            this.btn_save.TabIndex = 196;
-            this.btn_save.Text = "حفظ";
-            this.btn_save.Click += new System.EventHandler(this.button2_Click);
             // 
             // txt_note
             // 
@@ -243,7 +195,7 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.White;
             this.label8.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(767, 108);
+            this.label8.Location = new System.Drawing.Point(767, 118);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(97, 24);
             this.label8.TabIndex = 34;
@@ -293,6 +245,48 @@
             this.label3.Size = new System.Drawing.Size(106, 24);
             this.label3.TabIndex = 16;
             this.label3.Text = "اسم المستخدم";
+            // 
+            // btn_Update
+            // 
+            this.btn_Update.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btn_Update.Appearance.BackColor = System.Drawing.Color.Black;
+            this.btn_Update.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Update.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btn_Update.Appearance.Options.UseBackColor = true;
+            this.btn_Update.Appearance.Options.UseFont = true;
+            this.btn_Update.Appearance.Options.UseForeColor = true;
+            this.btn_Update.Appearance.Options.UseTextOptions = true;
+            this.btn_Update.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btn_Update.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.btn_Update.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.btn_Update.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Update.ImageOptions.Image")));
+            this.btn_Update.Location = new System.Drawing.Point(235, 212);
+            this.btn_Update.Name = "btn_Update";
+            this.btn_Update.Size = new System.Drawing.Size(173, 38);
+            this.btn_Update.TabIndex = 199;
+            this.btn_Update.Text = "تعديل";
+            this.btn_Update.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
+            // btn_save
+            // 
+            this.btn_save.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btn_save.Appearance.BackColor = System.Drawing.Color.Black;
+            this.btn_save.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_save.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btn_save.Appearance.Options.UseBackColor = true;
+            this.btn_save.Appearance.Options.UseFont = true;
+            this.btn_save.Appearance.Options.UseForeColor = true;
+            this.btn_save.Appearance.Options.UseTextOptions = true;
+            this.btn_save.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btn_save.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.btn_save.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.btn_save.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_save.ImageOptions.Image")));
+            this.btn_save.Location = new System.Drawing.Point(492, 213);
+            this.btn_save.Name = "btn_save";
+            this.btn_save.Size = new System.Drawing.Size(173, 38);
+            this.btn_save.TabIndex = 196;
+            this.btn_save.Text = "حفظ";
+            this.btn_save.Click += new System.EventHandler(this.button2_Click);
             // 
             // groupBox2
             // 
@@ -371,7 +365,6 @@
             this.Name = "Frm_Salf";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "شاشة استلاف الموظفين";
-            this.Load += new System.EventHandler(this.Frm_Salf_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -380,9 +373,7 @@
             this.ResumeLayout(false);
 
         }
-
         #endregion
-
         private System.Windows.Forms.TextBox Txt_money;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;

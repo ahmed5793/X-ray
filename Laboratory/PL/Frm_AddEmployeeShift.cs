@@ -195,6 +195,8 @@ namespace Laboratory.PL
                 Btn_AddShift.Enabled = true;
                 Btn_UpdateShift.Enabled = false;
                 Btn_DeleteShift.Enabled = false;
+                gridControl1.Enabled = true;
+
             }
             catch (Exception ex)
             {
@@ -222,6 +224,7 @@ namespace Laboratory.PL
                 Btn_AddShift.Enabled = true;
                 Btn_UpdateShift.Enabled = false;
                 Btn_DeleteShift.Enabled = false;
+                gridControl1.Enabled = true;
             }
             catch (Exception ex)
             {
@@ -250,6 +253,7 @@ namespace Laboratory.PL
                 {
                     comboBox1.Enabled = false;
                 Btn_AddShift.Enabled = false;
+                gridControl1.Enabled = false;
                 Btn_UpdateShift.Enabled = true;
                 Btn_DeleteShift.Enabled = true;
                 comboBox1.Text = gridView1.GetFocusedRowCellValue("إسم الموظف").ToString();
