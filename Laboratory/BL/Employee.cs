@@ -230,6 +230,18 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
+        internal DataTable Select_EmployeeFromBranchToAddShift(int Id_branch)
+        {
+            DataTable dt = new DataTable();
+            DataAccessLayer da = new DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@Id_Baranch", SqlDbType.Int);
+            param[0].Value = Id_branch;
+            da.open();
+            dt = da.selected("Select_EmployeeFromBranchToAddShift", param);
+            da.close();
+            return dt;
+        }
         internal DataTable Select_EmployeFromBranch(int Id_branch  )
         {
             DataTable dt = new DataTable();
@@ -537,6 +549,16 @@ namespace Laboratory.BL
             param[0] = new SqlParameter("@ID_Shift", SqlDbType.Int);
             param[0].Value = Id_Shift;
             da.excutequery("Delete_TechnicalShift", param);
+            da.close();
+        }
+        internal void Delete_EmployeeShift(int Id_Shift)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@ID_Shift", SqlDbType.Int);
+            param[0].Value = Id_Shift;
+            da.excutequery("Delete_EmployeeShift", param);
             da.close();
         }
         internal DataTable Search_EmployeeShift(string id)
