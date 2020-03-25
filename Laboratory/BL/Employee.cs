@@ -238,6 +238,18 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
+        internal DataTable Select_EmployeeShiftFromBranchToAddShift(int Id_branch)
+        {
+            DataTable dt = new DataTable();
+            DataAccessLayer da = new DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@Id_Baranch",SqlDbType.Int);
+            param[0].Value = Id_branch;
+            da.open();
+            dt = da.selected("Select_EmployeeShiftFromBranchToAddShift", param);
+            da.close();
+            return dt;
+        }
         internal DataTable Select_EmployeFromBranch(int Id_branch  )
         {
             DataTable dt = new DataTable();
