@@ -502,11 +502,12 @@ namespace Laboratory.BL
             return dt;
         }
 
-        internal void Add_EmployeeShift(int Employee_ID,  string Date_shift, string StartTime_Shift, string EndTime_Shift, decimal Amount)
+        internal void Add_EmployeeShift(int Employee_ID,  string Date_shift, string StartTime_Shift, string EndTime_Shift,
+                                        decimal Amount,int Id_Branch , string User_Name  )
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[5];
+            SqlParameter[] param = new SqlParameter[7];
             param[0] = new SqlParameter("@Employee_ID", SqlDbType.Int);
             param[0].Value = Employee_ID;
             param[1] = new SqlParameter("@Date_Shift", SqlDbType.NVarChar, 100);
@@ -517,15 +518,20 @@ namespace Laboratory.BL
             param[3].Value = EndTime_Shift;
             param[4] = new SqlParameter("@Amount", SqlDbType.Decimal);
             param[4].Value = Amount;
+            param[5] = new SqlParameter("@Id_Branch", SqlDbType.Int);
+            param[5].Value = Id_Branch;
+            param[6] = new SqlParameter("@Id_Users", SqlDbType.NVarChar,100);
+            param[6].Value = User_Name;
             da.excutequery("Add_EmployeeShift", param);
             da.close();
         }
 
-        internal void Update_EmployeeShift(int ID_Shift, int Employee_ID, string Date_shift, string StartTime_Shift, string EndTime_Shift, decimal Amount)
+        internal void Update_EmployeeShift(int ID_Shift, int Employee_ID, string Date_shift, string StartTime_Shift, 
+                             string EndTime_Shift, decimal Amount,int Id_Branch,string User_Name)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[6];
+            SqlParameter[] param = new SqlParameter[8];
             param[0] = new SqlParameter("@ID_Shift", SqlDbType.Int);
             param[0].Value = ID_Shift;
             param[1] = new SqlParameter("@Employee_ID", SqlDbType.Int);
@@ -538,6 +544,10 @@ namespace Laboratory.BL
             param[4].Value = EndTime_Shift;
             param[5] = new SqlParameter("@Amount", SqlDbType.Decimal);
             param[5].Value = Amount;
+            param[6] = new SqlParameter("@Id_Branch", SqlDbType.Int);
+            param[6].Value = Id_Branch;
+            param[7] = new SqlParameter("@Id_Users", SqlDbType.NVarChar, 100);
+            param[7].Value = User_Name;
             da.excutequery("Update_EmployeeShift", param);
             da.close();
         }
@@ -578,13 +588,15 @@ namespace Laboratory.BL
             return dt;
         }
 
-        internal DataTable Select_EmployeeShift()
+        internal DataTable Select_EmployeeShift(int Id_Branch )
         {
             DataTable dt = new DataTable();
-
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            dt = da.selected("Select_EmployeeShift", null);
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@Id_Branch", SqlDbType.Int);
+            param[0].Value = Id_Branch;
+            dt = da.selected("Select_EmployeeShift", param);
             da.close();
             return dt;
         }
