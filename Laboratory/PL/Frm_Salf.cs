@@ -13,6 +13,8 @@ namespace Laboratory.PL
 {
     public partial class Frm_Salf : Form
     {
+        Users U = new Users();
+        Branches b = new Branches();
         Employee E = new Employee();
         DataTable dt = new DataTable();
         public Frm_Salf()
@@ -20,8 +22,8 @@ namespace Laboratory.PL
             InitializeComponent();
             gridControl1.DataSource = E.SelectEmployeeSalf(Convert.ToInt32(cmb_branch.SelectedValue));
             gridView1.Columns[0].Visible = false;
-
-             Permision();
+            txt_userName.Text = Program.salesman;
+            Permision();
             btn_save.Show();
             btn_Update.Enabled = false;
         }
@@ -29,20 +31,10 @@ namespace Laboratory.PL
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-
-
-
-
-
-
-
-
         }
         void Permision()
         {
 
-            Users U = new Users();
-            Branches b = new Branches();
             dt.Clear();
             dt = U.SelectUserBranch(txt_userName.Text);
             if (dt.Rows.Count > 0)
@@ -138,12 +130,9 @@ namespace Laboratory.PL
 
         private void Frm_Salf_Load(object sender, EventArgs e)
         {
-            cmb_employeeName.DataSource = E.SelectCompoEmployee();
-            cmb_employeeName.DisplayMember = "Emp_Name";
-            cmb_employeeName.ValueMember = "Emp_ID";
-            txt_userName.Text = Program.salesman;
-         
-
+        //    cmb_employeeName.DataSource = E.SelectCompoEmployee();
+        //    cmb_employeeName.DisplayMember = "Emp_Name";
+        //    cmb_employeeName.ValueMember = "Emp_ID";       
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
