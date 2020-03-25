@@ -272,26 +272,6 @@ namespace Laboratory.PL
 
             btn_save.Show();
 
-
-            // }
-
-            //else
-            //{
-            //    MessageBox.Show("عزيزى المستخدم يرجي العلم بان مبلغ الاستلاف اكبر من الراتب الشهرى للموظف لايسمح بقيام العمليه");
-
-
-
-            //}
-
-
-
-
-
-
-
-
-
-
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -309,16 +289,8 @@ namespace Laboratory.PL
 
             }
 
-
-
-
-
-
-
             E.UpdateEmployee_Salf( Convert.ToDecimal(Txt_money.Text), Convert.ToInt32(gridView1.GetFocusedRowCellValue("ID_Salf")));
-          
-
-          
+         
             MessageBox.Show("تم التعديل بنجاح");
             txt_note.Clear();
            
@@ -337,6 +309,11 @@ namespace Laboratory.PL
 
         private void cmb_branch_SelectionChangeCommitted(object sender, EventArgs e)
         {
+
+            cmb_employeeName.DataSource = E.Select_EmployeeFromBranchToAddShift(Convert.ToInt32(cmb_branch.SelectedValue));
+            cmb_employeeName.DisplayMember = "Emp_Name";
+            cmb_employeeName.ValueMember = "id_employee";
+            cmb_employeeName.SelectedIndex = -1;
             gridControl1.DataSource = E.SelectEmployeeSalf(Convert.ToInt32(cmb_branch.SelectedValue));
         }
 
