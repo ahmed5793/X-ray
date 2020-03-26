@@ -19,7 +19,7 @@ namespace Laboratory.PL
         {
             InitializeComponent();
             gridControl1.DataSource = d.SelectDoctor_OFCENTER();
-
+            gridView1.Columns[3].Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -35,6 +35,11 @@ namespace Laboratory.PL
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             gridControl1.ShowRibbonPrintPreview();
+        }
+
+        private void Frm_ReportDoctorOfCenterData_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

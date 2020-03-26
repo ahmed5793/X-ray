@@ -335,7 +335,13 @@ namespace Laboratory.PL
         {
 
 
+            try
+            {
 
+                if (dataGridView1.Rows.Count>0)
+                {
+
+                
 
             progressBar1.Show();
 
@@ -357,11 +363,17 @@ namespace Laboratory.PL
 
 
                 backgroundWorker1.RunWorkerAsync();
-             
 
+                    }
+                }
             }
+            catch (Exception ex)
+            {
 
-        }
+                MessageBox.Show(ex.Message);
+            }
+        
+    }
 
         private void backgroundWorker1_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
         {

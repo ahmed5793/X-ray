@@ -68,6 +68,7 @@ namespace Laboratory.PL
                 btn_save.Hide();
                 btn_new.Show();
                 btn_update.Enabled = true;
+                txt_name.Enabled = false;
             }
         }
 
@@ -88,6 +89,7 @@ namespace Laboratory.PL
             btn_update.Enabled = false;
             txt_name.Clear();
             txt_phone.Clear();
+            txt_name.Enabled = true;
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -153,7 +155,7 @@ namespace Laboratory.PL
                     btn_update.Enabled = false;
                     btn_new.Hide();
                     btn_save.Show();
-
+                    txt_name.Enabled = true;
 
                 }
                 else

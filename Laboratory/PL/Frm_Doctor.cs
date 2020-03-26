@@ -97,8 +97,10 @@ namespace Laboratory.PL
         {
             if (dataGridView1.Rows.Count > 0)
             {
-
+                Btn_Update.Enabled = true;
+                Btn_Add.Enabled = false;
                 dateTimePicker1.Enabled = false;
+                txt_name.Enabled = false;
 
                 txt_name.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
                 comboBox1.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
@@ -107,7 +109,7 @@ namespace Laboratory.PL
 
                 dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
                
-                Btn_Update.Enabled = true;
+              
             }
 
         }
@@ -185,6 +187,8 @@ namespace Laboratory.PL
                 txt_phone.Clear();
                 txt_address.Clear();
                 Btn_Update.Enabled = false;
+                Btn_Add.Enabled = true;
+                txt_name.Enabled = true;
             }
             catch (Exception ex)
             {
