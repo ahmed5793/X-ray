@@ -139,6 +139,7 @@
             this.Txt_Cost.TabIndex = 116;
             this.Txt_Cost.Text = "0";
             this.Txt_Cost.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Txt_Cost.Click += new System.EventHandler(this.Txt_Cost_Click);
             this.Txt_Cost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Cost_KeyPress);
             this.Txt_Cost.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Txt_Cost_MouseMove);
             // 

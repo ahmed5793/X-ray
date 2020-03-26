@@ -290,5 +290,13 @@ namespace Laboratory.PL
                 Txt_Cost.Text = "0";
             }
         }
+
+        private void Txt_Cost_Click(object sender, EventArgs e)
+        {
+            if (Txt_Cost.Text == "0")
+            {
+                Txt_Cost.Text = "";
+            }
+        }
     }
 }
