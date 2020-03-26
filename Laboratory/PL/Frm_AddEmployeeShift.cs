@@ -249,7 +249,7 @@ namespace Laboratory.PL
         {
             try
             {
-                if (gridView1.RowCount > 0 && gridView1.SelectedRowsCount > 0)
+                if (gridView1.RowCount > 0 )
                 {
                     comboBox1.Enabled = false;
                 Btn_AddShift.Enabled = false;
