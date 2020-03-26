@@ -31,5 +31,10 @@ namespace Laboratory.PL
         {
             gridControl1.ShowRibbonPrintPreview();
         }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            gridControl1.ShowRibbonPrintPreview();
+        }
     }
 }
