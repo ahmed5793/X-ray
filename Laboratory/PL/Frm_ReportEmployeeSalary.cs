@@ -137,5 +137,10 @@ namespace Laboratory.PL
         {
 
         }
+
+        private void Btn_Print_Click(object sender, EventArgs e)
+        {
+            gridControl1.ShowRibbonPrintPreview();
+        }
     }
 }

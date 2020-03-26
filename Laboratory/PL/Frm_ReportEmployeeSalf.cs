@@ -155,5 +155,10 @@ namespace Laboratory.PL
             cmb_employeeName.ValueMember = "id_employee";
             cmb_employeeName.SelectedIndex = -1;
         }
+
+        private void Btn_Print_Click(object sender, EventArgs e)
+        {
+            gridControl1.ShowRibbonPrintPreview();
+        }
     }
     }

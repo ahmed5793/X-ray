@@ -25,7 +25,7 @@ namespace Laboratory.PL
             Btn_DeleteShift.Enabled = false;
             Btn_UpdateShift.Enabled = false;
             gridControl1.DataSource = E.Select_EmployeeShift(Convert.ToInt32(Cmb_Branch.SelectedValue));
-        }
+        }       
         void Permision()
         {
             dt.Clear();
