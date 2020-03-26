@@ -130,7 +130,7 @@ namespace Laboratory.PL
 
         private void cmb_Branch_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            comboBox1.DataSource = E.Select_EmployeeShiftFromBranchToAddShift(Convert.ToInt32(Cmb_Branch.SelectedValue));
+            comboBox1.DataSource = E.Select_EmployeeShiftFromBranchToAddShift(Convert.ToInt32(cmb_Branch.SelectedValue));
             comboBox1.DisplayMember = "Emp_Name";
             comboBox1.ValueMember = "id_employee";
             comboBox1.SelectedIndex = -1;
