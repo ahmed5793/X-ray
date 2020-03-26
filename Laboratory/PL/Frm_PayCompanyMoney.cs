@@ -182,17 +182,14 @@ namespace Laboratory.PL
         {
             try
             {
-
                 if (cmb_Stock.Text == "")
                 {
                     MessageBox.Show("من فضلك قم بااختيار الخزينة");
                     return;
-                }
-                
+                }                
                 decimal x = 0;
                 //decimal total = 0;
                 if (dataGridView1.Rows.Count >= 1)
-
                     if (RdbAllPay.Checked == true)
                     {
                         if (MessageBox.Show("هل تريد دفع المبلغ بالكامل", "عمليه الدفع", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
@@ -214,18 +211,13 @@ namespace Laboratory.PL
                             MessageBox.Show("تم   الغاء العمليه بنجاح");
                             return;
                         }
-
-
                     }
                     else if (rdbPartPay.Checked == true)
                     {
                         decimal z = Convert.ToInt32(dataGridView1.CurrentRow.Cells[2].Value) - Convert.ToDecimal(txt_prise.Text);
 
-
                         if (MessageBox.Show("هل تريد جزء من المبلغ ", "عمليه الدفع", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
-
                         {
-
                             if (Convert.ToDecimal(txt_prise.Text) > Convert.ToDecimal(dataGridView1.CurrentRow.Cells[2].Value))
                             {
                                 MessageBox.Show("المبلغ المدفوع اكبر من المبلغ الموجود حاليا على الشركة  ", "تاكيد", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -243,7 +235,6 @@ namespace Laboratory.PL
                                                dateTimePicker1.Value, Txt_SalesMAn.Text, "مدفوعات مديونية شركات من الشركة " + " " + cmb_company.Text);
                             MessageBox.Show("تم دفع المبلغ بنجاح");
                             dataGridView1.DataSource = c.SelectOneCompanyMoney(Convert.ToInt32(cmb_company.SelectedValue));
-
                         }
                         else
                         {
@@ -251,14 +242,10 @@ namespace Laboratory.PL
                             return;
                         }
                     }
-
-
                 txt_prise.Text = "0";
-
             }
             catch (Exception EX)
             {
-
                 MessageBox.Show(EX.Message);
                 MessageBox.Show(EX.StackTrace);
             }

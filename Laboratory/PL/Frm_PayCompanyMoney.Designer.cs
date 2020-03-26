@@ -141,7 +141,7 @@
             this.groupBox2.Controls.Add(this.RdbAllPay);
             this.groupBox2.Location = new System.Drawing.Point(39, 305);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(633, 71);
+            this.groupBox2.Size = new System.Drawing.Size(633, 63);
             this.groupBox2.TabIndex = 99;
             this.groupBox2.TabStop = false;
             // 
@@ -181,7 +181,7 @@
             this.RdbAllPay.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.RdbAllPay.Checked = true;
             this.RdbAllPay.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RdbAllPay.Location = new System.Drawing.Point(404, 22);
+            this.RdbAllPay.Location = new System.Drawing.Point(454, 21);
             this.RdbAllPay.Name = "RdbAllPay";
             this.RdbAllPay.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RdbAllPay.Size = new System.Drawing.Size(149, 26);
@@ -205,7 +205,7 @@
             this.simpleButton1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.simpleButton1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(271, 392);
+            this.simpleButton1.Location = new System.Drawing.Point(297, 390);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(179, 37);
             this.simpleButton1.TabIndex = 171;
@@ -230,7 +230,7 @@
             this.cmb_company.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmb_company.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_company.FormattingEnabled = true;
-            this.cmb_company.Location = new System.Drawing.Point(167, 19);
+            this.cmb_company.Location = new System.Drawing.Point(260, 19);
             this.cmb_company.Name = "cmb_company";
             this.cmb_company.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmb_company.Size = new System.Drawing.Size(330, 32);
@@ -263,13 +263,13 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Silver;
             this.dataGridView1.GridColor = System.Drawing.Color.DimGray;
-            this.dataGridView1.Location = new System.Drawing.Point(39, 196);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 196);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(633, 100);
+            this.dataGridView1.Size = new System.Drawing.Size(714, 100);
             this.dataGridView1.TabIndex = 100;
             // 
             // groupBox1
@@ -279,9 +279,9 @@
             this.groupBox1.Controls.Add(this.simpleButton2);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.cmb_company);
-            this.groupBox1.Location = new System.Drawing.Point(39, 126);
+            this.groupBox1.Location = new System.Drawing.Point(12, 126);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(633, 61);
+            this.groupBox1.Size = new System.Drawing.Size(716, 61);
             this.groupBox1.TabIndex = 97;
             this.groupBox1.TabStop = false;
             // 
@@ -299,7 +299,7 @@
             this.simpleButton2.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.simpleButton2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(41, 19);
+            this.simpleButton2.Location = new System.Drawing.Point(83, 19);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(105, 32);
             this.simpleButton2.TabIndex = 170;
@@ -312,7 +312,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(515, 24);
+            this.label6.Location = new System.Drawing.Point(598, 24);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(91, 24);
             this.label6.TabIndex = 102;
@@ -350,6 +350,9 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(754, 488);
+            this.MinimumSize = new System.Drawing.Size(754, 488);
             this.Name = "Frm_PayCompanyMoney";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "مدفوعات الشركات";

@@ -131,28 +131,7 @@ namespace Laboratory.PL
 
         private void dgv_visit_DoubleClick(object sender, EventArgs e)
         {
-            try
-            {
-                if (gridView1.RowCount>0)
-                {
-                    cmb_Company.Text = gridView1.GetFocusedRowCellValue("إسم الشركة").ToString();
-                    Cmb_category.Text= gridView1.GetFocusedRowCellValue("الجهاز").ToString();
-                    cmb_items.Text= gridView1.GetFocusedRowCellValue("سم الفحص").ToString();
-                    Txt_Discount.Text = gridView1.GetFocusedRowCellValue("نسبة الخصم").ToString();
-                    Txt_PriceDiscount.Text= gridView1.GetFocusedRowCellValue("سعر المريض العادي").ToString();
-                    Txt_Price.Text= gridView1.GetFocusedRowCellValue("السعر").ToString();
-                    cmb_Company.Enabled = false;
-                    Cmb_category.Enabled = false;
-                    cmb_items.Enabled = false;
-                    Btn_Delete.Enabled = true;
-                    Btn_Update.Enabled = true;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                MessageBox.Show(ex.StackTrace);
-            }
+          
         }
 
         private void btn_print_Click(object sender, EventArgs e)
@@ -316,8 +295,8 @@ namespace Laboratory.PL
                     if (dt.Rows.Count == 0)
                     {
                         MessageBox.Show("إسم الفحص غير صحيح");
-                        cmb_Company.Focus();
-                        cmb_Company.SelectAll();
+                        cmb_items.Focus();
+                        cmb_items.SelectAll();
                         return;
                     }
                 }
@@ -325,6 +304,7 @@ namespace Laboratory.PL
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
             }
             finally
             {
@@ -512,8 +492,33 @@ namespace Laboratory.PL
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+        private void gridControl1_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                if (gridView1.RowCount > 0)
+                {
+                    cmb_Company.Text = gridView1.GetFocusedRowCellValue("إسم الشركة").ToString();
+                    Cmb_category.Text = gridView1.GetFocusedRowCellValue("الجهاز").ToString();
+                    cmb_items.Text = gridView1.GetFocusedRowCellValue("سم الفحص").ToString();
+                    Txt_Discount.Text = gridView1.GetFocusedRowCellValue("نسبة الخصم").ToString();
+                    Txt_PriceDiscount.Text = gridView1.GetFocusedRowCellValue("سعر المريض العادي").ToString();
+                    Txt_Price.Text = gridView1.GetFocusedRowCellValue("السعر").ToString();
+                    cmb_Company.Enabled = false;
+                    Cmb_category.Enabled = false;
+                    cmb_items.Enabled = false;
+                    Btn_Delete.Enabled = true;
+                    Btn_Update.Enabled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
             }
         }
     }
