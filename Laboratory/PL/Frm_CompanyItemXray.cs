@@ -489,6 +489,8 @@ namespace Laboratory.PL
                 Txt_PriceDiscount.Text = "0";
                 Txt_PriceDiscount.Enabled = false;
                 Txt_Discount.Enabled = false;
+                comboBox1.Text = "";
+                cmb_items.Text = "";
                 gridControl1.DataSource = cm.Select_Company_Xray();
             }
             catch (Exception ex)
