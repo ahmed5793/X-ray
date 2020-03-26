@@ -442,14 +442,19 @@ namespace Laboratory.PL
                     }
                     cm.Add_Company_ItemsXray(Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToInt32(cmb_items.SelectedValue), Convert.ToDecimal(Txt_Discount.Text)
                        , Convert.ToDecimal(Txt_PriceDiscount.Text));
+           
+
+                    MessageBox.Show("تم إضافة الفحص للشركة بنجاح");
+                    gridControl1.DataSource = cm.Select_Company_Xray();
                     Txt_Price.Text = "0";
                     Txt_Discount.Text = "0";
                     Txt_PriceDiscount.Text = "0";
                     Txt_PriceDiscount.Enabled = false;
                     Txt_Discount.Enabled = false;
-                    MessageBox.Show("تم إضافة الفحص للشركة بنجاح");
-                    gridControl1.DataSource = cm.Select_Company_Xray();
-
+                    comboBox1.Text = "";
+                    cmb_items.Text = "";
+                    Cmb_category.Text = "";
+                    cmb_Company.Text = "";
                 }
             }
             catch (Exception ex)
@@ -491,6 +496,8 @@ namespace Laboratory.PL
                 Txt_Discount.Enabled = false;
                 comboBox1.Text = "";
                 cmb_items.Text = "";
+                Cmb_category.Text = "";
+                cmb_Company.Text = "";
                 gridControl1.DataSource = cm.Select_Company_Xray();
             }
             catch (Exception ex)
