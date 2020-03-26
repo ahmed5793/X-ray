@@ -90,7 +90,8 @@ namespace Laboratory.PL
                         Txt_Price.Text = dt.Rows[0][0].ToString();
                         Txt_PriceDiscount.Text = "0";
                         Txt_Discount.Text = "0";
-                    }               
+                    }
+                    Total();
                 }
             }
             catch (Exception ex)
@@ -504,7 +505,7 @@ namespace Laboratory.PL
                 {
                     cmb_Company.Text = gridView1.GetFocusedRowCellValue("إسم الشركة").ToString();
                     Cmb_category.Text = gridView1.GetFocusedRowCellValue("الجهاز").ToString();
-                    cmb_items.Text = gridView1.GetFocusedRowCellValue("سم الفحص").ToString();
+                    cmb_items.Text = gridView1.GetFocusedRowCellValue("إسم الفحص").ToString();
                     Txt_Discount.Text = gridView1.GetFocusedRowCellValue("نسبة الخصم").ToString();
                     Txt_PriceDiscount.Text = gridView1.GetFocusedRowCellValue("سعر المريض العادي").ToString();
                     Txt_Price.Text = gridView1.GetFocusedRowCellValue("السعر").ToString();
