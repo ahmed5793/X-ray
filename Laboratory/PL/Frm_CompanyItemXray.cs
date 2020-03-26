@@ -15,12 +15,14 @@ namespace Laboratory.PL
         ItemsXRaya ix = new ItemsXRaya();
         CategoryXRaya cx = new CategoryXRaya();
         Company cm = new Company();
+        DataTable dt = new DataTable();
+
         public Frm_CompanyItemXray()
         {
             InitializeComponent();
             company();
             CategoryXraya();
-            dgv_visit.DataSource = cm.Select_Company_Xray();
+            gridControl1.DataSource = cm.Select_Company_Xray();
             Btn_Update.Enabled = false;
             Btn_Delete.Hide();
             Btn_Delete.Enabled = false;
@@ -59,20 +61,14 @@ namespace Laboratory.PL
         {
             try
             {
-                DataTable dt = new DataTable();
-              
+                    cmb_items.Text = "";
                     cmb_items.DataSource = ix.SelectCtegoryItems(Convert.ToInt32(Cmb_category.SelectedValue));
                     cmb_items.DisplayMember = "Name";
                     cmb_items.ValueMember = "ID_ItemsXrays";
-              
-                if (cmb_items.Text != string.Empty)
-                {
-                    dt.Clear();
-                    dt = ix.SelectPriseItem(Convert.ToInt32(cmb_items.SelectedValue));
-                    Txt_Price.Text = dt.Rows[0][0].ToString();
+                    cmb_items.SelectedIndex = -1;
+                    Txt_Price.Text = "0";
                     Txt_Discount.Text = "0";
                     Txt_PriceDiscount.Text = "0";
-                }
             }
             catch (Exception ex)
             {
@@ -83,16 +79,18 @@ namespace Laboratory.PL
 
         private void cmb_items_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
             try
             {
                 if (cmb_items.Text != string.Empty)
                 {
                     dt.Clear();
                     dt = ix.SelectPriseItem(Convert.ToInt32(cmb_items.SelectedValue));
-                    Txt_Price.Text = dt.Rows[0][0].ToString();
-                    Txt_PriceDiscount.Text = "0";
-                    Txt_Discount.Text = "0";
+                    if (dt.Rows.Count>0)
+                    {
+                        Txt_Price.Text = dt.Rows[0][0].ToString();
+                        Txt_PriceDiscount.Text = "0";
+                        Txt_Discount.Text = "0";
+                    }               
                 }
             }
             catch (Exception ex)
@@ -102,10 +100,8 @@ namespace Laboratory.PL
             }          
         }
         private void btn_save_Click(object sender, EventArgs e)
-        {
-            
+        {            
         }
-
         private void Txt_Price_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == '.' && Txt_Price.Text.ToString().IndexOf('.') > -1)
@@ -117,7 +113,6 @@ namespace Laboratory.PL
                 e.Handled = true;
             }
         }
-
         private void Txt_Price_MouseMove(object sender, MouseEventArgs e)
         {
             if (Txt_Price.Text=="")
@@ -136,28 +131,7 @@ namespace Laboratory.PL
 
         private void dgv_visit_DoubleClick(object sender, EventArgs e)
         {
-            try
-            {
-                if (dgv_visit.Rows.Count>0)
-                {
-                    cmb_Company.Text = dgv_visit.CurrentRow.Cells[0].Value.ToString();
-                    Cmb_category.Text= dgv_visit.CurrentRow.Cells[1].Value.ToString();
-                    cmb_items.Text= dgv_visit.CurrentRow.Cells[2].Value.ToString();
-                    Txt_Discount.Text= dgv_visit.CurrentRow.Cells[3].Value.ToString();
-                    Txt_PriceDiscount.Text= dgv_visit.CurrentRow.Cells[4].Value.ToString();
-                    Txt_Price.Text= dgv_visit.CurrentRow.Cells[5].Value.ToString();
-                    cmb_Company.Enabled = false;
-                    Cmb_category.Enabled = false;
-                    cmb_items.Enabled = false;
-                    Btn_Delete.Enabled = true;
-                    Btn_Update.Enabled = true;
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
+          
         }
 
         private void btn_print_Click(object sender, EventArgs e)
@@ -167,22 +141,22 @@ namespace Laboratory.PL
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            try
-            {
-                dt.Clear();
-                dt = cm.Search_Company_Xray(textBox2.Text);
-                dgv_visit.DataSource = dt;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                MessageBox.Show(ex.StackTrace);
-            }
-            finally
-            {
-                dt.Dispose();
-            }
+            //DataTable dt = new DataTable();
+            //try
+            //{
+            //    dt.Clear();
+            //    dt = cm.Search_Company_Xray(textBox2.Text);
+            //    dgv_visit.DataSource = dt;
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //    MessageBox.Show(ex.StackTrace);
+            //}
+            //finally
+            //{
+            //    dt.Dispose();
+            //}
         }
         private void label2_Click(object sender, EventArgs e)
         {
@@ -283,7 +257,6 @@ namespace Laboratory.PL
 
         private void Cmb_category_Leave(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
             try
             {
                 if (Cmb_category.Text != "")
@@ -303,6 +276,7 @@ namespace Laboratory.PL
             {
 
                 MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
             }
             finally
             {
@@ -312,18 +286,17 @@ namespace Laboratory.PL
 
         private void cmb_items_Leave(object sender, EventArgs e)
         {
-            DataTable dt2 = new DataTable();
             try
             {
-                if (cmb_Company.Text != "")
+                if (cmb_items.Text != "")
                 {
-                    dt2.Clear();
-                    dt2 = ix.VildateItem(Convert.ToInt32(Cmb_category.SelectedValue), Convert.ToInt32(cmb_items.SelectedValue));
-                    if (dt2.Rows.Count == 0)
+                    dt.Clear();
+                    dt = ix.VildateItem(Convert.ToInt32(Cmb_category.SelectedValue), Convert.ToInt32(cmb_items.SelectedValue));
+                    if (dt.Rows.Count == 0)
                     {
                         MessageBox.Show("إسم الفحص غير صحيح");
-                        cmb_Company.Focus();
-                        cmb_Company.SelectAll();
+                        cmb_items.Focus();
+                        cmb_items.SelectAll();
                         return;
                     }
                 }
@@ -331,16 +304,16 @@ namespace Laboratory.PL
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
             }
             finally
             {
-                dt2.Dispose();
+                dt.Dispose();
             }
         }
 
         private void cmb_Company_Leave(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
             try
             {
                 if (cmb_Company.Text != "")
@@ -353,7 +326,6 @@ namespace Laboratory.PL
                         cmb_Company.Focus();
                         return;
                     }
-
                 }
             }
             catch (Exception ex)
@@ -381,15 +353,13 @@ namespace Laboratory.PL
                     {
                         cm.Delect_CompanyItem(Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToInt32(cmb_items.SelectedValue));
                         MessageBox.Show("تم مسح الفحص المحدد للشركة");
-
                     }
                     else
                     {
                         MessageBox.Show("تم إلغاء المسح");
                     }
                     Btn_Update.Enabled = false;
-                    Btn_Delete.Enabled = false;
-                
+                    Btn_Delete.Enabled = false;                
                     cmb_Company.Enabled = true;
                     Cmb_category.Enabled = true;
                     cmb_items.Enabled = true;
@@ -398,7 +368,7 @@ namespace Laboratory.PL
                     Txt_PriceDiscount.Text = "0";
                     Txt_PriceDiscount.Enabled = false;
                     Txt_Discount.Enabled = false;
-                    dgv_visit.DataSource = cm.Select_Company_Xray();
+                    gridControl1.DataSource = cm.Select_Company_Xray();
                 }
             }
             catch (Exception ex)
@@ -407,12 +377,6 @@ namespace Laboratory.PL
                 MessageBox.Show(ex.Message);
             }
         }
-
-        private void Frm_CompanyItemXray_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void Txt_Discount_Click(object sender, EventArgs e)
         {
             if (Txt_Discount.Text=="0")
@@ -421,7 +385,6 @@ namespace Laboratory.PL
             }
             Total();
         }
-
         private void Txt_PriceDiscount_Click(object sender, EventArgs e)
         {
             if (Txt_PriceDiscount.Text == "0")
@@ -430,11 +393,7 @@ namespace Laboratory.PL
             }
             Txt_PriceDiscount.SelectAll();
         }
-
-        private void Txt_PriceDiscount_Layout(object sender, LayoutEventArgs e)
-        {
-
-        }
+      
 
         private void Txt_PriceDiscount_Leave(object sender, EventArgs e)
         {
@@ -457,7 +416,7 @@ namespace Laboratory.PL
             cmb_items.Enabled = true;
             Txt_PriceDiscount.Enabled = false;
             Txt_Discount.Enabled = false;
-            dgv_visit.DataSource = cm.Select_Company_Xray();
+            gridControl1.DataSource = cm.Select_Company_Xray();
         }
 
         private void Btn_Add_Click(object sender, EventArgs e)
@@ -471,9 +430,10 @@ namespace Laboratory.PL
 
                 if (cmb_Company.Text != string.Empty && cmb_items.Text != string.Empty)
                 {
-                    for (int i = 0; i < dgv_visit.Rows.Count; i++)
+                    for (int i = 0; i < gridView1.RowCount; i++)
                     {
-                        if (cmb_Company.Text == dgv_visit.Rows[i].Cells[0].Value.ToString() && cmb_items.Text == dgv_visit.Rows[i].Cells[2].Value.ToString())
+                        DataRow row = gridView1.GetDataRow(i);
+                        if (cmb_Company.Text == row[0].ToString() && cmb_items.Text == row[2].ToString())
                         {
                             MessageBox.Show(" تم إضافة نوع الفحص من قبل إلى نفس الشركة", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             return;
@@ -487,7 +447,7 @@ namespace Laboratory.PL
                     Txt_PriceDiscount.Enabled = false;
                     Txt_Discount.Enabled = false;
                     MessageBox.Show("تم إضافة الفحص للشركة بنجاح");
-                    dgv_visit.DataSource = cm.Select_Company_Xray();
+                    gridControl1.DataSource = cm.Select_Company_Xray();
 
                 }
             }
@@ -528,12 +488,37 @@ namespace Laboratory.PL
                 Txt_PriceDiscount.Text = "0";
                 Txt_PriceDiscount.Enabled = false;
                 Txt_Discount.Enabled = false;
-                dgv_visit.DataSource = cm.Select_Company_Xray();
+                gridControl1.DataSource = cm.Select_Company_Xray();
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+        private void gridControl1_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                if (gridView1.RowCount > 0)
+                {
+                    cmb_Company.Text = gridView1.GetFocusedRowCellValue("إسم الشركة").ToString();
+                    Cmb_category.Text = gridView1.GetFocusedRowCellValue("الجهاز").ToString();
+                    cmb_items.Text = gridView1.GetFocusedRowCellValue("سم الفحص").ToString();
+                    Txt_Discount.Text = gridView1.GetFocusedRowCellValue("نسبة الخصم").ToString();
+                    Txt_PriceDiscount.Text = gridView1.GetFocusedRowCellValue("سعر المريض العادي").ToString();
+                    Txt_Price.Text = gridView1.GetFocusedRowCellValue("السعر").ToString();
+                    cmb_Company.Enabled = false;
+                    Cmb_category.Enabled = false;
+                    cmb_items.Enabled = false;
+                    Btn_Delete.Enabled = true;
+                    Btn_Update.Enabled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
             }
         }
     }
