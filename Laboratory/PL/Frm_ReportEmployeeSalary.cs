@@ -132,5 +132,10 @@ namespace Laboratory.PL
             cmb_employeeName.ValueMember = "id_employee";
             cmb_employeeName.SelectedIndex = -1;
         }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
     }
 }

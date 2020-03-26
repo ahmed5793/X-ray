@@ -71,7 +71,7 @@ namespace Laboratory.PL
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            gridControl1.ShowRibbonPrintPreview();
+          
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -96,6 +96,15 @@ namespace Laboratory.PL
             finally
             {
                 dt.Dispose();
+            }
+        }
+
+        private void Btn_Print_Click(object sender, EventArgs e)
+        {
+            if (gridView1.RowCount>0)
+            {
+                gridControl1.ShowRibbonPrintPreview();
+
             }
         }
     }
