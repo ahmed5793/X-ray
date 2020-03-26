@@ -272,5 +272,25 @@ namespace Laboratory.PL
                 MessageBox.Show(ex.StackTrace);
             }
         }
+
+        private void Txt_Cost_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar=='.'&& Txt_Cost.Text.ToString().IndexOf('.')>-1)
+            {
+                e.Handled = true;
+            }
+            if (!char.IsDigit(e.KeyChar)&& e.KeyChar!=8 && e.KeyChar!=Convert.ToChar(System.Globalization.CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Txt_Cost_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (Txt_Cost.Text == "")
+            {
+                Txt_Cost.Text = "0";
+            }
+        }
     }
 }
