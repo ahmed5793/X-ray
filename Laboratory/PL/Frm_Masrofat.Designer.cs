@@ -194,7 +194,7 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(408, 19);
+            this.textBox1.Location = new System.Drawing.Point(404, 19);
             this.textBox1.MaxLength = 11;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
@@ -207,11 +207,11 @@
             // 
             this.txt_notes.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_notes.Location = new System.Drawing.Point(6, 64);
-            this.txt_notes.MaxLength = 11;
+            this.txt_notes.MaxLength = 100000000;
             this.txt_notes.Multiline = true;
             this.txt_notes.Name = "txt_notes";
             this.txt_notes.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txt_notes.Size = new System.Drawing.Size(244, 89);
+            this.txt_notes.Size = new System.Drawing.Size(244, 127);
             this.txt_notes.TabIndex = 72;
             this.txt_notes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -221,7 +221,7 @@
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(256, 101);
+            this.label1.Location = new System.Drawing.Point(256, 120);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 19);
             this.label1.TabIndex = 73;
@@ -324,7 +324,7 @@
             this.simpleButton1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.simpleButton1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(612, 224);
+            this.simpleButton1.Location = new System.Drawing.Point(612, 225);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(154, 32);
             this.simpleButton1.TabIndex = 186;
@@ -344,8 +344,8 @@
             this.Btn_Delete.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Btn_Delete.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_Delete.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.Btn_Delete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Update.ImageOptions.Image")));
-            this.Btn_Delete.Location = new System.Drawing.Point(144, 224);
+            this.Btn_Delete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Delete.ImageOptions.Image")));
+            this.Btn_Delete.Location = new System.Drawing.Point(144, 225);
             this.Btn_Delete.Name = "Btn_Delete";
             this.Btn_Delete.Size = new System.Drawing.Size(181, 32);
             this.Btn_Delete.TabIndex = 185;
@@ -366,7 +366,7 @@
             this.Btn_Add.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_Add.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.Btn_Add.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Add.ImageOptions.Image")));
-            this.Btn_Add.Location = new System.Drawing.Point(399, 224);
+            this.Btn_Add.Location = new System.Drawing.Point(399, 225);
             this.Btn_Add.Name = "Btn_Add";
             this.Btn_Add.Size = new System.Drawing.Size(157, 32);
             this.Btn_Add.TabIndex = 184;
