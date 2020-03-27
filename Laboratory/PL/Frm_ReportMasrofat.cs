@@ -71,6 +71,8 @@ namespace Laboratory.PL
         {
             Masrofat m = new Masrofat();
             comboBox1.DataSource = m.SelectReserve();
+            comboBox1.DisplayMember = "masrof_type";
+            comboBox1.ValueMember = "ID_masrof";
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
