@@ -71,8 +71,6 @@ namespace Laboratory.PL
             txt_addbalance.Clear();
             txt_CurrentBalance1.Text = "0";
             textBox1.Text = "0";
-            txt_name.Clear();
-
             txt_reason.Clear();
         }
         private void cmb_StockFrom_SelectedIndexChanged(object sender, EventArgs e)
@@ -108,18 +106,19 @@ namespace Laboratory.PL
 
         private void btn_update_Click(object sender, EventArgs e)
         {
-
             try
             {
                 if (cmb_StockFrom.Text == "")
                 {
+                    MessageBox.Show("لا بد من تحديد خزنة المحول منها");
                     return;
                 }
                 if (Cmb_StrockTo.Text == "")
                 {
+                    MessageBox.Show("لا بد من تحديد خزنة المحول إليها");
                     return;
                 }
-                if (txt_addbalance.Text == "")
+                if (txt_addbalance.Text == ""|| txt_addbalance.Text=="0")
                 {
                     MessageBox.Show("لا بد من ان يكون التحويل اكبر من الصفر");
                     txt_addbalance.Focus();
@@ -136,7 +135,6 @@ namespace Laboratory.PL
                     MessageBox.Show("   المبلغ المراد تحويلة اكبر من الرصيد الحالى");
                     txt_addbalance.Focus();
                     return;
-
                 }
                 if (MessageBox.Show("هل تريد حفظ التحويل", "عملية التحويل", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
@@ -144,26 +142,33 @@ namespace Laboratory.PL
 
                     MessageBox.Show("تم إضافة الرصيد للخزنة المحددة");
 
-                    clear();
                     //updateMoneyFrom();
                     //UpdateMoneyTo();
-
                 }
                 else
                 {
                     MessageBox.Show("تم إلغاء التحويل");
-                    clear();
                     //updateMoneyFrom();
                     //UpdateMoneyTo();
-
                 }
+                clear();
 
             }
             catch (Exception EX)
             {
-
                 MessageBox.Show(EX.Message);
+                MessageBox.Show(EX.StackTrace);
             }
+        }
+
+        private void txt_CurrentBalance1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_addbalance_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

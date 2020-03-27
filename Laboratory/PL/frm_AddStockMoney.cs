@@ -34,7 +34,6 @@ namespace Laboratory.PL
         {
             txt_addbalance.Clear();
             txt_CurrentBalance.Text = "0";
-            txt_name.Clear();
             txt_reason.Clear();
         }
         private void btn_save_Click(object sender, EventArgs e)
@@ -81,18 +80,21 @@ namespace Laboratory.PL
         {            
                 try
                 {
-                if (cmb_Stock.Items.Count >= 1)
+                if (cmb_Stock.Text!="")
                 {
-                    if (txt_addbalance.Text == "")
+                    if (txt_addbalance.Text == "" || txt_addbalance.Text=="0")
                     {
                         MessageBox.Show("لا بد من ان يكون الايداع اكبر من الصفر");
                         txt_addbalance.Focus();
+                        return;
                     }
                     else if (txt_name.Text == "")
                     {
                         MessageBox.Show("يرجى تحديد إسم المودع");
                         txt_name.Focus();
+                        return;
                     }
+
                     else if (MessageBox.Show("هل تريد حفظ الايداع", "عملية الايداع", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         s.add_insertStock(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_addbalance.Text), Date_insert.Value, txt_name.Text, txt_reason.Text);
@@ -115,6 +117,14 @@ namespace Laboratory.PL
                     MessageBox.Show(ex.Message);
                 }
             
+        }
+
+        private void txt_addbalance_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (txt_addbalance.Text=="")
+            {
+                txt_addbalance.Text = "0";
+            }
         }
     }
    

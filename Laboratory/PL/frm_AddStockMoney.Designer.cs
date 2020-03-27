@@ -48,7 +48,7 @@
             // txt_CurrentBalance
             // 
             this.txt_CurrentBalance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_CurrentBalance.Location = new System.Drawing.Point(35, 55);
+            this.txt_CurrentBalance.Location = new System.Drawing.Point(35, 53);
             this.txt_CurrentBalance.Multiline = true;
             this.txt_CurrentBalance.Name = "txt_CurrentBalance";
             this.txt_CurrentBalance.ReadOnly = true;
@@ -59,7 +59,7 @@
             // txt_addbalance
             // 
             this.txt_addbalance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_addbalance.Location = new System.Drawing.Point(35, 105);
+            this.txt_addbalance.Location = new System.Drawing.Point(35, 100);
             this.txt_addbalance.Multiline = true;
             this.txt_addbalance.Name = "txt_addbalance";
             this.txt_addbalance.Size = new System.Drawing.Size(195, 28);
@@ -67,6 +67,7 @@
             this.txt_addbalance.Text = "0";
             this.txt_addbalance.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_addbalance.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_addbalance_KeyPress);
+            this.txt_addbalance.MouseMove += new System.Windows.Forms.MouseEventHandler(this.txt_addbalance_MouseMove);
             // 
             // label7
             // 
@@ -74,7 +75,7 @@
             this.label7.BackColor = System.Drawing.Color.Yellow;
             this.label7.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(235, 266);
+            this.label7.Location = new System.Drawing.Point(235, 277);
             this.label7.Name = "label7";
             this.label7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label7.Size = new System.Drawing.Size(90, 22);
@@ -87,7 +88,7 @@
             this.label6.BackColor = System.Drawing.Color.Yellow;
             this.label6.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(237, 195);
+            this.label6.Location = new System.Drawing.Point(237, 202);
             this.label6.Name = "label6";
             this.label6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label6.Size = new System.Drawing.Size(87, 22);
@@ -97,7 +98,7 @@
             // txt_reason
             // 
             this.txt_reason.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_reason.Location = new System.Drawing.Point(35, 236);
+            this.txt_reason.Location = new System.Drawing.Point(35, 247);
             this.txt_reason.Multiline = true;
             this.txt_reason.Name = "txt_reason";
             this.txt_reason.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -108,7 +109,7 @@
             // txt_name
             // 
             this.txt_name.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_name.Location = new System.Drawing.Point(36, 190);
+            this.txt_name.Location = new System.Drawing.Point(36, 196);
             this.txt_name.Multiline = true;
             this.txt_name.Name = "txt_name";
             this.txt_name.ReadOnly = true;
@@ -123,7 +124,7 @@
             this.label4.BackColor = System.Drawing.Color.Yellow;
             this.label4.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(235, 151);
+            this.label4.Location = new System.Drawing.Point(235, 150);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label4.Size = new System.Drawing.Size(94, 22);
@@ -146,7 +147,7 @@
             this.label2.BackColor = System.Drawing.Color.Yellow;
             this.label2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(235, 108);
+            this.label2.Location = new System.Drawing.Point(235, 103);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label2.Size = new System.Drawing.Size(128, 22);
@@ -159,7 +160,7 @@
             this.lblMoney.ForeColor = System.Drawing.Color.Red;
             this.lblMoney.Location = new System.Drawing.Point(103, 61);
             this.lblMoney.Name = "lblMoney";
-            this.lblMoney.Size = new System.Drawing.Size(16, 13);
+            this.lblMoney.Size = new System.Drawing.Size(19, 13);
             this.lblMoney.TabIndex = 42;
             this.lblMoney.Text = "...";
             // 
@@ -169,7 +170,7 @@
             this.label5.BackColor = System.Drawing.Color.Yellow;
             this.label5.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(292, 17);
+            this.label5.Location = new System.Drawing.Point(282, 13);
             this.label5.Name = "label5";
             this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label5.Size = new System.Drawing.Size(80, 22);
@@ -183,7 +184,7 @@
             this.cmb_Stock.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Stock.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_Stock.FormattingEnabled = true;
-            this.cmb_Stock.Location = new System.Drawing.Point(12, 12);
+            this.cmb_Stock.Location = new System.Drawing.Point(12, 11);
             this.cmb_Stock.Name = "cmb_Stock";
             this.cmb_Stock.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmb_Stock.Size = new System.Drawing.Size(265, 27);
@@ -197,7 +198,7 @@
             this.label3.BackColor = System.Drawing.Color.Yellow;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(235, 59);
+            this.label3.Location = new System.Drawing.Point(235, 57);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label3.Size = new System.Drawing.Size(159, 24);
@@ -228,7 +229,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(403, 435);
             this.Controls.Add(this.Btn_UpdateShift);
             this.Controls.Add(this.txt_CurrentBalance);
