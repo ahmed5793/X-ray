@@ -81,8 +81,7 @@ namespace Laboratory.PL
         {
             try
             {
-                if (cmb_items.Text != string.Empty)
-                {
+                
                     dt.Clear();
                     dt = ix.SelectPriseItem(Convert.ToInt32(cmb_items.SelectedValue));
                     if (dt.Rows.Count>0)
@@ -92,7 +91,7 @@ namespace Laboratory.PL
                         Txt_Discount.Text = "0";
                     }
                     Total();
-                }
+                
             }
             catch (Exception ex)
             {
@@ -428,7 +427,22 @@ namespace Laboratory.PL
                 if (Cmb_category.Text == "") { MessageBox.Show("لا بد من إختيار نوع الجهاز"); return; }
                 if (cmb_items.Text == "") { MessageBox.Show("لا بد من إختيار نوع الفحص"); return; }
                 if (comboBox1.Text == "") { MessageBox.Show("لا بد من إختيار نوع التعامل مع الشركة"); return; }
+                if (comboBox1.Text== "أسعار متفق عليها")
+                {
+                    if (Txt_PriceDiscount.Text=="" || Txt_PriceDiscount.Text=="0")
+                    {
+                        MessageBox.Show("يرجي تحديد السعر المتفق عليه ");
+                        Txt_PriceDiscount.Focus();
+                        return;
+                    }
+                }
+                //if (comboBox1.Text=="خصم")
+                //{
+                //    if (Txt_Discount.Text=="" || Txt_Discount)
+                //    {
 
+                //    }
+                //}
                 if (cmb_Company.Text != string.Empty && cmb_items.Text != string.Empty)
                 {
                     for (int i = 0; i < gridView1.RowCount; i++)
@@ -451,7 +465,7 @@ namespace Laboratory.PL
                     Txt_PriceDiscount.Text = "0";
                     Txt_PriceDiscount.Enabled = false;
                     Txt_Discount.Enabled = false;
-                    comboBox1.Text = "";
+                    comboBox1.SelectedIndex=-1;
                     cmb_items.Text = "";
                     Cmb_category.Text = "";
                     cmb_Company.Text = "";
@@ -472,6 +486,15 @@ namespace Laboratory.PL
                 {
                     MessageBox.Show("لا بد من تحديد سعر او  نسبة الخصم");
                     return;
+                }
+                if (comboBox1.Text == "أسعار متفق عليها")
+                {
+                    if (Txt_PriceDiscount.Text == "" || Txt_PriceDiscount.Text == "0")
+                    {
+                        MessageBox.Show("يرجي تحديد السعر المتفق عليه ");
+                        Txt_PriceDiscount.Focus();
+                        return;
+                    }
                 }
                 else if (MessageBox.Show("هل تريد تعديل البيانات", "عملية التعديل", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
