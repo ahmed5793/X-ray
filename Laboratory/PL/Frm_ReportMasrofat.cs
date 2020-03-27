@@ -16,8 +16,9 @@ namespace Laboratory.PL
         public Frm_ReportMasrofat()
         {
             InitializeComponent();
-            gridControl1.DataSource = M.select_Masrofat();
+            //gridControl1.DataSource = M.select_Masrofat();
             Calc_Total();
+            Permision();
         }
         void Calc_Total()
         {
@@ -25,13 +26,38 @@ namespace Laboratory.PL
             for (int i = 0; i < gridView1.RowCount; i++)
             {
                 DataRow row = gridView1.GetDataRow(i);
-                total += Convert.ToDecimal(row[1].ToString());
+                total += Convert.ToDecimal(row[2].ToString());
 
             }
             textBox1.Text = total.ToString("₱ #,##0.0");
 
         }
+        void Permision()
+        {
+            Branches b = new Branches();
+            DataTable dt = new DataTable();
+            Users u = new Users();
 
+            dt.Clear();
+            dt = u.SelectUserBranch(Program.salesman);
+
+            if (dt.Rows.Count > 0)
+            {
+                cmb_UserBranch.DataSource = u.SelectUserBranch(Program.salesman);
+                cmb_UserBranch.DisplayMember = "Name";
+                cmb_UserBranch.ValueMember = "Branch_ID";
+                cmb_UserBranch.SelectedIndex = -1;
+
+            }
+            else
+            {
+                cmb_UserBranch.DataSource = b.SelectCompBranches();
+                cmb_UserBranch.DisplayMember = "Name";
+                cmb_UserBranch.ValueMember = "Branch_ID";
+                cmb_UserBranch.SelectedIndex = -1;
+           
+            }
+        }
         private void btn_search_Click(object sender, EventArgs e)
         {
     
@@ -39,12 +65,12 @@ namespace Laboratory.PL
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            gridControl1.ShowRibbonPrintPreview();
         }
 
         private void Frm_ReportMasrofat_Load(object sender, EventArgs e)
         {
-
+            Masrofat m = new Masrofat();
+            comboBox1.DataSource = m.SelectReserve();
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -52,10 +78,35 @@ namespace Laboratory.PL
             DataTable dt = new DataTable();
             try
             {
+             
                 dt.Clear();
-                dt = M.search_Masrofat(DateFrom.Value, DateTo.Value);
-                gridControl1.DataSource = dt;
-                Calc_Total();
+                if (checkBox1.Checked == true)
+                {
+
+
+                  
+                    dt = M.search_Masrofat(DateFrom.Value, DateTo.Value);
+                    gridControl1.DataSource = dt;
+                    Calc_Total();
+                }
+                else
+                {
+                    if (cmb_UserBranch.Text == "")
+                    {
+                        MessageBox.Show("يرجي اختيار فرع");
+                        return;
+                    }
+                    if (comboBox1.Text == "")
+                    {
+                        MessageBox.Show("يرجي اختيار نوع الصمروف");
+                        return;
+                    }
+                    dt = M.search_CategoryMasrofat(DateFrom.Value, DateTo.Value,Convert.ToInt32(comboBox1.SelectedValue),
+                        Convert.ToInt32(cmb_UserBranch.SelectedValue));
+                    gridControl1.DataSource = dt;
+                    Calc_Total();
+
+                }
             }
             catch (Exception ex)
             {
@@ -66,6 +117,24 @@ namespace Laboratory.PL
             {
                 dt.Dispose();
             }
+        }
+
+        private void Btn_Print_Click(object sender, EventArgs e)
+        {
+            if (gridView1.RowCount>0)
+            {
+
+
+                gridControl1.ShowRibbonPrintPreview();
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            cmb_UserBranch.Enabled = false;
+            cmb_UserBranch.DataSource = null;
+            comboBox1.Enabled = false;
+            comboBox1.DataSource = null;
         }
     }
 }

@@ -121,6 +121,23 @@ namespace Laboratory.BL
             return dt;
 
         }
+        internal DataTable search_CategoryMasrofat(DateTime FromDate, DateTime ToDate, int idCategory,int idBranch)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[4];
+            DataTable dt = new DataTable();
+            param[0] = new SqlParameter("@Date_From", SqlDbType.Date);
+            param[0].Value = FromDate;
+            param[1] = new SqlParameter("@Date_to", SqlDbType.Date);
+            param[1].Value = ToDate;
+            param[2] = new SqlParameter("@idCategory", SqlDbType.Int);
+            param[2].Value = idCategory;
+            param[3] = new SqlParameter("@idBranch", SqlDbType.Int);
+            param[3].Value = idBranch;
+            dt = da.selected("search_CategoryMasrofat", param);
+            return dt;
+
+        }
         internal DataTable select_Masrofat()
         {
             DataTable dt = new DataTable();
