@@ -66,10 +66,10 @@ namespace Laboratory.PL
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
         }
-
+        Masrofat m = new Masrofat();
         private void Frm_ReportMasrofat_Load(object sender, EventArgs e)
         {
-            Masrofat m = new Masrofat();
+      
             comboBox1.DataSource = m.SelectReserve();
             comboBox1.DisplayMember = "masrof_type";
             comboBox1.ValueMember = "ID_masrof";
@@ -133,10 +133,23 @@ namespace Laboratory.PL
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            cmb_UserBranch.Enabled = false;
-            cmb_UserBranch.DataSource = null;
-            comboBox1.Enabled = false;
-            comboBox1.DataSource = null;
+            if (checkBox1.Checked==true)
+            {
+                cmb_UserBranch.Enabled = false;
+                cmb_UserBranch.DataSource = null;
+                comboBox1.Enabled = false;
+                comboBox1.DataSource = null;
+            }
+            else
+            {
+                Permision();
+                comboBox1.DataSource = m.SelectReserve();
+                comboBox1.DisplayMember = "masrof_type";
+                comboBox1.ValueMember = "ID_masrof";
+                cmb_UserBranch.Enabled = true;
+                comboBox1.Enabled = true;
+            }
+         
         }
     }
 }
