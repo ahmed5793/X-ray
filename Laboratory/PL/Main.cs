@@ -659,6 +659,12 @@ namespace Laboratory.PL
             Frm_checkTimeUserName ct = new Frm_checkTimeUserName();
             ct.ShowDialog();
         }
+
+        private void barHeaderItem23_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Frm_ReportSelectOrder so = new Frm_ReportSelectOrder();
+            so.Show();
+        }
     }
     }
     

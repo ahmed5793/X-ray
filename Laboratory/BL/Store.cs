@@ -110,5 +110,16 @@ namespace Laboratory.BL
             }
 
         }
+        internal DataTable SelectStoreBranch(int Id_branch)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@idbranch", SqlDbType.Int);
+            param[0].Value = Id_branch;
+            da.open();
+            DataTable dt = new DataTable();
+            dt = da.selected("SelectStoreBranch", param);
+            return dt;
+        }
     }
 }

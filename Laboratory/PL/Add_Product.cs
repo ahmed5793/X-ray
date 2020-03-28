@@ -24,6 +24,8 @@ namespace Laboratory.PL
         }
         internal void Clear()
         {
+            btn_update.Enabled = false;
+            Btn_Add.Enabled = true;
             txt_name.Text = "";
             txt_seeling.Text = "0";
             txt_phr.Text = "0";
@@ -36,10 +38,12 @@ namespace Laboratory.PL
             {
                 if (dataGridViewPR.Rows.Count > 0)
                 {
+                    Btn_Add.Enabled = false;
+                    btn_update.Enabled = true;
                     txt_name.Text = dataGridViewPR.CurrentRow.Cells[1].Value.ToString();
                     txt_seeling.Text = dataGridViewPR.CurrentRow.Cells[2].Value.ToString();
                     txt_phr.Text = dataGridViewPR.CurrentRow.Cells[3].Value.ToString();
-                    btn_update.Enabled = true;
+                  
                 }
 
             }
@@ -179,7 +183,7 @@ namespace Laboratory.PL
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             Clear();
-            btn_update.Enabled = false;
+       
         }
 
         private void btn_update_Click_1(object sender, EventArgs e)
@@ -206,7 +210,7 @@ namespace Laboratory.PL
                 dataGridViewPR.DataSource = Product.Select_Product();
                 Clear();
           
-                btn_update.Enabled = true;
+              
             }
             catch (Exception ex)
             {

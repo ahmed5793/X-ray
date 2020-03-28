@@ -83,7 +83,8 @@ namespace Laboratory.PL
             {
                 if (dataGridViewPR.Rows.Count > 0)
                 {
-
+                   
+                   
                     Cmb_ProdName.Text = dataGridViewPR.CurrentRow.Cells[2].Value.ToString();
                     Cmb_Store.Text = dataGridViewPR.CurrentRow.Cells[4].Value.ToString();
                     txt_quantity.Text = dataGridViewPR.CurrentRow.Cells[5].Value.ToString();
@@ -92,7 +93,7 @@ namespace Laboratory.PL
                     {
                         Txt_Minimum.Text = "0";
                     }
-              
+                    Btn_Add.Enabled = false;
                     Btn_Update.Enabled = true;
                     Btn_Delete.Enabled = true;
                     button1.Enabled = false;
@@ -246,16 +247,20 @@ namespace Laboratory.PL
                 MessageBox.Show(ex.Message);
             }
         }
-
-        private void simpleButton1_Click(object sender, EventArgs e)
+        void clear()
         {
-
+            Cmb_Store.Enabled = true;
+            Btn_Add.Enabled = true;
             Btn_Update.Enabled = false;
             Btn_Delete.Enabled = false;
             txt_quantity.Text = "0";
             Txt_Minimum.Text = "0";
             button1.Enabled = true;
             Cmb_ProdName.Enabled = true;
+        }
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            clear();
         }
 
         private void simpleButton3_Click(object sender, EventArgs e)
@@ -295,8 +300,7 @@ namespace Laboratory.PL
                     Product.Add_StoreProduct(Convert.ToInt32(Cmb_ProdName.SelectedValue), Convert.ToInt32(Cmb_Store.SelectedValue),
                         Convert.ToDecimal(txt_quantity.Text), Convert.ToInt32(Txt_Minimum.Text));
                     MessageBox.Show("تم إضافة الصنف للمخزن بنجاح");
-                    txt_quantity.Text = "0";
-                    Txt_Minimum.Text = "0";
+                    clear();
 
 
                 }
@@ -344,20 +348,15 @@ namespace Laboratory.PL
                     MessageBox.Show("تم إلغاء التعديل");
                 }
                 dataGridViewPR.DataSource = Product.Select_StoreProduct();
-             
-                Btn_Update.Enabled = false;
-                Btn_Delete.Enabled = false;
-                txt_quantity.Text = "0";
-                Txt_Minimum.Text = "0";
-                button1.Enabled = true;
-                Cmb_ProdName.Enabled = true;
+
+                clear();
 
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message);
-                MessageBox.Show(ex.StackTrace);
+               
             }
         }
 

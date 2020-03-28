@@ -50,5 +50,24 @@ namespace Laboratory.BL
             da.close();
             return dt; 
         }
+
+        internal DataTable ReportSelectOrder(int idStore,DateTime @FromDate,DateTime ToDate)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[3];
+            da.open();
+            param[0] = new SqlParameter("@idStore", SqlDbType.Int);
+            param[0].Value = idStore;
+            param[1] = new SqlParameter("FromDate", SqlDbType.Date);
+            param[1].Value = FromDate;
+            param[2] = new SqlParameter("@ToDate", SqlDbType.Date);
+            param[2].Value = ToDate;
+
+            DataTable dt = new DataTable();
+            dt.Clear();
+            dt = da.selected("ReportSelectOrder", param);
+            da.close();
+            return dt;
+        }
     }
 }

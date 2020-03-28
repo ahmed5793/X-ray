@@ -864,6 +864,7 @@
             this.barHeaderItem23.Caption = "تقرير بالاصناف المستهلكة";
             this.barHeaderItem23.Id = 67;
             this.barHeaderItem23.Name = "barHeaderItem23";
+            this.barHeaderItem23.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barHeaderItem23_ItemClick);
             // 
             // add_suppliers
             // 

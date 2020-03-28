@@ -253,6 +253,7 @@ namespace Laboratory.BL
             dt = da.selected("SelectStockBranch", param);
             return dt;
         }
+   
         internal DataTable Report_InsertStock(int Id_Stock)
         {
             DataAccessLayer da = new DataAccessLayer();
