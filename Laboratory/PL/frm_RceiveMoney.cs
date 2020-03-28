@@ -13,6 +13,7 @@ namespace Laboratory.PL
 {
     public partial class frm_RceiveMoney : DevExpress.XtraEditors.XtraForm
     {
+        Employee E = new Employee();
         Stock S = new Stock();
         Users U = new Users();
         Branches b = new Branches();
@@ -28,7 +29,6 @@ namespace Laboratory.PL
                 cmb_UserBranch.DataSource = U.SelectUserBranch(txt_UserName.Text);
                 cmb_UserBranch.DisplayMember = "Name";
                 cmb_UserBranch.ValueMember = "Branch_ID";
-                cmb_UserBranch.SelectedIndex = -1;
             }
             else
             {
@@ -36,8 +36,12 @@ namespace Laboratory.PL
                 cmb_UserBranch.DisplayMember = "Name";
                 cmb_UserBranch.ValueMember = "Branch_ID";
                 cmb_UserBranch.SelectedIndex = -1;
-
             }
+            Cmb_Users.DataSource = E.Select_EmployeFromBranch(Convert.ToInt32(cmb_UserBranch.SelectedValue));
+            Cmb_Users.DisplayMember = "Emp_Name";
+            Cmb_Users.ValueMember = "id_Emp";
+            Cmb_Users.SelectedIndex = -1;
+
         }
 
         public frm_RceiveMoney()
@@ -46,6 +50,7 @@ namespace Laboratory.PL
             Select_Users();
             txt_UserName.Text = Program.salesman;
             Permision();
+            textBox4.Hide();
         }
    
         void Select_Users()
@@ -85,10 +90,10 @@ namespace Laboratory.PL
             {
                 
                 dt.Clear();
-                dt = U.Select_MoneyForUser(Cmb_Users.Text,DateFrom.Value,Time_From.Value.TimeOfDay,
+                dt = U.Select_MoneyForUser(textBox4.Text,DateFrom.Value,Time_From.Value.TimeOfDay,
                    Time_To.Value.TimeOfDay);
                 dt2.Clear();
-                dt2 = U.Select_PullMoneyForUser(Cmb_Users.Text, DateFrom.Value, Time_From.Value.TimeOfDay, Time_To.Value.TimeOfDay);
+                dt2 = U.Select_PullMoneyForUser(textBox4.Text, DateFrom.Value, Time_From.Value.TimeOfDay, Time_To.Value.TimeOfDay);
                 gridControl1.DataSource = dt2;
                 gridControlInsert.DataSource = dt;
                 calcInsertMoney();
@@ -104,24 +109,46 @@ namespace Laboratory.PL
         }
         private void cmb_UserBranch_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmb_UserBranch.Text!="")
-            {
-                Cmb_Users.DataSource = U.Select_UserForBranch(Convert.ToInt32(cmb_UserBranch.SelectedValue));
-                Cmb_Users.DisplayMember = "UserName";
-                Cmb_Users.ValueMember ="id_Emp";
-                Cmb_Users.SelectedIndex = -1;
-            }
+            //if (cmb_UserBranch.Text!="")
+            //{
+            //    Cmb_Users.DataSource = U.Select_UserForBranch(Convert.ToInt32(cmb_UserBranch.SelectedValue));
+            //    Cmb_Users.DisplayMember = "UserName";
+            //    Cmb_Users.ValueMember ="id_Emp";
+            //    Cmb_Users.SelectedIndex = -1;
+            //}
+
+            Cmb_Users.DataSource = E.Select_EmployeFromBranch(Convert.ToInt32(cmb_UserBranch.SelectedValue));
+            Cmb_Users.DisplayMember = "Emp_Name";
+            Cmb_Users.ValueMember = "id_Emp";
+            Cmb_Users.SelectedIndex = -1;
         }
 
         private void cmb_UserBranch_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            if (cmb_UserBranch.Text != "")
-            {
-                Cmb_Users.DataSource = U.Select_UserForBranch(Convert.ToInt32(cmb_UserBranch.SelectedValue));
-                Cmb_Users.DisplayMember = "UserName";
-                Cmb_Users.ValueMember = "id_Emp";
-                Cmb_Users.SelectedIndex = -1;
-            }
+            //if (cmb_UserBranch.Text != "")
+            //{
+            //    Cmb_Users.DataSource = U.Select_UserForBranch(Convert.ToInt32(cmb_UserBranch.SelectedValue));
+            //    Cmb_Users.DisplayMember = "UserName";
+            //    Cmb_Users.ValueMember = "id_Emp";
+            //    Cmb_Users.SelectedIndex = -1;
+            //}
+
+            Cmb_Users.DataSource = E.Select_EmployeFromBranch(Convert.ToInt32(cmb_UserBranch.SelectedValue));
+            Cmb_Users.DisplayMember = "Emp_Name";
+            Cmb_Users.ValueMember = "id_Emp";
+            Cmb_Users.SelectedIndex = -1;
+        }
+
+        private void frm_RceiveMoney_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Cmb_Users_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            dt3.Clear();
+            dt3 = U.Select_UserName(Convert.ToInt32(Cmb_Users.SelectedValue));
+            textBox4.Text = dt3.Rows[0][0].ToString();
         }
     }
 }
