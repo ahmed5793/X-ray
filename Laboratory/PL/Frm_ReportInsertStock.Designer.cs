@@ -358,6 +358,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "تقرير الارصدة المضافة إلى الخزنة";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Frm_ReportInsertStock_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlInsert)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewInsert)).EndInit();
             this.ResumeLayout(false);

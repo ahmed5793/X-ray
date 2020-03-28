@@ -122,5 +122,20 @@ namespace Laboratory.PL
                 txt_addbalance.Text = "0";
             }
         }
+
+        private void cmb_Stock_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmb_Stock_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            dt.Clear();
+            dt = s.Select_moneyStock(Convert.ToInt32(cmb_Stock.SelectedValue));
+            if (dt.Rows.Count > 0)
+            {
+                txt_CurrentBalance.Text = dt.Rows[0][0].ToString();
+            }
+        }
     }
 }
