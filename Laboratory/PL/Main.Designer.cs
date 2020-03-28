@@ -303,9 +303,9 @@
             this.ribbonPage6});
             this.ribbon.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemImageEdit1});
-            this.ribbon.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
+            this.ribbon.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.MacOffice;
             this.ribbon.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ribbon.Size = new System.Drawing.Size(980, 169);
+            this.ribbon.Size = new System.Drawing.Size(980, 156);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.Click += new System.EventHandler(this.ribbon_Click);
             // 
@@ -1547,9 +1547,9 @@
             // 
             this.fluentDesignFormContainer1.Controls.Add(this.tileControl1);
             this.fluentDesignFormContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fluentDesignFormContainer1.Location = new System.Drawing.Point(0, 169);
+            this.fluentDesignFormContainer1.Location = new System.Drawing.Point(0, 156);
             this.fluentDesignFormContainer1.Name = "fluentDesignFormContainer1";
-            this.fluentDesignFormContainer1.Size = new System.Drawing.Size(980, 405);
+            this.fluentDesignFormContainer1.Size = new System.Drawing.Size(980, 418);
             this.fluentDesignFormContainer1.TabIndex = 2;
             this.fluentDesignFormContainer1.Click += new System.EventHandler(this.fluentDesignFormContainer1_Click);
             // 
@@ -1561,7 +1561,7 @@
             this.tileControl1.Location = new System.Drawing.Point(0, 0);
             this.tileControl1.MaxId = 11;
             this.tileControl1.Name = "tileControl1";
-            this.tileControl1.Size = new System.Drawing.Size(980, 405);
+            this.tileControl1.Size = new System.Drawing.Size(980, 418);
             this.tileControl1.TabIndex = 0;
             this.tileControl1.Text = "tileControl1";
             this.tileControl1.Click += new System.EventHandler(this.tileControl1_Click);
