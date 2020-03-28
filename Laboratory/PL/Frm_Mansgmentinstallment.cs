@@ -18,6 +18,7 @@ namespace Laboratory.PL
         {
             InitializeComponent();
             gridControl1.DataSource = i.Selectinstallment();
+            gridView1.Columns[0].Visible= false;
         }
 
         private void Frm_Mansgmentinstallment_Load(object sender, EventArgs e)

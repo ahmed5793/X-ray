@@ -64,7 +64,8 @@ namespace Laboratory.PL
        
                 Btn_Update.Enabled = true;
                 cmb_stock.Enabled = false;
-                txt_username.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                Btn_Add.Enabled = false;
+                //txt_username.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
                 cmb_stock.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
                 txt_money.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
                 dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
@@ -96,13 +97,17 @@ namespace Laboratory.PL
                 e.Handled = true;
             }
         }
-
-        private void simpleButton1_Click(object sender, EventArgs e)
+        void clear()
         {
             cmb_stock.Enabled = true;
             txt_money.Text = "0";
             Btn_Update.Enabled = false;
             cmb_stock.Enabled = true;
+            Btn_Add.Enabled = true;
+        }
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            clear();
         }
 
         private void Btn_Add_Click(object sender, EventArgs e)
@@ -147,12 +152,12 @@ namespace Laboratory.PL
                 s.Add_StockPull(Convert.ToInt32(cmb_stock.SelectedValue), Convert.ToDecimal(txt_money.Text), dateTimePicker1.Value, txt_username.Text, cmb_instalmenttype.Text + " " + " دفع قسط");
 
                 dataGridView1.DataSource = i.Selectinstallment();
-                txt_money.Clear();
+                clear();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                MessageBox.Show(ex.StackTrace);
+              
             }
 
 
@@ -197,15 +202,17 @@ namespace Laboratory.PL
 
 
                     dataGridView1.DataSource = i.Selectinstallment();
-                    txt_money.Clear();
+                   
+                    clear();
 
                 }
                 else
                 {
                     MessageBox.Show("تم الغاء عمليه التعديل");
-                    txt_money.Clear();
+                 
+                    clear();
 
-                    Btn_Update.Enabled = false;
+              
               
                 }
 
