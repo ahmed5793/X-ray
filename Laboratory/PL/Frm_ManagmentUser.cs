@@ -20,9 +20,9 @@ namespace Laboratory.PL
         public Frm_ManagmentUser()
         {
             InitializeComponent();
-            dataGridViewList.DataSource = u.SelectUsers();
-            dataGridViewList.Columns[0].Visible = false;
-            dataGridViewList.Columns[4].Visible = false;
+            gridControlInsert.DataSource = u.SelectUsers();
+            gridViewInsert.Columns[0].Visible = false;
+            //gridViewInsert.Columns[4].Visible = false;
             comboBox1.DataSource = E.SelectCompoEmployee();
             comboBox1.DisplayMember = "Emp_Name";
             comboBox1.ValueMember = "Emp_ID";
@@ -61,18 +61,7 @@ namespace Laboratory.PL
         }
 
         private void dataGridViewList_DoubleClick(object sender, EventArgs e)
-        {
-            ; ;
-            comboBox1.Enabled = false;
-            txt_User.Text = dataGridViewList.CurrentRow.Cells[2].Value.ToString();
-            txt_Pass.Text = dataGridViewList.CurrentRow.Cells[3].Value.ToString();
-            comboBox1.Text = dataGridViewList.CurrentRow.Cells[1].Value.ToString();
-            txt_PassRealy.Text = txt_Pass.Text;
-     
-           
-            Btn_Add.Enabled = false;
-            Btn_Update.Enabled = true;
-            Btn_Delete.Enabled = true;
+        {     
         }
 
         private void btn_update_Click(object sender, EventArgs e)
@@ -156,7 +145,7 @@ namespace Laboratory.PL
                 p.Add_UserEmployee(txt_User.Text, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
 
                 u.AddUser(Convert.ToInt32(comboBox1.SelectedValue), txt_User.Text, txt_Pass.Text);
-                dataGridViewList.DataSource = u.SelectUsers();
+                gridControlInsert.DataSource = u.SelectUsers();
                 MessageBox.Show("Registration saved successfully");
 
 
@@ -206,7 +195,7 @@ namespace Laboratory.PL
                 txt_User.Clear();
                 txt_PassRealy.Clear();
                 comboBox1.Enabled = true;
-                dataGridViewList.DataSource = u.SelectUsers();
+                gridControlInsert.DataSource = u.SelectUsers();
 
                 Btn_Update.Enabled = false;
                 Btn_Delete.Enabled = false;
@@ -232,9 +221,9 @@ namespace Laboratory.PL
                 if (MessageBox.Show("do you want remove USER", "", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
                 {
 
-                    u.deleteusers(Convert.ToInt32(dataGridViewList.CurrentRow.Cells[4].Value));
+                    u.deleteusers(Convert.ToInt32(gridViewInsert.GetFocusedRowCellValue("ID")));
                     MessageBox.Show("DONE", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    dataGridViewList.DataSource = u.SelectUsers();
+                    gridControlInsert.DataSource = u.SelectUsers();
 
                     Btn_Update.Enabled = false;
                     Btn_Add.Enabled = true;
@@ -264,6 +253,47 @@ namespace Laboratory.PL
             {
                 MessageBox.Show(ex.Message);
                 MessageBox.Show(ex.StackTrace);
+            }
+        }
+
+        private void gridControlInsert_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                if (gridViewInsert.RowCount>0)
+                {
+
+                    comboBox1.Enabled = false;
+                    txt_User.Text = gridViewInsert.GetFocusedRowCellValue("User Name").ToString();
+                    txt_Pass.Text = gridViewInsert.GetFocusedRowCellValue("Password").ToString();
+                    comboBox1.Text = gridViewInsert.GetFocusedRowCellValue("Employee Name").ToString();
+                    txt_PassRealy.Text = txt_Pass.Text;
+                    Btn_Add.Enabled = false;
+                    Btn_Update.Enabled = true;
+                    Btn_Delete.Enabled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+
+        private void comboBox1_Leave(object sender, EventArgs e)
+        {
+            if (comboBox1.Text != "")
+            {
+                dt.Clear();
+                dt = E.VildateEmployeeShift(Convert.ToInt32(comboBox1.SelectedValue));
+                if (dt.Rows.Count == 0)
+                {
+                    MessageBox.Show("يرجي العلم بان اسم الموظف غير مسجل من قبل يرجي تسجيل هذا الاسم في شاشه الموظفين", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    comboBox1.Focus();
+                    comboBox1.SelectAll();
+                    return;
+                }
             }
         }
     }

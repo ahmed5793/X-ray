@@ -138,14 +138,14 @@ namespace Laboratory.PL
                 }
                 if (MessageBox.Show("هل تريد حفظ التحويل", "عملية التحويل", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    s.Add_StockTransfair(Convert.ToDecimal(txt_addbalance.Text), Date_insert.Value, Convert.ToInt32(cmb_StockFrom.SelectedValue), cmb_StockFrom.Text, Convert.ToInt32(Cmb_StrockTo.SelectedValue), Cmb_StrockTo.Text, txt_name.Text, txt_reason.Text);
-                    s.Add_StockPull(Convert.ToInt32(cmb_StockFrom.SelectedValue), Convert.ToDecimal(txt_addbalance.Text), Date_insert.Value, txt_name.Text, txt_reason.Text);
-                    s.add_insertStock(Convert.ToInt32(Cmb_StrockTo.SelectedValue), Convert.ToDecimal(txt_addbalance.Text), Date_insert.Value, txt_name.Text, txt_reason.Text);
+                 s.Add_StockTransfair(Convert.ToDecimal(txt_addbalance.Text), Date_insert.Value, Convert.ToInt32(cmb_StockFrom.SelectedValue),
+                 cmb_StockFrom.Text, Convert.ToInt32(Cmb_StrockTo.SelectedValue), Cmb_StrockTo.Text, txt_name.Text, txt_reason.Text);
+                    s.Add_StockPull(Convert.ToInt32(cmb_StockFrom.SelectedValue), Convert.ToDecimal(txt_addbalance.Text), Date_insert.Value, 
+                                     txt_name.Text,"تحويل رصيد الي الخزنة"+" "+ Cmb_StrockTo.Text +" "+ txt_reason.Text);
+                    s.add_insertStock(Convert.ToInt32(Cmb_StrockTo.SelectedValue), Convert.ToDecimal(txt_addbalance.Text), Date_insert.Value,
+                                      txt_name.Text,"رصيد محول من خزنة "+" "+cmb_StockFrom.Text + " " + txt_reason.Text);
 
                     MessageBox.Show("تم إضافة الرصيد للخزنة المحددة");
-
-                    //updateMoneyFrom();
-                    //UpdateMoneyTo();
                 }
                 else
                 {

@@ -214,21 +214,7 @@ namespace Laboratory.PL
 
         private void cmb_employeeName_Leave(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            if (cmb_employeeName.Text != "")
-            {
-                dt.Clear();
-                dt = E.VildateEmployeeShift(Convert.ToInt32(cmb_employeeName.SelectedValue));
-                if (dt.Rows.Count == 0)
-                {
-                    MessageBox.Show("يرجي العلم بان اسم الموظف غير مسجل من قبل يرجي تسجيل هذا الاسم في شاشه الموظفين", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-                    cmb_employeeName.Focus();
-                    cmb_employeeName.SelectAll();
-                    return;
-                }
-                dt.Dispose();
-            }
+           
         }
 
         private void label9_Click(object sender, EventArgs e)
