@@ -42,12 +42,13 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
-            this.cmb_instalmenttype = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.cmb_instalmenttype = new System.Windows.Forms.ComboBox();
             this.cmb_stock = new System.Windows.Forms.ComboBox();
             this.Btn_New = new DevExpress.XtraEditors.SimpleButton();
             this.Btn_Update = new DevExpress.XtraEditors.SimpleButton();
             this.Btn_Add = new DevExpress.XtraEditors.SimpleButton();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -66,7 +67,7 @@
             this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.ShowEditingIcon = false;
-            this.dataGridView1.Size = new System.Drawing.Size(832, 228);
+            this.dataGridView1.Size = new System.Drawing.Size(855, 228);
             this.dataGridView1.TabIndex = 12;
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
@@ -75,9 +76,9 @@
             this.groupBox2.Controls.Add(this.txt_search);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Location = new System.Drawing.Point(17, 250);
+            this.groupBox2.Location = new System.Drawing.Point(4, 250);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(845, 290);
+            this.groupBox2.Size = new System.Drawing.Size(867, 290);
             this.groupBox2.TabIndex = 22;
             this.groupBox2.TabStop = false;
             // 
@@ -107,7 +108,7 @@
             this.btn_GenderJob.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_GenderJob.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_GenderJob.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_GenderJob.Location = new System.Drawing.Point(220, 18);
+            this.btn_GenderJob.Location = new System.Drawing.Point(199, 64);
             this.btn_GenderJob.Name = "btn_GenderJob";
             this.btn_GenderJob.Size = new System.Drawing.Size(53, 27);
             this.btn_GenderJob.TabIndex = 37;
@@ -120,7 +121,7 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.White;
             this.label8.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(599, 21);
+            this.label8.Location = new System.Drawing.Point(579, 66);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(83, 24);
             this.label8.TabIndex = 34;
@@ -129,23 +130,26 @@
             // txt_money
             // 
             this.txt_money.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_money.Location = new System.Drawing.Point(385, 91);
+            this.txt_money.Location = new System.Drawing.Point(452, 155);
             this.txt_money.Name = "txt_money";
             this.txt_money.Size = new System.Drawing.Size(154, 32);
             this.txt_money.TabIndex = 0;
+            this.txt_money.Text = "0";
             this.txt_money.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_money.Click += new System.EventHandler(this.txt_money_Click);
             this.txt_money.TextChanged += new System.EventHandler(this.txt_money_TextChanged);
             this.txt_money.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_money_KeyPress);
+            this.txt_money.MouseLeave += new System.EventHandler(this.txt_money_MouseLeave);
             // 
             // txt_username
             // 
             this.txt_username.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_username.Location = new System.Drawing.Point(320, 15);
+            this.txt_username.Location = new System.Drawing.Point(259, 18);
             this.txt_username.MaxLength = 3000;
             this.txt_username.Name = "txt_username";
             this.txt_username.ReadOnly = true;
             this.txt_username.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txt_username.Size = new System.Drawing.Size(269, 32);
+            this.txt_username.Size = new System.Drawing.Size(313, 32);
             this.txt_username.TabIndex = 2;
             this.txt_username.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_username.TextChanged += new System.EventHandler(this.txt_username_TextChanged);
@@ -155,7 +159,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(435, 65);
+            this.label5.Location = new System.Drawing.Point(612, 159);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(50, 24);
             this.label5.TabIndex = 17;
@@ -166,7 +170,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(616, 19);
+            this.label3.Location = new System.Drawing.Point(578, 22);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(106, 24);
             this.label3.TabIndex = 16;
@@ -174,19 +178,22 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.btn_GenderJob);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.cmb_instalmenttype);
+            this.groupBox1.Controls.Add(this.txt_username);
             this.groupBox1.Controls.Add(this.cmb_stock);
             this.groupBox1.Controls.Add(this.txt_money);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(17, 50);
+            this.groupBox1.Location = new System.Drawing.Point(4, -10);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(838, 139);
+            this.groupBox1.Size = new System.Drawing.Size(867, 199);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             // 
@@ -194,7 +201,7 @@
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(640, 97);
+            this.dateTimePicker1.Location = new System.Drawing.Point(153, 155);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(147, 26);
             this.dateTimePicker1.TabIndex = 34;
@@ -204,11 +211,22 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.White;
             this.label7.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(672, 70);
+            this.label7.Location = new System.Drawing.Point(306, 157);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(95, 24);
             this.label7.TabIndex = 33;
             this.label7.Text = "تاريخ القسط";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(578, 111);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 24);
+            this.label1.TabIndex = 39;
+            this.label1.Text = "خزينة";
             // 
             // cmb_instalmenttype
             // 
@@ -218,22 +236,11 @@
             this.cmb_instalmenttype.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_instalmenttype.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_instalmenttype.FormattingEnabled = true;
-            this.cmb_instalmenttype.Location = new System.Drawing.Point(279, 16);
+            this.cmb_instalmenttype.Location = new System.Drawing.Point(258, 63);
             this.cmb_instalmenttype.Name = "cmb_instalmenttype";
             this.cmb_instalmenttype.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmb_instalmenttype.Size = new System.Drawing.Size(314, 32);
             this.cmb_instalmenttype.TabIndex = 33;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(162, 62);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 24);
-            this.label1.TabIndex = 39;
-            this.label1.Text = "خزينة";
             // 
             // cmb_stock
             // 
@@ -243,10 +250,10 @@
             this.cmb_stock.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_stock.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_stock.FormattingEnabled = true;
-            this.cmb_stock.Location = new System.Drawing.Point(48, 90);
+            this.cmb_stock.Location = new System.Drawing.Point(259, 108);
             this.cmb_stock.Name = "cmb_stock";
             this.cmb_stock.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmb_stock.Size = new System.Drawing.Size(256, 32);
+            this.cmb_stock.Size = new System.Drawing.Size(313, 32);
             this.cmb_stock.TabIndex = 38;
             // 
             // Btn_New
@@ -261,10 +268,10 @@
             this.Btn_New.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Btn_New.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_New.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.Btn_New.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.Btn_New.Location = new System.Drawing.Point(570, 200);
+            this.Btn_New.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_New.ImageOptions.Image")));
+            this.Btn_New.Location = new System.Drawing.Point(562, 202);
             this.Btn_New.Name = "Btn_New";
-            this.Btn_New.Size = new System.Drawing.Size(129, 32);
+            this.Btn_New.Size = new System.Drawing.Size(157, 32);
             this.Btn_New.TabIndex = 183;
             this.Btn_New.Text = "تسجيل جديد";
             this.Btn_New.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -281,12 +288,12 @@
             this.Btn_Update.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Btn_Update.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_Update.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.Btn_Update.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.Btn_Update.Location = new System.Drawing.Point(192, 199);
+            this.Btn_Update.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Update.ImageOptions.Image")));
+            this.Btn_Update.Location = new System.Drawing.Point(170, 203);
             this.Btn_Update.Name = "Btn_Update";
-            this.Btn_Update.Size = new System.Drawing.Size(129, 32);
+            this.Btn_Update.Size = new System.Drawing.Size(149, 32);
             this.Btn_Update.TabIndex = 182;
-            this.Btn_Update.Text = "تعديل بيانات ";
+            this.Btn_Update.Text = "مسح القسط";
             this.Btn_Update.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // Btn_Add
@@ -302,12 +309,22 @@
             this.Btn_Add.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_Add.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.Btn_Add.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Add.ImageOptions.Image")));
-            this.Btn_Add.Location = new System.Drawing.Point(384, 199);
+            this.Btn_Add.Location = new System.Drawing.Point(367, 202);
             this.Btn_Add.Name = "Btn_Add";
-            this.Btn_Add.Size = new System.Drawing.Size(129, 32);
+            this.Btn_Add.Size = new System.Drawing.Size(147, 32);
             this.Btn_Add.TabIndex = 181;
             this.Btn_Add.Text = "حفظ";
             this.Btn_Add.Click += new System.EventHandler(this.Btn_Add_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(696, 63);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(134, 27);
+            this.textBox1.TabIndex = 40;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Frm_installment
             // 
@@ -320,8 +337,6 @@
             this.Controls.Add(this.Btn_Add);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txt_username);
             this.Name = "Frm_installment";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "شاشة تسجيل الاقساط";
@@ -332,7 +347,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -357,5 +371,6 @@
         private DevExpress.XtraEditors.SimpleButton Btn_New;
         private DevExpress.XtraEditors.SimpleButton Btn_Update;
         private DevExpress.XtraEditors.SimpleButton Btn_Add;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

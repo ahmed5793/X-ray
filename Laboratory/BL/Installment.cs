@@ -42,14 +42,19 @@ namespace Laboratory.BL
             SqlParameter[] param = new SqlParameter[1];
             param[0] = new SqlParameter("@Name", SqlDbType.NVarChar, 100);
             param[0].Value = name;
-
-
-
-
             da.excutequery("AddinstallmentType", param);
-
             da.close();
+        }
 
+        internal void Delete_Installment(int Id_Installment)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@Id_Installment", SqlDbType.Int);
+            param[0].Value = Id_Installment;
+            da.excutequery("Delete_Installment", param);
+            da.close();
         }
 
         internal void Updateinstallment(DateTime dateinstallment, decimal money,  int IDinstallmentType,int IDinstallment)
@@ -65,7 +70,6 @@ namespace Laboratory.BL
             param[2].Value = IDinstallmentType;
             param[3] = new SqlParameter("@idinstallment", SqlDbType.Int);
             param[3].Value = IDinstallment;
-
 
             da.excutequery("Updateinstallment", param);
 
@@ -100,7 +104,6 @@ namespace Laboratory.BL
         internal DataTable selectcompoinstallmentType()
         {
             DataTable dt = new DataTable();
-
             DataAccessLayer da = new DataAccessLayer();
             da.open();
             dt = da.selected("selectcompoinstallmentType", null);
