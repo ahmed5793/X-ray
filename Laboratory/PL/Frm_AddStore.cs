@@ -18,7 +18,6 @@ namespace Laboratory.PL
         {
             InitializeComponent();
             dataGridView1.DataSource = store.Select_Store();
-
             Btn_Add.Show();
             btn_update.Enabled = false;
         }
@@ -26,6 +25,7 @@ namespace Laboratory.PL
         {
             txt_name.Clear();
             txt_address.Clear();
+            btn_update.Enabled = false;
             dataGridView1.DataSource = store.Select_Store();
         }
         private void btn_save_Click(object sender, EventArgs e)
@@ -47,11 +47,11 @@ namespace Laboratory.PL
                     txt_name.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                     txt_address.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
                     btn_update.Enabled = true;
+                    Btn_Add.Enabled = false;
                 }
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
                 MessageBox.Show(ex.StackTrace);
             }
@@ -95,13 +95,12 @@ namespace Laboratory.PL
         {
             try
             {
-                Btn_Add.Show();
+                Btn_Add.Enabled=true;
                 btn_update.Enabled = false;
-
+                Clear();
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
         }
@@ -115,26 +114,24 @@ namespace Laboratory.PL
                     MessageBox.Show("يرجى التأكد من إسم المخزن");
                     return;
                 }
-                else if (MessageBox.Show("", "", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                else if (MessageBox.Show("هل تريد تعديل بيانات المخزن", "عملية تعديل ", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
                 {
                     store.Update_Store(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value), txt_name.Text, txt_address.Text);
-
                 }
                 else
                 {
                     MessageBox.Show("لم تم تعديل البيانات بنجاح  ");
-
                 }
                 Clear();
-
                 btn_update.Enabled = false;
+                Btn_Add.Enabled = true;
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
                 MessageBox.Show(ex.StackTrace);
             }
         }
+
     }
 }
