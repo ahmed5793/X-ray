@@ -94,10 +94,12 @@ namespace Laboratory.PL
         {
             if (dataGridView1.Rows.Count>0)
             {
-                textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                txt_name.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                 btn_update.Enabled = true;
                 btn_delete.Enabled = true;
+                Btn_Add.Enabled = false;
+                textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                txt_name.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+
             }
         }
 
@@ -153,17 +155,19 @@ namespace Laboratory.PL
             }
             textBox1.Text = s.Select_LastIdStock().Rows[0][0].ToString();
             txt_name.Clear();
-            Btn_Add.Show();
+          
             btn_update.Enabled = false;
             btn_delete.Enabled = false;
             dataGridView1.DataSource = s.select_Stock();
+            Btn_Add.Enabled = true;
+
 
         }
 
         private void btn_new_Click_1(object sender, EventArgs e)
         {
-
-            Btn_Add.Show();
+            Btn_Add.Enabled = true;
+          
             btn_update.Enabled = false;
             btn_delete.Enabled = false;
             txt_name.Clear();

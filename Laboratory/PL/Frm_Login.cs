@@ -70,17 +70,17 @@ namespace Laboratory.PL
 
                     if (dt.Rows.Count > 0)
                     {
-                        DataTable dt50 = new DataTable();
-                        DataTable dt5 = new DataTable();
+                        //DataTable dt50 = new DataTable();
+                        //DataTable dt5 = new DataTable();
 
                      
-                            dt50.Clear();
-                            dt50 = U.SelectCheckUserName(txt_User.Text);
-                            if (dt50.Rows.Count>0)
-                            {
-                                MessageBox.Show("عفوا هذا الاكونت مفتوح من جهاز اخر يرجي غلق الاكونت ثم اعد فتحه مرة اخرى");
-                                return;
-                            }
+                        //    dt50.Clear();
+                        //    dt50 = U.SelectCheckUserName(txt_User.Text);
+                        //    if (dt50.Rows.Count>0)
+                        //    {
+                        //        MessageBox.Show("عفوا هذا الاكونت مفتوح من جهاز اخر يرجي غلق الاكونت ثم اعد فتحه مرة اخرى");
+                        //        return;
+                        //    }
                       
 
 
@@ -655,26 +655,26 @@ namespace Laboratory.PL
                         Program.salesman = dt.Rows[0][1].ToString();
                         Console.Beep();
                         this.Hide();
-                        dt5 = U.SelectCheckUserNameOffline(txt_User.Text);
-                        if (dt5.Rows.Count > 0)
-                        {
-                            dt50.Clear();
-                            dt50 = U.SelectCheckUserName(txt_User.Text);
-                            if (dt50.Rows.Count == 0)
-                            {
-                                U.UpdateCheckUserName(txt_User.Text, "Online", Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy hh:mm tt")), Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy hh:mm tt")));
+                        //dt5 = U.SelectCheckUserNameOffline(txt_User.Text);
+                        //if (dt5.Rows.Count > 0)
+                        //{
+                        //    dt50.Clear();
+                        //    dt50 = U.SelectCheckUserName(txt_User.Text);
+                        //    if (dt50.Rows.Count == 0)
+                        //    {
+                        //        U.UpdateCheckUserName(txt_User.Text, "Online", Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy hh:mm tt")), Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy hh:mm tt")));
 
-                            }
+                          //}
 
-                        }
+                        //}
 
 
-                        else
-                        {
+                        //else
+                        //{
 
-                            U.AddCheckUserName(txt_User.Text, "Online", Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy hh:mm tt")),
-                             Convert.ToDateTime(DateTime.Now.ToString()));
-                        }
+                        //    U.AddCheckUserName(txt_User.Text, "Online", Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy hh:mm tt")),
+                        //     Convert.ToDateTime(DateTime.Now.ToString()));
+                        //}
                         fm.ShowDialog();
                         Users u = new Users();
                          DataTable dt10 = new DataTable();
