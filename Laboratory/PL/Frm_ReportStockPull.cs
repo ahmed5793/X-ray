@@ -40,14 +40,23 @@ namespace Laboratory.PL
             }
             else
             {
-                cmb_UserBranch.DataSource = b.SelectCompBranches();
-                cmb_UserBranch.DisplayMember = "Name";
-                cmb_UserBranch.ValueMember = "Branch_ID";
+                cmb_UserBranch.DataSource = null;
+                cmb_UserBranch.Enabled = false;
+                //cmb_UserBranch.DataSource = b.SelectCompBranches();
+                //cmb_UserBranch.DisplayMember = "Name";
+                //cmb_UserBranch.ValueMember = "Branch_ID";
 
-                cmb_Stock.DataSource = s.SelectStockBranch(Convert.ToInt32(cmb_UserBranch.SelectedValue));
-                cmb_Stock.DisplayMember = "Name_Stock";
-                cmb_Stock.ValueMember = "ID_Stock";
+                //cmb_Stock.DataSource = s.SelectStockBranch(Convert.ToInt32(cmb_UserBranch.SelectedValue));
+                //cmb_Stock.DisplayMember = "Name_Stock";
+                //cmb_Stock.ValueMember = "ID_Stock";
+                Stock();
             }
+        }
+        void Stock()
+        {
+            cmb_Stock.DataSource = s.Compo_Stock();
+            cmb_Stock.DisplayMember = "Name_Stock";
+            cmb_Stock.ValueMember = "ID_Stock";
         }
         void Calc_AmountPull()
         {
@@ -100,9 +109,7 @@ namespace Laboratory.PL
         }
         private void cmb_UserBranch_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            cmb_Stock.DataSource = s.SelectStockBranch(Convert.ToInt32(cmb_UserBranch.SelectedValue));
-            cmb_Stock.DisplayMember = "Name_Stock";
-            cmb_Stock.ValueMember = "ID_Stock";
+            Permision();
         }
 
         private void cmb_Stock_SelectionChangeCommitted_1(object sender, EventArgs e)

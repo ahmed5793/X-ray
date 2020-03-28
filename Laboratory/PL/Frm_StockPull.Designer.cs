@@ -190,6 +190,8 @@
             this.cmb_Stock.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmb_Stock.Size = new System.Drawing.Size(253, 27);
             this.cmb_Stock.TabIndex = 55;
+            this.cmb_Stock.SelectedIndexChanged += new System.EventHandler(this.cmb_Stock_SelectedIndexChanged);
+            this.cmb_Stock.SelectionChangeCommitted += new System.EventHandler(this.cmb_Stock_SelectionChangeCommitted);
             // 
             // label3
             // 
@@ -230,7 +232,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(380, 435);
+            this.ClientSize = new System.Drawing.Size(380, 434);
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.txt_CurrentBalance);
             this.Controls.Add(this.txt_addbalance);

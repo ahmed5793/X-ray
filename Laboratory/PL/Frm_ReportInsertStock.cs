@@ -41,13 +41,16 @@ namespace Laboratory.PL
             }
             else
             {
-                cmb_UserBranch.DataSource = b.SelectCompBranches();
-                cmb_UserBranch.DisplayMember = "Name";
-                cmb_UserBranch.ValueMember = "Branch_ID";
+                cmb_UserBranch.DataSource = null;
+                cmb_UserBranch.Enabled = false;
+                //cmb_UserBranch.DataSource = b.SelectCompBranches();
+                //cmb_UserBranch.DisplayMember = "Name";
+                //cmb_UserBranch.ValueMember = "Branch_ID";
 
-                cmb_Stock.DataSource = s.SelectStockBranch(Convert.ToInt32(cmb_UserBranch.SelectedValue));
-                cmb_Stock.DisplayMember = "Name_Stock";
-                cmb_Stock.ValueMember = "ID_Stock";
+                //cmb_Stock.DataSource = s.SelectStockBranch(Convert.ToInt32(cmb_UserBranch.SelectedValue));
+                //cmb_Stock.DisplayMember = "Name_Stock";
+                //cmb_Stock.ValueMember = "ID_Stock";
+                Stock();
             }
         }
         void Stock()
@@ -118,14 +121,40 @@ namespace Laboratory.PL
 
         private void cmb_UserBranch_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            cmb_Stock.DataSource = s.SelectStockBranch(Convert.ToInt32(cmb_UserBranch.SelectedValue));
-            cmb_Stock.DisplayMember = "Name_Stock";
-            cmb_Stock.ValueMember = "ID_Stock";
+            dt.Clear();
+            dt = u.SelectUserBranch(txt_username.Text);
+
+            if (dt.Rows.Count > 0)
+            {
+            
+
+                cmb_Stock.DataSource = s.SelectStockBranch(Convert.ToInt32(cmb_UserBranch.SelectedValue));
+                cmb_Stock.DisplayMember = "Name_Stock";
+                cmb_Stock.ValueMember = "ID_Stock";
+            }
+            else
+            {
+                cmb_UserBranch.DataSource = null;
+                cmb_UserBranch.Enabled = false;
+                //cmb_UserBranch.DataSource = b.SelectCompBranches();
+                //cmb_UserBranch.DisplayMember = "Name";
+                //cmb_UserBranch.ValueMember = "Branch_ID";
+
+                //cmb_Stock.DataSource = s.SelectStockBranch(Convert.ToInt32(cmb_UserBranch.SelectedValue));
+                //cmb_Stock.DisplayMember = "Name_Stock";
+                //cmb_Stock.ValueMember = "ID_Stock";
+                Stock();
+            }
         }
 
         private void simpleButton1_Click_1(object sender, EventArgs e)
         {
             gridControlInsert.ShowRibbonPrintPreview();
+        }
+
+        private void Frm_ReportInsertStock_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
