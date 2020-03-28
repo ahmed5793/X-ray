@@ -33,8 +33,6 @@ namespace Laboratory.PL
         {
             txt_addbalance.Clear();
             txt_CurrentBalance.Text = "0";
-            txt_name.Clear();
-            
             txt_reason.Clear();
         }
         private void btn_save_Click(object sender, EventArgs e)
@@ -64,14 +62,13 @@ namespace Laboratory.PL
 
             try
             {
-                if (cmb_Stock.Items.Count >= 1)
+                if (cmb_Stock.Text!="" )
                 {
-
-
-                    if (txt_addbalance.Text == "0")
+                    if (txt_addbalance.Text == "0" || txt_addbalance.Text=="")
                     {
                         MessageBox.Show("لا بد من ان يكون السحب اكبر من الصفر");
                         txt_addbalance.Focus();
+                        return;
                     }
                     if (txt_name.Text == "")
                     {
@@ -100,6 +97,10 @@ namespace Laboratory.PL
 
                     }
                 }
+                else
+                {
+                    MessageBox.Show("لا بد من تحديد الخزنة");
+                }
             }
             catch (Exception ex)
             {
@@ -107,6 +108,19 @@ namespace Laboratory.PL
                 MessageBox.Show(ex.Message);
             }
 
+        }
+
+        private void txt_addbalance_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_addbalance_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (txt_addbalance.Text=="")
+            {
+                txt_addbalance.Text = "0";
+            }
         }
     }
 }

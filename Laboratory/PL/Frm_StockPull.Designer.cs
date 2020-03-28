@@ -52,7 +52,6 @@
             this.txt_CurrentBalance.Multiline = true;
             this.txt_CurrentBalance.Name = "txt_CurrentBalance";
             this.txt_CurrentBalance.ReadOnly = true;
-            this.txt_CurrentBalance.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txt_CurrentBalance.Size = new System.Drawing.Size(195, 31);
             this.txt_CurrentBalance.TabIndex = 69;
             this.txt_CurrentBalance.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -63,12 +62,13 @@
             this.txt_addbalance.Location = new System.Drawing.Point(12, 95);
             this.txt_addbalance.Multiline = true;
             this.txt_addbalance.Name = "txt_addbalance";
-            this.txt_addbalance.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txt_addbalance.Size = new System.Drawing.Size(195, 28);
             this.txt_addbalance.TabIndex = 56;
             this.txt_addbalance.Text = "0";
             this.txt_addbalance.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_addbalance.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_addbalance_KeyPress);
+            this.txt_addbalance.MouseLeave += new System.EventHandler(this.txt_addbalance_MouseLeave);
+            this.txt_addbalance.MouseMove += new System.Windows.Forms.MouseEventHandler(this.txt_addbalance_MouseMove);
             // 
             // label7
             // 
@@ -76,7 +76,7 @@
             this.label7.BackColor = System.Drawing.Color.Yellow;
             this.label7.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(216, 267);
+            this.label7.Location = new System.Drawing.Point(216, 273);
             this.label7.Name = "label7";
             this.label7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label7.Size = new System.Drawing.Size(93, 22);
@@ -89,7 +89,7 @@
             this.label6.BackColor = System.Drawing.Color.Yellow;
             this.label6.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(218, 190);
+            this.label6.Location = new System.Drawing.Point(214, 191);
             this.label6.Name = "label6";
             this.label6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label6.Size = new System.Drawing.Size(91, 22);
@@ -99,11 +99,11 @@
             // txt_reason
             // 
             this.txt_reason.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_reason.Location = new System.Drawing.Point(11, 240);
+            this.txt_reason.Location = new System.Drawing.Point(11, 236);
             this.txt_reason.Multiline = true;
             this.txt_reason.Name = "txt_reason";
             this.txt_reason.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txt_reason.Size = new System.Drawing.Size(195, 73);
+            this.txt_reason.Size = new System.Drawing.Size(195, 106);
             this.txt_reason.TabIndex = 59;
             this.txt_reason.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -125,7 +125,7 @@
             this.label4.BackColor = System.Drawing.Color.Yellow;
             this.label4.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(221, 140);
+            this.label4.Location = new System.Drawing.Point(213, 141);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label4.Size = new System.Drawing.Size(102, 22);
@@ -148,7 +148,7 @@
             this.label2.BackColor = System.Drawing.Color.Yellow;
             this.label2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(221, 99);
+            this.label2.Location = new System.Drawing.Point(220, 101);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label2.Size = new System.Drawing.Size(95, 22);
@@ -171,7 +171,7 @@
             this.label5.BackColor = System.Drawing.Color.Yellow;
             this.label5.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(222, 15);
+            this.label5.Location = new System.Drawing.Point(271, 13);
             this.label5.Name = "label5";
             this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label5.Size = new System.Drawing.Size(80, 22);
@@ -188,7 +188,7 @@
             this.cmb_Stock.Location = new System.Drawing.Point(12, 12);
             this.cmb_Stock.Name = "cmb_Stock";
             this.cmb_Stock.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmb_Stock.Size = new System.Drawing.Size(195, 27);
+            this.cmb_Stock.Size = new System.Drawing.Size(253, 27);
             this.cmb_Stock.TabIndex = 55;
             // 
             // label3
@@ -229,8 +229,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(380, 434);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.ClientSize = new System.Drawing.Size(380, 435);
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.txt_CurrentBalance);
             this.Controls.Add(this.txt_addbalance);

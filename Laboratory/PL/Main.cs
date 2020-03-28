@@ -339,19 +339,19 @@ namespace Laboratory.PL
         private void barButtonItem20_ItemClick(object sender, ItemClickEventArgs e)
         {
             frm_AddStock fas = new frm_AddStock();
-            fas.Show();
+            fas.ShowDialog();
         }
 
         private void barButtonItem21_ItemClick(object sender, ItemClickEventArgs e)
         {
             Frm_StockPull fsp = new Frm_StockPull();
-            fsp.Show();
+            fsp.ShowDialog();
         }
 
         private void barButtonItem22_ItemClick(object sender, ItemClickEventArgs e)
         {
             frm_AddStockMoney fasm = new frm_AddStockMoney();
-            fasm.Show();
+            fasm.ShowDialog();
         }
 
         private void barButtonItem23_ItemClick(object sender, ItemClickEventArgs e)
