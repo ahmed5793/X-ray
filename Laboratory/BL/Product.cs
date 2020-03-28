@@ -222,45 +222,28 @@ namespace Laboratory.BL
         }
         internal DataTable Search_StoreProduct(string id)
         {
-            DataTable dt = new DataTable();
-            try
-            {
-                DataAccessLayer da = new DataAccessLayer();
-
-                da.open();
-                SqlParameter[] param = new SqlParameter[1];
-                param[0] = new SqlParameter("@id", SqlDbType.NVarChar, 100);
-                param[0].Value = id;
-                dt.Clear();
-                dt = da.selected("Search_StoreProduct", param);
-                da.close();
-                return dt;
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-            finally
-            {
-                dt.Dispose();
-            }
+               DataTable dt = new DataTable();
+               DataAccessLayer da = new DataAccessLayer();
+               da.open();
+               SqlParameter[] param = new SqlParameter[1];
+               param[0] = new SqlParameter("@id", SqlDbType.NVarChar, 100);
+               param[0].Value = id;
+               dt.Clear();
+               dt = da.selected("Search_StoreProduct", param);
+               da.close();
+               return dt;
         }
-
-        internal void add_TransFairProduct(int id_transfair, string  Emp_name, DateTime Date,string Note)
-
+        internal void add_TransFairProduct(string  Emp_name, DateTime Date,string Note)
         {
             DataAccessLayer da = new DataAccessLayer();
-            SqlParameter[] param = new SqlParameter[4];
+            SqlParameter[] param = new SqlParameter[3];
             da.open();
-            param[0] = new SqlParameter("@Id_Transfair", SqlDbType.Int);
-            param[0].Value = id_transfair;
-            param[1] = new SqlParameter("@Employee_name", SqlDbType.NVarChar, 100);
-            param[1].Value = Emp_name;
-            param[2] = new SqlParameter("@Date", SqlDbType.DateTime);
-            param[2].Value = Date;
-            param[3] = new SqlParameter("@note", SqlDbType.NVarChar,350);
-            param[3].Value = Note;
+            param[0] = new SqlParameter("@Employee_name", SqlDbType.NVarChar, 100);
+            param[0].Value = Emp_name;
+            param[1] = new SqlParameter("@Date", SqlDbType.DateTime);
+            param[1].Value = Date;
+            param[2] = new SqlParameter("@note", SqlDbType.NVarChar,350);
+            param[2].Value = Note;
             da.excutequery("add_TransFairProduct", param);
             da.close();
         }

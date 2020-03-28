@@ -15,6 +15,8 @@ namespace Laboratory.PL
         Store Store = new Store();
         Product Product = new Product();
         DataTable dt = new DataTable();
+        DataTable dt5 = new DataTable();
+
         public Tranfair_product()
         {
             InitializeComponent();
@@ -26,7 +28,6 @@ namespace Laboratory.PL
             Cmb_ToStore.DisplayMember = "Store_name";
             Cmb_ToStore.ValueMember = "id_store";
             Txt_sales.Text = Program.salesman;
-            txt_num.Text =Product.Select_LastIdTransfair().Rows[0][0].ToString();
 
             SelectdataTable();
             Rezizse();
@@ -120,7 +121,7 @@ namespace Laboratory.PL
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            txt_num.Text = Product.Select_LastIdTransfair().Rows[0][0].ToString();
+            txt_num.Clear();
             Txt_note.Clear();
             dt.Clear();
             Btn_selectProduct.Enabled = true;
@@ -186,7 +187,6 @@ namespace Laboratory.PL
         private void simpleButton2_Click(object sender, EventArgs e)
         {
 
-            DataTable dt5 = new DataTable();
             try
             {
                 if (Cmb_FromStore.Text == string.Empty && Cmb_ToStore.Text == string.Empty)
@@ -201,7 +201,8 @@ namespace Laboratory.PL
                 }
                 else
                 {
-                    Product.add_TransFairProduct(Convert.ToInt32(txt_num.Text), Txt_sales.Text, DateTimePicker1.Value, Txt_note.Text);
+                    Product.add_TransFairProduct(Txt_sales.Text, DateTimePicker1.Value, Txt_note.Text);
+                    txt_num.Text = Product.Select_LastIdTransfair().Rows[0][0].ToString();
                     for (int i = 0; i < DataGridView1.Rows.Count; i++)
                     {
                         Product.Add_TransfairDetails(Convert.ToInt32(txt_num.Text), Convert.ToInt32(Cmb_FromStore.SelectedValue), Cmb_FromStore.Text,
@@ -210,34 +211,39 @@ namespace Laboratory.PL
                         dt5 = Product.Validate_StoreProduct(Convert.ToInt32(DataGridView1.Rows[i].Cells[0].Value), Convert.ToInt32(Cmb_ToStore.SelectedValue));
                         if (dt5.Rows.Count > 0)
                         {
-                            Product.Update_QuantityStoreProduct(Convert.ToInt32(DataGridView1.Rows[i].Cells[0].Value),
-                                Convert.ToDecimal(DataGridView1.Rows[i].Cells[2].Value), Convert.ToInt32(Cmb_ToStore.SelectedValue));
+                           Product.Update_QuantityStoreProduct(Convert.ToInt32(DataGridView1.Rows[i].Cells[0].Value),
+                           Convert.ToDecimal(DataGridView1.Rows[i].Cells[2].Value), Convert.ToInt32(Cmb_ToStore.SelectedValue));
                         }
                         else if (dt5.Rows.Count == 0)
                         {
                             Product.Add_StoreProduct(Convert.ToInt32(DataGridView1.Rows[i].Cells[0].Value), Convert.ToInt32(Cmb_ToStore.SelectedValue),
-                                   Convert.ToDecimal(DataGridView1.Rows[i].Cells[2].Value), Convert.ToInt32(DataGridView1.Rows[i].Cells[3].Value));
+                            Convert.ToDecimal(DataGridView1.Rows[i].Cells[2].Value), Convert.ToInt32(DataGridView1.Rows[i].Cells[3].Value));
                         }
                     }
                     MessageBox.Show("تم إضافة التحويل بنجاح");
-                    Btn_selectProduct.Enabled = false;
-                    Cmb_FromStore.Enabled = false;
-                    Cmb_ToStore.Enabled = false;
-                    DataGridView1.Enabled = false;
-                    Btn_Save.Enabled = false;
-
-
-
+                    txt_num.Clear();
+                    Txt_note.Clear();
+                    dt.Clear();
+                    Btn_selectProduct.Enabled = true;
+                    Cmb_FromStore.Enabled = true;
+                    Cmb_ToStore.Enabled = true;
+                    DataGridView1.Enabled = true;
+                    Btn_Save.Enabled = true;
                 }
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
             }
         }
 
         private void Btn_Print_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }

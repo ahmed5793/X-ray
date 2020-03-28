@@ -286,10 +286,7 @@ namespace Laboratory.PL
 
         private void txt_pay_TextChanged(object sender, EventArgs e)
         {
-            if (txt_pay.Text=="")
-            {
-                txt_pay.Text = "0";
-            }
+          
         }
 
         private void txt_num_TextChanged(object sender, EventArgs e)
@@ -414,6 +411,7 @@ namespace Laboratory.PL
                     Cmb_Suppliers.Enabled = true;
                     dataGridView1.Enabled = true;
                     Btn_SelectProduct.Enabled = true;
+                    txt_num.Clear();
                 }
                 else
                 {
