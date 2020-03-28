@@ -15,10 +15,11 @@ namespace Laboratory.DAL
 
         public DataAccessLayer()
         {
-           
+        
 
-        //   con = new SqlConnection(@"server =.; database=Laboratory_las;integrated security=true");
-          con = new SqlConnection("Data Source=sql5031.site4now.net; database=DB_A54A03_Laboratory;User Id=DB_A54A03_Laboratory_admin;Password=Titonasser1994;");
+
+            //   con = new SqlConnection(@"server =.; database=Laboratory_las;integrated security=true");
+            con = new SqlConnection("Data Source=sql5031.site4now.net; database=DB_A54A03_Laboratory;User Id=DB_A54A03_Laboratory_admin;Password=Titonasser1994;") ;
 
 
         }
@@ -55,9 +56,9 @@ namespace Laboratory.DAL
             }
         }
         SqlCommand cm = new SqlCommand();
+
         internal DataTable selected(string storedProcedure, SqlParameter[] param)
         {
-
             cm.CommandType = CommandType.StoredProcedure;
             cm.CommandText = storedProcedure;
             cm.Connection = con;

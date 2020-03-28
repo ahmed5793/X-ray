@@ -345,7 +345,7 @@
             this.Btn_Delete.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_Delete.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.Btn_Delete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Delete.ImageOptions.Image")));
-            this.Btn_Delete.Location = new System.Drawing.Point(144, 225);
+            this.Btn_Delete.Location = new System.Drawing.Point(144, 229);
             this.Btn_Delete.Name = "Btn_Delete";
             this.Btn_Delete.Size = new System.Drawing.Size(181, 32);
             this.Btn_Delete.TabIndex = 185;

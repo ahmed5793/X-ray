@@ -198,8 +198,7 @@ namespace Laboratory.PL
         {
            
         }
-
-        private void simpleButton1_Click(object sender, EventArgs e)
+        void clear()
         {
             txt_notes.Clear();
             txt_amount.Clear();
@@ -208,6 +207,11 @@ namespace Laboratory.PL
             Btn_Add.Enabled = true;
             cmb_Stock.Enabled = true;
             dateTimePicker1.Value = DateTime.Now;
+            cmb_UserBranch.Enabled = true;
+        }
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            clear();
         }
 
         private void Btn_Add_Click(object sender, EventArgs e)
@@ -252,8 +256,7 @@ namespace Laboratory.PL
                     s.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_amount.Text), dateTimePicker1.Value, txt_username.Text, "مصروفات " + "لل" + comboBox1.Text);
                     MessageBox.Show("تم التسجيل بنجاح", "عمليه التسجيل");
                     dataGridView1.DataSource = m.SelectReserveDetails();
-                    txt_notes.Clear();
-                    txt_amount.Clear();
+                    clear();
                 }
                 else
                 {
@@ -295,8 +298,8 @@ namespace Laboratory.PL
             {
                 if (MessageBox.Show("هل تريد مسح المصروف", "مسح المصروف", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    s.add_insertStock(Convert.ToInt32(textBox1.Text), Convert.ToDecimal(txt_amount.Text), DateTime.Now, txt_username.Text, "مسح مصروف " + " " + comboBox1.Text + " " + "من شاشة المصروفات");
-                    m.DeleteReserveDetails(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
+                    s.add_insertStock(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_amount.Text), DateTime.Now, txt_username.Text, "مسح مصروف " + " " + comboBox1.Text + " " + "من شاشة المصروفات");
+                   m.DeleteReserveDetails(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
                     MessageBox.Show("تم مسح المصروف بنجاح");
                 }
                 else
@@ -304,12 +307,7 @@ namespace Laboratory.PL
                     MessageBox.Show("تم إلغاء مسح المصروف ");
                 }
                 dataGridView1.DataSource = m.SelectReserveDetails();
-                txt_notes.Clear();
-                txt_amount.Clear();
-                textBox1.Clear();
-                Btn_Delete.Enabled = false;
-                Btn_Add.Enabled = true;
-                cmb_Stock.Enabled = true;
+                clear();
 
             }
             catch (Exception ex)
