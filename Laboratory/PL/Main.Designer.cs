@@ -139,6 +139,7 @@
             this.Btn_UserPermession = new DevExpress.XtraBars.BarButtonItem();
             this.barStaticItem8 = new DevExpress.XtraBars.BarStaticItem();
             this.barStaticItem9 = new DevExpress.XtraBars.BarStaticItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.basic_information = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -169,7 +170,6 @@
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.barHeaderItem31 = new DevExpress.XtraBars.BarHeaderItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barAndDockingController1)).BeginInit();
@@ -1199,7 +1199,7 @@
             // 
             // Btn_ReportInsertStock
             // 
-            this.Btn_ReportInsertStock.Caption = "تقرير الارصدة المسحوبة من الخزنة";
+            this.Btn_ReportInsertStock.Caption = "تقرير الارصدة المضافة للخزنة";
             this.Btn_ReportInsertStock.Id = 118;
             this.Btn_ReportInsertStock.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ReportInsertStock.ImageOptions.Image")));
             this.Btn_ReportInsertStock.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("Btn_ReportInsertStock.ImageOptions.LargeImage")));
@@ -1282,6 +1282,15 @@
             this.barStaticItem9.ItemAppearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.barStaticItem9.ItemAppearance.Normal.Options.UseFont = true;
             this.barStaticItem9.Name = "barStaticItem9";
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "حركه الدخول علي البرنامج";
+            this.barButtonItem4.Id = 129;
+            this.barButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
+            this.barButtonItem4.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
+            this.barButtonItem4.Name = "barButtonItem4";
+            this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick_7);
             // 
             // basic_information
             // 
@@ -1580,15 +1589,6 @@
             this.barHeaderItem31.Caption = "barHeaderItem31";
             this.barHeaderItem31.Id = 124;
             this.barHeaderItem31.Name = "barHeaderItem31";
-            // 
-            // barButtonItem4
-            // 
-            this.barButtonItem4.Caption = "حركه الدخول علي البرنامج";
-            this.barButtonItem4.Id = 129;
-            this.barButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
-            this.barButtonItem4.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
-            this.barButtonItem4.Name = "barButtonItem4";
-            this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick_7);
             // 
             // Main
             // 
