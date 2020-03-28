@@ -193,12 +193,10 @@ namespace Laboratory.PL
                 if (MessageBox.Show("هل تريد تعديل بيانات الطبيب", "عمليه التعديل", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
                 {
                     s.Add_StockPull(Convert.ToInt32(cmb_stock.SelectedValue), Convert.ToDecimal(dataGridView1.CurrentRow.Cells[3].Value), dateTimePicker1.Value, txt_username.Text, cmb_instalmenttype.Text + " " + " دفع قسط");
-
-
                     i.Updateinstallment(dateTimePicker1.Value, Convert.ToDecimal(txt_money.Text), Convert.ToInt32(cmb_instalmenttype.SelectedValue), Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
                     s.add_insertStock(Convert.ToInt32(cmb_stock.SelectedValue), Convert.ToDecimal(txt_money.Text), dateTimePicker1.Value, txt_username.Text, cmb_instalmenttype.Text + " " + " دفع قسط");
 
-                    MessageBox.Show("تم التعديل بنجاحو", "عمليه التعديل", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("تم التعديل بنجاح", "عمليه التعديل", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
 
                     dataGridView1.DataSource = i.Selectinstallment();
