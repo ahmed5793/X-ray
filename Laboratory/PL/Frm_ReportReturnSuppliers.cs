@@ -40,7 +40,7 @@ namespace Laboratory.PL
                 for (int i = 0; i < gridView1.DataRowCount; i++)
                 {
                     DataRow row = gridView1.GetDataRow(i);
-                    total += Convert.ToDecimal(row[3].ToString());
+                    total += Convert.ToDecimal(row[5].ToString());
 
                 }
                 txt_totalpay.Text = total.ToString("₱ #,##0.0");
