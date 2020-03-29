@@ -51,6 +51,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new DevExpress.XtraEditors.SimpleButton();
             this.Cmb_Bransh = new System.Windows.Forms.ComboBox();
             this.Cmb_Stock = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -68,7 +69,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.button1 = new DevExpress.XtraEditors.SimpleButton();
             this.View_OldReturn = new DevExpress.XtraEditors.SimpleButton();
             this.Btn_AddReturn = new DevExpress.XtraEditors.SimpleButton();
             this.Btn_SaveReturn = new DevExpress.XtraEditors.SimpleButton();
@@ -412,6 +412,27 @@
             this.textBox1.TabIndex = 191;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button1.Appearance.BackColor = System.Drawing.Color.Black;
+            this.button1.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Appearance.ForeColor = System.Drawing.Color.White;
+            this.button1.Appearance.Options.UseBackColor = true;
+            this.button1.Appearance.Options.UseFont = true;
+            this.button1.Appearance.Options.UseForeColor = true;
+            this.button1.Appearance.Options.UseTextOptions = true;
+            this.button1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.button1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.button1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.button1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("button1.ImageOptions.Image")));
+            this.button1.Location = new System.Drawing.Point(405, 80);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(173, 38);
+            this.button1.TabIndex = 199;
+            this.button1.Text = "بحث بأسم المورد ";
+            this.button1.Click += new System.EventHandler(this.btn_save_Click_1);
+            // 
             // Cmb_Bransh
             // 
             this.Cmb_Bransh.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
@@ -667,30 +688,9 @@
             this.dataGridView2.Size = new System.Drawing.Size(985, 115);
             this.dataGridView2.TabIndex = 199;
             // 
-            // button1
-            // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button1.Appearance.BackColor = System.Drawing.Color.Black;
-            this.button1.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Appearance.ForeColor = System.Drawing.Color.White;
-            this.button1.Appearance.Options.UseBackColor = true;
-            this.button1.Appearance.Options.UseFont = true;
-            this.button1.Appearance.Options.UseForeColor = true;
-            this.button1.Appearance.Options.UseTextOptions = true;
-            this.button1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.button1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.button1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.button1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_save.ImageOptions.Image")));
-            this.button1.Location = new System.Drawing.Point(405, 80);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(173, 38);
-            this.button1.TabIndex = 199;
-            this.button1.Text = "بحث بأسم المورد ";
-            this.button1.Click += new System.EventHandler(this.btn_save_Click_1);
-            // 
             // View_OldReturn
             // 
-            this.View_OldReturn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.View_OldReturn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.View_OldReturn.Appearance.BackColor = System.Drawing.Color.Black;
             this.View_OldReturn.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.View_OldReturn.Appearance.ForeColor = System.Drawing.Color.White;
@@ -701,17 +701,17 @@
             this.View_OldReturn.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.View_OldReturn.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.View_OldReturn.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.View_OldReturn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.View_OldReturn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("View_OldReturn.ImageOptions.Image")));
             this.View_OldReturn.Location = new System.Drawing.Point(550, 353);
             this.View_OldReturn.Name = "View_OldReturn";
-            this.View_OldReturn.Size = new System.Drawing.Size(206, 38);
+            this.View_OldReturn.Size = new System.Drawing.Size(262, 38);
             this.View_OldReturn.TabIndex = 200;
-            this.View_OldReturn.Text = "عرض المرتجع السابق";
+            this.View_OldReturn.Text = "عرض المرتجع السابق لهذة الفاتورة";
             this.View_OldReturn.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // Btn_AddReturn
             // 
-            this.Btn_AddReturn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.Btn_AddReturn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Btn_AddReturn.Appearance.BackColor = System.Drawing.Color.Black;
             this.Btn_AddReturn.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_AddReturn.Appearance.ForeColor = System.Drawing.Color.White;
@@ -722,7 +722,7 @@
             this.Btn_AddReturn.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Btn_AddReturn.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_AddReturn.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.Btn_AddReturn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.Btn_AddReturn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_AddReturn.ImageOptions.Image")));
             this.Btn_AddReturn.Location = new System.Drawing.Point(237, 353);
             this.Btn_AddReturn.Name = "Btn_AddReturn";
             this.Btn_AddReturn.Size = new System.Drawing.Size(173, 38);
@@ -743,10 +743,10 @@
             this.Btn_SaveReturn.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Btn_SaveReturn.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_SaveReturn.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.Btn_SaveReturn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image1")));
-            this.Btn_SaveReturn.Location = new System.Drawing.Point(412, 569);
+            this.Btn_SaveReturn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_SaveReturn.ImageOptions.Image")));
+            this.Btn_SaveReturn.Location = new System.Drawing.Point(412, 575);
             this.Btn_SaveReturn.Name = "Btn_SaveReturn";
-            this.Btn_SaveReturn.Size = new System.Drawing.Size(173, 38);
+            this.Btn_SaveReturn.Size = new System.Drawing.Size(173, 35);
             this.Btn_SaveReturn.TabIndex = 202;
             this.Btn_SaveReturn.Text = "حفظ المرتجعات";
             this.Btn_SaveReturn.Click += new System.EventHandler(this.simpleButton1_Click_1);
@@ -756,7 +756,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(1000, 611);
+            this.ClientSize = new System.Drawing.Size(1000, 612);
             this.Controls.Add(this.Btn_SaveReturn);
             this.Controls.Add(this.Btn_AddReturn);
             this.Controls.Add(this.View_OldReturn);
@@ -764,13 +764,10 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
-            this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1016, 650);
-            this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1016, 650);
             this.Name = "Frm_ReturnSupplier";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "مرتجع مشتريات";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

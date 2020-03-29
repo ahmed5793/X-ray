@@ -59,7 +59,7 @@
             this.label7.BackColor = System.Drawing.Color.Cornsilk;
             this.label7.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(680, 70);
+            this.label7.Location = new System.Drawing.Point(683, 73);
             this.label7.Name = "label7";
             this.label7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label7.Size = new System.Drawing.Size(106, 29);
@@ -74,20 +74,21 @@
             this.cmb_Store.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Store.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_Store.FormattingEnabled = true;
-            this.cmb_Store.Location = new System.Drawing.Point(479, 66);
+            this.cmb_Store.Location = new System.Drawing.Point(420, 68);
             this.cmb_Store.Name = "cmb_Store";
             this.cmb_Store.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmb_Store.Size = new System.Drawing.Size(195, 37);
+            this.cmb_Store.Size = new System.Drawing.Size(257, 37);
             this.cmb_Store.TabIndex = 42;
+            this.cmb_Store.SelectionChangeCommitted += new System.EventHandler(this.cmb_Store_SelectionChangeCommitted);
             // 
             // txt_sales
             // 
             this.txt_sales.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_sales.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_sales.Location = new System.Drawing.Point(487, 23);
+            this.txt_sales.Location = new System.Drawing.Point(420, 20);
             this.txt_sales.Name = "txt_sales";
             this.txt_sales.ReadOnly = true;
-            this.txt_sales.Size = new System.Drawing.Size(185, 32);
+            this.txt_sales.Size = new System.Drawing.Size(257, 32);
             this.txt_sales.TabIndex = 34;
             this.txt_sales.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -97,7 +98,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(678, 27);
+            this.label4.Location = new System.Drawing.Point(683, 25);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(106, 24);
             this.label4.TabIndex = 33;
@@ -108,7 +109,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(260, 99);
+            this.label3.Location = new System.Drawing.Point(245, 98);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(71, 24);
             this.label3.TabIndex = 32;
@@ -120,7 +121,7 @@
             this.txt_note.Location = new System.Drawing.Point(10, 55);
             this.txt_note.Multiline = true;
             this.txt_note.Name = "txt_note";
-            this.txt_note.Size = new System.Drawing.Size(244, 123);
+            this.txt_note.Size = new System.Drawing.Size(218, 123);
             this.txt_note.TabIndex = 31;
             this.txt_note.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -220,9 +221,9 @@
             this.Btn_SelectProduct.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_SelectProduct.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.Btn_SelectProduct.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_SelectProduct.ImageOptions.Image")));
-            this.Btn_SelectProduct.Location = new System.Drawing.Point(431, 143);
+            this.Btn_SelectProduct.Location = new System.Drawing.Point(342, 139);
             this.Btn_SelectProduct.Name = "Btn_SelectProduct";
-            this.Btn_SelectProduct.Size = new System.Drawing.Size(160, 35);
+            this.Btn_SelectProduct.Size = new System.Drawing.Size(160, 54);
             this.Btn_SelectProduct.TabIndex = 115;
             this.Btn_SelectProduct.Text = "إختيار صنف";
             this.Btn_SelectProduct.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -231,11 +232,11 @@
             // 
             this.txt_num.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txt_num.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_num.Location = new System.Drawing.Point(369, 21);
+            this.txt_num.Location = new System.Drawing.Point(566, 161);
             this.txt_num.Multiline = true;
             this.txt_num.Name = "txt_num";
             this.txt_num.ReadOnly = true;
-            this.txt_num.Size = new System.Drawing.Size(99, 30);
+            this.txt_num.Size = new System.Drawing.Size(99, 14);
             this.txt_num.TabIndex = 85;
             this.txt_num.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -261,7 +262,7 @@
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.simpleButton1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.simpleButton1.Appearance.BackColor = System.Drawing.Color.Black;
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton1.Appearance.ForeColor = System.Drawing.Color.White;
@@ -282,7 +283,7 @@
             // 
             // simpleButton2
             // 
-            this.simpleButton2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.simpleButton2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.simpleButton2.Appearance.BackColor = System.Drawing.Color.Black;
             this.simpleButton2.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton2.Appearance.ForeColor = System.Drawing.Color.White;
@@ -305,7 +306,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.simpleButton1);
@@ -314,6 +315,7 @@
             this.Name = "Frm_Order";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "شاشة إستهلاك أصناف";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

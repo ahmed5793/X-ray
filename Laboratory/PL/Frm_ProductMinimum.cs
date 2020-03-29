@@ -11,40 +11,39 @@ using Laboratory.BL;
 
 namespace Laboratory.PL
 {
-    public partial class Frm_ReportSelectOrder : Form
+    public partial class Frm_ProductMinimum : Form
     {
-        Orders o = new Orders();
-        Users u = new Users();
-        Store s = new Store();
         Branches b = new Branches();
+        Product p = new Product();
+        Store s = new Store();
         DataTable dt = new DataTable();
-      
-        public Frm_ReportSelectOrder()
+        Users U = new Users();
+        public Frm_ProductMinimum()
         {
             InitializeComponent();
-            txt_UserName.Text = Program.salesman;
+            Txt_SalesMAn.Text = Program.salesman;
             PermisionStore();
         }
         void PermisionStore()
         {
 
             dt.Clear();
-            dt = u.SelectUserBranch(txt_UserName.Text);
+            dt = U.SelectUserBranch(Txt_SalesMAn.Text);
 
             if (dt.Rows.Count > 0)
             {
-                cmb_Branch.DataSource = u.SelectUserBranch(txt_UserName.Text);
-                cmb_Branch.DisplayMember = "Name";
-                cmb_Branch.ValueMember = "Branch_ID";
+                Cmb_Branch.DataSource = U.SelectUserBranch(Txt_SalesMAn.Text);
+                Cmb_Branch.DisplayMember = "Name";
+                Cmb_Branch.ValueMember = "Branch_ID";
 
-                cmb_Store.DataSource = s.SelectStoreBranch(Convert.ToInt32(cmb_Branch.SelectedValue));
+                cmb_Store.DataSource = s.SelectStoreBranch(Convert.ToInt32(Cmb_Branch.SelectedValue));
                 cmb_Store.DisplayMember = "Store_name";
                 cmb_Store.ValueMember = "id_store";
             }
             else
             {
-                cmb_Branch.DataSource = null;
-                cmb_Branch.Enabled = false;
+                Cmb_Branch.DataSource = null;
+                Cmb_Branch.Enabled = false;
                 //cmb_UserBranch.DataSource = b.SelectCompBranches();
                 //cmb_UserBranch.DisplayMember = "Name";
                 //cmb_UserBranch.ValueMember = "Branch_ID";
@@ -61,36 +60,26 @@ namespace Laboratory.PL
             cmb_Store.DisplayMember = "Store_name";
             cmb_Store.ValueMember = "id_store";
         }
-
-        private void btn_search_Click(object sender, EventArgs e)
+        private void Frm_ProductMinimum_Load(object sender, EventArgs e)
         {
-
+        }
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
             try
             {
-
-                dt.Clear();
-                dt = o.ReportSelectOrder(Convert.ToInt32(cmb_Store.SelectedValue), DateFrom.Value, DateTo.Value);
-                gridControl1.DataSource = dt;
-               
+                if (cmb_Store.Text!= "")
+                {
+                    gridControl1.DataSource = p.Select_MinimumProductFromStore(Convert.ToInt32(cmb_Store.SelectedValue));
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            
+                MessageBox.Show(ex.StackTrace);
             }
         }
 
-        private void cmb_Branch_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            PermisionStore();
-        }
-
-        private void Frm_ReportSelectOrder_Load(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void simpleButton1_Click(object sender, EventArgs e)
+        private void Btn_Print_Click(object sender, EventArgs e)
         {
             gridControl1.ShowRibbonPrintPreview();
         }
