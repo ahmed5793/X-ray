@@ -238,6 +238,7 @@
             // 
             // Btn_Print
             // 
+            this.Btn_Print.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.Btn_Print.Appearance.BackColor = System.Drawing.Color.Black;
             this.Btn_Print.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_Print.Appearance.ForeColor = System.Drawing.Color.White;
@@ -298,6 +299,7 @@
             this.Name = "Frm_AllPAyCompsny";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "كشف حساب الشركة";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Frm_AllPAyCompsny_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
