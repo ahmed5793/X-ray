@@ -39,7 +39,7 @@ namespace Laboratory.PL
             Cmb_Suppliers.DataSource = Suppliers.CompoBoxSuppliers();
             Cmb_Suppliers.DisplayMember = "Name";
             Cmb_Suppliers.ValueMember = "Sup_id";
-            txt_num.Text = Suppliers.LastSuppliersDetalis().Rows[0][0].ToString();
+            //txt_num.Text = Suppliers.LastSuppliersDetalis().Rows[0][0].ToString();
 
             txt_sales.Text = Program.salesman;
             DataTablee();
@@ -148,6 +148,11 @@ namespace Laboratory.PL
             {
                 if (dataGridView1.Rows.Count > 0)
                 {
+                    for (int i = 0; i < dataGridView1.Columns.Count; i++)
+                    {
+                        dataGridView1.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
+
+                    }
 
 
                     if (e.ColumnIndex == 3)
@@ -242,6 +247,7 @@ namespace Laboratory.PL
 
         private void txt_mark_KeyUp(object sender, KeyEventArgs e)
         {
+           
             Pay();
         }
 
@@ -281,12 +287,16 @@ namespace Laboratory.PL
             if (txt_pay.Text=="")
             {
                 txt_pay.Text = "0";
+                Pay();
             }
         }
 
         private void txt_pay_TextChanged(object sender, EventArgs e)
         {
-          
+            if (txt_pay.Text==".")
+            {
+                txt_pay.Text = "";
+            }
         }
 
         private void txt_num_TextChanged(object sender, EventArgs e)
@@ -345,6 +355,11 @@ namespace Laboratory.PL
                     if (cmb_Stock.Text == "")
                     {
                         MessageBox.Show("لا بد من تحديد خزنة");
+                        return;
+                    }
+                    if (Cmb_Store.Text == "")
+                    {
+                        MessageBox.Show("لا بد من تحديد مخزن");
                         return;
                     }
                     dt4.Clear();
@@ -431,6 +446,7 @@ namespace Laboratory.PL
             if (txt_pay.Text=="")
             {
                 txt_pay.Text = "0";
+                Pay();
             }
         }
     }
