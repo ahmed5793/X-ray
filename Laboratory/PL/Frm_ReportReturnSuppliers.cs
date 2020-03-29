@@ -16,5 +16,13 @@ namespace Laboratory.PL
         {
             InitializeComponent();
         }
+
+        private void Btn_Print_Click(object sender, EventArgs e)
+        {
+            if (gridView1.RowCount>0)
+            {
+                gridControl1.ShowRibbonPrintPreview();
+            }
+        }
     }
 }
