@@ -16,7 +16,7 @@ namespace Laboratory.PL
         public Frm_ReportPurshasesInvoice()
         {
             InitializeComponent();
-            dataGridView1.DataSource = Suppliers.Report_PurshasesInvoice();
+            //gridControl1.DataSource = Suppliers.Report_PurshasesInvoice();
         }
 
         private void btn_search_Click(object sender, EventArgs e)
@@ -30,7 +30,15 @@ namespace Laboratory.PL
             try
             {
                 dt = Suppliers.SearchReport_PurshasesInvoice(DateFrom.Value, DateTo.Value);
-                dataGridView1.DataSource = dt;
+                gridControl1.DataSource = dt;
+                decimal total = 0;
+                for (int i = 0; i < gridView1.DataRowCount; i++)
+                {
+                    DataRow row = gridView1.GetDataRow(i);
+                    total += Convert.ToDecimal(row[3].ToString());
+
+                }
+                txt_totalpay.Text = total.ToString("₱ #,##0.0");
             }
             catch (Exception ex)
             {
@@ -40,6 +48,19 @@ namespace Laboratory.PL
             finally
             {
                 dt.Dispose();
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Btn_Print_Click(object sender, EventArgs e)
+        {
+            if (gridView1.RowCount>0)
+            {
+                gridControl1.ShowRibbonPrintPreview();
             }
         }
     }

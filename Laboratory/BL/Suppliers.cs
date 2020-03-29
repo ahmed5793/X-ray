@@ -459,5 +459,20 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
+
+        internal DataTable ReportReurnSuppliers(DateTime Date_From, DateTime Date_To)
+        {
+            DataTable dt = new DataTable();
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[2];
+            param[0] = new SqlParameter("@Date_From", SqlDbType.Date);
+            param[0].Value = Date_From;
+            param[1] = new SqlParameter("@Date_To", SqlDbType.Date);
+            param[1].Value = Date_To;
+            dt = da.selected("ReportReurnSuppliers", param);
+            da.close();
+            return dt;
+        }
     }
 }
