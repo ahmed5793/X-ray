@@ -418,9 +418,9 @@ namespace Laboratory.BL
             DataAccessLayer da = new DataAccessLayer();
             da.open();
             SqlParameter[] param = new SqlParameter[2];
-            param[0] = new SqlParameter("@Id_Sup", SqlDbType.Int);
+            param[0] = new SqlParameter("@Date_From", SqlDbType.Date);
             param[0].Value = Date_From;
-            param[1] = new SqlParameter("@Id_Sup", SqlDbType.Int);
+            param[1] = new SqlParameter("@Date_To", SqlDbType.Date);
             param[1].Value = Date_To;
             dt = da.selected("SearchReport_PurshasesInvoice", param);
             da.close();
