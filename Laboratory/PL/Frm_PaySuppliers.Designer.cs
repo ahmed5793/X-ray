@@ -60,7 +60,7 @@
             this.label7.BackColor = System.Drawing.Color.White;
             this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(242, 82);
+            this.label7.Location = new System.Drawing.Point(246, 54);
             this.label7.Name = "label7";
             this.label7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label7.Size = new System.Drawing.Size(68, 19);
@@ -75,10 +75,10 @@
             this.cmb_Stock.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Stock.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_Stock.FormattingEnabled = true;
-            this.cmb_Stock.Location = new System.Drawing.Point(12, 79);
+            this.cmb_Stock.Location = new System.Drawing.Point(6, 51);
             this.cmb_Stock.Name = "cmb_Stock";
             this.cmb_Stock.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmb_Stock.Size = new System.Drawing.Size(222, 27);
+            this.cmb_Stock.Size = new System.Drawing.Size(234, 27);
             this.cmb_Stock.TabIndex = 46;
             // 
             // comboBox1
@@ -89,7 +89,7 @@
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(500, 32);
+            this.comboBox1.Location = new System.Drawing.Point(529, 51);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.comboBox1.Size = new System.Drawing.Size(244, 32);
@@ -97,13 +97,12 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.simpleButton1);
             this.groupBox2.Controls.Add(this.txt_prise);
             this.groupBox2.Controls.Add(this.rdbPartPay);
             this.groupBox2.Controls.Add(this.RdbAllPay);
             this.groupBox2.Location = new System.Drawing.Point(55, 277);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(726, 79);
+            this.groupBox2.Size = new System.Drawing.Size(726, 67);
             this.groupBox2.TabIndex = 73;
             this.groupBox2.TabStop = false;
             // 
@@ -121,7 +120,7 @@
             this.simpleButton1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.simpleButton1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(32, 21);
+            this.simpleButton1.Location = new System.Drawing.Point(359, 370);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(179, 37);
             this.simpleButton1.TabIndex = 169;
@@ -131,7 +130,7 @@
             // txt_prise
             // 
             this.txt_prise.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_prise.Location = new System.Drawing.Point(248, 28);
+            this.txt_prise.Location = new System.Drawing.Point(169, 21);
             this.txt_prise.MaxLength = 8;
             this.txt_prise.Name = "txt_prise";
             this.txt_prise.Size = new System.Drawing.Size(116, 27);
@@ -147,7 +146,7 @@
             this.rdbPartPay.BackColor = System.Drawing.Color.Black;
             this.rdbPartPay.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbPartPay.ForeColor = System.Drawing.Color.White;
-            this.rdbPartPay.Location = new System.Drawing.Point(370, 29);
+            this.rdbPartPay.Location = new System.Drawing.Point(291, 22);
             this.rdbPartPay.Name = "rdbPartPay";
             this.rdbPartPay.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.rdbPartPay.Size = new System.Drawing.Size(122, 26);
@@ -162,7 +161,7 @@
             this.RdbAllPay.Checked = true;
             this.RdbAllPay.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RdbAllPay.ForeColor = System.Drawing.Color.White;
-            this.RdbAllPay.Location = new System.Drawing.Point(550, 29);
+            this.RdbAllPay.Location = new System.Drawing.Point(499, 23);
             this.RdbAllPay.Name = "RdbAllPay";
             this.RdbAllPay.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RdbAllPay.Size = new System.Drawing.Size(149, 26);
@@ -176,7 +175,7 @@
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(6, 12);
+            this.dateTimePicker1.Location = new System.Drawing.Point(543, 14);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(228, 26);
             this.dateTimePicker1.TabIndex = 76;
@@ -206,13 +205,13 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Silver;
             this.dataGridView1.GridColor = System.Drawing.Color.DimGray;
-            this.dataGridView1.Location = new System.Drawing.Point(10, 157);
+            this.dataGridView1.Location = new System.Drawing.Point(10, 137);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(827, 114);
+            this.dataGridView1.Size = new System.Drawing.Size(854, 134);
             this.dataGridView1.TabIndex = 74;
             // 
             // groupBox1
@@ -230,7 +229,7 @@
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Location = new System.Drawing.Point(10, 37);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(827, 114);
+            this.groupBox1.Size = new System.Drawing.Size(854, 94);
             this.groupBox1.TabIndex = 71;
             this.groupBox1.TabStop = false;
             // 
@@ -248,7 +247,7 @@
             this.Btn_Save.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_Save.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.Btn_Save.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Save.ImageOptions.Image")));
-            this.Btn_Save.Location = new System.Drawing.Point(377, 192);
+            this.Btn_Save.Location = new System.Drawing.Point(391, 172);
             this.Btn_Save.Name = "Btn_Save";
             this.Btn_Save.Size = new System.Drawing.Size(179, 37);
             this.Btn_Save.TabIndex = 169;
@@ -268,7 +267,7 @@
             this.simpleButton2.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.simpleButton2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(378, 32);
+            this.simpleButton2.Location = new System.Drawing.Point(391, 51);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(105, 32);
             this.simpleButton2.TabIndex = 168;
@@ -289,7 +288,7 @@
             this.Btn_SelectProduct.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_SelectProduct.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.Btn_SelectProduct.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_SelectProduct.ImageOptions.Image")));
-            this.Btn_SelectProduct.Location = new System.Drawing.Point(271, -115);
+            this.Btn_SelectProduct.Location = new System.Drawing.Point(285, -115);
             this.Btn_SelectProduct.Name = "Btn_SelectProduct";
             this.Btn_SelectProduct.Size = new System.Drawing.Size(158, 32);
             this.Btn_SelectProduct.TabIndex = 168;
@@ -302,7 +301,7 @@
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(750, 39);
+            this.label5.Location = new System.Drawing.Point(778, 58);
             this.label5.Name = "label5";
             this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label5.Size = new System.Drawing.Size(67, 19);
@@ -312,7 +311,7 @@
             // Txt_sales
             // 
             this.Txt_sales.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_sales.Location = new System.Drawing.Point(6, 45);
+            this.Txt_sales.Location = new System.Drawing.Point(12, 14);
             this.Txt_sales.Name = "Txt_sales";
             this.Txt_sales.ReadOnly = true;
             this.Txt_sales.Size = new System.Drawing.Size(228, 26);
@@ -324,7 +323,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(240, 18);
+            this.label3.Location = new System.Drawing.Point(777, 20);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 19);
             this.label3.TabIndex = 75;
@@ -335,7 +334,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(240, 48);
+            this.label4.Location = new System.Drawing.Point(246, 17);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(81, 19);
             this.label4.TabIndex = 57;
@@ -346,13 +345,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(844, 364);
+            this.ClientSize = new System.Drawing.Size(871, 431);
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(860, 402);
+            this.MaximumSize = new System.Drawing.Size(887, 469);
             this.MinimumSize = new System.Drawing.Size(860, 402);
             this.Name = "Frm_PaySuppliers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -14,13 +14,12 @@ namespace Laboratory.PL
     {
         Suppliers S = new Suppliers();
         DataTable dt2 = new DataTable();
-
         public Frm_Suppliers()
         {
             InitializeComponent();
             dataGridView1.DataSource = S.SelectSuppliers();
             dataGridView1.Columns[0].Visible = false;
-            
+            Btn_Update.Enabled = false;            
         }
         void Clear()
         {
@@ -29,20 +28,14 @@ namespace Laboratory.PL
             txt_address.Text = "";
         }
         private void Btn_save_Click(object sender, EventArgs e)
-        {
-            
+        {            
         }
-
         private void btn_update_Click(object sender, EventArgs e)
         {
-          
         }
-
         private void btn_new_Click(object sender, EventArgs e)
-        {
-       
+        {       
         }
-
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
             try
@@ -53,35 +46,32 @@ namespace Laboratory.PL
                     txt_address.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
                     txt_phone.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
                     Btn_Update.Enabled = true;
+                    Btn_Add.Enabled = false;
                 }
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
             }
         }
 
         private void txt_phone_KeyPress(object sender, KeyPressEventArgs e)
         {
-
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
             {
-
                 e.Handled = true;
             }
         }
-
         private void txt_search_TextChanged(object sender, EventArgs e)
         {
             dataGridView1.DataSource = S.SearchSuppliers(txt_search.Text);
-
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-
             Btn_Update.Enabled = false;
+            Btn_Add.Enabled = true;
             Clear();
         }
 
@@ -116,8 +106,6 @@ namespace Laboratory.PL
         {
             try
             {
-
-
                 if (Txt_name.Text == "")
                 {
                     MessageBox.Show("يرجي التاكد من اسم المورد");
@@ -125,16 +113,16 @@ namespace Laboratory.PL
                 }
                 else if (MessageBox.Show("هل تريد تعديل بيانات المورد", "عمليه التعديل", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
                 {
-
                     S.UpdateSuppliers(Txt_name.Text, txt_address.Text, txt_phone.Text, int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString()));
-                    MessageBox.Show("تم تعديل بيانات العميل بنجاح", "عمليه التعديل", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                    dataGridView1.DataSource = S.SelectSuppliers();
-                    Clear();
-              
-                    Btn_Update.Enabled = false;
+                    MessageBox.Show("تم تعديل بيانات العميل بنجاح", "عمليه التعديل", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); 
                 }
-
+                else
+                {
+                    MessageBox.Show("تم إلغاء التعديل");
+                }
+                dataGridView1.DataSource = S.SelectSuppliers();
+                Clear();
+                Btn_Update.Enabled = false;
             }
             catch (Exception ex)
             {

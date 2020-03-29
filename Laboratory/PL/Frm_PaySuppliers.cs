@@ -35,11 +35,7 @@ namespace Laboratory.PL
             Txt_sales.Text = Program.salesman;
 
             txt_prise.Enabled = false;
-            comboBox1.Enabled = false;
-            //rdbPartPay.Hide();
-            //RdbAllPay.Hide();
-            //btnPay.Hide();
-            //txt_prise.Hide();
+        
         }
 
         private void btn_search_Click(object sender, EventArgs e)
@@ -172,26 +168,30 @@ namespace Laboratory.PL
                                 txt_prise.Focus();
                                 return;
                             }
-                            Suppliers.AddPaySuppliers(
-                                Convert.ToInt32(comboBox1.SelectedValue), Convert.ToDecimal(txt_prise.Text)
-                               , dateTimePicker1.Value, Convert.ToInt32(cmb_Stock.SelectedValue), Txt_sales.Text);
                             if (Convert.ToDecimal(txt_prise.Text) > 0)
                             {
+                                Suppliers.AddPaySuppliers(
+                                    Convert.ToInt32(comboBox1.SelectedValue), Convert.ToDecimal(txt_prise.Text)
+                                   , dateTimePicker1.Value, Convert.ToInt32(cmb_Stock.SelectedValue), Txt_sales.Text);
+
                                 Stock.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_prise.Text),
                                                    dateTimePicker1.Value, Txt_sales.Text, comboBox1.Text + " " + "مدفوعات مورد");
+
+                                dt5.Clear();
+                                dt5 = Suppliers.Select_SupplierTotalMoney(Convert.ToInt32(comboBox1.SelectedValue));
+                                decimal mno = Convert.ToDecimal(dt5.Rows[0][0]) - Convert.ToDecimal(txt_prise.Text);
+
+                                Suppliers.Update_SupplierTotalMoney(Convert.ToInt32(comboBox1.SelectedValue), mno);
+                                Suppliers.Add_SupplierStatmentACCount(Convert.ToInt32(comboBox1.SelectedValue), 0
+                                    , Convert.ToDecimal(txt_prise.Text), mno, "مدفوعات مورد", dateTimePicker1.Value);
+
+                                dataGridView1.DataSource = Suppliers.SelectOneSuppliersMony(Convert.ToInt32(comboBox1.SelectedValue));
+                                txt_prise.Text = "0";
+                                MessageBox.Show("تم دفع المبلغ بنجاح");
                             }
 
-                            dt5.Clear();
-                            dt5 = Suppliers.Select_SupplierTotalMoney(Convert.ToInt32(comboBox1.SelectedValue));
-                            decimal mno = Convert.ToDecimal(dt5.Rows[0][0]) - Convert.ToDecimal(txt_prise.Text);
 
-                            Suppliers.Update_SupplierTotalMoney(Convert.ToInt32(comboBox1.SelectedValue), mno);
-                            Suppliers.Add_SupplierStatmentACCount(Convert.ToInt32(comboBox1.SelectedValue), 0
-                                , Convert.ToDecimal(txt_prise.Text), mno, "مدفوعات مورد", dateTimePicker1.Value);
 
-                            dataGridView1.DataSource = Suppliers.SelectOneSuppliersMony(Convert.ToInt32(comboBox1.SelectedValue));
-                            txt_prise.Text = "0";
-                            MessageBox.Show("تم دفع المبلغ بنجاح");
                         }
                         else
                         {

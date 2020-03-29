@@ -117,9 +117,9 @@
             this.groupBox1.Controls.Add(this.txt_address);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(2, 1);
+            this.groupBox1.Location = new System.Drawing.Point(4, -7);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(695, 142);
+            this.groupBox1.Size = new System.Drawing.Size(695, 155);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             // 
@@ -127,10 +127,10 @@
             // 
             this.Txt_name.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Txt_name.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_name.Location = new System.Drawing.Point(365, 36);
+            this.Txt_name.Location = new System.Drawing.Point(153, 22);
             this.Txt_name.Name = "Txt_name";
             this.Txt_name.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Txt_name.Size = new System.Drawing.Size(229, 32);
+            this.Txt_name.Size = new System.Drawing.Size(330, 32);
             this.Txt_name.TabIndex = 0;
             this.Txt_name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -138,11 +138,11 @@
             // 
             this.txt_phone.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txt_phone.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_phone.Location = new System.Drawing.Point(20, 33);
+            this.txt_phone.Location = new System.Drawing.Point(153, 66);
             this.txt_phone.MaxLength = 11;
             this.txt_phone.Name = "txt_phone";
             this.txt_phone.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txt_phone.Size = new System.Drawing.Size(228, 32);
+            this.txt_phone.Size = new System.Drawing.Size(330, 32);
             this.txt_phone.TabIndex = 2;
             this.txt_phone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_phone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_phone_KeyPress);
@@ -154,7 +154,7 @@
             this.Label5.BackColor = System.Drawing.Color.White;
             this.Label5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label5.ForeColor = System.Drawing.Color.Black;
-            this.Label5.Location = new System.Drawing.Point(600, 39);
+            this.Label5.Location = new System.Drawing.Point(489, 27);
             this.Label5.Name = "Label5";
             this.Label5.Size = new System.Drawing.Size(86, 24);
             this.Label5.TabIndex = 17;
@@ -167,7 +167,7 @@
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(254, 39);
+            this.label3.Location = new System.Drawing.Point(489, 70);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(99, 24);
             this.label3.TabIndex = 16;
@@ -177,10 +177,10 @@
             // 
             this.txt_address.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txt_address.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_address.Location = new System.Drawing.Point(111, 92);
+            this.txt_address.Location = new System.Drawing.Point(153, 110);
             this.txt_address.Name = "txt_address";
             this.txt_address.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txt_address.Size = new System.Drawing.Size(425, 32);
+            this.txt_address.Size = new System.Drawing.Size(330, 32);
             this.txt_address.TabIndex = 1;
             this.txt_address.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -191,7 +191,7 @@
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(542, 96);
+            this.label2.Location = new System.Drawing.Point(489, 114);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 24);
             this.label2.TabIndex = 14;
@@ -211,7 +211,7 @@
             this.Btn_Add.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_Add.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.Btn_Add.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Add.ImageOptions.Image")));
-            this.Btn_Add.Location = new System.Drawing.Point(291, 151);
+            this.Btn_Add.Location = new System.Drawing.Point(290, 167);
             this.Btn_Add.Name = "Btn_Add";
             this.Btn_Add.Size = new System.Drawing.Size(160, 35);
             this.Btn_Add.TabIndex = 119;
@@ -232,7 +232,7 @@
             this.Btn_New.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_New.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.Btn_New.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_New.ImageOptions.Image")));
-            this.Btn_New.Location = new System.Drawing.Point(500, 151);
+            this.Btn_New.Location = new System.Drawing.Point(499, 167);
             this.Btn_New.Name = "Btn_New";
             this.Btn_New.Size = new System.Drawing.Size(160, 35);
             this.Btn_New.TabIndex = 118;
@@ -253,7 +253,7 @@
             this.Btn_Update.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_Update.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.Btn_Update.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Update.ImageOptions.Image")));
-            this.Btn_Update.Location = new System.Drawing.Point(90, 151);
+            this.Btn_Update.Location = new System.Drawing.Point(89, 167);
             this.Btn_Update.Name = "Btn_Update";
             this.Btn_Update.Size = new System.Drawing.Size(160, 35);
             this.Btn_Update.TabIndex = 120;
@@ -264,8 +264,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(703, 512);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.ClientSize = new System.Drawing.Size(703, 513);
             this.Controls.Add(this.Btn_Update);
             this.Controls.Add(this.Btn_Add);
             this.Controls.Add(this.Btn_New);
