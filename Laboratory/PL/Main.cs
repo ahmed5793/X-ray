@@ -671,6 +671,12 @@ namespace Laboratory.PL
             Frm_ProductMinimum fpm = new Frm_ProductMinimum();
             fpm.Show();
         }
+
+        private void barStaticItem10_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Frm_ReportReturnSuppliers rsf = new Frm_ReportReturnSuppliers();
+            rsf.Show();
+        }
     }
     }
     

@@ -171,6 +171,7 @@
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.barHeaderItem31 = new DevExpress.XtraBars.BarHeaderItem();
+            this.barStaticItem10 = new DevExpress.XtraBars.BarStaticItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barAndDockingController1)).BeginInit();
@@ -292,9 +293,10 @@
             this.barStaticItem8,
             this.barStaticItem9,
             this.barButtonItem4,
-            this.barButtonItem5});
+            this.barButtonItem5,
+            this.barStaticItem10});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 131;
+            this.ribbon.MaxItemId = 132;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.basic_information,
@@ -822,7 +824,8 @@
             this.report_invoicePurchise.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("report_invoicePurchise.ImageOptions.Image")));
             this.report_invoicePurchise.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("report_invoicePurchise.ImageOptions.LargeImage")));
             this.report_invoicePurchise.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barHeaderItem21)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barHeaderItem21),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barStaticItem10)});
             this.report_invoicePurchise.Name = "report_invoicePurchise";
             // 
             // barHeaderItem21
@@ -1602,6 +1605,15 @@
             this.barHeaderItem31.Id = 124;
             this.barHeaderItem31.Name = "barHeaderItem31";
             // 
+            // barStaticItem10
+            // 
+            this.barStaticItem10.Caption = "تقرير بالمرتجعات";
+            this.barStaticItem10.Id = 131;
+            this.barStaticItem10.ItemAppearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barStaticItem10.ItemAppearance.Normal.Options.UseFont = true;
+            this.barStaticItem10.Name = "barStaticItem10";
+            this.barStaticItem10.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barStaticItem10_ItemClick);
+            // 
             // Main
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
@@ -1778,5 +1790,6 @@
         private DevExpress.XtraBars.BarAndDockingController barAndDockingController1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem10;
     }
 }
