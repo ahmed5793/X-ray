@@ -33,6 +33,7 @@ namespace Laboratory.PL
             txt_sales.Text = Program.salesman;
             Permision();
             txt_iD.Hide();
+            textBox1.Hide();
             SelectDataTable();
             Txt_IdStore.Hide();
         }
@@ -79,6 +80,7 @@ namespace Laboratory.PL
             textBox1.Clear();
             Txt_QuantityStore.Text = "0";
             dt10.Clear();
+            dataGridView1.Rows.Clear();
         }
 
        void SelectDataTable()
@@ -379,24 +381,24 @@ namespace Laboratory.PL
             DataTable data5 = new DataTable();
             try
             {
-                data5.Clear();
-                data5 = Suppliers.Select_SupplierReturn(Convert.ToInt32(txt_num.Text));
-                frm_show.dataGridView1.DataSource = data5;
-                frm_show.ShowDialog();
-
+                if (txt_num.Text != "")
+                {
+                    data5.Clear();
+                    data5 = Suppliers.Select_SupplierReturn(Convert.ToInt32(txt_num.Text));
+                    frm_show.dataGridView1.DataSource = data5;
+                    frm_show.ShowDialog();
+                }
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
             }
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-
             try
-
             {
                 if (Convert.ToInt32(txt_return.Text) > Convert.ToInt32(txt_quantity.Text))
                 {
@@ -404,7 +406,7 @@ namespace Laboratory.PL
                     txt_return.Focus();
                     return;
                 }
-                if (Convert.ToInt32(txt_return.Text) > Convert.ToInt32(Txt_QuantityStore.Text))
+                if (Convert.ToDecimal(txt_return.Text) > Convert.ToDecimal(Txt_QuantityStore.Text))
                 {
                     MessageBox.Show("الكمية المرتجعة أكبر من الكمية بالمخزن", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txt_return.Focus();
@@ -428,11 +430,9 @@ namespace Laboratory.PL
                     r[3] = txt_prise.Text;
                     r[4] = (Convert.ToInt32(txt_return.Text) * Convert.ToDecimal(txt_prise.Text));
                     r[5] = Txt_IdStore.Text;
-
                     dt10.Rows.Add(r);
                     dataGridView2.DataSource = dt10;
                     Calc_ReturnValue();
-
                     txt_names.Clear();
                     txt_prise.Clear();
                     txt_quantity.Clear();
@@ -440,7 +440,6 @@ namespace Laboratory.PL
                     Txt_IdStore.Clear();
                     txt_total.Clear();
                     txt_return.Text = "0";
-
                 }
                 else
                 {
@@ -450,6 +449,7 @@ namespace Laboratory.PL
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
             }
 
         }

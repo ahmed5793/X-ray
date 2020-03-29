@@ -101,9 +101,9 @@
             this.btn_save.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btn_save.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.btn_save.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_save.ImageOptions.Image")));
-            this.btn_save.Location = new System.Drawing.Point(563, 5);
+            this.btn_save.Location = new System.Drawing.Point(583, 7);
             this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(141, 44);
+            this.btn_save.Size = new System.Drawing.Size(141, 33);
             this.btn_save.TabIndex = 194;
             this.btn_save.Text = "خروج";
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
@@ -113,7 +113,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(729, 449);
+            this.ClientSize = new System.Drawing.Size(729, 450);
             this.ControlBox = false;
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.dataGridView1);

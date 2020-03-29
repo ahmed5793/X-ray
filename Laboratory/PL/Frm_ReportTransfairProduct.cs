@@ -52,5 +52,10 @@ namespace Laboratory.PL
                 dt.Dispose();
             }
         }
+
+        private void simpleButton1_Click_1(object sender, EventArgs e)
+        {
+            gridControl1.ShowRibbonPrintPreview();
+        }
     }
 }

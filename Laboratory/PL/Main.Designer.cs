@@ -96,6 +96,7 @@
             this.report_items = new DevExpress.XtraBars.BarSubItem();
             this.barHeaderItem22 = new DevExpress.XtraBars.BarHeaderItem();
             this.barHeaderItem23 = new DevExpress.XtraBars.BarHeaderItem();
+            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.add_suppliers = new DevExpress.XtraBars.BarButtonItem();
             this.pay_suppliers = new DevExpress.XtraBars.BarButtonItem();
             this.Depit_suppliers = new DevExpress.XtraBars.BarButtonItem();
@@ -290,9 +291,10 @@
             this.Btn_UserPermession,
             this.barStaticItem8,
             this.barStaticItem9,
-            this.barButtonItem4});
+            this.barButtonItem4,
+            this.barButtonItem5});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 130;
+            this.ribbon.MaxItemId = 131;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.basic_information,
@@ -849,7 +851,8 @@
             this.report_items.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("report_items.ImageOptions.LargeImage")));
             this.report_items.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barHeaderItem22),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barHeaderItem23)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barHeaderItem23),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem5)});
             this.report_items.Name = "report_items";
             // 
             // barHeaderItem22
@@ -865,6 +868,14 @@
             this.barHeaderItem23.Id = 67;
             this.barHeaderItem23.Name = "barHeaderItem23";
             this.barHeaderItem23.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barHeaderItem23_ItemClick);
+            // 
+            // barButtonItem5
+            // 
+            this.barButtonItem5.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.barButtonItem5.Caption = "تقرير بالنواقص للاصناف فى المخازن";
+            this.barButtonItem5.Id = 130;
+            this.barButtonItem5.Name = "barButtonItem5";
+            this.barButtonItem5.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick_3);
             // 
             // add_suppliers
             // 
@@ -1766,5 +1777,6 @@
         private DevExpress.XtraBars.BarHeaderItem barHeaderItem31;
         private DevExpress.XtraBars.BarAndDockingController barAndDockingController1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
     }
 }

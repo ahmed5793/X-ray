@@ -24,6 +24,7 @@ namespace Laboratory.PL
             cmb_Store.DataSource = Store.Select_ComboStore();
             cmb_Store.DisplayMember = "Store_name";
             cmb_Store.ValueMember = "id_store";
+            txt_num.Hide();
             DataTablee();
             Rezizse();
         }
@@ -178,6 +179,11 @@ namespace Laboratory.PL
 
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void cmb_Store_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            dt.Clear();
         }
     }
 }

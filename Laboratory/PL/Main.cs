@@ -665,6 +665,12 @@ namespace Laboratory.PL
             Frm_ReportSelectOrder so = new Frm_ReportSelectOrder();
             so.Show();
         }
+
+        private void barButtonItem5_ItemClick_3(object sender, ItemClickEventArgs e)
+        {
+            Frm_ProductMinimum fpm = new Frm_ProductMinimum();
+            fpm.Show();
+        }
     }
     }
     

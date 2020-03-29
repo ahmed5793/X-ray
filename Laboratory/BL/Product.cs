@@ -75,8 +75,6 @@ namespace Laboratory.BL
         internal DataTable Search_Product(string id )
         {
             DataTable dt = new DataTable();
-            try
-            {
                 DataAccessLayer da = new DataAccessLayer();
 
                 da.open();
@@ -88,16 +86,6 @@ namespace Laboratory.BL
                 da.close();
                 return dt;
 
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-            finally
-            {
-                dt.Dispose();
-            }
         }
         internal DataTable Select_LastIdProduct()
         {
@@ -466,6 +454,19 @@ namespace Laboratory.BL
             {
                 dt.Dispose();
             }
+        }
+        internal DataTable Select_MinimumProductFromStore(int Id_Store)
+        {
+            DataTable dt = new DataTable();
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@Id_Store", SqlDbType.Int);
+            param[0].Value = Id_Store;
+            dt = da.selected("Select_MinimumProductFromStore", param);
+            da.close();
+            return dt;
+
         }
     }
 }
