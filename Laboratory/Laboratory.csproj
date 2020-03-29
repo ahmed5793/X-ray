@@ -562,6 +562,12 @@
     <Compile Include="PL\Frm_ProductList.Designer.cs">
       <DependentUpon>Frm_ProductList.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Frm_ProductMinimum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_ProductMinimum.Designer.cs">
+      <DependentUpon>Frm_ProductMinimum.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_Purshasing.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1076,6 +1082,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_ProductList.resx">
       <DependentUpon>Frm_ProductList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_ProductMinimum.resx">
+      <DependentUpon>Frm_ProductMinimum.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Purshasing.resx">
       <DependentUpon>Frm_Purshasing.cs</DependentUpon>
