@@ -18,7 +18,8 @@ namespace Laboratory.PL
     {
         Finger F = new Finger();
         Branches b = new Branches();
-
+        DataTable dt = new DataTable();
+        Users U = new Users();
         public frm_ReportFingerExcell()
         {
             InitializeComponent();
@@ -26,9 +27,10 @@ namespace Laboratory.PL
             //cmb_clients.DisplayMember = "IDEmployee";
             //cmb_clients.ValueMember = "IDEmployee";
 
-            cmb_user_branch.DataSource = b.SelectCompBranches();
-            cmb_user_branch.DisplayMember = "Name";
-            cmb_user_branch.ValueMember = "Branch_ID";
+            //cmb_user_branch.DataSource = b.SelectCompBranches();
+            //cmb_user_branch.DisplayMember = "Name";
+            //cmb_user_branch.ValueMember = "Branch_ID";
+            Permision();
             monthe();
             year();
 
@@ -43,8 +45,31 @@ namespace Laboratory.PL
 
             dataGridView1.Show();
             dataGridView2.Hide();
+           
+            cmb_clients.DataSource = F.selectIDfingeremployeeExcell(Convert.ToInt32(cmb_user_branch.SelectedValue));
+            cmb_clients.DisplayMember = "Name_Employee";
+            cmb_clients.ValueMember = "IDEmployee";
         }
+        void Permision()
+        {
+         
+            dt.Clear();
+            dt = U.SelectUserBranch(Program.salesman);
+            if (dt.Rows.Count > 0)
+            {
+                cmb_user_branch.DataSource = U.SelectUserBranch(Program.salesman);
+                cmb_user_branch.DisplayMember = "Name";
+                cmb_user_branch.ValueMember = "Branch_ID";
+            }
+            else
+            {
+                cmb_user_branch.DataSource = b.SelectCompBranches();
+                cmb_user_branch.DisplayMember = "Name";
+                cmb_user_branch.ValueMember = "Branch_ID";
+            }
+          
 
+        }
         void year()
         {
             for (int i = 2020; i <= DateTime.Now.Year; i++)
@@ -120,7 +145,7 @@ namespace Laboratory.PL
 
         private void frm_ReportFingerExcell_Load(object sender, EventArgs e)
         {
-            cmb_clients.SelectedIndex = -1;
+            //cmb_clients.SelectedIndex = -1;
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)

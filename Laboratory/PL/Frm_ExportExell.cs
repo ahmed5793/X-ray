@@ -25,20 +25,23 @@ namespace Laboratory.PL
         public Frm_ExportExell()
         {
             InitializeComponent();
+            txt_username.Text = Program.salesman;
             Permision();
             //dataGridView1.Columns[8].DefaultCellStyle.Format = "MM/dd/yyyy hh:mm:ss tt";
+        
 
 
 
         }
         System.Data.DataTable dt = new System.Data.DataTable();
-
+        new System.Data.DataTable dt2 = new System.Data.DataTable();
         void Permision()
         {
-            dt.Clear();
-            dt = u.SelectUserBranch(txt_username.Text);
+  
+            dt2.Clear();
+            dt2 = u.SelectUserBranch(txt_username.Text);
 
-            if (dt.Rows.Count > 0)
+            if (dt2.Rows.Count > 0)
             {
                 cmb_UserBranch.DataSource = u.SelectUserBranch(txt_username.Text);
                 cmb_UserBranch.DisplayMember = "Name";
@@ -60,7 +63,6 @@ namespace Laboratory.PL
          
 
             dataGridView1.RowTemplate.Height = 50;
-            txt_username.Text = Program.salesman;
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[1].Visible = false;
 
