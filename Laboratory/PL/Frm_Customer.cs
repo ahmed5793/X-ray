@@ -66,6 +66,7 @@ namespace Laboratory.PL
                 dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
                 txt_idnational.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
                 Btn_Update.Enabled = true;
+                Btn_Add.Enabled = false;
             }
         }
         private void btn_new_Click(object sender, EventArgs e)
@@ -102,6 +103,7 @@ namespace Laboratory.PL
         {
             clear();    
             Btn_Update.Enabled = false;
+            Btn_Add.Enabled = true;
         }
         private void Btn_Add_Click(object sender, EventArgs e)
         {
@@ -183,10 +185,12 @@ namespace Laboratory.PL
                 dataGridView1.DataSource = c.SelectCustomer();
                 clear();
                 Btn_Update.Enabled = false;
+                Btn_Add.Enabled = true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
             }
         }
     }
