@@ -273,7 +273,7 @@
         private System.Windows.Forms.Label label2;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        public DevExpress.XtraGrid.GridControl gridControl1;
     }
 }

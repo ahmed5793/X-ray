@@ -1458,7 +1458,7 @@ namespace Laboratory.PL
                     clear();
                     Customer();
 
-                    Frm_DataRevaltionTicket.getmain.dataGridView1.DataSource = t.selectDataRevlation(Convert.ToInt32(Frm_DataRevaltionTicket.getmain.comboBox1.SelectedValue), Convert.ToDateTime(x));
+                    Frm_DataRevaltionTicket.getmain.gridControl1.DataSource = t.selectDataRevlation(Convert.ToInt32(Frm_DataRevaltionTicket.getmain.comboBox1.SelectedValue), Convert.ToDateTime(x));
                 }
 
                 else
