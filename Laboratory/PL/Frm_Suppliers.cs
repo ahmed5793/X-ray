@@ -123,6 +123,7 @@ namespace Laboratory.PL
                 dataGridView1.DataSource = S.SelectSuppliers();
                 Clear();
                 Btn_Update.Enabled = false;
+                Btn_Add.Enabled = true;
             }
             catch (Exception ex)
             {

@@ -245,7 +245,7 @@ namespace Laboratory.BL
             SqlParameter[] param = new SqlParameter[1];
             param[0] = new SqlParameter("@Id_Suppliers", SqlDbType.Int);
             param[0].Value = Id_Suppliers;
-            dt = da.selected("Report_PaySupplier", null);
+            dt = da.selected("Report_PaySupplier", param);
             da.close();
             return dt;
         }
