@@ -162,7 +162,7 @@ namespace Laboratory.PL
             Permision();
 
             Txt_addtionPayment.Enabled = false;
-            Txt_rentCompany.Hide();
+            Txt_rentCompany.Enabled=false;
 
             CategoryXraya();
             SelectdataTable();
@@ -836,7 +836,7 @@ namespace Laboratory.PL
 
         private void cmb_statues_SelectionChangeCommitted(object sender, EventArgs e)
         {
-               if (cmb_statues.Text == "شركات")
+            if (cmb_statues.Text == "شركات")
             {
                 cmb_items.DataSource = null;
                 //label26.Show();
@@ -844,8 +844,7 @@ namespace Laboratory.PL
                 //Txt_addtionPayment.Show();
                 //Txt_PricePayment.Show();
                 //label29.Show();
-                Txt_rentCompany.Show();
-               // label24.Hide();
+                Txt_rentCompany.Enabled=true;
                 txt_discount.Enabled=false;
                 rdb_Discount.Enabled = false;
                 rdb_money.Enabled = false;
@@ -863,7 +862,6 @@ namespace Laboratory.PL
                 Txt_PricePayment.Enabled = true;
                 Txt_addtionPayment.Enabled = true;
                 dgv_order.Columns[3].Visible = true ;
-
                 company();
                 Patient_PaymentRate();
                 Btn_DetailsCompany.Show();
@@ -875,7 +873,6 @@ namespace Laboratory.PL
                 //label26.Hide();
                 //label27.Hide();
                 //label29.Hide();
-                Txt_rentCompany.Hide();
                 rdb_Discount.Enabled = true;
                 rdb_money.Enabled = true;
                 txt_afterDiscount.Enabled = true;
@@ -894,10 +891,10 @@ namespace Laboratory.PL
                 cmb_Company.Enabled = false;
                 Txt_PricePayment.Enabled = false;
                 Txt_addtionPayment.Enabled = false;
+                Txt_rentCompany.Enabled = false; ;
                 Btn_DetailsCompany.Hide();
             }
         }
-
         private void txt_addition_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == '.' && Txt_addtionPayment.Text.ToString().IndexOf('.') > -1)
@@ -1684,6 +1681,16 @@ namespace Laboratory.PL
 
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void cmb_UserBranch_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
 
         //private void ؤ(object sender, EventArgs e)
