@@ -233,6 +233,7 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
+
         internal DataTable Select_PriceXrayCompany(int id_company , int Id_Xray )
         {
             DataAccessLayer da = new DataAccessLayer();

@@ -336,8 +336,7 @@ namespace Laboratory.PL
         private void Cmb_category_SelectionChangeCommitted(object sender, EventArgs e)
         {
 
-            if (Cmb_category.Text != "")
-            {
+           
                 if (cmb_statues.Text == "نقدى")
                 {
                     dt.Clear();
@@ -386,7 +385,7 @@ namespace Laboratory.PL
                         cmb_items.DataSource = null;
                     }
                 }
-            }
+            
             //dt.Clear();
 
             //dt = ix.SelectCtegoryItems(Convert.ToInt32(Cmb_category.SelectedValue));
@@ -1551,7 +1550,6 @@ namespace Laboratory.PL
 
         private void simpleButton5_Click(object sender, EventArgs e)
         {
-
             try
             {
                 if (dgv_order.Rows.Count > 0)
@@ -1680,6 +1678,7 @@ namespace Laboratory.PL
             {
 
                 MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
             }
         }
 
