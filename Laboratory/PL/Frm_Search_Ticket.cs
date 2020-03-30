@@ -211,17 +211,20 @@ namespace Laboratory.PL
         private void simpleButton2_Click(object sender, EventArgs e)
         {
             Frm_Payouts pa = new Frm_Payouts();
-            DataTable dt = new DataTable();
+              
 
-            DataTable dt10 = new DataTable();
-            DataTable dt5 = new DataTable();
-            Tickets t = new Tickets();
+       
+         
+          
+       
 
-            Frm_DetailsTickets fd = new Frm_DetailsTickets();
+            //Frm_DetailsTickets fd = new Frm_DetailsTickets();
             if (gridView1.RowCount > 0)
             {
+                DataTable dt5 = new DataTable();
                 dt5.Clear();
                 dt5 = t.vildateReturnTickets(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
+                DataTable dt10 = new DataTable();
                 dt10.Clear();
                 dt10 = t.vildateTransferForCompany(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
 
@@ -238,10 +241,11 @@ namespace Laboratory.PL
                     MessageBox.Show("عزيزى المستخدم يرجي العلم باان تم تحويل الفاتورة الي جةة اخري واسترداد المبلغ   ", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
                     return;
                 }
-                dt5.Clear();
-                dt5 = t.TicketDetailsSelectTickets(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
+                DataTable dt7 = new DataTable();
+                dt7.Clear();
+                dt7 = t.TicketDetailsSelectTickets(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
 
-                foreach (DataRow dr in dt5.Rows)
+                foreach (DataRow dr in dt7.Rows)
                 {
                     pa.txt_name.Text = dr[1].ToString();
                     pa.txt_date.Text = dr[5].ToString();
