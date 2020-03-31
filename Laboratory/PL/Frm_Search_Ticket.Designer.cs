@@ -85,7 +85,7 @@
             this.ToDate.CustomFormat = "dd/MM/yyyy  *  tt mm:hh     ";
             this.ToDate.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ToDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.ToDate.Location = new System.Drawing.Point(184, 76);
+            this.ToDate.Location = new System.Drawing.Point(167, 76);
             this.ToDate.Name = "ToDate";
             this.ToDate.ShowUpDown = true;
             this.ToDate.Size = new System.Drawing.Size(287, 32);
@@ -196,7 +196,7 @@
             this.label3.BackColor = System.Drawing.Color.Black;
             this.label3.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(477, 76);
+            this.label3.Location = new System.Drawing.Point(460, 76);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 32);
             this.label3.TabIndex = 115;
@@ -263,6 +263,7 @@
             this.groupBox2.Controls.Add(this.gridControl1);
             this.groupBox2.Location = new System.Drawing.Point(9, 186);
             this.groupBox2.Name = "groupBox2";
+            this.groupBox2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.groupBox2.Size = new System.Drawing.Size(990, 283);
             this.groupBox2.TabIndex = 160;
             this.groupBox2.TabStop = false;
