@@ -97,7 +97,7 @@
             this.FromDate.CustomFormat = "dd/MM/yyyy  *  tt mm:hh     ";
             this.FromDate.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FromDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FromDate.Location = new System.Drawing.Point(526, 80);
+            this.FromDate.Location = new System.Drawing.Point(572, 76);
             this.FromDate.Name = "FromDate";
             this.FromDate.ShowUpDown = true;
             this.FromDate.Size = new System.Drawing.Size(287, 32);
@@ -117,7 +117,7 @@
             this.button2.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.button2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.button2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("button2.ImageOptions.Image")));
-            this.button2.Location = new System.Drawing.Point(22, 37);
+            this.button2.Location = new System.Drawing.Point(22, 45);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(120, 32);
             this.button2.TabIndex = 195;
@@ -183,7 +183,7 @@
             this.label2.BackColor = System.Drawing.Color.Black;
             this.label2.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(819, 80);
+            this.label2.Location = new System.Drawing.Point(865, 76);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 32);
             this.label2.TabIndex = 114;
