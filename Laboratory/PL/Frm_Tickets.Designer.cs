@@ -397,11 +397,11 @@
             this.txt_phone.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_phone.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_phone.Location = new System.Drawing.Point(237, 113);
-            this.txt_phone.MaxLength = 3000;
+            this.txt_phone.Location = new System.Drawing.Point(137, 113);
+            this.txt_phone.MaxLength = 11;
             this.txt_phone.Name = "txt_phone";
             this.txt_phone.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txt_phone.Size = new System.Drawing.Size(148, 25);
+            this.txt_phone.Size = new System.Drawing.Size(248, 25);
             this.txt_phone.TabIndex = 42;
             this.txt_phone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_phone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_phone_KeyPress);
@@ -703,7 +703,6 @@
             this.txt_IdTicket.Name = "txt_IdTicket";
             this.txt_IdTicket.Size = new System.Drawing.Size(92, 25);
             this.txt_IdTicket.TabIndex = 115;
-            this.txt_IdTicket.Text = "0";
             this.txt_IdTicket.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_idcust
@@ -714,7 +713,6 @@
             this.txt_idcust.Name = "txt_idcust";
             this.txt_idcust.Size = new System.Drawing.Size(85, 25);
             this.txt_idcust.TabIndex = 114;
-            this.txt_idcust.Text = "0";
             this.txt_idcust.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label6
