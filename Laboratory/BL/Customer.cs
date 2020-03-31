@@ -233,7 +233,7 @@ namespace Laboratory.BL
             param[3].Value = pay_date;
             param[4] = new SqlParameter("@Balance", SqlDbType.Decimal);
             param[4].Value = Balance;
-            param[5] = new SqlParameter("@IDStock", SqlDbType.Int);
+            param[5] = new SqlParameter("@id_Stock", SqlDbType.Int);
             param[5].Value = IDStock;
             param[6] = new SqlParameter("@sales_Man", SqlDbType.NVarChar, 100);
             param[6].Value = Sales_Man;
