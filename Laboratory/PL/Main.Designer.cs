@@ -47,7 +47,6 @@
             this.barHeaderItem5 = new DevExpress.XtraBars.BarHeaderItem();
             this.barHeaderItem28 = new DevExpress.XtraBars.BarHeaderItem();
             this.barHeaderItem1 = new DevExpress.XtraBars.BarHeaderItem();
-            this.add_employeeBranche = new DevExpress.XtraBars.BarButtonItem();
             this.Xray_Category = new DevExpress.XtraBars.BarButtonItem();
             this.XrayName = new DevExpress.XtraBars.BarButtonItem();
             this.add_DoctortCenter = new DevExpress.XtraBars.BarButtonItem();
@@ -91,6 +90,7 @@
             this.return_suppliers = new DevExpress.XtraBars.BarButtonItem();
             this.report_invoicePurchise = new DevExpress.XtraBars.BarSubItem();
             this.barHeaderItem21 = new DevExpress.XtraBars.BarHeaderItem();
+            this.barStaticItem10 = new DevExpress.XtraBars.BarStaticItem();
             this.barSubItem9 = new DevExpress.XtraBars.BarSubItem();
             this.barSubItem10 = new DevExpress.XtraBars.BarSubItem();
             this.report_items = new DevExpress.XtraBars.BarSubItem();
@@ -171,7 +171,6 @@
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.barHeaderItem31 = new DevExpress.XtraBars.BarHeaderItem();
-            this.barStaticItem10 = new DevExpress.XtraBars.BarStaticItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barAndDockingController1)).BeginInit();
@@ -200,7 +199,6 @@
             this.barHeaderItem3,
             this.barHeaderItem4,
             this.barHeaderItem5,
-            this.add_employeeBranche,
             this.Xray_Category,
             this.XrayName,
             this.add_DoctortCenter,
@@ -446,15 +444,6 @@
             this.barHeaderItem1.Caption = "barHeaderItem1";
             this.barHeaderItem1.Id = 9;
             this.barHeaderItem1.Name = "barHeaderItem1";
-            // 
-            // add_employeeBranche
-            // 
-            this.add_employeeBranche.Caption = "اضافه الموظفين للفروع";
-            this.add_employeeBranche.Id = 14;
-            this.add_employeeBranche.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("add_employeeBranche.ImageOptions.Image")));
-            this.add_employeeBranche.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("add_employeeBranche.ImageOptions.LargeImage")));
-            this.add_employeeBranche.Name = "add_employeeBranche";
-            this.add_employeeBranche.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem7_ItemClick);
             // 
             // Xray_Category
             // 
@@ -834,6 +823,15 @@
             this.barHeaderItem21.Id = 62;
             this.barHeaderItem21.Name = "barHeaderItem21";
             this.barHeaderItem21.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barHeaderItem21_ItemClick);
+            // 
+            // barStaticItem10
+            // 
+            this.barStaticItem10.Caption = "تقرير بالمرتجعات";
+            this.barStaticItem10.Id = 131;
+            this.barStaticItem10.ItemAppearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barStaticItem10.ItemAppearance.Normal.Options.UseFont = true;
+            this.barStaticItem10.Name = "barStaticItem10";
+            this.barStaticItem10.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barStaticItem10_ItemClick);
             // 
             // barSubItem9
             // 
@@ -1326,7 +1324,6 @@
             this.ribbonPageGroup1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPageGroup1.ImageOptions.Image")));
             this.ribbonPageGroup1.ItemLinks.Add(this.add_branch);
             this.ribbonPageGroup1.ItemLinks.Add(this.add_employee);
-            this.ribbonPageGroup1.ItemLinks.Add(this.add_employeeBranche);
             this.ribbonPageGroup1.ItemLinks.Add(this.Btn_AddAccount);
             this.ribbonPageGroup1.ItemLinks.Add(this.Btn_UserPermession);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem4);
@@ -1605,15 +1602,6 @@
             this.barHeaderItem31.Id = 124;
             this.barHeaderItem31.Name = "barHeaderItem31";
             // 
-            // barStaticItem10
-            // 
-            this.barStaticItem10.Caption = "تقرير بالمرتجعات";
-            this.barStaticItem10.Id = 131;
-            this.barStaticItem10.ItemAppearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.barStaticItem10.ItemAppearance.Normal.Options.UseFont = true;
-            this.barStaticItem10.Name = "barStaticItem10";
-            this.barStaticItem10.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barStaticItem10_ItemClick);
-            // 
             // Main
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
@@ -1668,7 +1656,6 @@
         public DevExpress.XtraBars.BarHeaderItem barHeaderItem3;
         public DevExpress.XtraBars.BarHeaderItem barHeaderItem4;
         public DevExpress.XtraBars.BarHeaderItem barHeaderItem5;
-        public DevExpress.XtraBars.BarButtonItem add_employeeBranche;
         public DevExpress.XtraBars.BarButtonItem Xray_Category;
         public DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         public DevExpress.XtraBars.BarButtonItem XrayName;

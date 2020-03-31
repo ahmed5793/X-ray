@@ -53,6 +53,7 @@ namespace Laboratory.PL
             InitializeComponent();
             Txt_SalesMAn.Text = Program.salesman;
             Permision();
+            check_AddEmployeeBranch.Hide();
            
         }       
         private void cmb_Users1_SelectionChangeCommitted(object sender, EventArgs e)

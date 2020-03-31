@@ -427,38 +427,6 @@
         3juoBW1J+QdUyoWLiCjBQwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="add_employeeBranche.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
-        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAYdEVYdFRpdGxlAENvdW50cnk7V29ybGQ7RmxhZ6ib
-        CnIAAAFLSURBVDhPjZO9SgNBFEbXiBgRCw15AMUiD+AbGBtfwiKtCEoa+60sLBRFBOsUIkQQtPBBLNKK
-        KfwJ2IgS13PCjAyRxBSHO9+93/3YSXazPM9TqtCAa3iDIlS1fee//qIosnR5HdpwBTfQgo1Q1fad6/sT
-        YPMWmrAG97CiwRq0fef6BiExwMcyuRkWduDYc0RtP5wN0V9V2/BuXTiALbiDPZiHqVDV9p3r09+IAd7R
-        5i5cwDs8hvo9pJ3r09+KAR2oKcIjPkMl6odG3V7Fvuega9DxrPiCmSSgD6WhgBJsx4DQW4wBkzxBmSpH
-        8AKv4Vx2OMlvsID5BIohDg2Y5F+YxdwLS/EannsGjH0PNKPnqE9hKQ3oOpT/3sQlzKdhKeUsBsSQUd/C
-        JuZl+EiWP2E1DZBRX+M5TLOwnwTkkA3uOQ5NCSW4hDYQWM9+AK7VIiu3jTEgAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="add_employeeBranche.ImageOptions.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
-        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAYdEVYdFRpdGxlAENvdW50cnk7V29ybGQ7RmxhZ6ib
-        CnIAAAMiSURBVFhHxZdPiE1RHMefIWXY0FgZvSljoazUFLKweEpZSaSkTMqKmmI1FsizkAUbXlOzoAYL
-        5V9EkaWSTJMFj1IGC02zofyZhZ7v53Z+t9+7zn09c28sPnPu+f7+zrnnnntfpdVq/VeSP/V6vRuGxIiY
-        EJNiVvwKI3N07PjF4tv4mwZ2iMvimbgnpsQJ0Sd6wsgcHTt++BMXy5fQTQNrxDnxRBwVm8QtcciCPejB
-        jh/+xBFPnmzuNM6Cs2wRd8RFsT5oo+KSBcbAHvy4Jo548pDPcidYjAV6cL4vSLQgaGvFY7HZAmNgD374
-        MyeePORra8JiLNBgueh41CWFI2LMtE7gF/y9RhPkTW+H2czBeCAeiXXmEOx3xS6v5YEf/hmNlbgmrouk
-        ltnMAdi1TXFbvBDs6htiXHwU+8RGMShWiiWCpwC4RsNWE+/EaXFWkINcr8QnkTwdsQZ4dNi9XC8SbKKd
-        4qp4I26Kp+KtmBHfBecAcI2GDR8afiiOCXKQi5zkp84fDXB48PxWzWBIOyOOZ/VO4E9cRK8K6gyZZgZO
-        sIaJHuks4e6YLQ/8icuxNcSIzU3kGB020SP9uUg77gb8icuxDYsJm5vIWR4tIp2N0x+z5YE/cTk2mpu0
-        uYm8UPpM9Ej/JnpjtjzwJy7Hxrtj1uYmspNb/5LmwVoFrIFSVsCS4i9e29wjnXPjgM2TQAml7AFXhGVe
-        puuqaIhpMRdG5uhtDZTyFFhS+S/UuF18FSx3FnTsaQOlnAMkDAyILyJW3KCJgSRQBUo5CZXQGBNWiGXf
-        JrgljMzN1kgCVQDKehcsVuIPrkhN+Oa2CrNN+wbKehv2KPEPV4T/3DdAg2ab8w1Aoe8BCsiPDfjSFem0
-        As0kUEFGoS8iCshvlcZTrgj3nCaWhvG9MNvJJDAUMYp+E+5X4tXipysUg9vUb4FZinwVH1ZiVuNCKJTH
-        eZGeAzGK/C7YoOQrxIyIFf8slouODRjz+WXEyrHb94aCWfaIZM9004DBYdXVb0NLHrgifPFxkdrblrEo
-        PrGDc6ApKM4bslek9mii+eITZxgUU2F0eq3yG/C4Y6YcZCrsAAAAAElFTkSuQmCC
-</value>
-  </data>
   <assembly alias="DevExpress.Data.v19.2" name="DevExpress.Data.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
   <data name="Xray_Category.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

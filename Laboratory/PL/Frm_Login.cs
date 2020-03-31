@@ -99,11 +99,11 @@ namespace Laboratory.PL
                             ///////
                             if (Convert.ToInt32(dt2.Rows[0][1]) == 0)
                             {
-                                Main.getmain.add_employeeBranche.Enabled = false;
+                               
                             }
                             else if (Convert.ToInt32(dt2.Rows[0][1]) == 1)
                             {
-                                Main.getmain.add_employeeBranche.Enabled = true;
+                               
                             }
                             ////////
                             if (Convert.ToInt32(dt2.Rows[0][2]) == 0)
