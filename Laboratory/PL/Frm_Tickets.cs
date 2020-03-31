@@ -828,6 +828,7 @@ namespace Laboratory.PL
         {
             if (cmb_statues.Text == "شركات")
             {
+                Cmb_category.SelectedIndex = -1;
                 cmb_items.DataSource = null;
                 //label26.Show();
                 //label27.Show();
@@ -858,6 +859,7 @@ namespace Laboratory.PL
             }
             else if (cmb_statues.Text== "نقدى")
             {
+                Cmb_category.SelectedIndex = -1;
                 cmb_items.DataSource = null;
                 label24.Show();
                 //label26.Hide();
@@ -934,10 +936,8 @@ namespace Laboratory.PL
 
         private void cmb_items_Leave(object sender, EventArgs e)
         {
-            if (Cmb_category.Text!=""&&cmb_items.Text!="")
-            {
-
-            
+            if (Cmb_category.Text!="")
+            {            
             dt.Clear();
             dt = ix.VildateItem(Convert.ToInt32(Cmb_category.SelectedValue), Convert.ToInt32(cmb_items.SelectedValue));
                 if (dt.Rows.Count == 0)
@@ -945,8 +945,6 @@ namespace Laboratory.PL
                     MessageBox.Show("يرجي العلم بان الاشعة المسجلة غير مسجلة في هذا القسم");
                     cmb_items.Text = "";
                     return;
-
-
                 }
             }
          
