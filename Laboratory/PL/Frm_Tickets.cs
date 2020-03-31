@@ -1337,7 +1337,7 @@ namespace Laboratory.PL
                             DataTable dt1 = new DataTable();
                             sr.documentViewer1.Refresh();
                             dt1.Clear();
-                            dt1 = t.ReportInvoiceTicketPay(Convert.ToInt32(txt_IdTicket.Text));
+                            dt1 = t.ReportInvoiceTicketPay(Convert.ToInt32(Cmb_customer.SelectedValue));
                             dso.Tables["DataTable1"].Clear();
                             for (int i = 0; i < dt1.Rows.Count; i++)
                             {
@@ -1452,7 +1452,7 @@ namespace Laboratory.PL
                             RPT.Order.DataSetOrderPay dso = new RPT.Order.DataSetOrderPay();
                             DataTable dt1 = new DataTable();
                             dt1.Clear();
-                            dt1 = t.ReportInvoiceTicketCompany(Convert.ToInt32(txt_IdTicket.Text));
+                            dt1 = t.ReportInvoiceTicketCompany(Convert.ToInt32(Cmb_customer.SelectedValue));
                             dso.Tables["dataCompany"].Clear();
                             for (int i = 0; i < dt1.Rows.Count; i++)
                             {
