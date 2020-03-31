@@ -117,9 +117,9 @@
             this.button2.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.button2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.button2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("button2.ImageOptions.Image")));
-            this.button2.Location = new System.Drawing.Point(6, 64);
+            this.button2.Location = new System.Drawing.Point(22, 37);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(120, 44);
+            this.button2.Size = new System.Drawing.Size(120, 32);
             this.button2.TabIndex = 195;
             this.button2.Text = "بحث";
             this.button2.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -142,6 +142,7 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(898, 18);
             this.label4.Name = "label4";
@@ -167,6 +168,7 @@
             // 
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.White;
             this.label13.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(455, 18);
             this.label13.Name = "label13";
