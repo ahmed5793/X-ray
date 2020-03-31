@@ -20,18 +20,13 @@ namespace Laboratory.PL
     public partial class Frm_Search_Ticket : Form
     {
 
-        Suppliers s = new Suppliers();
+   
         Tickets t = new Tickets();
         CategoryXRaya c = new CategoryXRaya();
-        Users u = new Users();
-        Branches b = new Branches();
-        DataTable dt = new DataTable();
-        void brnches()
-        {
-            cmb_branches.DataSource = b.SelectCompBranches();
-            cmb_branches.DisplayMember = "Name";
-            cmb_branches.ValueMember = "Branch_ID";
-        }
+
+
+
+     
         public Frm_Search_Ticket()
         {
             InitializeComponent();
@@ -48,15 +43,22 @@ namespace Laboratory.PL
             textBox1.Hide();
             Cmb_CategoryItem.Hide();
             cmb_branches.Hide();
+    
+        }
+        void brnches()
+        {
+            Branches b = new Branches();
+            cmb_branches.DataSource = b.SelectCompBranches();
+            cmb_branches.DisplayMember = "Name";
+            cmb_branches.ValueMember = "Branch_ID";
+        }
+        private void Frm_Search_Ticket_Load(object sender, EventArgs e)
+        {
             Cmb_CategoryItem.DataSource = c.selectCategoryXRaya();
             Cmb_CategoryItem.DisplayMember = "الفئات";
             Cmb_CategoryItem.ValueMember = "ID_CtegoryXrays";
             FromDate.Value = DateTime.Now;
             ToDate.Value = DateTime.Now;
-        }
-        private void Frm_Search_Ticket_Load(object sender, EventArgs e)
-        {
-          
         }
         private void txt_search_TextChanged(object sender, EventArgs e)
         {
@@ -210,23 +212,24 @@ namespace Laboratory.PL
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            Frm_Payouts pa = new Frm_Payouts();
-              
 
-       
-         
-          
-       
+
+
+            Frm_Payouts pa = new Frm_Payouts();
+
+            DataTable dt10 = new DataTable();
+            DataTable dt5 = new DataTable();
+            DataTable dt7 = new DataTable();
+            DataTable dt1 = new DataTable();
 
             //Frm_DetailsTickets fd = new Frm_DetailsTickets();
             if (gridView1.RowCount > 0)
             {
-                DataTable dt5 = new DataTable();
+
                 dt5.Clear();
                 dt5 = t.vildateReturnTickets(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
-                DataTable dt10 = new DataTable();
-                dt10.Clear();
-                dt10 = t.vildateTransferForCompany(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
+
+
 
                 if (dt5.Rows.Count > 0)
                 {
@@ -236,12 +239,14 @@ namespace Laboratory.PL
                         return;
                     }
                 }
-                else if (dt10.Rows.Count > 0)
+                dt10.Clear();
+                dt10 = t.vildateTransferForCompany(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
+                if (dt10.Rows.Count > 0)
                 {
-                    MessageBox.Show("عزيزى المستخدم يرجي العلم باان تم تحويل الفاتورة الي جةة اخري واسترداد المبلغ   ", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                    MessageBox.Show("عزيزى المستخدم يرجي العلم باان تم تحويل الفاتورة الي جهه اخري واسترداد المبلغ   ", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
                     return;
                 }
-                DataTable dt7 = new DataTable();
+
                 dt7.Clear();
                 dt7 = t.TicketDetailsSelectTickets(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
 
@@ -257,7 +262,7 @@ namespace Laboratory.PL
                     pa.txt_num.Text = dr[0].ToString();
                     pa.Txt_IdCust.Text = dr[26].ToString();
                 }
-                DataTable dt1 = new DataTable();
+
                 dt1.Clear();
                 dt1 = t.TicketDetailsSelectTicketsDetAILS(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
                 pa.dataGridView1.DataSource = dt1;
@@ -270,6 +275,7 @@ namespace Laboratory.PL
 
 
             }
+
         }
 
         private void simpleButton3_Click(object sender, EventArgs e)
@@ -278,7 +284,8 @@ namespace Laboratory.PL
             DataTable dt = new DataTable();
             DataTable dt10 = new DataTable();
             DataTable dt5 = new DataTable();
-            Tickets t = new Tickets();
+            DataTable dt1 = new DataTable();
+         
             Frm_DetailsTickets fd = new Frm_DetailsTickets();
             if (gridView1.RowCount > 0)
             {
@@ -375,7 +382,7 @@ namespace Laboratory.PL
 
                     }
                 }
-                DataTable dt1 = new DataTable();
+          
                 dt1 = t.TicketDetailsSelectTicketsDetAILS(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
                 fd.dgv_order.DataSource = dt1;
                 fd.ShowDialog();
@@ -442,6 +449,12 @@ namespace Laboratory.PL
 
 
             }
+        }
+
+ 
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+
         }
     }
 }

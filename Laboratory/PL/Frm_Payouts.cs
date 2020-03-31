@@ -13,27 +13,28 @@ namespace Laboratory.PL
 {
     public partial class Frm_Payouts : Form
     {
-        DataTable dt = new DataTable();
+      
         Users u = new Users();
-        Branches b = new Branches();
+      
         Stock s = new Stock();
         Tickets t = new Tickets();
         Customer c = new Customer();
-        DataTable dt4 = new DataTable();
-        DataTable dt5 = new DataTable();
-        DataTable dt6 = new DataTable();
+     
+        //DataTable dt6 = new DataTable();
 
-        DataTable dt1 = new DataTable();
-        Frm_TransferToCompany tc = new Frm_TransferToCompany();
+    
+       
         public Frm_Payouts()
            
         {
             InitializeComponent();
+            txt_username.Text = Program.salesman;
             Permision();
             Txt_IdCust.Hide();
         }
         void Permision()
         {
+            Branches b = new Branches();
             dt.Clear();
             dt = u.SelectUserBranch(txt_username.Text);
 
@@ -58,19 +59,15 @@ namespace Laboratory.PL
                 cmb_Stock.ValueMember = "ID_Stock";
             }
         }
-        void Stock()
-        {
 
-            cmb_Stock.DataSource = s.Compo_Stock();
-            cmb_Stock.DisplayMember = "Name_Stock";
-            cmb_Stock.ValueMember = "ID_Stock";
+        DataTable dt = new DataTable();
+        DataTable dt4 = new DataTable();
+        DataTable dt5 = new DataTable();
 
-        }
         private void Frm_Payouts_Load(object sender, EventArgs e)
         {
             txt_prise.Enabled = false;
-            txt_username.Text = Program.salesman;
-            Permision();
+
         }
 
         private void rdbPartPay_CheckedChanged(object sender, EventArgs e)
@@ -147,13 +144,7 @@ namespace Laboratory.PL
                     MessageBox.Show("عزيزى المستخدم يرجي العلم باان المبلغ المراد سحبة اكبر من المدفوع  ", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
                     return;
                 }
-                //dt6.Clear();
-                //dt6 = t.vildateIDReturnTickets(Convert.ToInt32(txt_num.Text));
-                //if (dt6.Rows.Count > 0)
-                //{
-                //    MessageBox.Show("عزيزى المستخدم يرجي العلم باان تم استرداد مبلغ الفاتورة من قبل لايمكن استرداها مرة اخرى   ", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
-                //    return;
-                //}
+              
                 dt5.Clear();
                 dt5 = t.vildateReturnTickets(Convert.ToInt32(txt_num.Text));
                 if (dt5.Rows.Count > 0)
@@ -300,7 +291,8 @@ namespace Laboratory.PL
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-
+             Frm_TransferToCompany tc = new Frm_TransferToCompany();
+            DataTable dt1 = new DataTable();
             dt1.Clear();
 
             dt1 = t.TicketDetailsSelectTicketsDetAILS(Convert.ToInt32(txt_num.Text));

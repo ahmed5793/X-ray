@@ -53,6 +53,7 @@
             this.button1 = new DevExpress.XtraEditors.SimpleButton();
             this.txt_totalinvoice = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -346,7 +347,7 @@
             this.simpleButton2.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.simpleButton2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(896, 487);
+            this.simpleButton2.Location = new System.Drawing.Point(889, 487);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(111, 43);
             this.simpleButton2.TabIndex = 236;
@@ -366,8 +367,7 @@
             this.btn_save.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.btn_save.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btn_save.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.btn_save.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
-            this.btn_save.Location = new System.Drawing.Point(738, 488);
+            this.btn_save.Location = new System.Drawing.Point(731, 488);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(152, 43);
             this.btn_save.TabIndex = 237;
@@ -387,8 +387,7 @@
             this.btn_print.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.btn_print.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btn_print.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.btn_print.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image1")));
-            this.btn_print.Location = new System.Drawing.Point(588, 488);
+            this.btn_print.Location = new System.Drawing.Point(581, 488);
             this.btn_print.Name = "btn_print";
             this.btn_print.Size = new System.Drawing.Size(144, 43);
             this.btn_print.TabIndex = 238;
@@ -408,8 +407,7 @@
             this.button1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.button1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.button1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.button1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image2")));
-            this.button1.Location = new System.Drawing.Point(438, 486);
+            this.button1.Location = new System.Drawing.Point(431, 486);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(144, 43);
             this.button1.TabIndex = 239;
@@ -442,6 +440,10 @@
             this.label6.TabIndex = 240;
             this.label6.Text = "إجمالى المبيعات";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             // 
             // Frm_Search_Ticket
             // 
@@ -502,5 +504,6 @@
         private DevExpress.XtraEditors.SimpleButton button1;
         public System.Windows.Forms.TextBox txt_totalinvoice;
         public System.Windows.Forms.Label label6;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
