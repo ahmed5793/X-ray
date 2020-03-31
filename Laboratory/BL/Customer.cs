@@ -23,7 +23,7 @@ namespace Laboratory.BL
             param[2] = new SqlParameter("@phone", SqlDbType.VarChar, 20);
             param[2].Value = phone;
           
-            param[3] = new SqlParameter("@age", SqlDbType.TinyInt);
+            param[3] = new SqlParameter("@age", SqlDbType.Int);
             param[3].Value = age;
             param[4] = new SqlParameter("@Start_Date", SqlDbType.DateTime);
             param[4].Value = Start_Date;
@@ -96,7 +96,7 @@ namespace Laboratory.BL
             param[2] = new SqlParameter("@phone", SqlDbType.VarChar, 20);
             param[2].Value = phone;
        
-            param[3] = new SqlParameter("@age", SqlDbType.TinyInt);
+            param[3] = new SqlParameter("@age", SqlDbType.Int);
             param[3].Value = age;
             param[4] = new SqlParameter("@id", SqlDbType.Int);
             param[4].Value = id;

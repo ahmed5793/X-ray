@@ -1253,7 +1253,6 @@ namespace Laboratory.PL
                             txt_idcust.Text = c.LastIdCustomer().Rows[0][0].ToString();
                             c.Add_CustomerTotalBalance(Convert.ToInt32(txt_idcust.Text));
 
-
                             t.AddTickets(dtb_visit.Value, dtp_recive.Value, Convert.ToDecimal(txt_total.Text), Convert.ToDecimal(txt_pay.Text),
                                 Convert.ToDecimal(txt_rent.Text), Convert.ToInt32(txt_idcust.Text), cmb_statues.Text, Convert.ToInt32(cmb_Doctor.SelectedValue),
                                 Convert.ToInt32(cmb_branches.SelectedValue), Convert.ToInt32(cmb_Stock.SelectedValue), dtb_kashf.Value,
@@ -1279,29 +1278,7 @@ namespace Laboratory.PL
                                  , txt_username.Text, Convert.ToInt32(cmb_UserBranch.SelectedValue), "حجز أشعة ورقم الحجز" + " " + txt_IdTicket.Text);
                         
                             MessageBox.Show("تم حفظ الفاتورة بنجاح");
-                            Rpt_OrderPay report = new Rpt_OrderPay();
-                            RPT.Order.DataSetOrderPay dso = new RPT.Order.DataSetOrderPay();
-                            DataTable dt1 = new DataTable();
-                            sr.documentViewer1.Refresh();
-                            dt1.Clear();
-                            dt1 = t.ReportInvoiceTicketPay(Convert.ToInt32(txt_IdTicket.Text));
-                            dso.Tables["DataTable1"].Clear();
-                            for (int i = 0; i < dt1.Rows.Count; i++)
-                            {
-                                dso.Tables["DataTable1"].Rows.Add(Convert.ToInt32(dt1.Rows[0][0]), dt1.Rows[0][1], dt1.Rows[0][2],
-                                    Convert.ToDecimal(dt1.Rows[0][3]), dt1.Rows[0][4], dt1.Rows[0][5], Convert.ToInt32(dt1.Rows[0][6]), Convert.ToDateTime(dt1.Rows[0][7]),
-                                    Convert.ToDateTime(dt1.Rows[0][8]), dt1.Rows[0][9], dt1.Rows[0][10], dt1.Rows[0][11], dt1.Rows[0][12], dt1.Rows[0][13],
-                                    Convert.ToDecimal(dt1.Rows[0][14]), Convert.ToDecimal(dt1.Rows[0][15]), Convert.ToDecimal(dt1.Rows[0][16]),
-                                    dt1.Rows[0][17], dt1.Rows[0][18], dt1.Rows[0][19], Convert.ToDateTime(dt1.Rows[0][20]), Convert.ToDecimal(dt1.Rows[0][21]),
-                                    dt1.Rows[0][22], Convert.ToDecimal(dt1.Rows[0][23]), dt1.Rows[0][24], Convert.ToInt32(dt1.Rows[0][25]), Convert.ToInt32(dt1.Rows[0][26]),
-                                    Convert.ToInt32(dt1.Rows[0][27]));
-                            }
-                            report.DataSource = dso;
-                            report.Parameters["idTicket"].Value = Convert.ToInt32(txt_IdTicket.Text);
-                            sr.documentViewer1.DocumentSource = report;
-                            report.Parameters["idTicket"].Visible = false;
-                            sr.documentViewer1.Enabled = true;
-                            sr.ShowDialog();
+                
                         }
                         else if (rdb_CurrentPatient.Checked == true)
                         {
@@ -1328,35 +1305,34 @@ namespace Laboratory.PL
                                 Convert.ToDecimal(txt_afterDiscount.Text)
                                  , dtb_visit.Value, mno, Convert.ToInt32(cmb_Stock.SelectedValue)
                                  , txt_username.Text, Convert.ToInt32(cmb_UserBranch.SelectedValue), "حجز أشعة ورقم الحجز" + " " + txt_IdTicket.Text);
-
              
                             MessageBox.Show("تم حفظ الفاتورة بنجاح");
 
-                            Rpt_OrderPay report = new Rpt_OrderPay();
-                            RPT.Order.DataSetOrderPay dso = new RPT.Order.DataSetOrderPay();
-                            DataTable dt1 = new DataTable();
-                            sr.documentViewer1.Refresh();
-                            dt1.Clear();
-                            dt1 = t.ReportInvoiceTicketPay(Convert.ToInt32(Cmb_customer.SelectedValue));
-                            dso.Tables["DataTable1"].Clear();
-                            for (int i = 0; i < dt1.Rows.Count; i++)
-                            {
-                                dso.Tables["DataTable1"].Rows.Add(Convert.ToInt32(dt1.Rows[0][0]), dt1.Rows[0][1], dt1.Rows[0][2],
-                                    Convert.ToDecimal(dt1.Rows[0][3]), dt1.Rows[0][4], dt1.Rows[0][5], Convert.ToInt32(dt1.Rows[0][6]), Convert.ToDateTime(dt1.Rows[0][7]),
-                                    Convert.ToDateTime(dt1.Rows[0][8]), dt1.Rows[0][9], dt1.Rows[0][10], dt1.Rows[0][11], dt1.Rows[0][12], dt1.Rows[0][13],
-                                    Convert.ToDecimal(dt1.Rows[0][14]), Convert.ToDecimal(dt1.Rows[0][15]), Convert.ToDecimal(dt1.Rows[0][16]),
-                                    dt1.Rows[0][17], dt1.Rows[0][18], dt1.Rows[0][19], Convert.ToDateTime(dt1.Rows[0][20]), Convert.ToDecimal(dt1.Rows[0][21]),
-                                    dt1.Rows[0][22], Convert.ToDecimal(dt1.Rows[0][23]), dt1.Rows[0][24], Convert.ToInt32(dt1.Rows[0][25]), Convert.ToInt32(dt1.Rows[0][26]),
-                                    Convert.ToInt32(dt1.Rows[0][27]));
-                            }
-                            report.DataSource = dso;
-                            report.Parameters["idTicket"].Value = Convert.ToInt32(Cmb_customer.SelectedValue);
-                            sr.documentViewer1.DocumentSource = report;
-                            report.Parameters["idTicket"].Visible = false;
-                            sr.documentViewer1.Enabled = true;
-                            sr.ShowDialog();
                         }
-           
+
+                        Rpt_OrderPay report = new Rpt_OrderPay();
+                        RPT.Order.DataSetOrderPay dso = new RPT.Order.DataSetOrderPay();
+                        DataTable dt1 = new DataTable();
+                        sr.documentViewer1.Refresh();
+                        dt1.Clear();
+                        dt1 = t.ReportInvoiceTicketPay(Convert.ToInt32(txt_IdTicket.Text));
+                        dso.Tables["DataTable1"].Clear();
+                        for (int i = 0; i < dt1.Rows.Count; i++)
+                        {
+                            dso.Tables["DataTable1"].Rows.Add(Convert.ToInt32(dt1.Rows[0][0]), dt1.Rows[0][1], dt1.Rows[0][2],
+                                Convert.ToDecimal(dt1.Rows[0][3]), dt1.Rows[0][4], dt1.Rows[0][5], Convert.ToInt32(dt1.Rows[0][6]), Convert.ToDateTime(dt1.Rows[0][7]),
+                                Convert.ToDateTime(dt1.Rows[0][8]), dt1.Rows[0][9], dt1.Rows[0][10], dt1.Rows[0][11], dt1.Rows[0][12], dt1.Rows[0][13],
+                                Convert.ToDecimal(dt1.Rows[0][14]), Convert.ToDecimal(dt1.Rows[0][15]), Convert.ToDecimal(dt1.Rows[0][16]),
+                                dt1.Rows[0][17], dt1.Rows[0][18], dt1.Rows[0][19], Convert.ToDateTime(dt1.Rows[0][20]), Convert.ToDecimal(dt1.Rows[0][21]),
+                                dt1.Rows[0][22], Convert.ToDecimal(dt1.Rows[0][23]), dt1.Rows[0][24], Convert.ToInt32(dt1.Rows[0][25]), Convert.ToInt32(dt1.Rows[0][26]),
+                                Convert.ToInt32(dt1.Rows[0][27]));
+                        }
+                        report.DataSource = dso;
+                        report.Parameters["idTicket"].Value = Convert.ToInt32(txt_IdTicket.Text);
+                        sr.documentViewer1.DocumentSource = report;
+                        report.Parameters["idTicket"].Visible = false;
+                        sr.documentViewer1.Enabled = true;
+                        sr.ShowDialog();
                     }
                     else if (cmb_statues.Text == "شركات")
                     {
@@ -1397,30 +1373,7 @@ namespace Laboratory.PL
                           
                             MessageBox.Show("تم حفظ الفاتورة بنجاح");
 
-                            RPT.Order.Rpt_TeckietCompanyOrder oc = new RPT.Order.Rpt_TeckietCompanyOrder();
-                            RPT.Order.DataSetOrderPay dso = new RPT.Order.DataSetOrderPay();
-                            DataTable dt1 = new DataTable();
-                            dt1.Clear();
-                            dt1 = t.ReportInvoiceTicketCompany(Convert.ToInt32(txt_IdTicket.Text));
-                            dso.Tables["dataCompany"].Clear();
-                            for (int i = 0; i < dt1.Rows.Count; i++)
-                            {
-                                dso.Tables["dataCompany"].Rows.Add(Convert.ToInt32(dt1.Rows[0][0]), dt1.Rows[0][1], dt1.Rows[0][2],
-                                    Convert.ToDecimal(dt1.Rows[0][3]), dt1.Rows[0][4], dt1.Rows[0][5], Convert.ToInt32(dt1.Rows[0][6]), Convert.ToDateTime(dt1.Rows[0][7]),
-                                    Convert.ToDateTime(dt1.Rows[0][8]), dt1.Rows[0][9], dt1.Rows[0][10], dt1.Rows[0][11], dt1.Rows[0][12], dt1.Rows[0][13],
-                                    Convert.ToDecimal(dt1.Rows[0][14]), Convert.ToDecimal(dt1.Rows[0][15]), Convert.ToDecimal(dt1.Rows[0][16]),
-                                    dt1.Rows[0][17], dt1.Rows[0][18], dt1.Rows[0][19], dt1.Rows[0][20], Convert.ToDateTime(dt1.Rows[0][21]), Convert.ToDecimal(dt1.Rows[0][22]),
-                                    dt1.Rows[0][23], Convert.ToDecimal(dt1.Rows[0][24]), dt1.Rows[0][25], Convert.ToDecimal(dt1.Rows[0][26]),
-                                    Convert.ToDecimal(dt1.Rows[0][27]), Convert.ToInt32(dt1.Rows[0][28]), Convert.ToInt32(dt1.Rows[0][29]),
-                                    Convert.ToInt32(dt1.Rows[0][30]), Convert.ToInt32(dt1.Rows[0][31]));
-                            }
-                            sr.documentViewer1.Refresh();
-                            oc.DataSource = dso;
-                            oc.Parameters["idTicket"].Value = Convert.ToInt32(txt_IdTicket.Text);
-                            sr.documentViewer1.DocumentSource = oc;
-                            oc.Parameters["idTicket"].Visible = false;
-                            sr.documentViewer1.Enabled = true;
-                            sr.ShowDialog();
+             
                         }
                         else if (rdb_CurrentPatient.Checked == true)
                         {
@@ -1448,34 +1401,34 @@ namespace Laboratory.PL
                                  , txt_username.Text, Convert.ToInt32(cmb_UserBranch.SelectedValue), "حجز أشعة ورقم الحجز" + " " + txt_IdTicket.Text);
                             MessageBox.Show("تم حفظ الفاتورة بنجاح");
 
-                            RPT.Order.Rpt_TeckietCompanyOrder oc = new RPT.Order.Rpt_TeckietCompanyOrder();
-                            RPT.Order.DataSetOrderPay dso = new RPT.Order.DataSetOrderPay();
-                            DataTable dt1 = new DataTable();
-                            dt1.Clear();
-                            dt1 = t.ReportInvoiceTicketCompany(Convert.ToInt32(Cmb_customer.SelectedValue));
-                            dso.Tables["dataCompany"].Clear();
-                            for (int i = 0; i < dt1.Rows.Count; i++)
-                            {
-                                dso.Tables["dataCompany"].Rows.Add(Convert.ToInt32(dt1.Rows[0][0]), dt1.Rows[0][1], dt1.Rows[0][2],
-                                    Convert.ToDecimal(dt1.Rows[0][3]), dt1.Rows[0][4], dt1.Rows[0][5], Convert.ToInt32(dt1.Rows[0][6]), Convert.ToDateTime(dt1.Rows[0][7]),
-                                    Convert.ToDateTime(dt1.Rows[0][8]), dt1.Rows[0][9], dt1.Rows[0][10], dt1.Rows[0][11], dt1.Rows[0][12], dt1.Rows[0][13],
-                                    Convert.ToDecimal(dt1.Rows[0][14]), Convert.ToDecimal(dt1.Rows[0][15]), Convert.ToDecimal(dt1.Rows[0][16]),
-                                    dt1.Rows[0][17], dt1.Rows[0][18], dt1.Rows[0][19], dt1.Rows[0][20], Convert.ToDateTime(dt1.Rows[0][21]), Convert.ToDecimal(dt1.Rows[0][22]),
-                                    dt1.Rows[0][23], Convert.ToDecimal(dt1.Rows[0][24]), dt1.Rows[0][25], Convert.ToDecimal(dt1.Rows[0][26]),
-                                    Convert.ToDecimal(dt1.Rows[0][27]), Convert.ToInt32(dt1.Rows[0][28]), Convert.ToInt32(dt1.Rows[0][29]),
-                                    Convert.ToInt32(dt1.Rows[0][30]), Convert.ToInt32(dt1.Rows[0][31]));
-                            }
-                            sr.documentViewer1.Refresh();
-                            oc.DataSource = dso;
-                            oc.Parameters["idTicket"].Value = Convert.ToInt32(Cmb_customer.SelectedValue);
-                            sr.documentViewer1.DocumentSource = oc;
-                            oc.Parameters["idTicket"].Visible = false;
-                            sr.documentViewer1.Enabled = true;
-                            sr.ShowDialog();
+                      
                         }
                         t.AddTicketCompany(Convert.ToInt32(txt_IdTicket.Text), Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToDecimal(Txt_rentCompany.Text));
+                        RPT.Order.Rpt_TeckietCompanyOrder oc = new RPT.Order.Rpt_TeckietCompanyOrder();
+                        RPT.Order.DataSetOrderPay dso = new RPT.Order.DataSetOrderPay();
+                        DataTable dt1 = new DataTable();
+                        dt1.Clear();
+                        dt1 = t.ReportInvoiceTicketCompany(Convert.ToInt32(txt_IdTicket.Text));
+                        dso.Tables["dataCompany"].Clear();
+                        for (int i = 0; i < dt1.Rows.Count; i++)
+                        {
+                            dso.Tables["dataCompany"].Rows.Add(Convert.ToInt32(dt1.Rows[0][0]), dt1.Rows[0][1], dt1.Rows[0][2],
+                                Convert.ToDecimal(dt1.Rows[0][3]), dt1.Rows[0][4], dt1.Rows[0][5], Convert.ToInt32(dt1.Rows[0][6]), Convert.ToDateTime(dt1.Rows[0][7]),
+                                Convert.ToDateTime(dt1.Rows[0][8]), dt1.Rows[0][9], dt1.Rows[0][10], dt1.Rows[0][11], dt1.Rows[0][12], dt1.Rows[0][13],
+                                Convert.ToDecimal(dt1.Rows[0][14]), Convert.ToDecimal(dt1.Rows[0][15]), Convert.ToDecimal(dt1.Rows[0][16]),
+                                dt1.Rows[0][17], dt1.Rows[0][18], dt1.Rows[0][19], dt1.Rows[0][20], Convert.ToDateTime(dt1.Rows[0][21]), Convert.ToDecimal(dt1.Rows[0][22]),
+                                dt1.Rows[0][23], Convert.ToDecimal(dt1.Rows[0][24]), dt1.Rows[0][25], Convert.ToDecimal(dt1.Rows[0][26]),
+                                Convert.ToDecimal(dt1.Rows[0][27]), Convert.ToInt32(dt1.Rows[0][28]), Convert.ToInt32(dt1.Rows[0][29]),
+                                Convert.ToInt32(dt1.Rows[0][30]), Convert.ToInt32(dt1.Rows[0][31]));
+                        }
+                        sr.documentViewer1.Refresh();
+                        oc.DataSource = dso;
+                        oc.Parameters["idTicket"].Value = Convert.ToInt32(txt_IdTicket.Text);
+                        sr.documentViewer1.DocumentSource = oc;
+                        oc.Parameters["idTicket"].Visible = false;
+                        sr.documentViewer1.Enabled = true;
+                        sr.ShowDialog();
 
-                     
                         dt.Clear();
                         dt= cm.Select_CompanyTotalMoney(Convert.ToInt32(cmb_Company.SelectedValue));
                         decimal mno = Convert.ToDecimal(dt.Rows[0][0]) + Convert.ToDecimal(Txt_rentCompany.Text); 
