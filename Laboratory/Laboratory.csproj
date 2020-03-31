@@ -915,6 +915,12 @@
     <Compile Include="RPT\Order\Rpt_OrderPay.Designer.cs">
       <DependentUpon>Rpt_OrderPay.cs</DependentUpon>
     </Compile>
+    <Compile Include="RPT\Order\Rpt_TeckietCompanyOrder.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPT\Order\Rpt_TeckietCompanyOrder.Designer.cs">
+      <DependentUpon>Rpt_TeckietCompanyOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="RPT\RPT_Barcode.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -1258,6 +1264,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RPT\Order\Rpt_OrderPay.resx">
       <DependentUpon>Rpt_OrderPay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\Order\Rpt_TeckietCompanyOrder.resx">
+      <DependentUpon>Rpt_TeckietCompanyOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RPT\RPT_Barcode.resx">
       <DependentUpon>RPT_Barcode.cs</DependentUpon>

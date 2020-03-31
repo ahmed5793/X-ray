@@ -274,6 +274,7 @@
             this.gridControl1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
+            this.gridControl1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.gridControl1.Size = new System.Drawing.Size(984, 264);
             this.gridControl1.TabIndex = 127;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -412,6 +413,7 @@
             this.button1.Size = new System.Drawing.Size(144, 43);
             this.button1.TabIndex = 239;
             this.button1.Text = "طباعة باركود";
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // txt_totalinvoice
             // 
@@ -467,6 +469,7 @@
             this.Name = "Frm_Search_Ticket";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "شاشة البحث فى كل الحجوزات";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Frm_Search_Ticket_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

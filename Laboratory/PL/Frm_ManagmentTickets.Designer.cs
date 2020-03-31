@@ -35,16 +35,16 @@
             this.txt_username = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.ToDate = new System.Windows.Forms.DateTimePicker();
+            this.FromDate = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.bar1 = new DevExpress.XtraBars.Bar();
-            this.ToDate = new System.Windows.Forms.DateTimePicker();
-            this.FromDate = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -130,6 +130,56 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
+            // ToDate
+            // 
+            this.ToDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ToDate.CustomFormat = "dd/MM/yyyy  *  tt mm:hh     ";
+            this.ToDate.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ToDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.ToDate.Location = new System.Drawing.Point(305, 48);
+            this.ToDate.Name = "ToDate";
+            this.ToDate.ShowUpDown = true;
+            this.ToDate.Size = new System.Drawing.Size(287, 32);
+            this.ToDate.TabIndex = 211;
+            // 
+            // FromDate
+            // 
+            this.FromDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.FromDate.CustomFormat = "dd/MM/yyyy  *  tt mm:hh     ";
+            this.FromDate.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FromDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.FromDate.Location = new System.Drawing.Point(305, 10);
+            this.FromDate.Name = "FromDate";
+            this.FromDate.ShowUpDown = true;
+            this.FromDate.Size = new System.Drawing.Size(287, 32);
+            this.FromDate.TabIndex = 210;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Black;
+            this.label2.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(600, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(41, 32);
+            this.label2.TabIndex = 208;
+            this.label2.Text = "من";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Black;
+            this.label3.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(598, 49);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(43, 32);
+            this.label3.TabIndex = 209;
+            this.label3.Text = "الي";
+            // 
             // simpleButton1
             // 
             this.simpleButton1.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -174,6 +224,7 @@
             this.gridControl1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
+            this.gridControl1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.gridControl1.Size = new System.Drawing.Size(880, 334);
             this.gridControl1.TabIndex = 127;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -233,56 +284,6 @@
             this.bar1.OptionsBar.UseWholeRow = true;
             this.bar1.Text = "Main menu";
             // 
-            // ToDate
-            // 
-            this.ToDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.ToDate.CustomFormat = "dd/MM/yyyy  *  tt mm:hh     ";
-            this.ToDate.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ToDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.ToDate.Location = new System.Drawing.Point(305, 48);
-            this.ToDate.Name = "ToDate";
-            this.ToDate.ShowUpDown = true;
-            this.ToDate.Size = new System.Drawing.Size(287, 32);
-            this.ToDate.TabIndex = 211;
-            // 
-            // FromDate
-            // 
-            this.FromDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.FromDate.CustomFormat = "dd/MM/yyyy  *  tt mm:hh     ";
-            this.FromDate.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FromDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FromDate.Location = new System.Drawing.Point(305, 10);
-            this.FromDate.Name = "FromDate";
-            this.FromDate.ShowUpDown = true;
-            this.FromDate.Size = new System.Drawing.Size(287, 32);
-            this.FromDate.TabIndex = 210;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Black;
-            this.label2.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(600, 10);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 32);
-            this.label2.TabIndex = 208;
-            this.label2.Text = "من";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Black;
-            this.label3.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(598, 49);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 32);
-            this.label3.TabIndex = 209;
-            this.label3.Text = "الي";
-            // 
             // Frm_ManagmentTickets
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -295,6 +296,7 @@
             this.Name = "Frm_ManagmentTickets";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "إدارة الحجوزات";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Frm_ManagmentTickets_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

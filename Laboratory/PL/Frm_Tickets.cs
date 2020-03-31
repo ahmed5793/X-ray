@@ -1395,7 +1395,8 @@ namespace Laboratory.PL
                                 Convert.ToDecimal(Txt_PricePayment.Text)
                                  , dtb_visit.Value, mno2, Convert.ToInt32(cmb_Stock.SelectedValue)
                                  , txt_username.Text, Convert.ToInt32(cmb_UserBranch.SelectedValue), "حجز أشعة ورقم الحجز" + " " + txt_IdTicket.Text);
-                        
+                            MessageBox.Show("تم حفظ الفاتورة بنجاح");
+
                         }
                         t.AddTicketCompany(Convert.ToInt32(txt_IdTicket.Text), Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToDecimal(Txt_rentCompany.Text));
 
@@ -1408,20 +1409,19 @@ namespace Laboratory.PL
                              ,dtb_visit.Value, mno , "حجز أشعة ورقم الحجز   "+" "+ txt_IdTicket.Text,Convert.ToInt32(cmb_Stock.SelectedValue)
                              ,Convert.ToInt32(cmb_UserBranch.SelectedValue),txt_username.Text);
                        
-                        MessageBox.Show("تم حفظ الفاتورة بنجاح");
 
                        
 
 
-                        Rpt_OrderCompany oc = new Rpt_OrderCompany();
+                        RPT.Order.Rpt_TeckietCompanyOrder oc = new RPT.Order.Rpt_TeckietCompanyOrder();
                         RPT.Order.DataSetOrderPay dso = new RPT.Order.DataSetOrderPay();
                         DataTable dt1 = new DataTable();
                         dt1.Clear();
                         dt1 = t.ReportInvoiceTicketCompany(Convert.ToInt32(txt_IdTicket.Text));
-                        dso.Tables["DataTable1"].Clear();
+                        dso.Tables["dataCompany"].Clear();
                         for (int i = 0; i < dt1.Rows.Count; i++)
                         {
-                            dso.Tables["DataTable1"].Rows.Add(Convert.ToInt32(dt1.Rows[0][0]), dt1.Rows[0][1], dt1.Rows[0][2],
+                            dso.Tables["dataCompany"].Rows.Add(Convert.ToInt32(dt1.Rows[0][0]), dt1.Rows[0][1], dt1.Rows[0][2],
                                 Convert.ToDecimal(dt1.Rows[0][3]), dt1.Rows[0][4], dt1.Rows[0][5], Convert.ToInt32(dt1.Rows[0][6]),Convert.ToDateTime(dt1.Rows[0][7]),
                                 Convert.ToDateTime(dt1.Rows[0][8]), dt1.Rows[0][9], dt1.Rows[0][10], dt1.Rows[0][11], dt1.Rows[0][12], dt1.Rows[0][13],
                                 Convert.ToDecimal(dt1.Rows[0][14]), Convert.ToDecimal(dt1.Rows[0][15]), Convert.ToDecimal(dt1.Rows[0][16]),
