@@ -120,7 +120,7 @@ namespace Laboratory.PL
 
         private void Frm_PayClient_Load(object sender, EventArgs e)
         {
-
+            txt_prise.Enabled = false;
         }
 
         private void txt_prise_Click(object sender, EventArgs e)
@@ -245,14 +245,14 @@ namespace Laboratory.PL
                     }
                     else if (rdbPartPay.Checked == true)
                     {
-                        decimal z = Convert.ToInt32(dataGridView1.CurrentRow.Cells[3].Value) - Convert.ToDecimal(txt_prise.Text);
+                        decimal z = Convert.ToInt32(dataGridView1.CurrentRow.Cells[2].Value) - Convert.ToDecimal(txt_prise.Text);
                         if (Convert.ToDecimal(txt_prise.Text) > Convert.ToDecimal(dataGridView1.CurrentRow.Cells[2].Value))
                         {
                             MessageBox.Show("المبلغ المدفوع اكبر من المبلغ الموجود حاليا على الشركة  ", "تاكيد", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             txt_prise.Focus();
                             return;
                         }
-                        if (Convert.ToDecimal(txt_prise.Text) > 0)
+                        if (txt_prise.Text == "0"&& txt_prise.Text == "")
                         {
                             MessageBox.Show("لا بد ان يكون المبلغ المدفوع اكبر من الصفر", "تاكيد", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             txt_prise.Focus();
@@ -287,6 +287,7 @@ namespace Laboratory.PL
 
                     }
                     txt_prise.Text = "0";
+
                 }
             }
             catch (Exception ex)
@@ -295,6 +296,11 @@ namespace Laboratory.PL
                 MessageBox.Show(ex.Message);
                 MessageBox.Show(ex.StackTrace);
             }
+        }
+
+        private void txt_prise_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

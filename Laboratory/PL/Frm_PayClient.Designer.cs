@@ -119,6 +119,7 @@
             this.txt_prise.Text = "0";
             this.txt_prise.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_prise.Click += new System.EventHandler(this.txt_prise_Click);
+            this.txt_prise.TextChanged += new System.EventHandler(this.txt_prise_TextChanged);
             this.txt_prise.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_prise_KeyPress);
             this.txt_prise.MouseMove += new System.Windows.Forms.MouseEventHandler(this.txt_prise_MouseMove);
             // 
@@ -334,7 +335,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
-            this.ClientSize = new System.Drawing.Size(720, 420);
+            this.ClientSize = new System.Drawing.Size(720, 419);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.Txt_SalesMAn);

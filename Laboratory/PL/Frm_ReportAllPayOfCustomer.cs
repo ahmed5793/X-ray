@@ -99,5 +99,10 @@ namespace Laboratory.PL
         {
             gridControl1.ShowRibbonPrintPreview();
         }
+
+        private void Frm_ReportAllPayOfCustomer_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
