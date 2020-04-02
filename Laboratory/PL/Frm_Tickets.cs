@@ -941,7 +941,7 @@ namespace Laboratory.PL
 
         private void cmb_items_Leave(object sender, EventArgs e)
         {
-            if (Cmb_category.Text!="")
+            if (Cmb_category.Text !="" )
             {            
             dt.Clear();
             dt = ix.VildateItem(Convert.ToInt32(Cmb_category.SelectedValue), Convert.ToInt32(cmb_items.SelectedValue));
@@ -972,13 +972,15 @@ namespace Laboratory.PL
 
         private void Cmb_category_Leave(object sender, EventArgs e)
         {
-
-            dt.Clear();
-            dt = cx.Validate_CategoryXray(Convert.ToInt32(Cmb_category.SelectedValue));
-            if (dt.Rows.Count == 0)
+            if (Cmb_category.Text != "")
             {
-                cmb_items.DataSource = null;
-                MessageBox.Show("عزيزيى المستخدم يرجي العلم بان اسم الجهاز غير مسجل ");
+                dt.Clear();
+                dt = cx.Validate_CategoryXray(Convert.ToInt32(Cmb_category.SelectedValue));
+                if (dt.Rows.Count == 0)
+                {
+                    cmb_items.DataSource = null;
+                    MessageBox.Show("عزيزيى المستخدم يرجي العلم بان اسم الجهاز غير مسجل ");
+                }
             }
         }
 
@@ -1167,6 +1169,17 @@ namespace Laboratory.PL
         private void Btn_Add_Click(object sender, EventArgs e)
         {
             clear();
+            Customer();
+            cmb_statues.Enabled = true;
+            cmb_items.Enabled = true;
+            Cmb_category.Enabled = true;
+            Cmb_customer.Enabled = true;
+            cmb_Doctor.Enabled = true;
+            cmb_DoctorOfCenter.Enabled = true;
+            cmb_Techincal.Enabled = true;
+            cmb_branches.Enabled = true;
+            cmb_Stock.Enabled = true;
+            cmb_UserBranch.Enabled = true;
         }
         frm_SingelReport sr = new frm_SingelReport();
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -1209,32 +1222,34 @@ namespace Laboratory.PL
                         MessageBox.Show("من فضلك قم باادخال بيانات العميل كاملة");
                         return;
                     }
-                    if (txt_compint.Text == "")
-                    {
-                        MessageBox.Show("من فضلك قم باادخال الشكوي");
-
-                        return;
-                    }
                     if (cmb_Doctor.Text == "")
                     {
                         MessageBox.Show("من فضلك قم باادخال الطبيب المعالج للمريض");
 
                         return;
                     }
-                    if (cmb_DoctorOfCenter.Text == "" )
+                    if (cmb_DoctorOfCenter.Text == "")
                     {
                         MessageBox.Show("من فضلك قم باادخال طبيب الحالة");
                         cmb_DoctorOfCenter.Focus();
 
                         return;
                     }
-                    if (cmb_Techincal.Text == "" )
+                    if (cmb_Techincal.Text == "")
                     {
                         MessageBox.Show("من فضلك قم باادخال الفني");
                         cmb_Techincal.Focus();
 
                         return;
                     }
+                    if (txt_compint.Text == "")
+                    {
+                        MessageBox.Show("من فضلك قم باادخال الشكوي");
+
+                        return;
+                    }
+                 
+                  
                     //if (Cmb_category.Text == "")
                     //{
                     //    MessageBox.Show("من فضلك قم بااختيار فئة الفحص");
@@ -1310,6 +1325,16 @@ namespace Laboratory.PL
                                  , txt_username.Text, Convert.ToInt32(cmb_UserBranch.SelectedValue), "حجز أشعة ورقم الحجز" + " " + txt_IdTicket.Text);
              
                             MessageBox.Show("تم حفظ الفاتورة بنجاح");
+                            cmb_statues.Enabled = false;
+                            cmb_items.Enabled = false;
+                            Cmb_category.Enabled = false;
+                            Cmb_customer.Enabled = false;
+                            cmb_Doctor.Enabled = false;
+                            cmb_DoctorOfCenter.Enabled = false;
+                            cmb_Techincal.Enabled = false;
+                            cmb_branches.Enabled = false;
+                            cmb_Stock.Enabled = false;
+                            cmb_UserBranch.Enabled = false;
 
                         }
 
@@ -1518,6 +1543,17 @@ namespace Laboratory.PL
 
                 clear();
                 Customer();
+
+                cmb_statues.Enabled = true;
+                cmb_items.Enabled = true;
+                Cmb_category.Enabled = true;
+                Cmb_customer.Enabled = true;
+                cmb_Doctor.Enabled = true;
+                cmb_DoctorOfCenter.Enabled = true;
+                cmb_Techincal.Enabled = true;
+                cmb_branches.Enabled = true;
+                cmb_Stock.Enabled = true;
+                cmb_UserBranch.Enabled = true;
             }
             else
             {
