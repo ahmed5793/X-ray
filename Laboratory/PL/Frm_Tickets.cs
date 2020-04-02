@@ -1323,14 +1323,24 @@ namespace Laboratory.PL
                         dso.Tables["DataTable1"].Clear();
                         for (int i = 0; i < dt1.Rows.Count; i++)
                         {
-                            dso.Tables["DataTable1"].Rows.Add(Convert.ToInt32(dt1.Rows[i][0]), dt1.Rows[i][1], dt1.Rows[i][2],
-                                Convert.ToDecimal(dt1.Rows[i][3]), dt1.Rows[i][4], dt1.Rows[i][5], Convert.ToInt32(dt1.Rows[i][6]),
-                                Convert.ToDateTime(dt1.Rows[i][7]),Convert.ToDateTime(dt1.Rows[i][8]), dt1.Rows[i][9], dt1.Rows[i][10],
-                                dt1.Rows[i][11], dt1.Rows[i][12], dt1.Rows[i][13],Convert.ToDecimal(dt1.Rows[i][14]), 
-                                Convert.ToDecimal(dt1.Rows[i][15]), Convert.ToDecimal(dt1.Rows[i][16]),dt1.Rows[i][17], dt1.Rows[i][18],
-                                dt1.Rows[i][19], Convert.ToDateTime(dt1.Rows[i][20]), Convert.ToDecimal(dt1.Rows[i][21]),
-                                dt1.Rows[i][22], Convert.ToDecimal(dt1.Rows[i][23]), dt1.Rows[i][24], Convert.ToInt32(dt1.Rows[i][25]),
-                                Convert.ToInt32(dt1.Rows[i][26]),Convert.ToInt32(dt1.Rows[i][27]));                        
+                            //dso.Tables["DataTable1"].Rows.Add(Convert.ToInt32(dt1.Rows[i][0]), dt1.Rows[i][1], dt1.Rows[i][2],
+                            //    Convert.ToDecimal(dt1.Rows[i][3]), dt1.Rows[i][4], dt1.Rows[i][5], Convert.ToInt32(dt1.Rows[i][6]),
+                            //    Convert.ToDateTime(dt1.Rows[i][7]),Convert.ToDateTime(dt1.Rows[i][8]), dt1.Rows[i][9], dt1.Rows[i][10],
+                            //    dt1.Rows[i][11], dt1.Rows[i][12], dt1.Rows[i][13],Convert.ToDecimal(dt1.Rows[i][14]), 
+                            //    Convert.ToDecimal(dt1.Rows[i][15]), Convert.ToDecimal(dt1.Rows[i][16]),dt1.Rows[i][17], dt1.Rows[i][18],
+                            //    dt1.Rows[i][19], Convert.ToDateTime(dt1.Rows[i][20]), Convert.ToDecimal(dt1.Rows[i][21]),
+                            //    dt1.Rows[i][22], Convert.ToDecimal(dt1.Rows[i][23]), dt1.Rows[i][24], Convert.ToInt32(dt1.Rows[i][25]),
+                            //    Convert.ToInt32(dt1.Rows[i][26]),Convert.ToInt32(dt1.Rows[i][27]));
+
+
+                            dso.Tables["DataTable1"].Rows.Add(dt1.Rows[i][0], dt1.Rows[i][1], dt1.Rows[i][2],
+                               dt1.Rows[i][3], dt1.Rows[i][4], dt1.Rows[i][5],dt1.Rows[i][6],
+                               dt1.Rows[i][7], dt1.Rows[i][8], dt1.Rows[i][9], dt1.Rows[i][10],
+                               dt1.Rows[i][11], dt1.Rows[i][12], dt1.Rows[i][13], dt1.Rows[i][14],
+                               dt1.Rows[i][15], dt1.Rows[i][16], dt1.Rows[i][17], dt1.Rows[i][18],
+                               dt1.Rows[i][19],dt1.Rows[i][20], Convert.ToDecimal(dt1.Rows[i][21]),
+                               dt1.Rows[i][22], dt1.Rows[i][23], dt1.Rows[i][24], dt1.Rows[i][25],
+                               dt1.Rows[i][26], dt1.Rows[i][27]);
                         }
                         report.DataSource = dso;
                         report.Parameters["idTicket"].Value = Convert.ToInt32(txt_IdTicket.Text);
@@ -1413,36 +1423,47 @@ namespace Laboratory.PL
                         dt1.Clear();
                         dt1 = t.ReportInvoiceTicketCompany(Convert.ToInt32(txt_IdTicket.Text));
                         RPT.Order.Rpt_TeckietCompanyOrder oc = new RPT.Order.Rpt_TeckietCompanyOrder();
-                        RPT.Order.DataSetOrderPay dso = new RPT.Order.DataSetOrderPay();
-                
+                        RPT.Order.DataSetOrderCompany dso = new RPT.Order.DataSetOrderCompany();
+                        
                         dso.Tables["dataCompany"].Clear();
                         for (int i = 0; i < dt1.Rows.Count; i++)
                         {
-                            dso.Tables["dataCompany"].Rows.Add(Convert.ToInt32(dt1.Rows[i][0]), dt1.Rows[i][1], dt1.Rows[i][2],
-                            Convert.ToDecimal(dt1.Rows[i][3]), dt1.Rows[i][4], dt1.Rows[i][5], Convert.ToInt32(dt1.Rows[i][6]), Convert.ToDateTime(dt1.Rows[i][7]),
-                            Convert.ToDateTime(dt1.Rows[i][8]), dt1.Rows[i][9], dt1.Rows[i][10], dt1.Rows[i][11], dt1.Rows[i][12], dt1.Rows[i][13],
-                            Convert.ToDecimal(dt1.Rows[i][14]), Convert.ToDecimal(dt1.Rows[i][15]), Convert.ToDecimal(dt1.Rows[i][16]),
-                            dt1.Rows[i][17], dt1.Rows[i][18], dt1.Rows[i][19], dt1.Rows[i][20], Convert.ToDateTime(dt1.Rows[i][21]), Convert.ToDecimal(dt1.Rows[i][22]),
-                            dt1.Rows[i][23], Convert.ToDecimal(dt1.Rows[i][24]), dt1.Rows[i][25], Convert.ToDecimal(dt1.Rows[i][26]),
-                            Convert.ToDecimal(dt1.Rows[i][27]), Convert.ToInt32(dt1.Rows[i][28]), Convert.ToInt32(dt1.Rows[i][29]),
-                            Convert.ToInt32(dt1.Rows[i][30]), Convert.ToInt32(dt1.Rows[i][31]));
+                            //dso.Tables["dataCompany"].Rows.Add(Convert.ToInt32(dt1.Rows[i][0]), dt1.Rows[i][1], dt1.Rows[i][2],
+                            //Convert.ToDecimal(dt1.Rows[i][3]), dt1.Rows[i][4], dt1.Rows[i][5], Convert.ToInt32(dt1.Rows[i][6]), Convert.ToDateTime(dt1.Rows[i][7]),
+                            //Convert.ToDateTime(dt1.Rows[i][8]), dt1.Rows[i][9], dt1.Rows[i][10], dt1.Rows[i][11], dt1.Rows[i][12], dt1.Rows[i][13],
+                            //Convert.ToDecimal(dt1.Rows[i][14]), Convert.ToDecimal(dt1.Rows[i][15]), Convert.ToDecimal(dt1.Rows[i][16]),
+                            //dt1.Rows[i][17], dt1.Rows[i][18], dt1.Rows[i][19], dt1.Rows[i][20], Convert.ToDateTime(dt1.Rows[i][21]), Convert.ToDecimal(dt1.Rows[i][22]),
+                            //dt1.Rows[i][23], Convert.ToDecimal(dt1.Rows[i][24]), dt1.Rows[i][25], Convert.ToDecimal(dt1.Rows[i][26]),
+                            //Convert.ToDecimal(dt1.Rows[i][27]), Convert.ToInt32(dt1.Rows[i][28]), Convert.ToInt32(dt1.Rows[i][29]),
+                            //Convert.ToInt32(dt1.Rows[i][30]), Convert.ToInt32(dt1.Rows[i][31]));
+
+                            dso.Tables["dataCompany"].Rows.Add(dt1.Rows[i][0], dt1.Rows[i][1], dt1.Rows[i][2],
+                               dt1.Rows[i][3], dt1.Rows[i][4], dt1.Rows[i][5], dt1.Rows[i][6], dt1.Rows[i][7],
+                               dt1.Rows[i][8], dt1.Rows[i][9], dt1.Rows[i][10], dt1.Rows[i][11], dt1.Rows[i][12], dt1.Rows[i][13],
+                               dt1.Rows[i][14],dt1.Rows[i][15], dt1.Rows[i][16],
+                               dt1.Rows[i][17], dt1.Rows[i][18], dt1.Rows[i][19], dt1.Rows[i][20], dt1.Rows[i][21],dt1.Rows[i][22],
+                               dt1.Rows[i][23], dt1.Rows[i][24], dt1.Rows[i][25], dt1.Rows[i][26],
+                               dt1.Rows[i][27], dt1.Rows[i][28], dt1.Rows[i][29],
+                               dt1.Rows[i][30], dt1.Rows[i][31]);
+
                         }
                         sr.documentViewer1.Refresh();
                         oc.DataSource = dso;
-                        oc.Parameters["idTicket"].Value = Convert.ToInt32(txt_IdTicket.Text);
+                        oc.Parameters["idTicket"].Value = Convert.ToInt32(txt_IdTicket.Text);                    
+                        
                         sr.documentViewer1.DocumentSource = oc;
                         oc.Parameters["idTicket"].Visible = false;
                         sr.documentViewer1.Enabled = true;
                         sr.ShowDialog();
 
                         dt.Clear();
-                        dt= cm.Select_CompanyTotalMoney(Convert.ToInt32(cmb_Company.SelectedValue));
-                        decimal mno = Convert.ToDecimal(dt.Rows[0][0]) + Convert.ToDecimal(Txt_rentCompany.Text); 
-                        cm.Update_CompanyTotalMoney(Convert.ToInt32(cmb_Company.SelectedValue),mno);
-                        cm.ADD_Company_TotalRent(Convert.ToInt32(cmb_Company.SelectedValue),0, Convert.ToDecimal(Txt_rentCompany.Text)
-                             ,dtb_visit.Value, mno , "حجز أشعة ورقم الحجز   "+" "+ txt_IdTicket.Text,Convert.ToInt32(cmb_Stock.SelectedValue)
-                             ,Convert.ToInt32(cmb_UserBranch.SelectedValue),txt_username.Text);
-                     
+                        dt = cm.Select_CompanyTotalMoney(Convert.ToInt32(cmb_Company.SelectedValue));
+                        decimal mno = Convert.ToDecimal(dt.Rows[0][0]) + Convert.ToDecimal(Txt_rentCompany.Text);
+                        cm.Update_CompanyTotalMoney(Convert.ToInt32(cmb_Company.SelectedValue), mno);
+                        cm.ADD_Company_TotalRent(Convert.ToInt32(cmb_Company.SelectedValue), 0, Convert.ToDecimal(Txt_rentCompany.Text)
+                             , dtb_visit.Value, mno, "حجز أشعة ورقم الحجز   " + " " + txt_IdTicket.Text, Convert.ToInt32(cmb_Stock.SelectedValue)
+                             , Convert.ToInt32(cmb_UserBranch.SelectedValue), txt_username.Text);
+
                     }
 
                     if (Convert.ToDecimal(txt_pay.Text) > 0)
@@ -1457,7 +1478,7 @@ namespace Laboratory.PL
                 else
                 {
                     MessageBox.Show("لا بد من إختيار فحص أولا أو إستكمال بيانات الفحص بشكل صحيح");
-                    return;
+                   
                 }
 
             }

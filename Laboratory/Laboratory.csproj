@@ -221,11 +221,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="LaboratoryDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LaboratoryDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="PL\FingerPrint.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -877,6 +872,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetFingerExcell.xsd</DependentUpon>
     </Compile>
+    <Compile Include="RPT\Order\DataSetOrderCompany.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetOrderCompany.xsd</DependentUpon>
+    </Compile>
     <Compile Include="RPT\Order\DataSetOrderPay.cs">
       <DependentUpon>DataSetOrderPay.xsd</DependentUpon>
     </Compile>
@@ -1282,17 +1282,6 @@
     <None Include="DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
-    <None Include="LaboratoryDataSet.xsc">
-      <DependentUpon>LaboratoryDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="LaboratoryDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>LaboratoryDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="LaboratoryDataSet.xss">
-      <DependentUpon>LaboratoryDataSet.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Laboratory.BL.FileExcel.datasource" />
     <None Include="Properties\Settings.settings">
@@ -1325,6 +1314,17 @@
     </None>
     <None Include="RPT\Order\DataSetFingerExcell.xss">
       <DependentUpon>DataSetFingerExcell.xsd</DependentUpon>
+    </None>
+    <None Include="RPT\Order\DataSetOrderCompany.xsc">
+      <DependentUpon>DataSetOrderCompany.xsd</DependentUpon>
+    </None>
+    <None Include="RPT\Order\DataSetOrderCompany.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetOrderCompany.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="RPT\Order\DataSetOrderCompany.xss">
+      <DependentUpon>DataSetOrderCompany.xsd</DependentUpon>
     </None>
     <None Include="RPT\Order\DataSetOrderPay.xsc">
       <DependentUpon>DataSetOrderPay.xsd</DependentUpon>
