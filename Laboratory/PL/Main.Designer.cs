@@ -171,6 +171,7 @@
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.barHeaderItem31 = new DevExpress.XtraBars.BarHeaderItem();
+            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barAndDockingController1)).BeginInit();
@@ -292,9 +293,10 @@
             this.barStaticItem9,
             this.barButtonItem4,
             this.barButtonItem5,
-            this.barStaticItem10});
+            this.barStaticItem10,
+            this.barButtonItem6});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 132;
+            this.ribbon.MaxItemId = 133;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.basic_information,
@@ -1403,6 +1405,7 @@
             this.ribbonPageGroup6.ItemLinks.Add(this.Depit_Company);
             this.ribbonPageGroup6.ItemLinks.Add(this.pay_Company);
             this.ribbonPageGroup6.ItemLinks.Add(this.Btn_AccountStatment);
+            this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem6);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             this.ribbonPageGroup6.Text = "ادارة التعاقدات";
             // 
@@ -1602,6 +1605,15 @@
             this.barHeaderItem31.Id = 124;
             this.barHeaderItem31.Name = "barHeaderItem31";
             // 
+            // barButtonItem6
+            // 
+            this.barButtonItem6.Caption = "تقرير عن التحويلات للجهه الاخرى";
+            this.barButtonItem6.Id = 132;
+            this.barButtonItem6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.Image")));
+            this.barButtonItem6.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.LargeImage")));
+            this.barButtonItem6.Name = "barButtonItem6";
+            this.barButtonItem6.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem6_ItemClick_2);
+            // 
             // Main
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
@@ -1778,5 +1790,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.BarStaticItem barStaticItem10;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem6;
     }
 }

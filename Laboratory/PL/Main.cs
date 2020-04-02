@@ -1211,8 +1211,12 @@ namespace Laboratory.PL
             }
 
 }
-  
-   
+
+        private void barButtonItem6_ItemClick_2(object sender, ItemClickEventArgs e)
+        {
+            Frm_ReportTransferForCompany ftm = new Frm_ReportTransferForCompany();
+            ftm.Show();
+        }
     }
 }
 	

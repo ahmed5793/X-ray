@@ -36,7 +36,7 @@ namespace Laboratory.PL
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            gridControl1.ShowRibbonPrintPreview();
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -56,6 +56,11 @@ namespace Laboratory.PL
             }
             textBox1.Text = total.ToString("₱ #,##0.0");
 
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            gridControl1.ShowRibbonPrintPreview();
         }
     }
 }
