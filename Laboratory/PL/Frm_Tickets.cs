@@ -1338,7 +1338,7 @@ namespace Laboratory.PL
                                dt1.Rows[i][7], dt1.Rows[i][8], dt1.Rows[i][9], dt1.Rows[i][10],
                                dt1.Rows[i][11], dt1.Rows[i][12], dt1.Rows[i][13], dt1.Rows[i][14],
                                dt1.Rows[i][15], dt1.Rows[i][16], dt1.Rows[i][17], dt1.Rows[i][18],
-                               dt1.Rows[i][19],dt1.Rows[i][20], Convert.ToDecimal(dt1.Rows[i][21]),
+                               dt1.Rows[i][19],dt1.Rows[i][20], dt1.Rows[i][21],
                                dt1.Rows[i][22], dt1.Rows[i][23], dt1.Rows[i][24], dt1.Rows[i][25],
                                dt1.Rows[i][26], dt1.Rows[i][27]);
                         }
