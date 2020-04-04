@@ -1209,13 +1209,31 @@ namespace Laboratory.PL
 
                 MessageBox.Show(ex.Message);
             }
-
-}
-
+        }
         private void barButtonItem6_ItemClick_2(object sender, ItemClickEventArgs e)
         {
-            Frm_ReportTransferForCompany ftm = new Frm_ReportTransferForCompany();
-            ftm.Show();
+            try
+            {
+                Frm_ReportTransferForCompany ftm = new Frm_ReportTransferForCompany();
+                ftm.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void Btn_ReportReturn_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                Frm_ManagmentTicketsReturn fmtr = new Frm_ManagmentTicketsReturn();
+                fmtr.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message) ;
+            }
         }
     }
 }

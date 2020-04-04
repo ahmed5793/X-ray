@@ -141,6 +141,7 @@
             this.barStaticItem8 = new DevExpress.XtraBars.BarStaticItem();
             this.barStaticItem9 = new DevExpress.XtraBars.BarStaticItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.basic_information = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -171,7 +172,7 @@
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.barHeaderItem31 = new DevExpress.XtraBars.BarHeaderItem();
-            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
+            this.Btn_ReportReturn = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barAndDockingController1)).BeginInit();
@@ -294,9 +295,10 @@
             this.barButtonItem4,
             this.barButtonItem5,
             this.barStaticItem10,
-            this.barButtonItem6});
+            this.barButtonItem6,
+            this.Btn_ReportReturn});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 133;
+            this.ribbon.MaxItemId = 135;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.basic_information,
@@ -1307,6 +1309,15 @@
             this.barButtonItem4.Name = "barButtonItem4";
             this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick_7);
             // 
+            // barButtonItem6
+            // 
+            this.barButtonItem6.Caption = "تقرير عن التحويلات للجهه الاخرى";
+            this.barButtonItem6.Id = 132;
+            this.barButtonItem6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.Image")));
+            this.barButtonItem6.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.LargeImage")));
+            this.barButtonItem6.Name = "barButtonItem6";
+            this.barButtonItem6.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem6_ItemClick_2);
+            // 
             // basic_information
             // 
             this.basic_information.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1533,6 +1544,7 @@
             this.ribbonPageGroup15.ItemLinks.Add(this.managment_tickets);
             this.ribbonPageGroup15.ItemLinks.Add(this.search_tickets);
             this.ribbonPageGroup15.ItemLinks.Add(this.Data_Redvelation);
+            this.ribbonPageGroup15.ItemLinks.Add(this.Btn_ReportReturn);
             this.ribbonPageGroup15.Name = "ribbonPageGroup15";
             this.ribbonPageGroup15.Text = "ادارة الحجوزات";
             // 
@@ -1605,14 +1617,14 @@
             this.barHeaderItem31.Id = 124;
             this.barHeaderItem31.Name = "barHeaderItem31";
             // 
-            // barButtonItem6
+            // Btn_ReportReturn
             // 
-            this.barButtonItem6.Caption = "تقرير عن التحويلات للجهه الاخرى";
-            this.barButtonItem6.Id = 132;
-            this.barButtonItem6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.Image")));
-            this.barButtonItem6.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.LargeImage")));
-            this.barButtonItem6.Name = "barButtonItem6";
-            this.barButtonItem6.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem6_ItemClick_2);
+            this.Btn_ReportReturn.Caption = "تقرير المردودات";
+            this.Btn_ReportReturn.Id = 134;
+            this.Btn_ReportReturn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ReportReturn.ImageOptions.Image")));
+            this.Btn_ReportReturn.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("Btn_ReportReturn.ImageOptions.LargeImage")));
+            this.Btn_ReportReturn.Name = "Btn_ReportReturn";
+            this.Btn_ReportReturn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_ReportReturn_ItemClick);
             // 
             // Main
             // 
@@ -1791,5 +1803,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.BarStaticItem barStaticItem10;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
+        public DevExpress.XtraBars.BarButtonItem Btn_ReportReturn;
     }
 }
