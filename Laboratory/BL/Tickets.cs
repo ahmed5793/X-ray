@@ -281,7 +281,22 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
-
+        internal DataTable selectSearchTicketsReturnDate(string Branch_Name,DateTime from, DateTime to)
+        {
+            DataTable dt = new DataTable();
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[3];
+            param[0] = new SqlParameter("@Branch", SqlDbType.NVarChar,100);
+            param[0].Value = Branch_Name;
+            param[1] = new SqlParameter("@from", SqlDbType.DateTime);
+            param[1].Value = from;
+            param[2] = new SqlParameter("@to", SqlDbType.DateTime);
+            param[2].Value = to;
+            dt = da.selected("selectSearchTicketsReturnDate", param);
+            da.close();
+            return dt;
+        }
         internal DataTable SelectSearchticketsDate( DateTime from, DateTime to)
         {
             DataTable dt = new DataTable();
@@ -435,16 +450,16 @@ namespace Laboratory.BL
             return dt;
         }
 
-        internal DataTable selectTicketsReturn()
+        internal DataTable selectTicketsReturn(string Branch_Name )
         {
             DataTable dt = new DataTable();
 
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-        
-          
-
-            dt = da.selected("selectTicketsReturn", null);
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@Branch", SqlDbType.NVarChar,100);
+            param[0].Value = Branch_Name;
+            dt = da.selected("selectTicketsReturn", param);
             da.close();
             return dt;
         }
