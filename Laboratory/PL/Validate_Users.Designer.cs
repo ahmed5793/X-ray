@@ -113,6 +113,7 @@
             this.check_PayClients = new System.Windows.Forms.CheckBox();
             this.check_AddClients = new System.Windows.Forms.CheckBox();
             this.groupBox18 = new System.Windows.Forms.GroupBox();
+            this.check_ReportTicketsReturn = new System.Windows.Forms.CheckBox();
             this.check_BookingTimes = new System.Windows.Forms.CheckBox();
             this.check_AddTickets = new System.Windows.Forms.CheckBox();
             this.check_ManagmentTickets = new System.Windows.Forms.CheckBox();
@@ -1326,6 +1327,7 @@
             // 
             this.groupBox18.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox18.Controls.Add(this.check_ReportTicketsReturn);
             this.groupBox18.Controls.Add(this.check_BookingTimes);
             this.groupBox18.Controls.Add(this.check_AddTickets);
             this.groupBox18.Controls.Add(this.check_ManagmentTickets);
@@ -1336,6 +1338,19 @@
             this.groupBox18.TabIndex = 69;
             this.groupBox18.TabStop = false;
             this.groupBox18.Text = "صلاحية المستخدمين داخل قائمة إدارة الحجوزات";
+            // 
+            // check_ReportTicketsReturn
+            // 
+            this.check_ReportTicketsReturn.AutoSize = true;
+            this.check_ReportTicketsReturn.BackColor = System.Drawing.Color.Black;
+            this.check_ReportTicketsReturn.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.check_ReportTicketsReturn.ForeColor = System.Drawing.Color.White;
+            this.check_ReportTicketsReturn.Location = new System.Drawing.Point(26, 41);
+            this.check_ReportTicketsReturn.Name = "check_ReportTicketsReturn";
+            this.check_ReportTicketsReturn.Size = new System.Drawing.Size(134, 23);
+            this.check_ReportTicketsReturn.TabIndex = 63;
+            this.check_ReportTicketsReturn.Text = "تقرير عن المردودات";
+            this.check_ReportTicketsReturn.UseVisualStyleBackColor = false;
             // 
             // check_BookingTimes
             // 
@@ -1636,5 +1651,6 @@
         public System.Windows.Forms.CheckBox check_BookingTimes;
         public System.Windows.Forms.CheckBox Check_AddUserAccount;
         public System.Windows.Forms.CheckBox Check_UserPermession;
+        public System.Windows.Forms.CheckBox check_ReportTicketsReturn;
     }
 }

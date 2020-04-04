@@ -134,7 +134,7 @@ namespace Laboratory.PL
 
                 p.AddUser_Permission(txt_User.Text, 1, 1);
 
-                p.AddUser_Tickets(txt_User.Text, 1, 1, 1, 1, 1, 1, 1,1);
+                p.AddUser_Tickets(txt_User.Text, 1, 1, 1, 1, 1, 1, 1,1,1);
 
                 p.AddUser_Store(txt_User.Text, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
 

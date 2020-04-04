@@ -411,11 +411,11 @@ int Depit_Suppliers, int Report_Suppliers)
         }
 
         internal void AddUser_Tickets(string User_Name, int Add_Tickets, int Managment_Tickets, int Search_Tickets,
-                                    int BookingTimes, int Add_Clients, int Pay_Clients, int Depit_Client, int Report_Depit)
+                                    int BookingTimes, int Add_Clients, int Pay_Clients, int Depit_Client, int Report_Depit,int Report_ReturnTicketsManagment)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[9];
+            SqlParameter[] param = new SqlParameter[10];
             param[0] = new SqlParameter("@User_Name", SqlDbType.NVarChar, 100);
             param[0].Value = User_Name;
             param[1] = new SqlParameter("@Add_Tickets", SqlDbType.Int);
@@ -434,6 +434,8 @@ int Depit_Suppliers, int Report_Suppliers)
             param[7].Value = Depit_Client;
             param[8] = new SqlParameter("@Report_Depit", SqlDbType.Int);
             param[8].Value = Report_Depit;
+            param[9] = new SqlParameter("@Report_ReturnTicketsManagment", SqlDbType.Int);
+            param[9].Value = Report_ReturnTicketsManagment;
 
             da.excutequery("AddUser_Tickets", param);
             da.close();
@@ -451,11 +453,11 @@ int Depit_Suppliers, int Report_Suppliers)
         }
 
         internal void UpdateUser_Tickets(string User_Name, int Add_Tickets, int Managment_Tickets, int Search_Tickets,
-                                      int BookingTimes ,int Add_Clients, int Pay_Clients, int Depit_Client, int Report_Depit)
+                                      int BookingTimes ,int Add_Clients, int Pay_Clients, int Depit_Client, int Report_Depit,int Report_ReturnTicketsManagment)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[9];
+            SqlParameter[] param = new SqlParameter[10];
             param[0] = new SqlParameter("@User_Name", SqlDbType.NVarChar, 100);
             param[0].Value = User_Name;
             param[1] = new SqlParameter("@Add_Tickets", SqlDbType.Int);
@@ -475,7 +477,8 @@ int Depit_Suppliers, int Report_Suppliers)
             param[7].Value = Depit_Client;
             param[8] = new SqlParameter("@Report_Depit", SqlDbType.Int);
             param[8].Value = Report_Depit;
-
+            param[9] = new SqlParameter("@Report_ReturnTicketsManagment", SqlDbType.Int);
+            param[9].Value = Report_ReturnTicketsManagment;
 
 
             da.excutequery("UpdateUser_Tickets", param);

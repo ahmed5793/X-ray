@@ -660,7 +660,7 @@ namespace Laboratory.PL
                 else
                 {
                     int AddTickets = 0, ManagmentTickets = 0, SearchAllTickets = 0,BookingTimes = 0 , AddClient = 0, PayClient = 0,
-                        DepitClient = 0, ReportClient = 0;
+                        DepitClient = 0, ReportClient = 0, ReportReturnTickets = 0; ;
 
                     if (check_AddTickets.Checked == true){AddTickets = 1;}
                     else if (check_AddTickets.Checked == false){AddTickets = 0;}
@@ -685,10 +685,12 @@ namespace Laboratory.PL
                     /////
                     if (check_CustomerAccountStatment.Checked == true){ReportClient = 1;}
                     else if (check_CustomerAccountStatment.Checked == false){ReportClient = 0;}
+                    if (check_ReportTicketsReturn.Checked == true) { ReportReturnTickets = 1; }
+                    else if (check_ReportTicketsReturn.Checked == false) { ReportReturnTickets = 0; }
 
 
                     p.UpdateUser_Tickets(txt_Baisc.Text, AddTickets, ManagmentTickets, SearchAllTickets,BookingTimes, AddClient, PayClient,
-                                          DepitClient, ReportClient);
+                                          DepitClient, ReportClient, ReportReturnTickets);
 
 
 
