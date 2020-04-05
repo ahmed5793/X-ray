@@ -447,7 +447,7 @@ namespace Laboratory.PL
                 else
                 {
                     int AddCompany = 0, AddItemCompany = 0, payCompany = 0, DepitCompany = 0, ReportCompany = 0,
-                        AddDOCOTOTOut = 0, ReportDoctorOut = 0;
+                        AddDOCOTOTOut = 0, ReportDoctorOut = 0, TransferCompany = 0;
 
                     if (check_AddCompany.Checked == true){AddCompany = 1;}
 
@@ -476,9 +476,13 @@ namespace Laboratory.PL
                     if (check_RepoDoctorOut.Checked == true) { ReportDoctorOut = 1; }
 
                     else if (check_RepoDoctorOut.Checked == false) { ReportDoctorOut = 0; }
+                    ////
+                    if (check_TransferCompany.Checked == true) { TransferCompany = 1; }
+
+                    else if (check_TransferCompany.Checked == false) { TransferCompany = 0; }
 
                     p.UpdateUserCompany(txt_Baisc.Text, AddCompany, AddItemCompany, payCompany, DepitCompany, ReportCompany,
-                                         AddDOCOTOTOut, ReportDoctorOut);
+                                         AddDOCOTOTOut, ReportDoctorOut,TransferCompany);
 
 
                     MessageBox.Show(" تم حفظ الصلاحيات للمستخدم");

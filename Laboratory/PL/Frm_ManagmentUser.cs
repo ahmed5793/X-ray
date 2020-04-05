@@ -140,7 +140,7 @@ namespace Laboratory.PL
 
                 p.AddUserAccount(txt_User.Text, 1, 1, 1, 1, 1, 1, 1, 1, 1,1,1);
 
-                p.AddUserCompany(txt_User.Text, 1, 1, 1, 1, 1, 1, 1);
+                p.AddUserCompany(txt_User.Text, 1, 1, 1, 1, 1, 1, 1,1);
 
                 p.Add_UserEmployee(txt_User.Text, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
 
