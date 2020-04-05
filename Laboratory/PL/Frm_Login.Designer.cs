@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Login));
+            DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::Laboratory.PL.SplashScreen1), true, true);
             this.bunifuThinButton1 = new WindowsFormsControlLibrary1.BunifuThinButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -61,7 +62,7 @@
             this.bunifuThinButton1.IconVisible = true;
             this.bunifuThinButton1.IconZoom = 90D;
             this.bunifuThinButton1.ImageIconOverlay = false;
-            this.bunifuThinButton1.Location = new System.Drawing.Point(54, 406);
+            this.bunifuThinButton1.Location = new System.Drawing.Point(52, 431);
             this.bunifuThinButton1.Name = "bunifuThinButton1";
             this.bunifuThinButton1.Size = new System.Drawing.Size(245, 39);
             this.bunifuThinButton1.TabIndex = 64;
@@ -178,13 +179,17 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Font = new System.Drawing.Font("Droid Arabic Kufi", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox1.ForeColor = System.Drawing.Color.Red;
-            this.checkBox1.Location = new System.Drawing.Point(63, 351);
+            this.checkBox1.Location = new System.Drawing.Point(75, 351);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(203, 32);
             this.checkBox1.TabIndex = 78;
             this.checkBox1.Text = "SHOW PASSOWRD";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // splashScreenManager1
+            // 
+            splashScreenManager1.ClosingDelay = 500;
             // 
             // Frm_Login
             // 
