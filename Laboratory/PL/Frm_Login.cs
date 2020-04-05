@@ -24,32 +24,32 @@ namespace Laboratory.PL
         DataTable dt5 = new DataTable();
         DataTable dt6 = new DataTable();
         DataTable dt7 = new DataTable();
-        
+
 
         Main fm = new Main();
 
         public Frm_Login()
         {
             InitializeComponent();
-           
+
             checkBox1.Checked = false;
         }
-      
+
 
         private void button1_Click(object sender, EventArgs e)
         {
-      
+
         }
 
         private void btn_save_Click(object sender, EventArgs e)
-        {    
+        {
         }
-    
+
         private void Frm_Login_Load(object sender, EventArgs e)
         {
             Thread.Sleep(8000);
-           
-            
+
+
         }
 
         private void txt_Pass_TextChanged(object sender, EventArgs e)
@@ -771,7 +771,21 @@ namespace Laboratory.PL
 
         private void txt_Pass_MouseClick(object sender, MouseEventArgs e)
         {
-           
+
+            if (txt_Pass.Text == "PASSWORD")
+            {
+
+                txt_Pass.Text = "";
+                checkBox1.Checked = false;
+                txt_Pass.UseSystemPasswordChar = true;
+
+
+            }
+            else if (txt_Pass.Text == "")
+            {
+                txt_Pass.Text = "PASSWORD";
+
+            }
         }
 
         private void txt_User_TextChanged(object sender, EventArgs e)
@@ -791,13 +805,13 @@ namespace Laboratory.PL
 
         private void txt_User_Leave(object sender, EventArgs e)
         {
-           
-           
+
+
         }
 
         private void txt_Pass_Leave(object sender, EventArgs e)
         {
-            
+
         }
 
         private void txt_User_TextChanged_1(object sender, EventArgs e)
@@ -807,35 +821,19 @@ namespace Laboratory.PL
 
         private void txt_User_DoubleClick(object sender, EventArgs e)
         {
-           
-        
-    }
+
+
+        }
 
         private void txt_Pass_MouseClick_1(object sender, MouseEventArgs e)
         {
-            if (checkBox1.Checked == true)
-            {
-                txt_Pass.UseSystemPasswordChar = false;
-            }
-            else
-            {
-                txt_Pass.UseSystemPasswordChar = true;
-            }
-            if (txt_Pass.Text == "PASSWORD")
-            {
-                txt_Pass.Text = "";
 
-              
 
-            }
-            else if (txt_Pass.Text == "")
-            {
-                txt_Pass.Text = "PASSWORD";
-            }
         }
 
         private void txt_Pass_Leave_1(object sender, EventArgs e)
         {
+
             if (txt_Pass.Text == "")
             {
 
@@ -843,11 +841,12 @@ namespace Laboratory.PL
                 checkBox1.Checked = true;
                 txt_Pass.Text = "PASSWORD";
 
-                   
-                
-             
+
+
+
 
             }
+          
         }
 
         private void txt_User_Leave_1(object sender, EventArgs e)
@@ -875,6 +874,7 @@ namespace Laboratory.PL
 
         private void txt_Pass_KeyDown(object sender, KeyEventArgs e)
         {
+          
         }
 
         private void bunifuCheckbox1_OnChange(object sender, EventArgs e)
@@ -884,19 +884,98 @@ namespace Laboratory.PL
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox1.Checked == true)
+            if (txt_Pass.Text != "PASSWORD")
             {
-                txt_Pass.UseSystemPasswordChar = false;
+
+
+                if (checkBox1.Checked == true)
+                {
+                    txt_Pass.UseSystemPasswordChar = false;
+                }
+                else
+                {
+                    txt_Pass.UseSystemPasswordChar = true;
+                }
             }
             else
             {
-                txt_Pass.UseSystemPasswordChar = true;
+                checkBox1.Checked = true;
             }
         }
 
         private void txt_Pass_KeyPress(object sender, KeyPressEventArgs e)
         {
-            checkBox1.Checked = false;
+      
+            //if (txt_Pass.Text !=String.Empty)
+            //{
+
+            //}
+            //else 
+            //{
+            //txt_Pass.UseSystemPasswordChar = true;
+            //    if (checkBox1.Checked == true)
+            //{
+            //    txt_Pass.UseSystemPasswordChar = false;
+            //}
+            //else
+            //{
+            //    txt_Pass.UseSystemPasswordChar = true;
+            //}
+            //}
+
+
+
+
+
+
+
+
+
+
+        }
+
+        private void txt_Pass_Move(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_Pass_CursorChanged(object sender, EventArgs e)
+        {
+
+           
+          
+           
+        }
+
+        private void txt_Pass_KeyUp(object sender, KeyEventArgs e)
+        {
+          
+          
+        }
+
+        private void txt_User_KeyDown(object sender, KeyEventArgs e)
+        {
+           
+          
+        }
+
+        private void txt_Pass_TextChanged_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_Pass_Click(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void txt_Pass_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (txt_Pass.Text != "PASSWORD")
+            {
+                checkBox1.Checked = false;
+                txt_Pass.UseSystemPasswordChar = true;
+            } 
         }
     }
 }

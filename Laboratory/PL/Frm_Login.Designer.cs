@@ -151,11 +151,13 @@
             this.txt_User.Name = "txt_User";
             this.txt_User.Size = new System.Drawing.Size(247, 25);
             this.txt_User.TabIndex = 76;
+            this.txt_User.TabStop = false;
             this.txt_User.Text = "USER NAME";
             this.txt_User.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_User.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_User_MouseClick_1);
             this.txt_User.TextChanged += new System.EventHandler(this.txt_User_TextChanged_1);
             this.txt_User.DoubleClick += new System.EventHandler(this.txt_User_DoubleClick);
+            this.txt_User.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_User_KeyDown);
             this.txt_User.Leave += new System.EventHandler(this.txt_User_Leave_1);
             // 
             // txt_Pass
@@ -167,13 +169,20 @@
             this.txt_Pass.Location = new System.Drawing.Point(86, 299);
             this.txt_Pass.Name = "txt_Pass";
             this.txt_Pass.Size = new System.Drawing.Size(249, 25);
-            this.txt_Pass.TabIndex = 77;
+            this.txt_Pass.TabIndex = 1000;
+            this.txt_Pass.TabStop = false;
             this.txt_Pass.Text = "PASSWORD";
             this.txt_Pass.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_Pass.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_Pass_MouseClick_1);
+            this.txt_Pass.Click += new System.EventHandler(this.txt_Pass_Click);
+            this.txt_Pass.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_Pass_MouseClick);
+            this.txt_Pass.CursorChanged += new System.EventHandler(this.txt_Pass_CursorChanged);
+            this.txt_Pass.TextChanged += new System.EventHandler(this.txt_Pass_TextChanged_2);
             this.txt_Pass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Pass_KeyDown);
             this.txt_Pass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Pass_KeyPress);
+            this.txt_Pass.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_Pass_KeyUp);
             this.txt_Pass.Leave += new System.EventHandler(this.txt_Pass_Leave_1);
+            this.txt_Pass.MouseMove += new System.Windows.Forms.MouseEventHandler(this.txt_Pass_MouseMove);
+            this.txt_Pass.Move += new System.EventHandler(this.txt_Pass_Move);
             // 
             // checkBox1
             // 
@@ -183,7 +192,8 @@
             this.checkBox1.Location = new System.Drawing.Point(75, 351);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(203, 32);
-            this.checkBox1.TabIndex = 78;
+            this.checkBox1.TabIndex = 12000;
+            this.checkBox1.TabStop = false;
             this.checkBox1.Text = "SHOW PASSOWRD";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
