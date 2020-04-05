@@ -893,5 +893,10 @@ namespace Laboratory.PL
                 txt_Pass.UseSystemPasswordChar = true;
             }
         }
+
+        private void txt_Pass_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            checkBox1.Checked = false;
+        }
     }
 }

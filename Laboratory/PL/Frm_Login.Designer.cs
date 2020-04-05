@@ -172,6 +172,7 @@
             this.txt_Pass.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_Pass.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_Pass_MouseClick_1);
             this.txt_Pass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Pass_KeyDown);
+            this.txt_Pass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Pass_KeyPress);
             this.txt_Pass.Leave += new System.EventHandler(this.txt_Pass_Leave_1);
             // 
             // checkBox1
