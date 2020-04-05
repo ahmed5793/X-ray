@@ -24,31 +24,42 @@ namespace Laboratory.PL
         DataTable dt5 = new DataTable();
         DataTable dt6 = new DataTable();
         DataTable dt7 = new DataTable();
-
+        
 
         Main fm = new Main();
 
         public Frm_Login()
         {
             InitializeComponent();
-            //Thread t = new Thread(new ThreadStart(startForm));
-            //t.Start();
-            //Thread.Sleep(5000);
-            //t.Abort();
-
+           
+            checkBox1.Checked = false;
         }
-        //public void startForm()
-        //{
-        //    Application.Run(new Frm_Splash());
-        //}
+      
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+      
         }
 
         private void btn_save_Click(object sender, EventArgs e)
+        {    
+        }
+    
+        private void Frm_Login_Load(object sender, EventArgs e)
         {
+            Thread.Sleep(8000);
+           
+            
+        }
+
+        private void txt_Pass_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuThinButton1_Click(object sender, EventArgs e)
+        {
+
             try
             {
 
@@ -73,7 +84,7 @@ namespace Laboratory.PL
                         //DataTable dt50 = new DataTable();
                         //DataTable dt5 = new DataTable();
 
-                     
+
                         //    dt50.Clear();
                         //    dt50 = U.SelectCheckUserName(txt_User.Text);
                         //    if (dt50.Rows.Count>0)
@@ -81,7 +92,7 @@ namespace Laboratory.PL
                         //        MessageBox.Show("عفوا هذا الاكونت مفتوح من جهاز اخر يرجي غلق الاكونت ثم اعد فتحه مرة اخرى");
                         //        return;
                         //    }
-                      
+
 
 
                         dt2.Clear();
@@ -99,11 +110,11 @@ namespace Laboratory.PL
                             ///////
                             if (Convert.ToInt32(dt2.Rows[0][1]) == 0)
                             {
-                               
+
                             }
                             else if (Convert.ToInt32(dt2.Rows[0][1]) == 1)
                             {
-                               
+
                             }
                             ////////
                             if (Convert.ToInt32(dt2.Rows[0][2]) == 0)
@@ -683,7 +694,7 @@ namespace Laboratory.PL
                         //    {
                         //        U.UpdateCheckUserName(txt_User.Text, "Online", Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy hh:mm tt")), Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy hh:mm tt")));
 
-                          //}
+                        //}
 
                         //}
 
@@ -696,7 +707,7 @@ namespace Laboratory.PL
                         //}
                         fm.ShowDialog();
                         Users u = new Users();
-                         DataTable dt10 = new DataTable();
+                        DataTable dt10 = new DataTable();
                         dt10.Clear();
 
                         dt10 = u.SelectAllCheckUserName();
@@ -704,7 +715,7 @@ namespace Laboratory.PL
 
 
 
-             
+
 
 
 
@@ -722,8 +733,8 @@ namespace Laboratory.PL
 
 
                 }
-            
-            
+
+
             }
             catch (Exception ex)
             {
@@ -731,11 +742,156 @@ namespace Laboratory.PL
                 MessageBox.Show(ex.Message);
                 MessageBox.Show(ex.StackTrace);
             }
+
         }
-    
-        private void Frm_Login_Load(object sender, EventArgs e)
+
+        private void simpleButton1_Click(object sender, EventArgs e)
         {
-            Thread.Sleep(8000);
+            this.Close();
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void txt_User_OnTextChange(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_Pass_OnTextChange(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_User_MouseClick(object sender, MouseEventArgs e)
+        {
+        }
+
+        private void txt_Pass_MouseClick(object sender, MouseEventArgs e)
+        {
+           
+        }
+
+        private void txt_User_TextChanged(object sender, EventArgs e)
+        {
+            txt_User.SelectAll();
+        }
+
+        private void txt_Pass_TextChanged_1(object sender, EventArgs e)
+        {
+            txt_Pass.SelectAll();
+        }
+
+        private void txt_User_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_User_Leave(object sender, EventArgs e)
+        {
+           
+           
+        }
+
+        private void txt_Pass_Leave(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txt_User_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_User_DoubleClick(object sender, EventArgs e)
+        {
+           
+        
+    }
+
+        private void txt_Pass_MouseClick_1(object sender, MouseEventArgs e)
+        {
+            if (checkBox1.Checked == true)
+            {
+                txt_Pass.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txt_Pass.UseSystemPasswordChar = true;
+            }
+            if (txt_Pass.Text == "PASSWORD")
+            {
+                txt_Pass.Text = "";
+
+              
+
+            }
+            else if (txt_Pass.Text == "")
+            {
+                txt_Pass.Text = "PASSWORD";
+            }
+        }
+
+        private void txt_Pass_Leave_1(object sender, EventArgs e)
+        {
+            if (txt_Pass.Text == "")
+            {
+
+
+                checkBox1.Checked = true;
+                txt_Pass.Text = "PASSWORD";
+
+                   
+                
+             
+
+            }
+        }
+
+        private void txt_User_Leave_1(object sender, EventArgs e)
+        {
+            if (txt_User.Text == "")
+            {
+
+                txt_User.Text = "USER NAME";
+            }
+        }
+
+        private void txt_User_MouseClick_1(object sender, MouseEventArgs e)
+        {
+            if (txt_User.Text == "USER NAME")
+            {
+                txt_User.Text = "";
+              
+
+            }
+            else if (txt_User.Text == "")
+            {
+                txt_User.Text = "USER NAME";
+            }
+        }
+
+        private void txt_Pass_KeyDown(object sender, KeyEventArgs e)
+        {
+        }
+
+        private void bunifuCheckbox1_OnChange(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
+            {
+                txt_Pass.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txt_Pass.UseSystemPasswordChar = true;
+            }
         }
     }
 }

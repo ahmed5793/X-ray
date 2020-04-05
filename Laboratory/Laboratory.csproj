@@ -89,6 +89,9 @@
     <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.4">
+      <HintPath>..\..\Users\AFAQE\Desktop\New folder\Bunifu_UI_v1.4.dll</HintPath>
+    </Reference>
     <Reference Include="Carbon.Data.Protection, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Carbon.Data.Protection.1.0.0\lib\netstandard2.0\Carbon.Data.Protection.dll</HintPath>
     </Reference>
@@ -858,12 +861,6 @@
     <Compile Include="PL\Validate_Users.Designer.cs">
       <DependentUpon>Validate_Users.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\WaitForm1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PL\WaitForm1.Designer.cs">
-      <DependentUpon>WaitForm1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RPT\Order\DataSetFingerExcelDay.Designer.cs">
@@ -1239,9 +1236,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Validate_Users.resx">
       <DependentUpon>Validate_Users.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PL\WaitForm1.resx">
-      <DependentUpon>WaitForm1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
