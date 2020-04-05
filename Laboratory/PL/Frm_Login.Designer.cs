@@ -143,7 +143,7 @@
             // 
             // splashScreenManager1
             // 
-            splashScreenManager1.ClosingDelay = 2000;
+            splashScreenManager1.ClosingDelay = 1000;
             // 
             // Frm_Login
             // 
