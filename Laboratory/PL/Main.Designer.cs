@@ -141,7 +141,8 @@
             this.barStaticItem8 = new DevExpress.XtraBars.BarStaticItem();
             this.barStaticItem9 = new DevExpress.XtraBars.BarStaticItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_ReportTransferCompany = new DevExpress.XtraBars.BarButtonItem();
+            this.Btn_ReportReturn = new DevExpress.XtraBars.BarButtonItem();
             this.basic_information = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -172,7 +173,6 @@
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.barHeaderItem31 = new DevExpress.XtraBars.BarHeaderItem();
-            this.Btn_ReportReturn = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barAndDockingController1)).BeginInit();
@@ -295,7 +295,7 @@
             this.barButtonItem4,
             this.barButtonItem5,
             this.barStaticItem10,
-            this.barButtonItem6,
+            this.btn_ReportTransferCompany,
             this.Btn_ReportReturn});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.MaxItemId = 135;
@@ -1309,14 +1309,23 @@
             this.barButtonItem4.Name = "barButtonItem4";
             this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick_7);
             // 
-            // barButtonItem6
+            // btn_ReportTransferCompany
             // 
-            this.barButtonItem6.Caption = "تقرير عن التحويلات للجهه الاخرى";
-            this.barButtonItem6.Id = 132;
-            this.barButtonItem6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.Image")));
-            this.barButtonItem6.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.LargeImage")));
-            this.barButtonItem6.Name = "barButtonItem6";
-            this.barButtonItem6.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem6_ItemClick_2);
+            this.btn_ReportTransferCompany.Caption = "تقرير عن التحويلات للجهه الاخرى";
+            this.btn_ReportTransferCompany.Id = 132;
+            this.btn_ReportTransferCompany.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.Image")));
+            this.btn_ReportTransferCompany.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.LargeImage")));
+            this.btn_ReportTransferCompany.Name = "btn_ReportTransferCompany";
+            this.btn_ReportTransferCompany.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem6_ItemClick_2);
+            // 
+            // Btn_ReportReturn
+            // 
+            this.Btn_ReportReturn.Caption = "تقرير المردودات";
+            this.Btn_ReportReturn.Id = 134;
+            this.Btn_ReportReturn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ReportReturn.ImageOptions.Image")));
+            this.Btn_ReportReturn.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("Btn_ReportReturn.ImageOptions.LargeImage")));
+            this.Btn_ReportReturn.Name = "Btn_ReportReturn";
+            this.Btn_ReportReturn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_ReportReturn_ItemClick);
             // 
             // basic_information
             // 
@@ -1416,7 +1425,7 @@
             this.ribbonPageGroup6.ItemLinks.Add(this.Depit_Company);
             this.ribbonPageGroup6.ItemLinks.Add(this.pay_Company);
             this.ribbonPageGroup6.ItemLinks.Add(this.Btn_AccountStatment);
-            this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem6);
+            this.ribbonPageGroup6.ItemLinks.Add(this.btn_ReportTransferCompany);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             this.ribbonPageGroup6.Text = "ادارة التعاقدات";
             // 
@@ -1617,15 +1626,6 @@
             this.barHeaderItem31.Id = 124;
             this.barHeaderItem31.Name = "barHeaderItem31";
             // 
-            // Btn_ReportReturn
-            // 
-            this.Btn_ReportReturn.Caption = "تقرير المردودات";
-            this.Btn_ReportReturn.Id = 134;
-            this.Btn_ReportReturn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ReportReturn.ImageOptions.Image")));
-            this.Btn_ReportReturn.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("Btn_ReportReturn.ImageOptions.LargeImage")));
-            this.Btn_ReportReturn.Name = "Btn_ReportReturn";
-            this.Btn_ReportReturn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_ReportReturn_ItemClick);
-            // 
             // Main
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
@@ -1802,7 +1802,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.BarStaticItem barStaticItem10;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem6;
         public DevExpress.XtraBars.BarButtonItem Btn_ReportReturn;
+        public DevExpress.XtraBars.BarButtonItem btn_ReportTransferCompany;
     }
 }

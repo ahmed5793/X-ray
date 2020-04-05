@@ -335,6 +335,15 @@ namespace Laboratory.PL
                             {
                                 Main.getmain.report_DoctorOut.Enabled = true;
                             }
+
+                            if (Convert.ToInt32(dt4.Rows[0][7]) == 0)
+                            {
+                                Main.getmain.btn_ReportTransferCompany.Enabled = false;
+                            }
+                            else if (Convert.ToInt32(dt4.Rows[0][7]) == 1)
+                            {
+                                Main.getmain.btn_ReportTransferCompany.Enabled = true;
+                            }
                         }
                         dt5.Clear();
                         dt5 = p.SelectUserAccount(txt_User.Text);
@@ -647,6 +656,16 @@ namespace Laboratory.PL
                             else if (Convert.ToInt32(dt7.Rows[0][7]) == 1)
                             {
                                 Main.getmain.Btn_CustomerAccouantStatment.Enabled = true;
+                            }
+                            if (Convert.ToInt32(dt7.Rows[0][8]) == 0)
+                            {
+                                Main.getmain.Btn_ReportReturn.Enabled = false;
+                                //Main.getmain.accordion_Tickets.Enabled = false;
+                            }
+                            else if (Convert.ToInt32(dt7.Rows[0][8]) == 1)
+                            {
+                                Main.getmain.Btn_ReportReturn.Enabled = true;
+                                //Main.getmain.accordion_Tickets.Enabled = true;
                             }
                         }
 

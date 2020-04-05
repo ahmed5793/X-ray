@@ -125,6 +125,7 @@
             this.Txt_SalesMAn = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.Cmb_Branch = new System.Windows.Forms.ComboBox();
+            this.check_TransferCompany = new System.Windows.Forms.CheckBox();
             this.groupBox4.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.groupBox15.SuspendLayout();
@@ -267,7 +268,7 @@
             this.check_PayCompany.BackColor = System.Drawing.Color.Black;
             this.check_PayCompany.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.check_PayCompany.ForeColor = System.Drawing.Color.White;
-            this.check_PayCompany.Location = new System.Drawing.Point(329, 49);
+            this.check_PayCompany.Location = new System.Drawing.Point(626, 101);
             this.check_PayCompany.Name = "check_PayCompany";
             this.check_PayCompany.Size = new System.Drawing.Size(141, 26);
             this.check_PayCompany.TabIndex = 61;
@@ -1005,7 +1006,7 @@
             this.groupBox11.Controls.Add(this.check_RepoDoctorOut);
             this.groupBox11.Controls.Add(this.Check_AddDoctor);
             this.groupBox11.ForeColor = System.Drawing.Color.Black;
-            this.groupBox11.Location = new System.Drawing.Point(5, 149);
+            this.groupBox11.Location = new System.Drawing.Point(5, 183);
             this.groupBox11.Name = "groupBox11";
             this.groupBox11.Size = new System.Drawing.Size(1007, 87);
             this.groupBox11.TabIndex = 65;
@@ -1042,6 +1043,7 @@
             // 
             this.groupBox10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox10.Controls.Add(this.check_TransferCompany);
             this.groupBox10.Controls.Add(this.check_REportCompany);
             this.groupBox10.Controls.Add(this.check_DebitCompany);
             this.groupBox10.Controls.Add(this.check_PayCompany);
@@ -1050,7 +1052,7 @@
             this.groupBox10.ForeColor = System.Drawing.Color.Black;
             this.groupBox10.Location = new System.Drawing.Point(6, 31);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(1007, 100);
+            this.groupBox10.Size = new System.Drawing.Size(1007, 146);
             this.groupBox10.TabIndex = 64;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "صلاحية المستخدمين داخل قائمة إدارة الشركات";
@@ -1061,7 +1063,7 @@
             this.check_REportCompany.BackColor = System.Drawing.Color.Black;
             this.check_REportCompany.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.check_REportCompany.ForeColor = System.Drawing.Color.White;
-            this.check_REportCompany.Location = new System.Drawing.Point(132, 49);
+            this.check_REportCompany.Location = new System.Drawing.Point(403, 101);
             this.check_REportCompany.Name = "check_REportCompany";
             this.check_REportCompany.Size = new System.Drawing.Size(145, 26);
             this.check_REportCompany.TabIndex = 63;
@@ -1074,7 +1076,7 @@
             this.check_DebitCompany.BackColor = System.Drawing.Color.Black;
             this.check_DebitCompany.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.check_DebitCompany.ForeColor = System.Drawing.Color.White;
-            this.check_DebitCompany.Location = new System.Drawing.Point(512, 49);
+            this.check_DebitCompany.Location = new System.Drawing.Point(183, 49);
             this.check_DebitCompany.Name = "check_DebitCompany";
             this.check_DebitCompany.Size = new System.Drawing.Size(132, 26);
             this.check_DebitCompany.TabIndex = 62;
@@ -1087,7 +1089,7 @@
             this.check_AddItemCompany.BackColor = System.Drawing.Color.Black;
             this.check_AddItemCompany.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.check_AddItemCompany.ForeColor = System.Drawing.Color.White;
-            this.check_AddItemCompany.Location = new System.Drawing.Point(679, 49);
+            this.check_AddItemCompany.Location = new System.Drawing.Point(420, 49);
             this.check_AddItemCompany.Name = "check_AddItemCompany";
             this.check_AddItemCompany.Size = new System.Drawing.Size(191, 26);
             this.check_AddItemCompany.TabIndex = 61;
@@ -1100,7 +1102,7 @@
             this.check_AddCompany.BackColor = System.Drawing.Color.Black;
             this.check_AddCompany.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.check_AddCompany.ForeColor = System.Drawing.Color.White;
-            this.check_AddCompany.Location = new System.Drawing.Point(899, 49);
+            this.check_AddCompany.Location = new System.Drawing.Point(698, 49);
             this.check_AddCompany.Name = "check_AddCompany";
             this.check_AddCompany.Size = new System.Drawing.Size(92, 26);
             this.check_AddCompany.TabIndex = 60;
@@ -1490,6 +1492,19 @@
             this.Cmb_Branch.TabIndex = 102;
             this.Cmb_Branch.SelectionChangeCommitted += new System.EventHandler(this.Cmb_Branch_SelectionChangeCommitted);
             // 
+            // check_TransferCompany
+            // 
+            this.check_TransferCompany.AutoSize = true;
+            this.check_TransferCompany.BackColor = System.Drawing.Color.Black;
+            this.check_TransferCompany.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.check_TransferCompany.ForeColor = System.Drawing.Color.White;
+            this.check_TransferCompany.Location = new System.Drawing.Point(115, 101);
+            this.check_TransferCompany.Name = "check_TransferCompany";
+            this.check_TransferCompany.Size = new System.Drawing.Size(209, 26);
+            this.check_TransferCompany.TabIndex = 64;
+            this.check_TransferCompany.Text = "تقرير عن التحويل الي شركات";
+            this.check_TransferCompany.UseVisualStyleBackColor = false;
+            // 
             // Validate_Users
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1652,5 +1667,6 @@
         public System.Windows.Forms.CheckBox Check_AddUserAccount;
         public System.Windows.Forms.CheckBox Check_UserPermession;
         public System.Windows.Forms.CheckBox check_ReportTicketsReturn;
+        public System.Windows.Forms.CheckBox check_TransferCompany;
     }
 }

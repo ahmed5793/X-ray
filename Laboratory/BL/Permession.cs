@@ -166,11 +166,11 @@ namespace Laboratory.BL
         }
 
         internal void AddUserCompany(string User_Name, int Add_Company, int Add_itemCompany, int Depit_Company,
-            int pay_Company, int Report_Company, int Add_DoctorOut, int Report_DoctorOut)
+            int pay_Company, int Report_Company, int Add_DoctorOut, int Report_DoctorOut,int TransferToCompany)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[8];
+            SqlParameter[] param = new SqlParameter[9];
             param[0] = new SqlParameter("@userName", SqlDbType.NVarChar, 100);
             param[0].Value = User_Name;
             param[1] = new SqlParameter("@Add_Company", SqlDbType.Int);
@@ -189,7 +189,8 @@ namespace Laboratory.BL
             param[6].Value = Add_DoctorOut;
             param[7] = new SqlParameter("@Report_DoctorOut", SqlDbType.Int);
             param[7].Value = Report_DoctorOut;
-     
+            param[8] = new SqlParameter("@TransferToCompany", SqlDbType.Int);
+            param[8].Value = TransferToCompany;
             da.excutequery("AddUserCompany", param);
             da.close();
         }
@@ -205,11 +206,11 @@ namespace Laboratory.BL
             return dt;
         }
         internal void UpdateUserCompany(string User_Name, int Add_Company, int Add_itemCompany, int Depit_Company,
-         int pay_Company, int Report_Company, int Add_DoctorOut, int Report_DoctorOut)
+         int pay_Company, int Report_Company, int Add_DoctorOut, int Report_DoctorOut,int TransferToCompany)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[8];
+            SqlParameter[] param = new SqlParameter[9];
             param[0] = new SqlParameter("@userName", SqlDbType.NVarChar, 100);
             param[0].Value = User_Name;
             param[1] = new SqlParameter("@Add_Company", SqlDbType.Int);
@@ -228,7 +229,8 @@ namespace Laboratory.BL
             param[6].Value = Add_DoctorOut;
             param[7] = new SqlParameter("@Report_DoctorOut", SqlDbType.Int);
             param[7].Value = Report_DoctorOut;
-
+            param[8] = new SqlParameter("@TransferToCompany", SqlDbType.Int);
+            param[8].Value = TransferToCompany;
             da.excutequery("UpdateUserCompany", param);
             da.close();
         }
