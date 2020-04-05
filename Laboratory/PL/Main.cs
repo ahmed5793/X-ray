@@ -1161,15 +1161,7 @@ namespace Laboratory.PL
 
         private void barButtonItem4_ItemClick_7(object sender, ItemClickEventArgs e)
         {
-            try { 
-            Frm_checkTimeUserName ct = new Frm_checkTimeUserName();
-            ct.ShowDialog();
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
+           
         }
 
         private void barHeaderItem23_ItemClick(object sender, ItemClickEventArgs e)

@@ -31,16 +31,16 @@ namespace Laboratory.PL
         public Frm_Login()
         {
             InitializeComponent();
-            Thread t = new Thread(new ThreadStart(startForm));
-            t.Start();
-            Thread.Sleep(5000);
-            t.Abort();
+            //Thread t = new Thread(new ThreadStart(startForm));
+            //t.Start();
+            //Thread.Sleep(5000);
+            //t.Abort();
 
         }
-        public void startForm()
-        {
-            Application.Run(new Frm_Splash());
-        }
+        //public void startForm()
+        //{
+        //    Application.Run(new Frm_Splash());
+        //}
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -735,7 +735,7 @@ namespace Laboratory.PL
     
         private void Frm_Login_Load(object sender, EventArgs e)
         {
-
+            Thread.Sleep(8000);
         }
     }
 }

@@ -84,6 +84,7 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup />
   <PropertyGroup>
     <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
@@ -767,12 +768,6 @@
     <Compile Include="PL\Frm_ShowOldReturn.Designer.cs">
       <DependentUpon>Frm_ShowOldReturn.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_Splash.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PL\Frm_Splash.Designer.cs">
-      <DependentUpon>Frm_Splash.cs</DependentUpon>
-    </Compile>
     <Compile Include="PL\Frm_StockPull.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -832,6 +827,12 @@
     </Compile>
     <Compile Include="PL\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\SplashScreen1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\SplashScreen1.Designer.cs">
+      <DependentUpon>SplashScreen1.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Test.cs">
       <SubType>Form</SubType>
@@ -902,12 +903,6 @@
     </Compile>
     <Compile Include="RPT\Order\RPT_FingeerExcell.Designer.cs">
       <DependentUpon>RPT_FingeerExcell.cs</DependentUpon>
-    </Compile>
-    <Compile Include="RPT\Order\Rpt_OrderCompany.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="RPT\Order\Rpt_OrderCompany.Designer.cs">
-      <DependentUpon>Rpt_OrderCompany.cs</DependentUpon>
     </Compile>
     <Compile Include="RPT\Order\Rpt_OrderPay.cs">
       <SubType>Component</SubType>
@@ -1194,9 +1189,6 @@
     <EmbeddedResource Include="PL\Frm_ShowOldReturn.resx">
       <DependentUpon>Frm_ShowOldReturn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PL\Frm_Splash.resx">
-      <DependentUpon>Frm_Splash.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_StockPull.resx">
       <DependentUpon>Frm_StockPull.cs</DependentUpon>
     </EmbeddedResource>
@@ -1226,6 +1218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\SplashScreen1.resx">
+      <DependentUpon>SplashScreen1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Test.resx">
       <DependentUpon>Test.cs</DependentUpon>
@@ -1258,9 +1253,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RPT\Order\RPT_FingeerExcell.resx">
       <DependentUpon>RPT_FingeerExcell.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RPT\Order\Rpt_OrderCompany.resx">
-      <DependentUpon>Rpt_OrderCompany.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RPT\Order\Rpt_OrderPay.resx">
       <DependentUpon>Rpt_OrderPay.cs</DependentUpon>

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::Laboratory.PL.SplashScreen1), true, true);
             this.btn_save = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -139,6 +140,10 @@
             this.pictureBox1.Size = new System.Drawing.Size(154, 164);
             this.pictureBox1.TabIndex = 59;
             this.pictureBox1.TabStop = false;
+            // 
+            // splashScreenManager1
+            // 
+            splashScreenManager1.ClosingDelay = 2000;
             // 
             // Frm_Login
             // 
