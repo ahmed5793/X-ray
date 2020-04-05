@@ -28,6 +28,8 @@ namespace Laboratory.PL
         }
         void Permision()
         {
+            try
+            {
             dt.Clear();
             dt = U.SelectUserBranch(txt_UserName.Text);
             if (dt.Rows.Count > 0)
@@ -46,7 +48,12 @@ namespace Laboratory.PL
             comboBox1.DisplayMember = "Emp_Name";
             comboBox1.ValueMember = "id_employee";
             comboBox1.SelectedIndex = -1;
-        
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         private void Frm_ReportEmployeeShift_Load(object sender, EventArgs e)

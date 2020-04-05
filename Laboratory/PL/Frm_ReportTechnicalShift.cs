@@ -27,11 +27,22 @@ namespace Laboratory.PL
         Techincal Techincal = new Techincal();
         public Frm_ReportTechnicalShift()
         {
-            InitializeComponent(); 
-            comboBox1.DataSource = Techincal.Select_ComboTechnical();
-            comboBox1.DisplayMember = "Tech_Name";
-            comboBox1.ValueMember = "Techincal_ID";
-            Calc();
+            InitializeComponent();
+            Function();
+        }
+        void Function()
+        {
+            try
+            {
+                comboBox1.DataSource = Techincal.Select_ComboTechnical();
+                comboBox1.DisplayMember = "Tech_Name";
+                comboBox1.ValueMember = "Techincal_ID";
+                Calc();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            } 
         }
         DataTable dt = new DataTable();
         private void comboBox1_Leave(object sender, EventArgs e)

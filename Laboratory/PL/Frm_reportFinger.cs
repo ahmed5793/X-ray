@@ -18,15 +18,27 @@ namespace Laboratory.PL
         public Frm_reportFinger()
         {
             InitializeComponent();
-            cmcb_clients.DataSource = f.selectidfingeremployee();
-            cmcb_clients.DisplayMember = "IDEmployee";
-            cmcb_clients.ValueMember = "IDEmployee";
-            monthe();
-            year();
+            Function();
             //dataGridView1.Columns[0].DefaultCellStyle.Format = "dd/MM/yyyy";
             //dataGridView1.Columns[1].DefaultCellStyle.Format = "hh:mm tt";
             //dataGridView1.Columns[2].DefaultCellStyle.Format = "hh:mm tt";
 
+        }
+        void Function()
+        {
+            try
+            {
+                cmcb_clients.DataSource = f.selectidfingeremployee();
+                cmcb_clients.DisplayMember = "IDEmployee";
+                cmcb_clients.ValueMember = "IDEmployee";
+                monthe();
+                year();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
         void year()
         {

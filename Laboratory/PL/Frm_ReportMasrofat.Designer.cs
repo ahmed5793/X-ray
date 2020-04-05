@@ -39,11 +39,11 @@
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.btn_search = new DevExpress.XtraEditors.SimpleButton();
             this.Btn_Print = new DevExpress.XtraEditors.SimpleButton();
             this.cmb_UserBranch = new System.Windows.Forms.ComboBox();
@@ -79,7 +79,7 @@
             this.DateTo.CustomFormat = "   dd/MM/yyyy       *      tt  mm:hh    ";
             this.DateTo.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DateTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DateTo.Location = new System.Drawing.Point(269, 107);
+            this.DateTo.Location = new System.Drawing.Point(270, 113);
             this.DateTo.Name = "DateTo";
             this.DateTo.ShowUpDown = true;
             this.DateTo.Size = new System.Drawing.Size(145, 32);
@@ -100,12 +100,13 @@
             // label4
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(420, 111);
+            this.label4.Location = new System.Drawing.Point(421, 113);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label4.Size = new System.Drawing.Size(68, 30);
+            this.label4.Size = new System.Drawing.Size(57, 30);
             this.label4.TabIndex = 93;
             this.label4.Text = "إلى :";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -113,15 +114,17 @@
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(645, 112);
+            this.label3.Location = new System.Drawing.Point(646, 112);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label3.Size = new System.Drawing.Size(70, 31);
             this.label3.TabIndex = 92;
             this.label3.Text = " : من";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // groupBox1
             // 
@@ -131,6 +134,7 @@
             this.groupBox1.Controls.Add(this.gridControl1);
             this.groupBox1.Location = new System.Drawing.Point(12, 149);
             this.groupBox1.Name = "groupBox1";
+            this.groupBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.groupBox1.Size = new System.Drawing.Size(927, 333);
             this.groupBox1.TabIndex = 159;
             this.groupBox1.TabStop = false;
@@ -144,6 +148,7 @@
             this.gridControl1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
+            this.gridControl1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.gridControl1.Size = new System.Drawing.Size(921, 314);
             this.gridControl1.TabIndex = 127;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -151,26 +156,38 @@
             // 
             // gridView1
             // 
-            this.gridView1.Appearance.ColumnFilterButton.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.Appearance.ColumnFilterButton.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
             this.gridView1.Appearance.ColumnFilterButton.Options.UseFont = true;
-            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
             this.gridView1.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Yellow;
             this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
             this.gridView1.Appearance.HeaderPanel.Options.UseForeColor = true;
             this.gridView1.Appearance.HeaderPanel.Options.UseTextOptions = true;
             this.gridView1.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold);
             this.gridView1.Appearance.Row.FontStyleDelta = System.Drawing.FontStyle.Bold;
             this.gridView1.Appearance.Row.Options.UseFont = true;
             this.gridView1.Appearance.Row.Options.UseTextOptions = true;
             this.gridView1.Appearance.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.AppearancePrint.HeaderPanel.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.Appearance.Row.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridView1.Appearance.Row.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.gridView1.AppearancePrint.EvenRow.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridView1.AppearancePrint.EvenRow.Options.UseFont = true;
+            this.gridView1.AppearancePrint.EvenRow.Options.UseTextOptions = true;
+            this.gridView1.AppearancePrint.EvenRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.AppearancePrint.EvenRow.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridView1.AppearancePrint.EvenRow.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.gridView1.AppearancePrint.HeaderPanel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.gridView1.AppearancePrint.HeaderPanel.FontStyleDelta = System.Drawing.FontStyle.Bold;
             this.gridView1.AppearancePrint.HeaderPanel.Options.UseFont = true;
             this.gridView1.AppearancePrint.HeaderPanel.Options.UseTextOptions = true;
             this.gridView1.AppearancePrint.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.AppearancePrint.Row.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridView1.AppearancePrint.Row.Options.UseFont = true;
             this.gridView1.AppearancePrint.Row.Options.UseTextOptions = true;
             this.gridView1.AppearancePrint.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.AppearancePrint.Row.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridView1.AppearancePrint.Row.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
@@ -191,16 +208,6 @@
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.barButtonItem1});
             this.barManager1.MaxItemId = 1;
-            // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "Print";
-            this.barButtonItem1.Id = 0;
-            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -234,6 +241,16 @@
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 542);
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Print";
+            this.barButtonItem1.Id = 0;
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
             // btn_search
             // 
             this.btn_search.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -248,7 +265,7 @@
             this.btn_search.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btn_search.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.btn_search.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_search.ImageOptions.Image")));
-            this.btn_search.Location = new System.Drawing.Point(104, 101);
+            this.btn_search.Location = new System.Drawing.Point(118, 47);
             this.btn_search.Name = "btn_search";
             this.btn_search.Size = new System.Drawing.Size(134, 38);
             this.btn_search.TabIndex = 207;
@@ -347,13 +364,16 @@
             // 
             this.checkBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.checkBox1.AutoSize = true;
+            this.checkBox1.BackColor = System.Drawing.Color.White;
             this.checkBox1.Font = new System.Drawing.Font("Droid Arabic Kufi", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(124, 20);
+            this.checkBox1.ForeColor = System.Drawing.Color.Black;
+            this.checkBox1.Location = new System.Drawing.Point(756, 29);
             this.checkBox1.Name = "checkBox1";
+            this.checkBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.checkBox1.Size = new System.Drawing.Size(158, 56);
             this.checkBox1.TabIndex = 229;
             this.checkBox1.Text = "كل الفروع";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.UseVisualStyleBackColor = false;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // Frm_ReportMasrofat

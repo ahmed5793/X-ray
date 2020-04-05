@@ -16,12 +16,21 @@ namespace Laboratory.PL
         public Frm_ReportDoctor()
         {
             InitializeComponent();
-            comboBox1.DataSource = Doctors.Select_ComboDoctor();
-            comboBox1.DisplayMember = "Doc_Name";
-            comboBox1.ValueMember = "Doc_ID";
-        
+            Function();
         }
-
+        void Function()
+        {
+            try
+            {
+                comboBox1.DataSource = Doctors.Select_ComboDoctor();
+                comboBox1.DisplayMember = "Doc_Name";
+                comboBox1.ValueMember = "Doc_ID";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void btn_search_Click(object sender, EventArgs e)
         {
            

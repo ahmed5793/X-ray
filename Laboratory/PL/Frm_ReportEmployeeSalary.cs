@@ -20,9 +20,21 @@ namespace Laboratory.PL
         public Frm_ReportEmployeeSalary()
         {
             InitializeComponent();
-            checkBox1.Checked = true;
-            txt_UserName.Text = Program.salesman;
-            Permision();
+            Function();
+        }
+        void Function()
+        {
+            try
+            {
+                checkBox1.Checked = true;
+                txt_UserName.Text = Program.salesman;
+                Permision();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
       public  void Permision()
         {

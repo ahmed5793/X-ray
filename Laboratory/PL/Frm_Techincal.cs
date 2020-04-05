@@ -20,7 +20,6 @@ namespace Laboratory.PL
             dataGridView1.DataSource = t.SelectTechincal();
             btn_new.Hide();
             btn_update.Enabled = false;
-
             dataGridView1.Columns[3].Visible = false;
         }
 

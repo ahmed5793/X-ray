@@ -16,8 +16,20 @@ namespace Laboratory.PL
         public Frm_DebitCustomer()
         {
             InitializeComponent();
-            gridControl1.DataSource = C.selectClientRent();
-            Calc();
+            Function();
+        }
+        void Function()
+        {
+            try
+            {
+                gridControl1.DataSource = C.selectClientRent();
+                Calc();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
         void Calc()
         {

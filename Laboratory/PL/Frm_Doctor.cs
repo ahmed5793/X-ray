@@ -46,12 +46,23 @@ namespace Laboratory.PL
             {
                 farm = this;
             }
-            Btn_Update.Enabled = false;
-            dataGridView1.DataSource = d.SelectDoctor();
-            dataGridView1.Columns[4].Visible = false;
-           
+            Function();
         }
+        void Function()
+        {
+            try
+            {
 
+                Btn_Update.Enabled = false;
+                dataGridView1.DataSource = d.SelectDoctor();
+                dataGridView1.Columns[4].Visible = false;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void groupBox2_Enter(object sender, EventArgs e)
         {
 

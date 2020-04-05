@@ -18,12 +18,20 @@ namespace Laboratory.PL
         public Frm_ReportDoctorOfCenterData()
         {
             InitializeComponent();
-       
-            gridControl1.DataSource = d.SelectDoctor_OFCENTER();
-            gridView1.Columns[3].Visible = false;
-
+            Function();
         }
-
+        void Function()
+        {
+            try
+            {
+                gridControl1.DataSource = d.SelectDoctor_OFCENTER();
+                gridView1.Columns[3].Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void button1_Click(object sender, EventArgs e)
         {
 

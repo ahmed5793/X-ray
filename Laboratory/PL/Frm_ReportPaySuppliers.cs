@@ -19,18 +19,26 @@ namespace Laboratory.PL
         public Frm_ReportPaySuppliers()
         {
             InitializeComponent();
+            Function();
+        }
+        void Function()
+        {
+            try
+            {
+                comboBox2.DataSource = Suppliers.CompoBoxSuppliers();
+                comboBox2.DisplayMember = "Name";
+                comboBox2.ValueMember = "Sup_id";
 
-            comboBox2.DataSource = Suppliers.CompoBoxSuppliers();
-            comboBox2.DisplayMember = "Name";
-            comboBox2.ValueMember = "Sup_id";
+                gridControl1.DataSource = Suppliers.Report_PaySupplier(Convert.ToInt32(comboBox2.SelectedValue));
+                dt5.Clear();
+                dt5 = Suppliers.Select_SupplierTotalMoney(Convert.ToInt32(comboBox2.SelectedValue));
+                textBox1.Text = dt5.Rows[0][0].ToString();
+            }
+            catch (Exception ex )
+            {
 
-
-
-
-            gridControl1.DataSource = Suppliers.Report_PaySupplier(Convert.ToInt32(comboBox2.SelectedValue));
-            dt5.Clear();
-            dt5 = Suppliers.Select_SupplierTotalMoney(Convert.ToInt32(comboBox2.SelectedValue));
-            textBox1.Text = dt5.Rows[0][0].ToString();
+                MessageBox.Show(ex.Message);
+            }
         }
         //void Calc()
         //{

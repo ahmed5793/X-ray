@@ -22,9 +22,22 @@ namespace Laboratory.PL
         public Frm_PayCompanyMoney()
         {
             InitializeComponent();
-            txt_prise.Enabled=false;
-            Txt_SalesMAn.Text = Program.salesman;
-            Permision();
+            Function();
+        }
+        void Function()
+        {
+            try
+            {
+                txt_prise.Enabled = false;
+                Txt_SalesMAn.Text = Program.salesman;
+                Permision();
+                Select_Company();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
         void Select_Company()
         {
@@ -174,7 +187,17 @@ namespace Laboratory.PL
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-                dataGridView1.DataSource = c.SelectOneCompanyMoney(Convert.ToInt32(cmb_company.SelectedValue));
+            try
+            {
+                if (cmb_company.Text!="")
+                {
+                    dataGridView1.DataSource = c.SelectOneCompanyMoney(Convert.ToInt32(cmb_company.SelectedValue));
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
            
         }
 

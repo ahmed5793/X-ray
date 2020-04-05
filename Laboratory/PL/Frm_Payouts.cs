@@ -28,9 +28,21 @@ namespace Laboratory.PL
            
         {
             InitializeComponent();
-            txt_username.Text = Program.salesman;
-            Permision();
-            Txt_IdCust.Hide();
+            Function();
+        }
+        void Function()
+        {
+            try
+            {
+                txt_username.Text = Program.salesman;
+                Permision();
+                Txt_IdCust.Hide();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
         void Permision()
         {

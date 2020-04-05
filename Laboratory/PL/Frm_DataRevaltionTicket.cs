@@ -52,10 +52,7 @@ namespace Laboratory.PL
             {
                 farm = this;
             }
-
-            comboBox1.DataSource = b.SelectCompBranches();
-            comboBox1.DisplayMember = "Name";
-            comboBox1.ValueMember = "Branch_ID";
+            Function();
             ////dataGridView1.Columns[2].DefaultCellStyle.Format = "hh:mm tt";
 
             //RepositoryItemTextEdit textEdit = new RepositoryItemTextEdit();
@@ -68,7 +65,21 @@ namespace Laboratory.PL
 
 
         }
+        void Function()
+        {
+            try
+            {
 
+                comboBox1.DataSource = b.SelectCompBranches();
+                comboBox1.DisplayMember = "Name";
+                comboBox1.ValueMember = "Branch_ID";
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            } 
+        }
         private void Frm_DataRevaltionTicket_Load(object sender, EventArgs e)
         {
             Lable_Date.Text=DateTime.Now.ToString("dd/MM/yyyy");

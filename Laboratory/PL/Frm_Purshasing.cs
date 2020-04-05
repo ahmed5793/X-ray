@@ -24,25 +24,36 @@ namespace Laboratory.PL
         public Frm_Purshasing()
         {
             InitializeComponent();
-            Cmb_Store.DataSource = Store.Select_ComboStore();
-            Cmb_Store.DisplayMember = "Store_name";
-            Cmb_Store.ValueMember = "id_store";
-            cmb_Stock.DataSource = Stock.Compo_Stock();
-            cmb_Stock.DisplayMember = "Name_Stock";
-            cmb_Stock.ValueMember = "ID_Stock";
-            if (dt4.Rows.Count > 0)
+            Function();
+        }
+        void Function()
+        {
+            try
             {
-                dt4 = Stock.Select_moneyStock(Convert.ToInt32(cmb_Stock.SelectedValue));
+                Cmb_Store.DataSource = Store.Select_ComboStore();
+                Cmb_Store.DisplayMember = "Store_name";
+                Cmb_Store.ValueMember = "id_store";
+                cmb_Stock.DataSource = Stock.Compo_Stock();
+                cmb_Stock.DisplayMember = "Name_Stock";
+                cmb_Stock.ValueMember = "ID_Stock";
+                if (dt4.Rows.Count > 0)
+                {
+                    dt4 = Stock.Select_moneyStock(Convert.ToInt32(cmb_Stock.SelectedValue));
 
+                }
+                Cmb_Suppliers.DataSource = Suppliers.CompoBoxSuppliers();
+                Cmb_Suppliers.DisplayMember = "Name";
+                Cmb_Suppliers.ValueMember = "Sup_id";
+                //txt_num.Text = Suppliers.LastSuppliersDetalis().Rows[0][0].ToString();
+
+                txt_sales.Text = Program.salesman;
+                DataTablee();
             }
+            catch (Exception ex)
+            {
 
-            Cmb_Suppliers.DataSource = Suppliers.CompoBoxSuppliers();
-            Cmb_Suppliers.DisplayMember = "Name";
-            Cmb_Suppliers.ValueMember = "Sup_id";
-            //txt_num.Text = Suppliers.LastSuppliersDetalis().Rows[0][0].ToString();
-
-            txt_sales.Text = Program.salesman;
-            DataTablee();
+                MessageBox.Show(ex.Message);
+            }
         }
         public void DataTablee()
         {

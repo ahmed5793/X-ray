@@ -21,8 +21,21 @@ namespace Laboratory.PL
         public Frm_ProductMinimum()
         {
             InitializeComponent();
-            Txt_SalesMAn.Text = Program.salesman;
-            PermisionStore();
+            Function();
+        }
+
+        void Function()
+        {
+            try
+            {
+                Txt_SalesMAn.Text = Program.salesman;
+                PermisionStore();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
         void PermisionStore()
         {

@@ -19,27 +19,38 @@ namespace Laboratory.PL
         public Frm_StockTransfair()
         {
             InitializeComponent();
-            cmb_StockFrom.DataSource = s.Compo_Stock();
-            cmb_StockFrom.DisplayMember = "Name_Stock";
-            cmb_StockFrom.ValueMember = "ID_Stock";
-            Cmb_StrockTo.DataSource = s.Compo_Stock();
-            Cmb_StrockTo.DisplayMember = "Name_Stock";
-            Cmb_StrockTo.ValueMember = "ID_Stock";
-            txt_name.Text = Program.salesman;
-            dt.Clear();
-            dt = s.Select_moneyStock(Convert.ToInt32(cmb_StockFrom.SelectedValue));
-            if (dt.Rows.Count > 0)
+            Function();
+        }
+        void Function()
+        {
+            try
             {
-                txt_CurrentBalance1.Text = dt.Rows[0][0].ToString();
+                cmb_StockFrom.DataSource = s.Compo_Stock();
+                cmb_StockFrom.DisplayMember = "Name_Stock";
+                cmb_StockFrom.ValueMember = "ID_Stock";
+                Cmb_StrockTo.DataSource = s.Compo_Stock();
+                Cmb_StrockTo.DisplayMember = "Name_Stock";
+                Cmb_StrockTo.ValueMember = "ID_Stock";
+                txt_name.Text = Program.salesman;
+                dt.Clear();
+                dt = s.Select_moneyStock(Convert.ToInt32(cmb_StockFrom.SelectedValue));
+                if (dt.Rows.Count > 0)
+                {
+                    txt_CurrentBalance1.Text = dt.Rows[0][0].ToString();
+                }
+                dt.Clear();
+                dt = s.Select_moneyStock(Convert.ToInt32(Cmb_StrockTo.SelectedValue));
+                if (dt.Rows.Count > 0)
+                {
+                    textBox1.Text = dt.Rows[0][0].ToString();
+                }
             }
-            dt.Clear();
-            dt = s.Select_moneyStock(Convert.ToInt32(Cmb_StrockTo.SelectedValue));
-            if (dt.Rows.Count > 0)
+            catch (Exception ex)
             {
-                textBox1.Text = dt.Rows[0][0].ToString();
+
+                MessageBox.Show(ex.Message);
             }
         }
-
         private void btn_save_Click(object sender, EventArgs e)
         {
 

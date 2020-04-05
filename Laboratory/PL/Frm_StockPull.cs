@@ -17,17 +17,29 @@ namespace Laboratory.PL
         DataTable dt = new DataTable();
         public Frm_StockPull()
         {
-            InitializeComponent();       
-            cmb_Stock.DataSource = s.Compo_Stock();
-            cmb_Stock.DisplayMember = "Name_Stock";
-            cmb_Stock.ValueMember = "ID_Stock";
-            txt_name.Text = Program.salesman;
-            dt.Clear();
-            dt = s.Select_moneyStock(Convert.ToInt32(cmb_Stock.SelectedValue));
-            if (dt.Rows.Count > 0)
+            InitializeComponent();
+            Function();
+        }
+        void Function()
+        {
+            try
             {
-                txt_CurrentBalance.Text = dt.Rows[0][0].ToString();
-            }        
+                cmb_Stock.DataSource = s.Compo_Stock();
+                cmb_Stock.DisplayMember = "Name_Stock";
+                cmb_Stock.ValueMember = "ID_Stock";
+                txt_name.Text = Program.salesman;
+                dt.Clear();
+                dt = s.Select_moneyStock(Convert.ToInt32(cmb_Stock.SelectedValue));
+                if (dt.Rows.Count > 0)
+                {
+                    txt_CurrentBalance.Text = dt.Rows[0][0].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            } 
         }
         void clear()
         {

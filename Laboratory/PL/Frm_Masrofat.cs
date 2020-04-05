@@ -83,17 +83,29 @@ namespace Laboratory.PL
             {
                 farm = this;
             }
-            txt_username.Text = Program.salesman;
-            SelectMasrofatType();
-            Permision();
-
-            dataGridView1.DataSource = m.SelectReserveDetails();
-
-   
-            textBox1.Hide();
-            Btn_Delete.Enabled = false;
+            Function();
         }
+        void Function()
+        {
+            try
+            {
 
+                txt_username.Text = Program.salesman;
+                SelectMasrofatType();
+                Permision();
+
+                dataGridView1.DataSource = m.SelectReserveDetails();
+
+
+                textBox1.Hide();
+                Btn_Delete.Enabled = false;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
 
         private void btn_GenderJob_Click(object sender, EventArgs e)
         {

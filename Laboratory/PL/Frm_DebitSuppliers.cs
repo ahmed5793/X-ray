@@ -17,8 +17,19 @@ namespace Laboratory.PL
         public Frm_DebitSuppliers()
         {
             InitializeComponent();
-            gridControl1.DataSource = Suppliers.Select_DepitSupplier();
-            Calc();
+            Function();
+        }
+        void Function()
+        {
+            try
+            {
+                gridControl1.DataSource = Suppliers.Select_DepitSupplier();
+                Calc();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            } 
         }
         void Calc()
         {

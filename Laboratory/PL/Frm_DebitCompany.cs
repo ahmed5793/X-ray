@@ -23,10 +23,17 @@ namespace Laboratory.PL
         }
         void company()
         {
+            try
+            {
+                cmb_Company.DataSource = cm.SelectCompany();
+                cmb_Company.DisplayMember = "اسم الشركه";
+                cmb_Company.ValueMember = "Comp_ID";
+            }
+            catch (Exception ex)
+            {
 
-            cmb_Company.DataSource = cm.SelectCompany();
-            cmb_Company.DisplayMember = "اسم الشركه";
-            cmb_Company.ValueMember = "Comp_ID";
+                MessageBox.Show(ex.Message);
+            }
         }
         //void Calc()
         //{

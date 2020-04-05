@@ -30,7 +30,8 @@ namespace Laboratory.PL
         }
         void Permision()
         {
-
+            try
+            {
             dt.Clear();
             dt = U.SelectUserBranch(txt_UserName.Text);
             if (dt.Rows.Count > 0)
@@ -50,6 +51,12 @@ namespace Laboratory.PL
             cmb_employeeName.ValueMember = "id_employee";
             cmb_employeeName.SelectedIndex = -1;
 
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
 
 

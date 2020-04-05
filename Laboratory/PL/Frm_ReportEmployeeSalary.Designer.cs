@@ -146,7 +146,7 @@
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(309, 1);
+            this.label2.Location = new System.Drawing.Point(294, 1);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(352, 28);
             this.label2.TabIndex = 141;

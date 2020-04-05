@@ -20,17 +20,29 @@ namespace Laboratory.PL
         public Tranfair_product()
         {
             InitializeComponent();
-            Cmb_FromStore.DataSource = Store.Select_ComboStore();
-            Cmb_FromStore.DisplayMember = "Store_name";
-            Cmb_FromStore.ValueMember = "id_store";
+            Function();
+        }
+        void Function()
+        {
+            try
+            {
+                Cmb_FromStore.DataSource = Store.Select_ComboStore();
+                Cmb_FromStore.DisplayMember = "Store_name";
+                Cmb_FromStore.ValueMember = "id_store";
 
-            Cmb_ToStore.DataSource = Store.Select_ComboStore();
-            Cmb_ToStore.DisplayMember = "Store_name";
-            Cmb_ToStore.ValueMember = "id_store";
-            Txt_sales.Text = Program.salesman;
+                Cmb_ToStore.DataSource = Store.Select_ComboStore();
+                Cmb_ToStore.DisplayMember = "Store_name";
+                Cmb_ToStore.ValueMember = "id_store";
+                Txt_sales.Text = Program.salesman;
 
-            SelectdataTable();
-            Rezizse();
+                SelectdataTable();
+                Rezizse();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
         void SelectdataTable()
         {

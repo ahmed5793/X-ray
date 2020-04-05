@@ -830,6 +830,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1030, 539);
             this.Controls.Add(this.btn_print);
             this.Controls.Add(this.txt_idtickets);
@@ -849,7 +850,8 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Name = "Frm_DetailsTickets";
-            this.Text = "Frm_DetailsTickets";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "شاشة تفاصيل الحجز";
             this.Load += new System.EventHandler(this.Frm_DetailsTickets_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_order)).EndInit();
             this.groupBox4.ResumeLayout(false);

@@ -17,8 +17,20 @@ namespace Laboratory.PL
         {
             InitializeComponent();
             //gridControl1.DataSource = M.select_Masrofat();
-            Calc_Total();
-            Permision();
+            Function();
+        }
+        void Function()
+        {
+            try
+            {
+                Calc_Total();
+                Permision();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
         void Calc_Total()
         {
@@ -150,6 +162,11 @@ namespace Laboratory.PL
                 comboBox1.Enabled = true;
             }
          
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -47,12 +47,23 @@ namespace Laboratory.PL
         public frm_RceiveMoney()
         {
             InitializeComponent();
-            Select_Users();
-            txt_UserName.Text = Program.salesman;
-            Permision();
-            textBox4.Hide();
+            Function();
         }
-   
+        void Function()
+        {
+            try
+            {
+                Select_Users();
+                txt_UserName.Text = Program.salesman;
+                Permision();
+                textBox4.Hide();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
         void Select_Users()
         {
             Cmb_Users.DataSource = U.SelectUsers();

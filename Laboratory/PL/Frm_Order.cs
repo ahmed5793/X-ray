@@ -20,6 +20,13 @@ namespace Laboratory.PL
         public Frm_Order()
         {
             InitializeComponent();
+            Function();
+        }
+        void Function()
+        {
+            try
+            {
+
             txt_sales.Text = Program.salesman;
             cmb_Store.DataSource = Store.Select_ComboStore();
             cmb_Store.DisplayMember = "Store_name";
@@ -27,6 +34,12 @@ namespace Laboratory.PL
             txt_num.Hide();
             DataTablee();
             Rezizse();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         public void DataTablee()
         {

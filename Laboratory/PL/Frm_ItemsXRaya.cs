@@ -19,13 +19,25 @@ namespace Laboratory.PL
         public Frm_ItemsXRaya()
         {
             InitializeComponent();
-            comboBox1.DataSource = c.selectCategoryXRaya();
-            comboBox1.DisplayMember = "الفئات";
-            comboBox1.ValueMember = "ID_CtegoryXrays";
-            dataGridView1.DataSource = i.SelectItemXRaya();
-            Btn_add.Enabled = true;
-            Btn_Update.Enabled = false;
-            dataGridView1.Columns[0].Visible = false;
+            Function();
+        }
+        void Function()
+        {
+            try
+            {
+                comboBox1.DataSource = c.selectCategoryXRaya();
+                comboBox1.DisplayMember = "الفئات";
+                comboBox1.ValueMember = "ID_CtegoryXrays";
+                dataGridView1.DataSource = i.SelectItemXRaya();
+                Btn_add.Enabled = true;
+                Btn_Update.Enabled = false;
+                dataGridView1.Columns[0].Visible = false;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {

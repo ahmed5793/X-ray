@@ -28,6 +28,8 @@ namespace Laboratory.PL
         }
         void Permision()
         {
+            try
+            {            
             dt.Clear();
             dt = U.SelectUserBranch(txt_UserName.Text);
             if (dt.Rows.Count > 0)
@@ -46,7 +48,11 @@ namespace Laboratory.PL
             cmb_Employee.DisplayMember = "Emp_Name";
             cmb_Employee.ValueMember = "id_employee";
             cmb_Employee.SelectedIndex = -1;
-          
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void Frm_EmployeeDiscount_Load(object sender, EventArgs e)

@@ -29,15 +29,13 @@ namespace Laboratory.PL
             Permision();
             //dataGridView1.Columns[8].DefaultCellStyle.Format = "MM/dd/yyyy hh:mm:ss tt";
         
-
-
-
         }
         System.Data.DataTable dt = new System.Data.DataTable();
         new System.Data.DataTable dt2 = new System.Data.DataTable();
         void Permision()
         {
-  
+           try
+           {
             dt2.Clear();
             dt2 = u.SelectUserBranch(txt_username.Text);
 
@@ -45,18 +43,19 @@ namespace Laboratory.PL
             {
                 cmb_UserBranch.DataSource = u.SelectUserBranch(txt_username.Text);
                 cmb_UserBranch.DisplayMember = "Name";
-                cmb_UserBranch.ValueMember = "Branch_ID";
-
-               
+                cmb_UserBranch.ValueMember = "Branch_ID";               
             }
             else
             {
                 cmb_UserBranch.DataSource = b.SelectCompBranches();
                 cmb_UserBranch.DisplayMember = "Name";
-                cmb_UserBranch.ValueMember = "Branch_ID";
-
-                
+                cmb_UserBranch.ValueMember = "Branch_ID";                
             }
+           }
+           catch (Exception ex)
+           {
+                MessageBox.Show(ex.Message);
+           }
         }
         private void Frm_ExportExell_Load(object sender, EventArgs e)
         {
@@ -326,7 +325,7 @@ namespace Laboratory.PL
             catch (Exception ex)
             {
                 //return;
-               // MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message);
                 //MessageBox.Show(ex.StackTrace);
                 
               

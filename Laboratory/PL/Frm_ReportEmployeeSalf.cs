@@ -20,11 +20,21 @@ namespace Laboratory.PL
         public Frm_ReportEmployeeSalf()
         {
             InitializeComponent();
-            checkBox1.Checked = true;
-            txt_UserName.Text = Program.salesman;
-            Permision();
+            Function();
+        }
+        void Function()
+        {
+            try
+            {
+                checkBox1.Checked = true;
+                txt_UserName.Text = Program.salesman;
+                Permision();
+            }
+            catch (Exception ex)
+            {
 
-
+                MessageBox.Show(ex.Message);
+            }
         }
         void Permision()
         {
@@ -73,13 +83,11 @@ namespace Laboratory.PL
             if (checkBox1.Checked == true)
             {
                 cmb_employeeName.Enabled = true;
-
                 Permision();
             }
             else
             {
-                cmb_employeeName.Enabled = false;
-              
+                cmb_employeeName.Enabled = false;              
                 cmb_employeeName.DataSource = null;
                 gridControl1.DataSource = null;
             }
@@ -144,10 +152,8 @@ namespace Laboratory.PL
         }
 
         private void cmb_employeeName_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-           
+        {         
         }
-
         private void cmb_Branch_SelectionChangeCommitted(object sender, EventArgs e)
         {
             cmb_employeeName.DataSource = E.Select_EmployeeFromBranchToAddShift(Convert.ToInt32(cmb_Branch.SelectedValue));

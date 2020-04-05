@@ -126,6 +126,7 @@
             this.groupBox1.Controls.Add(this.gridControl1);
             this.groupBox1.Location = new System.Drawing.Point(5, 95);
             this.groupBox1.Name = "groupBox1";
+            this.groupBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.groupBox1.Size = new System.Drawing.Size(892, 348);
             this.groupBox1.TabIndex = 223;
             this.groupBox1.TabStop = false;
@@ -149,29 +150,33 @@
             // 
             // gridView1
             // 
-            this.gridView1.Appearance.ColumnFilterButton.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.Appearance.ColumnFilterButton.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
             this.gridView1.Appearance.ColumnFilterButton.Options.UseFont = true;
-            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
             this.gridView1.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Yellow;
             this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
             this.gridView1.Appearance.HeaderPanel.Options.UseForeColor = true;
             this.gridView1.Appearance.HeaderPanel.Options.UseTextOptions = true;
             this.gridView1.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridView1.Appearance.HeaderPanel.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold);
             this.gridView1.Appearance.Row.FontStyleDelta = System.Drawing.FontStyle.Bold;
             this.gridView1.Appearance.Row.Options.UseFont = true;
             this.gridView1.Appearance.Row.Options.UseTextOptions = true;
             this.gridView1.Appearance.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridView1.Appearance.Row.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridView1.Appearance.Row.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.gridView1.AppearancePrint.HeaderPanel.Font = new System.Drawing.Font("Droid Arabic Kufi", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.AppearancePrint.EvenRow.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridView1.AppearancePrint.EvenRow.Options.UseFont = true;
+            this.gridView1.AppearancePrint.EvenRow.Options.UseTextOptions = true;
+            this.gridView1.AppearancePrint.EvenRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.AppearancePrint.EvenRow.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridView1.AppearancePrint.EvenRow.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.gridView1.AppearancePrint.HeaderPanel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.gridView1.AppearancePrint.HeaderPanel.FontStyleDelta = System.Drawing.FontStyle.Bold;
             this.gridView1.AppearancePrint.HeaderPanel.Options.UseFont = true;
             this.gridView1.AppearancePrint.HeaderPanel.Options.UseTextOptions = true;
             this.gridView1.AppearancePrint.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.AppearancePrint.Row.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.AppearancePrint.Row.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
             this.gridView1.AppearancePrint.Row.Options.UseFont = true;
             this.gridView1.AppearancePrint.Row.Options.UseTextOptions = true;
             this.gridView1.AppearancePrint.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -189,7 +194,7 @@
             // 
             // Btn_Print
             // 
-            this.Btn_Print.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Btn_Print.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.Btn_Print.Appearance.BackColor = System.Drawing.Color.Black;
             this.Btn_Print.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_Print.Appearance.ForeColor = System.Drawing.Color.White;
@@ -240,7 +245,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(909, 493);
             this.Controls.Add(this.txt_totalpay);
             this.Controls.Add(this.label6);
@@ -254,6 +259,7 @@
             this.Name = "Frm_ReportPurshasesInvoice";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "تقرير بالمشتريات";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
