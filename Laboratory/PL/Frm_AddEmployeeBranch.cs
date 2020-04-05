@@ -24,33 +24,52 @@ namespace Laboratory.PL
             //cmb_branch.DataSource = b.SelectCompBranches();
             //cmb_branch.DisplayMember = "Name";
             //cmb_branch.ValueMember = "Branch_ID";
-            cmb_employee.DataSource = E.SelectCompoEmployee();
-            cmb_employee.DisplayMember = "Emp_Name";
-            cmb_employee.ValueMember = "Emp_ID";
+            Select_Employee();
             dataGridView1.DataSource = E.SelectEmployeeBranch();
             Btn_Add.Enabled = true;
             Btn_Update.Enabled = false;
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[2].Visible = false;
         }
+        void Select_Employee()
+        {
+            try
+            {
+                cmb_employee.DataSource = E.SelectCompoEmployee();
+                cmb_employee.DisplayMember = "Emp_Name";
+                cmb_employee.ValueMember = "Emp_ID";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         void Permision()
         {
-            dt.Clear();
-            dt = u.SelectUserBranch(Program.salesman);
-
-            if (dt.Rows.Count > 0)
+            try
             {
-                cmb_branch.DataSource = u.SelectUserBranch(Program.salesman);
-                cmb_branch.DisplayMember = "Name";
-                cmb_branch.ValueMember = "Branch_ID";
+                dt.Clear();
+                dt = u.SelectUserBranch(Program.salesman);
 
+                if (dt.Rows.Count > 0)
+                {
+                    cmb_branch.DataSource = u.SelectUserBranch(Program.salesman);
+                    cmb_branch.DisplayMember = "Name";
+                    cmb_branch.ValueMember = "Branch_ID";
+
+                }
+                else
+                {
+                    cmb_branch.DataSource = b.SelectCompBranches();
+                    cmb_branch.DisplayMember = "Name";
+                    cmb_branch.ValueMember = "Branch_ID";
+
+                }
             }
-            else
+            catch (Exception ex)
             {
-                cmb_branch.DataSource = b.SelectCompBranches();
-                cmb_branch.DisplayMember = "Name";
-                cmb_branch.ValueMember = "Branch_ID";
 
+                MessageBox.Show(ex.Message);
             }
         }
         DataTable dt = new DataTable();

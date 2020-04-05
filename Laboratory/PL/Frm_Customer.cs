@@ -18,8 +18,19 @@ namespace Laboratory.PL
         public Frm_Customer()
         {
             InitializeComponent();
-            dataGridView1.DataSource = c.SelectCustomer();          
-            Btn_Update.Enabled = false;           
+            Function();
+        }
+        void Function()
+        {
+            try
+            {
+                dataGridView1.DataSource = c.SelectCustomer();
+                Btn_Update.Enabled = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void Frm_Customer_Load(object sender, EventArgs e)
         {

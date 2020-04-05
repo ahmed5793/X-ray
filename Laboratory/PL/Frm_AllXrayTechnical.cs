@@ -17,13 +17,22 @@ namespace Laboratory.PL
         public Frm_AllXrayTechnical()
         {
             InitializeComponent();
-
-            comboBox1.DataSource = Techincal.Select_ComboTechnical();
-            comboBox1.DisplayMember = "Tech_Name";
-            comboBox1.ValueMember = "Techincal_ID";
-
+            Function();
         }
+        void Function()
+        {
+            try
+            {
+                comboBox1.DataSource = Techincal.Select_ComboTechnical();
+                comboBox1.DisplayMember = "Tech_Name";
+                comboBox1.ValueMember = "Techincal_ID";
+            }
+            catch (Exception ex)
+            {
 
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
         {
             try

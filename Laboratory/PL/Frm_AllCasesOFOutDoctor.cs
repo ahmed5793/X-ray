@@ -17,13 +17,23 @@ namespace Laboratory.PL
 
         public Frm_AllCasesOFOutDoctor()
         {
-            InitializeComponent(); 
-            comboBox1.DataSource = Doctors.Select_ComboDoctor();
-            comboBox1.DisplayMember = "Doc_Name";
-            comboBox1.ValueMember = "Doc_ID";
-
+            InitializeComponent();
+            Function();
         }
+        void Function()
+        {
+            try
+            {
+                comboBox1.DataSource = Doctors.Select_ComboDoctor();
+                comboBox1.DisplayMember = "Doc_Name";
+                comboBox1.ValueMember = "Doc_ID";
+            }
+            catch (Exception ex)
+            {
 
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void comboBox1_Leave(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();

@@ -27,21 +27,29 @@ namespace Laboratory.PL
         }
         void Permision()
         {
-            dt.Clear();
-            dt = u.SelectUserBranch(txt_username.Text);
+            try
+            {
+                dt.Clear();
+                dt = u.SelectUserBranch(txt_username.Text);
 
-            if (dt.Rows.Count > 0)
-            {
-                cmb_UserBranch.DataSource = u.SelectUserBranch(txt_username.Text);
-                cmb_UserBranch.DisplayMember = "Name";
-                cmb_UserBranch.ValueMember = "Branch_ID";            
+                if (dt.Rows.Count > 0)
+                {
+                    cmb_UserBranch.DataSource = u.SelectUserBranch(txt_username.Text);
+                    cmb_UserBranch.DisplayMember = "Name";
+                    cmb_UserBranch.ValueMember = "Branch_ID";
+                }
+                else
+                {
+                    cmb_UserBranch.DataSource = b.SelectCompBranches();
+                    cmb_UserBranch.DisplayMember = "Name";
+                    cmb_UserBranch.ValueMember = "Branch_ID";
+                }
             }
-            else
+            catch (Exception ex)
             {
-                cmb_UserBranch.DataSource =b.SelectCompBranches();
-                cmb_UserBranch.DisplayMember = "Name";
-                cmb_UserBranch.ValueMember = "Branch_ID";                
+                MessageBox.Show(ex.Message);
             }
+       
         }
         void calc()
         {
@@ -58,12 +66,19 @@ namespace Laboratory.PL
         }
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            if (cmb_UserBranch.Text!="")
+            try
             {
-                dt.Clear();
-                dt = t.selectSearchTicketsReturnDate(cmb_UserBranch.Text, DateFrom.Value, DateTo.Value);
-                gridControl1.DataSource = dt;
-                calc();
+                if (cmb_UserBranch.Text != "")
+                {
+                    dt.Clear();
+                    dt = t.selectSearchTicketsReturnDate(cmb_UserBranch.Text, DateFrom.Value, DateTo.Value);
+                    gridControl1.DataSource = dt;
+                    calc();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
         private void Btn_Print_Click(object sender, EventArgs e)
@@ -73,14 +88,29 @@ namespace Laboratory.PL
 
         private void cmb_UserBranch_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            gridControl1.DataSource = t.selectTicketsReturn(cmb_UserBranch.Text);
-            calc();
+            try
+            {
+                gridControl1.DataSource = t.selectTicketsReturn(cmb_UserBranch.Text);
+                calc();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+           
         }
 
         private void cmb_UserBranch_SelectedIndexChanged(object sender, EventArgs e)
         {
-            gridControl1.DataSource = t.selectTicketsReturn(cmb_UserBranch.Text);
-            calc();
+            try
+            {
+                gridControl1.DataSource = t.selectTicketsReturn(cmb_UserBranch.Text);
+                calc();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

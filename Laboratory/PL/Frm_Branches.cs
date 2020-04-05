@@ -21,19 +21,34 @@ namespace Laboratory.PL
         public Frm_Branches()
         {
             InitializeComponent();
-            cmb_Stock.DataSource = s.select_Stock();
-            cmb_Stock.DisplayMember = "إسم الخزنة";
-            cmb_Stock.ValueMember = "رقم الخزنة";
-            dataGridView1.DataSource = b.SelectBranches();          
-            Btn_Update.Enabled = false;
-            dataGridView1.Columns[0].Visible = false;
+            Function();
         }
+        void Function()
+        {
+            try
+            {
 
+                cmb_Stock.DataSource = s.select_Stock();
+                cmb_Stock.DisplayMember = "إسم الخزنة";
+                cmb_Stock.ValueMember = "رقم الخزنة";
+
+                cmb_store.DataSource = st.Select_ComboStore();
+                cmb_store.DisplayMember = "Store_name";
+                cmb_store.ValueMember = "id_store";
+                dataGridView1.DataSource = b.SelectBranches();
+                Btn_Update.Enabled = false;
+                dataGridView1.Columns[0].Visible = false;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
+        
+        }
         private void Frm_Branches_Load(object sender, EventArgs e)
         {
-            cmb_store.DataSource = st.Select_ComboStore();
-            cmb_store.DisplayMember = "Store_name";
-            cmb_store.ValueMember = "id_store";
         }
 
         private void btn_update_Click(object sender, EventArgs e)

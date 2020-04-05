@@ -15,21 +15,59 @@ namespace Laboratory.PL
     {
         Product Product = new Product();
         Store Store = new Store();
+        DataTable dt = new DataTable();
+
         public Add_StoreProduct()
         {
             InitializeComponent();
-            Cmb_ProdName.DataSource = Product.Select_ComboProduct();
-            Cmb_ProdName.DisplayMember = "Product_Name";
-            Cmb_ProdName.ValueMember = "Id_Product";
-            Cmb_Store.DataSource = Store.Select_ComboStore();
-            Cmb_Store.DisplayMember = "Store_name";
-            Cmb_Store.ValueMember = "id_store";
-            dataGridViewPR.DataSource = Product.Select_StoreProduct();
+            Select_ProdName();
+            Select_StoreName();
+            Select_Product();
             Btn_Update.Enabled = false;
             Btn_Delete.Hide();
             dataGridViewPR.Columns[0].Visible = false;
         }
+        void Select_Product()
+        {
+            try
+            {
+                dataGridViewPR.DataSource = Product.Select_StoreProduct();
+            }
+            catch (Exception ex)
+            {
 
+                MessageBox.Show(ex.Message);
+            }
+        }
+        void Select_ProdName()
+        {
+            try
+            {
+
+                Cmb_ProdName.DataSource = Product.Select_ComboProduct();
+                Cmb_ProdName.DisplayMember = "Product_Name";
+                Cmb_ProdName.ValueMember = "Id_Product";
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+        void Select_StoreName()
+        {
+            try
+            {
+                Cmb_Store.DataSource = Store.Select_ComboStore();
+                Cmb_Store.DisplayMember = "Store_name";
+                Cmb_Store.ValueMember = "id_store";
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void groupBox3_Enter(object sender, EventArgs e)
         {
 
@@ -175,7 +213,6 @@ namespace Laboratory.PL
         {
             try
             {
-                DataTable dt = new DataTable();
                 if (Cmb_ProdName.Text != "")
                 {
                     dt.Clear();

@@ -19,24 +19,36 @@ namespace Laboratory.PL
         public Frm_AddTechnicalShift()
         {
             InitializeComponent();
-            Btn_DeleteShift.Enabled = false;
-            Btn_UpdateShift.Enabled = false;
-            Txt_SalesMAn.Text = Program.salesman;
-            textBox1.Hide();
-            comboBox1.DataSource = Techincal.Select_ComboTechnical();
-            comboBox1.DisplayMember = "Tech_Name";
-            comboBox1.ValueMember = "Techincal_ID";
+            Function();
+        }
+        void Function()
+        {
+            try
+            {
+                Btn_DeleteShift.Enabled = false;
+                Btn_UpdateShift.Enabled = false;
+                Txt_SalesMAn.Text = Program.salesman;
+                textBox1.Hide();
+                comboBox1.DataSource = Techincal.Select_ComboTechnical();
+                comboBox1.DisplayMember = "Tech_Name";
+                comboBox1.ValueMember = "Techincal_ID";
 
-            comboBox2.DataSource = Techincal.Select_ComboTypeShift();
-            comboBox2.DisplayMember = "Type_Shift";
-            comboBox2.ValueMember = "ID_Shift";
+                comboBox2.DataSource = Techincal.Select_ComboTypeShift();
+                comboBox2.DisplayMember = "Type_Shift";
+                comboBox2.ValueMember = "ID_Shift";
 
-            Cmb_Branch.DataSource = b.SelectCompBranches();
-            Cmb_Branch.DisplayMember = "Name";
-            Cmb_Branch.ValueMember = "Branch_ID";
-            Cmb_Branch.SelectedIndex = -1 ;
+                Cmb_Branch.DataSource = b.SelectCompBranches();
+                Cmb_Branch.DisplayMember = "Name";
+                Cmb_Branch.ValueMember = "Branch_ID";
+                Cmb_Branch.SelectedIndex = -1;
 
-            gridControl1.DataSource = Techincal.Select_TechnicalShift();
+                gridControl1.DataSource = Techincal.Select_TechnicalShift();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
         private void comboBox1_Leave(object sender, EventArgs e)
         {

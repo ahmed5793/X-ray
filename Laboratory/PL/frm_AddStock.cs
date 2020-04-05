@@ -16,19 +16,29 @@ namespace Laboratory.PL
         public frm_AddStock()
         {
             InitializeComponent();
-
-            textBox1.Text = s.Select_LastIdStock().Rows[0][0].ToString();
-            dataGridView1.DataSource = s.select_Stock();
-            btn_delete.Enabled = false;
-            btn_update.Enabled = false;
-            btn_delete.Hide();
-            textBox1.Text = s.Select_LastIdStock().Rows[0][0].ToString();
-            if (textBox1.Text == "")
-            {
-                textBox1.Text = "1";
-            }
+            Function();
         }
-
+        void Function()
+        {
+            try
+            {
+                textBox1.Text = s.Select_LastIdStock().Rows[0][0].ToString();
+                dataGridView1.DataSource = s.select_Stock();
+                btn_delete.Enabled = false;
+                btn_update.Enabled = false;
+                btn_delete.Hide();
+                textBox1.Text = s.Select_LastIdStock().Rows[0][0].ToString();
+                if (textBox1.Text == "")
+                {
+                    textBox1.Text = "1";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
+            }
+         }
         private void frm_AddStock_Load(object sender, EventArgs e)
         {
 

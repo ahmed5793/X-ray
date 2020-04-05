@@ -28,27 +28,35 @@ namespace Laboratory.PL
         }       
         void Permision()
         {
-            dt.Clear();
-            dt = U.SelectUserBranch(Txt_SalesMAn.Text);
-            if (dt.Rows.Count > 0)
+            try
             {
-                Cmb_Branch.DataSource = U.SelectUserBranch(Txt_SalesMAn.Text);
-                Cmb_Branch.DisplayMember = "Name";
-                Cmb_Branch.ValueMember = "Branch_ID";
+                dt.Clear();
+                dt = U.SelectUserBranch(Txt_SalesMAn.Text);
+                if (dt.Rows.Count > 0)
+                {
+                    Cmb_Branch.DataSource = U.SelectUserBranch(Txt_SalesMAn.Text);
+                    Cmb_Branch.DisplayMember = "Name";
+                    Cmb_Branch.ValueMember = "Branch_ID";
+                }
+                else
+                {
+                    Cmb_Branch.DataSource = b.SelectCompBranches();
+                    Cmb_Branch.DisplayMember = "Name";
+                    Cmb_Branch.ValueMember = "Branch_ID";
+                }
+                comboBox1.DataSource = E.Select_EmployeeShiftFromBranchToAddShift(Convert.ToInt32(Cmb_Branch.SelectedValue));
+                comboBox1.DisplayMember = "Emp_Name";
+                comboBox1.ValueMember = "id_employee";
+                comboBox1.SelectedIndex = -1;
+                if (comboBox1.Text != "")
+                {
+                    textBox1.Text = E.selectEmployeeRoleshift(Convert.ToInt32(comboBox1.SelectedValue)).Rows[0][0].ToString();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                Cmb_Branch.DataSource = b.SelectCompBranches();
-                Cmb_Branch.DisplayMember = "Name";
-                Cmb_Branch.ValueMember = "Branch_ID";
-            }
-            comboBox1.DataSource = E.Select_EmployeeShiftFromBranchToAddShift(Convert.ToInt32(Cmb_Branch.SelectedValue));
-            comboBox1.DisplayMember = "Emp_Name";
-            comboBox1.ValueMember = "id_employee";
-            comboBox1.SelectedIndex = -1;
-            if (comboBox1.Text != "")
-            {
-                textBox1.Text = E.selectEmployeeRoleshift(Convert.ToInt32(comboBox1.SelectedValue)).Rows[0][0].ToString();
+
+                MessageBox.Show(ex.Message);
             }
         }
         private void Btn_UpdateShift_Click(object sender, EventArgs e)

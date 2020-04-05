@@ -13,12 +13,14 @@ namespace Laboratory.PL
     public partial class Add_Product : Form
     {
         Product Product = new Product();
+        DataTable dt = new DataTable();
+
         public Add_Product()
         {
             InitializeComponent();
             btn_update.Enabled = false;
-            dataGridViewPR.DataSource = Product.Select_Product();
             txt_name.Focus();
+            Select_Product();
 
 
         }
@@ -30,7 +32,18 @@ namespace Laboratory.PL
             txt_seeling.Text = "0";
             txt_phr.Text = "0";
         }
+        void Select_Product()
+        {
+            try
+            {
+                dataGridViewPR.DataSource = Product.Select_Product();
+            }
+            catch (Exception ex)
+            {
 
+                MessageBox.Show(ex.Message);
+            }
+        }
 
         private void dataGridViewPR_DoubleClick(object sender, EventArgs e)
         {
@@ -47,16 +60,15 @@ namespace Laboratory.PL
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void txt_search_TextChanged(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
             try
             {
 

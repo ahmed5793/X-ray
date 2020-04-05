@@ -17,9 +17,20 @@ namespace Laboratory.PL
         public Frm_AddStore()
         {
             InitializeComponent();
-            dataGridView1.DataSource = store.Select_Store();
-            Btn_Add.Show();
-            btn_update.Enabled = false;
+            Function();
+        }
+        void Function()
+        {
+            try
+            {
+                dataGridView1.DataSource = store.Select_Store();
+                Btn_Add.Show();
+                btn_update.Enabled = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            } 
         }
         void Clear()
         {
