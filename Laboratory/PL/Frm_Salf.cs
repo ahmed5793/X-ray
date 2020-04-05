@@ -20,12 +20,24 @@ namespace Laboratory.PL
         public Frm_Salf()
         {
             InitializeComponent();
-            gridControl1.DataSource = E.SelectEmployeeSalf(Convert.ToInt32(cmb_branch.SelectedValue));
-            gridView1.Columns[0].Visible = false;
-            txt_userName.Text = Program.salesman;
-            Permision();
-            btn_save.Show();
-            btn_Update.Enabled = false;
+            Function();
+        }
+        void Function()
+        {
+            try
+            {
+                gridControl1.DataSource = E.SelectEmployeeSalf(Convert.ToInt32(cmb_branch.SelectedValue));
+                gridView1.Columns[0].Visible = false;
+                txt_userName.Text = Program.salesman;
+                Permision();
+                btn_save.Show();
+                btn_Update.Enabled = false;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
         DataTable dt1 = new DataTable();
 

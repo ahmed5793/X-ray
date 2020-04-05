@@ -42,17 +42,28 @@ namespace Laboratory.PL
             {
                 farm = this;
             }
-            clears();
-            dataGridView1.DataSource = E.SelectEmployee();
+            Function();
+        }
+        void Function()
+        {
+            try
+            {
+                clears();
+                dataGridView1.DataSource = E.SelectEmployee();
 
-            cmb_department.DataSource = E.SelectEmpRoleCompo();
-            cmb_department.DisplayMember = "Roles";
-            cmb_department.ValueMember = "ID_EmpRole";
+                cmb_department.DataSource = E.SelectEmpRoleCompo();
+                cmb_department.DisplayMember = "Roles";
+                cmb_department.ValueMember = "ID_EmpRole";
 
-            cmb_branch.DataSource = b.SelectCompBranches();
-            cmb_branch.DisplayMember = "Name";
-            cmb_branch.ValueMember = "Branch_ID";
+                cmb_branch.DataSource = b.SelectCompBranches();
+                cmb_branch.DisplayMember = "Name";
+                cmb_branch.ValueMember = "Branch_ID";
+            }
+            catch (Exception ex)
+            {
 
+                MessageBox.Show(ex.Message);
+            }
         }
         void clears()
         {

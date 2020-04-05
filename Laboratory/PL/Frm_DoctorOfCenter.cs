@@ -19,9 +19,21 @@ namespace Laboratory.PL
         public Frm_DoctorOfCenter()
         {
             InitializeComponent();
-            dataGridView1.DataSource = d.SelectDoctor_OFCENTER();
-            Btn_Update.Enabled = false;     
-            dataGridView1.Columns[3].Visible = false;
+            Function();
+        }
+        void Function()
+        {
+            try
+            {
+                dataGridView1.DataSource = d.SelectDoctor_OFCENTER();
+                Btn_Update.Enabled = false;
+                dataGridView1.Columns[3].Visible = false;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
         private void txt_search_TextChanged(object sender, EventArgs e)
         {

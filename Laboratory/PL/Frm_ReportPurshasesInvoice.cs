@@ -13,6 +13,7 @@ namespace Laboratory.PL
     public partial class Frm_ReportPurshasesInvoice : Form
     {
         Suppliers Suppliers = new Suppliers();
+        DataTable dt = new DataTable();
         public Frm_ReportPurshasesInvoice()
         {
             InitializeComponent();
@@ -26,7 +27,6 @@ namespace Laboratory.PL
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
             try
             {
                 dt = Suppliers.SearchReport_PurshasesInvoice(DateFrom.Value, DateTo.Value);

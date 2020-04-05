@@ -18,13 +18,25 @@ namespace Laboratory.PL
         public Frm_ReportAllPayOfCustomer()
         {
             InitializeComponent();
-            comboBox2.DataSource = C.SelectCompoCustomerN2dy();
-            comboBox2.DisplayMember = "Cust_Name";
-            comboBox2.ValueMember = "Cust_ID";
-            gridControl1.DataSource = C.Select_AllPayCustomer(Convert.ToInt32(comboBox2.SelectedValue));
-            dt5.Clear();
-            dt5 = C.Select_CustomertotalBAlance(Convert.ToInt32(comboBox2.SelectedValue));
-            textBox1.Text = dt5.Rows[0][0].ToString();
+            function();
+        }
+        void function()
+        {
+            try
+            {
+                comboBox2.DataSource = C.SelectCompoCustomerN2dy();
+                comboBox2.DisplayMember = "Cust_Name";
+                comboBox2.ValueMember = "Cust_ID";
+                gridControl1.DataSource = C.Select_AllPayCustomer(Convert.ToInt32(comboBox2.SelectedValue));
+                dt5.Clear();
+                dt5 = C.Select_CustomertotalBAlance(Convert.ToInt32(comboBox2.SelectedValue));
+                textBox1.Text = dt5.Rows[0][0].ToString();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
         //void Calc()
         //{

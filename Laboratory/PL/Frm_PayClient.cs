@@ -21,17 +21,28 @@ namespace Laboratory.PL
         public Frm_PayClient()
         {
             InitializeComponent();
-        
-            Txt_SalesMAn.Text = Program.salesman;
-         
-            Permision();
-
-            cmb_client.DataSource = c.SelectRentCompoCustomer();
-            cmb_client.DisplayMember = "Cust_Name";
-            cmb_client.ValueMember = "Cust_ID";
+            Function();
         }
-       
-     
+
+        void Function()
+        {
+            try
+            {
+
+                Txt_SalesMAn.Text = Program.salesman;
+
+                Permision();
+
+                cmb_client.DataSource = c.SelectRentCompoCustomer();
+                cmb_client.DisplayMember = "Cust_Name";
+                cmb_client.ValueMember = "Cust_ID";
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
         void Permision()
         {
             dt.Clear();

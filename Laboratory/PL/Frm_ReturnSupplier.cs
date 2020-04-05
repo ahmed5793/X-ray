@@ -27,15 +27,27 @@ namespace Laboratory.PL
         {
 
             InitializeComponent();
-            comboBox1.DataSource = Suppliers.select_IdPurshasing();
-            comboBox1.DisplayMember = "ID";
-            comboBox1.ValueMember = "ID";
-            txt_sales.Text = Program.salesman;
-            Permision();
-            txt_iD.Hide();
-            textBox1.Hide();
-            SelectDataTable();
-            Txt_IdStore.Hide();
+            Function();
+        }
+        void Function()
+        {
+            try
+            {
+                comboBox1.DataSource = Suppliers.select_IdPurshasing();
+                comboBox1.DisplayMember = "ID";
+                comboBox1.ValueMember = "ID";
+                txt_sales.Text = Program.salesman;
+                Permision();
+                txt_iD.Hide();
+                textBox1.Hide();
+                SelectDataTable();
+                Txt_IdStore.Hide();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            } 
         }
         void Permision()
         {

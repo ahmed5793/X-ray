@@ -16,12 +16,24 @@ namespace Laboratory.PL
         public Frm_ReportOfDoctorOfCenter()
         {
             InitializeComponent();
-            comboBox1.DataSource= DoctorOfCenter.CompoDoctor_OFCENTER();
-            comboBox1.DisplayMember = "Doc_Name";
-            comboBox1.ValueMember = "Doc_ID";
-
+            Function();
         }
 
+        void Function()
+        {
+            try
+            {
+
+                comboBox1.DataSource = DoctorOfCenter.CompoDoctor_OFCENTER();
+                comboBox1.DisplayMember = "Doc_Name";
+                comboBox1.ValueMember = "Doc_ID";
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            } 
+        }
         private void Frm_ReportOfDoctorOfCenter_Load(object sender, EventArgs e)
         {
 

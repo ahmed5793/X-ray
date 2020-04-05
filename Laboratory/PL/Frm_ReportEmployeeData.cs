@@ -16,12 +16,24 @@ namespace Laboratory.PL
         public Frm_ReportEmployeeData()
         {
             InitializeComponent();
-            gridControl1.DataSource = E.SelectEmployee();
-            gridView1.Columns[6].Visible = false;
-            gridView1.Columns[7].Visible = false;
-            gridView1.Columns[8].Visible = false;
+            Function();
         }
+        void Function()
+        {
+            try
+            {
 
+                gridControl1.DataSource = E.SelectEmployee();
+                gridView1.Columns[6].Visible = false;
+                gridView1.Columns[7].Visible = false;
+                gridView1.Columns[8].Visible = false;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void Frm_ReportEmployeeData_Load(object sender, EventArgs e)
         {
 

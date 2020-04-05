@@ -19,18 +19,29 @@ namespace Laboratory.PL
         public Frm_installment()
         {
             InitializeComponent();
-            dataGridView1.DataSource = i.Selectinstallment();
-            txt_username.Text = Program.salesman;
-            cmb_stock.DataSource = s.Compo_Stock();
-            cmb_stock.DisplayMember = "Name_Stock";
-            cmb_stock.ValueMember = "ID_Stock";
-            cmb_instalmenttype.DataSource = i.selectcompoinstallmentType();
-            cmb_instalmenttype.DisplayMember = "Name";
-            cmb_instalmenttype.ValueMember = "ID_installmentType";
-            Btn_Update.Enabled = false;
-            textBox1.Hide();
+            Function();
         }
+        void Function()
+        {
+            try
+            {
+                dataGridView1.DataSource = i.Selectinstallment();
+                txt_username.Text = Program.salesman;
+                cmb_stock.DataSource = s.Compo_Stock();
+                cmb_stock.DisplayMember = "Name_Stock";
+                cmb_stock.ValueMember = "ID_Stock";
+                cmb_instalmenttype.DataSource = i.selectcompoinstallmentType();
+                cmb_instalmenttype.DisplayMember = "Name";
+                cmb_instalmenttype.ValueMember = "ID_installmentType";
+                Btn_Update.Enabled = false;
+                textBox1.Hide();
+            }
+            catch (Exception ex)
+            {
 
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void Frm_installment_Load(object sender, EventArgs e)
         {
             dataGridView1.Columns[0].Visible = false;

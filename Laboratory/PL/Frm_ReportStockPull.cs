@@ -19,9 +19,21 @@ namespace Laboratory.PL
         public Frm_ReportStockPull()
         {
             InitializeComponent();
-            txt_username.Text = Program.salesman;
-            Permision();
-            Calc_AmountPull();
+            Function();
+        }
+        void Function()
+        {
+            try
+            {
+                txt_username.Text = Program.salesman;
+                Permision();
+                Calc_AmountPull();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
         void Permision()
         {

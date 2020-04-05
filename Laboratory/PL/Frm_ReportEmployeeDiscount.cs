@@ -41,14 +41,25 @@ namespace Laboratory.PL
         public Frm_ReportEmployeeDiscount()
         {
             InitializeComponent();
-            checkBox1.Checked = true;
-            txt_UserName.Text = Program.salesman;
-            Permision();
+            Function();
             //comboBox1.DataSource = E.SelectCompoEmployee();
             //comboBox1.DisplayMember = "Emp_Name";
             //comboBox1.ValueMember = "Emp_ID";
         }
+        void Function()
+        {
+            try
+            {
+                checkBox1.Checked = true;
+                txt_UserName.Text = Program.salesman;
+                Permision();
+            }
+            catch (Exception ex)
+            {
 
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void btn_search_Click(object sender, EventArgs e)
         {
 

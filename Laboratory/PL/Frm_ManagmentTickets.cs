@@ -30,6 +30,9 @@ namespace Laboratory.PL
         }
         void Permision()
         {
+            try
+            {
+
             dt = u.SelectUserBranch(txt_username.Text);
 
             if (dt.Rows.Count > 0)
@@ -37,17 +40,19 @@ namespace Laboratory.PL
                 cmb_branches.DataSource = u.SelectUserBranch(txt_username.Text);
                 cmb_branches.DisplayMember = "Name";
                 cmb_branches.ValueMember = "Branch_ID";
-
-
-
             }
             else
             {
                 cmb_branches.DataSource = b.SelectCompBranches();
                 cmb_branches.DisplayMember = "Name";
                 cmb_branches.ValueMember = "Branch_ID";
+            }
 
+            }
+            catch (Exception ex)
+            {
 
+                MessageBox.Show(ex.Message);
             }
         }
         DataTable dt = new DataTable();

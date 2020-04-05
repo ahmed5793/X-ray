@@ -20,24 +20,34 @@ namespace Laboratory.PL
         public Frm_PaySuppliers()
         {
             InitializeComponent();
-            cmb_Stock.DataSource = Stock.Compo_Stock();
-            cmb_Stock.DisplayMember = "Name_Stock";
-            cmb_Stock.ValueMember = "ID_Stock";
-            cmb_Stock.SelectedIndex = -1;
-            if (dt4.Rows.Count > 0)
-            {
-                dt4 = Stock.Select_moneyStock(Convert.ToInt32(cmb_Stock.SelectedValue));
-            }
-
-            comboBox1.DataSource = Suppliers.Combo_SupplierRent();
-            comboBox1.DisplayMember = "Name";
-            comboBox1.ValueMember = "Sup_id";
-            Txt_sales.Text = Program.salesman;
-
-            txt_prise.Enabled = false;
-        
+            Function();
         }
+        void Function()
+        {
+            try
+            {
+                cmb_Stock.DataSource = Stock.Compo_Stock();
+                cmb_Stock.DisplayMember = "Name_Stock";
+                cmb_Stock.ValueMember = "ID_Stock";
+                cmb_Stock.SelectedIndex = -1;
+                if (dt4.Rows.Count > 0)
+                {
+                    dt4 = Stock.Select_moneyStock(Convert.ToInt32(cmb_Stock.SelectedValue));
+                }
 
+                comboBox1.DataSource = Suppliers.Combo_SupplierRent();
+                comboBox1.DisplayMember = "Name";
+                comboBox1.ValueMember = "Sup_id";
+                Txt_sales.Text = Program.salesman;
+
+                txt_prise.Enabled = false;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void btn_search_Click(object sender, EventArgs e)
         {
         }

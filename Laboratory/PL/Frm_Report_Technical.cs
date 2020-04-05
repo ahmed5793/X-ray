@@ -17,14 +17,25 @@ namespace Laboratory.PL
         public Frm_Report_DetailsTechnical()
         {
             InitializeComponent();
-            comboBox1.DataSource = Techincal.Select_ComboTechnical();
-            comboBox1.DisplayMember = "Tech_Name";
-            comboBox1.ValueMember = "Techincal_ID";
-            gridControl1.DataSource = Techincal.Select_ReportTechnical(Convert.ToInt32(comboBox1.SelectedValue));
-            textBox1.Text = gridView1.RowCount.ToString();
+            Function();
         }
         DataTable dt = new DataTable();
+        void Function()
+        {
+            try
+            {
+                comboBox1.DataSource = Techincal.Select_ComboTechnical();
+                comboBox1.DisplayMember = "Tech_Name";
+                comboBox1.ValueMember = "Techincal_ID";
+                gridControl1.DataSource = Techincal.Select_ReportTechnical(Convert.ToInt32(comboBox1.SelectedValue));
+                textBox1.Text = gridView1.RowCount.ToString();
+            }
+            catch (Exception ex)
+            {
 
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void btn_search_Click(object sender, EventArgs e)
         {
         }

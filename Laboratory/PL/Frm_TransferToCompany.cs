@@ -25,12 +25,24 @@ namespace Laboratory.PL
         public Frm_TransferToCompany()
         {
             InitializeComponent();
-            cmb_Company.DataSource = c.SelectCompany();
-            cmb_Company.DisplayMember = "اسم الشركه";
-            cmb_Company.ValueMember = "Comp_ID";
-            txt_username.Text = Program.salesman;
+            Function();
+        }
+        void Function()
+        {
+            try
+            {
+                cmb_Company.DataSource = c.SelectCompany();
+                cmb_Company.DisplayMember = "اسم الشركه";
+                cmb_Company.ValueMember = "Comp_ID";
+                txt_username.Text = Program.salesman;
 
-            Permision();
+                Permision();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
         void Permision()
         {

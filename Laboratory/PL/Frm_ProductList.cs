@@ -17,10 +17,20 @@ namespace Laboratory.PL
         public Frm_ProductList()
         {
             InitializeComponent();
-            dataGridView1.DataSource = Product.Select_Product();
-
+            function();
         }
+        void function()
+        {
+            try
+            {
+                dataGridView1.DataSource = Product.Select_Product();
+            }
+            catch (Exception ex)
+            {
 
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void Btn_selectProduct_Click(object sender, EventArgs e)
         {
 

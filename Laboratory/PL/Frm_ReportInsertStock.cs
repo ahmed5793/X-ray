@@ -20,9 +20,21 @@ namespace Laboratory.PL
         public Frm_ReportInsertStock()
         {
             InitializeComponent();
-            txt_username.Text = Program.salesman;
-            Permision();
-            Calc_Amount();
+            Function();
+        }
+        void Function()
+        {
+            try
+            {
+                txt_username.Text = Program.salesman;
+                Permision();
+                Calc_Amount();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            } 
         }
         void Permision()
         {

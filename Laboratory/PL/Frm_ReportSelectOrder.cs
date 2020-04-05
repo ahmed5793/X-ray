@@ -27,7 +27,8 @@ namespace Laboratory.PL
         }
         void PermisionStore()
         {
-
+            try
+            {
             dt.Clear();
             dt = u.SelectUserBranch(txt_UserName.Text);
 
@@ -53,6 +54,13 @@ namespace Laboratory.PL
                 //cmb_Stock.DisplayMember = "Name_Stock";
                 //cmb_Stock.ValueMember = "ID_Stock";
                 store();
+            }
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
             }
         }
         void store()

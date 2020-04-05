@@ -30,25 +30,37 @@ namespace Laboratory.PL
             //cmb_user_branch.DataSource = b.SelectCompBranches();
             //cmb_user_branch.DisplayMember = "Name";
             //cmb_user_branch.ValueMember = "Branch_ID";
-            Permision();
-            monthe();
-            year();
+            Function();
+        }
+        void Function()
+        {
+            try
+            {
+                Permision();
+                monthe();
+                year();
 
-            lable_day.Hide();
-            DateFrom.Hide();
+                lable_day.Hide();
+                DateFrom.Hide();
 
-            lable_mothe.Show();
-            cmb_month.Show();
-            cmb_year.Show();
-            lable_year.Show();
-            cmb_clients.Enabled = true;
+                lable_mothe.Show();
+                cmb_month.Show();
+                cmb_year.Show();
+                lable_year.Show();
+                cmb_clients.Enabled = true;
 
-            dataGridView1.Show();
-            dataGridView2.Hide();
-           
-            cmb_clients.DataSource = F.selectIDfingeremployeeExcell(Convert.ToInt32(cmb_user_branch.SelectedValue));
-            cmb_clients.DisplayMember = "Name_Employee";
-            cmb_clients.ValueMember = "IDEmployee";
+                dataGridView1.Show();
+                dataGridView2.Hide();
+
+                cmb_clients.DataSource = F.selectIDfingeremployeeExcell(Convert.ToInt32(cmb_user_branch.SelectedValue));
+                cmb_clients.DisplayMember = "Name_Employee";
+                cmb_clients.ValueMember = "IDEmployee";
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
         void Permision()
         {

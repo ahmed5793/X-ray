@@ -36,21 +36,22 @@ namespace Laboratory.PL
         public Frm_Tickets()
         {
             InitializeComponent();
+            Function();
+
+        }
+        void Function()
+        {
             Cmb_customer.Show();
             txt_name.Hide();
             cmb_Company.Enabled = false;
             txt_username.Text = Program.salesman;
             brnches();
-
             Customer();
             doctor();
-
-
             txt_phone.Enabled = false;
             txt_age.Enabled = false;
             txt_address.Enabled = false;
             Btn_DetailsCompany.Hide();
-
         }
         void Permision()
         {
@@ -154,28 +155,35 @@ namespace Laboratory.PL
 
 
         Users u = new Users();
+        void Function_Load()
+        {
+            try
+            {
+                Permision();
+
+                Txt_addtionPayment.Enabled = false;
+                Txt_rentCompany.Enabled = false;
+
+                CategoryXraya();
+                SelectdataTable();
+
+                rezizse();
+                //txt_idcust.Hide();
+                //txt_IdTicket.Hide();
+                totalOrder();
+                DoctorOfCenter();
+                Techincal();
+                txt_idntational.Enabled = false;
+                comboBox1.Enabled = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void Frm_Tickets_Load(object sender, EventArgs e)
         {
-            Permision();
-
-            Txt_addtionPayment.Enabled = false;
-            Txt_rentCompany.Enabled=false;
-
-            CategoryXraya();
-            SelectdataTable();
-
-            rezizse();
-            //txt_idcust.Hide();
-            //txt_IdTicket.Hide();
-            totalOrder();
-            DoctorOfCenter();
-            Techincal();
-            txt_idntational.Enabled = false;
-            comboBox1.Enabled = false;
-
-
-
-
+            Function_Load();
         }
         void SelectTicketEmployee()
         {
