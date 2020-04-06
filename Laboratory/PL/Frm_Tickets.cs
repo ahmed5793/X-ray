@@ -865,7 +865,7 @@ namespace Laboratory.PL
                 cmb_Company.Enabled = true;
                 Txt_PricePayment.Enabled = true;
                 Txt_addtionPayment.Enabled = true;
-                dgv_order.Columns[3].Visible = true ;
+                dgv_order.Columns[2].Visible = true ;
                 company();
                 Patient_PaymentRate();
                 Btn_DetailsCompany.Show();
@@ -882,7 +882,7 @@ namespace Laboratory.PL
                 rdb_money.Enabled = true;
                 txt_afterDiscount.Enabled = true;
                 txt_discount.Enabled = true;
-                dgv_order.Columns[3].Visible = false;
+                dgv_order.Columns[2].Visible = false;
                 dt2.Clear();
                 Txt_PricePayment.Text = "0";
                 Txt_addtionPayment.Text = "0";
