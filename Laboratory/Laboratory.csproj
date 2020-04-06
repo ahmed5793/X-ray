@@ -471,12 +471,6 @@
     <Compile Include="PL\Frm_ItemsXRaya.designer.cs">
       <DependentUpon>Frm_ItemsXRaya.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_Login.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PL\Frm_Login.designer.cs">
-      <DependentUpon>Frm_Login.cs</DependentUpon>
-    </Compile>
     <Compile Include="PL\Frm_LoginMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1047,9 +1041,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_ItemsXRaya.resx">
       <DependentUpon>Frm_ItemsXRaya.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PL\Frm_Login.resx">
-      <DependentUpon>Frm_Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_LoginMain.resx">
       <DependentUpon>Frm_LoginMain.cs</DependentUpon>
