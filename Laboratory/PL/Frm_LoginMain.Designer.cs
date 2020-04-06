@@ -101,7 +101,7 @@
             this.bunifuThinButton1.IconVisible = true;
             this.bunifuThinButton1.IconZoom = 90D;
             this.bunifuThinButton1.ImageIconOverlay = false;
-            this.bunifuThinButton1.Location = new System.Drawing.Point(45, 433);
+            this.bunifuThinButton1.Location = new System.Drawing.Point(35, 430);
             this.bunifuThinButton1.Name = "bunifuThinButton1";
             this.bunifuThinButton1.Size = new System.Drawing.Size(245, 39);
             this.bunifuThinButton1.TabIndex = 12001;
