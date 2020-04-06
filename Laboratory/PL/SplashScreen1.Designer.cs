@@ -104,6 +104,7 @@
             this.Controls.Add(this.progressBarControl);
             this.Name = "SplashScreen1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.SplashScreen1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.progressBarControl.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.peImage.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.peLogo.Properties)).EndInit();
