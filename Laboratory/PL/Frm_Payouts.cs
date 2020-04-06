@@ -19,7 +19,7 @@ namespace Laboratory.PL
         Stock s = new Stock();
         Tickets t = new Tickets();
         Customer c = new Customer();
-     
+        Company cm = new Company();
         //DataTable dt6 = new DataTable();
 
     
@@ -37,6 +37,8 @@ namespace Laboratory.PL
                 txt_username.Text = Program.salesman;
                 Permision();
                 Txt_IdCust.Hide();
+                Txt_IdCompany.Hide();
+                Txt_RentCompany.Hide();
             }
             catch (Exception ex)
             {
@@ -146,11 +148,8 @@ namespace Laboratory.PL
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-
-
             try
             {
-
                 if (Convert.ToDecimal(txt_prise.Text) > Convert.ToDecimal(txt_pay.Text))
                 {
                     MessageBox.Show("عزيزى المستخدم يرجي العلم باان المبلغ المراد سحبة اكبر من المدفوع  ", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
@@ -276,6 +275,19 @@ namespace Laboratory.PL
 
                         }
                     }
+                    if (txt_statues.Text=="شركات")
+                    {
+                        dt.Clear();
+                        dt = cm.Select_CompanyTotalMoney(Convert.ToInt32(Txt_IdCompany.Text));
+                        decimal mno = Convert.ToDecimal(dt.Rows[0][0]) - Convert.ToDecimal(Txt_RentCompany.Text);
+
+                        cm.Update_CompanyTotalMoney(Convert.ToInt32(Txt_IdCompany.Text), mno);
+
+                        cm.ADD_Company_TotalRent(Convert.ToInt32(Txt_IdCompany.Text), Convert.ToDecimal(Txt_RentCompany.Text),0
+                        , dateTimePicker2.Value, mno, "مردود أشعة ورقم الحجز   " + " " + txt_num.Text, 
+                        Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToInt32(comboBox1.SelectedValue), txt_username.Text);
+                    }
+                   
                     Txt_IdCust.Clear();
                     txt_prise.Text = "0";
                     this.Close();
