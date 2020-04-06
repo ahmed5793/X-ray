@@ -140,7 +140,6 @@
             this.Btn_UserPermession = new DevExpress.XtraBars.BarButtonItem();
             this.barStaticItem8 = new DevExpress.XtraBars.BarStaticItem();
             this.barStaticItem9 = new DevExpress.XtraBars.BarStaticItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.btn_ReportTransferCompany = new DevExpress.XtraBars.BarButtonItem();
             this.Btn_ReportReturn = new DevExpress.XtraBars.BarButtonItem();
             this.basic_information = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -292,7 +291,6 @@
             this.Btn_UserPermession,
             this.barStaticItem8,
             this.barStaticItem9,
-            this.barButtonItem4,
             this.barButtonItem5,
             this.barStaticItem10,
             this.btn_ReportTransferCompany,
@@ -1120,6 +1118,7 @@
             this.barStaticItem7.ItemAppearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.barStaticItem7.ItemAppearance.Normal.Options.UseFont = true;
             this.barStaticItem7.Name = "barStaticItem7";
+            this.barStaticItem7.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
             // Download_finger
             // 
@@ -1300,21 +1299,12 @@
             this.barStaticItem9.ItemAppearance.Normal.Options.UseFont = true;
             this.barStaticItem9.Name = "barStaticItem9";
             // 
-            // barButtonItem4
-            // 
-            this.barButtonItem4.Caption = "حركه الدخول علي البرنامج";
-            this.barButtonItem4.Id = 129;
-            this.barButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
-            this.barButtonItem4.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
-            this.barButtonItem4.Name = "barButtonItem4";
-            this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick_7);
-            // 
             // btn_ReportTransferCompany
             // 
             this.btn_ReportTransferCompany.Caption = "تقرير عن التحويلات للجهه الاخرى";
             this.btn_ReportTransferCompany.Id = 132;
-            this.btn_ReportTransferCompany.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.Image")));
-            this.btn_ReportTransferCompany.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.LargeImage")));
+            this.btn_ReportTransferCompany.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_ReportTransferCompany.ImageOptions.Image")));
+            this.btn_ReportTransferCompany.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_ReportTransferCompany.ImageOptions.LargeImage")));
             this.btn_ReportTransferCompany.Name = "btn_ReportTransferCompany";
             this.btn_ReportTransferCompany.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem6_ItemClick_2);
             // 
@@ -1348,7 +1338,6 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.add_employee);
             this.ribbonPageGroup1.ItemLinks.Add(this.Btn_AddAccount);
             this.ribbonPageGroup1.ItemLinks.Add(this.Btn_UserPermession);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem4);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "ادارة الفروع";
             // 
@@ -1591,8 +1580,8 @@
             // 
             // tileControl1
             // 
-            this.tileControl1.BackgroundImage = global::Laboratory.Properties.Resources.home_clinic_;
-            this.tileControl1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tileControl1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tileControl1.BackgroundImage")));
+            this.tileControl1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.tileControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tileControl1.Location = new System.Drawing.Point(0, 0);
             this.tileControl1.MaxId = 11;
@@ -1799,7 +1788,6 @@
         private DevExpress.XtraBars.BarStaticItem barStaticItem9;
         private DevExpress.XtraBars.BarHeaderItem barHeaderItem31;
         private DevExpress.XtraBars.BarAndDockingController barAndDockingController1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.BarStaticItem barStaticItem10;
         public DevExpress.XtraBars.BarButtonItem Btn_ReportReturn;

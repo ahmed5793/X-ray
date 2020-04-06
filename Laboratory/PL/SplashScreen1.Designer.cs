@@ -67,27 +67,29 @@
             // peImage
             // 
             this.peImage.EditValue = global::Laboratory.Properties.Resources.home_clinic_;
-            this.peImage.Location = new System.Drawing.Point(12, 12);
+            this.peImage.Location = new System.Drawing.Point(12, 8);
             this.peImage.Name = "peImage";
             this.peImage.Properties.AllowFocused = false;
             this.peImage.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.peImage.Properties.Appearance.Options.UseBackColor = true;
             this.peImage.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.peImage.Properties.ShowMenu = false;
-            this.peImage.Size = new System.Drawing.Size(426, 180);
+            this.peImage.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
+            this.peImage.Size = new System.Drawing.Size(433, 184);
             this.peImage.TabIndex = 9;
             // 
             // peLogo
             // 
             this.peLogo.EditValue = ((object)(resources.GetObject("peLogo.EditValue")));
-            this.peLogo.Location = new System.Drawing.Point(278, 266);
+            this.peLogo.Location = new System.Drawing.Point(306, 249);
             this.peLogo.Name = "peLogo";
             this.peLogo.Properties.AllowFocused = false;
             this.peLogo.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.peLogo.Properties.Appearance.Options.UseBackColor = true;
             this.peLogo.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.peLogo.Properties.ShowMenu = false;
-            this.peLogo.Size = new System.Drawing.Size(160, 48);
+            this.peLogo.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
+            this.peLogo.Size = new System.Drawing.Size(139, 65);
             this.peLogo.TabIndex = 8;
             // 
             // SplashScreen1
@@ -100,6 +102,7 @@
             this.Controls.Add(this.labelStatus);
             this.Controls.Add(this.labelCopyright);
             this.Controls.Add(this.progressBarControl);
+            this.IsMdiContainer = true;
             this.Name = "SplashScreen1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.progressBarControl.Properties)).EndInit();

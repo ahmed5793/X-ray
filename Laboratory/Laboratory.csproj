@@ -474,8 +474,14 @@
     <Compile Include="PL\Frm_Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\Frm_Login.Designer.cs">
+    <Compile Include="PL\Frm_Login.designer.cs">
       <DependentUpon>Frm_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Frm_LoginMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_LoginMain.Designer.cs">
+      <DependentUpon>Frm_LoginMain.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Frm_Main.cs">
       <SubType>Form</SubType>
@@ -1044,6 +1050,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Login.resx">
       <DependentUpon>Frm_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_LoginMain.resx">
+      <DependentUpon>Frm_LoginMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Main.resx">
       <DependentUpon>Frm_Main.cs</DependentUpon>

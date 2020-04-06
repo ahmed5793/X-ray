@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
 using Laboratory.BL;
+using System.Threading;
 
 namespace Laboratory.PL
 {
-    public partial class Frm_Login : Form
+    public partial class Frm_LoginMain : DevExpress.XtraEditors.XtraForm
     {
         Users U = new Users();
         Permession p = new Permession();
@@ -27,34 +28,104 @@ namespace Laboratory.PL
 
 
         Main fm = new Main();
-
-        public Frm_Login()
+        public Frm_LoginMain()
         {
             InitializeComponent();
-
             checkBox1.Checked = false;
         }
 
-
-        private void button1_Click(object sender, EventArgs e)
+        private void txt_User_Leave(object sender, EventArgs e)
         {
 
+            if (txt_User.Text == "")
+            {
+
+                txt_User.Text = "USER NAME";
+            }
         }
 
-        private void btn_save_Click(object sender, EventArgs e)
+        private void txt_User_MouseClick(object sender, MouseEventArgs e)
         {
+            if (txt_User.Text == "USER NAME")
+            {
+                txt_User.Text = "";
+
+
+            }
+            else if (txt_User.Text == "")
+            {
+                txt_User.Text = "USER NAME";
+            }
         }
 
-        private void Frm_Login_Load(object sender, EventArgs e)
+        private void txt_Pass_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (txt_Pass.Text != "PASSWORD")
+            {
+                checkBox1.Checked = false;
+                txt_Pass.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void txt_Pass_Leave(object sender, EventArgs e)
+        {
+
+            if (txt_Pass.Text == "")
+            {
+
+
+                checkBox1.Checked = true;
+                txt_Pass.Text = "PASSWORD";
+
+
+
+
+
+            }
+        }
+
+        private void txt_Pass_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (txt_Pass.Text == "PASSWORD")
+            {
+
+                txt_Pass.Text = "";
+                checkBox1.Checked = false;
+                txt_Pass.UseSystemPasswordChar = true;
+
+
+            }
+            else if (txt_Pass.Text == "")
+            {
+                txt_Pass.Text = "PASSWORD";
+
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (txt_Pass.Text != "PASSWORD")
+            {
+
+
+                if (checkBox1.Checked == true)
+                {
+                    txt_Pass.UseSystemPasswordChar = false;
+                }
+                else
+                {
+                    txt_Pass.UseSystemPasswordChar = true;
+                }
+            }
+            else
+            {
+                checkBox1.Checked = true;
+            }
+        }
+
+        private void Frm_LoginMain_Load(object sender, EventArgs e)
         {
             Thread.Sleep(8000);
-
-
-        }
-
-        private void txt_Pass_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void bunifuThinButton1_Click(object sender, EventArgs e)
@@ -742,7 +813,6 @@ namespace Laboratory.PL
                 MessageBox.Show(ex.Message);
                 MessageBox.Show(ex.StackTrace);
             }
-
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -753,229 +823,6 @@ namespace Laboratory.PL
         private void simpleButton2_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
-        }
-
-        private void txt_User_OnTextChange(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_Pass_OnTextChange(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_User_MouseClick(object sender, MouseEventArgs e)
-        {
-        }
-
-        private void txt_Pass_MouseClick(object sender, MouseEventArgs e)
-        {
-
-            if (txt_Pass.Text == "PASSWORD")
-            {
-
-                txt_Pass.Text = "";
-                checkBox1.Checked = false;
-                txt_Pass.UseSystemPasswordChar = true;
-
-
-            }
-            else if (txt_Pass.Text == "")
-            {
-                txt_Pass.Text = "PASSWORD";
-
-            }
-        }
-
-        private void txt_User_TextChanged(object sender, EventArgs e)
-        {
-            txt_User.SelectAll();
-        }
-
-        private void txt_Pass_TextChanged_1(object sender, EventArgs e)
-        {
-            txt_Pass.SelectAll();
-        }
-
-        private void txt_User_MouseLeave(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_User_Leave(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void txt_Pass_Leave(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_User_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_User_DoubleClick(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void txt_Pass_MouseClick_1(object sender, MouseEventArgs e)
-        {
-
-
-        }
-
-        private void txt_Pass_Leave_1(object sender, EventArgs e)
-        {
-
-            if (txt_Pass.Text == "")
-            {
-
-
-                checkBox1.Checked = true;
-                txt_Pass.Text = "PASSWORD";
-
-
-
-
-
-            }
-          
-        }
-
-        private void txt_User_Leave_1(object sender, EventArgs e)
-        {
-            if (txt_User.Text == "")
-            {
-
-                txt_User.Text = "USER NAME";
-            }
-        }
-
-        private void txt_User_MouseClick_1(object sender, MouseEventArgs e)
-        {
-            if (txt_User.Text == "USER NAME")
-            {
-                txt_User.Text = "";
-              
-
-            }
-            else if (txt_User.Text == "")
-            {
-                txt_User.Text = "USER NAME";
-            }
-        }
-
-        private void txt_Pass_KeyDown(object sender, KeyEventArgs e)
-        {
-          
-        }
-
-        private void bunifuCheckbox1_OnChange(object sender, EventArgs e)
-        {
-          
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            if (txt_Pass.Text != "PASSWORD")
-            {
-
-
-                if (checkBox1.Checked == true)
-                {
-                    txt_Pass.UseSystemPasswordChar = false;
-                }
-                else
-                {
-                    txt_Pass.UseSystemPasswordChar = true;
-                }
-            }
-            else
-            {
-                checkBox1.Checked = true;
-            }
-        }
-
-        private void txt_Pass_KeyPress(object sender, KeyPressEventArgs e)
-        {
-      
-            //if (txt_Pass.Text !=String.Empty)
-            //{
-
-            //}
-            //else 
-            //{
-            //txt_Pass.UseSystemPasswordChar = true;
-            //    if (checkBox1.Checked == true)
-            //{
-            //    txt_Pass.UseSystemPasswordChar = false;
-            //}
-            //else
-            //{
-            //    txt_Pass.UseSystemPasswordChar = true;
-            //}
-            //}
-
-
-
-
-
-
-
-
-
-
-        }
-
-        private void txt_Pass_Move(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_Pass_CursorChanged(object sender, EventArgs e)
-        {
-
-           
-          
-           
-        }
-
-        private void txt_Pass_KeyUp(object sender, KeyEventArgs e)
-        {
-          
-          
-        }
-
-        private void txt_User_KeyDown(object sender, KeyEventArgs e)
-        {
-           
-          
-        }
-
-        private void txt_Pass_TextChanged_2(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_Pass_Click(object sender, EventArgs e)
-        {
-          
-        }
-
-        private void txt_Pass_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (txt_Pass.Text != "PASSWORD")
-            {
-                checkBox1.Checked = false;
-                txt_Pass.UseSystemPasswordChar = true;
-            } 
         }
     }
 }
