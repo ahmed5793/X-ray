@@ -31,7 +31,7 @@ namespace Laboratory.PL
         public Frm_LoginMain()
         {
             InitializeComponent();
-            checkBox1.Checked = false;
+            checkBox1.Checked = true;
         }
 
         private void txt_User_Leave(object sender, EventArgs e)
@@ -125,7 +125,7 @@ namespace Laboratory.PL
 
         private void Frm_LoginMain_Load(object sender, EventArgs e)
         {
-            Thread.Sleep(8000);
+            //Thread.Sleep(8000);
         }
 
      
@@ -824,6 +824,35 @@ namespace Laboratory.PL
 
                 MessageBox.Show(ex.Message);
                 MessageBox.Show(ex.StackTrace);
+            }
+        }
+
+        private void checkBox1_MouseMove(object sender, MouseEventArgs e)
+        {
+          
+        }
+
+        private void txt_Pass_Move(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void checkBox1_Leave(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void checkBox1_MouseLeave(object sender, EventArgs e)
+        {
+            if (txt_Pass.Text != "PASSWORD")
+            {
+                if (checkBox1.Checked == true)
+                {
+                    checkBox1.Checked = false;
+                    txt_Pass.UseSystemPasswordChar = true;
+                }
+
+
             }
         }
     }

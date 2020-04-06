@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_LoginMain));
             this.panel1 = new System.Windows.Forms.Panel();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
@@ -41,6 +42,8 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.bunifuThinButton2 = new WindowsFormsControlLibrary1.BunifuThinButton();
+            this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -97,6 +100,9 @@
             this.checkBox1.Text = "SHOW PASSOWRD";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.checkBox1.Leave += new System.EventHandler(this.checkBox1_Leave);
+            this.checkBox1.MouseLeave += new System.EventHandler(this.checkBox1_MouseLeave);
+            this.checkBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.checkBox1_MouseMove);
             // 
             // txt_Pass
             // 
@@ -114,6 +120,7 @@
             this.txt_Pass.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_Pass_MouseClick);
             this.txt_Pass.Leave += new System.EventHandler(this.txt_Pass_Leave);
             this.txt_Pass.MouseMove += new System.Windows.Forms.MouseEventHandler(this.txt_Pass_MouseMove);
+            this.txt_Pass.Move += new System.EventHandler(this.txt_Pass_Move);
             // 
             // txt_User
             // 
@@ -175,16 +182,28 @@
             this.bunifuThinButton2.ButtonText = "LOGIN";
             this.bunifuThinButton2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuThinButton2.ForeColor = System.Drawing.Color.White;
-            this.bunifuThinButton2.ForeColorHoverState = System.Drawing.Color.White;
+            this.bunifuThinButton2.ForeColorHoverState = System.Drawing.Color.Crimson;
             this.bunifuThinButton2.Iconimage = null;
             this.bunifuThinButton2.IconVisible = true;
             this.bunifuThinButton2.IconZoom = 90D;
             this.bunifuThinButton2.ImageIconOverlay = false;
-            this.bunifuThinButton2.Location = new System.Drawing.Point(79, 422);
+            this.bunifuThinButton2.Location = new System.Drawing.Point(79, 437);
             this.bunifuThinButton2.Name = "bunifuThinButton2";
             this.bunifuThinButton2.Size = new System.Drawing.Size(184, 36);
             this.bunifuThinButton2.TabIndex = 12011;
             this.bunifuThinButton2.Click += new System.EventHandler(this.bunifuThinButton2_Click);
+            // 
+            // bunifuDragControl2
+            // 
+            this.bunifuDragControl2.Fixed = true;
+            this.bunifuDragControl2.Horizontal = true;
+            this.bunifuDragControl2.TargetControl = this.panel1;
+            this.bunifuDragControl2.Vertical = true;
+            // 
+            // bunifuElipse2
+            // 
+            this.bunifuElipse2.ElipseRadius = 5;
+            this.bunifuElipse2.TargetControl = this;
             // 
             // Frm_LoginMain
             // 
@@ -192,7 +211,7 @@
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(341, 505);
+            this.ClientSize = new System.Drawing.Size(345, 520);
             this.Controls.Add(this.bunifuThinButton2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
@@ -205,6 +224,7 @@
             this.Controls.Add(this.pictureBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_LoginMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_LoginMain";
             this.Load += new System.EventHandler(this.Frm_LoginMain_Load);
             this.panel1.ResumeLayout(false);
@@ -233,5 +253,7 @@
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private WindowsFormsControlLibrary1.BunifuThinButton bunifuThinButton2;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl2;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
     }
 }
