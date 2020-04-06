@@ -556,9 +556,9 @@ namespace Laboratory.BL
             DataAccessLayer da = new DataAccessLayer();
             SqlParameter[] param = new SqlParameter[2];
 
-            param[0] = new SqlParameter("@Date_from", SqlDbType.DateTime);
+            param[0] = new SqlParameter("@Date_from", SqlDbType.Date);
             param[0].Value = Date_From;
-            param[1] = new SqlParameter("@Date_to", SqlDbType.DateTime);
+            param[1] = new SqlParameter("@Date_to", SqlDbType.Date);
             param[1].Value = Date_To;
             da.open();
             DataTable dt = new DataTable();
