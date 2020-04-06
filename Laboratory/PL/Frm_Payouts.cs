@@ -22,8 +22,6 @@ namespace Laboratory.PL
         Company cm = new Company();
         //DataTable dt6 = new DataTable();
 
-    
-       
         public Frm_Payouts()
            
         {
