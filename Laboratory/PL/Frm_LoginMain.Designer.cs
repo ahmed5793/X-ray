@@ -28,13 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_LoginMain));
             this.panel1 = new System.Windows.Forms.Panel();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.bunifuThinButton1 = new WindowsFormsControlLibrary1.BunifuThinButton();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.txt_Pass = new System.Windows.Forms.TextBox();
             this.txt_User = new System.Windows.Forms.TextBox();
@@ -42,8 +40,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -86,26 +82,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 12002;
             this.pictureBox1.TabStop = false;
-            // 
-            // bunifuThinButton1
-            // 
-            this.bunifuThinButton1.BackColor = System.Drawing.Color.Crimson;
-            this.bunifuThinButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton1.BackgroundImage")));
-            this.bunifuThinButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuThinButton1.ButtonText = "LOGIN";
-            this.bunifuThinButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuThinButton1.Font = new System.Drawing.Font("Yu Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuThinButton1.ForeColor = System.Drawing.Color.White;
-            this.bunifuThinButton1.ForeColorHoverState = System.Drawing.Color.Black;
-            this.bunifuThinButton1.Iconimage = null;
-            this.bunifuThinButton1.IconVisible = true;
-            this.bunifuThinButton1.IconZoom = 90D;
-            this.bunifuThinButton1.ImageIconOverlay = false;
-            this.bunifuThinButton1.Location = new System.Drawing.Point(35, 430);
-            this.bunifuThinButton1.Name = "bunifuThinButton1";
-            this.bunifuThinButton1.Size = new System.Drawing.Size(245, 39);
-            this.bunifuThinButton1.TabIndex = 12001;
-            this.bunifuThinButton1.Click += new System.EventHandler(this.bunifuThinButton1_Click);
             // 
             // checkBox1
             // 
@@ -190,18 +166,6 @@
             this.pictureBox2.TabIndex = 12004;
             this.pictureBox2.TabStop = false;
             // 
-            // bunifuDragControl1
-            // 
-            this.bunifuDragControl1.Fixed = true;
-            this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = this.panel1;
-            this.bunifuDragControl1.Vertical = true;
-            // 
-            // bunifuElipse1
-            // 
-            this.bunifuElipse1.ElipseRadius = 5;
-            this.bunifuElipse1.TargetControl = this;
-            // 
             // Frm_LoginMain
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
@@ -211,7 +175,6 @@
             this.ClientSize = new System.Drawing.Size(341, 505);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.bunifuThinButton1);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.txt_Pass);
             this.Controls.Add(this.txt_User);
