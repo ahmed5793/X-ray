@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.ClipboardSource.SpreadsheetML;
+using DevExpress.XtraGrid.Views.Grid;
 using Laboratory.BL;
 using Laboratory.RPT;
 using Laboratory.RPT_Order;
@@ -381,43 +382,48 @@ namespace Laboratory.PL
         {
             try
             {
-                if (gridView1.GetFocusedRowCellValue("طريقه التعامل").ToString() == "شركات")
+                if (gridView1.RowCount > 0)
                 {
-                    MessageBox.Show("لا يصلح تحويل الفحص من شركة إلى شركة اخرى يرجى إرتجاع المبلغ بالكامل لهذا الفحص ثم عمل حجز جديد للشركة الجديدة");
-                    return;
-                }
-                dt10.Clear();
-                dt10 = t.vildateTransferForCompany(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة").ToString()));
-                if (dt10.Rows.Count >0)
-                {
-                    MessageBox.Show("تم تحويل هذا الفحص من قبل ");
-                    return;
-                }
-                Frm_TransferToCompany tc = new Frm_TransferToCompany();
-                dt1.Clear();
-                dt1 = t.TicketDetailsSelectTicketsDetAILS(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
 
-                tc.dataGridView1.DataSource = dt1;
+                    if (gridView1.GetFocusedRowCellValue("طريقه التعامل").ToString() == "شركات")
+                    {
+                        MessageBox.Show("لا يصلح تحويل الفحص من شركة إلى شركة اخرى يرجى إرتجاع المبلغ بالكامل لهذا الفحص ثم عمل حجز جديد للشركة الجديدة");
+                        return;
+                    }
+                    dt10.Clear();
+                    dt10 = t.vildateTransferForCompany(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة").ToString()));
+                    if (dt10.Rows.Count > 0)
+                    {
+                        MessageBox.Show("تم تحويل هذا الفحص من قبل ");
+                        return;
+                    }
 
-                tc.dataGridView1.Columns[0].Visible = false;
-                tc.dataGridView1.Columns[3].Visible = false;
+                    Frm_TransferToCompany tc = new Frm_TransferToCompany();
+                    dt1.Clear();
+                    dt1 = t.TicketDetailsSelectTicketsDetAILS(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
 
-                dt10.Clear();
-                dt10 = t.TicketDetailsSelectTickets(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
-                foreach (DataRow dr in dt10.Rows)
-                {
-                    tc.txt_payLat.Text = dr[13].ToString();
-                    tc.txt_patientname.Text = dr[1].ToString();
-                    tc.textBox1.Text = dr[26].ToString();
+                    tc.dataGridView1.DataSource = dt1;
+
+                    tc.dataGridView1.Columns[0].Visible = false;
+                    tc.dataGridView1.Columns[3].Visible = false;
+
+                    dt10.Clear();
+                    dt10 = t.TicketDetailsSelectTickets(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
+                    foreach (DataRow dr in dt10.Rows)
+                    {
+                        tc.txt_payLat.Text = dr[13].ToString();
+                        tc.txt_patientname.Text = dr[1].ToString();
+                        tc.textBox1.Text = dr[26].ToString();
+                    }
+                    dt5.Clear();
+                    dt5 = t.vildateReturnTickets(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
+                    foreach (DataRow item in dt5.Rows)
+                    {
+                        tc.txt_rentCust.Text = item[1].ToString();
+                    }
+                    tc.ShowDialog();
+                    //this.Close();
                 }
-                dt5.Clear();
-                dt5 = t.vildateReturnTickets(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
-                foreach (DataRow item in dt5.Rows)
-                {
-                    tc.txt_rentCust.Text = item[1].ToString();
-                }
-                tc.ShowDialog();
-                //this.Close();
             }
             catch (Exception ex)
             {
