@@ -28,160 +28,223 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Login));
             DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::Laboratory.PL.SplashScreen1), true, true);
-            this.btn_save = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txt_Pass = new System.Windows.Forms.TextBox();
-            this.txt_User = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.bunifuThinButton1 = new WindowsFormsControlLibrary1.BunifuThinButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.txt_User = new System.Windows.Forms.TextBox();
+            this.txt_Pass = new System.Windows.Forms.TextBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
-            // btn_save
+            // bunifuThinButton1
             // 
-            this.btn_save.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_save.Location = new System.Drawing.Point(301, 315);
-            this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(238, 40);
-            this.btn_save.TabIndex = 57;
-            this.btn_save.Text = "LOGIN";
-            this.btn_save.UseVisualStyleBackColor = true;
-            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.txt_Pass);
-            this.groupBox1.Controls.Add(this.txt_User);
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(175, 148);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(571, 152);
-            this.groupBox1.TabIndex = 56;
-            this.groupBox1.TabStop = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial Black", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(12, 83);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(165, 33);
-            this.label3.TabIndex = 62;
-            this.label3.Text = "PASSWORD";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial Black", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(6, 33);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(175, 33);
-            this.label4.TabIndex = 60;
-            this.label4.Text = "USER NAME";
-            // 
-            // txt_Pass
-            // 
-            this.txt_Pass.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Pass.Location = new System.Drawing.Point(248, 83);
-            this.txt_Pass.Name = "txt_Pass";
-            this.txt_Pass.PasswordChar = '*';
-            this.txt_Pass.Size = new System.Drawing.Size(284, 32);
-            this.txt_Pass.TabIndex = 48;
-            this.txt_Pass.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_Pass.UseSystemPasswordChar = true;
-            // 
-            // txt_User
-            // 
-            this.txt_User.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_User.Location = new System.Drawing.Point(248, 31);
-            this.txt_User.Name = "txt_User";
-            this.txt_User.Size = new System.Drawing.Size(285, 32);
-            this.txt_User.TabIndex = 47;
-            this.txt_User.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::Laboratory.Properties.Resources.CLOSE;
-            this.button1.Location = new System.Drawing.Point(683, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(66, 65);
-            this.button1.TabIndex = 61;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Image = global::Laboratory.Properties.Resources.images;
-            this.pictureBox2.Location = new System.Drawing.Point(243, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(324, 139);
-            this.pictureBox2.TabIndex = 60;
-            this.pictureBox2.TabStop = false;
+            this.bunifuThinButton1.BackColor = System.Drawing.Color.Crimson;
+            this.bunifuThinButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton1.BackgroundImage")));
+            this.bunifuThinButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuThinButton1.ButtonText = "LOGIN";
+            this.bunifuThinButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuThinButton1.Font = new System.Drawing.Font("Yu Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuThinButton1.ForeColor = System.Drawing.Color.White;
+            this.bunifuThinButton1.ForeColorHoverState = System.Drawing.Color.Black;
+            this.bunifuThinButton1.Iconimage = null;
+            this.bunifuThinButton1.IconVisible = true;
+            this.bunifuThinButton1.IconZoom = 90D;
+            this.bunifuThinButton1.ImageIconOverlay = false;
+            this.bunifuThinButton1.Location = new System.Drawing.Point(52, 431);
+            this.bunifuThinButton1.Name = "bunifuThinButton1";
+            this.bunifuThinButton1.Size = new System.Drawing.Size(245, 39);
+            this.bunifuThinButton1.TabIndex = 64;
+            this.bunifuThinButton1.Click += new System.EventHandler(this.bunifuThinButton1_Click);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.ErrorImage = null;
             this.pictureBox1.Image = global::Laboratory.Properties.Resources.MOFTA7;
-            this.pictureBox1.Location = new System.Drawing.Point(15, 148);
+            this.pictureBox1.Location = new System.Drawing.Point(124, 91);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(154, 164);
-            this.pictureBox1.TabIndex = 59;
+            this.pictureBox1.Size = new System.Drawing.Size(103, 95);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 67;
             this.pictureBox1.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.simpleButton2);
+            this.panel1.Controls.Add(this.simpleButton1);
+            this.panel1.Location = new System.Drawing.Point(2, 6);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(339, 50);
+            this.panel1.TabIndex = 68;
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.simpleButton2.Location = new System.Drawing.Point(258, 6);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(37, 41);
+            this.simpleButton2.TabIndex = 1;
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(296, 5);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(37, 41);
+            this.simpleButton1.TabIndex = 0;
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(30, 213);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(52, 50);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 70;
+            this.pictureBox2.TabStop = false;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Location = new System.Drawing.Point(30, 344);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(270, 1);
+            this.panel3.TabIndex = 74;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(28, 285);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(52, 50);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 73;
+            this.pictureBox3.TabStop = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Location = new System.Drawing.Point(30, 269);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(270, 1);
+            this.panel2.TabIndex = 75;
+            // 
+            // txt_User
+            // 
+            this.txt_User.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.txt_User.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_User.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_User.ForeColor = System.Drawing.Color.White;
+            this.txt_User.Location = new System.Drawing.Point(88, 226);
+            this.txt_User.Name = "txt_User";
+            this.txt_User.Size = new System.Drawing.Size(247, 25);
+            this.txt_User.TabIndex = 76;
+            this.txt_User.TabStop = false;
+            this.txt_User.Text = "USER NAME";
+            this.txt_User.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_User.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_User_MouseClick_1);
+            this.txt_User.TextChanged += new System.EventHandler(this.txt_User_TextChanged_1);
+            this.txt_User.DoubleClick += new System.EventHandler(this.txt_User_DoubleClick);
+            this.txt_User.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_User_KeyDown);
+            this.txt_User.Leave += new System.EventHandler(this.txt_User_Leave_1);
+            // 
+            // txt_Pass
+            // 
+            this.txt_Pass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.txt_Pass.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_Pass.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Pass.ForeColor = System.Drawing.Color.White;
+            this.txt_Pass.Location = new System.Drawing.Point(86, 299);
+            this.txt_Pass.Name = "txt_Pass";
+            this.txt_Pass.Size = new System.Drawing.Size(249, 25);
+            this.txt_Pass.TabIndex = 1000;
+            this.txt_Pass.TabStop = false;
+            this.txt_Pass.Text = "PASSWORD";
+            this.txt_Pass.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_Pass.Click += new System.EventHandler(this.txt_Pass_Click);
+            this.txt_Pass.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_Pass_MouseClick);
+            this.txt_Pass.CursorChanged += new System.EventHandler(this.txt_Pass_CursorChanged);
+            this.txt_Pass.TextChanged += new System.EventHandler(this.txt_Pass_TextChanged_2);
+            this.txt_Pass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Pass_KeyDown);
+            this.txt_Pass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Pass_KeyPress);
+            this.txt_Pass.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_Pass_KeyUp);
+            this.txt_Pass.Leave += new System.EventHandler(this.txt_Pass_Leave_1);
+            this.txt_Pass.MouseMove += new System.Windows.Forms.MouseEventHandler(this.txt_Pass_MouseMove);
+            this.txt_Pass.Move += new System.EventHandler(this.txt_Pass_Move);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Droid Arabic Kufi", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.ForeColor = System.Drawing.Color.Red;
+            this.checkBox1.Location = new System.Drawing.Point(75, 351);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(203, 32);
+            this.checkBox1.TabIndex = 12000;
+            this.checkBox1.TabStop = false;
+            this.checkBox1.Text = "SHOW PASSOWRD";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // splashScreenManager1
             // 
-            splashScreenManager1.ClosingDelay = 2000;
+            splashScreenManager1.ClosingDelay = 500;
             // 
             // Frm_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(751, 361);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.ClientSize = new System.Drawing.Size(347, 482);
             this.ControlBox = false;
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.txt_Pass);
+            this.Controls.Add(this.txt_User);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btn_save);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.bunifuThinButton1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MaximumSize = new System.Drawing.Size(751, 361);
-            this.MinimumSize = new System.Drawing.Size(751, 361);
             this.Name = "Frm_Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_Login";
             this.Load += new System.EventHandler(this.Frm_Login_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btn_save;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txt_Pass;
-        private System.Windows.Forms.TextBox txt_User;
+        private WindowsFormsControlLibrary1.BunifuThinButton bunifuThinButton1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox txt_User;
+        private System.Windows.Forms.TextBox txt_Pass;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
