@@ -117,7 +117,16 @@ namespace Laboratory.PL
                         pa.txt_num.Text = dr[0].ToString();
                         pa.Txt_IdCust.Text = dr[26].ToString();
                     }
-
+                    dt10.Clear();
+                    dt10 = t.Select_IdCompanyAndRentFromTicket(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
+                    if (gridView1.GetFocusedRowCellValue("طريقه التعامل").ToString() == "شركات")
+                    {
+                        foreach (DataRow dr in dt10.Rows)
+                        {
+                            pa.Txt_IdCompany.Text = dr[0].ToString();
+                            pa.Txt_RentCompany.Text = dr[2].ToString();
+                        }
+                    }
                     dt5.Clear();
                     dt5 = t.vildateReturnTickets(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
                     foreach (DataRow item in dt5.Rows)

@@ -41,13 +41,15 @@
             this.txt_username = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Txt_IdCust = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.txt_date = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_num = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.Txt_IdCust = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.Txt_ReturnMoney = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -70,8 +72,8 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.label13 = new System.Windows.Forms.Label();
-            this.Txt_ReturnMoney = new System.Windows.Forms.TextBox();
+            this.Txt_IdCompany = new System.Windows.Forms.TextBox();
+            this.Txt_RentCompany = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -168,6 +170,17 @@
             this.groupBox1.TabIndex = 98;
             this.groupBox1.TabStop = false;
             // 
+            // Txt_IdCust
+            // 
+            this.Txt_IdCust.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Txt_IdCust.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_IdCust.Location = new System.Drawing.Point(390, 53);
+            this.Txt_IdCust.Name = "Txt_IdCust";
+            this.Txt_IdCust.ReadOnly = true;
+            this.Txt_IdCust.Size = new System.Drawing.Size(81, 32);
+            this.Txt_IdCust.TabIndex = 104;
+            this.Txt_IdCust.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // comboBox1
             // 
             this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
@@ -212,7 +225,7 @@
             this.txt_num.Location = new System.Drawing.Point(390, 11);
             this.txt_num.Name = "txt_num";
             this.txt_num.ReadOnly = true;
-            this.txt_num.Size = new System.Drawing.Size(79, 32);
+            this.txt_num.Size = new System.Drawing.Size(81, 32);
             this.txt_num.TabIndex = 99;
             this.txt_num.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -230,6 +243,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.Txt_RentCompany);
+            this.groupBox2.Controls.Add(this.Txt_IdCompany);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.Txt_ReturnMoney);
             this.groupBox2.Controls.Add(this.dataGridView1);
@@ -254,16 +269,29 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
-            // Txt_IdCust
+            // label13
             // 
-            this.Txt_IdCust.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Txt_IdCust.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_IdCust.Location = new System.Drawing.Point(390, 53);
-            this.Txt_IdCust.Name = "Txt_IdCust";
-            this.Txt_IdCust.ReadOnly = true;
-            this.Txt_IdCust.Size = new System.Drawing.Size(79, 32);
-            this.Txt_IdCust.TabIndex = 104;
-            this.Txt_IdCust.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Black;
+            this.label13.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label13.Location = new System.Drawing.Point(199, 143);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(204, 24);
+            this.label13.TabIndex = 124;
+            this.label13.Text = "المبلغ المسترد مسبقا للعميل";
+            // 
+            // Txt_ReturnMoney
+            // 
+            this.Txt_ReturnMoney.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Txt_ReturnMoney.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_ReturnMoney.Location = new System.Drawing.Point(21, 138);
+            this.Txt_ReturnMoney.Name = "Txt_ReturnMoney";
+            this.Txt_ReturnMoney.ReadOnly = true;
+            this.Txt_ReturnMoney.Size = new System.Drawing.Size(171, 32);
+            this.Txt_ReturnMoney.TabIndex = 125;
+            this.Txt_ReturnMoney.Text = "0";
+            this.Txt_ReturnMoney.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // dataGridView1
             // 
@@ -583,29 +611,27 @@
             this.simpleButton1.Text = "حفظ التحويل";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
-            // label13
+            // Txt_IdCompany
             // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Black;
-            this.label13.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label13.Location = new System.Drawing.Point(199, 143);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(204, 24);
-            this.label13.TabIndex = 124;
-            this.label13.Text = "المبلغ المسترد مسبقا للعميل";
+            this.Txt_IdCompany.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Txt_IdCompany.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_IdCompany.Location = new System.Drawing.Point(390, 54);
+            this.Txt_IdCompany.Name = "Txt_IdCompany";
+            this.Txt_IdCompany.ReadOnly = true;
+            this.Txt_IdCompany.Size = new System.Drawing.Size(113, 32);
+            this.Txt_IdCompany.TabIndex = 105;
+            this.Txt_IdCompany.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // Txt_ReturnMoney
+            // Txt_RentCompany
             // 
-            this.Txt_ReturnMoney.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Txt_ReturnMoney.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_ReturnMoney.Location = new System.Drawing.Point(21, 138);
-            this.Txt_ReturnMoney.Name = "Txt_ReturnMoney";
-            this.Txt_ReturnMoney.ReadOnly = true;
-            this.Txt_ReturnMoney.Size = new System.Drawing.Size(171, 32);
-            this.Txt_ReturnMoney.TabIndex = 125;
-            this.Txt_ReturnMoney.Text = "0";
-            this.Txt_ReturnMoney.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Txt_RentCompany.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Txt_RentCompany.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_RentCompany.Location = new System.Drawing.Point(390, 95);
+            this.Txt_RentCompany.Name = "Txt_RentCompany";
+            this.Txt_RentCompany.ReadOnly = true;
+            this.Txt_RentCompany.Size = new System.Drawing.Size(113, 32);
+            this.Txt_RentCompany.TabIndex = 126;
+            this.Txt_RentCompany.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Frm_Payouts
             // 
@@ -678,5 +704,7 @@
         public System.Windows.Forms.TextBox Txt_IdCust;
         public System.Windows.Forms.Label label13;
         public System.Windows.Forms.TextBox Txt_ReturnMoney;
+        public System.Windows.Forms.TextBox Txt_RentCompany;
+        public System.Windows.Forms.TextBox Txt_IdCompany;
     }
 }

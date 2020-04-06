@@ -1452,6 +1452,15 @@ namespace Laboratory.PL
                             MessageBox.Show("تم حفظ الفاتورة بنجاح");                      
                         }
                         t.AddTicketCompany(Convert.ToInt32(txt_IdTicket.Text), Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToDecimal(Txt_rentCompany.Text));
+
+                        dt.Clear();
+                        dt = cm.Select_CompanyTotalMoney(Convert.ToInt32(cmb_Company.SelectedValue));
+                        decimal mno = Convert.ToDecimal(dt.Rows[0][0]) + Convert.ToDecimal(Txt_rentCompany.Text);
+                        cm.Update_CompanyTotalMoney(Convert.ToInt32(cmb_Company.SelectedValue), mno);
+                        cm.ADD_Company_TotalRent(Convert.ToInt32(cmb_Company.SelectedValue), 0, Convert.ToDecimal(Txt_rentCompany.Text)
+                             , dtb_visit.Value, mno, "حجز أشعة ورقم الحجز   " + " " + txt_IdTicket.Text, Convert.ToInt32(cmb_Stock.SelectedValue)
+                             , Convert.ToInt32(cmb_UserBranch.SelectedValue), txt_username.Text);
+
                         DataTable dt1 = new DataTable();
                         dt1.Clear();
                         dt1 = t.ReportInvoiceTicketCompany(Convert.ToInt32(txt_IdTicket.Text));
@@ -1488,14 +1497,6 @@ namespace Laboratory.PL
                         oc.Parameters["idTicket"].Visible = false;
                         sr.documentViewer1.Enabled = true;
                         sr.ShowDialog();
-
-                        dt.Clear();
-                        dt = cm.Select_CompanyTotalMoney(Convert.ToInt32(cmb_Company.SelectedValue));
-                        decimal mno = Convert.ToDecimal(dt.Rows[0][0]) + Convert.ToDecimal(Txt_rentCompany.Text);
-                        cm.Update_CompanyTotalMoney(Convert.ToInt32(cmb_Company.SelectedValue), mno);
-                        cm.ADD_Company_TotalRent(Convert.ToInt32(cmb_Company.SelectedValue), 0, Convert.ToDecimal(Txt_rentCompany.Text)
-                             , dtb_visit.Value, mno, "حجز أشعة ورقم الحجز   " + " " + txt_IdTicket.Text, Convert.ToInt32(cmb_Stock.SelectedValue)
-                             , Convert.ToInt32(cmb_UserBranch.SelectedValue), txt_username.Text);
 
                     }
 
