@@ -128,7 +128,19 @@ namespace Laboratory.PL
             Thread.Sleep(8000);
         }
 
-        private void bunifuThinButton1_Click(object sender, EventArgs e)
+     
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void bunifuThinButton2_Click(object sender, EventArgs e)
         {
 
             try
@@ -813,16 +825,6 @@ namespace Laboratory.PL
                 MessageBox.Show(ex.Message);
                 MessageBox.Show(ex.StackTrace);
             }
-        }
-
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void simpleButton2_Click(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Minimized;
         }
     }
 }

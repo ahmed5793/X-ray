@@ -40,6 +40,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.bunifuThinButton2 = new WindowsFormsControlLibrary1.BunifuThinButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -166,6 +167,25 @@
             this.pictureBox2.TabIndex = 12004;
             this.pictureBox2.TabStop = false;
             // 
+            // bunifuThinButton2
+            // 
+            this.bunifuThinButton2.BackColor = System.Drawing.Color.Crimson;
+            this.bunifuThinButton2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton2.BackgroundImage")));
+            this.bunifuThinButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuThinButton2.ButtonText = "LOGIN";
+            this.bunifuThinButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuThinButton2.ForeColor = System.Drawing.Color.White;
+            this.bunifuThinButton2.ForeColorHoverState = System.Drawing.Color.White;
+            this.bunifuThinButton2.Iconimage = null;
+            this.bunifuThinButton2.IconVisible = true;
+            this.bunifuThinButton2.IconZoom = 90D;
+            this.bunifuThinButton2.ImageIconOverlay = false;
+            this.bunifuThinButton2.Location = new System.Drawing.Point(79, 422);
+            this.bunifuThinButton2.Name = "bunifuThinButton2";
+            this.bunifuThinButton2.Size = new System.Drawing.Size(184, 36);
+            this.bunifuThinButton2.TabIndex = 12011;
+            this.bunifuThinButton2.Click += new System.EventHandler(this.bunifuThinButton2_Click);
+            // 
             // Frm_LoginMain
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
@@ -173,6 +193,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(341, 505);
+            this.Controls.Add(this.bunifuThinButton2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.checkBox1);
@@ -211,5 +232,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private WindowsFormsControlLibrary1.BunifuThinButton bunifuThinButton2;
     }
 }
