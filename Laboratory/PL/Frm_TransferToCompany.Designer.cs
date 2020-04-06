@@ -134,18 +134,18 @@
             this.label16.AutoSize = true;
             this.label16.BackColor = System.Drawing.Color.White;
             this.label16.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(568, 158);
+            this.label16.Location = new System.Drawing.Point(189, 84);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(125, 19);
+            this.label16.Size = new System.Drawing.Size(153, 19);
             this.label16.TabIndex = 103;
-            this.label16.Text = "اجمالي المبلغ المسترد";
+            this.label16.Text = "المبلغ المردود مسبقا للعميل";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.White;
             this.label11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(595, 16);
+            this.label11.Location = new System.Drawing.Point(612, 16);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(53, 19);
             this.label11.TabIndex = 99;
@@ -155,12 +155,12 @@
             // txt_reasonAddition
             // 
             this.txt_reasonAddition.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_reasonAddition.Location = new System.Drawing.Point(6, 58);
+            this.txt_reasonAddition.Location = new System.Drawing.Point(6, 117);
             this.txt_reasonAddition.MaxLength = 3000;
             this.txt_reasonAddition.Multiline = true;
             this.txt_reasonAddition.Name = "txt_reasonAddition";
             this.txt_reasonAddition.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txt_reasonAddition.Size = new System.Drawing.Size(237, 107);
+            this.txt_reasonAddition.Size = new System.Drawing.Size(254, 68);
             this.txt_reasonAddition.TabIndex = 99;
             this.txt_reasonAddition.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -169,18 +169,19 @@
             this.label26.AutoSize = true;
             this.label26.BackColor = System.Drawing.Color.White;
             this.label26.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(568, 50);
+            this.label26.Location = new System.Drawing.Point(610, 50);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(111, 19);
             this.label26.TabIndex = 116;
             this.label26.Text = "نسبة تحمل المريض";
+            this.label26.Click += new System.EventHandler(this.label26_Click);
             // 
             // label27
             // 
             this.label27.AutoSize = true;
             this.label27.BackColor = System.Drawing.Color.White;
             this.label27.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(569, 83);
+            this.label27.Location = new System.Drawing.Point(612, 86);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(109, 19);
             this.label27.TabIndex = 118;
@@ -191,7 +192,7 @@
             this.label28.AutoSize = true;
             this.label28.BackColor = System.Drawing.Color.White;
             this.label28.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(249, 97);
+            this.label28.Location = new System.Drawing.Point(293, 142);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(55, 19);
             this.label28.TabIndex = 120;
@@ -237,7 +238,7 @@
             this.Txt_rentCompany.AutoSize = true;
             this.Txt_rentCompany.BackColor = System.Drawing.Color.White;
             this.Txt_rentCompany.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_rentCompany.Location = new System.Drawing.Point(152, 16);
+            this.Txt_rentCompany.Location = new System.Drawing.Point(130, 16);
             this.Txt_rentCompany.Name = "Txt_rentCompany";
             this.Txt_rentCompany.Size = new System.Drawing.Size(18, 19);
             this.Txt_rentCompany.TabIndex = 125;
@@ -248,7 +249,7 @@
             this.txt_rentCust.AutoSize = true;
             this.txt_rentCust.BackColor = System.Drawing.Color.White;
             this.txt_rentCust.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_rentCust.Location = new System.Drawing.Point(531, 155);
+            this.txt_rentCust.Location = new System.Drawing.Point(130, 84);
             this.txt_rentCust.Name = "txt_rentCust";
             this.txt_rentCust.Size = new System.Drawing.Size(18, 19);
             this.txt_rentCust.TabIndex = 124;
@@ -259,7 +260,7 @@
             this.Txt_PricePayment.AutoSize = true;
             this.Txt_PricePayment.BackColor = System.Drawing.Color.White;
             this.Txt_PricePayment.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_PricePayment.Location = new System.Drawing.Point(531, 87);
+            this.Txt_PricePayment.Location = new System.Drawing.Point(544, 84);
             this.Txt_PricePayment.Name = "Txt_PricePayment";
             this.Txt_PricePayment.Size = new System.Drawing.Size(18, 19);
             this.Txt_PricePayment.TabIndex = 123;
@@ -283,7 +284,7 @@
             this.Txt_addtionPayment.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Txt_addtionPayment.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_addtionPayment.ForeColor = System.Drawing.SystemColors.Info;
-            this.Txt_addtionPayment.Location = new System.Drawing.Point(428, 47);
+            this.Txt_addtionPayment.Location = new System.Drawing.Point(454, 47);
             this.Txt_addtionPayment.Name = "Txt_addtionPayment";
             this.Txt_addtionPayment.Size = new System.Drawing.Size(134, 26);
             this.Txt_addtionPayment.TabIndex = 115;
@@ -300,7 +301,7 @@
             this.txt_payLat.AutoSize = true;
             this.txt_payLat.BackColor = System.Drawing.Color.White;
             this.txt_payLat.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_payLat.Location = new System.Drawing.Point(531, 120);
+            this.txt_payLat.Location = new System.Drawing.Point(130, 49);
             this.txt_payLat.Name = "txt_payLat";
             this.txt_payLat.Size = new System.Drawing.Size(18, 19);
             this.txt_payLat.TabIndex = 129;
@@ -311,7 +312,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(569, 120);
+            this.label4.Location = new System.Drawing.Point(189, 50);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(84, 19);
             this.label4.TabIndex = 128;
@@ -359,7 +360,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(500, 56);
+            this.label2.Location = new System.Drawing.Point(500, 58);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(95, 22);
             this.label2.TabIndex = 132;
@@ -405,10 +406,10 @@
             this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Arial Black", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Font = new System.Drawing.Font("Arial Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(335, 7);
+            this.dateTimePicker1.Location = new System.Drawing.Point(331, 7);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.ShowUpDown = true;
-            this.dateTimePicker1.Size = new System.Drawing.Size(147, 34);
+            this.dateTimePicker1.Size = new System.Drawing.Size(164, 34);
             this.dateTimePicker1.TabIndex = 138;
             // 
             // txt_patientname
@@ -447,7 +448,7 @@
             // 
             this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(27, 178);
+            this.textBox1.Location = new System.Drawing.Point(27, 175);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(90, 32);
@@ -512,7 +513,6 @@
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.Label txt_payLat;
         private System.Windows.Forms.Label Txt_rentCompany;
-        private System.Windows.Forms.Label txt_rentCust;
         private System.Windows.Forms.Label Txt_PricePayment;
         private System.Windows.Forms.TextBox Txt_addtionPayment;
         private System.Windows.Forms.Label label5;
@@ -526,5 +526,6 @@
         public System.Windows.Forms.TextBox txt_patientname;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.Label txt_rentCust;
     }
 }

@@ -220,15 +220,10 @@ namespace Laboratory.PL
                             s.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_pay.Text), dateTimePicker2.Value, txt_username.Text, txt_name.Text + " مردودات");
 
                             MessageBox.Show("تم سحب المبلغ بنجاح");
-
-
-
                         }
                         else
                         {
                             MessageBox.Show("تم إلغاء العملية بنجاح");
-
-
                         }
                     }
                     else if (rdbPartPay.Checked == true)
@@ -303,31 +298,7 @@ namespace Laboratory.PL
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-             Frm_TransferToCompany tc = new Frm_TransferToCompany();
-            DataTable dt1 = new DataTable();
-            dt1.Clear();
-
-            dt1 = t.TicketDetailsSelectTicketsDetAILS(Convert.ToInt32(txt_num.Text));
-
-            tc.dataGridView1.DataSource = dt1;
-
-            tc.dataGridView1.Columns[0].Visible = false;
-            tc.dataGridView1.Columns[3].Visible = false;
-
-            dt10.Clear();
-            dt10 = t.TicketDetailsSelectTickets(Convert.ToInt32(txt_num.Text));
-
-            foreach (DataRow dr in dt10.Rows)
-            {
-
-                tc.txt_payLat.Text = dr[13].ToString();
-                tc.txt_patientname.Text = dr[1].ToString();
-
-
-            }
-            tc.textBox1.Text = Txt_IdCust.Text;
-            tc.ShowDialog();
-            this.Close();
+            
         }
     }
 }

@@ -47,10 +47,6 @@
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_save = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_print = new DevExpress.XtraEditors.SimpleButton();
-            this.button1 = new DevExpress.XtraEditors.SimpleButton();
             this.txt_totalinvoice = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
@@ -236,8 +232,10 @@
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(27, 472);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(201, 505);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(144, 24);
             this.label5.TabIndex = 87;
@@ -264,7 +262,7 @@
             this.groupBox2.Location = new System.Drawing.Point(9, 186);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupBox2.Size = new System.Drawing.Size(990, 283);
+            this.groupBox2.Size = new System.Drawing.Size(998, 307);
             this.groupBox2.TabIndex = 160;
             this.groupBox2.TabStop = false;
             // 
@@ -278,7 +276,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.gridControl1.Size = new System.Drawing.Size(984, 264);
+            this.gridControl1.Size = new System.Drawing.Size(992, 288);
             this.gridControl1.TabIndex = 127;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -337,93 +335,12 @@
             this.simpleButton1.Text = "طباعة التقرير";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click_1);
             // 
-            // simpleButton2
-            // 
-            this.simpleButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton2.Appearance.BackColor = System.Drawing.Color.Black;
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton2.Appearance.ForeColor = System.Drawing.Color.White;
-            this.simpleButton2.Appearance.Options.UseBackColor = true;
-            this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.Appearance.Options.UseForeColor = true;
-            this.simpleButton2.Appearance.Options.UseTextOptions = true;
-            this.simpleButton2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.simpleButton2.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.simpleButton2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(889, 487);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(111, 43);
-            this.simpleButton2.TabIndex = 236;
-            this.simpleButton2.Text = "مردوات";
-            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
-            // 
-            // btn_save
-            // 
-            this.btn_save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_save.Appearance.BackColor = System.Drawing.Color.Black;
-            this.btn_save.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_save.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btn_save.Appearance.Options.UseBackColor = true;
-            this.btn_save.Appearance.Options.UseFont = true;
-            this.btn_save.Appearance.Options.UseForeColor = true;
-            this.btn_save.Appearance.Options.UseTextOptions = true;
-            this.btn_save.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.btn_save.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.btn_save.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.btn_save.Location = new System.Drawing.Point(731, 488);
-            this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(152, 43);
-            this.btn_save.TabIndex = 237;
-            this.btn_save.Text = " تفاصيل الفاتورة";
-            this.btn_save.Click += new System.EventHandler(this.simpleButton3_Click);
-            // 
-            // btn_print
-            // 
-            this.btn_print.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_print.Appearance.BackColor = System.Drawing.Color.Black;
-            this.btn_print.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_print.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btn_print.Appearance.Options.UseBackColor = true;
-            this.btn_print.Appearance.Options.UseFont = true;
-            this.btn_print.Appearance.Options.UseForeColor = true;
-            this.btn_print.Appearance.Options.UseTextOptions = true;
-            this.btn_print.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.btn_print.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.btn_print.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.btn_print.Location = new System.Drawing.Point(581, 488);
-            this.btn_print.Name = "btn_print";
-            this.btn_print.Size = new System.Drawing.Size(144, 43);
-            this.btn_print.TabIndex = 238;
-            this.btn_print.Text = "طباعة فاتورة";
-            this.btn_print.Click += new System.EventHandler(this.simpleButton3_Click_1);
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Appearance.BackColor = System.Drawing.Color.Black;
-            this.button1.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Appearance.ForeColor = System.Drawing.Color.White;
-            this.button1.Appearance.Options.UseBackColor = true;
-            this.button1.Appearance.Options.UseFont = true;
-            this.button1.Appearance.Options.UseForeColor = true;
-            this.button1.Appearance.Options.UseTextOptions = true;
-            this.button1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.button1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.button1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.button1.Location = new System.Drawing.Point(431, 486);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(144, 43);
-            this.button1.TabIndex = 239;
-            this.button1.Text = "طباعة باركود";
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
             // txt_totalinvoice
             // 
             this.txt_totalinvoice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txt_totalinvoice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_totalinvoice.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_totalinvoice.Location = new System.Drawing.Point(203, 502);
+            this.txt_totalinvoice.Location = new System.Drawing.Point(443, 502);
             this.txt_totalinvoice.Name = "txt_totalinvoice";
             this.txt_totalinvoice.ReadOnly = true;
             this.txt_totalinvoice.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -438,7 +355,7 @@
             this.label6.BackColor = System.Drawing.Color.Black;
             this.label6.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(219, 472);
+            this.label6.Location = new System.Drawing.Point(624, 504);
             this.label6.Name = "label6";
             this.label6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label6.Size = new System.Drawing.Size(136, 27);
@@ -458,10 +375,6 @@
             this.ClientSize = new System.Drawing.Size(1011, 539);
             this.Controls.Add(this.txt_totalinvoice);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btn_print);
-            this.Controls.Add(this.btn_save);
-            this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label5);
@@ -504,10 +417,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private System.Windows.Forms.DateTimePicker ToDate;
         private System.Windows.Forms.DateTimePicker FromDate;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton btn_save;
-        private DevExpress.XtraEditors.SimpleButton btn_print;
-        private DevExpress.XtraEditors.SimpleButton button1;
         public System.Windows.Forms.TextBox txt_totalinvoice;
         public System.Windows.Forms.Label label6;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
