@@ -25,15 +25,34 @@ namespace Laboratory.PL
         DataTable dt5 = new DataTable();
         DataTable dt6 = new DataTable();
         DataTable dt7 = new DataTable();
-
+       
 
         Main fm = new Main();
         public Frm_LoginMain()
         {
-            InitializeComponent();
-            checkBox1.Checked = true;
-        }
 
+            Thread th = new Thread(new ThreadStart(startForm));
+            th.Start();
+            Thread.Sleep(5000);
+            InitializeComponent();
+         
+            th.Abort();
+       
+        }
+    
+        public void startForm()
+        {
+            try
+            {
+                Application.Run(new SplashScreen1());
+            }
+            catch (Exception ex)
+            {
+               
+                
+            }
+           
+        }
         private void txt_User_Leave(object sender, EventArgs e)
         {
 
@@ -122,9 +141,10 @@ namespace Laboratory.PL
                 checkBox1.Checked = true;
             }
         }
-
+   
         private void Frm_LoginMain_Load(object sender, EventArgs e)
         {
+            checkBox1.Checked = true;
             //Thread.Sleep(8000);
         }
 
