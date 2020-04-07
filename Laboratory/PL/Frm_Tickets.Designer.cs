@@ -79,9 +79,9 @@
             this.Txt_addtionPayment = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.rdb_Discount = new System.Windows.Forms.RadioButton();
-            this.txt_reasonAddition = new System.Windows.Forms.TextBox();
             this.txt_afterDiscount = new System.Windows.Forms.TextBox();
             this.rdb_money = new System.Windows.Forms.RadioButton();
+            this.txt_reasonAddition = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.txt_total = new System.Windows.Forms.TextBox();
@@ -675,6 +675,7 @@
             this.cmb_items.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmb_items.Size = new System.Drawing.Size(261, 26);
             this.cmb_items.TabIndex = 76;
+            this.cmb_items.SelectedIndexChanged += new System.EventHandler(this.cmb_items_SelectedIndexChanged);
             this.cmb_items.Leave += new System.EventHandler(this.cmb_items_Leave);
             // 
             // dgv_order
@@ -878,20 +879,6 @@
             this.rdb_Discount.UseVisualStyleBackColor = false;
             this.rdb_Discount.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
-            // txt_reasonAddition
-            // 
-            this.txt_reasonAddition.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.txt_reasonAddition.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_reasonAddition.Location = new System.Drawing.Point(46, 200);
-            this.txt_reasonAddition.MaxLength = 3000;
-            this.txt_reasonAddition.Multiline = true;
-            this.txt_reasonAddition.Name = "txt_reasonAddition";
-            this.txt_reasonAddition.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txt_reasonAddition.Size = new System.Drawing.Size(409, 60);
-            this.txt_reasonAddition.TabIndex = 99;
-            this.txt_reasonAddition.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // txt_afterDiscount
             // 
             this.txt_afterDiscount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -925,6 +912,20 @@
             this.rdb_money.Text = "قيمة";
             this.rdb_money.UseVisualStyleBackColor = false;
             this.rdb_money.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
+            // txt_reasonAddition
+            // 
+            this.txt_reasonAddition.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.txt_reasonAddition.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_reasonAddition.Location = new System.Drawing.Point(46, 200);
+            this.txt_reasonAddition.MaxLength = 3000;
+            this.txt_reasonAddition.Multiline = true;
+            this.txt_reasonAddition.Name = "txt_reasonAddition";
+            this.txt_reasonAddition.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txt_reasonAddition.Size = new System.Drawing.Size(409, 60);
+            this.txt_reasonAddition.TabIndex = 99;
+            this.txt_reasonAddition.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label24
             // 

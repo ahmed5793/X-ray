@@ -97,13 +97,13 @@ namespace Laboratory.PL
                             return;
                         }
                     }
-                    dt10.Clear();
-                    dt10 = t.vildateTransferForCompany(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
-                    if (dt10.Rows.Count > 0)
-                    {
-                        MessageBox.Show("عزيزى المستخدم يرجي العلم باان تم تحويل الفاتورة الي جهه اخري واسترداد المبلغ   ", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
-                        return;
-                    }
+                    //dt10.Clear();
+                    //dt10 = t.vildateTransferForCompany(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
+                    //if (dt10.Rows.Count > 0)
+                    //{
+                    //    MessageBox.Show("عزيزى المستخدم يرجي العلم باان تم تحويل الفاتورة الي جهه اخري واسترداد المبلغ   ", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                    //    return;
+                    //}
                     dt7.Clear();
                     dt7 = t.TicketDetailsSelectTickets(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
                     foreach (DataRow dr in dt7.Rows)
