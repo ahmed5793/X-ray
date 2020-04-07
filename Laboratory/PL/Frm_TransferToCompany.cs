@@ -35,9 +35,8 @@ namespace Laboratory.PL
                 cmb_Company.DisplayMember = "اسم الشركه";
                 cmb_Company.ValueMember = "Comp_ID";
                 txt_username.Text = Program.salesman;
-
-                Permision();
-                
+                textBox1.Hide();
+                Permision();                
             }
             catch (Exception ex)
             {
@@ -139,8 +138,7 @@ namespace Laboratory.PL
                     {
                         dataGridView2.DataSource = dt12;
                         dataGridView2.Columns[0].Visible = false;
-                        Patient_PaymentRate();
-                        Rent_Company();
+                 
                     }
                     else
                     {
@@ -159,8 +157,9 @@ namespace Laboratory.PL
 
                     }
                     txt_total.Text = Math.Round(total, 1).ToString();
-                   
 
+                    Patient_PaymentRate();
+                    Rent_Company();
 
 
 
@@ -277,13 +276,14 @@ namespace Laboratory.PL
                 c.ADD_Company_TotalRent(Convert.ToInt32(cmb_Company.SelectedValue), 0
                     , Convert.ToDecimal(Txt_rentCompany.Text), dateTimePicker1.Value, mno, "  تحويل حجز اشعة للموظف" , Convert.ToInt32(cmb_Stock.SelectedValue)
                  , Convert.ToInt32(comboBox1.SelectedValue), txt_username.Text);
+              
                 t.AddTransferForCompany(Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToDecimal(Txt_addtionPayment.Text),
                 Convert.ToDecimal(Txt_PricePayment.Text), Convert.ToDecimal(txt_total.Text), Convert.ToDecimal(txt_rentCust.Text),
                 Convert.ToDecimal(Txt_rentCompany.Text), dateTimePicker1.Value, txt_reasonAddition.Text,
                 Convert.ToInt32(dataGridView2.Rows[0].Cells[0].Value), Convert.ToInt32(dataGridView1.Rows[0].Cells[0].Value),
                 txt_patientname.Text, Convert.ToInt32(cmb_Stock.SelectedValue), txt_username.Text, comboBox1.Text);
 
-                //cm.Update_CompanyTotalMoney(Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToDecimal(Txt_rentCompany.Text));
+                cm.Update_CompanyTotalMoney(Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToDecimal(Txt_rentCompany.Text));
                 dt.Clear();
                 dt = cu.Select_CustomertotalBAlance(Convert.ToInt32(textBox1.Text));
                 decimal mno1 = Convert.ToDecimal(dt.Rows[0][0]) - Convert.ToDecimal(Txt_PricePayment.Text);
@@ -291,7 +291,7 @@ namespace Laboratory.PL
                 cu.Add_CustomerAccountStatment(Convert.ToInt32(textBox1.Text), 0,
                     Convert.ToDecimal(Txt_PricePayment.Text)
                      , dateTimePicker1.Value, mno1, Convert.ToInt32(cmb_Stock.SelectedValue)
-                     , txt_username.Text, Convert.ToInt32(comboBox1.SelectedValue), " مردود  أشعة و تحويلها إلى شركة " + " " + cmb_Company.Text);
+                     , txt_username.Text, Convert.ToInt32(comboBox1.SelectedValue), " تحويل الفحص رقم " + " " + textBox1.Text + " " + " إلى شركة " + " " + cmb_Company.Text);
                 //s.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_rentCust.Text), dateTimePicker1.Value, txt_username.Text, "مردودات وتحولها الي جهه  " + cmb_Company.Text);
                 MessageBox.Show("تم حفظ التحويل بنجاح");
                 this.Close();

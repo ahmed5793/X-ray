@@ -793,8 +793,11 @@ namespace Laboratory.PL
         {           
         }
         private void cmb_Company_SelectionChangeCommitted(object sender, EventArgs e)
-        {          
-            if (cmb_Company.Text!="")
+        {
+            if (cmb_statues.Text=="شركات")
+            {
+
+            if (cmb_Company.Text != "")
             {
                 //rdb_Discount.Checked = true;
                 //txt_discount.Enabled = false;
@@ -803,33 +806,36 @@ namespace Laboratory.PL
                 totalOrder();
                 Discount();
                 pay();
+
+                Cmb_category.SelectedIndex = -1;
+                cmb_items.SelectedIndex = -1;
+                //label26.Show();
+                //label27.Show();
+                //Txt_addtionPayment.Show();
+                //Txt_PricePayment.Show();
+                //label29.Show();
+                Txt_rentCompany.Show();
+                // label24.Hide();
+                txt_discount.Enabled = false;
+                rdb_Discount.Enabled = false;
+                rdb_money.Enabled = false;
+                txt_afterDiscount.Enabled = false;
+                dt2.Clear();
+                Txt_PricePayment.Text = "0";
+                Txt_addtionPayment.Text = "0";
+                Txt_rentCompany.Text = "0";
+                txt_reasonAddition.Clear();
+                txt_discount.Text = "0";
+                txt_rent.Text = "0";
+                txt_total.Text = "0";
+                txt_pay.Text = "0";
+                cmb_Company.Enabled = true;
+                Txt_PricePayment.Enabled = true;
+                Txt_addtionPayment.Enabled = true;
+                dgv_order.Columns[3].Visible = true;
             }
-            Cmb_category.SelectedIndex = -1;
-            cmb_items.SelectedIndex = -1;
-            //label26.Show();
-            //label27.Show();
-            //Txt_addtionPayment.Show();
-            //Txt_PricePayment.Show();
-            //label29.Show();
-            Txt_rentCompany.Show();
-            // label24.Hide();
-            txt_discount.Enabled = false;
-            rdb_Discount.Enabled = false;
-            rdb_money.Enabled = false;
-            txt_afterDiscount.Enabled = false;
-            dt2.Clear();
-            Txt_PricePayment.Text = "0";
-            Txt_addtionPayment.Text = "0";
-            Txt_rentCompany.Text = "0";
-            txt_reasonAddition.Clear();
-            txt_discount.Text = "0";
-            txt_rent.Text = "0";
-            txt_total.Text = "0";
-            txt_pay.Text = "0";
-            cmb_Company.Enabled = true;
-            Txt_PricePayment.Enabled = true;
-            Txt_addtionPayment.Enabled = true;
-            dgv_order.Columns[3].Visible = true;
+
+            }
 
         }
 
@@ -841,8 +847,6 @@ namespace Laboratory.PL
         {
             if (cmb_statues.Text == "شركات")
             {
-                Cmb_category.SelectedIndex = -1;
-                cmb_items.DataSource = null;
                 //label26.Show();
                 //label27.Show();
                 //Txt_addtionPayment.Show();
@@ -865,10 +869,12 @@ namespace Laboratory.PL
                 cmb_Company.Enabled = true;
                 Txt_PricePayment.Enabled = true;
                 Txt_addtionPayment.Enabled = true;
-                dgv_order.Columns[2].Visible = true ;
+                dgv_order.Columns[3].Visible = true ;
                 company();
                 Patient_PaymentRate();
                 Btn_DetailsCompany.Show();
+                Cmb_category.SelectedIndex = -1;
+                cmb_items.SelectedIndex = -1;
             }
             else if (cmb_statues.Text== "نقدى")
             {
@@ -882,7 +888,7 @@ namespace Laboratory.PL
                 rdb_money.Enabled = true;
                 txt_afterDiscount.Enabled = true;
                 txt_discount.Enabled = true;
-                dgv_order.Columns[2].Visible = false;
+                dgv_order.Columns[3].Visible = false;
                 dt2.Clear();
                 Txt_PricePayment.Text = "0";
                 Txt_addtionPayment.Text = "0";
@@ -949,7 +955,7 @@ namespace Laboratory.PL
 
         private void cmb_items_Leave(object sender, EventArgs e)
         {
-            if (Cmb_category.Text !="" )
+            if (Cmb_category.Text !="" && cmb_items.Text!="" )
             {            
             dt.Clear();
             dt = ix.VildateItem(Convert.ToInt32(Cmb_category.SelectedValue), Convert.ToInt32(cmb_items.SelectedValue));
@@ -1333,16 +1339,7 @@ namespace Laboratory.PL
                                  , txt_username.Text, Convert.ToInt32(cmb_UserBranch.SelectedValue), "حجز أشعة ورقم الحجز" + " " + txt_IdTicket.Text);
              
                             MessageBox.Show("تم حفظ الفاتورة بنجاح");
-                            cmb_statues.Enabled = false;
-                            cmb_items.Enabled = false;
-                            Cmb_category.Enabled = false;
-                            Cmb_customer.Enabled = false;
-                            cmb_Doctor.Enabled = false;
-                            cmb_DoctorOfCenter.Enabled = false;
-                            cmb_Techincal.Enabled = false;
-                            cmb_branches.Enabled = false;
-                            cmb_Stock.Enabled = false;
-                            cmb_UserBranch.Enabled = false;
+                    
 
                         }
 
@@ -1505,6 +1502,16 @@ namespace Laboratory.PL
                         s.add_insertStock(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_pay.Text), dtb_visit.Value,
                                           txt_username.Text, "فاتورة حجز اشعة رقم " + txt_IdTicket.Text);
                     }
+                    cmb_statues.Enabled = false;
+                    cmb_items.Enabled = false;
+                    Cmb_category.Enabled = false;
+                    Cmb_customer.Enabled = false;
+                    cmb_Doctor.Enabled = false;
+                    cmb_DoctorOfCenter.Enabled = false;
+                    cmb_Techincal.Enabled = false;
+                    cmb_branches.Enabled = false;
+                    cmb_Stock.Enabled = false;
+                    cmb_UserBranch.Enabled = false;
                     string x = DateTime.Now.ToShortDateString();
                     Frm_DataRevaltionTicket.getmain.gridControl1.DataSource = t.selectDataRevlation(Convert.ToInt32(Frm_DataRevaltionTicket.getmain.comboBox1.SelectedValue), Convert.ToDateTime(x));
                 }
@@ -1762,6 +1769,11 @@ namespace Laboratory.PL
         }
 
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmb_items_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
