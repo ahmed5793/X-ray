@@ -47,14 +47,6 @@ namespace Laboratory.PL
             dt = T.ReportSelectTransferCompany(DateFrom.Value, DateTo.Value);
             gridControl1.DataSource = dt;
 
-            decimal total = 0;
-            for (int i = 0; i < gridView1.RowCount; i++)
-            {
-                DataRow row = gridView1.GetDataRow(i);
-                total += Convert.ToDecimal(row[8].ToString());
-
-            }
-            textBox1.Text = total.ToString("₱ #,##0.0");
 
         }
 
