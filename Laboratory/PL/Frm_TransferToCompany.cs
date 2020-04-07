@@ -291,7 +291,7 @@ namespace Laboratory.PL
                 cu.Add_CustomerAccountStatment(Convert.ToInt32(textBox1.Text), 0,
                     Convert.ToDecimal(Txt_PricePayment.Text)
                      , dateTimePicker1.Value, mno1, Convert.ToInt32(cmb_Stock.SelectedValue)
-                     , txt_username.Text, Convert.ToInt32(comboBox1.SelectedValue), " تحويل الفحص رقم " + " " + textBox1.Text + " " + " إلى شركة " + " " + cmb_Company.Text);
+                     , txt_username.Text, Convert.ToInt32(comboBox1.SelectedValue), " تحويل الفحص رقم " + " " + txt_IdTeckit.Text + " " + " إلى شركة " + " " + cmb_Company.Text);
                 //s.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_rentCust.Text), dateTimePicker1.Value, txt_username.Text, "مردودات وتحولها الي جهه  " + cmb_Company.Text);
                 MessageBox.Show("تم حفظ التحويل بنجاح");
                 this.Close();

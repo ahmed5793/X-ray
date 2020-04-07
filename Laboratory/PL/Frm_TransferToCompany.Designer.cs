@@ -59,6 +59,7 @@
             this.txt_patientname = new System.Windows.Forms.TextBox();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_IdTeckit = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -455,12 +456,24 @@
             this.textBox1.TabIndex = 182;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // txt_IdTeckit
+            // 
+            this.txt_IdTeckit.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txt_IdTeckit.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_IdTeckit.Location = new System.Drawing.Point(608, 124);
+            this.txt_IdTeckit.Name = "txt_IdTeckit";
+            this.txt_IdTeckit.ReadOnly = true;
+            this.txt_IdTeckit.Size = new System.Drawing.Size(90, 32);
+            this.txt_IdTeckit.TabIndex = 183;
+            this.txt_IdTeckit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // Frm_TransferToCompany
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(758, 534);
+            this.Controls.Add(this.txt_IdTeckit);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.txt_patientname);
@@ -527,5 +540,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         public System.Windows.Forms.TextBox textBox1;
         public System.Windows.Forms.Label txt_rentCust;
+        public System.Windows.Forms.TextBox txt_IdTeckit;
     }
 }

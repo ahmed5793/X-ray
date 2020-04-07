@@ -411,6 +411,7 @@ namespace Laboratory.PL
                     dt10 = t.TicketDetailsSelectTickets(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
                     foreach (DataRow dr in dt10.Rows)
                     {
+                        tc.txt_IdTeckit.Text = dr[0].ToString();
                         tc.txt_payLat.Text = dr[13].ToString();
                         tc.txt_patientname.Text = dr[1].ToString();
                         tc.textBox1.Text = dr[26].ToString();
