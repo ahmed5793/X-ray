@@ -420,7 +420,7 @@ namespace Laboratory.PL
                     dt5 = t.vildateReturnTickets(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
                     foreach (DataRow item in dt5.Rows)
                     {
-                        tc.txt_rentCust.Text = item[1].ToString();
+                        tc.Txt_RentCustomer.Text = item[1].ToString();
                     }
                     tc.ShowDialog();
                     //this.Close();
