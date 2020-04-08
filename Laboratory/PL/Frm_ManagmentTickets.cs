@@ -420,15 +420,15 @@ namespace Laboratory.PL
                     foreach (DataRow dr in dt10.Rows)
                     {
                         tc.txt_IdTeckit.Text = dr[0].ToString();
-                        tc.txt_payLat.Text = dr[13].ToString();
+                        tc.Txt_PayLast.Text = dr[13].ToString();
                         tc.txt_patientname.Text = dr[1].ToString();
-                        tc.textBox1.Text = dr[26].ToString();
+                        tc.Txt_IdCust.Text = dr[26].ToString();
                     }
                     dt5.Clear();
                     dt5 = t.vildateReturnTickets(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
                     foreach (DataRow item in dt5.Rows)
                     {
-                        tc.txt_rentCust.Text = item[1].ToString();
+                        tc.Txt_RentCustomer.Text = item[1].ToString();
                     }
                     tc.ShowDialog();
                     //this.Close();
