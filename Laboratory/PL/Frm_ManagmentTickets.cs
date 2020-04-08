@@ -12,6 +12,7 @@ using DevExpress.XtraGrid.Views.Grid;
 using Laboratory.BL;
 using Laboratory.RPT;
 using Laboratory.RPT_Order;
+using DevExpress.XtraReports.UI;
 
 namespace Laboratory.PL
 {
@@ -367,9 +368,16 @@ namespace Laboratory.PL
                     rb.DataSource = ds1;
                     rb.Parameters["idTicket"].Value = Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة").ToString());
 
-                    sr.documentViewer1.DocumentSource = rb;
+                   sr.documentViewer1.DocumentSource = rb;
                     rb.Parameters["idTicket"].Visible = false;
-                    sr.ShowDialog();
+                    System.Drawing.Printing.PrintDocument printDocuments = new System.Drawing.Printing.PrintDocument();
+
+
+                   rb.PrintingSystem.ExportOptions.PrintPreview.DefaultFileName = printDocuments.DocumentName=Properties.Settings.Default.PrintNameBarcode;
+                    //rb.PrintingSystem.ExportOptions.PrintPreview.DefaultFileName =  Properties.Settings.Default.PrintNameBarcode;
+
+                    rb.Print();
+                    //sr.ShowDialog();
                 }
             }
             catch (Exception ex)
@@ -431,6 +439,11 @@ namespace Laboratory.PL
 
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void Frm_ManagmentTickets_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

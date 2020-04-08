@@ -7,11 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.XtraPrinting.Control;
+
 using Laboratory.BL;
 using Laboratory.RPT_Order;
 using DevExpress.XtraReports.UI;
-using DevExpress.XtraPrinting;
+
+
 
 
 namespace Laboratory.PL
@@ -1553,9 +1554,19 @@ namespace Laboratory.PL
                 rb.DataSource = ds1;
                 rb.Parameters["idTicket"].Value = Convert.ToInt32(txt_IdTicket.Text);
 
-                sr.documentViewer1.DocumentSource = rb;
+                //sr.documentViewer1.DocumentSource = rb;
                 rb.Parameters["idTicket"].Visible = false;
-                sr.ShowDialog();
+
+                System.Drawing.Printing.PrintDocument printDocuments = new System.Drawing.Printing.PrintDocument();
+              
+                //rb.PrinterName= printDocuments.PrinterSettings.PrinterName;
+
+                rb.PrintingSystem.ExportOptions.PrintPreview.DefaultFileName = printDocuments.DocumentName = Properties.Settings.Default.PrintNameBarcode;
+            
+                rb.Print();
+
+
+                //sr.ShowDialog();
 
                 clear();
                 Customer();
