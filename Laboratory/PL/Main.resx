@@ -3513,6 +3513,31 @@
         rkJggg==
 </value>
   </data>
+  <data name="barButtonItem4.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAAH3RFWHRUaXRsZQBQcmludDtE
+        aWFsb2c7UHJpbnQgRGlhbG9nRrebzwAAANBJREFUOE+lkcENgzAMRbMAO3QYLlTqDpmCAarswAjce+LO
+        LmyA1Fvqn/5UTrDSolp6Co6/f5zgYox/4UIINbEFmmT9UCQEIjNYK/RFQpLYCtYKfZGQJLaCtXT3rC8e
+        5IxBBg0DCsTd7ktsgSalH5BsauOswaaTbNCEBp3QC2ttYLEKl3GevLAIO1eP/V8MejY/BUcezL1pUEUn
+        QpwYFTDBusDgahnIfTMQY2zdjAnwvcOgJhmosCbIpAkOBhX6DdCUx3+/gZzwFTYd/sI4T+4F8iCK6s9j
+        TPwAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="barButtonItem4.ImageOptions.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAAH3RFWHRUaXRsZQBQcmludDtE
+        aWFsb2c7UHJpbnQgRGlhbG9nRrebzwAAAaJJREFUWEft1L1Kw1AYBuAUwdXeQCfBK3BQl85V3MWCdyBk
+        kg5OGnDTRSidxICom5P1ArwPF63QK1AE4/uGnPrl5AvNqUlccuCh4fx8581PjxdF0b9SO+ukdtZJ7bQF
+        QRAtwq6jmV1ggSoZw49b4xpZx4YpTYAmQBOgWIDdk6e4mGvjmmStWhdTMgF6MAGTPl5cUgBTj7hHD1My
+        AezNKQ7wF6xh1aSJFsCeRFUFwJYFA5jxRbGGVTNmxuXEzKQqNQHqCBBCF9rQAu5B7AurDtAfXF+uHt0O
+        fRjDNMFrPxnzSAbQzoEZh9Yf3I22UPwBohwc24RUgG14l5tKBVt4/njPuzObf8EV7MMOnMInmBAdGUCV
+        jLF43LTDRuiiKB+7udNvWIcD2AA+9jMw475zgDmtjaJ8z2YDaQQMcCH6xs4BlLuWWijKj01uTC+wAnxC
+        5hXQ1DnAnJYX4BCW4FX0UekB8l7BM9xYfVT8FRRkf4TGGizDm+ij34+wLCjaAfsMOIY9+BB96b9hWVCU
+        eMjYISSOpQ+isrBogk9CPYqBY5gz9H4AHXDdjWBTHsMAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="ribbonPageGroup1.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m

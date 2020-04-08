@@ -23,13 +23,27 @@ namespace Laboratory.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=Laboratory;Integrated Security=True")]
-        public string LaboratoryConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("Empty")]
+        public string PrintNameBarcode {
             get {
-                return ((string)(this["LaboratoryConnectionString"]));
+                return ((string)(this["PrintNameBarcode"]));
+            }
+            set {
+                this["PrintNameBarcode"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Empty")]
+        public string PrintNameInvoice {
+            get {
+                return ((string)(this["PrintNameInvoice"]));
+            }
+            set {
+                this["PrintNameInvoice"] = value;
             }
         }
     }

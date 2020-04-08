@@ -1227,6 +1227,19 @@ namespace Laboratory.PL
                 MessageBox.Show(ex.Message) ;
             }
         }
+
+        private void barButtonItem4_ItemClick_8(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                PrintSetting p = new PrintSetting();
+                p.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
 	

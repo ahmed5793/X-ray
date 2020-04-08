@@ -831,6 +831,12 @@
     <Compile Include="PL\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\PrintSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\PrintSetting.Designer.cs">
+      <DependentUpon>PrintSetting.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\SplashScreen1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1222,6 +1228,9 @@
     <EmbeddedResource Include="PL\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\PrintSetting.resx">
+      <DependentUpon>PrintSetting.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\SplashScreen1.resx">
       <DependentUpon>SplashScreen1.cs</DependentUpon>
     </EmbeddedResource>
@@ -1278,7 +1287,6 @@
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\Laboratory.BL.FileExcel.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
