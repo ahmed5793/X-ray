@@ -35,7 +35,7 @@ namespace Laboratory.PL
                 cmb_Company.DisplayMember = "اسم الشركه";
                 cmb_Company.ValueMember = "Comp_ID";
                 txt_username.Text = Program.salesman;
-                textBox1.Hide();
+                Txt_IdCust.Hide();
                 Permision();                
             }
             catch (Exception ex)
@@ -77,25 +77,25 @@ namespace Laboratory.PL
         }
         void Rent_Company()
         {
-            if (txt_total.Text != "" && Txt_PricePayment.Text != "")
+            if (Txt_Total.Text != "" && Txt_PricePayment.Text != "")
             {
-                decimal Total = Convert.ToDecimal(txt_total.Text) - Convert.ToDecimal(Txt_PricePayment.Text);
-                Txt_rentCompany.Text = Math.Round(Total, 1).ToString();
+                decimal Total = Convert.ToDecimal(Txt_Total.Text) - Convert.ToDecimal(Txt_PricePayment.Text);
+                Txt_RentCompany.Text = Math.Round(Total, 1).ToString();
             }
         }
         void Patient_PaymentRate()
         {
-            if (Txt_addtionPayment.Text != "" && Txt_PricePayment.Text != "")
+            if (Txt_addtionPaymentrate.Text != "" && Txt_PricePayment.Text != "")
             {
-                if (Txt_addtionPayment.Text == "0")
+                if (Txt_addtionPaymentrate.Text == "0")
                 {
-                    Txt_addtionPayment.Text = "0";
+                    Txt_addtionPaymentrate.Text = "0";
                     Txt_PricePayment.Text = "0";
                 }
                 else
                 {
-                    decimal Amount = Convert.ToDecimal(txt_total.Text);
-                    decimal Discount = Convert.ToDecimal(Txt_addtionPayment.Text);
+                    decimal Amount = Convert.ToDecimal(Txt_Total.Text);
+                    decimal Discount = Convert.ToDecimal(Txt_addtionPaymentrate.Text);
                     decimal Total = Amount * (Discount / 100);
                     Txt_PricePayment.Text = Math.Round(Total, 1).ToString();
                 }
@@ -103,7 +103,7 @@ namespace Laboratory.PL
             else
             {
 
-                Txt_addtionPayment.Text = "0";
+                Txt_addtionPaymentrate.Text = "0";
                 Txt_PricePayment.Text = "0";
             }
         }
@@ -156,7 +156,7 @@ namespace Laboratory.PL
 
 
                     }
-                    txt_total.Text = Math.Round(total, 1).ToString();
+                    Txt_Total.Text = Math.Round(total, 1).ToString();
 
                     Patient_PaymentRate();
                     Rent_Company();
@@ -197,7 +197,7 @@ namespace Laboratory.PL
         private void Txt_addtionPayment_KeyPress(object sender, KeyPressEventArgs e)
         {
           
-            if (e.KeyChar == '.' && Txt_addtionPayment.Text.ToString().IndexOf('.') > -1)
+            if (e.KeyChar == '.' && Txt_addtionPaymentrate.Text.ToString().IndexOf('.') > -1)
             {
                 e.Handled = true;
             }
@@ -216,17 +216,17 @@ namespace Laboratory.PL
 
         private void Txt_addtionPayment_MouseDown(object sender, MouseEventArgs e)
         {
-            if (Txt_addtionPayment.Text == "0")
+            if (Txt_addtionPaymentrate.Text == "0")
             {
-                Txt_addtionPayment.Text = "";
+                Txt_addtionPaymentrate.Text = "";
             }
         }
 
         private void Txt_addtionPayment_TextChanged(object sender, EventArgs e)
         {
-            if (Txt_addtionPayment.Text == ".")
+            if (Txt_addtionPaymentrate.Text == ".")
             {
-                Txt_addtionPayment.Text = "";
+                Txt_addtionPaymentrate.Text = "";
             }
         }
 
@@ -271,24 +271,24 @@ namespace Laboratory.PL
                 //}
                 dt.Clear();
                 dt = c.Select_CompanyTotalMoney(Convert.ToInt32(cmb_Company.SelectedValue));
-                decimal mno = Convert.ToDecimal(dt.Rows[0][0]) + Convert.ToDecimal(Txt_rentCompany.Text);
+                decimal mno = Convert.ToDecimal(dt.Rows[0][0]) + Convert.ToDecimal(Txt_RentCompany.Text);
                 c.Update_CompanyTotalMoney(Convert.ToInt32(cmb_Company.SelectedValue), mno);
                 c.ADD_Company_TotalRent(Convert.ToInt32(cmb_Company.SelectedValue), 0
-                    , Convert.ToDecimal(Txt_rentCompany.Text), dateTimePicker1.Value, mno, "  تحويل حجز اشعة للموظف" , Convert.ToInt32(cmb_Stock.SelectedValue)
+                    , Convert.ToDecimal(Txt_RentCompany.Text), dateTimePicker1.Value, mno, "  تحويل حجز اشعة للموظف" , Convert.ToInt32(cmb_Stock.SelectedValue)
                  , Convert.ToInt32(comboBox1.SelectedValue), txt_username.Text);
               
-                t.AddTransferForCompany(Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToDecimal(Txt_addtionPayment.Text),
-                Convert.ToDecimal(Txt_PricePayment.Text), Convert.ToDecimal(txt_total.Text), Convert.ToDecimal(txt_rentCust.Text),
-                Convert.ToDecimal(Txt_rentCompany.Text), dateTimePicker1.Value, txt_reasonAddition.Text,
+                t.AddTransferForCompany(Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToDecimal(Txt_addtionPaymentrate.Text),
+                Convert.ToDecimal(Txt_PricePayment.Text), Convert.ToDecimal(Txt_Total.Text), Convert.ToDecimal(Txt_RentCustomer.Text),
+                Convert.ToDecimal(Txt_RentCompany.Text), dateTimePicker1.Value, txt_reasonAddition.Text,
                 Convert.ToInt32(dataGridView2.Rows[0].Cells[0].Value), Convert.ToInt32(dataGridView1.Rows[0].Cells[0].Value),
                 txt_patientname.Text, Convert.ToInt32(cmb_Stock.SelectedValue), txt_username.Text, comboBox1.Text);
 
-                cm.Update_CompanyTotalMoney(Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToDecimal(Txt_rentCompany.Text));
+                cm.Update_CompanyTotalMoney(Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToDecimal(Txt_RentCompany.Text));
                 dt.Clear();
-                dt = cu.Select_CustomertotalBAlance(Convert.ToInt32(textBox1.Text));
+                dt = cu.Select_CustomertotalBAlance(Convert.ToInt32(Txt_IdCust.Text));
                 decimal mno1 = Convert.ToDecimal(dt.Rows[0][0]) - Convert.ToDecimal(Txt_PricePayment.Text);
-                cu.Update_CustomerTotalBalance(Convert.ToInt32(textBox1.Text), mno1);
-                cu.Add_CustomerAccountStatment(Convert.ToInt32(textBox1.Text), 0,
+                cu.Update_CustomerTotalBalance(Convert.ToInt32(Txt_IdCust.Text), mno1);
+                cu.Add_CustomerAccountStatment(Convert.ToInt32(Txt_IdCust.Text), 0,
                     Convert.ToDecimal(Txt_PricePayment.Text)
                      , dateTimePicker1.Value, mno1, Convert.ToInt32(cmb_Stock.SelectedValue)
                      , txt_username.Text, Convert.ToInt32(comboBox1.SelectedValue), " تحويل الفحص رقم " + " " + txt_IdTeckit.Text + " " + " إلى شركة " + " " + cmb_Company.Text);
@@ -310,6 +310,11 @@ namespace Laboratory.PL
         }
 
         private void label26_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
         {
 
         }

@@ -208,7 +208,7 @@ namespace Laboratory.PL
 
                             dt.Clear();
                             dt = c.Select_CustomertotalBAlance(Convert.ToInt32(Txt_IdCust.Text));
-                            decimal mno1 = Convert.ToDecimal(dt.Rows[0][0]) - Convert.ToDecimal(txt_pay.Text);
+                            decimal mno1 = Convert.ToDecimal(dt.Rows[0][0]) - Convert.ToDecimal(txt_rent.Text);
                             c.Update_CustomerTotalBalance(Convert.ToInt32(Txt_IdCust.Text), mno1);
                             c.Add_CustomerAccountStatment(Convert.ToInt32(Txt_IdCust.Text), Convert.ToDecimal(txt_pay.Text),
                                 Convert.ToDecimal(txt_pay.Text)
@@ -253,7 +253,15 @@ namespace Laboratory.PL
 
                             dt.Clear();
                             dt = c.Select_CustomertotalBAlance(Convert.ToInt32(Txt_IdCust.Text));
-                            decimal mno1 = Convert.ToDecimal(dt.Rows[0][0]) - Convert.ToDecimal(txt_prise.Text);
+                            decimal mno2 = Convert.ToDecimal(dt.Rows[0][0]) - Convert.ToDecimal(txt_rent.Text);
+
+                            c.Update_CustomerTotalBalance(Convert.ToInt32(Txt_IdCust.Text), mno2);
+
+                            dt.Clear();
+                            dt = c.Select_CustomertotalBAlance(Convert.ToInt32(Txt_IdCust.Text));
+                            decimal mno3 = Convert.ToDecimal(txt_prise.Text) - Convert.ToDecimal(txt_pay.Text);
+
+                            decimal mno1 = Convert.ToDecimal(dt.Rows[0][0]) - mno3;
                             c.Update_CustomerTotalBalance(Convert.ToInt32(Txt_IdCust.Text), mno1);
                             c.Add_CustomerAccountStatment(Convert.ToInt32(Txt_IdCust.Text), Convert.ToDecimal(txt_prise.Text),
                                 Convert.ToDecimal(txt_prise.Text)
@@ -262,15 +270,10 @@ namespace Laboratory.PL
                             s.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_prise.Text), dateTimePicker2.Value, txt_username.Text, txt_name.Text + " مردودات");
 
                             MessageBox.Show("تم سحب المبلغ بنجاح");
-
-
-
                         }
                         else
                         {
                             MessageBox.Show("تم إلغاء العملية بنجاح");
-
-
                         }
                     }
                     if (txt_statues.Text=="شركات")
