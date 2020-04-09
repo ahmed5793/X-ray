@@ -81,7 +81,7 @@ namespace Laboratory.PL
         Masrofat m = new Masrofat();
         private void Frm_ReportMasrofat_Load(object sender, EventArgs e)
         {
-      
+            searchControl1.Hide();
             comboBox1.DataSource = m.SelectReserve();
             comboBox1.DisplayMember = "masrof_type";
             comboBox1.ValueMember = "ID_masrof";
@@ -167,6 +167,11 @@ namespace Laboratory.PL
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void gridView1_CustomSummaryCalculate(object sender, DevExpress.Data.CustomSummaryEventArgs e)
+        {
+            //textBox1.Text = gridView1.Columns["price"].SummaryItem.SummaryValue.ToString();
         }
     }
 }
