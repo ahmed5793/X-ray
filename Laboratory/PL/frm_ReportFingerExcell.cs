@@ -120,7 +120,7 @@ namespace Laboratory.PL
 
 
         }
-
+        DataTable dt2 = new DataTable();
         public DataTable getatt(int EmpID, string year, string month)
         {
             DataTable dt = new DataTable();
@@ -198,17 +198,42 @@ namespace Laboratory.PL
                         int n = 0;
                         for (int i = 0; i < dt10.Rows.Count; i++)
                         {
-                            n = dataGridView1.Rows.Add();
-                            dataGridView1.Rows[n].Cells[0].Value = dt10.Rows[i][0].ToString();
-                            dataGridView1.Rows[n].Cells[1].Value = dt10.Rows[i][1].ToString();
-                            dataGridView1.Rows[n].Cells[2].Value = dt10.Rows[i][2].ToString();
-                            dataGridView1.Rows[n].Cells[3].Value = dt10.Rows[i][3].ToString();
+                           
 
+                                if (dt10.Rows[i][2].ToString() == "")
+                                {
+
+                             
+                                n = dataGridView1.Rows.Add();
+                              
+                                    dataGridView1.Rows[n].Cells[0].Value = dt10.Rows[i][0].ToString();
+                                    dataGridView1.Rows[n].Cells[1].Value = dt10.Rows[i][1].ToString();
+                                    dataGridView1.Rows[n].Cells[2].Value = "غائب";
+                                    dataGridView1.Rows[n].Cells[3].Value = "غائب";
+                                dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.Black;
+                                dataGridView1.Rows[i].DefaultCellStyle.ForeColor = Color.Yellow;
+
+                            }
+                                else
+                                {
+                                    n = dataGridView1.Rows.Add();
+                                    dataGridView1.Rows[n].Cells[0].Value = dt10.Rows[i][0].ToString();
+                                    dataGridView1.Rows[n].Cells[1].Value = dt10.Rows[i][1].ToString();
+                                    dataGridView1.Rows[n].Cells[2].Value = dt10.Rows[i][2].ToString();
+                                    dataGridView1.Rows[n].Cells[3].Value = dt10.Rows[i][3].ToString();
+                                }
+
+                          
 
 
                         }
 
 
+                    }
+                    else if(dt10.Rows.Count==0)
+                    {
+                        MessageBox.Show("لايوجد حضور وانصراف في هذا الشهر");
+                        return;
                     }
 
 

@@ -370,9 +370,10 @@ namespace Laboratory.PL
 
                    sr.documentViewer1.DocumentSource = rb;
                     rb.Parameters["idTicket"].Visible = false;
+
                     System.Drawing.Printing.PrintDocument printDocuments = new System.Drawing.Printing.PrintDocument();
 
-
+              
                    rb.PrintingSystem.ExportOptions.PrintPreview.DefaultFileName = printDocuments.DocumentName=Properties.Settings.Default.PrintNameBarcode;
                     //rb.PrintingSystem.ExportOptions.PrintPreview.DefaultFileName =  Properties.Settings.Default.PrintNameBarcode;
 
@@ -442,6 +443,11 @@ namespace Laboratory.PL
         }
 
         private void Frm_ManagmentTickets_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gridControl1_Click(object sender, EventArgs e)
         {
 
         }
