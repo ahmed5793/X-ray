@@ -423,6 +423,7 @@ namespace Laboratory.PL
                         tc.Txt_PayLast.Text = dr[13].ToString();
                         tc.txt_patientname.Text = dr[1].ToString();
                         tc.Txt_IdCust.Text = dr[26].ToString();
+                        tc.Txt_TotalBeforeTransfair.Text = dr[14].ToString();
                     }
                     dt5.Clear();
                     dt5 = t.vildateReturnTickets(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));

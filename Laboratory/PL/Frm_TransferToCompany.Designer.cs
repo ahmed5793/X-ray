@@ -41,6 +41,13 @@
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.Txt_RentCustomer = new System.Windows.Forms.TextBox();
+            this.Txt_PayLast = new System.Windows.Forms.TextBox();
+            this.Txt_RentCompany = new System.Windows.Forms.TextBox();
+            this.Txt_PricePayment = new System.Windows.Forms.TextBox();
+            this.Txt_Total = new System.Windows.Forms.TextBox();
             this.Txt_addtionPaymentrate = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -56,13 +63,7 @@
             this.Txt_IdCust = new System.Windows.Forms.TextBox();
             this.txt_IdTeckit = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.Txt_Total = new System.Windows.Forms.TextBox();
-            this.Txt_PricePayment = new System.Windows.Forms.TextBox();
-            this.Txt_RentCompany = new System.Windows.Forms.TextBox();
-            this.Txt_PayLast = new System.Windows.Forms.TextBox();
-            this.Txt_RentCustomer = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.Txt_TotalBeforeTransfair = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -238,6 +239,96 @@
             this.groupBox3.TabIndex = 92;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "الحسابات";
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.textBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.ForeColor = System.Drawing.SystemColors.Info;
+            this.textBox2.Location = new System.Drawing.Point(9, 126);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(134, 26);
+            this.textBox2.TabIndex = 136;
+            this.textBox2.Text = "0";
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.White;
+            this.label7.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(150, 130);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(169, 18);
+            this.label7.TabIndex = 135;
+            this.label7.Text = "المبلغ المفروض إسترداده للعميل";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // Txt_RentCustomer
+            // 
+            this.Txt_RentCustomer.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Txt_RentCustomer.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_RentCustomer.ForeColor = System.Drawing.SystemColors.Info;
+            this.Txt_RentCustomer.Location = new System.Drawing.Point(9, 92);
+            this.Txt_RentCustomer.Name = "Txt_RentCustomer";
+            this.Txt_RentCustomer.ReadOnly = true;
+            this.Txt_RentCustomer.Size = new System.Drawing.Size(134, 26);
+            this.Txt_RentCustomer.TabIndex = 134;
+            this.Txt_RentCustomer.Text = "0";
+            this.Txt_RentCustomer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // Txt_PayLast
+            // 
+            this.Txt_PayLast.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Txt_PayLast.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_PayLast.ForeColor = System.Drawing.SystemColors.Info;
+            this.Txt_PayLast.Location = new System.Drawing.Point(9, 56);
+            this.Txt_PayLast.Name = "Txt_PayLast";
+            this.Txt_PayLast.ReadOnly = true;
+            this.Txt_PayLast.Size = new System.Drawing.Size(134, 26);
+            this.Txt_PayLast.TabIndex = 133;
+            this.Txt_PayLast.Text = "0";
+            this.Txt_PayLast.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // Txt_RentCompany
+            // 
+            this.Txt_RentCompany.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Txt_RentCompany.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_RentCompany.ForeColor = System.Drawing.SystemColors.Info;
+            this.Txt_RentCompany.Location = new System.Drawing.Point(9, 20);
+            this.Txt_RentCompany.Name = "Txt_RentCompany";
+            this.Txt_RentCompany.ReadOnly = true;
+            this.Txt_RentCompany.Size = new System.Drawing.Size(134, 26);
+            this.Txt_RentCompany.TabIndex = 132;
+            this.Txt_RentCompany.Text = "0";
+            this.Txt_RentCompany.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // Txt_PricePayment
+            // 
+            this.Txt_PricePayment.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Txt_PricePayment.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_PricePayment.ForeColor = System.Drawing.SystemColors.Info;
+            this.Txt_PricePayment.Location = new System.Drawing.Point(484, 84);
+            this.Txt_PricePayment.Name = "Txt_PricePayment";
+            this.Txt_PricePayment.ReadOnly = true;
+            this.Txt_PricePayment.Size = new System.Drawing.Size(134, 26);
+            this.Txt_PricePayment.TabIndex = 131;
+            this.Txt_PricePayment.Text = "0";
+            this.Txt_PricePayment.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // Txt_Total
+            // 
+            this.Txt_Total.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Txt_Total.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_Total.ForeColor = System.Drawing.SystemColors.Info;
+            this.Txt_Total.Location = new System.Drawing.Point(484, 16);
+            this.Txt_Total.Name = "Txt_Total";
+            this.Txt_Total.ReadOnly = true;
+            this.Txt_Total.Size = new System.Drawing.Size(134, 26);
+            this.Txt_Total.TabIndex = 130;
+            this.Txt_Total.Text = "0";
+            this.Txt_Total.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Txt_addtionPaymentrate
             // 
@@ -426,95 +517,16 @@
             this.textBox1.TabIndex = 184;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // Txt_Total
+            // Txt_TotalBeforeTransfair
             // 
-            this.Txt_Total.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Txt_Total.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_Total.ForeColor = System.Drawing.SystemColors.Info;
-            this.Txt_Total.Location = new System.Drawing.Point(484, 16);
-            this.Txt_Total.Name = "Txt_Total";
-            this.Txt_Total.ReadOnly = true;
-            this.Txt_Total.Size = new System.Drawing.Size(134, 26);
-            this.Txt_Total.TabIndex = 130;
-            this.Txt_Total.Text = "0";
-            this.Txt_Total.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // Txt_PricePayment
-            // 
-            this.Txt_PricePayment.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Txt_PricePayment.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_PricePayment.ForeColor = System.Drawing.SystemColors.Info;
-            this.Txt_PricePayment.Location = new System.Drawing.Point(484, 84);
-            this.Txt_PricePayment.Name = "Txt_PricePayment";
-            this.Txt_PricePayment.ReadOnly = true;
-            this.Txt_PricePayment.Size = new System.Drawing.Size(134, 26);
-            this.Txt_PricePayment.TabIndex = 131;
-            this.Txt_PricePayment.Text = "0";
-            this.Txt_PricePayment.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // Txt_RentCompany
-            // 
-            this.Txt_RentCompany.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Txt_RentCompany.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_RentCompany.ForeColor = System.Drawing.SystemColors.Info;
-            this.Txt_RentCompany.Location = new System.Drawing.Point(9, 20);
-            this.Txt_RentCompany.Name = "Txt_RentCompany";
-            this.Txt_RentCompany.ReadOnly = true;
-            this.Txt_RentCompany.Size = new System.Drawing.Size(134, 26);
-            this.Txt_RentCompany.TabIndex = 132;
-            this.Txt_RentCompany.Text = "0";
-            this.Txt_RentCompany.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // Txt_PayLast
-            // 
-            this.Txt_PayLast.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Txt_PayLast.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_PayLast.ForeColor = System.Drawing.SystemColors.Info;
-            this.Txt_PayLast.Location = new System.Drawing.Point(9, 56);
-            this.Txt_PayLast.Name = "Txt_PayLast";
-            this.Txt_PayLast.ReadOnly = true;
-            this.Txt_PayLast.Size = new System.Drawing.Size(134, 26);
-            this.Txt_PayLast.TabIndex = 133;
-            this.Txt_PayLast.Text = "0";
-            this.Txt_PayLast.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // Txt_RentCustomer
-            // 
-            this.Txt_RentCustomer.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Txt_RentCustomer.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_RentCustomer.ForeColor = System.Drawing.SystemColors.Info;
-            this.Txt_RentCustomer.Location = new System.Drawing.Point(9, 92);
-            this.Txt_RentCustomer.Name = "Txt_RentCustomer";
-            this.Txt_RentCustomer.ReadOnly = true;
-            this.Txt_RentCustomer.Size = new System.Drawing.Size(134, 26);
-            this.Txt_RentCustomer.TabIndex = 134;
-            this.Txt_RentCustomer.Text = "0";
-            this.Txt_RentCustomer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.textBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.SystemColors.Info;
-            this.textBox2.Location = new System.Drawing.Point(9, 126);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(134, 26);
-            this.textBox2.TabIndex = 136;
-            this.textBox2.Text = "0";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.White;
-            this.label7.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(150, 130);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(169, 18);
-            this.label7.TabIndex = 135;
-            this.label7.Text = "المبلغ المفروض إسترداده للعميل";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+            this.Txt_TotalBeforeTransfair.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Txt_TotalBeforeTransfair.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_TotalBeforeTransfair.Location = new System.Drawing.Point(27, 205);
+            this.Txt_TotalBeforeTransfair.Name = "Txt_TotalBeforeTransfair";
+            this.Txt_TotalBeforeTransfair.ReadOnly = true;
+            this.Txt_TotalBeforeTransfair.Size = new System.Drawing.Size(111, 32);
+            this.Txt_TotalBeforeTransfair.TabIndex = 185;
+            this.Txt_TotalBeforeTransfair.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Frm_TransferToCompany
             // 
@@ -522,6 +534,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(758, 534);
+            this.Controls.Add(this.Txt_TotalBeforeTransfair);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.txt_IdTeckit);
             this.Controls.Add(this.Txt_IdCust);
@@ -594,5 +607,6 @@
         public System.Windows.Forms.TextBox Txt_RentCustomer;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label7;
+        public System.Windows.Forms.TextBox Txt_TotalBeforeTransfair;
     }
 }

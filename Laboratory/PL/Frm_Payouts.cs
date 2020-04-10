@@ -145,9 +145,9 @@ namespace Laboratory.PL
                             dt.Clear();
                             dt = c.Select_CustomertotalBAlance(Convert.ToInt32(Txt_IdCust.Text));
                             decimal mno2 = Convert.ToDecimal(dt.Rows[0][0]) - Convert.ToDecimal(txt_total.Text);
-                            c.Update_CustomerTotalBalance(Convert.ToInt32(Txt_IdCust.Text), mno1);
+                            c.Update_CustomerTotalBalance(Convert.ToInt32(Txt_IdCust.Text), mno2);
                             c.Add_CustomerAccountStatment(Convert.ToInt32(Txt_IdCust.Text), Convert.ToDecimal(txt_total.Text),
-                            0, dateTimePicker2.Value, mno1, Convert.ToInt32(cmb_Stock.SelectedValue)
+                            0, dateTimePicker2.Value, mno2, Convert.ToInt32(cmb_Stock.SelectedValue)
                             , txt_username.Text, Convert.ToInt32(comboBox1.SelectedValue), " إلغاء الفحص رقم" + " " + txt_num.Text  +" "+ "وإسترداد المبلغ  المدفوع مسبقا بالكامل للعميل");
                             MessageBox.Show("تم سحب المبلغ بنجاح");
                         }
