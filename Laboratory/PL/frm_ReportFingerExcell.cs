@@ -186,6 +186,7 @@ namespace Laboratory.PL
                         return;
 
                     }
+
                     DataTable dt10 = new DataTable();
 
 
@@ -195,6 +196,7 @@ namespace Laboratory.PL
 
                     if (dt10.Rows.Count > 0)
                     {
+
                         int n = 0;
                         for (int i = 0; i < dt10.Rows.Count; i++)
                         {
@@ -213,6 +215,7 @@ namespace Laboratory.PL
                                 dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.Black;
                                 dataGridView1.Rows[i].DefaultCellStyle.ForeColor = Color.Yellow;
 
+
                             }
                                 else
                                 {
@@ -230,11 +233,7 @@ namespace Laboratory.PL
 
 
                     }
-                    else if(dt10.Rows.Count==0)
-                    {
-                        MessageBox.Show("لايوجد حضور وانصراف في هذا الشهر");
-                        return;
-                    }
+                 
 
 
                 }
