@@ -262,7 +262,6 @@
             this.groupBox2.Size = new System.Drawing.Size(913, 259);
             this.groupBox2.TabIndex = 99;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // Txt_RentCompany
             // 
@@ -366,7 +365,6 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(517, 60);
             this.dataGridView1.TabIndex = 123;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label11
             // 
@@ -460,7 +458,6 @@
             this.label6.Size = new System.Drawing.Size(113, 24);
             this.label6.TabIndex = 98;
             this.label6.Text = "اجمالي الفحص";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // txt_total
             // 
@@ -588,7 +585,6 @@
             this.Name = "Frm_Payouts";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "شاشة المردودات";
-            this.Load += new System.EventHandler(this.Frm_Payouts_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
