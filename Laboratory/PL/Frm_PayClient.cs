@@ -133,12 +133,10 @@ namespace Laboratory.PL
         {
             txt_prise.Enabled = false;
         }
-
         private void txt_prise_Click(object sender, EventArgs e)
         {
-            txt_prise.Text = "";
+            txt_prise.SelectAll();
         }
-
         private void txt_prise_MouseMove(object sender, MouseEventArgs e)
         {
             if (txt_prise.Text == "")

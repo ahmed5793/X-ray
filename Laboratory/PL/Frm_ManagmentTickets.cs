@@ -98,13 +98,13 @@ namespace Laboratory.PL
                             return;
                         }
                     }
-                    //dt10.Clear();
-                    //dt10 = t.vildateTransferForCompany(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
-                    //if (dt10.Rows.Count > 0)
-                    //{
-                    //    MessageBox.Show("عزيزى المستخدم يرجي العلم باان تم تحويل الفاتورة الي جهه اخري واسترداد المبلغ   ", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
-                    //    return;
-                    //}
+                    dt10.Clear();
+                    dt10 = t.vildateTransferForCompany(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
+                    if (dt10.Rows.Count > 0)
+                    {
+                        MessageBox.Show("عزيزى المستخدم يرجي العلم باان تم تحويل الفاتورة الي جهه اخري واسترداد المبلغ   ", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                        return;
+                    }
                     dt7.Clear();
                     dt7 = t.TicketDetailsSelectTickets(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
                     foreach (DataRow dr in dt7.Rows)
@@ -424,13 +424,14 @@ namespace Laboratory.PL
                         tc.Txt_PayLast.Text = dr[13].ToString();
                         tc.txt_patientname.Text = dr[1].ToString();
                         tc.Txt_IdCust.Text = dr[26].ToString();
-                        tc.Txt_TotalBeforeTransfair.Text = dr[14].ToString();
+                        tc.Txt_TotalBeforeTransfair.Text = dr[12].ToString();
+                        tc.Txt_OldRentBeforeTransfair.Text = dr[14].ToString();
                     }
                     dt5.Clear();
                     dt5 = t.vildateReturnTickets(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
                     foreach (DataRow item in dt5.Rows)
                     {
-                        tc.Txt_RentCustomer.Text = item[1].ToString();
+                        tc.Txt_LastPayOut.Text = item[1].ToString();
                     }
                     tc.ShowDialog();
                     //this.Close();

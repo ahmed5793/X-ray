@@ -102,7 +102,6 @@ namespace Laboratory.PL
             }
             else
             {
-
                 Txt_addtionPaymentrate.Text = "0";
                 Txt_PricePayment.Text = "0";
             }
@@ -114,13 +113,29 @@ namespace Laboratory.PL
         }
         void TotalRentCustomer()
         {
-            decimal x;
-            x = Convert.ToDecimal(Txt_PayLast.Text) - Convert.ToDecimal(Txt_PricePayment.Text);
-            textBox2.Text = x.ToString();
+            decimal x ,y ;
+            if (Convert.ToDecimal(Txt_PayLast.Text) - Convert.ToDecimal(Txt_LastPayOut.Text) > Convert.ToDecimal(Txt_PricePayment.Text))
+            {
+                x = Convert.ToDecimal(Txt_PayLast.Text) - Convert.ToDecimal(Txt_LastPayOut.Text);
+                y = x - Convert.ToDecimal(Txt_PricePayment.Text);
+                textBox2.Text = y.ToString();
+                Txt_RentCustomer.Text = "0";
+            }
+            else if (Convert.ToDecimal(Txt_PricePayment.Text) > Convert.ToDecimal(Txt_PayLast.Text) - Convert.ToDecimal(Txt_LastPayOut.Text))
+            {
+                textBox2.Text = "0";
+                x = Convert.ToDecimal(Txt_PayLast.Text) - Convert.ToDecimal(Txt_LastPayOut.Text);
+                y =  Convert.ToDecimal(Txt_PricePayment.Text)-x;
+                Txt_RentCustomer.Text = y.ToString();
+            }
         }
         private void Frm_TransferToCompany_Load(object sender, EventArgs e)
         {
             dataGridView1.Hide();
+            txt_IdTeckit.Hide();
+            Txt_IdCust.Hide();
+            Txt_TotalBeforeTransfair.Hide();
+            Txt_OldRentBeforeTransfair.Hide();
             //TotalRentCustomer();
             Program.salesman = txt_username.Text;
             txt_patientname.Hide();
@@ -178,14 +193,16 @@ namespace Laboratory.PL
         {
             Patient_PaymentRate();
             Rent_Company();
-            if (Convert.ToDecimal(Txt_PayLast.Text) > Convert.ToDecimal(Txt_PricePayment.Text))
-            {
-                TotalRentCustomer();
-            }
-            else if (Convert.ToDecimal(Txt_PayLast.Text) > Convert.ToDecimal(Txt_PricePayment.Text))
-            {
-                textBox2.Text = "0";
-            }
+            TotalRentCustomer();
+
+            //if (Convert.ToDecimal(Txt_PayLast.Text) - Convert.ToDecimal(Txt_LastPayOut.Text) > Convert.ToDecimal(Txt_PricePayment.Text))
+            //{
+            //    TotalRentCustomer();
+            //}
+            //else if (Convert.ToDecimal(Txt_PricePayment.Text) > Convert.ToDecimal(Txt_PayLast.Text) - Convert.ToDecimal(Txt_LastPayOut.Text))
+            //{
+            //    textBox2.Text = "0";
+            //}
         }
 
         private void Txt_PricePayment_MouseUp(object sender, MouseEventArgs e)
@@ -223,10 +240,7 @@ namespace Laboratory.PL
 
         private void Txt_addtionPayment_MouseDown(object sender, MouseEventArgs e)
         {
-            if (Txt_addtionPaymentrate.Text == "0")
-            {
-                Txt_addtionPaymentrate.Text = "";
-            }
+         
         }
 
         private void Txt_addtionPayment_TextChanged(object sender, EventArgs e)
@@ -235,6 +249,7 @@ namespace Laboratory.PL
             {
                 Txt_addtionPaymentrate.Text = "";
             }
+            
         }
 
         private void cmb_Company_SelectedIndexChanged(object sender, EventArgs e)
@@ -276,47 +291,54 @@ namespace Laboratory.PL
                 //    MessageBox.Show("رصيد الخزنة الحالى غير كافى لسحب هذه المبلغ");
                 //    return;
                 //}
-                if (Convert.ToDecimal(Txt_PayLast.Text)> Convert.ToDecimal(Txt_PricePayment.Text))
+                if (Convert.ToDecimal(Txt_PayLast.Text) - Convert.ToDecimal(Txt_LastPayOut.Text) > Convert.ToDecimal(Txt_PricePayment.Text))
                 {
-
+                    if (Convert.ToDecimal(textBox2.Text)>0)
+                    {
+                        s.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(textBox2.Text), dateTimePicker1.Value, txt_username.Text, " سحب مبلغ " + " " + textBox2.Text + "مدفوع مسبقا للحجز  " + txt_IdTeckit.Text);
+                        for (int i = 0; i < dataGridView2.Rows.Count; i++)
+                        {
+                            t.addticketsReturn(Convert.ToInt32(txt_IdTeckit.Text), Convert.ToInt32(cmb_Stock.SelectedValue), comboBox1.Text,
+                                txt_patientname.Text, "استرداد عربون الحجز للعميل وتحويله إلى شركة " + " " + cmb_Company.Text, dataGridView2.Rows[i].Cells[1].Value.ToString(), dateTimePicker1.Value
+                                , Convert.ToDecimal(textBox2.Text), textBox2.Text, Convert.ToDecimal(dataGridView2.Rows[i].Cells[2].Value), Convert.ToDecimal(Txt_PayLast.Text), txt_username.Text);
+                        }
                     dt.Clear();
                     dt = cu.Select_CustomertotalBAlance(Convert.ToInt32(Txt_IdCust.Text));
-                    decimal mno4 = Convert.ToDecimal(dt.Rows[0][0]) + Convert.ToDecimal(Txt_PayLast.Text);
+                    decimal mno4 = Convert.ToDecimal(dt.Rows[0][0])+Convert.ToDecimal(textBox2.Text);
                     cu.Update_CustomerTotalBalance(Convert.ToInt32(Txt_IdCust.Text), mno4);
                     cu.Add_CustomerAccountStatment(Convert.ToInt32(Txt_IdCust.Text), 0,
-                    Convert.ToDecimal(Txt_PayLast.Text), dateTimePicker1.Value, mno4, Convert.ToInt32(cmb_Stock.SelectedValue)
-                 , txt_username.Text, Convert.ToInt32(comboBox1.SelectedValue), " تم دفع للعميل مبلغ " + " " + Txt_PayLast.Text + "مدفوع مسبقا للحجز  " + txt_IdTeckit.Text);
-                    s.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(Txt_PayLast.Text), dateTimePicker1.Value, txt_username.Text, " سحب مبلغ " + " " + Txt_PayLast.Text + "مدفوع مسبقا للحجز  " + txt_IdTeckit.Text);
+                    Convert.ToDecimal(textBox2.Text), dateTimePicker1.Value, mno4, Convert.ToInt32(cmb_Stock.SelectedValue)
+                    ,  txt_username.Text, Convert.ToInt32(comboBox1.SelectedValue), " تم دفع للعميل مبلغ " + " " + textBox2.Text + " فرق المبلغ المدفوع مسبقا للحجز   " + txt_IdTeckit.Text);
+
+
 
                     dt.Clear();
                     dt = cu.Select_CustomertotalBAlance(Convert.ToInt32(Txt_IdCust.Text));
-                    decimal mno2 = Convert.ToDecimal(dt.Rows[0][0]) - Convert.ToDecimal(Txt_TotalBeforeTransfair.Text);
+                        decimal hr = Convert.ToDecimal(textBox2.Text) + Convert.ToDecimal(Txt_OldRentBeforeTransfair.Text);
+                    decimal mno2 = Convert.ToDecimal(dt.Rows[0][0]) - hr;
                     cu.Update_CustomerTotalBalance(Convert.ToInt32(Txt_IdCust.Text), mno2);
                     cu.Add_CustomerAccountStatment(Convert.ToInt32(Txt_IdCust.Text), Convert.ToDecimal(Txt_TotalBeforeTransfair.Text),
                     0, dateTimePicker1.Value, mno2, Convert.ToInt32(cmb_Stock.SelectedValue)
                     , txt_username.Text, Convert.ToInt32(comboBox1.SelectedValue), " إلغاء الفحص النقدى رقم" + " " + txt_IdTeckit.Text + " " + "وإسترداد المبلغ  المدفوع مسبقا بالكامل للعميل");
+                    }
 
                     dt.Clear();
                     dt = cu.Select_CustomertotalBAlance(Convert.ToInt32(Txt_IdCust.Text));
                     decimal mno3 = Convert.ToDecimal(dt.Rows[0][0]);
                     //cu.Update_CustomerTotalBalance(Convert.ToInt32(Txt_IdCust.Text), mno2);
-                    cu.Add_CustomerAccountStatment(Convert.ToInt32(Txt_IdCust.Text), Convert.ToDecimal(Txt_PayLast.Text),
+                    cu.Add_CustomerAccountStatment(Convert.ToInt32(Txt_IdCust.Text), Convert.ToDecimal(Txt_PricePayment.Text),
                    Convert.ToDecimal(Txt_PricePayment.Text), dateTimePicker1.Value, mno3, Convert.ToInt32(cmb_Stock.SelectedValue)
                     , txt_username.Text, Convert.ToInt32(comboBox1.SelectedValue), " تحويل الفحص  رقم" + " " + txt_IdTeckit.Text + " " + "إلى الشركة " +" "+ cmb_Company.Text );
-                    for (int i = 0; i < dataGridView2.Rows.Count; i++)
-                    {
-                        t.addticketsReturn(Convert.ToInt32(txt_IdTeckit.Text), Convert.ToInt32(cmb_Stock.SelectedValue), comboBox1.Text,
-                            txt_patientname.Text, "استرداد عربون الحجز للعميل وتحويله إلى شركة " +" "+cmb_Company.Text, dataGridView2.Rows[i].Cells[1].Value.ToString(), dateTimePicker1.Value
-                            , Convert.ToDecimal(textBox2.Text), textBox2.Text, Convert.ToDecimal(dataGridView2.Rows[i].Cells[2].Value), Convert.ToDecimal(Txt_PayLast.Text), txt_username.Text);
-                    }
-                    s.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(textBox2.Text), dateTimePicker1.Value, txt_username.Text, " سحب مبلغ " + " " + textBox2.Text + "مدفوع مسبقا للحجز  " + txt_IdTeckit.Text);
+                  
 
                 }
 
-                else if (Convert.ToDecimal(Txt_PricePayment.Text) > Convert.ToDecimal(Txt_PayLast.Text))
-
+                else if (Convert.ToDecimal(Txt_PricePayment.Text) > Convert.ToDecimal(Txt_PayLast.Text) - Convert.ToDecimal(Txt_LastPayOut.Text))
                 {
+                    if (Convert.ToDecimal(Txt_RentCustomer.Text)>0)
+                    {
 
+                    }
                     dt.Clear();
                     dt = cu.Select_CustomertotalBAlance(Convert.ToInt32(Txt_IdCust.Text));
                     decimal mno4 = Convert.ToDecimal(dt.Rows[0][0]) + Convert.ToDecimal(Txt_PayLast.Text);
@@ -335,19 +357,20 @@ namespace Laboratory.PL
 
                     dt.Clear();
                     dt = cu.Select_CustomertotalBAlance(Convert.ToInt32(Txt_IdCust.Text));
-                    decimal mn = Convert.ToDecimal(Txt_PricePayment) - Convert.ToDecimal(Txt_PayLast.Text);
-                    decimal mno3 = Convert.ToDecimal(dt.Rows[0][0])+mn;
+                    //decimal mn = Convert.ToDecimal(Txt_PricePayment) - Convert.ToDecimal(Txt_PayLast.Text);
+                    decimal mno3 = Convert.ToDecimal(dt.Rows[0][0])+ Convert.ToDecimal(Txt_RentCustomer.Text);
                     cu.Update_CustomerTotalBalance(Convert.ToInt32(Txt_IdCust.Text), mno3);
-                    cu.Add_CustomerAccountStatment(Convert.ToInt32(Txt_IdCust.Text), mn,
+                    cu.Add_CustomerAccountStatment(Convert.ToInt32(Txt_IdCust.Text), 0,
                    Convert.ToDecimal(Txt_PricePayment.Text), dateTimePicker1.Value, mno3, Convert.ToInt32(cmb_Stock.SelectedValue)
                     , txt_username.Text, Convert.ToInt32(comboBox1.SelectedValue), " تحويل الفحص  رقم" + " " + txt_IdTeckit.Text + " " + "إلى الشركة " + " " + cmb_Company.Text);
                 }
 
                 t.AddTransferForCompany(Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToDecimal(Txt_addtionPaymentrate.Text),
-                Convert.ToDecimal(Txt_PricePayment.Text), Convert.ToDecimal(Txt_Total.Text), Convert.ToDecimal(Txt_RentCustomer.Text),
+                Convert.ToDecimal(Txt_PricePayment.Text), Convert.ToDecimal(Txt_Total.Text), Convert.ToDecimal(Txt_LastPayOut.Text),
                 Convert.ToDecimal(Txt_RentCompany.Text), dateTimePicker1.Value, txt_reasonAddition.Text,
                 Convert.ToInt32(dataGridView2.Rows[0].Cells[0].Value), Convert.ToInt32(dataGridView1.Rows[0].Cells[0].Value),
                 txt_patientname.Text, Convert.ToInt32(cmb_Stock.SelectedValue), txt_username.Text, comboBox1.Text);
+                
                 dt.Clear();
                 dt = c.Select_CompanyTotalMoney(Convert.ToInt32(cmb_Company.SelectedValue));
                 decimal mno = Convert.ToDecimal(dt.Rows[0][0]) + Convert.ToDecimal(Txt_RentCompany.Text);
@@ -379,6 +402,59 @@ namespace Laboratory.PL
         private void label7_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Txt_addtionPaymentrate_Leave(object sender, EventArgs e)
+        {
+            if (Txt_addtionPaymentrate.Text=="")
+            {
+                Txt_addtionPaymentrate.Text = "0";
+            }
+            Patient_PaymentRate();
+            Rent_Company();
+            TotalRentCustomer();
+            //if (Convert.ToDecimal(Txt_PayLast.Text) > Convert.ToDecimal(Txt_PricePayment.Text))
+            //{
+            //    TotalRentCustomer();
+            //}
+            //else if (Convert.ToDecimal(Txt_PricePayment.Text) > Convert.ToDecimal(Txt_PayLast.Text))
+            //{
+            //    textBox2.Text = "0";
+            //}
+        }
+
+        private void Txt_addtionPaymentrate_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (Txt_addtionPaymentrate.Text == "")
+            {
+                Txt_addtionPaymentrate.Text = "0";
+            }
+            Patient_PaymentRate();
+            Rent_Company();
+            TotalRentCustomer();
+            //if (Convert.ToDecimal(Txt_PayLast.Text) > Convert.ToDecimal(Txt_PricePayment.Text))
+            //{
+            //    TotalRentCustomer();
+            //}
+            //else if (Convert.ToDecimal(Txt_PricePayment.Text) > Convert.ToDecimal(Txt_PayLast.Text))
+            //{
+            //    textBox2.Text = "0";
+            //}
+        }
+
+        private void label28_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_reasonAddition_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Txt_addtionPaymentrate_Click(object sender, EventArgs e)
+        {
+            Txt_addtionPaymentrate.SelectAll();
         }
     }
 }
