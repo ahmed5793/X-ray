@@ -1557,13 +1557,20 @@ namespace Laboratory.PL
                 //sr.documentViewer1.DocumentSource = rb;
                 rb.Parameters["idTicket"].Visible = false;
 
-                System.Drawing.Printing.PrintDocument printDocuments = new System.Drawing.Printing.PrintDocument();
-              
-                //rb.PrinterName= printDocuments.PrinterSettings.PrinterName;
 
-                rb.PrintingSystem.ExportOptions.PrintPreview.DefaultFileName = printDocuments.DocumentName = Properties.Settings.Default.PrintNameBarcode;
-            
-                rb.Print();
+                string printerName = Properties.Settings.Default.PrintNameBarcode;
+
+
+
+
+                //Specify the printer name.
+                rb.PrinterName = printerName;
+
+                //Create the document.
+                rb.CreateDocument();
+
+                ReportPrintTool pt = new ReportPrintTool(rb);
+                pt.Print();
 
 
                 //sr.ShowDialog();

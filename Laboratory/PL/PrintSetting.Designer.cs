@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrintSetting));
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lable1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.cmb_barcode = new System.Windows.Forms.ComboBox();
             this.cmb_invoice = new System.Windows.Forms.ComboBox();
@@ -48,17 +48,17 @@
             this.bunifuCustomLabel1.TabIndex = 2;
             this.bunifuCustomLabel1.Text = "طابعه الباركود";
             // 
-            // bunifuCustomLabel2
+            // lable1
             // 
-            this.bunifuCustomLabel2.AutoSize = true;
-            this.bunifuCustomLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Droid Arabic Kufi", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.White;
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(365, 132);
-            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(150, 36);
-            this.bunifuCustomLabel2.TabIndex = 3;
-            this.bunifuCustomLabel2.Text = "طابعه الفاتورة";
+            this.lable1.AutoSize = true;
+            this.lable1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lable1.Font = new System.Drawing.Font("Droid Arabic Kufi", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lable1.ForeColor = System.Drawing.Color.White;
+            this.lable1.Location = new System.Drawing.Point(365, 132);
+            this.lable1.Name = "lable1";
+            this.lable1.Size = new System.Drawing.Size(150, 36);
+            this.lable1.TabIndex = 3;
+            this.lable1.Text = "طابعه الفاتورة";
             // 
             // simpleButton1
             // 
@@ -111,7 +111,7 @@
             this.Controls.Add(this.cmb_invoice);
             this.Controls.Add(this.cmb_barcode);
             this.Controls.Add(this.simpleButton1);
-            this.Controls.Add(this.bunifuCustomLabel2);
+            this.Controls.Add(this.lable1);
             this.Controls.Add(this.bunifuCustomLabel1);
             this.Name = "PrintSetting";
             this.Text = "PrintSetting";
@@ -123,7 +123,7 @@
 
         #endregion
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
+        private Bunifu.Framework.UI.BunifuCustomLabel lable1;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         public System.Windows.Forms.ComboBox cmb_barcode;
         public System.Windows.Forms.ComboBox cmb_invoice;

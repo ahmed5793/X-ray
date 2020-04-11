@@ -44,20 +44,20 @@ namespace Laboratory.PL
             try
             {
                 dt10.Clear();
-            dt10 = u.SelectUserBranch(txt_username.Text);
+                dt10 = u.SelectUserBranch(txt_username.Text);
 
-            if (dt10.Rows.Count > 0)
-            {
-                cmb_branches.DataSource = u.SelectUserBranch(txt_username.Text);
-                cmb_branches.DisplayMember = "Name";
-                cmb_branches.ValueMember = "Branch_ID";
-            }
-            else
-            {
-                cmb_branches.DataSource = b.SelectCompBranches();
-                cmb_branches.DisplayMember = "Name";
-                cmb_branches.ValueMember = "Branch_ID";
-            }
+                if (dt10.Rows.Count > 0)
+                {
+                    cmb_branches.DataSource = u.SelectUserBranch(txt_username.Text);
+                    cmb_branches.DisplayMember = "Name";
+                    cmb_branches.ValueMember = "Branch_ID";
+                }
+                else
+                {
+                    cmb_branches.DataSource = b.SelectCompBranches();
+                    cmb_branches.DisplayMember = "Name";
+                    cmb_branches.ValueMember = "Branch_ID";
+                }
 
             }
             catch (Exception ex)
@@ -68,18 +68,18 @@ namespace Laboratory.PL
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {           
+        {
             label2.Hide();
             label3.Hide();
             FromDate.Hide();
             ToDate.Hide();
         }
 
-       
+
         private void simpleButton1_Click(object sender, EventArgs e)
         {
 
-            gridControl1.DataSource = t.SelectSearchticketsBranchDate(Convert.ToInt32(cmb_branches.SelectedValue), FromDate.Value, ToDate.Value);  
+            gridControl1.DataSource = t.SelectSearchticketsBranchDate(Convert.ToInt32(cmb_branches.SelectedValue), FromDate.Value, ToDate.Value);
         }
         private void simpleButton2_Click(object sender, EventArgs e)
         {
@@ -153,7 +153,7 @@ namespace Laboratory.PL
         private void btn_save_Click(object sender, EventArgs e)
         {
             try
-            {               
+            {
                 Frm_DetailsTickets fd = new Frm_DetailsTickets();
                 if (gridView1.RowCount > 0)
                 {
@@ -261,7 +261,7 @@ namespace Laboratory.PL
                 MessageBox.Show(ex.StackTrace);
             }
         }
-       frm_SingelReport sr = new frm_SingelReport();
+        frm_SingelReport sr = new frm_SingelReport();
 
         private void btn_print_Click(object sender, EventArgs e)
         {
@@ -320,6 +320,20 @@ namespace Laboratory.PL
                         sr.documentViewer1.DocumentSource = oc;
                         oc.Parameters["idTicket"].Visible = false;
                         sr.documentViewer1.Enabled = true;
+
+                        //string printerName = Properties.Settings.Default.PrintNameInvoice;
+
+
+
+
+                        ////Specify the printer name.
+                        //oc.PrinterName = printerName;
+
+                        ////Create the document.
+                        //oc.CreateDocument();
+                     
+                      
+                      
                         sr.ShowDialog();
 
                     }
@@ -368,18 +382,33 @@ namespace Laboratory.PL
                     rb.DataSource = ds1;
                     rb.Parameters["idTicket"].Value = Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة").ToString());
 
-                   sr.documentViewer1.DocumentSource = rb;
+                    sr.documentViewer1.DocumentSource = rb;
                     rb.Parameters["idTicket"].Visible = false;
 
-                    System.Drawing.Printing.PrintDocument printDocuments = new System.Drawing.Printing.PrintDocument();
 
-              
-                   rb.PrintingSystem.ExportOptions.PrintPreview.DefaultFileName = printDocuments.DocumentName=Properties.Settings.Default.PrintNameBarcode;
-                    //rb.PrintingSystem.ExportOptions.PrintPreview.DefaultFileName =  Properties.Settings.Default.PrintNameBarcode;
 
-                    rb.Print();
-                    //sr.ShowDialog();
-                }
+        string printerName = Properties.Settings.Default.PrintNameBarcode;
+       
+        
+    
+
+            //Specify the printer name.
+            rb.PrinterName = printerName;
+
+            //Create the document.
+            rb.CreateDocument();
+
+            ReportPrintTool pt = new ReportPrintTool(rb);
+            pt.Print();
+                  
+                
+                 
+
+
+
+
+          
+        }
             }
             catch (Exception ex)
             {

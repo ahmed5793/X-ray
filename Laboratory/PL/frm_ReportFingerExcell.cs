@@ -82,7 +82,7 @@ namespace Laboratory.PL
           
 
         }
-        void year()
+     public   void year()
         {
             for (int i = 2020; i <= DateTime.Now.Year; i++)
             {
@@ -92,7 +92,7 @@ namespace Laboratory.PL
 
             }
         }
-        void monthe()
+     public   void monthe()
         {
             this.cmb_month.DisplayMember = "Text";
             this.cmb_month.ValueMember = "Value";
@@ -126,21 +126,27 @@ namespace Laboratory.PL
             DataTable dt = new DataTable();
             DataTable dt2 = new DataTable();
             dt.Columns.Add("التاريخ");
+
             dt.Columns.Add("اليوم");
 
             dt.Columns.Add("حضور");
             dt.Columns.Add("انصراف");
+            dt.Columns.Add("عدد ساعات العمل");
 
 
             int day = DateTime.DaysInMonth(Convert.ToInt32(cmb_year.Text), Convert.ToInt32(cmb_month.SelectedValue));
             for (int i = 0; i < day; i++)
             {
                 DateTime daydate = new DateTime(int.Parse(year), int.Parse(month), i + 1);
-
+            
                 dt2.Clear();
                 dt2 = F.AttendanceExcell(Convert.ToInt32(cmb_clients.SelectedValue), daydate, Convert.ToInt32(cmb_user_branch.SelectedValue));
+           
 
-                dt.Rows.Add(daydate.ToString("dd-MM-yyyy"), daydate.ToString("dddd"), dt2.Rows[0][0], dt2.Rows[0][1]);
+
+                dt.Rows.Add(daydate.ToString("dd-MM-yyyy"), daydate.ToString("dddd"), dt2.Rows[0][0], dt2.Rows[0][1], dt2.Rows[0][2]);
+
+
 
 
 
@@ -159,7 +165,24 @@ namespace Laboratory.PL
         {
             //cmb_clients.SelectedIndex = -1;
         }
+        DataTable dt10 = new DataTable();
 
+   
+
+        private void TotalTimeInGridView()
+        {
+            TimeSpan Sum;
+            TimeSpan total = TimeSpan.Parse("0:0:0");
+            for (int i = 0; i < dataGridView1.Rows.Count; ++i)
+            {
+                string time = Convert.ToString(dataGridView1.Rows[i].Cells[4].Value);
+                Sum = TimeSpan.Parse(time);
+                total=total.Add(Sum);
+            }
+            label3.Text = total.ToString();
+
+       
+        }
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
@@ -179,16 +202,33 @@ namespace Laboratory.PL
 
                 if (rdb_monthe.Checked == true)
                 {
-
+                    label1.Show();
+                    label2.Show();
+                    label3.Show();
+                    label4.Show();
                     if (cmb_clients.Text == "")
                     {
                         MessageBox.Show("من فضلك قم بااختيار اسم الموظف");
                         return;
 
                     }
+                    int day = DateTime.DaysInMonth(Convert.ToInt32(cmb_year.Text), Convert.ToInt32(cmb_month.SelectedValue));
+                    for (int i = 0; i < day; i++)
+                    {
+                        DateTime daydate = new DateTime(int.Parse(cmb_year.Text), Convert.ToInt32(cmb_month.SelectedValue), i + 1);
 
-                    DataTable dt10 = new DataTable();
 
+
+
+                        DataTable dt5 = new DataTable();
+                        dt5.Clear();
+                        dt5 = F.VildateAttendanceExcell(daydate, Convert.ToInt32(cmb_user_branch.SelectedValue));
+                        if (dt5.Rows.Count == 0)
+                        {
+                            MessageBox.Show("  لا يوجد حضور وانصراف لهذا الموظف في هذا الشهر");
+                            return;
+                        }
+                    }
 
                     dt10.Clear();
                     dt10 = getatt(Convert.ToInt32(cmb_clients.SelectedValue), cmb_year.Text, cmb_month.SelectedValue.ToString());
@@ -212,33 +252,51 @@ namespace Laboratory.PL
                                     dataGridView1.Rows[n].Cells[1].Value = dt10.Rows[i][1].ToString();
                                     dataGridView1.Rows[n].Cells[2].Value = "غائب";
                                     dataGridView1.Rows[n].Cells[3].Value = "غائب";
+                                dataGridView1.Rows[n].Cells[4].Value = "00:00:00";
+
                                 dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.Black;
                                 dataGridView1.Rows[i].DefaultCellStyle.ForeColor = Color.Yellow;
 
+                              
+
+
+
 
                             }
-                                else
-                                {
+                            else
+                            {
                                     n = dataGridView1.Rows.Add();
                                     dataGridView1.Rows[n].Cells[0].Value = dt10.Rows[i][0].ToString();
                                     dataGridView1.Rows[n].Cells[1].Value = dt10.Rows[i][1].ToString();
                                     dataGridView1.Rows[n].Cells[2].Value = dt10.Rows[i][2].ToString();
                                     dataGridView1.Rows[n].Cells[3].Value = dt10.Rows[i][3].ToString();
-                                }
+                                dataGridView1.Rows[n].Cells[4].Value = dt10.Rows[i][4].ToString();
 
-                          
-
+                                TotalTimeInGridView();
+                            }
+                           
 
                         }
-
+                               
 
                     }
-                 
 
 
                 }
+                 
+
+
+                
                 else if (rdb_day.Checked==true)
                 {
+
+                    label1.Hide();
+                    label2.Hide();
+                    label3.Hide();
+                    label4.Hide();
+
+
+
                     dataGridView2.DataSource = f.SelectAllAttendanceExcell(Convert.ToDateTime(DateFrom.Value.ToShortDateString()), Convert.ToInt32(cmb_user_branch.SelectedValue));
                 }
 
