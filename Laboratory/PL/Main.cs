@@ -1005,7 +1005,16 @@ namespace Laboratory.PL
 
         private void Data_Redvelation_ItemClick(object sender, ItemClickEventArgs e)
         {
-            
+            try
+            {
+                Frm_DataRevaltionTicket dts = new Frm_DataRevaltionTicket();
+                dts.Show();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
 
         }
 
