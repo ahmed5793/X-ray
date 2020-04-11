@@ -287,6 +287,8 @@ namespace Laboratory.RPT.Order {
             
             private global::System.Data.DataColumn columnatt_Out;
             
+            private global::System.Data.DataColumn columnCountTimeWOrks;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public DataTable1DataTable() {
@@ -354,6 +356,14 @@ namespace Laboratory.RPT.Order {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CountTimeWOrksColumn {
+                get {
+                    return this.columnCountTimeWOrks;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -389,13 +399,14 @@ namespace Laboratory.RPT.Order {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DataTable1Row AddDataTable1Row(string DATE, string DAY, string att_in, string att_Out) {
+            public DataTable1Row AddDataTable1Row(string DATE, string DAY, string att_in, string att_Out, string CountTimeWOrks) {
                 DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         DATE,
                         DAY,
                         att_in,
-                        att_Out};
+                        att_Out,
+                        CountTimeWOrks};
                 rowDataTable1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable1Row);
                 return rowDataTable1Row;
@@ -422,6 +433,7 @@ namespace Laboratory.RPT.Order {
                 this.columnDAY = base.Columns["DAY"];
                 this.columnatt_in = base.Columns["att_in"];
                 this.columnatt_Out = base.Columns["att_Out"];
+                this.columnCountTimeWOrks = base.Columns["CountTimeWOrks"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -435,6 +447,8 @@ namespace Laboratory.RPT.Order {
                 base.Columns.Add(this.columnatt_in);
                 this.columnatt_Out = new global::System.Data.DataColumn("att_Out", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnatt_Out);
+                this.columnCountTimeWOrks = new global::System.Data.DataColumn("CountTimeWOrks", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCountTimeWOrks);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -641,6 +655,22 @@ namespace Laboratory.RPT.Order {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string CountTimeWOrks {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.CountTimeWOrksColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CountTimeWOrks\' in table \'DataTable1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.CountTimeWOrksColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsDATENull() {
                 return this.IsNull(this.tableDataTable1.DATEColumn);
             }
@@ -685,6 +715,18 @@ namespace Laboratory.RPT.Order {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setatt_OutNull() {
                 this[this.tableDataTable1.att_OutColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsCountTimeWOrksNull() {
+                return this.IsNull(this.tableDataTable1.CountTimeWOrksColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetCountTimeWOrksNull() {
+                this[this.tableDataTable1.CountTimeWOrksColumn] = global::System.Convert.DBNull;
             }
         }
         

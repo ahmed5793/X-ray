@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.CodeParser;
 using Laboratory.BL;
 using Laboratory.RPT.Order;
 using Laboratory.RPT_Order;
@@ -144,7 +145,7 @@ namespace Laboratory.PL
            
 
 
-                dt.Rows.Add(daydate.ToString("dd-MM-yyyy"), daydate.ToString("dddd"), dt2.Rows[0][0], dt2.Rows[0][1], dt2.Rows[0][2]);
+                dt.Rows.Add(daydate.ToString("dd-MM-yyyy"), daydate.ToString("dddd"), dt2.Rows[0][0], dt2.Rows[0][1],dt2.Rows[0][2]);
 
 
 
@@ -171,17 +172,19 @@ namespace Laboratory.PL
 
         private void TotalTimeInGridView()
         {
-            TimeSpan Sum;
-            TimeSpan total = TimeSpan.Parse("0:0:0");
-            for (int i = 0; i < dataGridView1.Rows.Count; ++i)
-            {
-                string time = Convert.ToString(dataGridView1.Rows[i].Cells[4].Value);
-                Sum = TimeSpan.Parse(time);
-                total=total.Add(Sum);
-            }
-            label3.Text = total.ToString();
+            //TimeSpan Sum;
+            //TimeSpan total = TimeSpan.Parse("00:00:00");
+            //for (int i = 0; i < dataGridView1.Rows.Count; ++i)
+            //{
+            //    string time = Convert.ToString(dataGridView1.Rows[i].Cells[4].Value);
+            //    Sum = TimeSpan.Parse(time);
+            //    total=total.Add(Sum);
+            //}
+            //label3.Text = total.ToString();
 
-       
+           
+
+
         }
         private void simpleButton1_Click(object sender, EventArgs e)
         {
@@ -202,10 +205,7 @@ namespace Laboratory.PL
 
                 if (rdb_monthe.Checked == true)
                 {
-                    label1.Show();
-                    label2.Show();
-                    label3.Show();
-                    label4.Show();
+                   
                     if (cmb_clients.Text == "")
                     {
                         MessageBox.Show("من فضلك قم بااختيار اسم الموظف");
@@ -252,9 +252,9 @@ namespace Laboratory.PL
                                     dataGridView1.Rows[n].Cells[1].Value = dt10.Rows[i][1].ToString();
                                     dataGridView1.Rows[n].Cells[2].Value = "غائب";
                                     dataGridView1.Rows[n].Cells[3].Value = "غائب";
-                                dataGridView1.Rows[n].Cells[4].Value = "00:00:00";
+                                dataGridView1.Rows[n].Cells[4].Value ="00:00:00";
 
-                                dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.Black;
+                        dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.Black;
                                 dataGridView1.Rows[i].DefaultCellStyle.ForeColor = Color.Yellow;
 
                               
@@ -270,9 +270,8 @@ namespace Laboratory.PL
                                     dataGridView1.Rows[n].Cells[1].Value = dt10.Rows[i][1].ToString();
                                     dataGridView1.Rows[n].Cells[2].Value = dt10.Rows[i][2].ToString();
                                     dataGridView1.Rows[n].Cells[3].Value = dt10.Rows[i][3].ToString();
-                                dataGridView1.Rows[n].Cells[4].Value = dt10.Rows[i][4].ToString();
+                                dataGridView1.Rows[n].Cells[4].Value =dt10.Rows[i][4].ToString();
 
-                                TotalTimeInGridView();
                             }
                            
 
@@ -290,10 +289,7 @@ namespace Laboratory.PL
                 else if (rdb_day.Checked==true)
                 {
 
-                    label1.Hide();
-                    label2.Hide();
-                    label3.Hide();
-                    label4.Hide();
+                  
 
 
 
@@ -420,7 +416,7 @@ namespace Laboratory.PL
 
 
                             ds1.Tables["DataTable1"].Rows.Add(dataGridView1.Rows[i].Cells[0].Value.ToString(), dataGridView1.Rows[i].Cells[1].Value.ToString(),
-                            dataGridView1.Rows[i].Cells[2].Value.ToString(), dataGridView1.Rows[i].Cells[3].Value.ToString());
+                            dataGridView1.Rows[i].Cells[2].Value.ToString(), dataGridView1.Rows[i].Cells[3].Value.ToString(), dataGridView1.Rows[i].Cells[4].Value.ToString());
 
 
 
@@ -433,7 +429,7 @@ namespace Laboratory.PL
                         rf.DataSource = ds1;
                         rf.Parameters["Date"].Value = cmb_year.Text + "/" + cmb_month.Text;
                         rf.Parameters["ID"].Value = Convert.ToInt32(cmb_clients.SelectedValue);
-                        rf.Parameters["idbranch"].Value = Convert.ToInt32(cmb_user_branch.SelectedValue);
+                        rf.Parameters["idbranch"].Value = cmb_user_branch.Text;
                         rf.Parameters["NameEmployee"].Value = cmb_clients.Text;
                         rf.Parameters["UserName"].Value = Program.salesman;
 
@@ -455,7 +451,7 @@ namespace Laboratory.PL
                     if (dataGridView2.Rows.Count > 0)
                     {
 
-
+                        
                         DataSetFingerExcelDay ds = new DataSetFingerExcelDay();
                         RPT_FingerExcellDay rd = new RPT_FingerExcellDay();
                         frm_SingelReport sr = new frm_SingelReport();

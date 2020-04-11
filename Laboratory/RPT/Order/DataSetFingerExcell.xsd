@@ -12,13 +12,14 @@
   <xs:element name="DataSetFingerExcell" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetFingerExcell" msprop:Generator_UserDSName="DataSetFingerExcell">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="DATE" msprop:Generator_ColumnVarNameInTable="columnDATE" msprop:Generator_ColumnPropNameInRow="DATE" msprop:Generator_ColumnPropNameInTable="DATEColumn" msprop:Generator_UserColumnName="DATE" type="xs:string" minOccurs="0" />
               <xs:element name="DAY" msprop:Generator_ColumnVarNameInTable="columnDAY" msprop:Generator_ColumnPropNameInRow="DAY" msprop:Generator_ColumnPropNameInTable="DAYColumn" msprop:Generator_UserColumnName="DAY" type="xs:string" minOccurs="0" />
               <xs:element name="att_in" msprop:Generator_ColumnVarNameInTable="columnatt_in" msprop:Generator_ColumnPropNameInRow="att_in" msprop:Generator_ColumnPropNameInTable="att_inColumn" msprop:Generator_UserColumnName="att_in" type="xs:string" minOccurs="0" />
               <xs:element name="att_Out" msprop:Generator_ColumnVarNameInTable="columnatt_Out" msprop:Generator_ColumnPropNameInRow="att_Out" msprop:Generator_ColumnPropNameInTable="att_OutColumn" msprop:Generator_UserColumnName="att_Out" type="xs:string" minOccurs="0" />
+              <xs:element name="CountTimeWOrks" msprop:Generator_ColumnVarNameInTable="columnCountTimeWOrks" msprop:Generator_ColumnPropNameInRow="CountTimeWOrks" msprop:Generator_ColumnPropNameInTable="CountTimeWOrksColumn" msprop:Generator_UserColumnName="CountTimeWOrks" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

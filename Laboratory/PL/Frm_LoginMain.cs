@@ -30,27 +30,34 @@ namespace Laboratory.PL
         Main fm = new Main();
         public Frm_LoginMain()
         {
+            try
+            {
+
+            
+
 
             Thread th = new Thread(new ThreadStart(startForm));
             th.Start();
             Thread.Sleep(5000);
             InitializeComponent();
-         
+
             th.Abort();
-       
+            this.BringToFront();
+        }
+              catch (Exception)
+            {
+
+                
+            }
+
         }
     
         public void startForm()
         {
-            try
-            {
+           
                 Application.Run(new SplashScreen1());
-            }
-            catch (Exception ex)
-            {
-               
-                
-            }
+            
+         
            
         }
         private void txt_User_Leave(object sender, EventArgs e)
