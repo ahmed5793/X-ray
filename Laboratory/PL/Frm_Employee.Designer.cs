@@ -154,7 +154,7 @@
             this.txt_search.Location = new System.Drawing.Point(295, 19);
             this.txt_search.Name = "txt_search";
             this.txt_search.Size = new System.Drawing.Size(262, 32);
-            this.txt_search.TabIndex = 0;
+            this.txt_search.TabIndex = 50;
             this.txt_search.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_search.TextChanged += new System.EventHandler(this.txt_search_TextChanged);
             // 
@@ -324,6 +324,7 @@
             this.Txt_Salary.TextChanged += new System.EventHandler(this.Txt_Salary_TextChanged);
             this.Txt_Salary.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Salary_KeyPress);
             this.Txt_Salary.Leave += new System.EventHandler(this.Txt_Salary_Leave);
+            this.Txt_Salary.MouseLeave += new System.EventHandler(this.Txt_Salary_MouseLeave);
             // 
             // btn_GenderJob
             // 
@@ -400,9 +401,9 @@
             this.Btn_New.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_New.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.Btn_New.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_New.ImageOptions.Image")));
-            this.Btn_New.Location = new System.Drawing.Point(609, 186);
+            this.Btn_New.Location = new System.Drawing.Point(636, 192);
             this.Btn_New.Name = "Btn_New";
-            this.Btn_New.Size = new System.Drawing.Size(129, 32);
+            this.Btn_New.Size = new System.Drawing.Size(152, 32);
             this.Btn_New.TabIndex = 180;
             this.Btn_New.Text = "تسجيل جديد";
             this.Btn_New.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -421,9 +422,9 @@
             this.Btn_Update.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_Update.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.Btn_Update.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Update.ImageOptions.Image")));
-            this.Btn_Update.Location = new System.Drawing.Point(232, 187);
+            this.Btn_Update.Location = new System.Drawing.Point(164, 192);
             this.Btn_Update.Name = "Btn_Update";
-            this.Btn_Update.Size = new System.Drawing.Size(129, 32);
+            this.Btn_Update.Size = new System.Drawing.Size(149, 32);
             this.Btn_Update.TabIndex = 179;
             this.Btn_Update.Text = "تعديل بيانات ";
             this.Btn_Update.Click += new System.EventHandler(this.simpleButton2_Click);
@@ -442,9 +443,9 @@
             this.Btn_Add.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_Add.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.Btn_Add.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Add.ImageOptions.Image")));
-            this.Btn_Add.Location = new System.Drawing.Point(424, 187);
+            this.Btn_Add.Location = new System.Drawing.Point(404, 192);
             this.Btn_Add.Name = "Btn_Add";
-            this.Btn_Add.Size = new System.Drawing.Size(129, 32);
+            this.Btn_Add.Size = new System.Drawing.Size(148, 32);
             this.Btn_Add.TabIndex = 178;
             this.Btn_Add.Text = "حفظ";
             this.Btn_Add.Click += new System.EventHandler(this.Btn_Add_Click);

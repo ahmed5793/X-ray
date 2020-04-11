@@ -27,25 +27,26 @@ namespace Laboratory.PL
         {
             try
             {
+                txt_name.Focus();
 
                 cmb_Stock.DataSource = s.select_Stock();
                 cmb_Stock.DisplayMember = "إسم الخزنة";
                 cmb_Stock.ValueMember = "رقم الخزنة";
+                cmb_Stock.SelectedIndex = -1;
 
                 cmb_store.DataSource = st.Select_ComboStore();
                 cmb_store.DisplayMember = "Store_name";
                 cmb_store.ValueMember = "id_store";
+                cmb_store.SelectedIndex = -1;
+
                 dataGridView1.DataSource = b.SelectBranches();
                 Btn_Update.Enabled = false;
                 dataGridView1.Columns[0].Visible = false;
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
-            }
-
-        
+            }        
         }
         private void Frm_Branches_Load(object sender, EventArgs e)
         {
@@ -70,14 +71,21 @@ namespace Laboratory.PL
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
-            if (dataGridView1.Rows.Count>0)
+            try
             {
+              if (dataGridView1.Rows.Count>0)
+              {
                 Btn_Update.Enabled = true;
+                Btn_Add.Enabled = false;
                 txt_name.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                 txt_address.Text= dataGridView1.CurrentRow.Cells[2].Value.ToString();
                 cmb_Stock.Text= dataGridView1.CurrentRow.Cells[3].Value.ToString();
                 cmb_store.Text= dataGridView1.CurrentRow.Cells[4].Value.ToString();
-
+              }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -91,17 +99,16 @@ namespace Laboratory.PL
             txt_address.Clear();
             txt_name.Clear();
             Btn_Update.Enabled = false;
+            Btn_Add.Enabled = true;
+            cmb_Stock.SelectedIndex = -1;
+            cmb_store.SelectedIndex = -1;
         }
 
         private void Btn_Add_Click(object sender, EventArgs e)
         {
             try
             {
-                if (dataGridView1.Rows.Count>3)
-                {
-                    MessageBox.Show("ليس لديك صلاحية ان تضيف اكتر من ثلاث فروع الرجاء الرجوع الي مسئول النظام");
-                    return;
-                }
+               
                 if (txt_name.Text == "")
                 {
                     MessageBox.Show("عزيزى المستخدم قم باادخال اسم الفرع");
@@ -117,6 +124,11 @@ namespace Laboratory.PL
                     MessageBox.Show("عزيزى المستخدم قمبااختيار اسم المخزن");
                     return;
                 }
+                if (dataGridView1.Rows.Count >= 3)
+                {
+                    MessageBox.Show("ليس لديك صلاحية ان تضيف اكتر من ثلاث فروع الرجاء الرجوع الي مسئول النظام");
+                    return;
+                }
                 else
                 {
                     b.AddBranches(txt_name.Text, txt_address.Text, Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToInt32(cmb_store.SelectedValue));
@@ -125,6 +137,7 @@ namespace Laboratory.PL
                     txt_name.Clear();
                     dataGridView1.DataSource = b.SelectBranches();               
                     Btn_Update.Enabled = false;
+                    txt_name.Focus();
                 }
             }
             catch (Exception ex )
@@ -144,24 +157,33 @@ namespace Laboratory.PL
                 }
                 if (cmb_Stock.Text == "")
                 {
-                    MessageBox.Show("عزيزى المستخدم قم بااختياراسم الخزنة");
+                    MessageBox.Show("عزيزى المستخدم قم بااختيار اسم الخزنة");
                     return;
                 }
                 if (cmb_store.Text == "")
                 {
-                    MessageBox.Show("عزيزى المستخدم قمبااختيار اسم المخزن");
+                    MessageBox.Show("عزيزى المستخدم قم بااختيار اسم المخزن");
                     return;
                 }
-                else
+                if (MessageBox.Show("هل تريد تعديل البيانات ", "عملية التعديل", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
+
                     b.UpdateBranches(txt_name.Text, txt_address.Text, Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToInt32(cmb_store.SelectedValue),
                         Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
                     MessageBox.Show("تم التعديل بنجاح");
+
+                }
+                else
+                {
+                    MessageBox.Show("تم إلغاء التعديل ");
+                }
+
                     txt_address.Clear();
                     txt_name.Clear();
                     dataGridView1.DataSource = b.SelectBranches();                
                     Btn_Update.Enabled = false;
-                }
+                    Btn_Add.Enabled = true;
+                    txt_name.Focus();
             }
             catch (Exception ex)
             {

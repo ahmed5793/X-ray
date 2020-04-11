@@ -38,6 +38,7 @@ namespace Laboratory.PL
         public Frm_Employee()
         {
             InitializeComponent();
+            txt_name.Focus() ;
             if (farm == null)
             {
                 farm = this;
@@ -49,15 +50,17 @@ namespace Laboratory.PL
             try
             {
                 clears();
+                dateTimePicker1.Value = DateTime.Now;
                 dataGridView1.DataSource = E.SelectEmployee();
 
                 cmb_department.DataSource = E.SelectEmpRoleCompo();
                 cmb_department.DisplayMember = "Roles";
                 cmb_department.ValueMember = "ID_EmpRole";
-
+                cmb_department.SelectedIndex = -1;
                 cmb_branch.DataSource = b.SelectCompBranches();
                 cmb_branch.DisplayMember = "Name";
                 cmb_branch.ValueMember = "Branch_ID";
+                cmb_branch.SelectedIndex = -1;
             }
             catch (Exception ex)
             {
@@ -77,6 +80,10 @@ namespace Laboratory.PL
             checkBox1.Checked = false;
             cmb_branch.Enabled = false;
             cmb_branch.SelectedIndex = -1;
+            comboBox1.SelectedIndex = -1;
+            cmb_department.SelectedIndex = -1;
+            Txt_Salary.Hide();
+            txt_name.Focus();
         }
         private void btn_GenderJob_Click(object sender, EventArgs e)
         {
@@ -230,28 +237,35 @@ namespace Laboratory.PL
                 if (comboBox1.Text == "")
                 {
                     MessageBox.Show("من فضلك قم بااختيار نوع الراتب");
+                    
                     return;
                 }
 
                 if (txt_name.Text == "")
                 {
                     MessageBox.Show("من فضلك قم بكتابة اسم الموظف");
+                    txt_name.Focus();
                     return;
                 }
 
                 if (cmb_department.Text == "")
                 {
                     MessageBox.Show("من فضلك قم بااختيار التخصص");
+                    cmb_department.Focus();
                     return;
 
                 }
-                if (Txt_Salary.Text == "")
+                if (comboBox1.Text=="مرتب شهرى")
+                {
+
+                if (Txt_Salary.Text == "" || Txt_Salary.Text=="0")
                 {
                     MessageBox.Show("من فضلك قم بتحديد المرتب");
                     Txt_Salary.Focus();
                     return;
                 }
-              
+
+                }
                 else
                 {
                     E.AddEmployee(txt_name.Text, Convert.ToDecimal(Txt_Salary.Text), comboBox1.Text,
@@ -275,7 +289,7 @@ namespace Laboratory.PL
                  
                   
 
-                    MessageBox.Show("تم تسجيل الموظف بنجاح");
+                    MessageBox.Show("تم حفظ بيانات الموظف بنجاح");
                     clears();
                     dataGridView1.DataSource = E.SelectEmployee();
                 }
@@ -305,7 +319,15 @@ namespace Laboratory.PL
                     MessageBox.Show("من فضلك قم بااختيار التخصص");
                     return;
                 }
-              
+                if (comboBox1.Text == "مرتب شهرى")
+                {
+                    if (Txt_Salary.Text == "" || Txt_Salary.Text == "0")
+                    {
+                        MessageBox.Show("من فضلك قم بتحديد المرتب");
+                        Txt_Salary.Focus();
+                        return;
+                    }
+                }
                 else
                 {
                     E.UpdateEmployee(txt_name.Text, Convert.ToDecimal(Txt_Salary.Text), comboBox1.Text,
@@ -358,13 +380,15 @@ namespace Laboratory.PL
             if (checkBox1.Checked==true)
             {
                 cmb_branch.Enabled = true;
+
                 //cmb_branch.DataSource = b.SelectCompBranches();
             }
             else if(checkBox1.Checked==false)
             {
                 cmb_branch.Enabled = false;
-                cmb_branch.SelectedIndex = -1;
             }
+            cmb_branch.SelectedIndex = -1;
+
         }
 
         private void Txt_Salary_Leave(object sender, EventArgs e)
@@ -374,20 +398,18 @@ namespace Laboratory.PL
                 Txt_Salary.Text = "0";
             }
         }
-
         private void Txt_Salary_TextChanged(object sender, EventArgs e)
+        {         
+        }
+        private void Txt_Salary_Click(object sender, EventArgs e)
+        {           
+            Txt_Salary.SelectAll();           
+        }
+        private void Txt_Salary_MouseLeave(object sender, EventArgs e)
         {
-            if (Txt_Salary.Text=="")
+            if (Txt_Salary.Text == "")
             {
                 Txt_Salary.Text = "0";
-            }
-        }
-
-        private void Txt_Salary_Click(object sender, EventArgs e)
-        {
-            if (Txt_Salary.Text == "0")
-            {
-                Txt_Salary.Text = "";
             }
         }
     }
