@@ -60,6 +60,7 @@
             this.cmb_Company.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmb_Company.Size = new System.Drawing.Size(312, 27);
             this.cmb_Company.TabIndex = 121;
+            this.cmb_Company.SelectedIndexChanged += new System.EventHandler(this.cmb_Company_SelectedIndexChanged);
             this.cmb_Company.SelectionChangeCommitted += new System.EventHandler(this.cmb_Company_SelectionChangeCommitted);
             this.cmb_Company.Leave += new System.EventHandler(this.cmb_Company_Leave);
             // 

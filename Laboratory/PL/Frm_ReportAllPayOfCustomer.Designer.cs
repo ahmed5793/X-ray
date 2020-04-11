@@ -88,6 +88,7 @@
             this.comboBox2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.comboBox2.Size = new System.Drawing.Size(298, 27);
             this.comboBox2.TabIndex = 120;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             this.comboBox2.SelectionChangeCommitted += new System.EventHandler(this.comboBox2_SelectionChangeCommitted);
             this.comboBox2.Leave += new System.EventHandler(this.comboBox2_Leave);
             // 
@@ -227,7 +228,7 @@
             this.Btn_Print.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_Print.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.Btn_Print.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Print.ImageOptions.Image")));
-            this.Btn_Print.Location = new System.Drawing.Point(228, 465);
+            this.Btn_Print.Location = new System.Drawing.Point(289, 466);
             this.Btn_Print.Name = "Btn_Print";
             this.Btn_Print.Size = new System.Drawing.Size(146, 32);
             this.Btn_Print.TabIndex = 171;

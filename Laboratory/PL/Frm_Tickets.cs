@@ -164,13 +164,11 @@ namespace Laboratory.PL
 
                 Txt_addtionPayment.Enabled = false;
                 Txt_rentCompany.Enabled = false;
-
                 CategoryXraya();
                 SelectdataTable();
-
                 rezizse();
-                //txt_idcust.Hide();
-                //txt_IdTicket.Hide();
+                txt_idcust.Hide();
+                txt_IdTicket.Hide();
                 totalOrder();
                 DoctorOfCenter();
                 Techincal();

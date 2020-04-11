@@ -27,6 +27,7 @@ namespace Laboratory.PL
                 comboBox2.DataSource = C.SelectCompoCustomerN2dy();
                 comboBox2.DisplayMember = "Cust_Name";
                 comboBox2.ValueMember = "Cust_ID";
+                comboBox2.SelectedIndex = -1;
                 gridControl1.DataSource = C.Select_AllPayCustomer(Convert.ToInt32(comboBox2.SelectedValue));
                 dt5.Clear();
                 dt5 = C.Select_CustomertotalBAlance(Convert.ToInt32(comboBox2.SelectedValue));
@@ -74,10 +75,19 @@ namespace Laboratory.PL
         }
         private void comboBox2_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            gridControl1.DataSource = C.Select_AllPayCustomer(Convert.ToInt32(comboBox2.SelectedValue));
-            dt5.Clear();
-            dt5 = C.Select_CustomertotalBAlance(Convert.ToInt32(comboBox2.SelectedValue));
-            textBox1.Text = dt5.Rows[0][0].ToString();
+            try
+            {
+
+                gridControl1.DataSource = C.Select_AllPayCustomer(Convert.ToInt32(comboBox2.SelectedValue));
+                dt5.Clear();
+                dt5 = C.Select_CustomertotalBAlance(Convert.ToInt32(comboBox2.SelectedValue));
+                textBox1.Text = dt5.Rows[0][0].ToString();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -115,6 +125,23 @@ namespace Laboratory.PL
         private void Frm_ReportAllPayOfCustomer_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+
+                gridControl1.DataSource = C.Select_AllPayCustomer(Convert.ToInt32(comboBox2.SelectedValue));
+                dt5.Clear();
+                dt5 = C.Select_CustomertotalBAlance(Convert.ToInt32(comboBox2.SelectedValue));
+                textBox1.Text = dt5.Rows[0][0].ToString();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

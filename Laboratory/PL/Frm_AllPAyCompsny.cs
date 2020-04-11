@@ -44,6 +44,7 @@ namespace Laboratory.PL
             cmb_Company.DataSource = cm.SelectCompany();
             cmb_Company.DisplayMember = "اسم الشركه";
             cmb_Company.ValueMember = "Comp_ID";
+            cmb_Company.SelectedIndex = -1;
         }
         //void Calc()
         //{
@@ -143,6 +144,27 @@ namespace Laboratory.PL
         private void Frm_AllPAyCompsny_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void cmb_Company_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cmb_Company.Text != "")
+                {
+                    dt.Clear();
+                    dt = cm.Select_AllpAyOfCompany(Convert.ToInt32(cmb_Company.SelectedValue));
+                    gridControl1.DataSource = dt;
+                    dt2.Clear();
+                    dt2 = cm.Select_CompanyTotalMoney(Convert.ToInt32(cmb_Company.SelectedValue));
+                    textBox1.Text = dt2.Rows[0][0].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

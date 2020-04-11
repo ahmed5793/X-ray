@@ -511,7 +511,7 @@
             this.label12.BackColor = System.Drawing.Color.Black;
             this.label12.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.LightGoldenrodYellow;
-            this.label12.Location = new System.Drawing.Point(364, 25);
+            this.label12.Location = new System.Drawing.Point(364, 36);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(71, 24);
             this.label12.TabIndex = 129;
@@ -523,7 +523,7 @@
             this.label10.BackColor = System.Drawing.Color.Black;
             this.label10.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.LightGoldenrodYellow;
-            this.label10.Location = new System.Drawing.Point(790, 25);
+            this.label10.Location = new System.Drawing.Point(762, 34);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(95, 22);
             this.label10.TabIndex = 128;
@@ -533,17 +533,17 @@
             // 
             this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textBox2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(5, 15);
+            this.textBox2.Location = new System.Drawing.Point(5, 14);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(353, 41);
+            this.textBox2.Size = new System.Drawing.Size(353, 58);
             this.textBox2.TabIndex = 130;
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // dateTimePicker2
             // 
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(650, 26);
+            this.dateTimePicker2.Location = new System.Drawing.Point(622, 36);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(134, 20);
             this.dateTimePicker2.TabIndex = 127;
