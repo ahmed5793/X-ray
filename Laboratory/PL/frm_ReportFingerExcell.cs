@@ -65,7 +65,7 @@ namespace Laboratory.PL
         }
         void Permision()
         {
-         
+
             dt.Clear();
             dt = U.SelectUserBranch(Program.salesman);
             if (dt.Rows.Count > 0)
@@ -80,10 +80,10 @@ namespace Laboratory.PL
                 cmb_user_branch.DisplayMember = "Name";
                 cmb_user_branch.ValueMember = "Branch_ID";
             }
-          
+
 
         }
-     public   void year()
+        public void year()
         {
             for (int i = 2020; i <= DateTime.Now.Year; i++)
             {
@@ -93,7 +93,7 @@ namespace Laboratory.PL
 
             }
         }
-     public   void monthe()
+        public void monthe()
         {
             this.cmb_month.DisplayMember = "Text";
             this.cmb_month.ValueMember = "Value";
@@ -139,13 +139,13 @@ namespace Laboratory.PL
             for (int i = 0; i < day; i++)
             {
                 DateTime daydate = new DateTime(int.Parse(year), int.Parse(month), i + 1);
-            
+
                 dt2.Clear();
                 dt2 = F.AttendanceExcell(Convert.ToInt32(cmb_clients.SelectedValue), daydate, Convert.ToInt32(cmb_user_branch.SelectedValue));
-           
 
 
-                dt.Rows.Add(daydate.ToString("dd-MM-yyyy"), daydate.ToString("dddd"), dt2.Rows[0][0], dt2.Rows[0][1],dt2.Rows[0][2]);
+
+                dt.Rows.Add(daydate.ToString("dd-MM-yyyy"), daydate.ToString("dddd"), dt2.Rows[0][0], dt2.Rows[0][1], dt2.Rows[0][2]);
 
 
 
@@ -168,24 +168,48 @@ namespace Laboratory.PL
         }
         DataTable dt10 = new DataTable();
 
-   
+
 
         private void TotalTimeInGridView()
         {
-            //TimeSpan Sum;
-            //TimeSpan total = TimeSpan.Parse("00:00:00");
-            //for (int i = 0; i < dataGridView1.Rows.Count; ++i)
-            //{
-            //    string time = Convert.ToString(dataGridView1.Rows[i].Cells[4].Value);
-            //    Sum = TimeSpan.Parse(time);
-            //    total=total.Add(Sum);
-            //}
-            //label3.Text = total.ToString();
+            try
+            {
 
-           
+         
+            //    DateTime Sum;
+            //    TimeSpan total = TimeSpan.Parse("");
+            //    for (int i = 0; i < dataGridView1.Rows.Count; ++i)
+            //    {
+            //        string time = Convert.ToString(dataGridView1.Rows[i].Cells[4].Value);
+            //        Sum = TimeSpan.Parse(time);
+            //        total = total.Add(Sum);
+            //    }
+            //    label3.Text = total.ToString();
 
+            List<TimeSpan> total = new List<TimeSpan>();
+
+            for (int i = 0; i < dataGridView1.Rows.Count; ++i)
+            {
+                total.Add(TimeSpan.Parse(dataGridView1.Rows[i].Cells[4].Value.ToString()));
+            }
+            string hours = total.Sum(x => x.Hours).ToString();
+
+
+            string minutes = total.Sum(x => x.Minutes).ToString();
+            // label3.Text = total.Sum(x => x.Seconds).ToString();
+
+            decimal s = Convert.ToDecimal(minutes) / 60;
+            decimal y = Convert.ToDecimal(hours) + Convert.ToDecimal(s);
+            label3.Text = Math.Round(y, 2).ToString();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
 
         }
+     
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
@@ -225,6 +249,7 @@ namespace Laboratory.PL
                         dt5 = F.VildateAttendanceExcell(daydate, Convert.ToInt32(cmb_user_branch.SelectedValue));
                         if (dt5.Rows.Count == 0)
                         {
+
                             MessageBox.Show("  لا يوجد حضور وانصراف لهذا الموظف في هذا الشهر");
                             return;
                         }
@@ -270,7 +295,8 @@ namespace Laboratory.PL
                                     dataGridView1.Rows[n].Cells[1].Value = dt10.Rows[i][1].ToString();
                                     dataGridView1.Rows[n].Cells[2].Value = dt10.Rows[i][2].ToString();
                                     dataGridView1.Rows[n].Cells[3].Value = dt10.Rows[i][3].ToString();
-                                dataGridView1.Rows[n].Cells[4].Value =dt10.Rows[i][4].ToString();
+                                    dataGridView1.Rows[n].Cells[4].Value =dt10.Rows[i][4].ToString();
+                                TotalTimeInGridView();
 
                             }
                            
@@ -432,6 +458,7 @@ namespace Laboratory.PL
                         rf.Parameters["idbranch"].Value = cmb_user_branch.Text;
                         rf.Parameters["NameEmployee"].Value = cmb_clients.Text;
                         rf.Parameters["UserName"].Value = Program.salesman;
+                        rf.Parameters["totalWork"].Value = Convert.ToDecimal(label3.Text);
 
 
 
@@ -441,6 +468,8 @@ namespace Laboratory.PL
                         rf.Parameters["idbranch"].Visible = false;
                         rf.Parameters["NameEmployee"].Visible = false;
                         rf.Parameters["UserName"].Visible = false;
+                        rf.Parameters["totalWork"].Visible = false;
+
                         sr.ShowDialog();
                     }
                 }
