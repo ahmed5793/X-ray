@@ -31,7 +31,7 @@ namespace Laboratory.PL
                 gridControl1.DataSource = C.Select_AllPayCustomer(Convert.ToInt32(comboBox2.SelectedValue));
                 dt5.Clear();
                 dt5 = C.Select_CustomertotalBAlance(Convert.ToInt32(comboBox2.SelectedValue));
-                textBox1.Text = dt5.Rows[0][0].ToString();
+                //textBox1.Text = dt5.Rows[0][0].ToString();
             }
             catch (Exception ex)
             {

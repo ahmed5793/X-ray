@@ -255,16 +255,12 @@ namespace Laboratory.PL
                     return;
 
                 }
-                if (comboBox1.Text=="مرتب شهرى")
-                {
-
-                if (Txt_Salary.Text == "" || Txt_Salary.Text=="0")
+                if (comboBox1.Text=="مرتب شهرى" && Txt_Salary.Text == "0")
                 {
                     MessageBox.Show("من فضلك قم بتحديد المرتب");
                     Txt_Salary.Focus();
                     return;
-                }
-
+       
                 }
                 else
                 {
@@ -319,16 +315,13 @@ namespace Laboratory.PL
                     MessageBox.Show("من فضلك قم بااختيار التخصص");
                     return;
                 }
-                if (comboBox1.Text == "مرتب شهرى")
+                if (comboBox1.Text == "مرتب شهرى" && Txt_Salary.Text == "0.00")
                 {
-                    if (Txt_Salary.Text == "" || Txt_Salary.Text == "0")
-                    {
-                        MessageBox.Show("من فضلك قم بتحديد المرتب");
-                        Txt_Salary.Focus();
-                        return;
-                    }
+                    MessageBox.Show("من فضلك قم بتحديد المرتب");
+                    Txt_Salary.Focus();
+                    return;
                 }
-                else
+                else if(MessageBox.Show(" هل تريد تعديل البيانات للموظف","عملية التعديل" , MessageBoxButtons.YesNo,MessageBoxIcon.Question)== DialogResult.Yes)
                 {
                     E.UpdateEmployee(txt_name.Text, Convert.ToDecimal(Txt_Salary.Text), comboBox1.Text,
                         txt_NationalID.Text, txt_phone.Text, txt_address.Text, dateTimePicker1.Value, 
@@ -366,6 +359,12 @@ namespace Laboratory.PL
                     clears();
                     dataGridView1.DataSource = E.SelectEmployee();
                 }
+                else
+                {
+                    MessageBox.Show("تم إلغاء التعديل ");
+                }
+                clears();
+                dataGridView1.DataSource = E.SelectEmployee();
             }
             catch (Exception ex)
             {
