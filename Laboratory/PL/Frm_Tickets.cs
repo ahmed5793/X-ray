@@ -376,23 +376,32 @@ namespace Laboratory.PL
 
                 else if (cmb_statues.Text == "شركات")
                 {
-                if (cmb_Company.Text=="")
+                if (cmb_Company.Text == "")
                 {
-                    Cmb_category.DataSource = null;
-                    cmb_items.DataSource=null;
+                    //Cmb_category.DataSource = null;
+                    //cmb_items.DataSource = null;
+                    cmb_Company.Focus();
+                    MessageBox.Show("من فضلك قم بااختيار الشركة");
+                    return;
                 }
-                dt.Clear();
-                dt = t.VildateselectItemXrayCompany(Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToInt32(Cmb_category.SelectedValue));
-                if (dt.Rows.Count > 0)
+                else if (cmb_Company.Text != "")
                 {
-                    cmb_items.DataSource = t.VildateselectItemXrayCompany(Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToInt32(Cmb_category.SelectedValue));
-                    cmb_items.DisplayMember = "Name";
-                    cmb_items.ValueMember = "ID_ItemsXrays";
-                    cmb_items.SelectedIndex = -1;
-                }
-                else
-                {
-                    cmb_items.DataSource = null;
+
+                    dt.Clear();
+                    dt = t.VildateselectItemXrayCompany(Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToInt32(Cmb_category.SelectedValue));
+                    if (dt.Rows.Count > 0)
+                    {
+
+                        cmb_items.DataSource = t.VildateselectItemXrayCompany(Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToInt32(Cmb_category.SelectedValue));
+                        cmb_items.DisplayMember = "Name";
+                        cmb_items.ValueMember = "ID_ItemsXrays";
+                        cmb_items.SelectedIndex = -1;
+                    }
+                    else
+                    {
+                        cmb_items.DataSource = null;
+                    }
+
                 }
             }
             
@@ -806,8 +815,8 @@ namespace Laboratory.PL
                 Discount();
                 pay();
 
-                Cmb_category.SelectedIndex = -1;
-                cmb_items.SelectedIndex = -1;
+                //Cmb_category.SelectedIndex = -1;
+                //cmb_items.SelectedIndex = -1;
                 //label26.Show();
                 //label27.Show();
                 //Txt_addtionPayment.Show();
@@ -877,6 +886,7 @@ namespace Laboratory.PL
             }
             else if (cmb_statues.Text== "نقدى")
             {
+                
                 Cmb_category.SelectedIndex = -1;
                 cmb_items.DataSource = null;
                 label24.Show();
@@ -1761,10 +1771,7 @@ namespace Laboratory.PL
                         Patient_PaymentRate();
                         Rent_Company();
                         pay();
-                        if (Txt_addtionPayment.Text=="" || Txt_addtionPayment.Text=="0")
-                        {
-                            txt_pay.Enabled = false;
-                        }
+                      
 
                     }
 
