@@ -27,11 +27,11 @@ namespace Laboratory.PL
             {
 
                 company();
-                dt.Clear();
-                dt = cm.Select_AllpAyOfCompany(Convert.ToInt32(cmb_Company.SelectedValue));
-                dt2.Clear();
-                dt2 = cm.Select_CompanyTotalMoney(Convert.ToInt32(cmb_Company.SelectedValue));
-                textBox1.Text = dt2.Rows[0][0].ToString();
+                //dt.Clear();
+                //dt = cm.Select_AllpAyOfCompany(Convert.ToInt32(cmb_Company.SelectedValue));
+                //dt2.Clear();
+                //dt2 = cm.Select_CompanyTotalMoney(Convert.ToInt32(cmb_Company.SelectedValue));
+                //textBox1.Text = dt2.Rows[0][0].ToString();
             }
             catch (Exception ex)
             {
@@ -79,7 +79,9 @@ namespace Laboratory.PL
                     {
                         MessageBox.Show("إسم الشركة غير صحيح");
                         cmb_Company.Focus();
-                        cmb_Company.SelectAll();
+                        cmb_Company.Text="";
+                        gridControl1.DataSource=null;
+                        textBox1.Text = "0";
                         return;
                     }
                 }
@@ -148,6 +150,11 @@ namespace Laboratory.PL
 
         private void cmb_Company_SelectedIndexChanged(object sender, EventArgs e)
         {
+           
+        }
+
+        private void cmb_Company_KeyDown(object sender, KeyEventArgs e)
+        {
             try
             {
                 if (cmb_Company.Text != "")
@@ -157,7 +164,14 @@ namespace Laboratory.PL
                     gridControl1.DataSource = dt;
                     dt2.Clear();
                     dt2 = cm.Select_CompanyTotalMoney(Convert.ToInt32(cmb_Company.SelectedValue));
-                    textBox1.Text = dt2.Rows[0][0].ToString();
+                    if (dt2.Rows.Count>0)
+                    {
+                        textBox1.Text = dt2.Rows[0][0].ToString();
+                    }
+                    else
+                    {
+                        textBox1.Text = "0";
+                    }
                 }
             }
             catch (Exception ex)

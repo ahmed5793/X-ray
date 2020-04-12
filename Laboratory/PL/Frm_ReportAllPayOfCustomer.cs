@@ -27,15 +27,15 @@ namespace Laboratory.PL
                 comboBox2.DataSource = C.SelectCompoCustomerN2dy();
                 comboBox2.DisplayMember = "Cust_Name";
                 comboBox2.ValueMember = "Cust_ID";
-                //comboBox2.SelectedIndex = -1;
-                gridControl1.DataSource = C.Select_AllPayCustomer(Convert.ToInt32(comboBox2.SelectedValue));
-                dt5.Clear();
-                dt5 = C.Select_CustomertotalBAlance(Convert.ToInt32(comboBox2.SelectedValue));
-                textBox1.Text = dt5.Rows[0][0].ToString();
+                comboBox2.SelectedIndex = -1;
+
+                //gridControl1.DataSource = C.Select_AllPayCustomer(Convert.ToInt32(comboBox2.SelectedValue));
+                //dt5.Clear();
+                //dt5 = C.Select_CustomertotalBAlance(Convert.ToInt32(comboBox2.SelectedValue));
+                //textBox1.Text = dt5.Rows[0][0].ToString();
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
                 MessageBox.Show(ex.StackTrace);
             }
@@ -65,6 +65,8 @@ namespace Laboratory.PL
                         MessageBox.Show("إسم العميل غير موجود لا بد من إختيار إسم العميل من القائمة");
                         comboBox2.Focus();
                         textBox1.Clear();
+                        comboBox2.Text = "";
+                        gridControl1.DataSource = null;
                         return;
                     }
                 }
@@ -129,10 +131,25 @@ namespace Laboratory.PL
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-       
+           
         }
 
         private void comboBox2_SelectedValueChanged(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void comboBox2_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void comboBox2_ValueMemberChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_KeyDown(object sender, KeyEventArgs e)
         {
             try
             {
@@ -141,9 +158,16 @@ namespace Laboratory.PL
                     gridControl1.DataSource = C.Select_AllPayCustomer(Convert.ToInt32(comboBox2.SelectedValue));
                     dt5.Clear();
                     dt5 = C.Select_CustomertotalBAlance(Convert.ToInt32(comboBox2.SelectedValue));
-                    textBox1.Text = dt5.Rows[0][0].ToString();
-                }
+                    if (dt5.Rows.Count>0)
+                    {
+                        textBox1.Text = dt5.Rows[0][0].ToString();
 
+                    }
+                    else
+                    {
+                        textBox1.Text = "0";
+                    }
+                }
             }
             catch (Exception ex)
             {

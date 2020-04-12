@@ -62,6 +62,7 @@
             this.cmb_Company.TabIndex = 121;
             this.cmb_Company.SelectedIndexChanged += new System.EventHandler(this.cmb_Company_SelectedIndexChanged);
             this.cmb_Company.SelectionChangeCommitted += new System.EventHandler(this.cmb_Company_SelectionChangeCommitted);
+            this.cmb_Company.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmb_Company_KeyDown);
             this.cmb_Company.Leave += new System.EventHandler(this.cmb_Company_Leave);
             // 
             // label5
@@ -181,6 +182,7 @@
             this.groupBox1.Controls.Add(this.gridControl1);
             this.groupBox1.Location = new System.Drawing.Point(12, 118);
             this.groupBox1.Name = "groupBox1";
+            this.groupBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.groupBox1.Size = new System.Drawing.Size(959, 362);
             this.groupBox1.TabIndex = 133;
             this.groupBox1.TabStop = false;
@@ -196,6 +198,7 @@
             this.gridControl1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
+            this.gridControl1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.gridControl1.Size = new System.Drawing.Size(953, 340);
             this.gridControl1.TabIndex = 127;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
