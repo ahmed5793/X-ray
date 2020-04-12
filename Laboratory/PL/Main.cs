@@ -1249,6 +1249,53 @@ namespace Laboratory.PL
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void accordionControlElement1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+          
+         
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+           
+            
+        }
+
+        private void simpleButton4_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void accordionControlElement1_Click_2(object sender, EventArgs e)
+        {
+            try
+            {
+                Frm_DetailsPhone dp = new Frm_DetailsPhone();
+                dp.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void accordionControlElement4_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                Application.Restart();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
 	
