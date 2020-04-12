@@ -381,6 +381,12 @@
     <Compile Include="PL\Frm_DetailsCompay.designer.cs">
       <DependentUpon>Frm_DetailsCompay.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Frm_DetailsPhone.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_DetailsPhone.Designer.cs">
+      <DependentUpon>Frm_DetailsPhone.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_DetailsTickets.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1002,6 +1008,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_DetailsCompay.resx">
       <DependentUpon>Frm_DetailsCompay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_DetailsPhone.resx">
+      <DependentUpon>Frm_DetailsPhone.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_DetailsTickets.resx">
       <DependentUpon>Frm_DetailsTickets.cs</DependentUpon>
