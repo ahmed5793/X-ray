@@ -149,6 +149,20 @@ namespace Laboratory.PL
                 }               
                 if (comboBox1.Text != "" && comboBox2.Text != "")
                 {
+                    for (int i = 0; i < gridView1.RowCount; i++)
+                    {
+                        DataRow row = gridView1.GetDataRow(i);
+                        if (comboBox1.Text == row[1].ToString() &&
+                            comboBox2.Text == row[2].ToString() &&
+                            dateTimePicker1.Text == (row[3].ToString())
+                            && dateTimePicker3.Text == (row[4].ToString())
+                            && dateTimePicker2.Text == (row[5].ToString()))
+                        {
+                            MessageBox.Show("تم إضافة هذا الشيفت  لنفس الفني فى نفس الوقت من قبل ");
+                            return;
+                        }
+                    }
+
                     Techincal.Add_TechnicalShift(Convert.ToInt32(comboBox1.SelectedValue), Convert.ToInt32(comboBox2.SelectedValue),
                        (dateTimePicker1.Text), (dateTimePicker3.Text), (dateTimePicker2.Text), Convert.ToDecimal(Txt_Cost.Text)
                          , Txt_SalesMAn.Text, Convert.ToInt32(Cmb_Branch.SelectedValue));
@@ -209,6 +223,7 @@ namespace Laboratory.PL
                 gridControl1.Enabled = true;
                 Btn_UpdateShift.Enabled = false;
                 Btn_DeleteShift.Enabled = false;
+                Cmb_Branch.Enabled = true;
             }
             catch (Exception ex)
             {
@@ -258,7 +273,7 @@ namespace Laboratory.PL
                     Btn_AddShift.Enabled = false;
                     Btn_UpdateShift.Enabled = true;
                     Btn_DeleteShift.Enabled = true;
-                    
+                    Cmb_Branch.Enabled = false;
                     comboBox1.Text = gridView1.GetFocusedRowCellValue("إسم الفنى").ToString();
                     comboBox2.Text = gridView1.GetFocusedRowCellValue("نوع الشيفت").ToString();
                     Txt_Cost.Text = gridView1.GetFocusedRowCellValue("سعر الشيفت").ToString();

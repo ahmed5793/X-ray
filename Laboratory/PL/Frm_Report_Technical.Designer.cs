@@ -268,6 +268,7 @@
             // 
             // Btn_Print
             // 
+            this.Btn_Print.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Btn_Print.Appearance.BackColor = System.Drawing.Color.Black;
             this.Btn_Print.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_Print.Appearance.ForeColor = System.Drawing.Color.White;

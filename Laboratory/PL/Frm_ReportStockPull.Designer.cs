@@ -134,7 +134,7 @@
             this.gridViewPull.Appearance.HeaderPanel.Options.UseForeColor = true;
             this.gridViewPull.Appearance.HeaderPanel.Options.UseTextOptions = true;
             this.gridViewPull.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridViewPull.Appearance.Row.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewPull.Appearance.Row.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridViewPull.Appearance.Row.FontStyleDelta = System.Drawing.FontStyle.Bold;
             this.gridViewPull.Appearance.Row.Options.UseFont = true;
             this.gridViewPull.Appearance.Row.Options.UseTextOptions = true;
@@ -356,6 +356,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "تقرير الارصدة المسحوبة من الخزنة";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Frm_ReportStockPull_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlPull)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewPull)).EndInit();

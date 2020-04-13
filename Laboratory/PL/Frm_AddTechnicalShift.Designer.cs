@@ -300,7 +300,7 @@
             this.Btn_AddShift.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_AddShift.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.Btn_AddShift.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_AddShift.ImageOptions.Image")));
-            this.Btn_AddShift.Location = new System.Drawing.Point(658, 195);
+            this.Btn_AddShift.Location = new System.Drawing.Point(664, 195);
             this.Btn_AddShift.Name = "Btn_AddShift";
             this.Btn_AddShift.Size = new System.Drawing.Size(167, 32);
             this.Btn_AddShift.TabIndex = 165;

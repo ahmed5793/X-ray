@@ -25,6 +25,8 @@ namespace Laboratory.PL
         {
             try
             {
+                txt_reason.Hide();
+                label7.Hide();
                 cmb_StockFrom.DataSource = s.Compo_Stock();
                 cmb_StockFrom.DisplayMember = "Name_Stock";
                 cmb_StockFrom.ValueMember = "ID_Stock";
@@ -141,6 +143,7 @@ namespace Laboratory.PL
                     txt_name.Focus();
                     return;
                 }
+             
                 if (Convert.ToDecimal(txt_addbalance.Text) > Convert.ToDecimal(txt_CurrentBalance1.Text))
                 {
                     MessageBox.Show("   المبلغ المراد تحويلة اكبر من الرصيد الحالى");

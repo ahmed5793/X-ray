@@ -128,5 +128,10 @@ namespace Laboratory.PL
         {
            
         }
+
+        private void Frm_ReportStockPull_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

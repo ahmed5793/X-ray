@@ -199,7 +199,7 @@
             this.gridViewInsert.Appearance.HeaderPanel.Options.UseForeColor = true;
             this.gridViewInsert.Appearance.HeaderPanel.Options.UseTextOptions = true;
             this.gridViewInsert.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridViewInsert.Appearance.Row.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewInsert.Appearance.Row.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridViewInsert.Appearance.Row.FontStyleDelta = System.Drawing.FontStyle.Bold;
             this.gridViewInsert.Appearance.Row.Options.UseFont = true;
             this.gridViewInsert.Appearance.Row.Options.UseTextOptions = true;

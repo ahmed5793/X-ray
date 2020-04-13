@@ -130,7 +130,24 @@ namespace Laboratory.PL
 
         private void Cmb_Branch_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            Permision();
+            try
+            {
+                cmb_Employee.DataSource = E.Select_EmployeeFromBranchToAddShift(Convert.ToInt32(Cmb_Branch.SelectedValue));
+                cmb_Employee.DisplayMember = "Emp_Name";
+                cmb_Employee.ValueMember = "id_employee";
+                cmb_Employee.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+         
+        }
+
+        private void Cmb_Branch_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

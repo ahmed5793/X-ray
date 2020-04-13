@@ -201,9 +201,6 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="WhatsAppApi, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\WhatsAppAPI.15.4.29\lib\net40\WhatsAppApi.dll</HintPath>
-    </Reference>
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
@@ -585,12 +582,6 @@
     <Compile Include="PL\frm_RceiveMoney.Designer.cs">
       <DependentUpon>frm_RceiveMoney.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_Registrationwhats.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PL\Frm_Registrationwhats.Designer.cs">
-      <DependentUpon>Frm_Registrationwhats.cs</DependentUpon>
-    </Compile>
     <Compile Include="PL\Frm_ReportAllPayOfCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -764,12 +755,6 @@
     </Compile>
     <Compile Include="PL\Frm_Search_Ticket.Designer.cs">
       <DependentUpon>Frm_Search_Ticket.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PL\Frm_SendSmsWhatsApp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PL\Frm_SendSmsWhatsApp.Designer.cs">
-      <DependentUpon>Frm_SendSmsWhatsApp.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Frm_ShowOldReturn.cs">
       <SubType>Form</SubType>
@@ -1111,9 +1096,6 @@
     <EmbeddedResource Include="PL\frm_RceiveMoney.resx">
       <DependentUpon>frm_RceiveMoney.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PL\Frm_Registrationwhats.resx">
-      <DependentUpon>Frm_Registrationwhats.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_ReportAllPayOfCustomer.resx">
       <DependentUpon>Frm_ReportAllPayOfCustomer.cs</DependentUpon>
     </EmbeddedResource>
@@ -1200,9 +1182,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Search_Ticket.resx">
       <DependentUpon>Frm_Search_Ticket.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PL\Frm_SendSmsWhatsApp.resx">
-      <DependentUpon>Frm_SendSmsWhatsApp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_ShowOldReturn.resx">
       <DependentUpon>Frm_ShowOldReturn.cs</DependentUpon>
