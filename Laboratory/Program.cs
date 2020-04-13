@@ -22,6 +22,8 @@ namespace Laboratory
        
 
          Application.Run(new Frm_LoginMain());
+
+         
         }
     }
 }
