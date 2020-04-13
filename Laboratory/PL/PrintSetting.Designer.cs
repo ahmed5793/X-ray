@@ -113,8 +113,11 @@
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.lable1);
             this.Controls.Add(this.bunifuCustomLabel1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "PrintSetting";
-            this.Text = "PrintSetting";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "إعدادات الطابعة";
             this.Load += new System.EventHandler(this.PrintSetting_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

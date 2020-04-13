@@ -174,6 +174,7 @@
             this.Txt_Pay.Click += new System.EventHandler(this.Txt_Pay_Click);
             this.Txt_Pay.TextChanged += new System.EventHandler(this.Txt_Pay_TextChanged);
             this.Txt_Pay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Pay_KeyPress);
+            this.Txt_Pay.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Txt_Pay_MouseMove);
             // 
             // textBox4
             // 

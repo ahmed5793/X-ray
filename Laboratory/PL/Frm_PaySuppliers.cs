@@ -17,28 +17,53 @@ namespace Laboratory.PL
         Stock Stock = new Stock();
         DataTable dt4 = new DataTable();
         DataTable dt5= new DataTable();
+        Branches b = new Branches();
+        Users u = new Users();
         public Frm_PaySuppliers()
         {
             InitializeComponent();
             Function();
         }
+        void Permision()
+        {
+            dt.Clear();
+            dt = u.SelectUserBranch(Txt_sales.Text);
+
+            if (dt.Rows.Count > 0)
+            {
+                Cmb_Branch.DataSource = u.SelectUserBranch(Txt_sales.Text);
+                Cmb_Branch.DisplayMember = "Name";
+                Cmb_Branch.ValueMember = "Branch_ID";
+
+                cmb_Stock.DataSource = Stock.SelectStockBranch(Convert.ToInt32(Cmb_Branch.SelectedValue));
+                cmb_Stock.DisplayMember = "Name_Stock";
+                cmb_Stock.ValueMember = "ID_Stock";
+            }
+            else
+            {
+                Cmb_Branch.DataSource = b.SelectCompBranches();
+                Cmb_Branch.DisplayMember = "Name";
+                Cmb_Branch.ValueMember = "Branch_ID";
+
+                cmb_Stock.DataSource = Stock.SelectStockBranch(Convert.ToInt32(Cmb_Branch.SelectedValue));
+                cmb_Stock.DisplayMember = "Name_Stock";
+                cmb_Stock.ValueMember = "ID_Stock";
+            }
+        }
+
         void Function()
         {
             try
             {
-                cmb_Stock.DataSource = Stock.Compo_Stock();
-                cmb_Stock.DisplayMember = "Name_Stock";
-                cmb_Stock.ValueMember = "ID_Stock";
-                cmb_Stock.SelectedIndex = -1;
+                Txt_sales.Text = Program.salesman;
+                Permision();
                 if (dt4.Rows.Count > 0)
                 {
                     dt4 = Stock.Select_moneyStock(Convert.ToInt32(cmb_Stock.SelectedValue));
                 }
-
                 comboBox1.DataSource = Suppliers.Combo_SupplierRent();
                 comboBox1.DisplayMember = "Name";
                 comboBox1.ValueMember = "Sup_id";
-                Txt_sales.Text = Program.salesman;
 
                 txt_prise.Enabled = false;
             }
@@ -163,21 +188,22 @@ namespace Laboratory.PL
                     }
                     else if (rdbPartPay.Checked == true)
                     {
+                        if (Convert.ToDecimal(txt_prise.Text) > Convert.ToDecimal(dt4.Rows[0][0]))
+                        {
+                            MessageBox.Show("رصيد الخزنة الحالى غير كافى لشراء هذه الفاتورة");
+                            return;
+                        }
+                        else if (Convert.ToDecimal(txt_prise.Text) > Convert.ToDecimal(dataGridView1.CurrentRow.Cells[2].Value))
+                        {
+                            MessageBox.Show("المبلغ المراد تسديده اكبر من المبلغ المتبقى للمورد");
+                            txt_prise.Focus();
+                            return;
+                        }
                         if (MessageBox.Show("هل تريد دفع المبلغ المحدد", "عمليه الدفع", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
 
                         {
                             decimal x = Convert.ToDecimal(dataGridView1.CurrentRow.Cells[2].Value) - Convert.ToDecimal(txt_prise.Text);
-                            if (Convert.ToDecimal(txt_prise.Text) > Convert.ToDecimal(dt4.Rows[0][0]))
-                            {
-                                MessageBox.Show("رصيد الخزنة الحالى غير كافى لشراء هذه الفاتورة");
-                                return;
-                            }
-                            else if (Convert.ToDecimal(txt_prise.Text) > Convert.ToDecimal(dataGridView1.CurrentRow.Cells[2].Value))
-                            {
-                                MessageBox.Show("المبلغ المراد تسديده اكبر من المبلغ المتبقى للمورد");
-                                txt_prise.Focus();
-                                return;
-                            }
+                           
                             if (Convert.ToDecimal(txt_prise.Text) > 0)
                             {
                                 Suppliers.AddPaySuppliers(
@@ -185,7 +211,7 @@ namespace Laboratory.PL
                                    , dateTimePicker1.Value, Convert.ToInt32(cmb_Stock.SelectedValue), Txt_sales.Text);
 
                                 Stock.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_prise.Text),
-                                                   dateTimePicker1.Value, Txt_sales.Text, comboBox1.Text + " " + "مدفوعات مورد");
+                                                   dateTimePicker1.Value, Txt_sales.Text, "مدفوعات من حساب  المورد" +" "+ comboBox1.Text );
 
                                 dt5.Clear();
                                 dt5 = Suppliers.Select_SupplierTotalMoney(Convert.ToInt32(comboBox1.SelectedValue));
@@ -195,19 +221,17 @@ namespace Laboratory.PL
                                 Suppliers.Add_SupplierStatmentACCount(Convert.ToInt32(comboBox1.SelectedValue), 0
                                     , Convert.ToDecimal(txt_prise.Text), mno, "مدفوعات مورد", dateTimePicker1.Value);
 
-                                dataGridView1.DataSource = Suppliers.SelectOneSuppliersMony(Convert.ToInt32(comboBox1.SelectedValue));
-                                txt_prise.Text = "0";
+                        
                                 MessageBox.Show("تم دفع المبلغ بنجاح");
                             }
-
-
-
                         }
                         else
                         {
                             MessageBox.Show("تم إلغاء العملية بنجاح");
                             return;
                         }
+                        dataGridView1.DataSource = Suppliers.SelectOneSuppliersMony(Convert.ToInt32(comboBox1.SelectedValue));
+                        txt_prise.Text = "0";
                     }
                 }
             }
@@ -238,5 +262,42 @@ namespace Laboratory.PL
                 MessageBox.Show(ex.StackTrace);
             }
         }
+
+        private void txt_prise_Click(object sender, EventArgs e)
+        {
+            if (txt_prise.Text=="0")
+            {
+                txt_prise.Text = "";
+            }
+            else
+            {
+                txt_prise.SelectAll();
+                    
+            }
+        }
+        DataTable dt = new DataTable();
+
+        private void comboBox1_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                if (comboBox1.Text != "")
+                {
+                    dt.Clear();
+                    dt = Suppliers.Validate_SuppliersName(Convert.ToInt32(comboBox1.SelectedValue));
+                    if (dt.Rows.Count == 0)
+                    {
+                        MessageBox.Show("هذا الاسم غير موجود فى قائمة الموردين");
+                        comboBox1.Focus();
+                        comboBox1.SelectAll();
+                        return;
+                    }
+                }
+            }
+            catch (Exception ex )
+            {
+                MessageBox.Show(ex.Message);
+            }
+            }
     }
 }

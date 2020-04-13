@@ -80,8 +80,7 @@ namespace Laboratory.PL
         private void cmb_items_SelectionChangeCommitted(object sender, EventArgs e)
         {
             try
-            {
-                
+            {                
                     dt.Clear();
                     dt = ix.SelectPriseItem(Convert.ToInt32(cmb_items.SelectedValue));
                     if (dt.Rows.Count>0)
@@ -203,7 +202,6 @@ namespace Laboratory.PL
         }
         private void Txt_PriceDiscount_MouseMove(object sender, MouseEventArgs e)
         {
-
             if (Txt_PriceDiscount.Text == "")
             {
                 Txt_PriceDiscount.Text = "0";
@@ -211,11 +209,7 @@ namespace Laboratory.PL
         }
         private void Txt_Discount_MouseLeave(object sender, EventArgs e)
         {
-            if (Txt_Discount.Text == "")
-            {
-                Txt_Discount.Text = "0";
-            }
-            Total();
+         
         }
 
         private void Txt_Discount_KeyUp(object sender, KeyEventArgs e)
@@ -391,7 +385,10 @@ namespace Laboratory.PL
             {
                 Txt_PriceDiscount.Text = "";
             }
-            Txt_PriceDiscount.SelectAll();
+            else
+            {
+                Txt_PriceDiscount.SelectAll();
+            }
         }
       
 
@@ -405,17 +402,25 @@ namespace Laboratory.PL
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-
-            Txt_Price.Text = "0";
-            Txt_Discount.Text = "0";
-            Txt_PriceDiscount.Text = "0";
-            Btn_Delete.Enabled = false;
+            cmb_Company.SelectedIndex = -1;
+            cmb_items.SelectedIndex = -1;
+            Cmb_category.SelectedIndex = -1;
+            comboBox1.SelectedIndex = -1;
             Btn_Update.Enabled = false;
+            Btn_Delete.Enabled = false;
+            Btn_Add.Show();
             cmb_Company.Enabled = true;
             Cmb_category.Enabled = true;
             cmb_items.Enabled = true;
+            Txt_Price.Text = "0";
+            Txt_Discount.Text = "0";
+            Txt_PriceDiscount.Text = "0";
             Txt_PriceDiscount.Enabled = false;
             Txt_Discount.Enabled = false;
+            comboBox1.Text = "";
+            cmb_items.Text = "";
+            Cmb_category.Text = "";
+            cmb_Company.Text = "";
             gridControl1.DataSource = cm.Select_Company_Xray();
         }
 
@@ -506,6 +511,10 @@ namespace Laboratory.PL
                 {
                     MessageBox.Show("لم يتم التعديل  ");
                 }
+                cmb_Company.SelectedIndex = -1;
+                cmb_items.SelectedIndex = -1;
+                Cmb_category.SelectedIndex = -1;
+                comboBox1.SelectedIndex = -1;              
                 Btn_Update.Enabled = false;
                 Btn_Delete.Enabled = false;
                 Btn_Add.Show();
@@ -546,7 +555,58 @@ namespace Laboratory.PL
                     cmb_items.Enabled = false;
                     Btn_Delete.Enabled = true;
                     Btn_Update.Enabled = true;
+                    Btn_Add.Enabled = false;
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+
+        private void Txt_Discount_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (Txt_Discount.Text == "")
+            {
+                Txt_Discount.Text = "0";
+            }
+            Total();
+        }
+
+        private void Cmb_category_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                cmb_items.DataSource = ix.SelectCtegoryItems(Convert.ToInt32(Cmb_category.SelectedValue));
+                cmb_items.DisplayMember = "Name";
+                cmb_items.ValueMember = "ID_ItemsXrays";
+                cmb_items.SelectedIndex = -1;
+                Txt_Price.Text = "0";
+                Txt_Discount.Text = "0";
+                Txt_PriceDiscount.Text = "0";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+
+        private void cmb_items_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                dt.Clear();
+                dt = ix.SelectPriseItem(Convert.ToInt32(cmb_items.SelectedValue));
+                if (dt.Rows.Count > 0)
+                {
+                    Txt_Price.Text = dt.Rows[0][0].ToString();
+                    Txt_PriceDiscount.Text = "0";
+                    Txt_Discount.Text = "0";
+                }
+                Total();
+
             }
             catch (Exception ex)
             {

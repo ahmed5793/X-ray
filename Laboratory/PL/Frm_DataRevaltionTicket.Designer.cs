@@ -253,7 +253,9 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.comboBox1);
             this.Name = "Frm_DataRevaltionTicket";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "شاشة مواعيد الحجوزات للفروع";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Frm_DataRevaltionTicket_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();

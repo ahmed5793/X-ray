@@ -100,7 +100,7 @@ namespace Laboratory.PL
                     comboBox1.Focus();
                     return;
                 }
-                if (txt_price.Text == "")
+                if (txt_price.Text == ""  && txt_price.Text=="0")
                 {
 
                     MessageBox.Show("من فضلك يرجي ادخال سعر الاشعة");
@@ -136,9 +136,15 @@ namespace Laboratory.PL
                     comboBox1.Focus();
                     return;
                 }
-
-                i.UpdateItemXRaya(txt_name.Text, Convert.ToDecimal(txt_price.Text), Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value), Convert.ToInt32(comboBox1.SelectedValue));
-                MessageBox.Show("تم التعديل  بنجاح", "عمليه التعديل", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                if (MessageBox.Show("هل تريد التعديل", "عملية التعديل", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    i.UpdateItemXRaya(txt_name.Text, Convert.ToDecimal(txt_price.Text), Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value), Convert.ToInt32(comboBox1.SelectedValue));
+                    MessageBox.Show("تم التعديل  بنجاح", "عمليه التعديل", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                }
+                else
+                {
+                    MessageBox.Show("تم إلغاء التعديل", "عمليه التعديل", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                }
                 txt_name.Clear();
                 txt_price.Clear();
                 dataGridView1.DataSource = i.SelectItemXRaya();
@@ -156,6 +162,29 @@ namespace Laboratory.PL
         private void Frm_ItemsXRaya_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void txt_price_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (txt_price.Text=="")
+            {
+                txt_price.Text = "0";
+            }
+        }
+
+        private void txt_price_Click(object sender, EventArgs e)
+        {
+            txt_price.SelectAll();
+        }
+
+        private void simpleButton1_Click_1(object sender, EventArgs e)
+        {
+            txt_name.Clear();
+            txt_price.Clear();
+            dataGridView1.DataSource = i.SelectItemXRaya();
+            Btn_Update.Enabled = false;
+            Btn_add.Enabled = true;
+            comboBox1.Enabled = true;
         }
     }
 }

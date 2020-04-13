@@ -94,5 +94,20 @@ namespace Laboratory.PL
         {
             this.Close();
         }
+
+        private void Cmb_Suppliers_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (Cmb_Suppliers.Text != "")
+                {
+                    dataGridView1.DataSource = Suppliers.SelectSupplierInovice(Convert.ToInt32(Cmb_Suppliers.SelectedValue));
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

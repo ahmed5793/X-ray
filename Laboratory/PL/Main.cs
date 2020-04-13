@@ -569,7 +569,6 @@ namespace Laboratory.PL
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
         }

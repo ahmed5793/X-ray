@@ -132,5 +132,22 @@ namespace Laboratory.PL
         {
             gridControl1.ShowRibbonPrintPreview();
         }
+
+        private void comboBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (comboBox1.Text != String.Empty)
+                {
+                    gridControl1.DataSource = Doctors.Select_AllCasesOfOutDoctor(Convert.ToInt32(comboBox1.SelectedValue));
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

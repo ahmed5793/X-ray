@@ -371,9 +371,10 @@ namespace Laboratory.PL
                 cmb_year.Show();
                 lable_year.Show();
                 cmb_clients.Enabled = true;
-
                 dataGridView1.Show();
                 dataGridView2.Hide();
+                label6.Show();
+                label3.Show();
             }
 
         }
@@ -385,7 +386,8 @@ namespace Laboratory.PL
 
                 dataGridView1.Rows.Clear();
 
-
+                label6.Hide();
+                label3.Hide();
                 lable_day.Show();
                 DateFrom.Show();
                 lable_mothe.Hide();
@@ -443,12 +445,6 @@ namespace Laboratory.PL
 
                             ds1.Tables["DataTable1"].Rows.Add(dataGridView1.Rows[i].Cells[0].Value.ToString(), dataGridView1.Rows[i].Cells[1].Value.ToString(),
                             dataGridView1.Rows[i].Cells[2].Value.ToString(), dataGridView1.Rows[i].Cells[3].Value.ToString(), dataGridView1.Rows[i].Cells[4].Value.ToString());
-
-
-
-
-
-
                         }
 
 
@@ -459,8 +455,6 @@ namespace Laboratory.PL
                         rf.Parameters["NameEmployee"].Value = cmb_clients.Text;
                         rf.Parameters["UserName"].Value = Program.salesman;
                         rf.Parameters["totalWork"].Value = Convert.ToDecimal(label3.Text);
-
-
 
                         sr.documentViewer1.DocumentSource = rf;
                         rf.Parameters["Date"].Visible = false;

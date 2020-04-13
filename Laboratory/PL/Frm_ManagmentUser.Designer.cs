@@ -302,7 +302,6 @@
             this.Name = "Frm_ManagmentUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "إضافة مستخدم جديد";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Frm_ManagmentUser_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

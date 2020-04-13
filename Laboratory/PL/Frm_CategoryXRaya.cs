@@ -52,7 +52,7 @@ namespace Laboratory.PL
         {
             if (txt_name.Text == "")
             {
-                MessageBox.Show("من فضلك يرجي ادخال قسم الاشعة");
+                MessageBox.Show("من فضلك يرجي ادخال إسم الجهاز");
                 return;
             }
 
@@ -64,15 +64,29 @@ namespace Laboratory.PL
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            Btn_Update.Enabled = true;
             if (txt_name.Text == "")
             {
-                MessageBox.Show("من فضلك يرجي ادخال قسم الاشعة");
+                MessageBox.Show("من فضلك يرجي ادخال إسم الجهاز");
                 return;
 
             }
-            c.UpdateCtegoryXRaya(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value), txt_name.Text);
-            MessageBox.Show("تم التعديل  بنجاح", "عمليه التعديل", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            if (MessageBox.Show("هل تريد التعديل","عملية التعديل",MessageBoxButtons.YesNo , MessageBoxIcon.Question)== DialogResult.Yes)
+            {
+                c.UpdateCtegoryXRaya(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value), txt_name.Text);
+                MessageBox.Show("تم التعديل  بنجاح", "عمليه التعديل", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);         
+            }
+            else
+            {
+                MessageBox.Show("تم إلغاء التعديل");
+            }
+            dataGridView1.DataSource = c.selectCategoryXRaya();
+            txt_name.Clear();
+            Btn_Add.Enabled = true;
+            Btn_Update.Enabled = false;
+        }
+
+        private void simpleButton1_Click_1(object sender, EventArgs e)
+        {
             dataGridView1.DataSource = c.selectCategoryXRaya();
             txt_name.Clear();
             Btn_Add.Enabled = true;

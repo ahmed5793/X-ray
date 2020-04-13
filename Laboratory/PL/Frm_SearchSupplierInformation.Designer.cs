@@ -72,6 +72,7 @@
             this.Cmb_Suppliers.Size = new System.Drawing.Size(288, 32);
             this.Cmb_Suppliers.TabIndex = 192;
             this.Cmb_Suppliers.SelectionChangeCommitted += new System.EventHandler(this.Cmb_Suppliers_SelectionChangeCommitted);
+            this.Cmb_Suppliers.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Cmb_Suppliers_KeyDown);
             this.Cmb_Suppliers.Leave += new System.EventHandler(this.Cmb_Suppliers_Leave);
             // 
             // label1
@@ -101,7 +102,7 @@
             this.btn_save.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btn_save.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.btn_save.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_save.ImageOptions.Image")));
-            this.btn_save.Location = new System.Drawing.Point(576, 7);
+            this.btn_save.Location = new System.Drawing.Point(576, -12);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(141, 33);
             this.btn_save.TabIndex = 194;

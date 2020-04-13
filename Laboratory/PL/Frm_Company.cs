@@ -74,6 +74,8 @@ namespace Laboratory.PL
             txt_phone.Clear();
             richTextBox1.Clear();
             Btn_Add.Enabled = true;
+            dateTimePicker1.Enabled = true;
+
         }
 
         private void Btn_Add_Click(object sender, EventArgs e)
@@ -138,7 +140,7 @@ namespace Laboratory.PL
                 Btn_update.Enabled = false;
                 richTextBox1.Clear();
                 txt_name.Enabled = true;
-
+                dateTimePicker1.Enabled = true;
             }
             catch (Exception ex)
             {

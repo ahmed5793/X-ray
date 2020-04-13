@@ -42,6 +42,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Btn_Update = new DevExpress.XtraEditors.SimpleButton();
             this.Btn_add = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -71,9 +72,9 @@
             this.label8.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(470, 22);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(102, 24);
+            this.label8.Size = new System.Drawing.Size(86, 24);
             this.label8.TabIndex = 43;
-            this.label8.Text = "أجهزة الاشعة";
+            this.label8.Text = "إسم الجهاز";
             // 
             // txt_price
             // 
@@ -86,7 +87,9 @@
             this.txt_price.TabIndex = 39;
             this.txt_price.Text = "0";
             this.txt_price.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_price.Click += new System.EventHandler(this.txt_price_Click);
             this.txt_price.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_price_KeyPress);
+            this.txt_price.MouseMove += new System.Windows.Forms.MouseEventHandler(this.txt_price_MouseMove);
             // 
             // label1
             // 
@@ -167,6 +170,7 @@
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(375, 27);
             this.label6.Name = "label6";
@@ -196,6 +200,7 @@
             // 
             // Btn_Update
             // 
+            this.Btn_Update.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Btn_Update.Appearance.BackColor = System.Drawing.Color.Black;
             this.Btn_Update.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_Update.Appearance.ForeColor = System.Drawing.Color.White;
@@ -207,7 +212,7 @@
             this.Btn_Update.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_Update.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.Btn_Update.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Update.ImageOptions.Image")));
-            this.Btn_Update.Location = new System.Drawing.Point(159, 185);
+            this.Btn_Update.Location = new System.Drawing.Point(23, 183);
             this.Btn_Update.Name = "Btn_Update";
             this.Btn_Update.Size = new System.Drawing.Size(129, 32);
             this.Btn_Update.TabIndex = 181;
@@ -216,6 +221,7 @@
             // 
             // Btn_add
             // 
+            this.Btn_add.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Btn_add.Appearance.BackColor = System.Drawing.Color.Black;
             this.Btn_add.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_add.Appearance.ForeColor = System.Drawing.Color.White;
@@ -227,12 +233,33 @@
             this.Btn_add.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_add.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.Btn_add.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_add.ImageOptions.Image")));
-            this.Btn_add.Location = new System.Drawing.Point(363, 185);
+            this.Btn_add.Location = new System.Drawing.Point(235, 183);
             this.Btn_add.Name = "Btn_add";
             this.Btn_add.Size = new System.Drawing.Size(129, 32);
             this.Btn_add.TabIndex = 180;
             this.Btn_add.Text = "حفظ";
             this.Btn_add.Click += new System.EventHandler(this.simpleButton2_Click);
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.Black;
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton1.Appearance.ForeColor = System.Drawing.Color.White;
+            this.simpleButton1.Appearance.Options.UseBackColor = true;
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.Appearance.Options.UseForeColor = true;
+            this.simpleButton1.Appearance.Options.UseTextOptions = true;
+            this.simpleButton1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.simpleButton1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.simpleButton1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(437, 183);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(129, 32);
+            this.simpleButton1.TabIndex = 182;
+            this.simpleButton1.Text = "تسجيل جديد";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click_1);
             // 
             // Frm_ItemsXRaya
             // 
@@ -240,6 +267,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(591, 523);
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.Btn_Update);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.Btn_add);
@@ -273,5 +301,6 @@
         private System.Windows.Forms.Label label8;
         private DevExpress.XtraEditors.SimpleButton Btn_Update;
         private DevExpress.XtraEditors.SimpleButton Btn_add;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }
