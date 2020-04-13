@@ -37,7 +37,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.Time_From = new System.Windows.Forms.DateTimePicker();
-            this.txt_UserName = new System.Windows.Forms.TextBox();
             this.gridControlInsert = new DevExpress.XtraGrid.GridControl();
             this.gridViewInsert = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -52,13 +51,14 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.cmb_UserBranch = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.cmb_Stock = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlInsert)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewInsert)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -165,19 +165,6 @@
             this.Time_From.Size = new System.Drawing.Size(148, 25);
             this.Time_From.TabIndex = 119;
             this.Time_From.Value = new System.DateTime(2020, 3, 5, 18, 51, 0, 0);
-            // 
-            // txt_UserName
-            // 
-            this.txt_UserName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_UserName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_UserName.Location = new System.Drawing.Point(750, 5);
-            this.txt_UserName.Multiline = true;
-            this.txt_UserName.Name = "txt_UserName";
-            this.txt_UserName.ReadOnly = true;
-            this.txt_UserName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txt_UserName.Size = new System.Drawing.Size(224, 25);
-            this.txt_UserName.TabIndex = 121;
-            this.txt_UserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // gridControlInsert
             // 
@@ -440,20 +427,6 @@
             this.textBox3.Text = "0";
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label10
-            // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Yellow;
-            this.label10.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(986, 11);
-            this.label10.Name = "label10";
-            this.label10.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label10.Size = new System.Drawing.Size(44, 18);
-            this.label10.TabIndex = 175;
-            this.label10.Text = "المستلم";
-            // 
             // cmb_UserBranch
             // 
             this.cmb_UserBranch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -462,7 +435,7 @@
             this.cmb_UserBranch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_UserBranch.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_UserBranch.FormattingEnabled = true;
-            this.cmb_UserBranch.Location = new System.Drawing.Point(750, 39);
+            this.cmb_UserBranch.Location = new System.Drawing.Point(750, 4);
             this.cmb_UserBranch.Name = "cmb_UserBranch";
             this.cmb_UserBranch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmb_UserBranch.Size = new System.Drawing.Size(224, 26);
@@ -477,7 +450,7 @@
             this.label13.BackColor = System.Drawing.Color.Yellow;
             this.label13.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(992, 44);
+            this.label13.Location = new System.Drawing.Point(992, 9);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(35, 18);
             this.label13.TabIndex = 176;
@@ -532,6 +505,33 @@
             this.textBox4.TabIndex = 181;
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // cmb_Stock
+            // 
+            this.cmb_Stock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmb_Stock.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmb_Stock.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmb_Stock.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_Stock.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_Stock.FormattingEnabled = true;
+            this.cmb_Stock.Location = new System.Drawing.Point(751, 36);
+            this.cmb_Stock.Name = "cmb_Stock";
+            this.cmb_Stock.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cmb_Stock.Size = new System.Drawing.Size(224, 26);
+            this.cmb_Stock.TabIndex = 183;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Yellow;
+            this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(992, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(36, 18);
+            this.label1.TabIndex = 182;
+            this.label1.Text = "خزينة";
+            // 
             // frm_RceiveMoney
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -539,13 +539,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1064, 543);
+            this.Controls.Add(this.cmb_Stock);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.cmb_UserBranch);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label8);
@@ -553,7 +554,6 @@
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.Btn_Search);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.txt_UserName);
             this.Controls.Add(this.Time_From);
             this.Controls.Add(this.Cmb_Users);
             this.Controls.Add(this.label7);
@@ -593,7 +593,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker Time_From;
-        private System.Windows.Forms.TextBox txt_UserName;
         private DevExpress.XtraGrid.GridControl gridControlInsert;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewInsert;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -608,12 +607,13 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label10;
         public System.Windows.Forms.ComboBox cmb_UserBranch;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.TextBox textBox4;
+        public System.Windows.Forms.ComboBox cmb_Stock;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -19,6 +19,7 @@ namespace Laboratory.PL
         {
             InitializeComponent();
             gridControl1.DataSource = t.SelectTechincal();
+            gridView1.Columns[0].Visible = false;
 
         }
 

@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_EmpSarf));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.cmb_Branch = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.txt_discount = new System.Windows.Forms.TextBox();
@@ -50,8 +52,6 @@
             this.txt_UserName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.Btn_Add = new DevExpress.XtraEditors.SimpleButton();
-            this.label12 = new System.Windows.Forms.Label();
-            this.cmb_Branch = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,6 +83,34 @@
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // label12
+            // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label12.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(605, 31);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(66, 34);
+            this.label12.TabIndex = 58;
+            this.label12.Text = "الفرع";
+            // 
+            // cmb_Branch
+            // 
+            this.cmb_Branch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmb_Branch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmb_Branch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmb_Branch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_Branch.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_Branch.FormattingEnabled = true;
+            this.cmb_Branch.Location = new System.Drawing.Point(288, 31);
+            this.cmb_Branch.Name = "cmb_Branch";
+            this.cmb_Branch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cmb_Branch.Size = new System.Drawing.Size(256, 32);
+            this.cmb_Branch.TabIndex = 57;
+            this.cmb_Branch.SelectedIndexChanged += new System.EventHandler(this.cmb_Branch_SelectedIndexChanged);
+            this.cmb_Branch.SelectionChangeCommitted += new System.EventHandler(this.cmb_Branch_SelectionChangeCommitted);
             // 
             // label6
             // 
@@ -337,33 +365,6 @@
             this.Btn_Add.TabIndex = 179;
             this.Btn_Add.Text = "تاكيد الصرف";
             this.Btn_Add.Click += new System.EventHandler(this.Btn_Add_Click);
-            // 
-            // label12
-            // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label12.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(605, 31);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(66, 34);
-            this.label12.TabIndex = 58;
-            this.label12.Text = "الفرع";
-            // 
-            // cmb_Branch
-            // 
-            this.cmb_Branch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmb_Branch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cmb_Branch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmb_Branch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_Branch.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_Branch.FormattingEnabled = true;
-            this.cmb_Branch.Location = new System.Drawing.Point(288, 31);
-            this.cmb_Branch.Name = "cmb_Branch";
-            this.cmb_Branch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmb_Branch.Size = new System.Drawing.Size(256, 32);
-            this.cmb_Branch.TabIndex = 57;
-            this.cmb_Branch.SelectionChangeCommitted += new System.EventHandler(this.cmb_Branch_SelectionChangeCommitted);
             // 
             // Frm_EmpSarf
             // 

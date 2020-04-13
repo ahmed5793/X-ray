@@ -293,5 +293,10 @@ namespace Laboratory.PL
             cmb_employeeName.ValueMember = "id_employee";
             cmb_employeeName.SelectedIndex = -1;
         }
+
+        private void cmb_Branch_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -51,6 +51,7 @@
             this.Txt_SalesMAn = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.Cmb_Branch = new System.Windows.Forms.ComboBox();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -188,7 +189,9 @@
             this.comboBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.comboBox1.Size = new System.Drawing.Size(273, 27);
             this.comboBox1.TabIndex = 128;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             this.comboBox1.SelectionChangeCommitted += new System.EventHandler(this.comboBox1_SelectionChangeCommitted);
+            this.comboBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.comboBox1_KeyDown);
             this.comboBox1.Leave += new System.EventHandler(this.comboBox1_Leave);
             // 
             // textBox1
@@ -218,7 +221,7 @@
             this.Btn_AddShift.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_AddShift.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.Btn_AddShift.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_AddShift.ImageOptions.Image")));
-            this.Btn_AddShift.Location = new System.Drawing.Point(666, 170);
+            this.Btn_AddShift.Location = new System.Drawing.Point(583, 170);
             this.Btn_AddShift.Name = "Btn_AddShift";
             this.Btn_AddShift.Size = new System.Drawing.Size(167, 32);
             this.Btn_AddShift.TabIndex = 168;
@@ -239,7 +242,7 @@
             this.Btn_UpdateShift.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_UpdateShift.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.Btn_UpdateShift.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_UpdateShift.ImageOptions.Image")));
-            this.Btn_UpdateShift.Location = new System.Drawing.Point(422, 170);
+            this.Btn_UpdateShift.Location = new System.Drawing.Point(339, 170);
             this.Btn_UpdateShift.Name = "Btn_UpdateShift";
             this.Btn_UpdateShift.Size = new System.Drawing.Size(167, 32);
             this.Btn_UpdateShift.TabIndex = 169;
@@ -260,7 +263,7 @@
             this.Btn_DeleteShift.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_DeleteShift.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.Btn_DeleteShift.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_DeleteShift.ImageOptions.Image")));
-            this.Btn_DeleteShift.Location = new System.Drawing.Point(166, 170);
+            this.Btn_DeleteShift.Location = new System.Drawing.Point(83, 170);
             this.Btn_DeleteShift.Name = "Btn_DeleteShift";
             this.Btn_DeleteShift.Size = new System.Drawing.Size(167, 32);
             this.Btn_DeleteShift.TabIndex = 170;
@@ -394,12 +397,34 @@
             this.Cmb_Branch.TabIndex = 173;
             this.Cmb_Branch.SelectionChangeCommitted += new System.EventHandler(this.Cmb_Branch_SelectionChangeCommitted);
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.Black;
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton1.Appearance.ForeColor = System.Drawing.Color.White;
+            this.simpleButton1.Appearance.Options.UseBackColor = true;
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.Appearance.Options.UseForeColor = true;
+            this.simpleButton1.Appearance.Options.UseTextOptions = true;
+            this.simpleButton1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.simpleButton1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.simpleButton1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(786, 170);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(154, 32);
+            this.simpleButton1.TabIndex = 175;
+            this.simpleButton1.Text = "جديد";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click_1);
+            // 
             // Frm_AddEmployeeShift
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Olive;
             this.ClientSize = new System.Drawing.Size(960, 532);
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.Txt_SalesMAn);
             this.Controls.Add(this.label9);
@@ -456,5 +481,6 @@
         public System.Windows.Forms.ComboBox Cmb_Branch;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

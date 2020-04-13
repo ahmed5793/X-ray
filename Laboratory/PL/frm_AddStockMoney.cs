@@ -106,6 +106,12 @@ namespace Laboratory.PL
                         txt_name.Focus();
                         return;
                     }
+                  else  if (txt_reason.Text == "")
+                    {
+                        MessageBox.Show("يرجى تحديد سبب الايداع");
+                        txt_name.Focus();
+                        return;
+                    }
 
                     else if (MessageBox.Show("هل تريد حفظ الايداع", "عملية الايداع", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {

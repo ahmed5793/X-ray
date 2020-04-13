@@ -150,38 +150,42 @@ namespace Laboratory.BL
             dt = da.selected("Select_UserName", param);
             return dt;
         }
-        internal DataTable Select_MoneyForUser(string User_name , DateTime Date , TimeSpan Time_From , TimeSpan Time_To)
+        internal DataTable Select_MoneyForUser(int ID_Stock,string UserName, DateTime Date , TimeSpan Time_From , TimeSpan Time_To)
         {
 
             DataAccessLayer da = new DataAccessLayer();
             da.open();
             DataTable dt = new DataTable();
-            SqlParameter[] param = new SqlParameter[4];
-            param[0] = new SqlParameter("@UserName", SqlDbType.NVarChar,100);
-            param[0].Value = User_name;
-            param[1] = new SqlParameter("@Date", SqlDbType.Date);
-            param[1].Value = Date;
-            param[2] = new SqlParameter("@Time_From", SqlDbType.Time);
-            param[2].Value = Time_From;
-            param[3] = new SqlParameter("@Time_to", SqlDbType.Time);
-            param[3].Value = Time_To;
+            SqlParameter[] param = new SqlParameter[5];
+            param[0] = new SqlParameter("@ID_Stock", SqlDbType.Int);
+            param[0].Value = ID_Stock;
+            param[1] = new SqlParameter("@UserName", SqlDbType.NVarChar,50);
+            param[1].Value = @UserName;
+            param[2] = new SqlParameter("@Date", SqlDbType.Date);
+            param[2].Value = Date;
+            param[3] = new SqlParameter("@Time_From", SqlDbType.Time);
+            param[3].Value = Time_From;
+            param[4] = new SqlParameter("@Time_to", SqlDbType.Time);
+            param[4].Value = Time_To;
             dt = da.selected("Select_MoneyForUser", param);
             return dt;
         }
-        internal DataTable Select_PullMoneyForUser(string User_name, DateTime Date, TimeSpan Time_From, TimeSpan Time_To)
+        internal DataTable Select_PullMoneyForUser(int ID_Stock,string UserName, DateTime Date, TimeSpan Time_From, TimeSpan Time_To)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
             DataTable dt = new DataTable();
-            SqlParameter[] param = new SqlParameter[4];
-            param[0] = new SqlParameter("@UserName", SqlDbType.NVarChar, 100);
-            param[0].Value = User_name;
-            param[1] = new SqlParameter("@Date", SqlDbType.Date);
-            param[1].Value = Date;
-            param[2] = new SqlParameter("@Time_From", SqlDbType.Time);
-            param[2].Value = Time_From;
-            param[3] = new SqlParameter("@Time_to", SqlDbType.Time);
-            param[3].Value = Time_To;
+            SqlParameter[] param = new SqlParameter[5];
+            param[0] = new SqlParameter("@ID_Stock", SqlDbType.Int);
+            param[0].Value = ID_Stock;
+            param[1] = new SqlParameter("@UserName", SqlDbType.NVarChar, 50);
+            param[1].Value = @UserName;
+            param[2] = new SqlParameter("@Date", SqlDbType.Date);
+            param[2].Value = Date;
+            param[3] = new SqlParameter("@Time_From", SqlDbType.Time);
+            param[3].Value = Time_From;
+            param[4] = new SqlParameter("@Time_to", SqlDbType.Time);
+            param[4].Value = Time_To;
             dt = da.selected("Select_PullMoneyForUser", param);
             return dt;
         }

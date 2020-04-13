@@ -187,7 +187,7 @@
             this.Btn_AddShift.Name = "Btn_AddShift";
             this.Btn_AddShift.Size = new System.Drawing.Size(167, 32);
             this.Btn_AddShift.TabIndex = 169;
-            this.Btn_AddShift.Text = "إضافة الشيفت ";
+            this.Btn_AddShift.Text = "إضافة  ";
             this.Btn_AddShift.Click += new System.EventHandler(this.Btn_AddShift_Click);
             // 
             // label9
@@ -217,6 +217,7 @@
             this.Cmb_Branch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Cmb_Branch.Size = new System.Drawing.Size(306, 27);
             this.Cmb_Branch.TabIndex = 175;
+            this.Cmb_Branch.SelectedIndexChanged += new System.EventHandler(this.Cmb_Branch_SelectedIndexChanged);
             this.Cmb_Branch.SelectionChangeCommitted += new System.EventHandler(this.Cmb_Branch_SelectionChangeCommitted);
             // 
             // Frm_EmployeeDiscount
@@ -224,7 +225,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(566, 366);
+            this.ClientSize = new System.Drawing.Size(566, 365);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.Cmb_Branch);
             this.Controls.Add(this.Btn_AddShift);

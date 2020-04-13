@@ -88,6 +88,12 @@ namespace Laboratory.PL
                         txt_name.Focus();
                         return;
                     }
+                    if (txt_reason.Text == "")
+                    {
+                        MessageBox.Show("يرجى تحديد سبب السحب");
+                        txt_name.Focus();
+                        return;
+                    }
                     if (Convert.ToDecimal(txt_addbalance.Text) > Convert.ToDecimal(txt_CurrentBalance.Text))
                     {
                         MessageBox.Show("هذا المبلغ اكبر من الرصيد الحالى");
@@ -98,7 +104,7 @@ namespace Laboratory.PL
                     if (MessageBox.Show("هل تريد حفظ السحب", "عملية السحب", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         s.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_addbalance.Text), Date_insert.Value, txt_name.Text, txt_reason.Text);
-                        MessageBox.Show("تم سحب الرصيد من البنك المحدد");
+                        MessageBox.Show("تم سحب الرصيد من الخزينة المحدد");
                         clear();
 
                     }
