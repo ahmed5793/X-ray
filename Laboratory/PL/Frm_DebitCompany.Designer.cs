@@ -116,6 +116,7 @@
             this.cmb_Company.TabIndex = 111;
             this.cmb_Company.SelectedIndexChanged += new System.EventHandler(this.cmb_Company_SelectedIndexChanged_1);
             this.cmb_Company.SelectionChangeCommitted += new System.EventHandler(this.cmb_Company_SelectionChangeCommitted);
+            this.cmb_Company.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmb_Company_KeyDown);
             this.cmb_Company.Leave += new System.EventHandler(this.cmb_Company_Leave);
             // 
             // gridControl1

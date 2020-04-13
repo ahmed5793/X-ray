@@ -135,9 +135,16 @@ namespace Laboratory.PL
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            Btn_Update.Enabled = false;
+            dataGridView1.DataSource = d.SelectDoctor();
             txt_name.Clear();
             txt_phone.Clear();
+            txt_address.Clear();
+            Btn_Update.Enabled = false;
+            Btn_Add.Enabled = true;
+            txt_name.Enabled = true;
+            dateTimePicker1.Enabled = true;
+            comboBox1.SelectedIndex = -1;
+
         }
 
         private void Btn_Add_Click(object sender, EventArgs e)
@@ -161,6 +168,7 @@ namespace Laboratory.PL
                 txt_name.Clear();
                 txt_phone.Clear();
                 txt_address.Clear();
+                comboBox1.SelectedIndex = -1;
             }
             catch (Exception ex)
             {
@@ -200,10 +208,14 @@ namespace Laboratory.PL
                 Btn_Update.Enabled = false;
                 Btn_Add.Enabled = true;
                 txt_name.Enabled = true;
+                dateTimePicker1.Enabled = true;
+                comboBox1.SelectedIndex = -1;
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
             }
 
         }

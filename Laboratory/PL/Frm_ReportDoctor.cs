@@ -66,6 +66,7 @@ namespace Laboratory.PL
                     MessageBox.Show("يرجي العلم بان اسم الطبيب غير مسجل من قبل ", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
 
                     comboBox1.Focus();
+                    
                     comboBox1.SelectAll();
                     return;
                 }
@@ -109,6 +110,24 @@ namespace Laboratory.PL
             {
 
                 gridControl1.ShowRibbonPrintPreview();
+            }
+        }
+
+        private void comboBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (comboBox1.Text != String.Empty)
+                {
+                    gridControl1.DataSource = Doctors.Select_ReportDoctor(Convert.ToInt32(comboBox1.SelectedValue));
+                    textBox1.Text = gridView1.RowCount.ToString();
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
             }
         }
     }

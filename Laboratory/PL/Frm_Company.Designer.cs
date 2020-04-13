@@ -189,7 +189,7 @@
             this.btn_new.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btn_new.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.btn_new.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_new.ImageOptions.Image")));
-            this.btn_new.Location = new System.Drawing.Point(702, 192);
+            this.btn_new.Location = new System.Drawing.Point(675, 192);
             this.btn_new.Name = "btn_new";
             this.btn_new.Size = new System.Drawing.Size(148, 32);
             this.btn_new.TabIndex = 177;
@@ -209,7 +209,7 @@
             this.Btn_update.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_update.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.Btn_update.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_update.ImageOptions.Image")));
-            this.Btn_update.Location = new System.Drawing.Point(243, 192);
+            this.Btn_update.Location = new System.Drawing.Point(163, 192);
             this.Btn_update.Name = "Btn_update";
             this.Btn_update.Size = new System.Drawing.Size(169, 32);
             this.Btn_update.TabIndex = 176;
@@ -229,7 +229,7 @@
             this.Btn_Add.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_Add.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.Btn_Add.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Add.ImageOptions.Image")));
-            this.Btn_Add.Location = new System.Drawing.Point(487, 192);
+            this.Btn_Add.Location = new System.Drawing.Point(434, 192);
             this.Btn_Add.Name = "Btn_Add";
             this.Btn_Add.Size = new System.Drawing.Size(150, 32);
             this.Btn_Add.TabIndex = 175;
@@ -304,8 +304,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(948, 529);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.ClientSize = new System.Drawing.Size(948, 530);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btn_new);
             this.Controls.Add(this.Btn_update);

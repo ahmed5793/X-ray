@@ -376,7 +376,7 @@ namespace Laboratory.PL
                 decimal mno = Convert.ToDecimal(dt.Rows[0][0]) + Convert.ToDecimal(Txt_RentCompany.Text);
                 c.Update_CompanyTotalMoney(Convert.ToInt32(cmb_Company.SelectedValue), mno);
                 c.ADD_Company_TotalRent(Convert.ToInt32(cmb_Company.SelectedValue), 0
-                    , Convert.ToDecimal(Txt_RentCompany.Text), dateTimePicker1.Value, mno, "  تحويل حجز اشعة للموظف" + " " + txt_patientname.Text, Convert.ToInt32(cmb_Stock.SelectedValue)
+                    , Convert.ToDecimal(Txt_RentCompany.Text), dateTimePicker1.Value, mno, "  تحويل حجز اشعة رقم  " + " " + Txt_IdCust.Text + "للموظف " + txt_patientname.Text, Convert.ToInt32(cmb_Stock.SelectedValue)
                  , Convert.ToInt32(comboBox1.SelectedValue), txt_username.Text);
                 MessageBox.Show("تم حفظ التحويل بنجاح");
                 this.Close();

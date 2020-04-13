@@ -70,6 +70,7 @@
             this.Cmb_category.TabIndex = 1;
             this.Cmb_category.SelectedIndexChanged += new System.EventHandler(this.Cmb_category_SelectedIndexChanged);
             this.Cmb_category.SelectionChangeCommitted += new System.EventHandler(this.Cmb_category_SelectionChangeCommitted);
+            this.Cmb_category.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Cmb_category_KeyDown);
             this.Cmb_category.Leave += new System.EventHandler(this.Cmb_category_Leave);
             // 
             // label9
@@ -112,6 +113,7 @@
             this.cmb_items.Size = new System.Drawing.Size(366, 32);
             this.cmb_items.TabIndex = 2;
             this.cmb_items.SelectionChangeCommitted += new System.EventHandler(this.cmb_items_SelectionChangeCommitted);
+            this.cmb_items.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmb_items_KeyDown);
             this.cmb_items.Leave += new System.EventHandler(this.cmb_items_Leave);
             // 
             // cmb_Company
@@ -282,6 +284,7 @@
             this.Txt_Discount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Discount_KeyPress);
             this.Txt_Discount.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txt_Discount_KeyUp);
             this.Txt_Discount.MouseLeave += new System.EventHandler(this.Txt_Discount_MouseLeave);
+            this.Txt_Discount.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Txt_Discount_MouseMove);
             // 
             // label4
             // 

@@ -137,5 +137,24 @@ namespace Laboratory.PL
         {
             gridControl1.ShowRibbonPrintPreview();
         }
+
+        private void cmb_Company_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (cmb_Company.Text != "")
+                {
+                    dt.Clear();
+                    dt = cm.Select_DebitCompany(Convert.ToInt32(cmb_Company.SelectedValue));
+                    gridControl1.DataSource = dt;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
     }
 }

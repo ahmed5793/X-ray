@@ -92,7 +92,7 @@ namespace Laboratory.PL
             textBox1.Clear();
             Txt_QuantityStore.Text = "0";
             dt10.Clear();
-            dataGridView1.Rows.Clear();
+            dataGridView1.DataSource=null;
         }
 
        void SelectDataTable()
@@ -316,10 +316,7 @@ namespace Laboratory.PL
 
         private void Txt_Pay_TextChanged(object sender, EventArgs e)
         {
-            if (Txt_Pay.Text=="")
-            {
-                Txt_Pay.Text = "0";
-            }
+           
         }
 
         private void Txt_Pay_Click(object sender, EventArgs e)
@@ -327,6 +324,10 @@ namespace Laboratory.PL
             if (Txt_Pay.Text == "0")
             {
                 Txt_Pay.Text = "";
+            }
+            else
+            {
+                Txt_Pay.SelectAll();
             }
         }
 
@@ -503,13 +504,21 @@ namespace Laboratory.PL
                         , txt_sales.Text, Convert.ToInt32(dataGridView1.CurrentRow.Cells[5].Value));
 
                     }
-                    MessageBox.Show("تح حفظ المرتجع للفاتورة المحددة");
+                    MessageBox.Show("تم حفظ المرتجع للفاتورة المحددة");
                     Clear();
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void Txt_Pay_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (Txt_Pay.Text == "")
+            {
+                Txt_Pay.Text = "0";
             }
         }
     }

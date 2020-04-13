@@ -238,15 +238,19 @@ namespace Laboratory.PL
                     else if (rdbPartPay.Checked == true)
                     {
                         decimal z = Convert.ToInt32(dataGridView1.CurrentRow.Cells[2].Value) - Convert.ToDecimal(txt_prise.Text);
-
-                        if (MessageBox.Show("هل تريد جزء من المبلغ ", "عمليه الدفع", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                        if (txt_prise.Text=="0")
                         {
-                            if (Convert.ToDecimal(txt_prise.Text) > Convert.ToDecimal(dataGridView1.CurrentRow.Cells[2].Value))
-                            {
-                                MessageBox.Show("المبلغ المدفوع اكبر من المبلغ الموجود حاليا على الشركة  ", "تاكيد", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                txt_prise.Focus();
-                                return;
-                            }
+                            MessageBox.Show("لا بد ان يكون المبلغ المحدد  اكبر من الصفر ");
+                            return;
+                        }
+                        if (Convert.ToDecimal(txt_prise.Text) > Convert.ToDecimal(dataGridView1.CurrentRow.Cells[2].Value))
+                        {
+                            MessageBox.Show("المبلغ المدفوع اكبر من المبلغ الموجود حاليا على الشركة  ", "تاكيد", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            txt_prise.Focus();
+                            return;
+                        }
+                        if (MessageBox.Show("هل تريد جزء من المبلغ ", "عمليه الدفع", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                        {                          
                             dt.Clear();
                             dt = c.Select_CompanyTotalMoney(Convert.ToInt32(cmb_company.SelectedValue));
                             decimal mno = Convert.ToDecimal(dt.Rows[0][0]) - Convert.ToDecimal(txt_prise.Text);
