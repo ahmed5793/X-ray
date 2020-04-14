@@ -24,6 +24,7 @@ namespace Laboratory.PL
         {
             try
             {
+                comboBox1.Enabled = false;
                 checkBox1.Checked = false;
                 gridControl1.DataSource = Doctors.Select_ALLReportDoctor();
 
