@@ -41,6 +41,7 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.Btn_Print = new DevExpress.XtraEditors.SimpleButton();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -218,7 +219,7 @@
             this.simpleButton1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.simpleButton1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(146, 50);
+            this.simpleButton1.Location = new System.Drawing.Point(158, 96);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(146, 32);
             this.simpleButton1.TabIndex = 165;
@@ -238,12 +239,25 @@
             this.Btn_Print.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_Print.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.Btn_Print.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Print.ImageOptions.Image")));
-            this.Btn_Print.Location = new System.Drawing.Point(145, 98);
+            this.Btn_Print.Location = new System.Drawing.Point(12, 12);
             this.Btn_Print.Name = "Btn_Print";
             this.Btn_Print.Size = new System.Drawing.Size(146, 32);
             this.Btn_Print.TabIndex = 166;
             this.Btn_Print.Text = "طباعة التقرير";
             this.Btn_Print.Click += new System.EventHandler(this.Btn_Print_Click);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.BackColor = System.Drawing.Color.Yellow;
+            this.checkBox1.Font = new System.Drawing.Font("Droid Arabic Kufi", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.Location = new System.Drawing.Point(176, 49);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(118, 40);
+            this.checkBox1.TabIndex = 167;
+            this.checkBox1.Text = "كل الاطباء";
+            this.checkBox1.UseVisualStyleBackColor = false;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // Frm_AllCasesOFOutDoctor
             // 
@@ -251,6 +265,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.ClientSize = new System.Drawing.Size(991, 542);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.Btn_Print);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.groupBox1);
@@ -264,7 +279,7 @@
             this.MinimumSize = new System.Drawing.Size(967, 580);
             this.Name = "Frm_AllCasesOFOutDoctor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "تقرير تفصيلي لعدد الحالات القادمة من الاطباء الخارجية ";
+            this.Text = "تقرير مجمع لعدد الحالات القادمة من الاطباء الخارجية ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Frm_AllCasesOFOutDoctor_Load);
             this.groupBox1.ResumeLayout(false);
@@ -288,5 +303,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton Btn_Print;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

@@ -24,6 +24,9 @@ namespace Laboratory.PL
         {
             try
             {
+                checkBox1.Checked = false;
+                gridControl1.DataSource = Doctors.Select_ALLReportDoctor();
+
                 comboBox1.DataSource = Doctors.Select_ComboDoctor();
                 comboBox1.DisplayMember = "Doc_Name";
                 comboBox1.ValueMember = "Doc_ID";
@@ -109,11 +112,25 @@ namespace Laboratory.PL
             DataTable dt = new DataTable();
             try
             {
-                if (comboBox1.Text != string.Empty)
+                if (checkBox1.Checked == true)
                 {
-                    dt.Clear();
-                    dt = Doctors.Search_AllCasesOfOutDoctor(Convert.ToInt32(comboBox1.SelectedValue), DateFrom.Value, DateTo.Value);
-                    gridControl1.DataSource = dt;
+                   
+
+
+                    if (comboBox1.Text != string.Empty)
+                    {
+                        dt.Clear();
+                        dt = Doctors.Search_AllCasesOfOutDoctor(Convert.ToInt32(comboBox1.SelectedValue), DateFrom.Value, DateTo.Value);
+                        gridControl1.DataSource = dt;
+
+                    }
+                }
+                
+                
+              else
+            {
+                    gridControl1.DataSource = Doctors.Search_ALLReportDoctor(DateFrom.Value, DateTo.Value);
+
 
                 }
             }
@@ -147,6 +164,28 @@ namespace Laboratory.PL
             {
 
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked==true)
+            {
+                comboBox1.Enabled = true;
+                gridView1.Columns.Clear();
+                comboBox1.DataSource = Doctors.Select_ComboDoctor();
+                comboBox1.DisplayMember = "Doc_Name";
+                comboBox1.ValueMember = "Doc_ID";
+                comboBox1.SelectedIndex = -1;
+            }
+            else
+            {
+              
+
+
+                comboBox1.Enabled = false;
+                comboBox1.DataSource = null;
+                gridControl1.DataSource = Doctors.Select_ALLReportDoctor();
             }
         }
     }

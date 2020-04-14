@@ -202,5 +202,34 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
+
+        internal DataTable Select_ALLReportDoctor()
+        {
+            DataAccessLayer da = new DataAccessLayer();
+     
+           
+            da.open();
+            DataTable dt = new DataTable();
+            dt.Clear();
+            dt = da.selected("Select_ALLReportDoctor", null);
+            da.close();
+            return dt;
+        }
+        internal DataTable Search_ALLReportDoctor( DateTime Date_From, DateTime Date_To)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[2];
+           
+            param[0] = new SqlParameter("@Date_From", SqlDbType.Date);
+            param[0].Value = Date_From;
+            param[1] = new SqlParameter("@Date_To", SqlDbType.Date);
+            param[1].Value = Date_To;
+            da.open();
+            DataTable dt = new DataTable();
+            dt.Clear();
+            dt = da.selected("Search_ALLReportDoctor", param);
+            da.close();
+            return dt;
+        }
     }
 }

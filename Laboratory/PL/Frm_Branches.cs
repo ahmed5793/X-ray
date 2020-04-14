@@ -124,7 +124,7 @@ namespace Laboratory.PL
                     MessageBox.Show("عزيزى المستخدم قمبااختيار اسم المخزن");
                     return;
                 }
-                if (dataGridView1.Rows.Count >= 3)
+                if (dataGridView1.Rows.Count >= 4)
                 {
                     MessageBox.Show("ليس لديك صلاحية ان تضيف اكتر من ثلاث فروع الرجاء الرجوع الي مسئول النظام");
                     return;
@@ -165,7 +165,7 @@ namespace Laboratory.PL
                     MessageBox.Show("عزيزى المستخدم قم بااختيار اسم المخزن");
                     return;
                 }
-                if (MessageBox.Show("هل تريد تعديل البيانات ", "عملية التعديل", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("هل تريد تعديل البيانات ", "عملية التعديل", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
 
                     b.UpdateBranches(txt_name.Text, txt_address.Text, Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToInt32(cmb_store.SelectedValue),

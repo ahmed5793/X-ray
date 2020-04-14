@@ -104,7 +104,7 @@ namespace Laboratory.PL
         void doctor()
         {
             cmb_Doctor.DataSource = d.SelectDoctor();
-            cmb_Doctor.DisplayMember = "اسم الطبيب المعالج";
+            cmb_Doctor.DisplayMember = "اسم الطبيب ";
             cmb_Doctor.ValueMember = "Doc_ID";
             cmb_Doctor.SelectedIndex = -1;
         }
