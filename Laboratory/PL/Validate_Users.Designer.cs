@@ -93,6 +93,7 @@
             this.check_RepoDoctorOut = new System.Windows.Forms.CheckBox();
             this.Check_AddDoctor = new System.Windows.Forms.CheckBox();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.check_TransferCompany = new System.Windows.Forms.CheckBox();
             this.check_REportCompany = new System.Windows.Forms.CheckBox();
             this.check_DebitCompany = new System.Windows.Forms.CheckBox();
             this.check_AddItemCompany = new System.Windows.Forms.CheckBox();
@@ -125,7 +126,6 @@
             this.Txt_SalesMAn = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.Cmb_Branch = new System.Windows.Forms.ComboBox();
-            this.check_TransferCompany = new System.Windows.Forms.CheckBox();
             this.groupBox4.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.groupBox15.SuspendLayout();
@@ -1057,6 +1057,19 @@
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "صلاحية المستخدمين داخل قائمة إدارة الشركات";
             // 
+            // check_TransferCompany
+            // 
+            this.check_TransferCompany.AutoSize = true;
+            this.check_TransferCompany.BackColor = System.Drawing.Color.Black;
+            this.check_TransferCompany.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.check_TransferCompany.ForeColor = System.Drawing.Color.White;
+            this.check_TransferCompany.Location = new System.Drawing.Point(115, 101);
+            this.check_TransferCompany.Name = "check_TransferCompany";
+            this.check_TransferCompany.Size = new System.Drawing.Size(209, 26);
+            this.check_TransferCompany.TabIndex = 64;
+            this.check_TransferCompany.Text = "تقرير عن التحويل الي شركات";
+            this.check_TransferCompany.UseVisualStyleBackColor = false;
+            // 
             // check_REportCompany
             // 
             this.check_REportCompany.AutoSize = true;
@@ -1439,6 +1452,7 @@
             this.cmb_Users1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmb_Users1.Size = new System.Drawing.Size(316, 30);
             this.cmb_Users1.TabIndex = 52;
+            this.cmb_Users1.SelectedIndexChanged += new System.EventHandler(this.cmb_Users1_SelectedIndexChanged);
             this.cmb_Users1.SelectionChangeCommitted += new System.EventHandler(this.cmb_Users1_SelectionChangeCommitted);
             // 
             // label5
@@ -1491,19 +1505,6 @@
             this.Cmb_Branch.Size = new System.Drawing.Size(275, 27);
             this.Cmb_Branch.TabIndex = 102;
             this.Cmb_Branch.SelectionChangeCommitted += new System.EventHandler(this.Cmb_Branch_SelectionChangeCommitted);
-            // 
-            // check_TransferCompany
-            // 
-            this.check_TransferCompany.AutoSize = true;
-            this.check_TransferCompany.BackColor = System.Drawing.Color.Black;
-            this.check_TransferCompany.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.check_TransferCompany.ForeColor = System.Drawing.Color.White;
-            this.check_TransferCompany.Location = new System.Drawing.Point(115, 101);
-            this.check_TransferCompany.Name = "check_TransferCompany";
-            this.check_TransferCompany.Size = new System.Drawing.Size(209, 26);
-            this.check_TransferCompany.TabIndex = 64;
-            this.check_TransferCompany.Text = "تقرير عن التحويل الي شركات";
-            this.check_TransferCompany.UseVisualStyleBackColor = false;
             // 
             // Validate_Users
             // 

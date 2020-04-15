@@ -40,15 +40,13 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.cmb_instalmenttype = new System.Windows.Forms.ComboBox();
-            this.cmb_stock = new System.Windows.Forms.ComboBox();
             this.Btn_New = new DevExpress.XtraEditors.SimpleButton();
             this.Btn_Update = new DevExpress.XtraEditors.SimpleButton();
             this.Btn_Add = new DevExpress.XtraEditors.SimpleButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -130,7 +128,7 @@
             // txt_money
             // 
             this.txt_money.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_money.Location = new System.Drawing.Point(452, 155);
+            this.txt_money.Location = new System.Drawing.Point(371, 111);
             this.txt_money.Name = "txt_money";
             this.txt_money.Size = new System.Drawing.Size(154, 32);
             this.txt_money.TabIndex = 0;
@@ -159,7 +157,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(612, 159);
+            this.label5.Location = new System.Drawing.Point(591, 119);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(50, 24);
             this.label5.TabIndex = 17;
@@ -182,12 +180,10 @@
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.btn_GenderJob);
-            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.cmb_instalmenttype);
             this.groupBox1.Controls.Add(this.txt_username);
-            this.groupBox1.Controls.Add(this.cmb_stock);
             this.groupBox1.Controls.Add(this.txt_money);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -197,11 +193,21 @@
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(696, 63);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(134, 27);
+            this.textBox1.TabIndex = 40;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(153, 155);
+            this.dateTimePicker1.Location = new System.Drawing.Point(378, 162);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(147, 26);
             this.dateTimePicker1.TabIndex = 34;
@@ -211,22 +217,11 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.White;
             this.label7.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(306, 157);
+            this.label7.Location = new System.Drawing.Point(546, 164);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(95, 24);
             this.label7.TabIndex = 33;
             this.label7.Text = "تاريخ القسط";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(578, 111);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 24);
-            this.label1.TabIndex = 39;
-            this.label1.Text = "خزينة";
             // 
             // cmb_instalmenttype
             // 
@@ -241,20 +236,6 @@
             this.cmb_instalmenttype.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmb_instalmenttype.Size = new System.Drawing.Size(314, 32);
             this.cmb_instalmenttype.TabIndex = 33;
-            // 
-            // cmb_stock
-            // 
-            this.cmb_stock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmb_stock.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cmb_stock.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmb_stock.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_stock.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_stock.FormattingEnabled = true;
-            this.cmb_stock.Location = new System.Drawing.Point(259, 108);
-            this.cmb_stock.Name = "cmb_stock";
-            this.cmb_stock.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmb_stock.Size = new System.Drawing.Size(313, 32);
-            this.cmb_stock.TabIndex = 38;
             // 
             // Btn_New
             // 
@@ -316,16 +297,6 @@
             this.Btn_Add.Text = "حفظ";
             this.Btn_Add.Click += new System.EventHandler(this.Btn_Add_Click);
             // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(696, 63);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(134, 27);
-            this.textBox1.TabIndex = 40;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // Frm_installment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -366,8 +337,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label7;
         public System.Windows.Forms.ComboBox cmb_instalmenttype;
-        private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.ComboBox cmb_stock;
         private DevExpress.XtraEditors.SimpleButton Btn_New;
         private DevExpress.XtraEditors.SimpleButton Btn_Update;
         private DevExpress.XtraEditors.SimpleButton Btn_Add;

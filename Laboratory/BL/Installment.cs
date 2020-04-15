@@ -11,11 +11,11 @@ namespace Laboratory.BL
 {
     class Installment
     {
-        internal void Addinstallment(DateTime dateinstallment, decimal money, string username, int idstock,  int IDinstallmentType)
+        internal void Addinstallment(DateTime dateinstallment, decimal money, string username,   int IDinstallmentType)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[5];
+            SqlParameter[] param = new SqlParameter[4];
             param[0] = new SqlParameter("@date", SqlDbType.DateTime);
             param[0].Value = dateinstallment;
             param[1] = new SqlParameter("@money", SqlDbType.Decimal);
@@ -23,10 +23,9 @@ namespace Laboratory.BL
             param[2] = new SqlParameter("@userName", SqlDbType.NVarChar, 50);
             param[2].Value = username;
 
-            param[3] = new SqlParameter("@idStock", SqlDbType.Int);
-            param[3].Value = idstock;
-            param[4] = new SqlParameter("@idinstallmentType", SqlDbType.Int);
-            param[4].Value = IDinstallmentType;
+          
+            param[3] = new SqlParameter("@idinstallmentType", SqlDbType.Int);
+            param[3].Value = IDinstallmentType;
 
 
 

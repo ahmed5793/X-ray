@@ -169,6 +169,9 @@ namespace Laboratory.PL
                     ///////
                     if (Convert.ToInt32(dt2.Rows[0][6]) == 0){check_RepoDoctorOut.Checked = false;}
                     else if (Convert.ToInt32(dt2.Rows[0][6]) == 1){check_RepoDoctorOut.Checked = true;}
+
+                    if (Convert.ToInt32(dt2.Rows[0][7]) == 0) { check_TransferCompany.Checked = false; }
+                    else if (Convert.ToInt32(dt2.Rows[0][7]) == 1) { check_TransferCompany.Checked = true; }
                 }
                 dt2.Clear();
                 dt2 = p.SelectUserAccount(txt_Baisc.Text);
@@ -471,7 +474,7 @@ namespace Laboratory.PL
                     //////
                     if (Check_AddDoctor.Checked == true){AddDOCOTOTOut = 1;}
 
-                    else if (Check_AddDoctor_Centers.Checked == false){AddDOCOTOTOut = 0;}
+                    else if (Check_AddDoctor.Checked == false){AddDOCOTOTOut = 0;}
                     //////
                     if (check_RepoDoctorOut.Checked == true) { ReportDoctorOut = 1; }
 
@@ -481,7 +484,7 @@ namespace Laboratory.PL
 
                     else if (check_TransferCompany.Checked == false) { TransferCompany = 0; }
 
-                    p.UpdateUserCompany(txt_Baisc.Text, AddCompany, AddItemCompany, payCompany, DepitCompany, ReportCompany,
+                    p.UpdateUserCompany(txt_Baisc.Text, AddCompany, AddItemCompany, DepitCompany, payCompany, ReportCompany,
                                          AddDOCOTOTOut, ReportDoctorOut,TransferCompany);
 
 
@@ -518,9 +521,9 @@ namespace Laboratory.PL
 
                     else if (check_ReportMarofat.Checked == false){ReportMasrof = 0;}
                     ///////
-                    if (check_AddStore.Checked == true){AddStock = 1;}
+                    if (check_AddStock.Checked == true){AddStock = 1;}
 
-                    else if (check_AddStore.Checked == false){AddStock = 0;}
+                    else if (check_AddStock.Checked == false){AddStock = 0;}
                     ///////
                     if (check_InsertIntoStock.Checked == true){InsertStock = 1;}
 
@@ -790,5 +793,9 @@ namespace Laboratory.PL
 
         }
 
+        private void cmb_Users1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
