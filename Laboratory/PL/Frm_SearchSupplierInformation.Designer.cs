@@ -102,7 +102,7 @@
             this.btn_save.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btn_save.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.btn_save.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_save.ImageOptions.Image")));
-            this.btn_save.Location = new System.Drawing.Point(576, -12);
+            this.btn_save.Location = new System.Drawing.Point(576, -34);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(141, 33);
             this.btn_save.TabIndex = 194;

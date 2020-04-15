@@ -56,5 +56,10 @@ namespace Laboratory.PL
             }
 
         }
+
+        private void Frm_ReportReturnSuppliers_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
