@@ -263,7 +263,7 @@ namespace Laboratory.BL
             param[9] = new SqlParameter("@Report_InsertStock", SqlDbType.Int);
             param[9].Value = ReportInsertStock;
             param[10] = new SqlParameter("@Add_Instalment", SqlDbType.Int);
-            param[10].Value = Report_Instalment;
+            param[10].Value = Add_Instalment;
             param[11] = new SqlParameter("@Report_Instalment", SqlDbType.Int);
             param[11].Value = Report_Instalment;
             da.excutequery("AddUserAccount", param);
@@ -298,7 +298,7 @@ namespace Laboratory.BL
             param[9] = new SqlParameter("@Report_InsertStock", SqlDbType.Int);
             param[9].Value = ReportInsertStock;
             param[10] = new SqlParameter("@Add_Instalment", SqlDbType.Int);
-            param[10].Value = Report_Instalment;
+            param[10].Value = Add_Instalment;
             param[11] = new SqlParameter("@Report_Instalment", SqlDbType.Int);
             param[11].Value = Report_Instalment;
             da.excutequery("UpdateUserAccount", param);

@@ -13,7 +13,7 @@ namespace Laboratory.PL
 {
     public partial class Frm_installment : Form
     {
-        Stock s = new Stock();
+     
         Installment i = new Installment();
         DataTable dt = new DataTable();
         public Frm_installment()
@@ -27,9 +27,7 @@ namespace Laboratory.PL
             {
                 dataGridView1.DataSource = i.Selectinstallment();
                 txt_username.Text = Program.salesman;
-                cmb_stock.DataSource = s.Compo_Stock();
-                cmb_stock.DisplayMember = "Name_Stock";
-                cmb_stock.ValueMember = "ID_Stock";
+         
                 cmb_instalmenttype.DataSource = i.selectcompoinstallmentType();
                 cmb_instalmenttype.DisplayMember = "Name";
                 cmb_instalmenttype.ValueMember = "ID_installmentType";
@@ -73,10 +71,10 @@ namespace Laboratory.PL
             if (dataGridView1.Rows.Count>0)
             {
                 Btn_Update.Enabled = true;
-                cmb_stock.Enabled = false;
+               
                 Btn_Add.Enabled = false;
                 //txt_username.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                cmb_stock.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+              
                 txt_money.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
                 dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
                 cmb_instalmenttype.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
@@ -103,10 +101,10 @@ namespace Laboratory.PL
         }
         void clear()
         {
-            cmb_stock.Enabled = true;
+           
             txt_money.Text = "0";
             Btn_Update.Enabled = false;
-            cmb_stock.Enabled = true;
+           
             Btn_Add.Enabled = true;
             textBox1.Clear();
         }
@@ -124,12 +122,7 @@ namespace Laboratory.PL
                     MessageBox.Show("برجاء التاكد من المبلغ");
                     return;
                 }
-                if (cmb_stock.Text == "")
-                {
-                    MessageBox.Show("عزيزي المستخدم لم يتم التسجيل لعدم وجود خزنة");
-                    cmb_stock.Focus();
-                    return;
-                }
+           
                 if (cmb_instalmenttype.Text == "")
                 {
                     MessageBox.Show("برجاء التاكد من نوع القسط");
@@ -137,22 +130,11 @@ namespace Laboratory.PL
                     return;
                 }
 
-                dt.Clear();
-                dt = s.Select_moneyStock(Convert.ToInt32(cmb_stock.SelectedValue));
-                if (dt.Rows.Count > 0)
-                {
-                    if (Convert.ToDecimal(txt_money.Text) > Convert.ToDecimal(dt.Rows[0][0]))
-                    {
-                        MessageBox.Show("رصيد الخزنة الحالى غير كافى ");
-                        return;
-                    }
-                }
 
-                i.Addinstallment(dateTimePicker1.Value, Convert.ToDecimal(txt_money.Text), txt_username.Text, Convert.ToInt32(cmb_stock.SelectedValue), Convert.ToInt32(cmb_instalmenttype.SelectedValue));
+                i.Addinstallment(dateTimePicker1.Value, Convert.ToDecimal(txt_money.Text), txt_username.Text,  Convert.ToInt32(cmb_instalmenttype.SelectedValue));
 
                 MessageBox.Show("تم اضافةالقسط بنجاح ", "عمليه الاضافه", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                s.Add_StockPull(Convert.ToInt32(cmb_stock.SelectedValue), Convert.ToDecimal(txt_money.Text),
-                             dateTimePicker1.Value, txt_username.Text,  " دفع قسط" +" "+ cmb_instalmenttype.Text );
+                  
 
                 dataGridView1.DataSource = i.Selectinstallment();
                 clear();
@@ -174,22 +156,12 @@ namespace Laboratory.PL
                     txt_money.Focus();
                     return;
                 }
-                dt.Clear();
-                dt = s.Select_moneyStock(Convert.ToInt32(cmb_stock.SelectedValue));
-                if (dt.Rows.Count > 0)
-                {
-                    if (Convert.ToDecimal(txt_money.Text) > Convert.ToDecimal(dt.Rows[0][0]))
-                    {
-                        MessageBox.Show("رصيد الخزنة الحالى غير كافى ");
-                        return;
-                    }
-                }
+            
                 if (MessageBox.Show("هل تريد مسح القسط المحدد", "عمليه مسح قسط", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
                 {
                     //s.Add_StockPull(Convert.ToInt32(cmb_stock.SelectedValue), Convert.ToDecimal(dataGridView1.CurrentRow.Cells[3].Value), dateTimePicker1.Value, txt_username.Text, cmb_instalmenttype.Text + " " + " دفع قسط");
                     i.Delete_Installment(Convert.ToInt32(textBox1.Text));
-                    s.add_insertStock(Convert.ToInt32(cmb_stock.SelectedValue), Convert.ToDecimal(txt_money.Text), 
-                        dateTimePicker1.Value, txt_username.Text, " مسح قسط" + " " + cmb_instalmenttype.Text );
+                
 
                     MessageBox.Show("تم مسح القسط بنجاح", "عمليه التعديل", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
@@ -203,7 +175,7 @@ namespace Laboratory.PL
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                MessageBox.Show(ex.StackTrace);
+               
             }
         }
 
