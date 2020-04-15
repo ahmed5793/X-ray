@@ -250,6 +250,27 @@
             // 
             this.gridViewInsert.Appearance.ColumnFilterButton.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridViewInsert.Appearance.ColumnFilterButton.Options.UseFont = true;
+            this.gridViewInsert.Appearance.FocusedCell.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.gridViewInsert.Appearance.FocusedCell.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewInsert.Appearance.FocusedCell.ForeColor = System.Drawing.Color.Black;
+            this.gridViewInsert.Appearance.FocusedCell.Options.UseBackColor = true;
+            this.gridViewInsert.Appearance.FocusedCell.Options.UseFont = true;
+            this.gridViewInsert.Appearance.FocusedCell.Options.UseForeColor = true;
+            this.gridViewInsert.Appearance.FocusedCell.Options.UseTextOptions = true;
+            this.gridViewInsert.Appearance.FocusedCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridViewInsert.Appearance.FocusedCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridViewInsert.Appearance.FocusedCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.gridViewInsert.Appearance.FocusedRow.BackColor = System.Drawing.Color.Yellow;
+            this.gridViewInsert.Appearance.FocusedRow.BackColor2 = System.Drawing.Color.Yellow;
+            this.gridViewInsert.Appearance.FocusedRow.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewInsert.Appearance.FocusedRow.ForeColor = System.Drawing.Color.Black;
+            this.gridViewInsert.Appearance.FocusedRow.Options.UseBackColor = true;
+            this.gridViewInsert.Appearance.FocusedRow.Options.UseFont = true;
+            this.gridViewInsert.Appearance.FocusedRow.Options.UseForeColor = true;
+            this.gridViewInsert.Appearance.FocusedRow.Options.UseTextOptions = true;
+            this.gridViewInsert.Appearance.FocusedRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridViewInsert.Appearance.FocusedRow.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridViewInsert.Appearance.FocusedRow.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.gridViewInsert.Appearance.HeaderPanel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridViewInsert.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Yellow;
             this.gridViewInsert.Appearance.HeaderPanel.Options.UseFont = true;
@@ -283,7 +304,6 @@
             this.gridViewInsert.OptionsBehavior.ReadOnly = true;
             this.gridViewInsert.OptionsPrint.PrintPreview = true;
             this.gridViewInsert.OptionsView.ShowFooter = true;
-            this.gridViewInsert.OptionsView.ShowGroupPanel = false;
             // 
             // Frm_ManagmentUser
             // 
