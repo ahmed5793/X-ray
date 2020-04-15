@@ -1239,36 +1239,26 @@ namespace Laboratory.PL
                         MessageBox.Show("من فضلك قم بتحديد طريقة التعامل");
                         return;
                     }
-
-                    if (txt_name.Text == "" && Cmb_customer.Text == "" || txt_address.Text == "" || txt_age.Text == "")
-                    {
-                        MessageBox.Show("من فضلك قم باادخال بيانات العميل كاملة");
-                        return;
-                    }
                     if (cmb_Doctor.Text == "")
                     {
                         MessageBox.Show("من فضلك قم باادخال الطبيب المعالج للمريض");
-
                         return;
                     }
                     if (cmb_DoctorOfCenter.Text == "")
                     {
                         MessageBox.Show("من فضلك قم باادخال طبيب الحالة");
                         cmb_DoctorOfCenter.Focus();
-
                         return;
                     }
                     if (cmb_Techincal.Text == "")
                     {
                         MessageBox.Show("من فضلك قم باادخال الفني");
                         cmb_Techincal.Focus();
-
                         return;
                     }
                     if (txt_compint.Text == "")
                     {
                         MessageBox.Show("من فضلك قم باادخال الشكوي");
-
                         return;
                     }
                  
@@ -1287,6 +1277,18 @@ namespace Laboratory.PL
 
                     if (cmb_statues.Text == "نقدى")
                     {
+                        if (txt_name.Text =="" )
+                        {
+                            MessageBox.Show("من فضلك قم باادخال إسم العميل  ");
+                            txt_name.Focus();
+                            return;
+                        }
+                        if (txt_age.Text == "")
+                        {
+                            MessageBox.Show("من فضلك قم باادخال سن العميل  ");
+                            txt_age.Focus();
+                            return;
+                        }
                         Btn_Save.Enabled = false;
                         if (rdb_NewPatient.Checked == true)
                         {
@@ -1387,11 +1389,15 @@ namespace Laboratory.PL
                         report.Parameters["idTicket"].Visible = false;
                         sr.documentViewer1.Enabled = true;
                         sr.ShowDialog();
-
-
                     }
                     else if (cmb_statues.Text == "شركات")
                     {
+                        if (Cmb_customer.Text == "" )
+                        {
+                            MessageBox.Show("من فضلك قم باادخال إسم العميل ");
+                            Cmb_customer.Focus();
+                            return;
+                        }
                         Btn_Save.Enabled = false;
                         if (cmb_Company.Text == "")
                         {
