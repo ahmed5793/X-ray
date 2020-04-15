@@ -315,7 +315,7 @@ namespace Laboratory.PL
 
         private void Validate_Users_Load(object sender, EventArgs e)
         {
-              txt_Baisc.Hide();
+              //txt_Baisc.Hide();
         }
 
 
@@ -477,7 +477,7 @@ namespace Laboratory.PL
                     else if (Check_AddDoctor.Checked == false){AddDOCOTOTOut = 0;}
                     //////
                     if (check_RepoDoctorOut.Checked == true) { ReportDoctorOut = 1; }
-
+                    
                     else if (check_RepoDoctorOut.Checked == false) { ReportDoctorOut = 0; }
                     ////
                     if (check_TransferCompany.Checked == true) { TransferCompany = 1; }
