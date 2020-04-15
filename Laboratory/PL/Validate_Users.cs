@@ -39,10 +39,10 @@ namespace Laboratory.PL
                 Cmb_Branch.ValueMember = "Branch_ID";
 
             }
-            cmb_Users1.DataSource = E.Select_EmployeFromBranch(Convert.ToInt32(Cmb_Branch.SelectedValue));
-            cmb_Users1.DisplayMember = "Emp_Name";
-            cmb_Users1.ValueMember = "id_Emp";
-            cmb_Users1.SelectedIndex = -1;
+               cmb_Users1.DataSource = E.Select_EmployeFromBranch(Convert.ToInt32(Cmb_Branch.SelectedValue));
+               cmb_Users1.DisplayMember = "Emp_Name";
+               cmb_Users1.ValueMember = "id_Emp";
+               cmb_Users1.SelectedIndex = -1;
 
             dt2.Clear();
             dt2 = p.Select_UserBAsicInformation(txt_Baisc.Text);
@@ -54,7 +54,10 @@ namespace Laboratory.PL
             Txt_SalesMAn.Text = Program.salesman;
             Permision();
             check_AddEmployeeBranch.Hide();
-           
+            txt_Baisc.Hide();
+
+            checkBox1.Checked = true;
+
         }       
         private void cmb_Users1_SelectionChangeCommitted(object sender, EventArgs e)
         {          
@@ -315,7 +318,7 @@ namespace Laboratory.PL
 
         private void Validate_Users_Load(object sender, EventArgs e)
         {
-            txt_Baisc.Hide();
+           
         }
 
 
@@ -796,6 +799,64 @@ namespace Laboratory.PL
         private void cmb_Users1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+
+
+
+                if (checkBox1.Checked == true)
+                {
+                    Check();
+                    dt.Clear();
+                    dt = U.SelectUserBranch(Txt_SalesMAn.Text);
+
+                    if (dt.Rows.Count > 0)
+                    {
+                        Cmb_Branch.DataSource = U.SelectUserBranch(Txt_SalesMAn.Text);
+                        Cmb_Branch.DisplayMember = "Name";
+                        Cmb_Branch.ValueMember = "Branch_ID";
+                    }
+                    else
+                    {
+                        Cmb_Branch.DataSource = b.SelectCompBranches();
+                        Cmb_Branch.DisplayMember = "Name";
+                        Cmb_Branch.ValueMember = "Branch_ID";
+
+                    }
+                    Cmb_Branch.Enabled = true;
+                    if (Cmb_Branch.Text != "")
+                    {
+                    
+                        cmb_Users1.DataSource = E.Select_EmployeFromBranch(Convert.ToInt32(Cmb_Branch.SelectedValue));
+                        cmb_Users1.DisplayMember = "Emp_Name";
+                        cmb_Users1.ValueMember = "id_Emp";
+                        cmb_Users1.SelectedIndex = -1;
+                    }
+
+
+                }
+                else if (checkBox1.Checked == false)
+                {
+                    Check();
+
+                    Cmb_Branch.DataSource = null;
+                    Cmb_Branch.Enabled = false;
+                    cmb_Users1.DataSource = p.Select_EmployeNOTBranch();
+                    cmb_Users1.DisplayMember = "Emp_Name";
+                    cmb_Users1.ValueMember = "Emp_ID";
+                    cmb_Users1.SelectedIndex = -1;
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
