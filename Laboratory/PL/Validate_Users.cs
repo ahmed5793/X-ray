@@ -315,7 +315,7 @@ namespace Laboratory.PL
 
         private void Validate_Users_Load(object sender, EventArgs e)
         {
-              //txt_Baisc.Hide();
+            txt_Baisc.Hide();
         }
 
 
