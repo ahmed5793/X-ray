@@ -32,6 +32,7 @@ namespace Laboratory.PL
             InitializeComponent();
             txt_username.Text = Program.salesman;
             Permision();
+            
 
         }
 
@@ -481,6 +482,61 @@ namespace Laboratory.PL
         private void gridControl1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void simpleButton4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Frm_EditTeckit fd = new Frm_EditTeckit();
+                if (gridView1.RowCount > 0)
+                {
+                    dt10.Clear();
+                    dt10 = t.vildateTicketCompany(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
+                    if (dt10.Rows.Count > 0)
+                    {
+                        
+                        dt5.Clear();
+                        dt5 = t.TicketDetailsSelectTickets(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
+                        foreach (DataRow dr in dt5.Rows)
+                        {
+                            fd.txt_name.Text = dr[1].ToString();
+                           
+                            fd.txt_dateRecive.Text = dr[6].ToString();
+                            fd.txt_doctorOfCenter.Text = dr[7].ToString();
+                            fd.txt_branch.Text = dr[9].ToString();
+                            fd.txt_techincal.Text = dr[10].ToString();
+                            fd.txt_timeKa4f.Text = dr[18].ToString();
+                            fd.txt_idtickets.Text = dr[0].ToString();
+                        }
+                    }
+                    else
+                    {
+                        
+                        dt10.Clear();
+                        dt10 = t.TicketDetailsSelectTicketsCompany(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
+
+                        foreach (DataRow dr in dt10.Rows)
+                        {
+                            fd.txt_name.Text = dr[1].ToString();
+                         
+                            fd.txt_dateRecive.Text = dr[6].ToString();
+                            fd.txt_doctorOfCenter.Text = dr[7].ToString();
+                            fd.txt_branch.Text = dr[9].ToString();
+                            fd.txt_techincal.Text = dr[10].ToString();                            
+                            fd.txt_timeKa4f.Text = dr[19].ToString();
+                        }
+                    }
+                    fd.ShowDialog();
+                    gridControl1.DataSource = t.SelectSearchticketsBranchDate(Convert.ToInt32(cmb_branches.SelectedValue), FromDate.Value, ToDate.Value);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
+            }
         }
     }
 }

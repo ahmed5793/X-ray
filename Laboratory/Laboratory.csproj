@@ -445,6 +445,12 @@
     <Compile Include="PL\Frm_EditQantity.Designer.cs">
       <DependentUpon>Frm_EditQantity.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Frm_EditTeckit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_EditTeckit.Designer.cs">
+      <DependentUpon>Frm_EditTeckit.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_Employee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1036,6 +1042,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_EditQantity.resx">
       <DependentUpon>Frm_EditQantity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_EditTeckit.resx">
+      <DependentUpon>Frm_EditTeckit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Employee.resx">
       <DependentUpon>Frm_Employee.cs</DependentUpon>

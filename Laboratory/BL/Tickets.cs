@@ -65,6 +65,30 @@ namespace Laboratory.BL
             da.excutequery("AddTickets", param);
             da.close();
         }
+
+        internal void Update_TeckietInformation(int Id_Teckiet, int Id_Technical, int Id_DoctorOfCenter, DateTime Date_Revelation, 
+                                                DateTime Date_Recieve,int  palce_ToCheck, string User_Name)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[7];
+            param[0] = new SqlParameter("@Id_Teckiet", SqlDbType.Int);
+            param[0].Value = Id_Teckiet;
+            param[1] = new SqlParameter("@Id_Technical", SqlDbType.Int);
+            param[1].Value = Id_Technical;
+            param[2] = new SqlParameter("@Id_DoctortOfCenter", SqlDbType.Int);
+            param[2].Value = Id_DoctorOfCenter;
+            param[3] = new SqlParameter("@Date_Revelation", SqlDbType.DateTime);
+            param[3].Value = Date_Revelation;
+            param[4] = new SqlParameter("@Recieve_Date", SqlDbType.DateTime);
+            param[4].Value = Date_Recieve;
+            param[5] = new SqlParameter("@ID_Branches", SqlDbType.Int);
+            param[5].Value = palce_ToCheck;
+            param[6] = new SqlParameter("@User_Name", SqlDbType.NVarChar, 150);
+            param[6].Value = User_Name;
+            da.excutequery("Update_TeckietInformation", param);
+            da.close();
+        }
         internal void AddTicketDetails(int ID_Tickets, int ID_ItemsXrays, decimal prise)
         {
             DataAccessLayer da = new DataAccessLayer();
