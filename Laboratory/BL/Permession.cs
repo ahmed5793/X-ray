@@ -535,5 +535,16 @@ int Depit_Suppliers, int Report_Suppliers)
             da.excutequery("UpdateUser_Permission", param);
             da.close();
         }
+
+        internal DataTable Select_EmployeNOTBranch()
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+          
+          
+            DataTable dt = new DataTable();
+            dt = da.selected("Select_EmployeNOTBranch", null);
+            return dt;
+        }
     }
 }

@@ -23,8 +23,14 @@ namespace Laboratory.PL
         {
             try
             {
+
                 Calc_Total();
                 Permision();
+                checkBox1.Checked = false;
+                comboBox1.DataSource = null;
+                comboBox1.Enabled = false;
+                gridControl1.DataSource = m.search_AllMasrofatBranch(DateFrom.Value, DateTo.Value, Convert.ToInt32(cmb_UserBranch.SelectedValue));
+
             }
             catch (Exception ex)
             {
@@ -58,7 +64,7 @@ namespace Laboratory.PL
                 cmb_UserBranch.DataSource = u.SelectUserBranch(Program.salesman);
                 cmb_UserBranch.DisplayMember = "Name";
                 cmb_UserBranch.ValueMember = "Branch_ID";
-                cmb_UserBranch.SelectedIndex = -1;
+         
 
             }
             else
@@ -66,7 +72,6 @@ namespace Laboratory.PL
                 cmb_UserBranch.DataSource = b.SelectCompBranches();
                 cmb_UserBranch.DisplayMember = "Name";
                 cmb_UserBranch.ValueMember = "Branch_ID";
-                cmb_UserBranch.SelectedIndex = -1;
            
             }
         }
@@ -81,10 +86,10 @@ namespace Laboratory.PL
         Masrofat m = new Masrofat();
         private void Frm_ReportMasrofat_Load(object sender, EventArgs e)
         {
-            searchControl1.Hide();
-            comboBox1.DataSource = m.SelectReserve();
-            comboBox1.DisplayMember = "masrof_type";
-            comboBox1.ValueMember = "ID_masrof";
+           
+            //comboBox1.DataSource = m.SelectReserve();
+            //comboBox1.DisplayMember = "masrof_type";
+            //comboBox1.ValueMember = "ID_masrof";
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -110,15 +115,36 @@ namespace Laboratory.PL
                         MessageBox.Show("يرجي اختيار فرع");
                         return;
                     }
-                    if (comboBox1.Text == "")
+                  
+                    if (checkBox1.Checked == true)
                     {
-                        MessageBox.Show("يرجي اختيار نوع الصمروف");
-                        return;
+                        if (comboBox1.Text == "")
+                        {
+                            MessageBox.Show("يرجي اختيار نوع الصمروف");
+                            return;
+                        }
+                        Permision();
+                        comboBox1.DataSource = m.SelectReserve();
+                        comboBox1.DisplayMember = "masrof_type";
+                        comboBox1.ValueMember = "ID_masrof";
+                        cmb_UserBranch.Enabled = true;
+                        comboBox1.Enabled = true;
+                        dt = M.search_CategoryMasrofat(DateFrom.Value, DateTo.Value, Convert.ToInt32(comboBox1.SelectedValue),
+                 Convert.ToInt32(cmb_UserBranch.SelectedValue));
+                        gridControl1.DataSource = dt;
+                        Calc_Total();
+
                     }
-                    dt = M.search_CategoryMasrofat(DateFrom.Value, DateTo.Value,Convert.ToInt32(comboBox1.SelectedValue),
-                        Convert.ToInt32(cmb_UserBranch.SelectedValue));
-                    gridControl1.DataSource = dt;
-                    Calc_Total();
+                    else
+                    {
+
+                        comboBox1.Enabled = false;
+                        comboBox1.DataSource = null;
+                        gridControl1.DataSource = m.search_AllMasrofatBranch(DateFrom.Value, DateTo.Value, Convert.ToInt32(cmb_UserBranch.SelectedValue));
+
+                        Calc_Total();
+                    }
+             
 
                 }
             }
@@ -147,19 +173,20 @@ namespace Laboratory.PL
         {
             if (checkBox1.Checked==true)
             {
-                cmb_UserBranch.Enabled = false;
-                cmb_UserBranch.DataSource = null;
-                comboBox1.Enabled = false;
-                comboBox1.DataSource = null;
-            }
-            else
-            {
                 Permision();
                 comboBox1.DataSource = m.SelectReserve();
                 comboBox1.DisplayMember = "masrof_type";
                 comboBox1.ValueMember = "ID_masrof";
                 cmb_UserBranch.Enabled = true;
                 comboBox1.Enabled = true;
+             
+            }
+            else if(checkBox1.Checked == false)
+            {
+              
+                comboBox1.Enabled = false;
+                comboBox1.DataSource = null;
+                gridControl1.DataSource=m.search_AllMasrofatBranch(DateFrom.Value, DateTo.Value, Convert.ToInt32(cmb_UserBranch.SelectedValue));
             }
          
         }
