@@ -109,7 +109,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu_UI_v1.4">
-      <HintPath>..\..\Users\AFAQE\Desktop\New folder\Bunifu_UI_v1.4.dll</HintPath>
+      <HintPath>..\..\Users\AFAQE\Desktop\Bunifu_UI_v1.4.dll</HintPath>
     </Reference>
     <Reference Include="Carbon.Data.Protection, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Carbon.Data.Protection.1.0.0\lib\netstandard2.0\Carbon.Data.Protection.dll</HintPath>
@@ -859,12 +859,6 @@
     <Compile Include="PL\SplashScreen1.Designer.cs">
       <DependentUpon>SplashScreen1.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Test.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PL\Test.Designer.cs">
-      <DependentUpon>Test.cs</DependentUpon>
-    </Compile>
     <Compile Include="PL\Tranfair_product.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1249,9 +1243,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\SplashScreen1.resx">
       <DependentUpon>SplashScreen1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PL\Test.resx">
-      <DependentUpon>Test.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Tranfair_product.resx">
       <DependentUpon>Tranfair_product.cs</DependentUpon>

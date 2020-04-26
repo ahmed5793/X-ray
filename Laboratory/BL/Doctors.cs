@@ -231,5 +231,38 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
+        internal DataTable SelectCountDoctorOut(int idDoctor)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[1];
+
+            param[0] = new SqlParameter("@idDoctor", SqlDbType.Int);
+            param[0].Value = idDoctor;
+     
+            da.open();
+            DataTable dt = new DataTable();
+            dt.Clear();
+            dt = da.selected("SelectCountDoctorOut", param);
+            da.close();
+            return dt;
+        }
+
+        internal DataTable SelectDateCountDoctorOut(int idDoctor, DateTime Date_From, DateTime Date_To)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[3];
+            param[0] = new SqlParameter("@idDoctor", SqlDbType.Int);
+            param[0].Value = idDoctor;
+            param[1] = new SqlParameter("@Date_From", SqlDbType.Date);
+            param[1].Value = Date_From;
+            param[2] = new SqlParameter("@Date_To", SqlDbType.Date);
+            param[2].Value = Date_To;
+            da.open();
+            DataTable dt = new DataTable();
+            dt.Clear();
+            dt = da.selected("SelectDateCountDoctorOut", param);
+            da.close();
+            return dt;
+        }
     }
 }

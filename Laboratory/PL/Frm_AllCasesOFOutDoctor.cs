@@ -18,60 +18,116 @@ namespace Laboratory.PL
         public Frm_AllCasesOFOutDoctor()
         {
             InitializeComponent();
-            Function();
+            //SELECTALLDOCTOR();
+         
+
+
+
         }
-        void Function()
+
+        //void SELECTALLDOCTOR()
+        //{
+
+        //    DataTable dt = new DataTable();
+        //    DataTable dt2 = new DataTable();
+        //    dt.Clear();
+        //     dt = Doctors.Select_ALLReportDoctor();
+
+
+
+
+        //    var total = 0;
+        //    for (int i = 0; i < dt.Rows.Count; i++)
+        //    {
+        //        //for (int j = 0; j < dt.Rows[i][j]; j++)
+        //        //{
+        //        //    if (dt.Rows[i][0])
+
+        //        //        continue;
+
+
+
+
+        //         //   total += Convert.ToInt32(dt.Rows[i][j]);
+
+        //        //}
+        //        // display 
+        //        // totals.Add(total);
+        //        // you haev the value add it whenever you want
+        //        dt.Rows[i]["TOTAL"] = total;
+        //        total = 0;
+        //        gridControl1.DataSource = dt;
+        //    }
+
+
+        //}
+
+        void searchDatetAllDoctor()
         {
-            try
-            {
-                comboBox1.Enabled = false;
-                checkBox1.Checked = false;
-                gridControl1.DataSource = Doctors.Select_ALLReportDoctor();
+          
 
-                comboBox1.DataSource = Doctors.Select_ComboDoctor();
-                comboBox1.DisplayMember = "Doc_Name";
-                comboBox1.ValueMember = "Doc_ID";
-            }
-            catch (Exception ex)
+            DataTable dt = new DataTable();
+            DataTable dt2 = new DataTable();
+            dt.Clear();
+            dt = Doctors.Search_ALLReportDoctor(DateFrom.Value, DateTo.Value);
+            for (int i = 0; i < dt.Rows.Count; i++)
             {
+                dt2.Clear();
+                dt2 = Doctors.SelectDateCountDoctorOut(Convert.ToInt32(dt.Rows[i]["Doc_ID"]), DateFrom.Value, DateTo.Value);
+                for (int y = 0; y < dt2.Rows.Count; y++)
+                {
+                    int COUNT = Convert.ToInt32(dt2.Rows[y][0]);
+                    decimal VALUE = Convert.ToDecimal(dt2.Rows[y][1]);
+                    decimal TOTAL = Convert.ToDecimal(dt2.Rows[y][2]);
 
-                MessageBox.Show(ex.Message);
+                    dt.Rows[i]["COUNT"] =COUNT;
+                    dt.Rows[i]["VALUE"] = Math.Round(VALUE, 2);
+                    dt.Rows[i]["TOTAL"] = Math.Round(TOTAL, 2);
+               
+ 
+
+                }
+                gridControl1.DataSource = dt;
+                gridView1.Columns["Doc_ID"].Visible = false;
             }
+
+
         }
+        void SelectAllDoctor()
+        {
+           
+            //DataTable dt = new DataTable();
+            //DataTable dt2 = new DataTable();
+            //dt.Clear();
+            //dt = Doctors.Select_ALLReportDoctor();
+            //for (int i = 0; i < dt.Rows.Count; i++)
+            //{
+            //    dt2.Clear();
+            //    dt2 = Doctors.SelectCountDoctorOut(Convert.ToInt32(dt.Rows[i]["Doc_ID"]));
+            //    for (int y = 0; y < dt2.Rows.Count; y++)
+            //    {
+
+                  
+            //        dt.Rows[i]["COUNT"] = Convert.ToInt32(dt2.Rows[y][0]);
+
+            //        dt.Rows[i]["VALUE"] = Convert.ToDecimal(dt2.Rows[y][1]);
+            //        dt.Rows[i]["TOTAL"] = Convert.ToDecimal(dt2.Rows[y][2]);
+
+            //    }
+            //    gridControl1.DataSource = dt;
+            //}
+         
+
+        }
+
         private void comboBox1_Leave(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            if (comboBox1.Text != "")
-            {
-                dt.Clear();
-                dt = Doctors.vildateOutDoctor(Convert.ToInt32(comboBox1.SelectedValue));
-                if (dt.Rows.Count == 0)
-                {
-                    MessageBox.Show("يرجي العلم بان اسم الطبيب غير مسجل من قبل ", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-                    comboBox1.Focus();
-                    comboBox1.SelectAll();
-                    return;
-                }
-                dt.Dispose();
-            }
+          
         }
 
         private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            try
-            {
-                if (comboBox1.Text != String.Empty)
-                {
-                    gridControl1.DataSource = Doctors.Select_AllCasesOfOutDoctor(Convert.ToInt32(comboBox1.SelectedValue));
-
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
+           
         }
 
         private void btn_search_Click(object sender, EventArgs e)
@@ -98,52 +154,37 @@ namespace Laboratory.PL
             {
                 for (int i = 0; i < gView.GetChildRowCount(parent); i++)
                     if (gView.GetChildRowHandle(parent, i) == e.RowHandle)
-                        e.Appearance.BackColor = i % 2 == 0 ? Color.White : Color.Blue;
+                        e.Appearance.BackColor = i % 2 == 0 ? Color.White : Color.Yellow;
             }
-            else e.Appearance.BackColor = e.RowHandle % 2 == 0 ? Color.White : Color.Blue;
+            else e.Appearance.BackColor = e.RowHandle % 2 == 0 ? Color.White : Color.Yellow;
         }
 
         private void Frm_AllCasesOFOutDoctor_Load(object sender, EventArgs e)
         {
-
+            //SelectAllDoctor();
+            //gridView1.Columns["Doc_ID"].Visible = false;
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
+          
             try
             {
-                if (checkBox1.Checked == true)
-                {
-                   
 
 
-                    if (comboBox1.Text != string.Empty)
-                    {
-                        dt.Clear();
-                        dt = Doctors.Search_AllCasesOfOutDoctor(Convert.ToInt32(comboBox1.SelectedValue), DateFrom.Value, DateTo.Value);
-                        gridControl1.DataSource = dt;
-
-                    }
-                }
-                
-                
-              else
-            {
-                    gridControl1.DataSource = Doctors.Search_ALLReportDoctor(DateFrom.Value, DateTo.Value);
+                searchDatetAllDoctor();
 
 
-                }
+
+
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message);
             }
-            finally
-            {
-                dt.Dispose();
-            }
+          
+          
         }
 
         private void Btn_Print_Click(object sender, EventArgs e)
@@ -153,41 +194,13 @@ namespace Laboratory.PL
 
         private void comboBox1_KeyDown(object sender, KeyEventArgs e)
         {
-            try
-            {
-                if (comboBox1.Text != String.Empty)
-                {
-                    gridControl1.DataSource = Doctors.Select_AllCasesOfOutDoctor(Convert.ToInt32(comboBox1.SelectedValue));
-
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
+          
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox1.Checked==true)
-            {
-                comboBox1.Enabled = true;
-                gridView1.Columns.Clear();
-                comboBox1.DataSource = Doctors.Select_ComboDoctor();
-                comboBox1.DisplayMember = "Doc_Name";
-                comboBox1.ValueMember = "Doc_ID";
-                comboBox1.SelectedIndex = -1;
-            }
-            else
-            {
-              
-
-
-                comboBox1.Enabled = false;
-                comboBox1.DataSource = null;
-                gridControl1.DataSource = Doctors.Select_ALLReportDoctor();
-            }
+            
+           
         }
     }
 }
