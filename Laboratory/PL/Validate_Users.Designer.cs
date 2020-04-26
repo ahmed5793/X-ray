@@ -127,6 +127,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.Cmb_Branch = new System.Windows.Forms.ComboBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.Check_Revenue = new System.Windows.Forms.CheckBox();
             this.groupBox4.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.groupBox15.SuspendLayout();
@@ -157,6 +158,7 @@
             // 
             this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox4.Controls.Add(this.Check_Revenue);
             this.groupBox4.Controls.Add(this.check_ReportInsertStock);
             this.groupBox4.Controls.Add(this.check_ReportPullStock);
             this.groupBox4.Controls.Add(this.Ckeck_ReciveMoney);
@@ -178,7 +180,7 @@
             this.check_ReportInsertStock.BackColor = System.Drawing.Color.Black;
             this.check_ReportInsertStock.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.check_ReportInsertStock.ForeColor = System.Drawing.Color.White;
-            this.check_ReportInsertStock.Location = new System.Drawing.Point(351, 90);
+            this.check_ReportInsertStock.Location = new System.Drawing.Point(100, 90);
             this.check_ReportInsertStock.Name = "check_ReportInsertStock";
             this.check_ReportInsertStock.Size = new System.Drawing.Size(243, 26);
             this.check_ReportInsertStock.TabIndex = 87;
@@ -191,7 +193,7 @@
             this.check_ReportPullStock.BackColor = System.Drawing.Color.Black;
             this.check_ReportPullStock.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.check_ReportPullStock.ForeColor = System.Drawing.Color.White;
-            this.check_ReportPullStock.Location = new System.Drawing.Point(50, 89);
+            this.check_ReportPullStock.Location = new System.Drawing.Point(66, 40);
             this.check_ReportPullStock.Name = "check_ReportPullStock";
             this.check_ReportPullStock.Size = new System.Drawing.Size(277, 26);
             this.check_ReportPullStock.TabIndex = 86;
@@ -204,7 +206,7 @@
             this.Ckeck_ReciveMoney.BackColor = System.Drawing.Color.Black;
             this.Ckeck_ReciveMoney.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Ckeck_ReciveMoney.ForeColor = System.Drawing.Color.White;
-            this.Ckeck_ReciveMoney.Location = new System.Drawing.Point(183, 40);
+            this.Ckeck_ReciveMoney.Location = new System.Drawing.Point(371, 40);
             this.Ckeck_ReciveMoney.Name = "Ckeck_ReciveMoney";
             this.Ckeck_ReciveMoney.Size = new System.Drawing.Size(144, 26);
             this.Ckeck_ReciveMoney.TabIndex = 85;
@@ -217,7 +219,7 @@
             this.check_TranfairStockToStock.BackColor = System.Drawing.Color.Black;
             this.check_TranfairStockToStock.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.check_TranfairStockToStock.ForeColor = System.Drawing.Color.White;
-            this.check_TranfairStockToStock.Location = new System.Drawing.Point(628, 90);
+            this.check_TranfairStockToStock.Location = new System.Drawing.Point(457, 90);
             this.check_TranfairStockToStock.Name = "check_TranfairStockToStock";
             this.check_TranfairStockToStock.Size = new System.Drawing.Size(226, 26);
             this.check_TranfairStockToStock.TabIndex = 77;
@@ -230,7 +232,7 @@
             this.check_InsertIntoStock.BackColor = System.Drawing.Color.Black;
             this.check_InsertIntoStock.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.check_InsertIntoStock.ForeColor = System.Drawing.Color.White;
-            this.check_InsertIntoStock.Location = new System.Drawing.Point(591, 40);
+            this.check_InsertIntoStock.Location = new System.Drawing.Point(719, 40);
             this.check_InsertIntoStock.Name = "check_InsertIntoStock";
             this.check_InsertIntoStock.Size = new System.Drawing.Size(135, 26);
             this.check_InsertIntoStock.TabIndex = 76;
@@ -243,7 +245,7 @@
             this.check_PullStock.BackColor = System.Drawing.Color.Black;
             this.check_PullStock.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.check_PullStock.ForeColor = System.Drawing.Color.White;
-            this.check_PullStock.Location = new System.Drawing.Point(389, 40);
+            this.check_PullStock.Location = new System.Drawing.Point(544, 40);
             this.check_PullStock.Name = "check_PullStock";
             this.check_PullStock.Size = new System.Drawing.Size(139, 26);
             this.check_PullStock.TabIndex = 75;
@@ -256,7 +258,7 @@
             this.check_AddStock.BackColor = System.Drawing.Color.Black;
             this.check_AddStock.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.check_AddStock.ForeColor = System.Drawing.Color.White;
-            this.check_AddStock.Location = new System.Drawing.Point(777, 40);
+            this.check_AddStock.Location = new System.Drawing.Point(881, 40);
             this.check_AddStock.Name = "check_AddStock";
             this.check_AddStock.Size = new System.Drawing.Size(107, 26);
             this.check_AddStock.TabIndex = 73;
@@ -1519,6 +1521,19 @@
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
+            // Check_Revenue
+            // 
+            this.Check_Revenue.AutoSize = true;
+            this.Check_Revenue.BackColor = System.Drawing.Color.Black;
+            this.Check_Revenue.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Check_Revenue.ForeColor = System.Drawing.Color.White;
+            this.Check_Revenue.Location = new System.Drawing.Point(743, 90);
+            this.Check_Revenue.Name = "Check_Revenue";
+            this.Check_Revenue.Size = new System.Drawing.Size(119, 26);
+            this.Check_Revenue.TabIndex = 88;
+            this.Check_Revenue.Text = "تقرير الايرادات";
+            this.Check_Revenue.UseVisualStyleBackColor = false;
+            // 
             // Validate_Users
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1684,5 +1699,6 @@
         public System.Windows.Forms.CheckBox check_ReportTicketsReturn;
         public System.Windows.Forms.CheckBox check_TransferCompany;
         private System.Windows.Forms.CheckBox checkBox1;
+        public System.Windows.Forms.CheckBox Check_Revenue;
     }
 }

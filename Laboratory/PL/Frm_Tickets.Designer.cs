@@ -104,10 +104,10 @@
             this.cmb_statues = new System.Windows.Forms.ComboBox();
             this.label21 = new System.Windows.Forms.Label();
             this.cmb_UserBranch = new System.Windows.Forms.ComboBox();
-            this.Btn_NewOrder = new DevExpress.XtraEditors.SimpleButton();
-            this.Btn_Save = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.Btn_DetailsCompany = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.Btn_Save = new DevExpress.XtraEditors.SimpleButton();
+            this.Btn_NewOrder = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_order)).BeginInit();
@@ -990,6 +990,7 @@
             this.txt_discount.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_discount_KeyUp);
             this.txt_discount.Leave += new System.EventHandler(this.txt_discount_Leave);
             this.txt_discount.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txt_discount_MouseDown);
+            this.txt_discount.MouseLeave += new System.EventHandler(this.txt_discount_MouseLeave);
             this.txt_discount.Validated += new System.EventHandler(this.txt_discount_Validated);
             // 
             // txt_rent
@@ -1240,48 +1241,28 @@
             this.cmb_UserBranch.Size = new System.Drawing.Size(233, 26);
             this.cmb_UserBranch.TabIndex = 118;
             this.cmb_UserBranch.SelectedIndexChanged += new System.EventHandler(this.cmb_UserBranch_SelectedIndexChanged);
+            this.cmb_UserBranch.SelectionChangeCommitted += new System.EventHandler(this.cmb_UserBranch_SelectionChangeCommitted);
             // 
-            // Btn_NewOrder
+            // Btn_DetailsCompany
             // 
-            this.Btn_NewOrder.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.Btn_NewOrder.Appearance.BackColor = System.Drawing.Color.Black;
-            this.Btn_NewOrder.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_NewOrder.Appearance.ForeColor = System.Drawing.Color.White;
-            this.Btn_NewOrder.Appearance.Options.UseBackColor = true;
-            this.Btn_NewOrder.Appearance.Options.UseFont = true;
-            this.Btn_NewOrder.Appearance.Options.UseForeColor = true;
-            this.Btn_NewOrder.Appearance.Options.UseTextOptions = true;
-            this.Btn_NewOrder.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.Btn_NewOrder.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.Btn_NewOrder.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.Btn_NewOrder.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_NewOrder.ImageOptions.Image")));
-            this.Btn_NewOrder.Location = new System.Drawing.Point(698, 571);
-            this.Btn_NewOrder.Name = "Btn_NewOrder";
-            this.Btn_NewOrder.Size = new System.Drawing.Size(141, 32);
-            this.Btn_NewOrder.TabIndex = 179;
-            this.Btn_NewOrder.Text = "فاتورة جديدة";
-            this.Btn_NewOrder.Click += new System.EventHandler(this.Btn_Add_Click);
-            // 
-            // Btn_Save
-            // 
-            this.Btn_Save.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.Btn_Save.Appearance.BackColor = System.Drawing.Color.Black;
-            this.Btn_Save.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Save.Appearance.ForeColor = System.Drawing.Color.White;
-            this.Btn_Save.Appearance.Options.UseBackColor = true;
-            this.Btn_Save.Appearance.Options.UseFont = true;
-            this.Btn_Save.Appearance.Options.UseForeColor = true;
-            this.Btn_Save.Appearance.Options.UseTextOptions = true;
-            this.Btn_Save.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.Btn_Save.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.Btn_Save.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.Btn_Save.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Save.ImageOptions.Image")));
-            this.Btn_Save.Location = new System.Drawing.Point(512, 571);
-            this.Btn_Save.Name = "Btn_Save";
-            this.Btn_Save.Size = new System.Drawing.Size(141, 32);
-            this.Btn_Save.TabIndex = 180;
-            this.Btn_Save.Text = "حفظ الفاتورة";
-            this.Btn_Save.Click += new System.EventHandler(this.simpleButton1_Click);
+            this.Btn_DetailsCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Btn_DetailsCompany.Appearance.BackColor = System.Drawing.Color.Black;
+            this.Btn_DetailsCompany.Appearance.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_DetailsCompany.Appearance.ForeColor = System.Drawing.Color.White;
+            this.Btn_DetailsCompany.Appearance.Options.UseBackColor = true;
+            this.Btn_DetailsCompany.Appearance.Options.UseFont = true;
+            this.Btn_DetailsCompany.Appearance.Options.UseForeColor = true;
+            this.Btn_DetailsCompany.Appearance.Options.UseTextOptions = true;
+            this.Btn_DetailsCompany.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Btn_DetailsCompany.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.Btn_DetailsCompany.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.Btn_DetailsCompany.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_DetailsCompany.ImageOptions.Image")));
+            this.Btn_DetailsCompany.Location = new System.Drawing.Point(485, 181);
+            this.Btn_DetailsCompany.Name = "Btn_DetailsCompany";
+            this.Btn_DetailsCompany.Size = new System.Drawing.Size(151, 32);
+            this.Btn_DetailsCompany.TabIndex = 182;
+            this.Btn_DetailsCompany.Text = "الاوراق المطلوبة ";
+            this.Btn_DetailsCompany.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // simpleButton1
             // 
@@ -1304,26 +1285,47 @@
             this.simpleButton1.Text = "طباعة الباركود";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click_1);
             // 
-            // Btn_DetailsCompany
+            // Btn_Save
             // 
-            this.Btn_DetailsCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Btn_DetailsCompany.Appearance.BackColor = System.Drawing.Color.Black;
-            this.Btn_DetailsCompany.Appearance.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_DetailsCompany.Appearance.ForeColor = System.Drawing.Color.White;
-            this.Btn_DetailsCompany.Appearance.Options.UseBackColor = true;
-            this.Btn_DetailsCompany.Appearance.Options.UseFont = true;
-            this.Btn_DetailsCompany.Appearance.Options.UseForeColor = true;
-            this.Btn_DetailsCompany.Appearance.Options.UseTextOptions = true;
-            this.Btn_DetailsCompany.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.Btn_DetailsCompany.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.Btn_DetailsCompany.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.Btn_DetailsCompany.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_DetailsCompany.ImageOptions.Image")));
-            this.Btn_DetailsCompany.Location = new System.Drawing.Point(485, 181);
-            this.Btn_DetailsCompany.Name = "Btn_DetailsCompany";
-            this.Btn_DetailsCompany.Size = new System.Drawing.Size(151, 32);
-            this.Btn_DetailsCompany.TabIndex = 182;
-            this.Btn_DetailsCompany.Text = "الاوراق المطلوبة ";
-            this.Btn_DetailsCompany.Click += new System.EventHandler(this.simpleButton2_Click);
+            this.Btn_Save.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.Btn_Save.Appearance.BackColor = System.Drawing.Color.Black;
+            this.Btn_Save.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Save.Appearance.ForeColor = System.Drawing.Color.White;
+            this.Btn_Save.Appearance.Options.UseBackColor = true;
+            this.Btn_Save.Appearance.Options.UseFont = true;
+            this.Btn_Save.Appearance.Options.UseForeColor = true;
+            this.Btn_Save.Appearance.Options.UseTextOptions = true;
+            this.Btn_Save.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Btn_Save.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.Btn_Save.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.Btn_Save.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Save.ImageOptions.Image")));
+            this.Btn_Save.Location = new System.Drawing.Point(512, 571);
+            this.Btn_Save.Name = "Btn_Save";
+            this.Btn_Save.Size = new System.Drawing.Size(141, 32);
+            this.Btn_Save.TabIndex = 180;
+            this.Btn_Save.Text = "حفظ الفاتورة";
+            this.Btn_Save.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
+            // Btn_NewOrder
+            // 
+            this.Btn_NewOrder.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.Btn_NewOrder.Appearance.BackColor = System.Drawing.Color.Black;
+            this.Btn_NewOrder.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_NewOrder.Appearance.ForeColor = System.Drawing.Color.White;
+            this.Btn_NewOrder.Appearance.Options.UseBackColor = true;
+            this.Btn_NewOrder.Appearance.Options.UseFont = true;
+            this.Btn_NewOrder.Appearance.Options.UseForeColor = true;
+            this.Btn_NewOrder.Appearance.Options.UseTextOptions = true;
+            this.Btn_NewOrder.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Btn_NewOrder.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.Btn_NewOrder.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.Btn_NewOrder.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_NewOrder.ImageOptions.Image")));
+            this.Btn_NewOrder.Location = new System.Drawing.Point(698, 571);
+            this.Btn_NewOrder.Name = "Btn_NewOrder";
+            this.Btn_NewOrder.Size = new System.Drawing.Size(141, 32);
+            this.Btn_NewOrder.TabIndex = 179;
+            this.Btn_NewOrder.Text = "فاتورة جديدة";
+            this.Btn_NewOrder.Click += new System.EventHandler(this.Btn_Add_Click);
             // 
             // Frm_Tickets
             // 

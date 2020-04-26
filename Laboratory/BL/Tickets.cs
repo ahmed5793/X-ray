@@ -176,6 +176,23 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
+        internal DataTable Report_StockMoneyCategoryXray(string  Branch_name , DateTime From_Date , DateTime To_Date   )
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[3];
+            param[0] = new SqlParameter("@Branch_name", SqlDbType.NVarChar , 50 );
+            param[0].Value = Branch_name;
+            param[1] = new SqlParameter("@Date_From", SqlDbType.Date);
+            param[1].Value = From_Date;
+            param[2] = new SqlParameter("@Date_to", SqlDbType.Date);
+            param[2].Value = To_Date;
+            dt = da.selected("Report_StockMoneyCategoryXray", param);
+            da.close();
+            return dt;
+        }
         internal DataTable SelectManagmentTicketsBranchEvening(int IDBranch, DateTime date_day)
         {
             DataTable dt = new DataTable();
@@ -402,11 +419,12 @@ namespace Laboratory.BL
         }
 
         internal void addticketsReturn(int id_tickets,int id_stock,string branch,string patient_name,
-                                      string statues,string item_name,DateTime date_return,decimal moneyreturn, string note, decimal prise_items,decimal Pay, string UserName)
+                                      string statues,string item_name,DateTime date_return,decimal moneyreturn, string note, 
+                                      decimal prise_items,decimal Pay, string UserName, int Id_Item)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[12];
+            SqlParameter[] param = new SqlParameter[13];
             param[0] = new SqlParameter("@id_tickets", SqlDbType.Int);
             param[0].Value = id_tickets;
             param[1] = new SqlParameter("@id_stock", SqlDbType.Int);
@@ -427,12 +445,12 @@ namespace Laboratory.BL
             param[8].Value = note;
             param[9] = new SqlParameter("@prise_items", SqlDbType.Decimal);
             param[9].Value = prise_items;
-
             param[10] = new SqlParameter("@Pay", SqlDbType.Decimal);
-            param[10].Value = prise_items;
+            param[10].Value = Pay;
             param[11] = new SqlParameter("@UserName", SqlDbType.NVarChar,50);
             param[11].Value = UserName;
-
+            param[12] = new SqlParameter("@Id_Item", SqlDbType.Int);
+            param[12].Value = Id_Item;
             da.excutequery("addticketsReturn", param);
             da.close();
         }

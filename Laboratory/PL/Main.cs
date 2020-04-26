@@ -1295,6 +1295,20 @@ namespace Laboratory.PL
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void Btn_Revenues_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                Frm_Revenue fr = new Frm_Revenue();
+                fr.Show();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
 	

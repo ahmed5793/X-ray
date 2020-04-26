@@ -130,7 +130,8 @@ namespace Laboratory.PL
                             {
                                 t.addticketsReturn(Convert.ToInt32(txt_num.Text), Convert.ToInt32(cmb_Stock.SelectedValue), comboBox1.Text,
                                     txt_name.Text, txt_statues.Text, dataGridView1.Rows[i].Cells[1].Value.ToString(), dateTimePicker2.Value
-                                    , Convert.ToDecimal(txt_pay.Text), textBox2.Text, Convert.ToDecimal(dataGridView1.Rows[i].Cells[2].Value), Convert.ToDecimal(txt_pay.Text), txt_username.Text);
+                                    , Convert.ToDecimal(txt_pay.Text), textBox2.Text, Convert.ToDecimal(dataGridView1.Rows[i].Cells[2].Value),
+                                      Convert.ToDecimal(txt_pay.Text), txt_username.Text, Convert.ToInt32(dataGridView1.Rows[i].Cells[3].Value));
                             }
 
                             dt.Clear();

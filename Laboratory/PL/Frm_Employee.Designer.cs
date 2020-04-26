@@ -37,10 +37,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txt_address = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txt_search = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txt_IdEmploye = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -56,9 +54,12 @@
             this.Btn_New = new DevExpress.XtraEditors.SimpleButton();
             this.Btn_Update = new DevExpress.XtraEditors.SimpleButton();
             this.Btn_Add = new DevExpress.XtraEditors.SimpleButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.gridControlInsert = new DevExpress.XtraGrid.GridControl();
+            this.gridViewInsert = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlInsert)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewInsert)).BeginInit();
             this.SuspendLayout();
             // 
             // dateTimePicker1
@@ -147,62 +148,28 @@
             this.label2.TabIndex = 14;
             this.label2.Text = "العنوان";
             // 
-            // txt_search
+            // txt_IdEmploye
             // 
-            this.txt_search.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txt_search.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_search.Location = new System.Drawing.Point(295, 19);
-            this.txt_search.Name = "txt_search";
-            this.txt_search.Size = new System.Drawing.Size(262, 32);
-            this.txt_search.TabIndex = 50;
-            this.txt_search.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_search.TextChanged += new System.EventHandler(this.txt_search_TextChanged);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.Maroon;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 58);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.ShowEditingIcon = false;
-            this.dataGridView1.Size = new System.Drawing.Size(885, 245);
-            this.dataGridView1.TabIndex = 12;
-            this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
+            this.txt_IdEmploye.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txt_IdEmploye.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_IdEmploye.Location = new System.Drawing.Point(806, 195);
+            this.txt_IdEmploye.Name = "txt_IdEmploye";
+            this.txt_IdEmploye.Size = new System.Drawing.Size(83, 32);
+            this.txt_IdEmploye.TabIndex = 50;
+            this.txt_IdEmploye.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_IdEmploye.TextChanged += new System.EventHandler(this.txt_search_TextChanged);
             // 
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.txt_search);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.gridControlInsert);
             this.groupBox2.Location = new System.Drawing.Point(6, 233);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(897, 310);
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.White;
-            this.label6.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(563, 22);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(41, 24);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "بحث";
             // 
             // groupBox1
             // 
@@ -450,6 +417,83 @@
             this.Btn_Add.Text = "حفظ";
             this.Btn_Add.Click += new System.EventHandler(this.Btn_Add_Click);
             // 
+            // gridControlInsert
+            // 
+            this.gridControlInsert.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridControlInsert.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridControlInsert.Location = new System.Drawing.Point(7, 13);
+            this.gridControlInsert.LookAndFeel.SkinName = "DevExpress Dark Style";
+            this.gridControlInsert.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.gridControlInsert.MainView = this.gridViewInsert;
+            this.gridControlInsert.Name = "gridControlInsert";
+            this.gridControlInsert.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.gridControlInsert.Size = new System.Drawing.Size(885, 291);
+            this.gridControlInsert.TabIndex = 185;
+            this.gridControlInsert.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridViewInsert});
+            this.gridControlInsert.DoubleClick += new System.EventHandler(this.gridControlInsert_DoubleClick);
+            // 
+            // gridViewInsert
+            // 
+            this.gridViewInsert.Appearance.ColumnFilterButton.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewInsert.Appearance.ColumnFilterButton.Options.UseFont = true;
+            this.gridViewInsert.Appearance.FocusedCell.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.gridViewInsert.Appearance.FocusedCell.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewInsert.Appearance.FocusedCell.ForeColor = System.Drawing.Color.Black;
+            this.gridViewInsert.Appearance.FocusedCell.Options.UseBackColor = true;
+            this.gridViewInsert.Appearance.FocusedCell.Options.UseFont = true;
+            this.gridViewInsert.Appearance.FocusedCell.Options.UseForeColor = true;
+            this.gridViewInsert.Appearance.FocusedCell.Options.UseTextOptions = true;
+            this.gridViewInsert.Appearance.FocusedCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridViewInsert.Appearance.FocusedCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridViewInsert.Appearance.FocusedCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.gridViewInsert.Appearance.FocusedRow.BackColor = System.Drawing.Color.Yellow;
+            this.gridViewInsert.Appearance.FocusedRow.BackColor2 = System.Drawing.Color.Yellow;
+            this.gridViewInsert.Appearance.FocusedRow.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewInsert.Appearance.FocusedRow.ForeColor = System.Drawing.Color.Black;
+            this.gridViewInsert.Appearance.FocusedRow.Options.UseBackColor = true;
+            this.gridViewInsert.Appearance.FocusedRow.Options.UseFont = true;
+            this.gridViewInsert.Appearance.FocusedRow.Options.UseForeColor = true;
+            this.gridViewInsert.Appearance.FocusedRow.Options.UseTextOptions = true;
+            this.gridViewInsert.Appearance.FocusedRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridViewInsert.Appearance.FocusedRow.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridViewInsert.Appearance.FocusedRow.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.gridViewInsert.Appearance.HeaderPanel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewInsert.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Yellow;
+            this.gridViewInsert.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridViewInsert.Appearance.HeaderPanel.Options.UseForeColor = true;
+            this.gridViewInsert.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.gridViewInsert.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridViewInsert.Appearance.Row.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewInsert.Appearance.Row.FontStyleDelta = System.Drawing.FontStyle.Bold;
+            this.gridViewInsert.Appearance.Row.Options.UseFont = true;
+            this.gridViewInsert.Appearance.Row.Options.UseTextOptions = true;
+            this.gridViewInsert.Appearance.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridViewInsert.AppearancePrint.HeaderPanel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewInsert.AppearancePrint.HeaderPanel.FontStyleDelta = System.Drawing.FontStyle.Bold;
+            this.gridViewInsert.AppearancePrint.HeaderPanel.Options.UseFont = true;
+            this.gridViewInsert.AppearancePrint.HeaderPanel.Options.UseTextOptions = true;
+            this.gridViewInsert.AppearancePrint.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridViewInsert.AppearancePrint.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridViewInsert.AppearancePrint.HeaderPanel.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.gridViewInsert.AppearancePrint.Row.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewInsert.AppearancePrint.Row.Options.UseFont = true;
+            this.gridViewInsert.AppearancePrint.Row.Options.UseTextOptions = true;
+            this.gridViewInsert.AppearancePrint.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridViewInsert.AppearancePrint.Row.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridViewInsert.AppearancePrint.Row.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.gridViewInsert.GridControl = this.gridControlInsert;
+            this.gridViewInsert.Name = "gridViewInsert";
+            this.gridViewInsert.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
+            this.gridViewInsert.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
+            this.gridViewInsert.OptionsBehavior.AutoSelectAllInEditor = false;
+            this.gridViewInsert.OptionsBehavior.Editable = false;
+            this.gridViewInsert.OptionsBehavior.ReadOnly = true;
+            this.gridViewInsert.OptionsPrint.PrintPreview = true;
+            this.gridViewInsert.OptionsView.ShowFooter = true;
+            // 
             // Frm_Employee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -457,6 +501,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(906, 547);
             this.Controls.Add(this.Btn_New);
+            this.Controls.Add(this.txt_IdEmploye);
             this.Controls.Add(this.Btn_Update);
             this.Controls.Add(this.Btn_Add);
             this.Controls.Add(this.groupBox2);
@@ -467,12 +512,13 @@
             this.Text = "شاشة تسجيل بيانات الموظفين";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Frm_Employee_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlInsert)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewInsert)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -486,10 +532,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_address;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txt_search;
-        public System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox txt_IdEmploye;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btn_GenderJob;
         private System.Windows.Forms.TextBox txt_NationalID;
@@ -505,5 +549,7 @@
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.ComboBox cmb_branch;
         private System.Windows.Forms.CheckBox checkBox1;
+        private DevExpress.XtraGrid.GridControl gridControlInsert;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewInsert;
     }
 }

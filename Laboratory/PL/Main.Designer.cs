@@ -143,6 +143,7 @@
             this.btn_ReportTransferCompany = new DevExpress.XtraBars.BarButtonItem();
             this.Btn_ReportReturn = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.Btn_Revenues = new DevExpress.XtraBars.BarButtonItem();
             this.basic_information = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -307,9 +308,10 @@
             this.barStaticItem10,
             this.btn_ReportTransferCompany,
             this.Btn_ReportReturn,
-            this.barButtonItem4});
+            this.barButtonItem4,
+            this.Btn_Revenues});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 139;
+            this.ribbon.MaxItemId = 140;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.basic_information,
@@ -493,7 +495,6 @@
             this.Report_DoctorCenter.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("Report_DoctorCenter.ImageOptions.LargeImage")));
             this.Report_DoctorCenter.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barHeaderItem6),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barHeaderItem7),
             new DevExpress.XtraBars.LinkPersistInfo(this.barHeaderItem8)});
             this.Report_DoctorCenter.Name = "Report_DoctorCenter";
             // 
@@ -1339,6 +1340,15 @@
             this.barButtonItem4.Name = "barButtonItem4";
             this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick_8);
             // 
+            // Btn_Revenues
+            // 
+            this.Btn_Revenues.Caption = "تقرير الايرادات";
+            this.Btn_Revenues.Id = 139;
+            this.Btn_Revenues.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Revenues.ImageOptions.Image")));
+            this.Btn_Revenues.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("Btn_Revenues.ImageOptions.LargeImage")));
+            this.Btn_Revenues.Name = "Btn_Revenues";
+            this.Btn_Revenues.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_Revenues_ItemClick);
+            // 
             // basic_information
             // 
             this.basic_information.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1484,6 +1494,7 @@
             this.ribbonPageGroup9.ItemLinks.Add(this.Btn_ReciveaMoney);
             this.ribbonPageGroup9.ItemLinks.Add(this.Btn_ReportInsertStock);
             this.ribbonPageGroup9.ItemLinks.Add(this.Btn_ReportPullStock);
+            this.ribbonPageGroup9.ItemLinks.Add(this.Btn_Revenues);
             this.ribbonPageGroup9.Name = "ribbonPageGroup9";
             this.ribbonPageGroup9.Text = "ادارة الخزينة";
             // 
@@ -1918,5 +1929,6 @@
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator1;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement1;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement4;
+        public DevExpress.XtraBars.BarButtonItem Btn_Revenues;
     }
 }

@@ -235,11 +235,12 @@ namespace Laboratory.BL
             da.close();
         }
         internal void AddUserAccount(string userName, int Add_Masrofat, int Report_Masrofat, int Add_Stock,
-  int Pull_Stock, int Insert_Stock, int Transfer_Stock, int ReciveMoney , int ReportPullStock , int ReportInsertStock,int Add_Instalment,int Report_Instalment)
+                                      int Pull_Stock, int Insert_Stock, int Transfer_Stock, int ReciveMoney , int ReportPullStock , 
+                                      int ReportInsertStock,int Add_Instalment,int Report_Instalment , int Report_Renvue)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[12];
+            SqlParameter[] param = new SqlParameter[13];
             param[0] = new SqlParameter("@userName", SqlDbType.NVarChar, 100);
             param[0].Value = userName;
             param[1] = new SqlParameter("Add_Masrofat", SqlDbType.Int);
@@ -266,15 +267,18 @@ namespace Laboratory.BL
             param[10].Value = Add_Instalment;
             param[11] = new SqlParameter("@Report_Instalment", SqlDbType.Int);
             param[11].Value = Report_Instalment;
+            param[12] = new SqlParameter("@Report_Revenue", SqlDbType.Int);
+            param[12].Value = Report_Renvue;
             da.excutequery("AddUserAccount", param);
             da.close();
         }
         internal void UpdateUserAccount(string userName, int Add_Masrofat, int Report_Masrofat, int Add_Stock,
- int Pull_Stock, int Insert_Stock, int Transfer_Stock, int ReciveMoney, int ReportPullStock, int ReportInsertStock, int Add_Instalment, int Report_Instalment)
+                                         int Pull_Stock, int Insert_Stock, int Transfer_Stock, int ReciveMoney, int ReportPullStock,
+                                         int ReportInsertStock,  int Add_Instalment, int Report_Instalment, int Report_Renvue)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[12];
+            SqlParameter[] param = new SqlParameter[13];
             param[0] = new SqlParameter("@userName", SqlDbType.NVarChar, 100);
             param[0].Value = userName;
             param[1] = new SqlParameter("Add_Masrofat", SqlDbType.Int);
@@ -301,6 +305,8 @@ namespace Laboratory.BL
             param[10].Value = Add_Instalment;
             param[11] = new SqlParameter("@Report_Instalment", SqlDbType.Int);
             param[11].Value = Report_Instalment;
+            param[12] = new SqlParameter("@Report_Revenue", SqlDbType.Int);
+            param[12].Value = Report_Renvue;
             da.excutequery("UpdateUserAccount", param);
             da.close();
         }

@@ -98,18 +98,14 @@ namespace Laboratory.PL
             try
             {
              
-                dt.Clear();
-                if (checkBox1.Checked == true)
-                {
-
-
-                  
-                    dt = M.search_Masrofat(DateFrom.Value, DateTo.Value);
-                    gridControl1.DataSource = dt;
-                    Calc_Total();
-                }
-                else
-                {
+                //dt.Clear();
+                //if (checkBox1.Checked == true)
+                //{
+                //    dt = M.search_Masrofat(DateFrom.Value, DateTo.Value);
+                //    gridControl1.DataSource = dt;
+                //    Calc_Total();
+                //}
+         
                     if (cmb_UserBranch.Text == "")
                     {
                         MessageBox.Show("يرجي اختيار فرع");
@@ -123,14 +119,14 @@ namespace Laboratory.PL
                             MessageBox.Show("يرجي اختيار نوع الصمروف");
                             return;
                         }
-                        Permision();
-                        comboBox1.DataSource = m.SelectReserve();
-                        comboBox1.DisplayMember = "masrof_type";
-                        comboBox1.ValueMember = "ID_masrof";
-                        cmb_UserBranch.Enabled = true;
-                        comboBox1.Enabled = true;
+                        //Permision();
+                        //comboBox1.DataSource = m.SelectReserve();
+                        //comboBox1.DisplayMember = "masrof_type";
+                        //comboBox1.ValueMember = "ID_masrof";
+                        //cmb_UserBranch.Enabled = true;
+                        //comboBox1.Enabled = true;
                         dt = M.search_CategoryMasrofat(DateFrom.Value, DateTo.Value, Convert.ToInt32(comboBox1.SelectedValue),
-                 Convert.ToInt32(cmb_UserBranch.SelectedValue));
+                        Convert.ToInt32(cmb_UserBranch.SelectedValue));
                         gridControl1.DataSource = dt;
                         Calc_Total();
 
@@ -146,7 +142,7 @@ namespace Laboratory.PL
                     }
              
 
-                }
+                
             }
             catch (Exception ex)
             {

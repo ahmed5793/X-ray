@@ -561,6 +561,15 @@ namespace Laboratory.PL
                             {
                                 Main.getmain.btn_ReportInstallment.Enabled = true;
                             }
+                            ///////
+                            if (Convert.ToInt32(dt5.Rows[0][11]) == 0)
+                            {
+                                Main.getmain.Btn_Revenues.Enabled = false;
+                            }
+                            else if (Convert.ToInt32(dt5.Rows[0][11]) == 1)
+                            {
+                                Main.getmain.Btn_Revenues.Enabled = true;
+                            }
                         }
 
                         dt6.Clear();

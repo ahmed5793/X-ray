@@ -138,7 +138,7 @@ namespace Laboratory.PL
 
                 p.AddUser_Store(txt_User.Text, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
 
-                p.AddUserAccount(txt_User.Text, 1, 1, 1, 1, 1, 1, 1, 1, 1,1,1);
+                p.AddUserAccount(txt_User.Text, 1, 1, 1, 1, 1, 1, 1, 1, 1,1,1,1);
 
                 p.AddUserCompany(txt_User.Text, 1, 1, 1, 1, 1, 1, 1,1);
 

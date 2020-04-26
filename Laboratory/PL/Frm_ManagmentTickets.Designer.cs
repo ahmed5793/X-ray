@@ -66,11 +66,12 @@
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.txt_username);
             this.groupBox1.Controls.Add(this.label18);
-            this.groupBox1.Location = new System.Drawing.Point(8, 4);
+            this.groupBox1.Location = new System.Drawing.Point(5, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(982, 51);
             this.groupBox1.TabIndex = 99;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // cmb_branches
             // 
@@ -128,7 +129,7 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.simpleButton1);
-            this.groupBox2.Location = new System.Drawing.Point(7, 63);
+            this.groupBox2.Location = new System.Drawing.Point(7, 60);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(983, 65);
             this.groupBox2.TabIndex = 100;

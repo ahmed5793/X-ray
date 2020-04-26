@@ -298,7 +298,7 @@ namespace Laboratory.PL
                         {
                             t.addticketsReturn(Convert.ToInt32(txt_IdTeckit.Text), Convert.ToInt32(cmb_Stock.SelectedValue), comboBox1.Text,
                                 txt_patientname.Text, "استرداد عربون الحجز للعميل وتحويله إلى شركة " + " " + cmb_Company.Text, dataGridView2.Rows[i].Cells[1].Value.ToString(), dateTimePicker1.Value
-                                , Convert.ToDecimal(textBox2.Text), textBox2.Text, Convert.ToDecimal(dataGridView2.Rows[i].Cells[2].Value), Convert.ToDecimal(Txt_PayLast.Text), txt_username.Text);
+                                , Convert.ToDecimal(textBox2.Text), textBox2.Text, Convert.ToDecimal(dataGridView2.Rows[i].Cells[2].Value), Convert.ToDecimal(Txt_PayLast.Text), txt_username.Text, Convert.ToInt32(dataGridView2.Rows[0].Cells[0].Value));
                         }
                         dt.Clear();
                         dt = cu.Select_CustomertotalBAlance(Convert.ToInt32(Txt_IdCust.Text));

@@ -212,6 +212,9 @@ namespace Laboratory.PL
                     //////
                     if (Convert.ToInt32(dt2.Rows[0][10]) == 0){check_ReportInstalment.Checked = false;}
                     else if (Convert.ToInt32(dt2.Rows[0][10]) == 1){check_ReportInstalment.Checked = true;}
+                    //////
+                    if (Convert.ToInt32(dt2.Rows[0][11]) == 0) { Check_Revenue.Checked = false; }
+                    else if (Convert.ToInt32(dt2.Rows[0][11]) == 1) { Check_Revenue.Checked = true; }
                 }
                 dt2.Clear();
                 dt2 = p.selectUser_Store(txt_Baisc.Text);
@@ -514,7 +517,7 @@ namespace Laboratory.PL
                 {
                     int AddMasrof = 0, ReportMasrof = 0, AddStock = 0, InsertStock = 0, PullStock = 0,
                         TransfierStock = 0,ReciveMoney = 0 , ReportPullStock = 0, ReportInsertStock = 0 ,AddInstalment = 0,
-                        reportInstalment = 0;
+                        reportInstalment = 0 , Report_Revenues=0;
 
                     if (check_AddMasrof.Checked == true){AddMasrof = 1;}
 
@@ -560,11 +563,14 @@ namespace Laboratory.PL
                     if (check_ReportInstalment.Checked == true){reportInstalment = 1;}
 
                     else if (check_ReportInstalment.Checked == false){reportInstalment = 0;}
+                    ///////////
+                    if (Check_Revenue.Checked == true) { Report_Revenues = 1; }
 
+                    else if (Check_Revenue.Checked == false) { Report_Revenues = 0; }
 
 
                     p.UpdateUserAccount(txt_Baisc.Text, AddMasrof, ReportMasrof, AddStock, InsertStock, PullStock,
-                        TransfierStock, ReciveMoney,ReportPullStock,ReportInsertStock, AddInstalment, reportInstalment);
+                        TransfierStock, ReciveMoney,ReportPullStock,ReportInsertStock, AddInstalment, reportInstalment, Report_Revenues);
 
                     MessageBox.Show(" تم حفظ الصلاحيات للمستخدم");
                 }

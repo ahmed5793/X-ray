@@ -13,6 +13,7 @@ namespace Laboratory.PL
     public partial class Frm_ReportDoctor : Form
     {
         Doctors Doctors = new Doctors();
+        DataTable dt = new DataTable();
         public Frm_ReportDoctor()
         {
             InitializeComponent();
@@ -31,6 +32,17 @@ namespace Laboratory.PL
                 MessageBox.Show(ex.Message);
             }
         }
+
+        void Calc()
+        {
+            decimal total = 0;
+            for (int i = 0; i < gridView1.RowCount; i++)
+            {
+                DataRow r = gridView1.GetDataRow(i);
+                total += Convert.ToDecimal(r[4].ToString());
+            }
+            textBox2.Text = total.ToString();
+        }
         private void btn_search_Click(object sender, EventArgs e)
         {
            
@@ -44,6 +56,7 @@ namespace Laboratory.PL
                 {
                     gridControl1.DataSource = Doctors.Select_ReportDoctor(Convert.ToInt32(comboBox1.SelectedValue));
                     textBox1.Text = gridView1.RowCount.ToString();
+                    Calc();
 
                 }
             }
@@ -56,7 +69,6 @@ namespace Laboratory.PL
 
         private void comboBox1_Leave(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
             if (comboBox1.Text != "")
             {
                 dt.Clear();
@@ -81,7 +93,6 @@ namespace Laboratory.PL
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
             try
             {
                 if (comboBox1.Text != string.Empty)
@@ -90,7 +101,7 @@ namespace Laboratory.PL
                     dt = Doctors.Search_ReportDoctor(Convert.ToInt32(comboBox1.SelectedValue), DateFrom.Value, DateTo.Value);
                     gridControl1.DataSource = dt;
                     textBox1.Text = gridView1.RowCount.ToString();
-
+                    Calc();
                 }
             }
             catch (Exception ex)
@@ -98,10 +109,7 @@ namespace Laboratory.PL
 
                 MessageBox.Show(ex.Message);
             }
-            finally
-            {
-                dt.Dispose();
-            }
+
         }
 
         private void Btn_Print_Click(object sender, EventArgs e)
@@ -121,6 +129,7 @@ namespace Laboratory.PL
                 {
                     gridControl1.DataSource = Doctors.Select_ReportDoctor(Convert.ToInt32(comboBox1.SelectedValue));
                     textBox1.Text = gridView1.RowCount.ToString();
+                    Calc();
 
                 }
             }

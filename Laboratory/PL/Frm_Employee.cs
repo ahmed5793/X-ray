@@ -51,7 +51,7 @@ namespace Laboratory.PL
             {
                 clears();
                 dateTimePicker1.Value = DateTime.Now;
-                dataGridView1.DataSource = E.SelectEmployee();
+                gridControlInsert.DataSource = E.SelectEmployee();
 
                 cmb_department.DataSource = E.SelectEmpRoleCompo();
                 cmb_department.DisplayMember = "Roles";
@@ -61,11 +61,12 @@ namespace Laboratory.PL
                 cmb_branch.DisplayMember = "Name";
                 cmb_branch.ValueMember = "Branch_ID";
                 cmb_branch.SelectedIndex = -1;
+                txt_IdEmploye.Hide();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
-                MessageBox.Show(ex.Message);
+                return;
+                //MessageBox.Show(ex.Message);
             }
         }
         void clears()
@@ -124,49 +125,14 @@ namespace Laboratory.PL
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
-            if (dataGridView1.Rows.Count>0)
-            {
-                Txt_Salary.Show();           
-                Btn_Update.Enabled = true;
-                Btn_Add.Enabled = false;
-                txt_name.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                cmb_department.Text= dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                dateTimePicker1.Text= dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                txt_phone.Text= dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                txt_address.Text= dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                txt_NationalID.Text= dataGridView1.CurrentRow.Cells[6].Value.ToString();
-                if (dataGridView1.CurrentRow.Cells[8].Value.ToString()== "شيفت")
-                {
-                    Txt_Salary.Hide();
-                }
-                else if(dataGridView1.CurrentRow.Cells[8].Value.ToString() == "مرتب شهرى")
-                {
-                    Txt_Salary.Show();
-                    Txt_Salary.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-
-                }
-                comboBox1.Text= dataGridView1.CurrentRow.Cells[8].Value.ToString();
-                if (dataGridView1.CurrentRow.Cells[9].Value.ToString()=="")
-                {
-                    cmb_branch.SelectedIndex = -1;
-                    checkBox1.Checked = false;
-                    cmb_branch.Enabled = false;
-                }
-                else if (dataGridView1.CurrentRow.Cells[9].Value.ToString() != "")
-                {
-                    cmb_branch.DataSource = b.SelectCompBranches();
-                    cmb_branch.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
-                    checkBox1.Checked = true;
-                    cmb_branch.Enabled = true;
-                }
-            }
+ 
         }
 
         private void txt_search_TextChanged(object sender, EventArgs e)
         {
-            dt.Clear();
-            dt = E.SearchEmployes(txt_search.Text);
-            dataGridView1.DataSource = dt;
+            //dt.Clear();
+            //dt = E.SearchEmployes(txt_search.Text);
+            //dataGridView1.DataSource = dt;
         }
 
         private void txt_phone_KeyPress(object sender, KeyPressEventArgs e)
@@ -287,7 +253,7 @@ namespace Laboratory.PL
 
                     MessageBox.Show("تم حفظ بيانات الموظف بنجاح");
                     clears();
-                    dataGridView1.DataSource = E.SelectEmployee();
+                    gridControlInsert.DataSource = E.SelectEmployee();
                 }
             }
             catch (Exception ex)
@@ -325,10 +291,10 @@ namespace Laboratory.PL
                 {
                     E.UpdateEmployee(txt_name.Text, Convert.ToDecimal(Txt_Salary.Text), comboBox1.Text,
                         txt_NationalID.Text, txt_phone.Text, txt_address.Text, dateTimePicker1.Value, 
-                        Convert.ToInt32(cmb_department.SelectedValue), Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
+                        Convert.ToInt32(cmb_department.SelectedValue), Convert.ToInt32(txt_IdEmploye.Text));
 
                     dt.Clear();
-                    dt = E.VildateEmployeeBranch(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
+                    dt = E.VildateEmployeeBranch(Convert.ToInt32(txt_IdEmploye.Text));
                     if (checkBox1.Checked==true)
                     {
                         if (cmb_branch.Text == "")
@@ -340,31 +306,30 @@ namespace Laboratory.PL
                         if (dt.Rows.Count > 0)
                         {
                             E.UpdateEmployeeBranch(Convert.ToInt32(cmb_branch.SelectedValue),
-                                Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
+                                Convert.ToInt32(txt_IdEmploye.Text));
                         }
                         else
                         {
                             E.AddEmployeeBranch(Convert.ToInt32(cmb_branch.SelectedValue), 
-                                Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
+                                Convert.ToInt32(txt_IdEmploye.Text));
                         }
                     }
                     else if(checkBox1.Checked==false)
                     {
                         if (dt.Rows.Count > 0)
                         {
-                            E.Delete_EmployeeBranch(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
+                            E.Delete_EmployeeBranch(Convert.ToInt32(txt_IdEmploye.Text));
                         }
                     }
                     MessageBox.Show("تم تعديل بيانات الموظف بنجاح");
-                    clears();
-                    dataGridView1.DataSource = E.SelectEmployee();
+                    
                 }
                 else
                 {
                     MessageBox.Show("تم إلغاء التعديل ");
                 }
                 clears();
-                dataGridView1.DataSource = E.SelectEmployee();
+                gridControlInsert.DataSource = E.SelectEmployee();
             }
             catch (Exception ex)
             {
@@ -409,6 +374,57 @@ namespace Laboratory.PL
             if (Txt_Salary.Text == "")
             {
                 Txt_Salary.Text = "0";
+            }
+        }
+
+        private void gridControlInsert_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                if (gridViewInsert.RowCount > 0)
+                {
+                    Txt_Salary.Show();
+                    Btn_Update.Enabled = true;
+                    Btn_Add.Enabled = false;
+                    txt_IdEmploye.Text = gridViewInsert.GetFocusedRowCellValue("رقم الموظف").ToString();
+                    txt_name.Text = gridViewInsert.GetFocusedRowCellValue("اسم الموظف").ToString();
+                    cmb_department.Text = gridViewInsert.GetFocusedRowCellValue("التخصص").ToString();
+                    dateTimePicker1.Text = gridViewInsert.GetFocusedRowCellValue("تاريخ التسجيل").ToString();
+                    txt_phone.Text = gridViewInsert.GetFocusedRowCellValue("موبايل").ToString();
+                    txt_address.Text = gridViewInsert.GetFocusedRowCellValue("العنوان").ToString();
+                    txt_NationalID.Text = gridViewInsert.GetFocusedRowCellValue("الرقم القومي").ToString();
+                    if (gridViewInsert.GetFocusedRowCellValue("نوع الراتب").ToString() == "شيفت")
+                    {
+                        Txt_Salary.Hide();
+                    }
+                    else if (gridViewInsert.GetFocusedRowCellValue("نوع الراتب").ToString() == "مرتب شهرى")
+                    {
+                        Txt_Salary.Show();
+                        Txt_Salary.Text = gridViewInsert.GetFocusedRowCellValue("الراتب").ToString();
+
+                    }
+                    comboBox1.Text = gridViewInsert.GetFocusedRowCellValue("نوع الراتب").ToString();
+                    if (gridViewInsert.GetFocusedRowCellValue("الفرع").ToString() == "")
+                    {
+                        cmb_branch.Text = gridViewInsert.GetFocusedRowCellValue("الفرع").ToString();
+                        checkBox1.Checked = false;
+                        cmb_branch.Enabled = false;
+                    }
+                    else if (gridViewInsert.GetFocusedRowCellValue("الفرع").ToString() != "")
+                    {
+                        //cmb_branch.DataSource = b.SelectCompBranches();
+                        checkBox1.Checked = true;
+                        cmb_branch.Enabled = true; 
+                        cmb_branch.Text = gridViewInsert.GetFocusedRowCellValue("الفرع").ToString();
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
             }
         }
     }

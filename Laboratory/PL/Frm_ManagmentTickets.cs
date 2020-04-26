@@ -538,5 +538,10 @@ namespace Laboratory.PL
                 MessageBox.Show(ex.StackTrace);
             }
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

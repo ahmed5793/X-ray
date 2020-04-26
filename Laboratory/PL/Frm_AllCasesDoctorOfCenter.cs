@@ -17,6 +17,7 @@ namespace Laboratory.PL
     public partial class Frm_AllCasesDoctorOfCenter : Form
     {
         DoctorOfCenter DoctorOfCenter = new DoctorOfCenter();
+        DataTable dt = new DataTable();
 
         public Frm_AllCasesDoctorOfCenter()
         {
@@ -63,7 +64,6 @@ namespace Laboratory.PL
 
         private void comboBox1_Leave(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
             if (comboBox1.Text != "")
             {
                 dt.Clear();
@@ -146,7 +146,6 @@ namespace Laboratory.PL
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
 
             try
             {
