@@ -51,10 +51,10 @@
             this.DateTo.CustomFormat = "   dd/MM/yyyy       *      tt  mm:hh    ";
             this.DateTo.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DateTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DateTo.Location = new System.Drawing.Point(310, 97);
+            this.DateTo.Location = new System.Drawing.Point(375, 99);
             this.DateTo.Name = "DateTo";
             this.DateTo.ShowUpDown = true;
-            this.DateTo.Size = new System.Drawing.Size(133, 32);
+            this.DateTo.Size = new System.Drawing.Size(152, 32);
             this.DateTo.TabIndex = 133;
             // 
             // DateFrom
@@ -63,10 +63,10 @@
             this.DateFrom.CustomFormat = "   dd/MM/yyyy       *      tt  mm:hh    ";
             this.DateFrom.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DateFrom.Location = new System.Drawing.Point(543, 97);
+            this.DateFrom.Location = new System.Drawing.Point(375, 55);
             this.DateFrom.Name = "DateFrom";
             this.DateFrom.ShowUpDown = true;
-            this.DateFrom.Size = new System.Drawing.Size(136, 32);
+            this.DateFrom.Size = new System.Drawing.Size(152, 32);
             this.DateFrom.TabIndex = 132;
             // 
             // label4
@@ -75,7 +75,7 @@
             this.label4.BackColor = System.Drawing.Color.Yellow;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(449, 97);
+            this.label4.Location = new System.Drawing.Point(533, 100);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label4.Size = new System.Drawing.Size(44, 31);
@@ -89,7 +89,7 @@
             this.label3.BackColor = System.Drawing.Color.Yellow;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(685, 97);
+            this.label3.Location = new System.Drawing.Point(533, 56);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label3.Size = new System.Drawing.Size(46, 31);
@@ -104,11 +104,11 @@
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label2.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(279, 9);
+            this.label2.Location = new System.Drawing.Point(259, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(476, 32);
+            this.label2.Size = new System.Drawing.Size(524, 32);
             this.label2.TabIndex = 128;
-            this.label2.Text = "عرض مجمع  للحالات التى عمل بها الطبيب الخارجي ";
+            this.label2.Text = "تقرير مجمع لعدد الحالات القادمة من الاطباء الخارجية ";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // groupBox1
@@ -179,6 +179,7 @@
             // 
             // simpleButton1
             // 
+            this.simpleButton1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.simpleButton1.Appearance.BackColor = System.Drawing.Color.Black;
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton1.Appearance.ForeColor = System.Drawing.Color.White;
@@ -190,7 +191,7 @@
             this.simpleButton1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.simpleButton1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(158, 96);
+            this.simpleButton1.Location = new System.Drawing.Point(208, 79);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(146, 32);
             this.simpleButton1.TabIndex = 165;
