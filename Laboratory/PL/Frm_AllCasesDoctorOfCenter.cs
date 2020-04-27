@@ -42,33 +42,50 @@ namespace Laboratory.PL
         void searchDatetAllDoctor()
         {
 
+            try
+            {
+
 
             DataTable dt = new DataTable();
             DataTable dt2 = new DataTable();
             dt.Clear();
             dt = DoctorOfCenter.Search_ALLReportDoctorOfCenter(DateFrom.Value, DateTo.Value);
-            for (int i = 0; i < dt.Rows.Count; i++)
+            if (dt.Rows.Count == 0)
             {
-                dt2.Clear();
-                dt2 = DoctorOfCenter.SelectDateCountDoctorOfCenter(Convert.ToInt32(dt.Rows[i]["Doc_ID"]), DateFrom.Value, DateTo.Value);
-                for (int y = 0; y < dt2.Rows.Count; y++)
-                {
-                    int COUNT = Convert.ToInt32(dt2.Rows[y][0]);
-                    decimal VALUE = Convert.ToDecimal(dt2.Rows[y][1]);
-                    //decimal TOTAL = Convert.ToDecimal(dt2.Rows[y][2]);
-
-                    dt.Rows[i]["COUNT"] = COUNT;
-                    dt.Rows[i]["VALUE"] = Math.Round(VALUE, 2);
-                    //dt.Rows[i]["TOTAL"] = Math.Round(TOTAL, 2);
-
-
-
-                }
-                gridControl1.DataSource = dt;
-                gridView1.Columns["Doc_ID"].Visible = false;
+                gridControl1.DataSource = null;
             }
+            else
+            {
 
 
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    dt2.Clear();
+                    dt2 = DoctorOfCenter.SelectDateCountDoctorOfCenter(Convert.ToInt32(dt.Rows[i]["Doc_ID"]), DateFrom.Value, DateTo.Value);
+                    for (int y = 0; y < dt2.Rows.Count; y++)
+                    {
+                        int COUNT = Convert.ToInt32(dt2.Rows[y][0]);
+                        decimal VALUE = Convert.ToDecimal(dt2.Rows[y][1]);
+                        //decimal TOTAL = Convert.ToDecimal(dt2.Rows[y][2]);
+
+                        dt.Rows[i]["COUNT"] = COUNT;
+                        dt.Rows[i]["VALUE"] = Math.Round(VALUE, 2);
+                        //dt.Rows[i]["TOTAL"] = Math.Round(TOTAL, 2);
+
+
+
+                    }
+                    gridControl1.DataSource = dt;
+                    gridView1.Columns["Doc_ID"].Visible = false;
+                }
+
+            }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
@@ -163,16 +180,16 @@ namespace Laboratory.PL
 
         private void gridView1_RowStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowStyleEventArgs e)
         {
-            GridView gView = (GridView)sender;
-            if (!gView.IsValidRowHandle(e.RowHandle)) return;
-            int parent = gView.GetParentRowHandle(e.RowHandle);
-            if (gView.IsGroupRow(parent))
-            {
-                for (int i = 0; i < gView.GetChildRowCount(parent); i++)
-                    if (gView.GetChildRowHandle(parent, i) == e.RowHandle)
-                        e.Appearance.BackColor = i % 2 == 0 ? Color.LightPink : Color.Red;
-            }
-            else e.Appearance.BackColor = e.RowHandle % 2 == 0 ? Color.Gold : Color.Green;
+            //GridView gView = (GridView)sender;
+            //if (!gView.IsValidRowHandle(e.RowHandle)) return;
+            //int parent = gView.GetParentRowHandle(e.RowHandle);
+            //if (gView.IsGroupRow(parent))
+            //{
+            //    for (int i = 0; i < gView.GetChildRowCount(parent); i++)
+            //        if (gView.GetChildRowHandle(parent, i) == e.RowHandle)
+            //            e.Appearance.BackColor = i % 2 == 0 ? Color.LightPink : Color.Red;
+            //}
+            //else e.Appearance.BackColor = e.RowHandle % 2 == 0 ? Color.Gold : Color.Green;
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)

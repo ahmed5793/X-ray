@@ -17,38 +17,12 @@ namespace Laboratory.PL
         public Frm_AllXrayTechnical()
         {
             InitializeComponent();
-            Function();
+            
         }
-        void Function()
-        {
-            try
-            {
-                comboBox1.DataSource = Techincal.Select_ComboTechnical();
-                comboBox1.DisplayMember = "Tech_Name";
-                comboBox1.ValueMember = "Techincal_ID";
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
-        }
+     
         private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            try
-            {
-                if (comboBox1.Text!="")
-                {
-                    gridControl1.DataSource = Techincal.Technical_ItemXray(Convert.ToInt32(comboBox1.SelectedValue));
-
-                }
-
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
+            
         }
 
         private void btn_search_Click(object sender, EventArgs e)
@@ -57,32 +31,6 @@ namespace Laboratory.PL
 
         private void comboBox1_Leave(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            try
-            {
-                if (comboBox1.Text != "")
-                {
-                    dt.Clear();
-                    dt = Techincal.vildateTechincal(Convert.ToInt32(comboBox1.SelectedValue));
-                    if (dt.Rows.Count == 0)
-                    {
-                        MessageBox.Show("يرجي العلم بان اسم الفني غير مسجل من قبل يرجي تسجيل هذا الاسم في شاشه الفني", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-                        comboBox1.Focus();
-                        comboBox1.SelectAll();
-                        return;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                dt.Dispose();
-            }
        
         }
 
@@ -93,27 +41,55 @@ namespace Laboratory.PL
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            gridControl1.ShowRibbonPrintPreview();
+           
         }
 
         private void Frm_AllXrayTechnical_Load(object sender, EventArgs e)
         {
 
         }
-
-        private void simpleButton1_Click(object sender, EventArgs e)
+        void searchDatetAllDoctor()
         {
-
-            DataTable dt = new DataTable();
-
             try
             {
-                if (comboBox1.Text != string.Empty)
-                {
-                    dt.Clear();
-                    dt = Techincal.Search_Technical_ItemXray(Convert.ToInt32(comboBox1.SelectedValue), DateFrom.Value, DateTo.Value);
-                    gridControl1.DataSource = dt;
 
+
+
+
+
+                DataTable dt = new DataTable();
+                DataTable dt2 = new DataTable();
+                dt.Clear();
+                dt = Techincal.Search_Technical_ItemXray(DateFrom.Value, DateTo.Value);
+                if (dt.Rows.Count == 0)
+                {
+                    gridControl1.DataSource = null;
+                }
+                else
+                {
+
+
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        dt2.Clear();
+                        dt2 = Techincal.SelectDateCountTechincal(Convert.ToInt32(dt.Rows[i]["Techincal_ID"]), DateFrom.Value, DateTo.Value);
+                        for (int y = 0; y < dt2.Rows.Count; y++)
+                        {
+                            int COUNT = Convert.ToInt32(dt2.Rows[y][0]);
+
+
+
+                            dt.Rows[i]["COUNT"] = COUNT;
+
+
+
+
+
+                        }
+                        gridControl1.DataSource = dt;
+                        gridView1.Columns["Techincal_ID"].Visible = false;
+
+                    }
                 }
             }
             catch (Exception ex)
@@ -121,10 +97,24 @@ namespace Laboratory.PL
 
                 MessageBox.Show(ex.Message);
             }
-            finally
+
+
+        }
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+
+           
+
+            try
             {
-                dt.Dispose();
+                searchDatetAllDoctor();
             }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+          
         }
 
         private void Btn_Print_Click(object sender, EventArgs e)

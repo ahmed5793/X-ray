@@ -75,27 +75,36 @@ namespace Laboratory.PL
             DataTable dt2 = new DataTable();
             dt.Clear();
             dt = Doctors.Search_ALLReportDoctor(DateFrom.Value, DateTo.Value);
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                dt2.Clear();
-                dt2 = Doctors.SelectDateCountDoctorOut(Convert.ToInt32(dt.Rows[i]["Doc_ID"]), DateFrom.Value, DateTo.Value);
-                for (int y = 0; y < dt2.Rows.Count; y++)
+                if (dt.Rows.Count == 0)
                 {
-                    int COUNT = Convert.ToInt32(dt2.Rows[y][0]);
-                    decimal VALUE = Convert.ToDecimal(dt2.Rows[y][1]);
-                    
-
-                    dt.Rows[i]["COUNT"] = COUNT;
-                    dt.Rows[i]["VALUE"] = Math.Round(VALUE, 2);
-                   
-
-
-
+                    gridControl1.DataSource = null;
                 }
-                gridControl1.DataSource = dt;
-                gridView1.Columns["Doc_ID"].Visible = false;
+                else
+                {
 
-            }
+
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        dt2.Clear();
+                        dt2 = Doctors.SelectDateCountDoctorOut(Convert.ToInt32(dt.Rows[i]["Doc_ID"]), DateFrom.Value, DateTo.Value);
+                        for (int y = 0; y < dt2.Rows.Count; y++)
+                        {
+                            int COUNT = Convert.ToInt32(dt2.Rows[y][0]);
+                            decimal VALUE = Convert.ToDecimal(dt2.Rows[y][1]);
+
+
+                            dt.Rows[i]["COUNT"] = COUNT;
+                            dt.Rows[i]["VALUE"] = Math.Round(VALUE, 2);
+
+
+
+
+                        }
+                        gridControl1.DataSource = dt;
+                        gridView1.Columns["Doc_ID"].Visible = false;
+
+                    }
+                }
         }
               catch (Exception ex)
             {
@@ -159,16 +168,16 @@ namespace Laboratory.PL
 
         private void gridView1_RowStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowStyleEventArgs e)
         {
-            GridView gView = (GridView)sender;
-            if (!gView.IsValidRowHandle(e.RowHandle)) return;
-            int parent = gView.GetParentRowHandle(e.RowHandle);
-            if (gView.IsGroupRow(parent))
-            {
-                for (int i = 0; i < gView.GetChildRowCount(parent); i++)
-                    if (gView.GetChildRowHandle(parent, i) == e.RowHandle)
-                        e.Appearance.BackColor = i % 2 == 0 ? Color.White : Color.Yellow;
-            }
-            else e.Appearance.BackColor = e.RowHandle % 2 == 0 ? Color.White : Color.Yellow;
+            //GridView gView = (GridView)sender;
+            //if (!gView.IsValidRowHandle(e.RowHandle)) return;
+            //int parent = gView.GetParentRowHandle(e.RowHandle);
+            //if (gView.IsGroupRow(parent))
+            //{
+            //    for (int i = 0; i < gView.GetChildRowCount(parent); i++)
+            //        if (gView.GetChildRowHandle(parent, i) == e.RowHandle)
+            //            e.Appearance.BackColor = i % 2 == 0 ? Color.White : Color.Yellow;
+            //}
+            //else e.Appearance.BackColor = e.RowHandle % 2 == 0 ? Color.White : Color.Yellow;
         }
 
         private void Frm_AllCasesOFOutDoctor_Load(object sender, EventArgs e)
