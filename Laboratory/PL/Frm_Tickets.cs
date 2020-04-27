@@ -744,6 +744,7 @@ namespace Laboratory.PL
             cmb_UserBranch.SelectedIndex = -1;
             cmb_Stock.SelectedIndex = -1;
             cmb_Company.Enabled = false;
+            txt_pay.Enabled = false;
         }
         private void label21_Click(object sender, EventArgs e)
         {

@@ -126,13 +126,14 @@ namespace Laboratory.PL
                         if (MessageBox.Show("هل تريد سحب المبلغ بالكامل", "عمليه السحب", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
 
                         {
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
-                            {
+                        for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                        {
                                 t.addticketsReturn(Convert.ToInt32(txt_num.Text), Convert.ToInt32(cmb_Stock.SelectedValue), comboBox1.Text,
                                     txt_name.Text, txt_statues.Text, dataGridView1.Rows[i].Cells[1].Value.ToString(), dateTimePicker2.Value
                                     , Convert.ToDecimal(txt_pay.Text), textBox2.Text, Convert.ToDecimal(dataGridView1.Rows[i].Cells[2].Value),
                                       Convert.ToDecimal(txt_pay.Text), txt_username.Text, Convert.ToInt32(dataGridView1.Rows[i].Cells[3].Value));
-                            }
+                        
+                        }
                         t.UpdateTicketsActive(Convert.ToInt32(txt_num.Text), "return");
                             dt.Clear();
                             dt = c.Select_CustomertotalBAlance(Convert.ToInt32(Txt_IdCust.Text));
