@@ -53,6 +53,7 @@ namespace Laboratory.PL
             txt_age.Enabled = false;
             txt_address.Enabled = false;
             Btn_DetailsCompany.Hide();
+            txt_pay.Enabled = false;
         }
         void Permision()
         {
@@ -873,6 +874,7 @@ namespace Laboratory.PL
                 rdb_Discount.Enabled = false;
                 rdb_money.Enabled = false;
                 txt_afterDiscount.Enabled = false;
+                txt_pay.Enabled = false;
                 dt2.Clear();
                 Txt_PricePayment.Text = "0";
                 Txt_addtionPayment.Text = "0";
@@ -919,7 +921,8 @@ namespace Laboratory.PL
                 cmb_Company.Enabled = false;
                 Txt_PricePayment.Enabled = false;
                 Txt_addtionPayment.Enabled = false;
-                Txt_rentCompany.Enabled = false; ;
+                Txt_rentCompany.Enabled = false; 
+                txt_pay.Enabled = true; 
                 Btn_DetailsCompany.Hide();
             }
         }
@@ -1047,7 +1050,6 @@ namespace Laboratory.PL
 
         private void Txt_addtionPayment_KeyUp(object sender, KeyEventArgs e)
         {
-          
             Patient_PaymentRate();
             Rent_Company();
             pay();
@@ -1057,6 +1059,18 @@ namespace Laboratory.PL
             Patient_PaymentRate();
             Rent_Company();
             pay();
+            if (cmb_statues.Text == "شركات")
+            {
+                if (Convert.ToDecimal(Txt_addtionPayment.Text) > 0)
+                {
+                    txt_pay.Enabled = true;
+                }
+                else if (Convert.ToDecimal(Txt_addtionPayment.Text) <= 0 || (Txt_addtionPayment.Text) == "")
+                {
+                    txt_pay.Enabled = false;
+
+                }
+            }
         }
 
         private void Txt_addtionPayment_MouseLeave(object sender, EventArgs e)
@@ -1157,7 +1171,7 @@ namespace Laboratory.PL
 
         private void Txt_addtionPayment_KeyDown(object sender, KeyEventArgs e)
         {
-          
+           
         }
 
         private void Txt_addtionPayment_TextChanged(object sender, EventArgs e)
@@ -1166,6 +1180,7 @@ namespace Laboratory.PL
             {
                 Txt_addtionPayment.Text = "";
             }
+           
         }
 
         private void txt_pay_TextChanged(object sender, EventArgs e)
@@ -1837,7 +1852,7 @@ namespace Laboratory.PL
                         Patient_PaymentRate();
                         Rent_Company();
                         pay();
-                      
+                     
 
                     }
 
@@ -1890,6 +1905,12 @@ namespace Laboratory.PL
                 DiscountMoney();
                 pay();
             }
+        }
+
+        private void Txt_PricePayment_TextChanged(object sender, EventArgs e)
+        {
+            
+            
         }
 
         //private void ؤ(object sender, EventArgs e)

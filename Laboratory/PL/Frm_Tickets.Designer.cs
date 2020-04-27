@@ -815,6 +815,7 @@
             this.Txt_PricePayment.TabIndex = 117;
             this.Txt_PricePayment.Text = "0";
             this.Txt_PricePayment.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Txt_PricePayment.TextChanged += new System.EventHandler(this.Txt_PricePayment_TextChanged);
             this.Txt_PricePayment.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txt_PricePayment_KeyUp);
             // 
             // label27
