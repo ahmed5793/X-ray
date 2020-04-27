@@ -64,7 +64,12 @@ namespace Laboratory.PL
 
         void searchDatetAllDoctor()
         {
-          
+            try
+            {
+
+            
+
+
 
             DataTable dt = new DataTable();
             DataTable dt2 = new DataTable();
@@ -78,17 +83,24 @@ namespace Laboratory.PL
                 {
                     int COUNT = Convert.ToInt32(dt2.Rows[y][0]);
                     decimal VALUE = Convert.ToDecimal(dt2.Rows[y][1]);
-                    decimal TOTAL = Convert.ToDecimal(dt2.Rows[y][2]);
+                    
 
-                    dt.Rows[i]["COUNT"] =COUNT;
+                    dt.Rows[i]["COUNT"] = COUNT;
                     dt.Rows[i]["VALUE"] = Math.Round(VALUE, 2);
-                    dt.Rows[i]["TOTAL"] = Math.Round(TOTAL, 2);
-               
- 
+                   
+
+
 
                 }
                 gridControl1.DataSource = dt;
                 gridView1.Columns["Doc_ID"].Visible = false;
+
+            }
+        }
+              catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
             }
 
 
