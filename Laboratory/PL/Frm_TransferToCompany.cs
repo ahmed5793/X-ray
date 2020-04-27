@@ -300,6 +300,7 @@ namespace Laboratory.PL
                                 txt_patientname.Text, "استرداد عربون الحجز للعميل وتحويله إلى شركة " + " " + cmb_Company.Text, dataGridView2.Rows[i].Cells[1].Value.ToString(), dateTimePicker1.Value
                                 , Convert.ToDecimal(textBox2.Text), textBox2.Text, Convert.ToDecimal(dataGridView2.Rows[i].Cells[2].Value), Convert.ToDecimal(Txt_PayLast.Text), txt_username.Text, Convert.ToInt32(dataGridView2.Rows[0].Cells[0].Value));
                         }
+                        t.UpdateTicketsActive(Convert.ToInt32(txt_IdTeckit.Text), "Transfer");
                         dt.Clear();
                         dt = cu.Select_CustomertotalBAlance(Convert.ToInt32(Txt_IdCust.Text));
                         decimal mno5 = Convert.ToDecimal(Txt_PayLast.Text) - Convert.ToDecimal(Txt_LastPayOut.Text);

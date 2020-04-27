@@ -14,11 +14,11 @@ namespace Laboratory.BL
         internal void AddTickets(DateTime Visite_Date, DateTime Receive_Date, decimal Total, decimal Pay, decimal Rent, 
             int Cust_ID, string Statues, int Doctor_ID, int ID_Branches,int ID_Stock,DateTime Date_revelation,string Complain,
             int ID_Doctorofcenter,int ID_Techincal, string userName,String PlaceToCheck,decimal Additions, string ReasonForAdding,
-            decimal TotalAfterDiscount,decimal Patient_paymentAmount)
+            decimal TotalAfterDiscount,decimal Patient_paymentAmount,string Activate)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[20];
+            SqlParameter[] param = new SqlParameter[21];
             param[0] = new SqlParameter("@Visite_Date", SqlDbType.DateTime);
             param[0].Value = Visite_Date;
             param[1] = new SqlParameter("@Receive_Date", SqlDbType.DateTime);
@@ -61,7 +61,8 @@ namespace Laboratory.BL
             param[19] = new SqlParameter("@Patient_paymentAmount", SqlDbType.Decimal);
             param[19].Value = Patient_paymentAmount;
 
-
+            param[20] = new SqlParameter("@Activate", SqlDbType.NVarChar,50);
+            param[20].Value = Activate;
             da.excutequery("AddTickets", param);
             da.close();
         }
@@ -671,6 +672,18 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
-
+        internal void UpdateTicketsActive(int Id_Teckiet, string Activate)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[2];
+            param[0] = new SqlParameter("@Id_Teckiet", SqlDbType.Int);
+            param[0].Value = Id_Teckiet;
+            param[1] = new SqlParameter("@Activate", SqlDbType.NVarChar,50);
+            param[1].Value = Activate;
+         
+            da.excutequery("UpdateTicketsActive", param);
+            da.close();
+        }
     }
 }
