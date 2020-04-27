@@ -29,9 +29,9 @@ namespace Laboratory.PL
         {
             try
             {
-                comboBox1.DataSource = DoctorOfCenter.CompoDoctor_OFCENTER();
-                comboBox1.DisplayMember = "Doc_Name";
-                comboBox1.ValueMember = "Doc_ID";
+            //    comboBox1.DataSource = DoctorOfCenter.CompoDoctor_OFCENTER();
+            //    comboBox1.DisplayMember = "Doc_Name";
+            //    comboBox1.ValueMember = "Doc_ID";
             }
             catch (Exception ex)
             {
@@ -39,22 +39,53 @@ namespace Laboratory.PL
                 MessageBox.Show(ex.Message);
             }
         }
+        void searchDatetAllDoctor()
+        {
+
+
+            DataTable dt = new DataTable();
+            DataTable dt2 = new DataTable();
+            dt.Clear();
+            dt = DoctorOfCenter.Search_ALLReportDoctorOfCenter(DateFrom.Value, DateTo.Value);
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                dt2.Clear();
+                dt2 = DoctorOfCenter.SelectDateCountDoctorOfCenter(Convert.ToInt32(dt.Rows[i]["Doc_ID"]), DateFrom.Value, DateTo.Value);
+                for (int y = 0; y < dt2.Rows.Count; y++)
+                {
+                    int COUNT = Convert.ToInt32(dt2.Rows[y][0]);
+                    decimal VALUE = Convert.ToDecimal(dt2.Rows[y][1]);
+                    //decimal TOTAL = Convert.ToDecimal(dt2.Rows[y][2]);
+
+                    dt.Rows[i]["COUNT"] = COUNT;
+                    dt.Rows[i]["VALUE"] = Math.Round(VALUE, 2);
+                    //dt.Rows[i]["TOTAL"] = Math.Round(TOTAL, 2);
+
+
+
+                }
+                gridControl1.DataSource = dt;
+                gridView1.Columns["Doc_ID"].Visible = false;
+            }
+
+
+        }
 
         private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            try
-            {
-                if (comboBox1.Text != String.Empty)
-                {
-                    gridControl1.DataSource = DoctorOfCenter.Select_NumberCases_DoctorOfCenter(Convert.ToInt32(comboBox1.SelectedValue));
+            //try
+            //{
+            //    if (comboBox1.Text != String.Empty)
+            //    {
+            //        gridControl1.DataSource = DoctorOfCenter.Select_NumberCases_DoctorOfCenter(Convert.ToInt32(comboBox1.SelectedValue));
 
-                }
-            }
-            catch (Exception ex)
-            {
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
 
-                MessageBox.Show(ex.Message);
-            }
+            //    MessageBox.Show(ex.Message);
+            //}
         }
 
         private void btn_search_Click(object sender, EventArgs e)
@@ -64,20 +95,20 @@ namespace Laboratory.PL
 
         private void comboBox1_Leave(object sender, EventArgs e)
         {
-            if (comboBox1.Text != "")
-            {
-                dt.Clear();
-                dt = DoctorOfCenter.vildateDoctorOfCenter(Convert.ToInt32(comboBox1.SelectedValue));
-                if (dt.Rows.Count == 0)
-                {
-                    MessageBox.Show("يرجي العلم بان اسم طبيب الاشعة غير مسجل من قبل ", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            //if (comboBox1.Text != "")
+            //{
+            //    dt.Clear();
+                //dt = DoctorOfCenter.vildateDoctorOfCenter(Convert.ToInt32(comboBox1.SelectedValue));
+            //    if (dt.Rows.Count == 0)
+            //    {
+            //        MessageBox.Show("يرجي العلم بان اسم طبيب الاشعة غير مسجل من قبل ", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
 
-                    comboBox1.Focus();
-                    comboBox1.SelectAll();
-                    return;
-                }
-                dt.Dispose();
-            }
+            //        comboBox1.Focus();
+            //        comboBox1.SelectAll();
+            //        return;
+            //    }
+            //    dt.Dispose();
+            //}
         }
 
         private void Frm_AllCasesDoctorOfCenter_Load(object sender, EventArgs e)
@@ -149,24 +180,14 @@ namespace Laboratory.PL
 
             try
             {
-                if (comboBox1.Text != string.Empty)
-                {
-                    dt.Clear();
-                    dt = DoctorOfCenter.Search_NumberCases_DoctorOfCenter(Convert.ToInt32(comboBox1.SelectedValue), DateFrom.Value, DateTo.Value);
-                    gridControl1.DataSource = dt;
-
-
-                }
+                searchDatetAllDoctor();
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message);
             }
-            finally
-            {
-                dt.Dispose();
-            }
+        
         }
 
         private void Btn_Print_Click(object sender, EventArgs e)

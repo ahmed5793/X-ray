@@ -1309,6 +1309,20 @@ namespace Laboratory.PL
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void barButtonItem6_ItemClick_3(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                Frm_ReportOfDoctorOfCenter frdoc = new Frm_ReportOfDoctorOfCenter();
+                frdoc.Show();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
 	

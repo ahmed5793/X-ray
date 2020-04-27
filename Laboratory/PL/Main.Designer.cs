@@ -52,8 +52,8 @@
             this.add_DoctortCenter = new DevExpress.XtraBars.BarButtonItem();
             this.Report_DoctorCenter = new DevExpress.XtraBars.BarSubItem();
             this.barHeaderItem6 = new DevExpress.XtraBars.BarHeaderItem();
-            this.barHeaderItem7 = new DevExpress.XtraBars.BarHeaderItem();
             this.barHeaderItem8 = new DevExpress.XtraBars.BarHeaderItem();
+            this.barHeaderItem7 = new DevExpress.XtraBars.BarHeaderItem();
             this.add_Techincal = new DevExpress.XtraBars.BarButtonItem();
             this.add_shiftTechincal = new DevExpress.XtraBars.BarButtonItem();
             this.report_Techincal = new DevExpress.XtraBars.BarSubItem();
@@ -184,6 +184,7 @@
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barAndDockingController1)).BeginInit();
@@ -309,9 +310,10 @@
             this.btn_ReportTransferCompany,
             this.Btn_ReportReturn,
             this.barButtonItem4,
-            this.Btn_Revenues});
+            this.Btn_Revenues,
+            this.barButtonItem6});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 140;
+            this.ribbon.MaxItemId = 141;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.basic_information,
@@ -495,7 +497,8 @@
             this.Report_DoctorCenter.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("Report_DoctorCenter.ImageOptions.LargeImage")));
             this.Report_DoctorCenter.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barHeaderItem6),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barHeaderItem8)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barHeaderItem8),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem6)});
             this.Report_DoctorCenter.Name = "Report_DoctorCenter";
             // 
             // barHeaderItem6
@@ -505,19 +508,19 @@
             this.barHeaderItem6.Name = "barHeaderItem6";
             this.barHeaderItem6.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barHeaderItem6_ItemClick);
             // 
-            // barHeaderItem7
-            // 
-            this.barHeaderItem7.Caption = "تقرير تفصيلي بعدد الحالات التى عمل بها الطبيب";
-            this.barHeaderItem7.Id = 22;
-            this.barHeaderItem7.Name = "barHeaderItem7";
-            this.barHeaderItem7.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barHeaderItem7_ItemClick);
-            // 
             // barHeaderItem8
             // 
             this.barHeaderItem8.Caption = "تقرير مجمع لكل الحالات التى عمل بها الطبيب";
             this.barHeaderItem8.Id = 23;
             this.barHeaderItem8.Name = "barHeaderItem8";
             this.barHeaderItem8.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barHeaderItem8_ItemClick);
+            // 
+            // barHeaderItem7
+            // 
+            this.barHeaderItem7.Caption = "تقرير تفصيلي بعدد الحالات التى عمل بها الطبيب";
+            this.barHeaderItem7.Id = 22;
+            this.barHeaderItem7.Name = "barHeaderItem7";
+            this.barHeaderItem7.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barHeaderItem7_ItemClick);
             // 
             // add_Techincal
             // 
@@ -1740,6 +1743,16 @@
             this.accordionControlElement3.Name = "accordionControlElement3";
             this.accordionControlElement3.Text = "Element3";
             // 
+            // barButtonItem6
+            // 
+            this.barButtonItem6.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.barButtonItem6.Caption = "تقرير تفصيلي للحالات التى عمل بها طبيب المركز";
+            this.barButtonItem6.Id = 140;
+            this.barButtonItem6.ItemAppearance.Normal.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barButtonItem6.ItemAppearance.Normal.Options.UseFont = true;
+            this.barButtonItem6.Name = "barButtonItem6";
+            this.barButtonItem6.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem6_ItemClick_3);
+            // 
             // Main
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
@@ -1930,5 +1943,6 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement1;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement4;
         public DevExpress.XtraBars.BarButtonItem Btn_Revenues;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem6;
     }
 }
