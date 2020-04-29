@@ -19,6 +19,7 @@ namespace Laboratory.PL
         {
             InitializeComponent();
             gridControl1.DataSource = d.SelectDoctor();
+            gridView1.Columns["Doc_ID"].Visible = false;
         }
 
         private void Frm_ReportOutDoctorData_Load(object sender, EventArgs e)

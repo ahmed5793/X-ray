@@ -97,7 +97,7 @@
             this.groupBox1.Controls.Add(this.txt_address);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(10, -2);
+            this.groupBox1.Location = new System.Drawing.Point(10, 9);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(908, 159);
             this.groupBox1.TabIndex = 21;
@@ -275,7 +275,7 @@
             this.Btn_New.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_New.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.Btn_New.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_New.ImageOptions.Image")));
-            this.Btn_New.Location = new System.Drawing.Point(632, 170);
+            this.Btn_New.Location = new System.Drawing.Point(632, 177);
             this.Btn_New.Name = "Btn_New";
             this.Btn_New.Size = new System.Drawing.Size(164, 32);
             this.Btn_New.TabIndex = 177;
@@ -295,7 +295,7 @@
             this.Btn_Update.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_Update.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.Btn_Update.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Update.ImageOptions.Image")));
-            this.Btn_Update.Location = new System.Drawing.Point(141, 170);
+            this.Btn_Update.Location = new System.Drawing.Point(141, 177);
             this.Btn_Update.Name = "Btn_Update";
             this.Btn_Update.Size = new System.Drawing.Size(149, 32);
             this.Btn_Update.TabIndex = 176;
@@ -315,7 +315,7 @@
             this.Btn_Add.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_Add.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.Btn_Add.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Add.ImageOptions.Image")));
-            this.Btn_Add.Location = new System.Drawing.Point(404, 170);
+            this.Btn_Add.Location = new System.Drawing.Point(404, 177);
             this.Btn_Add.Name = "Btn_Add";
             this.Btn_Add.Size = new System.Drawing.Size(143, 32);
             this.Btn_Add.TabIndex = 175;
@@ -326,7 +326,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(921, 513);
+            this.ClientSize = new System.Drawing.Size(921, 512);
             this.Controls.Add(this.Btn_New);
             this.Controls.Add(this.Btn_Update);
             this.Controls.Add(this.Btn_Add);
@@ -339,7 +339,7 @@
             this.MinimumSize = new System.Drawing.Size(937, 551);
             this.Name = "Frm_Doctor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "شاشة تسجيل الطبيب المعالجح";
+            this.Text = "شاشة تسجيل الطبيب المعالج";
             this.Load += new System.EventHandler(this.Frm_Doctor_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

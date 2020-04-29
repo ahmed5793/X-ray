@@ -33,6 +33,7 @@
             this.Cmb_Suppliers = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_save = new DevExpress.XtraEditors.SimpleButton();
+            this.Btn_Update = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,7 +66,7 @@
             this.Cmb_Suppliers.FormattingEnabled = true;
             this.Cmb_Suppliers.Items.AddRange(new object[] {
             ""});
-            this.Cmb_Suppliers.Location = new System.Drawing.Point(152, 9);
+            this.Cmb_Suppliers.Location = new System.Drawing.Point(149, 9);
             this.Cmb_Suppliers.Margin = new System.Windows.Forms.Padding(4);
             this.Cmb_Suppliers.Name = "Cmb_Suppliers";
             this.Cmb_Suppliers.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -81,7 +82,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(448, 13);
+            this.label1.Location = new System.Drawing.Point(445, 13);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 22);
@@ -102,20 +103,42 @@
             this.btn_save.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btn_save.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.btn_save.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_save.ImageOptions.Image")));
-            this.btn_save.Location = new System.Drawing.Point(576, -34);
+            this.btn_save.Location = new System.Drawing.Point(576, -57);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(141, 33);
             this.btn_save.TabIndex = 194;
             this.btn_save.Text = "خروج";
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
+            // Btn_Update
+            // 
+            this.Btn_Update.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Btn_Update.Appearance.BackColor = System.Drawing.Color.White;
+            this.Btn_Update.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Update.Appearance.ForeColor = System.Drawing.Color.White;
+            this.Btn_Update.Appearance.Options.UseBackColor = true;
+            this.Btn_Update.Appearance.Options.UseFont = true;
+            this.Btn_Update.Appearance.Options.UseForeColor = true;
+            this.Btn_Update.Appearance.Options.UseTextOptions = true;
+            this.Btn_Update.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Btn_Update.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.Btn_Update.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.Btn_Update.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Update.ImageOptions.Image")));
+            this.Btn_Update.Location = new System.Drawing.Point(682, 9);
+            this.Btn_Update.Name = "Btn_Update";
+            this.Btn_Update.Size = new System.Drawing.Size(35, 35);
+            this.Btn_Update.TabIndex = 195;
+            this.Btn_Update.Text = "خروج";
+            this.Btn_Update.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Btn_Update_MouseClick);
+            // 
             // Frm_SearchSupplierInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(729, 450);
+            this.ClientSize = new System.Drawing.Size(729, 449);
             this.ControlBox = false;
+            this.Controls.Add(this.Btn_Update);
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Cmb_Suppliers);
@@ -139,5 +162,6 @@
         public System.Windows.Forms.ComboBox Cmb_Suppliers;
         public System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.SimpleButton btn_save;
+        private DevExpress.XtraEditors.SimpleButton Btn_Update;
     }
 }
