@@ -109,5 +109,11 @@ namespace Laboratory.PL
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void Btn_Update_MouseClick(object sender, MouseEventArgs e)
+        {
+            dataGridView1.DataSource = null;
+            this.Close();
+        }
     }
 }

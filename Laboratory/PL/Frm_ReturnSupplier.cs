@@ -448,11 +448,12 @@ namespace Laboratory.PL
                     Calc_ReturnValue();
                     txt_names.Clear();
                     txt_prise.Clear();
-                    txt_quantity.Clear();
+                  
                     txt_iD.Clear();
                     Txt_IdStore.Clear();
                     txt_total.Clear();
                     txt_return.Text = "0";
+                    Txt_QuantityStore.Text = "0";
                 }
                 else
                 {
@@ -471,7 +472,13 @@ namespace Laboratory.PL
         {
 
             try
+
             {
+                if (Convert.ToDecimal(Txt_Pay.Text)>Convert.ToDecimal(textBox4.Text))
+                {
+                    MessageBox.Show("لا يمكن دفع مبلغ اكبر من قيمة المرتجع");
+                    return;
+                }
                 dt.Clear();
                 dt = s.Select_moneyStock(Convert.ToInt32(Cmb_Stock.SelectedValue));
                 if (dt.Rows.Count > 0)
@@ -520,6 +527,11 @@ namespace Laboratory.PL
             {
                 Txt_Pay.Text = "0";
             }
+        }
+
+        private void Txt_QuantityStore_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

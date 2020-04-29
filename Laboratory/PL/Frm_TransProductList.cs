@@ -44,5 +44,35 @@ namespace Laboratory.PL
             dataGridView1.DataSource = null;
             this.Close();
         }
+
+        private void Frm_TransProductList_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_Update_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+
+              
+            BL.Product p = new Product();
+
+           
+              dataGridView1.DataSource=  p.Search_ComboTransfairProductT(textBox1.Text);
+
+           
+            }
+            catch (Exception EX)
+            {
+
+                MessageBox.Show(EX.Message);
+            }
+        }
     }
 }

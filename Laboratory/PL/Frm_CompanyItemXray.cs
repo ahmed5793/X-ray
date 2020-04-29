@@ -209,11 +209,12 @@ namespace Laboratory.PL
         }
         private void Txt_Discount_MouseLeave(object sender, EventArgs e)
         {
-         
+           
         }
 
         private void Txt_Discount_KeyUp(object sender, KeyEventArgs e)
-        {          
+        {
+           
         }
         private void Txt_PriceDiscount_KeyUp(object sender, KeyEventArgs e)
         {           
@@ -373,6 +374,7 @@ namespace Laboratory.PL
         }
         private void Txt_Discount_Click(object sender, EventArgs e)
         {
+          
             if (Txt_Discount.Text=="0")
             {
                 Txt_Discount.Text = "";
@@ -612,6 +614,22 @@ namespace Laboratory.PL
             {
                 MessageBox.Show(ex.Message);
                 MessageBox.Show(ex.StackTrace);
+            }
+        }
+
+        private void Txt_Discount_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (Txt_Discount.Text == "0")
+            {
+                Txt_Discount.Text = "";
+            }
+        }
+
+        private void Txt_Discount_Leave(object sender, EventArgs e)
+        {
+            if (Txt_Discount.Text == "")
+            {
+                Txt_Discount.Text = "0";
             }
         }
     }

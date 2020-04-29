@@ -145,6 +145,7 @@ namespace Laboratory.PL
 
         private void simpleButton1_Click_1(object sender, EventArgs e)
         {
+
             Frm_TransProductList frm_TransProductList = new Frm_TransProductList();
             try
             {
@@ -201,6 +202,8 @@ namespace Laboratory.PL
 
             try
             {
+               
+
                 if (Cmb_FromStore.Text == string.Empty && Cmb_ToStore.Text == string.Empty)
                 {
                     MessageBox.Show("لا بد من وجود مخزن للتحويل");
@@ -209,6 +212,11 @@ namespace Laboratory.PL
                 if (DataGridView1.Rows.Count < 1)
                 {
                     MessageBox.Show("لابد من وجود صنف واحد على الاقل ");
+                    return;
+                }
+                if (Convert.ToInt32(Cmb_FromStore.SelectedValue) == Convert.ToInt32(Cmb_ToStore.SelectedValue))
+                {
+                    MessageBox.Show("لا يمكن التحويل الي نفس المخزن");
                     return;
                 }
                 else

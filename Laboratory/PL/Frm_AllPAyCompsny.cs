@@ -129,6 +129,9 @@ namespace Laboratory.PL
                     dt.Clear();
                     dt = cm.Search_AllpAyOfCompany(Convert.ToInt32(cmb_Company.SelectedValue), DateFrom.Value, DateTo.Value);
                     gridControl1.DataSource = dt;
+                    dt2.Clear();
+                    dt2 = cm.Select_CompanyTotalMoney(Convert.ToInt32(cmb_Company.SelectedValue));
+                    textBox1.Text = dt2.Rows[0][0].ToString();
                 }
             }
             catch (Exception ex)

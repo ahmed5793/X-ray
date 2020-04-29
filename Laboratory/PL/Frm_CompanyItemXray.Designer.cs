@@ -309,8 +309,10 @@
             this.Txt_Discount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Txt_Discount.Click += new System.EventHandler(this.Txt_Discount_Click);
             this.Txt_Discount.TextChanged += new System.EventHandler(this.Txt_Discount_TextChanged);
+            this.Txt_Discount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txt_Discount_KeyDown);
             this.Txt_Discount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Discount_KeyPress);
             this.Txt_Discount.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txt_Discount_KeyUp);
+            this.Txt_Discount.Leave += new System.EventHandler(this.Txt_Discount_Leave);
             this.Txt_Discount.MouseLeave += new System.EventHandler(this.Txt_Discount_MouseLeave);
             this.Txt_Discount.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Txt_Discount_MouseMove);
             // 

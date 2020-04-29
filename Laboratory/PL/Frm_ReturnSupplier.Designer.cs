@@ -637,6 +637,7 @@
             this.Txt_QuantityStore.TabIndex = 188;
             this.Txt_QuantityStore.Text = "0";
             this.Txt_QuantityStore.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Txt_QuantityStore.TextChanged += new System.EventHandler(this.Txt_QuantityStore_TextChanged);
             // 
             // label3
             // 
@@ -672,7 +673,6 @@
             // dataGridView2
             // 
             this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
             this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));

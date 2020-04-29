@@ -28,38 +28,38 @@ namespace Laboratory.PL
             txt_username.Text = Program.salesman;
             Permision();
             //dataGridView1.Columns[8].DefaultCellStyle.Format = "MM/dd/yyyy hh:mm:ss tt";
-        
+
         }
         System.Data.DataTable dt = new System.Data.DataTable();
         new System.Data.DataTable dt2 = new System.Data.DataTable();
         void Permision()
         {
-           try
-           {
-            dt2.Clear();
-            dt2 = u.SelectUserBranch(txt_username.Text);
+            try
+            {
+                dt2.Clear();
+                dt2 = u.SelectUserBranch(txt_username.Text);
 
-            if (dt2.Rows.Count > 0)
-            {
-                cmb_UserBranch.DataSource = u.SelectUserBranch(txt_username.Text);
-                cmb_UserBranch.DisplayMember = "Name";
-                cmb_UserBranch.ValueMember = "Branch_ID";               
+                if (dt2.Rows.Count > 0)
+                {
+                    cmb_UserBranch.DataSource = u.SelectUserBranch(txt_username.Text);
+                    cmb_UserBranch.DisplayMember = "Name";
+                    cmb_UserBranch.ValueMember = "Branch_ID";
+                }
+                else
+                {
+                    cmb_UserBranch.DataSource = b.SelectCompBranches();
+                    cmb_UserBranch.DisplayMember = "Name";
+                    cmb_UserBranch.ValueMember = "Branch_ID";
+                }
             }
-            else
+            catch (Exception ex)
             {
-                cmb_UserBranch.DataSource = b.SelectCompBranches();
-                cmb_UserBranch.DisplayMember = "Name";
-                cmb_UserBranch.ValueMember = "Branch_ID";                
-            }
-           }
-           catch (Exception ex)
-           {
                 MessageBox.Show(ex.Message);
-           }
+            }
         }
         private void Frm_ExportExell_Load(object sender, EventArgs e)
         {
-         
+
 
             dataGridView1.RowTemplate.Height = 50;
             dataGridView1.Columns[0].Visible = false;
@@ -81,39 +81,39 @@ namespace Laboratory.PL
 
         private void btn_update_Click(object sender, EventArgs e)
         {
-           
-        }
-     
-        private void button1_Click(object sender, EventArgs e)
-        {
-         
 
         }
-    
-        
-            
-        
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
+
+
+
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-            
- 
+
+
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            
+
 
 
 
@@ -150,7 +150,7 @@ namespace Laboratory.PL
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            
+
         }
 
         private void fileExcelBindingSource_CurrentChanged(object sender, EventArgs e)
@@ -162,7 +162,7 @@ namespace Laboratory.PL
         {
             dataGridView1.Rows.Clear();
             /// DLL MICROSOFT.OFFICE.INTEROP.EXCEL
-            
+
             _Application importExcelToDataGridViewApp;
             _Workbook importExcelToDataGridViewWorkbook;
             _Worksheet importExcelToDataGridViewWorksheet;
@@ -189,9 +189,9 @@ namespace Laboratory.PL
                     importExcelToDataGridViewRange = importExcelToDataGridViewWorksheet.UsedRange;
 
 
-                 
-                  
-                    for (int excelWorkSheetRowIndex = 2; excelWorkSheetRowIndex < importExcelToDataGridViewRange.Rows.Count ; excelWorkSheetRowIndex++)
+
+
+                    for (int excelWorkSheetRowIndex = 2; excelWorkSheetRowIndex < importExcelToDataGridViewRange.Rows.Count; excelWorkSheetRowIndex++)
                     {
 
                         if (importExcelToDataGridViewRange.Item[excelWorkSheetRowIndex, 2].Value == null)
@@ -200,8 +200,8 @@ namespace Laboratory.PL
                         }
                         else
                         {
-                       
-                            
+
+
                             dataGridView1.Rows.Add(importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 1].Value,
                           importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 2].Value,
                           importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 3].Value,
@@ -210,20 +210,20 @@ namespace Laboratory.PL
                           importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 6].Value,
                           importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 7].Value,
                           importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 8].Value,
-                         Convert.ToDateTime( importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 9].Value)
+                         Convert.ToDateTime(importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 9].Value)
                            .ToString("dddd", new System.Globalization.CultureInfo("ar-EG")),
                                      Convert.ToDateTime(importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 9].Value)
-                           .ToString("dd-MM-yyyy  hh:mm tt", new System.Globalization.CultureInfo("ar-EG"))); 
-                         
-                  
+                           .ToString("dd-MM-yyyy  hh:mm tt", new System.Globalization.CultureInfo("ar-EG")));
+
+
 
 
                         }
 
-                  
+
 
                     }
-                
+
 
                 }
             }
@@ -240,7 +240,7 @@ namespace Laboratory.PL
         {
 
         }
-    
+
         private void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
             cmb_UserBranch.Enabled = false;
@@ -258,7 +258,7 @@ namespace Laboratory.PL
 
                 //});
 
-                
+
                 if (dataGridView1.Rows.Count > 0)
                 {
                     for (int i = 0; i < dataGridView1.Rows.Count; i++)
@@ -270,28 +270,28 @@ namespace Laboratory.PL
                         if (dt10.Rows.Count > 0)
                         {
                             //ToString("dd-MM-YYYY hh:mm tt")
-                           
 
-                                f.AddFingeerExcel(Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), dataGridView1.Rows[i].Cells[3].Value.ToString(), Convert.ToDateTime(dataGridView1.Rows[i].Cells[9].Value), Convert.ToInt32(cmb_UserBranch.SelectedValue), txt_username.Text);
+
+                            f.AddFingeerExcel(Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), dataGridView1.Rows[i].Cells[3].Value.ToString(), Convert.ToDateTime(dataGridView1.Rows[i].Cells[9].Value), Convert.ToInt32(cmb_UserBranch.SelectedValue), txt_username.Text);
 
 
 
 
                         }
                         dt2.Clear();
-                        dt2 = f.vildateHRINOUTExcel(Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), Convert.ToDateTime(dataGridView1.Rows[i].Cells[9].Value),Convert.ToInt32(cmb_UserBranch.SelectedValue));
+                        dt2 = f.vildateHRINOUTExcel(Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), Convert.ToDateTime(dataGridView1.Rows[i].Cells[9].Value), Convert.ToInt32(cmb_UserBranch.SelectedValue));
 
 
                         if (dt2.Rows.Count == 0)
                         {
-                         
-                                    f.AddFingeerExcel(Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), dataGridView1.Rows[i].Cells[3].Value.ToString(), Convert.ToDateTime(dataGridView1.Rows[i].Cells[9].Value), Convert.ToInt32(cmb_UserBranch.SelectedValue), txt_username.Text);
 
-                               
-                         
-                          
+                            f.AddFingeerExcel(Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), dataGridView1.Rows[i].Cells[3].Value.ToString(), Convert.ToDateTime(dataGridView1.Rows[i].Cells[9].Value), Convert.ToInt32(cmb_UserBranch.SelectedValue), txt_username.Text);
+
+
+
+
                         }
-                      
+
 
 
                         backgroundWorker1.ReportProgress(i);
@@ -301,19 +301,19 @@ namespace Laboratory.PL
 
                             progressBar1.Value += 1;
 
-                            label3.Text = progressBar1.Value.ToString()+"/"+dataGridView1.Rows.Count;
+                            label3.Text = progressBar1.Value.ToString() + "/" + dataGridView1.Rows.Count;
 
 
                         }
-                       
-                    
+
+
 
 
                     }
 
-                  
 
-                    
+
+
 
 
 
@@ -327,8 +327,8 @@ namespace Laboratory.PL
                 //return;
                 MessageBox.Show(ex.Message);
                 //MessageBox.Show(ex.StackTrace);
-                
-              
+
+
             }
         }
 
@@ -339,31 +339,31 @@ namespace Laboratory.PL
             try
             {
 
-                if (dataGridView1.Rows.Count>0)
+                if (dataGridView1.Rows.Count > 0)
                 {
 
-                
-
-            progressBar1.Show();
 
 
-
-            progressBar1.Maximum = dataGridView1.Rows.Count;
+                    progressBar1.Show();
 
 
 
-
-            if (backgroundWorker1.IsBusy)
-            {
-               
-                MessageBox.Show("جارى حفظ البينات ");
-            }
-            else
-            {
+                    progressBar1.Maximum = dataGridView1.Rows.Count;
 
 
 
-                backgroundWorker1.RunWorkerAsync();
+
+                    if (backgroundWorker1.IsBusy)
+                    {
+
+                        MessageBox.Show("جارى حفظ البينات ");
+                    }
+                    else
+                    {
+
+
+
+                        backgroundWorker1.RunWorkerAsync();
 
                     }
                 }
@@ -373,16 +373,16 @@ namespace Laboratory.PL
 
                 MessageBox.Show(ex.Message);
             }
-        
-    }
+
+        }
 
         private void backgroundWorker1_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
         {
-            
 
-                MessageBox.Show("تم حفظ الداتا بنجاح", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                label3.Text = "0";
-                dataGridView1.Rows.Clear();
+
+            MessageBox.Show("تم حفظ الداتا بنجاح", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            label3.Text = "0";
+            dataGridView1.Rows.Clear();
             progressBar1.Value = 0;
             textBox1.Clear();
             cmb_UserBranch.Enabled = true;
@@ -402,15 +402,36 @@ namespace Laboratory.PL
 
         private void backgroundWorker2_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
-           
+
         }
 
         private void simpleButton3_Click(object sender, EventArgs e)
         {
-        
-            
+
+
         }
+
+        private void Frm_ExportExell_FormClosed(object sender, FormClosedEventArgs e)
+        {
+           
+
+                this.Close();
+           
+
+           
+
+
+        }
+
+        private void Frm_ExportExell_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+          
+
+        }
+    
     }
-}
+    }
+
 
 

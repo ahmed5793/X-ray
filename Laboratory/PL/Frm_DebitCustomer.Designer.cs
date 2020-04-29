@@ -77,9 +77,9 @@
             this.label1.Location = new System.Drawing.Point(259, 6);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label1.Size = new System.Drawing.Size(414, 40);
+            this.label1.Size = new System.Drawing.Size(337, 40);
             this.label1.TabIndex = 75;
-            this.label1.Text = "تقرير عن مديونية العملاء النقدي";
+            this.label1.Text = "تقرير عن مديونية العملاء ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // groupBox1

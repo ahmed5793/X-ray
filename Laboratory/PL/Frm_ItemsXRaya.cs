@@ -78,6 +78,9 @@ namespace Laboratory.PL
             if (dt.Rows.Count == 0)
             {
                 MessageBox.Show("عزيزيى المستخدم يرجي العلم بان اسم الجهاز غير مسجل ");
+                comboBox1.Focus();
+                comboBox1.SelectAll();
+
                 return;
             }
         }
@@ -86,6 +89,16 @@ namespace Laboratory.PL
         {
             try
             {
+                dt.Clear();
+                dt = c.Validate_CategoryXray(Convert.ToInt32(comboBox1.SelectedValue));
+                if (dt.Rows.Count == 0)
+                {
+                    MessageBox.Show("عزيزيى المستخدم يرجي العلم بان اسم الجهاز غير مسجل ");
+                    txt_name.Focus();
+                    txt_name.SelectAll();
+
+                    return;
+                }
                 if (txt_name.Text == "")
                 {
                     MessageBox.Show("من فضلك يرجي ادخال اسم الاشعة");

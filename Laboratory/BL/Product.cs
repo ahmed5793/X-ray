@@ -468,5 +468,19 @@ namespace Laboratory.BL
             return dt;
 
         }
+
+        internal DataTable Search_ComboTransfairProductT(string id)
+        {
+            DataTable dt = new DataTable();
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@id", SqlDbType.NVarChar,50);
+            param[0].Value = id;
+            dt = da.selected("Search_ComboTransfairProductT", param);
+            da.close();
+            return dt;
+
+        }
     }
 }

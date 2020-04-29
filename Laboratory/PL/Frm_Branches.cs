@@ -124,7 +124,7 @@ namespace Laboratory.PL
                     MessageBox.Show("عزيزى المستخدم قمبااختيار اسم المخزن");
                     return;
                 }
-                if (dataGridView1.Rows.Count >= 4)
+                if (dataGridView1.Rows.Count >= 3)
                 {
                     MessageBox.Show("ليس لديك صلاحية ان تضيف اكتر من ثلاث فروع الرجاء الرجوع الي مسئول النظام");
                     return;

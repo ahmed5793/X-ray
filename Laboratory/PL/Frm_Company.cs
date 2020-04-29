@@ -66,8 +66,7 @@ namespace Laboratory.PL
                 e.Handled = true;
             }
         }
-
-        private void simpleButton1_Click(object sender, EventArgs e)
+        void clear()
         {
             Btn_update.Enabled = false;
             txt_name.Clear();
@@ -75,6 +74,10 @@ namespace Laboratory.PL
             richTextBox1.Clear();
             Btn_Add.Enabled = true;
             dateTimePicker1.Enabled = true;
+        }
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            clear();
 
         }
 
@@ -126,26 +129,20 @@ namespace Laboratory.PL
                     co.UpdateCompany(txt_name.Text, txt_phone.Text, Convert.ToInt32(gridView1.GetFocusedRowCellValue("Comp_ID")), txt_address.Text, richTextBox1.Text);
 
                     MessageBox.Show("تم تعديل بيانات الشركة بنجاح", "عمليه التعديل", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                
+                    gridControl1.DataSource = co.SelectCompany();
+                    clear();
                 }
                 else
                 {
                     MessageBox.Show("تم الغاء عمليه التعديل");
-                    
+                    clear();
                 }
-                gridControl1.DataSource = co.SelectCompany();
-                txt_name.Clear();
-                txt_phone.Clear();
-                txt_address.Clear();
-                Btn_update.Enabled = false;
-                richTextBox1.Clear();
-                txt_name.Enabled = true;
-                dateTimePicker1.Enabled = true;
+               
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                MessageBox.Show(ex.StackTrace);
+              
             }
         }
 
