@@ -74,7 +74,6 @@ namespace Laboratory.PL
             txt_note.Clear();
             txt_userName.Clear();
             Txt_money.Clear();
-     
             btn_save.Show();         
         }
         private void txt_search_TextChanged(object sender, EventArgs e)
@@ -121,67 +120,88 @@ namespace Laboratory.PL
                     cmb_employeeName.SelectAll();
                     return;
                 }
-                dt.Dispose();
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
 
-            if (Txt_money.Text == "" || Txt_money.Text == "0")
+            try
             {
-                MessageBox.Show("من فضلك قم بكتابة المبلغ");
-                return;
-            }
-            if (cmb_employeeName.Text == "")
-            {
-                MessageBox.Show("قم بااختيار اسم الموظف");
-                return;
-            }
+                if (Txt_money.Text == "" || Txt_money.Text == "0")
+                {
+                    MessageBox.Show("من فضلك قم بكتابة المبلغ");
+                    return;
+                }
+                if (cmb_employeeName.Text == "")
+                {
+                    MessageBox.Show("قم بااختيار اسم الموظف");
+                    return;
+                }
 
-            if (txt_userName.Text == "")
-            {
-                MessageBox.Show("قم بااختيار اسم الداين");
-                return;
-            }
+                if (txt_userName.Text == "")
+                {
+                    MessageBox.Show("قم بااختيار اسم الداين");
+                    return;
+                }
 
-            E.AddEmployee_Salf(txt_userName.Text, dateTimePicker1.Value, dateTimePicker2.Value, txt_note.Text,
-                               Convert.ToDecimal(Txt_money.Text), Convert.ToInt32(cmb_employeeName.SelectedValue),
-                               Convert.ToInt32(cmb_branch.SelectedValue));
-            MessageBox.Show("تم التسجيل بنجاح");
-            gridControl1.DataSource = E.SelectEmployeeSalf(Convert.ToInt32(cmb_branch.SelectedValue));
-            txt_note.Clear();
-            txt_userName.Clear();
-            Txt_money.Clear();
-            txt_note.Clear();
-            Txt_money.Clear();
-            btn_save.Show();
+                E.AddEmployee_Salf(txt_userName.Text, dateTimePicker1.Value, dateTimePicker2.Value, txt_note.Text,
+                                   Convert.ToDecimal(Txt_money.Text), Convert.ToInt32(cmb_employeeName.SelectedValue),
+                                   Convert.ToInt32(cmb_branch.SelectedValue));
+                MessageBox.Show("تم التسجيل بنجاح");
+                gridControl1.DataSource = E.SelectEmployeeSalf(Convert.ToInt32(cmb_branch.SelectedValue));
+                txt_note.Clear();
+                Txt_money.Text = "0";
+                cmb_employeeName.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-
-            if (Txt_money.Text == "" || Txt_money.Text == "0")
+            try
             {
-                MessageBox.Show("من فضلك قم بكتابة المبلغ");
-                return;
+                if (cmb_employeeName.Text=="")
+                {
+                    MessageBox.Show("يرجى تحديد إسم الموظف");
+                }
+                if (Txt_money.Text == "" || Txt_money.Text == "0")
+                {
+                    MessageBox.Show("من فضلك قم بكتابة المبلغ");
+                    return;
 
+                }
+                if (MessageBox.Show("هل تريد تعديل السلف", "عملية التعديل", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    E.UpdateEmployee_Salf(Convert.ToDecimal(Txt_money.Text), Convert.ToInt32(gridView1.GetFocusedRowCellValue("ID_Salf")));
+                    MessageBox.Show("تم التعديل بنجاح");
+                }
+                else
+                {
+                    MessageBox.Show("تم إلغاء التعديل");
+                }
+
+                txt_note.Clear();
+                Txt_money.Text = "0";
+                btn_Update.Enabled = false;
+                btn_save.Enabled = true;
+                cmb_branch.Enabled = true;
+                txt_note.Enabled = true;
+                dateTimePicker1.Enabled = true;
+                dateTimePicker2.Enabled = true;
+                cmb_employeeName.Enabled = true;
+                gridControl1.Enabled = true;
+                gridControl1.DataSource = E.SelectEmployeeSalf(Convert.ToInt32(cmb_branch.SelectedValue));
             }
+            catch (Exception ex)
+            {
 
-            E.UpdateEmployee_Salf( Convert.ToDecimal(Txt_money.Text), Convert.ToInt32(gridView1.GetFocusedRowCellValue("ID_Salf")));
-         
-            MessageBox.Show("تم التعديل بنجاح");
-            txt_note.Clear();           
-            Txt_money.Clear();
-            btn_save.Show();
-            btn_Update.Enabled = false;
-            cmb_branch.Enabled = true;
-            txt_note.Enabled = true;
-            dateTimePicker1.Enabled = true;
-            dateTimePicker2.Enabled = true;
-            cmb_employeeName.Enabled = true;
-            gridControl1.Enabled = true;
-            gridControl1.DataSource = E.SelectEmployeeSalf(Convert.ToInt32(cmb_branch.SelectedValue));
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void cmb_branch_SelectionChangeCommitted(object sender, EventArgs e)
@@ -206,8 +226,9 @@ namespace Laboratory.PL
                     dateTimePicker2.Enabled = false;
                     cmb_employeeName.Enabled = false;
                     btn_Update.Enabled = true;
+                    btn_save.Enabled = false;
                     gridControl1.Enabled = false;
-
+                    txt_userName.Text = Program.salesman;
                     cmb_employeeName.Text = gridView1.GetFocusedRowCellValue("اسم الموظف").ToString();
                     cmb_branch.Text = gridView1.GetFocusedRowCellValue("فرع").ToString();
                     dateTimePicker1.Text = gridView1.GetFocusedRowCellValue("تاريخ السلف").ToString();
@@ -227,6 +248,23 @@ namespace Laboratory.PL
         private void Frm_Salf_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void simpleButton1_Click_1(object sender, EventArgs e)
+        {
+            txt_note.Clear();
+            Txt_money.Text="0";
+            btn_Update.Enabled = false;
+            btn_save.Enabled = true;
+            cmb_branch.Enabled = true;
+            txt_note.Enabled = true;
+            dateTimePicker1.Enabled = true;
+            dateTimePicker2.Enabled = true;
+            cmb_employeeName.Enabled = true;
+            cmb_employeeName.SelectedIndex = -1;
+            gridControl1.Enabled = true;
+            txt_userName.Text = Program.salesman;
+            gridControl1.DataSource = E.SelectEmployeeSalf(Convert.ToInt32(cmb_branch.SelectedValue));
         }
     }
     }

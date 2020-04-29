@@ -268,7 +268,7 @@ namespace Laboratory.PL
                 txt_salf.Text = "0";
                 txt_discount.Text = "0";
                 label6.Text = "0.00";
-
+                cmb_employeeName.SelectedIndex = -1;
 
 
             }

@@ -32,10 +32,12 @@ namespace Laboratory.PL
                 comboBox1.DataSource = Techincal.Select_ComboTechnical();
                 comboBox1.DisplayMember = "Tech_Name";
                 comboBox1.ValueMember = "Techincal_ID";
+                comboBox1.SelectedIndex = -1;
 
                 comboBox2.DataSource = Techincal.Select_ComboTypeShift();
                 comboBox2.DisplayMember = "Type_Shift";
                 comboBox2.ValueMember = "ID_Shift";
+                comboBox2.SelectedIndex = -1;
 
                 Cmb_Branch.DataSource = b.SelectCompBranches();
                 Cmb_Branch.DisplayMember = "Name";
@@ -169,6 +171,8 @@ namespace Laboratory.PL
                     MessageBox.Show("تم إضافة الشيفت بنجاح");
                     Txt_Cost.Text = "0";
                     Txt_Cost.Clear();
+                    comboBox2.SelectedIndex = -1;
+                    comboBox1.SelectedIndex = -1;
                     gridControl1.DataSource = Techincal.Select_TechnicalShift();
                 }
             }
@@ -217,6 +221,8 @@ namespace Laboratory.PL
                 }
                 Txt_Cost.Text = "0";
                 Txt_Cost.Clear();
+                comboBox2.SelectedIndex = -1;
+                comboBox1.SelectedIndex = -1;
                 gridControl1.DataSource = Techincal.Select_TechnicalShift();
                 comboBox1.Enabled = true;
                 Btn_AddShift.Enabled = true;
@@ -245,15 +251,17 @@ namespace Laboratory.PL
                 {
                     MessageBox.Show("تم إلغاء مسح الشيفت ");
                 }
-
                 Txt_Cost.Text = "0";
                 Txt_Cost.Clear();
+                comboBox2.SelectedIndex = -1;
+                comboBox1.SelectedIndex = -1;
                 gridControl1.DataSource = Techincal.Select_TechnicalShift();
                 comboBox1.Enabled = true;
                 Btn_AddShift.Enabled = true;
                 gridControl1.Enabled = true;
                 Btn_UpdateShift.Enabled = false;
                 Btn_DeleteShift.Enabled = false;
+                Cmb_Branch.Enabled = true;
             }
             catch (Exception ex)
             {
@@ -324,6 +332,22 @@ namespace Laboratory.PL
             {
                 Txt_Cost.Text = "";
             }
+        }
+
+        private void simpleButton1_Click_3(object sender, EventArgs e)
+        {
+
+            Txt_Cost.Text = "0";
+            Txt_Cost.Clear();
+            comboBox2.SelectedIndex = -1;
+            comboBox1.SelectedIndex = -1;
+            gridControl1.DataSource = Techincal.Select_TechnicalShift();
+            comboBox1.Enabled = true;
+            Btn_AddShift.Enabled = true;
+            gridControl1.Enabled = true;
+            Btn_UpdateShift.Enabled = false;
+            Btn_DeleteShift.Enabled = false;
+            Cmb_Branch.Enabled = true;
         }
     }
 }

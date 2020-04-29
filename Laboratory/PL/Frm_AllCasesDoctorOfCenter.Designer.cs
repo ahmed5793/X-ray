@@ -62,7 +62,7 @@
             this.DateFrom.CustomFormat = "   dd/MM/yyyy       *      tt  mm:hh    ";
             this.DateFrom.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DateFrom.Location = new System.Drawing.Point(442, 51);
+            this.DateFrom.Location = new System.Drawing.Point(442, 40);
             this.DateFrom.Name = "DateFrom";
             this.DateFrom.ShowUpDown = true;
             this.DateFrom.Size = new System.Drawing.Size(132, 32);
@@ -74,10 +74,10 @@
             this.label4.BackColor = System.Drawing.Color.Yellow;
             this.label4.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(580, 89);
+            this.label4.Location = new System.Drawing.Point(580, 90);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label4.Size = new System.Drawing.Size(68, 31);
+            this.label4.Size = new System.Drawing.Size(74, 31);
             this.label4.TabIndex = 118;
             this.label4.Text = "إلى :";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -88,7 +88,7 @@
             this.label3.BackColor = System.Drawing.Color.Yellow;
             this.label3.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(580, 51);
+            this.label3.Location = new System.Drawing.Point(580, 40);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label3.Size = new System.Drawing.Size(74, 31);
@@ -124,7 +124,7 @@
             this.simpleButton1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.simpleButton1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(297, 66);
+            this.simpleButton1.Location = new System.Drawing.Point(293, 66);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(116, 32);
             this.simpleButton1.TabIndex = 164;
@@ -144,7 +144,7 @@
             this.Btn_Print.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_Print.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.Btn_Print.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Print.ImageOptions.Image")));
-            this.Btn_Print.Location = new System.Drawing.Point(4, 3);
+            this.Btn_Print.Location = new System.Drawing.Point(108, 66);
             this.Btn_Print.Name = "Btn_Print";
             this.Btn_Print.Size = new System.Drawing.Size(146, 32);
             this.Btn_Print.TabIndex = 165;

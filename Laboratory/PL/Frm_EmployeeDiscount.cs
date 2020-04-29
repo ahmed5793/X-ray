@@ -120,6 +120,7 @@ namespace Laboratory.PL
                 MessageBox.Show("تم الحفظ بنجاح");
                 txt_reason.Clear();
                 txt_Money.Text = "0";
+                cmb_Employee.SelectedIndex = -1;
             }
             catch (Exception ex)
             {

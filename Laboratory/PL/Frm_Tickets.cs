@@ -1326,6 +1326,18 @@ namespace Laboratory.PL
                                 txt_name.Focus();
                                 return;
                             }
+                            if (comboBox1.Text == "")
+                            {
+                                MessageBox.Show("من فضلك قم بتحديد النوع ");
+                                comboBox1.Focus();
+                                return;
+                            }
+                            if (txt_age.Text == "")
+                            {
+                                MessageBox.Show("من فضلك قم بتحديد سن العميل ");
+                                txt_age.Focus();
+                                return;
+                            }
                             Btn_Save.Enabled = false;
 
                             c.addCustomer(txt_name.Text, txt_address.Text, txt_phone.Text, Convert.ToInt32(txt_age.Text), dtb_visit.Value, comboBox1.Text, txt_idntational.Text);
@@ -1451,6 +1463,18 @@ namespace Laboratory.PL
                                 txt_name.Focus();
                                 return;
                             }
+                            if (comboBox1.Text == "")
+                            {
+                                MessageBox.Show("من فضلك قم بتحديد النوع ");
+                                comboBox1.Focus();
+                                return;
+                            }
+                            if (txt_age.Text == "")
+                            {
+                                MessageBox.Show("من فضلك قم بتحديد سن العميل ");
+                                txt_age.Focus();
+                                return;
+                            }
                             Btn_Save.Enabled = false;
                             c.addCustomer(txt_name.Text, txt_address.Text, txt_phone.Text, Convert.ToInt32(txt_age.Text), dtb_visit.Value, comboBox1.Text, txt_idntational.Text);
                             txt_idcust.Text = c.LastIdCustomer().Rows[0][0].ToString();                      
@@ -1479,7 +1503,21 @@ namespace Laboratory.PL
                                 Convert.ToDecimal(Txt_PricePayment.Text)
                                  , dtb_visit.Value, mno1, Convert.ToInt32(cmb_Stock.SelectedValue)
                                  , txt_username.Text, Convert.ToInt32(cmb_UserBranch.SelectedValue), "حجز أشعة ورقم الحجز" + " " + txt_IdTicket.Text);
-                          
+
+                            ///////////////////////
+
+                            dt.Clear();
+                            dt = cm.Select_CompanyTotalMoney(Convert.ToInt32(cmb_Company.SelectedValue));
+                            decimal mno = Convert.ToDecimal(dt.Rows[0][0]) + Convert.ToDecimal(Txt_rentCompany.Text);
+                            cm.Update_CompanyTotalMoney(Convert.ToInt32(cmb_Company.SelectedValue), mno);
+                            cm.ADD_Company_TotalRent(Convert.ToInt32(cmb_Company.SelectedValue), 0, Convert.ToDecimal(Txt_rentCompany.Text)
+                                 , dtb_visit.Value, mno, "حجز أشعة ورقم الحجز   " + " " + txt_IdTicket.Text + " " + "إلى" + " " + txt_name.Text, Convert.ToInt32(cmb_Stock.SelectedValue)
+                                 , Convert.ToInt32(cmb_UserBranch.SelectedValue), txt_username.Text);
+
+
+
+
+
                             MessageBox.Show("تم حفظ الفاتورة بنجاح");
 
              
@@ -1517,6 +1555,21 @@ namespace Laboratory.PL
                                 Convert.ToDecimal(Txt_PricePayment.Text)
                                  , dtb_visit.Value, mno2, Convert.ToInt32(cmb_Stock.SelectedValue)
                                  , txt_username.Text, Convert.ToInt32(cmb_UserBranch.SelectedValue), "حجز أشعة ورقم الحجز" + " " + txt_IdTicket.Text);
+
+
+                            //////////////////
+
+                            dt.Clear();
+                            dt = cm.Select_CompanyTotalMoney(Convert.ToInt32(cmb_Company.SelectedValue));
+                            decimal mno = Convert.ToDecimal(dt.Rows[0][0]) + Convert.ToDecimal(Txt_rentCompany.Text);
+                            cm.Update_CompanyTotalMoney(Convert.ToInt32(cmb_Company.SelectedValue), mno);
+                            cm.ADD_Company_TotalRent(Convert.ToInt32(cmb_Company.SelectedValue), 0, Convert.ToDecimal(Txt_rentCompany.Text)
+                                 , dtb_visit.Value, mno, "حجز أشعة ورقم الحجز   " + " " + txt_IdTicket.Text +" "+ "إلى" +" "+ Cmb_customer.Text , Convert.ToInt32(cmb_Stock.SelectedValue)
+                                 , Convert.ToInt32(cmb_UserBranch.SelectedValue), txt_username.Text);
+
+
+
+
                             MessageBox.Show("تم حفظ الفاتورة بنجاح");                      
                         }
                       
@@ -1524,13 +1577,6 @@ namespace Laboratory.PL
 
                         t.AddTicketCompany(Convert.ToInt32(txt_IdTicket.Text), Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToDecimal(Txt_rentCompany.Text));
 
-                        dt.Clear();
-                        dt = cm.Select_CompanyTotalMoney(Convert.ToInt32(cmb_Company.SelectedValue));
-                        decimal mno = Convert.ToDecimal(dt.Rows[0][0]) + Convert.ToDecimal(Txt_rentCompany.Text);
-                        cm.Update_CompanyTotalMoney(Convert.ToInt32(cmb_Company.SelectedValue), mno);
-                        cm.ADD_Company_TotalRent(Convert.ToInt32(cmb_Company.SelectedValue), 0, Convert.ToDecimal(Txt_rentCompany.Text)
-                             , dtb_visit.Value, mno, "حجز أشعة ورقم الحجز   " + " " + txt_IdTicket.Text, Convert.ToInt32(cmb_Stock.SelectedValue)
-                             , Convert.ToInt32(cmb_UserBranch.SelectedValue), txt_username.Text);
 
                         DataTable dt1 = new DataTable();
                         dt1.Clear();

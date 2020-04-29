@@ -225,7 +225,7 @@ namespace Laboratory.PL
                     if (RdbAllPay.Checked == true)
                     {
 
-                        if (MessageBox.Show("هل تريد دفع المبلغ بالكامل", "عمليه الدفع", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                        if (MessageBox.Show("هل تريد تسديد المبلغ على العميل بالكامل", "عمليه الدفع", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
 
                         {
                             //    c.addPayClient(Convert.ToInt32(cmb_client.SelectedValue), Convert.ToDecimal(dataGridView1.CurrentRow.Cells[3].Value),
@@ -267,13 +267,17 @@ namespace Laboratory.PL
                             txt_prise.Focus();
                             return;
                         }
-                        if (MessageBox.Show("هل تريد جزء من المبلغ ", "عمليه الدفع", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                        if (MessageBox.Show("هل تريد تسديد جزء من المبلغ على العميل ", "عمليه الدفع", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
 
                         {
                             //c.addPayClient(Convert.ToInt32(cmb_client.SelectedValue), Convert.ToDecimal(txt_prise.Text), z,
                             //    dateTimePicker1.Value, Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value),
                             //    Convert.ToInt32(cmb_Stock.SelectedValue), Txt_SalesMAn.Text, Convert.ToInt32(Cmb_Branch.SelectedValue));
-
+                            if (txt_prise.Text=="")
+                            {
+                                MessageBox.Show("لا بد من تحديد السعر");
+                                return;
+                            }
                             dt.Clear();
                             dt = c.Select_CustomertotalBAlance(Convert.ToInt32(cmb_client.SelectedValue));
                             decimal mno = Convert.ToDecimal(dt.Rows[0][0]) - Convert.ToDecimal(txt_prise.Text);

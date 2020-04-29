@@ -104,6 +104,7 @@
             this.groupBox2.Controls.Add(this.gridControlPull);
             this.groupBox2.Location = new System.Drawing.Point(6, 119);
             this.groupBox2.Name = "groupBox2";
+            this.groupBox2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.groupBox2.Size = new System.Drawing.Size(983, 335);
             this.groupBox2.TabIndex = 168;
             this.groupBox2.TabStop = false;
@@ -119,6 +120,7 @@
             this.gridControlPull.LookAndFeel.UseDefaultLookAndFeel = false;
             this.gridControlPull.MainView = this.gridViewPull;
             this.gridControlPull.Name = "gridControlPull";
+            this.gridControlPull.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.gridControlPull.Size = new System.Drawing.Size(971, 312);
             this.gridControlPull.TabIndex = 127;
             this.gridControlPull.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {

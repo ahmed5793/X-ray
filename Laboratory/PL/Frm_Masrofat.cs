@@ -329,5 +329,13 @@ namespace Laboratory.PL
                 MessageBox.Show(ex.StackTrace);
             }
         }
+
+        private void txt_amount_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (txt_amount.Text=="")
+            {
+                txt_amount.Text = "0";
+            }
+        }
     }
 }

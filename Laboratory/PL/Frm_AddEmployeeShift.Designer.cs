@@ -52,6 +52,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.Cmb_Branch = new System.Windows.Forms.ComboBox();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.Txt_IdShift = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -134,6 +135,7 @@
             this.Txt_Cost.Text = "0";
             this.Txt_Cost.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Txt_Cost.Click += new System.EventHandler(this.Txt_Cost_Click);
+            this.Txt_Cost.TextChanged += new System.EventHandler(this.Txt_Cost_TextChanged);
             this.Txt_Cost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Cost_KeyPress);
             this.Txt_Cost.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Txt_Cost_MouseMove);
             // 
@@ -418,12 +420,26 @@
             this.simpleButton1.Text = "جديد";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click_1);
             // 
+            // Txt_IdShift
+            // 
+            this.Txt_IdShift.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Txt_IdShift.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_IdShift.Location = new System.Drawing.Point(360, 4);
+            this.Txt_IdShift.MaxLength = 11;
+            this.Txt_IdShift.Name = "Txt_IdShift";
+            this.Txt_IdShift.ReadOnly = true;
+            this.Txt_IdShift.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Txt_IdShift.Size = new System.Drawing.Size(107, 26);
+            this.Txt_IdShift.TabIndex = 176;
+            this.Txt_IdShift.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // Frm_AddEmployeeShift
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Olive;
             this.ClientSize = new System.Drawing.Size(960, 532);
+            this.Controls.Add(this.Txt_IdShift);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.Txt_SalesMAn);
@@ -482,5 +498,6 @@
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private System.Windows.Forms.TextBox Txt_IdShift;
     }
 }

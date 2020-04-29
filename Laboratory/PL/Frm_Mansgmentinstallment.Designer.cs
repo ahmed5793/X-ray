@@ -140,6 +140,7 @@
             this.groupBox3.Controls.Add(this.gridControl1);
             this.groupBox3.Location = new System.Drawing.Point(5, 71);
             this.groupBox3.Name = "groupBox3";
+            this.groupBox3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.groupBox3.Size = new System.Drawing.Size(811, 356);
             this.groupBox3.TabIndex = 162;
             this.groupBox3.TabStop = false;
@@ -155,6 +156,7 @@
             this.gridControl1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
+            this.gridControl1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.gridControl1.Size = new System.Drawing.Size(802, 340);
             this.gridControl1.TabIndex = 127;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -254,6 +256,7 @@
             this.Name = "Frm_Mansgmentinstallment";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "شاشة تقرير الاقساط";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Frm_Mansgmentinstallment_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

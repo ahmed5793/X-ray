@@ -137,6 +137,7 @@ namespace Laboratory.PL
                         {
                             pa.Txt_IdCompany.Text = dr[0].ToString();
                             pa.Txt_RentCompany.Text = dr[2].ToString();
+                            pa.Txt_PriceCustomerPayment.Text = dr[3].ToString();
                         }
                     }
                     dt5.Clear();

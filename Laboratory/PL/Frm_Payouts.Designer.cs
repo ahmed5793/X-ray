@@ -70,6 +70,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.Txt_PriceCustomerPayment = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -238,6 +239,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.Txt_PriceCustomerPayment);
             this.groupBox2.Controls.Add(this.Txt_RentCompany);
             this.groupBox2.Controls.Add(this.Txt_IdCompany);
             this.groupBox2.Controls.Add(this.label13);
@@ -267,7 +269,7 @@
             // 
             this.Txt_RentCompany.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Txt_RentCompany.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_RentCompany.Location = new System.Drawing.Point(321, 101);
+            this.Txt_RentCompany.Location = new System.Drawing.Point(358, 58);
             this.Txt_RentCompany.Name = "Txt_RentCompany";
             this.Txt_RentCompany.ReadOnly = true;
             this.Txt_RentCompany.Size = new System.Drawing.Size(113, 32);
@@ -278,7 +280,7 @@
             // 
             this.Txt_IdCompany.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Txt_IdCompany.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_IdCompany.Location = new System.Drawing.Point(321, 59);
+            this.Txt_IdCompany.Location = new System.Drawing.Point(358, 16);
             this.Txt_IdCompany.Name = "Txt_IdCompany";
             this.Txt_IdCompany.ReadOnly = true;
             this.Txt_IdCompany.Size = new System.Drawing.Size(113, 32);
@@ -409,9 +411,9 @@
             this.label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label9.Location = new System.Drawing.Point(198, 102);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(60, 24);
+            this.label9.Size = new System.Drawing.Size(142, 24);
             this.label9.TabIndex = 102;
-            this.label9.Text = "المتبقي";
+            this.label9.Text = "المتبقي على العميل";
             // 
             // txt_rent
             // 
@@ -432,9 +434,9 @@
             this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label7.Location = new System.Drawing.Point(198, 59);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(62, 24);
+            this.label7.Size = new System.Drawing.Size(114, 24);
             this.label7.TabIndex = 100;
-            this.label7.Text = "المدفوع";
+            this.label7.Text = "المدفوع مسبقا ";
             // 
             // txt_pay
             // 
@@ -569,6 +571,17 @@
             this.simpleButton1.Text = "حفظ الاسترداد";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
+            // Txt_PriceCustomerPayment
+            // 
+            this.Txt_PriceCustomerPayment.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Txt_PriceCustomerPayment.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_PriceCustomerPayment.Location = new System.Drawing.Point(358, 99);
+            this.Txt_PriceCustomerPayment.Name = "Txt_PriceCustomerPayment";
+            this.Txt_PriceCustomerPayment.ReadOnly = true;
+            this.Txt_PriceCustomerPayment.Size = new System.Drawing.Size(137, 32);
+            this.Txt_PriceCustomerPayment.TabIndex = 127;
+            this.Txt_PriceCustomerPayment.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // Frm_Payouts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -634,5 +647,6 @@
         public System.Windows.Forms.TextBox Txt_ReturnMoney;
         public System.Windows.Forms.TextBox Txt_RentCompany;
         public System.Windows.Forms.TextBox Txt_IdCompany;
+        public System.Windows.Forms.TextBox Txt_PriceCustomerPayment;
     }
 }

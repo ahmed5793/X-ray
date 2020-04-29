@@ -250,6 +250,7 @@
             this.txt_amount.Text = "0";
             this.txt_amount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_amount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_amount_KeyPress);
+            this.txt_amount.MouseMove += new System.Windows.Forms.MouseEventHandler(this.txt_amount_MouseMove);
             // 
             // label5
             // 

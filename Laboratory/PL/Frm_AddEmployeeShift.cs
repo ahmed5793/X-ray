@@ -25,6 +25,7 @@ namespace Laboratory.PL
             Btn_DeleteShift.Enabled = false;
             Btn_UpdateShift.Enabled = false;
             gridControl1.DataSource = E.Select_EmployeeShift(Convert.ToInt32(Cmb_Branch.SelectedValue));
+            Txt_IdShift.Hide();
         }       
         void Permision()
         {
@@ -158,6 +159,18 @@ namespace Laboratory.PL
                     MessageBox.Show("تم إضافة الشيفت بنجاح");
                     Txt_Cost.Text = "0";
                     gridControl1.DataSource = E.Select_EmployeeShift(Convert.ToInt32(Cmb_Branch.SelectedValue));
+                    Txt_Cost.Text = "0";
+                    comboBox1.Enabled = true;
+                    Btn_AddShift.Enabled = true;
+                    Btn_UpdateShift.Enabled = false;
+                    Btn_DeleteShift.Enabled = false;
+                    Cmb_Branch.Enabled = true;
+                    textBox1.Clear();
+                    Txt_IdShift.Clear();
+                    comboBox1.SelectedIndex = -1;
+                    dateTimePicker1.Value = DateTime.Now;
+                    dateTimePicker2.Value = DateTime.Now;
+                    dateTimePicker3.Value = DateTime.Now;
                 }
             }
             catch (Exception ex)
@@ -195,7 +208,7 @@ namespace Laboratory.PL
                     //        return;
                     //    }
                     //}
-                    E.Update_EmployeeShift(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الشيفت")), Convert.ToInt32(comboBox1.SelectedValue),
+                    E.Update_EmployeeShift(Convert.ToInt32(Txt_IdShift.Text), Convert.ToInt32(comboBox1.SelectedValue),
                          (dateTimePicker1.Text), (dateTimePicker3.Text),
                         (dateTimePicker2.Text), Convert.ToDecimal(Txt_Cost.Text), Convert.ToInt32(Cmb_Branch.SelectedValue), Txt_SalesMAn.Text);
                     MessageBox.Show("تم تعديل الشيفت بنجاح", "عملية التعديل");
@@ -206,12 +219,18 @@ namespace Laboratory.PL
                 }
             
                 gridControl1.DataSource = E.Select_EmployeeShift(Convert.ToInt32(Cmb_Branch.SelectedValue));
+                Txt_Cost.Text = "0";
                 comboBox1.Enabled = true;
                 Btn_AddShift.Enabled = true;
                 Btn_UpdateShift.Enabled = false;
                 Btn_DeleteShift.Enabled = false;
                 Cmb_Branch.Enabled = true;
-                Txt_Cost.Text = "0";
+                textBox1.Clear();
+                Txt_IdShift.Clear();
+                comboBox1.SelectedIndex = -1;
+                dateTimePicker1.Value = DateTime.Now;
+                dateTimePicker2.Value = DateTime.Now;
+                dateTimePicker3.Value = DateTime.Now;
             }
             catch (Exception ex)
             {
@@ -226,20 +245,26 @@ namespace Laboratory.PL
             {
                 if (MessageBox.Show("هل تريد مسح الشيفت", "عملية المسح", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    E.Delete_EmployeeShift(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الشيفت")));
+                    E.Delete_EmployeeShift(Convert.ToInt32(Txt_IdShift.Text));
                     MessageBox.Show("تم مسح الشيفت بنجاح");
                 }
                 else
                 {
                     MessageBox.Show("تم إلغاء مسح الشيفت ");            
                 }
-                Txt_Cost.Text = "0";
                 gridControl1.DataSource = E.Select_EmployeeShift(Convert.ToInt32(Cmb_Branch.SelectedValue));
+                Txt_Cost.Text = "0";
                 comboBox1.Enabled = true;
                 Btn_AddShift.Enabled = true;
                 Btn_UpdateShift.Enabled = false;
                 Btn_DeleteShift.Enabled = false;
-                gridControl1.Enabled = true;
+                Cmb_Branch.Enabled = true;
+                textBox1.Clear();
+                Txt_IdShift.Clear();
+                comboBox1.SelectedIndex = -1;
+                dateTimePicker1.Value = DateTime.Now;
+                dateTimePicker2.Value = DateTime.Now;
+                dateTimePicker3.Value = DateTime.Now;
             }
             catch (Exception ex)
             {
@@ -275,6 +300,7 @@ namespace Laboratory.PL
                 comboBox1.Text = gridView1.GetFocusedRowCellValue("إسم الموظف").ToString();
                 textBox1.Text = gridView1.GetFocusedRowCellValue("التخصص").ToString();
                 Txt_Cost.Text = gridView1.GetFocusedRowCellValue("سعر الشيفت").ToString();
+                Txt_IdShift.Text = gridView1.GetFocusedRowCellValue("رقم الشيفت").ToString();
                 //Txt_SalesMAn.Text = gridView1.GetFocusedRowCellValue("إسم المستخدم").ToString();
                 dateTimePicker1.Value = Convert.ToDateTime(gridView1.GetFocusedRowCellValue("تاريخ الشيفت"));
                 dateTimePicker3.Value = Convert.ToDateTime(gridView1.GetFocusedRowCellValue("من وقت"));
@@ -327,7 +353,13 @@ namespace Laboratory.PL
                 Btn_UpdateShift.Enabled = false;
                 Btn_DeleteShift.Enabled = false;
                 Cmb_Branch.Enabled = true;
-                Txt_Cost.Text = "0";
+                textBox1.Clear();
+                Txt_IdShift.Clear();
+
+                comboBox1.SelectedIndex = -1;
+                dateTimePicker1.Value = DateTime.Now;
+                dateTimePicker2.Value = DateTime.Now;
+                dateTimePicker3.Value = DateTime.Now;
 
             }
             catch (Exception ex)
@@ -347,6 +379,11 @@ namespace Laboratory.PL
         {
            
             
+        }
+
+        private void Txt_Cost_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
