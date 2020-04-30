@@ -300,22 +300,33 @@ namespace Laboratory.PL
                                 dt3 = f.selectReservations_dates();
                                 for (int y = 0; y < dt3.Rows.Count; y++)
                                 {
-                                    if (Convert.ToDateTime(dt10.Rows[i][2]) >= Convert.ToDateTime(dt3.Rows[y][2]) || Convert.ToDateTime(dt10.Rows[i][2]) <= Convert.ToDateTime(dt3.Rows[y][3])
-                                           || Convert.ToDateTime(dt10.Rows[i][3]) >= Convert.ToDateTime(dt3.Rows[y][2])  || Convert.ToDateTime(dt10.Rows[i][3]) <= Convert.ToDateTime(dt3.Rows[y][3]))
+                                    n = dataGridView1.Rows.Add();
+                                    dataGridView1.Rows[n].Cells[0].Value = dt10.Rows[i][0].ToString();
+                                    dataGridView1.Rows[n].Cells[1].Value = dt10.Rows[i][1].ToString();
+                                    dataGridView1.Rows[n].Cells[2].Value = dt10.Rows[i][2].ToString();
+                                    dataGridView1.Rows[n].Cells[3].Value = dt10.Rows[i][3].ToString();
+                                    dataGridView1.Rows[n].Cells[4].Value = dt10.Rows[i][4].ToString();
+                                    if (Convert.ToDateTime(dt10.Rows[i][2]) >= Convert.ToDateTime(dt3.Rows[y][2]) && Convert.ToDateTime(dt10.Rows[i][2]) <= Convert.ToDateTime(dt3.Rows[y][3])) 
                                     {
 
 
-                                        n = dataGridView1.Rows.Add();
-                                        dataGridView1.Rows[n].Cells[0].Value = dt10.Rows[i][0].ToString();
-                                        dataGridView1.Rows[n].Cells[1].Value = dt10.Rows[i][1].ToString();
-                                        dataGridView1.Rows[n].Cells[2].Value = dt10.Rows[i][2].ToString();
-                                        dataGridView1.Rows[n].Cells[3].Value = dt10.Rows[i][3].ToString();
-                                        dataGridView1.Rows[n].Cells[4].Value = dt10.Rows[i][4].ToString();
+                                     
                                       
                                         dataGridView1.Rows[n].Cells[5].Value = dt3.Rows[y][1].ToString();
                                         dataGridView1.Rows[n].Cells[6].Value = "NULL";
                                         TotalTimeInGridView();
                                     }
+                                    else if ( Convert.ToDateTime(dt10.Rows[i][3]) >= Convert.ToDateTime(dt3.Rows[y][2]) && Convert.ToDateTime(dt10.Rows[i][3]) <= Convert.ToDateTime(dt3.Rows[y][3])
+)
+                                    {
+                                       
+
+                                        dataGridView1.Rows[n].Cells[5].Value = dt3.Rows[y][1].ToString();
+                                        dataGridView1.Rows[n].Cells[6].Value = "NULL";
+                                        
+
+                                    }
+                                   
                                 }
                              
 
