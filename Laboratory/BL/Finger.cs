@@ -316,6 +316,56 @@ namespace Laboratory.BL
             return dt;
         }
 
+        internal void AddReservationsdates(DateTime  hador, DateTime ansraf, string GenderShift)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[3];
+            param[0] = new SqlParameter("@7ador", SqlDbType.DateTime);
+            param[0].Value = hador;
+            param[1] = new SqlParameter("@ansraf", SqlDbType.DateTime);
+            param[1].Value = ansraf;
 
+            param[2] = new SqlParameter("@GenderShift", SqlDbType.NVarChar,50);
+            param[2].Value = GenderShift;
+
+            da.excutequery("AddReservationsdates", param);
+            da.close();
+        }
+        internal void UpdateReservationsdates(DateTime hador, DateTime ansraf, string GenderShift,int id)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[4];
+            param[0] = new SqlParameter("@7ador", SqlDbType.Time);
+            param[0].Value = hador;
+            param[1] = new SqlParameter("@ansraf", SqlDbType.Time);
+            param[1].Value = ansraf;
+
+            param[2] = new SqlParameter("@GenderShift", SqlDbType.NVarChar, 50);
+            param[2].Value = GenderShift;
+            param[3] = new SqlParameter("@id", SqlDbType.Int);
+            param[3].Value = id;
+
+            da.excutequery("UpdateReservationsdates", param);
+            da.close();
+        }
+
+        internal DataTable selectReservations_dates()
+        {
+
+            DataAccessLayer da = new DataAccessLayer();
+            DataTable dt = new DataTable();
+
+
+            da.open();
+          
+
+
+            dt = da.selected("selectReservations_dates", null);
+            da.close();
+
+            return dt;
+        }
     }
 }
