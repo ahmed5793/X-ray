@@ -1323,6 +1323,12 @@ namespace Laboratory.PL
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void barButtonItem7_ItemClick_1(object sender, ItemClickEventArgs e)
+        {
+            Frm_timeWork tw = new Frm_timeWork();
+            tw.ShowDialog();
+        }
     }
 }
 	
