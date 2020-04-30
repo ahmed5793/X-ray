@@ -41,6 +41,8 @@
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.Txt_RentCustomer = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.Txt_LastPayOut = new System.Windows.Forms.TextBox();
@@ -64,8 +66,6 @@
             this.txt_IdTeckit = new System.Windows.Forms.TextBox();
             this.Txt_OldRentBeforeTransfair = new System.Windows.Forms.TextBox();
             this.Txt_TotalBeforeTransfair = new System.Windows.Forms.TextBox();
-            this.Txt_RentCustomer = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -245,6 +245,30 @@
             this.groupBox3.TabIndex = 92;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "الحسابات";
+            // 
+            // Txt_RentCustomer
+            // 
+            this.Txt_RentCustomer.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Txt_RentCustomer.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_RentCustomer.ForeColor = System.Drawing.SystemColors.Info;
+            this.Txt_RentCustomer.Location = new System.Drawing.Point(483, 143);
+            this.Txt_RentCustomer.Name = "Txt_RentCustomer";
+            this.Txt_RentCustomer.ReadOnly = true;
+            this.Txt_RentCustomer.Size = new System.Drawing.Size(134, 26);
+            this.Txt_RentCustomer.TabIndex = 138;
+            this.Txt_RentCustomer.Text = "0";
+            this.Txt_RentCustomer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.White;
+            this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(623, 147);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(108, 19);
+            this.label8.TabIndex = 137;
+            this.label8.Text = "المتبقي على العميل";
             // 
             // textBox2
             // 
@@ -427,6 +451,7 @@
             this.comboBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.comboBox1.Size = new System.Drawing.Size(265, 32);
             this.comboBox1.TabIndex = 137;
+            this.comboBox1.SelectionChangeCommitted += new System.EventHandler(this.comboBox1_SelectionChangeCommitted);
             // 
             // label3
             // 
@@ -503,6 +528,7 @@
             this.Txt_IdCust.Size = new System.Drawing.Size(111, 32);
             this.Txt_IdCust.TabIndex = 182;
             this.Txt_IdCust.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Txt_IdCust.TextChanged += new System.EventHandler(this.Txt_IdCust_TextChanged);
             // 
             // txt_IdTeckit
             // 
@@ -536,30 +562,6 @@
             this.Txt_TotalBeforeTransfair.Size = new System.Drawing.Size(111, 32);
             this.Txt_TotalBeforeTransfair.TabIndex = 185;
             this.Txt_TotalBeforeTransfair.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // Txt_RentCustomer
-            // 
-            this.Txt_RentCustomer.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Txt_RentCustomer.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_RentCustomer.ForeColor = System.Drawing.SystemColors.Info;
-            this.Txt_RentCustomer.Location = new System.Drawing.Point(483, 143);
-            this.Txt_RentCustomer.Name = "Txt_RentCustomer";
-            this.Txt_RentCustomer.ReadOnly = true;
-            this.Txt_RentCustomer.Size = new System.Drawing.Size(134, 26);
-            this.Txt_RentCustomer.TabIndex = 138;
-            this.Txt_RentCustomer.Text = "0";
-            this.Txt_RentCustomer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.White;
-            this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(623, 147);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(108, 19);
-            this.label8.TabIndex = 137;
-            this.label8.Text = "المتبقي على العميل";
             // 
             // Frm_TransferToCompany
             // 

@@ -547,6 +547,12 @@
     <Compile Include="PL\Frm_MasrofGender.designer.cs">
       <DependentUpon>Frm_MasrofGender.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Frm_NoticeAmountCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_NoticeAmountCustomer.Designer.cs">
+      <DependentUpon>Frm_NoticeAmountCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_Order.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1093,6 +1099,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_MasrofGender.resx">
       <DependentUpon>Frm_MasrofGender.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_NoticeAmountCustomer.resx">
+      <DependentUpon>Frm_NoticeAmountCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Order.resx">
       <DependentUpon>Frm_Order.cs</DependentUpon>

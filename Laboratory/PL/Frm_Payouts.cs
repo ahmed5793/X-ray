@@ -128,13 +128,14 @@ namespace Laboratory.PL
                         {
                         for (int i = 0; i < dataGridView1.Rows.Count; i++)
                         {
-                                t.addticketsReturn(Convert.ToInt32(txt_num.Text), Convert.ToInt32(cmb_Stock.SelectedValue), comboBox1.Text,
-                                    txt_name.Text, txt_statues.Text, dataGridView1.Rows[i].Cells[1].Value.ToString(), dateTimePicker2.Value
-                                    , Convert.ToDecimal(txt_pay.Text), textBox2.Text, Convert.ToDecimal(dataGridView1.Rows[i].Cells[2].Value),
-                                      Convert.ToDecimal(txt_pay.Text), txt_username.Text, Convert.ToInt32(dataGridView1.Rows[i].Cells[3].Value));
+                          t.addticketsReturn(Convert.ToInt32(txt_num.Text), Convert.ToInt32(cmb_Stock.SelectedValue), comboBox1.Text,
+                          txt_name.Text, txt_statues.Text, dataGridView1.Rows[i].Cells[1].Value.ToString(), dateTimePicker2.Value
+                         , Convert.ToDecimal(txt_pay.Text), textBox2.Text, Convert.ToDecimal(dataGridView1.Rows[i].Cells[2].Value),
+                         Convert.ToDecimal(txt_pay.Text), txt_username.Text, Convert.ToInt32(dataGridView1.Rows[i].Cells[3].Value));
                         
                         }
                         t.UpdateTicketsActive(Convert.ToInt32(txt_num.Text), "return");
+
                         if (txt_statues.Text == "نقدى")
                         {
                             dt.Clear();
@@ -143,27 +144,34 @@ namespace Laboratory.PL
                             c.Update_CustomerTotalBalance(Convert.ToInt32(Txt_IdCust.Text), mno1);
                             c.Add_CustomerAccountStatment(Convert.ToInt32(Txt_IdCust.Text), 0,
                             Convert.ToDecimal(txt_pay.Text), dateTimePicker2.Value, mno1, Convert.ToInt32(cmb_Stock.SelectedValue)
-                         , txt_username.Text, Convert.ToInt32(comboBox1.SelectedValue), " دفع مبلغ " + " " + txt_pay.Text + "مدفوع مسبقا للحجز  " + txt_num.Text);
-                            s.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_pay.Text), dateTimePicker2.Value, txt_username.Text, " سحب مبلغ " + " " + txt_pay.Text + "مدفوع مسبقا للحجز  " + txt_num.Text);
-
+                         , txt_username.Text, Convert.ToInt32(comboBox1.SelectedValue), "إذن صرف مبلغ " + " " + (txt_pay.Text )+ "مدفوع مسبقا للحجز  " + (txt_num.Text));
+                         
+                           
+                            /////////////
+                          
+                            s.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_pay.Text), dateTimePicker2.Value, txt_username.Text, " سحب مبلغ " + " " +( txt_pay.Text )+ "مدفوع مسبقا للحجز  " +( txt_num.Text));
+                         
+                            ///////////
+                            
                             dt.Clear();
                             dt = c.Select_CustomertotalBAlance(Convert.ToInt32(Txt_IdCust.Text));
                             decimal mno2 = Convert.ToDecimal(dt.Rows[0][0]) - Convert.ToDecimal(txt_total.Text);
                             c.Update_CustomerTotalBalance(Convert.ToInt32(Txt_IdCust.Text), mno2);
                             c.Add_CustomerAccountStatment(Convert.ToInt32(Txt_IdCust.Text), Convert.ToDecimal(txt_total.Text),
                             0, dateTimePicker2.Value, mno2, Convert.ToInt32(cmb_Stock.SelectedValue)
-                            , txt_username.Text, Convert.ToInt32(comboBox1.SelectedValue), " إلغاء الفحص رقم" + " " + txt_num.Text + " " + "وإسترداد المبلغ  المدفوع مسبقا بالكامل للعميل");
+                            , txt_username.Text, Convert.ToInt32(comboBox1.SelectedValue), " إلغاء الفحص رقم" + " " + (txt_num.Text) + " " + "وإسترداد المبلغ  المدفوع مسبقا بالكامل للعميل");
                         }    
                         if (txt_statues.Text == "شركات")
                         {
+
                             dt.Clear();
                             dt = c.Select_CustomertotalBAlance(Convert.ToInt32(Txt_IdCust.Text));
                             decimal mno1 = Convert.ToDecimal(dt.Rows[0][0]) + Convert.ToDecimal(txt_pay.Text);
                             c.Update_CustomerTotalBalance(Convert.ToInt32(Txt_IdCust.Text), mno1);
                             c.Add_CustomerAccountStatment(Convert.ToInt32(Txt_IdCust.Text), 0,
                             Convert.ToDecimal(txt_pay.Text), dateTimePicker2.Value, mno1, Convert.ToInt32(cmb_Stock.SelectedValue)
-                         , txt_username.Text, Convert.ToInt32(comboBox1.SelectedValue), " دفع مبلغ " + " " + txt_pay.Text + "مدفوع مسبقا للحجز  " + txt_num.Text);
-                            s.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_pay.Text), dateTimePicker2.Value, txt_username.Text, " سحب مبلغ " + " " + txt_pay.Text + "مدفوع مسبقا للحجز  " + txt_num.Text);
+                         , txt_username.Text, Convert.ToInt32(comboBox1.SelectedValue), " إذن صرف مبلغ " + " " +( txt_pay.Text) + "مدفوع مسبقا للحجز  " + (txt_num.Text));
+                            s.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_pay.Text), dateTimePicker2.Value, txt_username.Text, " سحب مبلغ " + " " + (txt_pay.Text) + "مدفوع مسبقا للحجز  " +( txt_num.Text));
 
                             dt.Clear();
                             dt = c.Select_CustomertotalBAlance(Convert.ToInt32(Txt_IdCust.Text));
@@ -171,7 +179,7 @@ namespace Laboratory.PL
                             c.Update_CustomerTotalBalance(Convert.ToInt32(Txt_IdCust.Text), mno2);
                             c.Add_CustomerAccountStatment(Convert.ToInt32(Txt_IdCust.Text), Convert.ToDecimal(Txt_PriceCustomerPayment.Text),
                             0, dateTimePicker2.Value, mno2, Convert.ToInt32(cmb_Stock.SelectedValue)
-                            , txt_username.Text, Convert.ToInt32(comboBox1.SelectedValue), " إلغاء الفحص رقم" + " " + txt_num.Text + " " + "وإسترداد المبلغ  المدفوع مسبقا بالكامل للعميل");
+                            , txt_username.Text, Convert.ToInt32(comboBox1.SelectedValue), " إلغاء الفحص رقم" + " " +( txt_num.Text) + " " + "وإسترداد المبلغ  المدفوع مسبقا بالكامل للعميل");
                             //////////////////
                             dt.Clear();
                             dt = cm.Select_CompanyTotalMoney(Convert.ToInt32(Txt_IdCompany.Text));
@@ -180,7 +188,7 @@ namespace Laboratory.PL
                             cm.Update_CompanyTotalMoney(Convert.ToInt32(Txt_IdCompany.Text), mno);
 
                             cm.ADD_Company_TotalRent(Convert.ToInt32(Txt_IdCompany.Text), Convert.ToDecimal(Txt_RentCompany.Text), 0
-                            , dateTimePicker2.Value, mno, "مردود أشعة ورقم الحجز   " + " " + txt_num.Text + " " + "للعميل " + " " + txt_name.Text,
+                            , dateTimePicker2.Value, mno, "مردود أشعة ورقم الحجز   " + " " + (txt_num.Text) + " " + "للعميل " + " " + txt_name.Text,
                             Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToInt32(comboBox1.SelectedValue), txt_username.Text);
                         }
                         MessageBox.Show("تم سحب المبلغ بنجاح");
