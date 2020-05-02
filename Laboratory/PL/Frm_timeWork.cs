@@ -17,7 +17,7 @@ namespace Laboratory.PL
         public Frm_timeWork()
         {
             InitializeComponent();
-            gridControl1.DataSource = f.selectReservations_dates();
+            //gridControl1.DataSource = f.selectReservations_dates();
             gridView1.Columns["id"].Visible = false;
             Btn_update.Enabled = false;
         }
@@ -47,7 +47,7 @@ namespace Laboratory.PL
 
             f.AddReservationsdates(Convert.ToDateTime(dateTimePicker2.Value.ToString("hh:mm tt")), Convert.ToDateTime(dateTimePicker1.Value.ToString("hh:mm tt")),cmb_Company.Text);
             MessageBox.Show("تم الحفظ بنجاح");
-            gridControl1.DataSource = f.selectReservations_dates();
+            //gridControl1.DataSource = f.selectReservations_dates();
             cmb_Company.Enabled = true;
             Btn_Add.Enabled = true;
             Btn_update.Enabled = false;
@@ -69,7 +69,7 @@ namespace Laboratory.PL
             f.UpdateReservationsdates(Convert.ToDateTime(dateTimePicker2.Value),
                 Convert.ToDateTime(dateTimePicker1.Value), cmb_Company.Text,Convert.ToInt32(gridView1.GetFocusedRowCellValue("id")));
             MessageBox.Show("تم التعديل بنجاح");
-            gridControl1.DataSource = f.selectReservations_dates();
+            //gridControl1.DataSource = f.selectReservations_dates();
                 cmb_Company.Enabled = true;
                 Btn_Add.Enabled = true;
                 Btn_update.Enabled = false;

@@ -133,8 +133,7 @@ namespace Laboratory.PL
             dt.Columns.Add("حضور");
             dt.Columns.Add("انصراف");
             dt.Columns.Add("عدد ساعات العمل");
-            dt.Columns.Add("نوع الشيفت");
-            dt.Columns.Add("التاخير");
+           
 
 
             int day = DateTime.DaysInMonth(Convert.ToInt32(cmb_year.Text), Convert.ToInt32(cmb_month.SelectedValue));
@@ -146,7 +145,7 @@ namespace Laboratory.PL
                 dt2 = F.AttendanceExcell(Convert.ToInt32(cmb_clients.SelectedValue), daydate, Convert.ToInt32(cmb_user_branch.SelectedValue));
 
 
-                dt.Rows.Add(daydate.ToString("dd-MM-yyyy"), daydate.ToString("dddd"), dt2.Rows[0][0], dt2.Rows[0][1], dt2.Rows[0][2],dt2.Rows[0][3],dt2.Rows[0][4]);
+                dt.Rows.Add(daydate.ToString("dd-MM-yyyy"), daydate.ToString("dddd"), dt2.Rows[0][0], dt2.Rows[0][1], dt2.Rows[0][2]);
 
 
 
@@ -278,8 +277,7 @@ namespace Laboratory.PL
                                 dataGridView1.Rows[n].Cells[2].Value = "غائب";
                                 dataGridView1.Rows[n].Cells[3].Value = "غائب";
                                 dataGridView1.Rows[n].Cells[4].Value = "00:00:00";
-                                dataGridView1.Rows[n].Cells[5].Value = "NULL";
-                                dataGridView1.Rows[n].Cells[6].Value = "NULL";
+                            
                                 dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.Black;
                                 dataGridView1.Rows[i].DefaultCellStyle.ForeColor = Color.Yellow;
 
@@ -296,38 +294,16 @@ namespace Laboratory.PL
 
                             else
                             {
-                                DataTable dt3 = new DataTable();
-                                dt3 = f.selectReservations_dates();
-                                for (int y = 0; y < dt3.Rows.Count; y++)
-                                {
-                                    n = dataGridView1.Rows.Add();
+                               
+                                  n = dataGridView1.Rows.Add();
                                     dataGridView1.Rows[n].Cells[0].Value = dt10.Rows[i][0].ToString();
                                     dataGridView1.Rows[n].Cells[1].Value = dt10.Rows[i][1].ToString();
                                     dataGridView1.Rows[n].Cells[2].Value = dt10.Rows[i][2].ToString();
                                     dataGridView1.Rows[n].Cells[3].Value = dt10.Rows[i][3].ToString();
                                     dataGridView1.Rows[n].Cells[4].Value = dt10.Rows[i][4].ToString();
-                                    if (Convert.ToDateTime(dt10.Rows[i][2]) >= Convert.ToDateTime(dt3.Rows[y][2]) && Convert.ToDateTime(dt10.Rows[i][2]) <= Convert.ToDateTime(dt3.Rows[y][3])) 
-                                    {
-
-
-                                     
-                                      
-                                        dataGridView1.Rows[n].Cells[5].Value = dt3.Rows[y][1].ToString();
-                                        dataGridView1.Rows[n].Cells[6].Value = "NULL";
-                                        TotalTimeInGridView();
-                                    }
-                                    else if ( Convert.ToDateTime(dt10.Rows[i][3]) >= Convert.ToDateTime(dt3.Rows[y][2]) && Convert.ToDateTime(dt10.Rows[i][3]) <= Convert.ToDateTime(dt3.Rows[y][3])
-)
-                                    {
-                                       
-
-                                        dataGridView1.Rows[n].Cells[5].Value = dt3.Rows[y][1].ToString();
-                                        dataGridView1.Rows[n].Cells[6].Value = "NULL";
-                                        
-
-                                    }
-                                   
-                                }
+                                TotalTimeInGridView();
+                              
+                               
                              
 
                             }
