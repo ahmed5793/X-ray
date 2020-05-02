@@ -318,7 +318,7 @@ namespace Laboratory.PL
                         decimal mno4 = Convert.ToDecimal(dt.Rows[0][0]) + mno5;
                         cu.Update_CustomerTotalBalance(Convert.ToInt32(Txt_IdCust.Text), mno4);
                         cu.Add_CustomerAccountStatment(Convert.ToInt32(Txt_IdCust.Text), 0,
-                        mno5, dateTimePicker1.Value, mno4, Convert.ToInt32(cmb_Stock.SelectedValue)
+                        Convert.ToDecimal(textBox2.Text), dateTimePicker1.Value, mno4, Convert.ToInt32(cmb_Stock.SelectedValue)
                         , txt_username.Text, Convert.ToInt32(comboBox1.SelectedValue),
                         " إذن صرف مبلغ   " + " " + (textBox2.Text )+" "+ " فرق المبلغ المدفوع مسبقا للحجز   " +" "+ (txt_IdTeckit.Text));
 
