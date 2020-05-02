@@ -11,9 +11,7 @@ using System.Windows.Forms;
 using Laboratory.BL;
 using Laboratory.RPT_Order;
 using DevExpress.XtraReports.UI;
-
-
-
+using Tulpep.NotificationWindow;
 
 namespace Laboratory.PL
 {
@@ -1650,6 +1648,19 @@ namespace Laboratory.PL
                     cmb_UserBranch.Enabled = false;
                     string x = DateTime.Now.ToShortDateString();
                     Frm_DataRevaltionTicket.getmain.gridControl1.DataSource = t.selectDataRevlation(Convert.ToInt32(Frm_DataRevaltionTicket.getmain.comboBox1.SelectedValue), Convert.ToDateTime(x));
+                    PopupNotifier po = new PopupNotifier();
+                  
+                    po.Image = Properties.Resources.iconfinder_175_Information_183524;
+                    po.TitleText = "مركز جاما للأشعه والرنين المغناطيسي ";
+                    po.ContentText = " حجز فحص من فرع"+" "+ cmb_UserBranch.Text;
+                    po.ShowCloseButton = true;
+                  
+                    
+
+                  
+                    po.Popup();
+                 
+                    po.AnimationInterval = 100000;
                 }
 
                 else
