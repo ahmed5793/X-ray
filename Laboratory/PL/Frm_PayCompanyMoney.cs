@@ -255,7 +255,7 @@ namespace Laboratory.PL
                             dt = c.Select_CompanyTotalMoney(Convert.ToInt32(cmb_company.SelectedValue));
                             decimal mno = Convert.ToDecimal(dt.Rows[0][0]) - Convert.ToDecimal(txt_prise.Text);
                             c.Update_CompanyTotalMoney(Convert.ToInt32(cmb_company.SelectedValue), mno);
-                            c.ADD_Company_TotalRent(Convert.ToInt32(cmb_company.SelectedValue), Convert.ToDecimal(dataGridView1.CurrentRow.Cells[2].Value)
+                            c.ADD_Company_TotalRent(Convert.ToInt32(cmb_company.SelectedValue), Convert.ToDecimal(txt_prise.Text)
                                 , x, dateTimePicker1.Value, mno, "تسديد جزء من حساب الشركة القديم", Convert.ToInt32(cmb_Stock.SelectedValue)
                              , Convert.ToInt32(Cmb_Branch.SelectedValue), Txt_SalesMAn.Text);
                             s.add_insertStock(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_prise.Text),
