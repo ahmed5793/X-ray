@@ -185,7 +185,6 @@
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barAndDockingController1)).BeginInit();
@@ -312,8 +311,7 @@
             this.Btn_ReportReturn,
             this.barButtonItem4,
             this.Btn_Revenues,
-            this.barButtonItem6,
-            this.barButtonItem7});
+            this.barButtonItem6});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.MaxItemId = 143;
             this.ribbon.Name = "ribbon";
@@ -1406,7 +1404,6 @@
             // ribbonPageGroup17
             // 
             this.ribbonPageGroup17.ItemLinks.Add(this.barButtonItem4);
-            this.ribbonPageGroup17.ItemLinks.Add(this.barButtonItem7);
             this.ribbonPageGroup17.Name = "ribbonPageGroup17";
             this.ribbonPageGroup17.Text = "اعدادات الطابعة";
             // 
@@ -1756,15 +1753,6 @@
             this.accordionControlElement3.Name = "accordionControlElement3";
             this.accordionControlElement3.Text = "Element3";
             // 
-            // barButtonItem7
-            // 
-            this.barButtonItem7.Caption = "مواعيد العمل";
-            this.barButtonItem7.Id = 142;
-            this.barButtonItem7.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.Image")));
-            this.barButtonItem7.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.LargeImage")));
-            this.barButtonItem7.Name = "barButtonItem7";
-            this.barButtonItem7.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem7_ItemClick_1);
-            // 
             // Main
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
@@ -1956,6 +1944,5 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement4;
         public DevExpress.XtraBars.BarButtonItem Btn_Revenues;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem7;
     }
 }
