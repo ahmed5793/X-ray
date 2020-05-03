@@ -1618,14 +1618,14 @@ namespace Laboratory.PL
                     {
                         if (rdb_CurrentPatient.Checked == true)
                         {
-                            t.addticketsReturn(Convert.ToInt32(txt_IdTicket.Text), Convert.ToInt32(cmb_Stock.SelectedValue), cmb_branches.Text,
+                            t.addticketsReturn(Convert.ToInt32(txt_IdTicket.Text), Convert.ToInt32(cmb_Stock.SelectedValue), cmb_UserBranch.Text,
                                 Cmb_customer.Text, cmb_statues.Text, dgv_order.Rows[i].Cells[1].Value.ToString(), dtb_visit.Value
                                 , 0, ".", Convert.ToDecimal(dgv_order.Rows[i].Cells[2].Value),
                                   Convert.ToDecimal(txt_pay.Text), txt_username.Text, Convert.ToInt32(dgv_order.Rows[i].Cells[0].Value));
                         }
                         if (rdb_NewPatient.Checked == true)
                         {
-                            t.addticketsReturn(Convert.ToInt32(txt_IdTicket.Text), Convert.ToInt32(cmb_Stock.SelectedValue), cmb_branches.Text,
+                            t.addticketsReturn(Convert.ToInt32(txt_IdTicket.Text), Convert.ToInt32(cmb_Stock.SelectedValue), cmb_UserBranch.Text,
                                 Cmb_customer.Text, cmb_statues.Text, dgv_order.Rows[i].Cells[1].Value.ToString(), dtb_visit.Value
                                 , 0, ".", Convert.ToDecimal(dgv_order.Rows[i].Cells[2].Value),
                                   Convert.ToDecimal(txt_pay.Text), txt_username.Text, Convert.ToInt32(dgv_order.Rows[i].Cells[0].Value));
