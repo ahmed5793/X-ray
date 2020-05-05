@@ -46,5 +46,17 @@ namespace Laboratory.Properties {
                 this["PrintNameInvoice"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("NO")]
+        public string ProudectKey {
+            get {
+                return ((string)(this["ProudectKey"]));
+            }
+            set {
+                this["ProudectKey"] = value;
+            }
+        }
     }
 }

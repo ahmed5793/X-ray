@@ -8,5 +8,8 @@
     <Setting Name="PrintNameInvoice" Type="System.String" Scope="User">
       <Value Profile="(Default)">Empty</Value>
     </Setting>
+    <Setting Name="ProudectKey" Type="System.String" Scope="User">
+      <Value Profile="(Default)">NO</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

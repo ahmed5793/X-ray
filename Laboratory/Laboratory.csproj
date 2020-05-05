@@ -26,7 +26,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ProductName>Smart_X-Ray</ProductName>
     <PublisherName>Smart_X-Ray</PublisherName>
-    <ApplicationRevision>7</ApplicationRevision>
+    <ApplicationRevision>8</ApplicationRevision>
     <ApplicationVersion>2.1.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -191,6 +191,8 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
     <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Management.Instrumentation" />
     <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
     </Reference>
@@ -796,6 +798,12 @@
     <Compile Include="PL\Frm_Search_Ticket.Designer.cs">
       <DependentUpon>Frm_Search_Ticket.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\frm_SerielNumber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\frm_SerielNumber.Designer.cs">
+      <DependentUpon>frm_SerielNumber.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_ShowOldReturn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1232,6 +1240,9 @@
     <EmbeddedResource Include="PL\Frm_Search_Ticket.resx">
       <DependentUpon>Frm_Search_Ticket.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\frm_SerielNumber.resx">
+      <DependentUpon>frm_SerielNumber.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_ShowOldReturn.resx">
       <DependentUpon>Frm_ShowOldReturn.cs</DependentUpon>
     </EmbeddedResource>
@@ -1283,7 +1294,6 @@
     <EmbeddedResource Include="PL\Validate_Users.resx">
       <DependentUpon>Validate_Users.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
