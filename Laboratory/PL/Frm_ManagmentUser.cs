@@ -142,7 +142,7 @@ namespace Laboratory.PL
 
                 p.AddUserCompany(txt_User.Text, 1, 1, 1, 1, 1, 1, 1,1);
 
-                p.Add_UserEmployee(txt_User.Text, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+                p.Add_UserEmployee(txt_User.Text, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,1);
 
                 u.AddUser(Convert.ToInt32(comboBox1.SelectedValue), txt_User.Text, txt_Pass.Text);
                 gridControlInsert.DataSource = u.SelectUsers();

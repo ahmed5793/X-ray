@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Validate_Users));
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.Check_Revenue = new System.Windows.Forms.CheckBox();
             this.check_ReportInsertStock = new System.Windows.Forms.CheckBox();
             this.check_ReportPullStock = new System.Windows.Forms.CheckBox();
             this.Ckeck_ReciveMoney = new System.Windows.Forms.CheckBox();
@@ -127,7 +128,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.Cmb_Branch = new System.Windows.Forms.ComboBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.Check_Revenue = new System.Windows.Forms.CheckBox();
+            this.check_Techprise = new System.Windows.Forms.CheckBox();
             this.groupBox4.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.groupBox15.SuspendLayout();
@@ -173,6 +174,19 @@
             this.groupBox4.TabIndex = 64;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "صلاحية المستخدمين داخل قائمة الخزنة ";
+            // 
+            // Check_Revenue
+            // 
+            this.Check_Revenue.AutoSize = true;
+            this.Check_Revenue.BackColor = System.Drawing.Color.Black;
+            this.Check_Revenue.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Check_Revenue.ForeColor = System.Drawing.Color.White;
+            this.Check_Revenue.Location = new System.Drawing.Point(743, 90);
+            this.Check_Revenue.Name = "Check_Revenue";
+            this.Check_Revenue.Size = new System.Drawing.Size(119, 26);
+            this.Check_Revenue.TabIndex = 88;
+            this.Check_Revenue.Text = "تقرير الايرادات";
+            this.Check_Revenue.UseVisualStyleBackColor = false;
             // 
             // check_ReportInsertStock
             // 
@@ -801,6 +815,7 @@
             // 
             this.groupBox9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox9.Controls.Add(this.check_Techprise);
             this.groupBox9.Controls.Add(this.Check_AddShiftTechincal);
             this.groupBox9.Controls.Add(this.check_ReportTechnical);
             this.groupBox9.Controls.Add(this.check_AddTechnical);
@@ -818,11 +833,11 @@
             this.Check_AddShiftTechincal.AutoSize = true;
             this.Check_AddShiftTechincal.BackColor = System.Drawing.Color.Black;
             this.Check_AddShiftTechincal.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Check_AddShiftTechincal.Location = new System.Drawing.Point(305, 38);
+            this.Check_AddShiftTechincal.Location = new System.Drawing.Point(271, 37);
             this.Check_AddShiftTechincal.Name = "Check_AddShiftTechincal";
-            this.Check_AddShiftTechincal.Size = new System.Drawing.Size(146, 26);
+            this.Check_AddShiftTechincal.Size = new System.Drawing.Size(164, 26);
             this.Check_AddShiftTechincal.TabIndex = 13;
-            this.Check_AddShiftTechincal.Text = "إضافة فنيين المركز";
+            this.Check_AddShiftTechincal.Text = "إضافة شيفتات الفنيين ";
             this.Check_AddShiftTechincal.UseVisualStyleBackColor = false;
             // 
             // check_ReportTechnical
@@ -830,7 +845,7 @@
             this.check_ReportTechnical.AutoSize = true;
             this.check_ReportTechnical.BackColor = System.Drawing.Color.Black;
             this.check_ReportTechnical.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.check_ReportTechnical.Location = new System.Drawing.Point(134, 37);
+            this.check_ReportTechnical.Location = new System.Drawing.Point(92, 37);
             this.check_ReportTechnical.Name = "check_ReportTechnical";
             this.check_ReportTechnical.Size = new System.Drawing.Size(109, 26);
             this.check_ReportTechnical.TabIndex = 12;
@@ -842,7 +857,7 @@
             this.check_AddTechnical.AutoSize = true;
             this.check_AddTechnical.BackColor = System.Drawing.Color.Black;
             this.check_AddTechnical.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.check_AddTechnical.Location = new System.Drawing.Point(512, 38);
+            this.check_AddTechnical.Location = new System.Drawing.Point(689, 38);
             this.check_AddTechnical.Name = "check_AddTechnical";
             this.check_AddTechnical.Size = new System.Drawing.Size(102, 26);
             this.check_AddTechnical.TabIndex = 10;
@@ -1521,18 +1536,17 @@
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // Check_Revenue
+            // check_Techprise
             // 
-            this.Check_Revenue.AutoSize = true;
-            this.Check_Revenue.BackColor = System.Drawing.Color.Black;
-            this.Check_Revenue.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Check_Revenue.ForeColor = System.Drawing.Color.White;
-            this.Check_Revenue.Location = new System.Drawing.Point(743, 90);
-            this.Check_Revenue.Name = "Check_Revenue";
-            this.Check_Revenue.Size = new System.Drawing.Size(119, 26);
-            this.Check_Revenue.TabIndex = 88;
-            this.Check_Revenue.Text = "تقرير الايرادات";
-            this.Check_Revenue.UseVisualStyleBackColor = false;
+            this.check_Techprise.AutoSize = true;
+            this.check_Techprise.BackColor = System.Drawing.Color.Black;
+            this.check_Techprise.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.check_Techprise.Location = new System.Drawing.Point(484, 38);
+            this.check_Techprise.Name = "check_Techprise";
+            this.check_Techprise.Size = new System.Drawing.Size(165, 26);
+            this.check_Techprise.TabIndex = 14;
+            this.check_Techprise.Text = "اسعار الشيفتات للفنيين";
+            this.check_Techprise.UseVisualStyleBackColor = false;
             // 
             // Validate_Users
             // 
@@ -1700,5 +1714,6 @@
         public System.Windows.Forms.CheckBox check_TransferCompany;
         private System.Windows.Forms.CheckBox checkBox1;
         public System.Windows.Forms.CheckBox Check_Revenue;
+        public System.Windows.Forms.CheckBox check_Techprise;
     }
 }

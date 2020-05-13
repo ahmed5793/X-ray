@@ -363,7 +363,7 @@ namespace Laboratory.BL
         internal DataTable TechnicalShiftPrice(int Id_Technical,int Id_Type)
         {
             DataAccessLayer da = new DataAccessLayer();
-            SqlParameter[] param = new SqlParameter[1];
+            SqlParameter[] param = new SqlParameter[2];
             param[0] = new SqlParameter("@Id_Technical", SqlDbType.Int);
             param[0].Value = Id_Technical;
             param[1] = new SqlParameter("@Id_ShiftType", SqlDbType.Int);

@@ -352,17 +352,94 @@ namespace Laboratory.PL
 
         private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            if (comboBox1.Text!="" && comboBox2.Text!="")
-            {
-                Txt_Cost.Text = Techincal.TechnicalShiftPrice(Convert.ToInt32(comboBox1.SelectedValue), Convert.ToInt32(comboBox1.SelectedValue)).Rows[0][0].ToString();
-            }
+            //try
+            //{
+            //    if (comboBox1.Text != "" && comboBox2.Text != "")
+            //    {
+            //        dt.Clear();
+            //        dt = Techincal.TechnicalShiftPrice(Convert.ToInt32(comboBox1.SelectedValue), Convert.ToInt32(comboBox1.SelectedValue));
+            //        if (dt.Rows.Count>0)
+            //        {
+            //            Txt_Cost.Text = dt.Rows[0][0].ToString();
+            //        }
+            //        else
+            //        {
+            //            MessageBox.Show("هذا الشيفت غير مسجل للفني من قبل يرجى إعادة تسجيل الشيفت للفنى أولا وإعادة تسجيل الشيفت مرة أخرى ");
+
+            //            Txt_Cost.Text = "0";
+            //        }
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+
+            //    MessageBox.Show(ex.Message);
+            //    MessageBox.Show(ex.StackTrace);
+            //}
+
         }
 
         private void comboBox2_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            if (comboBox1.Text != "" && comboBox2.Text != "")
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            try
             {
-                Txt_Cost.Text = Techincal.TechnicalShiftPrice(Convert.ToInt32(comboBox1.SelectedValue), Convert.ToInt32(comboBox1.SelectedValue)).Rows[0][0].ToString();
+                if (comboBox1.Text != "" && comboBox2.Text != "")
+                {
+                    dt.Clear();
+                    dt = Techincal.TechnicalShiftPrice(Convert.ToInt32(comboBox1.SelectedValue), Convert.ToInt32(comboBox2.SelectedValue));
+                    if (dt.Rows.Count > 0)
+                    {
+                        Txt_Cost.Text = dt.Rows[0][0].ToString();
+                    }
+                    else if (dt.Rows.Count == 0)
+                    {
+                        Txt_Cost.Text = "0";
+                        MessageBox.Show("هذا الشيفت غير مسجل للفني من قبل يرجى إعادة تسجيل الشيفت للفنى أولا  ");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+
+        private void comboBox2_SelectedValueChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void comboBox2_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (comboBox1.Text != "" && comboBox2.Text != "")
+                {
+                    dt.Clear();
+                    dt = Techincal.TechnicalShiftPrice(Convert.ToInt32(comboBox1.SelectedValue), Convert.ToInt32(comboBox2.SelectedValue));
+                    if (dt.Rows.Count > 0)
+                    {
+                        Txt_Cost.Text = dt.Rows[0][0].ToString();
+                    }
+                    else if (dt.Rows.Count == 0)
+                    {
+                        Txt_Cost.Text = "0";
+                        MessageBox.Show("هذا الشيفت غير مسجل للفني من قبل يرجى إعادة تسجيل الشيفت للفنى أولا ");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
             }
         }
     }

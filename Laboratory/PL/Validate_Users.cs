@@ -146,6 +146,10 @@ namespace Laboratory.PL
                     if (Convert.ToInt32(dt2.Rows[0][9]) == 0) { check_ReportTechnical.Checked = false; }
 
                     else if (Convert.ToInt32(dt2.Rows[0][9]) == 1) { check_ReportTechnical.Checked = true; }
+                    ///////
+                    if (Convert.ToInt32(dt2.Rows[0][10]) == 0) { check_Techprise.Checked = false; }
+
+                    else if (Convert.ToInt32(dt2.Rows[0][10]) == 1) { check_Techprise.Checked = true; }
                 }
                 dt2.Clear();
                 dt2 = p.SelectUserCompany(txt_Baisc.Text);
@@ -401,7 +405,7 @@ namespace Laboratory.PL
                 else
                 {
                     int DiscountEmployee = 0, employeeSalary = 0, AddShiftEmployee = 0, AddSalfEmployee = 0, ReportEmployee = 0,
-                        AddDOCOTOTCenter = 0, ReportDoctorCenter = 0, addTechincal = 0, AddShiftTecincal = 0, ReportTechincal = 0;
+                        AddDOCOTOTCenter = 0, ReportDoctorCenter = 0, addTechincal = 0, AddShiftTecincal = 0, ReportTechincal = 0,TechincalPrise = 0;
 
                     if (Check_Discount.Checked == true){DiscountEmployee = 1;}
                     else if (Check_Discount.Checked == false){DiscountEmployee = 0;}
@@ -432,9 +436,13 @@ namespace Laboratory.PL
                     //////
                     if (check_AddTechnical.Checked == true){addTechincal = 1;}
                     else if (check_AddTechnical.Checked == false){addTechincal = 0;}
+                    ///////
+
+                    if (check_Techprise.Checked == true) { TechincalPrise = 1; }
+                    else if (check_Techprise.Checked == false) { TechincalPrise = 0; }
 
                     p.Update_UserEmployee(txt_Baisc.Text, AddShiftEmployee, DiscountEmployee, AddSalfEmployee, employeeSalary, ReportEmployee,
-                        AddDOCOTOTCenter, ReportDoctorCenter, addTechincal, AddShiftTecincal, ReportTechincal);
+                        AddDOCOTOTCenter, ReportDoctorCenter, addTechincal, AddShiftTecincal, ReportTechincal, TechincalPrise);
                     MessageBox.Show(" تم حفظ الصلاحيات للمستخدم");
                 }
             }

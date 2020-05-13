@@ -386,6 +386,7 @@ namespace Laboratory.PL
                                 {
                                     Main.getmain.add_shiftTechincal.Enabled = true;
                                 }
+                                //////////
                                 if (Convert.ToInt32(dt3.Rows[0][9]) == 0)
                                 {
                                     Main.getmain.report_Techincal.Enabled = false;
@@ -393,6 +394,15 @@ namespace Laboratory.PL
                                 else if (Convert.ToInt32(dt3.Rows[0][9]) == 1)
                                 {
                                     Main.getmain.report_Techincal.Enabled = true;
+                                }
+                                //////////
+                                if (Convert.ToInt32(dt3.Rows[0][10]) == 0)
+                                {
+                                    Main.getmain.Btn_TechnicalShiftPrice.Enabled = false;
+                                }
+                                else if (Convert.ToInt32(dt3.Rows[0][10]) == 1)
+                                {
+                                    Main.getmain.Btn_TechnicalShiftPrice.Enabled = true;
                                 }
                             }
                             dt4.Clear();

@@ -87,11 +87,11 @@ namespace Laboratory.BL
         }
         internal void Add_UserEmployee(string User_Name, int Add_Shift_Emolpyee, int Add_DiscountEmployee, int Add_Salf, 
             int Add_Mortbat, int Report_Employee,int DoctorOfCenter , int Report_DoctorOfCenter 
-            , int Add_Technical , int Add_Shift_Technical, int Report_Technical)
+            , int Add_Technical , int Add_Shift_Technical, int Report_Technical,int TechnicalShiftPrice)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[11];
+            SqlParameter[] param = new SqlParameter[12];
             param[0] = new SqlParameter("@User_Name", SqlDbType.NVarChar, 100);
             param[0].Value = User_Name;
             param[1] = new SqlParameter("@Add_Shift_Emolpyee", SqlDbType.Int);
@@ -116,16 +116,18 @@ namespace Laboratory.BL
             param[9].Value = Add_Shift_Technical;
             param[10] = new SqlParameter("@Report_Technical", SqlDbType.Int);
             param[10].Value = Report_Technical;
+            param[11] = new SqlParameter("@TechnicalShiftPrice", SqlDbType.Int);
+            param[11].Value = TechnicalShiftPrice;
             da.excutequery("Add_UserEmployee", param);
             da.close();
         }
         internal void Update_UserEmployee(string User_Name, int Add_Shift_Emolpyee, int Add_DiscountEmployee, int Add_Salf,
             int Add_Mortbat, int Report_Employee, int DoctorOfCenter, int Report_DoctorOfCenter
-            , int Add_Technical, int Add_Shift_Technical, int Report_Technical)
+            , int Add_Technical, int Add_Shift_Technical, int Report_Technical,int  TechnicalShiftPrice)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[11];
+            SqlParameter[] param = new SqlParameter[12];
             param[0] = new SqlParameter("@User_Name", SqlDbType.NVarChar, 100);
             param[0].Value = User_Name;
             param[1] = new SqlParameter("@Add_Shift_Emolpyee", SqlDbType.Int);
@@ -150,6 +152,8 @@ namespace Laboratory.BL
             param[9].Value = Add_Shift_Technical;
             param[10] = new SqlParameter("@Report_Technical", SqlDbType.Int);
             param[10].Value = Report_Technical;
+            param[11] = new SqlParameter("@TechnicalShiftPrice", SqlDbType.Int);
+            param[11].Value = TechnicalShiftPrice;
             da.excutequery("Update_UserEmployee", param);
             da.close();
         }
