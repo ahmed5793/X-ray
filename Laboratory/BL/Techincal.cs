@@ -360,5 +360,20 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
+        internal DataTable TechnicalShiftPrice(int Id_Technical,int Id_Type)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@Id_Technical", SqlDbType.Int);
+            param[0].Value = Id_Technical;
+            param[1] = new SqlParameter("@Id_ShiftType", SqlDbType.Int);
+            param[1].Value = Id_Type;
+            da.open();
+            DataTable dt = new DataTable();
+            dt.Clear();
+            dt = da.selected("TechnicalShiftPrice", param);
+            da.close();
+            return dt;
+        }
     }
 }

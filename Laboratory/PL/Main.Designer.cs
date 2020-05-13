@@ -185,6 +185,7 @@
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.Btn_TechnicalShiftPrice = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barAndDockingController1)).BeginInit();
@@ -311,9 +312,10 @@
             this.Btn_ReportReturn,
             this.barButtonItem4,
             this.Btn_Revenues,
-            this.barButtonItem6});
+            this.barButtonItem6,
+            this.Btn_TechnicalShiftPrice});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 143;
+            this.ribbon.MaxItemId = 144;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.basic_information,
@@ -1443,6 +1445,7 @@
             this.ribbonPageGroup5.ItemLinks.Add(this.add_Techincal);
             this.ribbonPageGroup5.ItemLinks.Add(this.add_shiftTechincal);
             this.ribbonPageGroup5.ItemLinks.Add(this.report_Techincal);
+            this.ribbonPageGroup5.ItemLinks.Add(this.Btn_TechnicalShiftPrice);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
             this.ribbonPageGroup5.Text = "ادارة الفني";
             // 
@@ -1753,6 +1756,14 @@
             this.accordionControlElement3.Name = "accordionControlElement3";
             this.accordionControlElement3.Text = "Element3";
             // 
+            // Btn_TechnicalShiftPrice
+            // 
+            this.Btn_TechnicalShiftPrice.Caption = "آسعار الشيفتات للفنيين";
+            this.Btn_TechnicalShiftPrice.Id = 143;
+            this.Btn_TechnicalShiftPrice.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("Btn_TechnicalShiftPrice.ImageOptions.SvgImage")));
+            this.Btn_TechnicalShiftPrice.Name = "Btn_TechnicalShiftPrice";
+            this.Btn_TechnicalShiftPrice.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_TechnicalShiftPrice_ItemClick);
+            // 
             // Main
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
@@ -1944,5 +1955,6 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement4;
         public DevExpress.XtraBars.BarButtonItem Btn_Revenues;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
+        public DevExpress.XtraBars.BarButtonItem Btn_TechnicalShiftPrice;
     }
 }

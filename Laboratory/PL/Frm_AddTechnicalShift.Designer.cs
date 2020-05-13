@@ -85,6 +85,7 @@
             this.comboBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.comboBox1.Size = new System.Drawing.Size(273, 27);
             this.comboBox1.TabIndex = 101;
+            this.comboBox1.SelectionChangeCommitted += new System.EventHandler(this.comboBox1_SelectionChangeCommitted);
             this.comboBox1.Leave += new System.EventHandler(this.comboBox1_Leave);
             // 
             // label1
@@ -113,6 +114,7 @@
             this.comboBox2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.comboBox2.Size = new System.Drawing.Size(273, 27);
             this.comboBox2.TabIndex = 103;
+            this.comboBox2.SelectionChangeCommitted += new System.EventHandler(this.comboBox2_SelectionChangeCommitted);
             this.comboBox2.Leave += new System.EventHandler(this.comboBox2_Leave);
             // 
             // button1
@@ -135,6 +137,7 @@
             this.Txt_Cost.Location = new System.Drawing.Point(12, 127);
             this.Txt_Cost.MaxLength = 11;
             this.Txt_Cost.Name = "Txt_Cost";
+            this.Txt_Cost.ReadOnly = true;
             this.Txt_Cost.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Txt_Cost.Size = new System.Drawing.Size(143, 26);
             this.Txt_Cost.TabIndex = 116;

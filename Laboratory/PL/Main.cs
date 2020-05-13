@@ -1328,6 +1328,12 @@ namespace Laboratory.PL
         {
            
         }
+
+        private void Btn_TechnicalShiftPrice_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Frm_TechnicalShiftPrice ftsp = new Frm_TechnicalShiftPrice();
+            ftsp.Show();
+        }
     }
 }
 	

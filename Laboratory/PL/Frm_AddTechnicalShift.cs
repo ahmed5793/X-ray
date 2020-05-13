@@ -349,5 +349,21 @@ namespace Laboratory.PL
             Btn_DeleteShift.Enabled = false;
             Cmb_Branch.Enabled = true;
         }
+
+        private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (comboBox1.Text!="" && comboBox2.Text!="")
+            {
+                Txt_Cost.Text = Techincal.TechnicalShiftPrice(Convert.ToInt32(comboBox1.SelectedValue), Convert.ToInt32(comboBox1.SelectedValue)).Rows[0][0].ToString();
+            }
+        }
+
+        private void comboBox2_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (comboBox1.Text != "" && comboBox2.Text != "")
+            {
+                Txt_Cost.Text = Techincal.TechnicalShiftPrice(Convert.ToInt32(comboBox1.SelectedValue), Convert.ToInt32(comboBox1.SelectedValue)).Rows[0][0].ToString();
+            }
+        }
     }
 }
