@@ -26,8 +26,8 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ProductName>Smart_X-Ray</ProductName>
     <PublisherName>Smart_X-Ray</PublisherName>
-    <ApplicationRevision>9</ApplicationRevision>
-    <ApplicationVersion>2.1.0.%2a</ApplicationVersion>
+    <ApplicationRevision>11</ApplicationRevision>
+    <ApplicationVersion>3.2.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -479,6 +479,12 @@
     </Compile>
     <Compile Include="PL\Frm_ExportExell.Designer.cs">
       <DependentUpon>Frm_ExportExell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Frm_ExportItemToCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_ExportItemToCompany.Designer.cs">
+      <DependentUpon>Frm_ExportItemToCompany.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Frm_GenderJob.cs">
       <SubType>Form</SubType>
@@ -1081,6 +1087,9 @@
     <EmbeddedResource Include="PL\Frm_ExportExell.resx">
       <DependentUpon>Frm_ExportExell.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_ExportItemToCompany.resx">
+      <DependentUpon>Frm_ExportItemToCompany.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_GenderJob.resx">
       <DependentUpon>Frm_GenderJob.cs</DependentUpon>
     </EmbeddedResource>
@@ -1294,6 +1303,7 @@
     <EmbeddedResource Include="PL\Validate_Users.resx">
       <DependentUpon>Validate_Users.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

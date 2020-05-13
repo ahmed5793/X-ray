@@ -19,6 +19,7 @@ namespace Laboratory.PL
 
         public Frm_CompanyItemXray()
         {
+
             InitializeComponent();
             company();
             CategoryXraya();
@@ -32,29 +33,55 @@ namespace Laboratory.PL
         }
         void Total()
         {
-            if (Txt_Price.Text != string.Empty && Txt_Discount.Text != string.Empty)
+            try
+            {
+
+                if (Txt_Price.Text != string.Empty && Txt_Discount.Text != string.Empty)
             {
                 decimal price = Convert.ToDecimal(Txt_Price.Text);
                 decimal discount = Convert.ToDecimal(Txt_Discount.Text);
                 decimal total = price - (price * (discount / 100));
                 Txt_PriceDiscount.Text = total.ToString();
             }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
         void company()
         {
-            cmb_Company.DataSource = cm.SelectCompany();
+            try
+            {
+
+                cmb_Company.DataSource = cm.SelectCompany();
             cmb_Company.DisplayMember = "اسم الشركه";
             cmb_Company.ValueMember = "Comp_ID";
             cmb_Company.SelectedIndex = -1;
-
         }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+}
         void CategoryXraya()
         {
+            try
+            {
 
             Cmb_category.DataSource = cx.selectCategoryXRaya();
             Cmb_category.DisplayMember = "الفئات";
             Cmb_category.ValueMember = "ID_CtegoryXrays";
             Cmb_category.SelectedIndex = -1;
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void Cmb_category_SelectionChangeCommitted(object sender, EventArgs e)
@@ -630,6 +657,26 @@ namespace Laboratory.PL
             if (Txt_Discount.Text == "")
             {
                 Txt_Discount.Text = "0";
+            }
+        }
+
+        private void Frm_CompanyItemXray_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void simpleButton1_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+
+            Frm_ExportItemToCompany ecm = new Frm_ExportItemToCompany();
+            ecm.ShowDialog();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }
