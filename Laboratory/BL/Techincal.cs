@@ -318,5 +318,47 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
+        internal void add_TechnicalShiftPrice(int Id_Technical, int  Id_TypeShift, decimal Price)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[3];
+            param[0] = new SqlParameter("@TID_TypeShift", SqlDbType.Int);
+            param[0].Value = Id_Technical;
+            param[1] = new SqlParameter("@Id_Technical", SqlDbType.Int);
+            param[1].Value = Id_TypeShift;
+            param[2] = new SqlParameter("@Price", SqlDbType.Int );
+            param[2].Value = Price;
+            da.excutequery("add_TechnicalShiftPrice", param);
+            da.close();
+        }
+        internal void Update_TechnicalShiftPrice(int Id_Technical, int Id_TypeShift, decimal Price)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[3];
+            param[0] = new SqlParameter("@TID_TypeShift", SqlDbType.Int);
+            param[0].Value = Id_Technical;
+            param[1] = new SqlParameter("@Id_Technical", SqlDbType.Int);
+            param[1].Value = Id_TypeShift;
+            param[2] = new SqlParameter("@Price", SqlDbType.Int);
+            param[2].Value = Price;
+            da.excutequery("Update_TechnicalShiftPrice", param);
+            da.close();
+        }
+
+        internal DataTable Select_TechnicalShiftPrice(int  Id_Technical)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@Id_Technical", SqlDbType.Int);
+            param[0].Value = Id_Technical;
+            da.open();
+            DataTable dt = new DataTable();
+            dt.Clear();
+            dt = da.selected("Select_TechnicalShiftPrice", param);
+            da.close();
+            return dt;
+        }
     }
 }
