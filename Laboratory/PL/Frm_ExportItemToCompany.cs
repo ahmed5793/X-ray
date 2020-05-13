@@ -36,13 +36,29 @@ namespace Laboratory.PL
 
         private void Btn_Add_Click(object sender, EventArgs e)
         {
+            try
+            {
+
+          
+       
             if (backgroundWorker1.IsBusy)
             {
                 MessageBox.Show("جارى حفظ البيانات");
             }
             else
             {
+                progressBar1.Show();
+
+
+
+                progressBar1.Maximum = dataGridView1.Rows.Count;
                 backgroundWorker1.RunWorkerAsync();
+            }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -86,31 +102,45 @@ namespace Laboratory.PL
 
                         dt1.Clear();
                         dt1 = cm.selectItemCompany(Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value));
-                        if (Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value) == Convert.ToInt32(dt1.Rows[0][1]) &&
-                            Convert.ToInt32(cmb_Company.SelectedValue) == Convert.ToInt32(dt1.Rows[0][1]))
+                        if (dt1.Rows.Count==0)
                         {
-                            MessageBox.Show(" تم اضافات الفحوصات الى نفس الشركة من قبل", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
-                            return;
-
+                            cm.Add_Company_ItemsXray(Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value), Convert.ToDecimal(0)
+                            , Convert.ToInt32(dataGridView1.Rows[i].Cells[3].Value));
 
                         }
                         else
                         {
+                            MessageBox.Show(" تم اضافات الفحوصات الى نفس الشركة من قبل", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            cmb_Company.Enabled = true;
+                            return;
 
 
-                            cm.Add_Company_ItemsXray(Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value), Convert.ToDecimal(0)
-    , Convert.ToInt32(dataGridView1.Rows[i].Cells[3].Value));
                         }
 
 
 
+                        backgroundWorker1.ReportProgress(i);
 
+                        if (progressBar1.Value <= dataGridView1.Rows.Count)
+                        {
+
+                            progressBar1.Value += 1;
+
+                            label3.Text = progressBar1.Value.ToString() + "/" + dataGridView1.Rows.Count;
+
+
+                        }
 
                     }
+                
+
                     MessageBox.Show("تم حفظ الداتا بنجاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     cmb_Company.Enabled = true;
+                    progressBar1.Value = 0;
+                    label3.Text ="0";
+                      
                 }
                 }
             catch (Exception ex)
