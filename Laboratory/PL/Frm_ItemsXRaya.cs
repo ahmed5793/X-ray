@@ -28,10 +28,10 @@ namespace Laboratory.PL
                 comboBox1.DataSource = c.selectCategoryXRaya();
                 comboBox1.DisplayMember = "الفئات";
                 comboBox1.ValueMember = "ID_CtegoryXrays";
-                dataGridView1.DataSource = i.SelectItemXRaya();
+                gridControl1.DataSource = i.SelectItemXRaya();
                 Btn_add.Enabled = true;
                 Btn_Update.Enabled = false;
-                dataGridView1.Columns[0].Visible = false;
+                gridView1.Columns[0].Visible = false;
             }
             catch (Exception ex)
             {
@@ -41,22 +41,12 @@ namespace Laboratory.PL
         }
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
-            if (dataGridView1.Rows.Count > 0)
-            {
-                Btn_add.Enabled = false;
-                Btn_Update.Enabled = true;
-                comboBox1.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                txt_name.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                txt_price.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-            }
+          
         }
 
         private void txt_search_TextChanged(object sender, EventArgs e)
         {
-            dt.Clear();
-            dt = i.SearchItemXRaya(txt_search.Text);
-            dataGridView1.DataSource = dt;
-            dt.Dispose();
+          
         }
 
         private void txt_price_KeyPress(object sender, KeyPressEventArgs e)
@@ -124,7 +114,7 @@ namespace Laboratory.PL
                 MessageBox.Show("تم الاضافه  بنجاح", "عمليه الاضافه", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 txt_name.Clear();
                 txt_price.Clear();
-                dataGridView1.DataSource = i.SelectItemXRaya();
+                gridControl1.DataSource = i.SelectItemXRaya();
             }
             catch (Exception ex)
             {
@@ -151,7 +141,7 @@ namespace Laboratory.PL
                 }
                 if (MessageBox.Show("هل تريد التعديل", "عملية التعديل", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    i.UpdateItemXRaya(txt_name.Text, Convert.ToDecimal(txt_price.Text), Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value), Convert.ToInt32(comboBox1.SelectedValue));
+                    i.UpdateItemXRaya(txt_name.Text, Convert.ToDecimal(txt_price.Text), Convert.ToInt32(gridView1.GetFocusedRowCellValue("ID_ItemsXrays")), Convert.ToInt32(comboBox1.SelectedValue));
                     MessageBox.Show("تم التعديل  بنجاح", "عمليه التعديل", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 }
                 else
@@ -160,7 +150,7 @@ namespace Laboratory.PL
                 }
                 txt_name.Clear();
                 txt_price.Clear();
-                dataGridView1.DataSource = i.SelectItemXRaya();
+                gridControl1.DataSource = i.SelectItemXRaya();
                 Btn_Update.Enabled = false;
                 Btn_add.Enabled = true;
                 comboBox1.Enabled = true;
@@ -194,10 +184,33 @@ namespace Laboratory.PL
         {
             txt_name.Clear();
             txt_price.Clear();
-            dataGridView1.DataSource = i.SelectItemXRaya();
+            gridControl1.DataSource = i.SelectItemXRaya();
             Btn_Update.Enabled = false;
             Btn_add.Enabled = true;
             comboBox1.Enabled = true;
+        }
+
+        private void gridView1_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+
+
+                if (gridView1.RowCount > 0)
+                {
+                    Btn_add.Enabled = false;
+                    Btn_Update.Enabled = true;
+
+                    comboBox1.Text = gridView1.GetFocusedRowCellValue("الفئه").ToString();
+                    txt_name.Text = gridView1.GetFocusedRowCellValue("اسم الصنف").ToString();
+                    txt_price.Text = gridView1.GetFocusedRowCellValue("السعر").ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

@@ -73,7 +73,9 @@ namespace Laboratory.PL
             txt_phone.Clear();
             richTextBox1.Clear();
             Btn_Add.Enabled = true;
+            txt_address.Clear();      
             dateTimePicker1.Enabled = true;
+            txt_name.Enabled = true;
         }
         private void simpleButton1_Click(object sender, EventArgs e)
         {

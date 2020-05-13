@@ -455,5 +455,21 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
+
+        internal DataTable selectItemCompany(int Id_Company,int iditem)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[2];
+            param[0] = new SqlParameter("@idcompany", SqlDbType.Int);
+            param[0].Value = Id_Company;
+            param[1] = new SqlParameter("@iditem", SqlDbType.Int);
+            param[1].Value = iditem;
+            dt = da.selected("selectItemCompany", param);
+            da.close();
+            return dt;
+        }
     }
 }
