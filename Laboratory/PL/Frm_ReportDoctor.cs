@@ -39,7 +39,7 @@ namespace Laboratory.PL
             for (int i = 0; i < gridView1.RowCount; i++)
             {
                 DataRow r = gridView1.GetDataRow(i);
-                total += Convert.ToDecimal(r[4].ToString());
+                total += Convert.ToDecimal(r[5].ToString());
             }
             textBox2.Text = total.ToString();
         }
@@ -138,6 +138,11 @@ namespace Laboratory.PL
 
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void Frm_ReportDoctor_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
