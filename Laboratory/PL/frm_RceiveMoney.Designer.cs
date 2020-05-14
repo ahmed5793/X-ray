@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_RceiveMoney));
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             this.Cmb_Users = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.Time_To = new System.Windows.Forms.DateTimePicker();
@@ -59,6 +59,7 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.cmb_Stock = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlInsert)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewInsert)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -105,7 +106,7 @@
             this.Time_To.CustomFormat = "tt  mm:hh:ss   ";
             this.Time_To.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Time_To.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.Time_To.Location = new System.Drawing.Point(415, 75);
+            this.Time_To.Location = new System.Drawing.Point(345, 75);
             this.Time_To.Name = "Time_To";
             this.Time_To.ShowUpDown = true;
             this.Time_To.Size = new System.Drawing.Size(148, 25);
@@ -118,7 +119,7 @@
             this.DateFrom.CustomFormat = "   dd/MM/yyyy ";
             this.DateFrom.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DateFrom.Location = new System.Drawing.Point(415, 4);
+            this.DateFrom.Location = new System.Drawing.Point(345, 4);
             this.DateFrom.Name = "DateFrom";
             this.DateFrom.ShowUpDown = true;
             this.DateFrom.Size = new System.Drawing.Size(148, 25);
@@ -131,7 +132,7 @@
             this.label4.BackColor = System.Drawing.Color.Black;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Yellow;
-            this.label4.Location = new System.Drawing.Point(569, 75);
+            this.label4.Location = new System.Drawing.Point(499, 75);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label4.Size = new System.Drawing.Size(83, 23);
@@ -145,7 +146,7 @@
             this.label3.BackColor = System.Drawing.Color.Black;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Yellow;
-            this.label3.Location = new System.Drawing.Point(567, 39);
+            this.label3.Location = new System.Drawing.Point(497, 39);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label3.Size = new System.Drawing.Size(82, 26);
@@ -159,7 +160,7 @@
             this.Time_From.CustomFormat = "  tt  mm:hh:ss  ";
             this.Time_From.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Time_From.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.Time_From.Location = new System.Drawing.Point(415, 38);
+            this.Time_From.Location = new System.Drawing.Point(345, 38);
             this.Time_From.Name = "Time_From";
             this.Time_From.ShowUpDown = true;
             this.Time_From.Size = new System.Drawing.Size(148, 25);
@@ -246,7 +247,7 @@
             this.Btn_Search.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_Search.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.Btn_Search.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Search.ImageOptions.Image")));
-            this.Btn_Search.Location = new System.Drawing.Point(254, 44);
+            this.Btn_Search.Location = new System.Drawing.Point(184, 44);
             this.Btn_Search.Name = "Btn_Search";
             this.Btn_Search.Size = new System.Drawing.Size(119, 32);
             this.Btn_Search.TabIndex = 163;
@@ -266,7 +267,7 @@
             this.simpleButton1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.simpleButton1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(72, 42);
+            this.simpleButton1.Location = new System.Drawing.Point(7, 0);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(136, 32);
             this.simpleButton1.TabIndex = 164;
@@ -288,9 +289,9 @@
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.gridControl1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            gridLevelNode1.RelationName = "Level1";
+            gridLevelNode2.RelationName = "Level1";
             this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
+            gridLevelNode2});
             this.gridControl1.Location = new System.Drawing.Point(6, 15);
             this.gridControl1.LookAndFeel.SkinName = "DevExpress Dark Style";
             this.gridControl1.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -376,7 +377,7 @@
             this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(128, 105);
+            this.label8.Location = new System.Drawing.Point(90, 105);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(220, 23);
             this.label8.TabIndex = 167;
@@ -404,7 +405,7 @@
             this.label2.BackColor = System.Drawing.Color.Black;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Yellow;
-            this.label2.Location = new System.Drawing.Point(570, 7);
+            this.label2.Location = new System.Drawing.Point(500, 7);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label2.Size = new System.Drawing.Size(48, 22);
@@ -532,6 +533,20 @@
             this.label1.TabIndex = 182;
             this.label1.Text = "خزينة";
             // 
+            // checkBox1
+            // 
+            this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.ForeColor = System.Drawing.Color.Black;
+            this.checkBox1.Location = new System.Drawing.Point(626, 70);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(119, 28);
+            this.checkBox1.TabIndex = 184;
+            this.checkBox1.Text = "اجمالي الفرع";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // frm_RceiveMoney
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -539,6 +554,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1064, 543);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.cmb_Stock);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox4);
@@ -615,5 +631,6 @@
         private System.Windows.Forms.TextBox textBox4;
         public System.Windows.Forms.ComboBox cmb_Stock;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
