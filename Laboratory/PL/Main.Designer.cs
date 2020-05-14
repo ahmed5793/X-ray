@@ -145,6 +145,8 @@
             this.Btn_ReportReturn = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.Btn_Revenues = new DevExpress.XtraBars.BarButtonItem();
+            this.Btn_TechnicalShiftPrice = new DevExpress.XtraBars.BarButtonItem();
+            this.Btn_PermissionNoticeMoney = new DevExpress.XtraBars.BarButtonItem();
             this.basic_information = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -185,7 +187,6 @@
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.Btn_TechnicalShiftPrice = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barAndDockingController1)).BeginInit();
@@ -313,9 +314,10 @@
             this.barButtonItem4,
             this.Btn_Revenues,
             this.barButtonItem6,
-            this.Btn_TechnicalShiftPrice});
+            this.Btn_TechnicalShiftPrice,
+            this.Btn_PermissionNoticeMoney});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 144;
+            this.ribbon.MaxItemId = 145;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.basic_information,
@@ -1364,6 +1366,22 @@
             this.Btn_Revenues.Name = "Btn_Revenues";
             this.Btn_Revenues.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_Revenues_ItemClick);
             // 
+            // Btn_TechnicalShiftPrice
+            // 
+            this.Btn_TechnicalShiftPrice.Caption = "آسعار الشيفتات للفنيين";
+            this.Btn_TechnicalShiftPrice.Id = 143;
+            this.Btn_TechnicalShiftPrice.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("Btn_TechnicalShiftPrice.ImageOptions.SvgImage")));
+            this.Btn_TechnicalShiftPrice.Name = "Btn_TechnicalShiftPrice";
+            this.Btn_TechnicalShiftPrice.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_TechnicalShiftPrice_ItemClick);
+            // 
+            // Btn_PermissionNoticeMoney
+            // 
+            this.Btn_PermissionNoticeMoney.Caption = "إذن صرف مبلغ للعميل";
+            this.Btn_PermissionNoticeMoney.Id = 144;
+            this.Btn_PermissionNoticeMoney.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("Btn_PermissionNoticeMoney.ImageOptions.SvgImage")));
+            this.Btn_PermissionNoticeMoney.Name = "Btn_PermissionNoticeMoney";
+            this.Btn_PermissionNoticeMoney.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_PermissionNoticeMoney_ItemClick);
+            // 
             // basic_information
             // 
             this.basic_information.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1444,8 +1462,8 @@
             // 
             this.ribbonPageGroup5.ItemLinks.Add(this.add_Techincal);
             this.ribbonPageGroup5.ItemLinks.Add(this.add_shiftTechincal);
-            this.ribbonPageGroup5.ItemLinks.Add(this.report_Techincal);
             this.ribbonPageGroup5.ItemLinks.Add(this.Btn_TechnicalShiftPrice);
+            this.ribbonPageGroup5.ItemLinks.Add(this.report_Techincal);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
             this.ribbonPageGroup5.Text = "ادارة الفني";
             // 
@@ -1607,6 +1625,7 @@
             this.ribbonPageGroup16.ItemLinks.Add(this.add_patient);
             this.ribbonPageGroup16.ItemLinks.Add(this.pay_patientCompany);
             this.ribbonPageGroup16.ItemLinks.Add(this.depit_client);
+            this.ribbonPageGroup16.ItemLinks.Add(this.Btn_PermissionNoticeMoney);
             this.ribbonPageGroup16.ItemLinks.Add(this.Btn_CustomerAccouantStatment);
             this.ribbonPageGroup16.Name = "ribbonPageGroup16";
             this.ribbonPageGroup16.Text = "ادارة المرضي";
@@ -1755,14 +1774,6 @@
             this.accordionControlElement3.HeaderControl = this.simpleButton3;
             this.accordionControlElement3.Name = "accordionControlElement3";
             this.accordionControlElement3.Text = "Element3";
-            // 
-            // Btn_TechnicalShiftPrice
-            // 
-            this.Btn_TechnicalShiftPrice.Caption = "آسعار الشيفتات للفنيين";
-            this.Btn_TechnicalShiftPrice.Id = 143;
-            this.Btn_TechnicalShiftPrice.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("Btn_TechnicalShiftPrice.ImageOptions.SvgImage")));
-            this.Btn_TechnicalShiftPrice.Name = "Btn_TechnicalShiftPrice";
-            this.Btn_TechnicalShiftPrice.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_TechnicalShiftPrice_ItemClick);
             // 
             // Main
             // 
@@ -1956,5 +1967,6 @@
         public DevExpress.XtraBars.BarButtonItem Btn_Revenues;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
         public DevExpress.XtraBars.BarButtonItem Btn_TechnicalShiftPrice;
+        private DevExpress.XtraBars.BarButtonItem Btn_PermissionNoticeMoney;
     }
 }

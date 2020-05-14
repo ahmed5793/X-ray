@@ -600,6 +600,12 @@
     <Compile Include="PL\Frm_PaySuppliers.Designer.cs">
       <DependentUpon>Frm_PaySuppliers.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Frm_PermessionMoneyNotice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_PermessionMoneyNotice.Designer.cs">
+      <DependentUpon>Frm_PermessionMoneyNotice.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_ProductList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1152,6 +1158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_PaySuppliers.resx">
       <DependentUpon>Frm_PaySuppliers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_PermessionMoneyNotice.resx">
+      <DependentUpon>Frm_PermessionMoneyNotice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_ProductList.resx">
       <DependentUpon>Frm_ProductList.cs</DependentUpon>

@@ -34,6 +34,7 @@ namespace Laboratory.PL
                 cmb_Company.DataSource = c.SelectCompany();
                 cmb_Company.DisplayMember = "اسم الشركه";
                 cmb_Company.ValueMember = "Comp_ID";
+                cmb_Company.SelectedIndex = -1;
                 txt_username.Text = Program.salesman;
                 Txt_IdCust.Hide();
                 Permision();                
@@ -291,16 +292,16 @@ namespace Laboratory.PL
 
                     if (Convert.ToDecimal(textBox2.Text) > 0)
                     {
-                        dt5.Clear();
-                        dt5 = s.Select_moneyStock(Convert.ToInt32(cmb_Stock.SelectedValue));
+                    //    dt5.Clear();
+                    //    dt5 = s.Select_moneyStock(Convert.ToInt32(cmb_Stock.SelectedValue));
 
-                        if (Convert.ToDecimal(textBox2.Text) > Convert.ToDecimal(dt5.Rows[0][0]))
-                        {
-                            MessageBox.Show("رصيد الخزنة الحالى غير كافى لسحب هذه المبلغ");
-                            return;
-                        }
-                        s.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(textBox2.Text), dateTimePicker1.Value
-                         , txt_username.Text, " سحب مبلغ " + " " + (textBox2.Text) + "مدفوع مسبقا للحجز " + (txt_IdTeckit.Text));
+                    //    if (Convert.ToDecimal(textBox2.Text) > Convert.ToDecimal(dt5.Rows[0][0]))
+                    //    {
+                    //        MessageBox.Show("رصيد الخزنة الحالى غير كافى لسحب هذه المبلغ");
+                    //        return;
+                    //    }
+                    //    s.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(textBox2.Text), dateTimePicker1.Value
+                    //     , txt_username.Text, " سحب مبلغ " + " " + (textBox2.Text) + "مدفوع مسبقا للحجز " + (txt_IdTeckit.Text));
                         for (int i = 0; i < dataGridView2.Rows.Count; i++)
                         {
                             t.addticketsReturn(Convert.ToInt32(txt_IdTeckit.Text), Convert.ToInt32(cmb_Stock.SelectedValue), comboBox1.Text,
@@ -328,24 +329,24 @@ namespace Laboratory.PL
                     dt = cu.Select_CustomertotalBAlance(Convert.ToInt32(Txt_IdCust.Text));
                     decimal hr = Convert.ToDecimal(dt.Rows[0][0]) * -1 ;
                     decimal mno3 = Convert.ToDecimal(dt.Rows[0][0])+ Convert.ToDecimal(Txt_PricePayment.Text);
-                    cu.Update_CustomerTotalBalance(Convert.ToInt32(Txt_IdCust.Text), mno2);
+                    cu.Update_CustomerTotalBalance(Convert.ToInt32(Txt_IdCust.Text), mno3);
                     cu.Add_CustomerAccountStatment(Convert.ToInt32(Txt_IdCust.Text), hr,
                    Convert.ToDecimal(Txt_PricePayment.Text), dateTimePicker1.Value, mno3, Convert.ToInt32(cmb_Stock.SelectedValue)
                     , txt_username.Text, Convert.ToInt32(comboBox1.SelectedValue), " تحويل الفحص  رقم" + " (" + (txt_IdTeckit.Text) + " )" + "إلى الشركة " + "" + cmb_Company.Text );
 
 
 
-                        dt.Clear();
-                        dt = cu.Select_CustomertotalBAlance(Convert.ToInt32(Txt_IdCust.Text));
-                    decimal hrl = Convert.ToDecimal(dt.Rows[0][0]) * -1;
+                    //    dt.Clear();
+                    //    dt = cu.Select_CustomertotalBAlance(Convert.ToInt32(Txt_IdCust.Text));
+                    //decimal hrl = Convert.ToDecimal(dt.Rows[0][0]) * -1;
 
-                    //decimal mno5 = Convert.ToDecimal(Txt_PayLast.Text) - Convert.ToDecimal(Txt_LastPayOut.Text);
-                        decimal mno4 = Convert.ToDecimal(dt.Rows[0][0]) + hrl;
-                        cu.Update_CustomerTotalBalance(Convert.ToInt32(Txt_IdCust.Text), mno4);
-                        cu.Add_CustomerAccountStatment(Convert.ToInt32(Txt_IdCust.Text), 0,
-                        hrl, dateTimePicker1.Value, mno4, Convert.ToInt32(cmb_Stock.SelectedValue)
-                        , txt_username.Text, Convert.ToInt32(comboBox1.SelectedValue),
-                        " إذن صرف مبلغ   " + " (" + (hrl )+" )"+ "  فرق المبلغ المدفوع مسبقا للحجز رقم  " +" ("+ (txt_IdTeckit.Text)+")");
+                    ////decimal mno5 = Convert.ToDecimal(Txt_PayLast.Text) - Convert.ToDecimal(Txt_LastPayOut.Text);
+                    //    decimal mno4 = Convert.ToDecimal(dt.Rows[0][0]) + hrl;
+                    //    cu.Update_CustomerTotalBalance(Convert.ToInt32(Txt_IdCust.Text), mno4);
+                    //    cu.Add_CustomerAccountStatment(Convert.ToInt32(Txt_IdCust.Text), 0,
+                    //    hrl, dateTimePicker1.Value, mno4, Convert.ToInt32(cmb_Stock.SelectedValue)
+                    //    , txt_username.Text, Convert.ToInt32(comboBox1.SelectedValue),
+                    //    " إذن صرف مبلغ   " + " (" + (hrl )+" )"+ "  فرق المبلغ المدفوع مسبقا للحجز رقم  " +" ("+ (txt_IdTeckit.Text)+")");
 
 
 
@@ -356,25 +357,29 @@ namespace Laboratory.PL
                 {
                     if (Convert.ToDecimal(Txt_RentCustomer.Text) > 0)
                     {
+                        if (Txt_LastPayOut.Text=="0")
+                        {
+                            dt.Clear();
+                            dt = cu.Select_CustomertotalBAlance(Convert.ToInt32(Txt_IdCust.Text));
+                            decimal mno2 = Convert.ToDecimal(dt.Rows[0][0]) - Convert.ToDecimal(Txt_TotalBeforeTransfair.Text);
+                            cu.Update_CustomerTotalBalance(Convert.ToInt32(Txt_IdCust.Text), mno2);
+                            cu.Add_CustomerAccountStatment(Convert.ToInt32(Txt_IdCust.Text), Convert.ToDecimal(Txt_TotalBeforeTransfair.Text),
+                            0, dateTimePicker1.Value, mno2, Convert.ToInt32(cmb_Stock.SelectedValue)
+                            , txt_username.Text, Convert.ToInt32(comboBox1.SelectedValue), " إلغاء الفحص النقدى رقم" + " (" + (txt_IdTeckit.Text) + ")");
 
-                        dt.Clear();
-                        dt = cu.Select_CustomertotalBAlance(Convert.ToInt32(Txt_IdCust.Text));
-                        decimal mno2 = Convert.ToDecimal(dt.Rows[0][0]) - Convert.ToDecimal(Txt_TotalBeforeTransfair.Text);
-                        cu.Update_CustomerTotalBalance(Convert.ToInt32(Txt_IdCust.Text), mno2);
-                        cu.Add_CustomerAccountStatment(Convert.ToInt32(Txt_IdCust.Text), Convert.ToDecimal(Txt_TotalBeforeTransfair.Text),
-                        0, dateTimePicker1.Value, mno2, Convert.ToInt32(cmb_Stock.SelectedValue)
-                        , txt_username.Text, Convert.ToInt32(comboBox1.SelectedValue), " إلغاء الفحص النقدى رقم" + " (" + (txt_IdTeckit.Text)+")");
+                        }
 
 
-                     //   dt.Clear();
-                     //   dt = cu.Select_CustomertotalBAlance(Convert.ToInt32(Txt_IdCust.Text));
-                     //   decimal mno4 = Convert.ToDecimal(dt.Rows[0][0]) + Convert.ToDecimal(Txt_PayLast.Text);
-                     //   cu.Update_CustomerTotalBalance(Convert.ToInt32(Txt_IdCust.Text), mno4);
-                     //   cu.Add_CustomerAccountStatment(Convert.ToInt32(Txt_IdCust.Text), 0,
-                     //   Convert.ToDecimal(Txt_PayLast.Text), dateTimePicker1.Value, mno4, Convert.ToInt32(cmb_Stock.SelectedValue)
-                     //, txt_username.Text, Convert.ToInt32(comboBox1.SelectedValue), " تم دفع للعميل مبلغ " + " " + ( Txt_PayLast.Text ) + "مدفوع مسبقا للحجز  " +( txt_IdTeckit.Text ));
 
-                        
+                        //   dt.Clear();
+                        //   dt = cu.Select_CustomertotalBAlance(Convert.ToInt32(Txt_IdCust.Text));
+                        //   decimal mno4 = Convert.ToDecimal(dt.Rows[0][0]) + Convert.ToDecimal(Txt_PayLast.Text);
+                        //   cu.Update_CustomerTotalBalance(Convert.ToInt32(Txt_IdCust.Text), mno4);
+                        //   cu.Add_CustomerAccountStatment(Convert.ToInt32(Txt_IdCust.Text), 0,
+                        //   Convert.ToDecimal(Txt_PayLast.Text), dateTimePicker1.Value, mno4, Convert.ToInt32(cmb_Stock.SelectedValue)
+                        //, txt_username.Text, Convert.ToInt32(comboBox1.SelectedValue), " تم دفع للعميل مبلغ " + " " + ( Txt_PayLast.Text ) + "مدفوع مسبقا للحجز  " +( txt_IdTeckit.Text ));
+
+
                         dt.Clear();
                         dt = cu.Select_CustomertotalBAlance(Convert.ToInt32(Txt_IdCust.Text));
                         //decimal mn = Convert.ToDecimal(Txt_PricePayment) - Convert.ToDecimal(Txt_PayLast.Text);

@@ -1310,12 +1310,7 @@ namespace Laboratory.PL
                     if (cmb_statues.Text == "نقدى")
                     {
                        
-                        //if (txt_age.Text == "")
-                        //{
-                        //    MessageBox.Show("من فضلك قم باادخال سن العميل  ");
-                        //    txt_age.Focus();
-                        //    return;
-                        //}
+                        
                         if (rdb_NewPatient.Checked == true)
                         {
                             if (txt_name.Text == "")
@@ -1330,12 +1325,12 @@ namespace Laboratory.PL
                                 comboBox1.Focus();
                                 return;
                             }
-                            if (txt_age.Text == "")
-                            {
-                                MessageBox.Show("من فضلك قم بتحديد سن العميل ");
-                                txt_age.Focus();
-                                return;
-                            }
+                            //if (txt_age.Text == "")
+                            //{
+                            //    MessageBox.Show("من فضلك قم بتحديد سن العميل ");
+                            //    txt_age.Focus();
+                            //    return;
+                            //}
                             Btn_Save.Enabled = false;
 
                             c.addCustomer(txt_name.Text, txt_address.Text, txt_phone.Text, Convert.ToInt32(txt_age.Text), dtb_visit.Value, comboBox1.Text, txt_idntational.Text);
@@ -1486,6 +1481,7 @@ namespace Laboratory.PL
                                     Convert.ToDecimal(Txt_PricePayment.Text), "active");
                             txt_IdTicket.Text = t.LastIdTicket().Rows[0][0].ToString();
                             t.AddTickestDiscount(Convert.ToInt32(txt_IdTicket.Text), Convert.ToDecimal(txt_discount.Text));
+            
                             for (int i = 0; i < dgv_order.Rows.Count; i++)
                             {
                                 t.AddTicketDetails(Convert.ToInt32(txt_IdTicket.Text), Convert.ToInt32(dgv_order.Rows[i].Cells[0].Value),
@@ -1969,6 +1965,14 @@ namespace Laboratory.PL
         {
             
             
+        }
+
+        private void txt_age_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (txt_age.Text=="")
+            {
+                txt_age.Text = "0";
+            }
         }
 
         //private void ؤ(object sender, EventArgs e)

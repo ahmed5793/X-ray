@@ -117,7 +117,7 @@ namespace Laboratory.PL
                                 return;
                             }
                         }
-                        if (Convert.ToDecimal(dataGridView1.CurrentRow.Cells[2].Value) > Convert.ToDecimal(dt4.Rows[0][0]))
+                        if (Convert.ToDecimal(txt_pay.Text) > Convert.ToDecimal(dt4.Rows[0][0]))
                         {
                             MessageBox.Show("رصيد الخزنة الحالى غير كافى لسحب هذا المبلغ");
                             return;

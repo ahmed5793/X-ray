@@ -278,6 +278,16 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
+        internal DataTable SelectCreditCompoCustomer()
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            dt = da.selected("SelectCreditCompoCustomer", null);
+            da.close();
+            return dt;
+        }
         internal DataTable Select_AllPayCustomerCompany()
         {
             DataTable dt = new DataTable();

@@ -1334,6 +1334,12 @@ namespace Laboratory.PL
             Frm_TechnicalShiftPrice ftsp = new Frm_TechnicalShiftPrice();
             ftsp.Show();
         }
+
+        private void Btn_PermissionNoticeMoney_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Frm_PermessionMoneyNotice fpmn = new Frm_PermessionMoneyNotice();
+            fpmn.Show();
+        }
     }
 }
 	

@@ -112,7 +112,7 @@ namespace Laboratory.PL
                     dt10 = t.vildateTransferForCompany(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
                     if (dt10.Rows.Count > 0)
                     {
-                        MessageBox.Show("عزيزى المستخدم يرجي العلم باان تم تحويل الفاتورة الي جهه اخري واسترداد المبلغ   ", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                        MessageBox.Show("عزيزى المستخدم يرجي العلم باان تم تحويل الفاتورة الي جهه اخري  ", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
                         return;
                     }
                     dt7.Clear();
