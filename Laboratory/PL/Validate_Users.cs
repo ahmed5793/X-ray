@@ -833,6 +833,11 @@ namespace Laboratory.PL
                         Cmb_Branch.DataSource = U.SelectUserBranch(Txt_SalesMAn.Text);
                         Cmb_Branch.DisplayMember = "Name";
                         Cmb_Branch.ValueMember = "Branch_ID";
+
+                        cmb_Users1.DataSource = E.Select_EmployeFromBranch(Convert.ToInt32(Cmb_Branch.SelectedValue));
+                        cmb_Users1.DisplayMember = "Emp_Name";
+                        cmb_Users1.ValueMember = "id_Emp";
+                        cmb_Users1.SelectedIndex = -1;
                     }
                     else
                     {
@@ -840,16 +845,17 @@ namespace Laboratory.PL
                         Cmb_Branch.DisplayMember = "Name";
                         Cmb_Branch.ValueMember = "Branch_ID";
 
-                    }
-                    Cmb_Branch.Enabled = true;
-                    if (Cmb_Branch.Text != "")
-                    {
-                    
                         cmb_Users1.DataSource = E.Select_EmployeFromBranch(Convert.ToInt32(Cmb_Branch.SelectedValue));
                         cmb_Users1.DisplayMember = "Emp_Name";
                         cmb_Users1.ValueMember = "id_Emp";
                         cmb_Users1.SelectedIndex = -1;
+
                     }
+                    Cmb_Branch.Enabled = true;
+                    //if (Cmb_Branch.Text != "")
+                    //{
+                    
+                    //}
 
 
                 }
@@ -861,7 +867,7 @@ namespace Laboratory.PL
                     Cmb_Branch.Enabled = false;
                     cmb_Users1.DataSource = p.Select_EmployeNOTBranch();
                     cmb_Users1.DisplayMember = "Emp_Name";
-                    cmb_Users1.ValueMember = "Emp_ID";
+                    cmb_Users1.ValueMember = "id_Emp";
                     cmb_Users1.SelectedIndex = -1;
 
                 }

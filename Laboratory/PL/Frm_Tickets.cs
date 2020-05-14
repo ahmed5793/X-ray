@@ -36,7 +36,7 @@ namespace Laboratory.PL
         {
             InitializeComponent();
             Function();
-
+            cmb_statues.SelectedIndex = 0;
         }
         void Function()
         {
@@ -343,7 +343,14 @@ namespace Laboratory.PL
         DataTable dt = new DataTable();
         private void Cmb_category_SelectionChangeCommitted(object sender, EventArgs e)
         {
-
+            //if (cmb_statues.Text=="")
+            //{
+            //    MessageBox.Show("من فضلك قم بااختيار طريقه التعامل اولا");
+            //    Cmb_category.SelectedIndex = -1;
+            //    cmb_statues.Focus();
+            //    cmb_items.DataSource = null;
+            //    return;
+            //}
            
                 if (cmb_statues.Text == "نقدى")
                 {
@@ -728,7 +735,7 @@ namespace Laboratory.PL
             txt_rent.Text = "0";
             txt_total.Text = "0";
             txt_pay.Text = "0";
-            cmb_statues.SelectedIndex = -1;
+            //cmb_statues.SelectedIndex = -1;
             cmb_branches.SelectedIndex = -1;
 
             cmb_items.SelectedIndex = -1;
@@ -1325,12 +1332,12 @@ namespace Laboratory.PL
                                 comboBox1.Focus();
                                 return;
                             }
-                            //if (txt_age.Text == "")
-                            //{
-                            //    MessageBox.Show("من فضلك قم بتحديد سن العميل ");
-                            //    txt_age.Focus();
-                            //    return;
-                            //}
+                            if (txt_age.Text == "")
+                            {
+                                MessageBox.Show("من فضلك قم بتحديد سن العميل ");
+                                txt_age.Focus();
+                                return;
+                            }
                             Btn_Save.Enabled = false;
 
                             c.addCustomer(txt_name.Text, txt_address.Text, txt_phone.Text, Convert.ToInt32(txt_age.Text), dtb_visit.Value, comboBox1.Text, txt_idntational.Text);
@@ -1431,7 +1438,7 @@ namespace Laboratory.PL
                                dt1.Rows[i][15], dt1.Rows[i][16], dt1.Rows[i][17], dt1.Rows[i][18],
                                dt1.Rows[i][19],dt1.Rows[i][20], dt1.Rows[i][21],
                                dt1.Rows[i][22], dt1.Rows[i][23], dt1.Rows[i][24], dt1.Rows[i][25],
-                               dt1.Rows[i][26], dt1.Rows[i][27], dt1.Rows[i][28]);
+                               dt1.Rows[i][26], dt1.Rows[i][27], dt1.Rows[i][28], dt1.Rows[i][29]);
                         }
                         report.DataSource = dso;
                         report.Parameters["idTicket"].Value = Convert.ToInt32(txt_IdTicket.Text);
