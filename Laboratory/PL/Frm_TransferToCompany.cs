@@ -314,20 +314,22 @@ namespace Laboratory.PL
 
                         dt.Clear();
                         dt = cu.Select_CustomertotalBAlance(Convert.ToInt32(Txt_IdCust.Text));
-                        decimal hr = Convert.ToDecimal(textBox2.Text) + Convert.ToDecimal(Txt_OldRentBeforeTransfair.Text);
+                        //decimal hr = Convert.ToDecimal(textBox2.Text) + Convert.ToDecimal(Txt_OldRentBeforeTransfair.Text);
                         decimal mno2 = Convert.ToDecimal(dt.Rows[0][0]) - Convert.ToDecimal(Txt_TotalBeforeTransfair.Text);
                         cu.Update_CustomerTotalBalance(Convert.ToInt32(Txt_IdCust.Text), mno2);
-                        cu.Add_CustomerAccountStatment(Convert.ToInt32(Txt_IdCust.Text), Convert.ToDecimal(Txt_TotalBeforeTransfair.Text),
-                        0, dateTimePicker1.Value, mno2, Convert.ToInt32(cmb_Stock.SelectedValue)
+                        cu.Add_CustomerAccountStatment(Convert.ToInt32(Txt_IdCust.Text),
+                            Convert.ToDecimal(Txt_TotalBeforeTransfair.Text),0, dateTimePicker1.Value, mno2, 
+                            Convert.ToInt32(cmb_Stock.SelectedValue)
                         , txt_username.Text, Convert.ToInt32(comboBox1.SelectedValue), " إلغاء الفحص النقدى رقم" + " " + (txt_IdTeckit.Text) );
 
 
 
                     dt.Clear();
                     dt = cu.Select_CustomertotalBAlance(Convert.ToInt32(Txt_IdCust.Text));
+                    decimal hr = Convert.ToDecimal(dt.Rows[0][0]) * -1 ;
                     decimal mno3 = Convert.ToDecimal(dt.Rows[0][0])+ Convert.ToDecimal(Txt_PricePayment.Text);
                     cu.Update_CustomerTotalBalance(Convert.ToInt32(Txt_IdCust.Text), mno2);
-                    cu.Add_CustomerAccountStatment(Convert.ToInt32(Txt_IdCust.Text), 0,
+                    cu.Add_CustomerAccountStatment(Convert.ToInt32(Txt_IdCust.Text), hr,
                    Convert.ToDecimal(Txt_PricePayment.Text), dateTimePicker1.Value, mno3, Convert.ToInt32(cmb_Stock.SelectedValue)
                     , txt_username.Text, Convert.ToInt32(comboBox1.SelectedValue), " تحويل الفحص  رقم" + " " + (txt_IdTeckit.Text) + " " + "إلى الشركة " + " " + cmb_Company.Text);
 
@@ -335,13 +337,15 @@ namespace Laboratory.PL
 
                         dt.Clear();
                         dt = cu.Select_CustomertotalBAlance(Convert.ToInt32(Txt_IdCust.Text));
-                        decimal mno5 = Convert.ToDecimal(Txt_PayLast.Text) - Convert.ToDecimal(Txt_LastPayOut.Text);
-                        decimal mno4 = Convert.ToDecimal(dt.Rows[0][0]) + Convert.ToDecimal(textBox2.Text);
+                    decimal hrl = Convert.ToDecimal(dt.Rows[0][0]) * -1;
+
+                    //decimal mno5 = Convert.ToDecimal(Txt_PayLast.Text) - Convert.ToDecimal(Txt_LastPayOut.Text);
+                        decimal mno4 = Convert.ToDecimal(dt.Rows[0][0]) + hrl;
                         cu.Update_CustomerTotalBalance(Convert.ToInt32(Txt_IdCust.Text), mno4);
                         cu.Add_CustomerAccountStatment(Convert.ToInt32(Txt_IdCust.Text), 0,
-                        Convert.ToDecimal(textBox2.Text), dateTimePicker1.Value, mno4, Convert.ToInt32(cmb_Stock.SelectedValue)
+                        hrl, dateTimePicker1.Value, mno4, Convert.ToInt32(cmb_Stock.SelectedValue)
                         , txt_username.Text, Convert.ToInt32(comboBox1.SelectedValue),
-                        " إذن صرف مبلغ   " + " " + (textBox2.Text )+" "+ " فرق المبلغ المدفوع مسبقا للحجز   " +" "+ (txt_IdTeckit.Text));
+                        " إذن صرف مبلغ   " + " (" + (hrl )+" )"+ "  فرق المبلغ المدفوع مسبقا للحجز رقم  " +" ("+ (txt_IdTeckit.Text)+")");
 
 
 
