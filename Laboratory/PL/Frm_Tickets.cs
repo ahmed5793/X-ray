@@ -37,6 +37,8 @@ namespace Laboratory.PL
             InitializeComponent();
             Function();
             cmb_statues.SelectedIndex = 0;
+            txt_pay.Enabled = true;
+
         }
         void Function()
         {
