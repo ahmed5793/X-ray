@@ -282,23 +282,25 @@ namespace Laboratory.PL
                 {
                     if (gridView1.GetFocusedRowCellValue("طريقه التعامل").ToString() == "نقدى")
                     {
+                        DataTable dt2 = new DataTable();
                         Rpt_OrderPay report = new Rpt_OrderPay();
                         RPT.Order.DataSetOrderPay dso = new RPT.Order.DataSetOrderPay();
-                        DataTable dt1 = new DataTable();
+                      
                         sr.documentViewer1.Refresh();
-                        dt1.Clear();
-                        dt1 = t.ReportInvoiceTicketPay(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة").ToString()));
+                        dt2.Clear();
+                        dt2 = t.ReportInvoiceTicketPay(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة").ToString()));
                         dso.Tables["DataTable1"].Clear();
-                        for (int i = 0; i < dt1.Rows.Count; i++)
+                        for (int i = 0; i < dt2.Rows.Count; i++)
                         {
-                            dso.Tables["DataTable1"].Rows.Add(Convert.ToInt32(dt1.Rows[0][0]), dt1.Rows[0][1], dt1.Rows[0][2],
-                                Convert.ToDecimal(dt1.Rows[0][3]), dt1.Rows[0][4], dt1.Rows[0][5], Convert.ToInt32(dt1.Rows[0][6]), Convert.ToDateTime(dt1.Rows[0][7]),
-                                Convert.ToDateTime(dt1.Rows[0][8]), dt1.Rows[0][9], dt1.Rows[0][10], dt1.Rows[0][11], dt1.Rows[0][12], dt1.Rows[0][13],
-                                Convert.ToDecimal(dt1.Rows[0][14]), Convert.ToDecimal(dt1.Rows[0][15]), Convert.ToDecimal(dt1.Rows[0][16]),
-                                dt1.Rows[0][17], dt1.Rows[0][18], dt1.Rows[0][19], Convert.ToDateTime(dt1.Rows[0][20]), Convert.ToDecimal(dt1.Rows[0][21]),
-                                dt1.Rows[0][22], Convert.ToDecimal(dt1.Rows[0][23]), dt1.Rows[0][24], Convert.ToInt32(dt1.Rows[0][25]), Convert.ToInt32(dt1.Rows[0][26]),
-                                Convert.ToInt32(dt1.Rows[0][27]));
+                            dso.Tables["DataTable1"].Rows.Add(dt2.Rows[0][0], dt2.Rows[0][1], dt2.Rows[0][2],
+                               dt2.Rows[0][3], dt2.Rows[0][4], dt2.Rows[0][5], dt2.Rows[0][6], dt2.Rows[0][7],
+                                dt2.Rows[0][8], dt2.Rows[0][9], dt2.Rows[0][10], dt2.Rows[0][11], dt2.Rows[0][12], dt2.Rows[0][13],
+                                dt2.Rows[0][14], dt2.Rows[0][15], dt2.Rows[0][16],
+                                dt2.Rows[0][17], dt2.Rows[0][18], dt2.Rows[0][19], dt2.Rows[0][20],dt2.Rows[0][21],
+                                dt2.Rows[0][22], dt2.Rows[0][23], dt2.Rows[0][24], dt2.Rows[0][25], dt2.Rows[0][26],
+                                dt2.Rows[0][27], dt2.Rows[0][28]);
                         }
+                        sr.documentViewer1.Refresh();
                         report.DataSource = dso;
                         report.Parameters["idTicket"].Value = Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة").ToString());
                         sr.documentViewer1.DocumentSource = report;
@@ -308,22 +310,26 @@ namespace Laboratory.PL
                     }
                     else if (gridView1.GetFocusedRowCellValue("طريقه التعامل").ToString() == "شركات")
                     {
-                        RPT.Order.Rpt_TeckietCompanyOrder oc = new RPT.Order.Rpt_TeckietCompanyOrder();
-                        RPT.Order.DataSetOrderPay dso = new RPT.Order.DataSetOrderPay();
                         DataTable dt1 = new DataTable();
+                 
+                     
+                        sr.documentViewer1.Refresh();
+
                         dt1.Clear();
                         dt1 = t.ReportInvoiceTicketCompany(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة").ToString()));
+                        RPT.Order.Rpt_TeckietCompanyOrder oc = new RPT.Order.Rpt_TeckietCompanyOrder();
+                        RPT.Order.DataSetOrderPay dso = new RPT.Order.DataSetOrderPay();
                         dso.Tables["dataCompany"].Clear();
                         for (int i = 0; i < dt1.Rows.Count; i++)
                         {
-                            dso.Tables["dataCompany"].Rows.Add(Convert.ToInt32(dt1.Rows[0][0]), dt1.Rows[0][1], dt1.Rows[0][2],
-                                Convert.ToDecimal(dt1.Rows[0][3]), dt1.Rows[0][4], dt1.Rows[0][5], Convert.ToInt32(dt1.Rows[0][6]), Convert.ToDateTime(dt1.Rows[0][7]),
-                                Convert.ToDateTime(dt1.Rows[0][8]), dt1.Rows[0][9], dt1.Rows[0][10], dt1.Rows[0][11], dt1.Rows[0][12], dt1.Rows[0][13],
-                                Convert.ToDecimal(dt1.Rows[0][14]), Convert.ToDecimal(dt1.Rows[0][15]), Convert.ToDecimal(dt1.Rows[0][16]),
-                                dt1.Rows[0][17], dt1.Rows[0][18], dt1.Rows[0][19], dt1.Rows[0][20], Convert.ToDateTime(dt1.Rows[0][21]), Convert.ToDecimal(dt1.Rows[0][22]),
-                                dt1.Rows[0][23], Convert.ToDecimal(dt1.Rows[0][24]), dt1.Rows[0][25], Convert.ToDecimal(dt1.Rows[0][26]),
-                                Convert.ToDecimal(dt1.Rows[0][27]), Convert.ToInt32(dt1.Rows[0][28]), Convert.ToInt32(dt1.Rows[0][29]),
-                                Convert.ToInt32(dt1.Rows[0][30]), Convert.ToInt32(dt1.Rows[0][31]));
+                            dso.Tables["dataCompany"].Rows.Add(dt1.Rows[i][0], dt1.Rows[i][1], dt1.Rows[i][2],
+                           dt1.Rows[i][3], dt1.Rows[i][4], dt1.Rows[i][5], dt1.Rows[i][6], dt1.Rows[i][7],
+                           dt1.Rows[i][8], dt1.Rows[i][9], dt1.Rows[i][10], dt1.Rows[i][11], dt1.Rows[i][12], dt1.Rows[i][13],
+                           dt1.Rows[i][14], dt1.Rows[i][15], dt1.Rows[i][16],
+                           dt1.Rows[i][17], dt1.Rows[i][18], dt1.Rows[i][19], dt1.Rows[i][20], dt1.Rows[i][21], dt1.Rows[i][22],
+                           dt1.Rows[i][23], dt1.Rows[i][24], dt1.Rows[i][25], dt1.Rows[i][26],
+                           dt1.Rows[i][27], dt1.Rows[i][28], dt1.Rows[i][29],
+                           dt1.Rows[i][30], dt1.Rows[i][31], dt1.Rows[i][32]);
                         }
                         sr.documentViewer1.Refresh();
                         oc.DataSource = dso;
@@ -332,16 +338,7 @@ namespace Laboratory.PL
                         oc.Parameters["idTicket"].Visible = false;
                         sr.documentViewer1.Enabled = true;
 
-                        //string printerName = Properties.Settings.Default.PrintNameInvoice;
-
-
-
-
-                        ////Specify the printer name.
-                        //oc.PrinterName = printerName;
-
-                        ////Create the document.
-                        //oc.CreateDocument();
+                        
                      
                       
                       
@@ -350,17 +347,7 @@ namespace Laboratory.PL
                     }
 
 
-                    // ReportPrintTool tool = new ReportPrintTool(report);
-                    //tool.ShowRibbonPreview();
-                    //  report.RequestParameters = false;
-                    //XtraReport1 x = new XtraReport1();
-                    //s.documentViewer1.Refresh();
-                    //    x.Parameters["@idTicket"].Value = Convert.ToInt32(dgv_visit.CurrentRow.Cells[0].Value);
-                    //x.DataSource = t.ReportInvoiceTicketPay(Convert.ToInt32(dgv_visit.CurrentRow.Cells[0].Value));
-                    //s.documentViewer1.DocumentSource = x;
-                    //x.Parameters["@idTicket"].Visible = false;
-                    //  x.RequestParameters = false;
-                    //s.ShowDialog();
+                   
 
                 }
             }

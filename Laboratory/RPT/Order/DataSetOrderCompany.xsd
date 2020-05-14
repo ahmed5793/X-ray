@@ -47,6 +47,7 @@
               <xs:element name="ID_Stock" msprop:Generator_ColumnVarNameInTable="columnID_Stock" msprop:Generator_ColumnPropNameInRow="ID_Stock" msprop:Generator_ColumnPropNameInTable="ID_StockColumn" msprop:Generator_UserColumnName="ID_Stock" type="xs:string" minOccurs="0" />
               <xs:element name="ID_Branch" msprop:Generator_ColumnVarNameInTable="columnID_Branch" msprop:Generator_ColumnPropNameInRow="ID_Branch" msprop:Generator_ColumnPropNameInTable="ID_BranchColumn" msprop:Generator_UserColumnName="ID_Branch" type="xs:string" minOccurs="0" />
               <xs:element name="ID_Company" msprop:Generator_ColumnVarNameInTable="columnID_Company" msprop:Generator_ColumnPropNameInRow="ID_Company" msprop:Generator_ColumnPropNameInTable="ID_CompanyColumn" msprop:Generator_UserColumnName="ID_Company" type="xs:string" minOccurs="0" />
+              <xs:element name="CtegoryXraysName" msprop:Generator_ColumnVarNameInTable="columnCtegoryXraysName" msprop:Generator_ColumnPropNameInRow="CtegoryXraysName" msprop:Generator_ColumnPropNameInTable="CtegoryXraysNameColumn" msprop:Generator_UserColumnName="CtegoryXraysName" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
