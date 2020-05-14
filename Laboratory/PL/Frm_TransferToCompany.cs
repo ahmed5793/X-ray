@@ -320,7 +320,7 @@ namespace Laboratory.PL
                         cu.Add_CustomerAccountStatment(Convert.ToInt32(Txt_IdCust.Text),
                             Convert.ToDecimal(Txt_TotalBeforeTransfair.Text),0, dateTimePicker1.Value, mno2, 
                             Convert.ToInt32(cmb_Stock.SelectedValue)
-                        , txt_username.Text, Convert.ToInt32(comboBox1.SelectedValue), " إلغاء الفحص النقدى رقم" + " " + (txt_IdTeckit.Text) );
+                        , txt_username.Text, Convert.ToInt32(comboBox1.SelectedValue), " إلغاء الفحص النقدى رقم" + "( " + (txt_IdTeckit.Text)+")" );
 
 
 
@@ -331,7 +331,7 @@ namespace Laboratory.PL
                     cu.Update_CustomerTotalBalance(Convert.ToInt32(Txt_IdCust.Text), mno2);
                     cu.Add_CustomerAccountStatment(Convert.ToInt32(Txt_IdCust.Text), hr,
                    Convert.ToDecimal(Txt_PricePayment.Text), dateTimePicker1.Value, mno3, Convert.ToInt32(cmb_Stock.SelectedValue)
-                    , txt_username.Text, Convert.ToInt32(comboBox1.SelectedValue), " تحويل الفحص  رقم" + " " + (txt_IdTeckit.Text) + " " + "إلى الشركة " + " " + cmb_Company.Text);
+                    , txt_username.Text, Convert.ToInt32(comboBox1.SelectedValue), " تحويل الفحص  رقم" + " (" + (txt_IdTeckit.Text) + " )" + "إلى الشركة " + "" + cmb_Company.Text );
 
 
 
@@ -363,7 +363,7 @@ namespace Laboratory.PL
                         cu.Update_CustomerTotalBalance(Convert.ToInt32(Txt_IdCust.Text), mno2);
                         cu.Add_CustomerAccountStatment(Convert.ToInt32(Txt_IdCust.Text), Convert.ToDecimal(Txt_TotalBeforeTransfair.Text),
                         0, dateTimePicker1.Value, mno2, Convert.ToInt32(cmb_Stock.SelectedValue)
-                        , txt_username.Text, Convert.ToInt32(comboBox1.SelectedValue), " إلغاء الفحص النقدى رقم" + " " + (txt_IdTeckit.Text));
+                        , txt_username.Text, Convert.ToInt32(comboBox1.SelectedValue), " إلغاء الفحص النقدى رقم" + " (" + (txt_IdTeckit.Text)+")");
 
 
                      //   dt.Clear();
@@ -383,7 +383,7 @@ namespace Laboratory.PL
                         cu.Update_CustomerTotalBalance(Convert.ToInt32(Txt_IdCust.Text), mno3);
                         cu.Add_CustomerAccountStatment(Convert.ToInt32(Txt_IdCust.Text), 0,
                        Convert.ToDecimal(Txt_PricePayment.Text), dateTimePicker1.Value, mno3, Convert.ToInt32(cmb_Stock.SelectedValue)
-                        , txt_username.Text, Convert.ToInt32(comboBox1.SelectedValue), " تحويل الفحص  رقم" + " " + (txt_IdTeckit.Text )+ " " + "إلى الشركة " + " " + cmb_Company.Text);
+                        , txt_username.Text, Convert.ToInt32(comboBox1.SelectedValue), " تحويل الفحص  رقم" + "( " + (txt_IdTeckit.Text )+ " )" + "إلى الشركة " + " " + cmb_Company.Text);
                     }
                 }
                 t.AddTransferForCompany(Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToDecimal(Txt_addtionPaymentrate.Text),
@@ -397,7 +397,7 @@ namespace Laboratory.PL
                 decimal mno = Convert.ToDecimal(dt.Rows[0][0]) + Convert.ToDecimal(Txt_RentCompany.Text);
                 c.Update_CompanyTotalMoney(Convert.ToInt32(cmb_Company.SelectedValue), mno);
                 c.ADD_Company_TotalRent(Convert.ToInt32(cmb_Company.SelectedValue), 0
-                    , Convert.ToDecimal(Txt_RentCompany.Text), dateTimePicker1.Value, mno, "  تحويل حجز اشعة رقم  " + " " + (txt_IdTeckit.Text) +" "+ "للعميل " + txt_patientname.Text, Convert.ToInt32(cmb_Stock.SelectedValue)
+                    , Convert.ToDecimal(Txt_RentCompany.Text), dateTimePicker1.Value, mno, "  تحويل حجز اشعة رقم  " + "( " + (txt_IdTeckit.Text) +" )"+ "للعميل " + txt_patientname.Text, Convert.ToInt32(cmb_Stock.SelectedValue)
                  , Convert.ToInt32(comboBox1.SelectedValue), txt_username.Text);
                 MessageBox.Show("تم حفظ التحويل بنجاح");
                 this.Close();
