@@ -335,6 +335,8 @@ namespace Laboratory.RPT.Order {
             
             private global::System.Data.DataColumn columnID_Branch;
             
+            private global::System.Data.DataColumn columnCtegoryXraysName;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public DataTable1DataTable() {
@@ -594,6 +596,14 @@ namespace Laboratory.RPT.Order {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CtegoryXraysNameColumn {
+                get {
+                    return this.columnCtegoryXraysName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -657,7 +667,8 @@ namespace Laboratory.RPT.Order {
                         string ReassionForAdding, 
                         string ID_National, 
                         string ID_Stock, 
-                        string ID_Branch) {
+                        string ID_Branch, 
+                        string CtegoryXraysName) {
                 DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID_Tickets,
@@ -687,7 +698,8 @@ namespace Laboratory.RPT.Order {
                         ReassionForAdding,
                         ID_National,
                         ID_Stock,
-                        ID_Branch};
+                        ID_Branch,
+                        CtegoryXraysName};
                 rowDataTable1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable1Row);
                 return rowDataTable1Row;
@@ -738,6 +750,7 @@ namespace Laboratory.RPT.Order {
                 this.columnID_National = base.Columns["ID_National"];
                 this.columnID_Stock = base.Columns["ID_Stock"];
                 this.columnID_Branch = base.Columns["ID_Branch"];
+                this.columnCtegoryXraysName = base.Columns["CtegoryXraysName"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -799,6 +812,8 @@ namespace Laboratory.RPT.Order {
                 base.Columns.Add(this.columnID_Stock);
                 this.columnID_Branch = new global::System.Data.DataColumn("ID_Branch", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_Branch);
+                this.columnCtegoryXraysName = new global::System.Data.DataColumn("CtegoryXraysName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCtegoryXraysName);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1389,6 +1404,22 @@ namespace Laboratory.RPT.Order {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string CtegoryXraysName {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.CtegoryXraysNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CtegoryXraysName\' in table \'DataTable1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.CtegoryXraysNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsID_TicketsNull() {
                 return this.IsNull(this.tableDataTable1.ID_TicketsColumn);
             }
@@ -1721,6 +1752,18 @@ namespace Laboratory.RPT.Order {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetID_BranchNull() {
                 this[this.tableDataTable1.ID_BranchColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsCtegoryXraysNameNull() {
+                return this.IsNull(this.tableDataTable1.CtegoryXraysNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetCtegoryXraysNameNull() {
+                this[this.tableDataTable1.CtegoryXraysNameColumn] = global::System.Convert.DBNull;
             }
         }
         

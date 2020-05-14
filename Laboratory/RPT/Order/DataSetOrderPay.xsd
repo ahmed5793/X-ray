@@ -12,7 +12,7 @@
   <xs:element name="DataSetOrderPay" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetOrderPay" msprop:Generator_UserDSName="DataSetOrderPay">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID_Tickets" msprop:Generator_ColumnVarNameInTable="columnID_Tickets" msprop:Generator_ColumnPropNameInRow="ID_Tickets" msprop:Generator_ColumnPropNameInTable="ID_TicketsColumn" msprop:Generator_UserColumnName="ID_Tickets" type="xs:string" minOccurs="0" />
@@ -43,6 +43,7 @@
               <xs:element name="ID_National" msprop:Generator_ColumnVarNameInTable="columnID_National" msprop:Generator_ColumnPropNameInRow="ID_National" msprop:Generator_ColumnPropNameInTable="ID_NationalColumn" msprop:Generator_UserColumnName="ID_National" type="xs:string" minOccurs="0" />
               <xs:element name="ID_Stock" msprop:Generator_ColumnVarNameInTable="columnID_Stock" msprop:Generator_ColumnPropNameInRow="ID_Stock" msprop:Generator_ColumnPropNameInTable="ID_StockColumn" msprop:Generator_UserColumnName="ID_Stock" type="xs:string" minOccurs="0" />
               <xs:element name="ID_Branch" msprop:Generator_ColumnVarNameInTable="columnID_Branch" msprop:Generator_ColumnPropNameInRow="ID_Branch" msprop:Generator_ColumnPropNameInTable="ID_BranchColumn" msprop:Generator_UserColumnName="ID_Branch" type="xs:string" minOccurs="0" />
+              <xs:element name="CtegoryXraysName" msprop:Generator_ColumnVarNameInTable="columnCtegoryXraysName" msprop:Generator_ColumnPropNameInRow="CtegoryXraysName" msprop:Generator_ColumnPropNameInTable="CtegoryXraysNameColumn" msprop:Generator_UserColumnName="CtegoryXraysName" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
