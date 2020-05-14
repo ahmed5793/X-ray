@@ -365,6 +365,7 @@
             this.txt_age.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txt_age.Size = new System.Drawing.Size(68, 25);
             this.txt_age.TabIndex = 46;
+            this.txt_age.Text = "0";
             this.txt_age.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_age.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_age_KeyPress);
             // 
