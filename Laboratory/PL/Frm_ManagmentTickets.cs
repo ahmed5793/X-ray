@@ -44,21 +44,21 @@ namespace Laboratory.PL
         {
             try
             {
-                dt10.Clear();
-                dt10 = u.SelectUserBranch(txt_username.Text);
+                //dt10.Clear();
+                //dt10 = u.SelectUserBranch(txt_username.Text);
 
-                if (dt10.Rows.Count > 0)
-                {
-                    cmb_branches.DataSource = u.SelectUserBranch(txt_username.Text);
-                    cmb_branches.DisplayMember = "Name";
-                    cmb_branches.ValueMember = "Branch_ID";
-                }
-                else
-                {
+                //if (dt10.Rows.Count > 0)
+                //{
+                //    cmb_branches.DataSource = u.SelectUserBranch(txt_username.Text);
+                //    cmb_branches.DisplayMember = "Name";
+                //    cmb_branches.ValueMember = "Branch_ID";
+                //}
+                //else
+                //{
                     cmb_branches.DataSource = b.SelectCompBranches();
                     cmb_branches.DisplayMember = "Name";
                     cmb_branches.ValueMember = "Branch_ID";
-                }
+              //  }
 
             }
             catch (Exception ex)
@@ -272,12 +272,13 @@ namespace Laboratory.PL
                 MessageBox.Show(ex.StackTrace);
             }
         }
-        frm_SingelReport sr = new frm_SingelReport();
 
+        frm_SingelReport sr = new frm_SingelReport();
         private void btn_print_Click(object sender, EventArgs e)
         {
             try
             {
+             
                 if (gridView1.RowCount > 0)
                 {
                     if (gridView1.GetFocusedRowCellValue("طريقه التعامل").ToString() == "نقدى")
@@ -318,10 +319,11 @@ namespace Laboratory.PL
                         dt1.Clear();
                         dt1 = t.ReportInvoiceTicketCompany(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة").ToString()));
                         RPT.Order.Rpt_TeckietCompanyOrder oc = new RPT.Order.Rpt_TeckietCompanyOrder();
-                        RPT.Order.DataSetOrderPay dso = new RPT.Order.DataSetOrderPay();
+                        RPT.Order.DataSetOrderCompany dso = new RPT.Order.DataSetOrderCompany();
                         dso.Tables["dataCompany"].Clear();
                         for (int i = 0; i < dt1.Rows.Count; i++)
                         {
+
                             dso.Tables["dataCompany"].Rows.Add(dt1.Rows[i][0], dt1.Rows[i][1], dt1.Rows[i][2],
                            dt1.Rows[i][3], dt1.Rows[i][4], dt1.Rows[i][5], dt1.Rows[i][6], dt1.Rows[i][7],
                            dt1.Rows[i][8], dt1.Rows[i][9], dt1.Rows[i][10], dt1.Rows[i][11], dt1.Rows[i][12], dt1.Rows[i][13],
