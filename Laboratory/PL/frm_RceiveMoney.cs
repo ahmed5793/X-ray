@@ -82,7 +82,7 @@ namespace Laboratory.PL
                 Permision();
                 DateFrom.Value = Convert.ToDateTime(DateTime.Now.ToShortDateString());
 
-                textBox4.Hide();
+               textBox4.Hide();
             }
             catch (Exception ex)
             {
@@ -116,27 +116,44 @@ namespace Laboratory.PL
             decimal totalmoney = Convert.ToDecimal(textBox1.Text) - Convert.ToDecimal(textBox2.Text);
             textBox3.Text = totalmoney.ToString();
         }
+        DataTable dt1 = new DataTable();
+        DataTable dt4 = new DataTable();
         private void Btn_Search_Click(object sender, EventArgs e)
         {
             try
             {
-                
-                dt.Clear();
-                dt = U.Select_MoneyForUser(Convert.ToInt32(cmb_Stock.SelectedValue),textBox4.Text,DateFrom.Value,Time_From.Value.TimeOfDay,
-                   Time_To.Value.TimeOfDay);
-                dt2.Clear();
-                dt2 = U.Select_PullMoneyForUser(Convert.ToInt32(cmb_Stock.SelectedValue), textBox4.Text, DateFrom.Value, Time_From.Value.TimeOfDay, Time_To.Value.TimeOfDay);
-                gridControl1.DataSource = dt2;
-                gridControlInsert.DataSource = dt;
+                if (checkBox1.Checked==true)
+                {
+                  
+                    dt1.Clear();
+                    dt1 = U.Select_MoneyForUserAllBranch(Convert.ToInt32(cmb_Stock.SelectedValue),  DateFrom.Value, Time_From.Value.TimeOfDay,
+                       Time_To.Value.TimeOfDay);
+                    dt4.Clear();
+                    dt4 = U.Select_PullMoneyForUserAllBranch(Convert.ToInt32(cmb_Stock.SelectedValue), DateFrom.Value, Time_From.Value.TimeOfDay, Time_To.Value.TimeOfDay);
+                    gridControl1.DataSource = dt4;
+                    gridControlInsert.DataSource = dt1;
+                }
+                else if((checkBox1.Checked == false))
+                {
+                    dt.Clear();
+                    dt = U.Select_MoneyForUser(Convert.ToInt32(cmb_Stock.SelectedValue), textBox4.Text, DateFrom.Value, Time_From.Value.TimeOfDay,
+                       Time_To.Value.TimeOfDay);
+                    dt2.Clear();
+                    dt2 = U.Select_PullMoneyForUser(Convert.ToInt32(cmb_Stock.SelectedValue), textBox4.Text, DateFrom.Value, Time_From.Value.TimeOfDay, Time_To.Value.TimeOfDay);
+                    gridControl1.DataSource = dt2;
+                    gridControlInsert.DataSource = dt;
+                }
+              
                 calcInsertMoney();
                 CalcPullMoney();
                 Clac_total();
+
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message);
-                MessageBox.Show(ex.StackTrace);
+              
             }
         }
         private void cmb_UserBranch_SelectedIndexChanged(object sender, EventArgs e)
@@ -211,6 +228,28 @@ namespace Laboratory.PL
             dt3.Clear();
             dt3 = U.Select_UserName(Convert.ToInt32(Cmb_Users.SelectedValue));
             textBox4.Text = dt3.Rows[0][0].ToString();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+
+          
+            if (checkBox1.Checked==true)
+            {
+                    Cmb_Users.Enabled = false;
+            }
+                else
+                {
+                    Cmb_Users.Enabled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+               
+            }
         }
     }
 }
