@@ -367,6 +367,8 @@
             this.txt_age.TabIndex = 46;
             this.txt_age.Text = "0";
             this.txt_age.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_age.Click += new System.EventHandler(this.txt_age_Click);
+            this.txt_age.TextChanged += new System.EventHandler(this.txt_age_TextChanged);
             this.txt_age.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_age_KeyPress);
             this.txt_age.MouseMove += new System.Windows.Forms.MouseEventHandler(this.txt_age_MouseMove);
             // 

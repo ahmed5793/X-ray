@@ -1653,19 +1653,23 @@ namespace Laboratory.PL
                     cmb_UserBranch.Enabled = false;
                     string x = DateTime.Now.ToShortDateString();
                     Frm_DataRevaltionTicket.getmain.gridControl1.DataSource = t.selectDataRevlation(Convert.ToInt32(Frm_DataRevaltionTicket.getmain.comboBox1.SelectedValue), Convert.ToDateTime(x));
-                    PopupNotifier po = new PopupNotifier();
+                   
+                    
+                    ///// notification
+                    
+                    //PopupNotifier po = new PopupNotifier();
                   
-                    po.Image = Properties.Resources.iconfinder_175_Information_183524;
-                    po.TitleText = "مركز جاما للأشعه والرنين المغناطيسي ";
-                    po.ContentText = " حجز فحص من فرع"+" "+ cmb_UserBranch.Text;
-                    po.ShowCloseButton = true;
+                    //po.Image = Properties.Resources.iconfinder_175_Information_183524;
+                    //po.TitleText = "مركز جاما للأشعه والرنين المغناطيسي ";
+                    //po.ContentText = " حجز فحص من فرع"+" "+ cmb_UserBranch.Text;
+                    //po.ShowCloseButton = true;
                   
                     
 
                   
-                    po.Popup();
+                    //po.Popup();
                  
-                    po.AnimationInterval = 100000;
+                    //po.AnimationInterval = 100000;
                 }
 
                 else
@@ -2009,6 +2013,19 @@ namespace Laboratory.PL
             {
                 txt_age.Text = "0";
             }
+        }
+
+        private void txt_age_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_age.Text=="")
+            {
+                txt_age.Text = "0";
+            }
+        }
+
+        private void txt_age_Click(object sender, EventArgs e)
+        {
+            txt_age.SelectAll();
         }
 
         //private void ؤ(object sender, EventArgs e)

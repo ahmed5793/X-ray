@@ -99,7 +99,7 @@ namespace Laboratory.PL
                     decimal Amount = Convert.ToDecimal(Txt_Total.Text);
                     decimal Discount = Convert.ToDecimal(Txt_addtionPaymentrate.Text);
                     decimal Total = Amount * (Discount / 100);
-                    Txt_PricePayment.Text = Math.Round(Total, 1).ToString();
+                    Txt_PricePayment.Text = Math.Round(Total, 2).ToString();
                 }
             }
             else
@@ -128,6 +128,13 @@ namespace Laboratory.PL
                 textBox2.Text = "0";
                 x = Convert.ToDecimal(Txt_PayLast.Text) - Convert.ToDecimal(Txt_LastPayOut.Text);
                 y =  Convert.ToDecimal(Txt_PricePayment.Text)-x;
+                Txt_RentCustomer.Text = y.ToString();
+            }
+            else if (Convert.ToDecimal(Txt_PricePayment.Text) == Convert.ToDecimal(Txt_PayLast.Text) - Convert.ToDecimal(Txt_LastPayOut.Text))
+            {
+                textBox2.Text = "0";
+                x = Convert.ToDecimal(Txt_PayLast.Text) - Convert.ToDecimal(Txt_LastPayOut.Text);
+                y = Convert.ToDecimal(Txt_PricePayment.Text) - x;
                 Txt_RentCustomer.Text = y.ToString();
             }
         }
@@ -254,7 +261,50 @@ namespace Laboratory.PL
 
         private void cmb_Company_SelectedIndexChanged(object sender, EventArgs e)
         {
+            try
+            {
+                if (cmb_Company.Text != "")
+                {
+                    for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                    {
+                        dt12 = c.selectXrayCompanyTransfer(Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToInt32(dataGridView1.Rows[i].Cells[3].Value));
+                        if (dt12.Rows.Count > 0)
+                        {
+                            dataGridView2.DataSource = dt12;
+                            dataGridView2.Columns[0].Visible = false;
 
+                        }
+                        else
+                        {
+                            dataGridView2.DataSource = null;
+                            MessageBox.Show("يرجي العلم بان هذا الفحص غير مسجل في هذة الشركه");
+                        }
+
+
+                        decimal total = 0;
+
+                        for (int y = 0; y < dataGridView2.Rows.Count; y++)
+                        {
+
+                            total += Convert.ToDecimal(dataGridView2.Rows[y].Cells[2].Value);
+
+
+                        }
+                        Txt_Total.Text = Math.Round(total, 1).ToString();
+
+                        Patient_PaymentRate();
+                        Rent_Company();
+                        TotalRentCustomer();
+                    }
+
+
+                }
+            }
+            catch (Exception ex )
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void txt_total_Click(object sender, EventArgs e)
@@ -287,7 +337,7 @@ namespace Laboratory.PL
                     return;
                 }
            
-                if (Convert.ToDecimal(Txt_PayLast.Text) - Convert.ToDecimal(Txt_LastPayOut.Text) > Convert.ToDecimal(Txt_PricePayment.Text))
+                if (Convert.ToDecimal(Txt_PayLast.Text) - Convert.ToDecimal(Txt_LastPayOut.Text) >= Convert.ToDecimal(Txt_PricePayment.Text))
                 {
 
                     if (Convert.ToDecimal(textBox2.Text) > 0)
