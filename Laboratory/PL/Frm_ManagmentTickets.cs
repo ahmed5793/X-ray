@@ -367,48 +367,71 @@ namespace Laboratory.PL
                 if (gridView1.RowCount > 0)
                 {
                     DataSet1 ds1 = new DataSet1();
-                    DataTable dt = new DataTable();
-                    dt.Clear();
-                    dt = t.PrintBarcode(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة").ToString()));
-                    RPT.RPT_Barcode rb = new RPT.RPT_Barcode();
-                    sr.documentViewer1.Refresh();
+                    //            DataTable dt = new DataTable();
+                    //            dt.Clear();
+                    //            dt = t.PrintBarcode(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة").ToString()));
+                    //            RPT.RPT_Barcode rb = new RPT.RPT_Barcode();
+                    //            sr.documentViewer1.Refresh();
 
-                    ds1.Tables["DataTable1"].Clear();
-                    for (int i = 0; i < dt.Rows.Count; i++)
-                    {
-                        ds1.Tables["DataTable1"].Rows.Add(Convert.ToInt32(dt.Rows[i][0]), dt.Rows[i][1], dt.Rows[i][2],
-                            dt.Rows[i][3], Convert.ToDateTime(dt.Rows[i][4]));
-                    }
-                    rb.DataSource = ds1;
-                    rb.Parameters["idTicket"].Value = Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة").ToString());
+                    //            ds1.Tables["DataTable1"].Clear();
+                    //            for (int i = 0; i < dt.Rows.Count; i++)
+                    //            {
+                    //                ds1.Tables["DataTable1"].Rows.Add(Convert.ToInt32(dt.Rows[i][0]), dt.Rows[i][1], dt.Rows[i][2],
+                    //                    dt.Rows[i][3], Convert.ToDateTime(dt.Rows[i][4]));
+                    //            }
+                    //            rb.DataSource = ds1;
+                    //            rb.Parameters["idTicket"].Value = Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة").ToString());
 
-                    sr.documentViewer1.DocumentSource = rb;
-                    rb.Parameters["idTicket"].Visible = false;
+                    //            sr.documentViewer1.DocumentSource = rb;
+                    //            rb.Parameters["idTicket"].Visible = false;
 
 
 
-        string printerName = Properties.Settings.Default.PrintNameBarcode;
-       
-        
-    
+                    //string printerName = Properties.Settings.Default.PrintNameBarcode;
 
-            //Specify the printer name.
-            rb.PrinterName = printerName;
 
-            //Create the document.
-            rb.CreateDocument();
 
-            ReportPrintTool pt = new ReportPrintTool(rb);
-            pt.Print();
-                  
-                
+
+                    //    //Specify the printer name.
+                    //    rb.PrinterName = printerName;
+
+                    //    //Create the document.
+                    //    rb.CreateDocument();
+
+                    //    ReportPrintTool pt = new ReportPrintTool(rb);
+                    //    pt.Print();
+
+
                  
+                 RPT.Order.CrystalReport2 cr = new RPT.Order.CrystalReport2();
+                  
+                    DataTable dt = new DataTable();
+                               dt.Clear();
+                               dt = t.PrintBarcode(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة").ToString()));
+                          
+                                sr.documentViewer1.Refresh();
+
+                              ds1.Tables["DataTable1"].Clear();
+                    ds1.Tables["DataTable1"].Clear();
+                              for (int i = 0; i < dt.Rows.Count; i++)
+                                {
+                                   ds1.Tables["DataTable1"].Rows.Add(Convert.ToInt32(dt.Rows[i][0]), dt.Rows[i][1], dt.Rows[i][2],
+                                        dt.Rows[i][3], Convert.ToDateTime(dt.Rows[i][4]));
+                            }
+                    cr.SetDataSource(ds1);
+                 
+                    sr.documentViewer1.DocumentSource = cr;
+                    sr.documentViewer1.Refresh();
+                    System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
+                    cr.PrintOptions.PrinterName = printDocument.PrinterSettings.PrinterName;
+                    cr.PrintToPrinter(1, true, 0, 0);
+
+                    sr.Close();
+                    cr.Dispose();
 
 
 
-
-          
-        }
+                }
             }
             catch (Exception ex)
             {

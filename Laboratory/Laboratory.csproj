@@ -26,7 +26,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ProductName>Smart_X-Ray</ProductName>
     <PublisherName>Smart_X-Ray</PublisherName>
-    <ApplicationRevision>12</ApplicationRevision>
+    <ApplicationRevision>14</ApplicationRevision>
     <ApplicationVersion>2.1.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -926,6 +926,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RPT\Order\CrystalReport2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="RPT\Order\DataSetFingerExcelDay.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1333,6 +1339,10 @@
     </Compile>
     <EmbeddedResource Include="frm_SingelReport.resx">
       <DependentUpon>frm_SingelReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\Order\CrystalReport2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport2.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="RPT\Order\RPT_FingerExcellDay.resx">
       <DependentUpon>RPT_FingerExcellDay.cs</DependentUpon>

@@ -31,15 +31,15 @@
             this.components = new System.ComponentModel.Container();
             this.objectDataSource1 = new DevExpress.DataAccess.ObjectBinding.ObjectDataSource(this.components);
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
-            this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
-            this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
-            this.idTicket = new DevExpress.XtraReports.Parameters.Parameter();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel9 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel7 = new DevExpress.XtraReports.UI.XRLabel();
+            this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
+            this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
+            this.idTicket = new DevExpress.XtraReports.Parameters.Parameter();
             ((System.ComponentModel.ISupportInitialize)(this.objectDataSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
@@ -57,28 +57,8 @@
             this.xrLabel4,
             this.xrLabel9,
             this.xrLabel7});
-            this.Detail.HeightF = 140.5F;
-            this.Detail.MultiColumn.ColumnWidth = 248F;
-            this.Detail.MultiColumn.Layout = DevExpress.XtraPrinting.ColumnLayout.AcrossThenDown;
-            this.Detail.MultiColumn.Mode = DevExpress.XtraReports.UI.MultiColumnMode.UseColumnWidth;
+            this.Detail.HeightF = 143.625F;
             this.Detail.Name = "Detail";
-            // 
-            // TopMargin
-            // 
-            this.TopMargin.HeightF = 0F;
-            this.TopMargin.Name = "TopMargin";
-            // 
-            // BottomMargin
-            // 
-            this.BottomMargin.HeightF = 0F;
-            this.BottomMargin.Name = "BottomMargin";
-            // 
-            // idTicket
-            // 
-            this.idTicket.Description = "idTicket";
-            this.idTicket.Name = "idTicket";
-            this.idTicket.Type = typeof(int);
-            this.idTicket.ValueInfo = "0";
             // 
             // xrLabel1
             // 
@@ -144,11 +124,11 @@
             // xrLabel9
             // 
             this.xrLabel9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.xrLabel9.LocationFloat = new DevExpress.Utils.PointFloat(14.5F, 111.5F);
+            this.xrLabel9.LocationFloat = new DevExpress.Utils.PointFloat(12.5F, 111.5F);
             this.xrLabel9.Multiline = true;
             this.xrLabel9.Name = "xrLabel9";
             this.xrLabel9.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel9.SizeF = new System.Drawing.SizeF(221.5F, 25F);
+            this.xrLabel9.SizeF = new System.Drawing.SizeF(212.5F, 25.00001F);
             this.xrLabel9.StylePriority.UseFont = false;
             this.xrLabel9.StylePriority.UseTextAlignment = false;
             this.xrLabel9.Text = "مركز جاما للأشعة والرنين المغناطيسي";
@@ -166,6 +146,25 @@
             this.xrLabel7.StylePriority.UseTextAlignment = false;
             this.xrLabel7.Text = "أ.د";
             this.xrLabel7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // TopMargin
+            // 
+            this.TopMargin.HeightF = 0F;
+            this.TopMargin.Name = "TopMargin";
+            this.TopMargin.Visible = false;
+            // 
+            // BottomMargin
+            // 
+            this.BottomMargin.HeightF = 0F;
+            this.BottomMargin.Name = "BottomMargin";
+            this.BottomMargin.Visible = false;
+            // 
+            // idTicket
+            // 
+            this.idTicket.Description = "idTicket";
+            this.idTicket.Name = "idTicket";
+            this.idTicket.Type = typeof(int);
+            this.idTicket.ValueInfo = "0";
             // 
             // RPT_Barcode
             // 
