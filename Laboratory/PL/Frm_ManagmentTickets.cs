@@ -453,7 +453,7 @@ namespace Laboratory.PL
                         tc.Txt_PayLast.Text = dr[13].ToString();
                         tc.txt_patientname.Text = dr[1].ToString();
                         tc.Txt_IdCust.Text = dr[26].ToString();
-                        tc.Txt_TotalBeforeTransfair.Text = dr[12].ToString();
+                        tc.Txt_TotalBeforeTransfair.Text = dr[21].ToString();
                         tc.Txt_OldRentBeforeTransfair.Text = dr[14].ToString();
                     }
                     dt5.Clear();
@@ -470,6 +470,7 @@ namespace Laboratory.PL
             {
 
                 MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
             }
         }
 
