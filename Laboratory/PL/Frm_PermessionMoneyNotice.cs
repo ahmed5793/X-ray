@@ -244,5 +244,27 @@ namespace Laboratory.PL
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void cmb_client_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cmb_client.Text != "")
+                {
+                    dt = c.selectOneClientRent(Convert.ToInt32(cmb_client.SelectedValue));
+                    if (dt.Rows.Count > 0)
+                    {
+                        Txt_Balance.Text = (Convert.ToDecimal(dt.Rows[0][2]) * -1).ToString();
+                    }
+
+                }
+            }
+            catch (Exception EX)
+            {
+
+                MessageBox.Show(EX.Message);
+                MessageBox.Show(EX.StackTrace);
+            }
+        }
     }
 }

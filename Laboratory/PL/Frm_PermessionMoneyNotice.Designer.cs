@@ -167,6 +167,7 @@
             this.cmb_client.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmb_client.Size = new System.Drawing.Size(373, 32);
             this.cmb_client.TabIndex = 101;
+            this.cmb_client.SelectedIndexChanged += new System.EventHandler(this.cmb_client_SelectedIndexChanged);
             this.cmb_client.SelectionChangeCommitted += new System.EventHandler(this.cmb_client_SelectionChangeCommitted);
             this.cmb_client.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmb_client_KeyDown);
             this.cmb_client.Leave += new System.EventHandler(this.cmb_client_Leave);
