@@ -77,27 +77,27 @@ namespace Laboratory.PL
 
         private void Txt_Money_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == '.' && Txt_Money.Text.ToString().IndexOf('.') > -1)
-            {
-                e.Handled = true;
-            }
-            else if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != Convert.ToChar((System.Globalization.CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator)))
-            {
-                e.Handled = true;
-            }
+            //if (e.KeyChar == '.' && Txt_Money.Text.ToString().IndexOf('.') > -1)
+            //{
+            //    e.Handled = true;
+            //}
+            //else if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != Convert.ToChar((System.Globalization.CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator)))
+            //{
+            //    e.Handled = true;
+            //}
         }
 
         private void Txt_Money_MouseMove(object sender, MouseEventArgs e)
         {
-            if (Txt_Money.Text == "")
-            {
-                Txt_Money.Text = "0";
-            }
+            //if (Txt_Money.Text == "")
+            //{
+            //    Txt_Money.Text = "0";
+            //}
         }
 
         private void Txt_Money_Click(object sender, EventArgs e)
         {
-            Txt_Money.SelectAll();
+            //Txt_Money.SelectAll();
             
         }
 
@@ -149,46 +149,44 @@ namespace Laboratory.PL
         {
             try
             {
-                if (Txt_Money.Text=="" || Txt_Money.Text=="0")
-                {
-                    MessageBox.Show("لا بد من تحديد المبلغ المراد صرفه للعميل");
-                    return;
-                }
-                if (Convert.ToDecimal(Txt_Money.Text) > Convert.ToDecimal(Txt_Balance.Text))
-                {
-                    MessageBox.Show("لا يسمح بصرف مبلغ أكبر من المبلغ المستحق لعميل");
-                    return;
-                }
+                //if (Txt_Money.Text=="" || Txt_Money.Text=="0")
+                //{
+                //    MessageBox.Show("لا بد من تحديد المبلغ المراد صرفه للعميل");
+                //    return;
+                //}
+                //if (Convert.ToDecimal(Txt_Money.Text) > Convert.ToDecimal(Txt_Balance.Text))
+                //{
+                //    MessageBox.Show("لا يسمح بصرف مبلغ أكبر من المبلغ المستحق لعميل");
+                //    return;
+                //}
             
-                else
-                {
-                    if (MessageBox.Show("هل تريد تأكيد صرف المبلغ المراد تحديد ","تأكيد صرف مبلغ ",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
+               
+                    if (MessageBox.Show("هريد تأكيد صرف المبلغ المراد تحديد ","تأكيد صرف مبلغ ",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
                     {
 
                     dt.Clear();
                     dt = s.Select_moneyStock(Convert.ToInt32(cmb_Stock.SelectedValue));
-                    if (Convert.ToDecimal(Txt_Money.Text) > Convert.ToDecimal(dt.Rows[0][0]))
+                    if (Convert.ToDecimal(Txt_Balance.Text) > Convert.ToDecimal(dt.Rows[0][0]))
                     {
                         MessageBox.Show("رصيد الخزنة الحالى غير كافى لسحب هذه المبلغ");
                         return;
                     }
-                    s.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(Txt_Money.Text), dateTimePicker1.Value
-                     , Txt_SalesMAn.Text, " إذن صرف  مبلغ " + "( " + (Txt_Money.Text) +")");
+                    s.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(Txt_Balance.Text), dateTimePicker1.Value
+                     , Txt_SalesMAn.Text, " إذن صرف  مبلغ " + "( " + (Txt_Balance.Text) +")" + " تسوية رصيد للعميل " + " " + cmb_client.Text);
 
                     dt.Clear();
                     dt = c.Select_CustomertotalBAlance(Convert.ToInt32(cmb_client.SelectedValue));
                     decimal hrl = Convert.ToDecimal(dt.Rows[0][0]) * -1;
 
                     //decimal mno5 = Convert.ToDecimal(Txt_PayLast.Text) - Convert.ToDecimal(Txt_LastPayOut.Text);
-                    decimal mno4 = Convert.ToDecimal(dt.Rows[0][0]) + Convert.ToDecimal(Txt_Money.Text);
+                    decimal mno4 = Convert.ToDecimal(dt.Rows[0][0]) + Convert.ToDecimal(Txt_Balance.Text);
                     c.Update_CustomerTotalBalance(Convert.ToInt32(cmb_client.SelectedValue), mno4);
                     c.Add_CustomerAccountStatment(Convert.ToInt32(cmb_client.SelectedValue), 0,
-                    Convert.ToDecimal(Txt_Money.Text), dateTimePicker1.Value, mno4, Convert.ToInt32(cmb_Stock.SelectedValue)
+                    Convert.ToDecimal(Txt_Balance.Text), dateTimePicker1.Value, mno4, Convert.ToInt32(cmb_Stock.SelectedValue)
                     , Txt_SalesMAn.Text, Convert.ToInt32(Cmb_Branch.SelectedValue),
-                    " إذن صرف مبلغ   " + " (" + (Txt_Money.Text) + " )" + " تسوية رصيد للعميل ");
+                    " إذن صرف مبلغ   " + " (" + (Txt_Balance.Text) + " )" + " تسوية رصيد للعميل " +" "+ cmb_client.Text);
                         MessageBox.Show("تم تأكيد صرف المبلغ المحدد للعميل");
                         cmb_client.SelectedIndex = -1;
-                        Txt_Money.Text = "0";
                         Txt_Balance.Text = "0";
                         
 
@@ -200,7 +198,7 @@ namespace Laboratory.PL
                     }
 
 
-                }
+                
 
             }
             catch (Exception EX)
@@ -246,6 +244,11 @@ namespace Laboratory.PL
         }
 
         private void cmb_client_SelectedIndexChanged(object sender, EventArgs e)
+        {
+      
+        }
+
+        private void cmb_client_SelectedValueChanged(object sender, EventArgs e)
         {
             try
             {
