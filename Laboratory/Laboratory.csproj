@@ -26,7 +26,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ProductName>Smart_X-Ray</ProductName>
     <PublisherName>Smart_X-Ray</PublisherName>
-    <ApplicationRevision>15</ApplicationRevision>
+    <ApplicationRevision>16</ApplicationRevision>
     <ApplicationVersion>2.1.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -251,6 +251,12 @@
     </Compile>
     <Compile Include="PL\FingerPrint.Designer.cs">
       <DependentUpon>FingerPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Frm_AddAllOutDoctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_AddAllOutDoctor.Designer.cs">
+      <DependentUpon>Frm_AddAllOutDoctor.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Frm_AddEmployeeShift.cs">
       <SubType>Form</SubType>
@@ -996,6 +1002,9 @@
     </Compile>
     <EmbeddedResource Include="PL\FingerPrint.resx">
       <DependentUpon>FingerPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_AddAllOutDoctor.resx">
+      <DependentUpon>Frm_AddAllOutDoctor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_AddEmployeeShift.resx">
       <DependentUpon>Frm_AddEmployeeShift.cs</DependentUpon>

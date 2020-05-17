@@ -1151,7 +1151,11 @@ namespace Laboratory.PL
 
         private void txt_pay_Click(object sender, EventArgs e)
         {
-            txt_pay.Text = "";
+            if (txt_pay.Text=="0")
+            {
+                txt_pay.Text = "";
+
+            }
         }
 
         private void cmb_Doctor_Leave(object sender, EventArgs e)
