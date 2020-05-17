@@ -187,6 +187,7 @@
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barAndDockingController1)).BeginInit();
@@ -315,9 +316,10 @@
             this.Btn_Revenues,
             this.barButtonItem6,
             this.Btn_TechnicalShiftPrice,
-            this.Btn_PermissionNoticeMoney});
+            this.Btn_PermissionNoticeMoney,
+            this.barButtonItem7});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 145;
+            this.ribbon.MaxItemId = 146;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.basic_information,
@@ -1495,6 +1497,7 @@
             // 
             this.ribbonPageGroup7.ItemLinks.Add(this.add_doctorOut);
             this.ribbonPageGroup7.ItemLinks.Add(this.report_DoctorOut);
+            this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem7);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             this.ribbonPageGroup7.Text = "ادارة الاطباء الخارجية";
             // 
@@ -1775,6 +1778,13 @@
             this.accordionControlElement3.Name = "accordionControlElement3";
             this.accordionControlElement3.Text = "Element3";
             // 
+            // barButtonItem7
+            // 
+            this.barButtonItem7.Caption = "barButtonItem7";
+            this.barButtonItem7.Id = 145;
+            this.barButtonItem7.Name = "barButtonItem7";
+            this.barButtonItem7.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem7_ItemClick_2);
+            // 
             // Main
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
@@ -1968,5 +1978,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
         public DevExpress.XtraBars.BarButtonItem Btn_TechnicalShiftPrice;
         private DevExpress.XtraBars.BarButtonItem Btn_PermissionNoticeMoney;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem7;
     }
 }

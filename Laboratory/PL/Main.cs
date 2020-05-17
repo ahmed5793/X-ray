@@ -1340,6 +1340,12 @@ namespace Laboratory.PL
             Frm_PermessionMoneyNotice fpmn = new Frm_PermessionMoneyNotice();
             fpmn.Show();
         }
+
+        private void barButtonItem7_ItemClick_2(object sender, ItemClickEventArgs e)
+        {
+            Frm_AddAllOutDoctor fd = new Frm_AddAllOutDoctor();
+            fd.Show();
+        }
     }
 }
 	
