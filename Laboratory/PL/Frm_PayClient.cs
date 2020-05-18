@@ -242,7 +242,9 @@ namespace Laboratory.PL
                                  , dateTimePicker1.Value, mno, Convert.ToInt32(cmb_Stock.SelectedValue)
                                  , Txt_SalesMAn.Text, Convert.ToInt32(Cmb_Branch.SelectedValue), "تسديد كل الحساب القديم" );
 
-                            s.add_insertStock(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(dataGridView1.CurrentRow.Cells[2].Value), dateTimePicker1.Value,Txt_SalesMAn.Text, "مدفوعات مديونية");
+                            s.add_insertStock(Convert.ToInt32(cmb_Stock.SelectedValue), 
+                                Convert.ToDecimal(dataGridView1.CurrentRow.Cells[2].Value), dateTimePicker1.Value,Txt_SalesMAn.Text,
+                                "  مدفوعات من العميل  "+" "+cmb_client.Text );
                             MessageBox.Show("تم دفع المبلغ بنجاح");
                             dataGridView1.DataSource = c.selectOneClientRent(Convert.ToInt32(cmb_client.SelectedValue));
                         }

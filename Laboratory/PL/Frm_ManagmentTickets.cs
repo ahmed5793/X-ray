@@ -531,6 +531,7 @@ namespace Laboratory.PL
                             fd.txt_techincal.Text = dr[10].ToString();
                             fd.txt_timeKa4f.Text = dr[18].ToString();
                             fd.txt_idtickets.Text = dr[0].ToString();
+                            fd.Txt_OldNotes.Text = dr[22].ToString();
                         }
                     }
                     else
@@ -548,6 +549,8 @@ namespace Laboratory.PL
                             fd.txt_branch.Text = dr[9].ToString();
                             fd.txt_techincal.Text = dr[10].ToString();                            
                             fd.txt_timeKa4f.Text = dr[19].ToString();
+                            fd.Txt_OldNotes.Text = dr[22].ToString();
+
                         }
                     }
                     fd.ShowDialog();

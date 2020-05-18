@@ -68,11 +68,11 @@ namespace Laboratory.BL
         }
 
         internal void Update_TeckietInformation(int Id_Teckiet, int Id_Technical, int Id_DoctorOfCenter, DateTime Date_Revelation, 
-                                                DateTime Date_Recieve,int  palce_ToCheck, string User_Name)
+                                                DateTime Date_Recieve,int  palce_ToCheck, string User_Name , string Notes)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[7];
+            SqlParameter[] param = new SqlParameter[8];
             param[0] = new SqlParameter("@Id_Teckiet", SqlDbType.Int);
             param[0].Value = Id_Teckiet;
             param[1] = new SqlParameter("@Id_Technical", SqlDbType.Int);
@@ -87,6 +87,8 @@ namespace Laboratory.BL
             param[5].Value = palce_ToCheck;
             param[6] = new SqlParameter("@User_Name", SqlDbType.NVarChar, 150);
             param[6].Value = User_Name;
+            param[7] = new SqlParameter("@ReasonForAdding", SqlDbType.NVarChar, 150);
+            param[7].Value = Notes;
             da.excutequery("Update_TeckietInformation", param);
             da.close();
         }

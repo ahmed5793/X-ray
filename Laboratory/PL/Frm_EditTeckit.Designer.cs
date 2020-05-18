@@ -58,12 +58,18 @@
             this.txt_name = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.Txt_OldNotes = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.Txt_NewNotes = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label28);
+            this.groupBox2.Controls.Add(this.Txt_OldNotes);
             this.groupBox2.Controls.Add(this.txt_branch);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.txt_dateRecive);
@@ -77,7 +83,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(454, 121);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(434, 227);
+            this.groupBox2.Size = new System.Drawing.Size(434, 323);
             this.groupBox2.TabIndex = 118;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "بيانات الفحص قبل التعديل";
@@ -87,7 +93,7 @@
             // 
             this.txt_branch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_branch.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_branch.Location = new System.Drawing.Point(8, 179);
+            this.txt_branch.Location = new System.Drawing.Point(6, 182);
             this.txt_branch.Name = "txt_branch";
             this.txt_branch.ReadOnly = true;
             this.txt_branch.Size = new System.Drawing.Size(314, 26);
@@ -100,7 +106,7 @@
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.White;
             this.label13.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(327, 181);
+            this.label13.Location = new System.Drawing.Point(325, 184);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(99, 24);
             this.label13.TabIndex = 137;
@@ -202,6 +208,8 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.Txt_NewNotes);
             this.groupBox1.Controls.Add(this.label21);
             this.groupBox1.Controls.Add(this.cmb_branches);
             this.groupBox1.Controls.Add(this.dtb_kashf);
@@ -215,7 +223,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(3, 121);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(445, 227);
+            this.groupBox1.Size = new System.Drawing.Size(445, 323);
             this.groupBox1.TabIndex = 119;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "بيانات الفحص الجديده";
@@ -321,7 +329,7 @@
             this.cmb_DoctorOfCenter.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmb_DoctorOfCenter.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_DoctorOfCenter.FormattingEnabled = true;
-            this.cmb_DoctorOfCenter.Location = new System.Drawing.Point(68, 69);
+            this.cmb_DoctorOfCenter.Location = new System.Drawing.Point(68, 67);
             this.cmb_DoctorOfCenter.Name = "cmb_DoctorOfCenter";
             this.cmb_DoctorOfCenter.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmb_DoctorOfCenter.Size = new System.Drawing.Size(261, 26);
@@ -334,7 +342,7 @@
             this.cmb_Techincal.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmb_Techincal.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_Techincal.FormattingEnabled = true;
-            this.cmb_Techincal.Location = new System.Drawing.Point(69, 30);
+            this.cmb_Techincal.Location = new System.Drawing.Point(68, 27);
             this.cmb_Techincal.Name = "cmb_Techincal";
             this.cmb_Techincal.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmb_Techincal.Size = new System.Drawing.Size(261, 26);
@@ -377,7 +385,7 @@
             this.Btn_Save.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_Save.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.Btn_Save.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Save.ImageOptions.Image")));
-            this.Btn_Save.Location = new System.Drawing.Point(343, 372);
+            this.Btn_Save.Location = new System.Drawing.Point(343, 467);
             this.Btn_Save.Name = "Btn_Save";
             this.Btn_Save.Size = new System.Drawing.Size(208, 48);
             this.Btn_Save.TabIndex = 181;
@@ -428,12 +436,66 @@
             this.label2.Text = "رقم الحجز";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // label28
+            // 
+            this.label28.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label28.AutoSize = true;
+            this.label28.BackColor = System.Drawing.Color.White;
+            this.label28.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(328, 254);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(71, 24);
+            this.label28.TabIndex = 140;
+            this.label28.Text = "ملاحظات";
+            // 
+            // Txt_OldNotes
+            // 
+            this.Txt_OldNotes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.Txt_OldNotes.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_OldNotes.Location = new System.Drawing.Point(6, 223);
+            this.Txt_OldNotes.MaxLength = 3000;
+            this.Txt_OldNotes.Multiline = true;
+            this.Txt_OldNotes.Name = "Txt_OldNotes";
+            this.Txt_OldNotes.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Txt_OldNotes.Size = new System.Drawing.Size(316, 80);
+            this.Txt_OldNotes.TabIndex = 139;
+            this.Txt_OldNotes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.White;
+            this.label8.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(333, 254);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(71, 24);
+            this.label8.TabIndex = 145;
+            this.label8.Text = "ملاحظات";
+            // 
+            // Txt_NewNotes
+            // 
+            this.Txt_NewNotes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.Txt_NewNotes.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_NewNotes.Location = new System.Drawing.Point(11, 223);
+            this.Txt_NewNotes.MaxLength = 3000;
+            this.Txt_NewNotes.Multiline = true;
+            this.Txt_NewNotes.Name = "Txt_NewNotes";
+            this.Txt_NewNotes.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Txt_NewNotes.Size = new System.Drawing.Size(316, 80);
+            this.Txt_NewNotes.TabIndex = 144;
+            this.Txt_NewNotes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // Frm_EditTeckit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(893, 432);
+            this.ClientSize = new System.Drawing.Size(893, 527);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txt_name);
             this.Controls.Add(this.label1);
@@ -488,5 +550,9 @@
         public System.Windows.Forms.TextBox txt_name;
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label8;
+        public System.Windows.Forms.TextBox Txt_OldNotes;
+        public System.Windows.Forms.TextBox Txt_NewNotes;
     }
 }
