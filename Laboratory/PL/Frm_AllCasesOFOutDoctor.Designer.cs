@@ -144,7 +144,7 @@
             this.Btn_Print.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_Print.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.Btn_Print.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Print.ImageOptions.Image")));
-            this.Btn_Print.Location = new System.Drawing.Point(12, 12);
+            this.Btn_Print.Location = new System.Drawing.Point(24, 79);
             this.Btn_Print.Name = "Btn_Print";
             this.Btn_Print.Size = new System.Drawing.Size(146, 32);
             this.Btn_Print.TabIndex = 166;

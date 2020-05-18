@@ -72,7 +72,8 @@ namespace Laboratory.PL
                 else if (MessageBox.Show("هل تريد تأكيد التعديل على الحجز","عملية التعديل",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
                 {
                     t.Update_TeckietInformation(Convert.ToInt32(txt_idtickets.Text), Convert.ToInt32(cmb_Techincal.SelectedValue),
-                Convert.ToInt32(cmb_DoctorOfCenter.SelectedValue),dtb_kashf.Value,dtp_recive.Value,Convert.ToInt32(cmb_branches.SelectedValue),txt_username.Text);
+                Convert.ToInt32(cmb_DoctorOfCenter.SelectedValue),dtb_kashf.Value,dtp_recive.Value,
+                Convert.ToInt32(cmb_branches.SelectedValue),txt_username.Text, Txt_NewNotes.Text);
                     MessageBox.Show("تم حفظ التعديلات بنجاح");
                 }
                 else

@@ -1038,7 +1038,14 @@ namespace Laboratory.PL
 
         private void cmb_statues_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            if (cmb_statues.Text== "نقدى")
+            {
+                txt_pay.Enabled = true;
+            }
+            else if (cmb_statues.Text == "شركات")
+            {
+                txt_pay.Enabled = false;
+            }
         }
 
         private void Txt_addtionPayment_KeyPress(object sender, KeyPressEventArgs e)
@@ -1155,6 +1162,10 @@ namespace Laboratory.PL
             {
                 txt_pay.Text = "";
 
+            }
+            else
+            {
+                txt_pay.SelectAll();
             }
         }
 
@@ -1694,7 +1705,9 @@ namespace Laboratory.PL
 
         private void simpleButton1_Click_1(object sender, EventArgs e)
         {
-          
+            try
+            {
+
             if (txt_IdTicket.Text!="")
             {
                 DataSet1 ds1 = new DataSet1();
@@ -1780,6 +1793,13 @@ namespace Laboratory.PL
             {
                 MessageBox.Show("لا بد من وجود فاتورة لطباعة الباركود ");
                 return;
+            }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
             }
         }
 
