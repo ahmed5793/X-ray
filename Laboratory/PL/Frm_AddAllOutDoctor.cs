@@ -58,8 +58,14 @@ namespace Laboratory.PL
                         else
                         {
 
-                            dataGridView1.Rows.Add(importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 0].Value);
 
+                            dataGridView1.Rows.Add(importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 1].Value,
+
+                           importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 2].Value,
+
+                           importExcelToDataGridViewWorksheet.Cells[excelWorkSheetRowIndex, 3].Value);
+
+                           
 
                         }
 
@@ -85,12 +91,25 @@ namespace Laboratory.PL
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < dataGridView1.RowCount; i++)
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
-                d.AddDoctor(dataGridView1.Rows[i].Cells[0].Value.ToString(), null, null, DateTime.Now , 1);
-                MessageBox.Show("تم اضافه بيانات الطبيب بنجاح", "عمليه الاضافه", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+               System.Data.DataTable dt = new System.Data.DataTable();
+                dt = d.vildateDocotrOut(dataGridView1.Rows[i].Cells[0].Value.ToString());
+                if (dt.Rows.Count==0)
+                {
+                    d.AddDoctor(dataGridView1.Rows[i].Cells[0].Value.ToString(), "", "", DateTime.Now, 8);
+                }
+              
+            
 
             }
+            MessageBox.Show("تم اضافه بيانات الطبيب بنجاح", "عمليه الاضافه", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+        }
+
+        private void Frm_AddAllOutDoctor_Load(object sender, EventArgs e)
+        {
+            dataGridView1.RowTemplate.Height = 50;
         }
     }
 }

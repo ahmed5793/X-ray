@@ -1331,20 +1331,39 @@ namespace Laboratory.PL
 
         private void Btn_TechnicalShiftPrice_ItemClick(object sender, ItemClickEventArgs e)
         {
+            try
+            {
+
+          
             Frm_TechnicalShiftPrice ftsp = new Frm_TechnicalShiftPrice();
             ftsp.Show();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void Btn_PermissionNoticeMoney_ItemClick(object sender, ItemClickEventArgs e)
         {
+            try
+            {
+
+         
             Frm_PermessionMoneyNotice fpmn = new Frm_PermessionMoneyNotice();
             fpmn.Show();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void barButtonItem7_ItemClick_2(object sender, ItemClickEventArgs e)
         {
-            Frm_AddAllOutDoctor fd = new Frm_AddAllOutDoctor();
-            fd.Show();
+           
         }
     }
 }

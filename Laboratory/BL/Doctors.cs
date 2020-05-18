@@ -264,5 +264,20 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
+        internal DataTable vildateDocotrOut(string name)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[1];
+
+            param[0] = new SqlParameter("@name", SqlDbType.NVarChar,50);
+            param[0].Value = name;
+
+            da.open();
+            DataTable dt = new DataTable();
+            dt.Clear();
+            dt = da.selected("vildateDocotrOut", param);
+            da.close();
+            return dt;
+        }
     }
 }
