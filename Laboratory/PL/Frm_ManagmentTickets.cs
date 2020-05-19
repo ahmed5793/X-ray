@@ -294,7 +294,7 @@ namespace Laboratory.PL
                         for (int i = 0; i < dt2.Rows.Count; i++)
                         {
                             dso.Tables["DataTable1"].Rows.Add(dt2.Rows[0][0], dt2.Rows[0][1], dt2.Rows[0][2],
-                               dt2.Rows[0][3], dt2.Rows[0][4], dt2.Rows[0][5], dt2.Rows[0][6], dt2.Rows[0][7],
+                              dt2.Rows[0][3], dt2.Rows[0][4], dt2.Rows[0][5], dt2.Rows[0][6], dt2.Rows[0][7],
                                 dt2.Rows[0][8], dt2.Rows[0][9], dt2.Rows[0][10], dt2.Rows[0][11], dt2.Rows[0][12], dt2.Rows[0][13],
                                 dt2.Rows[0][14], dt2.Rows[0][15], dt2.Rows[0][16],
                                 dt2.Rows[0][17], dt2.Rows[0][18], dt2.Rows[0][19], dt2.Rows[0][20],dt2.Rows[0][21],
