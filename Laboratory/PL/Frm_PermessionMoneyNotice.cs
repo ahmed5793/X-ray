@@ -105,15 +105,14 @@ namespace Laboratory.PL
         {
             try
             {
-                if (cmb_client.Text != "")
-                {
+                
                    dt = c.selectOneClientRent(Convert.ToInt32(cmb_client.SelectedValue));
                     if (dt.Rows.Count>0)
                     {
                         Txt_Balance.Text = (Convert.ToDecimal(dt.Rows[0][2]) * -1).ToString();
                     }
                   
-                }
+                
             }
             catch (Exception EX)
             {
@@ -127,15 +126,14 @@ namespace Laboratory.PL
         {
             try
             {
-                if (cmb_client.Text != "")
-                {
+               
                     dt = c.selectOneClientRent(Convert.ToInt32(cmb_client.SelectedValue));
                     if (dt.Rows.Count > 0)
                     {
                         Txt_Balance.Text = (Convert.ToDecimal(dt.Rows[0][2]) * -1).ToString();
                     }
 
-                }
+               
             }
             catch (Exception EX)
             {
@@ -245,29 +243,41 @@ namespace Laboratory.PL
 
         private void cmb_client_SelectedIndexChanged(object sender, EventArgs e)
         {
-      
+            //try
+            //{
+               
+            //    if (cmb_client.SelectedIndex != -1)
+            //    {
+            //        dt = c.selectOneClientRent(Convert.ToInt32((DataRowView)cmb_client.SelectedValue));
+            //        if (dt.Rows.Count > 0)
+            //        {
+            //            Txt_Balance.Text = (Convert.ToDecimal(dt.Rows[0][2]) * -1).ToString();
+            //        }
+
+            //    }
+
+            //}
+            //catch (Exception EX)
+            //{
+
+            //    MessageBox.Show(EX.Message);
+            //    MessageBox.Show(EX.StackTrace);
+            //}
         }
 
         private void cmb_client_SelectedValueChanged(object sender, EventArgs e)
         {
-            try
-            {
-                if (cmb_client.Text != "")
-                {
-                    dt = c.selectOneClientRent(Convert.ToInt32(cmb_client.SelectedValue));
-                    if (dt.Rows.Count > 0)
-                    {
-                        Txt_Balance.Text = (Convert.ToDecimal(dt.Rows[0][2]) * -1).ToString();
-                    }
+ 
+        }
 
-                }
-            }
-            catch (Exception EX)
-            {
+        private void cmb_client_Click(object sender, EventArgs e)
+        {
+       
+        }
 
-                MessageBox.Show(EX.Message);
-                MessageBox.Show(EX.StackTrace);
-            }
+        private void cmb_client_MouseMove(object sender, MouseEventArgs e)
+        {
+    
         }
     }
 }
