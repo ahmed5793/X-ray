@@ -168,8 +168,10 @@
             this.cmb_client.SelectedIndexChanged += new System.EventHandler(this.cmb_client_SelectedIndexChanged);
             this.cmb_client.SelectionChangeCommitted += new System.EventHandler(this.cmb_client_SelectionChangeCommitted);
             this.cmb_client.SelectedValueChanged += new System.EventHandler(this.cmb_client_SelectedValueChanged);
+            this.cmb_client.Click += new System.EventHandler(this.cmb_client_Click);
             this.cmb_client.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmb_client_KeyDown);
             this.cmb_client.Leave += new System.EventHandler(this.cmb_client_Leave);
+            this.cmb_client.MouseMove += new System.Windows.Forms.MouseEventHandler(this.cmb_client_MouseMove);
             // 
             // label1
             // 
