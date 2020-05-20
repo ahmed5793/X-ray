@@ -1239,7 +1239,10 @@ namespace Laboratory.PL
         {
             clear();
             Customer();
+            
             cmb_statues.Enabled = true;
+            cmb_statues.SelectedIndex = 0;
+            txt_pay.Enabled = true;
             cmb_items.Enabled = true;
             Cmb_category.Enabled = true;
             Cmb_customer.Enabled = true;
@@ -1427,7 +1430,38 @@ namespace Laboratory.PL
                         }
                         decimal mb = (Convert.ToDecimal(txt_total.Text) - Convert.ToDecimal(txt_afterDiscount.Text));
                         t.AddTickestDiscount(Convert.ToInt32(txt_IdTicket.Text),mb );
+                        ////////////
+                        for (int i = 0; i < dgv_order.Rows.Count; i++)
+                        {
+                            if (rdb_CurrentPatient.Checked == true)
+                            {
+                                t.addticketsReturn(Convert.ToInt32(txt_IdTicket.Text), Convert.ToInt32(cmb_Stock.SelectedValue), cmb_UserBranch.Text,
+                                    Cmb_customer.Text, cmb_statues.Text, dgv_order.Rows[i].Cells[1].Value.ToString(), dtb_visit.Value
+                                    , 0, ".", Convert.ToDecimal(dgv_order.Rows[i].Cells[2].Value),
+                                      Convert.ToDecimal(txt_pay.Text), txt_username.Text, Convert.ToInt32(dgv_order.Rows[i].Cells[0].Value),
+                                      Convert.ToInt32(cmb_UserBranch.SelectedValue));
+                                
+                            }
+                            if (rdb_NewPatient.Checked == true)
+                            {
+                                t.addticketsReturn(Convert.ToInt32(txt_IdTicket.Text), Convert.ToInt32(cmb_Stock.SelectedValue), cmb_UserBranch.Text,
+                                    Cmb_customer.Text, cmb_statues.Text, dgv_order.Rows[i].Cells[1].Value.ToString(), dtb_visit.Value
+                                    , 0, ".", Convert.ToDecimal(dgv_order.Rows[i].Cells[2].Value),
+                                      Convert.ToDecimal(txt_pay.Text), txt_username.Text, 
+                                      Convert.ToInt32(dgv_order.Rows[i].Cells[0].Value), Convert.ToInt32(cmb_UserBranch.SelectedValue));
+                            }
 
+                            t.Add_Revenue(Convert.ToInt32(cmb_UserBranch.SelectedValue), Convert.ToInt32(txt_IdTicket.Text), 
+                                Convert.ToInt32(dgv_order.Rows[i].Cells[0].Value), Convert.ToDecimal(dgv_order.Rows[i].Cells[2].Value)
+                                ,mb, Convert.ToDecimal(txt_pay.Text), Convert.ToDecimal(txt_rent.Text),dtb_visit.Value);
+                        }
+                        if (Convert.ToDecimal(txt_pay.Text) > 0)
+                        {
+                            s.add_insertStock(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_pay.Text), dtb_visit.Value,
+                                              txt_username.Text, "فاتورة حجز اشعة رقم " + (txt_IdTicket.Text));
+                        }
+
+                        ////////////
                         DataTable dt1 = new DataTable();
                         dt1.Clear();
                         dt1 = t.ReportInvoiceTicketPay(Convert.ToInt32(txt_IdTicket.Text));
@@ -1594,7 +1628,39 @@ namespace Laboratory.PL
                         
 
                         t.AddTicketCompany(Convert.ToInt32(txt_IdTicket.Text), Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToDecimal(Txt_rentCompany.Text));
+                        
+                        
+                        //////////
+                        for (int i = 0; i < dgv_order.Rows.Count; i++)
+                        {
+                            if (rdb_CurrentPatient.Checked == true)
+                            {
+                                t.addticketsReturn(Convert.ToInt32(txt_IdTicket.Text), Convert.ToInt32(cmb_Stock.SelectedValue), cmb_UserBranch.Text,
+                                    Cmb_customer.Text, cmb_statues.Text, dgv_order.Rows[i].Cells[1].Value.ToString(), dtb_visit.Value
+                                    , 0, ".", Convert.ToDecimal(dgv_order.Rows[i].Cells[2].Value),
+                                      Convert.ToDecimal(txt_pay.Text), txt_username.Text,
+                                      Convert.ToInt32(dgv_order.Rows[i].Cells[0].Value),Convert.ToInt32(cmb_UserBranch.SelectedValue));
+                            }
+                            if (rdb_NewPatient.Checked == true)
+                            {
+                                t.addticketsReturn(Convert.ToInt32(txt_IdTicket.Text), Convert.ToInt32(cmb_Stock.SelectedValue), cmb_UserBranch.Text,
+                                    Cmb_customer.Text, cmb_statues.Text, dgv_order.Rows[i].Cells[1].Value.ToString(), dtb_visit.Value
+                                    , 0, ".", Convert.ToDecimal(dgv_order.Rows[i].Cells[2].Value),
+                                      Convert.ToDecimal(txt_pay.Text), txt_username.Text, 
+                                      Convert.ToInt32(dgv_order.Rows[i].Cells[0].Value), Convert.ToInt32(cmb_UserBranch.SelectedValue));
+                            }
 
+                            t.Add_Revenue(Convert.ToInt32(cmb_UserBranch.SelectedValue), Convert.ToInt32(txt_IdTicket.Text),
+                                Convert.ToInt32(dgv_order.Rows[i].Cells[0].Value), Convert.ToDecimal(dgv_order.Rows[i].Cells[2].Value)
+                                , 0, Convert.ToDecimal(txt_pay.Text), Convert.ToDecimal(txt_rent.Text), dtb_visit.Value);
+                        }
+                        if (Convert.ToDecimal(txt_pay.Text) > 0)
+                        {
+                            s.add_insertStock(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_pay.Text), dtb_visit.Value,
+                                              txt_username.Text, "فاتورة حجز اشعة رقم " + (txt_IdTicket.Text));
+                        }
+
+                        /////////////  print Teckiet
 
                         DataTable dt1 = new DataTable();
                         dt1.Clear();
@@ -1634,28 +1700,15 @@ namespace Laboratory.PL
                         sr.ShowDialog();
 
                     }
-                    for (int i = 0; i < dgv_order.Rows.Count; i++)
-                    {
-                        if (rdb_CurrentPatient.Checked == true)
-                        {
-                            t.addticketsReturn(Convert.ToInt32(txt_IdTicket.Text), Convert.ToInt32(cmb_Stock.SelectedValue), cmb_UserBranch.Text,
-                                Cmb_customer.Text, cmb_statues.Text, dgv_order.Rows[i].Cells[1].Value.ToString(), dtb_visit.Value
-                                , 0, ".", Convert.ToDecimal(dgv_order.Rows[i].Cells[2].Value),
-                                  Convert.ToDecimal(txt_pay.Text), txt_username.Text, Convert.ToInt32(dgv_order.Rows[i].Cells[0].Value));
-                        }
-                        if (rdb_NewPatient.Checked == true)
-                        {
-                            t.addticketsReturn(Convert.ToInt32(txt_IdTicket.Text), Convert.ToInt32(cmb_Stock.SelectedValue), cmb_UserBranch.Text,
-                                Cmb_customer.Text, cmb_statues.Text, dgv_order.Rows[i].Cells[1].Value.ToString(), dtb_visit.Value
-                                , 0, ".", Convert.ToDecimal(dgv_order.Rows[i].Cells[2].Value),
-                                  Convert.ToDecimal(txt_pay.Text), txt_username.Text, Convert.ToInt32(dgv_order.Rows[i].Cells[0].Value));
-                        }
-                    }
-                    if (Convert.ToDecimal(txt_pay.Text) > 0)
-                    {
-                        s.add_insertStock(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_pay.Text), dtb_visit.Value,
-                                          txt_username.Text, "فاتورة حجز اشعة رقم " + (txt_IdTicket.Text));
-                    }
+
+
+
+                    /////////////////
+
+                    /////////////////
+                   
+
+         
                     cmb_statues.Enabled = false;
                     cmb_items.Enabled = false;
                     Cmb_category.Enabled = false;

@@ -128,11 +128,10 @@ namespace Laboratory.PL
                         {
                         for (int i = 0; i < dataGridView1.Rows.Count; i++)
                         {
-                          t.addticketsReturn(Convert.ToInt32(txt_num.Text), Convert.ToInt32(cmb_Stock.SelectedValue), comboBox1.Text,
-                          txt_name.Text, txt_statues.Text, dataGridView1.Rows[i].Cells[1].Value.ToString(), dateTimePicker2.Value
-                         , Convert.ToDecimal(txt_pay.Text), textBox2.Text, Convert.ToDecimal(dataGridView1.Rows[i].Cells[2].Value),
-                         Convert.ToDecimal(txt_pay.Text), txt_username.Text, Convert.ToInt32(dataGridView1.Rows[i].Cells[3].Value));
-                        
+                          
+                            t.UpdateticketsReturn(Convert.ToInt32(txt_num.Text), Convert.ToInt32(cmb_Stock.SelectedValue), comboBox1.Text
+                                , dateTimePicker2.Value, Convert.ToDecimal(txt_pay.Text), txt_username.Text,
+                                Convert.ToInt32(comboBox1.SelectedValue),textBox2.Text);
                         }
                         t.UpdateTicketsActive(Convert.ToInt32(txt_num.Text), "return");
 

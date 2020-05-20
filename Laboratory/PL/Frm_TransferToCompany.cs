@@ -354,11 +354,15 @@ namespace Laboratory.PL
                     //     , txt_username.Text, " سحب مبلغ " + " " + (textBox2.Text) + "مدفوع مسبقا للحجز " + (txt_IdTeckit.Text));
                         for (int i = 0; i < dataGridView2.Rows.Count; i++)
                         {
-                            t.addticketsReturn(Convert.ToInt32(txt_IdTeckit.Text), Convert.ToInt32(cmb_Stock.SelectedValue), comboBox1.Text,
-                            txt_patientname.Text, "تحويل إلى شركة " + " " + cmb_Company.Text,
-                            dataGridView2.Rows[i].Cells[1].Value.ToString(), dateTimePicker1.Value, Convert.ToDecimal(textBox2.Text),
-                            textBox2.Text, Convert.ToDecimal(dataGridView2.Rows[i].Cells[2].Value), Convert.ToDecimal(Txt_PayLast.Text),
-                            txt_username.Text, Convert.ToInt32(dataGridView2.Rows[0].Cells[0].Value));
+                            t.UpdateticketsReturn(Convert.ToInt32(txt_IdTeckit.Text), Convert.ToInt32(cmb_Stock.SelectedValue), comboBox1.Text,
+                           dateTimePicker1.Value, Convert.ToDecimal(textBox2.Text),
+                            txt_username.Text, Convert.ToInt32(comboBox1.SelectedValue),txt_reasonAddition.Text);
+                          
+                            
+                            
+                            t.Update_Revenue(Convert.ToInt32(comboBox1.SelectedValue), Convert.ToInt32(txt_IdTeckit.Text),
+                                Convert.ToInt32(dataGridView2.Rows[0].Cells[0].Value), Convert.ToDecimal(dataGridView2.Rows[i].Cells[2].Value)
+                               ,0, Convert.ToDecimal(Txt_PricePayment.Text), Convert.ToDecimal(Txt_RentCustomer.Text),dateTimePicker1.Value);
                         }
                     }
                         t.UpdateTicketsActive(Convert.ToInt32(txt_IdTeckit.Text), "Transfer");
@@ -420,7 +424,18 @@ namespace Laboratory.PL
                         }
 
 
+                        for (int i = 0; i < dataGridView2.Rows.Count; i++)
+                        {
+                            t.UpdateticketsReturn(Convert.ToInt32(txt_IdTeckit.Text), Convert.ToInt32(cmb_Stock.SelectedValue), comboBox1.Text,
+                           dateTimePicker1.Value, Convert.ToDecimal(textBox2.Text),
+                            txt_username.Text, Convert.ToInt32(comboBox1.SelectedValue), txt_reasonAddition.Text);
 
+
+
+                            t.Update_Revenue(Convert.ToInt32(comboBox1.SelectedValue), Convert.ToInt32(txt_IdTeckit.Text),
+                                Convert.ToInt32(dataGridView2.Rows[0].Cells[0].Value), Convert.ToDecimal(dataGridView2.Rows[i].Cells[2].Value)
+                               , 0, Convert.ToDecimal(Txt_PayLast.Text), Convert.ToDecimal(Txt_RentCustomer.Text), dateTimePicker1.Value);
+                        }
                         //   dt.Clear();
                         //   dt = cu.Select_CustomertotalBAlance(Convert.ToInt32(Txt_IdCust.Text));
                         //   decimal mno4 = Convert.ToDecimal(dt.Rows[0][0]) + Convert.ToDecimal(Txt_PayLast.Text);
