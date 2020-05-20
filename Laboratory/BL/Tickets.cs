@@ -179,15 +179,15 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
-        internal DataTable Report_StockMoneyCategoryXray(string  Branch_name , DateTime From_Date , DateTime To_Date   )
+        internal DataTable Report_StockMoneyCategoryXray(int  Id_Branch , DateTime From_Date , DateTime To_Date   )
         {
             DataTable dt = new DataTable();
 
             DataAccessLayer da = new DataAccessLayer();
             da.open();
             SqlParameter[] param = new SqlParameter[3];
-            param[0] = new SqlParameter("@Branch_name", SqlDbType.NVarChar , 50 );
-            param[0].Value = Branch_name;
+            param[0] = new SqlParameter("@Id_Branch", SqlDbType.Int);
+            param[0].Value = Id_Branch;
             param[1] = new SqlParameter("@Date_From", SqlDbType.Date);
             param[1].Value = From_Date;
             param[2] = new SqlParameter("@Date_to", SqlDbType.Date);
@@ -423,11 +423,11 @@ namespace Laboratory.BL
 
         internal void addticketsReturn(int id_tickets,int id_stock,string branch,string patient_name,
                                       string statues,string item_name,DateTime date_return,decimal moneyreturn, string note, 
-                                      decimal prise_items,decimal Pay, string UserName, int Id_Item)
+                                      decimal prise_items,decimal Pay, string UserName, int Id_Item,int Id_UserBranch)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[13];
+            SqlParameter[] param = new SqlParameter[14];
             param[0] = new SqlParameter("@id_tickets", SqlDbType.Int);
             param[0].Value = id_tickets;
             param[1] = new SqlParameter("@id_stock", SqlDbType.Int);
@@ -454,10 +454,38 @@ namespace Laboratory.BL
             param[11].Value = UserName;
             param[12] = new SqlParameter("@Id_Item", SqlDbType.Int);
             param[12].Value = Id_Item;
+            param[13] = new SqlParameter("@Id_Branch", SqlDbType.Int);
+            param[13].Value = Id_UserBranch;
             da.excutequery("addticketsReturn", param);
             da.close();
         }
 
+        internal void UpdateticketsReturn(int id_tickets, int id_stock, string branch, DateTime date_return, decimal moneyreturn,
+                                      string UserName,  int Id_UserBranch,string Notes)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[8];
+            param[0] = new SqlParameter("@id_tickets", SqlDbType.Int);
+            param[0].Value = id_tickets;
+            param[1] = new SqlParameter("@id_stock", SqlDbType.Int);
+            param[1].Value = id_stock;
+            param[2] = new SqlParameter("@branch", SqlDbType.NVarChar, 50);
+            param[2].Value = branch;
+            param[3] = new SqlParameter("@date_return", SqlDbType.DateTime);
+            param[3].Value = date_return;
+            param[4] = new SqlParameter("@moneyreturn", SqlDbType.Decimal);
+            param[4].Value = moneyreturn;
+
+            param[5] = new SqlParameter("@UserName", SqlDbType.NVarChar, 50);
+            param[5].Value = UserName;
+            param[6] = new SqlParameter("@Id_Branch", SqlDbType.Int);
+            param[6].Value = Id_UserBranch;
+            param[7] = new SqlParameter("@note", SqlDbType.NVarChar,150);
+            param[7].Value = Notes;
+            da.excutequery("UpdateticketsReturn", param);
+            da.close();
+        }
         internal DataTable vildateReturnTickets( int idtickets)
         {
             DataTable dt = new DataTable();
@@ -687,5 +715,56 @@ namespace Laboratory.BL
             da.excutequery("UpdateTicketsActive", param);
             da.close();
         }
+        internal void Add_Revenue(int id_Branch , int Id_Teckiet, int Id_ItemXtay, decimal price_ItemXray,
+                                                Decimal Discount, decimal Pay, decimal Rent, DateTime Date_Pay)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[8];
+            param[0] = new SqlParameter("@ID_Branch", SqlDbType.Int);
+            param[0].Value = id_Branch;
+            param[1] = new SqlParameter("@Id_Teckiet", SqlDbType.Int);
+            param[1].Value = Id_Teckiet;
+            param[2] = new SqlParameter("@Id_ItemXray", SqlDbType.Int);
+            param[2].Value = Id_ItemXtay;
+            param[3] = new SqlParameter("@Price_ItemXray", SqlDbType.Decimal);
+            param[3].Value = price_ItemXray;
+            param[4] = new SqlParameter("@Discount", SqlDbType.Decimal);
+            param[4].Value = Discount;
+            param[5] = new SqlParameter("@Pay", SqlDbType.Decimal);
+            param[5].Value = Pay;
+            param[6] = new SqlParameter("@Rent", SqlDbType.Decimal);
+            param[6].Value = Rent;
+            param[7] = new SqlParameter("@date_Pay", SqlDbType.DateTime);
+            param[7].Value = Date_Pay;
+            da.excutequery("Add_Revenue", param);
+            da.close();
+        }
+        internal void Update_Revenue(int id_Branch, int Id_Teckiet, int Id_ItemXtay, decimal price_ItemXray,
+                                         Decimal Discount, decimal Pay, decimal Rent, DateTime Date_Pay)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[8];
+            param[0] = new SqlParameter("@ID_Branch", SqlDbType.Int);
+            param[0].Value = id_Branch;
+            param[1] = new SqlParameter("@Id_Teckiet", SqlDbType.Int);
+            param[1].Value = Id_Teckiet;
+            param[2] = new SqlParameter("@Id_ItemXray", SqlDbType.Int);
+            param[2].Value = Id_ItemXtay;
+            param[3] = new SqlParameter("@Price_ItemXray", SqlDbType.Decimal);
+            param[3].Value = price_ItemXray;
+            param[4] = new SqlParameter("@Discount", SqlDbType.Decimal);
+            param[4].Value = Discount;
+            param[5] = new SqlParameter("@Pay", SqlDbType.Decimal);
+            param[5].Value = Pay;
+            param[6] = new SqlParameter("@Rent", SqlDbType.Decimal);
+            param[6].Value = Rent;
+            param[7] = new SqlParameter("@date_Pay", SqlDbType.DateTime);
+            param[7].Value = Date_Pay;
+            da.excutequery("Update_Revenue", param);
+            da.close();
+        }
+
     }
 }

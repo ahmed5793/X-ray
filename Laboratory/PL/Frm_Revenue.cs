@@ -80,7 +80,8 @@ namespace Laboratory.PL
             {
                 if (cmb_branches.Text!="")
                 {
-                    gridControl1.DataSource = t.Report_StockMoneyCategoryXray(cmb_branches.Text, FromDate.Value, ToDate.Value);
+                    gridControl1.DataSource = t.Report_StockMoneyCategoryXray(Convert.ToInt32(cmb_branches.SelectedValue),
+                        FromDate.Value, ToDate.Value);
                     dt10.Clear();
                     dt10 = m.search_AllMasrofatBranch(FromDate.Value, ToDate.Value, Convert.ToInt32(cmb_branches.SelectedValue));
                     Calc_Masrofat();
