@@ -119,7 +119,9 @@
             this.txt_Pass.Text = "PASSWORD";
             this.txt_Pass.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_Pass.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_Pass_MouseClick);
+            this.txt_Pass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Pass_KeyDown);
             this.txt_Pass.Leave += new System.EventHandler(this.txt_Pass_Leave);
+            this.txt_Pass.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txt_Pass_MouseDown);
             this.txt_Pass.MouseMove += new System.Windows.Forms.MouseEventHandler(this.txt_Pass_MouseMove);
             this.txt_Pass.Move += new System.EventHandler(this.txt_Pass_Move);
             // 

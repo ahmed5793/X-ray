@@ -78,25 +78,25 @@
             // ToDate
             // 
             this.ToDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.ToDate.CustomFormat = "dd/MM/yyyy  *  tt mm:hh     ";
+            this.ToDate.CustomFormat = "";
             this.ToDate.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ToDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.ToDate.Location = new System.Drawing.Point(167, 76);
+            this.ToDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.ToDate.Location = new System.Drawing.Point(281, 67);
             this.ToDate.Name = "ToDate";
             this.ToDate.ShowUpDown = true;
-            this.ToDate.Size = new System.Drawing.Size(287, 32);
+            this.ToDate.Size = new System.Drawing.Size(136, 32);
             this.ToDate.TabIndex = 207;
             // 
             // FromDate
             // 
             this.FromDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.FromDate.CustomFormat = "dd/MM/yyyy  *  tt mm:hh     ";
+            this.FromDate.CustomFormat = "";
             this.FromDate.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FromDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FromDate.Location = new System.Drawing.Point(572, 76);
+            this.FromDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.FromDate.Location = new System.Drawing.Point(544, 67);
             this.FromDate.Name = "FromDate";
             this.FromDate.ShowUpDown = true;
-            this.FromDate.Size = new System.Drawing.Size(287, 32);
+            this.FromDate.Size = new System.Drawing.Size(150, 32);
             this.FromDate.TabIndex = 206;
             // 
             // button2
@@ -179,7 +179,7 @@
             this.label2.BackColor = System.Drawing.Color.Black;
             this.label2.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(865, 76);
+            this.label2.Location = new System.Drawing.Point(712, 67);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 32);
             this.label2.TabIndex = 114;
@@ -192,7 +192,7 @@
             this.label3.BackColor = System.Drawing.Color.Black;
             this.label3.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(460, 76);
+            this.label3.Location = new System.Drawing.Point(466, 67);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 32);
             this.label3.TabIndex = 115;
