@@ -48,7 +48,7 @@ namespace Laboratory.PL
         {
 
         }
-        void searchDatetAllDoctor()
+        void searchDatetAllDoctorAll()
         {
             try
             {
@@ -100,6 +100,110 @@ namespace Laboratory.PL
 
 
         }
+        void searchDatetAllDoctorPay()
+        {
+            try
+            {
+
+
+
+
+
+                DataTable dt = new DataTable();
+                DataTable dt2 = new DataTable();
+                dt.Clear();
+                dt = Techincal.Search_Technical_ItemXrayPay(DateFrom.Value, DateTo.Value);
+                if (dt.Rows.Count == 0)
+                {
+                    gridControl1.DataSource = null;
+                }
+                else
+                {
+
+
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        dt2.Clear();
+                        dt2 = Techincal.SelectDateCountTechincalPay(Convert.ToInt32(dt.Rows[i]["Techincal_ID"]), DateFrom.Value, DateTo.Value);
+                        for (int y = 0; y < dt2.Rows.Count; y++)
+                        {
+                            int COUNT = Convert.ToInt32(dt2.Rows[y][0]);
+
+
+
+                            dt.Rows[i]["COUNT"] = COUNT;
+
+
+
+
+
+                        }
+                        gridControl1.DataSource = dt;
+                        gridView1.Columns["Techincal_ID"].Visible = false;
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
+
+        }
+        void searchDatetAllDoctorCompany()
+        {
+            try
+            {
+
+
+
+
+
+                DataTable dt = new DataTable();
+                DataTable dt2 = new DataTable();
+                dt.Clear();
+                dt = Techincal.Search_Technical_ItemXrayCompany(DateFrom.Value, DateTo.Value);
+                if (dt.Rows.Count == 0)
+                {
+                    gridControl1.DataSource = null;
+                }
+                else
+                {
+
+
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        dt2.Clear();
+                        dt2 = Techincal.SelectDateCountTechincalCompany(Convert.ToInt32(dt.Rows[i]["Techincal_ID"]), DateFrom.Value, DateTo.Value);
+                        for (int y = 0; y < dt2.Rows.Count; y++)
+                        {
+                            int COUNT = Convert.ToInt32(dt2.Rows[y][0]);
+
+
+
+                            dt.Rows[i]["COUNT"] = COUNT;
+
+
+
+
+
+                        }
+                        gridControl1.DataSource = dt;
+                        gridView1.Columns["Techincal_ID"].Visible = false;
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
+
+        }
         private void simpleButton1_Click(object sender, EventArgs e)
         {
 
@@ -107,7 +211,20 @@ namespace Laboratory.PL
 
             try
             {
-                searchDatetAllDoctor();
+                if (radio_all.Checked==true)
+                {
+                    searchDatetAllDoctorAll();
+                }
+                else if (radio_pay.Checked==true)
+                {
+                    searchDatetAllDoctorPay();
+                }
+                else if(radio_company.Checked==true)
+                {
+                    searchDatetAllDoctorCompany();
+
+                }
+
             }
             catch (Exception ex)
             {

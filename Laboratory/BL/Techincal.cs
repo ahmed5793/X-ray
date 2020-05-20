@@ -164,6 +164,38 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
+        internal DataTable Search_Technical_ItemXrayPay(DateTime Date_From, DateTime Date_To)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[2];
+
+            param[0] = new SqlParameter("@Date_from", SqlDbType.Date);
+            param[0].Value = Date_From;
+            param[1] = new SqlParameter("@Date_To", SqlDbType.Date);
+            param[1].Value = Date_To;
+            da.open();
+            DataTable dt = new DataTable();
+            dt.Clear();
+            dt = da.selected("Search_Technical_ItemXrayPay", param);
+            da.close();
+            return dt;
+        }
+        internal DataTable Search_Technical_ItemXrayCompany(DateTime Date_From, DateTime Date_To)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[2];
+
+            param[0] = new SqlParameter("@Date_from", SqlDbType.Date);
+            param[0].Value = Date_From;
+            param[1] = new SqlParameter("@Date_To", SqlDbType.Date);
+            param[1].Value = Date_To;
+            da.open();
+            DataTable dt = new DataTable();
+            dt.Clear();
+            dt = da.selected("Search_Technical_ItemXrayCompany", param);
+            da.close();
+            return dt;
+        }
         internal void Add_TechnicalShift(int Technical_Id, int Id_Shift, string Date_shift , string StartTime_Shift , 
                                           string EndTime_Shift , decimal Amount,string Sales_Man , int Id_Branch )
         {
@@ -315,6 +347,40 @@ namespace Laboratory.BL
             DataTable dt = new DataTable();
             dt.Clear();
             dt = da.selected("SelectDateCountTechincal", param);
+            da.close();
+            return dt;
+        }
+        internal DataTable SelectDateCountTechincalPay(int idTechincal, DateTime Date_From, DateTime Date_To)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[3];
+            param[0] = new SqlParameter("@idTechincal", SqlDbType.Int);
+            param[0].Value = idTechincal;
+            param[1] = new SqlParameter("@Date_From", SqlDbType.Date);
+            param[1].Value = Date_From;
+            param[2] = new SqlParameter("@Date_To", SqlDbType.Date);
+            param[2].Value = Date_To;
+            da.open();
+            DataTable dt = new DataTable();
+            dt.Clear();
+            dt = da.selected("SelectDateCountTechincalPay", param);
+            da.close();
+            return dt;
+        }
+        internal DataTable SelectDateCountTechincalCompany(int idTechincal, DateTime Date_From, DateTime Date_To)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[3];
+            param[0] = new SqlParameter("@idTechincal", SqlDbType.Int);
+            param[0].Value = idTechincal;
+            param[1] = new SqlParameter("@Date_From", SqlDbType.Date);
+            param[1].Value = Date_From;
+            param[2] = new SqlParameter("@Date_To", SqlDbType.Date);
+            param[2].Value = Date_To;
+            da.open();
+            DataTable dt = new DataTable();
+            dt.Clear();
+            dt = da.selected("SelectDateCountTechincalCompany", param);
             da.close();
             return dt;
         }

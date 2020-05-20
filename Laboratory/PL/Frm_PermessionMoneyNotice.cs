@@ -279,5 +279,20 @@ namespace Laboratory.PL
         {
     
         }
+
+        private void Cmb_Branch_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            try
+            {
+                cmb_Stock.DataSource = s.SelectStockBranch(Convert.ToInt32(Cmb_Branch.SelectedValue));
+                cmb_Stock.DisplayMember = "Name_Stock";
+                cmb_Stock.ValueMember = "ID_Stock";
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

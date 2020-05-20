@@ -39,7 +39,7 @@ namespace Laboratory.PL
                 MessageBox.Show(ex.Message);
             }
         }
-        void searchDatetAllDoctor()
+        void searchDatetAllDoctorAll()
         {
 
             try
@@ -87,6 +87,105 @@ namespace Laboratory.PL
                 MessageBox.Show(ex.Message);
             }
         }
+
+        void searchDatetAllDoctorPay()
+        {
+
+            try
+            {
+
+
+                DataTable dt = new DataTable();
+                DataTable dt2 = new DataTable();
+                dt.Clear();
+                dt = DoctorOfCenter.Search_ALLReportDoctorOfCenterPay(DateFrom.Value, DateTo.Value);
+                if (dt.Rows.Count == 0)
+                {
+                    gridControl1.DataSource = null;
+                }
+                else
+                {
+
+
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        dt2.Clear();
+                        dt2 = DoctorOfCenter.SelectDateCountDoctorOfCenterPay(Convert.ToInt32(dt.Rows[i]["Doc_ID"]), DateFrom.Value, DateTo.Value);
+                        for (int y = 0; y < dt2.Rows.Count; y++)
+                        {
+                            int COUNT = Convert.ToInt32(dt2.Rows[y][0]);
+                            decimal VALUE = Convert.ToDecimal(dt2.Rows[y][1]);
+                            //decimal TOTAL = Convert.ToDecimal(dt2.Rows[y][2]);
+
+                            dt.Rows[i]["COUNT"] = COUNT;
+                            dt.Rows[i]["VALUE"] = Math.Round(VALUE, 2);
+                            //dt.Rows[i]["TOTAL"] = Math.Round(TOTAL, 2);
+
+
+
+                        }
+                        gridControl1.DataSource = dt;
+                        gridView1.Columns["Doc_ID"].Visible = false;
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        void searchDatetAllDoctorCompany()
+        {
+
+            try
+            {
+
+
+                DataTable dt = new DataTable();
+                DataTable dt2 = new DataTable();
+                dt.Clear();
+                dt = DoctorOfCenter.Search_ALLReportDoctorOfCenterCompany(DateFrom.Value, DateTo.Value);
+                if (dt.Rows.Count == 0)
+                {
+                    gridControl1.DataSource = null;
+                }
+                else
+                {
+
+
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        dt2.Clear();
+                        dt2 = DoctorOfCenter.SelectDateCountDoctorOfCenterCompany(Convert.ToInt32(dt.Rows[i]["Doc_ID"]), DateFrom.Value, DateTo.Value);
+                        for (int y = 0; y < dt2.Rows.Count; y++)
+                        {
+                            int COUNT = Convert.ToInt32(dt2.Rows[y][0]);
+                            decimal VALUE = Convert.ToDecimal(dt2.Rows[y][1]);
+                            //decimal TOTAL = Convert.ToDecimal(dt2.Rows[y][2]);
+
+                            dt.Rows[i]["COUNT"] = COUNT;
+                            dt.Rows[i]["VALUE"] = Math.Round(VALUE, 2);
+                            //dt.Rows[i]["TOTAL"] = Math.Round(TOTAL, 2);
+
+
+
+                        }
+                        gridControl1.DataSource = dt;
+                        gridView1.Columns["Doc_ID"].Visible = false;
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
 
         private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
         {
@@ -197,7 +296,20 @@ namespace Laboratory.PL
 
             try
             {
-                searchDatetAllDoctor();
+                if (radio_all.Checked == true)
+                {
+
+
+                    searchDatetAllDoctorAll();
+                }
+                else if (radio_pay.Checked==true)
+                {
+                    searchDatetAllDoctorPay();
+                }
+                else if (radio_company.Checked == true)
+                {
+                    searchDatetAllDoctorCompany();
+                }
             }
             catch (Exception ex)
             {

@@ -39,6 +39,9 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.radio_company = new System.Windows.Forms.RadioButton();
+            this.radio_pay = new System.Windows.Forms.RadioButton();
+            this.radio_all = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -144,7 +147,7 @@
             this.Btn_Print.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_Print.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.Btn_Print.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Print.ImageOptions.Image")));
-            this.Btn_Print.Location = new System.Drawing.Point(108, 66);
+            this.Btn_Print.Location = new System.Drawing.Point(4, 3);
             this.Btn_Print.Name = "Btn_Print";
             this.Btn_Print.Size = new System.Drawing.Size(146, 32);
             this.Btn_Print.TabIndex = 165;
@@ -250,12 +253,58 @@
             this.gridView1.OptionsPrint.PrintPreview = true;
             this.gridView1.OptionsView.ShowFooter = true;
             // 
+            // radio_company
+            // 
+            this.radio_company.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.radio_company.AutoSize = true;
+            this.radio_company.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radio_company.ForeColor = System.Drawing.Color.Black;
+            this.radio_company.Location = new System.Drawing.Point(847, 94);
+            this.radio_company.Name = "radio_company";
+            this.radio_company.Size = new System.Drawing.Size(97, 34);
+            this.radio_company.TabIndex = 175;
+            this.radio_company.TabStop = true;
+            this.radio_company.Text = "شركات";
+            this.radio_company.UseVisualStyleBackColor = true;
+            // 
+            // radio_pay
+            // 
+            this.radio_pay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.radio_pay.AutoSize = true;
+            this.radio_pay.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radio_pay.ForeColor = System.Drawing.Color.Black;
+            this.radio_pay.Location = new System.Drawing.Point(847, 56);
+            this.radio_pay.Name = "radio_pay";
+            this.radio_pay.Size = new System.Drawing.Size(73, 34);
+            this.radio_pay.TabIndex = 174;
+            this.radio_pay.TabStop = true;
+            this.radio_pay.Text = "نقدى";
+            this.radio_pay.UseVisualStyleBackColor = true;
+            // 
+            // radio_all
+            // 
+            this.radio_all.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.radio_all.AutoSize = true;
+            this.radio_all.Checked = true;
+            this.radio_all.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radio_all.ForeColor = System.Drawing.Color.Black;
+            this.radio_all.Location = new System.Drawing.Point(846, 12);
+            this.radio_all.Name = "radio_all";
+            this.radio_all.Size = new System.Drawing.Size(80, 34);
+            this.radio_all.TabIndex = 173;
+            this.radio_all.TabStop = true;
+            this.radio_all.Text = "مجمع";
+            this.radio_all.UseVisualStyleBackColor = true;
+            // 
             // Frm_AllCasesDoctorOfCenter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(954, 533);
+            this.Controls.Add(this.radio_company);
+            this.Controls.Add(this.radio_pay);
+            this.Controls.Add(this.radio_all);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Btn_Print);
             this.Controls.Add(this.simpleButton1);
@@ -273,6 +322,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -287,5 +337,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private System.Windows.Forms.RadioButton radio_company;
+        private System.Windows.Forms.RadioButton radio_pay;
+        private System.Windows.Forms.RadioButton radio_all;
     }
 }

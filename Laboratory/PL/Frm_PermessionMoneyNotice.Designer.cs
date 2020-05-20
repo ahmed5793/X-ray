@@ -94,6 +94,7 @@
             this.Cmb_Branch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Cmb_Branch.Size = new System.Drawing.Size(215, 27);
             this.Cmb_Branch.TabIndex = 108;
+            this.Cmb_Branch.SelectionChangeCommitted += new System.EventHandler(this.Cmb_Branch_SelectionChangeCommitted);
             // 
             // cmb_Stock
             // 
