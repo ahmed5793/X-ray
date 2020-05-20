@@ -66,6 +66,7 @@
             this.txt_IdTeckit = new System.Windows.Forms.TextBox();
             this.Txt_OldRentBeforeTransfair = new System.Windows.Forms.TextBox();
             this.Txt_TotalBeforeTransfair = new System.Windows.Forms.TextBox();
+            this.Txt_OldBranch = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -563,12 +564,24 @@
             this.Txt_TotalBeforeTransfair.TabIndex = 185;
             this.Txt_TotalBeforeTransfair.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // Txt_OldBranch
+            // 
+            this.Txt_OldBranch.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Txt_OldBranch.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_OldBranch.Location = new System.Drawing.Point(604, 12);
+            this.Txt_OldBranch.Name = "Txt_OldBranch";
+            this.Txt_OldBranch.ReadOnly = true;
+            this.Txt_OldBranch.Size = new System.Drawing.Size(134, 32);
+            this.Txt_OldBranch.TabIndex = 186;
+            this.Txt_OldBranch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // Frm_TransferToCompany
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(758, 560);
+            this.Controls.Add(this.Txt_OldBranch);
             this.Controls.Add(this.Txt_TotalBeforeTransfair);
             this.Controls.Add(this.Txt_OldRentBeforeTransfair);
             this.Controls.Add(this.txt_IdTeckit);
@@ -644,5 +657,6 @@
         public System.Windows.Forms.TextBox Txt_TotalBeforeTransfair;
         private System.Windows.Forms.TextBox Txt_RentCustomer;
         private System.Windows.Forms.Label label8;
+        public System.Windows.Forms.TextBox Txt_OldBranch;
     }
 }
