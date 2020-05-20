@@ -37,6 +37,7 @@ namespace Laboratory.PL
                 cmb_Company.SelectedIndex = -1;
                 txt_username.Text = Program.salesman;
                 Txt_IdCust.Hide();
+                Txt_OldBranch.Hide();
                 Permision();                
             }
             catch (Exception ex)
@@ -336,7 +337,11 @@ namespace Laboratory.PL
                     cmb_Company.Focus();
                     return;
                 }
-           
+                if (comboBox1.Text!=Txt_OldBranch.Text)
+                {
+                    MessageBox.Show("لا بد من تحويل الفحص من فرع"+ " "+Txt_OldBranch.Text +"  الذى تم الحجز منه" );
+                    return;
+                }
                 if (Convert.ToDecimal(Txt_PayLast.Text) - Convert.ToDecimal(Txt_LastPayOut.Text) >= Convert.ToDecimal(Txt_PricePayment.Text))
                 {
 
