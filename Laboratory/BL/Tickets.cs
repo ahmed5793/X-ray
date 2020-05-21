@@ -390,9 +390,9 @@ namespace Laboratory.BL
 
             param[0] = new SqlParameter("@id_Branche", SqlDbType.Int);
             param[0].Value = branch;
-            param[1] = new SqlParameter("@from", SqlDbType.DateTime);
+            param[1] = new SqlParameter("@from", SqlDbType.Date);
             param[1].Value = from;
-            param[2] = new SqlParameter("@to", SqlDbType.DateTime);
+            param[2] = new SqlParameter("@to", SqlDbType.Date);
             param[2].Value = to;
 
             dt = da.selected("SelectSearchticketsBranchDate", param);
@@ -409,9 +409,9 @@ namespace Laboratory.BL
             param[0].Value = branch;
             param[1] = new SqlParameter("@Id_CategoryItem", SqlDbType.Int);
             param[1].Value = Id_CategoryItem;
-            param[2] = new SqlParameter("@from", SqlDbType.DateTime);
+            param[2] = new SqlParameter("@from", SqlDbType.Date);
             param[2].Value = from;
-            param[3] = new SqlParameter("@to", SqlDbType.DateTime);
+            param[3] = new SqlParameter("@to", SqlDbType.Date);
             param[3].Value = to;
             dt = da.selected("SelectSearchticketsBranchDateandCategory", param);
             da.close();
