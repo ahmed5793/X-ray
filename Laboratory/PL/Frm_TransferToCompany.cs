@@ -388,11 +388,12 @@ namespace Laboratory.PL
 
 
                                 Txt_IdOldBranch.Clear();
-                                Txt_IdOldBranch.Text = (t.Select_IDBranch(Txt_OldBranch.Text)).ToString();
+                                Txt_IdOldBranch.Text = (t.Select_IDBranch(Txt_OldBranch.Text).Rows[0][0].ToString());
 
                                 t.Update_Revenue(Convert.ToInt32(Txt_IdOldBranch.Text), Convert.ToInt32(txt_IdTeckit.Text),
                                    Convert.ToInt32(dataGridView2.Rows[i].Cells[0].Value), Convert.ToDecimal(dataGridView2.Rows[i].Cells[2].Value)
-                                  , 0, Convert.ToDecimal(Txt_PricePayment.Text), Convert.ToDecimal(Txt_RentCustomer.Text), dateTimePicker1.Value);
+                                  , 0, Convert.ToDecimal(Txt_PricePayment.Text), Convert.ToDecimal(Txt_RentCustomer.Text),
+                                   dateTimePicker1.Value);
                             }
                         }
                     }
@@ -462,7 +463,7 @@ namespace Laboratory.PL
                             // txt_username.Text, Convert.ToInt32(comboBox1.SelectedValue), txt_reasonAddition.Text);
 
                             Txt_IdOldBranch.Clear();
-                            Txt_IdOldBranch.Text=  (t.Select_IDBranch(Txt_OldBranch.Text)).ToString();
+                            Txt_IdOldBranch.Text=  (t.Select_IDBranch(Txt_OldBranch.Text)).Rows[0][0].ToString();
 
                             t.Update_Revenue(Convert.ToInt32(Txt_IdOldBranch.Text), Convert.ToInt32(txt_IdTeckit.Text),
                                 Convert.ToInt32(dataGridView2.Rows[0].Cells[0].Value), Convert.ToDecimal(dataGridView2.Rows[i].Cells[2].Value)

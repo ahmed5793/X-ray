@@ -207,7 +207,7 @@ namespace Laboratory.PL
                             {
                                 t.addticketsReturn(Convert.ToInt32(txt_num.Text), Convert.ToInt32(cmb_Stock.SelectedValue),
                                     comboBox1.Text,
-                                      txt_name.Text, "تحويل الفحص إلى شركة", dataGridView1.Rows[i].Cells[1].Value.ToString(),
+                                      txt_name.Text, txt_statues.Text, dataGridView1.Rows[i].Cells[1].Value.ToString(),
 
                                       dateTimePicker2.Value, Convert.ToDecimal(txt_pay.Text), textBox2.Text,
                                       Convert.ToDecimal(dataGridView1.Rows[i].Cells[2].Value),
@@ -221,11 +221,12 @@ namespace Laboratory.PL
 
 
                                 Txt_IdOldBranch.Clear();
-                                Txt_IdOldBranch.Text = (t.Select_IDBranch(Txt_OldBranch.Text)).ToString();
+                                Txt_IdOldBranch.Text = (t.Select_IDBranch(Txt_OldBranch.Text)).Rows[0][0].ToString();
 
-                                t.UpdateticketsReturn(Convert.ToInt32(txt_num.Text), Convert.ToInt32(cmb_Stock.SelectedValue), comboBox1.Text
+                                t.UpdateticketsReturn(Convert.ToInt32(txt_num.Text), Convert.ToInt32(cmb_Stock.SelectedValue), 
+                                    Txt_OldBranch.Text
                                     , dateTimePicker2.Value, Convert.ToDecimal(txt_pay.Text), txt_username.Text,
-                                    Convert.ToInt32(comboBox1.SelectedValue), textBox2.Text);
+                                    Convert.ToInt32(Txt_IdOldBranch.Text), textBox2.Text);
                             }
                         }
                         MessageBox.Show("تم سحب المبلغ بنجاح");
