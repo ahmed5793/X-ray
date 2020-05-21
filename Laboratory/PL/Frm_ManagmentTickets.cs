@@ -128,6 +128,8 @@ namespace Laboratory.PL
                         pa.textBox1.Text = dr[20].ToString();
                         pa.txt_num.Text = dr[0].ToString();
                         pa.Txt_IdCust.Text = dr[26].ToString();
+                        pa.Txt_OldBranch.Text = gridView1.GetFocusedRowCellValue("فرع").ToString();
+
                     }
                     dt10.Clear();
                     dt10 = t.Select_IdCompanyAndRentFromTicket(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
@@ -479,6 +481,7 @@ namespace Laboratory.PL
                         tc.Txt_TotalBeforeTransfair.Text = dr[21].ToString();
                         tc.Txt_OldRentBeforeTransfair.Text = dr[14].ToString();
                         tc.Txt_OldBranch.Text = gridView1.GetFocusedRowCellValue("فرع").ToString();
+
                     }
                     dt5.Clear();
                     dt5 = t.vildateReturnTickets(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));

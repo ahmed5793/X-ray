@@ -67,6 +67,7 @@
             this.Txt_OldRentBeforeTransfair = new System.Windows.Forms.TextBox();
             this.Txt_TotalBeforeTransfair = new System.Windows.Forms.TextBox();
             this.Txt_OldBranch = new System.Windows.Forms.TextBox();
+            this.Txt_IdOldBranch = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -163,12 +164,12 @@
             // txt_reasonAddition
             // 
             this.txt_reasonAddition.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_reasonAddition.Location = new System.Drawing.Point(9, 127);
+            this.txt_reasonAddition.Location = new System.Drawing.Point(8, 116);
             this.txt_reasonAddition.MaxLength = 3000;
             this.txt_reasonAddition.Multiline = true;
             this.txt_reasonAddition.Name = "txt_reasonAddition";
             this.txt_reasonAddition.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txt_reasonAddition.Size = new System.Drawing.Size(239, 75);
+            this.txt_reasonAddition.Size = new System.Drawing.Size(239, 62);
             this.txt_reasonAddition.TabIndex = 99;
             this.txt_reasonAddition.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_reasonAddition.TextChanged += new System.EventHandler(this.txt_reasonAddition_TextChanged);
@@ -201,7 +202,7 @@
             this.label28.AutoSize = true;
             this.label28.BackColor = System.Drawing.Color.White;
             this.label28.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(262, 154);
+            this.label28.Location = new System.Drawing.Point(261, 143);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(55, 19);
             this.label28.TabIndex = 120;
@@ -242,7 +243,7 @@
             this.groupBox3.Controls.Add(this.label16);
             this.groupBox3.Location = new System.Drawing.Point(7, 306);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(745, 208);
+            this.groupBox3.Size = new System.Drawing.Size(745, 195);
             this.groupBox3.TabIndex = 92;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "الحسابات";
@@ -252,7 +253,7 @@
             this.Txt_RentCustomer.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Txt_RentCustomer.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_RentCustomer.ForeColor = System.Drawing.SystemColors.Info;
-            this.Txt_RentCustomer.Location = new System.Drawing.Point(483, 143);
+            this.Txt_RentCustomer.Location = new System.Drawing.Point(484, 144);
             this.Txt_RentCustomer.Name = "Txt_RentCustomer";
             this.Txt_RentCustomer.ReadOnly = true;
             this.Txt_RentCustomer.Size = new System.Drawing.Size(134, 26);
@@ -575,12 +576,24 @@
             this.Txt_OldBranch.TabIndex = 186;
             this.Txt_OldBranch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // Txt_IdOldBranch
+            // 
+            this.Txt_IdOldBranch.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Txt_IdOldBranch.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_IdOldBranch.Location = new System.Drawing.Point(604, 53);
+            this.Txt_IdOldBranch.Name = "Txt_IdOldBranch";
+            this.Txt_IdOldBranch.ReadOnly = true;
+            this.Txt_IdOldBranch.Size = new System.Drawing.Size(134, 32);
+            this.Txt_IdOldBranch.TabIndex = 187;
+            this.Txt_IdOldBranch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // Frm_TransferToCompany
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(758, 560);
+            this.Controls.Add(this.Txt_IdOldBranch);
             this.Controls.Add(this.Txt_OldBranch);
             this.Controls.Add(this.Txt_TotalBeforeTransfair);
             this.Controls.Add(this.Txt_OldRentBeforeTransfair);
@@ -658,5 +671,6 @@
         private System.Windows.Forms.TextBox Txt_RentCustomer;
         private System.Windows.Forms.Label label8;
         public System.Windows.Forms.TextBox Txt_OldBranch;
+        public System.Windows.Forms.TextBox Txt_IdOldBranch;
     }
 }

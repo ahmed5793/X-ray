@@ -273,6 +273,19 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
+        internal DataTable Select_IDBranch(string Branch_Name)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@Branchname", SqlDbType.NVarChar,50);
+            param[0].Value = Branch_Name;
+            dt = da.selected("Select_IDBranch", param);
+            da.close();
+            return dt;
+        }
         internal DataTable Select_IdCompanyAndRentFromTicket(int IDTickets)
         {
             DataTable dt = new DataTable();

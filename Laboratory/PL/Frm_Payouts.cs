@@ -126,13 +126,7 @@ namespace Laboratory.PL
                         if (MessageBox.Show("هل تريد سحب المبلغ المدفوع مسبقا من العميل بالكامل", "عمليه السحب", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
 
                         {
-                        for (int i = 0; i < dataGridView1.Rows.Count; i++)
-                        {
-                          
-                            t.UpdateticketsReturn(Convert.ToInt32(txt_num.Text), Convert.ToInt32(cmb_Stock.SelectedValue), comboBox1.Text
-                                , dateTimePicker2.Value, Convert.ToDecimal(txt_pay.Text), txt_username.Text,
-                                Convert.ToInt32(comboBox1.SelectedValue),textBox2.Text);
-                        }
+                
                         t.UpdateTicketsActive(Convert.ToInt32(txt_num.Text), "return");
 
                         if (txt_statues.Text == "نقدى")
@@ -189,6 +183,50 @@ namespace Laboratory.PL
                             cm.ADD_Company_TotalRent(Convert.ToInt32(Txt_IdCompany.Text), Convert.ToDecimal(Txt_RentCompany.Text), 0
                             , dateTimePicker2.Value, mno, "مردود أشعة ورقم الحجز   " + " " + (txt_num.Text) + " " + "للعميل " + " " + txt_name.Text,
                             Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToInt32(comboBox1.SelectedValue), txt_username.Text);
+                        }
+
+                        if (comboBox1.Text == Txt_OldBranch.Text)
+                        {
+                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            {
+
+                                t.UpdateticketsReturn(Convert.ToInt32(txt_num.Text), Convert.ToInt32(cmb_Stock.SelectedValue),
+                                    comboBox1.Text
+                                    , dateTimePicker2.Value, Convert.ToDecimal(txt_pay.Text), txt_username.Text,
+                                    Convert.ToInt32(comboBox1.SelectedValue), textBox2.Text);
+
+
+                                t.Update_Revenue(Convert.ToInt32(comboBox1.SelectedValue), Convert.ToInt32(txt_num.Text),
+                             Convert.ToInt32(dataGridView1.Rows[i].Cells[3].Value), Convert.ToDecimal(dataGridView1.Rows[i].Cells[2].Value)
+                                   , 0, Convert.ToDecimal(txt_pay.Text), Convert.ToDecimal(txt_rent.Text), dateTimePicker2.Value);
+                            }
+                        }
+                        else if (comboBox1.Text != Txt_OldBranch.Text)
+                        {
+                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            {
+                                t.addticketsReturn(Convert.ToInt32(txt_num.Text), Convert.ToInt32(cmb_Stock.SelectedValue),
+                                    comboBox1.Text,
+                                      txt_name.Text, "تحويل الفحص إلى شركة", dataGridView1.Rows[i].Cells[1].Value.ToString(),
+
+                                      dateTimePicker2.Value, Convert.ToDecimal(txt_pay.Text), textBox2.Text,
+                                      Convert.ToDecimal(dataGridView1.Rows[i].Cells[2].Value),
+                                        Convert.ToDecimal(txt_pay.Text), txt_username.Text, Convert.ToInt32(dataGridView1.Rows[i].Cells[3].Value),
+                                        Convert.ToInt32(comboBox1.SelectedValue));
+
+
+                                t.Add_Revenue(Convert.ToInt32(comboBox1.SelectedValue), Convert.ToInt32(txt_num.Text),
+                                Convert.ToInt32(dataGridView1.Rows[i].Cells[3].Value), 0
+                                , 0, 0, 0, dateTimePicker2.Value);
+
+
+                                Txt_IdOldBranch.Clear();
+                                Txt_IdOldBranch.Text = (t.Select_IDBranch(Txt_OldBranch.Text)).ToString();
+
+                                t.UpdateticketsReturn(Convert.ToInt32(txt_num.Text), Convert.ToInt32(cmb_Stock.SelectedValue), comboBox1.Text
+                                    , dateTimePicker2.Value, Convert.ToDecimal(txt_pay.Text), txt_username.Text,
+                                    Convert.ToInt32(comboBox1.SelectedValue), textBox2.Text);
+                            }
                         }
                         MessageBox.Show("تم سحب المبلغ بنجاح");
                         }
@@ -271,6 +309,16 @@ namespace Laboratory.PL
         private void simpleButton2_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void Txt_OldBranch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Txt_IdOldBranch_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
