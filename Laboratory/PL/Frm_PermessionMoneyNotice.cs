@@ -147,19 +147,28 @@ namespace Laboratory.PL
         {
             try
             {
-                //if (Txt_Money.Text=="" || Txt_Money.Text=="0")
-                //{
-                //    MessageBox.Show("لا بد من تحديد المبلغ المراد صرفه للعميل");
-                //    return;
-                //}
+
                 //if (Convert.ToDecimal(Txt_Money.Text) > Convert.ToDecimal(Txt_Balance.Text))
                 //{
                 //    MessageBox.Show("لا يسمح بصرف مبلغ أكبر من المبلغ المستحق لعميل");
                 //    return;
                 //}
-            
-               
-                    if (MessageBox.Show("هريد تأكيد صرف المبلغ المراد تحديد ","تأكيد صرف مبلغ ",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
+                if (Cmb_Branch.Text == "")
+                {
+                    MessageBox.Show("لا بد من تحديد الفرع  ");
+                    return;
+                }
+                if (cmb_client.Text=="")
+                {
+                    MessageBox.Show("لا بد من تحديد إسم العميل المراد الصرف له ");
+                    return;
+                }
+                if (Txt_Balance.Text == "" || Txt_Balance.Text == "0")
+                {
+                    MessageBox.Show("لا بد من تحديد المبلغ المراد صرفه للعميل");
+                    return;
+                }
+                if (MessageBox.Show("هريد تأكيد صرف المبلغ المراد تحديد ","تأكيد صرف مبلغ ",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
                     {
 
                     dt.Clear();
@@ -170,7 +179,7 @@ namespace Laboratory.PL
                         return;
                     }
                     s.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(Txt_Balance.Text), dateTimePicker1.Value
-                     , Txt_SalesMAn.Text, " إذن صرف  مبلغ " + "( " + (Txt_Balance.Text) +")" + " تسوية رصيد للعميل " + " " + cmb_client.Text);
+                     , Txt_SalesMAn.Text, " إذن صرف  مبلغ " + "( " + (Txt_Balance.Text) +")" + "  للعميل " + " " + cmb_client.Text);
 
                     dt.Clear();
                     dt = c.Select_CustomertotalBAlance(Convert.ToInt32(cmb_client.SelectedValue));
@@ -182,7 +191,7 @@ namespace Laboratory.PL
                     c.Add_CustomerAccountStatment(Convert.ToInt32(cmb_client.SelectedValue), 0,
                     Convert.ToDecimal(Txt_Balance.Text), dateTimePicker1.Value, mno4, Convert.ToInt32(cmb_Stock.SelectedValue)
                     , Txt_SalesMAn.Text, Convert.ToInt32(Cmb_Branch.SelectedValue),
-                    " إذن صرف مبلغ   " + " (" + (Txt_Balance.Text) + " )" + " تسوية رصيد للعميل " +" "+ cmb_client.Text);
+                    " إذن صرف مبلغ   " + " (" + (Txt_Balance.Text) + " )" );
                         MessageBox.Show("تم تأكيد صرف المبلغ المحدد للعميل");
                         cmb_client.SelectedIndex = -1;
                         Txt_Balance.Text = "0";
