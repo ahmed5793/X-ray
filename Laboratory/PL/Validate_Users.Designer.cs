@@ -76,6 +76,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.check_Techprise = new System.Windows.Forms.CheckBox();
             this.Check_AddShiftTechincal = new System.Windows.Forms.CheckBox();
             this.check_ReportTechnical = new System.Windows.Forms.CheckBox();
             this.check_AddTechnical = new System.Windows.Forms.CheckBox();
@@ -128,7 +129,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.Cmb_Branch = new System.Windows.Forms.ComboBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.check_Techprise = new System.Windows.Forms.CheckBox();
+            this.check_sarfPay = new System.Windows.Forms.CheckBox();
             this.groupBox4.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.groupBox15.SuspendLayout();
@@ -828,6 +829,18 @@
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "صلاحية المستخدم داخل قائمة فنيين المركز";
             // 
+            // check_Techprise
+            // 
+            this.check_Techprise.AutoSize = true;
+            this.check_Techprise.BackColor = System.Drawing.Color.Black;
+            this.check_Techprise.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.check_Techprise.Location = new System.Drawing.Point(484, 38);
+            this.check_Techprise.Name = "check_Techprise";
+            this.check_Techprise.Size = new System.Drawing.Size(165, 26);
+            this.check_Techprise.TabIndex = 14;
+            this.check_Techprise.Text = "اسعار الشيفتات للفنيين";
+            this.check_Techprise.UseVisualStyleBackColor = false;
+            // 
             // Check_AddShiftTechincal
             // 
             this.Check_AddShiftTechincal.AutoSize = true;
@@ -1293,6 +1306,7 @@
             // 
             this.groupBox16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox16.Controls.Add(this.check_sarfPay);
             this.groupBox16.Controls.Add(this.check_DepitClients);
             this.groupBox16.Controls.Add(this.check_CustomerAccountStatment);
             this.groupBox16.Controls.Add(this.check_PayClients);
@@ -1536,17 +1550,18 @@
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // check_Techprise
+            // check_sarfPay
             // 
-            this.check_Techprise.AutoSize = true;
-            this.check_Techprise.BackColor = System.Drawing.Color.Black;
-            this.check_Techprise.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.check_Techprise.Location = new System.Drawing.Point(484, 38);
-            this.check_Techprise.Name = "check_Techprise";
-            this.check_Techprise.Size = new System.Drawing.Size(165, 26);
-            this.check_Techprise.TabIndex = 14;
-            this.check_Techprise.Text = "اسعار الشيفتات للفنيين";
-            this.check_Techprise.UseVisualStyleBackColor = false;
+            this.check_sarfPay.AutoSize = true;
+            this.check_sarfPay.BackColor = System.Drawing.Color.Black;
+            this.check_sarfPay.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.check_sarfPay.ForeColor = System.Drawing.Color.White;
+            this.check_sarfPay.Location = new System.Drawing.Point(28, 50);
+            this.check_sarfPay.Name = "check_sarfPay";
+            this.check_sarfPay.Size = new System.Drawing.Size(117, 23);
+            this.check_sarfPay.TabIndex = 63;
+            this.check_sarfPay.Text = "اذن صرف للعميل";
+            this.check_sarfPay.UseVisualStyleBackColor = false;
             // 
             // Validate_Users
             // 
@@ -1715,5 +1730,6 @@
         private System.Windows.Forms.CheckBox checkBox1;
         public System.Windows.Forms.CheckBox Check_Revenue;
         public System.Windows.Forms.CheckBox check_Techprise;
+        public System.Windows.Forms.CheckBox check_sarfPay;
     }
 }

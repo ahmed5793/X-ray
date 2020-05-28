@@ -303,6 +303,15 @@ namespace Laboratory.PL
                     if (Convert.ToInt32(dt2.Rows[0][7]) == 0) { check_CustomerAccountStatment.Checked = false; }
 
                     else if (Convert.ToInt32(dt2.Rows[0][7]) == 1) { check_CustomerAccountStatment.Checked = true; }
+                    ///////
+                    if (Convert.ToInt32(dt2.Rows[0][8]) == 0) { check_ReportTicketsReturn.Checked = false; }
+
+                    else if (Convert.ToInt32(dt2.Rows[0][8]) == 1) { check_ReportTicketsReturn.Checked = true; }
+                    ////
+                    if (Convert.ToInt32(dt2.Rows[0][9]) == 0) { check_sarfPay.Checked = false; }
+
+                    else if (Convert.ToInt32(dt2.Rows[0][9]) == 1) { check_sarfPay.Checked = true; }
+
                 }
                 //dt2.Clear();
                 //dt2 = p.selectUser_Permission(txt_Baisc.Text);
@@ -684,7 +693,7 @@ namespace Laboratory.PL
                 else
                 {
                     int AddTickets = 0, ManagmentTickets = 0, SearchAllTickets = 0,BookingTimes = 0 , AddClient = 0, PayClient = 0,
-                        DepitClient = 0, ReportClient = 0, ReportReturnTickets = 0; ;
+                        DepitClient = 0, ReportClient = 0, ReportReturnTickets = 0, SarfClients = 0; ;
 
                     if (check_AddTickets.Checked == true){AddTickets = 1;}
                     else if (check_AddTickets.Checked == false){AddTickets = 0;}
@@ -712,9 +721,12 @@ namespace Laboratory.PL
                     if (check_ReportTicketsReturn.Checked == true) { ReportReturnTickets = 1; }
                     else if (check_ReportTicketsReturn.Checked == false) { ReportReturnTickets = 0; }
 
+                    if (check_sarfPay.Checked == true) { SarfClients = 1; }
+                    else if (check_sarfPay.Checked == false) { SarfClients = 0; }
+
 
                     p.UpdateUser_Tickets(txt_Baisc.Text, AddTickets, ManagmentTickets, SearchAllTickets,BookingTimes, AddClient, PayClient,
-                                          DepitClient, ReportClient, ReportReturnTickets);
+                                          DepitClient, ReportClient, ReportReturnTickets,SarfClients);
 
 
 

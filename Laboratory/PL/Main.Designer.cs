@@ -1976,7 +1976,7 @@
         public DevExpress.XtraBars.BarButtonItem Btn_Revenues;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
         public DevExpress.XtraBars.BarButtonItem Btn_TechnicalShiftPrice;
-        private DevExpress.XtraBars.BarButtonItem Btn_PermissionNoticeMoney;
         private DevExpress.XtraBars.BarButtonItem barButtonItem7;
+        public DevExpress.XtraBars.BarButtonItem Btn_PermissionNoticeMoney;
     }
 }

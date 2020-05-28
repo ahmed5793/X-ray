@@ -182,6 +182,8 @@
             this.gridControlInsert.TabIndex = 161;
             this.gridControlInsert.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewInsert});
+            this.gridControlInsert.DataSourceChanged += new System.EventHandler(this.gridControlInsert_DataSourceChanged);
+            this.gridControlInsert.Click += new System.EventHandler(this.gridControlInsert_Click);
             // 
             // gridViewInsert
             // 
@@ -220,7 +222,6 @@
             this.gridViewInsert.OptionsBehavior.ReadOnly = true;
             this.gridViewInsert.OptionsPrint.PrintPreview = true;
             this.gridViewInsert.OptionsView.ShowFooter = true;
-            this.gridViewInsert.OptionsView.ShowGroupPanel = false;
             // 
             // groupBox1
             // 

@@ -390,12 +390,31 @@ namespace Laboratory.BL
 
             param[0] = new SqlParameter("@id_Branche", SqlDbType.Int);
             param[0].Value = branch;
+            param[1] = new SqlParameter("@from", SqlDbType.DateTime);
+            param[1].Value = from;
+            param[2] = new SqlParameter("@to", SqlDbType.DateTime);
+            param[2].Value = to;
+
+            dt = da.selected("SelectSearchticketsBranchDate", param);
+            da.close();
+            return dt;
+        }
+        internal DataTable SelectSearchAllticketsBranchDate(int branch, DateTime from, DateTime to)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[3];
+
+            param[0] = new SqlParameter("@id_Branche", SqlDbType.Int);
+            param[0].Value = branch;
             param[1] = new SqlParameter("@from", SqlDbType.Date);
             param[1].Value = from;
             param[2] = new SqlParameter("@to", SqlDbType.Date);
             param[2].Value = to;
 
-            dt = da.selected("SelectSearchticketsBranchDate", param);
+            dt = da.selected("SelectSearchAllticketsBranchDate", param);
             da.close();
             return dt;
         }

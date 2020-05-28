@@ -465,11 +465,11 @@ int Depit_Suppliers, int Report_Suppliers)
         }
 
         internal void UpdateUser_Tickets(string User_Name, int Add_Tickets, int Managment_Tickets, int Search_Tickets,
-                                      int BookingTimes ,int Add_Clients, int Pay_Clients, int Depit_Client, int Report_Depit,int Report_ReturnTicketsManagment)
+                                      int BookingTimes ,int Add_Clients, int Pay_Clients, int Depit_Client, int Report_Depit,int Report_ReturnTicketsManagment,int sarfclients)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[10];
+            SqlParameter[] param = new SqlParameter[11];
             param[0] = new SqlParameter("@User_Name", SqlDbType.NVarChar, 100);
             param[0].Value = User_Name;
             param[1] = new SqlParameter("@Add_Tickets", SqlDbType.Int);
@@ -491,6 +491,9 @@ int Depit_Suppliers, int Report_Suppliers)
             param[8].Value = Report_Depit;
             param[9] = new SqlParameter("@Report_ReturnTicketsManagment", SqlDbType.Int);
             param[9].Value = Report_ReturnTicketsManagment;
+
+            param[10] = new SqlParameter("@SarfClients", SqlDbType.Int);
+            param[10].Value = sarfclients;
 
 
             da.excutequery("UpdateUser_Tickets", param);

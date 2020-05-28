@@ -192,7 +192,7 @@ namespace Laboratory.PL
 
             if (comboBox1.Text == "بحث بالتاريخ + مكان الفحص")
             {
-                gridControl1.DataSource = t.SelectSearchticketsBranchDate(Convert.ToInt32(cmb_branches.SelectedValue), FromDate.Value, ToDate.Value);
+                gridControl1.DataSource = t.SelectSearchAllticketsBranchDate(Convert.ToInt32(cmb_branches.SelectedValue), FromDate.Value, ToDate.Value);
             }
             else if (comboBox1.Text == "بحث بالتاريخ + مكان الفحص+نوع الفحص")
             {
