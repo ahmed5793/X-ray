@@ -192,7 +192,7 @@
             this.Txt_Balance.BackColor = System.Drawing.SystemColors.MenuText;
             this.Txt_Balance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_Balance.ForeColor = System.Drawing.Color.Yellow;
-            this.Txt_Balance.Location = new System.Drawing.Point(243, 313);
+            this.Txt_Balance.Location = new System.Drawing.Point(230, 312);
             this.Txt_Balance.MaxLength = 8;
             this.Txt_Balance.Name = "Txt_Balance";
             this.Txt_Balance.ReadOnly = true;
