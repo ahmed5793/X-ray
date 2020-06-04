@@ -237,7 +237,6 @@
     <Compile Include="BL\Employee.cs" />
     <Compile Include="BL\Finger.cs" />
     <Compile Include="BL\Installment.cs" />
-    <Compile Include="BL\whats.cs" />
     <Compile Include="DataSet1.cs">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
@@ -822,6 +821,12 @@
     <Compile Include="PL\frm_SerielNumber.Designer.cs">
       <DependentUpon>frm_SerielNumber.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Frm_Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_Settings.Designer.cs">
+      <DependentUpon>Frm_Settings.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_ShowOldReturn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -893,6 +898,12 @@
     </Compile>
     <Compile Include="PL\Frm_TypeShift.Designer.cs">
       <DependentUpon>Frm_TypeShift.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Frm_UpdateItemPrice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_UpdateItemPrice.Designer.cs">
+      <DependentUpon>Frm_UpdateItemPrice.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Main.cs">
       <SubType>Form</SubType>
@@ -1282,6 +1293,9 @@
     <EmbeddedResource Include="PL\frm_SerielNumber.resx">
       <DependentUpon>frm_SerielNumber.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_Settings.resx">
+      <DependentUpon>Frm_Settings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_ShowOldReturn.resx">
       <DependentUpon>Frm_ShowOldReturn.cs</DependentUpon>
     </EmbeddedResource>
@@ -1317,6 +1331,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_TypeShift.resx">
       <DependentUpon>Frm_TypeShift.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_UpdateItemPrice.resx">
+      <DependentUpon>Frm_UpdateItemPrice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>

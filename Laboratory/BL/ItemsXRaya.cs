@@ -155,5 +155,68 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
+
+        internal void UpdatePrice( decimal price)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@price", SqlDbType.Decimal);
+            param[0].Value = price;
+           
+           
+
+
+            da.excutequery("UpdatePrice", param);
+            da.close();
+        }
+
+
+        internal void UpdatePriceMins(decimal price)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@price", SqlDbType.Decimal);
+            param[0].Value = price;
+
+
+
+
+            da.excutequery("UpdatePriceMins", param);
+            da.close();
+        }
+
+
+        internal void UpdatePriceCompany(decimal price)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@price", SqlDbType.Decimal);
+            param[0].Value = price;
+
+
+
+
+            da.excutequery("UpdatePriceCompany", param);
+            da.close();
+        }
+
+
+        internal void UpdatePriceMinsCompany(decimal price)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@price", SqlDbType.Decimal);
+            param[0].Value = price;
+
+
+
+
+            da.excutequery("UpdatePriceMinsCompany", param);
+            da.close();
+        }
     }
 }

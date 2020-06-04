@@ -1240,7 +1240,7 @@ namespace Laboratory.PL
         {
             try
             {
-                PrintSetting p = new PrintSetting();
+                Frm_Settings p = new Frm_Settings();
                 p.ShowDialog();
             }
             catch (Exception ex)
