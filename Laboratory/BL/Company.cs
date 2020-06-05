@@ -179,11 +179,11 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
-        internal void Add_Company_ItemsXray(int ID_Company, int ID_Item,decimal discount , decimal Price)
+        internal void Add_Company_ItemsXray(int ID_Company, int ID_Item,decimal discount , decimal Price,int ID_Category)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[4];
+            SqlParameter[] param = new SqlParameter[5];
             param[0] = new SqlParameter("@Id_Company", SqlDbType.Int);
             param[0].Value = ID_Company;
             param[1] = new SqlParameter("@Id_ItemXrays", SqlDbType.Int);
@@ -192,14 +192,16 @@ namespace Laboratory.BL
             param[2].Value = discount;
             param[3] = new SqlParameter("@Price", SqlDbType.Decimal);
             param[3].Value = Price;
+            param[4] = new SqlParameter("@ID_Category", SqlDbType.Int);
+            param[4].Value = ID_Category;
             da.excutequery("Add_Company_ItemsXray", param);
             da.close();
         }
-        internal void Update_Company_Xray(int ID_Company, int ID_Item, decimal discount,decimal Price)
+        internal void Update_Company_Xray(int ID_Company, int ID_Item, decimal discount,decimal Price,int ID_Category)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[4];
+            SqlParameter[] param = new SqlParameter[5];
             param[0] = new SqlParameter("@Id_Company", SqlDbType.Int);
             param[0].Value = ID_Company;
             param[1] = new SqlParameter("@Id_ItemXrays", SqlDbType.Int);
@@ -208,6 +210,8 @@ namespace Laboratory.BL
             param[2].Value = discount;
             param[3] = new SqlParameter("@Price", SqlDbType.Decimal);
             param[3].Value = Price;
+            param[4] = new SqlParameter("@ID_Category", SqlDbType.Int);
+            param[4].Value = ID_Category;
             da.excutequery("Update_Company_Xray", param);
             da.close();
         }

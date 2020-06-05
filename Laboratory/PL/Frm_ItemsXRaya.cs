@@ -63,6 +63,10 @@ namespace Laboratory.PL
 
         private void comboBox1_Leave(object sender, EventArgs e)
         {
+            try
+            {
+
+          
             dt.Clear();
             dt = c.Validate_CategoryXray(Convert.ToInt32(comboBox1.SelectedValue));
             if (dt.Rows.Count == 0)
@@ -72,6 +76,12 @@ namespace Laboratory.PL
                 comboBox1.SelectAll();
 
                 return;
+            }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -158,7 +168,7 @@ namespace Laboratory.PL
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                MessageBox.Show(ex.StackTrace);
+               
             }
         }
 

@@ -1372,6 +1372,13 @@ namespace Laboratory.PL
                                 Convert.ToDecimal(Txt_PricePayment.Text),"active");
                             txt_IdTicket.Text = t.LastIdTicket().Rows[0][0].ToString();
 
+                            if (Convert.ToDecimal(txt_pay.Text) > 0)
+                            {
+                                s.add_insertStock(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_pay.Text), dtb_visit.Value,
+                                                  txt_username.Text, "فاتورة حجز اشعة رقم " + (txt_IdTicket.Text));
+                            }
+                            MessageBox.Show("تم حفظ الفاتورة بنجاح");
+
                             for (int i = 0; i < dgv_order.Rows.Count; i++)
                             {
                                 t.AddTicketDetails(Convert.ToInt32(txt_IdTicket.Text), Convert.ToInt32(dgv_order.Rows[i].Cells[0].Value),
@@ -1388,12 +1395,7 @@ namespace Laboratory.PL
                                  , dtb_visit.Value, mno, Convert.ToInt32(cmb_Stock.SelectedValue)
                                  , txt_username.Text, Convert.ToInt32(cmb_UserBranch.SelectedValue), "حجز أشعة ورقم الحجز" + " " +(txt_IdTicket.Text));
 
-                            if (Convert.ToDecimal(txt_pay.Text) > 0)
-                            {
-                                s.add_insertStock(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_pay.Text), dtb_visit.Value,
-                                                  txt_username.Text, "فاتورة حجز اشعة رقم " + (txt_IdTicket.Text));
-                            }
-                            MessageBox.Show("تم حفظ الفاتورة بنجاح");
+                   
 
 
                 
@@ -1416,6 +1418,12 @@ namespace Laboratory.PL
                                     Convert.ToDecimal(Txt_PricePayment.Text), "active");
                             txt_IdTicket.Text = t.LastIdTicket().Rows[0][0].ToString();
 
+                            if (Convert.ToDecimal(txt_pay.Text) > 0)
+                            {
+                                s.add_insertStock(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_pay.Text), dtb_visit.Value,
+                                                  txt_username.Text, "فاتورة حجز اشعة رقم " + (txt_IdTicket.Text));
+                            }
+
                             for (int i = 0; i < dgv_order.Rows.Count; i++)
                             {
                                 t.AddTicketDetails(Convert.ToInt32(txt_IdTicket.Text), Convert.ToInt32(dgv_order.Rows[i].Cells[0].Value),
@@ -1431,11 +1439,7 @@ namespace Laboratory.PL
                                  , dtb_visit.Value, mno, Convert.ToInt32(cmb_Stock.SelectedValue)
                                  , txt_username.Text, Convert.ToInt32(cmb_UserBranch.SelectedValue), "حجز أشعة ورقم الحجز" + " " + (txt_IdTicket.Text));
 
-                            if (Convert.ToDecimal(txt_pay.Text) > 0)
-                            {
-                                s.add_insertStock(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_pay.Text), dtb_visit.Value,
-                                                  txt_username.Text, "فاتورة حجز اشعة رقم " + (txt_IdTicket.Text));
-                            }
+                           
 
                             MessageBox.Show("تم حفظ الفاتورة بنجاح");
                     
@@ -1547,6 +1551,12 @@ namespace Laboratory.PL
                                     cmb_UserBranch.Text, Convert.ToDecimal(Txt_addtionPayment.Text), txt_reasonAddition.Text, Convert.ToDecimal(txt_afterDiscount.Text),
                                     Convert.ToDecimal(Txt_PricePayment.Text), "active");
                             txt_IdTicket.Text = t.LastIdTicket().Rows[0][0].ToString();
+
+                            if (Convert.ToDecimal(txt_pay.Text) > 0)
+                            {
+                                s.add_insertStock(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_pay.Text), dtb_visit.Value,
+                                                  txt_username.Text, "فاتورة حجز اشعة رقم " + (txt_IdTicket.Text));
+                            }
                             t.AddTickestDiscount(Convert.ToInt32(txt_IdTicket.Text), Convert.ToDecimal(txt_discount.Text));
             
                             for (int i = 0; i < dgv_order.Rows.Count; i++)
@@ -1576,11 +1586,7 @@ namespace Laboratory.PL
                                  , Convert.ToInt32(cmb_UserBranch.SelectedValue), txt_username.Text);
 
 
-                            if (Convert.ToDecimal(txt_pay.Text) > 0)
-                            {
-                                s.add_insertStock(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_pay.Text), dtb_visit.Value,
-                                                  txt_username.Text, "فاتورة حجز اشعة رقم " + (txt_IdTicket.Text));
-                            }
+                          
 
 
 
@@ -1605,6 +1611,11 @@ namespace Laboratory.PL
                                     cmb_UserBranch.Text, Convert.ToDecimal(Txt_addtionPayment.Text), txt_reasonAddition.Text, Convert.ToDecimal(txt_afterDiscount.Text),
                                     Convert.ToDecimal(Txt_PricePayment.Text), "active");
                             txt_IdTicket.Text = t.LastIdTicket().Rows[0][0].ToString();
+                            if (Convert.ToDecimal(txt_pay.Text) > 0)
+                            {
+                                s.add_insertStock(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_pay.Text), dtb_visit.Value,
+                                                  txt_username.Text, "فاتورة حجز اشعة رقم " + (txt_IdTicket.Text));
+                            }
                             t.AddTickestDiscount(Convert.ToInt32(txt_IdTicket.Text), Convert.ToDecimal(txt_discount.Text));
                             for (int i = 0; i < dgv_order.Rows.Count; i++)
                             {
@@ -1634,11 +1645,7 @@ namespace Laboratory.PL
                                  , Convert.ToInt32(cmb_UserBranch.SelectedValue), txt_username.Text);
 
 
-                            if (Convert.ToDecimal(txt_pay.Text) > 0)
-                            {
-                                s.add_insertStock(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_pay.Text), dtb_visit.Value,
-                                                  txt_username.Text, "فاتورة حجز اشعة رقم " + (txt_IdTicket.Text));
-                            }
+                          
 
 
                             MessageBox.Show("تم حفظ الفاتورة بنجاح");                      
@@ -1765,7 +1772,7 @@ namespace Laboratory.PL
             {
 
                 MessageBox.Show(ex.Message);
-                MessageBox.Show(ex.StackTrace);
+              
                 Btn_Save.Enabled = true;
             }
         }

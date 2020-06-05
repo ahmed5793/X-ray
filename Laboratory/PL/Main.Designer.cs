@@ -1352,7 +1352,7 @@
             // 
             // barButtonItem4
             // 
-            this.barButtonItem4.Caption = "ضبط اعدادات الطابعة";
+            this.barButtonItem4.Caption = "ضبط الاعدادات";
             this.barButtonItem4.Id = 138;
             this.barButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
             this.barButtonItem4.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));

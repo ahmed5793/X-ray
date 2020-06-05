@@ -111,6 +111,7 @@
             this.Reception = new System.Windows.Forms.TabPage();
             this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
+            this.check_sarfPay = new System.Windows.Forms.CheckBox();
             this.check_DepitClients = new System.Windows.Forms.CheckBox();
             this.check_CustomerAccountStatment = new System.Windows.Forms.CheckBox();
             this.check_PayClients = new System.Windows.Forms.CheckBox();
@@ -129,7 +130,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.Cmb_Branch = new System.Windows.Forms.ComboBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.check_sarfPay = new System.Windows.Forms.CheckBox();
             this.groupBox4.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.groupBox15.SuspendLayout();
@@ -1318,6 +1318,19 @@
             this.groupBox16.TabStop = false;
             this.groupBox16.Text = "صلاحية المستخدمين داخل قائمة إدارة المرضى";
             // 
+            // check_sarfPay
+            // 
+            this.check_sarfPay.AutoSize = true;
+            this.check_sarfPay.BackColor = System.Drawing.Color.Black;
+            this.check_sarfPay.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.check_sarfPay.ForeColor = System.Drawing.Color.White;
+            this.check_sarfPay.Location = new System.Drawing.Point(28, 50);
+            this.check_sarfPay.Name = "check_sarfPay";
+            this.check_sarfPay.Size = new System.Drawing.Size(117, 23);
+            this.check_sarfPay.TabIndex = 63;
+            this.check_sarfPay.Text = "اذن صرف للعميل";
+            this.check_sarfPay.UseVisualStyleBackColor = false;
+            // 
             // check_DepitClients
             // 
             this.check_DepitClients.AutoSize = true;
@@ -1549,19 +1562,6 @@
             this.checkBox1.Text = "فرع محدد";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
-            // check_sarfPay
-            // 
-            this.check_sarfPay.AutoSize = true;
-            this.check_sarfPay.BackColor = System.Drawing.Color.Black;
-            this.check_sarfPay.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.check_sarfPay.ForeColor = System.Drawing.Color.White;
-            this.check_sarfPay.Location = new System.Drawing.Point(28, 50);
-            this.check_sarfPay.Name = "check_sarfPay";
-            this.check_sarfPay.Size = new System.Drawing.Size(117, 23);
-            this.check_sarfPay.TabIndex = 63;
-            this.check_sarfPay.Text = "اذن صرف للعميل";
-            this.check_sarfPay.UseVisualStyleBackColor = false;
             // 
             // Validate_Users
             // 

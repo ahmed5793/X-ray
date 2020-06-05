@@ -82,7 +82,7 @@
             this.cmb_barcode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_barcode.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_barcode.FormattingEnabled = true;
-            this.cmb_barcode.Location = new System.Drawing.Point(12, 60);
+            this.cmb_barcode.Location = new System.Drawing.Point(18, 60);
             this.cmb_barcode.Name = "cmb_barcode";
             this.cmb_barcode.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmb_barcode.Size = new System.Drawing.Size(333, 32);
@@ -96,7 +96,7 @@
             this.cmb_invoice.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_invoice.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_invoice.FormattingEnabled = true;
-            this.cmb_invoice.Location = new System.Drawing.Point(12, 134);
+            this.cmb_invoice.Location = new System.Drawing.Point(18, 134);
             this.cmb_invoice.Name = "cmb_invoice";
             this.cmb_invoice.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmb_invoice.Size = new System.Drawing.Size(333, 30);
@@ -107,7 +107,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(527, 303);
+            this.ClientSize = new System.Drawing.Size(533, 346);
             this.Controls.Add(this.cmb_invoice);
             this.Controls.Add(this.cmb_barcode);
             this.Controls.Add(this.simpleButton1);

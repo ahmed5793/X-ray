@@ -693,7 +693,7 @@ namespace Laboratory.PL
                 else
                 {
                     int AddTickets = 0, ManagmentTickets = 0, SearchAllTickets = 0,BookingTimes = 0 , AddClient = 0, PayClient = 0,
-                        DepitClient = 0, ReportClient = 0, ReportReturnTickets = 0, SarfClients = 0; ;
+                        DepitClient = 0, ReportClient = 0, ReportReturnTickets = 0, SarfClients = 0; 
 
                     if (check_AddTickets.Checked == true){AddTickets = 1;}
                     else if (check_AddTickets.Checked == false){AddTickets = 0;}
