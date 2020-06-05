@@ -104,9 +104,9 @@ namespace Laboratory.PL
                         dt1 = cm.selectItemCompany(Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value));
                         if (dt1.Rows.Count==0)
                         {
-
+                           
                             cm.Add_Company_ItemsXray(Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value), Convert.ToDecimal(0)
-                            , Convert.ToInt32(dataGridView1.Rows[i].Cells[3].Value));
+                            , Convert.ToInt32(dataGridView1.Rows[i].Cells[3].Value), Convert.ToInt32(dataGridView1.Rows[i].Cells[4].Value));
 
                         }
                         else

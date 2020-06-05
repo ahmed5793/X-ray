@@ -494,7 +494,7 @@ namespace Laboratory.PL
                         }
                     }
                     cm.Add_Company_ItemsXray(Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToInt32(cmb_items.SelectedValue), Convert.ToDecimal(Txt_Discount.Text)
-                       , Convert.ToDecimal(Txt_PriceDiscount.Text));
+                       , Convert.ToDecimal(Txt_PriceDiscount.Text),Convert.ToInt32(Cmb_category.SelectedValue));
            
 
                     MessageBox.Show("تم إضافة الفحص للشركة بنجاح");
@@ -540,7 +540,7 @@ namespace Laboratory.PL
                 if (MessageBox.Show("هل تريد تعديل البيانات", "عملية التعديل", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                         cm.Update_Company_Xray(Convert.ToInt32(cmb_Company.SelectedValue),Convert.ToInt32(textBox1.Text),
-                            Convert.ToDecimal(Txt_Discount.Text), Convert.ToDecimal(Txt_PriceDiscount.Text));
+                            Convert.ToDecimal(Txt_Discount.Text), Convert.ToDecimal(Txt_PriceDiscount.Text), Convert.ToInt32(Cmb_category.SelectedValue));
                         MessageBox.Show("تم التعديل بنجاح ");
                 }
                 else

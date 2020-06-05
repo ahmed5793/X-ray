@@ -156,15 +156,16 @@ namespace Laboratory.BL
             return dt;
         }
 
-        internal void UpdatePrice( decimal price)
+        internal void UpdatePrice( decimal price,int idCtegory)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[1];
+            SqlParameter[] param = new SqlParameter[2];
             param[0] = new SqlParameter("@price", SqlDbType.Decimal);
             param[0].Value = price;
-           
-           
+            param[1] = new SqlParameter("@idCtegory", SqlDbType.Int);
+            param[1].Value = idCtegory;
+
 
 
             da.excutequery("UpdatePrice", param);
@@ -172,15 +173,16 @@ namespace Laboratory.BL
         }
 
 
-        internal void UpdatePriceMins(decimal price)
+        internal void UpdatePriceMins(decimal price,int idCtegory)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[1];
+            SqlParameter[] param = new SqlParameter[2];
             param[0] = new SqlParameter("@price", SqlDbType.Decimal);
             param[0].Value = price;
 
-
+            param[1] = new SqlParameter("@idCtegory", SqlDbType.Int);
+            param[1].Value = idCtegory;
 
 
             da.excutequery("UpdatePriceMins", param);
@@ -188,15 +190,16 @@ namespace Laboratory.BL
         }
 
 
-        internal void UpdatePriceCompany(decimal price)
+        internal void UpdatePriceCompany(decimal price,int idCtegory)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[1];
+            SqlParameter[] param = new SqlParameter[2];
             param[0] = new SqlParameter("@price", SqlDbType.Decimal);
             param[0].Value = price;
 
-
+            param[1] = new SqlParameter("@idCtegory", SqlDbType.Int);
+            param[1].Value = idCtegory;
 
 
             da.excutequery("UpdatePriceCompany", param);
@@ -204,14 +207,15 @@ namespace Laboratory.BL
         }
 
 
-        internal void UpdatePriceMinsCompany(decimal price)
+        internal void UpdatePriceMinsCompany(decimal price ,int idCtegory)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[1];
+            SqlParameter[] param = new SqlParameter[2];
             param[0] = new SqlParameter("@price", SqlDbType.Decimal);
             param[0].Value = price;
-
+            param[1] = new SqlParameter("@idCtegory", SqlDbType.Int);
+            param[1].Value = idCtegory;
 
 
 
