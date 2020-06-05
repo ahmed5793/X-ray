@@ -30,21 +30,21 @@ namespace Laboratory.PL
         {
             try
             {            
-            dt.Clear();
-            dt = U.SelectUserBranch(txt_UserName.Text);
-            if (dt.Rows.Count > 0)
-            {
-                Cmb_Branch.DataSource = U.SelectUserBranch(txt_UserName.Text);
-                Cmb_Branch.DisplayMember = "Name";
-                Cmb_Branch.ValueMember = "Branch_ID";
-            }
-            else
-            {
+            //dt.Clear();
+            //dt = U.SelectUserBranch(txt_UserName.Text);
+            //if (dt.Rows.Count > 0)
+            //{
+          
+            //{      Cmb_Branch.DataSource = U.SelectUserBranch(txt_UserName.Text);
+            //    Cmb_Branch.DisplayMember = "Name";
+            //    Cmb_Branch.ValueMember = "Branch_ID";
+            //}
+            //else
                 Cmb_Branch.DataSource = b.SelectCompBranches();
                 Cmb_Branch.DisplayMember = "Name";
                 Cmb_Branch.ValueMember = "Branch_ID";
-            }
-            cmb_Employee.DataSource = E.Select_EmployeeFromBranchToAddShift(Convert.ToInt32(Cmb_Branch.SelectedValue));
+            //}
+            cmb_Employee.DataSource = E.Select_EmployeeFromBranchToAddShift();
             cmb_Employee.DisplayMember = "Emp_Name";
             cmb_Employee.ValueMember = "id_employee";
             cmb_Employee.SelectedIndex = -1;
@@ -105,6 +105,11 @@ namespace Laboratory.PL
                     MessageBox.Show("من فضلك قم بااختيار اسم العميل");
                     return;
                 }
+                if (Cmb_Branch.Text == "")
+                {
+                    MessageBox.Show("لا بد من تحديد الفرع الذى تم عمل الخصم منه ");
+                    return;
+                }
                 if (txt_Money.Text == "" || txt_Money.Text == "0")
                 {
                     MessageBox.Show("من فضلك قم باادخال المبلغ الذى تريد خصمة");
@@ -128,21 +133,20 @@ namespace Laboratory.PL
                 MessageBox.Show(ex.StackTrace);
             }
         }
-
         private void Cmb_Branch_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            try
-            {
-                cmb_Employee.DataSource = E.Select_EmployeeFromBranchToAddShift(Convert.ToInt32(Cmb_Branch.SelectedValue));
-                cmb_Employee.DisplayMember = "Emp_Name";
-                cmb_Employee.ValueMember = "id_employee";
-                cmb_Employee.SelectedIndex = -1;
-            }
-            catch (Exception ex)
-            {
+            //try
+            //{
+            //    cmb_Employee.DataSource = E.Select_EmployeeFromBranchToAddShift(Convert.ToInt32(Cmb_Branch.SelectedValue));
+            //    cmb_Employee.DisplayMember = "Emp_Name";
+            //    cmb_Employee.ValueMember = "id_employee";
+            //    cmb_Employee.SelectedIndex = -1;
+            //}
+            //catch (Exception ex)
+            //{
 
-                MessageBox.Show(ex.Message);
-            }
+            //    MessageBox.Show(ex.Message);
+            //}
          
         }
 

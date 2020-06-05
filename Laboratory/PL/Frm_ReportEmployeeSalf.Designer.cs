@@ -88,7 +88,7 @@
             this.label7.BackColor = System.Drawing.Color.Yellow;
             this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(596, 119);
+            this.label7.Location = new System.Drawing.Point(599, 120);
             this.label7.Name = "label7";
             this.label7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label7.Size = new System.Drawing.Size(75, 19);
@@ -318,7 +318,7 @@
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.Yellow;
             this.label12.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(593, 84);
+            this.label12.Location = new System.Drawing.Point(635, 84);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(38, 19);
             this.label12.TabIndex = 220;

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -15,6 +16,7 @@ namespace Laboratory.PL
         Employee E = new Employee();
 
         DataTable dt = new DataTable();
+        DataTable dt2 = new DataTable();
         Users U = new Users();
         Branches b = new Branches();
 
@@ -32,24 +34,24 @@ namespace Laboratory.PL
         {
             try
             {
-            dt.Clear();
-            dt = U.SelectUserBranch(txt_UserName.Text);
-            if (dt.Rows.Count > 0)
-            {
-                cmb_Branch.DataSource = U.SelectUserBranch(txt_UserName.Text);
-                cmb_Branch.DisplayMember = "Name";
-                cmb_Branch.ValueMember = "Branch_ID";
-            }
-            else
-            {
-                cmb_Branch.DataSource = b.SelectCompBranches();
-                cmb_Branch.DisplayMember = "Name";
-                cmb_Branch.ValueMember = "Branch_ID";
-            }
-            cmb_employeeName.DataSource = E.Select_EmployeeFromBranchToAddShift(Convert.ToInt32(cmb_Branch.SelectedValue));
-            cmb_employeeName.DisplayMember = "Emp_Name";
-            cmb_employeeName.ValueMember = "id_employee";
-            cmb_employeeName.SelectedIndex = -1;
+                //dt.Clear();
+                //dt = U.SelectUserBranch(txt_UserName.Text);
+                //if (dt.Rows.Count > 0)
+                //{
+                //    cmb_Branch.DataSource = U.SelectUserBranch(txt_UserName.Text);
+                //    cmb_Branch.DisplayMember = "Name";
+                //    cmb_Branch.ValueMember = "Branch_ID";
+                //}
+                //else
+                //{
+                //cmb_Branch.DataSource = b.SelectCompBranches();
+                //    cmb_Branch.DisplayMember = "Name";
+                //    cmb_Branch.ValueMember = "Branch_ID";
+                //}
+                cmb_employeeName.DataSource = E.SelectCompoEmployee();
+                cmb_employeeName.DisplayMember = "Emp_Name";
+                cmb_employeeName.ValueMember = "Emp_ID";
+                cmb_employeeName.SelectedIndex = -1;
 
             }
             catch (Exception ex)
@@ -71,43 +73,33 @@ namespace Laboratory.PL
         }
         void calc()
         {
-            if (txt_salf.Text == "" )
+            if (txt_salf.Text == "")
             {
-               
+
                 txt_salf.Text = "0";
             }
-            if ( txt_discount.Text == "" )
+            if (txt_discount.Text == "")
             {
-             
+
                 txt_discount.Text = "0";
-             
+
             }
-            if (Txt_salary.Text == "" )
+            if (Txt_salary.Text == "")
             {
                 Txt_salary.Text = "0";
-         
+
             }
 
             decimal x = 0;
-                x = Convert.ToDecimal(Txt_salary.Text) - (Convert.ToDecimal(txt_salf.Text) + Convert.ToDecimal(txt_discount.Text));
-                label6.Text = x.ToString();
-            
+            x = Convert.ToDecimal(Txt_salary.Text) - (Convert.ToDecimal(txt_salf.Text) + Convert.ToDecimal(txt_discount.Text));
+            label6.Text = x.ToString();
+
         }
         private void cmb_employeeName_SelectionChangeCommitted(object sender, EventArgs e)
         {
-          
-
-            
-
-
-
-          
+           
 
         }
-        
-
-
-    
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
@@ -116,8 +108,7 @@ namespace Laboratory.PL
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-          
-            
+                      
         }
 
         private void Txt_salary_TextChanged(object sender, EventArgs e)
@@ -127,7 +118,6 @@ namespace Laboratory.PL
                 Txt_salary.Text = "0";
             }
         }
-
         private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
         {
       
@@ -137,7 +127,7 @@ namespace Laboratory.PL
 
         private void Txt_salary_KeyUp(object sender, KeyEventArgs e)
         {
-            calc();
+            //calc();
         }
 
         private void Txt_salary_Leave(object sender, EventArgs e)
@@ -166,11 +156,17 @@ namespace Laboratory.PL
             {
                 txt_salf.Text = "0";
             }
+            if (Convert.ToDecimal(txt_salf.Text)>Convert.ToDecimal(Txt_TotalSalf.Text))
+            {
+                MessageBox.Show("لا يسمح ان يكون المبلغ المراد تسديده للسلف أكبر من إجمالى السلف ");
+                txt_salf.Focus();
+                return;
+            }
         }
 
         private void txt_discount_KeyUp(object sender, KeyEventArgs e)
         {
-            calc();
+            //calc();
         }
 
         private void txt_salf_KeyUp(object sender, KeyEventArgs e)
@@ -180,7 +176,7 @@ namespace Laboratory.PL
 
         private void txt_total_KeyUp(object sender, KeyEventArgs e)
         {
-            calc();
+            
         }
 
         private void Txt_salary_KeyPress(object sender, KeyPressEventArgs e)
@@ -221,7 +217,19 @@ namespace Laboratory.PL
 
         private void cmb_employeeName_Leave(object sender, EventArgs e)
         {
-           
+            if (cmb_employeeName.Text != "")
+            {
+                dt.Clear();
+                dt = E.VildateEmployeeShift(Convert.ToInt32(cmb_employeeName.SelectedValue));
+                if (dt.Rows.Count == 0)
+                {
+                    MessageBox.Show("يرجي العلم بان اسم الموظف غير مسجل من قبل يرجي تسجيل هذا الاسم في شاشه الموظفين", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    cmb_employeeName.Focus();
+                    cmb_employeeName.SelectAll();
+                    return;
+                }
+                dt.Dispose();
+            }
         }
 
         private void label9_Click(object sender, EventArgs e)
@@ -243,9 +251,9 @@ namespace Laboratory.PL
                     MessageBox.Show("قم بااختيار اسم الموظف");
                     return;
                 }
-                if (Txt_salary.Text == "0" || Txt_salary.Text == "")
+                if (Convert.ToDecimal(txt_salf.Text) > Convert.ToDecimal(Txt_TotalSalf.Text))
                 {
-                    MessageBox.Show("قم بكتابه المرتب الذي تريد صرفة ");
+                    MessageBox.Show("لا بد ان يكون المبلغ المراد تسديده من السلف ان يكون اقل من إجمالى السلف");
                     return;
                 }
                 dt.Clear();
@@ -266,6 +274,7 @@ namespace Laboratory.PL
                 txt_note.Clear();
                 Txt_salary.Text = "0";
                 txt_salf.Text = "0";
+                Txt_TotalSalf.Text = "0";           
                 txt_discount.Text = "0";
                 label6.Text = "0.00";
                 cmb_employeeName.SelectedIndex = -1;
@@ -288,15 +297,67 @@ namespace Laboratory.PL
             txt_salf.Text = "0";
             txt_discount.Text = "0";
             label6.Text = "0.00";
-            cmb_employeeName.DataSource = E.Select_EmployeeFromBranchToAddShift(Convert.ToInt32(cmb_Branch.SelectedValue));
-            cmb_employeeName.DisplayMember = "Emp_Name";
-            cmb_employeeName.ValueMember = "id_employee";
-            cmb_employeeName.SelectedIndex = -1;
+            //cmb_employeeName.DataSource = E.Select_EmployeeFromBranchToAddShift(Convert.ToInt32(cmb_Branch.SelectedValue));
+            //cmb_employeeName.DisplayMember = "Emp_Name";
+            //cmb_employeeName.ValueMember = "id_employee";
+            //cmb_employeeName.SelectedIndex = -1;
         }
 
         private void cmb_Branch_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                dt.Clear();
+                dt = E.SelectAllEmployeeFixedSalary(Convert.ToInt32(cmb_employeeName.SelectedValue));
+                if (dt.Rows.Count > 0)
+                {
+
+                    if (Convert.ToInt32(dt.Rows[0][0]) > 0)
+                    {
+                        Txt_salary.Text = dt.Rows[0][0].ToString();
+                        Txt_TotalSalf.Text = dt.Rows[0][1].ToString();
+                        txt_discount.Text = dt.Rows[0][2].ToString();
+                    }
+                    else if (Convert.ToInt32(dt.Rows[0][0]) == 0)
+                    {
+                        dt2.Clear();
+                        dt2 = E.SelectAllShiftOfEmployee(Convert.ToInt32(cmb_employeeName.SelectedValue),(dateTimePicker2.Text));
+
+                        Txt_salary.Text = dt2.Rows[0][0].ToString();
+                        Txt_TotalSalf.Text = dt.Rows[0][1].ToString();
+                        txt_discount.Text = dt.Rows[0][2].ToString();
+                    }
+                    if (Txt_TotalSalf.Text == "0")
+                    {
+                        txt_salf.Enabled = false;
+                    }
+                    else
+                    {
+                        txt_salf.Enabled = true;
+                    }
+                    calc();
+                }
+              
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+
+        private void txt_salf_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (Convert.ToDecimal(txt_salf.Text)> Convert.ToDecimal(Txt_TotalSalf.Text))
+            {
+                MessageBox.Show("لا بد ان يكون المبلغ المراد تسديده من السلف ان يكون اقل من إجمالى السلف");
+                return;
+            }
         }
     }
 }

@@ -30,21 +30,21 @@ namespace Laboratory.PL
         {
             try
             {
-            dt.Clear();
-            dt = U.SelectUserBranch(txt_UserName.Text);
-            if (dt.Rows.Count > 0)
-            {
-                cmb_Branch.DataSource = U.SelectUserBranch(txt_UserName.Text);
-                cmb_Branch.DisplayMember = "Name";
-                cmb_Branch.ValueMember = "Branch_ID";
-            }
-            else
-            {
-                cmb_Branch.DataSource = b.SelectCompBranches();
-                cmb_Branch.DisplayMember = "Name";
-                cmb_Branch.ValueMember = "Branch_ID";
-            }
-            comboBox1.DataSource = E.Select_EmployeeShiftFromBranchToAddShift(Convert.ToInt32(cmb_Branch.SelectedValue));
+            //dt.Clear();
+            //dt = U.SelectUserBranch(txt_UserName.Text);
+            //if (dt.Rows.Count > 0)
+            //{
+            //    cmb_Branch.DataSource = U.SelectUserBranch(txt_UserName.Text);
+            //    cmb_Branch.DisplayMember = "Name";
+            //    cmb_Branch.ValueMember = "Branch_ID";
+            //}
+            //else
+            //{
+            //    cmb_Branch.DataSource = b.SelectCompBranches();
+            //    cmb_Branch.DisplayMember = "Name";
+            //    cmb_Branch.ValueMember = "Branch_ID";
+            //}
+            comboBox1.DataSource = E.Select_EmployeeShiftFromBranchToAddShift();
             comboBox1.DisplayMember = "Emp_Name";
             comboBox1.ValueMember = "id_employee";
             comboBox1.SelectedIndex = -1;
@@ -137,10 +137,10 @@ namespace Laboratory.PL
 
         private void cmb_Branch_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            comboBox1.DataSource = E.Select_EmployeeShiftFromBranchToAddShift(Convert.ToInt32(cmb_Branch.SelectedValue));
-            comboBox1.DisplayMember = "Emp_Name";
-            comboBox1.ValueMember = "id_employee";
-            comboBox1.SelectedIndex = -1;
+            //comboBox1.DataSource = E.Select_EmployeeShiftFromBranchToAddShift(Convert.ToInt32(cmb_Branch.SelectedValue));
+            //comboBox1.DisplayMember = "Emp_Name";
+            //comboBox1.ValueMember = "id_employee";
+            //comboBox1.SelectedIndex = -1;
         }
     }
 }

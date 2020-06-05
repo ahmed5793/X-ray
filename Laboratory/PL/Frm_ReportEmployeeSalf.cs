@@ -39,21 +39,21 @@ namespace Laboratory.PL
         void Permision()
         {
 
-            dt.Clear();
-            dt = U.SelectUserBranch(txt_UserName.Text);
-            if (dt.Rows.Count > 0)
-            {
-                cmb_Branch.DataSource = U.SelectUserBranch(txt_UserName.Text);
-                cmb_Branch.DisplayMember = "Name";
-                cmb_Branch.ValueMember = "Branch_ID";
-            }
-            else
-            {
+            //dt.Clear();
+            //dt = U.SelectUserBranch(txt_UserName.Text);
+            //if (dt.Rows.Count > 0)
+            //{
+            //    cmb_Branch.DataSource = U.SelectUserBranch(txt_UserName.Text);
+            //    cmb_Branch.DisplayMember = "Name";
+            //    cmb_Branch.ValueMember = "Branch_ID";
+            //}
+            //else
+            //{
                 cmb_Branch.DataSource = b.SelectCompBranches();
                 cmb_Branch.DisplayMember = "Name";
                 cmb_Branch.ValueMember = "Branch_ID";
-            }
-            cmb_employeeName.DataSource = E.Select_EmployeeFromBranchToAddShift(Convert.ToInt32(cmb_Branch.SelectedValue));
+            //}
+            cmb_employeeName.DataSource = E.Select_EmployeeFromBranchToAddShift();
             cmb_employeeName.DisplayMember = "Emp_Name";
             cmb_employeeName.ValueMember = "id_employee";
             cmb_employeeName.SelectedIndex = -1;
@@ -156,10 +156,10 @@ namespace Laboratory.PL
         }
         private void cmb_Branch_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            cmb_employeeName.DataSource = E.Select_EmployeeFromBranchToAddShift(Convert.ToInt32(cmb_Branch.SelectedValue));
-            cmb_employeeName.DisplayMember = "Emp_Name";
-            cmb_employeeName.ValueMember = "id_employee";
-            cmb_employeeName.SelectedIndex = -1;
+        //    cmb_employeeName.DataSource = E.Select_EmployeeFromBranchToAddShift(Convert.ToInt32(cmb_Branch.SelectedValue));
+        //    cmb_employeeName.DisplayMember = "Emp_Name";
+        //    cmb_employeeName.ValueMember = "id_employee";
+        //    cmb_employeeName.SelectedIndex = -1;
         }
 
         private void Btn_Print_Click(object sender, EventArgs e)

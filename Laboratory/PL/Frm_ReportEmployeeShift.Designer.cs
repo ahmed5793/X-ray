@@ -45,8 +45,6 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.label8 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.cmb_Branch = new System.Windows.Forms.ComboBox();
             this.txt_UserName = new System.Windows.Forms.TextBox();
             this.Btn_Print = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox1.SuspendLayout();
@@ -61,7 +59,7 @@
             this.label7.BackColor = System.Drawing.Color.Yellow;
             this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(595, 108);
+            this.label7.Location = new System.Drawing.Point(601, 78);
             this.label7.Name = "label7";
             this.label7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label7.Size = new System.Drawing.Size(75, 19);
@@ -75,7 +73,7 @@
             this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(269, 105);
+            this.comboBox1.Location = new System.Drawing.Point(269, 74);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.comboBox1.Size = new System.Drawing.Size(320, 27);
@@ -118,7 +116,7 @@
             this.DateTo.CustomFormat = "   dd/MM/yyyy   ";
             this.DateTo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DateTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DateTo.Location = new System.Drawing.Point(269, 148);
+            this.DateTo.Location = new System.Drawing.Point(269, 120);
             this.DateTo.Name = "DateTo";
             this.DateTo.ShowUpDown = true;
             this.DateTo.Size = new System.Drawing.Size(126, 26);
@@ -130,7 +128,7 @@
             this.DateFrom.CustomFormat = "   dd/MM/yyyy   ";
             this.DateFrom.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DateFrom.Location = new System.Drawing.Point(489, 148);
+            this.DateFrom.Location = new System.Drawing.Point(489, 118);
             this.DateFrom.Name = "DateFrom";
             this.DateFrom.ShowUpDown = true;
             this.DateFrom.Size = new System.Drawing.Size(126, 26);
@@ -142,7 +140,7 @@
             this.label4.BackColor = System.Drawing.Color.Black;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Yellow;
-            this.label4.Location = new System.Drawing.Point(401, 148);
+            this.label4.Location = new System.Drawing.Point(401, 120);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label4.Size = new System.Drawing.Size(44, 26);
@@ -156,7 +154,7 @@
             this.label3.BackColor = System.Drawing.Color.Black;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Yellow;
-            this.label3.Location = new System.Drawing.Point(621, 148);
+            this.label3.Location = new System.Drawing.Point(621, 118);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label3.Size = new System.Drawing.Size(55, 26);
@@ -321,7 +319,7 @@
             this.simpleButton1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.simpleButton1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(101, 74);
+            this.simpleButton1.Location = new System.Drawing.Point(101, 58);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(134, 38);
             this.simpleButton1.TabIndex = 209;
@@ -339,33 +337,6 @@
             this.label8.Size = new System.Drawing.Size(81, 19);
             this.label8.TabIndex = 225;
             this.label8.Text = "إسم المستخدم";
-            // 
-            // label12
-            // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Yellow;
-            this.label12.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(596, 74);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(38, 19);
-            this.label12.TabIndex = 224;
-            this.label12.Text = "الفرع";
-            // 
-            // cmb_Branch
-            // 
-            this.cmb_Branch.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cmb_Branch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cmb_Branch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmb_Branch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_Branch.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_Branch.FormattingEnabled = true;
-            this.cmb_Branch.Location = new System.Drawing.Point(269, 71);
-            this.cmb_Branch.Name = "cmb_Branch";
-            this.cmb_Branch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmb_Branch.Size = new System.Drawing.Size(321, 27);
-            this.cmb_Branch.TabIndex = 223;
-            this.cmb_Branch.SelectionChangeCommitted += new System.EventHandler(this.cmb_Branch_SelectionChangeCommitted);
             // 
             // txt_UserName
             // 
@@ -409,8 +380,6 @@
             this.ClientSize = new System.Drawing.Size(956, 538);
             this.Controls.Add(this.Btn_Print);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.cmb_Branch);
             this.Controls.Add(this.txt_UserName);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.groupBox1);
@@ -455,8 +424,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label12;
-        public System.Windows.Forms.ComboBox cmb_Branch;
         private System.Windows.Forms.TextBox txt_UserName;
         private DevExpress.XtraEditors.SimpleButton Btn_Print;
     }

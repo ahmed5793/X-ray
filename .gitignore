@@ -328,3 +328,5 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+Laboratory/DAL/DataAccessLayer.cs
+Laboratory/DAL/DataAccessLayer.cs

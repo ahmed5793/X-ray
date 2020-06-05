@@ -33,7 +33,7 @@ namespace Laboratory.PL
                 Cmb_Branch.DisplayMember = "Name";
                 Cmb_Branch.ValueMember = "Branch_ID";
             }
-            comboBox1.DataSource = E.Select_EmployeeFromBranchToAddShift(Convert.ToInt32(Cmb_Branch.SelectedValue));
+            comboBox1.DataSource = E.Select_EmployeeFromBranchToAddShift();
             comboBox1.DisplayMember = "Emp_Name";
             comboBox1.ValueMember = "id_employee";
             comboBox1.SelectedIndex = -1;
@@ -70,7 +70,7 @@ namespace Laboratory.PL
             if (checkBox1.Checked == true)
             {
                 comboBox1.Enabled = true;
-                comboBox1.DataSource = E.Select_EmployeeFromBranchToAddShift(Convert.ToInt32(Cmb_Branch.SelectedValue));
+                comboBox1.DataSource = E.Select_EmployeeFromBranchToAddShift();
                 comboBox1.DisplayMember = "Emp_Name";
                 comboBox1.ValueMember = "id_employee";
                 comboBox1.SelectedIndex = -1;
@@ -139,10 +139,10 @@ namespace Laboratory.PL
 
         private void Cmb_Branch_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            comboBox1.DataSource = E.Select_EmployeeFromBranchToAddShift(Convert.ToInt32(Cmb_Branch.SelectedValue));
-            comboBox1.DisplayMember = "Emp_Name";
-            comboBox1.ValueMember = "id_employee";
-            comboBox1.SelectedIndex = -1;
+            //comboBox1.DataSource = E.Select_EmployeeFromBranchToAddShift(Convert.ToInt32(Cmb_Branch.SelectedValue));
+            //comboBox1.DisplayMember = "Emp_Name";
+            //comboBox1.ValueMember = "id_employee";
+            //comboBox1.SelectedIndex = -1;
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Laboratory.DAL;
 using System.Data;
 using System.Data.SqlClient;
-
+using DevExpress.XtraEditors.Filtering.Templates;
 
 namespace Laboratory.BL
 {
@@ -168,15 +168,12 @@ namespace Laboratory.BL
             da.excutequery("UpdateEmployee_Salf", param);
             da.close();
         }
-        internal DataTable SelectEmployeeSalf(int IDbranch)
+        internal DataTable SelectEmployeeSalf()
         {
             DataTable dt = new DataTable();
-            SqlParameter[] param = new SqlParameter[1];
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            param[0] = new SqlParameter("@IDBranch", SqlDbType.Int);
-            param[0].Value = IDbranch;
-            dt = da.selected("SelectEmployeeSalf", param);
+            dt = da.selected("SelectEmployeeSalf", null);
             da.close();
             return dt;
         }
@@ -206,12 +203,6 @@ namespace Laboratory.BL
             param[2].Value = money;
             param[3] = new SqlParameter("@Pay", SqlDbType.NVarChar, 50);
             param[3].Value = pay;
-
-
-
-
-
-
             da.excutequery("AddEMPSalaryMins", param);
             da.close();
         }
@@ -219,34 +210,54 @@ namespace Laboratory.BL
         internal DataTable SelectCompoEmployee()
         {
             DataTable dt = new DataTable();
-
             DataAccessLayer da = new DataAccessLayer();
             da.open();
             dt = da.selected("SelectCompoEmployee", null);
             da.close();
             return dt;
         }
-        internal DataTable Select_EmployeeFromBranchToAddShift(int Id_branch)
+        internal DataTable SelectAllEmployeeFixedSalary(int Id_Employee)
         {
             DataTable dt = new DataTable();
             DataAccessLayer da = new DataAccessLayer();
             SqlParameter[] param = new SqlParameter[1];
-            param[0] = new SqlParameter("@Id_Baranch", SqlDbType.Int);
-            param[0].Value = Id_branch;
+            param[0] = new SqlParameter("@Id_Employee", SqlDbType.Int);
+            param[0].Value = Id_Employee;
             da.open();
-            dt = da.selected("Select_EmployeeFromBranchToAddShift", param);
+            dt = da.selected("SelectAllEmployeeFixedSalary", param);
             da.close();
             return dt;
         }
-        internal DataTable Select_EmployeeShiftFromBranchToAddShift(int Id_branch)
+        internal DataTable SelectAllShiftOfEmployee(int Id_Employee, string DateFrom)
         {
             DataTable dt = new DataTable();
             DataAccessLayer da = new DataAccessLayer();
-            SqlParameter[] param = new SqlParameter[1];
-            param[0] = new SqlParameter("@Id_Baranch",SqlDbType.Int);
-            param[0].Value = Id_branch;
+            SqlParameter[] param = new SqlParameter[2];
+            param[0] = new SqlParameter("@Id_Employee", SqlDbType.Int);
+            param[0].Value = Id_Employee;
+            param[1] = new SqlParameter("@Date_From", SqlDbType.NVarChar,100);
+            param[1].Value = DateFrom;
             da.open();
-            dt = da.selected("Select_EmployeeShiftFromBranchToAddShift", param);
+            dt = da.selected("SelectAllShiftOfEmployee", param);
+            da.close();
+            return dt;
+        }
+        internal DataTable Select_EmployeeFromBranchToAddShift()
+        {
+            DataTable dt = new DataTable();
+            DataAccessLayer da = new DataAccessLayer();
+ 
+            da.open();
+            dt = da.selected("Select_EmployeeFromBranchToAddShift", null);
+            da.close();
+            return dt;
+        }
+        internal DataTable Select_EmployeeShiftFromBranchToAddShift()
+        {
+            DataTable dt = new DataTable();
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            dt = da.selected("Select_EmployeeShiftFromBranchToAddShift", null);
             da.close();
             return dt;
         }
@@ -596,15 +607,13 @@ namespace Laboratory.BL
             return dt;
         }
 
-        internal DataTable Select_EmployeeShift(int Id_Branch )
+        internal DataTable Select_EmployeeShift( )
         {
             DataTable dt = new DataTable();
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[1];
-            param[0] = new SqlParameter("@Id_Branch", SqlDbType.Int);
-            param[0].Value = Id_Branch;
-            dt = da.selected("Select_EmployeeShift", param);
+           
+            dt = da.selected("Select_EmployeeShift", null);
             da.close();
             return dt;
         }

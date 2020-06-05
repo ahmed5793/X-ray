@@ -63,7 +63,7 @@
             this.label7.BackColor = System.Drawing.Color.Yellow;
             this.label7.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(441, 242);
+            this.label7.Location = new System.Drawing.Point(452, 240);
             this.label7.Name = "label7";
             this.label7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label7.Size = new System.Drawing.Size(84, 22);
@@ -112,7 +112,7 @@
             this.label4.BackColor = System.Drawing.Color.Yellow;
             this.label4.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(441, 134);
+            this.label4.Location = new System.Drawing.Point(442, 134);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label4.Size = new System.Drawing.Size(93, 22);
@@ -136,7 +136,7 @@
             this.label2.BackColor = System.Drawing.Color.Yellow;
             this.label2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(441, 178);
+            this.label2.Location = new System.Drawing.Point(450, 178);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label2.Size = new System.Drawing.Size(86, 22);
@@ -149,7 +149,7 @@
             this.label5.BackColor = System.Drawing.Color.Yellow;
             this.label5.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(441, 91);
+            this.label5.Location = new System.Drawing.Point(449, 91);
             this.label5.Name = "label5";
             this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label5.Size = new System.Drawing.Size(87, 22);
@@ -183,9 +183,9 @@
             this.Btn_AddShift.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_AddShift.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.Btn_AddShift.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_AddShift.ImageOptions.Image")));
-            this.Btn_AddShift.Location = new System.Drawing.Point(190, 325);
+            this.Btn_AddShift.Location = new System.Drawing.Point(190, 319);
             this.Btn_AddShift.Name = "Btn_AddShift";
-            this.Btn_AddShift.Size = new System.Drawing.Size(167, 32);
+            this.Btn_AddShift.Size = new System.Drawing.Size(167, 38);
             this.Btn_AddShift.TabIndex = 169;
             this.Btn_AddShift.Text = "إضافة  ";
             this.Btn_AddShift.Click += new System.EventHandler(this.Btn_AddShift_Click);
@@ -197,7 +197,7 @@
             this.label9.BackColor = System.Drawing.Color.Yellow;
             this.label9.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(440, 52);
+            this.label9.Location = new System.Drawing.Point(494, 53);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(42, 22);
             this.label9.TabIndex = 174;
@@ -225,7 +225,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(566, 365);
+            this.ClientSize = new System.Drawing.Size(566, 366);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.Cmb_Branch);
             this.Controls.Add(this.Btn_AddShift);

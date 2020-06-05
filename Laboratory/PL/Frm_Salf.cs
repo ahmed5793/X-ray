@@ -26,7 +26,7 @@ namespace Laboratory.PL
         {
             try
             {
-                gridControl1.DataSource = E.SelectEmployeeSalf(Convert.ToInt32(cmb_branch.SelectedValue));
+                gridControl1.DataSource = E.SelectEmployeeSalf();
                 gridView1.Columns[0].Visible = false;
                 txt_userName.Text = Program.salesman;
                 Permision();
@@ -47,25 +47,25 @@ namespace Laboratory.PL
         void Permision()
         {
 
-            dt.Clear();
-            dt = U.SelectUserBranch(txt_userName.Text);
-            if (dt.Rows.Count > 0)
-            {
-                cmb_branch.DataSource = U.SelectUserBranch(txt_userName.Text);
-                cmb_branch.DisplayMember = "Name";
-                cmb_branch.ValueMember = "Branch_ID";
-            }
-            else
-            {
+            //dt.Clear();
+            //dt = U.SelectUserBranch(txt_userName.Text);
+            //if (dt.Rows.Count > 0)
+            //{
+            //    cmb_branch.DataSource = U.SelectUserBranch(txt_userName.Text);
+            //    cmb_branch.DisplayMember = "Name";
+            //    cmb_branch.ValueMember = "Branch_ID";
+            //}
+            //else
+            //{
                 cmb_branch.DataSource = b.SelectCompBranches();
                 cmb_branch.DisplayMember = "Name";
                 cmb_branch.ValueMember = "Branch_ID";
-            }
-            cmb_employeeName.DataSource = E.Select_EmployeeFromBranchToAddShift(Convert.ToInt32(cmb_branch.SelectedValue));
+            //}
+            cmb_employeeName.DataSource = E.Select_EmployeeFromBranchToAddShift();
             cmb_employeeName.DisplayMember = "Emp_Name";
             cmb_employeeName.ValueMember = "id_employee";
             cmb_employeeName.SelectedIndex = -1;
-            gridControl1.DataSource = E.SelectEmployeeSalf(Convert.ToInt32(cmb_branch.SelectedValue));
+            gridControl1.DataSource = E.SelectEmployeeSalf();
         }
 
 
@@ -133,6 +133,11 @@ namespace Laboratory.PL
                     MessageBox.Show("من فضلك قم بكتابة المبلغ");
                     return;
                 }
+                if (cmb_branch.Text == "")
+                {
+                    MessageBox.Show("لا بد من تحديد الفرع الذى تم صرف السلف منه ");
+                    return;
+                }
                 if (cmb_employeeName.Text == "")
                 {
                     MessageBox.Show("قم بااختيار اسم الموظف");
@@ -149,7 +154,7 @@ namespace Laboratory.PL
                                    Convert.ToDecimal(Txt_money.Text), Convert.ToInt32(cmb_employeeName.SelectedValue),
                                    Convert.ToInt32(cmb_branch.SelectedValue));
                 MessageBox.Show("تم التسجيل بنجاح");
-                gridControl1.DataSource = E.SelectEmployeeSalf(Convert.ToInt32(cmb_branch.SelectedValue));
+                gridControl1.DataSource = E.SelectEmployeeSalf();
                 txt_note.Clear();
                 Txt_money.Text = "0";
                 cmb_employeeName.SelectedIndex = -1;
@@ -175,6 +180,11 @@ namespace Laboratory.PL
                     return;
 
                 }
+                if (cmb_branch.Text == "")
+                {
+                    MessageBox.Show("لا بد من تحديد الفرع الذى تم صرف السلف منه ");
+                    return;
+                }
                 if (MessageBox.Show("هل تريد تعديل السلف", "عملية التعديل", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     E.UpdateEmployee_Salf(Convert.ToDecimal(Txt_money.Text), Convert.ToInt32(gridView1.GetFocusedRowCellValue("ID_Salf")));
@@ -195,7 +205,7 @@ namespace Laboratory.PL
                 dateTimePicker2.Enabled = true;
                 cmb_employeeName.Enabled = true;
                 gridControl1.Enabled = true;
-                gridControl1.DataSource = E.SelectEmployeeSalf(Convert.ToInt32(cmb_branch.SelectedValue));
+                gridControl1.DataSource = E.SelectEmployeeSalf();
             }
             catch (Exception ex)
             {
@@ -207,11 +217,11 @@ namespace Laboratory.PL
         private void cmb_branch_SelectionChangeCommitted(object sender, EventArgs e)
         {
 
-            cmb_employeeName.DataSource = E.Select_EmployeeFromBranchToAddShift(Convert.ToInt32(cmb_branch.SelectedValue));
-            cmb_employeeName.DisplayMember = "Emp_Name";
-            cmb_employeeName.ValueMember = "id_employee";
-            cmb_employeeName.SelectedIndex = -1;
-            gridControl1.DataSource = E.SelectEmployeeSalf(Convert.ToInt32(cmb_branch.SelectedValue));
+            //cmb_employeeName.DataSource = E.Select_EmployeeFromBranchToAddShift(Convert.ToInt32(cmb_branch.SelectedValue));
+            //cmb_employeeName.DisplayMember = "Emp_Name";
+            //cmb_employeeName.ValueMember = "id_employee";
+            //cmb_employeeName.SelectedIndex = -1;
+            //gridControl1.DataSource = E.SelectEmployeeSalf();
         }
 
         private void gridControl1_DoubleClick(object sender, EventArgs e)
@@ -264,7 +274,7 @@ namespace Laboratory.PL
             cmb_employeeName.SelectedIndex = -1;
             gridControl1.Enabled = true;
             txt_userName.Text = Program.salesman;
-            gridControl1.DataSource = E.SelectEmployeeSalf(Convert.ToInt32(cmb_branch.SelectedValue));
+            gridControl1.DataSource = E.SelectEmployeeSalf();
         }
     }
     }
