@@ -397,6 +397,14 @@ namespace Laboratory.PL
                         Main.getmain.Btn_UserPermession.Enabled = true;
                     }
                     ////
+                    if (Convert.ToInt32(dt2.Rows[0][9]) == 0)
+                    {
+                        Main.getmain.Setting_Items.Enabled = false;
+                    }
+                    else if (Convert.ToInt32(dt2.Rows[0][9]) == 1)
+                    {
+                        Main.getmain.Setting_Items.Enabled = true;
+                    }
                 }
                 dt3.Clear();
                 dt3 = p.Select_UserEmployee(txt_User.Text);

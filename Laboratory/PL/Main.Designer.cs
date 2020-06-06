@@ -148,6 +148,7 @@
             this.Btn_TechnicalShiftPrice = new DevExpress.XtraBars.BarButtonItem();
             this.Btn_PermissionNoticeMoney = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
+            this.Setting_Items = new DevExpress.XtraBars.BarButtonItem();
             this.basic_information = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -317,9 +318,10 @@
             this.barButtonItem6,
             this.Btn_TechnicalShiftPrice,
             this.Btn_PermissionNoticeMoney,
-            this.barButtonItem7});
+            this.barButtonItem7,
+            this.Setting_Items});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 146;
+            this.ribbon.MaxItemId = 147;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.basic_information,
@@ -1352,7 +1354,7 @@
             // 
             // barButtonItem4
             // 
-            this.barButtonItem4.Caption = "ضبط الاعدادات";
+            this.barButtonItem4.Caption = "اعدادات الطابعة";
             this.barButtonItem4.Id = 138;
             this.barButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
             this.barButtonItem4.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
@@ -1391,6 +1393,15 @@
             this.barButtonItem7.Name = "barButtonItem7";
             this.barButtonItem7.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem7_ItemClick_2);
             // 
+            // Setting_Items
+            // 
+            this.Setting_Items.Caption = "اعداداتالفحوصات";
+            this.Setting_Items.Id = 146;
+            this.Setting_Items.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.Image")));
+            this.Setting_Items.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.LargeImage")));
+            this.Setting_Items.Name = "Setting_Items";
+            this.Setting_Items.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem8_ItemClick_1);
+            // 
             // basic_information
             // 
             this.basic_information.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1420,6 +1431,7 @@
             // 
             this.ribbonPageGroup3.ItemLinks.Add(this.Xray_Category);
             this.ribbonPageGroup3.ItemLinks.Add(this.XrayName);
+            this.ribbonPageGroup3.ItemLinks.Add(this.Setting_Items);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "ادارة الفحص";
             // 
@@ -1978,5 +1990,6 @@
         public DevExpress.XtraBars.BarButtonItem Btn_TechnicalShiftPrice;
         private DevExpress.XtraBars.BarButtonItem barButtonItem7;
         public DevExpress.XtraBars.BarButtonItem Btn_PermissionNoticeMoney;
+        public DevExpress.XtraBars.BarButtonItem Setting_Items;
     }
 }

@@ -130,6 +130,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.Cmb_Branch = new System.Windows.Forms.ComboBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chec_Setting = new System.Windows.Forms.CheckBox();
             this.groupBox4.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.groupBox15.SuspendLayout();
@@ -659,6 +660,7 @@
             // 
             this.groupBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox7.Controls.Add(this.chec_Setting);
             this.groupBox7.Controls.Add(this.Check_Add_CategoryXray);
             this.groupBox7.Controls.Add(this.Check_Add_Xray);
             this.groupBox7.Location = new System.Drawing.Point(16, 116);
@@ -1563,6 +1565,19 @@
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
+            // chec_Setting
+            // 
+            this.chec_Setting.AutoSize = true;
+            this.chec_Setting.BackColor = System.Drawing.Color.Black;
+            this.chec_Setting.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chec_Setting.ForeColor = System.Drawing.Color.White;
+            this.chec_Setting.Location = new System.Drawing.Point(92, 28);
+            this.chec_Setting.Name = "chec_Setting";
+            this.chec_Setting.Size = new System.Drawing.Size(146, 26);
+            this.chec_Setting.TabIndex = 8;
+            this.chec_Setting.Text = "اعدادات الفحوصات";
+            this.chec_Setting.UseVisualStyleBackColor = false;
+            // 
             // Validate_Users
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1731,5 +1746,6 @@
         public System.Windows.Forms.CheckBox Check_Revenue;
         public System.Windows.Forms.CheckBox check_Techprise;
         public System.Windows.Forms.CheckBox check_sarfPay;
+        public System.Windows.Forms.CheckBox chec_Setting;
     }
 }

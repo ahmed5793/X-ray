@@ -130,7 +130,7 @@ namespace Laboratory.PL
 
 
 
-                p.Add_UserBAsicInformation(txt_User.Text, 1, 1, 1, 1, 1, 1, 1,1,1);
+                p.Add_UserBAsicInformation(txt_User.Text, 1, 1, 1, 1, 1, 1, 1,1,1,1);
 
                 p.AddUser_Permission(txt_User.Text, 1, 1);
 

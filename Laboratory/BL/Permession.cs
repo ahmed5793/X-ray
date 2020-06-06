@@ -11,11 +11,11 @@ namespace Laboratory.BL
     class Permession
     {
         internal void Add_UserBAsicInformation(string User_Name, int Add_Employee, int Add_Employee_Branch, int Add_Branch, 
-            int add_CategoryXray, int Add_Xrays,int Download_Finger,int Report_Finger,int Add_UserAccount , int UserPermession )
+            int add_CategoryXray, int Add_Xrays,int Download_Finger,int Report_Finger,int Add_UserAccount , int UserPermession,int SettingItem)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[10];
+            SqlParameter[] param = new SqlParameter[11];
             param[0] = new SqlParameter("@User_Name", SqlDbType.NVarChar, 100);
             param[0].Value = User_Name;
             param[1] = new SqlParameter("@Add_Employee", SqlDbType.Int);
@@ -36,6 +36,8 @@ namespace Laboratory.BL
             param[8].Value = Add_UserAccount;
             param[9] = new SqlParameter("@User_Permession", SqlDbType.Int);
             param[9].Value = UserPermession;
+            param[10] = new SqlParameter("@SettingItem", SqlDbType.Int);
+            param[10].Value = SettingItem;
             da.excutequery("Add_UserBAsicInformation", param);
             da.close();
 
@@ -56,11 +58,11 @@ namespace Laboratory.BL
 
         }
         internal void Update_UserBAsicInformation(string User_Name, int Add_Employee, int Add_Employee_Branch, int Add_Branch,
-              int add_CategoryXray, int Add_Xrays, int Download_Finger, int Report_Finger, int Add_UserAccount, int UserPermession)
+              int add_CategoryXray, int Add_Xrays, int Download_Finger, int Report_Finger, int Add_UserAccount, int UserPermession,int SettingItem)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[10];
+            SqlParameter[] param = new SqlParameter[11];
             param[0] = new SqlParameter("@User_Name", SqlDbType.NVarChar, 100);
             param[0].Value = User_Name;
             param[1] = new SqlParameter("@Add_Employee", SqlDbType.Int);
@@ -81,6 +83,8 @@ namespace Laboratory.BL
             param[8].Value = Add_UserAccount;
             param[9] = new SqlParameter("@User_Permession", SqlDbType.Int);
             param[9].Value = UserPermession;
+            param[10] = new SqlParameter("@SettingItem", SqlDbType.Int);
+            param[10].Value = SettingItem;
             da.excutequery("Update_UserBAsicInformation", param);
             da.close();
 

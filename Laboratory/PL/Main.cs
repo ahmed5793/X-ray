@@ -1240,7 +1240,7 @@ namespace Laboratory.PL
         {
             try
             {
-                Frm_Settings p = new Frm_Settings();
+                PrintSetting p = new PrintSetting();
                 p.ShowDialog();
             }
             catch (Exception ex)
@@ -1364,6 +1364,19 @@ namespace Laboratory.PL
         private void barButtonItem7_ItemClick_2(object sender, ItemClickEventArgs e)
         {
            
+        }
+
+        private void barButtonItem8_ItemClick_1(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                Frm_UpdateItemPrice p = new Frm_UpdateItemPrice();
+                p.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
