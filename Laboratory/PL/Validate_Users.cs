@@ -99,7 +99,10 @@ namespace Laboratory.PL
                     ///////
                     if (Convert.ToInt32(dt2.Rows[0][8]) == 0) { Check_UserPermession.Checked = false; }
                     else if (Convert.ToInt32(dt2.Rows[0][8]) == 1) { Check_UserPermession.Checked = true; }
-                   
+
+                    if (Convert.ToInt32(dt2.Rows[0][9]) == 0) { chec_Setting.Checked = false; }
+                    else if (Convert.ToInt32(dt2.Rows[0][9]) == 1) { chec_Setting.Checked = true; }
+
                 }
 
                 dt2.Clear();
@@ -358,7 +361,7 @@ namespace Laboratory.PL
                 else
                 {
                     int Add_Branch = 0, Add_Employee = 0, Add_EmployeeBranch = 0, Add_CategoryXray = 0, Add_Xrays = 0,
-                        Downloaad_Finger = 0, Report_Finger = 0, Add_UserAccount = 0, User_Permession = 0 ;
+                        Downloaad_Finger = 0, Report_Finger = 0, Add_UserAccount = 0, User_Permession = 0 , checkSetting = 0;
                     if (check_AddBranch.Checked == true){Add_Branch = 1;}
                     else if (check_AddBranch.Checked == false){Add_Branch = 0;}
                     /////
@@ -386,8 +389,12 @@ namespace Laboratory.PL
                     if (Check_UserPermession.Checked == true) { User_Permession = 1; }
                     else if (Check_UserPermession.Checked == false) { User_Permession = 0; }
 
+                    //
+                    if (chec_Setting.Checked == true) { checkSetting = 1; }
+                    else if (chec_Setting.Checked == false) { checkSetting = 0; }
+
                     p.Update_UserBAsicInformation(txt_Baisc.Text, Add_Employee, Add_EmployeeBranch, Add_Branch, Add_CategoryXray, 
-                        Add_Xrays, Downloaad_Finger, Report_Finger, Add_UserAccount, User_Permession);
+                        Add_Xrays, Downloaad_Finger, Report_Finger, Add_UserAccount, User_Permession, checkSetting);
 
 
 
