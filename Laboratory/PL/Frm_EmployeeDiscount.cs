@@ -46,7 +46,7 @@ namespace Laboratory.PL
             //}
             cmb_Employee.DataSource = E.Select_EmployeeFromBranchToAddShift();
             cmb_Employee.DisplayMember = "Emp_Name";
-            cmb_Employee.ValueMember = "id_employee";
+            cmb_Employee.ValueMember = "Emp_ID";
             cmb_Employee.SelectedIndex = -1;
             }
             catch (Exception ex)

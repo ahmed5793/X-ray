@@ -63,7 +63,7 @@ namespace Laboratory.PL
             //}
             cmb_employeeName.DataSource = E.Select_EmployeeFromBranchToAddShift();
             cmb_employeeName.DisplayMember = "Emp_Name";
-            cmb_employeeName.ValueMember = "id_employee";
+            cmb_employeeName.ValueMember = "Emp_ID";
             cmb_employeeName.SelectedIndex = -1;
             gridControl1.DataSource = E.SelectEmployeeSalf();
         }

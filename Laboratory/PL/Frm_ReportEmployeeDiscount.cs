@@ -35,7 +35,7 @@ namespace Laboratory.PL
             }
             comboBox1.DataSource = E.Select_EmployeeFromBranchToAddShift();
             comboBox1.DisplayMember = "Emp_Name";
-            comboBox1.ValueMember = "id_employee";
+            comboBox1.ValueMember = "Emp_ID";
             comboBox1.SelectedIndex = -1;
         }
         public Frm_ReportEmployeeDiscount()
@@ -72,7 +72,7 @@ namespace Laboratory.PL
                 comboBox1.Enabled = true;
                 comboBox1.DataSource = E.Select_EmployeeFromBranchToAddShift();
                 comboBox1.DisplayMember = "Emp_Name";
-                comboBox1.ValueMember = "id_employee";
+                comboBox1.ValueMember = "Emp_ID";
                 comboBox1.SelectedIndex = -1;
             }
             else
