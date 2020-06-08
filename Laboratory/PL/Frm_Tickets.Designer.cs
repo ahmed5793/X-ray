@@ -108,6 +108,7 @@
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.Btn_Save = new DevExpress.XtraEditors.SimpleButton();
             this.Btn_NewOrder = new DevExpress.XtraEditors.SimpleButton();
+            this.label30 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_order)).BeginInit();
@@ -737,6 +738,7 @@
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this.label30);
             this.groupBox3.Controls.Add(this.label29);
             this.groupBox3.Controls.Add(this.Txt_rentCompany);
             this.groupBox3.Controls.Add(this.label28);
@@ -842,9 +844,9 @@
             this.Txt_addtionPayment.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Txt_addtionPayment.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_addtionPayment.ForeColor = System.Drawing.SystemColors.Info;
-            this.Txt_addtionPayment.Location = new System.Drawing.Point(7, 18);
+            this.Txt_addtionPayment.Location = new System.Drawing.Point(26, 18);
             this.Txt_addtionPayment.Name = "Txt_addtionPayment";
-            this.Txt_addtionPayment.Size = new System.Drawing.Size(134, 25);
+            this.Txt_addtionPayment.Size = new System.Drawing.Size(115, 25);
             this.Txt_addtionPayment.TabIndex = 115;
             this.Txt_addtionPayment.Text = "0";
             this.Txt_addtionPayment.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1332,6 +1334,19 @@
             this.Btn_NewOrder.Text = "فاتورة جديدة";
             this.Btn_NewOrder.Click += new System.EventHandler(this.Btn_Add_Click);
             // 
+            // label30
+            // 
+            this.label30.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label30.AutoSize = true;
+            this.label30.BackColor = System.Drawing.Color.White;
+            this.label30.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(5, 22);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(21, 18);
+            this.label30.TabIndex = 122;
+            this.label30.Text = "%";
+            // 
             // Frm_Tickets
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1462,5 +1477,6 @@
         private DevExpress.XtraEditors.SimpleButton btn_addgrid;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
         private DevExpress.XtraEditors.SimpleButton simpleButton4;
+        private System.Windows.Forms.Label label30;
     }
 }

@@ -26,8 +26,8 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ProductName>Smart_X-Ray</ProductName>
     <PublisherName>Smart_X-Ray</PublisherName>
-    <ApplicationRevision>21</ApplicationRevision>
-    <ApplicationVersion>4.2.0.%2a</ApplicationVersion>
+    <ApplicationRevision>23</ApplicationRevision>
+    <ApplicationVersion>5.3.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>

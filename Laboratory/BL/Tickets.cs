@@ -798,5 +798,25 @@ namespace Laboratory.BL
             da.close();
         }
 
+        internal DataTable SelectSearchticketsBranch(string branch, DateTime from, DateTime to)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[3];
+
+            param[0] = new SqlParameter("@BrancheName", SqlDbType.NVarChar,50);
+            param[0].Value = branch;
+            param[1] = new SqlParameter("@from", SqlDbType.DateTime);
+            param[1].Value = from;
+            param[2] = new SqlParameter("@to", SqlDbType.DateTime);
+            param[2].Value = to;
+
+            dt = da.selected("SelectSearchticketsBranch", param);
+            da.close();
+            return dt;
+        }
+
     }
 }

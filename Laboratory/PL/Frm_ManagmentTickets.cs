@@ -79,8 +79,23 @@ namespace Laboratory.PL
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (radio_placeTicket.Checked==true)
+                {
+                    gridControl1.DataSource = t.SelectSearchticketsBranchDate(Convert.ToInt32(cmb_branches.SelectedValue), FromDate.Value, ToDate.Value);
 
-            gridControl1.DataSource = t.SelectSearchticketsBranchDate(Convert.ToInt32(cmb_branches.SelectedValue), FromDate.Value, ToDate.Value);
+                }
+                else if (radio_Branch.Checked==true)
+                {
+                    gridControl1.DataSource = t.SelectSearchticketsBranch(cmb_branches.Text, FromDate.Value, ToDate.Value);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void simpleButton2_Click(object sender, EventArgs e)
         {

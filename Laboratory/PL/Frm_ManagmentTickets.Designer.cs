@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_ManagmentTickets));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmb_branches = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.txt_username = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -51,6 +50,8 @@
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.radio_Branch = new System.Windows.Forms.RadioButton();
+            this.radio_placeTicket = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -62,8 +63,9 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.radio_Branch);
+            this.groupBox1.Controls.Add(this.radio_placeTicket);
             this.groupBox1.Controls.Add(this.cmb_branches);
-            this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.txt_username);
             this.groupBox1.Controls.Add(this.label18);
             this.groupBox1.Location = new System.Drawing.Point(5, 3);
@@ -80,22 +82,11 @@
             this.cmb_branches.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_branches.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_branches.FormattingEnabled = true;
-            this.cmb_branches.Location = new System.Drawing.Point(56, 12);
+            this.cmb_branches.Location = new System.Drawing.Point(6, 12);
             this.cmb_branches.Name = "cmb_branches";
             this.cmb_branches.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmb_branches.Size = new System.Drawing.Size(233, 32);
             this.cmb_branches.TabIndex = 84;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label13.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(293, 15);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(99, 24);
-            this.label13.TabIndex = 83;
-            this.label13.Text = "مكان الفحص";
             // 
             // txt_username
             // 
@@ -444,6 +435,33 @@
             this.simpleButton4.Text = " تعديل الفاتورة";
             this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
             // 
+            // radio_Branch
+            // 
+            this.radio_Branch.AutoSize = true;
+            this.radio_Branch.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radio_Branch.ForeColor = System.Drawing.Color.Black;
+            this.radio_Branch.Location = new System.Drawing.Point(442, 12);
+            this.radio_Branch.Name = "radio_Branch";
+            this.radio_Branch.Size = new System.Drawing.Size(80, 34);
+            this.radio_Branch.TabIndex = 176;
+            this.radio_Branch.TabStop = true;
+            this.radio_Branch.Text = "الفرع";
+            this.radio_Branch.UseVisualStyleBackColor = true;
+            // 
+            // radio_placeTicket
+            // 
+            this.radio_placeTicket.AutoSize = true;
+            this.radio_placeTicket.Checked = true;
+            this.radio_placeTicket.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radio_placeTicket.ForeColor = System.Drawing.Color.Black;
+            this.radio_placeTicket.Location = new System.Drawing.Point(270, 10);
+            this.radio_placeTicket.Name = "radio_placeTicket";
+            this.radio_placeTicket.Size = new System.Drawing.Size(138, 34);
+            this.radio_placeTicket.TabIndex = 175;
+            this.radio_placeTicket.TabStop = true;
+            this.radio_placeTicket.Text = "مكان الحجز";
+            this.radio_placeTicket.UseVisualStyleBackColor = true;
+            // 
             // Frm_ManagmentTickets
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -480,7 +498,6 @@
         private System.Windows.Forms.TextBox txt_username;
         private System.Windows.Forms.Label label18;
         public System.Windows.Forms.ComboBox cmb_branches;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
@@ -498,5 +515,7 @@
         public DevExpress.XtraGrid.GridControl gridControl1;
         public System.Windows.Forms.DateTimePicker ToDate;
         public System.Windows.Forms.DateTimePicker FromDate;
+        private System.Windows.Forms.RadioButton radio_Branch;
+        private System.Windows.Forms.RadioButton radio_placeTicket;
     }
 }
