@@ -322,6 +322,13 @@ namespace Laboratory.PL
         {
             try
             {
+                dt5.Clear();
+                dt5 = t.vildateTransferForCompany(Convert.ToInt32(txt_IdTeckit.Text));
+                if (dt5.Rows.Count > 0)
+                {
+                    MessageBox.Show("تم تحويل هذا الفحص من قبل ");
+                    return;
+                }
                 //if (dataGridView2.Rows.Count>=0)
                 //{
                 dt5.Clear();

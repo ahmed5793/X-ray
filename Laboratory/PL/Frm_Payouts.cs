@@ -80,12 +80,37 @@ namespace Laboratory.PL
         {
             try
             {
+               
+                    if (Convert.ToInt32(txt_pay.Text )== 0)
+                    {
+                        MessageBox.Show("لا يوجد مردود لهذاالفحص لا يوجد مبلغ مدفوع مسبقا");
+                        return;
+                    }
+
+                
+                dt5.Clear();
+                dt5 = t.vildateReturnTickets(Convert.ToInt32(txt_num.Text));
+                if (dt5.Rows.Count > 0)
+                {
+                    if (Convert.ToDecimal(txt_pay.Text) == Convert.ToDecimal(dt5.Rows[0][1]))
+                    {
+                        MessageBox.Show("عزيزى المستخدم يرجي العلم باان تم استرداد مبلغ الفاتورة من قبل لايمكن استرداها مرة اخرى   ", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+                dt10.Clear();
+                dt10 = t.vildateTransferForCompany(Convert.ToInt32(txt_num.Text));
+                if (dt10.Rows.Count > 0)
+                {
+                    MessageBox.Show("عزيزى المستخدم يرجي العلم باان تم تحويل الفاتورة الي جهه اخري  ", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                    return;
+                }
                 //if (Convert.ToDecimal(txt_prise.Text) > Convert.ToDecimal(txt_pay.Text))
                 //{
                 //    MessageBox.Show("عزيزى المستخدم يرجي العلم باان المبلغ المراد سحبة اكبر من المدفوع  ", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
                 //    return;
                 //}
-              
+
                 //dt5.Clear();
                 //dt5 = t.vildateReturnTickets(Convert.ToInt32(txt_num.Text));
                 //if (dt5.Rows.Count > 0)
@@ -104,19 +129,19 @@ namespace Laboratory.PL
                 }
                 if (dataGridView1.Rows.Count >= 1)
                 {
-                        if (dt5.Rows.Count > 0)
-                        {
-                            if (Convert.ToDecimal(dt5.Rows[0][1]) == Convert.ToDecimal(txt_pay.Text))
-                            {
-                                MessageBox.Show("عزيزى المستخدم يرجي العلم باان تم استرداد مبلغ الفاتورة من قبل لايمكن استرداها مرة اخرى   ", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
-                                return;
-                            }
-                            if (Convert.ToDecimal(dt5.Rows[0][1]) > 0)
-                            {
-                                MessageBox.Show("عزيزى المستخدم يرجي العلم بانه تم استرداد مبلغ" + "(" + Convert.ToDecimal(dt5.Rows[0][1]) + ")" + "لهذه الفاتورة من قبل", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
-                                return;
-                            }
-                        }
+                        //if (dt5.Rows.Count > 0)
+                        //{
+                        //    if (Convert.ToDecimal(dt5.Rows[0][1]) == Convert.ToDecimal(txt_pay.Text))
+                        //    {
+                        //        MessageBox.Show("عزيزى المستخدم يرجي العلم باان تم استرداد مبلغ الفاتورة من قبل لايمكن استرداها مرة اخرى   ", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                        //        return;
+                        //    }
+                        //    if (Convert.ToDecimal(dt5.Rows[0][1]) > 0)
+                        //    {
+                        //        MessageBox.Show("عزيزى المستخدم يرجي العلم بانه تم استرداد مبلغ" + "(" + Convert.ToDecimal(dt5.Rows[0][1]) + ")" + "لهذه الفاتورة من قبل", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                        //        return;
+                        //    }
+                        //}
                         if (Convert.ToDecimal(txt_pay.Text) > Convert.ToDecimal(dt4.Rows[0][0]))
                         {
                             MessageBox.Show("رصيد الخزنة الحالى غير كافى لسحب هذا المبلغ");

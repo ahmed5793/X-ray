@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_EmpSarf));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmb_employeeName = new System.Windows.Forms.ComboBox();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.label12 = new System.Windows.Forms.Label();
             this.Txt_TotalSalf = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -51,8 +53,6 @@
             this.txt_UserName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.Btn_Add = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.cmb_employeeName = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,6 +85,37 @@
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // cmb_employeeName
+            // 
+            this.cmb_employeeName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmb_employeeName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmb_employeeName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmb_employeeName.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_employeeName.FormattingEnabled = true;
+            this.cmb_employeeName.Location = new System.Drawing.Point(302, 27);
+            this.cmb_employeeName.Name = "cmb_employeeName";
+            this.cmb_employeeName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cmb_employeeName.Size = new System.Drawing.Size(279, 30);
+            this.cmb_employeeName.TabIndex = 61;
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.Black;
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton1.Appearance.Options.UseBackColor = true;
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.Appearance.Options.UseTextOptions = true;
+            this.simpleButton1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.simpleButton1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.simpleButton1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.simpleButton1.Location = new System.Drawing.Point(55, 20);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(118, 36);
+            this.simpleButton1.TabIndex = 60;
+            this.simpleButton1.Text = "بحث";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // label12
             // 
@@ -197,10 +228,10 @@
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial Black", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(470, 263);
+            this.label6.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(469, 268);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(110, 52);
+            this.label6.Size = new System.Drawing.Size(59, 29);
             this.label6.TabIndex = 56;
             this.label6.Text = "0.00";
             // 
@@ -264,6 +295,7 @@
             this.Txt_salary.Location = new System.Drawing.Point(416, 122);
             this.Txt_salary.MaxLength = 11;
             this.Txt_salary.Name = "Txt_salary";
+            this.Txt_salary.ReadOnly = true;
             this.Txt_salary.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Txt_salary.Size = new System.Drawing.Size(164, 32);
             this.Txt_salary.TabIndex = 40;
@@ -350,37 +382,6 @@
             this.Btn_Add.TabIndex = 179;
             this.Btn_Add.Text = "تاكيد الصرف";
             this.Btn_Add.Click += new System.EventHandler(this.Btn_Add_Click);
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.Black;
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton1.Appearance.Options.UseBackColor = true;
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.Appearance.Options.UseTextOptions = true;
-            this.simpleButton1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.simpleButton1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.simpleButton1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
-            this.simpleButton1.Location = new System.Drawing.Point(55, 20);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(118, 36);
-            this.simpleButton1.TabIndex = 60;
-            this.simpleButton1.Text = "بحث";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
-            // 
-            // cmb_employeeName
-            // 
-            this.cmb_employeeName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmb_employeeName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cmb_employeeName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmb_employeeName.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_employeeName.FormattingEnabled = true;
-            this.cmb_employeeName.Location = new System.Drawing.Point(302, 27);
-            this.cmb_employeeName.Name = "cmb_employeeName";
-            this.cmb_employeeName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmb_employeeName.Size = new System.Drawing.Size(279, 30);
-            this.cmb_employeeName.TabIndex = 61;
             // 
             // Frm_EmpSarf
             // 
