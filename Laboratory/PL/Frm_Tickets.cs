@@ -57,6 +57,10 @@ namespace Laboratory.PL
         }
         void Permision()
         {
+            try
+            {
+
+           
             //dt.Clear();
             //dt = u.SelectUserBranch(txt_username.Text);
 
@@ -80,83 +84,146 @@ namespace Laboratory.PL
                 cmb_Stock.DisplayMember = "Name_Stock";
                 cmb_Stock.ValueMember = "ID_Stock";
                 //Stock();
-            //}
+                //}
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
         public void rezizse()
         {
+            try { 
             dgv_order.RowHeadersWidth = 20;
             dgv_order.Columns[1].Width = 180;
             dgv_order.Columns[2].Width = 90;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public void SelectdataTable()
         {
+            try { 
             dt2.Columns.Add("رقم الفحص");
             dt2.Columns.Add("اسم الفحص");
             dt2.Columns.Add("قيمة الفحص");
             dt2.Columns.Add("الخصم");
             dgv_order.DataSource = dt2;
             dgv_order.Columns[0].Visible = false;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
         void company()
         {
+            try { 
             cmb_Company.DataSource = cm.SelectCompany();
             cmb_Company.DisplayMember = "اسم الشركه";
             cmb_Company.ValueMember = "Comp_ID";
             cmb_Company.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
         void doctor()
         {
+            try { 
             cmb_Doctor.DataSource = d.SelectDoctor();
             cmb_Doctor.DisplayMember = "اسم الطبيب ";
             cmb_Doctor.ValueMember = "Doc_ID";
             cmb_Doctor.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
         void brnches()
         {
+            try
+            { 
             cmb_branches.DataSource = b.SelectCompBranches();
             cmb_branches.DisplayMember = "Name";
             cmb_branches.ValueMember = "Branch_ID";
             cmb_branches.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
 
-        void Stock()
-        {
-
-            cmb_Stock.DataSource = s.Compo_Stock();
-            cmb_Stock.DisplayMember = "Name_Stock";
-            cmb_Stock.ValueMember = "ID_Stock";
-
-        }
+     
         void Customer()
         {
+            try { 
             Cmb_customer.DataSource = c.SelectCompoCustomer();
             Cmb_customer.DisplayMember = "Cust_Name";
             Cmb_customer.ValueMember = "Cust_ID";
             Cmb_customer.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
 
         void CategoryXraya()
         {
+            try { 
 
             Cmb_category.DataSource = cx.selectCategoryXRaya();
             Cmb_category.DisplayMember = "الفئات";
             Cmb_category.ValueMember = "ID_CtegoryXrays";
             Cmb_category.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
         void DoctorOfCenter()
         {
+            try { 
             cmb_DoctorOfCenter.DataSource = dc.CompoDoctor_OFCENTER();
             cmb_DoctorOfCenter.DisplayMember = "Doc_Name";
             cmb_DoctorOfCenter.ValueMember = "Doc_ID";
             cmb_DoctorOfCenter.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
         void Techincal()
         {
+            try { 
             cmb_Techincal.DataSource = tc.CompoTechibncal();
             cmb_Techincal.DisplayMember = "Tech_Name";
             cmb_Techincal.ValueMember = "Techincal_ID";
             cmb_Techincal.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
 
 
@@ -204,6 +271,7 @@ namespace Laboratory.PL
         }
         void Patient_PaymentRate()
         {
+            try { 
             if (Txt_addtionPayment.Text != "" && Txt_PricePayment.Text != "")
             {
                 if (Txt_addtionPayment.Text == "0")
@@ -225,25 +293,44 @@ namespace Laboratory.PL
                 Txt_addtionPayment.Text = "0";
                 Txt_PricePayment.Text = "0";
             }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
         void Rent_Company()
         {
+            try { 
             if (txt_afterDiscount.Text != "" && Txt_PricePayment.Text != "")
             {
                 decimal Total = Convert.ToDecimal(txt_afterDiscount.Text) - Convert.ToDecimal(Txt_PricePayment.Text);
                 Txt_rentCompany.Text = Math.Round(Total, 1).ToString();
             }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public void totalOrder()
         {
-
+            try { 
             decimal total = 0;
             for (int i = 0; i < dgv_order.Rows.Count; i++)
             {
                 total += Convert.ToDecimal(dgv_order.Rows[i].Cells[2].Value);
             }
             txt_total.Text = Math.Round(total, 1).ToString();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
 
         }
         public void pay()
@@ -289,12 +376,13 @@ namespace Laboratory.PL
             {
 
                 MessageBox.Show(ex.Message);
-                MessageBox.Show(ex.StackTrace);
+               
             }
 
         }
         public void Discount()
         {
+            try { 
             decimal x = 0;
             if (txt_total.Text != string.Empty && txt_discount.Text != string.Empty)
             {
@@ -310,10 +398,16 @@ namespace Laboratory.PL
                 txt_afterDiscount.Text = Math.Round(discount, 1).ToString();
                 totalOrder();
             }
+            }
+            catch (Exception ex)
+            {
 
+                MessageBox.Show(ex.Message);
+            }
         }
         public void DiscountMoney()
         {
+            try { 
             decimal x = 0;
             if (txt_total.Text != string.Empty && txt_discount.Text != string.Empty)
             {
@@ -330,6 +424,12 @@ namespace Laboratory.PL
                 txt_afterDiscount.Text = discount.ToString();
                 totalOrder();
 
+            }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
             }
 
         }
@@ -353,7 +453,7 @@ namespace Laboratory.PL
             //    cmb_items.DataSource = null;
             //    return;
             //}
-           
+            try { 
                 if (cmb_statues.Text == "نقدى")
                 {
                     //dt.Clear();
@@ -416,21 +516,28 @@ namespace Laboratory.PL
                     }
 
                 }
-            }
-            
-            //dt.Clear();
+                
+        }
 
-            //dt = ix.SelectCtegoryItems(Convert.ToInt32(Cmb_category.SelectedValue));
-            //if (dt.Rows.Count > 0)
-            //{
-            //    cmb_items.DataSource = ix.SelectCtegoryItems(Convert.ToInt32(Cmb_category.SelectedValue));
-            //    cmb_items.DisplayMember = "Name";
-            //    cmb_items.ValueMember = "ID_ItemsXrays";
-            //}
-            //else
-            //{
-            //    cmb_items.DataSource = null;
-            //}
+                //dt.Clear();
+
+                //dt = ix.SelectCtegoryItems(Convert.ToInt32(Cmb_category.SelectedValue));
+                //if (dt.Rows.Count > 0)
+                //{
+                //    cmb_items.DataSource = ix.SelectCtegoryItems(Convert.ToInt32(Cmb_category.SelectedValue));
+                //    cmb_items.DisplayMember = "Name";
+                //    cmb_items.ValueMember = "ID_ItemsXrays";
+                //}
+                //else
+                //{
+                //    cmb_items.DataSource = null;
+                //}
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
     
 
@@ -440,7 +547,8 @@ namespace Laboratory.PL
         }
 
         private void Cmb_customer_SelectionChangeCommitted(object sender, EventArgs e)
-        {           
+        {
+        try {  
                 dt.Clear();
                 dt = c.SelectDataCompoCustomer(Convert.ToInt32(Cmb_customer.SelectedValue));
                 if (dt.Rows.Count > 0)
@@ -459,11 +567,18 @@ namespace Laboratory.PL
                     txt_address.Clear();
 
                     txt_age.Clear();
-                }            
+                }
         }
+        catch (Exception ex)
+        {
+
+            MessageBox.Show(ex.Message);
+        }
+    }
 
         private void rdb_NewPatient_CheckedChanged(object sender, EventArgs e)
         {
+        try {
             if (rdb_NewPatient.Checked == true)
             {
                 Cmb_customer.Hide();
@@ -482,6 +597,12 @@ namespace Laboratory.PL
 
             }
         }
+        catch (Exception ex)
+        {
+
+            MessageBox.Show(ex.Message);
+        }
+    }
 
         private void rdb_CurrentPatient_CheckedChanged(object sender, EventArgs e)
         {
@@ -509,6 +630,7 @@ namespace Laboratory.PL
 
         private void Cmb_customer_Leave(object sender, EventArgs e)
         {
+            try { 
             if (Cmb_customer.Text != "")
             {
                 dt.Clear();
@@ -532,10 +654,17 @@ namespace Laboratory.PL
                     return;
                 }
             }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void Cmb_customer_KeyDown(object sender, KeyEventArgs e)
         {
+            try { 
             dt.Clear();
             dt = c.SelectDataCompoCustomer(Convert.ToInt32(Cmb_customer.SelectedValue));
             if (dt.Rows.Count > 0)
@@ -545,12 +674,18 @@ namespace Laboratory.PL
                 txt_age.Text = dt.Rows[0][2].ToString();
 
             }
-           
-         
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void txt_price_KeyPress(object sender, KeyPressEventArgs e)
         {
+            try { 
             if (e.KeyChar == '.' && txt_total.Text.ToString().IndexOf('.') > -1)
             {
                 e.Handled = true;
@@ -559,10 +694,17 @@ namespace Laboratory.PL
             {
                 e.Handled = true;
             }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void text_discount_KeyPress(object sender, KeyPressEventArgs e)
         {
+            try { 
             if (e.KeyChar == '.' && txt_discount.Text.ToString().IndexOf('.') > -1)
             {
                 e.Handled = true;
@@ -570,6 +712,12 @@ namespace Laboratory.PL
             else if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != Convert.ToChar((System.Globalization.CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator)))
             {
                 e.Handled = true;
+            }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -652,19 +800,27 @@ namespace Laboratory.PL
 
         private void txt_discount_Leave(object sender, EventArgs e)
         {
-            if (txt_discount.Text=="")
+            try
             {
-                txt_discount.Text = "0";
+                if (txt_discount.Text == "")
+                {
+                    txt_discount.Text = "0";
+                }
+                if (rdb_Discount.Checked == true)
+                {
+                    Discount();
+                    pay();
+                }
+                else
+                {
+                    DiscountMoney();
+                    pay();
+                }
             }
-            if (rdb_Discount.Checked == true)
+            catch (Exception ex)
             {
-                Discount();
-                pay();
-            }
-            else
-            {
-                DiscountMoney();
-                pay();
+
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -681,6 +837,7 @@ namespace Laboratory.PL
 
         private void txt_discount_KeyUp(object sender, KeyEventArgs e)
         {
+            try { 
             if (rdb_Discount.Checked==true)
             {
                 Discount();
@@ -690,6 +847,12 @@ namespace Laboratory.PL
             {
                 DiscountMoney();
                 pay();
+            }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
             }
         }
         private void txt_discount_Validated(object sender, EventArgs e)
@@ -714,6 +877,7 @@ namespace Laboratory.PL
         }
         void clear()
         {
+            try { 
             Btn_Save.Enabled = true;
             rdb_money.Enabled = true;
             rdb_Discount.Enabled = true;
@@ -739,7 +903,7 @@ namespace Laboratory.PL
             txt_pay.Text = "0";
             //cmb_statues.SelectedIndex = -1;
             cmb_branches.SelectedIndex = -1;
-
+                cmb_statues.SelectedIndex = 0;
             cmb_items.SelectedIndex = -1;
             Cmb_category.SelectedIndex = -1;
             comboBox1.SelectedIndex = -1;
@@ -752,6 +916,13 @@ namespace Laboratory.PL
             cmb_Stock.SelectedIndex = -1;
             cmb_Company.Enabled = false;
             txt_pay.Enabled = false;
+                Btn_DetailsCompany.Hide();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
         private void label21_Click(object sender, EventArgs e)
         {
@@ -777,6 +948,7 @@ namespace Laboratory.PL
 
         private void dgv_order_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
+            try { 
             totalOrder();
 
             if (rdb_Discount.Checked == true)
@@ -793,7 +965,13 @@ namespace Laboratory.PL
             Patient_PaymentRate();
             Rent_Company();
             pay();
-            
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         private void txt_discount_KeyPress(object sender, KeyPressEventArgs e)
@@ -819,6 +997,7 @@ namespace Laboratory.PL
         }
         private void cmb_Company_SelectionChangeCommitted(object sender, EventArgs e)
         {
+            try { 
             if (cmb_statues.Text=="شركات")
             {
 
@@ -861,7 +1040,12 @@ namespace Laboratory.PL
             }
 
             }
+            }
+            catch (Exception ex)
+            {
 
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btn_print_Click(object sender, EventArgs e)
@@ -870,6 +1054,7 @@ namespace Laboratory.PL
 
         private void cmb_statues_SelectionChangeCommitted(object sender, EventArgs e)
         {
+            try { 
             if (cmb_statues.Text == "شركات")
             {
                 //label26.Show();
@@ -933,6 +1118,12 @@ namespace Laboratory.PL
                 txt_pay.Enabled = true; 
                 Btn_DetailsCompany.Hide();
             }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
         private void txt_addition_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -948,6 +1139,7 @@ namespace Laboratory.PL
 
         private void cmb_Techincal_Leave(object sender, EventArgs e)
         {
+            try { 
             if (cmb_Techincal.Text!="")
             {
                 dt.Clear();
@@ -961,10 +1153,17 @@ namespace Laboratory.PL
                     return;
                 } 
             }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void cmb_DoctorOfCenter_Leave(object sender, EventArgs e)
         {
+            try { 
             if (cmb_DoctorOfCenter.Text != "")
             {
                 dt.Clear();
@@ -979,10 +1178,17 @@ namespace Laboratory.PL
                 }
 
             }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void cmb_items_Leave(object sender, EventArgs e)
         {
+            try { 
             if (Cmb_category.Text !="" && cmb_items.Text!="" )
             {            
             dt.Clear();
@@ -994,11 +1200,17 @@ namespace Laboratory.PL
                     return;
                 }
             }
-         
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void Cmb_category_KeyDown(object sender, KeyEventArgs e)
         {
+            try { 
             if (Cmb_category.Text != "")
             {
 
@@ -1010,10 +1222,17 @@ namespace Laboratory.PL
                     cmb_items.DataSource = null;
                 }
             }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void Cmb_category_Leave(object sender, EventArgs e)
         {
+            try { 
             if (Cmb_category.Text != "")
             {
                 dt.Clear();
@@ -1023,6 +1242,12 @@ namespace Laboratory.PL
                     cmb_items.DataSource = null;
                     MessageBox.Show("عزيزيى المستخدم يرجي العلم بان اسم الجهاز غير مسجل ");
                 }
+            }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -1071,6 +1296,7 @@ namespace Laboratory.PL
         }
         private void Txt_PricePayment_KeyUp(object sender, KeyEventArgs e)
         {
+            try { 
             Patient_PaymentRate();
             Rent_Company();
             pay();
@@ -1086,10 +1312,17 @@ namespace Laboratory.PL
 
                 }
             }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void Txt_addtionPayment_MouseLeave(object sender, EventArgs e)
         {
+            try { 
             if (Txt_addtionPayment.Text=="")
             {
                 Txt_addtionPayment.Text = "0";
@@ -1105,10 +1338,17 @@ namespace Laboratory.PL
             Patient_PaymentRate();
             Rent_Company();
             pay();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void cmb_Company_Leave(object sender, EventArgs e)
         {
+            
             DataTable dt2 = new DataTable();
             try
             {
@@ -1171,6 +1411,7 @@ namespace Laboratory.PL
 
         private void cmb_Doctor_Leave(object sender, EventArgs e)
         {
+            try { 
             DataTable dt = new DataTable();
             if (cmb_Doctor.Text != "")
             {
@@ -1185,6 +1426,12 @@ namespace Laboratory.PL
                     return;
                 }
                 dt.Dispose();
+            }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -1237,11 +1484,12 @@ namespace Laboratory.PL
 
         private void Btn_Add_Click(object sender, EventArgs e)
         {
+            try { 
             clear();
             Customer();
             
             cmb_statues.Enabled = true;
-            cmb_statues.SelectedIndex = 0;
+        
             txt_pay.Enabled = true;
             cmb_items.Enabled = true;
             Cmb_category.Enabled = true;
@@ -1252,8 +1500,13 @@ namespace Laboratory.PL
             cmb_branches.Enabled = true;
             cmb_Stock.Enabled = true;
             cmb_UserBranch.Enabled = true;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
-        frm_SingelReport sr = new frm_SingelReport();
         private void simpleButton1_Click(object sender, EventArgs e)
         {         
             //    Rpt_OrderPay report = new Rpt_OrderPay();
@@ -1478,6 +1731,7 @@ namespace Laboratory.PL
                         DataTable dt1 = new DataTable();
                         dt1.Clear();
                         dt1 = t.ReportInvoiceTicketPay(Convert.ToInt32(txt_IdTicket.Text));
+                        frm_SingelReport sr = new frm_SingelReport();
 
                         Rpt_OrderPay report = new Rpt_OrderPay();
                         RPT.Order.DataSetOrderPay dso = new RPT.Order.DataSetOrderPay();
@@ -1510,6 +1764,7 @@ namespace Laboratory.PL
                         report.Parameters["idTicket"].Visible = false;
                         sr.documentViewer1.Enabled = true;
                         sr.ShowDialog();
+                  
                     }
                     else if (cmb_statues.Text == "شركات")
                     {
@@ -1686,22 +1941,17 @@ namespace Laboratory.PL
                         DataTable dt1 = new DataTable();
                         dt1.Clear();
                         dt1 = t.ReportInvoiceTicketCompany(Convert.ToInt32(txt_IdTicket.Text));
+                        frm_SingelReport sr = new frm_SingelReport();
+
                         RPT.Order.Rpt_TeckietCompanyOrder oc = new RPT.Order.Rpt_TeckietCompanyOrder();
-                        RPT.Order.DataSetOrderCompany dso = new RPT.Order.DataSetOrderCompany();
+                        RPT.Order.DataSetOrderCompany dso1 = new RPT.Order.DataSetOrderCompany();
                         
-                        dso.Tables["dataCompany"].Clear();
+                        dso1.Tables["dataCompany"].Clear();
                         for (int i = 0; i < dt1.Rows.Count; i++)
                         {
-                            //dso.Tables["dataCompany"].Rows.Add(Convert.ToInt32(dt1.Rows[i][0]), dt1.Rows[i][1], dt1.Rows[i][2],
-                            //Convert.ToDecimal(dt1.Rows[i][3]), dt1.Rows[i][4], dt1.Rows[i][5], Convert.ToInt32(dt1.Rows[i][6]), Convert.ToDateTime(dt1.Rows[i][7]),
-                            //Convert.ToDateTime(dt1.Rows[i][8]), dt1.Rows[i][9], dt1.Rows[i][10], dt1.Rows[i][11], dt1.Rows[i][12], dt1.Rows[i][13],
-                            //Convert.ToDecimal(dt1.Rows[i][14]), Convert.ToDecimal(dt1.Rows[i][15]), Convert.ToDecimal(dt1.Rows[i][16]),
-                            //dt1.Rows[i][17], dt1.Rows[i][18], dt1.Rows[i][19], dt1.Rows[i][20], Convert.ToDateTime(dt1.Rows[i][21]), Convert.ToDecimal(dt1.Rows[i][22]),
-                            //dt1.Rows[i][23], Convert.ToDecimal(dt1.Rows[i][24]), dt1.Rows[i][25], Convert.ToDecimal(dt1.Rows[i][26]),
-                            //Convert.ToDecimal(dt1.Rows[i][27]), Convert.ToInt32(dt1.Rows[i][28]), Convert.ToInt32(dt1.Rows[i][29]),
-                            //Convert.ToInt32(dt1.Rows[i][30]), Convert.ToInt32(dt1.Rows[i][31]));
+                          
 
-                            dso.Tables["dataCompany"].Rows.Add(dt1.Rows[i][0], dt1.Rows[i][1], dt1.Rows[i][2],
+                            dso1.Tables["dataCompany"].Rows.Add(dt1.Rows[i][0], dt1.Rows[i][1], dt1.Rows[i][2],
                                dt1.Rows[i][3], dt1.Rows[i][4], dt1.Rows[i][5], dt1.Rows[i][6], dt1.Rows[i][7],
                                dt1.Rows[i][8], dt1.Rows[i][9], dt1.Rows[i][10], dt1.Rows[i][11], dt1.Rows[i][12], dt1.Rows[i][13],
                                dt1.Rows[i][14],dt1.Rows[i][15], dt1.Rows[i][16],
@@ -1712,14 +1962,15 @@ namespace Laboratory.PL
 
                         }
                         sr.documentViewer1.Refresh();
-                        oc.DataSource = dso;
+                        oc.DataSource = dso1;
                         oc.Parameters["idTicket"].Value = Convert.ToInt32(txt_IdTicket.Text);                    
                         
                         sr.documentViewer1.DocumentSource = oc;
                         oc.Parameters["idTicket"].Visible = false;
                         sr.documentViewer1.Enabled = true;
                         sr.ShowDialog();
-
+                      
+                    
                     }
 
 
@@ -1740,9 +1991,7 @@ namespace Laboratory.PL
                     cmb_branches.Enabled = false;
                     cmb_Stock.Enabled = false;
                     cmb_UserBranch.Enabled = false;
-                    string x = DateTime.Now.ToShortDateString();
-                    Frm_DataRevaltionTicket.getmain.gridControl1.DataSource = t.selectDataRevlation(Convert.ToInt32(Frm_DataRevaltionTicket.getmain.comboBox1.SelectedValue), Convert.ToDateTime(x));
-                   
+                
                     
                   
                 }
@@ -1759,7 +2008,7 @@ namespace Laboratory.PL
 
                 MessageBox.Show(ex.Message);
               
-                Btn_Save.Enabled = true;
+               // Btn_Save.Enabled = true;
             }
         }
 
@@ -1771,45 +2020,46 @@ namespace Laboratory.PL
             if (txt_IdTicket.Text!="")
             {
                 DataSet1 ds1 = new DataSet1();
-              //  DataTable dt = new DataTable();
-                //dt.Clear();
-                //dt = t.PrintBarcode(Convert.ToInt32(txt_IdTicket.Text));
-                //RPT.RPT_Barcode rb = new RPT.RPT_Barcode();
+                    //  DataTable dt = new DataTable();
+                    //dt.Clear();
+                    //dt = t.PrintBarcode(Convert.ToInt32(txt_IdTicket.Text));
+                    //RPT.RPT_Barcode rb = new RPT.RPT_Barcode();
 
-                //sr.documentViewer1.Refresh();
+                    //sr.documentViewer1.Refresh();
 
-                //ds1.Tables["DataTable1"].Clear();
-                //for (int i = 0; i < dt.Rows.Count; i++)
-                //{
-                //    ds1.Tables["DataTable1"].Rows.Add(Convert.ToInt32(dt.Rows[i][0]), dt.Rows[i][1], dt.Rows[i][2],
-                //        dt.Rows[i][3], Convert.ToDateTime(dt.Rows[i][4]));
-                //}
-                //rb.DataSource = ds1;
-                //rb.Parameters["idTicket"].Value = Convert.ToInt32(txt_IdTicket.Text);
+                    //ds1.Tables["DataTable1"].Clear();
+                    //for (int i = 0; i < dt.Rows.Count; i++)
+                    //{
+                    //    ds1.Tables["DataTable1"].Rows.Add(Convert.ToInt32(dt.Rows[i][0]), dt.Rows[i][1], dt.Rows[i][2],
+                    //        dt.Rows[i][3], Convert.ToDateTime(dt.Rows[i][4]));
+                    //}
+                    //rb.DataSource = ds1;
+                    //rb.Parameters["idTicket"].Value = Convert.ToInt32(txt_IdTicket.Text);
 
-                ////sr.documentViewer1.DocumentSource = rb;
-                //rb.Parameters["idTicket"].Visible = false;
-
-
-                //string printerName = Properties.Settings.Default.PrintNameBarcode;
+                    ////sr.documentViewer1.DocumentSource = rb;
+                    //rb.Parameters["idTicket"].Visible = false;
 
 
+                    //string printerName = Properties.Settings.Default.PrintNameBarcode;
 
 
-                ////Specify the printer name.
-                //rb.PrinterName = printerName;
-
-                ////Create the document.
-                //rb.CreateDocument();
-
-                //ReportPrintTool pt = new ReportPrintTool(rb);
-                //pt.Print();
 
 
-                //sr.ShowDialog();
+                    ////Specify the printer name.
+                    //rb.PrinterName = printerName;
+
+                    ////Create the document.
+                    //rb.CreateDocument();
+
+                    //ReportPrintTool pt = new ReportPrintTool(rb);
+                    //pt.Print();
 
 
-                RPT.Order.CrystalReport2 cr = new RPT.Order.CrystalReport2();
+                    //sr.ShowDialog();
+
+                    frm_SingelReport sr = new frm_SingelReport();
+
+                    RPT.Order.CrystalReport2 cr = new RPT.Order.CrystalReport2();
 
                 DataTable dt = new DataTable();
                 dt.Clear();
@@ -1859,7 +2109,7 @@ namespace Laboratory.PL
             {
 
                 MessageBox.Show(ex.Message);
-                MessageBox.Show(ex.StackTrace);
+               
             }
         }
 

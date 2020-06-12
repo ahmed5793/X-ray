@@ -236,7 +236,7 @@
             this.xrLabel21.StylePriority.UseTextAlignment = false;
             this.xrLabel21.Text = "xrLabel21";
             this.xrLabel21.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrLabel21.TextFormatString = "{0:dddd, dd MMMM, yyyy hh:mm:ss tt}";
+            this.xrLabel21.TextFormatString = "{0:dd/MM/yyyy}";
             // 
             // xrLabel16
             // 
@@ -726,7 +726,7 @@
             this.xrLabel15.StylePriority.UseBackColor = false;
             this.xrLabel15.StylePriority.UseFont = false;
             this.xrLabel15.StylePriority.UseTextAlignment = false;
-            this.xrLabel15.Text = "النسبة الذى يتحملها العميل";
+            this.xrLabel15.Text = " (%)النسبة الذى يتحملها العميل";
             this.xrLabel15.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLabel11
