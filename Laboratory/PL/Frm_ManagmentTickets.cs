@@ -104,15 +104,15 @@ namespace Laboratory.PL
                 //Frm_DetailsTickets fd = new Frm_DetailsTickets();
                 if (gridView1.RowCount > 0)
                 {
-                    if (gridView1.GetFocusedRowCellValue("طريقه التعامل").ToString() == "نقدى" )
-                    {
+                    //if (gridView1.GetFocusedRowCellValue("طريقه التعامل").ToString() == "نقدى" )
+                    //{
                         if (Convert.ToDecimal(gridView1.GetFocusedRowCellValue("المدفوع"))==0)
                         {
                             MessageBox.Show("لا يوجد مردود لهذاالفحص لا يوجد مبلغ مدفوع مسبقا");
                             return;
                         }
 
-                    }
+                    //}
                     dt5.Clear();
                     dt5 = t.vildateReturnTickets(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
                     if (dt5.Rows.Count > 0)

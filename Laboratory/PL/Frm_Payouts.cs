@@ -81,11 +81,11 @@ namespace Laboratory.PL
             try
             {
                
-                    if (Convert.ToInt32(txt_pay.Text )== 0)
-                    {
-                        MessageBox.Show("لا يوجد مردود لهذاالفحص لا يوجد مبلغ مدفوع مسبقا");
-                        return;
-                    }
+                    //if (Convert.ToInt32(txt_pay.Text )== 0)
+                    //{
+                    //    MessageBox.Show("لا يوجد مردود لهذاالفحص لا يوجد مبلغ مدفوع مسبقا");
+                    //    return;
+                    //}
 
                 
                 dt5.Clear();
@@ -322,6 +322,7 @@ namespace Laboratory.PL
             {
 
                 MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
             }
         }
 
