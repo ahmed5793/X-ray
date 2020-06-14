@@ -90,16 +90,16 @@ namespace Laboratory.PL
                 
                 dt5.Clear();
                 dt5 = t.vildateReturnTickets(Convert.ToInt32(txt_num.Text));
-                if (dt5.Rows.Count > 0)
-                {
-                    //if (Convert.ToDecimal(txt_pay.Text) == Convert.ToDecimal(dt5.Rows[0][1]))
-                    //{
-                    MessageBox.Show("عزيزى المستخدم يرجي العلم باان تم استرداد مبلغ الفاتورة من قبل لايمكن استرداها مرة اخرى   ", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
-                    //MessageBox.Show(dt5.Rows[0][3].ToString() , "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                //if (dt5.Rows.Count > 0)
+                //{
+                //    //if (Convert.ToDecimal(txt_pay.Text) == Convert.ToDecimal(dt5.Rows[0][1]))
+                //    //{
+                //    MessageBox.Show("عزيزى المستخدم يرجي العلم باان تم استرداد مبلغ الفاتورة من قبل لايمكن استرداها مرة اخرى   ", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                //    //MessageBox.Show(dt5.Rows[0][3].ToString() , "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
 
-                    return;
-                   //}
-                }
+                //    return;
+                //   //}
+                //}
                 dt10.Clear();
                 dt10 = t.vildateTransferForCompany(Convert.ToInt32(txt_num.Text));
                 if (dt10.Rows.Count > 0)
@@ -190,7 +190,7 @@ namespace Laboratory.PL
                             c.Add_CustomerAccountStatment(Convert.ToInt32(Txt_IdCust.Text), 0,
                             Convert.ToDecimal(txt_pay.Text), dateTimePicker2.Value, mno1, Convert.ToInt32(cmb_Stock.SelectedValue)
                          , txt_username.Text, Convert.ToInt32(comboBox1.SelectedValue), " إذن صرف مبلغ " + " " +( txt_pay.Text) + "مدفوع مسبقا للحجز  " + (txt_num.Text));
-                            s.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_pay.Text), dateTimePicker2.Value, txt_username.Text, " سحب مبلغ " + " " + (txt_pay.Text) + "مدفوع مسبقا للحجز  " +( txt_num.Text));
+                            //s.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_pay.Text), dateTimePicker2.Value, txt_username.Text, " سحب مبلغ " + " " + (txt_pay.Text) + "مدفوع مسبقا للحجز  " +( txt_num.Text));
 
                             dt.Clear();
                             dt = c.Select_CustomertotalBAlance(Convert.ToInt32(Txt_IdCust.Text));
@@ -217,7 +217,7 @@ namespace Laboratory.PL
                             {
                                 dt5.Clear();
                                 dt5 = t.vildateReturnTickets(Convert.ToInt32(txt_num.Text));
-                                if (dt5.Rows.Count == 0)
+                                if (dt5.Rows.Count > 0)
                                 {
                                     //if (Convert.ToDecimal(txt_pay.Text) == Convert.ToDecimal(dt5.Rows[0][1]))
                                     //{
@@ -247,7 +247,7 @@ namespace Laboratory.PL
                             {
                                 dt5.Clear();
                                 dt5 = t.vildateReturnTickets(Convert.ToInt32(txt_num.Text));
-                                if (dt5.Rows.Count == 0)
+                                if (dt5.Rows.Count > 0)
                                 {
                                     //if (Convert.ToDecimal(txt_pay.Text) == Convert.ToDecimal(dt5.Rows[0][1]))
                                     //{
