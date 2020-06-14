@@ -131,20 +131,20 @@ namespace Laboratory.PL
                 }
                 if (dataGridView1.Rows.Count >= 1)
                 {
-                        //if (dt5.Rows.Count > 0)
-                        //{
-                        //    if (Convert.ToDecimal(dt5.Rows[0][1]) == Convert.ToDecimal(txt_pay.Text))
-                        //    {
-                        //        MessageBox.Show("عزيزى المستخدم يرجي العلم باان تم استرداد مبلغ الفاتورة من قبل لايمكن استرداها مرة اخرى   ", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
-                        //        return;
-                        //    }
-                        //    if (Convert.ToDecimal(dt5.Rows[0][1]) > 0)
-                        //    {
-                        //        MessageBox.Show("عزيزى المستخدم يرجي العلم بانه تم استرداد مبلغ" + "(" + Convert.ToDecimal(dt5.Rows[0][1]) + ")" + "لهذه الفاتورة من قبل", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
-                        //        return;
-                        //    }
-                        //}
-                        if (Convert.ToDecimal(txt_pay.Text) > Convert.ToDecimal(dt4.Rows[0][0]))
+                    if (dt5.Rows.Count > 0)
+                    {
+                        if (Convert.ToDecimal(dt5.Rows[0][1]) == Convert.ToDecimal(txt_pay.Text))
+                        {
+                            MessageBox.Show("عزيزى المستخدم يرجي العلم باان تم استرداد مبلغ الفاتورة من قبل لايمكن استرداها مرة اخرى   ", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                            return;
+                        }
+                        if (Convert.ToDecimal(dt5.Rows[0][1]) > 0)
+                        {
+                            MessageBox.Show("عزيزى المستخدم يرجي العلم بانه تم استرداد مبلغ" + "(" + Convert.ToDecimal(dt5.Rows[0][1]) + ")" + "لهذه الفاتورة من قبل", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                            return;
+                        }
+                    }
+                    if (Convert.ToDecimal(txt_pay.Text) > Convert.ToDecimal(dt4.Rows[0][0]))
                         {
                             MessageBox.Show("رصيد الخزنة الحالى غير كافى لسحب هذا المبلغ");
                             return;
@@ -256,6 +256,7 @@ namespace Laboratory.PL
                                 return;
                                 //}
                             }
+
                             for (int i = 0; i < dataGridView1.Rows.Count; i++)
                             {
                                
@@ -275,13 +276,13 @@ namespace Laboratory.PL
                                 , 0, 0, 0, dateTimePicker2.Value);
 
 
-                                Txt_IdOldBranch.Clear();
-                                Txt_IdOldBranch.Text = (t.Select_IDBranch(Txt_OldBranch.Text)).Rows[0][0].ToString();
+                                //Txt_IdOldBranch.Clear();
+                                //Txt_IdOldBranch.Text = (t.Select_IDBranch(Txt_OldBranch.Text)).Rows[0][0].ToString();
 
-                                t.UpdateticketsReturn(Convert.ToInt32(txt_num.Text), Convert.ToInt32(cmb_Stock.SelectedValue), 
-                                    Txt_OldBranch.Text
-                                    , dateTimePicker2.Value, Convert.ToDecimal(txt_pay.Text), txt_username.Text,
-                                    Convert.ToInt32(Txt_IdOldBranch.Text), textBox2.Text);
+                                //t.UpdateticketsReturn(Convert.ToInt32(txt_num.Text), Convert.ToInt32(cmb_Stock.SelectedValue), 
+                                //    Txt_OldBranch.Text
+                                //    , dateTimePicker2.Value, Convert.ToDecimal(txt_pay.Text), txt_username.Text,
+                                //    Convert.ToInt32(Txt_IdOldBranch.Text), textBox2.Text);
                                 s.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_pay.Text), dateTimePicker2.Value, txt_username.Text, " سحب مبلغ " + " " + (txt_pay.Text) + "مدفوع مسبقا للحجز  " + (txt_num.Text));
                                 MessageBox.Show("تم سحب المبلغ بنجاح");
 
