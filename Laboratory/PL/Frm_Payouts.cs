@@ -90,7 +90,7 @@ namespace Laboratory.PL
                 
                 dt5.Clear();
                 dt5 = t.vildateReturnTickets(Convert.ToInt32(txt_num.Text));
-                if (dt5.Rows.Count == 0)
+                if (dt5.Rows.Count > 0)
                 {
                     //if (Convert.ToDecimal(txt_pay.Text) == Convert.ToDecimal(dt5.Rows[0][1]))
                     //{
