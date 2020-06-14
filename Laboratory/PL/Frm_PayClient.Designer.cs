@@ -101,7 +101,7 @@
             this.groupBox2.Controls.Add(this.txt_prise);
             this.groupBox2.Controls.Add(this.rdbPartPay);
             this.groupBox2.Controls.Add(this.RdbAllPay);
-            this.groupBox2.Location = new System.Drawing.Point(12, 291);
+            this.groupBox2.Location = new System.Drawing.Point(12, 367);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(696, 60);
             this.groupBox2.TabIndex = 79;
@@ -186,7 +186,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(696, 93);
+            this.dataGridView1.Size = new System.Drawing.Size(696, 105);
             this.dataGridView1.TabIndex = 80;
             // 
             // groupBox1
@@ -264,7 +264,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(610, 53);
+            this.label5.Location = new System.Drawing.Point(610, 52);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(81, 19);
             this.label5.TabIndex = 99;
@@ -323,7 +323,7 @@
             this.simpleButton1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.simpleButton1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(298, 371);
+            this.simpleButton1.Location = new System.Drawing.Point(298, 447);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(179, 37);
             this.simpleButton1.TabIndex = 172;
@@ -335,7 +335,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
-            this.ClientSize = new System.Drawing.Size(720, 420);
+            this.ClientSize = new System.Drawing.Size(720, 496);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.Txt_SalesMAn);
@@ -350,9 +350,7 @@
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(736, 458);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(736, 458);
             this.Name = "Frm_PayClient";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "شاشة مدفوعات العملاء ";
