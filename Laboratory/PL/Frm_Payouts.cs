@@ -90,13 +90,13 @@ namespace Laboratory.PL
                 
                 dt5.Clear();
                 dt5 = t.vildateReturnTickets(Convert.ToInt32(txt_num.Text));
-                if (dt5.Rows.Count > 0)
+                if (dt5.Rows.Count == 0)
                 {
-                    if (Convert.ToDecimal(txt_pay.Text) == Convert.ToDecimal(dt5.Rows[0][1]))
-                    {
+                    //if (Convert.ToDecimal(txt_pay.Text) == Convert.ToDecimal(dt5.Rows[0][1]))
+                    //{
                         MessageBox.Show("عزيزى المستخدم يرجي العلم باان تم استرداد مبلغ الفاتورة من قبل لايمكن استرداها مرة اخرى   ", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
                         return;
-                   }
+                   //}
                 }
                 dt10.Clear();
                 dt10 = t.vildateTransferForCompany(Convert.ToInt32(txt_num.Text));
