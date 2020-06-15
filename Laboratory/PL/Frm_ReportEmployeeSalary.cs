@@ -111,7 +111,8 @@ namespace Laboratory.PL
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-          
+            try
+            {
             if (checkBox1.Checked == true)
             {
                 if (cmb_employeeName.Text=="")
@@ -135,6 +136,15 @@ namespace Laboratory.PL
 
             }
             textBox1.Text = total.ToString("₱ #,##0.0");
+
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
+            }
         }
 
         private void cmb_Branch_SelectionChangeCommitted(object sender, EventArgs e)
