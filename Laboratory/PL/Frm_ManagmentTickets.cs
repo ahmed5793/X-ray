@@ -140,7 +140,7 @@ namespace Laboratory.PL
                         pa.txt_pay.Text = dr[13].ToString();
                         pa.txt_rent.Text = dr[14].ToString();
                         pa.txt_statues.Text = dr[15].ToString();
-                        pa.textBox1.Text = dr[20].ToString();
+                        pa.textBox1.Text = dr[9].ToString();
                         pa.txt_num.Text = dr[0].ToString();
                         pa.Txt_IdCust.Text = dr[26].ToString();
                         pa.Txt_OldBranch.Text = gridView1.GetFocusedRowCellValue("فرع").ToString();

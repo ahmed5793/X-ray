@@ -37,6 +37,10 @@ namespace Laboratory.PL
                 Txt_IdCust.Hide();
                 Txt_IdCompany.Hide();
                 Txt_RentCompany.Hide();
+                Txt_IdOldBranch.Hide();
+                Txt_OldBranch.Hide();
+                Txt_PriceCustomerPayment.Hide();
+
             }
             catch (Exception ex)
             {
