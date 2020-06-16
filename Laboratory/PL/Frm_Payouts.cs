@@ -126,6 +126,7 @@ namespace Laboratory.PL
                 dt4 = s.Select_moneyStock(Convert.ToInt32(cmb_Stock.SelectedValue));
                 if (cmb_Stock.Text == "")
                 {
+
                     MessageBox.Show("لا بد من تحديد خزنة");
                     return;
                 }
@@ -144,13 +145,13 @@ namespace Laboratory.PL
                             return;
                         }
                     }
-                    if (Convert.ToDecimal(txt_pay.Text) > Convert.ToDecimal(dt4.Rows[0][0]))
+                        if (Convert.ToDecimal(txt_pay.Text) > Convert.ToDecimal(dt4.Rows[0][0]))
                         {
                             MessageBox.Show("رصيد الخزنة الحالى غير كافى لسحب هذا المبلغ");
                             return;
                         }
 
-                        if (MessageBox.Show("هل تريد سحب المبلغ المدفوع مسبقا من العميل بالكامل", "عمليه السحب", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                        if (MessageBox.Show("المبلغ المدفوع مسبقا من العميل عند حجز الفحص "+"(" + txt_pay.Text +  ")"+"هل تريد سحب مبلغ", "عمليه السحب", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
 
                         {
                 
