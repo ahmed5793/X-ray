@@ -269,7 +269,7 @@ namespace Laboratory.PL
                                       Convert.ToDecimal(dataGridView1.Rows[i].Cells[2].Value),
                                         Convert.ToDecimal(txt_pay.Text), txt_username.Text, Convert.ToInt32(dataGridView1.Rows[i].Cells[3].Value),
                                         Convert.ToInt32(comboBox1.SelectedValue));
-
+                                        
 
                                 t.Add_Revenue(Convert.ToInt32(comboBox1.SelectedValue), Convert.ToInt32(txt_num.Text),
                                 Convert.ToInt32(dataGridView1.Rows[i].Cells[3].Value), 0
