@@ -532,7 +532,24 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
+        internal DataTable Select_RowFromStock(int Id_Stock , decimal Pay_Money ,DateTime Date_)
+        {
+            DataTable dt = new DataTable();
 
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[3];
+            param[0] = new SqlParameter("@Id_Stock", SqlDbType.Int);
+            param[0].Value = Id_Stock;
+            param[1] = new SqlParameter("@PayMoney", SqlDbType.Decimal);
+            param[1].Value = Pay_Money;
+            param[2] = new SqlParameter("@Date", SqlDbType.Date);
+            param[2].Value = Date_;
+
+            dt = da.selected("Select_RowFromStock", param);
+            da.close();
+            return dt;
+        }
         internal DataTable vildateIDReturnTickets(int idtickets)
         {
             DataTable dt = new DataTable();
