@@ -245,10 +245,11 @@ namespace Laboratory.PL
                             
                             }
                             dt5.Clear();
-                            dt5 = t.Select_RowFromStock(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_pay.Text), dateTimePicker2.Value);
+                            dt5 = t.Select_RowFromStock(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_pay.Text),
+                                dateTimePicker2.Value, " سحب مبلغ " + " ( " + (txt_pay.Text) + " ) " + "  مدفوع مسبقا للحجز رقم  " + " ( " + (txt_num.Text) + " ) ");
                             if (dt5.Rows.Count == 0)
                             {
-                                s.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_pay.Text), dateTimePicker2.Value, txt_username.Text, " سحب مبلغ " + " ( " + (txt_pay.Text) + " ) " + "مدفوع مسبقا للحجز  " + " ( " + (txt_num.Text) + " ) ");
+                                s.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_pay.Text), dateTimePicker2.Value, txt_username.Text, " سحب مبلغ " + " ( " + (txt_pay.Text) + " ) " + "  مدفوع مسبقا للحجز رقم  " + " ( " + (txt_num.Text) + " ) ");
 
                             }
                             MessageBox.Show("تم سحب المبلغ بنجاح");
