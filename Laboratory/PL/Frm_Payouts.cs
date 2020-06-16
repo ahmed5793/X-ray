@@ -155,7 +155,7 @@ namespace Laboratory.PL
                             return;
                         }
 
-                        if (MessageBox.Show("المبلغ المدفوع مسبقا من العميل عند حجز الفحص "+"(" + txt_pay.Text +  ")"+"هل تريد سحب مبلغ", "عمليه السحب", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                        if (MessageBox.Show("هل تريد سحب مبلغ" +" "+"(" + txt_pay.Text +  ")"+"المبلغ المدفوع مسبقا من العميل عند حجز الفحص", "عمليه السحب", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
 
                         {
                 
