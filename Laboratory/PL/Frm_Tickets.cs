@@ -823,12 +823,40 @@ namespace Laboratory.PL
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            DiscountMoney();
+            //DiscountMoney();
+            if (txt_discount.Text == "")
+            {
+                txt_discount.Text = "0";
+            }
+            if (rdb_Discount.Checked == true)
+            {
+                Discount();
+                pay();
+            }
+            else
+            {
+                DiscountMoney();
+                pay();
+            }
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            Discount();
+            //Discount();
+            if (txt_discount.Text == "")
+            {
+                txt_discount.Text = "0";
+            }
+            if (rdb_Discount.Checked == true)
+            {
+                Discount();
+                pay();
+            }
+            else
+            {
+                DiscountMoney();
+                pay();
+            }
         }
 
         private void txt_discount_Leave(object sender, EventArgs e)
