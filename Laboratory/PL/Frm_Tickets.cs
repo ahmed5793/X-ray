@@ -233,7 +233,8 @@ namespace Laboratory.PL
             try
             {
                 Permision();
-
+                rdb_discountPatient.Enabled = false;
+                rdb_MoneyPatient.Enabled = false;
                 Txt_addtionPayment.Enabled = false;
                 Txt_rentCompany.Enabled = false;
                 CategoryXraya();
@@ -268,6 +269,38 @@ namespace Laboratory.PL
             //}
 
 
+        }
+        void Patient_PaymentRateMony()
+        {
+            try
+            {
+                if (Txt_addtionPayment.Text != "" && Txt_PricePayment.Text != "")
+                {
+                    if (Txt_addtionPayment.Text == "0")
+                    {
+                        Txt_addtionPayment.Text = "0";
+                        Txt_PricePayment.Text = "0";
+                    }
+                    else
+                    {
+                        decimal Amount = Convert.ToDecimal(txt_afterDiscount.Text);
+                        decimal Discount = Convert.ToDecimal(Txt_addtionPayment.Text);
+                        decimal Total = Amount -Discount ;
+                        Txt_PricePayment.Text = Math.Round(Total, 1).ToString();
+                    }
+                }
+                else
+                {
+
+                    Txt_addtionPayment.Text = "0";
+                    Txt_PricePayment.Text = "0";
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
         void Patient_PaymentRate()
         {
@@ -877,8 +910,12 @@ namespace Laboratory.PL
         }
         void clear()
         {
-            try { 
-            Btn_Save.Enabled = true;
+            try {
+                rdb_MoneyPatient.Enabled = false;
+                rdb_discountPatient.Enabled = false;
+                timer1.Enabled = true;
+                dtb_visit.Value = Convert.ToDateTime(DateTime.Now.ToLongTimeString());
+                Btn_Save.Enabled = true;
             rdb_money.Enabled = true;
             rdb_Discount.Enabled = true;
             txt_address.Clear();
@@ -917,6 +954,11 @@ namespace Laboratory.PL
             cmb_Company.Enabled = false;
             txt_pay.Enabled = false;
                 Btn_DetailsCompany.Hide();
+                Txt_addtionPayment.Enabled = false;
+                Txt_rentCompany.Enabled = false;
+                Txt_PricePayment.Enabled = false;
+                rdb_MoneyPatient.Enabled = false;
+                rdb_discountPatient.Enabled = false;
             }
             catch (Exception ex)
             {
@@ -937,8 +979,12 @@ namespace Laboratory.PL
      
         private void txt_afterDiscount_KeyUp(object sender, KeyEventArgs e)
         {
-            Patient_PaymentRate();
-            Rent_Company();
+                
+                Patient_PaymentRate();
+                Rent_Company();
+            
+           
+           
         }
 
         private void cmb_Techincal_SelectedIndexChanged(object sender, EventArgs e)
@@ -1086,11 +1132,14 @@ namespace Laboratory.PL
                 Btn_DetailsCompany.Show();
                 Cmb_category.SelectedIndex = -1;
                 cmb_items.SelectedIndex = -1;
+                    rdb_MoneyPatient.Enabled = true;
+                    rdb_discountPatient.Enabled = true;
             }
             else if (cmb_statues.Text== "نقدى")
             {
-                
-                Cmb_category.SelectedIndex = -1;
+                    rdb_MoneyPatient.Enabled = false;
+                    rdb_discountPatient.Enabled = false;
+                    Cmb_category.SelectedIndex = -1;
                 cmb_items.DataSource = null;
                 label24.Show();
                 //label26.Hide();
@@ -1266,6 +1315,7 @@ namespace Laboratory.PL
             if (cmb_statues.Text== "نقدى")
             {
                 txt_pay.Enabled = true;
+              
             }
             else if (cmb_statues.Text == "شركات")
             {
@@ -1290,17 +1340,38 @@ namespace Laboratory.PL
 
         private void Txt_addtionPayment_KeyUp(object sender, KeyEventArgs e)
         {
-            Patient_PaymentRate();
-            Rent_Company();
-            pay();
+            if (rdb_discountPatient.Checked==true)
+            {
+                Patient_PaymentRate();
+                Rent_Company();
+                pay();
+            }
+            else if(rdb_MoneyPatient.Checked==true)
+            {
+                Patient_PaymentRateMony();
+                Rent_Company();
+                pay();
+            }
+           
         }
         private void Txt_PricePayment_KeyUp(object sender, KeyEventArgs e)
         {
-            try { 
-            Patient_PaymentRate();
-            Rent_Company();
-            pay();
-            if (cmb_statues.Text == "شركات")
+            try {
+               
+                if (rdb_discountPatient.Checked == true)
+                {
+
+                    Patient_PaymentRate();
+                    Rent_Company();
+                    pay();
+                }
+                else if (rdb_MoneyPatient.Checked == true)
+                {
+                    Patient_PaymentRateMony();
+                    Rent_Company();
+                    pay();
+                }
+                if (cmb_statues.Text == "شركات")
             {
                 if (Convert.ToDecimal(Txt_addtionPayment.Text) > 0)
                 {
@@ -1335,9 +1406,19 @@ namespace Laboratory.PL
             {
                 txt_pay.Enabled = false;
             }
-            Patient_PaymentRate();
-            Rent_Company();
-            pay();
+                if (rdb_discountPatient.Checked == true)
+                {
+                    Patient_PaymentRate();
+                    Rent_Company();
+                    pay();
+                }
+                else if (rdb_MoneyPatient.Checked == true)
+                {
+                    Patient_PaymentRateMony();
+                    Rent_Company();
+                    pay();
+                }
+           
             }
             catch (Exception ex)
             {
@@ -1487,7 +1568,7 @@ namespace Laboratory.PL
             try { 
             clear();
             Customer();
-            
+           
             cmb_statues.Enabled = true;
         
             txt_pay.Enabled = true;
@@ -2291,7 +2372,6 @@ namespace Laboratory.PL
             {
 
                 MessageBox.Show(ex.Message);
-                MessageBox.Show(ex.StackTrace);
             }
         }
 
@@ -2360,6 +2440,33 @@ namespace Laboratory.PL
         private void txt_age_Click(object sender, EventArgs e)
         {
             txt_age.SelectAll();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            dtb_visit.Value = Convert.ToDateTime(DateTime.Now.ToLongTimeString());
+        }
+
+        private void radioButton2_CheckedChanged_1(object sender, EventArgs e)
+        {
+            Patient_PaymentRateMony();
+            Rent_Company();
+            pay();
+
+        }
+
+        private void radioButton1_CheckedChanged_1(object sender, EventArgs e)
+        {
+            Patient_PaymentRate();
+            Rent_Company();
+            pay();
+
+
+        }
+
+        private void txt_afterDiscount_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
         //private void ؤ(object sender, EventArgs e)
