@@ -875,6 +875,7 @@
             this.Txt_PricePayment.TextChanged += new System.EventHandler(this.Txt_PricePayment_TextChanged);
             this.Txt_PricePayment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_PricePayment_KeyPress);
             this.Txt_PricePayment.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txt_PricePayment_KeyUp);
+            this.Txt_PricePayment.MouseLeave += new System.EventHandler(this.Txt_PricePayment_MouseLeave);
             // 
             // label27
             // 

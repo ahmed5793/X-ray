@@ -279,7 +279,7 @@ namespace Laboratory.PL
                     if (Txt_addtionPayment.Text == "0")
                     {
                         Txt_addtionPayment.Text = "0";
-                        Txt_PricePayment.Text = "0";
+                        //Txt_PricePayment.Text = "0";
                     }
                     else
                     {
@@ -1396,7 +1396,7 @@ namespace Laboratory.PL
                 }
                 else if (rdb_MoneyPatient.Checked == true)
                 {
-                    Patient_PaymentRateMony();
+                    //Patient_PaymentRateMony();
                     Rent_Company();
                     pay();
                 }
@@ -2455,8 +2455,12 @@ namespace Laboratory.PL
 
         private void Txt_PricePayment_TextChanged(object sender, EventArgs e)
         {
-            
-            
+            if (Txt_addtionPayment.Text == ".")
+            {
+                Txt_addtionPayment.Text = "";
+            }
+
+
         }
 
         private void txt_age_MouseMove(object sender, MouseEventArgs e)
@@ -2538,6 +2542,43 @@ namespace Laboratory.PL
             else if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != Convert.ToChar((System.Globalization.CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator)))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void Txt_PricePayment_MouseLeave(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Txt_PricePayment.Text == "")
+                {
+                    Txt_PricePayment.Text = "0";
+                }
+                if (Convert.ToDecimal(Txt_PricePayment.Text) > 0 || Txt_PricePayment.Text != "")
+                {
+                    txt_pay.Enabled = true;
+                }
+                else
+                {
+                    txt_pay.Enabled = false;
+                }
+                if (rdb_discountPatient.Checked == true)
+                {
+                    Patient_PaymentRate();
+                    Rent_Company();
+                    pay();
+                }
+                else if (rdb_MoneyPatient.Checked == true)
+                {
+                    //Patient_PaymentRateMony();
+                    Rent_Company();
+                    pay();
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
             }
         }
 
