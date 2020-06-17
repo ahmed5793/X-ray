@@ -462,6 +462,16 @@ namespace Laboratory.PL
             {
                 if (gridView1.RowCount > 0)
                 {
+                    dt5.Clear();
+                    dt5 = t.vildateReturnTickets(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
+                    if (dt5.Rows.Count > 0)
+                    {
+                        if (Convert.ToDecimal(gridView1.GetFocusedRowCellValue("المدفوع")) == Convert.ToDecimal(dt5.Rows[0][1]))
+                        {
+                            MessageBox.Show("عزيزى المستخدم يرجي العلم باان تم استرداد مبلغ الفاتورة من قبل لايمكن استرداها مرة اخرى   ", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                            return;
+                        }
+                    }
 
                     if (gridView1.GetFocusedRowCellValue("طريقه التعامل").ToString() == "شركات")
                     {

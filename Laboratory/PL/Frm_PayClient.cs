@@ -198,7 +198,18 @@ namespace Laboratory.PL
             {
                 if (cmb_client.Text != "")
                 {
-                    dataGridView1.DataSource = c.selectOneClientRent(Convert.ToInt32(cmb_client.SelectedValue));
+                    //dataGridView1.DataSource = c.selectOneClientRent(Convert.ToInt32(cmb_client.SelectedValue));
+                    Txt_CustAccount.Text = c.selectOneClientRent(Convert.ToInt32(cmb_client.SelectedValue)).Rows[0][2].ToString();
+                    Txt_CustAcountAfterDisCount.Text = c.selectOneClientRent(Convert.ToInt32(cmb_client.SelectedValue)).Rows[0][2].ToString();
+                    if (Txt_CustAccount.Text=="0")
+                    {
+                        TxtDisCount.Enabled = false;
+                    }
+                    else
+                    {
+                        TxtDisCount.Enabled = true;
+                    }
+
                 }
             }
             catch (Exception EX)
@@ -263,7 +274,7 @@ namespace Laboratory.PL
                             txt_prise.Focus();
                             return;
                         }
-                        if (txt_prise.Text == "0"&& txt_prise.Text == "")
+                        if (txt_prise.Text == "0" && txt_prise.Text == "")
                         {
                             MessageBox.Show("لا بد ان يكون المبلغ المدفوع اكبر من الصفر", "تاكيد", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             txt_prise.Focus();
@@ -314,6 +325,31 @@ namespace Laboratory.PL
         }
 
         private void txt_prise_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtDisCount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '.' && txt_prise.Text.ToString().IndexOf('.') > -1)
+            {
+                e.Handled = true;
+            }
+            else if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != Convert.ToChar((System.Globalization.CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator)))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TxtDisCount_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (Txt_CustAccount.Text!="")
+            {
+                (Txt_CustAcountAfterDisCount.Text) = (Convert.ToDecimal(Txt_CustAccount.Text) - Convert.ToDecimal(TxtDisCount.Text)).ToString();
+            }
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
 
         }

@@ -94,7 +94,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(500, 167);
+            this.label1.Location = new System.Drawing.Point(506, 167);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 24);
             this.label1.TabIndex = 91;
@@ -399,7 +399,7 @@
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(500, 128);
+            this.label5.Location = new System.Drawing.Point(549, 130);
             this.label5.Name = "label5";
             this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label5.Size = new System.Drawing.Size(46, 22);
@@ -460,7 +460,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(505, 7);
+            this.label3.Location = new System.Drawing.Point(537, 10);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 24);
             this.label3.TabIndex = 135;
@@ -471,7 +471,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(500, 87);
+            this.label6.Location = new System.Drawing.Point(561, 88);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(36, 24);
             this.label6.TabIndex = 134;
@@ -536,7 +536,7 @@
             // 
             this.txt_IdTeckit.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txt_IdTeckit.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_IdTeckit.Location = new System.Drawing.Point(610, 91);
+            this.txt_IdTeckit.Location = new System.Drawing.Point(604, 94);
             this.txt_IdTeckit.Name = "txt_IdTeckit";
             this.txt_IdTeckit.ReadOnly = true;
             this.txt_IdTeckit.Size = new System.Drawing.Size(134, 32);
@@ -547,7 +547,7 @@
             // 
             this.Txt_OldRentBeforeTransfair.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Txt_OldRentBeforeTransfair.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_OldRentBeforeTransfair.Location = new System.Drawing.Point(610, 138);
+            this.Txt_OldRentBeforeTransfair.Location = new System.Drawing.Point(604, 135);
             this.Txt_OldRentBeforeTransfair.Name = "Txt_OldRentBeforeTransfair";
             this.Txt_OldRentBeforeTransfair.ReadOnly = true;
             this.Txt_OldRentBeforeTransfair.Size = new System.Drawing.Size(134, 32);

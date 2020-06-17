@@ -37,7 +37,6 @@
             this.rdbPartPay = new System.Windows.Forms.RadioButton();
             this.RdbAllPay = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.label6 = new System.Windows.Forms.Label();
@@ -48,8 +47,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.Cmb_Branch = new System.Windows.Forms.ComboBox();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.TxtDisCount = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.Txt_CustAcountAfterDisCount = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.Txt_CustAccount = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,7 +64,7 @@
             this.cmb_Stock.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Stock.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_Stock.FormattingEnabled = true;
-            this.cmb_Stock.Location = new System.Drawing.Point(23, 87);
+            this.cmb_Stock.Location = new System.Drawing.Point(250, 136);
             this.cmb_Stock.Name = "cmb_Stock";
             this.cmb_Stock.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmb_Stock.Size = new System.Drawing.Size(214, 27);
@@ -74,10 +78,10 @@
             this.cmb_client.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmb_client.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_client.FormattingEnabled = true;
-            this.cmb_client.Location = new System.Drawing.Point(213, 14);
+            this.cmb_client.Location = new System.Drawing.Point(174, 177);
             this.cmb_client.Name = "cmb_client";
             this.cmb_client.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmb_client.Size = new System.Drawing.Size(373, 32);
+            this.cmb_client.Size = new System.Drawing.Size(290, 32);
             this.cmb_client.TabIndex = 29;
             this.cmb_client.SelectionChangeCommitted += new System.EventHandler(this.cmb_client_SelectionChangeCommitted);
             this.cmb_client.Leave += new System.EventHandler(this.cmb_client_Leave);
@@ -87,7 +91,7 @@
             this.label19.AutoSize = true;
             this.label19.BackColor = System.Drawing.Color.White;
             this.label19.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(243, 90);
+            this.label19.Location = new System.Drawing.Point(590, 139);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(39, 19);
             this.label19.TabIndex = 83;
@@ -98,12 +102,12 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.txt_prise);
             this.groupBox2.Controls.Add(this.rdbPartPay);
             this.groupBox2.Controls.Add(this.RdbAllPay);
-            this.groupBox2.Location = new System.Drawing.Point(12, 367);
+            this.groupBox2.Controls.Add(this.txt_prise);
+            this.groupBox2.Location = new System.Drawing.Point(12, 394);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(696, 60);
+            this.groupBox2.Size = new System.Drawing.Size(696, 62);
             this.groupBox2.TabIndex = 79;
             this.groupBox2.TabStop = false;
             // 
@@ -111,10 +115,10 @@
             // 
             this.txt_prise.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.txt_prise.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_prise.Location = new System.Drawing.Point(126, 18);
+            this.txt_prise.Location = new System.Drawing.Point(68, 21);
             this.txt_prise.MaxLength = 8;
             this.txt_prise.Name = "txt_prise";
-            this.txt_prise.Size = new System.Drawing.Size(116, 27);
+            this.txt_prise.Size = new System.Drawing.Size(171, 27);
             this.txt_prise.TabIndex = 63;
             this.txt_prise.Text = "0";
             this.txt_prise.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -129,7 +133,7 @@
             this.rdbPartPay.AutoSize = true;
             this.rdbPartPay.BackColor = System.Drawing.Color.White;
             this.rdbPartPay.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbPartPay.Location = new System.Drawing.Point(248, 19);
+            this.rdbPartPay.Location = new System.Drawing.Point(246, 21);
             this.rdbPartPay.Name = "rdbPartPay";
             this.rdbPartPay.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.rdbPartPay.Size = new System.Drawing.Size(122, 26);
@@ -145,7 +149,7 @@
             this.RdbAllPay.BackColor = System.Drawing.Color.White;
             this.RdbAllPay.Checked = true;
             this.RdbAllPay.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RdbAllPay.Location = new System.Drawing.Point(437, 19);
+            this.RdbAllPay.Location = new System.Drawing.Point(481, 22);
             this.RdbAllPay.Name = "RdbAllPay";
             this.RdbAllPay.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RdbAllPay.Size = new System.Drawing.Size(149, 26);
@@ -161,44 +165,36 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(624, 95);
+            this.label3.Location = new System.Drawing.Point(563, 60);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 19);
             this.label3.TabIndex = 81;
             this.label3.Text = "تاريخ الدفع";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowDrop = true;
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.Silver;
-            this.dataGridView1.GridColor = System.Drawing.Color.DimGray;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 192);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(696, 105);
-            this.dataGridView1.TabIndex = 80;
-            // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.Txt_CustAccount);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.Cmb_Branch);
+            this.groupBox1.Controls.Add(this.Txt_CustAcountAfterDisCount);
+            this.groupBox1.Controls.Add(this.cmb_Stock);
+            this.groupBox1.Controls.Add(this.label19);
+            this.groupBox1.Controls.Add(this.Txt_SalesMAn);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.TxtDisCount);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.simpleButton2);
+            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.cmb_client);
-            this.groupBox1.Location = new System.Drawing.Point(12, 126);
+            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Location = new System.Drawing.Point(12, 35);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(696, 57);
+            this.groupBox1.Size = new System.Drawing.Size(696, 357);
             this.groupBox1.TabIndex = 77;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
@@ -217,7 +213,7 @@
             this.simpleButton2.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.simpleButton2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(45, 14);
+            this.simpleButton2.Location = new System.Drawing.Point(27, 175);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(122, 32);
             this.simpleButton2.TabIndex = 171;
@@ -230,7 +226,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(596, 21);
+            this.label6.Location = new System.Drawing.Point(565, 184);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(65, 19);
             this.label6.TabIndex = 100;
@@ -241,10 +237,11 @@
             this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dateTimePicker1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(390, 90);
+            this.dateTimePicker1.Location = new System.Drawing.Point(250, 57);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(215, 26);
             this.dateTimePicker1.TabIndex = 82;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // label1
             // 
@@ -252,7 +249,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(287, 4);
+            this.label1.Location = new System.Drawing.Point(349, 8);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(125, 24);
             this.label1.TabIndex = 78;
@@ -264,7 +261,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(610, 52);
+            this.label5.Location = new System.Drawing.Point(549, 23);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(81, 19);
             this.label5.TabIndex = 99;
@@ -274,7 +271,7 @@
             // 
             this.Txt_SalesMAn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Txt_SalesMAn.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_SalesMAn.Location = new System.Drawing.Point(390, 48);
+            this.Txt_SalesMAn.Location = new System.Drawing.Point(250, 17);
             this.Txt_SalesMAn.Multiline = true;
             this.Txt_SalesMAn.Name = "Txt_SalesMAn";
             this.Txt_SalesMAn.ReadOnly = true;
@@ -288,7 +285,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(243, 50);
+            this.label4.Location = new System.Drawing.Point(591, 99);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(38, 19);
             this.label4.TabIndex = 97;
@@ -302,7 +299,7 @@
             this.Cmb_Branch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Cmb_Branch.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cmb_Branch.FormattingEnabled = true;
-            this.Cmb_Branch.Location = new System.Drawing.Point(22, 47);
+            this.Cmb_Branch.Location = new System.Drawing.Point(250, 96);
             this.Cmb_Branch.Name = "Cmb_Branch";
             this.Cmb_Branch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Cmb_Branch.Size = new System.Drawing.Size(215, 27);
@@ -323,31 +320,96 @@
             this.simpleButton1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.simpleButton1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(298, 447);
+            this.simpleButton1.Location = new System.Drawing.Point(298, 470);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(179, 37);
             this.simpleButton1.TabIndex = 172;
             this.simpleButton1.Text = "حفظ المدفوع";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(522, 230);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(108, 19);
+            this.label2.TabIndex = 172;
+            this.label2.Text = "المتبقى على العميل";
+            // 
+            // TxtDisCount
+            // 
+            this.TxtDisCount.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.TxtDisCount.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtDisCount.Location = new System.Drawing.Point(292, 270);
+            this.TxtDisCount.MaxLength = 8;
+            this.TxtDisCount.Name = "TxtDisCount";
+            this.TxtDisCount.Size = new System.Drawing.Size(171, 27);
+            this.TxtDisCount.TabIndex = 173;
+            this.TxtDisCount.Text = "0";
+            this.TxtDisCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtDisCount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtDisCount_KeyDown);
+            this.TxtDisCount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtDisCount_KeyPress);
+            // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.White;
+            this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(583, 275);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(47, 19);
+            this.label7.TabIndex = 174;
+            this.label7.Text = "الخصم ";
+            // 
+            // Txt_CustAcountAfterDisCount
+            // 
+            this.Txt_CustAcountAfterDisCount.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.Txt_CustAcountAfterDisCount.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_CustAcountAfterDisCount.Location = new System.Drawing.Point(292, 312);
+            this.Txt_CustAcountAfterDisCount.MaxLength = 8;
+            this.Txt_CustAcountAfterDisCount.Name = "Txt_CustAcountAfterDisCount";
+            this.Txt_CustAcountAfterDisCount.Size = new System.Drawing.Size(171, 27);
+            this.Txt_CustAcountAfterDisCount.TabIndex = 175;
+            this.Txt_CustAcountAfterDisCount.Text = "0";
+            this.Txt_CustAcountAfterDisCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.White;
+            this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(469, 316);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(165, 19);
+            this.label8.TabIndex = 176;
+            this.label8.Text = "المتبقى على العميل بعد الخصم";
+            // 
+            // Txt_CustAccount
+            // 
+            this.Txt_CustAccount.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.Txt_CustAccount.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_CustAccount.Location = new System.Drawing.Point(292, 225);
+            this.Txt_CustAccount.MaxLength = 8;
+            this.Txt_CustAccount.Name = "Txt_CustAccount";
+            this.Txt_CustAccount.Size = new System.Drawing.Size(171, 27);
+            this.Txt_CustAccount.TabIndex = 177;
+            this.Txt_CustAccount.Text = "0";
+            this.Txt_CustAccount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // Frm_PayClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
-            this.ClientSize = new System.Drawing.Size(720, 496);
+            this.ClientSize = new System.Drawing.Size(720, 511);
             this.Controls.Add(this.simpleButton1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.Txt_SalesMAn);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.Cmb_Branch);
-            this.Controls.Add(this.cmb_Stock);
-            this.Controls.Add(this.label19);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -357,7 +419,6 @@
             this.Load += new System.EventHandler(this.Frm_PayClient_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -375,7 +436,6 @@
         private System.Windows.Forms.RadioButton rdbPartPay;
         private System.Windows.Forms.RadioButton RdbAllPay;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label1;
@@ -386,5 +446,11 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private System.Windows.Forms.Label label6;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private System.Windows.Forms.TextBox Txt_CustAccount;
+        private System.Windows.Forms.TextBox Txt_CustAcountAfterDisCount;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox TxtDisCount;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label2;
     }
 }

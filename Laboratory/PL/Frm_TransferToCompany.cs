@@ -394,13 +394,13 @@ namespace Laboratory.PL
                                 , 0, 0, 0, dateTimePicker1.Value);
 
 
-                                Txt_IdOldBranch.Clear();
-                                Txt_IdOldBranch.Text = (t.Select_IDBranch(Txt_OldBranch.Text).Rows[0][0].ToString());
+                                //Txt_IdOldBranch.Clear();
+                                //Txt_IdOldBranch.Text = (t.Select_IDBranch(Txt_OldBranch.Text).Rows[0][0].ToString());
 
-                                t.Update_Revenue(Convert.ToInt32(Txt_IdOldBranch.Text), Convert.ToInt32(txt_IdTeckit.Text),
-                                   Convert.ToInt32(dataGridView2.Rows[i].Cells[0].Value), Convert.ToDecimal(dataGridView2.Rows[i].Cells[2].Value)
-                                  , 0, Convert.ToDecimal(Txt_PricePayment.Text), Convert.ToDecimal(Txt_RentCustomer.Text),
-                                   dateTimePicker1.Value);
+                                //t.Update_Revenue(Convert.ToInt32(Txt_IdOldBranch.Text), Convert.ToInt32(txt_IdTeckit.Text),
+                                //   Convert.ToInt32(dataGridView2.Rows[i].Cells[0].Value), Convert.ToDecimal(dataGridView2.Rows[i].Cells[2].Value)
+                                //  , 0, Convert.ToDecimal(Txt_PricePayment.Text), Convert.ToDecimal(Txt_RentCustomer.Text),
+                                //   dateTimePicker1.Value);
                             }
                         }
                     }

@@ -436,7 +436,7 @@
             this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
             this.simpleButton3.Location = new System.Drawing.Point(663, 486);
             this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(178, 32);
+            this.simpleButton3.Size = new System.Drawing.Size(178, 31);
             this.simpleButton3.TabIndex = 244;
             this.simpleButton3.Text = "تحويل الي جهه اخرى";
             this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
