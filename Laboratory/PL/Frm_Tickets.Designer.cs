@@ -783,6 +783,7 @@
             this.groupBox4.TabIndex = 125;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "تحمل المريض";
+            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter_1);
             // 
             // rdb_discountPatient
             // 
@@ -872,6 +873,7 @@
             this.Txt_PricePayment.TabIndex = 117;
             this.Txt_PricePayment.Text = "0";
             this.Txt_PricePayment.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Txt_PricePayment.Click += new System.EventHandler(this.Txt_PricePayment_Click);
             this.Txt_PricePayment.TextChanged += new System.EventHandler(this.Txt_PricePayment_TextChanged);
             this.Txt_PricePayment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_PricePayment_KeyPress);
             this.Txt_PricePayment.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txt_PricePayment_KeyUp);

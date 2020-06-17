@@ -529,6 +529,8 @@ namespace Laboratory.PL
                     //cmb_items.DataSource = null;
                     cmb_Company.Focus();
                     MessageBox.Show("من فضلك قم بااختيار الشركة");
+                    Cmb_category.DataSource = null;
+
                     return;
                 }
                 else if (cmb_Company.Text != "")
@@ -2493,16 +2495,16 @@ namespace Laboratory.PL
         {
             if (rdb_MoneyPatient.Checked == true)
             {
-                Txt_addtionPayment.Enabled = false;
+                Txt_addtionPayment.Enabled = false;                
                 Txt_PricePayment.Enabled = true;
             }
             else
             {
-
                 Txt_addtionPayment.Enabled = true;
                 Txt_PricePayment.Enabled = false;
-
             }
+            Txt_addtionPayment.Text = "0";
+            Txt_PricePayment.Text = "0";
             Patient_PaymentRateMony();
             Rent_Company();
             pay();
@@ -2514,6 +2516,7 @@ namespace Laboratory.PL
             if (rdb_discountPatient.Checked==true)
             {
                 Txt_addtionPayment.Enabled = true;
+          
                 Txt_PricePayment.Enabled = false;
             }
             else
@@ -2521,6 +2524,8 @@ namespace Laboratory.PL
                 Txt_addtionPayment.Enabled = false;
                 Txt_PricePayment.Enabled = true;
             }
+            Txt_PricePayment.Text = "0";
+            Txt_addtionPayment.Text = "0";
             Patient_PaymentRate();
             Rent_Company();
             pay();
@@ -2580,6 +2585,16 @@ namespace Laboratory.PL
 
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void Txt_PricePayment_Click(object sender, EventArgs e)
+        {
+            Txt_PricePayment.Text = "";
+        }
+
+        private void groupBox4_Enter_1(object sender, EventArgs e)
+        {
+
         }
 
         //private void ؤ(object sender, EventArgs e)

@@ -297,8 +297,12 @@
             this.TxtDisCount.TabIndex = 173;
             this.TxtDisCount.Text = "0";
             this.TxtDisCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtDisCount.Click += new System.EventHandler(this.TxtDisCount_Click);
+            this.TxtDisCount.TextChanged += new System.EventHandler(this.TxtDisCount_TextChanged);
             this.TxtDisCount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtDisCount_KeyDown);
             this.TxtDisCount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtDisCount_KeyPress);
+            this.TxtDisCount.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtDisCount_KeyUp);
+            this.TxtDisCount.MouseLeave += new System.EventHandler(this.TxtDisCount_MouseLeave);
             // 
             // label7
             // 

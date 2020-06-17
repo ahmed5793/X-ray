@@ -337,8 +337,6 @@ namespace Laboratory.PL
                             Txt_CustAcountAfterDisCount.Text = c.selectOneClientRent(Convert.ToInt32(cmb_client.SelectedValue)).Rows[0][0].ToString();
                             TxtDisCount.Text = "0";
                         }
-
-
                         else
                         {
                             MessageBox.Show("تم   الغاء العمليه بنجاح");
@@ -365,7 +363,7 @@ namespace Laboratory.PL
 
         private void TxtDisCount_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == '.' && txt_prise.Text.ToString().IndexOf('.') > -1)
+            if (e.KeyChar == '.' && TxtDisCount.Text.ToString().IndexOf('.') > -1)
             {
                 e.Handled = true;
             }
@@ -377,15 +375,56 @@ namespace Laboratory.PL
 
         private void TxtDisCount_KeyDown(object sender, KeyEventArgs e)
         {
-            if (Txt_CustAccount.Text!="")
-            {
-                (Txt_CustAcountAfterDisCount.Text) = (Convert.ToDecimal(Txt_CustAccount.Text) - Convert.ToDecimal(TxtDisCount.Text)).ToString();
-            }
+            
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void TxtDisCount_Click(object sender, EventArgs e)
+        {
+            TxtDisCount.Text = "";
+
+        }
+
+        private void TxtDisCount_KeyUp(object sender, KeyEventArgs e)
+        {
+           
+            if (Txt_CustAccount.Text != "" && Txt_CustAccount.Text != "0")
+            {
+                if (TxtDisCount.Text!="")
+                {
+                    (Txt_CustAcountAfterDisCount.Text) = (Convert.ToDecimal(Txt_CustAccount.Text) - Convert.ToDecimal(TxtDisCount.Text)).ToString();
+
+                }
+                else if (TxtDisCount.Text == "")
+                {
+                    (Txt_CustAcountAfterDisCount.Text) = (Convert.ToDecimal(Txt_CustAccount.Text) - 0).ToString();
+
+                }
+            }
+        }
+
+        private void TxtDisCount_MouseLeave(object sender, EventArgs e)
+        {
+            if (TxtDisCount.Text=="")
+            {
+                TxtDisCount.Text = "0";
+            }
+            if (Txt_CustAccount.Text != "" && Txt_CustAccount.Text != "0")
+            {
+                (Txt_CustAcountAfterDisCount.Text) = (Convert.ToDecimal(Txt_CustAccount.Text) - Convert.ToDecimal(TxtDisCount.Text)).ToString();
+            }
+        }
+
+        private void TxtDisCount_TextChanged(object sender, EventArgs e)
+        {
+            if (TxtDisCount.Text==".")
+            {
+                TxtDisCount.Text = "0";
+            }
         }
     }
 }
