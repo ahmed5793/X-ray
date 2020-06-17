@@ -868,7 +868,6 @@
             this.Txt_PricePayment.ForeColor = System.Drawing.SystemColors.Info;
             this.Txt_PricePayment.Location = new System.Drawing.Point(7, 121);
             this.Txt_PricePayment.Name = "Txt_PricePayment";
-            this.Txt_PricePayment.ReadOnly = true;
             this.Txt_PricePayment.Size = new System.Drawing.Size(134, 25);
             this.Txt_PricePayment.TabIndex = 117;
             this.Txt_PricePayment.Text = "0";

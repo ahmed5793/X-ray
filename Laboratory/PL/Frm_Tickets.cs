@@ -2347,7 +2347,16 @@ namespace Laboratory.PL
                         DataTable dt12 = new DataTable();
 
                         DataRow r = dt2.NewRow();
-
+                        if (rdb_discountPatient.Checked == true)
+                        {
+                            Txt_addtionPayment.Enabled = true;
+                            Txt_PricePayment.Enabled = false;
+                        }
+                        else
+                        {
+                            Txt_addtionPayment.Enabled = false;
+                            Txt_PricePayment.Enabled = true;
+                        }
                         dt12 = t.VildateXrayCompany(Convert.ToInt32(cmb_items.SelectedValue), Convert.ToInt32(cmb_Company.SelectedValue));
                         if (dt12.Rows.Count > 0)
                         {
