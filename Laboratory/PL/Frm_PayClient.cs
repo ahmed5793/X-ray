@@ -231,7 +231,7 @@ namespace Laboratory.PL
                     return;
                 }
 
-                if (dataGridView1.Rows.Count >= 1)
+                if (Convert.ToDecimal(Txt_CustAccount.Text) >0 && Convert.ToDecimal(TxtDisCount.Text) > 0)
                 {
                     if (RdbAllPay.Checked == true)
                     {
@@ -243,21 +243,38 @@ namespace Laboratory.PL
                             //          x, dateTimePicker1.Value, Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value),
                             //          Convert.ToInt32(cmb_Stock.SelectedValue), Txt_SalesMAn.Text, Convert.ToInt32(Cmb_Branch.SelectedValue));
 
+                            if (Convert.ToDecimal(TxtDisCount.Text)>0)
+                            {
 
+
+                                dt.Clear();
+                                dt = c.Select_CustomertotalBAlance(Convert.ToInt32(cmb_client.SelectedValue));
+                                decimal mno1 = Convert.ToDecimal(dt.Rows[0][0]) - Convert.ToDecimal(TxtDisCount.Text)
+                                    ;
+                                c.Update_CustomerTotalBalance(Convert.ToInt32(cmb_client.SelectedValue), mno1);
+                                c.Add_CustomerAccountStatment(Convert.ToInt32(cmb_client.SelectedValue), 
+                                    Convert.ToDecimal(TxtDisCount.Text),0
+                                     , dateTimePicker1.Value, mno1, Convert.ToInt32(cmb_Stock.SelectedValue)
+                                     , Txt_SalesMAn.Text, Convert.ToInt32(Cmb_Branch.SelectedValue), "خصم مبلغ"  +"("+TxtDisCount.Text+")"+ "من الحساب المتبقي على العميل");
+                            }
                             dt.Clear();
                             dt = c.Select_CustomertotalBAlance(Convert.ToInt32(cmb_client.SelectedValue));
-                            decimal mno = Convert.ToDecimal(dt.Rows[0][0]) - Convert.ToDecimal(dataGridView1.CurrentRow.Cells[2].Value);
+                            decimal mno = Convert.ToDecimal(dt.Rows[0][0]) - Convert.ToDecimal(Txt_CustAcountAfterDisCount.Text)
+                                ;
                             c.Update_CustomerTotalBalance(Convert.ToInt32(cmb_client.SelectedValue), mno);
-                            c.Add_CustomerAccountStatment(Convert.ToInt32(cmb_client.SelectedValue), Convert.ToDecimal(dataGridView1.CurrentRow.Cells[2].Value),
+                            c.Add_CustomerAccountStatment(Convert.ToInt32(cmb_client.SelectedValue), Convert.ToDecimal(Txt_CustAcountAfterDisCount.Text),
                                0
                                  , dateTimePicker1.Value, mno, Convert.ToInt32(cmb_Stock.SelectedValue)
                                  , Txt_SalesMAn.Text, Convert.ToInt32(Cmb_Branch.SelectedValue), "تسديد كل الحساب القديم" );
 
                             s.add_insertStock(Convert.ToInt32(cmb_Stock.SelectedValue), 
-                                Convert.ToDecimal(dataGridView1.CurrentRow.Cells[2].Value), dateTimePicker1.Value,Txt_SalesMAn.Text,
+                                Convert.ToDecimal(Txt_CustAcountAfterDisCount.Text), dateTimePicker1.Value,Txt_SalesMAn.Text,
                                 "  مدفوعات من العميل  "+" "+cmb_client.Text );
                             MessageBox.Show("تم دفع المبلغ بنجاح");
-                            dataGridView1.DataSource = c.selectOneClientRent(Convert.ToInt32(cmb_client.SelectedValue));
+
+                            Txt_CustAccount.Text = c.selectOneClientRent(Convert.ToInt32(cmb_client.SelectedValue)).Rows[0][0].ToString();
+                            Txt_CustAcountAfterDisCount.Text = c.selectOneClientRent(Convert.ToInt32(cmb_client.SelectedValue)).Rows[0][0].ToString();
+                            TxtDisCount.Text = "0";
                         }
                         else
                         {
@@ -267,8 +284,8 @@ namespace Laboratory.PL
                     }
                     else if (rdbPartPay.Checked == true)
                     {
-                        decimal z = Convert.ToInt32(dataGridView1.CurrentRow.Cells[2].Value) - Convert.ToDecimal(txt_prise.Text);
-                        if (Convert.ToDecimal(txt_prise.Text) > Convert.ToDecimal(dataGridView1.CurrentRow.Cells[2].Value))
+                        decimal z = Convert.ToInt32(Txt_CustAcountAfterDisCount.Text) - Convert.ToDecimal(txt_prise.Text);
+                        if (Convert.ToDecimal(txt_prise.Text) > Convert.ToDecimal(Txt_CustAcountAfterDisCount.Text))
                         {
                             MessageBox.Show("المبلغ المدفوع اكبر من المبلغ الموجود حاليا على الشركة  ", "تاكيد", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             txt_prise.Focus();
@@ -291,6 +308,20 @@ namespace Laboratory.PL
                                 MessageBox.Show("لا بد من تحديد السعر");
                                 return;
                             }
+                            if (Convert.ToDecimal(TxtDisCount.Text) > 0)
+                            {
+
+
+                                dt.Clear();
+                                dt = c.Select_CustomertotalBAlance(Convert.ToInt32(cmb_client.SelectedValue));
+                                decimal mno1 = Convert.ToDecimal(dt.Rows[0][0]) - Convert.ToDecimal(TxtDisCount.Text)
+                                    ;
+                                c.Update_CustomerTotalBalance(Convert.ToInt32(cmb_client.SelectedValue), mno1);
+                                c.Add_CustomerAccountStatment(Convert.ToInt32(cmb_client.SelectedValue),
+                                    Convert.ToDecimal(TxtDisCount.Text), 0
+                                     , dateTimePicker1.Value, mno1, Convert.ToInt32(cmb_Stock.SelectedValue)
+                                     , Txt_SalesMAn.Text, Convert.ToInt32(Cmb_Branch.SelectedValue), "خصم مبلغ" + "(" + TxtDisCount.Text + ")" + "من الحساب المتبقي على العميل");
+                            }
                             dt.Clear();
                             dt = c.Select_CustomertotalBAlance(Convert.ToInt32(cmb_client.SelectedValue));
                             decimal mno = Convert.ToDecimal(dt.Rows[0][0]) - Convert.ToDecimal(txt_prise.Text);
@@ -301,7 +332,10 @@ namespace Laboratory.PL
                                  , Txt_SalesMAn.Text, Convert.ToInt32(Cmb_Branch.SelectedValue), "تسديد جزء من الحساب ");
                             s.add_insertStock(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_prise.Text), dateTimePicker1.Value, Txt_SalesMAn.Text, cmb_client.Text + " " + "مدفوعات مديونية");
                             MessageBox.Show("تم دفع المبلغ بنجاح");
-                            dataGridView1.DataSource = c.selectOneClientRent(Convert.ToInt32(cmb_client.SelectedValue));
+
+                            Txt_CustAccount.Text = c.selectOneClientRent(Convert.ToInt32(cmb_client.SelectedValue)).Rows[0][0].ToString();
+                            Txt_CustAcountAfterDisCount.Text = c.selectOneClientRent(Convert.ToInt32(cmb_client.SelectedValue)).Rows[0][0].ToString();
+                            TxtDisCount.Text = "0";
                         }
 
 
