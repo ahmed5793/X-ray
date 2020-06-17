@@ -283,9 +283,10 @@ namespace Laboratory.PL
                     }
                     else
                     {
+
                         decimal Amount = Convert.ToDecimal(txt_afterDiscount.Text);
-                        decimal Discount = Convert.ToDecimal(Txt_addtionPayment.Text);
-                        decimal Total = Amount -Discount ;
+                        decimal Discount = Convert.ToDecimal(Txt_PricePayment.Text);
+                        decimal Total = Amount - Discount ;
                         Txt_PricePayment.Text = Math.Round(Total, 1).ToString();
                     }
                 }
@@ -2477,6 +2478,18 @@ namespace Laboratory.PL
 
         private void radioButton2_CheckedChanged_1(object sender, EventArgs e)
         {
+            if (rdb_MoneyPatient.Checked == true)
+            {
+                Txt_addtionPayment.Enabled = false;
+                Txt_PricePayment.Enabled = true;
+            }
+            else
+            {
+
+                Txt_addtionPayment.Enabled = true;
+                Txt_PricePayment.Enabled = false;
+
+            }
             Patient_PaymentRateMony();
             Rent_Company();
             pay();
@@ -2485,6 +2498,16 @@ namespace Laboratory.PL
 
         private void radioButton1_CheckedChanged_1(object sender, EventArgs e)
         {
+            if (rdb_discountPatient.Checked==true)
+            {
+                Txt_addtionPayment.Enabled = true;
+                Txt_PricePayment.Enabled = false;
+            }
+            else
+            {
+                Txt_addtionPayment.Enabled = false;
+                Txt_PricePayment.Enabled = true;
+            }
             Patient_PaymentRate();
             Rent_Company();
             pay();
@@ -2495,6 +2518,18 @@ namespace Laboratory.PL
         private void txt_afterDiscount_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Txt_PricePayment_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '.' && Txt_PricePayment.Text.ToString().IndexOf('.') > -1)
+            {
+                e.Handled = true;
+            }
+            else if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != Convert.ToChar((System.Globalization.CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator)))
+            {
+                e.Handled = true;
+            }
         }
 
         //private void ؤ(object sender, EventArgs e)
