@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Tickets));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
@@ -71,6 +72,9 @@
             this.txt_idcust = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.rdb_discountPatient = new System.Windows.Forms.RadioButton();
+            this.rdb_MoneyPatient = new System.Windows.Forms.RadioButton();
             this.label29 = new System.Windows.Forms.Label();
             this.Txt_rentCompany = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
@@ -108,11 +112,12 @@
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.Btn_Save = new DevExpress.XtraEditors.SimpleButton();
             this.Btn_NewOrder = new DevExpress.XtraEditors.SimpleButton();
-            this.label30 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_order)).BeginInit();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -738,7 +743,7 @@
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox3.Controls.Add(this.label30);
+            this.groupBox3.Controls.Add(this.groupBox4);
             this.groupBox3.Controls.Add(this.label29);
             this.groupBox3.Controls.Add(this.Txt_rentCompany);
             this.groupBox3.Controls.Add(this.label28);
@@ -766,6 +771,50 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "الحسابات";
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.rdb_discountPatient);
+            this.groupBox4.Controls.Add(this.rdb_MoneyPatient);
+            this.groupBox4.Location = new System.Drawing.Point(14, 19);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(133, 52);
+            this.groupBox4.TabIndex = 125;
+            this.groupBox4.TabStop = false;
+            // 
+            // rdb_discountPatient
+            // 
+            this.rdb_discountPatient.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.rdb_discountPatient.AutoSize = true;
+            this.rdb_discountPatient.BackColor = System.Drawing.Color.Yellow;
+            this.rdb_discountPatient.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdb_discountPatient.Location = new System.Drawing.Point(62, 22);
+            this.rdb_discountPatient.Name = "rdb_discountPatient";
+            this.rdb_discountPatient.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.rdb_discountPatient.Size = new System.Drawing.Size(64, 22);
+            this.rdb_discountPatient.TabIndex = 124;
+            this.rdb_discountPatient.Text = "%خصم";
+            this.rdb_discountPatient.UseVisualStyleBackColor = false;
+            this.rdb_discountPatient.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged_1);
+            // 
+            // rdb_MoneyPatient
+            // 
+            this.rdb_MoneyPatient.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.rdb_MoneyPatient.AutoSize = true;
+            this.rdb_MoneyPatient.BackColor = System.Drawing.Color.Yellow;
+            this.rdb_MoneyPatient.Checked = true;
+            this.rdb_MoneyPatient.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdb_MoneyPatient.Location = new System.Drawing.Point(9, 22);
+            this.rdb_MoneyPatient.Name = "rdb_MoneyPatient";
+            this.rdb_MoneyPatient.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.rdb_MoneyPatient.Size = new System.Drawing.Size(47, 22);
+            this.rdb_MoneyPatient.TabIndex = 123;
+            this.rdb_MoneyPatient.TabStop = true;
+            this.rdb_MoneyPatient.Text = "قيمة";
+            this.rdb_MoneyPatient.UseVisualStyleBackColor = false;
+            this.rdb_MoneyPatient.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged_1);
+            // 
             // label29
             // 
             this.label29.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -773,7 +822,7 @@
             this.label29.AutoSize = true;
             this.label29.BackColor = System.Drawing.Color.White;
             this.label29.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(147, 92);
+            this.label29.Location = new System.Drawing.Point(148, 150);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(105, 18);
             this.label29.TabIndex = 121;
@@ -786,7 +835,7 @@
             this.Txt_rentCompany.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Txt_rentCompany.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_rentCompany.ForeColor = System.Drawing.SystemColors.Info;
-            this.Txt_rentCompany.Location = new System.Drawing.Point(8, 89);
+            this.Txt_rentCompany.Location = new System.Drawing.Point(9, 147);
             this.Txt_rentCompany.Name = "Txt_rentCompany";
             this.Txt_rentCompany.ReadOnly = true;
             this.Txt_rentCompany.Size = new System.Drawing.Size(133, 25);
@@ -814,7 +863,7 @@
             this.Txt_PricePayment.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Txt_PricePayment.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_PricePayment.ForeColor = System.Drawing.SystemColors.Info;
-            this.Txt_PricePayment.Location = new System.Drawing.Point(6, 53);
+            this.Txt_PricePayment.Location = new System.Drawing.Point(7, 111);
             this.Txt_PricePayment.Name = "Txt_PricePayment";
             this.Txt_PricePayment.ReadOnly = true;
             this.Txt_PricePayment.Size = new System.Drawing.Size(134, 25);
@@ -831,7 +880,7 @@
             this.label27.AutoSize = true;
             this.label27.BackColor = System.Drawing.Color.White;
             this.label27.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(146, 56);
+            this.label27.Location = new System.Drawing.Point(147, 114);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(102, 18);
             this.label27.TabIndex = 118;
@@ -844,9 +893,9 @@
             this.Txt_addtionPayment.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Txt_addtionPayment.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_addtionPayment.ForeColor = System.Drawing.SystemColors.Info;
-            this.Txt_addtionPayment.Location = new System.Drawing.Point(26, 18);
+            this.Txt_addtionPayment.Location = new System.Drawing.Point(10, 77);
             this.Txt_addtionPayment.Name = "Txt_addtionPayment";
-            this.Txt_addtionPayment.Size = new System.Drawing.Size(115, 25);
+            this.Txt_addtionPayment.Size = new System.Drawing.Size(124, 25);
             this.Txt_addtionPayment.TabIndex = 115;
             this.Txt_addtionPayment.Text = "0";
             this.Txt_addtionPayment.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -864,7 +913,7 @@
             this.label26.AutoSize = true;
             this.label26.BackColor = System.Drawing.Color.White;
             this.label26.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(146, 23);
+            this.label26.Location = new System.Drawing.Point(147, 80);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(104, 18);
             this.label26.TabIndex = 116;
@@ -893,13 +942,14 @@
             this.txt_afterDiscount.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txt_afterDiscount.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_afterDiscount.ForeColor = System.Drawing.SystemColors.Info;
-            this.txt_afterDiscount.Location = new System.Drawing.Point(321, 84);
+            this.txt_afterDiscount.Location = new System.Drawing.Point(320, 83);
             this.txt_afterDiscount.Name = "txt_afterDiscount";
             this.txt_afterDiscount.ReadOnly = true;
             this.txt_afterDiscount.Size = new System.Drawing.Size(134, 25);
             this.txt_afterDiscount.TabIndex = 111;
             this.txt_afterDiscount.Text = "0";
             this.txt_afterDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_afterDiscount.TextChanged += new System.EventHandler(this.txt_afterDiscount_TextChanged);
             this.txt_afterDiscount.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_afterDiscount_KeyUp);
             // 
             // rdb_money
@@ -1334,18 +1384,10 @@
             this.Btn_NewOrder.Text = "فاتورة جديدة";
             this.Btn_NewOrder.Click += new System.EventHandler(this.Btn_Add_Click);
             // 
-            // label30
+            // timer1
             // 
-            this.label30.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label30.AutoSize = true;
-            this.label30.BackColor = System.Drawing.Color.White;
-            this.label30.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(5, 22);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(21, 18);
-            this.label30.TabIndex = 122;
-            this.label30.Text = "%";
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Frm_Tickets
             // 
@@ -1391,6 +1433,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_order)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1477,6 +1521,9 @@
         private DevExpress.XtraEditors.SimpleButton btn_addgrid;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
         private DevExpress.XtraEditors.SimpleButton simpleButton4;
-        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.RadioButton rdb_discountPatient;
+        private System.Windows.Forms.RadioButton rdb_MoneyPatient;
+        private System.Windows.Forms.GroupBox groupBox4;
     }
 }

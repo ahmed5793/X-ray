@@ -19,7 +19,7 @@ namespace Laboratory.DAL
 
             //demo
           //  con = new SqlConnection(@"server =.; database=Laboratory_las;integrated security=true");
-          ///  con = new SqlConnection("Data Source=sql5046.site4now.net; database=DB_A54A03_TestLaboratory;User Id=DB_A54A03_TestLaboratory_admin;Password=Titonasser1994;") ;
+           // con = new SqlConnection("Data Source=sql5046.site4now.net; database=DB_A54A03_TestLaboratory;User Id=DB_A54A03_TestLaboratory_admin;Password=Titonasser1994;") ;
 
             //last
 
