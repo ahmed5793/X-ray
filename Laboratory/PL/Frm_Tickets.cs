@@ -518,9 +518,6 @@ namespace Laboratory.PL
                 //    cmb_items.DataSource = null;
                 //}
 
-
-
-
                 else if (cmb_statues.Text == "شركات")
                 {
                 if (cmb_Company.Text == "")
@@ -529,7 +526,8 @@ namespace Laboratory.PL
                     //cmb_items.DataSource = null;
                     cmb_Company.Focus();
                     MessageBox.Show("من فضلك قم بااختيار الشركة");
-                    Cmb_category.DataSource = null;
+                    Cmb_category.SelectedIndex=-1;
+                        cmb_items.SelectedIndex = -1;
 
                     return;
                 }
@@ -2593,6 +2591,11 @@ namespace Laboratory.PL
         }
 
         private void groupBox4_Enter_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmb_items_SelectionChangeCommitted(object sender, EventArgs e)
         {
 
         }

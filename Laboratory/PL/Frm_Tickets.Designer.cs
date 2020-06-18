@@ -689,6 +689,7 @@
             this.cmb_items.Size = new System.Drawing.Size(261, 26);
             this.cmb_items.TabIndex = 76;
             this.cmb_items.SelectedIndexChanged += new System.EventHandler(this.cmb_items_SelectedIndexChanged);
+            this.cmb_items.SelectionChangeCommitted += new System.EventHandler(this.cmb_items_SelectionChangeCommitted);
             this.cmb_items.Leave += new System.EventHandler(this.cmb_items_Leave);
             // 
             // dgv_order
