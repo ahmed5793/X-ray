@@ -527,10 +527,10 @@ namespace Laboratory.PL
                     cmb_Company.Focus();
                     MessageBox.Show("من فضلك قم بااختيار الشركة");
                     Cmb_category.SelectedIndex=-1;
-                        cmb_items.SelectedIndex = -1;
-
+                    cmb_items.SelectedIndex = -1;
                     return;
                 }
+
                 else if (cmb_Company.Text != "")
                 {
 
@@ -1112,6 +1112,27 @@ namespace Laboratory.PL
                 Txt_PricePayment.Enabled = true;
                 Txt_addtionPayment.Enabled = true;
                 dgv_order.Columns[3].Visible = true;
+                        if (Cmb_category.Text=="")
+                        {
+                            cmb_items.DataSource = null;
+                        }
+                        else if (Cmb_category.Text != "")
+                        {
+                            dt.Clear();
+                            dt = t.VildateselectItemXrayCompany(Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToInt32(Cmb_category.SelectedValue));
+                            if (dt.Rows.Count > 0)
+                            {
+
+                                cmb_items.DataSource = t.VildateselectItemXrayCompany(Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToInt32(Cmb_category.SelectedValue));
+                                cmb_items.DisplayMember = "Name";
+                                cmb_items.ValueMember = "ID_ItemsXrays";
+                                cmb_items.SelectedIndex = -1;
+                            }
+                            else
+                            {
+                                cmb_items.DataSource = null;
+                            }
+                        }
             }
 
             }
