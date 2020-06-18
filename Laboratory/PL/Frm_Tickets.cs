@@ -527,29 +527,26 @@ namespace Laboratory.PL
                     cmb_Company.Focus();
                     MessageBox.Show("من فضلك قم بااختيار الشركة");
                     Cmb_category.SelectedIndex=-1;
-                    cmb_items.SelectedIndex = -1;
-                    return;
-                }
-
-                else if (cmb_Company.Text != "")
-                {
-
-                    dt.Clear();
-                    dt = t.VildateselectItemXrayCompany(Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToInt32(Cmb_category.SelectedValue));
-                    if (dt.Rows.Count > 0)
+                    cmb_items.DataSource = null;
+                        return;
+                }                   
+                    else /*if (Cmb_category.Text != "")*/
                     {
-
-                        cmb_items.DataSource = t.VildateselectItemXrayCompany(Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToInt32(Cmb_category.SelectedValue));
-                        cmb_items.DisplayMember = "Name";
-                        cmb_items.ValueMember = "ID_ItemsXrays";
-                        cmb_items.SelectedIndex = -1;
+                        dt.Clear();
+                        dt = t.VildateselectItemXrayCompany(Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToInt32(Cmb_category.SelectedValue));
+                        if (dt.Rows.Count > 0)
+                        {
+                            cmb_items.DataSource = t.VildateselectItemXrayCompany(Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToInt32(Cmb_category.SelectedValue));
+                            cmb_items.DisplayMember = "Name";
+                            cmb_items.ValueMember = "ID_ItemsXrays";
+                            cmb_items.SelectedIndex = -1;
+                        }
+                        //else
+                        //{
+                        //    cmb_items.DataSource = null;
+                        //}
                     }
-                    else
-                    {
-                        cmb_items.DataSource = null;
-                    }
-
-                }
+               
                 
         }
 
@@ -1128,10 +1125,10 @@ namespace Laboratory.PL
                                 cmb_items.ValueMember = "ID_ItemsXrays";
                                 cmb_items.SelectedIndex = -1;
                             }
-                            else
-                            {
-                                cmb_items.DataSource = null;
-                            }
+                            //else
+                            //{
+                            //    cmb_items.DataSource = null;
+                            //}
                         }
             }
 
@@ -1309,18 +1306,83 @@ namespace Laboratory.PL
 
         private void Cmb_category_KeyDown(object sender, KeyEventArgs e)
         {
-            try { 
-            if (Cmb_category.Text != "")
+            try
             {
-
-
-                dt.Clear();
-                dt = cx.Validate_CategoryXray(Convert.ToInt32(Cmb_category.SelectedValue));
-                if (dt.Rows.Count==0)
+                if (cmb_statues.Text == "نقدى")
                 {
-                    cmb_items.DataSource = null;
+                    //dt.Clear();
+                    //dt = ix.SelectCtegoryItems(Convert.ToInt32(Cmb_category.SelectedValue));
+                    //if (dt.Rows.Count > 0)
+                    //{
+                    cmb_items.DataSource = ix.SelectCtegoryItems(Convert.ToInt32(Cmb_category.SelectedValue));
+                    cmb_items.DisplayMember = "Name";
+                    cmb_items.ValueMember = "ID_ItemsXrays";
+                    cmb_items.SelectedIndex = -1;
+
+                    //}
+                    //else
+                    //{
+                    //    cmb_items.DataSource = null;
+                    //}
                 }
-            }
+
+                //dt = ix.SelectCtegoryItems(Convert.ToInt32(Cmb_category.SelectedValue));
+                //if (dt.Rows.Count > 0)
+                //{
+                //    cmb_items.DataSource = t.VildateselectItemXrayCompany(Convert.ToInt32(Cmb_category.SelectedValue));
+                //    cmb_items.DisplayMember = "Name";
+                //    cmb_items.ValueMember = "ID_ItemsXrays";
+                //}
+                //else
+                //{
+                //    cmb_items.DataSource = null;
+                //}
+
+                else if (cmb_statues.Text == "شركات")
+                {
+                    if (cmb_Company.Text == "")
+                    {
+                        //Cmb_category.DataSource = null;
+                        //cmb_items.DataSource = null;
+                        cmb_Company.Focus();
+                        MessageBox.Show("من فضلك قم بااختيار الشركة");
+                        Cmb_category.SelectedIndex = -1;
+                        cmb_items.DataSource = null;
+                        return;
+                    }
+                    else if (Cmb_category.Text != "")
+                    {
+                        dt.Clear();
+                        dt = t.VildateselectItemXrayCompany(Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToInt32(Cmb_category.SelectedValue));
+                        if (dt.Rows.Count > 0)
+                        {
+                            cmb_items.DataSource = t.VildateselectItemXrayCompany(Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToInt32(Cmb_category.SelectedValue));
+                            cmb_items.DisplayMember = "Name";
+                            cmb_items.ValueMember = "ID_ItemsXrays";
+                            cmb_items.SelectedIndex = -1;
+                        }
+                        //else
+                        //{
+                        //    cmb_items.DataSource = null;
+                        //}
+                    }
+
+
+                }
+
+                //dt.Clear();
+
+                //dt = ix.SelectCtegoryItems(Convert.ToInt32(Cmb_category.SelectedValue));
+                //if (dt.Rows.Count > 0)
+                //{
+                //    cmb_items.DataSource = ix.SelectCtegoryItems(Convert.ToInt32(Cmb_category.SelectedValue));
+                //    cmb_items.DisplayMember = "Name";
+                //    cmb_items.ValueMember = "ID_ItemsXrays";
+                //}
+                //else
+                //{
+                //    cmb_items.DataSource = null;
+                //}
             }
             catch (Exception ex)
             {
