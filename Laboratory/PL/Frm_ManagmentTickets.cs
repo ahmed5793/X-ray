@@ -81,16 +81,51 @@ namespace Laboratory.PL
         {
             try
             {
-                if (radio_placeTicket.Checked==true)
+                if (rdb_all.Checked==true)
                 {
-                    gridControl1.DataSource = t.SelectSearchticketsBranchDate(Convert.ToInt32(cmb_branches.SelectedValue), FromDate.Value, ToDate.Value);
+
+
+                    if (radio_placeTicket.Checked == true)
+                    {
+                        gridControl1.DataSource = t.SelectSearchticketsBranchDate(Convert.ToInt32(cmb_branches.SelectedValue), FromDate.Value, ToDate.Value);
+
+                    }
+                    else if (radio_Branch.Checked == true)
+                    {
+                        gridControl1.DataSource = t.SelectSearchticketsBranch(cmb_branches.Text, FromDate.Value, ToDate.Value);
+
+                    }
+                }
+                else if(rdb_company.Checked==true)
+                {
+                    if (radio_placeTicket.Checked == true)
+                    {
+                        gridControl1.DataSource = t.SelectSearchticketsBranchDateCompany(Convert.ToInt32(cmb_branches.SelectedValue), FromDate.Value, ToDate.Value);
+
+                    }
+                    else if (radio_Branch.Checked == true)
+                    {
+                        gridControl1.DataSource = t.SelectSearchticketsBranchCompany(cmb_branches.Text, FromDate.Value, ToDate.Value);
+
+                    }
 
                 }
-                else if (radio_Branch.Checked==true)
+
+                else if (rdb_pay.Checked == true)
                 {
-                    gridControl1.DataSource = t.SelectSearchticketsBranch(cmb_branches.Text, FromDate.Value, ToDate.Value);
+                    if (radio_placeTicket.Checked == true)
+                    {
+                        gridControl1.DataSource = t.SelectSearchticketsBranchDatePay(Convert.ToInt32(cmb_branches.SelectedValue), FromDate.Value, ToDate.Value);
+
+                    }
+                    else if (radio_Branch.Checked == true)
+                    {
+                        gridControl1.DataSource = t.SelectSearchticketsBranchPay(cmb_branches.Text, FromDate.Value, ToDate.Value);
+
+                    }
 
                 }
+
             }
             catch (Exception ex)
             {
@@ -528,7 +563,7 @@ namespace Laboratory.PL
 
         private void Frm_ManagmentTickets_Load(object sender, EventArgs e)
         {
-
+            txt_username.Hide();
         }
 
         private void gridControl1_Click(object sender, EventArgs e)

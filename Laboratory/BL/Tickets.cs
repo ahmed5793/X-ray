@@ -854,6 +854,86 @@ namespace Laboratory.BL
         }
 
 
+        internal DataTable SelectSearchticketsBranchDateCompany(int branch, DateTime from, DateTime to)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[3];
+
+            param[0] = new SqlParameter("@id_Branche", SqlDbType.Int);
+            param[0].Value = branch;
+            param[1] = new SqlParameter("@from", SqlDbType.DateTime);
+            param[1].Value = from;
+            param[2] = new SqlParameter("@to", SqlDbType.DateTime);
+            param[2].Value = to;
+
+            dt = da.selected("SelectSearchticketsBranchDateCompany", param);
+            da.close();
+            return dt;
+        }
+        internal DataTable SelectSearchticketsBranchCompany(string branch, DateTime from, DateTime to)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[3];
+
+            param[0] = new SqlParameter("@BrancheName", SqlDbType.NVarChar, 50);
+            param[0].Value = branch;
+            param[1] = new SqlParameter("@from", SqlDbType.DateTime);
+            param[1].Value = from;
+            param[2] = new SqlParameter("@to", SqlDbType.DateTime);
+            param[2].Value = to;
+
+            dt = da.selected("SelectSearchticketsBranchCompany", param);
+            da.close();
+            return dt;
+        }
+
+
+        internal DataTable SelectSearchticketsBranchDatePay(int branch, DateTime from, DateTime to)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[3];
+
+            param[0] = new SqlParameter("@id_Branche", SqlDbType.Int);
+            param[0].Value = branch;
+            param[1] = new SqlParameter("@from", SqlDbType.DateTime);
+            param[1].Value = from;
+            param[2] = new SqlParameter("@to", SqlDbType.DateTime);
+            param[2].Value = to;
+
+            dt = da.selected("SelectSearchticketsBranchDatePay", param);
+            da.close();
+            return dt;
+        }
+        internal DataTable SelectSearchticketsBranchPay(string branch, DateTime from, DateTime to)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[3];
+
+            param[0] = new SqlParameter("@BrancheName", SqlDbType.NVarChar, 50);
+            param[0].Value = branch;
+            param[1] = new SqlParameter("@from", SqlDbType.DateTime);
+            param[1].Value = from;
+            param[2] = new SqlParameter("@to", SqlDbType.DateTime);
+            param[2].Value = to;
+
+            dt = da.selected("SelectSearchticketsBranchPay", param);
+            da.close();
+            return dt;
+        }
+
+
         internal DataTable SelectDiscountTicketsBranch(string branch, DateTime from, DateTime to)
         {
             DataTable dt = new DataTable();
