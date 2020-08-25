@@ -82,5 +82,7 @@ namespace Laboratory.BL
             da.excutequery("UpdateBranches", param);
             da.close();
         }
+
+    
     }
 }

@@ -147,6 +147,7 @@ namespace Laboratory.PL
             checkBox1.Checked = true;
             //Properties.Settings.Default.Reset();
             //Thread.Sleep(8000);
+            //Properties.Settings.Default.Reset();
         }
 
      
@@ -178,7 +179,7 @@ namespace Laboratory.PL
 
               
                     
-            
+                
 
                 if (txt_User.Text == "")
                 {
@@ -198,64 +199,24 @@ namespace Laboratory.PL
 
                         if (dt.Rows.Count > 0)
                         {
-                            //DataTable dt50 = new DataTable();
-                            //DataTable dt5 = new DataTable();
-
-
-                            //    dt50.Clear();
-                            //    dt50 = U.SelectCheckUserName(txt_User.Text);
-                            //    if (dt50.Rows.Count>0)
-                            //    {
-                            //        MessageBox.Show("عفوا هذا الاكونت مفتوح من جهاز اخر يرجي غلق الاكونت ثم اعد فتحه مرة اخرى");
-                            //        return;
-                            //    }
+                            /*---------------نسخه تجريبية------------------*/
+                           // bool check;
+                           //check = trail();
+                           // if (check==false)
+                           // {
+                           //     return;
+                           // }
 
 
                             backgroundWorker1.RunWorkerAsync();
 
-
-
                             Program.salesman = dt.Rows[0][1].ToString();
                             Console.Beep();
                             this.Hide();
-                            //dt5 = U.SelectCheckUserNameOffline(txt_User.Text);
-                            //if (dt5.Rows.Count > 0)
-                            //{
-                            //    dt50.Clear();
-                            //    dt50 = U.SelectCheckUserName(txt_User.Text);
-                            //    if (dt50.Rows.Count == 0)
-                            //    {
-                            //        U.UpdateCheckUserName(txt_User.Text, "Online", Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy hh:mm tt")), Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy hh:mm tt")));
-
-                            //}
-
-                            //}
-
-
-                            //else
-                            //{
-
-                            //    U.AddCheckUserName(txt_User.Text, "Online", Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy hh:mm tt")),
-                            //     Convert.ToDateTime(DateTime.Now.ToString()));
-                            //}
+                        
+                            
                             fm.ShowDialog();
-                            Users u = new Users();
-                            DataTable dt10 = new DataTable();
-                            dt10.Clear();
-
-                            dt10 = u.SelectAllCheckUserName();
-
-
-
-
-
-
-
-
-
-
-
-
+                        
                         }
                         else
                         {
@@ -276,15 +237,38 @@ namespace Laboratory.PL
               
             }
         }
+        bool trail()
+        {
+            int x = Properties.Settings.Default.Trial;
+            int y = x + 1;
+            Properties.Settings.Default.Trial = y;
+            Properties.Settings.Default.Save();
+
+             
+            if ( y  >  5)
+            {
+                  
+                MessageBox.Show("يرجي العلم بأان تم انتهاء فترة النسخه التجريبية","تعطيل",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                return false;
+            
+
+            }
+
+            else
+            {
+
+                int min = y -5;
+                MessageBox.Show(" هذة نسخة تجريبة ومتبقي لك عدد مرات" +  (min)   +" مرة","تعطيل", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+            return true;
+
+        }
 
         private void checkBox1_MouseMove(object sender, MouseEventArgs e)
         {
           
-        }
-
-        private void txt_Pass_Move(object sender, EventArgs e)
-        {
-           
         }
 
         private void checkBox1_Leave(object sender, EventArgs e)
@@ -310,7 +294,7 @@ namespace Laboratory.PL
         {
             try
             {
-
+               
                 dt2.Clear();
                 dt2 = p.Select_UserBAsicInformation(txt_User.Text);
                 if (dt2.Rows.Count >= 1)
@@ -941,11 +925,6 @@ namespace Laboratory.PL
             }
         }
 
-        private void txt_Pass_MouseDown(object sender, MouseEventArgs e)
-        {
-
-        }
-
         private void txt_Pass_KeyDown(object sender, KeyEventArgs e)
         {
             try
@@ -1063,6 +1042,11 @@ namespace Laboratory.PL
                 MessageBox.Show(ex.Message);
 
             }
+        }
+
+        private void txt_User_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

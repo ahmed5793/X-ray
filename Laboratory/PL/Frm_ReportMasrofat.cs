@@ -13,11 +13,19 @@ namespace Laboratory.PL
     public partial class Frm_ReportMasrofat : Form
     {
         Masrofat M = new Masrofat();
+        Stock s = new Stock();
         public Frm_ReportMasrofat()
         {
             InitializeComponent();
             //gridControl1.DataSource = M.select_Masrofat();
             Function();
+        }
+
+        void selectStock()
+        {
+            cmb_Stock.DataSource = s.select_Stock();
+            cmb_Stock.DisplayMember = "إسم الخزنة"; 
+            cmb_Stock.ValueMember = "رقم الخزنة";
         }
         void Function()
         {
@@ -25,11 +33,12 @@ namespace Laboratory.PL
             {
 
                 Calc_Total();
-                Permision();
+                //Permision();
+                selectStock();
                 checkBox1.Checked = false;
                 comboBox1.DataSource = null;
                 comboBox1.Enabled = false;
-                gridControl1.DataSource = m.search_AllMasrofatBranch(DateFrom.Value, DateTo.Value, Convert.ToInt32(cmb_UserBranch.SelectedValue));
+                gridControl1.DataSource = m.search_AllMasrofatBranch(DateFrom.Value, DateTo.Value, Convert.ToInt32(cmb_Stock.SelectedValue));
 
             }
             catch (Exception ex)
@@ -50,31 +59,31 @@ namespace Laboratory.PL
             textBox1.Text = total.ToString("₱ #,##0.0");
 
         }
-        void Permision()
-        {
-            Branches b = new Branches();
-            DataTable dt = new DataTable();
-            Users u = new Users();
+        //void Permision()
+        //{
+        //    Branches b = new Branches();
+        //    DataTable dt = new DataTable();
+        //    Users u = new Users();
 
-            dt.Clear();
-            dt = u.SelectUserBranch(Program.salesman);
+        //    dt.Clear();
+        //    dt = u.SelectUserBranch(Program.salesman);
 
-            if (dt.Rows.Count > 0)
-            {
-                cmb_UserBranch.DataSource = u.SelectUserBranch(Program.salesman);
-                cmb_UserBranch.DisplayMember = "Name";
-                cmb_UserBranch.ValueMember = "Branch_ID";
+        //    if (dt.Rows.Count > 0)
+        //    {
+        //        cmb_UserBranch.DataSource = u.SelectUserBranch(Program.salesman);
+        //        cmb_UserBranch.DisplayMember = "Name";
+        //        cmb_UserBranch.ValueMember = "Branch_ID";
          
 
-            }
-            else
-            {
-                cmb_UserBranch.DataSource = b.SelectCompBranches();
-                cmb_UserBranch.DisplayMember = "Name";
-                cmb_UserBranch.ValueMember = "Branch_ID";
+        //    }
+        //    else
+        //    {
+        //        cmb_UserBranch.DataSource = b.SelectCompBranches();
+        //        cmb_UserBranch.DisplayMember = "Name";
+        //        cmb_UserBranch.ValueMember = "Branch_ID";
            
-            }
-        }
+        //    }
+        //}
         private void btn_search_Click(object sender, EventArgs e)
         {
     
@@ -106,7 +115,7 @@ namespace Laboratory.PL
                 //    Calc_Total();
                 //}
          
-                    if (cmb_UserBranch.Text == "")
+                    if (cmb_Stock.Text == "")
                     {
                         MessageBox.Show("يرجي اختيار فرع");
                         return;
@@ -126,7 +135,7 @@ namespace Laboratory.PL
                         //cmb_UserBranch.Enabled = true;
                         //comboBox1.Enabled = true;
                         dt = M.search_CategoryMasrofat(DateFrom.Value, DateTo.Value, Convert.ToInt32(comboBox1.SelectedValue),
-                        Convert.ToInt32(cmb_UserBranch.SelectedValue));
+                        Convert.ToInt32(cmb_Stock.SelectedValue));
                         gridControl1.DataSource = dt;
                         Calc_Total();
 
@@ -136,7 +145,7 @@ namespace Laboratory.PL
 
                         comboBox1.Enabled = false;
                         comboBox1.DataSource = null;
-                        gridControl1.DataSource = m.search_AllMasrofatBranch(DateFrom.Value, DateTo.Value, Convert.ToInt32(cmb_UserBranch.SelectedValue));
+                        gridControl1.DataSource = m.search_AllMasrofatBranch(DateFrom.Value, DateTo.Value, Convert.ToInt32(cmb_Stock.SelectedValue));
 
                         Calc_Total();
                     }
@@ -169,11 +178,13 @@ namespace Laboratory.PL
         {
             if (checkBox1.Checked==true)
             {
-                Permision();
+                // Permision();
+
+                selectStock();
                 comboBox1.DataSource = m.SelectReserve();
                 comboBox1.DisplayMember = "masrof_type";
                 comboBox1.ValueMember = "ID_masrof";
-                cmb_UserBranch.Enabled = true;
+                cmb_Stock.Enabled = true;
                 comboBox1.Enabled = true;
              
             }
@@ -182,7 +193,7 @@ namespace Laboratory.PL
               
                 comboBox1.Enabled = false;
                 comboBox1.DataSource = null;
-                gridControl1.DataSource=m.search_AllMasrofatBranch(DateFrom.Value, DateTo.Value, Convert.ToInt32(cmb_UserBranch.SelectedValue));
+                gridControl1.DataSource=m.search_AllMasrofatBranch(DateFrom.Value, DateTo.Value, Convert.ToInt32(cmb_Stock.SelectedValue));
             }
          
         }

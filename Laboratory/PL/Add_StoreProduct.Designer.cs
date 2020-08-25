@@ -35,6 +35,7 @@
             this.Cmb_Store = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.Btn_Delete = new System.Windows.Forms.Button();
             this.Txt_Minimum = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -42,7 +43,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txt_quantity = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.Btn_Delete = new System.Windows.Forms.Button();
             this.Btn_New = new DevExpress.XtraEditors.SimpleButton();
             this.Btn_Update = new DevExpress.XtraEditors.SimpleButton();
             this.Btn_Add = new DevExpress.XtraEditors.SimpleButton();
@@ -141,6 +141,20 @@
             this.groupBox3.TabIndex = 27;
             this.groupBox3.TabStop = false;
             this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
+            // 
+            // Btn_Delete
+            // 
+            this.Btn_Delete.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Btn_Delete.BackColor = System.Drawing.Color.Black;
+            this.Btn_Delete.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Delete.ForeColor = System.Drawing.Color.White;
+            this.Btn_Delete.Location = new System.Drawing.Point(57, 110);
+            this.Btn_Delete.Name = "Btn_Delete";
+            this.Btn_Delete.Size = new System.Drawing.Size(75, 42);
+            this.Btn_Delete.TabIndex = 30;
+            this.Btn_Delete.Text = "حذف الصنف ";
+            this.Btn_Delete.UseVisualStyleBackColor = false;
+            this.Btn_Delete.Click += new System.EventHandler(this.Btn_Delete_Click);
             // 
             // Txt_Minimum
             // 
@@ -246,20 +260,6 @@
             this.label9.Text = "المخزن";
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
-            // Btn_Delete
-            // 
-            this.Btn_Delete.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Btn_Delete.BackColor = System.Drawing.Color.Black;
-            this.Btn_Delete.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Delete.ForeColor = System.Drawing.Color.White;
-            this.Btn_Delete.Location = new System.Drawing.Point(57, 110);
-            this.Btn_Delete.Name = "Btn_Delete";
-            this.Btn_Delete.Size = new System.Drawing.Size(75, 42);
-            this.Btn_Delete.TabIndex = 30;
-            this.Btn_Delete.Text = "حذف الصنف ";
-            this.Btn_Delete.UseVisualStyleBackColor = false;
-            this.Btn_Delete.Click += new System.EventHandler(this.Btn_Delete_Click);
-            // 
             // Btn_New
             // 
             this.Btn_New.Appearance.BackColor = System.Drawing.Color.Black;
@@ -272,7 +272,7 @@
             this.Btn_New.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Btn_New.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_New.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.Btn_New.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.Btn_New.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_New.ImageOptions.Image")));
             this.Btn_New.Location = new System.Drawing.Point(454, 171);
             this.Btn_New.Name = "Btn_New";
             this.Btn_New.Size = new System.Drawing.Size(146, 32);
@@ -292,7 +292,7 @@
             this.Btn_Update.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Btn_Update.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_Update.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.Btn_Update.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.Btn_Update.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Update.ImageOptions.Image")));
             this.Btn_Update.Location = new System.Drawing.Point(106, 171);
             this.Btn_Update.Name = "Btn_Update";
             this.Btn_Update.Size = new System.Drawing.Size(129, 32);
@@ -312,7 +312,7 @@
             this.Btn_Add.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Btn_Add.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_Add.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.Btn_Add.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
+            this.Btn_Add.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Add.ImageOptions.Image")));
             this.Btn_Add.Location = new System.Drawing.Point(282, 171);
             this.Btn_Add.Name = "Btn_Add";
             this.Btn_Add.Size = new System.Drawing.Size(129, 32);

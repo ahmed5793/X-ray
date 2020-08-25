@@ -36,27 +36,39 @@ namespace Laboratory.PL
         }
         void Permision()
         {
-            dt.Clear();
-            dt = u.SelectUserBranch(txt_username.Text);
+           
 
-            if (dt.Rows.Count > 0)
-            {
-                cmb_UserBranch.DataSource = u.SelectUserBranch(txt_username.Text);
-                cmb_UserBranch.DisplayMember = "Name";
-                cmb_UserBranch.ValueMember = "Branch_ID";
-                cmb_UserBranch.SelectedIndex = -1;
 
-                cmb_Stock.DataSource = s.SelectStockBranch(Convert.ToInt32(cmb_UserBranch.SelectedValue));
-                cmb_Stock.DisplayMember = "Name_Stock";
-                cmb_Stock.ValueMember = "ID_Stock";
-            }
+         
+
+                dt.Clear();
+                dt = u.SelectUserBranch(txt_username.Text);
+
+                if (dt.Rows.Count > 0)
+                {
+                    cmb_UserBranch.Enabled = true;
+                    cmb_UserBranch.DataSource = u.SelectUserBranch(txt_username.Text);
+                    cmb_UserBranch.DisplayMember = "Name";
+                    cmb_UserBranch.ValueMember = "Branch_ID";
+                    cmb_UserBranch.SelectedIndex = -1;
+
+                    cmb_Stock.DataSource = s.SelectStockBranch(Convert.ToInt32(cmb_UserBranch.SelectedValue));
+                    cmb_Stock.DisplayMember = "Name_Stock";
+                    cmb_Stock.ValueMember = "ID_Stock";
+                }
+            
             else
             {
-                cmb_UserBranch.DataSource = b.SelectCompBranches();
-                cmb_UserBranch.DisplayMember = "Name";
-                cmb_UserBranch.ValueMember = "Branch_ID";
-                cmb_UserBranch.SelectedIndex = -1;
-                //Stock();
+                //cmb_UserBranch.DataSource = b.SelectCompBranches();
+                //cmb_UserBranch.DisplayMember = "Name";
+                //cmb_UserBranch.ValueMember = "Branch_ID";
+                //cmb_UserBranch.SelectedIndex = -1;
+                Stock();
+                
+                
+                cmb_UserBranch.Enabled = false;
+              
+
             }
         }
         void Stock()
@@ -235,16 +247,17 @@ namespace Laboratory.PL
                     MessageBox.Show("من فضلك ادخال المبلغ ");
                     return;
                 }
-                if (cmb_UserBranch.Text=="")
-                {
-                    MessageBox.Show("لا بد من تحديد الفرع ");
-                    return;
-                }
                 if (cmb_Stock.Text == "")
                 {
                     MessageBox.Show("لا بد من تحديد الخزنة ");
                     return;
                 }
+                //if (cmb_UserBranch.Text=="")
+                //{
+                //    MessageBox.Show("لا بد من تحديد الفرع ");
+                //    return;
+                //}
+              
                 if (comboBox1.Text == "")
                 {
                     MessageBox.Show("لا بد من تحديد نوع المصروف ");
@@ -262,9 +275,13 @@ namespace Laboratory.PL
                 }
                 if (comboBox1.Text != string.Empty)
                 {
-                    m.AddReserveDetails(Convert.ToInt32(comboBox1.SelectedValue), txt_notes.Text,
-                    Convert.ToDecimal(txt_amount.Text), dateTimePicker1.Value, Convert.ToInt32(cmb_Stock.SelectedValue),
-                    txt_username.Text , Convert.ToInt32(cmb_UserBranch.SelectedValue));
+                    
+                   
+                        m.AddReserveDetails(Convert.ToInt32(comboBox1.SelectedValue), txt_notes.Text,
+                        Convert.ToDecimal(txt_amount.Text), dateTimePicker1.Value, Convert.ToInt32(cmb_Stock.SelectedValue),
+                        txt_username.Text);
+                    
+                 
                     s.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_amount.Text), dateTimePicker1.Value, txt_username.Text, "مصروفات " + "لل" + comboBox1.Text);
                     MessageBox.Show("تم التسجيل بنجاح", "عمليه التسجيل");
                     dataGridView1.DataSource = m.SelectReserveDetails();
@@ -291,9 +308,36 @@ namespace Laboratory.PL
         private void cmb_UserBranch_SelectionChangeCommitted(object sender, EventArgs e)
         {
 
-            cmb_Stock.DataSource = s.SelectStockBranch(Convert.ToInt32(cmb_UserBranch.SelectedValue));
-            cmb_Stock.DisplayMember = "Name_Stock";
-            cmb_Stock.ValueMember = "ID_Stock";
+            dt.Clear();
+            dt = u.SelectUserBranch(txt_username.Text);
+
+            if (dt.Rows.Count > 0)
+            {
+                
+
+                cmb_Stock.DataSource = s.SelectStockBranch(Convert.ToInt32(cmb_UserBranch.SelectedValue));
+                cmb_Stock.DisplayMember = "Name_Stock";
+                cmb_Stock.ValueMember = "ID_Stock";
+            }
+
+            else
+            {
+                //cmb_UserBranch.DataSource = b.SelectCompBranches();
+                //cmb_UserBranch.DisplayMember = "Name";
+                //cmb_UserBranch.ValueMember = "Branch_ID";
+                //cmb_UserBranch.SelectedIndex = -1;
+                Stock();
+
+
+                cmb_UserBranch.Enabled = false;
+
+
+            }
+
+
+            //cmb_Stock.DataSource = s.SelectStockBranch(Convert.ToInt32(cmb_UserBranch.SelectedValue));
+            //cmb_Stock.DisplayMember = "Name_Stock";
+            //cmb_Stock.ValueMember = "ID_Stock";
         }
 
         private void cmb_UserBranch_SelectedIndexChanged(object sender, EventArgs e)

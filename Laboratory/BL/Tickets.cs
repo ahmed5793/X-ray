@@ -196,6 +196,23 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
+
+        internal DataTable Report_StockMoneyCategoryXrayAll( DateTime From_Date, DateTime To_Date)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[2];
+            
+            param[0] = new SqlParameter("@Date_From", SqlDbType.Date);
+            param[0].Value = From_Date;
+            param[1] = new SqlParameter("@Date_to", SqlDbType.Date);
+            param[1].Value = To_Date;
+            dt = da.selected("Report_StockMoneyCategoryXrayAll", param);
+            da.close();
+            return dt;
+        }
         internal DataTable SelectManagmentTicketsBranchEvening(int IDBranch, DateTime date_day)
         {
             DataTable dt = new DataTable();
@@ -835,6 +852,29 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
+
+
+        internal DataTable SelectDiscountTicketsBranch(string branch, DateTime from, DateTime to)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[3];
+
+            param[0] = new SqlParameter("@BrancheName", SqlDbType.NVarChar, 50);
+            param[0].Value = branch;
+            param[1] = new SqlParameter("@from", SqlDbType.DateTime);
+            param[1].Value = from;
+            param[2] = new SqlParameter("@to", SqlDbType.DateTime);
+            param[2].Value = to;
+
+            dt = da.selected("SelectDiscountTicketsBranch", param);
+            da.close();
+            return dt;
+        }
+
+
 
     }
 }

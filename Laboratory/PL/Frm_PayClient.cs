@@ -231,7 +231,7 @@ namespace Laboratory.PL
                     return;
                 }
 
-                if (Convert.ToDecimal(Txt_CustAccount.Text) >0 && Convert.ToDecimal(TxtDisCount.Text) > 0)
+                if (Convert.ToDecimal(Txt_CustAccount.Text) >0)
                 {
                     if (RdbAllPay.Checked == true)
                     {
@@ -284,7 +284,7 @@ namespace Laboratory.PL
                     }
                     else if (rdbPartPay.Checked == true)
                     {
-                        decimal z = Convert.ToInt32(Txt_CustAcountAfterDisCount.Text) - Convert.ToDecimal(txt_prise.Text);
+                        decimal z = Convert.ToDecimal(Txt_CustAcountAfterDisCount.Text) - Convert.ToDecimal(txt_prise.Text);
                         if (Convert.ToDecimal(txt_prise.Text) > Convert.ToDecimal(Txt_CustAcountAfterDisCount.Text))
                         {
                             MessageBox.Show("المبلغ المدفوع اكبر من المبلغ الموجود حاليا على الشركة  ", "تاكيد", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -344,9 +344,19 @@ namespace Laboratory.PL
                         }
 
                     }
-                    txt_prise.Text = "0";
+                  
 
                 }
+                txt_prise.Text = "0";
+                Txt_CustAccount.Text = "0";
+                Txt_CustAcountAfterDisCount.Text = "0";
+                TxtDisCount.Text = "0";
+
+                cmb_client.DataSource = c.SelectRentCompoCustomer();
+                cmb_client.DisplayMember = "Cust_Name";
+                cmb_client.ValueMember = "Cust_ID";
+                cmb_client.Text = "";
+                cmb_client.SelectedIndex = -1;
             }
             catch (Exception ex)
             {

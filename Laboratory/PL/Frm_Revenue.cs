@@ -45,6 +45,7 @@ namespace Laboratory.PL
             InitializeComponent();
             txt_username.Text = Program.salesman;
             Permision();
+
         }
         void Permision()
         {
@@ -78,17 +79,31 @@ namespace Laboratory.PL
         {
             try
             {
-                if (cmb_branches.Text!="")
-                {
-                    gridControl1.DataSource = t.Report_StockMoneyCategoryXray(Convert.ToInt32(cmb_branches.SelectedValue),
-                        FromDate.Value, ToDate.Value);
-                    dt10.Clear();
-                    dt10 = m.search_AllMasrofatBranch(FromDate.Value, ToDate.Value, Convert.ToInt32(cmb_branches.SelectedValue));
-                    Calc_Masrofat();
-                    Calc_Total();
-                    textBox1.Text = (Convert.ToDecimal(Txt_Total.Text) - Convert.ToDecimal(Txt_Masrofat.Text)).ToString();
 
-                }
+               
+
+
+                    if (cmb_branches.Text != "")
+                    {
+                        gridControl1.DataSource = t.Report_StockMoneyCategoryXray(Convert.ToInt32(cmb_branches.SelectedValue),
+                            FromDate.Value, ToDate.Value);
+                        dt10.Clear();
+                        dt10 = m.search_AllMasrofatBranch(FromDate.Value, ToDate.Value, Convert.ToInt32(cmb_branches.SelectedValue));
+                        Calc_Masrofat();
+                        Calc_Total();
+                        textBox1.Text = (Convert.ToDecimal(Txt_Total.Text) - Convert.ToDecimal(Txt_Masrofat.Text)).ToString();
+
+                    }
+               
+                        //gridControl1.DataSource = t.Report_StockMoneyCategoryXrayAll(FromDate.Value, ToDate.Value);
+                        //dt10.Clear();
+                        //dt10 = m.search_AllMasrofatStock(FromDate.Value, ToDate.Value);
+                        //Calc_Masrofat();
+                        //Calc_Total();
+                        //textBox1.Text = (Convert.ToDecimal(Txt_Total.Text) - Convert.ToDecimal(Txt_Masrofat.Text)).ToString();
+
+                    
+                
             }
             catch (Exception ex)
             {
@@ -100,6 +115,21 @@ namespace Laboratory.PL
         private void Btn_Print_Click(object sender, EventArgs e)
         {
             gridControl1.ShowRibbonPrintPreview();
+        }
+
+        private void rdb_AllBranch_CheckedChanged(object sender, EventArgs e)
+        {
+            cmb_branches.Enabled = false;
+        }
+
+        private void rdbOneBranch_CheckedChanged(object sender, EventArgs e)
+        {
+            cmb_branches.Enabled = true;
+        }
+
+        private void Frm_Revenue_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

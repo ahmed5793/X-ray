@@ -1187,15 +1187,7 @@ namespace Laboratory.PL
 
         private void barButtonItem5_ItemClick_3(object sender, ItemClickEventArgs e)
         {
-            try { 
-            Frm_ProductMinimum fpm = new Frm_ProductMinimum();
-            fpm.Show();
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
+           
         }
 
         private void barStaticItem10_ItemClick(object sender, ItemClickEventArgs e)
@@ -1375,6 +1367,53 @@ namespace Laboratory.PL
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void barStaticItem11_ItemClick(object sender, ItemClickEventArgs e)
+        {
+           
+        }
+
+        private void barHeaderItem32_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                Frm_ProductMinimum fpm = new Frm_ProductMinimum();
+                fpm.Show();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void barHeaderItem33_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                Report_StoreProduct sp = new Report_StoreProduct();
+                sp.Show();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void barButtonItem8_ItemClick_2(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                Report_DiscountTicket dt = new Report_DiscountTicket();
+                dt.Show();
+            }
+            catch (Exception ex)
+            {
+
                 MessageBox.Show(ex.Message);
             }
         }

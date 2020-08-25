@@ -125,13 +125,17 @@ namespace Laboratory.PL
         {
             try
             {
-                if (comboBox1.Text != String.Empty)
+                if (e.KeyCode==Keys.Enter)
                 {
-                    gridControl1.DataSource = Doctors.Select_ReportDoctor(Convert.ToInt32(comboBox1.SelectedValue));
-                    textBox1.Text = gridView1.RowCount.ToString();
-                    Calc();
+                    if (comboBox1.Text != String.Empty)
+                    {
+                        gridControl1.DataSource = Doctors.Select_ReportDoctor(Convert.ToInt32(comboBox1.SelectedValue));
+                        textBox1.Text = gridView1.RowCount.ToString();
+                        Calc();
 
+                    }
                 }
+               
             }
             catch (Exception ex)
             {

@@ -206,6 +206,7 @@
             this.Txt_CustAccount.Location = new System.Drawing.Point(292, 225);
             this.Txt_CustAccount.MaxLength = 8;
             this.Txt_CustAccount.Name = "Txt_CustAccount";
+            this.Txt_CustAccount.ReadOnly = true;
             this.Txt_CustAccount.Size = new System.Drawing.Size(171, 27);
             this.Txt_CustAccount.TabIndex = 177;
             this.Txt_CustAccount.Text = "0";
@@ -256,6 +257,7 @@
             this.Txt_CustAcountAfterDisCount.Location = new System.Drawing.Point(292, 312);
             this.Txt_CustAcountAfterDisCount.MaxLength = 8;
             this.Txt_CustAcountAfterDisCount.Name = "Txt_CustAcountAfterDisCount";
+            this.Txt_CustAcountAfterDisCount.ReadOnly = true;
             this.Txt_CustAcountAfterDisCount.Size = new System.Drawing.Size(171, 27);
             this.Txt_CustAcountAfterDisCount.TabIndex = 175;
             this.Txt_CustAcountAfterDisCount.Text = "0";

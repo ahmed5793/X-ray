@@ -97,7 +97,8 @@
             this.report_items = new DevExpress.XtraBars.BarSubItem();
             this.barHeaderItem22 = new DevExpress.XtraBars.BarHeaderItem();
             this.barHeaderItem23 = new DevExpress.XtraBars.BarHeaderItem();
-            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.barHeaderItem32 = new DevExpress.XtraBars.BarHeaderItem();
+            this.barHeaderItem33 = new DevExpress.XtraBars.BarHeaderItem();
             this.add_suppliers = new DevExpress.XtraBars.BarButtonItem();
             this.pay_suppliers = new DevExpress.XtraBars.BarButtonItem();
             this.Depit_suppliers = new DevExpress.XtraBars.BarButtonItem();
@@ -141,6 +142,7 @@
             this.Btn_UserPermession = new DevExpress.XtraBars.BarButtonItem();
             this.barStaticItem8 = new DevExpress.XtraBars.BarStaticItem();
             this.barStaticItem9 = new DevExpress.XtraBars.BarStaticItem();
+            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.btn_ReportTransferCompany = new DevExpress.XtraBars.BarButtonItem();
             this.Btn_ReportReturn = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
@@ -149,6 +151,7 @@
             this.Btn_PermissionNoticeMoney = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.Setting_Items = new DevExpress.XtraBars.BarButtonItem();
+            this.barStaticItem11 = new DevExpress.XtraBars.BarStaticItem();
             this.basic_information = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -189,6 +192,7 @@
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barAndDockingController1)).BeginInit();
@@ -319,9 +323,13 @@
             this.Btn_TechnicalShiftPrice,
             this.Btn_PermissionNoticeMoney,
             this.barButtonItem7,
-            this.Setting_Items});
+            this.Setting_Items,
+            this.barStaticItem11,
+            this.barHeaderItem32,
+            this.barHeaderItem33,
+            this.barButtonItem8});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 147;
+            this.ribbon.MaxItemId = 151;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.basic_information,
@@ -890,7 +898,8 @@
             this.report_items.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barHeaderItem22),
             new DevExpress.XtraBars.LinkPersistInfo(this.barHeaderItem23),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem5)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barHeaderItem32),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barHeaderItem33)});
             this.report_items.Name = "report_items";
             // 
             // barHeaderItem22
@@ -907,13 +916,19 @@
             this.barHeaderItem23.Name = "barHeaderItem23";
             this.barHeaderItem23.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barHeaderItem23_ItemClick);
             // 
-            // barButtonItem5
+            // barHeaderItem32
             // 
-            this.barButtonItem5.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.barButtonItem5.Caption = "تقرير بالنواقص للاصناف فى المخازن";
-            this.barButtonItem5.Id = 130;
-            this.barButtonItem5.Name = "barButtonItem5";
-            this.barButtonItem5.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick_3);
+            this.barHeaderItem32.Caption = "تقرير بالنواقص للاصناف فى المخازن";
+            this.barHeaderItem32.Id = 148;
+            this.barHeaderItem32.Name = "barHeaderItem32";
+            this.barHeaderItem32.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barHeaderItem32_ItemClick);
+            // 
+            // barHeaderItem33
+            // 
+            this.barHeaderItem33.Caption = "تقرير عن الاصناف في المخزن";
+            this.barHeaderItem33.Id = 149;
+            this.barHeaderItem33.Name = "barHeaderItem33";
+            this.barHeaderItem33.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barHeaderItem33_ItemClick);
             // 
             // add_suppliers
             // 
@@ -1334,6 +1349,14 @@
             this.barStaticItem9.ItemAppearance.Normal.Options.UseFont = true;
             this.barStaticItem9.Name = "barStaticItem9";
             // 
+            // barButtonItem5
+            // 
+            this.barButtonItem5.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.barButtonItem5.Caption = "تقرير بالنواقص للاصناف فى المخازن";
+            this.barButtonItem5.Id = 130;
+            this.barButtonItem5.Name = "barButtonItem5";
+            this.barButtonItem5.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick_3);
+            // 
             // btn_ReportTransferCompany
             // 
             this.btn_ReportTransferCompany.Caption = "تقرير عن التحويلات للجهه الاخرى";
@@ -1397,10 +1420,17 @@
             // 
             this.Setting_Items.Caption = "اعداداتالفحوصات";
             this.Setting_Items.Id = 146;
-            this.Setting_Items.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.Image")));
-            this.Setting_Items.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.LargeImage")));
+            this.Setting_Items.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Setting_Items.ImageOptions.Image")));
+            this.Setting_Items.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("Setting_Items.ImageOptions.LargeImage")));
             this.Setting_Items.Name = "Setting_Items";
             this.Setting_Items.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem8_ItemClick_1);
+            // 
+            // barStaticItem11
+            // 
+            this.barStaticItem11.Caption = "تقرير عن الاصناف في المخزن";
+            this.barStaticItem11.Id = 147;
+            this.barStaticItem11.Name = "barStaticItem11";
+            this.barStaticItem11.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barStaticItem11_ItemClick);
             // 
             // basic_information
             // 
@@ -1638,6 +1668,7 @@
             this.ribbonPageGroup15.ItemLinks.Add(this.search_tickets);
             this.ribbonPageGroup15.ItemLinks.Add(this.Data_Redvelation);
             this.ribbonPageGroup15.ItemLinks.Add(this.Btn_ReportReturn);
+            this.ribbonPageGroup15.ItemLinks.Add(this.barButtonItem8);
             this.ribbonPageGroup15.Name = "ribbonPageGroup15";
             this.ribbonPageGroup15.Text = "ادارة الحجوزات";
             // 
@@ -1795,6 +1826,15 @@
             this.accordionControlElement3.HeaderControl = this.simpleButton3;
             this.accordionControlElement3.Name = "accordionControlElement3";
             this.accordionControlElement3.Text = "Element3";
+            // 
+            // barButtonItem8
+            // 
+            this.barButtonItem8.Caption = "تقرير الخصومات";
+            this.barButtonItem8.Id = 150;
+            this.barButtonItem8.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.Image")));
+            this.barButtonItem8.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.LargeImage")));
+            this.barButtonItem8.Name = "barButtonItem8";
+            this.barButtonItem8.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem8_ItemClick_2);
             // 
             // Main
             // 
@@ -1991,5 +2031,9 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem7;
         public DevExpress.XtraBars.BarButtonItem Btn_PermissionNoticeMoney;
         public DevExpress.XtraBars.BarButtonItem Setting_Items;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem11;
+        private DevExpress.XtraBars.BarHeaderItem barHeaderItem32;
+        private DevExpress.XtraBars.BarHeaderItem barHeaderItem33;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem8;
     }
 }

@@ -78,10 +78,10 @@
             this.cmb_branches.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_branches.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_branches.FormattingEnabled = true;
-            this.cmb_branches.Location = new System.Drawing.Point(147, 12);
+            this.cmb_branches.Location = new System.Drawing.Point(10, 13);
             this.cmb_branches.Name = "cmb_branches";
             this.cmb_branches.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmb_branches.Size = new System.Drawing.Size(279, 32);
+            this.cmb_branches.Size = new System.Drawing.Size(247, 32);
             this.cmb_branches.TabIndex = 84;
             // 
             // label13
@@ -89,7 +89,7 @@
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.label13.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(430, 15);
+            this.label13.Location = new System.Drawing.Point(263, 18);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(47, 24);
             this.label13.TabIndex = 83;
@@ -99,7 +99,7 @@
             // 
             this.txt_username.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_username.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_username.Location = new System.Drawing.Point(603, 12);
+            this.txt_username.Location = new System.Drawing.Point(629, 12);
             this.txt_username.Name = "txt_username";
             this.txt_username.ReadOnly = true;
             this.txt_username.Size = new System.Drawing.Size(233, 32);
@@ -112,7 +112,7 @@
             this.label18.AutoSize = true;
             this.label18.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.label18.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(842, 16);
+            this.label18.Location = new System.Drawing.Point(868, 15);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(106, 24);
             this.label18.TabIndex = 57;
@@ -432,6 +432,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "تقرير الايرادات ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Frm_Revenue_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);

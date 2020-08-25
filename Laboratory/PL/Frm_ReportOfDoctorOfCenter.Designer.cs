@@ -157,6 +157,7 @@
             this.comboBox1.Size = new System.Drawing.Size(346, 32);
             this.comboBox1.TabIndex = 88;
             this.comboBox1.SelectionChangeCommitted += new System.EventHandler(this.comboBox1_SelectionChangeCommitted);
+            this.comboBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.comboBox1_KeyDown);
             this.comboBox1.Leave += new System.EventHandler(this.comboBox1_Leave);
             // 
             // label7

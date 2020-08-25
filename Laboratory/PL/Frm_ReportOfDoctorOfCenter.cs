@@ -54,6 +54,8 @@ namespace Laboratory.PL
         {
             try
             {
+                
+                
                 if (comboBox1.Text!=String.Empty)
                 {
                     gridControl1.DataSource = DoctorOfCenter.Select_ReportDoctorOfCenter(Convert.ToInt32(comboBox1.SelectedValue));
@@ -123,6 +125,33 @@ namespace Laboratory.PL
         private void Btn_Print_Click(object sender, EventArgs e)
         {
             gridControl1.ShowRibbonPrintPreview();
+        }
+
+        private void comboBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+
+                if (e.KeyCode == Keys.Enter)
+                {
+
+
+               
+
+                    if (comboBox1.Text != String.Empty)
+                    {
+                        gridControl1.DataSource = DoctorOfCenter.Select_ReportDoctorOfCenter(Convert.ToInt32(comboBox1.SelectedValue));
+                        textBox1.Text = gridView1.RowCount.ToString();
+
+                    }
+              
+                }
+            }
+                catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

@@ -33,10 +33,10 @@ namespace Laboratory.BL
             return dt;
         }
 
-        internal void AddReserveDetails(int IdReserve, string decription, decimal amount, DateTime date, int Id_Stock , string Sales_Man, int Id_Branch )
+        internal void AddReserveDetails(int IdReserve, string decription, decimal amount, DateTime date, int Id_Stock , string Sales_Man )
         {
             DataAccessLayer da = new DataAccessLayer();
-            SqlParameter[] param = new SqlParameter[7];
+            SqlParameter[] param = new SqlParameter[6];
             da.open();
             param[0] = new SqlParameter("@idReserve", SqlDbType.Int);
             param[0].Value = IdReserve;
@@ -50,8 +50,7 @@ namespace Laboratory.BL
             param[4].Value = Id_Stock;
             param[5] = new SqlParameter("@Sales_man", SqlDbType.NVarChar,100);
             param[5].Value = Sales_Man;
-            param[6] = new SqlParameter("@Id_Branch", SqlDbType.Int);
-            param[6].Value = Id_Branch;
+        
             da.excutequery("AddReserveDetails", param);
             da.close();
         }
@@ -121,7 +120,7 @@ namespace Laboratory.BL
             return dt;
 
         }
-        internal DataTable search_CategoryMasrofat(DateTime FromDate, DateTime ToDate, int idCategory,int idBranch)
+        internal DataTable search_CategoryMasrofat(DateTime FromDate, DateTime ToDate, int idCategory,int idStock)
         {
             DataAccessLayer da = new DataAccessLayer();
             SqlParameter[] param = new SqlParameter[4];
@@ -132,13 +131,13 @@ namespace Laboratory.BL
             param[1].Value = ToDate;
             param[2] = new SqlParameter("@idCategory", SqlDbType.Int);
             param[2].Value = idCategory;
-            param[3] = new SqlParameter("@idBranch", SqlDbType.Int);
-            param[3].Value = idBranch;
+            param[3] = new SqlParameter("@idStock", SqlDbType.Int);
+            param[3].Value = idStock;
             dt = da.selected("search_CategoryMasrofat", param);
             return dt;
 
         }
-        internal DataTable search_AllMasrofatBranch(DateTime FromDate, DateTime ToDate,  int idBranch)
+        internal DataTable search_AllMasrofatBranch(DateTime FromDate, DateTime ToDate,  int idStock)
         {
             DataAccessLayer da = new DataAccessLayer();
             SqlParameter[] param = new SqlParameter[3];
@@ -148,9 +147,25 @@ namespace Laboratory.BL
             param[1] = new SqlParameter("@Date_to", SqlDbType.Date);
             param[1].Value = ToDate;
          
-            param[2] = new SqlParameter("@idBranch", SqlDbType.Int);
-            param[2].Value = idBranch;
+            param[2] = new SqlParameter("@idStock", SqlDbType.Int);
+            param[2].Value = idStock;
             dt = da.selected("search_AllMasrofatBranch", param);
+            return dt;
+
+        }
+
+        internal DataTable search_AllMasrofatStock(DateTime FromDate, DateTime ToDate)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[2];
+            DataTable dt = new DataTable();
+            param[0] = new SqlParameter("@Date_From", SqlDbType.Date);
+            param[0].Value = FromDate;
+            param[1] = new SqlParameter("@Date_to", SqlDbType.Date);
+            param[1].Value = ToDate;
+
+            
+            dt = da.selected("search_AllMasrofatStock", param);
             return dt;
 
         }

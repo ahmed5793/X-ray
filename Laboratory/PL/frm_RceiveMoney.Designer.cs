@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_RceiveMoney));
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.Cmb_Users = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.Time_To = new System.Windows.Forms.DateTimePicker();
@@ -273,6 +273,7 @@
             this.simpleButton1.Size = new System.Drawing.Size(136, 32);
             this.simpleButton1.TabIndex = 164;
             this.simpleButton1.Text = "طباعة التقرير";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // groupBox2
             // 
@@ -290,9 +291,9 @@
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.gridControl1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            gridLevelNode2.RelationName = "Level1";
+            gridLevelNode1.RelationName = "Level1";
             this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2});
+            gridLevelNode1});
             this.gridControl1.Location = new System.Drawing.Point(6, 15);
             this.gridControl1.LookAndFeel.SkinName = "DevExpress Dark Style";
             this.gridControl1.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -498,7 +499,7 @@
             // 
             this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(7, 5);
+            this.textBox4.Location = new System.Drawing.Point(7, 23);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
             this.textBox4.ReadOnly = true;

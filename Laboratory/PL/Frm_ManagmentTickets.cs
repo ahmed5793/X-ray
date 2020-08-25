@@ -440,7 +440,7 @@ namespace Laboratory.PL
                     sr.documentViewer1.DocumentSource = cr;
                     sr.documentViewer1.Refresh();
                     System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
-                    cr.PrintOptions.PrinterName = printDocument.PrinterSettings.PrinterName;
+                    cr.PrintOptions.PrinterName = Properties.Settings.Default.PrintNameBarcode;
                     cr.PrintToPrinter(1, true, 0, 0);
 
                     sr.Close();

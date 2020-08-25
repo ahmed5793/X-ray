@@ -1485,8 +1485,8 @@ namespace Laboratory.PL
                 }
                 if (cmb_statues.Text == "شركات")
             {
-                if (Convert.ToDecimal(Txt_addtionPayment.Text) > 0)
-                {
+                if (Convert.ToDecimal(Txt_addtionPayment.Text) > 0 || Convert.ToDecimal(Txt_PricePayment.Text) > 0)
+                    {
                     txt_pay.Enabled = true;
                 }
                 else if (Convert.ToDecimal(Txt_addtionPayment.Text) <= 0 || (Txt_addtionPayment.Text) == "")
@@ -1761,11 +1761,11 @@ namespace Laboratory.PL
                         cmb_Techincal.Focus();
                         return;
                     }
-                    if (txt_compint.Text == "")
-                    {
-                        MessageBox.Show("من فضلك قم باادخال الشكوي");
-                        return;
-                    }
+                    //if (txt_compint.Text == "")
+                    //{
+                    //    MessageBox.Show("من فضلك قم باادخال الشكوي");
+                    //    return;
+                    //}
                  
                   
                     //if (Cmb_category.Text == "")
@@ -1817,12 +1817,15 @@ namespace Laboratory.PL
                                 cmb_UserBranch.Text, Convert.ToDecimal(Txt_addtionPayment.Text), txt_reasonAddition.Text, Convert.ToDecimal(txt_afterDiscount.Text),
                                 Convert.ToDecimal(Txt_PricePayment.Text),"active");
                             txt_IdTicket.Text = t.LastIdTicket().Rows[0][0].ToString();
-
-                            if (Convert.ToDecimal(txt_pay.Text) > 0)
-                            {
-                                s.add_insertStock(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_pay.Text), dtb_visit.Value,
-                                                  txt_username.Text, "فاتورة حجز اشعة رقم " + (txt_IdTicket.Text));
-                            }
+                          
+                          
+                                if (Convert.ToDecimal(txt_pay.Text) > 0)
+                                {
+                                    s.add_insertStock(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_pay.Text), dtb_visit.Value,
+                                                      txt_username.Text, "فاتورة حجز اشعة  رقم " + (txt_IdTicket.Text)+ " " + "للعميل"+ " " + txt_name.Text);
+                                }
+                            
+                          
                             MessageBox.Show("تم حفظ الفاتورة بنجاح");
 
                             for (int i = 0; i < dgv_order.Rows.Count; i++)
@@ -1867,7 +1870,7 @@ namespace Laboratory.PL
                             if (Convert.ToDecimal(txt_pay.Text) > 0)
                             {
                                 s.add_insertStock(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_pay.Text), dtb_visit.Value,
-                                                  txt_username.Text, "فاتورة حجز اشعة رقم " + (txt_IdTicket.Text));
+                                                  txt_username.Text, "فاتورة حجز اشعة رقم " + (txt_IdTicket.Text) + " " + "للعميل" + " "+ Cmb_customer.Text);
                             }
 
                             for (int i = 0; i < dgv_order.Rows.Count; i++)
@@ -1920,43 +1923,43 @@ namespace Laboratory.PL
                         }
                     
 
-                        ////////////
-                        DataTable dt1 = new DataTable();
-                        dt1.Clear();
-                        dt1 = t.ReportInvoiceTicketPay(Convert.ToInt32(txt_IdTicket.Text));
-                        frm_SingelReport sr = new frm_SingelReport();
+                        //////////////
+                        //DataTable dt1 = new DataTable();
+                        //dt1.Clear();
+                        //dt1 = t.ReportInvoiceTicketPay(Convert.ToInt32(txt_IdTicket.Text));
+                        //frm_SingelReport sr = new frm_SingelReport();
 
-                        Rpt_OrderPay report = new Rpt_OrderPay();
-                        RPT.Order.DataSetOrderPay dso = new RPT.Order.DataSetOrderPay();
-                        sr.documentViewer1.Refresh();
-                        dso.Tables["DataTable1"].Clear();
-                        for (int i = 0; i < dt1.Rows.Count; i++)
-                        {
-                            //dso.Tables["DataTable1"].Rows.Add(Convert.ToInt32(dt1.Rows[i][0]), dt1.Rows[i][1], dt1.Rows[i][2],
-                            //    Convert.ToDecimal(dt1.Rows[i][3]), dt1.Rows[i][4], dt1.Rows[i][5], Convert.ToInt32(dt1.Rows[i][6]),
-                            //    Convert.ToDateTime(dt1.Rows[i][7]),Convert.ToDateTime(dt1.Rows[i][8]), dt1.Rows[i][9], dt1.Rows[i][10],
-                            //    dt1.Rows[i][11], dt1.Rows[i][12], dt1.Rows[i][13],Convert.ToDecimal(dt1.Rows[i][14]), 
-                            //    Convert.ToDecimal(dt1.Rows[i][15]), Convert.ToDecimal(dt1.Rows[i][16]),dt1.Rows[i][17], dt1.Rows[i][18],
-                            //    dt1.Rows[i][19], Convert.ToDateTime(dt1.Rows[i][20]), Convert.ToDecimal(dt1.Rows[i][21]),
-                            //    dt1.Rows[i][22], Convert.ToDecimal(dt1.Rows[i][23]), dt1.Rows[i][24], Convert.ToInt32(dt1.Rows[i][25]),
-                            //    Convert.ToInt32(dt1.Rows[i][26]),Convert.ToInt32(dt1.Rows[i][27]));
+                        //Rpt_OrderPay report = new Rpt_OrderPay();
+                        //RPT.Order.DataSetOrderPay dso = new RPT.Order.DataSetOrderPay();
+                        //sr.documentViewer1.Refresh();
+                        //dso.Tables["DataTable1"].Clear();
+                        //for (int i = 0; i < dt1.Rows.Count; i++)
+                        //{
+                        //    //dso.Tables["DataTable1"].Rows.Add(Convert.ToInt32(dt1.Rows[i][0]), dt1.Rows[i][1], dt1.Rows[i][2],
+                        //    //    Convert.ToDecimal(dt1.Rows[i][3]), dt1.Rows[i][4], dt1.Rows[i][5], Convert.ToInt32(dt1.Rows[i][6]),
+                        //    //    Convert.ToDateTime(dt1.Rows[i][7]),Convert.ToDateTime(dt1.Rows[i][8]), dt1.Rows[i][9], dt1.Rows[i][10],
+                        //    //    dt1.Rows[i][11], dt1.Rows[i][12], dt1.Rows[i][13],Convert.ToDecimal(dt1.Rows[i][14]), 
+                        //    //    Convert.ToDecimal(dt1.Rows[i][15]), Convert.ToDecimal(dt1.Rows[i][16]),dt1.Rows[i][17], dt1.Rows[i][18],
+                        //    //    dt1.Rows[i][19], Convert.ToDateTime(dt1.Rows[i][20]), Convert.ToDecimal(dt1.Rows[i][21]),
+                        //    //    dt1.Rows[i][22], Convert.ToDecimal(dt1.Rows[i][23]), dt1.Rows[i][24], Convert.ToInt32(dt1.Rows[i][25]),
+                        //    //    Convert.ToInt32(dt1.Rows[i][26]),Convert.ToInt32(dt1.Rows[i][27]));
 
 
-                            dso.Tables["DataTable1"].Rows.Add(dt1.Rows[i][0], dt1.Rows[i][1], dt1.Rows[i][2],
-                               dt1.Rows[i][3], dt1.Rows[i][4], dt1.Rows[i][5],dt1.Rows[i][6],
-                               dt1.Rows[i][7], dt1.Rows[i][8], dt1.Rows[i][9], dt1.Rows[i][10],
-                               dt1.Rows[i][11], dt1.Rows[i][12], dt1.Rows[i][13], dt1.Rows[i][14],
-                               dt1.Rows[i][15], dt1.Rows[i][16], dt1.Rows[i][17], dt1.Rows[i][18],
-                               dt1.Rows[i][19],dt1.Rows[i][20], dt1.Rows[i][21],
-                               dt1.Rows[i][22], dt1.Rows[i][23], dt1.Rows[i][24], dt1.Rows[i][25],
-                               dt1.Rows[i][26], dt1.Rows[i][27], dt1.Rows[i][28], dt1.Rows[i][29]);
-                        }
-                        report.DataSource = dso;
-                        report.Parameters["idTicket"].Value = Convert.ToInt32(txt_IdTicket.Text);
-                        sr.documentViewer1.DocumentSource = report;
-                        report.Parameters["idTicket"].Visible = false;
-                        sr.documentViewer1.Enabled = true;
-                        sr.ShowDialog();
+                        //    dso.Tables["DataTable1"].Rows.Add(dt1.Rows[i][0], dt1.Rows[i][1], dt1.Rows[i][2],
+                        //       dt1.Rows[i][3], dt1.Rows[i][4], dt1.Rows[i][5],dt1.Rows[i][6],
+                        //       dt1.Rows[i][7], dt1.Rows[i][8], dt1.Rows[i][9], dt1.Rows[i][10],
+                        //       dt1.Rows[i][11], dt1.Rows[i][12], dt1.Rows[i][13], dt1.Rows[i][14],
+                        //       dt1.Rows[i][15], dt1.Rows[i][16], dt1.Rows[i][17], dt1.Rows[i][18],
+                        //       dt1.Rows[i][19],dt1.Rows[i][20], dt1.Rows[i][21],
+                        //       dt1.Rows[i][22], dt1.Rows[i][23], dt1.Rows[i][24], dt1.Rows[i][25],
+                        //       dt1.Rows[i][26], dt1.Rows[i][27], dt1.Rows[i][28], dt1.Rows[i][29]);
+                        //}
+                        //report.DataSource = dso;
+                        //report.Parameters["idTicket"].Value = Convert.ToInt32(txt_IdTicket.Text);
+                        //sr.documentViewer1.DocumentSource = report;
+                        //report.Parameters["idTicket"].Visible = false;
+                        //sr.documentViewer1.Enabled = true;
+                        //sr.ShowDialog();
                   
                     }
                     else if (cmb_statues.Text == "شركات")
@@ -2003,7 +2006,7 @@ namespace Laboratory.PL
                             if (Convert.ToDecimal(txt_pay.Text) > 0)
                             {
                                 s.add_insertStock(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_pay.Text), dtb_visit.Value,
-                                                  txt_username.Text, "فاتورة حجز اشعة رقم " + (txt_IdTicket.Text));
+                                                  txt_username.Text, "فاتورة حجز اشعة رقم " + (txt_IdTicket.Text) + " " + "للعميل"+ " "+ txt_name.Text);
                             }
                             t.AddTickestDiscount(Convert.ToInt32(txt_IdTicket.Text), Convert.ToDecimal(txt_discount.Text));
             
@@ -2062,7 +2065,7 @@ namespace Laboratory.PL
                             if (Convert.ToDecimal(txt_pay.Text) > 0)
                             {
                                 s.add_insertStock(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_pay.Text), dtb_visit.Value,
-                                                  txt_username.Text, "فاتورة حجز اشعة رقم " + (txt_IdTicket.Text));
+                                                  txt_username.Text, "فاتورة حجز اشعة رقم " + (txt_IdTicket.Text) + " " + "للعميل" + " " +Cmb_customer.Text);
                             }
                             t.AddTickestDiscount(Convert.ToInt32(txt_IdTicket.Text), Convert.ToDecimal(txt_discount.Text));
                             for (int i = 0; i < dgv_order.Rows.Count; i++)
@@ -2131,37 +2134,37 @@ namespace Laboratory.PL
                       
                         /////////////  print Teckiet
 
-                        DataTable dt1 = new DataTable();
-                        dt1.Clear();
-                        dt1 = t.ReportInvoiceTicketCompany(Convert.ToInt32(txt_IdTicket.Text));
-                        frm_SingelReport sr = new frm_SingelReport();
+                        //DataTable dt1 = new DataTable();
+                        //dt1.Clear();
+                        //dt1 = t.ReportInvoiceTicketCompany(Convert.ToInt32(txt_IdTicket.Text));
+                        //frm_SingelReport sr = new frm_SingelReport();
 
-                        RPT.Order.Rpt_TeckietCompanyOrder oc = new RPT.Order.Rpt_TeckietCompanyOrder();
-                        RPT.Order.DataSetOrderCompany dso1 = new RPT.Order.DataSetOrderCompany();
+                        //RPT.Order.Rpt_TeckietCompanyOrder oc = new RPT.Order.Rpt_TeckietCompanyOrder();
+                        //RPT.Order.DataSetOrderCompany dso1 = new RPT.Order.DataSetOrderCompany();
                         
-                        dso1.Tables["dataCompany"].Clear();
-                        for (int i = 0; i < dt1.Rows.Count; i++)
-                        {
+                        //dso1.Tables["dataCompany"].Clear();
+                        //for (int i = 0; i < dt1.Rows.Count; i++)
+                        //{
                           
 
-                            dso1.Tables["dataCompany"].Rows.Add(dt1.Rows[i][0], dt1.Rows[i][1], dt1.Rows[i][2],
-                               dt1.Rows[i][3], dt1.Rows[i][4], dt1.Rows[i][5], dt1.Rows[i][6], dt1.Rows[i][7],
-                               dt1.Rows[i][8], dt1.Rows[i][9], dt1.Rows[i][10], dt1.Rows[i][11], dt1.Rows[i][12], dt1.Rows[i][13],
-                               dt1.Rows[i][14],dt1.Rows[i][15], dt1.Rows[i][16],
-                               dt1.Rows[i][17], dt1.Rows[i][18], dt1.Rows[i][19], dt1.Rows[i][20], dt1.Rows[i][21],dt1.Rows[i][22],
-                               dt1.Rows[i][23], dt1.Rows[i][24], dt1.Rows[i][25], dt1.Rows[i][26],
-                               dt1.Rows[i][27], dt1.Rows[i][28], dt1.Rows[i][29],
-                               dt1.Rows[i][30], dt1.Rows[i][31], dt1.Rows[i][32]);
+                        //    dso1.Tables["dataCompany"].Rows.Add(dt1.Rows[i][0], dt1.Rows[i][1], dt1.Rows[i][2],
+                        //       dt1.Rows[i][3], dt1.Rows[i][4], dt1.Rows[i][5], dt1.Rows[i][6], dt1.Rows[i][7],
+                        //       dt1.Rows[i][8], dt1.Rows[i][9], dt1.Rows[i][10], dt1.Rows[i][11], dt1.Rows[i][12], dt1.Rows[i][13],
+                        //       dt1.Rows[i][14],dt1.Rows[i][15], dt1.Rows[i][16],
+                        //       dt1.Rows[i][17], dt1.Rows[i][18], dt1.Rows[i][19], dt1.Rows[i][20], dt1.Rows[i][21],dt1.Rows[i][22],
+                        //       dt1.Rows[i][23], dt1.Rows[i][24], dt1.Rows[i][25], dt1.Rows[i][26],
+                        //       dt1.Rows[i][27], dt1.Rows[i][28], dt1.Rows[i][29],
+                        //       dt1.Rows[i][30], dt1.Rows[i][31], dt1.Rows[i][32]);
 
-                        }
-                        sr.documentViewer1.Refresh();
-                        oc.DataSource = dso1;
-                        oc.Parameters["idTicket"].Value = Convert.ToInt32(txt_IdTicket.Text);                    
+                        //}
+                        //sr.documentViewer1.Refresh();
+                        //oc.DataSource = dso1;
+                        //oc.Parameters["idTicket"].Value = Convert.ToInt32(txt_IdTicket.Text);                    
                         
-                        sr.documentViewer1.DocumentSource = oc;
-                        oc.Parameters["idTicket"].Visible = false;
-                        sr.documentViewer1.Enabled = true;
-                        sr.ShowDialog();
+                        //sr.documentViewer1.DocumentSource = oc;
+                        //oc.Parameters["idTicket"].Visible = false;
+                        //sr.documentViewer1.Enabled = true;
+                        //sr.ShowDialog();
                       
                     
                     }
@@ -2272,7 +2275,7 @@ namespace Laboratory.PL
                 sr.documentViewer1.DocumentSource = cr;
                 sr.documentViewer1.Refresh();
                 System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
-                cr.PrintOptions.PrinterName = printDocument.PrinterSettings.PrinterName;
+                cr.PrintOptions.PrinterName = Properties.Settings.Default.PrintNameBarcode;
                 cr.PrintToPrinter(1, true, 0, 0);
                 sr.Close();
                 cr.Dispose();
@@ -2681,6 +2684,92 @@ namespace Laboratory.PL
         private void cmb_items_SelectionChangeCommitted(object sender, EventArgs e)
         {
 
+        }
+
+        private void simpleButton5_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+
+                if (txt_IdTicket.Text != "")
+                {
+
+                    if (cmb_statues.Text == "نقدى")
+                    {
+                        ////////////
+                        DataTable dt1 = new DataTable();
+                        dt1.Clear();
+                        dt1 = t.ReportInvoiceTicketPay(Convert.ToInt32(txt_IdTicket.Text));
+                        frm_SingelReport sr = new frm_SingelReport();
+
+                        Rpt_OrderPay report = new Rpt_OrderPay();
+                        RPT.Order.DataSetOrderPay dso = new RPT.Order.DataSetOrderPay();
+                        sr.documentViewer1.Refresh();
+                        dso.Tables["DataTable1"].Clear();
+                        for (int i = 0; i < dt1.Rows.Count; i++)
+                        {
+
+
+
+                            dso.Tables["DataTable1"].Rows.Add(dt1.Rows[i][0], dt1.Rows[i][1], dt1.Rows[i][2],
+                               dt1.Rows[i][3], dt1.Rows[i][4], dt1.Rows[i][5], dt1.Rows[i][6],
+                               dt1.Rows[i][7], dt1.Rows[i][8], dt1.Rows[i][9], dt1.Rows[i][10],
+                               dt1.Rows[i][11], dt1.Rows[i][12], dt1.Rows[i][13], dt1.Rows[i][14],
+                               dt1.Rows[i][15], dt1.Rows[i][16], dt1.Rows[i][17], dt1.Rows[i][18],
+                               dt1.Rows[i][19], dt1.Rows[i][20], dt1.Rows[i][21],
+                               dt1.Rows[i][22], dt1.Rows[i][23], dt1.Rows[i][24], dt1.Rows[i][25],
+                               dt1.Rows[i][26], dt1.Rows[i][27], dt1.Rows[i][28], dt1.Rows[i][29]);
+                        }
+                        report.DataSource = dso;
+                        report.Parameters["idTicket"].Value = Convert.ToInt32(txt_IdTicket.Text);
+                        sr.documentViewer1.DocumentSource = report;
+                        report.Parameters["idTicket"].Visible = false;
+                        sr.documentViewer1.Enabled = true;
+                        sr.ShowDialog();
+                    }
+
+                    else if (cmb_statues.Text == "شركات")
+                    {
+
+                        DataTable dt1 = new DataTable();
+                        dt1.Clear();
+                        dt1 = t.ReportInvoiceTicketCompany(Convert.ToInt32(txt_IdTicket.Text));
+                        frm_SingelReport sr = new frm_SingelReport();
+
+                        RPT.Order.Rpt_TeckietCompanyOrder oc = new RPT.Order.Rpt_TeckietCompanyOrder();
+                        RPT.Order.DataSetOrderCompany dso1 = new RPT.Order.DataSetOrderCompany();
+
+                        dso1.Tables["dataCompany"].Clear();
+                        for (int i = 0; i < dt1.Rows.Count; i++)
+                        {
+
+
+                            dso1.Tables["dataCompany"].Rows.Add(dt1.Rows[i][0], dt1.Rows[i][1], dt1.Rows[i][2],
+                               dt1.Rows[i][3], dt1.Rows[i][4], dt1.Rows[i][5], dt1.Rows[i][6], dt1.Rows[i][7],
+                               dt1.Rows[i][8], dt1.Rows[i][9], dt1.Rows[i][10], dt1.Rows[i][11], dt1.Rows[i][12], dt1.Rows[i][13],
+                               dt1.Rows[i][14], dt1.Rows[i][15], dt1.Rows[i][16],
+                               dt1.Rows[i][17], dt1.Rows[i][18], dt1.Rows[i][19], dt1.Rows[i][20], dt1.Rows[i][21], dt1.Rows[i][22],
+                               dt1.Rows[i][23], dt1.Rows[i][24], dt1.Rows[i][25], dt1.Rows[i][26],
+                               dt1.Rows[i][27], dt1.Rows[i][28], dt1.Rows[i][29],
+                               dt1.Rows[i][30], dt1.Rows[i][31], dt1.Rows[i][32]);
+
+                        }
+                        sr.documentViewer1.Refresh();
+                        oc.DataSource = dso1;
+                        oc.Parameters["idTicket"].Value = Convert.ToInt32(txt_IdTicket.Text);
+
+                        sr.documentViewer1.DocumentSource = oc;
+                        oc.Parameters["idTicket"].Visible = false;
+                        sr.documentViewer1.Enabled = true;
+                        sr.ShowDialog();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
 
         //private void ؤ(object sender, EventArgs e)

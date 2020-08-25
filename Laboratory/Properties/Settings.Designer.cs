@@ -58,5 +58,17 @@ namespace Laboratory.Properties {
                 this["ProudectKey"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int Trial {
+            get {
+                return ((int)(this["Trial"]));
+            }
+            set {
+                this["Trial"] = value;
+            }
+        }
     }
 }

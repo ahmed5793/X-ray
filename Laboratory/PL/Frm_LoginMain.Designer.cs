@@ -121,9 +121,7 @@
             this.txt_Pass.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_Pass_MouseClick);
             this.txt_Pass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Pass_KeyDown);
             this.txt_Pass.Leave += new System.EventHandler(this.txt_Pass_Leave);
-            this.txt_Pass.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txt_Pass_MouseDown);
             this.txt_Pass.MouseMove += new System.Windows.Forms.MouseEventHandler(this.txt_Pass_MouseMove);
-            this.txt_Pass.Move += new System.EventHandler(this.txt_Pass_Move);
             // 
             // txt_User
             // 
@@ -139,6 +137,7 @@
             this.txt_User.Text = "USER NAME";
             this.txt_User.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_User.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_User_MouseClick);
+            this.txt_User.TextChanged += new System.EventHandler(this.txt_User_TextChanged);
             this.txt_User.Leave += new System.EventHandler(this.txt_User_Leave);
             // 
             // panel2

@@ -85,6 +85,12 @@ namespace Laboratory.PL
                 decimal Total = Convert.ToDecimal(Txt_Total.Text) - Convert.ToDecimal(Txt_PricePayment.Text);
                 Txt_RentCompany.Text = Math.Round(Total, 1).ToString();
             }
+            else
+            {
+
+                decimal Total = Convert.ToDecimal(Txt_Total.Text) - 0;
+                Txt_RentCompany.Text = Math.Round(Total, 1).ToString();
+            }
         }
         void Patient_PaymentRate()
         {
@@ -141,7 +147,17 @@ namespace Laboratory.PL
         }
         private void Frm_TransferToCompany_Load(object sender, EventArgs e)
         {
-            dataGridView1.Hide();
+            try
+            {
+
+                rdb_discountPatient.Checked = true;                
+                Txt_addtionPaymentrate.Enabled = true;
+                Txt_PricePayment.Enabled = false;
+                Patient_PaymentRate();
+                Rent_Company();
+                TotalRentCustomer();
+
+                dataGridView1.Hide();
             txt_IdTeckit.Hide();
             Txt_IdCust.Hide();
             Txt_TotalBeforeTransfair.Hide();
@@ -149,6 +165,12 @@ namespace Laboratory.PL
             //TotalRentCustomer();
             Program.salesman = txt_username.Text;
             txt_patientname.Hide();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void cmb_Company_SelectionChangeCommitted(object sender, EventArgs e)
@@ -598,6 +620,118 @@ namespace Laboratory.PL
 
         private void Txt_IdCust_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void rdb_discountPatient_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdb_discountPatient.Checked == true)
+            {
+                Txt_addtionPaymentrate.Enabled = true;
+
+                Txt_PricePayment.Enabled = false;
+            }
+            else
+            {
+                Txt_addtionPaymentrate.Enabled = false;
+                Txt_PricePayment.Enabled = true;
+            }
+            Txt_PricePayment.Text = "0";
+            Txt_addtionPaymentrate.Text = "0";
+            Patient_PaymentRate();
+            Rent_Company();
+           TotalRentCustomer ();
+        }
+
+        private void rdb_MoneyPatient_CheckedChanged(object sender, EventArgs e)
+        {
+
+            if (rdb_MoneyPatient.Checked == true)
+            {
+                Txt_addtionPaymentrate.Enabled = false;
+                Txt_PricePayment.Enabled = true;
+            }
+            else
+            {
+                Txt_addtionPaymentrate.Enabled = true;
+                Txt_PricePayment.Enabled = false;
+            }
+            Txt_addtionPaymentrate.Text = "0";
+            Txt_PricePayment.Text = "0";
+            //Patient_PaymentRateMony();
+            Rent_Company();
+            TotalRentCustomer();
+        }
+
+        private void Txt_PricePayment_TextChanged(object sender, EventArgs e)
+        {
+            if (Txt_PricePayment.Text == ".")
+            {
+                Txt_PricePayment.Text = "";
+            }
+        }
+
+        private void Txt_PricePayment_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (Txt_PricePayment.Text == "")
+            {
+                Txt_PricePayment.Text = "0";
+            }
+            //Patient_PaymentRate();
+            Rent_Company();
+            TotalRentCustomer();
+        }
+
+        private void Txt_PricePayment_Leave(object sender, EventArgs e)
+        {
+            if (Txt_PricePayment.Text == "")
+            {
+                Txt_PricePayment.Text = "0";
+            }
+            if (Convert.ToDecimal(Txt_PricePayment.Text)> Convert.ToDecimal(Txt_Total.Text))
+            {
+                Txt_PricePayment.Text = "0";
+                MessageBox.Show("لا بد ان يكون مبلغ تحمل المريض اصغر من او يساوي اجمالى المبلغ");
+                Txt_PricePayment.Focus();
+
+            }
+            //Patient_PaymentRate();
+            Rent_Company();
+            TotalRentCustomer();
+        }
+
+        private void Txt_PricePayment_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (Txt_PricePayment.Text == "")
+            {
+                Txt_PricePayment.Text = "0";
+            }
+            Rent_Company();
+            TotalRentCustomer();
+        }
+
+        private void Txt_PricePayment_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (e.KeyChar == '.' && Txt_PricePayment.Text.ToString().IndexOf('.') > -1)
+            {
+                e.Handled = true;
+            }
+            else if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != Convert.ToChar(System.Globalization.CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator))
+            {
+                e.Handled = true;
+            }
+
+        }
+
+        private void Txt_PricePayment_Click(object sender, EventArgs e)
+        {
+            Txt_PricePayment.SelectAll();
 
         }
     }

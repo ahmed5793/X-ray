@@ -47,7 +47,7 @@
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.btn_search = new DevExpress.XtraEditors.SimpleButton();
             this.Btn_Print = new DevExpress.XtraEditors.SimpleButton();
-            this.cmb_UserBranch = new System.Windows.Forms.ComboBox();
+            this.cmb_Stock = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -303,19 +303,19 @@
             this.Btn_Print.Text = "طباعة التقرير";
             this.Btn_Print.Click += new System.EventHandler(this.Btn_Print_Click);
             // 
-            // cmb_UserBranch
+            // cmb_Stock
             // 
-            this.cmb_UserBranch.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cmb_UserBranch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cmb_UserBranch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmb_UserBranch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_UserBranch.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_UserBranch.FormattingEnabled = true;
-            this.cmb_UserBranch.Location = new System.Drawing.Point(349, 12);
-            this.cmb_UserBranch.Name = "cmb_UserBranch";
-            this.cmb_UserBranch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmb_UserBranch.Size = new System.Drawing.Size(233, 27);
-            this.cmb_UserBranch.TabIndex = 227;
+            this.cmb_Stock.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cmb_Stock.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmb_Stock.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmb_Stock.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_Stock.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_Stock.FormattingEnabled = true;
+            this.cmb_Stock.Location = new System.Drawing.Point(349, 12);
+            this.cmb_Stock.Name = "cmb_Stock";
+            this.cmb_Stock.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cmb_Stock.Size = new System.Drawing.Size(233, 27);
+            this.cmb_Stock.TabIndex = 227;
             // 
             // label13
             // 
@@ -326,9 +326,9 @@
             this.label13.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label13.Location = new System.Drawing.Point(599, 9);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(54, 31);
+            this.label13.Size = new System.Drawing.Size(66, 31);
             this.label13.TabIndex = 226;
-            this.label13.Text = "الفرع";
+            this.label13.Text = "الخزينة";
             // 
             // comboBox1
             // 
@@ -394,7 +394,7 @@
             this.ClientSize = new System.Drawing.Size(951, 542);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.cmb_UserBranch);
+            this.Controls.Add(this.cmb_Stock);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label5);
@@ -446,7 +446,7 @@
         private DevExpress.XtraEditors.SimpleButton btn_search;
         private DevExpress.XtraEditors.SimpleButton Btn_Print;
         private System.Windows.Forms.Label textBox1;
-        public System.Windows.Forms.ComboBox cmb_UserBranch;
+        public System.Windows.Forms.ComboBox cmb_Stock;
         private System.Windows.Forms.Label label13;
         public System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label5;
