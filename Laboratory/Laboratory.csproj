@@ -238,12 +238,6 @@
     <Compile Include="BL\Employee.cs" />
     <Compile Include="BL\Finger.cs" />
     <Compile Include="BL\Installment.cs" />
-    <Compile Include="BL\Report_DiscountTicket.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BL\Report_DiscountTicket.Designer.cs">
-      <DependentUpon>Report_DiscountTicket.cs</DependentUpon>
-    </Compile>
     <Compile Include="DataSet1.cs">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
@@ -924,6 +918,12 @@
     <Compile Include="PL\PrintSetting.Designer.cs">
       <DependentUpon>PrintSetting.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Report_DiscountTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Report_DiscountTicket.Designer.cs">
+      <DependentUpon>Report_DiscountTicket.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Report_StoreProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1018,9 +1018,6 @@
     <Compile Include="RPT\Order\Rpt_OrderPay.designer.cs">
       <DependentUpon>Rpt_OrderPay.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="BL\Report_DiscountTicket.resx">
-      <DependentUpon>Report_DiscountTicket.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="PL\FingerPrint.resx">
       <DependentUpon>FingerPrint.cs</DependentUpon>
     </EmbeddedResource>
@@ -1351,6 +1348,9 @@
     <EmbeddedResource Include="PL\PrintSetting.resx">
       <DependentUpon>PrintSetting.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\Report_DiscountTicket.resx">
+      <DependentUpon>Report_DiscountTicket.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\Report_StoreProduct.resx">
       <DependentUpon>Report_StoreProduct.cs</DependentUpon>
     </EmbeddedResource>
@@ -1366,6 +1366,7 @@
     <EmbeddedResource Include="PL\Validate_Users.resx">
       <DependentUpon>Validate_Users.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

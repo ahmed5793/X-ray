@@ -31,15 +31,16 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Tickets));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.rdb_NewPatient = new System.Windows.Forms.RadioButton();
+            this.rdb_CurrentPatient = new System.Windows.Forms.RadioButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.txt_idntational = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.Cmb_customer = new System.Windows.Forms.ComboBox();
-            this.rdb_NewPatient = new System.Windows.Forms.RadioButton();
             this.comboBox7 = new System.Windows.Forms.ComboBox();
-            this.rdb_CurrentPatient = new System.Windows.Forms.RadioButton();
             this.label19 = new System.Windows.Forms.Label();
             this.txt_compint = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
@@ -115,15 +116,14 @@
             this.Btn_NewOrder = new DevExpress.XtraEditors.SimpleButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox1.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_order)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -159,6 +159,51 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "بيانات العملاء";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.rdb_NewPatient);
+            this.groupBox6.Controls.Add(this.rdb_CurrentPatient);
+            this.groupBox6.Location = new System.Drawing.Point(97, 19);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(297, 46);
+            this.groupBox6.TabIndex = 127;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "نوع المريض";
+            // 
+            // rdb_NewPatient
+            // 
+            this.rdb_NewPatient.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rdb_NewPatient.AutoSize = true;
+            this.rdb_NewPatient.BackColor = System.Drawing.Color.White;
+            this.rdb_NewPatient.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdb_NewPatient.Location = new System.Drawing.Point(200, 14);
+            this.rdb_NewPatient.Name = "rdb_NewPatient";
+            this.rdb_NewPatient.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.rdb_NewPatient.Size = new System.Drawing.Size(84, 22);
+            this.rdb_NewPatient.TabIndex = 94;
+            this.rdb_NewPatient.Text = "مريض جديد";
+            this.rdb_NewPatient.UseVisualStyleBackColor = false;
+            this.rdb_NewPatient.CheckedChanged += new System.EventHandler(this.rdb_NewPatient_CheckedChanged);
+            // 
+            // rdb_CurrentPatient
+            // 
+            this.rdb_CurrentPatient.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rdb_CurrentPatient.AutoSize = true;
+            this.rdb_CurrentPatient.BackColor = System.Drawing.Color.White;
+            this.rdb_CurrentPatient.Checked = true;
+            this.rdb_CurrentPatient.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdb_CurrentPatient.Location = new System.Drawing.Point(36, 18);
+            this.rdb_CurrentPatient.Name = "rdb_CurrentPatient";
+            this.rdb_CurrentPatient.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.rdb_CurrentPatient.Size = new System.Drawing.Size(92, 22);
+            this.rdb_CurrentPatient.TabIndex = 92;
+            this.rdb_CurrentPatient.TabStop = true;
+            this.rdb_CurrentPatient.Text = "مريض مسجل";
+            this.rdb_CurrentPatient.UseVisualStyleBackColor = false;
+            this.rdb_CurrentPatient.CheckedChanged += new System.EventHandler(this.rdb_CurrentPatient_CheckedChanged);
             // 
             // simpleButton2
             // 
@@ -243,7 +288,7 @@
             this.Cmb_customer.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.Cmb_customer.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cmb_customer.FormattingEnabled = true;
-            this.Cmb_customer.Location = new System.Drawing.Point(96, 66);
+            this.Cmb_customer.Location = new System.Drawing.Point(97, 66);
             this.Cmb_customer.Name = "Cmb_customer";
             this.Cmb_customer.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Cmb_customer.Size = new System.Drawing.Size(257, 26);
@@ -252,22 +297,6 @@
             this.Cmb_customer.SelectionChangeCommitted += new System.EventHandler(this.Cmb_customer_SelectionChangeCommitted);
             this.Cmb_customer.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Cmb_customer_KeyDown);
             this.Cmb_customer.Leave += new System.EventHandler(this.Cmb_customer_Leave);
-            // 
-            // rdb_NewPatient
-            // 
-            this.rdb_NewPatient.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.rdb_NewPatient.AutoSize = true;
-            this.rdb_NewPatient.BackColor = System.Drawing.Color.White;
-            this.rdb_NewPatient.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdb_NewPatient.Location = new System.Drawing.Point(200, 14);
-            this.rdb_NewPatient.Name = "rdb_NewPatient";
-            this.rdb_NewPatient.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.rdb_NewPatient.Size = new System.Drawing.Size(84, 22);
-            this.rdb_NewPatient.TabIndex = 94;
-            this.rdb_NewPatient.Text = "مريض جديد";
-            this.rdb_NewPatient.UseVisualStyleBackColor = false;
-            this.rdb_NewPatient.CheckedChanged += new System.EventHandler(this.rdb_NewPatient_CheckedChanged);
             // 
             // comboBox7
             // 
@@ -282,24 +311,6 @@
             this.comboBox7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.comboBox7.Size = new System.Drawing.Size(233, 26);
             this.comboBox7.TabIndex = 90;
-            // 
-            // rdb_CurrentPatient
-            // 
-            this.rdb_CurrentPatient.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.rdb_CurrentPatient.AutoSize = true;
-            this.rdb_CurrentPatient.BackColor = System.Drawing.Color.White;
-            this.rdb_CurrentPatient.Checked = true;
-            this.rdb_CurrentPatient.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdb_CurrentPatient.Location = new System.Drawing.Point(36, 18);
-            this.rdb_CurrentPatient.Name = "rdb_CurrentPatient";
-            this.rdb_CurrentPatient.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.rdb_CurrentPatient.Size = new System.Drawing.Size(92, 22);
-            this.rdb_CurrentPatient.TabIndex = 92;
-            this.rdb_CurrentPatient.TabStop = true;
-            this.rdb_CurrentPatient.Text = "مريض مسجل";
-            this.rdb_CurrentPatient.UseVisualStyleBackColor = false;
-            this.rdb_CurrentPatient.CheckedChanged += new System.EventHandler(this.rdb_CurrentPatient_CheckedChanged);
             // 
             // label19
             // 
@@ -1409,17 +1420,6 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.rdb_NewPatient);
-            this.groupBox6.Controls.Add(this.rdb_CurrentPatient);
-            this.groupBox6.Location = new System.Drawing.Point(97, 19);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(297, 46);
-            this.groupBox6.TabIndex = 127;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "نوع المريض";
-            // 
             // simpleButton5
             // 
             this.simpleButton5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -1481,6 +1481,8 @@
             this.Load += new System.EventHandler(this.Frm_Tickets_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_order)).EndInit();
@@ -1490,8 +1492,6 @@
             this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
