@@ -224,7 +224,7 @@ namespace Laboratory.PL
                             {
                                 //if (Convert.ToDecimal(txt_pay.Text) == Convert.ToDecimal(dt5.Rows[0][1]))
                                 //{
-                                MessageBox.Show("عزيزى المستخدم يرجي العلم باان تم استرداد مبلغ الفاتورة من قبل لايمكن استرداها مرة اخرى   ", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                                MessageBox.Show("عزيزى المستخدم يرجي العلم باان تم استرداد مبلغ الفاتورة من قبل لايمكن استردادها مرة اخرى   ", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
                                 //MessageBox.Show(dt5.Rows[0][3].ToString(), "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
 
                                 return;
@@ -263,7 +263,7 @@ namespace Laboratory.PL
                             {
                                 //if (Convert.ToDecimal(txt_pay.Text) == Convert.ToDecimal(dt5.Rows[0][1]))
                                 //{
-                                MessageBox.Show("عزيزى المستخدم يرجي العلم باان تم استرداد مبلغ الفاتورة من قبل لايمكن استرداها مرة اخرى   ", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                                MessageBox.Show("عزيزى المستخدم يرجي العلم باان تم استرداد مبلغ الفاتورة من قبل لايمكن استردادها مرة اخرى   ", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
                                 //MessageBox.Show(dt5.Rows[0][3].ToString(), "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
 
                                 return;
