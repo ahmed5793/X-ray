@@ -39,6 +39,8 @@
             this.DateFrom = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -73,7 +75,7 @@
             this.groupBox1.Controls.Add(this.gridControl1);
             this.groupBox1.Location = new System.Drawing.Point(4, 100);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(901, 399);
+            this.groupBox1.Size = new System.Drawing.Size(901, 353);
             this.groupBox1.TabIndex = 210;
             this.groupBox1.TabStop = false;
             // 
@@ -89,7 +91,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.gridControl1.Size = new System.Drawing.Size(892, 377);
+            this.gridControl1.Size = new System.Drawing.Size(892, 332);
             this.gridControl1.TabIndex = 127;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -244,11 +246,43 @@
             this.label3.Text = " : من";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // textBox2
+            // 
+            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.textBox2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.ForeColor = System.Drawing.Color.Yellow;
+            this.textBox2.Location = new System.Drawing.Point(523, 459);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(171, 29);
+            this.textBox2.TabIndex = 130;
+            this.textBox2.Text = "0";
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.BackColor = System.Drawing.Color.Beige;
+            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(697, 460);
+            this.label5.Name = "label5";
+            this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label5.Size = new System.Drawing.Size(200, 26);
+            this.label5.TabIndex = 131;
+            this.label5.Text = "اجمالي الخصومات";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Report_DiscountTicket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(909, 500);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.btn_search);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label7);
@@ -282,5 +316,7 @@
         private System.Windows.Forms.DateTimePicker DateFrom;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label5;
     }
 }

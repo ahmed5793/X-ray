@@ -453,6 +453,24 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
+        internal DataTable SelectSearchticketsBranchVisiteDateandCategory(string Viste_Branche, int Id_CategoryItem, DateTime from, DateTime to)
+        {
+            DataTable dt = new DataTable();
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[4];
+            param[0] = new SqlParameter("@Viste_Branche", SqlDbType.NVarChar,50);
+            param[0].Value = Viste_Branche;
+            param[1] = new SqlParameter("@Id_CategoryItem", SqlDbType.Int);
+            param[1].Value = Id_CategoryItem;
+            param[2] = new SqlParameter("@from", SqlDbType.Date);
+            param[2].Value = from;
+            param[3] = new SqlParameter("@to", SqlDbType.Date);
+            param[3].Value = to;
+            dt = da.selected("SelectSearchticketsBranchVisiteDateandCategory", param);
+            da.close();
+            return dt;
+        }
 
         internal DataTable VildateXrayCompany(int IDitem,int idcompany)
         {

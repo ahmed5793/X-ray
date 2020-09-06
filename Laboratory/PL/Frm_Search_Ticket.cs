@@ -44,7 +44,8 @@ namespace Laboratory.PL
             textBox1.Hide();
             Cmb_CategoryItem.Hide();
             cmb_branches.Hide();
-    
+            label7.Hide();
+
         }
         void brnches()
         {
@@ -88,6 +89,7 @@ namespace Laboratory.PL
         {
             if (comboBox1.Text == "كل الحجوزات")
             {
+                label7.Hide();
                 label2.Hide();
                 label3.Hide();
                 label13.Hide();
@@ -108,7 +110,7 @@ namespace Laboratory.PL
             else if (comboBox1.Text == "بحث بالتاريخ + مكان الفحص")
             {
                 brnches();
-               
+                label7.Hide();
                 //dgv_visit.DataSource = null;
                 label2.Show();
                 label3.Show();
@@ -125,6 +127,8 @@ namespace Laboratory.PL
             }
             else if (comboBox1.Text == "بحث بالتاريخ + مكان الفحص+نوع الفحص")
             {
+                label7.Hide();
+                
                 brnches();
                 Cmb_CategoryItem.DataSource = c.selectCategoryXRaya();
                 Cmb_CategoryItem.DisplayMember = "الفئات";
@@ -134,6 +138,28 @@ namespace Laboratory.PL
                 label2.Show();
                 label3.Show();
                 label13.Show();
+                FromDate.Show();
+                ToDate.Show();
+                button2.Show();
+                label4.Show();
+                label5.Show();
+                textBox1.Show();
+                Cmb_CategoryItem.Show();
+                cmb_branches.Show();
+            }
+            else if (comboBox1.Text == "بحث بالتاريخ + الفرع+نوع الفحص")
+            {
+                label7.Show();
+                label13.Hide();
+                brnches();
+                Cmb_CategoryItem.DataSource = c.selectCategoryXRaya();
+                Cmb_CategoryItem.DisplayMember = "الفئات";
+                Cmb_CategoryItem.ValueMember = "ID_CtegoryXrays";
+
+                //dgv_visit.DataSource = null;
+                label2.Show();
+                label3.Show();
+           
                 FromDate.Show();
                 ToDate.Show();
                 button2.Show();
@@ -200,6 +226,13 @@ namespace Laboratory.PL
                
 
             }
+            else if (comboBox1.Text == "بحث بالتاريخ + الفرع+نوع الفحص")
+            {
+                gridControl1.DataSource = t.SelectSearchticketsBranchVisiteDateandCategory(cmb_branches.Text, Convert.ToInt32(Cmb_CategoryItem.SelectedValue), FromDate.Value, ToDate.Value);
+
+
+            }
+           
             sum();
         }
 
@@ -299,6 +332,16 @@ namespace Laboratory.PL
         private void button1_Click_1(object sender, EventArgs e)
         {
             
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -50,6 +50,7 @@
             this.txt_totalinvoice = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -60,6 +61,7 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.ToDate);
             this.groupBox1.Controls.Add(this.FromDate);
             this.groupBox1.Controls.Add(this.button2);
@@ -209,12 +211,14 @@
             this.comboBox1.Items.AddRange(new object[] {
             "كل الحجوزات",
             "بحث بالتاريخ + مكان الفحص",
-            "بحث بالتاريخ + مكان الفحص+نوع الفحص"});
+            "بحث بالتاريخ + مكان الفحص+نوع الفحص",
+            "بحث بالتاريخ + الفرع+نوع الفحص"});
             this.comboBox1.Location = new System.Drawing.Point(468, 19);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.comboBox1.Size = new System.Drawing.Size(377, 32);
             this.comboBox1.TabIndex = 85;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             this.comboBox1.SelectionChangeCommitted += new System.EventHandler(this.comboBox1_SelectionChangeCommitted);
             // 
             // label1
@@ -395,6 +399,19 @@
             // 
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.White;
+            this.label7.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(479, 16);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(47, 24);
+            this.label7.TabIndex = 208;
+            this.label7.Text = "الفرع";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
             // Frm_Search_Ticket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -448,5 +465,6 @@
         public System.Windows.Forms.TextBox txt_totalinvoice;
         public System.Windows.Forms.Label label6;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Label label7;
     }
 }
