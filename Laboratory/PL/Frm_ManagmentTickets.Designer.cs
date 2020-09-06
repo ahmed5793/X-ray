@@ -101,6 +101,7 @@
             this.radio_placeTicket.TabIndex = 175;
             this.radio_placeTicket.Text = "مكان الفحص";
             this.radio_placeTicket.UseVisualStyleBackColor = true;
+            this.radio_placeTicket.CheckedChanged += new System.EventHandler(this.radio_placeTicket_CheckedChanged);
             // 
             // radio_Branch
             // 

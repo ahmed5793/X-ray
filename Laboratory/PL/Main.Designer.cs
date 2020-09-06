@@ -152,6 +152,8 @@
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.Setting_Items = new DevExpress.XtraBars.BarButtonItem();
             this.barStaticItem11 = new DevExpress.XtraBars.BarStaticItem();
+            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
+            this.Btn_Return = new DevExpress.XtraBars.BarButtonItem();
             this.basic_information = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -192,7 +194,6 @@
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barAndDockingController1)).BeginInit();
@@ -327,9 +328,10 @@
             this.barStaticItem11,
             this.barHeaderItem32,
             this.barHeaderItem33,
-            this.barButtonItem8});
+            this.barButtonItem8,
+            this.Btn_Return});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 151;
+            this.ribbon.MaxItemId = 152;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.basic_information,
@@ -1432,6 +1434,24 @@
             this.barStaticItem11.Name = "barStaticItem11";
             this.barStaticItem11.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barStaticItem11_ItemClick);
             // 
+            // barButtonItem8
+            // 
+            this.barButtonItem8.Caption = "تقرير الخصومات";
+            this.barButtonItem8.Id = 150;
+            this.barButtonItem8.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.Image")));
+            this.barButtonItem8.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.LargeImage")));
+            this.barButtonItem8.Name = "barButtonItem8";
+            this.barButtonItem8.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem8_ItemClick_2);
+            // 
+            // Btn_Return
+            // 
+            this.Btn_Return.Caption = "شاشة المردودات";
+            this.Btn_Return.Id = 151;
+            this.Btn_Return.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Return.ImageOptions.Image")));
+            this.Btn_Return.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("Btn_Return.ImageOptions.LargeImage")));
+            this.Btn_Return.Name = "Btn_Return";
+            this.Btn_Return.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_Return_ItemClick);
+            // 
             // basic_information
             // 
             this.basic_information.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1667,6 +1687,7 @@
             this.ribbonPageGroup15.ItemLinks.Add(this.managment_tickets);
             this.ribbonPageGroup15.ItemLinks.Add(this.search_tickets);
             this.ribbonPageGroup15.ItemLinks.Add(this.Data_Redvelation);
+            this.ribbonPageGroup15.ItemLinks.Add(this.Btn_Return);
             this.ribbonPageGroup15.ItemLinks.Add(this.Btn_ReportReturn);
             this.ribbonPageGroup15.ItemLinks.Add(this.barButtonItem8);
             this.ribbonPageGroup15.Name = "ribbonPageGroup15";
@@ -1826,15 +1847,6 @@
             this.accordionControlElement3.HeaderControl = this.simpleButton3;
             this.accordionControlElement3.Name = "accordionControlElement3";
             this.accordionControlElement3.Text = "Element3";
-            // 
-            // barButtonItem8
-            // 
-            this.barButtonItem8.Caption = "تقرير الخصومات";
-            this.barButtonItem8.Id = 150;
-            this.barButtonItem8.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.Image")));
-            this.barButtonItem8.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.LargeImage")));
-            this.barButtonItem8.Name = "barButtonItem8";
-            this.barButtonItem8.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem8_ItemClick_2);
             // 
             // Main
             // 
@@ -2035,5 +2047,6 @@
         private DevExpress.XtraBars.BarHeaderItem barHeaderItem32;
         private DevExpress.XtraBars.BarHeaderItem barHeaderItem33;
         private DevExpress.XtraBars.BarButtonItem barButtonItem8;
+        public DevExpress.XtraBars.BarButtonItem Btn_Return;
     }
 }

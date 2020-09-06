@@ -65,6 +65,7 @@
             this.check_DownloadFinger = new System.Windows.Forms.CheckBox();
             this.check_ReportFinger = new System.Windows.Forms.CheckBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.chec_Setting = new System.Windows.Forms.CheckBox();
             this.Check_Add_CategoryXray = new System.Windows.Forms.CheckBox();
             this.Check_Add_Xray = new System.Windows.Forms.CheckBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -130,7 +131,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.Cmb_Branch = new System.Windows.Forms.ComboBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.chec_Setting = new System.Windows.Forms.CheckBox();
+            this.check_TicketReturn = new System.Windows.Forms.CheckBox();
             this.groupBox4.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.groupBox15.SuspendLayout();
@@ -669,6 +670,19 @@
             this.groupBox7.TabIndex = 59;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "قسم الاشعة";
+            // 
+            // chec_Setting
+            // 
+            this.chec_Setting.AutoSize = true;
+            this.chec_Setting.BackColor = System.Drawing.Color.Black;
+            this.chec_Setting.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chec_Setting.ForeColor = System.Drawing.Color.White;
+            this.chec_Setting.Location = new System.Drawing.Point(92, 28);
+            this.chec_Setting.Name = "chec_Setting";
+            this.chec_Setting.Size = new System.Drawing.Size(146, 26);
+            this.chec_Setting.TabIndex = 8;
+            this.chec_Setting.Text = "اعدادات الفحوصات";
+            this.chec_Setting.UseVisualStyleBackColor = false;
             // 
             // Check_Add_CategoryXray
             // 
@@ -1389,6 +1403,7 @@
             // 
             this.groupBox18.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox18.Controls.Add(this.check_TicketReturn);
             this.groupBox18.Controls.Add(this.check_ReportTicketsReturn);
             this.groupBox18.Controls.Add(this.check_BookingTimes);
             this.groupBox18.Controls.Add(this.check_AddTickets);
@@ -1407,7 +1422,7 @@
             this.check_ReportTicketsReturn.BackColor = System.Drawing.Color.Black;
             this.check_ReportTicketsReturn.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.check_ReportTicketsReturn.ForeColor = System.Drawing.Color.White;
-            this.check_ReportTicketsReturn.Location = new System.Drawing.Point(26, 41);
+            this.check_ReportTicketsReturn.Location = new System.Drawing.Point(42, 41);
             this.check_ReportTicketsReturn.Name = "check_ReportTicketsReturn";
             this.check_ReportTicketsReturn.Size = new System.Drawing.Size(134, 23);
             this.check_ReportTicketsReturn.TabIndex = 63;
@@ -1420,7 +1435,7 @@
             this.check_BookingTimes.BackColor = System.Drawing.Color.Black;
             this.check_BookingTimes.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.check_BookingTimes.ForeColor = System.Drawing.Color.White;
-            this.check_BookingTimes.Location = new System.Drawing.Point(198, 41);
+            this.check_BookingTimes.Location = new System.Drawing.Point(393, 41);
             this.check_BookingTimes.Name = "check_BookingTimes";
             this.check_BookingTimes.Size = new System.Drawing.Size(120, 23);
             this.check_BookingTimes.TabIndex = 62;
@@ -1433,7 +1448,7 @@
             this.check_AddTickets.BackColor = System.Drawing.Color.Black;
             this.check_AddTickets.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.check_AddTickets.ForeColor = System.Drawing.Color.White;
-            this.check_AddTickets.Location = new System.Drawing.Point(774, 41);
+            this.check_AddTickets.Location = new System.Drawing.Point(888, 41);
             this.check_AddTickets.Name = "check_AddTickets";
             this.check_AddTickets.Size = new System.Drawing.Size(94, 23);
             this.check_AddTickets.TabIndex = 59;
@@ -1446,7 +1461,7 @@
             this.check_ManagmentTickets.BackColor = System.Drawing.Color.Black;
             this.check_ManagmentTickets.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.check_ManagmentTickets.ForeColor = System.Drawing.Color.White;
-            this.check_ManagmentTickets.Location = new System.Drawing.Point(605, 41);
+            this.check_ManagmentTickets.Location = new System.Drawing.Point(750, 41);
             this.check_ManagmentTickets.Name = "check_ManagmentTickets";
             this.check_ManagmentTickets.Size = new System.Drawing.Size(88, 23);
             this.check_ManagmentTickets.TabIndex = 61;
@@ -1459,7 +1474,7 @@
             this.check_SearchTickets.BackColor = System.Drawing.Color.Black;
             this.check_SearchTickets.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.check_SearchTickets.ForeColor = System.Drawing.Color.White;
-            this.check_SearchTickets.Location = new System.Drawing.Point(383, 41);
+            this.check_SearchTickets.Location = new System.Drawing.Point(554, 41);
             this.check_SearchTickets.Name = "check_SearchTickets";
             this.check_SearchTickets.Size = new System.Drawing.Size(141, 23);
             this.check_SearchTickets.TabIndex = 58;
@@ -1565,18 +1580,18 @@
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // chec_Setting
+            // check_TicketReturn
             // 
-            this.chec_Setting.AutoSize = true;
-            this.chec_Setting.BackColor = System.Drawing.Color.Black;
-            this.chec_Setting.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chec_Setting.ForeColor = System.Drawing.Color.White;
-            this.chec_Setting.Location = new System.Drawing.Point(92, 28);
-            this.chec_Setting.Name = "chec_Setting";
-            this.chec_Setting.Size = new System.Drawing.Size(146, 26);
-            this.chec_Setting.TabIndex = 8;
-            this.chec_Setting.Text = "اعدادات الفحوصات";
-            this.chec_Setting.UseVisualStyleBackColor = false;
+            this.check_TicketReturn.AutoSize = true;
+            this.check_TicketReturn.BackColor = System.Drawing.Color.Black;
+            this.check_TicketReturn.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.check_TicketReturn.ForeColor = System.Drawing.Color.White;
+            this.check_TicketReturn.Location = new System.Drawing.Point(225, 41);
+            this.check_TicketReturn.Name = "check_TicketReturn";
+            this.check_TicketReturn.Size = new System.Drawing.Size(116, 23);
+            this.check_TicketReturn.TabIndex = 64;
+            this.check_TicketReturn.Text = "شاشة المردودات";
+            this.check_TicketReturn.UseVisualStyleBackColor = false;
             // 
             // Validate_Users
             // 
@@ -1747,5 +1762,6 @@
         public System.Windows.Forms.CheckBox check_Techprise;
         public System.Windows.Forms.CheckBox check_sarfPay;
         public System.Windows.Forms.CheckBox chec_Setting;
+        public System.Windows.Forms.CheckBox check_TicketReturn;
     }
 }

@@ -1417,6 +1417,12 @@ namespace Laboratory.PL
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void Btn_Return_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Frm_TeckeitReturn frm_TeckeitReturn = new Frm_TeckeitReturn();
+            frm_TeckeitReturn.Show();
+        }
     }
 }
 	

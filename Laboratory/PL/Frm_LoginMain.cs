@@ -916,6 +916,17 @@ namespace Laboratory.PL
                         Main.getmain.Btn_PermissionNoticeMoney.Enabled = true;
                         //Main.getmain.accordion_Tickets.Enabled = true;
                     }
+
+                    if (Convert.ToInt32(dt7.Rows[0][10]) == 0)
+                    {
+                        Main.getmain.Btn_Return.Enabled = false;
+                        //Main.getmain.accordion_Tickets.Enabled = false;
+                    }
+                    else if (Convert.ToInt32(dt7.Rows[0][10]) == 1)
+                    {
+                        Main.getmain.Btn_Return.Enabled = true;
+                        //Main.getmain.accordion_Tickets.Enabled = true;
+                    }
                 }
             }
             catch (Exception ex)

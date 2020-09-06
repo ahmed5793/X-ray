@@ -314,6 +314,12 @@ namespace Laboratory.PL
                     if (Convert.ToInt32(dt2.Rows[0][9]) == 0) { check_sarfPay.Checked = false; }
 
                     else if (Convert.ToInt32(dt2.Rows[0][9]) == 1) { check_sarfPay.Checked = true; }
+                    /////
+
+                    if (Convert.ToInt32(dt2.Rows[0][10]) == 0) { check_TicketReturn.Checked = false; }
+
+                    else if (Convert.ToInt32(dt2.Rows[0][10]) == 1) { check_TicketReturn.Checked = true; }
+
 
                 }
                 //dt2.Clear();
@@ -700,7 +706,7 @@ namespace Laboratory.PL
                 else
                 {
                     int AddTickets = 0, ManagmentTickets = 0, SearchAllTickets = 0,BookingTimes = 0 , AddClient = 0, PayClient = 0,
-                        DepitClient = 0, ReportClient = 0, ReportReturnTickets = 0, SarfClients = 0; 
+                        DepitClient = 0, ReportClient = 0, ReportReturnTickets = 0, SarfClients = 0 , Ticket_Return=0 ; 
 
                     if (check_AddTickets.Checked == true){AddTickets = 1;}
                     else if (check_AddTickets.Checked == false){AddTickets = 0;}
@@ -731,9 +737,11 @@ namespace Laboratory.PL
                     if (check_sarfPay.Checked == true) { SarfClients = 1; }
                     else if (check_sarfPay.Checked == false) { SarfClients = 0; }
 
+                    if (check_TicketReturn.Checked == true) { Ticket_Return = 1; }
+                    else if (check_TicketReturn.Checked == false) { Ticket_Return = 0; }
 
                     p.UpdateUser_Tickets(txt_Baisc.Text, AddTickets, ManagmentTickets, SearchAllTickets,BookingTimes, AddClient, PayClient,
-                                          DepitClient, ReportClient, ReportReturnTickets,SarfClients);
+                                          DepitClient, ReportClient, ReportReturnTickets,SarfClients, Ticket_Return);
 
 
 

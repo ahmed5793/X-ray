@@ -682,5 +682,10 @@ namespace Laboratory.PL
 
             }
         }
+
+        private void radio_placeTicket_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
+    }
 }

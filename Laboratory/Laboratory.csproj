@@ -239,6 +239,12 @@
     <Compile Include="BL\Employee.cs" />
     <Compile Include="BL\Finger.cs" />
     <Compile Include="BL\Installment.cs" />
+    <Compile Include="PL\Frm_TeckeitReturn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_TeckeitReturn.Designer.cs">
+      <DependentUpon>Frm_TeckeitReturn.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Report_DiscountTicket.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1019,6 +1025,9 @@
     <Compile Include="RPT\Order\Rpt_OrderPay.designer.cs">
       <DependentUpon>Rpt_OrderPay.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="PL\Frm_TeckeitReturn.resx">
+      <DependentUpon>Frm_TeckeitReturn.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\Report_DiscountTicket.resx">
       <DependentUpon>Report_DiscountTicket.cs</DependentUpon>
     </EmbeddedResource>
