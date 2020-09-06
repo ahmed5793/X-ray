@@ -1826,7 +1826,6 @@ namespace Laboratory.PL
                                 }
                             
                           
-                            MessageBox.Show("تم حفظ الفاتورة بنجاح");
 
                             for (int i = 0; i < dgv_order.Rows.Count; i++)
                             {
@@ -1844,10 +1843,11 @@ namespace Laboratory.PL
                                  , dtb_visit.Value, mno, Convert.ToInt32(cmb_Stock.SelectedValue)
                                  , txt_username.Text, Convert.ToInt32(cmb_UserBranch.SelectedValue), "حجز أشعة ورقم الحجز" + " " +(txt_IdTicket.Text));
 
-                   
+
+                            MessageBox.Show("تم حفظ الفاتورة بنجاح");
 
 
-                
+
                         }
                         else if (rdb_CurrentPatient.Checked == true)
                         {

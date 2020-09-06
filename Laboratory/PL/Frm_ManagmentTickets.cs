@@ -84,6 +84,8 @@ namespace Laboratory.PL
                 if (rdb_all.Checked==true)
                 {
 
+                    
+
 
                     if (radio_placeTicket.Checked == true)
                     {
@@ -98,6 +100,8 @@ namespace Laboratory.PL
                 }
                 else if(rdb_company.Checked==true)
                 {
+                  
+
                     if (radio_placeTicket.Checked == true)
                     {
                         gridControl1.DataSource = t.SelectSearchticketsBranchDateCompany(Convert.ToInt32(cmb_branches.SelectedValue), FromDate.Value, ToDate.Value);
@@ -113,6 +117,7 @@ namespace Laboratory.PL
 
                 else if (rdb_pay.Checked == true)
                 {
+                    
                     if (radio_placeTicket.Checked == true)
                     {
                         gridControl1.DataSource = t.SelectSearchticketsBranchDatePay(Convert.ToInt32(cmb_branches.SelectedValue), FromDate.Value, ToDate.Value);
@@ -633,5 +638,49 @@ namespace Laboratory.PL
         {
 
         }
-    }
+
+        private void rdb_company_CheckedChanged(object sender, EventArgs e)
+        {
+
+            if (rdb_company.Checked == true)
+            {
+                gridControl1.DataSource = null;
+                gridView1.Columns.Clear();
+                radio_Branch.Checked = true;
+                gridControl1.DataSource = t.SelectSearchticketsBranchCompany(cmb_branches.Text, FromDate.Value, ToDate.Value);
+            }
+
+
+
+        }
+
+        private void rdb_pay_CheckedChanged(object sender, EventArgs e)
+        {
+              if (rdb_pay.Checked == true)
+            {
+                gridControl1.DataSource = null;
+                gridView1.Columns.Clear();
+                radio_Branch.Checked = true;
+                gridControl1.DataSource = t.SelectSearchticketsBranchPay(cmb_branches.Text, FromDate.Value, ToDate.Value);
+
+            }
+
+
+            }
+
+            private void rdb_all_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdb_all.Checked == true)
+            {
+                gridControl1.DataSource = null;
+                gridView1.Columns.Clear();
+                radio_Branch.Checked = true;
+                gridControl1.DataSource = t.SelectSearchticketsBranch(cmb_branches.Text, FromDate.Value, ToDate.Value);
+
+
+
+
+            }
+        }
+        }
 }

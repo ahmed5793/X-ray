@@ -96,13 +96,13 @@ namespace Laboratory.PL
                 dt = s.Report_InsertStock(Convert.ToInt32(cmb_Stock.SelectedValue));
                 gridControlInsert.DataSource = dt;
                 Calc_Amount();
-           
+
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message);
-                MessageBox.Show(ex.StackTrace);
+
             }
         }
 
@@ -121,7 +121,7 @@ namespace Laboratory.PL
             {
 
                 MessageBox.Show(ex.Message);
-                MessageBox.Show(ex.StackTrace);
+               
             }
           
         }

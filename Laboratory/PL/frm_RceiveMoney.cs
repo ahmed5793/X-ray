@@ -175,23 +175,37 @@ namespace Laboratory.PL
             //}
             //else
             //{
+            try
+            {
 
+          
             cmb_Stock.DataSource = s.SelectStockBranch(Convert.ToInt32(cmb_UserBranch.SelectedValue));
             cmb_Stock.DisplayMember = "Name_Stock";
             cmb_Stock.ValueMember = "ID_Stock";
 
 
-            //Cmb_Users.DataSource = E.Select_EmployeFromBranch(Convert.ToInt32(cmb_UserBranch.SelectedValue));
-            //Cmb_Users.DisplayMember = "Emp_Name";
-            //Cmb_Users.ValueMember = "id_Emp";
-            //Cmb_Users.SelectedIndex = -1;
+                //Cmb_Users.DataSource = E.Select_EmployeFromBranch(Convert.ToInt32(cmb_UserBranch.SelectedValue));
+                //Cmb_Users.DisplayMember = "Emp_Name";
+                //Cmb_Users.ValueMember = "id_Emp";
+                //Cmb_Users.SelectedIndex = -1;
 
 
-            // }
+                // }
+            }
+            catch (Exception)
+            {
+
+                return;
+            }
         }
+          
 
-        private void cmb_UserBranch_SelectionChangeCommitted(object sender, EventArgs e)
+    private void cmb_UserBranch_SelectionChangeCommitted(object sender, EventArgs e)
         {
+            try
+            {
+
+         
             dt.Clear();
             dt = U.SelectUserBranch(Program.salesman);
             if (dt.Rows.Count > 0)
@@ -219,9 +233,16 @@ namespace Laboratory.PL
 
 
             }
-        }
+            }
+            catch (Exception)
+            {
 
-        private void frm_RceiveMoney_Load(object sender, EventArgs e)
+                return;
+            }
+        }
+            
+
+    private void frm_RceiveMoney_Load(object sender, EventArgs e)
         {
 
         }

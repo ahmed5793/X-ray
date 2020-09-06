@@ -30,9 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_ManagmentTickets));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radio_Branch = new System.Windows.Forms.RadioButton();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.radio_placeTicket = new System.Windows.Forms.RadioButton();
+            this.radio_Branch = new System.Windows.Forms.RadioButton();
             this.cmb_branches = new System.Windows.Forms.ComboBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.rdb_company = new System.Windows.Forms.RadioButton();
+            this.rdb_pay = new System.Windows.Forms.RadioButton();
+            this.rdb_all = new System.Windows.Forms.RadioButton();
             this.txt_username = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.ToDate = new System.Windows.Forms.DateTimePicker();
@@ -51,18 +56,13 @@
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.rdb_pay = new System.Windows.Forms.RadioButton();
-            this.rdb_all = new System.Windows.Forms.RadioButton();
-            this.rdb_company = new System.Windows.Forms.RadioButton();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            this.groupBox4.SuspendLayout();
-            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -79,6 +79,29 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.radio_placeTicket);
+            this.groupBox5.Controls.Add(this.radio_Branch);
+            this.groupBox5.Controls.Add(this.cmb_branches);
+            this.groupBox5.Location = new System.Drawing.Point(10, 13);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(566, 63);
+            this.groupBox5.TabIndex = 178;
+            this.groupBox5.TabStop = false;
+            // 
+            // radio_placeTicket
+            // 
+            this.radio_placeTicket.AutoSize = true;
+            this.radio_placeTicket.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radio_placeTicket.ForeColor = System.Drawing.Color.Black;
+            this.radio_placeTicket.Location = new System.Drawing.Point(366, 19);
+            this.radio_placeTicket.Name = "radio_placeTicket";
+            this.radio_placeTicket.Size = new System.Drawing.Size(146, 34);
+            this.radio_placeTicket.TabIndex = 175;
+            this.radio_placeTicket.Text = "مكان الفحص";
+            this.radio_placeTicket.UseVisualStyleBackColor = true;
+            // 
             // radio_Branch
             // 
             this.radio_Branch.AutoSize = true;
@@ -93,18 +116,6 @@
             this.radio_Branch.Text = "الفرع";
             this.radio_Branch.UseVisualStyleBackColor = true;
             // 
-            // radio_placeTicket
-            // 
-            this.radio_placeTicket.AutoSize = true;
-            this.radio_placeTicket.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radio_placeTicket.ForeColor = System.Drawing.Color.Black;
-            this.radio_placeTicket.Location = new System.Drawing.Point(366, 19);
-            this.radio_placeTicket.Name = "radio_placeTicket";
-            this.radio_placeTicket.Size = new System.Drawing.Size(146, 34);
-            this.radio_placeTicket.TabIndex = 175;
-            this.radio_placeTicket.Text = "مكان الفحص";
-            this.radio_placeTicket.UseVisualStyleBackColor = true;
-            // 
             // cmb_branches
             // 
             this.cmb_branches.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
@@ -117,6 +128,61 @@
             this.cmb_branches.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmb_branches.Size = new System.Drawing.Size(233, 32);
             this.cmb_branches.TabIndex = 84;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox4.Controls.Add(this.rdb_company);
+            this.groupBox4.Controls.Add(this.rdb_pay);
+            this.groupBox4.Controls.Add(this.rdb_all);
+            this.groupBox4.Location = new System.Drawing.Point(596, 10);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(380, 63);
+            this.groupBox4.TabIndex = 177;
+            this.groupBox4.TabStop = false;
+            // 
+            // rdb_company
+            // 
+            this.rdb_company.AutoSize = true;
+            this.rdb_company.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdb_company.ForeColor = System.Drawing.Color.Black;
+            this.rdb_company.Location = new System.Drawing.Point(266, 19);
+            this.rdb_company.Name = "rdb_company";
+            this.rdb_company.Size = new System.Drawing.Size(97, 34);
+            this.rdb_company.TabIndex = 177;
+            this.rdb_company.TabStop = true;
+            this.rdb_company.Text = "شركات";
+            this.rdb_company.UseVisualStyleBackColor = true;
+            this.rdb_company.CheckedChanged += new System.EventHandler(this.rdb_company_CheckedChanged);
+            // 
+            // rdb_pay
+            // 
+            this.rdb_pay.AutoSize = true;
+            this.rdb_pay.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdb_pay.ForeColor = System.Drawing.Color.Black;
+            this.rdb_pay.Location = new System.Drawing.Point(130, 19);
+            this.rdb_pay.Name = "rdb_pay";
+            this.rdb_pay.Size = new System.Drawing.Size(73, 34);
+            this.rdb_pay.TabIndex = 176;
+            this.rdb_pay.TabStop = true;
+            this.rdb_pay.Text = "نقدى";
+            this.rdb_pay.UseVisualStyleBackColor = true;
+            this.rdb_pay.CheckedChanged += new System.EventHandler(this.rdb_pay_CheckedChanged);
+            // 
+            // rdb_all
+            // 
+            this.rdb_all.AutoSize = true;
+            this.rdb_all.Checked = true;
+            this.rdb_all.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdb_all.ForeColor = System.Drawing.Color.Black;
+            this.rdb_all.Location = new System.Drawing.Point(22, 17);
+            this.rdb_all.Name = "rdb_all";
+            this.rdb_all.Size = new System.Drawing.Size(69, 34);
+            this.rdb_all.TabIndex = 175;
+            this.rdb_all.TabStop = true;
+            this.rdb_all.Text = "الكل";
+            this.rdb_all.UseVisualStyleBackColor = true;
+            this.rdb_all.CheckedChanged += new System.EventHandler(this.rdb_all_CheckedChanged);
             // 
             // txt_username
             // 
@@ -453,72 +519,6 @@
             this.simpleButton4.Text = " تعديل الفاتورة";
             this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
             // 
-            // groupBox4
-            // 
-            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox4.Controls.Add(this.rdb_company);
-            this.groupBox4.Controls.Add(this.rdb_pay);
-            this.groupBox4.Controls.Add(this.rdb_all);
-            this.groupBox4.Location = new System.Drawing.Point(596, 10);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(380, 63);
-            this.groupBox4.TabIndex = 177;
-            this.groupBox4.TabStop = false;
-            // 
-            // rdb_pay
-            // 
-            this.rdb_pay.AutoSize = true;
-            this.rdb_pay.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdb_pay.ForeColor = System.Drawing.Color.Black;
-            this.rdb_pay.Location = new System.Drawing.Point(130, 19);
-            this.rdb_pay.Name = "rdb_pay";
-            this.rdb_pay.Size = new System.Drawing.Size(73, 34);
-            this.rdb_pay.TabIndex = 176;
-            this.rdb_pay.TabStop = true;
-            this.rdb_pay.Text = "نقدى";
-            this.rdb_pay.UseVisualStyleBackColor = true;
-            // 
-            // rdb_all
-            // 
-            this.rdb_all.AutoSize = true;
-            this.rdb_all.Checked = true;
-            this.rdb_all.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdb_all.ForeColor = System.Drawing.Color.Black;
-            this.rdb_all.Location = new System.Drawing.Point(22, 17);
-            this.rdb_all.Name = "rdb_all";
-            this.rdb_all.Size = new System.Drawing.Size(69, 34);
-            this.rdb_all.TabIndex = 175;
-            this.rdb_all.TabStop = true;
-            this.rdb_all.Text = "الكل";
-            this.rdb_all.UseVisualStyleBackColor = true;
-            // 
-            // rdb_company
-            // 
-            this.rdb_company.AutoSize = true;
-            this.rdb_company.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdb_company.ForeColor = System.Drawing.Color.Black;
-            this.rdb_company.Location = new System.Drawing.Point(266, 19);
-            this.rdb_company.Name = "rdb_company";
-            this.rdb_company.Size = new System.Drawing.Size(97, 34);
-            this.rdb_company.TabIndex = 177;
-            this.rdb_company.TabStop = true;
-            this.rdb_company.Text = "شركات";
-            this.rdb_company.UseVisualStyleBackColor = true;
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox5.Controls.Add(this.radio_placeTicket);
-            this.groupBox5.Controls.Add(this.radio_Branch);
-            this.groupBox5.Controls.Add(this.cmb_branches);
-            this.groupBox5.Location = new System.Drawing.Point(10, 13);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(566, 63);
-            this.groupBox5.TabIndex = 178;
-            this.groupBox5.TabStop = false;
-            // 
             // Frm_ManagmentTickets
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -541,15 +541,15 @@
             this.Load += new System.EventHandler(this.Frm_ManagmentTickets_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
 
         }
