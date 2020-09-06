@@ -37,12 +37,24 @@ namespace Laboratory.BL
         {
 
         }
+        void Calc_AmountPull()
+        {
+            decimal total = 0;
+            for (int i = 0; i < gridView1.DataRowCount; i++)
+            {
+                DataRow row = gridView1.GetDataRow(i);
+                total += Convert.ToDecimal(row[7].ToString());
 
+            }
+            textBox2.Text = total.ToString("₱ #,#0.0");
+
+        }
         private void btn_search_Click(object sender, EventArgs e)
         {
             try
             {
                gridControl1.DataSource= t.SelectDiscountTicketsBranch(cmb_Branch.Text,Convert.ToDateTime(DateFrom.Text),Convert.ToDateTime(DateTo.Text));
+                Calc_AmountPull();
             }
             catch (Exception ex)
             {
