@@ -37,12 +37,13 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cmb_client = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Txt_Balance = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.cmb_client = new DevExpress.XtraEditors.LookUpEdit();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            ((System.ComponentModel.ISupportInitialize)(this.cmb_client.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // label5
@@ -142,38 +143,6 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(215, 26);
             this.dateTimePicker1.TabIndex = 103;
             // 
-            // label6
-            // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.White;
-            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(472, 265);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(65, 19);
-            this.label6.TabIndex = 110;
-            this.label6.Text = "إسم العميل";
-            // 
-            // cmb_client
-            // 
-            this.cmb_client.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cmb_client.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmb_client.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmb_client.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_client.FormattingEnabled = true;
-            this.cmb_client.Location = new System.Drawing.Point(89, 258);
-            this.cmb_client.Name = "cmb_client";
-            this.cmb_client.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmb_client.Size = new System.Drawing.Size(373, 32);
-            this.cmb_client.TabIndex = 101;
-            this.cmb_client.SelectedIndexChanged += new System.EventHandler(this.cmb_client_SelectedIndexChanged);
-            this.cmb_client.SelectionChangeCommitted += new System.EventHandler(this.cmb_client_SelectionChangeCommitted);
-            this.cmb_client.SelectedValueChanged += new System.EventHandler(this.cmb_client_SelectedValueChanged);
-            this.cmb_client.Click += new System.EventHandler(this.cmb_client_Click);
-            this.cmb_client.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmb_client_KeyDown);
-            this.cmb_client.Leave += new System.EventHandler(this.cmb_client_Leave);
-            this.cmb_client.MouseMove += new System.Windows.Forms.MouseEventHandler(this.cmb_client_MouseMove);
-            // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -234,12 +203,64 @@
             this.simpleButton1.Text = "حفظ المدفوع";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
+            // cmb_client
+            // 
+            this.cmb_client.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cmb_client.Location = new System.Drawing.Point(176, 255);
+            this.cmb_client.Name = "cmb_client";
+            this.cmb_client.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_client.Properties.Appearance.Options.UseFont = true;
+            this.cmb_client.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_client.Properties.AppearanceDropDown.Options.UseFont = true;
+            this.cmb_client.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Search)});
+            this.cmb_client.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Cust_Name", "Name1", 20, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Center, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Cust_ID", "Name2", 10, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Center, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.cmb_client.Properties.DropDownRows = 15;
+            this.cmb_client.Properties.NullText = "أسم العميل";
+            this.cmb_client.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.StartsWith;
+            this.cmb_client.Properties.SearchMode = DevExpress.XtraEditors.Controls.SearchMode.AutoSuggest;
+            this.cmb_client.Properties.ShowFooter = false;
+            this.cmb_client.Properties.ShowHeader = false;
+            this.cmb_client.Properties.ShowPopupShadow = false;
+            this.cmb_client.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.cmb_client.Size = new System.Drawing.Size(374, 26);
+            this.cmb_client.TabIndex = 179;
+            this.cmb_client.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lookUpEdit1_KeyDown);
+            this.cmb_client.Leave += new System.EventHandler(this.lookUpEdit1_Leave);
+            this.cmb_client.MouseLeave += new System.EventHandler(this.cmb_client_MouseLeave);
+            this.cmb_client.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lookUpEdit1_MouseMove);
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.simpleButton2.Appearance.BackColor = System.Drawing.Color.Black;
+            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton2.Appearance.ForeColor = System.Drawing.Color.White;
+            this.simpleButton2.Appearance.Options.UseBackColor = true;
+            this.simpleButton2.Appearance.Options.UseFont = true;
+            this.simpleButton2.Appearance.Options.UseForeColor = true;
+            this.simpleButton2.Appearance.Options.UseTextOptions = true;
+            this.simpleButton2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.simpleButton2.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.simpleButton2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.simpleButton2.Location = new System.Drawing.Point(54, 248);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(105, 37);
+            this.simpleButton2.TabIndex = 180;
+            this.simpleButton2.Text = "بحث";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
+            // 
             // Frm_PermessionMoneyNotice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(684, 485);
+            this.Controls.Add(this.simpleButton2);
+            this.Controls.Add(this.cmb_client);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Txt_Balance);
@@ -252,13 +273,12 @@
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.cmb_client);
             this.MaximizeBox = false;
             this.Name = "Frm_PermessionMoneyNotice";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "إذن صرف مبلغ للعميل";
             this.Load += new System.EventHandler(this.Frm_PermessionMoneyNotice_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.cmb_client.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -274,11 +294,11 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label6;
-        public System.Windows.Forms.ComboBox cmb_client;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox Txt_Balance;
         private System.Windows.Forms.Label label2;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.LookUpEdit cmb_client;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
     }
 }
