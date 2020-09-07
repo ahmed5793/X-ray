@@ -46,29 +46,8 @@ namespace Laboratory.BL
             return dt;
         }
 
-        internal DataTable InsertName(string Name , int Age)
-        {
-            DataTable dt = new DataTable();
-
-            DataAccessLayer da = new DataAccessLayer();
-            da.open();
-            SqlParameter[] param = new SqlParameter[2];
-            param[0] = new SqlParameter("@Name", SqlDbType.NVarChar, 50);
-            param[0].Value = Name;
-            param[1] = new SqlParameter("@Age", SqlDbType.Int);
-            param[1].Value = Age;
-
-            dt = da.selected("AddStudent", param);
-            da.close();
-            return dt;
-        }
-        
-        void Insert_ID()
-        {
-            DataTable dt = new DataTable();
-            dt = InsertName("Ahmed", 28);
-            int ID = int.Parse(dt.Rows[0][0].ToString());
-        }
+   
+      
         internal void AddBranches(string name, string address,int id_stock,int id_store)
         {
             DataAccessLayer da = new DataAccessLayer();

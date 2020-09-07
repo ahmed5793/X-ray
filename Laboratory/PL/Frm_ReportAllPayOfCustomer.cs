@@ -64,27 +64,7 @@ namespace Laboratory.PL
      
         private void comboBox2_Leave(object sender, EventArgs e)
         {
-            try
-            {
-                if (lookUpEdit1.Text != "")
-                {
-                    dt.Clear();
-                    dt = C.validate_CustomerName(Convert.ToInt32(lookUpEdit1.EditValue));
-                    if (dt.Rows.Count == 0)
-                    {
-                        MessageBox.Show("إسم العميل غير موجود لا بد من إختيار إسم العميل من القائمة");
-                        lookUpEdit1.Focus();
-                        textBox1.Clear();
-                        lookUpEdit1.Text = "";
-                        gridControl1.DataSource = null;
-                        return;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+           
         }
         private void comboBox2_SelectionChangeCommitted(object sender, EventArgs e)
         {
@@ -221,6 +201,31 @@ namespace Laboratory.PL
         private void lookUpEdit1_EditValueChanged(object sender, EventArgs e)
         {
            
+        }
+
+        private void lookUpEdit1_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                if (lookUpEdit1.Text != "")
+                {
+                    dt.Clear();
+                    dt = C.validate_CustomerName(Convert.ToInt32(lookUpEdit1.EditValue));
+                    if (dt.Rows.Count == 0)
+                    {
+                        MessageBox.Show("إسم العميل غير موجود لا بد من إختيار إسم العميل من القائمة");
+                        lookUpEdit1.Focus();
+                        textBox1.Clear();
+                        lookUpEdit1.Text = "";
+                        gridControl1.DataSource = null;
+                        return;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

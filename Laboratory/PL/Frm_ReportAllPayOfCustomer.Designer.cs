@@ -282,6 +282,7 @@
             // 
             // lookUpEdit1
             // 
+            this.lookUpEdit1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lookUpEdit1.Location = new System.Drawing.Point(298, 50);
             this.lookUpEdit1.Name = "lookUpEdit1";
             this.lookUpEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -303,6 +304,7 @@
             this.lookUpEdit1.TabIndex = 178;
             this.lookUpEdit1.EditValueChanged += new System.EventHandler(this.lookUpEdit1_EditValueChanged);
             this.lookUpEdit1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lookUpEdit1_KeyDown);
+            this.lookUpEdit1.Leave += new System.EventHandler(this.lookUpEdit1_Leave);
             this.lookUpEdit1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lookUpEdit1_MouseClick);
             this.lookUpEdit1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lookUpEdit1_MouseDown);
             // 
