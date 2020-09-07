@@ -11,11 +11,12 @@ namespace Laboratory.BL
 {
     class Tickets
     {
-        internal void AddTickets(DateTime Visite_Date, DateTime Receive_Date, decimal Total, decimal Pay, decimal Rent, 
+        internal DataTable AddTickets(DateTime Visite_Date, DateTime Receive_Date, decimal Total, decimal Pay, decimal Rent, 
             int Cust_ID, string Statues, int Doctor_ID, int ID_Branches,int ID_Stock,DateTime Date_revelation,string Complain,
             int ID_Doctorofcenter,int ID_Techincal, string userName,String PlaceToCheck,decimal Additions, string ReasonForAdding,
             decimal TotalAfterDiscount,decimal Patient_paymentAmount,string Activate)
         {
+            DataTable dt = new DataTable();
             DataAccessLayer da = new DataAccessLayer();
             da.open();
             SqlParameter[] param = new SqlParameter[21];
@@ -63,10 +64,20 @@ namespace Laboratory.BL
 
             param[20] = new SqlParameter("@Activate", SqlDbType.NVarChar,50);
             param[20].Value = Activate;
-            da.excutequery("AddTickets", param);
+            dt= da.selected("AddTickets", param);
+            
             da.close();
+            return dt;
         }
+        // void Select_IdTickiiet()
+        //{
+        //    DataTable dt = new DataTable();
+        //    dt = AddTickets(DateTime Visite_Date, DateTime Receive_Date, decimal Total, decimal Pay, decimal Rent,
+        //    int Cust_ID, string Statues, int Doctor_ID, int ID_Branches, int ID_Stock, DateTime Date_revelation, string Complain,
+        //    int ID_Doctorofcenter, int ID_Techincal, string userName, String PlaceToCheck, decimal Additions, string ReasonForAdding,
+        //    decimal TotalAfterDiscount, decimal Patient_paymentAmount, string Activate);
 
+        //}
         internal void Update_TeckietInformation(int Id_Teckiet, int Id_Technical, int Id_DoctorOfCenter, DateTime Date_Revelation, 
                                                 DateTime Date_Recieve,int  palce_ToCheck, string User_Name , string Notes)
         {

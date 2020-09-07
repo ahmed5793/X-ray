@@ -24,10 +24,20 @@ namespace Laboratory.PL
         {
             try
             {
-                comboBox2.DataSource = C.SelectCompoCustomerN2dy();
-                comboBox2.DisplayMember = "Cust_Name";
-                comboBox2.ValueMember = "Cust_ID";
-                comboBox2.SelectedIndex = -1;
+                DataTable dt = new DataTable();
+                dt.Clear();
+                dt = C.SelectCompoCustomerN2dy();
+
+
+                lookUpEdit1.Properties.DataSource = dt;
+
+                lookUpEdit1.Properties.DisplayMember = "Cust_Name";
+                lookUpEdit1.Properties.ValueMember = "Cust_ID";
+             
+
+
+                
+               
 
                 //gridControl1.DataSource = C.Select_AllPayCustomer(Convert.ToInt32(comboBox2.SelectedValue));
                 //dt5.Clear();
@@ -54,35 +64,15 @@ namespace Laboratory.PL
      
         private void comboBox2_Leave(object sender, EventArgs e)
         {
-            try
-            {
-                if (comboBox2.Text != "")
-                {
-                    dt.Clear();
-                    dt = C.validate_CustomerName(Convert.ToInt32(comboBox2.SelectedValue));
-                    if (dt.Rows.Count == 0)
-                    {
-                        MessageBox.Show("إسم العميل غير موجود لا بد من إختيار إسم العميل من القائمة");
-                        comboBox2.Focus();
-                        textBox1.Clear();
-                        comboBox2.Text = "";
-                        gridControl1.DataSource = null;
-                        return;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+           
         }
         private void comboBox2_SelectionChangeCommitted(object sender, EventArgs e)
         {
             try
             {
-                gridControl1.DataSource = C.Select_AllPayCustomer(Convert.ToInt32(comboBox2.SelectedValue));
+                gridControl1.DataSource = C.Select_AllPayCustomer(Convert.ToInt32(lookUpEdit1.EditValue));
                 dt5.Clear();
-                dt5 = C.Select_CustomertotalBAlance(Convert.ToInt32(comboBox2.SelectedValue));
+                dt5 = C.Select_CustomertotalBAlance(Convert.ToInt32(lookUpEdit1.EditValue));
                 textBox1.Text = dt5.Rows[0][0].ToString();
             }
             catch (Exception ex)
@@ -96,10 +86,10 @@ namespace Laboratory.PL
         {
             try
             {
-                if (comboBox2.Text != "")
+                if (lookUpEdit1.Text != "")
                 {
                     dt5.Clear();
-                    dt5 = C.Search_AllPayCustomerNameanddate(Convert.ToInt32(comboBox2.SelectedValue), DateFrom.Value, DateTo.Value);
+                    dt5 = C.Search_AllPayCustomerNameanddate(Convert.ToInt32(lookUpEdit1.EditValue), DateFrom.Value, DateTo.Value);
                     if (dt5.Rows.Count > 0)
                     {
                         gridControl1.DataSource = dt5;
@@ -153,11 +143,11 @@ namespace Laboratory.PL
         {
             try
             {
-                if (comboBox2.SelectedValue != null)
+                if (lookUpEdit1.EditValue != null)
                 {
-                    gridControl1.DataSource = C.Select_AllPayCustomer(Convert.ToInt32(comboBox2.SelectedValue));
+                    gridControl1.DataSource = C.Select_AllPayCustomer(Convert.ToInt32(lookUpEdit1.EditValue));
                     dt5.Clear();
-                    dt5 = C.Select_CustomertotalBAlance(Convert.ToInt32(comboBox2.SelectedValue));
+                    dt5 = C.Select_CustomertotalBAlance(Convert.ToInt32(lookUpEdit1.EditValue));
                     if (dt5.Rows.Count>0)
                     {
                         textBox1.Text = dt5.Rows[0][0].ToString();
@@ -173,6 +163,68 @@ namespace Laboratory.PL
             {
                 MessageBox.Show(ex.Message);
                 MessageBox.Show(ex.StackTrace);
+            }
+        }
+
+        private void lookUpEdit1_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                
+
+                    gridControl1.DataSource = C.Select_AllPayCustomer(Convert.ToInt32(lookUpEdit1.EditValue));
+                    dt5.Clear();
+                    dt5 = C.Select_CustomertotalBAlance(Convert.ToInt32(lookUpEdit1.EditValue));
+                if (gridView1.RowCount > 0)
+                {
+
+                    textBox1.Text = dt5.Rows[0][0].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void lookUpEdit1_MouseDown(object sender, MouseEventArgs e)
+        {
+           
+        }
+
+        private void lookUpEdit1_MouseClick(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        private void lookUpEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void lookUpEdit1_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                if (lookUpEdit1.Text != "")
+                {
+                    dt.Clear();
+                    dt = C.validate_CustomerName(Convert.ToInt32(lookUpEdit1.EditValue));
+                    if (dt.Rows.Count == 0)
+                    {
+                        MessageBox.Show("إسم العميل غير موجود لا بد من إختيار إسم العميل من القائمة");
+                        lookUpEdit1.Focus();
+                        textBox1.Clear();
+                        lookUpEdit1.Text = "";
+                        gridControl1.DataSource = null;
+                        return;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

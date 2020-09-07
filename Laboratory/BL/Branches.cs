@@ -45,6 +45,9 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
+
+   
+      
         internal void AddBranches(string name, string address,int id_stock,int id_store)
         {
             DataAccessLayer da = new DataAccessLayer();

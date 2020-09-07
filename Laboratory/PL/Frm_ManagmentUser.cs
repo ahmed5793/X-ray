@@ -33,6 +33,7 @@ namespace Laboratory.PL
         {
             Btn_Delete.Enabled = false;
             Btn_Update.Enabled = false;
+            Btn_Update.Hide();
         }
 
         private void label2_Click(object sender, EventArgs e)
