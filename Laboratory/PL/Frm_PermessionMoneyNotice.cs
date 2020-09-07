@@ -306,7 +306,7 @@ namespace Laboratory.PL
 
         private void lookUpEdit1_KeyDown(object sender, KeyEventArgs e)
         {
-          
+            Txt_Balance.Text = "0";
         }
 
         private void lookUpEdit1_Leave(object sender, EventArgs e)
