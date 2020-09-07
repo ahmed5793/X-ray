@@ -32,10 +32,10 @@ namespace Laboratory.PL
 
                 Permision();
 
-                cmb_client.DataSource = c.SelectCreditCompoCustomer();
-                cmb_client.DisplayMember = "Cust_Name";
-                cmb_client.ValueMember = "Cust_ID";
-                cmb_client.SelectedIndex = -1;
+                cmb_client.Properties.DataSource = c.SelectCreditCompoCustomer();
+                cmb_client.Properties.DisplayMember = "Cust_Name";
+                cmb_client.Properties.ValueMember = "Cust_ID";
+                //cmb_client.Properties.SelectedIndex = -1;
             }
             catch (Exception ex)
             {
@@ -106,7 +106,7 @@ namespace Laboratory.PL
             try
             {
                 
-                   dt = c.selectOneClientRent(Convert.ToInt32(cmb_client.SelectedValue));
+                   dt = c.selectOneClientRent(Convert.ToInt32(cmb_client.EditValue));
                     if (dt.Rows.Count>0)
                     {
                         Txt_Balance.Text = (Convert.ToDecimal(dt.Rows[0][2]) * -1).ToString();
@@ -118,7 +118,6 @@ namespace Laboratory.PL
             {
 
                 MessageBox.Show(EX.Message);
-                MessageBox.Show(EX.StackTrace);
             }
         }
 
@@ -127,7 +126,7 @@ namespace Laboratory.PL
             try
             {
                
-                    dt = c.selectOneClientRent(Convert.ToInt32(cmb_client.SelectedValue));
+                    dt = c.selectOneClientRent(Convert.ToInt32(cmb_client.EditValue));
                     if (dt.Rows.Count > 0)
                     {
                         Txt_Balance.Text = (Convert.ToDecimal(dt.Rows[0][2]) * -1).ToString();
@@ -182,18 +181,19 @@ namespace Laboratory.PL
                      , Txt_SalesMAn.Text, " إذن صرف  مبلغ " + "( " + (Txt_Balance.Text) +")" + "  للعميل " + " " + cmb_client.Text);
 
                     dt.Clear();
-                    dt = c.Select_CustomertotalBAlance(Convert.ToInt32(cmb_client.SelectedValue));
+                    dt = c.Select_CustomertotalBAlance(Convert.ToInt32(cmb_client.EditValue));
                     decimal hrl = Convert.ToDecimal(dt.Rows[0][0]) * -1;
 
                     //decimal mno5 = Convert.ToDecimal(Txt_PayLast.Text) - Convert.ToDecimal(Txt_LastPayOut.Text);
                     decimal mno4 = Convert.ToDecimal(dt.Rows[0][0]) + Convert.ToDecimal(Txt_Balance.Text);
-                    c.Update_CustomerTotalBalance(Convert.ToInt32(cmb_client.SelectedValue), mno4);
-                    c.Add_CustomerAccountStatment(Convert.ToInt32(cmb_client.SelectedValue), 0,
+                    c.Update_CustomerTotalBalance(Convert.ToInt32(cmb_client.EditValue), mno4);
+                    c.Add_CustomerAccountStatment(Convert.ToInt32(cmb_client.EditValue), 0,
                     Convert.ToDecimal(Txt_Balance.Text), dateTimePicker1.Value, mno4, Convert.ToInt32(cmb_Stock.SelectedValue)
                     , Txt_SalesMAn.Text, Convert.ToInt32(Cmb_Branch.SelectedValue),
                     " إذن صرف مبلغ   " + " (" + (Txt_Balance.Text) + " )" );
                         MessageBox.Show("تم تأكيد صرف المبلغ المحدد للعميل");
-                        cmb_client.SelectedIndex = -1;
+                        //cmb_client.Properties.SelectedIndex = -1;
+
                         Txt_Balance.Text = "0";
                         
 
@@ -234,7 +234,7 @@ namespace Laboratory.PL
                 if (cmb_client.Text != "")
                 {
                     dt.Clear();
-                    dt = c.validate_CustomerName(Convert.ToInt32(cmb_client.SelectedValue));
+                    dt = c.validate_CustomerName(Convert.ToInt32(cmb_client.EditValue));
                     if (dt.Rows.Count == 0)
                     {
                         MessageBox.Show("إسم العميل غير موجود لا بد من إختيار إسم العميل من القائمة");
@@ -303,5 +303,89 @@ namespace Laboratory.PL
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void lookUpEdit1_KeyDown(object sender, KeyEventArgs e)
+        {
+            Txt_Balance.Text = "0";
+        }
+
+        private void lookUpEdit1_Leave(object sender, EventArgs e)
+        {
+         
+            try
+            {
+                if (cmb_client.Text != "")
+                {
+                    dt.Clear();
+                    dt = c.validate_CustomerName(Convert.ToInt32(cmb_client.EditValue));
+                    if (dt.Rows.Count == 0)
+                    {
+                        Txt_Balance.Text = "0";
+                        cmb_client.Text = "";
+                        MessageBox.Show("إسم العميل غير موجود لا بد من إختيار إسم العميل من القائمة");
+
+                       
+                        return;
+
+
+
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void lookUpEdit1_MouseMove(object sender, MouseEventArgs e)
+        {
+
+            //try
+            //{
+
+            //    dt = c.selectOneClientRent(Convert.ToInt32(cmb_client.EditValue));
+            //    if (dt.Rows.Count > 0)
+            //    {
+            //        Txt_Balance.Text = (Convert.ToDecimal(dt.Rows[0][2]) * -1).ToString();
+            //    }
+
+
+            //}
+            //catch (Exception EX)
+            //{
+
+            //    MessageBox.Show(EX.Message);
+            //    MessageBox.Show(EX.StackTrace);
+            //}
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                dt = c.selectOneClientRent(Convert.ToInt32(cmb_client.EditValue));
+                if (dt.Rows.Count > 0)
+                {
+                    Txt_Balance.Text = (Convert.ToDecimal(dt.Rows[0][2]) * -1).ToString();
+                }
+
+
+            }
+            catch (Exception EX)
+            {
+
+                MessageBox.Show(EX.Message);
+            }
+        }
+
+        private void cmb_client_MouseLeave(object sender, EventArgs e)
+        {
+        }
     }
 }
+
+

@@ -1810,15 +1810,15 @@ namespace Laboratory.PL
                             txt_idcust.Text = c.LastIdCustomer().Rows[0][0].ToString();
                             c.Add_CustomerTotalBalance(Convert.ToInt32(txt_idcust.Text));
 
-                            t.AddTickets(dtb_visit.Value, dtp_recive.Value, Convert.ToDecimal(txt_total.Text), Convert.ToDecimal(txt_pay.Text),
-                                Convert.ToDecimal(txt_rent.Text), Convert.ToInt32(txt_idcust.Text), cmb_statues.Text, Convert.ToInt32(cmb_Doctor.SelectedValue),
-                                Convert.ToInt32(cmb_branches.SelectedValue), Convert.ToInt32(cmb_Stock.SelectedValue), dtb_kashf.Value,
-                                txt_compint.Text, Convert.ToInt32(cmb_DoctorOfCenter.SelectedValue), Convert.ToInt32(cmb_Techincal.SelectedValue), txt_username.Text,
-                                cmb_UserBranch.Text, Convert.ToDecimal(Txt_addtionPayment.Text), txt_reasonAddition.Text, Convert.ToDecimal(txt_afterDiscount.Text),
-                                Convert.ToDecimal(Txt_PricePayment.Text),"active");
-                            void Select_IdTickiiet()
-                            {
+                            //t.AddTickets(dtb_visit.Value, dtp_recive.Value, Convert.ToDecimal(txt_total.Text), Convert.ToDecimal(txt_pay.Text),
+                            //    Convert.ToDecimal(txt_rent.Text), Convert.ToInt32(txt_idcust.Text), cmb_statues.Text, Convert.ToInt32(cmb_Doctor.SelectedValue),
+                            //    Convert.ToInt32(cmb_branches.SelectedValue), Convert.ToInt32(cmb_Stock.SelectedValue), dtb_kashf.Value,
+                            //    txt_compint.Text, Convert.ToInt32(cmb_DoctorOfCenter.SelectedValue), Convert.ToInt32(cmb_Techincal.SelectedValue), txt_username.Text,
+                            //    cmb_UserBranch.Text, Convert.ToDecimal(Txt_addtionPayment.Text), txt_reasonAddition.Text, Convert.ToDecimal(txt_afterDiscount.Text),
+                            //    Convert.ToDecimal(Txt_PricePayment.Text),"active");
+                        
                                 DataTable dt = new DataTable();
+                            dt.Clear();
                                 dt = t.AddTickets(dtb_visit.Value, dtp_recive.Value, Convert.ToDecimal(txt_total.Text), Convert.ToDecimal(txt_pay.Text),
                                 Convert.ToDecimal(txt_rent.Text), Convert.ToInt32(txt_idcust.Text), cmb_statues.Text, Convert.ToInt32(cmb_Doctor.SelectedValue),
                                 Convert.ToInt32(cmb_branches.SelectedValue), Convert.ToInt32(cmb_Stock.SelectedValue), dtb_kashf.Value,
@@ -1829,8 +1829,7 @@ namespace Laboratory.PL
 
                                 txt_IdTicket.Text =ID.ToString();
 
-                            }
-                            Select_IdTickiiet();
+                       
                             //txt_IdTicket.Text = t.LastIdTicket().Rows[0][0].ToString();
 
 
@@ -1873,14 +1872,17 @@ namespace Laboratory.PL
                                 return;
                             }
                             Btn_Save.Enabled = false;
-
-                            t.AddTickets(dtb_visit.Value, dtp_recive.Value, Convert.ToDecimal(txt_total.Text), Convert.ToDecimal(txt_pay.Text),
+                            dt.Clear();
+                         dt=   t.AddTickets(dtb_visit.Value, dtp_recive.Value, Convert.ToDecimal(txt_total.Text), Convert.ToDecimal(txt_pay.Text),
                                 Convert.ToDecimal(txt_rent.Text), Convert.ToInt32(Cmb_customer.SelectedValue), cmb_statues.Text, Convert.ToInt32(cmb_Doctor.SelectedValue),
                                 Convert.ToInt32(cmb_branches.SelectedValue), Convert.ToInt32(cmb_Stock.SelectedValue), dtb_kashf.Value,
                                 txt_compint.Text, Convert.ToInt32(cmb_DoctorOfCenter.SelectedValue), Convert.ToInt32(cmb_Techincal.SelectedValue), txt_username.Text,
                                     cmb_UserBranch.Text, Convert.ToDecimal(Txt_addtionPayment.Text), txt_reasonAddition.Text, Convert.ToDecimal(txt_afterDiscount.Text),
                                     Convert.ToDecimal(Txt_PricePayment.Text), "active");
-                            txt_IdTicket.Text = t.LastIdTicket().Rows[0][0].ToString();
+                            int ID = int.Parse(dt.Rows[0][0].ToString());
+
+                            txt_IdTicket.Text = ID.ToString();
+                            //txt_IdTicket.Text = t.LastIdTicket().Rows[0][0].ToString();
 
                             if (Convert.ToDecimal(txt_pay.Text) > 0)
                             {
@@ -2009,14 +2011,17 @@ namespace Laboratory.PL
                             c.addCustomer(txt_name.Text, txt_address.Text, txt_phone.Text, Convert.ToInt32(txt_age.Text), dtb_visit.Value, comboBox1.Text, txt_idntational.Text);
                             txt_idcust.Text = c.LastIdCustomer().Rows[0][0].ToString();                      
                             c.Add_CustomerTotalBalance(Convert.ToInt32(txt_idcust.Text));
-
-                            t.AddTickets(dtb_visit.Value, dtp_recive.Value, Convert.ToDecimal(txt_total.Text), Convert.ToDecimal(txt_pay.Text),
+                            dt.Clear();
+                          dt=  t.AddTickets(dtb_visit.Value, dtp_recive.Value, Convert.ToDecimal(txt_total.Text), Convert.ToDecimal(txt_pay.Text),
                                 Convert.ToDecimal(txt_rent.Text), Convert.ToInt32(txt_idcust.Text), cmb_statues.Text, Convert.ToInt32(cmb_Doctor.SelectedValue),
                                 Convert.ToInt32(cmb_branches.SelectedValue), Convert.ToInt32(cmb_Stock.SelectedValue), dtb_kashf.Value,
                                 txt_compint.Text, Convert.ToInt32(cmb_DoctorOfCenter.SelectedValue), Convert.ToInt32(cmb_Techincal.SelectedValue), txt_username.Text,
                                     cmb_UserBranch.Text, Convert.ToDecimal(Txt_addtionPayment.Text), txt_reasonAddition.Text, Convert.ToDecimal(txt_afterDiscount.Text),
                                     Convert.ToDecimal(Txt_PricePayment.Text), "active");
-                            txt_IdTicket.Text = t.LastIdTicket().Rows[0][0].ToString();
+                            int ID = int.Parse(dt.Rows[0][0].ToString());
+
+                            txt_IdTicket.Text = ID.ToString();
+                            //txt_IdTicket.Text = t.LastIdTicket().Rows[0][0].ToString();
 
                             if (Convert.ToDecimal(txt_pay.Text) > 0)
                             {
@@ -2069,14 +2074,17 @@ namespace Laboratory.PL
                                 return;
                             }
                             Btn_Save.Enabled = false;
-
-                            t.AddTickets(dtb_visit.Value, dtp_recive.Value, Convert.ToDecimal(txt_total.Text), Convert.ToDecimal(txt_pay.Text),
+                            dt.Clear();
+                         dt=   t.AddTickets(dtb_visit.Value, dtp_recive.Value, Convert.ToDecimal(txt_total.Text), Convert.ToDecimal(txt_pay.Text),
                                 Convert.ToDecimal(txt_rent.Text), Convert.ToInt32(Cmb_customer.SelectedValue), cmb_statues.Text, Convert.ToInt32(cmb_Doctor.SelectedValue),
                                 Convert.ToInt32(cmb_branches.SelectedValue), Convert.ToInt32(cmb_Stock.SelectedValue), dtb_kashf.Value,
                                 txt_compint.Text, Convert.ToInt32(cmb_DoctorOfCenter.SelectedValue), Convert.ToInt32(cmb_Techincal.SelectedValue), txt_username.Text,
                                     cmb_UserBranch.Text, Convert.ToDecimal(Txt_addtionPayment.Text), txt_reasonAddition.Text, Convert.ToDecimal(txt_afterDiscount.Text),
                                     Convert.ToDecimal(Txt_PricePayment.Text), "active");
-                            txt_IdTicket.Text = t.LastIdTicket().Rows[0][0].ToString();
+                            int ID = int.Parse(dt.Rows[0][0].ToString());
+
+                            txt_IdTicket.Text = ID.ToString();
+                            //txt_IdTicket.Text = t.LastIdTicket().Rows[0][0].ToString();
                             if (Convert.ToDecimal(txt_pay.Text) > 0)
                             {
                                 s.add_insertStock(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_pay.Text), dtb_visit.Value,

@@ -25,7 +25,7 @@ namespace Laboratory.DAL
 
             //last
 
-            con = new SqlConnection("Data Source=sql5033.site4now.net; database=DB_A54A03_LastLaboratory;User Id=  DB_A54A03_LastLaboratory_admin;Password=Titonasser1994;");
+            con = new SqlConnection("Data Source=sql5033.site4now.net; database=DB_A54A03_LastLaboratory;User Id=  DB_A54A03_LastLaboratory_admin;Password=Titonasser1994;MultipleActiveResultSets=True;Max Pool Size=200;");
 
 
         }
