@@ -33,9 +33,9 @@ namespace Laboratory.PL
 
                 Permision();
 
-                cmb_client.DataSource = c.SelectRentCompoCustomer();
-                cmb_client.DisplayMember = "Cust_Name";
-                cmb_client.ValueMember = "Cust_ID";
+                lookUpEdit1.Properties.DataSource = c.SelectRentCompoCustomer();
+                lookUpEdit1.Properties.DisplayMember = "Cust_Name";
+                lookUpEdit1.Properties.ValueMember = "Cust_ID";
             }
             catch (Exception ex)
             {
@@ -83,9 +83,9 @@ namespace Laboratory.PL
 
         private void RdbOneCustomer_CheckedChanged(object sender, EventArgs e)
         {
-            cmb_client.DataSource = c.SelectRentCompoCustomer();
-            cmb_client.DisplayMember = "Cust_Name";
-            cmb_client.ValueMember = "Cust_ID";
+            lookUpEdit1.Properties.DataSource = c.SelectRentCompoCustomer();
+            lookUpEdit1.Properties.DisplayMember = "Cust_Name";
+            lookUpEdit1.Properties.ValueMember = "Cust_ID";
         }
 
         private void RdbAllPay_CheckedChanged(object sender, EventArgs e)
@@ -154,14 +154,14 @@ namespace Laboratory.PL
         {
             try
             {
-                if (cmb_client.Text != "")
+                if (lookUpEdit1.Text != "")
                 {
                     dt.Clear();
-                    dt = c.validate_CustomerName(Convert.ToInt32(cmb_client.SelectedValue));
+                    dt = c.validate_CustomerName(Convert.ToInt32(lookUpEdit1.EditValue));
                     if (dt.Rows.Count == 0)
                     {
                         MessageBox.Show("إسم العميل غير موجود لا بد من إختيار إسم العميل من القائمة");
-                        cmb_client.Focus();
+                        lookUpEdit1.Focus();
                         return;
                     }
                 }
@@ -196,11 +196,11 @@ namespace Laboratory.PL
         {
             try
             {
-                if (cmb_client.Text != "")
+                if (lookUpEdit1.Text != "")
                 {
                     //dataGridView1.DataSource = c.selectOneClientRent(Convert.ToInt32(cmb_client.SelectedValue));
-                    Txt_CustAccount.Text = c.selectOneClientRent(Convert.ToInt32(cmb_client.SelectedValue)).Rows[0][2].ToString();
-                    Txt_CustAcountAfterDisCount.Text = c.selectOneClientRent(Convert.ToInt32(cmb_client.SelectedValue)).Rows[0][2].ToString();
+                    Txt_CustAccount.Text = c.selectOneClientRent(Convert.ToInt32(lookUpEdit1.EditValue)).Rows[0][2].ToString();
+                    Txt_CustAcountAfterDisCount.Text = c.selectOneClientRent(Convert.ToInt32(lookUpEdit1.EditValue)).Rows[0][2].ToString();
                     if (Txt_CustAccount.Text=="0")
                     {
                         TxtDisCount.Enabled = false;
@@ -248,32 +248,32 @@ namespace Laboratory.PL
 
 
                                 dt.Clear();
-                                dt = c.Select_CustomertotalBAlance(Convert.ToInt32(cmb_client.SelectedValue));
+                                dt = c.Select_CustomertotalBAlance(Convert.ToInt32(lookUpEdit1.EditValue));
                                 decimal mno1 = Convert.ToDecimal(dt.Rows[0][0]) - Convert.ToDecimal(TxtDisCount.Text)
                                     ;
-                                c.Update_CustomerTotalBalance(Convert.ToInt32(cmb_client.SelectedValue), mno1);
-                                c.Add_CustomerAccountStatment(Convert.ToInt32(cmb_client.SelectedValue), 
+                                c.Update_CustomerTotalBalance(Convert.ToInt32(lookUpEdit1.EditValue), mno1);
+                                c.Add_CustomerAccountStatment(Convert.ToInt32(lookUpEdit1.EditValue), 
                                     Convert.ToDecimal(TxtDisCount.Text),0
                                      , dateTimePicker1.Value, mno1, Convert.ToInt32(cmb_Stock.SelectedValue)
                                      , Txt_SalesMAn.Text, Convert.ToInt32(Cmb_Branch.SelectedValue), "خصم مبلغ"  +"("+TxtDisCount.Text+")"+ "من الحساب المتبقي على العميل");
                             }
                             dt.Clear();
-                            dt = c.Select_CustomertotalBAlance(Convert.ToInt32(cmb_client.SelectedValue));
+                            dt = c.Select_CustomertotalBAlance(Convert.ToInt32(lookUpEdit1.EditValue));
                             decimal mno = Convert.ToDecimal(dt.Rows[0][0]) - Convert.ToDecimal(Txt_CustAcountAfterDisCount.Text)
                                 ;
-                            c.Update_CustomerTotalBalance(Convert.ToInt32(cmb_client.SelectedValue), mno);
-                            c.Add_CustomerAccountStatment(Convert.ToInt32(cmb_client.SelectedValue), Convert.ToDecimal(Txt_CustAcountAfterDisCount.Text),
+                            c.Update_CustomerTotalBalance(Convert.ToInt32(lookUpEdit1.EditValue), mno);
+                            c.Add_CustomerAccountStatment(Convert.ToInt32(lookUpEdit1.EditValue), Convert.ToDecimal(Txt_CustAcountAfterDisCount.Text),
                                0
                                  , dateTimePicker1.Value, mno, Convert.ToInt32(cmb_Stock.SelectedValue)
                                  , Txt_SalesMAn.Text, Convert.ToInt32(Cmb_Branch.SelectedValue), "تسديد كل الحساب القديم" );
 
                             s.add_insertStock(Convert.ToInt32(cmb_Stock.SelectedValue), 
                                 Convert.ToDecimal(Txt_CustAcountAfterDisCount.Text), dateTimePicker1.Value,Txt_SalesMAn.Text,
-                                "  مدفوعات من العميل  "+" "+cmb_client.Text );
+                                "  مدفوعات من العميل  "+" "+lookUpEdit1.Text );
                             MessageBox.Show("تم دفع المبلغ بنجاح");
 
-                            Txt_CustAccount.Text = c.selectOneClientRent(Convert.ToInt32(cmb_client.SelectedValue)).Rows[0][0].ToString();
-                            Txt_CustAcountAfterDisCount.Text = c.selectOneClientRent(Convert.ToInt32(cmb_client.SelectedValue)).Rows[0][0].ToString();
+                            Txt_CustAccount.Text = c.selectOneClientRent(Convert.ToInt32(lookUpEdit1.EditValue)).Rows[0][0].ToString();
+                            Txt_CustAcountAfterDisCount.Text = c.selectOneClientRent(Convert.ToInt32(lookUpEdit1.EditValue)).Rows[0][0].ToString();
                             TxtDisCount.Text = "0";
                         }
                         else
@@ -313,28 +313,28 @@ namespace Laboratory.PL
 
 
                                 dt.Clear();
-                                dt = c.Select_CustomertotalBAlance(Convert.ToInt32(cmb_client.SelectedValue));
+                                dt = c.Select_CustomertotalBAlance(Convert.ToInt32(lookUpEdit1.EditValue));
                                 decimal mno1 = Convert.ToDecimal(dt.Rows[0][0]) - Convert.ToDecimal(TxtDisCount.Text)
                                     ;
-                                c.Update_CustomerTotalBalance(Convert.ToInt32(cmb_client.SelectedValue), mno1);
-                                c.Add_CustomerAccountStatment(Convert.ToInt32(cmb_client.SelectedValue),
+                                c.Update_CustomerTotalBalance(Convert.ToInt32(lookUpEdit1.EditValue), mno1);
+                                c.Add_CustomerAccountStatment(Convert.ToInt32(lookUpEdit1.EditValue),
                                     Convert.ToDecimal(TxtDisCount.Text), 0
                                      , dateTimePicker1.Value, mno1, Convert.ToInt32(cmb_Stock.SelectedValue)
                                      , Txt_SalesMAn.Text, Convert.ToInt32(Cmb_Branch.SelectedValue), "خصم مبلغ" + "(" + TxtDisCount.Text + ")" + "من الحساب المتبقي على العميل");
                             }
                             dt.Clear();
-                            dt = c.Select_CustomertotalBAlance(Convert.ToInt32(cmb_client.SelectedValue));
+                            dt = c.Select_CustomertotalBAlance(Convert.ToInt32(lookUpEdit1.EditValue));
                             decimal mno = Convert.ToDecimal(dt.Rows[0][0]) - Convert.ToDecimal(txt_prise.Text);
-                            c.Update_CustomerTotalBalance(Convert.ToInt32(cmb_client.SelectedValue), mno);
-                            c.Add_CustomerAccountStatment(Convert.ToInt32(cmb_client.SelectedValue), Convert.ToDecimal(txt_prise.Text),
+                            c.Update_CustomerTotalBalance(Convert.ToInt32(lookUpEdit1.EditValue), mno);
+                            c.Add_CustomerAccountStatment(Convert.ToInt32(lookUpEdit1.EditValue), Convert.ToDecimal(txt_prise.Text),
                                0
                                  , dateTimePicker1.Value, mno, Convert.ToInt32(cmb_Stock.SelectedValue)
                                  , Txt_SalesMAn.Text, Convert.ToInt32(Cmb_Branch.SelectedValue), "تسديد جزء من الحساب ");
-                            s.add_insertStock(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_prise.Text), dateTimePicker1.Value, Txt_SalesMAn.Text, cmb_client.Text + " " + "مدفوعات مديونية");
+                            s.add_insertStock(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_prise.Text), dateTimePicker1.Value, Txt_SalesMAn.Text, lookUpEdit1.Text + " " + "مدفوعات مديونية");
                             MessageBox.Show("تم دفع المبلغ بنجاح");
 
-                            Txt_CustAccount.Text = c.selectOneClientRent(Convert.ToInt32(cmb_client.SelectedValue)).Rows[0][0].ToString();
-                            Txt_CustAcountAfterDisCount.Text = c.selectOneClientRent(Convert.ToInt32(cmb_client.SelectedValue)).Rows[0][0].ToString();
+                            Txt_CustAccount.Text = c.selectOneClientRent(Convert.ToInt32(lookUpEdit1.EditValue)).Rows[0][0].ToString();
+                            Txt_CustAcountAfterDisCount.Text = c.selectOneClientRent(Convert.ToInt32(lookUpEdit1.EditValue)).Rows[0][0].ToString();
                             TxtDisCount.Text = "0";
                         }
                         else
@@ -352,11 +352,12 @@ namespace Laboratory.PL
                 Txt_CustAcountAfterDisCount.Text = "0";
                 TxtDisCount.Text = "0";
 
-                cmb_client.DataSource = c.SelectRentCompoCustomer();
-                cmb_client.DisplayMember = "Cust_Name";
-                cmb_client.ValueMember = "Cust_ID";
-                cmb_client.Text = "";
-                cmb_client.SelectedIndex = -1;
+
+                lookUpEdit1.Properties.DataSource = c.SelectRentCompoCustomer();
+                lookUpEdit1.Properties.DisplayMember = "Cust_Name";
+                lookUpEdit1.Properties.ValueMember = "Cust_ID";
+                lookUpEdit1.Text = "";
+
             }
             catch (Exception ex)
             {
