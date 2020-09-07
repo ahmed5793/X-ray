@@ -731,6 +731,7 @@ namespace Laboratory.PL
                     /////
                     if (check_CustomerAccountStatment.Checked == true){ReportClient = 1;}
                     else if (check_CustomerAccountStatment.Checked == false){ReportClient = 0;}
+
                     if (check_ReportTicketsReturn.Checked == true) { ReportReturnTickets = 1; }
                     else if (check_ReportTicketsReturn.Checked == false) { ReportReturnTickets = 0; }
 
