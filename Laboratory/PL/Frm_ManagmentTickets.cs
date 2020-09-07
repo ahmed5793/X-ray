@@ -569,6 +569,7 @@ namespace Laboratory.PL
         private void Frm_ManagmentTickets_Load(object sender, EventArgs e)
         {
             txt_username.Hide();
+            simpleButton2.Hide();
         }
 
         private void gridControl1_Click(object sender, EventArgs e)

@@ -1816,10 +1816,25 @@ namespace Laboratory.PL
                                 txt_compint.Text, Convert.ToInt32(cmb_DoctorOfCenter.SelectedValue), Convert.ToInt32(cmb_Techincal.SelectedValue), txt_username.Text,
                                 cmb_UserBranch.Text, Convert.ToDecimal(Txt_addtionPayment.Text), txt_reasonAddition.Text, Convert.ToDecimal(txt_afterDiscount.Text),
                                 Convert.ToDecimal(Txt_PricePayment.Text),"active");
-                            txt_IdTicket.Text = t.LastIdTicket().Rows[0][0].ToString();
-                          
-                          
-                                if (Convert.ToDecimal(txt_pay.Text) > 0)
+                            void Select_IdTickiiet()
+                            {
+                                DataTable dt = new DataTable();
+                                dt = t.AddTickets(dtb_visit.Value, dtp_recive.Value, Convert.ToDecimal(txt_total.Text), Convert.ToDecimal(txt_pay.Text),
+                                Convert.ToDecimal(txt_rent.Text), Convert.ToInt32(txt_idcust.Text), cmb_statues.Text, Convert.ToInt32(cmb_Doctor.SelectedValue),
+                                Convert.ToInt32(cmb_branches.SelectedValue), Convert.ToInt32(cmb_Stock.SelectedValue), dtb_kashf.Value,
+                                txt_compint.Text, Convert.ToInt32(cmb_DoctorOfCenter.SelectedValue), Convert.ToInt32(cmb_Techincal.SelectedValue), txt_username.Text,
+                                cmb_UserBranch.Text, Convert.ToDecimal(Txt_addtionPayment.Text), txt_reasonAddition.Text, Convert.ToDecimal(txt_afterDiscount.Text),
+                                Convert.ToDecimal(Txt_PricePayment.Text), "active");
+                                int ID = int.Parse(dt.Rows[0][0].ToString());
+
+                                txt_IdTicket.Text =ID.ToString();
+
+                            }
+                            Select_IdTickiiet();
+                            //txt_IdTicket.Text = t.LastIdTicket().Rows[0][0].ToString();
+
+
+                            if (Convert.ToDecimal(txt_pay.Text) > 0)
                                 {
                                     s.add_insertStock(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_pay.Text), dtb_visit.Value,
                                                       txt_username.Text, "فاتورة حجز اشعة  رقم " + (txt_IdTicket.Text)+ " " + "للعميل"+ " " + txt_name.Text);
