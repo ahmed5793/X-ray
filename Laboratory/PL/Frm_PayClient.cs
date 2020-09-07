@@ -437,5 +437,12 @@ namespace Laboratory.PL
                 TxtDisCount.Text = "0";
             }
         }
+
+        private void lookUpEdit1_KeyDown(object sender, KeyEventArgs e)
+        {
+            TxtDisCount.Text = "0";
+            Txt_CustAccount.Text = "0";
+            Txt_CustAcountAfterDisCount.Text = "0";
+        }
     }
 }
