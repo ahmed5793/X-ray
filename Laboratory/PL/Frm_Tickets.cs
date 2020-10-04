@@ -978,7 +978,7 @@ namespace Laboratory.PL
             cmb_UserBranch.SelectedIndex = -1;
             cmb_Stock.SelectedIndex = -1;
             cmb_Company.Enabled = false;
-            txt_pay.Enabled = false;
+            txt_pay.Enabled = true;
                 Btn_DetailsCompany.Hide();
                 Txt_addtionPayment.Enabled = false;
                 Txt_rentCompany.Enabled = false;
@@ -1766,8 +1766,8 @@ namespace Laboratory.PL
                     //    MessageBox.Show("من فضلك قم باادخال الشكوي");
                     //    return;
                     //}
-                 
-                  
+
+
                     //if (Cmb_category.Text == "")
                     //{
                     //    MessageBox.Show("من فضلك قم بااختيار فئة الفحص");
@@ -1779,13 +1779,15 @@ namespace Laboratory.PL
                     //    MessageBox.Show("من فضلك قم بااختيار نوع الفحص");
                     //    return;
                     //}
-
+                    
                     if (cmb_statues.Text == "نقدى")
                     {
-                       
-                        
+
+
+                      decimal  mb = Convert.ToDecimal(txt_total.Text) - Convert.ToDecimal(txt_afterDiscount.Text);
                         if (rdb_NewPatient.Checked == true)
                         {
+                            
                             if (txt_name.Text == "")
                             {
                                 MessageBox.Show("من فضلك قم باادخال إسم العميل  ");
@@ -1829,7 +1831,8 @@ namespace Laboratory.PL
 
                                 txt_IdTicket.Text =ID.ToString();
 
-                       
+                           // decimal mb = Convert.ToDecimal(txt_total.Text) - Convert.ToDecimal(txt_afterDiscount.Text);
+                            t.AddTickestDiscount(Convert.ToInt32(txt_IdTicket.Text), mb);
                             //txt_IdTicket.Text = t.LastIdTicket().Rows[0][0].ToString();
 
 
@@ -1882,6 +1885,9 @@ namespace Laboratory.PL
                             int ID = int.Parse(dt.Rows[0][0].ToString());
 
                             txt_IdTicket.Text = ID.ToString();
+
+                          
+                            t.AddTickestDiscount(Convert.ToInt32(txt_IdTicket.Text), mb);
                             //txt_IdTicket.Text = t.LastIdTicket().Rows[0][0].ToString();
 
                             if (Convert.ToDecimal(txt_pay.Text) > 0)
@@ -1911,8 +1917,9 @@ namespace Laboratory.PL
                     
 
                         }
-                        decimal mb = (Convert.ToDecimal(txt_total.Text) - Convert.ToDecimal(txt_afterDiscount.Text));
-                        t.AddTickestDiscount(Convert.ToInt32(txt_IdTicket.Text),mb );
+                       
+                        //decimal mb = Convert.ToDecimal(txt_total.Text) - Convert.ToDecimal(txt_afterDiscount.Text);
+                        //t.AddTickestDiscount(Convert.ToInt32(txt_IdTicket.Text), mb);
                         ////////////
                         for (int i = 0; i < dgv_order.Rows.Count; i++)
                         {
@@ -1938,8 +1945,8 @@ namespace Laboratory.PL
                                 Convert.ToInt32(dgv_order.Rows[i].Cells[0].Value), Convert.ToDecimal(dgv_order.Rows[i].Cells[2].Value)
                                 ,mb, Convert.ToDecimal(txt_pay.Text), Convert.ToDecimal(txt_rent.Text),dtb_visit.Value);
                         }
-                    
 
+                        
                         //////////////
                         //DataTable dt1 = new DataTable();
                         //dt1.Clear();
@@ -1977,7 +1984,7 @@ namespace Laboratory.PL
                         //report.Parameters["idTicket"].Visible = false;
                         //sr.documentViewer1.Enabled = true;
                         //sr.ShowDialog();
-                  
+
                     }
                     else if (cmb_statues.Text == "شركات")
                     {
@@ -2363,6 +2370,7 @@ namespace Laboratory.PL
             Frm_Doctor fd = new Frm_Doctor();
             fd.ShowDialog();
             doctor();
+
         }
 
         private void simpleButton4_Click(object sender, EventArgs e)

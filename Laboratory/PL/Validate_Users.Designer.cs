@@ -118,6 +118,7 @@
             this.check_PayClients = new System.Windows.Forms.CheckBox();
             this.check_AddClients = new System.Windows.Forms.CheckBox();
             this.groupBox18 = new System.Windows.Forms.GroupBox();
+            this.check_TicketReturn = new System.Windows.Forms.CheckBox();
             this.check_ReportTicketsReturn = new System.Windows.Forms.CheckBox();
             this.check_BookingTimes = new System.Windows.Forms.CheckBox();
             this.check_AddTickets = new System.Windows.Forms.CheckBox();
@@ -131,7 +132,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.Cmb_Branch = new System.Windows.Forms.ComboBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.check_TicketReturn = new System.Windows.Forms.CheckBox();
             this.groupBox4.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.groupBox15.SuspendLayout();
@@ -1416,6 +1416,19 @@
             this.groupBox18.TabStop = false;
             this.groupBox18.Text = "صلاحية المستخدمين داخل قائمة إدارة الحجوزات";
             // 
+            // check_TicketReturn
+            // 
+            this.check_TicketReturn.AutoSize = true;
+            this.check_TicketReturn.BackColor = System.Drawing.Color.Black;
+            this.check_TicketReturn.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.check_TicketReturn.ForeColor = System.Drawing.Color.White;
+            this.check_TicketReturn.Location = new System.Drawing.Point(225, 41);
+            this.check_TicketReturn.Name = "check_TicketReturn";
+            this.check_TicketReturn.Size = new System.Drawing.Size(116, 23);
+            this.check_TicketReturn.TabIndex = 64;
+            this.check_TicketReturn.Text = "شاشة المردودات";
+            this.check_TicketReturn.UseVisualStyleBackColor = false;
+            // 
             // check_ReportTicketsReturn
             // 
             this.check_ReportTicketsReturn.AutoSize = true;
@@ -1579,19 +1592,6 @@
             this.checkBox1.Text = "فرع محدد";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
-            // check_TicketReturn
-            // 
-            this.check_TicketReturn.AutoSize = true;
-            this.check_TicketReturn.BackColor = System.Drawing.Color.Black;
-            this.check_TicketReturn.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.check_TicketReturn.ForeColor = System.Drawing.Color.White;
-            this.check_TicketReturn.Location = new System.Drawing.Point(225, 41);
-            this.check_TicketReturn.Name = "check_TicketReturn";
-            this.check_TicketReturn.Size = new System.Drawing.Size(116, 23);
-            this.check_TicketReturn.TabIndex = 64;
-            this.check_TicketReturn.Text = "شاشة المردودات";
-            this.check_TicketReturn.UseVisualStyleBackColor = false;
             // 
             // Validate_Users
             // 

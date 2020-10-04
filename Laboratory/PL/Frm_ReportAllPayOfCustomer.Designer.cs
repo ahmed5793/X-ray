@@ -297,7 +297,6 @@
             this.lookUpEdit1.Properties.DropDownRows = 15;
             this.lookUpEdit1.Properties.NullText = "أسم العميل";
             this.lookUpEdit1.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.StartsWith;
-            this.lookUpEdit1.Properties.SearchMode = DevExpress.XtraEditors.Controls.SearchMode.AutoSuggest;
             this.lookUpEdit1.Properties.ShowFooter = false;
             this.lookUpEdit1.Properties.ShowHeader = false;
             this.lookUpEdit1.Properties.ShowPopupShadow = false;

@@ -188,7 +188,7 @@
             // lookUpEdit1
             // 
             this.lookUpEdit1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lookUpEdit1.Location = new System.Drawing.Point(250, 180);
+            this.lookUpEdit1.Location = new System.Drawing.Point(143, 180);
             this.lookUpEdit1.Name = "lookUpEdit1";
             this.lookUpEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lookUpEdit1.Properties.Appearance.Options.UseFont = true;
@@ -202,12 +202,11 @@
             this.lookUpEdit1.Properties.DropDownRows = 15;
             this.lookUpEdit1.Properties.NullText = "أسم العميل";
             this.lookUpEdit1.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.StartsWith;
-            this.lookUpEdit1.Properties.SearchMode = DevExpress.XtraEditors.Controls.SearchMode.AutoSuggest;
             this.lookUpEdit1.Properties.ShowFooter = false;
             this.lookUpEdit1.Properties.ShowHeader = false;
             this.lookUpEdit1.Properties.ShowPopupShadow = false;
             this.lookUpEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.lookUpEdit1.Size = new System.Drawing.Size(380, 26);
+            this.lookUpEdit1.Size = new System.Drawing.Size(530, 26);
             this.lookUpEdit1.TabIndex = 179;
             this.lookUpEdit1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lookUpEdit1_KeyDown);
             // 
@@ -356,9 +355,9 @@
             this.simpleButton2.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.simpleButton2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(97, 175);
+            this.simpleButton2.Location = new System.Drawing.Point(25, 175);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(122, 32);
+            this.simpleButton2.Size = new System.Drawing.Size(102, 32);
             this.simpleButton2.TabIndex = 171;
             this.simpleButton2.Text = "بحث";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);

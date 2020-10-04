@@ -145,7 +145,7 @@ namespace Laboratory.PL
                     {
                         pa.txt_name.Text = dr[1].ToString();
                         pa.txt_date.Text = dr[5].ToString();
-                        pa.txt_total.Text = dr[12].ToString();
+                        pa.txt_total.Text = dr[21].ToString();
                         pa.txt_pay.Text = dr[13].ToString();
                         pa.txt_rent.Text = dr[14].ToString();
                         pa.txt_statues.Text = dr[15].ToString();

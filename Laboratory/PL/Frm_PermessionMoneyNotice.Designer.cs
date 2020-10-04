@@ -220,15 +220,17 @@
             this.cmb_client.Properties.DropDownRows = 15;
             this.cmb_client.Properties.NullText = "أسم العميل";
             this.cmb_client.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.StartsWith;
-            this.cmb_client.Properties.SearchMode = DevExpress.XtraEditors.Controls.SearchMode.AutoSuggest;
             this.cmb_client.Properties.ShowFooter = false;
             this.cmb_client.Properties.ShowHeader = false;
             this.cmb_client.Properties.ShowPopupShadow = false;
             this.cmb_client.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.cmb_client.Size = new System.Drawing.Size(374, 26);
             this.cmb_client.TabIndex = 179;
+            this.cmb_client.Click += new System.EventHandler(this.cmb_client_Click_1);
             this.cmb_client.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lookUpEdit1_KeyDown);
+            this.cmb_client.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmb_client_KeyPress);
             this.cmb_client.Leave += new System.EventHandler(this.lookUpEdit1_Leave);
+            this.cmb_client.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cmb_client_MouseClick);
             this.cmb_client.MouseLeave += new System.EventHandler(this.cmb_client_MouseLeave);
             this.cmb_client.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lookUpEdit1_MouseMove);
             // 

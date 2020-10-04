@@ -188,7 +188,6 @@ namespace Laboratory.PL
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-          
             try
             {
 
@@ -204,8 +203,7 @@ namespace Laboratory.PL
 
                 MessageBox.Show(ex.Message);
             }
-          
-          
+
         }
 
         private void Btn_Print_Click(object sender, EventArgs e)
@@ -222,6 +220,11 @@ namespace Laboratory.PL
         {
             
            
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+
         }
     }
 }

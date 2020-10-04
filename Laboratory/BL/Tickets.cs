@@ -190,14 +190,14 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
-        internal DataTable Report_StockMoneyCategoryXray(int  Id_Branch , DateTime From_Date , DateTime To_Date   )
+        internal DataTable Report_StockMoneyCategoryXray(string  Id_Branch , DateTime From_Date , DateTime To_Date   )
         {
             DataTable dt = new DataTable();
 
             DataAccessLayer da = new DataAccessLayer();
             da.open();
             SqlParameter[] param = new SqlParameter[3];
-            param[0] = new SqlParameter("@Id_Branch", SqlDbType.Int);
+            param[0] = new SqlParameter("@Id_Branch", SqlDbType.NVarChar,50);
             param[0].Value = Id_Branch;
             param[1] = new SqlParameter("@Date_From", SqlDbType.Date);
             param[1].Value = From_Date;

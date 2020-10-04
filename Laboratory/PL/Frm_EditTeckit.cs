@@ -88,7 +88,7 @@ namespace Laboratory.PL
             catch (Exception EX)
             {
                 MessageBox.Show(EX.Message);
-                MessageBox.Show(EX.StackTrace);
+               
             }
         }
 
@@ -103,6 +103,11 @@ namespace Laboratory.PL
         }
 
         private void txt_techincal_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Frm_EditTeckit_Load(object sender, EventArgs e)
         {
 
         }

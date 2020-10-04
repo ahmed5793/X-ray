@@ -599,7 +599,7 @@ namespace Laboratory.PL
                     else if (Check_Revenue.Checked == false) { Report_Revenues = 0; }
 
 
-                    p.UpdateUserAccount(txt_Baisc.Text, AddMasrof, ReportMasrof, AddStock, InsertStock, PullStock,
+                    p.UpdateUserAccount(txt_Baisc.Text, AddMasrof, ReportMasrof, AddStock, PullStock, InsertStock,
                         TransfierStock, ReciveMoney,ReportPullStock,ReportInsertStock, AddInstalment, reportInstalment, Report_Revenues);
 
                     MessageBox.Show(" تم حفظ الصلاحيات للمستخدم");

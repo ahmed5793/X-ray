@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_EditTeckit));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.Txt_OldNotes = new System.Windows.Forms.TextBox();
             this.txt_branch = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txt_dateRecive = new System.Windows.Forms.TextBox();
@@ -41,6 +43,8 @@
             this.label23 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.Txt_NewNotes = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.cmb_branches = new System.Windows.Forms.ComboBox();
             this.dtb_kashf = new System.Windows.Forms.DateTimePicker();
@@ -58,10 +62,6 @@
             this.txt_name = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.Txt_OldNotes = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.Txt_NewNotes = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -88,6 +88,34 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "بيانات الفحص قبل التعديل";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // label28
+            // 
+            this.label28.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label28.AutoSize = true;
+            this.label28.BackColor = System.Drawing.Color.White;
+            this.label28.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(328, 254);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(71, 24);
+            this.label28.TabIndex = 140;
+            this.label28.Text = "ملاحظات";
+            // 
+            // Txt_OldNotes
+            // 
+            this.Txt_OldNotes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.Txt_OldNotes.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_OldNotes.Location = new System.Drawing.Point(6, 223);
+            this.Txt_OldNotes.MaxLength = 3000;
+            this.Txt_OldNotes.Multiline = true;
+            this.Txt_OldNotes.Name = "Txt_OldNotes";
+            this.Txt_OldNotes.ReadOnly = true;
+            this.Txt_OldNotes.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Txt_OldNotes.Size = new System.Drawing.Size(316, 80);
+            this.Txt_OldNotes.TabIndex = 139;
+            this.Txt_OldNotes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_branch
             // 
@@ -227,6 +255,33 @@
             this.groupBox1.TabIndex = 119;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "بيانات الفحص الجديده";
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.White;
+            this.label8.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(333, 254);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(71, 24);
+            this.label8.TabIndex = 145;
+            this.label8.Text = "ملاحظات";
+            // 
+            // Txt_NewNotes
+            // 
+            this.Txt_NewNotes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.Txt_NewNotes.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_NewNotes.Location = new System.Drawing.Point(11, 223);
+            this.Txt_NewNotes.MaxLength = 3000;
+            this.Txt_NewNotes.Multiline = true;
+            this.Txt_NewNotes.Name = "Txt_NewNotes";
+            this.Txt_NewNotes.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Txt_NewNotes.Size = new System.Drawing.Size(316, 80);
+            this.Txt_NewNotes.TabIndex = 144;
+            this.Txt_NewNotes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label21
             // 
@@ -436,60 +491,6 @@
             this.label2.Text = "رقم الحجز";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label28
-            // 
-            this.label28.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label28.AutoSize = true;
-            this.label28.BackColor = System.Drawing.Color.White;
-            this.label28.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(328, 254);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(71, 24);
-            this.label28.TabIndex = 140;
-            this.label28.Text = "ملاحظات";
-            // 
-            // Txt_OldNotes
-            // 
-            this.Txt_OldNotes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.Txt_OldNotes.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_OldNotes.Location = new System.Drawing.Point(6, 223);
-            this.Txt_OldNotes.MaxLength = 3000;
-            this.Txt_OldNotes.Multiline = true;
-            this.Txt_OldNotes.Name = "Txt_OldNotes";
-            this.Txt_OldNotes.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Txt_OldNotes.Size = new System.Drawing.Size(316, 80);
-            this.Txt_OldNotes.TabIndex = 139;
-            this.Txt_OldNotes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label8
-            // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.White;
-            this.label8.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(333, 254);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(71, 24);
-            this.label8.TabIndex = 145;
-            this.label8.Text = "ملاحظات";
-            // 
-            // Txt_NewNotes
-            // 
-            this.Txt_NewNotes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.Txt_NewNotes.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_NewNotes.Location = new System.Drawing.Point(11, 223);
-            this.Txt_NewNotes.MaxLength = 3000;
-            this.Txt_NewNotes.Multiline = true;
-            this.Txt_NewNotes.Name = "Txt_NewNotes";
-            this.Txt_NewNotes.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Txt_NewNotes.Size = new System.Drawing.Size(316, 80);
-            this.Txt_NewNotes.TabIndex = 144;
-            this.Txt_NewNotes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // Frm_EditTeckit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -510,6 +511,7 @@
             this.Name = "Frm_EditTeckit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "شاشة تعديل بيانات الحجز";
+            this.Load += new System.EventHandler(this.Frm_EditTeckit_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);

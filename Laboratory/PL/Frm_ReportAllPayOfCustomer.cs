@@ -101,6 +101,8 @@ namespace Laboratory.PL
                         return;
 
                     }
+                    dt5 = C.Select_CustomertotalBAlance(Convert.ToInt32(lookUpEdit1.EditValue));
+                    textBox1.Text = dt5.Rows[0][0].ToString();
                 }
             }
             catch (Exception ex)

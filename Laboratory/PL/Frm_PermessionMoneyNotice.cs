@@ -385,6 +385,21 @@ namespace Laboratory.PL
         private void cmb_client_MouseLeave(object sender, EventArgs e)
         {
         }
+
+        private void cmb_client_Click_1(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void cmb_client_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void cmb_client_MouseClick(object sender, MouseEventArgs e)
+        {
+            Txt_Balance.Text = "0";
+        }
     }
 }
 
