@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetRevenue" targetNamespace="http://tempuri.org/DataSetRevenue.xsd" xmlns:mstns="http://tempuri.org/DataSetRevenue.xsd" xmlns="http://tempuri.org/DataSetRevenue.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetRevenue" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetRevenue" msprop:Generator_UserDSName="DataSetRevenue">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTableCount" msprop:Generator_TableClassName="DataTableCountDataTable" msprop:Generator_TableVarName="tableDataTableCount" msprop:Generator_TablePropName="DataTableCount" msprop:Generator_RowDeletingName="DataTableCountRowDeleting" msprop:Generator_RowChangingName="DataTableCountRowChanging" msprop:Generator_RowEvHandlerName="DataTableCountRowChangeEventHandler" msprop:Generator_RowDeletedName="DataTableCountRowDeleted" msprop:Generator_UserTableName="DataTableCount" msprop:Generator_RowChangedName="DataTableCountRowChanged" msprop:Generator_RowEvArgName="DataTableCountRowChangeEvent" msprop:Generator_RowClassName="DataTableCountRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
+              <xs:element name="ثانوية_x0020_قديم" msprop:Generator_ColumnVarNameInTable="columnثانوية_قديم" msprop:Generator_ColumnPropNameInRow="ثانوية_قديم" msprop:Generator_ColumnPropNameInTable="ثانوية_قديمColumn" msprop:Generator_UserColumnName="ثانوية قديم" type="xs:string" minOccurs="0" />
+              <xs:element name="ثانوية_x0020_جديد" msprop:Generator_ColumnVarNameInTable="columnثانوية_جديد" msprop:Generator_ColumnPropNameInRow="ثانوية_جديد" msprop:Generator_ColumnPropNameInTable="ثانوية_جديدColumn" msprop:Generator_UserColumnName="ثانوية جديد" type="xs:string" minOccurs="0" />
+              <xs:element name="الجمهورية" msprop:Generator_ColumnVarNameInTable="columnالجمهورية" msprop:Generator_ColumnPropNameInRow="الجمهورية" msprop:Generator_ColumnPropNameInTable="الجمهوريةColumn" msprop:Generator_UserColumnName="الجمهورية" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DataTableMoney" msprop:Generator_TableClassName="DataTableMoneyDataTable" msprop:Generator_TableVarName="tableDataTableMoney" msprop:Generator_TablePropName="DataTableMoney" msprop:Generator_RowDeletingName="DataTableMoneyRowDeleting" msprop:Generator_RowChangingName="DataTableMoneyRowChanging" msprop:Generator_RowEvHandlerName="DataTableMoneyRowChangeEventHandler" msprop:Generator_RowDeletedName="DataTableMoneyRowDeleted" msprop:Generator_UserTableName="DataTableMoney" msprop:Generator_RowChangedName="DataTableMoneyRowChanged" msprop:Generator_RowEvArgName="DataTableMoneyRowChangeEvent" msprop:Generator_RowClassName="DataTableMoneyRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
+              <xs:element name="ثانوية_x0020_قديم" msprop:Generator_ColumnVarNameInTable="columnثانوية_قديم" msprop:Generator_ColumnPropNameInRow="ثانوية_قديم" msprop:Generator_ColumnPropNameInTable="ثانوية_قديمColumn" msprop:Generator_UserColumnName="ثانوية قديم" type="xs:string" minOccurs="0" />
+              <xs:element name="ثانوية_x0020_جديد" msprop:Generator_ColumnVarNameInTable="columnثانوية_جديد" msprop:Generator_ColumnPropNameInRow="ثانوية_جديد" msprop:Generator_ColumnPropNameInTable="ثانوية_جديدColumn" msprop:Generator_UserColumnName="ثانوية جديد" type="xs:string" minOccurs="0" />
+              <xs:element name="الجمهورية" msprop:Generator_ColumnVarNameInTable="columnالجمهورية" msprop:Generator_ColumnPropNameInRow="الجمهورية" msprop:Generator_ColumnPropNameInTable="الجمهوريةColumn" msprop:Generator_UserColumnName="الجمهورية" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DataTableDiscount" msprop:Generator_TableClassName="DataTableDiscountDataTable" msprop:Generator_TableVarName="tableDataTableDiscount" msprop:Generator_TablePropName="DataTableDiscount" msprop:Generator_RowDeletingName="DataTableDiscountRowDeleting" msprop:Generator_RowChangingName="DataTableDiscountRowChanging" msprop:Generator_RowEvHandlerName="DataTableDiscountRowChangeEventHandler" msprop:Generator_RowDeletedName="DataTableDiscountRowDeleted" msprop:Generator_UserTableName="DataTableDiscount" msprop:Generator_RowChangedName="DataTableDiscountRowChanged" msprop:Generator_RowEvArgName="DataTableDiscountRowChangeEvent" msprop:Generator_RowClassName="DataTableDiscountRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
+              <xs:element name="ثانوية_x0020_قديم" msprop:Generator_ColumnVarNameInTable="columnثانوية_قديم" msprop:Generator_ColumnPropNameInRow="ثانوية_قديم" msprop:Generator_ColumnPropNameInTable="ثانوية_قديمColumn" msprop:Generator_UserColumnName="ثانوية قديم" type="xs:string" minOccurs="0" />
+              <xs:element name="ثانوية_x0020_جديد" msprop:Generator_ColumnVarNameInTable="columnثانوية_جديد" msprop:Generator_ColumnPropNameInRow="ثانوية_جديد" msprop:Generator_ColumnPropNameInTable="ثانوية_جديدColumn" msprop:Generator_UserColumnName="ثانوية جديد" type="xs:string" minOccurs="0" />
+              <xs:element name="الجمهورية" msprop:Generator_ColumnVarNameInTable="columnالجمهورية" msprop:Generator_ColumnPropNameInRow="الجمهورية" msprop:Generator_ColumnPropNameInTable="الجمهوريةColumn" msprop:Generator_UserColumnName="الجمهورية" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DataTableReturn" msprop:Generator_TableClassName="DataTableReturnDataTable" msprop:Generator_TableVarName="tableDataTableReturn" msprop:Generator_TablePropName="DataTableReturn" msprop:Generator_RowDeletingName="DataTableReturnRowDeleting" msprop:Generator_RowChangingName="DataTableReturnRowChanging" msprop:Generator_RowEvHandlerName="DataTableReturnRowChangeEventHandler" msprop:Generator_RowDeletedName="DataTableReturnRowDeleted" msprop:Generator_UserTableName="DataTableReturn" msprop:Generator_RowChangedName="DataTableReturnRowChanged" msprop:Generator_RowEvArgName="DataTableReturnRowChangeEvent" msprop:Generator_RowClassName="DataTableReturnRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
+              <xs:element name="ثانوية_x0020_قديم" msprop:Generator_ColumnVarNameInTable="columnثانوية_قديم" msprop:Generator_ColumnPropNameInRow="ثانوية_قديم" msprop:Generator_ColumnPropNameInTable="ثانوية_قديمColumn" msprop:Generator_UserColumnName="ثانوية قديم" type="xs:string" minOccurs="0" />
+              <xs:element name="ثانوية_x0020_جديد" msprop:Generator_ColumnVarNameInTable="columnثانوية_جديد" msprop:Generator_ColumnPropNameInRow="ثانوية_جديد" msprop:Generator_ColumnPropNameInTable="ثانوية_جديدColumn" msprop:Generator_UserColumnName="ثانوية جديد" type="xs:string" minOccurs="0" />
+              <xs:element name="الجمهورية" msprop:Generator_ColumnVarNameInTable="columnالجمهورية" msprop:Generator_ColumnPropNameInRow="الجمهورية" msprop:Generator_ColumnPropNameInTable="الجمهوريةColumn" msprop:Generator_UserColumnName="الجمهورية" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
