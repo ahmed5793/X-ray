@@ -1001,6 +1001,14 @@
     <Compile Include="frm_SingelReport.Designer.cs">
       <DependentUpon>frm_SingelReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="RPT\Order\DataSetRevenue.cs">
+      <DependentUpon>DataSetRevenue.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RPT\Order\DataSetRevenue.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetRevenue.xsd</DependentUpon>
+    </Compile>
     <Compile Include="RPT\Order\RPT_FingerExcellDay.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -1012,6 +1020,12 @@
     </Compile>
     <Compile Include="RPT\Order\RPT_FingeerExcell.Designer.cs">
       <DependentUpon>RPT_FingeerExcell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RPT\Order\Rpt_Revenue.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Rpt_Revenue.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="RPT\Order\Rpt_TeckietCompanyOrder.cs">
       <SubType>Component</SubType>
@@ -1400,6 +1414,10 @@
     <EmbeddedResource Include="RPT\Order\RPT_FingeerExcell.resx">
       <DependentUpon>RPT_FingeerExcell.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RPT\Order\Rpt_Revenue.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Rpt_Revenue.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="RPT\Order\Rpt_TeckietCompanyOrder.resx">
       <DependentUpon>Rpt_TeckietCompanyOrder.cs</DependentUpon>
     </EmbeddedResource>
@@ -1470,6 +1488,17 @@
     </None>
     <None Include="RPT\Order\DataSetOrderPay.xss">
       <DependentUpon>DataSetOrderPay.xsd</DependentUpon>
+    </None>
+    <None Include="RPT\Order\DataSetRevenue.xsc">
+      <DependentUpon>DataSetRevenue.xsd</DependentUpon>
+    </None>
+    <None Include="RPT\Order\DataSetRevenue.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetRevenue.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="RPT\Order\DataSetRevenue.xss">
+      <DependentUpon>DataSetRevenue.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
