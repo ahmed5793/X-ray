@@ -983,7 +983,81 @@ namespace Laboratory.BL
             return dt;
         }
 
+        internal DataTable Report_ReveuneBranchesDiscount( DateTime from, DateTime to)
+        {
+            DataTable dt = new DataTable();
 
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[2];
+
+
+            param[0] = new SqlParameter("@Date_From", SqlDbType.Date);
+            param[0].Value = from;
+            param[1] = new SqlParameter("@Date_To", SqlDbType.Date);
+            param[1].Value = to;
+
+            dt = da.selected("Report_ReveuneBranchesDiscount", param);
+            da.close();
+            return dt;
+        }
+
+
+        internal DataTable Report_ReveuneBranches(DateTime from, DateTime to)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[2];
+
+
+            param[0] = new SqlParameter("@Date_From", SqlDbType.Date);
+            param[0].Value = from;
+            param[1] = new SqlParameter("@Date_To", SqlDbType.Date);
+            param[1].Value = to;
+
+            dt = da.selected("Report_ReveuneBranches", param);
+            da.close();
+            return dt;
+        }
+        internal DataTable Report_ReveuneBranchesMoney(DateTime from, DateTime to)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[2];
+
+
+
+            param[0] = new SqlParameter("@Date_From", SqlDbType.Date);
+            param[0].Value = from;
+            param[1] = new SqlParameter("@Date_To", SqlDbType.Date);
+            param[1].Value = to;
+
+            dt = da.selected("Report_ReveuneBranchesMoney", param);
+            da.close();
+            return dt;
+        }
+        internal DataTable Report_ReveuneBranchesReturn(DateTime from, DateTime to)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[2];
+
+
+            param[0] = new SqlParameter("@Date_From", SqlDbType.Date);
+            param[0].Value = from;
+            param[1] = new SqlParameter("@Date_To", SqlDbType.Date);
+            param[1].Value = to;
+
+            dt = da.selected("Report_ReveuneBranchesReturn", param);
+            da.close();
+            return dt;
+        }
 
     }
 }

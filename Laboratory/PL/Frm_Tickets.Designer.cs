@@ -34,12 +34,11 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.rdb_NewPatient = new System.Windows.Forms.RadioButton();
             this.rdb_CurrentPatient = new System.Windows.Forms.RadioButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.Cmb_customer = new System.Windows.Forms.ComboBox();
             this.txt_idntational = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.Cmb_customer = new System.Windows.Forms.ComboBox();
             this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.txt_compint = new System.Windows.Forms.TextBox();
@@ -57,9 +56,6 @@
             this.dtp_recive = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btn_addgrid = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.label12 = new System.Windows.Forms.Label();
             this.cmb_DoctorOfCenter = new System.Windows.Forms.ComboBox();
             this.cmb_Techincal = new System.Windows.Forms.ComboBox();
@@ -110,13 +106,17 @@
             this.cmb_statues = new System.Windows.Forms.ComboBox();
             this.label21 = new System.Windows.Forms.Label();
             this.cmb_UserBranch = new System.Windows.Forms.ComboBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             this.Btn_DetailsCompany = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.Btn_Save = new DevExpress.XtraEditors.SimpleButton();
             this.Btn_NewOrder = new DevExpress.XtraEditors.SimpleButton();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_addgrid = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox1.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -205,25 +205,23 @@
             this.rdb_CurrentPatient.UseVisualStyleBackColor = false;
             this.rdb_CurrentPatient.CheckedChanged += new System.EventHandler(this.rdb_CurrentPatient_CheckedChanged);
             // 
-            // simpleButton2
+            // Cmb_customer
             // 
-            this.simpleButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton2.Appearance.BackColor = System.Drawing.Color.Black;
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton2.Appearance.ForeColor = System.Drawing.Color.White;
-            this.simpleButton2.Appearance.Options.UseBackColor = true;
-            this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.Appearance.Options.UseForeColor = true;
-            this.simpleButton2.Appearance.Options.UseTextOptions = true;
-            this.simpleButton2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.simpleButton2.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.simpleButton2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(48, 231);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(43, 32);
-            this.simpleButton2.TabIndex = 183;
-            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click_1);
+            this.Cmb_customer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Cmb_customer.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.Cmb_customer.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.Cmb_customer.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cmb_customer.FormattingEnabled = true;
+            this.Cmb_customer.Location = new System.Drawing.Point(96, 66);
+            this.Cmb_customer.Name = "Cmb_customer";
+            this.Cmb_customer.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Cmb_customer.Size = new System.Drawing.Size(257, 26);
+            this.Cmb_customer.TabIndex = 92;
+            this.Cmb_customer.SelectedIndexChanged += new System.EventHandler(this.Cmb_customer_SelectedIndexChanged);
+            this.Cmb_customer.SelectionChangeCommitted += new System.EventHandler(this.Cmb_customer_SelectionChangeCommitted);
+            this.Cmb_customer.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Cmb_customer_KeyDown);
+            this.Cmb_customer.Leave += new System.EventHandler(this.Cmb_customer_Leave);
             // 
             // txt_idntational
             // 
@@ -279,24 +277,6 @@
             this.comboBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.comboBox1.Size = new System.Drawing.Size(111, 26);
             this.comboBox1.TabIndex = 95;
-            // 
-            // Cmb_customer
-            // 
-            this.Cmb_customer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Cmb_customer.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.Cmb_customer.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.Cmb_customer.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cmb_customer.FormattingEnabled = true;
-            this.Cmb_customer.Location = new System.Drawing.Point(96, 66);
-            this.Cmb_customer.Name = "Cmb_customer";
-            this.Cmb_customer.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Cmb_customer.Size = new System.Drawing.Size(257, 26);
-            this.Cmb_customer.TabIndex = 92;
-            this.Cmb_customer.SelectedIndexChanged += new System.EventHandler(this.Cmb_customer_SelectedIndexChanged);
-            this.Cmb_customer.SelectionChangeCommitted += new System.EventHandler(this.Cmb_customer_SelectionChangeCommitted);
-            this.Cmb_customer.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Cmb_customer_KeyDown);
-            this.Cmb_customer.Leave += new System.EventHandler(this.Cmb_customer_Leave);
             // 
             // comboBox7
             // 
@@ -530,66 +510,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "بيانات الاشعة";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
-            // 
-            // btn_addgrid
-            // 
-            this.btn_addgrid.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btn_addgrid.Appearance.BackColor = System.Drawing.Color.Black;
-            this.btn_addgrid.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_addgrid.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btn_addgrid.Appearance.Options.UseBackColor = true;
-            this.btn_addgrid.Appearance.Options.UseFont = true;
-            this.btn_addgrid.Appearance.Options.UseForeColor = true;
-            this.btn_addgrid.Appearance.Options.UseTextOptions = true;
-            this.btn_addgrid.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.btn_addgrid.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.btn_addgrid.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.btn_addgrid.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_addgrid.ImageOptions.Image")));
-            this.btn_addgrid.Location = new System.Drawing.Point(65, 108);
-            this.btn_addgrid.Name = "btn_addgrid";
-            this.btn_addgrid.Size = new System.Drawing.Size(43, 35);
-            this.btn_addgrid.TabIndex = 186;
-            this.btn_addgrid.Click += new System.EventHandler(this.simpleButton5_Click);
-            // 
-            // simpleButton3
-            // 
-            this.simpleButton3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.simpleButton3.Appearance.BackColor = System.Drawing.Color.Black;
-            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton3.Appearance.ForeColor = System.Drawing.Color.White;
-            this.simpleButton3.Appearance.Options.UseBackColor = true;
-            this.simpleButton3.Appearance.Options.UseFont = true;
-            this.simpleButton3.Appearance.Options.UseForeColor = true;
-            this.simpleButton3.Appearance.Options.UseTextOptions = true;
-            this.simpleButton3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.simpleButton3.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.simpleButton3.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
-            this.simpleButton3.Location = new System.Drawing.Point(74, 54);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(43, 32);
-            this.simpleButton3.TabIndex = 184;
-            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
-            // 
-            // simpleButton4
-            // 
-            this.simpleButton4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.simpleButton4.Appearance.BackColor = System.Drawing.Color.Black;
-            this.simpleButton4.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton4.Appearance.ForeColor = System.Drawing.Color.White;
-            this.simpleButton4.Appearance.Options.UseBackColor = true;
-            this.simpleButton4.Appearance.Options.UseFont = true;
-            this.simpleButton4.Appearance.Options.UseForeColor = true;
-            this.simpleButton4.Appearance.Options.UseTextOptions = true;
-            this.simpleButton4.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.simpleButton4.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.simpleButton4.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.simpleButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
-            this.simpleButton4.Location = new System.Drawing.Point(74, 18);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(43, 32);
-            this.simpleButton4.TabIndex = 185;
-            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
             // 
             // label12
             // 
@@ -1251,10 +1171,10 @@
             this.dtb_visit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dtb_visit.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtb_visit.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtb_visit.Location = new System.Drawing.Point(886, 148);
+            this.dtb_visit.Location = new System.Drawing.Point(876, 148);
             this.dtb_visit.Name = "dtb_visit";
             this.dtb_visit.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dtb_visit.Size = new System.Drawing.Size(118, 25);
+            this.dtb_visit.Size = new System.Drawing.Size(128, 25);
             this.dtb_visit.TabIndex = 95;
             // 
             // cmb_Company
@@ -1330,6 +1250,32 @@
             this.cmb_UserBranch.TabIndex = 118;
             this.cmb_UserBranch.SelectedIndexChanged += new System.EventHandler(this.cmb_UserBranch_SelectedIndexChanged);
             this.cmb_UserBranch.SelectionChangeCommitted += new System.EventHandler(this.cmb_UserBranch_SelectionChangeCommitted);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // simpleButton5
+            // 
+            this.simpleButton5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.simpleButton5.Appearance.BackColor = System.Drawing.Color.Black;
+            this.simpleButton5.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton5.Appearance.ForeColor = System.Drawing.Color.White;
+            this.simpleButton5.Appearance.Options.UseBackColor = true;
+            this.simpleButton5.Appearance.Options.UseFont = true;
+            this.simpleButton5.Appearance.Options.UseForeColor = true;
+            this.simpleButton5.Appearance.Options.UseTextOptions = true;
+            this.simpleButton5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.simpleButton5.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.simpleButton5.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.simpleButton5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
+            this.simpleButton5.Location = new System.Drawing.Point(342, 571);
+            this.simpleButton5.Name = "simpleButton5";
+            this.simpleButton5.Size = new System.Drawing.Size(144, 32);
+            this.simpleButton5.TabIndex = 183;
+            this.simpleButton5.Text = "طباعة الفاتورة";
+            this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click_1);
             // 
             // Btn_DetailsCompany
             // 
@@ -1415,31 +1361,85 @@
             this.Btn_NewOrder.Text = "فاتورة جديدة";
             this.Btn_NewOrder.Click += new System.EventHandler(this.Btn_Add_Click);
             // 
-            // timer1
+            // btn_addgrid
             // 
-            this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.btn_addgrid.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btn_addgrid.Appearance.BackColor = System.Drawing.Color.Black;
+            this.btn_addgrid.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_addgrid.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btn_addgrid.Appearance.Options.UseBackColor = true;
+            this.btn_addgrid.Appearance.Options.UseFont = true;
+            this.btn_addgrid.Appearance.Options.UseForeColor = true;
+            this.btn_addgrid.Appearance.Options.UseTextOptions = true;
+            this.btn_addgrid.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btn_addgrid.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.btn_addgrid.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.btn_addgrid.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_addgrid.ImageOptions.Image")));
+            this.btn_addgrid.Location = new System.Drawing.Point(65, 108);
+            this.btn_addgrid.Name = "btn_addgrid";
+            this.btn_addgrid.Size = new System.Drawing.Size(43, 35);
+            this.btn_addgrid.TabIndex = 186;
+            this.btn_addgrid.Click += new System.EventHandler(this.simpleButton5_Click);
             // 
-            // simpleButton5
+            // simpleButton3
             // 
-            this.simpleButton5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.simpleButton5.Appearance.BackColor = System.Drawing.Color.Black;
-            this.simpleButton5.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton5.Appearance.ForeColor = System.Drawing.Color.White;
-            this.simpleButton5.Appearance.Options.UseBackColor = true;
-            this.simpleButton5.Appearance.Options.UseFont = true;
-            this.simpleButton5.Appearance.Options.UseForeColor = true;
-            this.simpleButton5.Appearance.Options.UseTextOptions = true;
-            this.simpleButton5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.simpleButton5.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.simpleButton5.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.simpleButton5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
-            this.simpleButton5.Location = new System.Drawing.Point(342, 571);
-            this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(144, 32);
-            this.simpleButton5.TabIndex = 183;
-            this.simpleButton5.Text = "طباعة الفاتورة";
-            this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click_1);
+            this.simpleButton3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.simpleButton3.Appearance.BackColor = System.Drawing.Color.Black;
+            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton3.Appearance.ForeColor = System.Drawing.Color.White;
+            this.simpleButton3.Appearance.Options.UseBackColor = true;
+            this.simpleButton3.Appearance.Options.UseFont = true;
+            this.simpleButton3.Appearance.Options.UseForeColor = true;
+            this.simpleButton3.Appearance.Options.UseTextOptions = true;
+            this.simpleButton3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.simpleButton3.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.simpleButton3.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
+            this.simpleButton3.Location = new System.Drawing.Point(74, 54);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(43, 32);
+            this.simpleButton3.TabIndex = 184;
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
+            // 
+            // simpleButton4
+            // 
+            this.simpleButton4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.simpleButton4.Appearance.BackColor = System.Drawing.Color.Black;
+            this.simpleButton4.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton4.Appearance.ForeColor = System.Drawing.Color.White;
+            this.simpleButton4.Appearance.Options.UseBackColor = true;
+            this.simpleButton4.Appearance.Options.UseFont = true;
+            this.simpleButton4.Appearance.Options.UseForeColor = true;
+            this.simpleButton4.Appearance.Options.UseTextOptions = true;
+            this.simpleButton4.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.simpleButton4.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.simpleButton4.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.simpleButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
+            this.simpleButton4.Location = new System.Drawing.Point(74, 18);
+            this.simpleButton4.Name = "simpleButton4";
+            this.simpleButton4.Size = new System.Drawing.Size(43, 32);
+            this.simpleButton4.TabIndex = 185;
+            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButton2.Appearance.BackColor = System.Drawing.Color.Black;
+            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton2.Appearance.ForeColor = System.Drawing.Color.White;
+            this.simpleButton2.Appearance.Options.UseBackColor = true;
+            this.simpleButton2.Appearance.Options.UseFont = true;
+            this.simpleButton2.Appearance.Options.UseForeColor = true;
+            this.simpleButton2.Appearance.Options.UseTextOptions = true;
+            this.simpleButton2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.simpleButton2.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.simpleButton2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.simpleButton2.Location = new System.Drawing.Point(48, 231);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(43, 32);
+            this.simpleButton2.TabIndex = 183;
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click_1);
             // 
             // Frm_Tickets
             // 

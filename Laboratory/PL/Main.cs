@@ -1290,9 +1290,15 @@ namespace Laboratory.PL
 
         private void Btn_Revenues_ItemClick(object sender, ItemClickEventArgs e)
         {
+
+
+
             try
             {
-                Frm_Revenue fr = new Frm_Revenue();
+                //Frm_Revenue fr = new Frm_Revenue();
+                //fr.Show();
+
+                Laboratory.RPT.Order.Frm_Report fr = new RPT.Order.Frm_Report();
                 fr.Show();
             }
             catch (Exception ex)

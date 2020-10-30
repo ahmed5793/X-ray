@@ -4,6 +4,10 @@
 
     partial class DataSetRevenue
     {
+        partial class DataTableMoneyDataTable
+        {
+        }
+
         partial class DataTableCountDataTable
         {
         }

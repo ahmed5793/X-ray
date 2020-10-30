@@ -1009,6 +1009,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetRevenue.xsd</DependentUpon>
     </Compile>
+    <Compile Include="RPT\Order\Frm_Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RPT\Order\Frm_Report.Designer.cs">
+      <DependentUpon>Frm_Report.cs</DependentUpon>
+    </Compile>
     <Compile Include="RPT\Order\RPT_FingerExcellDay.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -1038,6 +1044,12 @@
     </Compile>
     <Compile Include="RPT\Order\Rpt_OrderPay.designer.cs">
       <DependentUpon>Rpt_OrderPay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RPT\XtraReport1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPT\XtraReport1.Designer.cs">
+      <DependentUpon>XtraReport1.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="PL\Frm_TeckeitReturn.resx">
       <DependentUpon>Frm_TeckeitReturn.cs</DependentUpon>
@@ -1408,6 +1420,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport2.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="RPT\Order\Frm_Report.resx">
+      <DependentUpon>Frm_Report.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RPT\Order\RPT_FingerExcellDay.resx">
       <DependentUpon>RPT_FingerExcellDay.cs</DependentUpon>
     </EmbeddedResource>
@@ -1423,6 +1438,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RPT\Order\Rpt_OrderPay.resx">
       <DependentUpon>Rpt_OrderPay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\XtraReport1.resx">
+      <DependentUpon>XtraReport1.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
