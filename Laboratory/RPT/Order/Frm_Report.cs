@@ -33,7 +33,7 @@ namespace Laboratory.RPT.Order
                
                 Frm_Report sr = new Frm_Report();
 
-                XtraReport1 report = new XtraReport1();
+                Rpt_Revenue report = new Rpt_Revenue();
                 DataSetRevenue dso = new DataSetRevenue();
                
                 dt1.Clear();
@@ -86,15 +86,22 @@ namespace Laboratory.RPT.Order
                        dt4.Rows[i][3]);
                 }
 
-
-
-                report.DataSource = dso;
-                report.Parameters["DateFrom"].Value = dtb_from.Value;
-                report.Parameters["DateTo"].Value = dtb_to.Value;
+                sr.documentViewer1.Refresh();
+                report.SetDataSource(dso);
+                report.SetParameterValue("DateFrom", dtb_from.Value);
+                report.SetParameterValue("Date_To", dtb_to.Value);
+               
                 sr.documentViewer1.DocumentSource = report;
-                report.Parameters["DateFrom"].Visible = false;
-                report.Parameters["DateTo"].Visible = false;
-                sr.documentViewer1.Enabled = true;
+                ///sr.documentViewer1.DocumentSource = report;
+
+               
+                //report.DataSource = dso;
+                //report.Parameters["DateFrom"].Value = dtb_from.Value;
+                //report.Parameters["DateTo"].Value = dtb_to.Value;
+                //sr.documentViewer1.DocumentSource = report;
+                //report.Parameters["DateFrom"].Visible = false;
+                //report.Parameters["DateTo"].Visible = false;
+                //sr.documentViewer1.Enabled = true;
                 sr.ShowDialog();
             }
             catch (Exception ex)
