@@ -16,14 +16,14 @@ namespace Laboratory.RPT.Order {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class Rpt_Revenue : ReportClass {
+    public class Rpt_RevenueDataSet : ReportClass {
         
-        public Rpt_Revenue() {
+        public Rpt_RevenueDataSet() {
         }
         
         public override string ResourceName {
             get {
-                return "Rpt_Revenue.rpt";
+                return "Rpt_RevenueDataSet.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Laboratory.RPT.Order {
         
         public override string FullResourceName {
             get {
-                return "Laboratory.RPT.Order.Rpt_Revenue.rpt";
+                return "Laboratory.RPT.Order.Rpt_RevenueDataSet.rpt";
             }
             set {
                 // Do nothing
@@ -90,7 +90,7 @@ namespace Laboratory.RPT.Order {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_Date_From {
+        public CrystalDecisions.Shared.IParameterField Parameter_From {
             get {
                 return this.DataDefinition.ParameterFields[0];
             }
@@ -98,7 +98,7 @@ namespace Laboratory.RPT.Order {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_Date_To {
+        public CrystalDecisions.Shared.IParameterField Parameter_To {
             get {
                 return this.DataDefinition.ParameterFields[1];
             }
@@ -106,9 +106,9 @@ namespace Laboratory.RPT.Order {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedRpt_Revenue : Component, ICachedReport {
+    public class CachedRpt_RevenueDataSet : Component, ICachedReport {
         
-        public CachedRpt_Revenue() {
+        public CachedRpt_RevenueDataSet() {
         }
         
         [Browsable(false)]
@@ -145,7 +145,7 @@ namespace Laboratory.RPT.Order {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            Rpt_Revenue rpt = new Rpt_Revenue();
+            Rpt_RevenueDataSet rpt = new Rpt_RevenueDataSet();
             rpt.Site = this.Site;
             return rpt;
         }
