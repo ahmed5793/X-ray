@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Search_Ticket));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.ToDate = new System.Windows.Forms.DateTimePicker();
             this.FromDate = new System.Windows.Forms.DateTimePicker();
             this.button2 = new DevExpress.XtraEditors.SimpleButton();
@@ -50,7 +51,6 @@
             this.txt_totalinvoice = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -76,6 +76,19 @@
             this.groupBox1.Size = new System.Drawing.Size(998, 118);
             this.groupBox1.TabIndex = 100;
             this.groupBox1.TabStop = false;
+            // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.White;
+            this.label7.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(479, 16);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(47, 24);
+            this.label7.TabIndex = 208;
+            this.label7.Text = "الفرع";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // ToDate
             // 
@@ -387,30 +400,17 @@
             this.label6.BackColor = System.Drawing.Color.Black;
             this.label6.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(624, 504);
+            this.label6.Location = new System.Drawing.Point(621, 503);
             this.label6.Name = "label6";
             this.label6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label6.Size = new System.Drawing.Size(136, 27);
+            this.label6.Size = new System.Drawing.Size(301, 27);
             this.label6.TabIndex = 240;
-            this.label6.Text = "إجمالى المبيعات";
+            this.label6.Text = "إجمالى المبيعات بعد الخصومات";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // backgroundWorker1
             // 
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
-            // 
-            // label7
-            // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.White;
-            this.label7.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(479, 16);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(47, 24);
-            this.label7.TabIndex = 208;
-            this.label7.Text = "الفرع";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // Frm_Search_Ticket
             // 
