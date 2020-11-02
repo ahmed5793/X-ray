@@ -88,13 +88,13 @@ namespace Laboratory.RPT.Order
                 //       dt4.Rows[i][3]);
                 //}
 
-                sr.documentViewer1.Refresh();
+                sr.crystalReportViewer1.Refresh();
                 report.SetDatabaseLogon("DB_A54A03_LastLaboratory_admin", "Titonasser1994", "sql5033.site4now.net", "DB_A54A03_LastLaboratory");
             
                 report.SetParameterValue("@Date_From", dtb_from.Text);
                 report.SetParameterValue("@Date_To", dtb_to.Text);
 
-                sr.documentViewer1.DocumentSource = report;
+                crystalReportViewer1.ReportSource = report;
               //  sr.documentViewer1.Enabled = true;
 
                 ///sr.documentViewer1.DocumentSource = report;
@@ -106,20 +106,15 @@ namespace Laboratory.RPT.Order
                 //sr.documentViewer1.DocumentSource = report;
                 //report.Parameters["DateFrom"].Visible = false;
                 //report.Parameters["DateTo"].Visible = false;
-                sr.documentViewer1.Enabled = true;
-                sr.ShowDialog();
-                
+              
+              //  sr.ShowDialog();
+               
             }
             catch (Exception ex)
             {
 
                MessageBox.Show(ex.Message);
             }
-        }
-
-        private void documentViewer1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
