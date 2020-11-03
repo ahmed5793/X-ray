@@ -98,7 +98,6 @@
             this.groupBox1.Size = new System.Drawing.Size(907, 419);
             this.groupBox1.TabIndex = 100;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
             // 
             // groupBox2
             // 
@@ -114,7 +113,6 @@
             this.groupBox2.Size = new System.Drawing.Size(888, 58);
             this.groupBox2.TabIndex = 101;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
             // 
             // Btn_Save
             // 
@@ -156,8 +154,10 @@
             this.ClientSize = new System.Drawing.Size(912, 500);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.MinimumSize = new System.Drawing.Size(928, 539);
             this.Name = "Frm_Report";
-            this.Text = "Frm_Report";
+            this.Text = " ";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
