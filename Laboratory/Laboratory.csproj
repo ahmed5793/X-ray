@@ -963,6 +963,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RPT\DataSetMoveStock.cs">
+      <DependentUpon>DataSetMoveStock.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RPT\DataSetMoveStock.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetMoveStock.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RPT\Frm_ReportMoveStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RPT\Frm_ReportMoveStock.Designer.cs">
+      <DependentUpon>Frm_ReportMoveStock.cs</DependentUpon>
+    </Compile>
     <Compile Include="RPT\Order\CrystalReport2.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1050,6 +1064,12 @@
     </Compile>
     <Compile Include="RPT\Order\Rpt_OrderPay.designer.cs">
       <DependentUpon>Rpt_OrderPay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RPT\Rpt_MoveStock.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPT\Rpt_MoveStock.Designer.cs">
+      <DependentUpon>Rpt_MoveStock.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="PL\Frm_TeckeitReturn.resx">
       <DependentUpon>Frm_TeckeitReturn.cs</DependentUpon>
@@ -1416,6 +1436,9 @@
     <EmbeddedResource Include="frm_SingelReport.resx">
       <DependentUpon>frm_SingelReport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RPT\Frm_ReportMoveStock.resx">
+      <DependentUpon>Frm_ReportMoveStock.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RPT\Order\CrystalReport2.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport2.cs</LastGenOutput>
@@ -1443,6 +1466,9 @@
     <EmbeddedResource Include="RPT\Order\Rpt_OrderPay.resx">
       <DependentUpon>Rpt_OrderPay.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RPT\Rpt_MoveStock.resx">
+      <DependentUpon>Rpt_MoveStock.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
@@ -1464,6 +1490,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="RPT\DataSetMoveStock.xsc">
+      <DependentUpon>DataSetMoveStock.xsd</DependentUpon>
+    </None>
+    <None Include="RPT\DataSetMoveStock.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetMoveStock.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="RPT\DataSetMoveStock.xss">
+      <DependentUpon>DataSetMoveStock.xsd</DependentUpon>
+    </None>
     <None Include="RPT\Order\DataSetFingerExcelDay.xsc">
       <DependentUpon>DataSetFingerExcelDay.xsd</DependentUpon>
     </None>

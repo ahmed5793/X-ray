@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetMoveStock" targetNamespace="http://tempuri.org/DataSetMoveStock.xsd" xmlns:mstns="http://tempuri.org/DataSetMoveStock.xsd" xmlns="http://tempuri.org/DataSetMoveStock.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetMoveStock" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetMoveStock" msprop:Generator_UserDSName="DataSetMoveStock">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Insert_Stock" msprop:Generator_TableClassName="Insert_StockDataTable" msprop:Generator_TableVarName="tableInsert_Stock" msprop:Generator_TablePropName="Insert_Stock" msprop:Generator_RowDeletingName="Insert_StockRowDeleting" msprop:Generator_RowChangingName="Insert_StockRowChanging" msprop:Generator_RowEvHandlerName="Insert_StockRowChangeEventHandler" msprop:Generator_RowDeletedName="Insert_StockRowDeleted" msprop:Generator_UserTableName="Insert_Stock" msprop:Generator_RowChangedName="Insert_StockRowChanged" msprop:Generator_RowEvArgName="Insert_StockRowChangeEvent" msprop:Generator_RowClassName="Insert_StockRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Stock_Name" msprop:Generator_ColumnVarNameInTable="columnStock_Name" msprop:Generator_ColumnPropNameInRow="Stock_Name" msprop:Generator_ColumnPropNameInTable="Stock_NameColumn" msprop:Generator_UserColumnName="Stock_Name" type="xs:string" minOccurs="0" />
+              <xs:element name="Money" msprop:Generator_ColumnVarNameInTable="columnMoney" msprop:Generator_ColumnPropNameInRow="Money" msprop:Generator_ColumnPropNameInTable="MoneyColumn" msprop:Generator_UserColumnName="Money" type="xs:string" minOccurs="0" />
+              <xs:element name="Date" msprop:Generator_ColumnVarNameInTable="columnDate" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_UserColumnName="Date" type="xs:string" minOccurs="0" />
+              <xs:element name="User" msprop:Generator_ColumnVarNameInTable="columnUser" msprop:Generator_ColumnPropNameInRow="User" msprop:Generator_ColumnPropNameInTable="UserColumn" msprop:Generator_UserColumnName="User" type="xs:string" minOccurs="0" />
+              <xs:element name="Reason" msprop:Generator_ColumnVarNameInTable="columnReason" msprop:Generator_ColumnPropNameInRow="Reason" msprop:Generator_ColumnPropNameInTable="ReasonColumn" msprop:Generator_UserColumnName="Reason" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Stock_Pull" msprop:Generator_TableClassName="Stock_PullDataTable" msprop:Generator_TableVarName="tableStock_Pull" msprop:Generator_TablePropName="Stock_Pull" msprop:Generator_RowDeletingName="Stock_PullRowDeleting" msprop:Generator_RowChangingName="Stock_PullRowChanging" msprop:Generator_RowEvHandlerName="Stock_PullRowChangeEventHandler" msprop:Generator_RowDeletedName="Stock_PullRowDeleted" msprop:Generator_UserTableName="Stock_Pull" msprop:Generator_RowChangedName="Stock_PullRowChanged" msprop:Generator_RowEvArgName="Stock_PullRowChangeEvent" msprop:Generator_RowClassName="Stock_PullRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Stock_Name" msprop:Generator_ColumnVarNameInTable="columnStock_Name" msprop:Generator_ColumnPropNameInRow="Stock_Name" msprop:Generator_ColumnPropNameInTable="Stock_NameColumn" msprop:Generator_UserColumnName="Stock_Name" type="xs:string" minOccurs="0" />
+              <xs:element name="Money" msprop:Generator_ColumnVarNameInTable="columnMoney" msprop:Generator_ColumnPropNameInRow="Money" msprop:Generator_ColumnPropNameInTable="MoneyColumn" msprop:Generator_UserColumnName="Money" type="xs:string" minOccurs="0" />
+              <xs:element name="Date" msprop:Generator_ColumnVarNameInTable="columnDate" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_UserColumnName="Date" type="xs:string" minOccurs="0" />
+              <xs:element name="User" msprop:Generator_ColumnVarNameInTable="columnUser" msprop:Generator_ColumnPropNameInRow="User" msprop:Generator_ColumnPropNameInTable="UserColumn" msprop:Generator_UserColumnName="User" type="xs:string" minOccurs="0" />
+              <xs:element name="Reason" msprop:Generator_ColumnVarNameInTable="columnReason" msprop:Generator_ColumnPropNameInRow="Reason" msprop:Generator_ColumnPropNameInTable="ReasonColumn" msprop:Generator_UserColumnName="Reason" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1429,6 +1429,12 @@ namespace Laboratory.PL
             Frm_TeckeitReturn frm_TeckeitReturn = new Frm_TeckeitReturn();
             frm_TeckeitReturn.Show();
         }
+
+        private void barButtonItem9_ItemClick_1(object sender, ItemClickEventArgs e)
+        {
+            RPT.Frm_ReportMoveStock fdsaw = new RPT.Frm_ReportMoveStock();
+            fdsaw.Show();
+        }
     }
 }
 	
