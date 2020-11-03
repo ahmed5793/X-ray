@@ -185,7 +185,6 @@
             this.gridViewPull.OptionsBehavior.ReadOnly = true;
             this.gridViewPull.OptionsPrint.PrintPreview = true;
             this.gridViewPull.OptionsView.ShowFooter = true;
-            this.gridViewPull.OptionsView.ShowGroupPanel = false;
             // 
             // simpleButton1
             // 

@@ -252,7 +252,6 @@
             this.gridViewInsert.OptionsBehavior.ReadOnly = true;
             this.gridViewInsert.OptionsPrint.PrintPreview = true;
             this.gridViewInsert.OptionsView.ShowFooter = true;
-            this.gridViewInsert.OptionsView.ShowGroupPanel = false;
             // 
             // label6
             // 
