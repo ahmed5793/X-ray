@@ -23,7 +23,7 @@ namespace Laboratory.RPT.Order
         //DataTable dt2 = new DataTable();
         //DataTable dt3 = new DataTable();
         //DataTable dt4 = new DataTable();
-
+         
         private void Btn_Save_Click(object sender, EventArgs e)
         {
             try
@@ -36,8 +36,10 @@ namespace Laboratory.RPT.Order
                 Frm_Report sr = new Frm_Report();
 
                 Rpt_Revenue report = new Rpt_Revenue();
-               // DataSetRevenue dso = new DataSetRevenue();
-               
+                
+
+                // DataSetRevenue dso = new DataSetRevenue();
+
                 //dt1.Clear();
                 //dt1 = t.Report_ReveuneBranches(dtb_from.Value, dtb_to.Value);
 
@@ -62,7 +64,7 @@ namespace Laboratory.RPT.Order
                 //       dt1.Rows[i][3]);
                 //}
 
-             
+
                 //for (int i = 0; i < dt3.Rows.Count; i++)
                 //{
 
