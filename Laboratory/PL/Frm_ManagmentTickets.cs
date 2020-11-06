@@ -624,7 +624,7 @@ namespace Laboratory.PL
                         }
                     }
                     fd.ShowDialog();
-                    gridControl1.DataSource = t.SelectSearchticketsBranchDate(Convert.ToInt32(cmb_branches.SelectedValue), FromDate.Value, ToDate.Value);
+                 //   gridControl1.DataSource = t.SelectSearchticketsBranchDate(Convert.ToInt32(cmb_branches.SelectedValue), FromDate.Value, ToDate.Value);
 
                 }
             }

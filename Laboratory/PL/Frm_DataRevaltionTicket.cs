@@ -42,6 +42,7 @@ namespace Laboratory.PL
 
         Branches b = new Branches();
         Tickets t = new Tickets();
+        CategoryXRaya cx = new CategoryXRaya();
         string x = DateTime.Now.ToShortDateString();
 
 
@@ -73,6 +74,10 @@ namespace Laboratory.PL
                 comboBox1.DataSource = b.SelectCompBranches();
                 comboBox1.DisplayMember = "Name";
                 comboBox1.ValueMember = "Branch_ID";
+                Cmb_category.DataSource = cx.selectCategoryXRaya();
+                Cmb_category.DisplayMember = "الفئات";
+                Cmb_category.ValueMember = "ID_CtegoryXrays";
+              
             }
             catch (Exception ex)
             {
@@ -106,7 +111,8 @@ namespace Laboratory.PL
             try
             {
 
-                gridControl1.DataSource = t.selectDataRevlation(Convert.ToInt32(comboBox1.SelectedValue), Convert.ToDateTime(x));
+                gridControl1.DataSource = t.selectDataRevlation(Convert.ToInt32(comboBox1.SelectedValue), Convert.ToDateTime(x),
+                    Convert.ToInt32(Cmb_category.SelectedValue));
 
 
 

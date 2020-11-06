@@ -768,15 +768,17 @@ namespace Laboratory.BL
             return dt;
         }
 
-        internal DataTable selectDataRevlation(int idBranch, DateTime date)
+        internal DataTable selectDataRevlation(int idBranch, DateTime date,int idCategory)
         {
             DataAccessLayer da = new DataAccessLayer();
-            SqlParameter[] param = new SqlParameter[2];
+            SqlParameter[] param = new SqlParameter[3];
 
             param[0] = new SqlParameter("@idBranch", SqlDbType.Int);
             param[0].Value = idBranch;
             param[1] = new SqlParameter("@date", SqlDbType.Date);
             param[1].Value = date;
+            param[2] = new SqlParameter("@idCategory", SqlDbType.Int);
+            param[2].Value = idCategory;
             da.open();
             DataTable dt = new DataTable();
             dt.Clear();

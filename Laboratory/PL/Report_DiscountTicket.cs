@@ -53,6 +53,7 @@ namespace Laboratory.BL
         {
             try
             {
+
                gridControl1.DataSource= t.SelectDiscountTicketsBranch(cmb_Branch.Text,Convert.ToDateTime(DateFrom.Text),Convert.ToDateTime(DateTo.Text));
                 Calc_AmountPull();
             }

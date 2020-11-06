@@ -1065,6 +1065,12 @@
     <Compile Include="RPT\Order\Rpt_OrderPay.designer.cs">
       <DependentUpon>Rpt_OrderPay.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Report_PayCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Report_PayCustomer.Designer.cs">
+      <DependentUpon>Report_PayCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="RPT\Rpt_MoveStock.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -1465,6 +1471,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RPT\Order\Rpt_OrderPay.resx">
       <DependentUpon>Rpt_OrderPay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Report_PayCustomer.resx">
+      <DependentUpon>Report_PayCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RPT\Rpt_MoveStock.resx">
       <DependentUpon>Rpt_MoveStock.cs</DependentUpon>
