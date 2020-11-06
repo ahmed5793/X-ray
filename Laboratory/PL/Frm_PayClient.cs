@@ -330,7 +330,8 @@ namespace Laboratory.PL
                                0
                                  , dateTimePicker1.Value, mno, Convert.ToInt32(cmb_Stock.SelectedValue)
                                  , Txt_SalesMAn.Text, Convert.ToInt32(Cmb_Branch.SelectedValue), "تسديد جزء من الحساب ");
-                            s.add_insertStock(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_prise.Text), dateTimePicker1.Value, Txt_SalesMAn.Text, lookUpEdit1.Text + " " + "مدفوعات مديونية");
+                            s.add_insertStock(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_prise.Text), dateTimePicker1.Value,
+                                Txt_SalesMAn.Text, lookUpEdit1.Text + " " + "مدفوعات مديونية");
                             MessageBox.Show("تم دفع المبلغ بنجاح");
 
                             Txt_CustAccount.Text = c.selectOneClientRent(Convert.ToInt32(lookUpEdit1.EditValue)).Rows[0][0].ToString();

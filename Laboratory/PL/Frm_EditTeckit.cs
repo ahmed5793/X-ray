@@ -82,7 +82,7 @@ namespace Laboratory.PL
 
                 }
                 this.Close();
-                fmt.gridControl1.DataSource = t.SelectSearchticketsBranchDate(Convert.ToInt32(fmt.cmb_branches.SelectedValue), fmt.FromDate.Value, fmt.ToDate.Value);
+               fmt.gridControl1.DataSource = t.SelectSearchticketsBranchDate(Convert.ToInt32(fmt.cmb_branches.SelectedValue), fmt.FromDate.Value, fmt.ToDate.Value);
 
             }
             catch (Exception EX)
