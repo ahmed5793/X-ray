@@ -268,6 +268,18 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
+        internal DataTable SelectTicketsForCustomer(int id)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            DataTable dt = new DataTable();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@Id_Customer", SqlDbType.Int);
+            param[0].Value = id;
+            dt = da.selected("SelectTicketsForCustomer", param);
+            da.close();
+            return dt;
+        }
         internal DataTable SelectRentCompoCustomer()
         {
             DataTable dt = new DataTable();

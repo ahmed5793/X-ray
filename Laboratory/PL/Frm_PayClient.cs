@@ -18,6 +18,7 @@ namespace Laboratory.PL
         Users u = new Users();
         Branches b = new Branches();
         DataTable dt = new DataTable();
+        Tickets t = new Tickets();
         public Frm_PayClient()
         {
             InitializeComponent();
@@ -198,7 +199,6 @@ namespace Laboratory.PL
             {
                 if (lookUpEdit1.Text != "")
                 {
-                    //dataGridView1.DataSource = c.selectOneClientRent(Convert.ToInt32(cmb_client.SelectedValue));
                     Txt_CustAccount.Text = c.selectOneClientRent(Convert.ToInt32(lookUpEdit1.EditValue)).Rows[0][2].ToString();
                     Txt_CustAcountAfterDisCount.Text = c.selectOneClientRent(Convert.ToInt32(lookUpEdit1.EditValue)).Rows[0][2].ToString();
                     if (Txt_CustAccount.Text=="0")
@@ -209,6 +209,7 @@ namespace Laboratory.PL
                     {
                         TxtDisCount.Enabled = true;
                     }
+                  
 
                 }
             }
@@ -274,7 +275,6 @@ namespace Laboratory.PL
 
                             Txt_CustAccount.Text = c.selectOneClientRent(Convert.ToInt32(lookUpEdit1.EditValue)).Rows[0][0].ToString();
                             Txt_CustAcountAfterDisCount.Text = c.selectOneClientRent(Convert.ToInt32(lookUpEdit1.EditValue)).Rows[0][0].ToString();
-                            TxtDisCount.Text = "0";
                         }
                         else
                         {
@@ -336,7 +336,7 @@ namespace Laboratory.PL
 
                             Txt_CustAccount.Text = c.selectOneClientRent(Convert.ToInt32(lookUpEdit1.EditValue)).Rows[0][0].ToString();
                             Txt_CustAcountAfterDisCount.Text = c.selectOneClientRent(Convert.ToInt32(lookUpEdit1.EditValue)).Rows[0][0].ToString();
-                            TxtDisCount.Text = "0";
+
                         }
                         else
                         {
@@ -345,9 +345,20 @@ namespace Laboratory.PL
                         }
 
                     }
-                  
+                    if (Convert.ToDecimal(TxtDisCount.Text) > 0)
+                    {
+                        dt.Clear();
+                        dt = c.SelectTicketsForCustomer(Convert.ToInt32(lookUpEdit1.EditValue));
+                        int y = dt.Rows.Count;
+                        int x = Convert.ToInt32(TxtDisCount.Text)/y;
+                        for (int i = 0; i < dt.Rows.Count; i++)
+                        {
+                            t.Update_TiecketDiscount(Convert.ToInt32(dt.Rows[i][0]), Convert.ToDecimal(x));
+                        }
+                    }
 
                 }
+              
                 txt_prise.Text = "0";
                 Txt_CustAccount.Text = "0";
                 Txt_CustAcountAfterDisCount.Text = "0";
