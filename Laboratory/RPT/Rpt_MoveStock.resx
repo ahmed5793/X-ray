@@ -117,7 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="dataSetMoveStock1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 173</value>
+  <metadata name="collectionDataSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
   </metadata>
+  <metadata name="sqlDataSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
+  </metadata>
+  <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlJlcG9ydE1vdmVJbnNlclN0b2NrIj48RmllbGQgTmFtZT0i2KXYs9mFINin2YTYrtiy2YbYqSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSLYp9mE2YXYqNmE2LoiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9Itin2YTYqtin2LHZitiuIiBUeXBlPSJEYXRlVGltZSIgLz48RmllbGQgTmFtZT0i2KXYs9mFINin2YTZhdiz2KrYrtiv2YUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0i2KfZhNiz2KjYqCIgVHlwZT0iU3RyaW5nIiAvPjwvVmlldz48L0RhdGFTZXQ+</value>
+  </data>
+  <metadata name="sqlDataSource2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 95</value>
+  </metadata>
+  <data name="sqlDataSource2.ResultSchemaSerializable" xml:space="preserve">
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTIiPjxWaWV3IE5hbWU9IlJlcG9ydE1vdmVQdWxsU3RvY2siPjxGaWVsZCBOYW1lPSLYpdiz2YUg2KfZhNiu2LLZhtipIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Itin2YTZhdio2YTYuiIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0i2KfZhNiq2KfYsdmK2K4iIFR5cGU9IkRhdGVUaW1lIiAvPjxGaWVsZCBOYW1lPSLYpdiz2YUg2KfZhNmF2LPYqtiu2K/ZhSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSLYp9mE2LPYqNioIiBUeXBlPSJTdHJpbmciIC8+PC9WaWV3PjwvRGF0YVNldD4=</value>
+  </data>
 </root>

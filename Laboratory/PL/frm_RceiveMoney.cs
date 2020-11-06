@@ -84,7 +84,7 @@ namespace Laboratory.PL
                 // Select_Users();
 
                 Permision();
-                DateFrom.Value = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+                //from.Value = Convert.ToDateTime(DateTime.Now.ToShortDateString());
 
                 textBox4.Hide();
                 label7.Hide();
@@ -185,10 +185,9 @@ namespace Laboratory.PL
                 //{
 
                 dt1.Clear();
-                dt1 = U.Select_MoneyForUserAllBranch(Convert.ToInt32(cmb_Stock.SelectedValue), DateFrom.Value, Time_From.Value.TimeOfDay,
-                   Time_To.Value.TimeOfDay);
+                dt1 = s.ReportMoveInserStock(Convert.ToInt32(cmb_Stock.SelectedValue), FromDate.Value, ToDate.Value);
                 dt4.Clear();
-                dt4 = U.Select_PullMoneyForUserAllBranch(Convert.ToInt32(cmb_Stock.SelectedValue), DateFrom.Value, Time_From.Value.TimeOfDay, Time_To.Value.TimeOfDay);
+                dt4 = s.ReportMovePullStock(Convert.ToInt32(cmb_Stock.SelectedValue), FromDate.Value, ToDate.Value);
                 gridControl1.DataSource = dt4;
                 gridControlInsert.DataSource = dt1;
                 //}
@@ -354,6 +353,11 @@ namespace Laboratory.PL
         }
 
         private void groupBox10_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }

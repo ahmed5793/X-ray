@@ -37,26 +37,28 @@ namespace Laboratory.RPT
                 Frm_ReportMoveStock frm = new Frm_ReportMoveStock();
                 Rpt_MoveStock rpt = new Rpt_MoveStock();
 
-            dso.Tables["Insert_Stock"].Clear();
-            dso.Tables["Stock_Pull"].Clear();
-            dt1.Clear();
-            dt1 = s.ReportMoveInserStock(Convert.ToInt32(cmb_Stock.SelectedValue),dtb_from.Value,dtb_to.Value);
-            dt2.Clear();
-            dt2 = s.ReportMovePullStock(Convert.ToInt32(cmb_Stock.SelectedValue), dtb_from.Value, dtb_to.Value);
-            for (int i = 0; i < dt1.Rows.Count; i++)
-            {
-                dso.Tables["Insert_Stock"].Rows.Add(dt1.Rows[i][0], 
-                   (dt1.Rows[i][1]),(dt1.Rows[i][2]),
-                    dt1.Rows[i][3],dt1.Rows[i][4]);
-            }
-            for (int i = 0; i < dt2.Rows.Count; i++)
-            {
-              dso.Tables["Stock_Pull"].Rows.Add(dt2.Rows[i][0], (dt2.Rows[i][1])
-                  , (dt2.Rows[i][2]), dt2.Rows[i][3], dt2.Rows[i][4]);
-            }
-           
-              frm.documentViewer1.Refresh();
-                rpt.DataSource = dso;
+                //dso.Tables["Insert_Stock"].Clear();
+                //dso.Tables["Stock_Pull"].Clear();
+                //dt1.Clear();
+                //dt1 = s.ReportMoveInserStock(Convert.ToInt32(cmb_Stock.SelectedValue),dtb_from.Value,dtb_to.Value);
+                //dt2.Clear();
+                //dt2 = s.ReportMovePullStock(Convert.ToInt32(cmb_Stock.SelectedValue), dtb_from.Value, dtb_to.Value);
+                //for (int i = 0; i < dt1.Rows.Count; i++)
+                //{
+                //    dso.Tables["Insert_Stock"].Rows.Add(dt1.Rows[i][0], 
+                //       (dt1.Rows[i][1]),(dt1.Rows[i][2]),
+                //        dt1.Rows[i][3],dt1.Rows[i][4]);
+                //}
+                //for (int i = 0; i < dt2.Rows.Count; i++)
+                //{
+                //  dso.Tables["Stock_Pull"].Rows.Add(dt2.Rows[i][0], (dt2.Rows[i][1])
+                //      , (dt2.Rows[i][2]), dt2.Rows[i][3], dt2.Rows[i][4]);
+                //}
+              //  rpt.DataSource = dso;
+
+                frm.documentViewer1.Refresh();
+                //rpt.DataSource("DB_A54A03_LastLaboratory_admin", "Titonasser1994", "sql5033.site4now.net", "DB_A54A03_LastLaboratory");
+
                 rpt.Parameters["Id_Stock"].Value = Convert.ToInt32(cmb_Stock.SelectedValue);
                 rpt.Parameters["Date_From"].Value = (dtb_from.Value);
                 rpt.Parameters["Date_To"].Value = (dtb_to.Value);

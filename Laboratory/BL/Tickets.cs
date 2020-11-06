@@ -1058,6 +1058,19 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
+        internal void Update_TiecketDiscount(int Id_Teckiet, decimal Value)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[2];
+            param[0] = new SqlParameter("@ID_Tickets", SqlDbType.Int);
+            param[0].Value = Id_Teckiet;
+            param[1] = new SqlParameter("@Value", SqlDbType.Decimal);
+            param[1].Value = Value;
+  
+            da.excutequery("Update_TiecketDiscount", param);
+            da.close();
+        }
 
     }
 }

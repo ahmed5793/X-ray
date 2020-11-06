@@ -194,7 +194,6 @@
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barAndDockingController1)).BeginInit();
@@ -330,8 +329,7 @@
             this.barHeaderItem32,
             this.barHeaderItem33,
             this.barButtonItem8,
-            this.Btn_Return,
-            this.barButtonItem9});
+            this.Btn_Return});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.MaxItemId = 153;
             this.ribbon.Name = "ribbon";
@@ -1602,7 +1600,6 @@
             this.ribbonPageGroup9.ItemLinks.Add(this.Btn_ReportInsertStock);
             this.ribbonPageGroup9.ItemLinks.Add(this.Btn_ReportPullStock);
             this.ribbonPageGroup9.ItemLinks.Add(this.Btn_Revenues);
-            this.ribbonPageGroup9.ItemLinks.Add(this.barButtonItem9);
             this.ribbonPageGroup9.Name = "ribbonPageGroup9";
             this.ribbonPageGroup9.Text = "ادارة الخزينة";
             // 
@@ -1851,13 +1848,6 @@
             this.accordionControlElement3.Name = "accordionControlElement3";
             this.accordionControlElement3.Text = "Element3";
             // 
-            // barButtonItem9
-            // 
-            this.barButtonItem9.Caption = "barButtonItem9";
-            this.barButtonItem9.Id = 152;
-            this.barButtonItem9.Name = "barButtonItem9";
-            this.barButtonItem9.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem9_ItemClick_1);
-            // 
             // Main
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
@@ -2058,6 +2048,5 @@
         private DevExpress.XtraBars.BarHeaderItem barHeaderItem33;
         private DevExpress.XtraBars.BarButtonItem barButtonItem8;
         public DevExpress.XtraBars.BarButtonItem Btn_Return;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem9;
     }
 }
