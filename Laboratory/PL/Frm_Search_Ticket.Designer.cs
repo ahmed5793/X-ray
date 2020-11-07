@@ -222,7 +222,6 @@
             this.comboBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "كل الحجوزات",
             "بحث بالتاريخ + مكان الفحص",
             "بحث بالتاريخ + مكان الفحص+نوع الفحص",
             "بحث بالتاريخ + الفرع+نوع الفحص"});

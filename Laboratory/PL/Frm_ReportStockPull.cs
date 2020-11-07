@@ -27,7 +27,7 @@ namespace Laboratory.PL
             {
                 txt_username.Text = Program.salesman;
                 Permision();
-                Calc_AmountPull();
+               // Calc_AmountPull();
             }
             catch (Exception ex)
             {
@@ -70,33 +70,33 @@ namespace Laboratory.PL
             cmb_Stock.DisplayMember = "Name_Stock";
             cmb_Stock.ValueMember = "ID_Stock";
         }
-        void Calc_AmountPull()
-        {
-            decimal total = 0;
-            for (int i = 0; i < gridViewPull.DataRowCount; i++)
-            {
-                DataRow row = gridViewPull.GetDataRow(i);
-                total += Convert.ToDecimal(row[1].ToString());
+        //void Calc_AmountPull()
+        //{
+        //    decimal total = 0;
+        //    for (int i = 0; i < gridViewPull.DataRowCount; i++)
+        //    {
+        //        DataRow row = gridViewPull.GetDataRow(i);
+        //        total += Convert.ToDecimal(row[1].ToString());
 
-            }
-            textBox2.Text = total.ToString("₱ #,#0.0");
+        //    }
+        //    textBox2.Text = total.ToString("₱ #,#0.0");
 
-        }
+        //}
         private void cmb_Stock_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            try
-            {
-                dt.Clear();
-                dt = s.Reprot_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue));
-                gridControlPull.DataSource = dt;
-                Calc_AmountPull();
-            }
-            catch (Exception ex)
-            {
+            //try
+            //{
+            //    dt.Clear();
+            //    dt = s.Reprot_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue));
+            //    gridControlPull.DataSource = dt;
+            //    Calc_AmountPull();
+            //}
+            //catch (Exception ex)
+            //{
 
-                MessageBox.Show(ex.Message);
-                MessageBox.Show(ex.StackTrace);
-            }
+            //    MessageBox.Show(ex.Message);
+            //    MessageBox.Show(ex.StackTrace);
+            //}
         }
 
 
@@ -107,7 +107,7 @@ namespace Laboratory.PL
                 dt.Clear();
                 dt = s.Search_ReprotStockPull(Convert.ToInt32(cmb_Stock.SelectedValue), DateFrom.Value, DateTo.Value);
                 gridControlPull.DataSource = dt;
-                Calc_AmountPull();
+               // Calc_AmountPull();
             }
             catch (Exception ex)
             {

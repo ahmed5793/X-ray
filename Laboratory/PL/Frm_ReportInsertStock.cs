@@ -28,7 +28,7 @@ namespace Laboratory.PL
             {
                 txt_username.Text = Program.salesman;
                 Permision();
-                Calc_Amount();
+               // Calc_Amount();
             }
             catch (Exception ex)
             {
@@ -71,18 +71,18 @@ namespace Laboratory.PL
             cmb_Stock.DisplayMember = "Name_Stock";
             cmb_Stock.ValueMember = "ID_Stock";
         }
-        void Calc_Amount()
-        {
-            decimal total = 0;
-            for (int i = 0; i < gridViewInsert.DataRowCount; i++)
-            {
-                DataRow row = gridViewInsert.GetDataRow(i);
-                total += Convert.ToDecimal(row[1].ToString());
+        //void Calc_Amount()
+        //{
+        //    decimal total = 0;
+        //    for (int i = 0; i < gridViewInsert.DataRowCount; i++)
+        //    {
+        //        DataRow row = gridViewInsert.GetDataRow(i);
+        //        total += Convert.ToDecimal(row[1].ToString());
 
-            }
-            textBox1.Text = total.ToString("₱ #,#0.0");
+        //    }
+        //    textBox1.Text = total.ToString("₱ #,#0.0");
 
-        }
+        //}
      
         private void btn_search_Click(object sender, EventArgs e)
         {
@@ -90,20 +90,20 @@ namespace Laboratory.PL
 
         private void cmb_Stock_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            try
-            {
-                dt.Clear();
-                dt = s.Report_InsertStock(Convert.ToInt32(cmb_Stock.SelectedValue));
-                gridControlInsert.DataSource = dt;
-                Calc_Amount();
+            //try
+            //{
+            //    dt.Clear();
+            //    dt = s.Report_InsertStock(Convert.ToInt32(cmb_Stock.SelectedValue));
+            //    gridControlInsert.DataSource = dt;
+            //    Calc_Amount();
 
-            }
-            catch (Exception ex)
-            {
+            //}
+            //catch (Exception ex)
+            //{
 
-                MessageBox.Show(ex.Message);
+            //    MessageBox.Show(ex.Message);
 
-            }
+            //}
         }
 
 
@@ -114,7 +114,7 @@ namespace Laboratory.PL
                 dt.Clear();
                 dt = s.Search_Report_InsertStock(Convert.ToInt32(cmb_Stock.SelectedValue), DateFrom.Value, DateTo.Value);
                 gridControlInsert.DataSource = dt;
-                Calc_Amount();
+               // Calc_Amount();
 
             }
             catch (Exception ex)

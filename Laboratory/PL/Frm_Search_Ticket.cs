@@ -87,27 +87,27 @@ namespace Laboratory.PL
 
         private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            if (comboBox1.Text == "كل الحجوزات")
-            {
-                label7.Hide();
-                label2.Hide();
-                label3.Hide();
-                label13.Hide();
-                FromDate.Hide();
-                ToDate.Hide();
-                button2.Hide();
-                label4.Hide();
-                label5.Hide();
-                textBox1.Hide();
-                Cmb_CategoryItem.Hide();
-                cmb_branches.Hide();
-                gridControl1.DataSource = t.SelecthManagmentTicketsBranch();
-                sum();
+            //if (comboBox1.Text == "كل الحجوزات")
+            //{
+            //    label7.Hide();
+            //    label2.Hide();
+            //    label3.Hide();
+            //    label13.Hide();
+            //    FromDate.Hide();
+            //    ToDate.Hide();
+            //    button2.Hide();
+            //    label4.Hide();
+            //    label5.Hide();
+            //    textBox1.Hide();
+            //    Cmb_CategoryItem.Hide();
+            //    cmb_branches.Hide();
+            //    gridControl1.DataSource = t.SelecthManagmentTicketsBranch();
+            //    sum();
 
 
 
-            }
-            else if (comboBox1.Text == "بحث بالتاريخ + مكان الفحص")
+            //}
+             if (comboBox1.Text == "بحث بالتاريخ + مكان الفحص")
             {
                 brnches();
                 label7.Hide();

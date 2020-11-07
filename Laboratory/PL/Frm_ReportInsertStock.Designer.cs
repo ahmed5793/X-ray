@@ -31,8 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_ReportInsertStock));
             this.cmb_Stock = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.DateTo = new System.Windows.Forms.DateTimePicker();
             this.DateFrom = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
@@ -40,6 +38,11 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.gridControlInsert = new DevExpress.XtraGrid.GridControl();
             this.gridViewInsert = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.label6 = new System.Windows.Forms.Label();
             this.btn_search = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
@@ -79,36 +82,6 @@
             this.label7.Size = new System.Drawing.Size(67, 19);
             this.label7.TabIndex = 111;
             this.label7.Text = "إسم الخزنة";
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label1.BackColor = System.Drawing.Color.Beige;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(641, 505);
-            this.label1.Name = "label1";
-            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label1.Size = new System.Drawing.Size(188, 25);
-            this.label1.TabIndex = 110;
-            this.label1.Text = "إجمالى المبالغ المضافة\r\n";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.textBox1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.textBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.Yellow;
-            this.textBox1.Location = new System.Drawing.Point(462, 503);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(171, 30);
-            this.textBox1.TabIndex = 109;
-            this.textBox1.Text = "0";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DateTo
             // 
@@ -170,7 +143,7 @@
             this.groupBox1.Location = new System.Drawing.Point(3, 118);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupBox1.Size = new System.Drawing.Size(1017, 365);
+            this.groupBox1.Size = new System.Drawing.Size(1017, 412);
             this.groupBox1.TabIndex = 160;
             this.groupBox1.TabStop = false;
             // 
@@ -186,7 +159,7 @@
             this.gridControlInsert.MainView = this.gridViewInsert;
             this.gridControlInsert.Name = "gridControlInsert";
             this.gridControlInsert.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.gridControlInsert.Size = new System.Drawing.Size(1004, 337);
+            this.gridControlInsert.Size = new System.Drawing.Size(1004, 391);
             this.gridControlInsert.TabIndex = 127;
             this.gridControlInsert.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewInsert});
@@ -217,6 +190,16 @@
             this.gridViewInsert.Appearance.FocusedRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridViewInsert.Appearance.FocusedRow.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridViewInsert.Appearance.FocusedRow.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.gridViewInsert.Appearance.FooterPanel.Font = new System.Drawing.Font("Droid Arabic Kufi", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewInsert.Appearance.FooterPanel.ForeColor = System.Drawing.Color.Chartreuse;
+            this.gridViewInsert.Appearance.FooterPanel.Options.UseFont = true;
+            this.gridViewInsert.Appearance.FooterPanel.Options.UseForeColor = true;
+            this.gridViewInsert.Appearance.GroupFooter.Font = new System.Drawing.Font("Droid Arabic Kufi", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewInsert.Appearance.GroupFooter.ForeColor = System.Drawing.Color.Gold;
+            this.gridViewInsert.Appearance.GroupFooter.Options.UseFont = true;
+            this.gridViewInsert.Appearance.GroupFooter.Options.UseForeColor = true;
+            this.gridViewInsert.Appearance.GroupFooter.Options.UseTextOptions = true;
+            this.gridViewInsert.Appearance.GroupFooter.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridViewInsert.Appearance.HeaderPanel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.gridViewInsert.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Yellow;
             this.gridViewInsert.Appearance.HeaderPanel.Options.UseFont = true;
@@ -243,6 +226,12 @@
             this.gridViewInsert.AppearancePrint.Row.Options.UseFont = true;
             this.gridViewInsert.AppearancePrint.Row.Options.UseTextOptions = true;
             this.gridViewInsert.AppearancePrint.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridViewInsert.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2,
+            this.gridColumn3,
+            this.gridColumn4,
+            this.gridColumn5});
             this.gridViewInsert.GridControl = this.gridControlInsert;
             this.gridViewInsert.Name = "gridViewInsert";
             this.gridViewInsert.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
@@ -252,6 +241,52 @@
             this.gridViewInsert.OptionsBehavior.ReadOnly = true;
             this.gridViewInsert.OptionsPrint.PrintPreview = true;
             this.gridViewInsert.OptionsView.ShowFooter = true;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "إسم الخزنة";
+            this.gridColumn1.FieldName = "إسم الخزنة";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "المبلغ";
+            this.gridColumn2.FieldName = "المبلغ";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "المبلغ", "TOTAL: {0:n3}", new decimal(new int[] {
+                            0,
+                            0,
+                            0,
+                            131072}))});
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "التاريخ";
+            this.gridColumn3.FieldName = "التاريخ";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 2;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "إسم المستخدم";
+            this.gridColumn4.FieldName = "إسم المستخدم";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 3;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "سبب الايداع";
+            this.gridColumn5.FieldName = "سبب الايداع";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 4;
             // 
             // label6
             // 
@@ -290,7 +325,6 @@
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.simpleButton1.Appearance.BackColor = System.Drawing.Color.Black;
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton1.Appearance.ForeColor = System.Drawing.Color.White;
@@ -302,9 +336,9 @@
             this.simpleButton1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.simpleButton1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(217, 498);
+            this.simpleButton1.Location = new System.Drawing.Point(3, 5);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(144, 32);
+            this.simpleButton1.Size = new System.Drawing.Size(149, 32);
             this.simpleButton1.TabIndex = 213;
             this.simpleButton1.Text = "طباعة التقرير";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click_1);
@@ -372,8 +406,6 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btn_search);
             this.Controls.Add(this.gridControlInsert);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.cmb_Stock);
             this.Controls.Add(this.label7);
@@ -399,8 +431,6 @@
 
         private System.Windows.Forms.ComboBox cmb_Stock;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DateTimePicker DateTo;
         private System.Windows.Forms.DateTimePicker DateFrom;
         private System.Windows.Forms.Label label4;
@@ -415,5 +445,10 @@
         private System.Windows.Forms.TextBox txt_username;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label13;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
     }
 }

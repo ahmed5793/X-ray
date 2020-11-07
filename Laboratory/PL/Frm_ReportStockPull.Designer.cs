@@ -30,11 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_ReportStockPull));
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.gridControlPull = new DevExpress.XtraGrid.GridControl();
             this.gridViewPull = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.cmb_UserBranch = new System.Windows.Forms.ComboBox();
             this.txt_username = new System.Windows.Forms.TextBox();
@@ -66,36 +69,6 @@
             this.label2.Text = "عرض الارصدة المسحوبة من الخزنة";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox2
-            // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.textBox2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.textBox2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.Yellow;
-            this.textBox2.Location = new System.Drawing.Point(492, 474);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(171, 29);
-            this.textBox2.TabIndex = 128;
-            this.textBox2.Text = "0";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label5.BackColor = System.Drawing.Color.Beige;
-            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(666, 475);
-            this.label5.Name = "label5";
-            this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label5.Size = new System.Drawing.Size(200, 26);
-            this.label5.TabIndex = 129;
-            this.label5.Text = "إجمالى المبالغ المسحوبة\r\n";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -105,7 +78,7 @@
             this.groupBox2.Location = new System.Drawing.Point(6, 119);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupBox2.Size = new System.Drawing.Size(983, 335);
+            this.groupBox2.Size = new System.Drawing.Size(983, 384);
             this.groupBox2.TabIndex = 168;
             this.groupBox2.TabStop = false;
             // 
@@ -121,7 +94,7 @@
             this.gridControlPull.MainView = this.gridViewPull;
             this.gridControlPull.Name = "gridControlPull";
             this.gridControlPull.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.gridControlPull.Size = new System.Drawing.Size(971, 312);
+            this.gridControlPull.Size = new System.Drawing.Size(971, 361);
             this.gridControlPull.TabIndex = 127;
             this.gridControlPull.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewPull});
@@ -152,6 +125,10 @@
             this.gridViewPull.Appearance.FocusedRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridViewPull.Appearance.FocusedRow.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridViewPull.Appearance.FocusedRow.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.gridViewPull.Appearance.FooterPanel.Font = new System.Drawing.Font("Droid Arabic Kufi", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewPull.Appearance.FooterPanel.ForeColor = System.Drawing.Color.Chartreuse;
+            this.gridViewPull.Appearance.FooterPanel.Options.UseFont = true;
+            this.gridViewPull.Appearance.FooterPanel.Options.UseForeColor = true;
             this.gridViewPull.Appearance.HeaderPanel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.gridViewPull.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Yellow;
             this.gridViewPull.Appearance.HeaderPanel.Options.UseFont = true;
@@ -176,6 +153,12 @@
             this.gridViewPull.AppearancePrint.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridViewPull.AppearancePrint.Row.Options.UseTextOptions = true;
             this.gridViewPull.AppearancePrint.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridViewPull.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2,
+            this.gridColumn3,
+            this.gridColumn4,
+            this.gridColumn5});
             this.gridViewPull.GridControl = this.gridControlPull;
             this.gridViewPull.Name = "gridViewPull";
             this.gridViewPull.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
@@ -186,9 +169,54 @@
             this.gridViewPull.OptionsPrint.PrintPreview = true;
             this.gridViewPull.OptionsView.ShowFooter = true;
             // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "إسم الخزنة";
+            this.gridColumn1.FieldName = "إسم الخزنة";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "المبلغ المسحوب";
+            this.gridColumn2.FieldName = "المبلغ المسحوب";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "المبلغ المسحوب", "TOTAL: {0:n3}", new decimal(new int[] {
+                            0,
+                            0,
+                            0,
+                            65536}))});
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "إسم المستخدم";
+            this.gridColumn3.FieldName = "إسم المستخدم";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 2;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "تاريخ السحب";
+            this.gridColumn4.FieldName = "تاريخ السحب";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 3;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "سبب السحب";
+            this.gridColumn5.FieldName = "سبب السحب";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 4;
+            // 
             // simpleButton1
             // 
-            this.simpleButton1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.simpleButton1.Appearance.BackColor = System.Drawing.Color.Black;
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton1.Appearance.ForeColor = System.Drawing.Color.White;
@@ -200,7 +228,7 @@
             this.simpleButton1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.simpleButton1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(272, 473);
+            this.simpleButton1.Location = new System.Drawing.Point(6, 6);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(144, 32);
             this.simpleButton1.TabIndex = 225;
@@ -364,8 +392,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(994, 515);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.cmb_UserBranch);
             this.Controls.Add(this.txt_username);
@@ -396,11 +422,7 @@
 
         #endregion
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox2;
-        private DevExpress.XtraGrid.GridControl gridControlPull;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridViewPull;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         public System.Windows.Forms.ComboBox cmb_UserBranch;
         private System.Windows.Forms.TextBox txt_username;
@@ -413,5 +435,12 @@
         private System.Windows.Forms.DateTimePicker DateFrom;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private DevExpress.XtraGrid.GridControl gridControlPull;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewPull;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
     }
 }
