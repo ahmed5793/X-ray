@@ -64,55 +64,6 @@ namespace Laboratory.PL
 
         void searchDatetAllDoctor()
         {
-            try
-            {
-
-            
-
-
-
-            DataTable dt = new DataTable();
-            DataTable dt2 = new DataTable();
-            dt.Clear();
-            dt = Doctors.Search_ALLReportDoctor(DateFrom.Value, DateTo.Value);
-                if (dt.Rows.Count == 0)
-                {
-                    gridControl1.DataSource = null;
-                }
-                else
-                {
-
-
-                    for (int i = 0; i < dt.Rows.Count; i++)
-                    {
-                        dt2.Clear();
-                        dt2 = Doctors.SelectDateCountDoctorOut(Convert.ToInt32(dt.Rows[i]["Doc_ID"]), DateFrom.Value, DateTo.Value);
-                        for (int y = 0; y < dt2.Rows.Count; y++)
-                        {
-                            int COUNT = Convert.ToInt32(dt2.Rows[y][0]);
-                            decimal VALUE = Convert.ToDecimal(dt2.Rows[y][1]);
-
-
-                            dt.Rows[i]["COUNT"] = COUNT;
-                            dt.Rows[i]["VALUE"] = Math.Round(VALUE, 2);
-
-
-
-
-                        }
-                        gridControl1.DataSource = dt;
-                        gridView1.Columns["Doc_ID"].Visible = false;
-
-                    }
-                }
-        }
-              catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
-
-
         }
         void SelectAllDoctor()
         {
@@ -184,6 +135,7 @@ namespace Laboratory.PL
         {
             //SelectAllDoctor();
             //gridView1.Columns["Doc_ID"].Visible = false;
+            label1.Hide();
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -191,10 +143,17 @@ namespace Laboratory.PL
             try
             {
 
-
-                searchDatetAllDoctor();
-
-
+                label1.Show();
+                //  searchDatetAllDoctor();
+                label1.Text = "جارى الاستعلام عن البيانات ";
+                if (backgroundWorker1.IsBusy)
+                {
+                    label1.Text="جارى الاستعلام عن البيانات ";
+                }
+                else
+                {
+                    backgroundWorker1.RunWorkerAsync();
+                }
 
 
             }
@@ -225,6 +184,66 @@ namespace Laboratory.PL
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
 
+        }
+
+        private void backgroundWorker1_DoWork_1(object sender, DoWorkEventArgs e)
+        {
+
+            try
+            {
+
+
+
+
+
+                DataTable dt = new DataTable();
+                DataTable dt2 = new DataTable();
+                dt.Clear();
+                dt = Doctors.Search_ALLReportDoctor(DateFrom.Value, DateTo.Value);
+                if (dt.Rows.Count == 0)
+                {
+                    gridControl1.DataSource = null;
+                }
+                else
+                {
+
+
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        dt2.Clear();
+                        dt2 = Doctors.SelectDateCountDoctorOut(Convert.ToInt32(dt.Rows[i]["Doc_ID"]), DateFrom.Value, DateTo.Value);
+                        for (int y = 0; y < dt2.Rows.Count; y++)
+                        {
+                            int COUNT = Convert.ToInt32(dt2.Rows[y][0]);
+                            decimal VALUE = Convert.ToDecimal(dt2.Rows[y][1]);
+
+
+                            dt.Rows[i]["COUNT"] = COUNT;
+                            dt.Rows[i]["VALUE"] = Math.Round(VALUE, 2);
+
+
+
+
+                        }
+
+
+                    }
+                }
+                gridControl1.DataSource = dt;
+                gridView1.Columns["Doc_ID"].Visible = false;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
+
+        }
+
+        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            label1.Text = "تم عرض البيانات بنجاح";
         }
     }
 }

@@ -42,6 +42,8 @@
             this.radio_company = new System.Windows.Forms.RadioButton();
             this.radio_pay = new System.Windows.Forms.RadioButton();
             this.radio_all = new System.Windows.Forms.RadioButton();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -53,7 +55,7 @@
             this.DateTo.CustomFormat = "   dd/MM/yyyy       *      tt  mm:hh    ";
             this.DateTo.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DateTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DateTo.Location = new System.Drawing.Point(439, 89);
+            this.DateTo.Location = new System.Drawing.Point(518, 86);
             this.DateTo.Name = "DateTo";
             this.DateTo.ShowUpDown = true;
             this.DateTo.Size = new System.Drawing.Size(135, 32);
@@ -65,7 +67,7 @@
             this.DateFrom.CustomFormat = "   dd/MM/yyyy       *      tt  mm:hh    ";
             this.DateFrom.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DateFrom.Location = new System.Drawing.Point(442, 40);
+            this.DateFrom.Location = new System.Drawing.Point(521, 37);
             this.DateFrom.Name = "DateFrom";
             this.DateFrom.ShowUpDown = true;
             this.DateFrom.Size = new System.Drawing.Size(132, 32);
@@ -77,7 +79,7 @@
             this.label4.BackColor = System.Drawing.Color.Yellow;
             this.label4.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(580, 90);
+            this.label4.Location = new System.Drawing.Point(659, 87);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label4.Size = new System.Drawing.Size(74, 31);
@@ -91,7 +93,7 @@
             this.label3.BackColor = System.Drawing.Color.Yellow;
             this.label3.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(580, 40);
+            this.label3.Location = new System.Drawing.Point(659, 37);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label3.Size = new System.Drawing.Size(74, 31);
@@ -127,7 +129,7 @@
             this.simpleButton1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.simpleButton1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(293, 66);
+            this.simpleButton1.Location = new System.Drawing.Point(396, 56);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(116, 32);
             this.simpleButton1.TabIndex = 164;
@@ -296,12 +298,30 @@
             this.radio_all.Text = "مجمع";
             this.radio_all.UseVisualStyleBackColor = true;
             // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(7, 94);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(377, 32);
+            this.label1.TabIndex = 176;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Frm_AllCasesDoctorOfCenter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(954, 533);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.radio_company);
             this.Controls.Add(this.radio_pay);
             this.Controls.Add(this.radio_all);
@@ -340,5 +360,7 @@
         private System.Windows.Forms.RadioButton radio_company;
         private System.Windows.Forms.RadioButton radio_pay;
         private System.Windows.Forms.RadioButton radio_all;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Label label1;
     }
 }

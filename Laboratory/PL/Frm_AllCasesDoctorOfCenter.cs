@@ -75,11 +75,12 @@ namespace Laboratory.PL
 
 
                     }
-                    gridControl1.DataSource = dt;
-                    gridView1.Columns["Doc_ID"].Visible = false;
+                  
                 }
 
             }
+                gridControl1.DataSource = dt;
+                gridView1.Columns["Doc_ID"].Visible = false;
             }
             catch (Exception ex)
             {
@@ -124,11 +125,12 @@ namespace Laboratory.PL
 
 
                         }
-                        gridControl1.DataSource = dt;
-                        gridView1.Columns["Doc_ID"].Visible = false;
+                        
                     }
 
                 }
+                gridControl1.DataSource = dt;
+                gridView1.Columns["Doc_ID"].Visible = false;
             }
             catch (Exception ex)
             {
@@ -173,11 +175,12 @@ namespace Laboratory.PL
 
 
                         }
-                        gridControl1.DataSource = dt;
-                        gridView1.Columns["Doc_ID"].Visible = false;
+                       
                     }
 
                 }
+                gridControl1.DataSource = dt;
+                gridView1.Columns["Doc_ID"].Visible = false;
             }
             catch (Exception ex)
             {
@@ -296,13 +299,58 @@ namespace Laboratory.PL
 
             try
             {
+
+                label1.Show();
+                //  searchDatetAllDoctor();
+                label1.Text = "جارى الاستعلام عن البيانات ";
+                if (backgroundWorker1.IsBusy)
+                {
+                    label1.Text = "جارى الاستعلام عن البيانات ";
+                }
+                else
+                {
+                    backgroundWorker1.RunWorkerAsync();
+                }
+                //if (radio_all.Checked == true)
+                //{
+
+
+                //    searchDatetAllDoctorAll();
+                //}
+                //else if (radio_pay.Checked==true)
+                //{
+                //    searchDatetAllDoctorPay();
+                //}
+                //else if (radio_company.Checked == true)
+                //{
+                //    searchDatetAllDoctorCompany();
+                //}
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        
+        }
+
+        private void Btn_Print_Click(object sender, EventArgs e)
+        {
+            gridControl1.ShowRibbonPrintPreview();
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+
+            try
+            {
                 if (radio_all.Checked == true)
                 {
 
 
                     searchDatetAllDoctorAll();
                 }
-                else if (radio_pay.Checked==true)
+                else if (radio_pay.Checked == true)
                 {
                     searchDatetAllDoctorPay();
                 }
@@ -316,12 +364,12 @@ namespace Laboratory.PL
 
                 MessageBox.Show(ex.Message);
             }
-        
+
         }
 
-        private void Btn_Print_Click(object sender, EventArgs e)
+        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            gridControl1.ShowRibbonPrintPreview();
+            label1.Text = "تم عرض البيانات بنجاح";
         }
     }
 }
