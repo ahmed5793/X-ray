@@ -87,27 +87,31 @@ namespace Laboratory.PL
 
         private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            //if (comboBox1.Text == "كل الحجوزات")
-            //{
-            //    label7.Hide();
-            //    label2.Hide();
-            //    label3.Hide();
-            //    label13.Hide();
-            //    FromDate.Hide();
-            //    ToDate.Hide();
-            //    button2.Hide();
-            //    label4.Hide();
-            //    label5.Hide();
-            //    textBox1.Hide();
-            //    Cmb_CategoryItem.Hide();
-            //    cmb_branches.Hide();
-            //    gridControl1.DataSource = t.SelecthManagmentTicketsBranch();
-            //    sum();
+            try
+            {
+
+           
+            if (comboBox1.Text == "كل الحجوزات")
+            {
+                label7.Hide();
+                label2.Hide();
+                label3.Hide();
+                label13.Hide();
+                FromDate.Hide();
+                ToDate.Hide();
+                button2.Hide();
+                label4.Hide();
+                label5.Hide();
+                textBox1.Hide();
+                Cmb_CategoryItem.Hide();
+                cmb_branches.Hide();
+                gridControl1.DataSource = t.SelecthManagmentTicketsBranch();
+                sum();
+                sumAfterDsicount();
 
 
-
-            //}
-             if (comboBox1.Text == "بحث بالتاريخ + مكان الفحص")
+            }
+            if (comboBox1.Text == "بحث بالتاريخ + مكان الفحص")
             {
                 brnches();
                 label7.Hide();
@@ -169,6 +173,12 @@ namespace Laboratory.PL
                 Cmb_CategoryItem.Show();
                 cmb_branches.Show();
             }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -199,9 +209,10 @@ namespace Laboratory.PL
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-          
+           
         }
-        void sum()
+
+        void sumAfterDsicount()
         {
             decimal total = 0;
             for (int i = 0; i < gridView1.RowCount; i++)
@@ -212,6 +223,18 @@ namespace Laboratory.PL
             }
             txt_totalinvoice.Text = total.ToString("₱ #,##0.0");
             textBox1.Text = gridView1.RowCount.ToString();
+        }
+        void sum()
+        {
+            decimal total = 0;
+            for (int i = 0; i < gridView1.RowCount; i++)
+            {
+                DataRow row = gridView1.GetDataRow(i);
+                total += Convert.ToDecimal(row[8].ToString());
+
+            }
+            textBox2.Text = total.ToString("₱ #,##0.0");
+   
         }
         private void simpleButton1_Click(object sender, EventArgs e)
         {
@@ -232,7 +255,8 @@ namespace Laboratory.PL
 
 
             }
-           
+
+            sumAfterDsicount();
             sum();
         }
 

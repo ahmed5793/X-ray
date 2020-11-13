@@ -51,6 +51,8 @@
             this.txt_totalinvoice = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -222,6 +224,7 @@
             this.comboBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
+            "كل الحجوزات",
             "بحث بالتاريخ + مكان الفحص",
             "بحث بالتاريخ + مكان الفحص+نوع الفحص",
             "بحث بالتاريخ + الفرع+نوع الفحص"});
@@ -246,25 +249,25 @@
             // 
             // label5
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(201, 505);
+            this.label5.Location = new System.Drawing.Point(157, 505);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(144, 24);
+            this.label5.Size = new System.Drawing.Size(97, 24);
             this.label5.TabIndex = 87;
-            this.label5.Text = "إجمالى عدد الحالات";
+            this.label5.Text = " عدد الحالات";
             // 
             // textBox1
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.textBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(9, 499);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(186, 32);
+            this.textBox1.Size = new System.Drawing.Size(142, 32);
             this.textBox1.TabIndex = 88;
             this.textBox1.Text = "0";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -381,10 +384,10 @@
             // 
             // txt_totalinvoice
             // 
-            this.txt_totalinvoice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txt_totalinvoice.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.txt_totalinvoice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_totalinvoice.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_totalinvoice.Location = new System.Drawing.Point(443, 502);
+            this.txt_totalinvoice.Location = new System.Drawing.Point(323, 503);
             this.txt_totalinvoice.Name = "txt_totalinvoice";
             this.txt_totalinvoice.ReadOnly = true;
             this.txt_totalinvoice.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -395,21 +398,49 @@
             // 
             // label6
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label6.BackColor = System.Drawing.Color.Black;
             this.label6.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(621, 503);
+            this.label6.Location = new System.Drawing.Point(504, 503);
             this.label6.Name = "label6";
             this.label6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label6.Size = new System.Drawing.Size(301, 27);
+            this.label6.Size = new System.Drawing.Size(181, 27);
             this.label6.TabIndex = 240;
-            this.label6.Text = "إجمالى المبيعات بعد الخصومات";
+            this.label6.Text = "الأجمالي بعد الخصومات";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // backgroundWorker1
             // 
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(741, 504);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.textBox2.Size = new System.Drawing.Size(175, 29);
+            this.textBox2.TabIndex = 243;
+            this.textBox2.Text = "0";
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label8.BackColor = System.Drawing.Color.Black;
+            this.label8.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(922, 505);
+            this.label8.Name = "label8";
+            this.label8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label8.Size = new System.Drawing.Size(81, 27);
+            this.label8.TabIndex = 242;
+            this.label8.Text = "الاجمالي";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Frm_Search_Ticket
             // 
@@ -417,6 +448,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1011, 539);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.txt_totalinvoice);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.simpleButton1);
@@ -465,5 +498,7 @@
         public System.Windows.Forms.Label label6;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Label label7;
+        public System.Windows.Forms.TextBox textBox2;
+        public System.Windows.Forms.Label label8;
     }
 }

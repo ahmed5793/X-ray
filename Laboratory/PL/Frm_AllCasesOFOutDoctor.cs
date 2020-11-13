@@ -145,7 +145,7 @@ namespace Laboratory.PL
 
                 label1.Show();
                 //  searchDatetAllDoctor();
-                label1.Text = "جارى الاستعلام عن البيانات ";
+                label1.Text = "... جارى الاستعلام عن البيانات ";
                 if (backgroundWorker1.IsBusy)
                 {
                     label1.Text="جارى الاستعلام عن البيانات ";
