@@ -342,11 +342,13 @@ namespace Laboratory.PL
                 decimal Total = Convert.ToDecimal(txt_afterDiscount.Text) - Convert.ToDecimal(Txt_PricePayment.Text);
                 Txt_rentCompany.Text = Math.Round(Total, 1).ToString();
             }
+
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
             }
         }
 
@@ -374,13 +376,13 @@ namespace Laboratory.PL
 
             decimal x = 0;
             
-            if (txt_afterDiscount.Text != "" &&  txt_pay.Text != "")
+            if (txt_afterDiscount.Text != "" &&  txt_pay.Text != "" )
             {
-                //if (txt_pay.Text=="")
-                //{
-                //    txt_pay.Text = "0";
-                //}
-                if (cmb_statues.Text == "شركات")
+                    if (Txt_PricePayment.Text == "")
+                    {
+                        Txt_PricePayment.Text = "0";
+                    }
+                    if (cmb_statues.Text == "شركات")
                 {
                     decimal totainv = Convert.ToDecimal(Txt_PricePayment.Text) - Convert.ToDecimal(txt_pay.Text);
                     txt_rent.Text = Math.Round(totainv, 1).ToString();
@@ -410,6 +412,7 @@ namespace Laboratory.PL
             {
 
                 MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
                
             }
 
