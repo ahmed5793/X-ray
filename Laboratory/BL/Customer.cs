@@ -171,27 +171,27 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
-        internal void addPayClient(int id_client, decimal pay, decimal rent, DateTime pay_date, int id_ticket,int IDStock ,string Sales_Man , int Id_Branch)
+        internal void addPayClient(int id_client, decimal pay, int Id_stock, string Sales_Man,
+                                   DateTime pay_date, int Id_Item,int ID_Tickets,decimal discount)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
             SqlParameter[] param = new SqlParameter[8];
-            param[0] = new SqlParameter("@ID_client", SqlDbType.Int);
+            param[0] = new SqlParameter("@IdCustomer", SqlDbType.Int);
             param[0].Value = id_client;
-            param[1] = new SqlParameter("@pay", SqlDbType.Decimal);
+            param[1] = new SqlParameter("@PayMoney", SqlDbType.Decimal);
             param[1].Value = pay;
-            param[2] = new SqlParameter("@rent", SqlDbType.Decimal);
-            param[2].Value = rent;
-            param[3] = new SqlParameter("@date_pay", SqlDbType.DateTime);
-            param[3].Value = pay_date;
-            param[4] = new SqlParameter("@id_ticket", SqlDbType.Int);
-            param[4].Value = id_ticket;
-            param[5] = new SqlParameter("@IDStock", SqlDbType.Int);
-            param[5].Value = IDStock;
-            param[6] = new SqlParameter("@sales_Man", SqlDbType.NVarChar,100);
-            param[6].Value = Sales_Man;
-            param[7] = new SqlParameter("@Id_Branch", SqlDbType.Int);
-            param[7].Value = Id_Branch;
+            param[2] = new SqlParameter("@IdStock", SqlDbType.Int);
+            param[2].Value = Id_stock;
+            param[3] = new SqlParameter("@SalesMan", SqlDbType.DateTime);
+            param[3].Value = Sales_Man;
+            param[4] = new SqlParameter("@DatePay", SqlDbType.Date);
+            param[4].Value = pay_date;
+            param[5] = new SqlParameter("@ID_Item", SqlDbType.Int);
+            param[5].Value = Id_Item;
+            param[7] = new SqlParameter("@Discount", SqlDbType.Decimal);
+            param[7].Value = ID_Tickets;
+     
             da.excutequery("addPayClient", param);
             da.close();
         }

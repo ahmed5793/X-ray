@@ -199,17 +199,12 @@ namespace Laboratory.PL
             {
                 if (lookUpEdit1.Text != "")
                 {
-                    Txt_CustAccount.Text = c.selectOneClientRent(Convert.ToInt32(lookUpEdit1.EditValue)).Rows[0][2].ToString();
-                    Txt_CustAcountAfterDisCount.Text = c.selectOneClientRent(Convert.ToInt32(lookUpEdit1.EditValue)).Rows[0][2].ToString();
-                    if (Txt_CustAccount.Text=="0")
-                    {
-                        TxtDisCount.Enabled = false;
-                    }
-                    else
-                    {
-                        TxtDisCount.Enabled = true;
-                    }
                   
+                    dataGridView2.DataSource = c.SelectTicketsForCustomer(Convert.ToInt32(lookUpEdit1.EditValue));
+                    dataGridView2.Columns[8].Visible = false;
+                    dataGridView2.Columns[8].Visible = false;
+
+        
 
                 }
             }
@@ -237,13 +232,9 @@ namespace Laboratory.PL
                     if (RdbAllPay.Checked == true)
                     {
 
-                        if (MessageBox.Show("هل تريد تسديد المبلغ على العميل بالكامل", "عمليه الدفع", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                        if (MessageBox.Show(" هل تريد تسديد المبلغ على العميل بالكامل للفاتورة المحددة", "عمليه الدفع", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
 
                         {
-                            //    c.addPayClient(Convert.ToInt32(cmb_client.SelectedValue), Convert.ToDecimal(dataGridView1.CurrentRow.Cells[3].Value),
-                            //          x, dateTimePicker1.Value, Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value),
-                            //          Convert.ToInt32(cmb_Stock.SelectedValue), Txt_SalesMAn.Text, Convert.ToInt32(Cmb_Branch.SelectedValue));
-
                             if (Convert.ToDecimal(TxtDisCount.Text)>0)
                             {
 
@@ -256,12 +247,13 @@ namespace Laboratory.PL
                                 c.Add_CustomerAccountStatment(Convert.ToInt32(lookUpEdit1.EditValue), 
                                     Convert.ToDecimal(TxtDisCount.Text),0
                                      , dateTimePicker1.Value, mno1, Convert.ToInt32(cmb_Stock.SelectedValue)
-                                     , Txt_SalesMAn.Text, Convert.ToInt32(Cmb_Branch.SelectedValue), "خصم مبلغ"  +"("+TxtDisCount.Text+")"+ "من الحساب المتبقي على العميل");
+                                     , Txt_SalesMAn.Text, Convert.ToInt32(Cmb_Branch.SelectedValue), "خصم مبلغ"  +"("+TxtDisCount.Text+")"+ "  من الحساب المتبقي على العميل للفحص رقم"+" "+ dataGridView2.CurrentRow.Cells[0].Value);
                             }
+
                             dt.Clear();
                             dt = c.Select_CustomertotalBAlance(Convert.ToInt32(lookUpEdit1.EditValue));
-                            decimal mno = Convert.ToDecimal(dt.Rows[0][0]) - Convert.ToDecimal(Txt_CustAcountAfterDisCount.Text)
-                                ;
+                            decimal mno = Convert.ToDecimal(dt.Rows[0][0]) - Convert.ToDecimal(Txt_CustAcountAfterDisCount.Text);
+
                             c.Update_CustomerTotalBalance(Convert.ToInt32(lookUpEdit1.EditValue), mno);
                             c.Add_CustomerAccountStatment(Convert.ToInt32(lookUpEdit1.EditValue), Convert.ToDecimal(Txt_CustAcountAfterDisCount.Text),
                                0
@@ -270,11 +262,29 @@ namespace Laboratory.PL
 
                             s.add_insertStock(Convert.ToInt32(cmb_Stock.SelectedValue), 
                                 Convert.ToDecimal(Txt_CustAcountAfterDisCount.Text), dateTimePicker1.Value,Txt_SalesMAn.Text,
-                                "  مدفوعات من العميل  "+" "+lookUpEdit1.Text );
+                                "  مدفوعات من العميل  "+" "+lookUpEdit1.Text +" "+ "للفحص رقم " +" "+ dataGridView2.CurrentRow.Cells[0].Value);
+
+
+                          c.addPayClient(Convert.ToInt32(lookUpEdit1.EditValue), Convert.ToDecimal(Txt_CustAcountAfterDisCount.Text)
+                          ,Convert.ToInt32(cmb_Stock.SelectedValue), Txt_SalesMAn.Text , dateTimePicker1.Value , 
+                          Convert.ToInt32(dataGridView2.CurrentRow.Cells[8].Value) , Convert.ToInt32(dataGridView2.CurrentRow.Cells[0].Value)
+                          , Convert.ToDecimal(TxtDisCount.Text));
+
                             MessageBox.Show("تم دفع المبلغ بنجاح");
 
-                            Txt_CustAccount.Text = c.selectOneClientRent(Convert.ToInt32(lookUpEdit1.EditValue)).Rows[0][0].ToString();
-                            Txt_CustAcountAfterDisCount.Text = c.selectOneClientRent(Convert.ToInt32(lookUpEdit1.EditValue)).Rows[0][0].ToString();
+
+                           /*كود الاضافة فى جدول مدفوعات العملاء وتعديل الفاتورة على الحسابات الجديدة */
+                                                        
+                                //for (int i = 0; i < dt.Rows.Count; i++)
+                                //{
+                                //    decimal y = Convert.ToDecimal(dt.Rows[i][7]);//rent
+                                //    decimal z = Convert.ToDecimal(dt.Rows[i][6]);//pay
+                                //    decimal x = Convert.ToDecimal(Txt_CustAcountAfterDisCount.Text) - y;
+
+                                //}
+                            
+
+
                         }
                         else
                         {
@@ -300,9 +310,7 @@ namespace Laboratory.PL
                         if (MessageBox.Show("هل تريد تسديد جزء من المبلغ على العميل ", "عمليه الدفع", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
 
                         {
-                            //c.addPayClient(Convert.ToInt32(cmb_client.SelectedValue), Convert.ToDecimal(txt_prise.Text), z,
-                            //    dateTimePicker1.Value, Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value),
-                            //    Convert.ToInt32(cmb_Stock.SelectedValue), Txt_SalesMAn.Text, Convert.ToInt32(Cmb_Branch.SelectedValue));
+                      
                             if (txt_prise.Text=="")
                             {
                                 MessageBox.Show("لا بد من تحديد السعر");
@@ -310,8 +318,6 @@ namespace Laboratory.PL
                             }
                             if (Convert.ToDecimal(TxtDisCount.Text) > 0)
                             {
-
-
                                 dt.Clear();
                                 dt = c.Select_CustomertotalBAlance(Convert.ToInt32(lookUpEdit1.EditValue));
                                 decimal mno1 = Convert.ToDecimal(dt.Rows[0][0]) - Convert.ToDecimal(TxtDisCount.Text)
@@ -322,20 +328,30 @@ namespace Laboratory.PL
                                      , dateTimePicker1.Value, mno1, Convert.ToInt32(cmb_Stock.SelectedValue)
                                      , Txt_SalesMAn.Text, Convert.ToInt32(Cmb_Branch.SelectedValue), "خصم مبلغ" + "(" + TxtDisCount.Text + ")" + "من الحساب المتبقي على العميل");
                             }
+
                             dt.Clear();
                             dt = c.Select_CustomertotalBAlance(Convert.ToInt32(lookUpEdit1.EditValue));
                             decimal mno = Convert.ToDecimal(dt.Rows[0][0]) - Convert.ToDecimal(txt_prise.Text);
                             c.Update_CustomerTotalBalance(Convert.ToInt32(lookUpEdit1.EditValue), mno);
+
                             c.Add_CustomerAccountStatment(Convert.ToInt32(lookUpEdit1.EditValue), Convert.ToDecimal(txt_prise.Text),
-                               0
-                                 , dateTimePicker1.Value, mno, Convert.ToInt32(cmb_Stock.SelectedValue)
+                               0, dateTimePicker1.Value, mno, Convert.ToInt32(cmb_Stock.SelectedValue)
                                  , Txt_SalesMAn.Text, Convert.ToInt32(Cmb_Branch.SelectedValue), "تسديد جزء من الحساب ");
+
                             s.add_insertStock(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_prise.Text), dateTimePicker1.Value,
-                                Txt_SalesMAn.Text, lookUpEdit1.Text + " " + "مدفوعات مديونية");
+                                Txt_SalesMAn.Text,
+                                "  مدفوعات من العميل  " + " " + lookUpEdit1.Text + " " + "للفحص رقم " + " " + dataGridView2.CurrentRow.Cells[0].Value);
+
+                         c.addPayClient(Convert.ToInt32(lookUpEdit1.EditValue), Convert.ToDecimal(txt_prise.Text)
+                         , Convert.ToInt32(cmb_Stock.SelectedValue), Txt_SalesMAn.Text, dateTimePicker1.Value,
+                         Convert.ToInt32(dataGridView2.CurrentRow.Cells[8].Value), Convert.ToInt32(dataGridView2.CurrentRow.Cells[0].Value)
+                            , Convert.ToDecimal(TxtDisCount.Text)); 
+
+
+
                             MessageBox.Show("تم دفع المبلغ بنجاح");
 
-                            Txt_CustAccount.Text = c.selectOneClientRent(Convert.ToInt32(lookUpEdit1.EditValue)).Rows[0][0].ToString();
-                            Txt_CustAcountAfterDisCount.Text = c.selectOneClientRent(Convert.ToInt32(lookUpEdit1.EditValue)).Rows[0][0].ToString();
+
 
                         }
                         else
@@ -345,17 +361,17 @@ namespace Laboratory.PL
                         }
 
                     }
-                    if (Convert.ToDecimal(TxtDisCount.Text) > 0)
-                    {
-                        dt.Clear();
-                        dt = c.SelectTicketsForCustomer(Convert.ToInt32(lookUpEdit1.EditValue));
-                        int y = dt.Rows.Count;
-                        int x = Convert.ToInt32(TxtDisCount.Text)/y;
-                        for (int i = 0; i < dt.Rows.Count; i++)
-                        {
-                            t.Update_TiecketDiscount(Convert.ToInt32(dt.Rows[i][0]), Convert.ToDecimal(x));
-                        }
-                    }
+                    //if (Convert.ToDecimal(TxtDisCount.Text) > 0)
+                    //{
+                    //    dt.Clear();
+                    //    dt = c.SelectTicketsForCustomer(Convert.ToInt32(lookUpEdit1.EditValue));
+                    //    int y = dt.Rows.Count;
+                    //    int x = Convert.ToInt32(TxtDisCount.Text)/y;
+                    //    for (int i = 0; i < dt.Rows.Count; i++)
+                    //    {
+                    //        t.Update_TiecketDiscount(Convert.ToInt32(dt.Rows[i][0]), Convert.ToDecimal(x));
+                    //    }
+                    //}
 
                 }
               
@@ -364,6 +380,7 @@ namespace Laboratory.PL
                 Txt_CustAcountAfterDisCount.Text = "0";
                 TxtDisCount.Text = "0";
 
+                dataGridView2.DataSource = c.SelectTicketsForCustomer(Convert.ToInt32(lookUpEdit1.EditValue));
 
                 lookUpEdit1.Properties.DataSource = c.SelectRentCompoCustomer();
                 lookUpEdit1.Properties.DisplayMember = "Cust_Name";
@@ -430,6 +447,7 @@ namespace Laboratory.PL
             }
         }
 
+
         private void TxtDisCount_MouseLeave(object sender, EventArgs e)
         {
             if (TxtDisCount.Text=="")
@@ -455,6 +473,46 @@ namespace Laboratory.PL
             TxtDisCount.Text = "0";
             Txt_CustAccount.Text = "0";
             Txt_CustAcountAfterDisCount.Text = "0";
+        }
+
+        private void Txt_CustAcountAfterDisCount_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView2_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                //    Txt_CustAccount.Text = c.selectOneClientRent(Convert.ToInt32(lookUpEdit1.EditValue)).Rows[0][2].ToString();
+                //    Txt_CustAcountAfterDisCount.Text = c.selectOneClientRent(Convert.ToInt32(lookUpEdit1.EditValue)).Rows[0][2].ToString();
+
+                Txt_CustAccount.Text =dataGridView2.CurrentRow.Cells[7].Value.ToString();
+                Txt_CustAcountAfterDisCount.Text = dataGridView2.CurrentRow.Cells[7].Value.ToString();
+                if (Txt_CustAccount.Text == "0")
+                {
+                    TxtDisCount.Enabled = false;
+                }
+                else
+                {
+                    TxtDisCount.Enabled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
+            }
         }
     }
 }
