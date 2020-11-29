@@ -11,7 +11,7 @@ namespace Laboratory.DAL
 {
     class DataAccessLayer
     {
-        SqlConnection con;
+       SqlConnection con;
 
         public DataAccessLayer()
         {
