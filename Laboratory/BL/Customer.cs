@@ -189,9 +189,10 @@ namespace Laboratory.BL
             param[4].Value = pay_date;
             param[5] = new SqlParameter("@ID_Item", SqlDbType.Int);
             param[5].Value = Id_Item;
+            param[6] = new SqlParameter("@ID_Tickets", SqlDbType.Int);
+            param[6].Value = ID_Tickets;
             param[7] = new SqlParameter("@Discount", SqlDbType.Decimal);
-            param[7].Value = ID_Tickets;
-     
+            param[7].Value = discount;
             da.excutequery("addPayClient", param);
             da.close();
         }
