@@ -202,7 +202,7 @@ namespace Laboratory.PL
                   
                     dataGridView2.DataSource = c.SelectTicketsForCustomer(Convert.ToInt32(lookUpEdit1.EditValue));
                     dataGridView2.Columns[8].Visible = false;
-                    dataGridView2.Columns[8].Visible = false;
+                    dataGridView2.Columns[1].Visible = false;
 
         
 
@@ -372,20 +372,23 @@ namespace Laboratory.PL
                     //        t.Update_TiecketDiscount(Convert.ToInt32(dt.Rows[i][0]), Convert.ToDecimal(x));
                     //    }
                     //}
+                    txt_prise.Text = "0";
+                    Txt_CustAccount.Text = "0";
+                    Txt_CustAcountAfterDisCount.Text = "0";
+                    TxtDisCount.Text = "0";
 
+                    dataGridView2.DataSource = c.SelectTicketsForCustomer(Convert.ToInt32(lookUpEdit1.EditValue));
+
+                    lookUpEdit1.Properties.DataSource = c.SelectRentCompoCustomer();
+                    lookUpEdit1.Properties.DisplayMember = "Cust_Name";
+                    lookUpEdit1.Properties.ValueMember = "Cust_ID";
+                    lookUpEdit1.Text = "";
                 }
-              
-                txt_prise.Text = "0";
-                Txt_CustAccount.Text = "0";
-                Txt_CustAcountAfterDisCount.Text = "0";
-                TxtDisCount.Text = "0";
-
-                dataGridView2.DataSource = c.SelectTicketsForCustomer(Convert.ToInt32(lookUpEdit1.EditValue));
-
-                lookUpEdit1.Properties.DataSource = c.SelectRentCompoCustomer();
-                lookUpEdit1.Properties.DisplayMember = "Cust_Name";
-                lookUpEdit1.Properties.ValueMember = "Cust_ID";
-                lookUpEdit1.Text = "";
+                else
+                {
+                    MessageBox.Show("لا بد من تاكيد الخطوات الصحيحة لتاكيد العملية قبل الحفظ");
+                }
+                
 
             }
             catch (Exception ex)
