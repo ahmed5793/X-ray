@@ -266,7 +266,7 @@ namespace Laboratory.PL
 
 
                           c.addPayClient(Convert.ToInt32(lookUpEdit1.EditValue), Convert.ToDecimal(Txt_CustAcountAfterDisCount.Text)
-                          ,Convert.ToInt32(cmb_Stock.SelectedValue), Txt_SalesMAn.Text , dateTimePicker1.Value , 
+                          ,(Cmb_Branch.Text), Txt_SalesMAn.Text , dateTimePicker1.Value , 
                           Convert.ToInt32(dataGridView2.CurrentRow.Cells[8].Value) , Convert.ToInt32(dataGridView2.CurrentRow.Cells[0].Value)
                           , Convert.ToDecimal(TxtDisCount.Text));
 
@@ -343,7 +343,7 @@ namespace Laboratory.PL
                                 "  مدفوعات من العميل  " + " " + lookUpEdit1.Text + " " + "للفحص رقم " + " " + dataGridView2.CurrentRow.Cells[0].Value);
 
                          c.addPayClient(Convert.ToInt32(lookUpEdit1.EditValue), Convert.ToDecimal(txt_prise.Text)
-                         , Convert.ToInt32(cmb_Stock.SelectedValue), Txt_SalesMAn.Text, dateTimePicker1.Value,
+                         , (Cmb_Branch.Text), Txt_SalesMAn.Text, dateTimePicker1.Value,
                          Convert.ToInt32(dataGridView2.CurrentRow.Cells[8].Value), Convert.ToInt32(dataGridView2.CurrentRow.Cells[0].Value)
                             , Convert.ToDecimal(TxtDisCount.Text)); 
 

@@ -171,7 +171,7 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
-        internal void addPayClient(int id_client, decimal pay, int Id_stock, string Sales_Man,
+        internal void addPayClient(int id_client, decimal pay, string branch, string Sales_Man,
                                    DateTime pay_date, int Id_Item,int ID_Tickets,decimal discount)
         {
             DataAccessLayer da = new DataAccessLayer();
@@ -181,8 +181,8 @@ namespace Laboratory.BL
             param[0].Value = id_client;
             param[1] = new SqlParameter("@PayMoney", SqlDbType.Decimal);
             param[1].Value = pay;
-            param[2] = new SqlParameter("@IdStock", SqlDbType.Int);
-            param[2].Value = Id_stock;
+            param[2] = new SqlParameter("@Branch", SqlDbType.NVarChar,50);
+            param[2].Value = branch;
             param[3] = new SqlParameter("@SalesMan", SqlDbType.NVarChar,50);
             param[3].Value = Sales_Man;
             param[4] = new SqlParameter("@DatePay", SqlDbType.Date);
