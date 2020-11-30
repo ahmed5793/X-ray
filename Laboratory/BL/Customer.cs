@@ -183,7 +183,7 @@ namespace Laboratory.BL
             param[1].Value = pay;
             param[2] = new SqlParameter("@IdStock", SqlDbType.Int);
             param[2].Value = Id_stock;
-            param[3] = new SqlParameter("@SalesMan", SqlDbType.DateTime);
+            param[3] = new SqlParameter("@SalesMan", SqlDbType.NVarChar,50);
             param[3].Value = Sales_Man;
             param[4] = new SqlParameter("@DatePay", SqlDbType.Date);
             param[4].Value = pay_date;

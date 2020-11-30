@@ -258,7 +258,7 @@ namespace Laboratory.PL
                             c.Add_CustomerAccountStatment(Convert.ToInt32(lookUpEdit1.EditValue), Convert.ToDecimal(Txt_CustAcountAfterDisCount.Text),
                                0
                                  , dateTimePicker1.Value, mno, Convert.ToInt32(cmb_Stock.SelectedValue)
-                                 , Txt_SalesMAn.Text, Convert.ToInt32(Cmb_Branch.SelectedValue), "تسديد كل الحساب القديم" );
+                                 , Txt_SalesMAn.Text, Convert.ToInt32(Cmb_Branch.SelectedValue), "تسديد كل الحساب القديم للفحص رقم" +" "+ dataGridView2.CurrentRow.Cells[0].Value);
 
                             s.add_insertStock(Convert.ToInt32(cmb_Stock.SelectedValue), 
                                 Convert.ToDecimal(Txt_CustAcountAfterDisCount.Text), dateTimePicker1.Value,Txt_SalesMAn.Text,
