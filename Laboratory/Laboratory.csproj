@@ -1049,6 +1049,12 @@
       <DependentUpon>Rpt_Revenue.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="RPT\Order\Rpt_RevenueDetalis.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Rpt_RevenueDetalis.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="RPT\Order\Rpt_TeckietCompanyOrder.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -1418,7 +1424,6 @@
     <EmbeddedResource Include="PL\Validate_Users.resx">
       <DependentUpon>Validate_Users.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -1451,6 +1456,10 @@
     <EmbeddedResource Include="RPT\Order\Rpt_Revenue.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Rpt_Revenue.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\Order\Rpt_RevenueDetalis.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Rpt_RevenueDetalis.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="RPT\Order\Rpt_TeckietCompanyOrder.resx">
       <DependentUpon>Rpt_TeckietCompanyOrder.cs</DependentUpon>
