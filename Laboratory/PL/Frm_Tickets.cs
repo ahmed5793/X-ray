@@ -1810,9 +1810,13 @@ namespace Laboratory.PL
                                 return;
                             }
                             Btn_Save.Enabled = false;
+                            DataTable dt = new DataTable();
 
-                            c.addCustomer(txt_name.Text, txt_address.Text, txt_phone.Text, Convert.ToInt32(txt_age.Text), dtb_visit.Value, comboBox1.Text, txt_idntational.Text);
-                            txt_idcust.Text = c.LastIdCustomer().Rows[0][0].ToString();
+                            dt.Clear();
+                            dt = c.addCustomer(txt_name.Text, txt_address.Text, txt_phone.Text, Convert.ToInt32(txt_age.Text),
+                                dtb_visit.Value, comboBox1.Text, txt_idntational.Text);
+                            int idcust = int.Parse(dt.Rows[0][0].ToString());
+                            txt_idcust.Text = idcust.ToString();
                             c.Add_CustomerTotalBalance(Convert.ToInt32(txt_idcust.Text));
 
                             //t.AddTickets(dtb_visit.Value, dtp_recive.Value, Convert.ToDecimal(txt_total.Text), Convert.ToDecimal(txt_pay.Text),
@@ -1822,7 +1826,6 @@ namespace Laboratory.PL
                             //    cmb_UserBranch.Text, Convert.ToDecimal(Txt_addtionPayment.Text), txt_reasonAddition.Text, Convert.ToDecimal(txt_afterDiscount.Text),
                             //    Convert.ToDecimal(Txt_PricePayment.Text),"active");
                         
-                                DataTable dt = new DataTable();
                             dt.Clear();
                                 dt = t.AddTickets(dtb_visit.Value, dtp_recive.Value, Convert.ToDecimal(txt_total.Text), Convert.ToDecimal(txt_pay.Text),
                                 Convert.ToDecimal(txt_rent.Text), Convert.ToInt32(txt_idcust.Text), cmb_statues.Text, Convert.ToInt32(cmb_Doctor.SelectedValue),
@@ -2026,8 +2029,11 @@ namespace Laboratory.PL
                             //    return;
                             //}
                             Btn_Save.Enabled = false;
-                            c.addCustomer(txt_name.Text, txt_address.Text, txt_phone.Text, Convert.ToInt32(txt_age.Text), dtb_visit.Value, comboBox1.Text, txt_idntational.Text);
-                            txt_idcust.Text = c.LastIdCustomer().Rows[0][0].ToString();                      
+                            dt.Clear();
+                          dt=  c.addCustomer(txt_name.Text, txt_address.Text, txt_phone.Text, Convert.ToInt32(txt_age.Text),
+                              dtb_visit.Value, comboBox1.Text, txt_idntational.Text);
+                            int idcust = int.Parse(dt.Rows[0][0].ToString());
+                            txt_idcust.Text = idcust.ToString();                      
                             c.Add_CustomerTotalBalance(Convert.ToInt32(txt_idcust.Text));
                             dt.Clear();
                             dt=  t.AddTickets(dtb_visit.Value, dtp_recive.Value, Convert.ToDecimal(txt_total.Text), Convert.ToDecimal(txt_pay.Text),

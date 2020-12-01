@@ -6,14 +6,16 @@ using System.Threading.Tasks;
 using Laboratory.DAL;
 using System.Data;
 using System.Data.SqlClient;
+using DevExpress.ClipboardSource.SpreadsheetML;
 
 namespace Laboratory.BL
 {
     class Customer
     {
-        internal void addCustomer(string name, string address, string phone,int age,DateTime Start_Date,string gender,string ID_Ntional)
+        internal DataTable addCustomer(string name, string address, string phone,int age,DateTime Start_Date,string gender,string ID_Ntional)
         {
             DataAccessLayer da = new DataAccessLayer();
+            DataTable dt = new DataTable();
             da.open();
             SqlParameter[] param = new SqlParameter[7];
             param[0] = new SqlParameter("@name", SqlDbType.NVarChar, 150);
@@ -32,8 +34,9 @@ namespace Laboratory.BL
             param[6] = new SqlParameter("@ID_Ntional", SqlDbType.VarChar, 100);
             param[6].Value = ID_Ntional;
 
-            da.excutequery("AddCustomer", param);
+         dt  = da.selected("AddCustomer", param);
             da.close();
+            return dt;
         }
         internal DataTable SelectCustomer()
         {
