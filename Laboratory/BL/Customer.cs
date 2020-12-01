@@ -6,14 +6,16 @@ using System.Threading.Tasks;
 using Laboratory.DAL;
 using System.Data;
 using System.Data.SqlClient;
+using DevExpress.ClipboardSource.SpreadsheetML;
 
 namespace Laboratory.BL
 {
     class Customer
     {
-        internal void addCustomer(string name, string address, string phone,int age,DateTime Start_Date,string gender,string ID_Ntional)
+        internal DataTable addCustomer(string name, string address, string phone,int age,DateTime Start_Date,string gender,string ID_Ntional)
         {
             DataAccessLayer da = new DataAccessLayer();
+            DataTable dt = new DataTable();
             da.open();
             SqlParameter[] param = new SqlParameter[7];
             param[0] = new SqlParameter("@name", SqlDbType.NVarChar, 150);
@@ -32,8 +34,9 @@ namespace Laboratory.BL
             param[6] = new SqlParameter("@ID_Ntional", SqlDbType.VarChar, 100);
             param[6].Value = ID_Ntional;
 
-            da.excutequery("AddCustomer", param);
+         dt  = da.selected("AddCustomer", param);
             da.close();
+            return dt;
         }
         internal DataTable SelectCustomer()
         {
@@ -171,7 +174,7 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
-        internal void addPayClient(int id_client, decimal pay, int Id_stock, string Sales_Man,
+        internal void addPayClient(int id_client, decimal pay, string branch, string Sales_Man,
                                    DateTime pay_date, int Id_Item,int ID_Tickets,decimal discount)
         {
             DataAccessLayer da = new DataAccessLayer();
@@ -181,8 +184,8 @@ namespace Laboratory.BL
             param[0].Value = id_client;
             param[1] = new SqlParameter("@PayMoney", SqlDbType.Decimal);
             param[1].Value = pay;
-            param[2] = new SqlParameter("@IdStock", SqlDbType.Int);
-            param[2].Value = Id_stock;
+            param[2] = new SqlParameter("@Branch", SqlDbType.NVarChar,50);
+            param[2].Value = branch;
             param[3] = new SqlParameter("@SalesMan", SqlDbType.NVarChar,50);
             param[3].Value = Sales_Man;
             param[4] = new SqlParameter("@DatePay", SqlDbType.Date);
