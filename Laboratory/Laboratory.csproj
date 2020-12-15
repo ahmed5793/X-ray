@@ -1037,6 +1037,12 @@
     <Compile Include="RPT\Order\Rpt_DevRevenue.Designer.cs">
       <DependentUpon>Rpt_DevRevenue.cs</DependentUpon>
     </Compile>
+    <Compile Include="RPT\Order\Rpt_DevRevenueAllBranch.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPT\Order\Rpt_DevRevenueAllBranch.designer.cs">
+      <DependentUpon>Rpt_DevRevenueAllBranch.cs</DependentUpon>
+    </Compile>
     <Compile Include="RPT\Order\RPT_FingerExcellDay.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -1463,6 +1469,9 @@
     <EmbeddedResource Include="RPT\Order\Rpt_DevRevenue.resx">
       <DependentUpon>Rpt_DevRevenue.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RPT\Order\Rpt_DevRevenueAllBranch.resx">
+      <DependentUpon>Rpt_DevRevenueAllBranch.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RPT\Order\RPT_FingerExcellDay.resx">
       <DependentUpon>RPT_FingerExcellDay.cs</DependentUpon>
     </EmbeddedResource>
@@ -1502,6 +1511,7 @@
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Laboratory.RPT.Order.DataSetRevenue+DataTableAllBranchDataTable.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

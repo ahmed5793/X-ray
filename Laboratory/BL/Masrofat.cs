@@ -180,5 +180,36 @@ namespace Laboratory.BL
             return dt;
         }
 
+        internal DataTable Report_RevenueDetails_Masrofat_AllBranch(DateTime FromDate, DateTime ToDate)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[2];
+            DataTable dt = new DataTable();
+            param[0] = new SqlParameter("@FromDate", SqlDbType.Date);
+            param[0].Value = FromDate;
+            param[1] = new SqlParameter("@Todate", SqlDbType.Date);
+            param[1].Value = ToDate;
+
+
+            dt = da.selected("Report_RevenueDetails_Masrofat_AllBranch", param);
+            return dt;
+
+        }
+        internal DataTable Report_RevenueDetails_Masrofat_OneBranch(string Branch,DateTime FromDate, DateTime ToDate)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[3];
+            DataTable dt = new DataTable();
+            param[0] = new SqlParameter("@branch", SqlDbType.NVarChar,50);
+            param[0].Value = Branch;
+            param[1] = new SqlParameter("@FromDate", SqlDbType.Date);
+            param[1].Value = FromDate;
+            param[2] = new SqlParameter("@Todate", SqlDbType.Date);
+            param[2].Value = ToDate;
+            dt = da.selected("Report_RevenueDetails_Masrofat_OneBranch", param);
+            return dt;
+
+        }
+
     }
 }
