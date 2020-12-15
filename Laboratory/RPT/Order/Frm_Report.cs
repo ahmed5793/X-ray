@@ -26,6 +26,7 @@ namespace Laboratory.RPT.Order
         {
             try
             {
+               
                 Frm_Report sr = new Frm_Report();
                 if (rdb_one.Checked == true)
                 {
@@ -56,7 +57,7 @@ namespace Laboratory.RPT.Order
 
 
 
-
+                    sr.documentViewer1.Refresh();
                     dso.Tables["DataTable"].Clear();
                     for (int i = 0; i < dt1.Rows.Count; i++)
                     {
@@ -69,20 +70,20 @@ namespace Laboratory.RPT.Order
                            dt1.Rows[i][11], dt1.Rows[i][12], dt1.Rows[i][13], dt1.Rows[i][14],
                            dt1.Rows[i][15]);
                     }
-                    sr.documentViewer1.Refresh();
+                   
                     report.DataSource = dso;
-                    report.Parameters["branch"].Value = cmb_branches.Text;
+                    report.Parameters["Branch"].Value = cmb_branches.Text;
                     report.Parameters["FromDate"].Value = dtb_from.Text;
                     report.Parameters["Todate"].Value = dtb_to.Text;
                     sr.documentViewer1.DocumentSource = report;
-                    report.Parameters["branch"].Visible = false;
+                    report.Parameters["Branch"].Visible = false;
                     report.Parameters["FromDate"].Visible = false;
                     report.Parameters["Todate"].Visible = false;
+                  // documentViewer1.Refresh();
+                  //  documentViewer1.DocumentSource = report;
+                    // sr.documentViewer1.Enabled = true;
 
-                    documentViewer1.DocumentSource = report;
-                    // sr.documentViewer.Enabled = true;
-
-                    // sr.ShowDialog();
+                    sr.ShowDialog();
 
                 }
                 else if(rdb_All.Checked==true)
