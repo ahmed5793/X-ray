@@ -1081,6 +1081,27 @@ namespace Laboratory.BL
             da.excutequery("Update_TiecketDiscount", param);
             da.close();
         }
+        internal DataTable ReportRevenueAllDetails(string branch, DateTime Date_From, DateTime Date_To)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[3];
+            DataTable dt = new DataTable();
+
+
+
+            param[0] = new SqlParameter("@branch", SqlDbType.NVarChar, 50);
+            param[0].Value = branch;
+            param[1] = new SqlParameter("@FromDate", SqlDbType.Date);
+            param[1].Value = Date_From;
+            param[2] = new SqlParameter("@Todate", SqlDbType.Date);
+            param[2].Value = Date_To;
+            da.open();
+
+            dt.Clear();
+            dt = da.selected("ReportRevenueAllDetails", param);
+            da.close();
+            return dt;
+        }
 
     }
 }
