@@ -33,14 +33,25 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.label7 = new System.Windows.Forms.Label();
             this.cmb_Branch = new System.Windows.Forms.ComboBox();
             this.DateTo = new System.Windows.Forms.DateTimePicker();
             this.DateFrom = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.Cmb_CategoryItem = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -60,9 +71,9 @@
             this.btn_search.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btn_search.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.btn_search.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_search.ImageOptions.Image")));
-            this.btn_search.Location = new System.Drawing.Point(51, 23);
+            this.btn_search.Location = new System.Drawing.Point(210, 26);
             this.btn_search.Name = "btn_search";
-            this.btn_search.Size = new System.Drawing.Size(134, 38);
+            this.btn_search.Size = new System.Drawing.Size(134, 43);
             this.btn_search.TabIndex = 211;
             this.btn_search.Text = "بحث  ";
             this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
@@ -73,9 +84,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.gridControl1);
-            this.groupBox1.Location = new System.Drawing.Point(4, 100);
+            this.groupBox1.Location = new System.Drawing.Point(4, 147);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(901, 353);
+            this.groupBox1.Size = new System.Drawing.Size(982, 349);
             this.groupBox1.TabIndex = 210;
             this.groupBox1.TabStop = false;
             // 
@@ -91,7 +102,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.gridControl1.Size = new System.Drawing.Size(892, 332);
+            this.gridControl1.Size = new System.Drawing.Size(973, 327);
             this.gridControl1.TabIndex = 127;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -156,6 +167,17 @@
             this.gridView1.AppearancePrint.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridView1.AppearancePrint.Row.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridView1.AppearancePrint.Row.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2,
+            this.gridColumn3,
+            this.gridColumn4,
+            this.gridColumn5,
+            this.gridColumn6,
+            this.gridColumn7,
+            this.gridColumn8,
+            this.gridColumn9,
+            this.gridColumn10});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
@@ -166,6 +188,99 @@
             this.gridView1.OptionsPrint.PrintPreview = true;
             this.gridView1.OptionsView.ShowFooter = true;
             // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "رقم الفاتورة";
+            this.gridColumn1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn1.FieldName = "رقم الفاتورة";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "رقم الفاتورة", "( {0} )  = عدد الفحوصات")});
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            this.gridColumn1.Width = 138;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "اسم المستخدم";
+            this.gridColumn2.FieldName = "اسم المستخدم";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.Width = 92;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "الفرع";
+            this.gridColumn3.FieldName = "فرع";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 2;
+            this.gridColumn3.Width = 92;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "اسم المريض";
+            this.gridColumn4.FieldName = "اسم المريض";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 3;
+            this.gridColumn4.Width = 92;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "تاريخ الزيارة";
+            this.gridColumn5.FieldName = "تاريخ الزيارة";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 4;
+            this.gridColumn5.Width = 92;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "نوع الفحص";
+            this.gridColumn6.FieldName = "نوع الفحص";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Width = 20;
+            // 
+            // gridColumn7
+            // 
+            this.gridColumn7.Caption = "الاجمالي";
+            this.gridColumn7.FieldName = "الاجمالي";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 5;
+            this.gridColumn7.Width = 79;
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.Caption = "الخصم";
+            this.gridColumn8.FieldName = "الخصم";
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "الخصم", "( {0:0.##} ) = إجمالى الخصومات")});
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 6;
+            this.gridColumn8.Width = 159;
+            // 
+            // gridColumn9
+            // 
+            this.gridColumn9.Caption = "الاجمالي بعد الخصم";
+            this.gridColumn9.FieldName = "الاجمالي بعد الخصم";
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.Visible = true;
+            this.gridColumn9.VisibleIndex = 7;
+            this.gridColumn9.Width = 91;
+            // 
+            // gridColumn10
+            // 
+            this.gridColumn10.Caption = "ملاحظات";
+            this.gridColumn10.FieldName = "ملاحظات";
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.Visible = true;
+            this.gridColumn10.VisibleIndex = 8;
+            this.gridColumn10.Width = 120;
+            // 
             // label7
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -173,7 +288,7 @@
             this.label7.BackColor = System.Drawing.Color.Yellow;
             this.label7.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(591, 11);
+            this.label7.Location = new System.Drawing.Point(720, 12);
             this.label7.Name = "label7";
             this.label7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label7.Size = new System.Drawing.Size(43, 29);
@@ -188,10 +303,10 @@
             this.cmb_Branch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Branch.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_Branch.FormattingEnabled = true;
-            this.cmb_Branch.Location = new System.Drawing.Point(265, 11);
+            this.cmb_Branch.Location = new System.Drawing.Point(397, 11);
             this.cmb_Branch.Name = "cmb_Branch";
             this.cmb_Branch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmb_Branch.Size = new System.Drawing.Size(320, 32);
+            this.cmb_Branch.Size = new System.Drawing.Size(279, 32);
             this.cmb_Branch.TabIndex = 208;
             // 
             // DateTo
@@ -200,7 +315,7 @@
             this.DateTo.CustomFormat = "   dd/MM/yyyy   ";
             this.DateTo.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DateTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DateTo.Location = new System.Drawing.Point(221, 61);
+            this.DateTo.Location = new System.Drawing.Point(313, 104);
             this.DateTo.Name = "DateTo";
             this.DateTo.ShowUpDown = true;
             this.DateTo.Size = new System.Drawing.Size(157, 32);
@@ -212,7 +327,7 @@
             this.DateFrom.CustomFormat = "   dd/MM/yyyy   ";
             this.DateFrom.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DateFrom.Location = new System.Drawing.Point(483, 62);
+            this.DateFrom.Location = new System.Drawing.Point(577, 106);
             this.DateFrom.Name = "DateFrom";
             this.DateFrom.ShowUpDown = true;
             this.DateFrom.Size = new System.Drawing.Size(156, 32);
@@ -224,7 +339,7 @@
             this.label4.BackColor = System.Drawing.Color.Black;
             this.label4.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Yellow;
-            this.label4.Location = new System.Drawing.Point(384, 62);
+            this.label4.Location = new System.Drawing.Point(475, 105);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label4.Size = new System.Drawing.Size(68, 31);
@@ -238,7 +353,7 @@
             this.label3.BackColor = System.Drawing.Color.Black;
             this.label3.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Yellow;
-            this.label3.Location = new System.Drawing.Point(645, 62);
+            this.label3.Location = new System.Drawing.Point(736, 107);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label3.Size = new System.Drawing.Size(70, 31);
@@ -246,43 +361,60 @@
             this.label3.Text = " : من";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox2
+            // Cmb_CategoryItem
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.textBox2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.Yellow;
-            this.textBox2.Location = new System.Drawing.Point(523, 459);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(171, 29);
-            this.textBox2.TabIndex = 130;
-            this.textBox2.Text = "0";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Cmb_CategoryItem.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Cmb_CategoryItem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.Cmb_CategoryItem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.Cmb_CategoryItem.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cmb_CategoryItem.FormattingEnabled = true;
+            this.Cmb_CategoryItem.Location = new System.Drawing.Point(397, 60);
+            this.Cmb_CategoryItem.Name = "Cmb_CategoryItem";
+            this.Cmb_CategoryItem.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Cmb_CategoryItem.Size = new System.Drawing.Size(279, 32);
+            this.Cmb_CategoryItem.TabIndex = 213;
             // 
-            // label5
+            // label1
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.BackColor = System.Drawing.Color.Beige;
-            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(697, 460);
-            this.label5.Name = "label5";
-            this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label5.Size = new System.Drawing.Size(200, 26);
-            this.label5.TabIndex = 131;
-            this.label5.Text = "اجمالي الخصومات";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Yellow;
+            this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(693, 64);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(92, 24);
+            this.label1.TabIndex = 212;
+            this.label1.Text = "نوع الفحص";
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.Black;
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton1.Appearance.ForeColor = System.Drawing.Color.White;
+            this.simpleButton1.Appearance.Options.UseBackColor = true;
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.Appearance.Options.UseForeColor = true;
+            this.simpleButton1.Appearance.Options.UseTextOptions = true;
+            this.simpleButton1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.simpleButton1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.simpleButton1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(21, 25);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(144, 43);
+            this.simpleButton1.TabIndex = 236;
+            this.simpleButton1.Text = "طباعة التقرير";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // Report_DiscountTicket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(909, 500);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label5);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(990, 501);
+            this.Controls.Add(this.simpleButton1);
+            this.Controls.Add(this.Cmb_CategoryItem);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_search);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label7);
@@ -316,7 +448,18 @@
         private System.Windows.Forms.DateTimePicker DateFrom;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label5;
+        public System.Windows.Forms.ComboBox Cmb_CategoryItem;
+        private System.Windows.Forms.Label label1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

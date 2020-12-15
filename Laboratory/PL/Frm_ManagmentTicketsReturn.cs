@@ -18,23 +18,31 @@ namespace Laboratory.PL
         Tickets t = new Tickets();
         DataTable dt = new DataTable();
         Users u = new Users();
+        CategoryXRaya c = new CategoryXRaya();
 
         public Frm_ManagmentTicketsReturn()
         {
             InitializeComponent();
-            txt_username.Text = Program.salesman;
+            
             Permision();
         }
         void Permision()
         {
             try
             {
+
+                // select Category XRay
+                Cmb_CategoryItem.DataSource = c.selectCategoryXRaya();
+                Cmb_CategoryItem.DisplayMember = "الفئات";
+                Cmb_CategoryItem.ValueMember = "ID_CtegoryXrays";
+
+
                 dt.Clear();
-                dt = u.SelectUserBranch(txt_username.Text);
+                dt = u.SelectUserBranch(Program.salesman);
 
                 if (dt.Rows.Count > 0)
                 {
-                    cmb_UserBranch.DataSource = u.SelectUserBranch(txt_username.Text);
+                    cmb_UserBranch.DataSource = u.SelectUserBranch(Program.salesman);
                     cmb_UserBranch.DisplayMember = "Name";
                     cmb_UserBranch.ValueMember = "Branch_ID";
                 }
@@ -51,16 +59,16 @@ namespace Laboratory.PL
             }
        
         }
-        void calc()
-        {
-            decimal totall = 0;
-            for (int i = 0; i < gridView1.RowCount ; i++)
-            {
-                DataRow row = gridView1.GetDataRow(i);
-                totall += Convert.ToDecimal(row[7]);
-            }
-            textBox1.Text = Math.Round(totall,1).ToString();
-        }
+        //void calc()
+        //{
+        //    decimal totall = 0;
+        //    for (int i = 0; i < gridView1.RowCount ; i++)
+        //    {
+        //        DataRow row = gridView1.GetDataRow(i);
+        //        totall += Convert.ToDecimal(row[7]);
+        //    }
+        //    textBox1.Text = Math.Round(totall,1).ToString();
+        //}
         private void Frm_ManagmentTicketsReturn_Load(object sender, EventArgs e)
         {
         }
@@ -71,9 +79,9 @@ namespace Laboratory.PL
                 if (cmb_UserBranch.Text != "")
                 {
                     dt.Clear();
-                    dt = t.selectSearchTicketsReturnDate(cmb_UserBranch.Text, DateFrom.Value, DateTo.Value);
+                    dt = t.selectSearchTicketsReturnDate(cmb_UserBranch.Text, DateFrom.Value, DateTo.Value, Convert.ToInt32(Cmb_CategoryItem.SelectedValue));
                     gridControl1.DataSource = dt;
-                    calc();
+                    //calc();
                 }
             }
             catch (Exception ex)
@@ -83,7 +91,15 @@ namespace Laboratory.PL
         }
         private void Btn_Print_Click(object sender, EventArgs e)
         {
-            gridControl1.ShowRibbonPrintPreview();
+            if (gridView1.RowCount > 0)
+            {
+                gridControl1.ShowRibbonPrintPreview();
+            }
+            else
+            {
+                MessageBox.Show(" لا يوجد بيانات للطباعة");
+
+            }
         }
 
         private void cmb_UserBranch_SelectionChangeCommitted(object sender, EventArgs e)
@@ -91,7 +107,7 @@ namespace Laboratory.PL
             try
             {
                 gridControl1.DataSource = t.selectTicketsReturn(cmb_UserBranch.Text);
-                calc();
+                //calc();
             }
             catch (Exception ex)
             {
@@ -105,7 +121,7 @@ namespace Laboratory.PL
             try
             {
                 gridControl1.DataSource = t.selectTicketsReturn(cmb_UserBranch.Text);
-                calc();
+                //calc();
             }
             catch (Exception ex)
             {
