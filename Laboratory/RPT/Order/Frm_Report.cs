@@ -27,10 +27,7 @@ namespace Laboratory.RPT.Order
             try
             {
                
-                Frm_Report sr = new Frm_Report();
-                Tickets t = new Tickets();
-                DataSetRevenue dso = new DataSetRevenue();
-                DataTable dt1 = new DataTable();
+              
 
                 if (rdb_one.Checked == true)
                 {
@@ -47,7 +44,10 @@ namespace Laboratory.RPT.Order
 
                     //  Rpt_Revenue report = new Rpt_Revenue();
                     Rpt_DevRevenue report = new Rpt_DevRevenue();
-
+                    Frm_Report sr = new Frm_Report();
+                    Tickets t = new Tickets();
+                    DataSetRevenue dso = new DataSetRevenue();
+                    DataTable dt1 = new DataTable();
                     ////////////
                     dt1.Clear();
                     dt1 = t.ReportRevenueAllDetails(cmb_branches.Text, dtb_from.Value, dtb_to.Value);
@@ -85,39 +85,39 @@ namespace Laboratory.RPT.Order
                 }
                 else if(rdb_All.Checked==true)
                 {
-                    Rpt_DevRevenueAllBranch report = new Rpt_DevRevenueAllBranch();
-
+                    XtraReportRevenueDetailsAllBranch reportB = new XtraReportRevenueDetailsAllBranch();
+                    Frm_Report sr1 = new Frm_Report();
+                    Tickets t = new Tickets();
+                    DataSetRevenue dso1= new DataSetRevenue();
+                    DataTable dt1 = new DataTable();
                     ////////////
                     dt1.Clear();
                     dt1 = t.Report_RevenueDetails_AllBranch( dtb_from.Value, dtb_to.Value);
 
 
 
-                    sr.documentViewer1.Refresh();
-                    dso.Tables["DataTableAllBranch"].Clear();
-                    for (int i = 0; i < dt1.Rows.Count; i++)
+                    sr1.documentViewer1.Refresh();
+                    dso1.Tables["DataTableAllBranch"].Clear();
+                    for (int n = 0; n < dt1.Rows.Count; n++)
                     {
-
-
-
-                        dso.Tables["DataTableAllBranch"].Rows.Add(dt1.Rows[i][0], dt1.Rows[i][1], dt1.Rows[i][2],
-                           dt1.Rows[i][3], dt1.Rows[i][4], dt1.Rows[i][5], dt1.Rows[i][6],
-                           dt1.Rows[i][7], dt1.Rows[i][8], dt1.Rows[i][9], dt1.Rows[i][10],
-                           dt1.Rows[i][11], dt1.Rows[i][12], dt1.Rows[i][13], dt1.Rows[i][14],
-                           dt1.Rows[i][15]);
+                        dso1.Tables["DataTableAllBranch"].Rows.Add(dt1.Rows[n][0], dt1.Rows[n][1], dt1.Rows[n][2],
+                           dt1.Rows[n][3], dt1.Rows[n][4], dt1.Rows[n][5], dt1.Rows[n][6],
+                           dt1.Rows[n][7], dt1.Rows[n][8], dt1.Rows[n][9], dt1.Rows[n][10],
+                           dt1.Rows[n][11], dt1.Rows[n][12], dt1.Rows[n][13], dt1.Rows[n][14],
+                           dt1.Rows[n][15]);
                     }
 
-                    report.DataSource = dso;
-                    report.Parameters["FromDate"].Value = dtb_from.Text;
-                    report.Parameters["Todate"].Value = dtb_to.Text;
-                    sr.documentViewer1.DocumentSource = report;
-                    report.Parameters["FromDate"].Visible = false;
-                    report.Parameters["Todate"].Visible = false;
+                    reportB.DataSource = dso1;
+                    reportB.Parameters["FromDate"].Value = dtb_from.Text;
+                    reportB.Parameters["ToDate"].Value = dtb_to.Text;
+                    sr1.documentViewer1.DocumentSource = reportB;
+                    reportB.Parameters["FromDate"].Visible = false;
+                    reportB.Parameters["ToDate"].Visible = false;
                     // documentViewer1.Refresh();
-                    //  documentViewer1.DocumentSource = report;
-                    // sr.documentViewer1.Enabled = true;
+                     // documentViewer1.DocumentSource = reportB;
+                     sr1.documentViewer1.Enabled = true;
 
-                    sr.ShowDialog();
+                    sr1.ShowDialog();
                 }
                
 

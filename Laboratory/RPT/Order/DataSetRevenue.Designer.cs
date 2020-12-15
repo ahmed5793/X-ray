@@ -616,21 +616,21 @@ namespace Laboratory.RPT.Order {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public DataTableRow AddDataTableRow(
                         string Name, 
-                        string couTicNa2dy, 
-                        string couTicComp, 
-                        string ValuTicNa2dy, 
-                        string ValuTicComp, 
-                        string couTransf, 
-                        string Valuransf, 
-                        string PayCust, 
-                        string CouRetNa2dy, 
-                        string ValuRetNa2dy, 
-                        string CouRetComp, 
-                        string ValuRetComp, 
-                        string CouDiscTic, 
-                        string ValuDiscTic, 
-                        string CouDiscPay, 
-                        string ValuDiscPay) {
+                        int couTicNa2dy, 
+                        int couTicComp, 
+                        decimal ValuTicNa2dy, 
+                        decimal ValuTicComp, 
+                        int couTransf, 
+                        decimal Valuransf, 
+                        decimal PayCust, 
+                        int CouRetNa2dy, 
+                        decimal ValuRetNa2dy, 
+                        int CouRetComp, 
+                        decimal ValuRetComp, 
+                        int CouDiscTic, 
+                        decimal ValuDiscTic, 
+                        int CouDiscPay, 
+                        decimal ValuDiscPay) {
                 DataTableRow rowDataTableRow = ((DataTableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Name,
@@ -694,35 +694,35 @@ namespace Laboratory.RPT.Order {
             private void InitClass() {
                 this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName);
-                this.columncouTicNa2dy = new global::System.Data.DataColumn("couTicNa2dy", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columncouTicNa2dy = new global::System.Data.DataColumn("couTicNa2dy", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncouTicNa2dy);
-                this.columncouTicComp = new global::System.Data.DataColumn("couTicComp", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columncouTicComp = new global::System.Data.DataColumn("couTicComp", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncouTicComp);
-                this.columnValuTicNa2dy = new global::System.Data.DataColumn("ValuTicNa2dy", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnValuTicNa2dy = new global::System.Data.DataColumn("ValuTicNa2dy", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnValuTicNa2dy);
-                this.columnValuTicComp = new global::System.Data.DataColumn("ValuTicComp", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnValuTicComp = new global::System.Data.DataColumn("ValuTicComp", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnValuTicComp);
-                this.columncouTransf = new global::System.Data.DataColumn("couTransf", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columncouTransf = new global::System.Data.DataColumn("couTransf", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncouTransf);
-                this.columnValuransf = new global::System.Data.DataColumn("Valuransf", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnValuransf = new global::System.Data.DataColumn("Valuransf", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnValuransf);
-                this.columnPayCust = new global::System.Data.DataColumn("PayCust", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnPayCust = new global::System.Data.DataColumn("PayCust", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPayCust);
-                this.columnCouRetNa2dy = new global::System.Data.DataColumn("CouRetNa2dy", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnCouRetNa2dy = new global::System.Data.DataColumn("CouRetNa2dy", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCouRetNa2dy);
-                this.columnValuRetNa2dy = new global::System.Data.DataColumn("ValuRetNa2dy", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnValuRetNa2dy = new global::System.Data.DataColumn("ValuRetNa2dy", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnValuRetNa2dy);
-                this.columnCouRetComp = new global::System.Data.DataColumn("CouRetComp", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnCouRetComp = new global::System.Data.DataColumn("CouRetComp", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCouRetComp);
-                this.columnValuRetComp = new global::System.Data.DataColumn("ValuRetComp", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnValuRetComp = new global::System.Data.DataColumn("ValuRetComp", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnValuRetComp);
-                this.columnCouDiscTic = new global::System.Data.DataColumn("CouDiscTic", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnCouDiscTic = new global::System.Data.DataColumn("CouDiscTic", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCouDiscTic);
-                this.columnValuDiscTic = new global::System.Data.DataColumn("ValuDiscTic", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnValuDiscTic = new global::System.Data.DataColumn("ValuDiscTic", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnValuDiscTic);
-                this.columnCouDiscPay = new global::System.Data.DataColumn("CouDiscPay", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnCouDiscPay = new global::System.Data.DataColumn("CouDiscPay", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCouDiscPay);
-                this.columnValuDiscPay = new global::System.Data.DataColumn("ValuDiscPay", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnValuDiscPay = new global::System.Data.DataColumn("ValuDiscPay", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnValuDiscPay);
             }
             
@@ -1089,21 +1089,21 @@ namespace Laboratory.RPT.Order {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public DataTableAllBranchRow AddDataTableAllBranchRow(
                         string Name, 
-                        string couTicNa2dy, 
-                        string couTicComp, 
-                        string ValuTicNa2dy, 
-                        string ValuTicComp, 
-                        string couTransf, 
-                        string Valuransf, 
-                        string PayCust, 
-                        string CouRetNa2dy, 
-                        string ValuRetNa2dy, 
-                        string CouRetComp, 
-                        string ValuRetComp, 
-                        string CouDiscTic, 
-                        string ValuDiscTic, 
-                        string CouDiscPay, 
-                        string ValuDiscPay) {
+                        int couTicNa2dy, 
+                        int couTicComp, 
+                        decimal ValuTicNa2dy, 
+                        decimal ValuTicComp, 
+                        int couTransf, 
+                        decimal Valuransf, 
+                        decimal PayCust, 
+                        int CouRetNa2dy, 
+                        decimal ValuRetNa2dy, 
+                        int CouRetComp, 
+                        decimal ValuRetComp, 
+                        int CouDiscTic, 
+                        decimal ValuDiscTic, 
+                        int CouDiscPay, 
+                        decimal ValuDiscPay) {
                 DataTableAllBranchRow rowDataTableAllBranchRow = ((DataTableAllBranchRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Name,
@@ -1167,35 +1167,35 @@ namespace Laboratory.RPT.Order {
             private void InitClass() {
                 this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName);
-                this.columncouTicNa2dy = new global::System.Data.DataColumn("couTicNa2dy", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columncouTicNa2dy = new global::System.Data.DataColumn("couTicNa2dy", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncouTicNa2dy);
-                this.columncouTicComp = new global::System.Data.DataColumn("couTicComp", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columncouTicComp = new global::System.Data.DataColumn("couTicComp", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncouTicComp);
-                this.columnValuTicNa2dy = new global::System.Data.DataColumn("ValuTicNa2dy", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnValuTicNa2dy = new global::System.Data.DataColumn("ValuTicNa2dy", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnValuTicNa2dy);
-                this.columnValuTicComp = new global::System.Data.DataColumn("ValuTicComp", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnValuTicComp = new global::System.Data.DataColumn("ValuTicComp", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnValuTicComp);
-                this.columncouTransf = new global::System.Data.DataColumn("couTransf", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columncouTransf = new global::System.Data.DataColumn("couTransf", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncouTransf);
-                this.columnValuransf = new global::System.Data.DataColumn("Valuransf", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnValuransf = new global::System.Data.DataColumn("Valuransf", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnValuransf);
-                this.columnPayCust = new global::System.Data.DataColumn("PayCust", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnPayCust = new global::System.Data.DataColumn("PayCust", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPayCust);
-                this.columnCouRetNa2dy = new global::System.Data.DataColumn("CouRetNa2dy", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnCouRetNa2dy = new global::System.Data.DataColumn("CouRetNa2dy", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCouRetNa2dy);
-                this.columnValuRetNa2dy = new global::System.Data.DataColumn("ValuRetNa2dy", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnValuRetNa2dy = new global::System.Data.DataColumn("ValuRetNa2dy", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnValuRetNa2dy);
-                this.columnCouRetComp = new global::System.Data.DataColumn("CouRetComp", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnCouRetComp = new global::System.Data.DataColumn("CouRetComp", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCouRetComp);
-                this.columnValuRetComp = new global::System.Data.DataColumn("ValuRetComp", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnValuRetComp = new global::System.Data.DataColumn("ValuRetComp", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnValuRetComp);
-                this.columnCouDiscTic = new global::System.Data.DataColumn("CouDiscTic", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnCouDiscTic = new global::System.Data.DataColumn("CouDiscTic", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCouDiscTic);
-                this.columnValuDiscTic = new global::System.Data.DataColumn("ValuDiscTic", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnValuDiscTic = new global::System.Data.DataColumn("ValuDiscTic", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnValuDiscTic);
-                this.columnCouDiscPay = new global::System.Data.DataColumn("CouDiscPay", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnCouDiscPay = new global::System.Data.DataColumn("CouDiscPay", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCouDiscPay);
-                this.columnValuDiscPay = new global::System.Data.DataColumn("ValuDiscPay", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnValuDiscPay = new global::System.Data.DataColumn("ValuDiscPay", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnValuDiscPay);
             }
             
@@ -1410,7 +1410,7 @@ namespace Laboratory.RPT.Order {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public MasrofatRow AddMasrofatRow(string Money) {
+            public MasrofatRow AddMasrofatRow(decimal Money) {
                 MasrofatRow rowMasrofatRow = ((MasrofatRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Money};
@@ -1442,7 +1442,7 @@ namespace Laboratory.RPT.Order {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnMoney = new global::System.Data.DataColumn("Money", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnMoney = new global::System.Data.DataColumn("Money", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMoney);
                 this.columnMoney.Caption = "Name";
             }
@@ -1658,7 +1658,7 @@ namespace Laboratory.RPT.Order {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public MasrofatAllBranchRow AddMasrofatAllBranchRow(string Money) {
+            public MasrofatAllBranchRow AddMasrofatAllBranchRow(decimal Money) {
                 MasrofatAllBranchRow rowMasrofatAllBranchRow = ((MasrofatAllBranchRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Money};
@@ -1690,7 +1690,7 @@ namespace Laboratory.RPT.Order {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnMoney = new global::System.Data.DataColumn("Money", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnMoney = new global::System.Data.DataColumn("Money", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMoney);
                 this.columnMoney.Caption = "Name";
             }
@@ -1851,10 +1851,10 @@ namespace Laboratory.RPT.Order {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string couTicNa2dy {
+            public int couTicNa2dy {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTable.couTicNa2dyColumn]));
+                        return ((int)(this[this.tableDataTable.couTicNa2dyColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'couTicNa2dy\' in table \'DataTable\' is DBNull.", e);
@@ -1867,10 +1867,10 @@ namespace Laboratory.RPT.Order {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string couTicComp {
+            public int couTicComp {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTable.couTicCompColumn]));
+                        return ((int)(this[this.tableDataTable.couTicCompColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'couTicComp\' in table \'DataTable\' is DBNull.", e);
@@ -1883,10 +1883,10 @@ namespace Laboratory.RPT.Order {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string ValuTicNa2dy {
+            public decimal ValuTicNa2dy {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTable.ValuTicNa2dyColumn]));
+                        return ((decimal)(this[this.tableDataTable.ValuTicNa2dyColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'ValuTicNa2dy\' in table \'DataTable\' is DBNull.", e);
@@ -1899,10 +1899,10 @@ namespace Laboratory.RPT.Order {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string ValuTicComp {
+            public decimal ValuTicComp {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTable.ValuTicCompColumn]));
+                        return ((decimal)(this[this.tableDataTable.ValuTicCompColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'ValuTicComp\' in table \'DataTable\' is DBNull.", e);
@@ -1915,10 +1915,10 @@ namespace Laboratory.RPT.Order {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string couTransf {
+            public int couTransf {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTable.couTransfColumn]));
+                        return ((int)(this[this.tableDataTable.couTransfColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'couTransf\' in table \'DataTable\' is DBNull.", e);
@@ -1931,10 +1931,10 @@ namespace Laboratory.RPT.Order {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Valuransf {
+            public decimal Valuransf {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTable.ValuransfColumn]));
+                        return ((decimal)(this[this.tableDataTable.ValuransfColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Valuransf\' in table \'DataTable\' is DBNull.", e);
@@ -1947,10 +1947,10 @@ namespace Laboratory.RPT.Order {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string PayCust {
+            public decimal PayCust {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTable.PayCustColumn]));
+                        return ((decimal)(this[this.tableDataTable.PayCustColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'PayCust\' in table \'DataTable\' is DBNull.", e);
@@ -1963,10 +1963,10 @@ namespace Laboratory.RPT.Order {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string CouRetNa2dy {
+            public int CouRetNa2dy {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTable.CouRetNa2dyColumn]));
+                        return ((int)(this[this.tableDataTable.CouRetNa2dyColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'CouRetNa2dy\' in table \'DataTable\' is DBNull.", e);
@@ -1979,10 +1979,10 @@ namespace Laboratory.RPT.Order {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string ValuRetNa2dy {
+            public decimal ValuRetNa2dy {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTable.ValuRetNa2dyColumn]));
+                        return ((decimal)(this[this.tableDataTable.ValuRetNa2dyColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'ValuRetNa2dy\' in table \'DataTable\' is DBNull.", e);
@@ -1995,10 +1995,10 @@ namespace Laboratory.RPT.Order {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string CouRetComp {
+            public int CouRetComp {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTable.CouRetCompColumn]));
+                        return ((int)(this[this.tableDataTable.CouRetCompColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'CouRetComp\' in table \'DataTable\' is DBNull.", e);
@@ -2011,10 +2011,10 @@ namespace Laboratory.RPT.Order {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string ValuRetComp {
+            public decimal ValuRetComp {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTable.ValuRetCompColumn]));
+                        return ((decimal)(this[this.tableDataTable.ValuRetCompColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'ValuRetComp\' in table \'DataTable\' is DBNull.", e);
@@ -2027,10 +2027,10 @@ namespace Laboratory.RPT.Order {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string CouDiscTic {
+            public int CouDiscTic {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTable.CouDiscTicColumn]));
+                        return ((int)(this[this.tableDataTable.CouDiscTicColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'CouDiscTic\' in table \'DataTable\' is DBNull.", e);
@@ -2043,10 +2043,10 @@ namespace Laboratory.RPT.Order {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string ValuDiscTic {
+            public decimal ValuDiscTic {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTable.ValuDiscTicColumn]));
+                        return ((decimal)(this[this.tableDataTable.ValuDiscTicColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'ValuDiscTic\' in table \'DataTable\' is DBNull.", e);
@@ -2059,10 +2059,10 @@ namespace Laboratory.RPT.Order {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string CouDiscPay {
+            public int CouDiscPay {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTable.CouDiscPayColumn]));
+                        return ((int)(this[this.tableDataTable.CouDiscPayColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'CouDiscPay\' in table \'DataTable\' is DBNull.", e);
@@ -2075,10 +2075,10 @@ namespace Laboratory.RPT.Order {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string ValuDiscPay {
+            public decimal ValuDiscPay {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTable.ValuDiscPayColumn]));
+                        return ((decimal)(this[this.tableDataTable.ValuDiscPayColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'ValuDiscPay\' in table \'DataTable\' is DBNull.", e);
@@ -2314,10 +2314,10 @@ namespace Laboratory.RPT.Order {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string couTicNa2dy {
+            public int couTicNa2dy {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTableAllBranch.couTicNa2dyColumn]));
+                        return ((int)(this[this.tableDataTableAllBranch.couTicNa2dyColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'couTicNa2dy\' in table \'DataTableAllBranch\' is DBNull.", e);
@@ -2330,10 +2330,10 @@ namespace Laboratory.RPT.Order {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string couTicComp {
+            public int couTicComp {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTableAllBranch.couTicCompColumn]));
+                        return ((int)(this[this.tableDataTableAllBranch.couTicCompColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'couTicComp\' in table \'DataTableAllBranch\' is DBNull.", e);
@@ -2346,10 +2346,10 @@ namespace Laboratory.RPT.Order {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string ValuTicNa2dy {
+            public decimal ValuTicNa2dy {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTableAllBranch.ValuTicNa2dyColumn]));
+                        return ((decimal)(this[this.tableDataTableAllBranch.ValuTicNa2dyColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'ValuTicNa2dy\' in table \'DataTableAllBranch\' is DBNull.", e);
@@ -2362,10 +2362,10 @@ namespace Laboratory.RPT.Order {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string ValuTicComp {
+            public decimal ValuTicComp {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTableAllBranch.ValuTicCompColumn]));
+                        return ((decimal)(this[this.tableDataTableAllBranch.ValuTicCompColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'ValuTicComp\' in table \'DataTableAllBranch\' is DBNull.", e);
@@ -2378,10 +2378,10 @@ namespace Laboratory.RPT.Order {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string couTransf {
+            public int couTransf {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTableAllBranch.couTransfColumn]));
+                        return ((int)(this[this.tableDataTableAllBranch.couTransfColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'couTransf\' in table \'DataTableAllBranch\' is DBNull.", e);
@@ -2394,10 +2394,10 @@ namespace Laboratory.RPT.Order {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Valuransf {
+            public decimal Valuransf {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTableAllBranch.ValuransfColumn]));
+                        return ((decimal)(this[this.tableDataTableAllBranch.ValuransfColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Valuransf\' in table \'DataTableAllBranch\' is DBNull.", e);
@@ -2410,10 +2410,10 @@ namespace Laboratory.RPT.Order {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string PayCust {
+            public decimal PayCust {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTableAllBranch.PayCustColumn]));
+                        return ((decimal)(this[this.tableDataTableAllBranch.PayCustColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'PayCust\' in table \'DataTableAllBranch\' is DBNull.", e);
@@ -2426,10 +2426,10 @@ namespace Laboratory.RPT.Order {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string CouRetNa2dy {
+            public int CouRetNa2dy {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTableAllBranch.CouRetNa2dyColumn]));
+                        return ((int)(this[this.tableDataTableAllBranch.CouRetNa2dyColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'CouRetNa2dy\' in table \'DataTableAllBranch\' is DBNull.", e);
@@ -2442,10 +2442,10 @@ namespace Laboratory.RPT.Order {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string ValuRetNa2dy {
+            public decimal ValuRetNa2dy {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTableAllBranch.ValuRetNa2dyColumn]));
+                        return ((decimal)(this[this.tableDataTableAllBranch.ValuRetNa2dyColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'ValuRetNa2dy\' in table \'DataTableAllBranch\' is DBNull.", e);
@@ -2458,10 +2458,10 @@ namespace Laboratory.RPT.Order {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string CouRetComp {
+            public int CouRetComp {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTableAllBranch.CouRetCompColumn]));
+                        return ((int)(this[this.tableDataTableAllBranch.CouRetCompColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'CouRetComp\' in table \'DataTableAllBranch\' is DBNull.", e);
@@ -2474,10 +2474,10 @@ namespace Laboratory.RPT.Order {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string ValuRetComp {
+            public decimal ValuRetComp {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTableAllBranch.ValuRetCompColumn]));
+                        return ((decimal)(this[this.tableDataTableAllBranch.ValuRetCompColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'ValuRetComp\' in table \'DataTableAllBranch\' is DBNull.", e);
@@ -2490,10 +2490,10 @@ namespace Laboratory.RPT.Order {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string CouDiscTic {
+            public int CouDiscTic {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTableAllBranch.CouDiscTicColumn]));
+                        return ((int)(this[this.tableDataTableAllBranch.CouDiscTicColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'CouDiscTic\' in table \'DataTableAllBranch\' is DBNull.", e);
@@ -2506,10 +2506,10 @@ namespace Laboratory.RPT.Order {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string ValuDiscTic {
+            public decimal ValuDiscTic {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTableAllBranch.ValuDiscTicColumn]));
+                        return ((decimal)(this[this.tableDataTableAllBranch.ValuDiscTicColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'ValuDiscTic\' in table \'DataTableAllBranch\' is DBNull.", e);
@@ -2522,10 +2522,10 @@ namespace Laboratory.RPT.Order {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string CouDiscPay {
+            public int CouDiscPay {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTableAllBranch.CouDiscPayColumn]));
+                        return ((int)(this[this.tableDataTableAllBranch.CouDiscPayColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'CouDiscPay\' in table \'DataTableAllBranch\' is DBNull.", e);
@@ -2538,10 +2538,10 @@ namespace Laboratory.RPT.Order {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string ValuDiscPay {
+            public decimal ValuDiscPay {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTableAllBranch.ValuDiscPayColumn]));
+                        return ((decimal)(this[this.tableDataTableAllBranch.ValuDiscPayColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'ValuDiscPay\' in table \'DataTableAllBranch\' is DBNull.", e);
@@ -2761,10 +2761,10 @@ namespace Laboratory.RPT.Order {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Money {
+            public decimal Money {
                 get {
                     try {
-                        return ((string)(this[this.tableMasrofat.MoneyColumn]));
+                        return ((decimal)(this[this.tableMasrofat.MoneyColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Money\' in table \'Masrofat\' is DBNull.", e);
@@ -2804,10 +2804,10 @@ namespace Laboratory.RPT.Order {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Money {
+            public decimal Money {
                 get {
                     try {
-                        return ((string)(this[this.tableMasrofatAllBranch.MoneyColumn]));
+                        return ((decimal)(this[this.tableMasrofatAllBranch.MoneyColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Money\' in table \'MasrofatAllBranch\' is DBNull.", e);

@@ -1037,12 +1037,6 @@
     <Compile Include="RPT\Order\Rpt_DevRevenue.Designer.cs">
       <DependentUpon>Rpt_DevRevenue.cs</DependentUpon>
     </Compile>
-    <Compile Include="RPT\Order\Rpt_DevRevenueAllBranch.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="RPT\Order\Rpt_DevRevenueAllBranch.designer.cs">
-      <DependentUpon>Rpt_DevRevenueAllBranch.cs</DependentUpon>
-    </Compile>
     <Compile Include="RPT\Order\RPT_FingerExcellDay.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -1084,6 +1078,12 @@
     </Compile>
     <Compile Include="RPT\Order\Rpt_OrderPay.designer.cs">
       <DependentUpon>Rpt_OrderPay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RPT\Order\XtraReportRevenueDetailsAllBranch.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPT\Order\XtraReportRevenueDetailsAllBranch.Designer.cs">
+      <DependentUpon>XtraReportRevenueDetailsAllBranch.cs</DependentUpon>
     </Compile>
     <Compile Include="RPT\Rpt_MoveStock.cs">
       <SubType>Component</SubType>
@@ -1469,9 +1469,6 @@
     <EmbeddedResource Include="RPT\Order\Rpt_DevRevenue.resx">
       <DependentUpon>Rpt_DevRevenue.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RPT\Order\Rpt_DevRevenueAllBranch.resx">
-      <DependentUpon>Rpt_DevRevenueAllBranch.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="RPT\Order\RPT_FingerExcellDay.resx">
       <DependentUpon>RPT_FingerExcellDay.cs</DependentUpon>
     </EmbeddedResource>
@@ -1495,6 +1492,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RPT\Order\Rpt_OrderPay.resx">
       <DependentUpon>Rpt_OrderPay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\Order\XtraReportRevenueDetailsAllBranch.resx">
+      <DependentUpon>XtraReportRevenueDetailsAllBranch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RPT\Rpt_MoveStock.resx">
       <DependentUpon>Rpt_MoveStock.cs</DependentUpon>
