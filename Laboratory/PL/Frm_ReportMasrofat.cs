@@ -134,7 +134,7 @@ namespace Laboratory.PL
                         //comboBox1.ValueMember = "ID_masrof";
                         //cmb_UserBranch.Enabled = true;
                         //comboBox1.Enabled = true;
-                        dt = M.search_CategoryMasrofat(DateFrom.Value, DateTo.Value, Convert.ToInt32(comboBox1.SelectedValue),
+                        dt = M.search_CategoryMasrofat(DateFrom.Value, DateTo.Value,Convert.ToInt32(comboBox1.SelectedValue),
                         Convert.ToInt32(cmb_Stock.SelectedValue));
                         gridControl1.DataSource = dt;
                         Calc_Total();

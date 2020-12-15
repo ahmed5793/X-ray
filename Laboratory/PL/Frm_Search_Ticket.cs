@@ -94,20 +94,18 @@ namespace Laboratory.PL
             if (comboBox1.Text == "كل الحجوزات")
             {
                 label7.Hide();
-                label2.Hide();
-                label3.Hide();
+                label2.Show();
+                label3.Show();
                 label13.Hide();
-                FromDate.Hide();
-                ToDate.Hide();
-                button2.Hide();
+                FromDate.Show();
+                ToDate.Show();
+                button2.Show();
                 label4.Hide();
                 label5.Hide();
                 textBox1.Hide();
                 Cmb_CategoryItem.Hide();
                 cmb_branches.Hide();
-                gridControl1.DataSource = t.SelecthManagmentTicketsBranch();
-                sum();
-                sumAfterDsicount();
+          
 
 
             }
@@ -238,7 +236,12 @@ namespace Laboratory.PL
         }
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-
+            if (comboBox1.Text == "كل الحجوزات")
+            {
+              
+                gridControl1.DataSource = t.SelecthManagmentTicketsBranch(FromDate.Value, ToDate.Value);
+                
+            }
             if (comboBox1.Text == "بحث بالتاريخ + مكان الفحص")
             {
                 gridControl1.DataSource = t.SelectSearchAllticketsBranchDate(Convert.ToInt32(cmb_branches.SelectedValue), FromDate.Value, ToDate.Value);

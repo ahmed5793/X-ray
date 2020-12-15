@@ -1061,6 +1061,12 @@
       <DependentUpon>Rpt_RevenueDetalis.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="RPT\Order\Rpt_RevenueDetalisAllBranch.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Rpt_RevenueDetalisAllBranch.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="RPT\Order\Rpt_TeckietCompanyOrder.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -1470,6 +1476,10 @@
     <EmbeddedResource Include="RPT\Order\Rpt_RevenueDetalis.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Rpt_RevenueDetalis.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\Order\Rpt_RevenueDetalisAllBranch.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Rpt_RevenueDetalisAllBranch.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="RPT\Order\Rpt_TeckietCompanyOrder.resx">
       <DependentUpon>Rpt_TeckietCompanyOrder.cs</DependentUpon>

@@ -44,6 +44,7 @@ namespace Laboratory.PL
         {
             Cmb_customer.Show();
             txt_name.Hide();
+            //rdb_NewPatient.Checked = true;
             cmb_Company.Enabled = false;
             txt_username.Text = Program.salesman;
             brnches();

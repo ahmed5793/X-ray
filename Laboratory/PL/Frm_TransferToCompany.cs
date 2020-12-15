@@ -351,8 +351,7 @@ namespace Laboratory.PL
                     MessageBox.Show("تم تحويل هذا الفحص من قبل ");
                     return;
                 }
-                //if (dataGridView2.Rows.Count>=0)
-                //{
+               
                 dt5.Clear();
                 dt5 = s.Select_moneyStock(Convert.ToInt32(cmb_Stock.SelectedValue));
                 if (cmb_Stock.Text == "")
@@ -370,62 +369,7 @@ namespace Laboratory.PL
                 if (Convert.ToDecimal(Txt_PayLast.Text) - Convert.ToDecimal(Txt_LastPayOut.Text) >= Convert.ToDecimal(Txt_PricePayment.Text))
                 {
 
-                    if (Convert.ToDecimal(textBox2.Text) > 0)
-                    {
-                        //    dt5.Clear();
-                        //    dt5 = s.Select_moneyStock(Convert.ToInt32(cmb_Stock.SelectedValue));
-
-                        //    if (Convert.ToDecimal(textBox2.Text) > Convert.ToDecimal(dt5.Rows[0][0]))
-                        //    {
-                        //        MessageBox.Show("رصيد الخزنة الحالى غير كافى لسحب هذه المبلغ");
-                        //        return;
-                        //    }
-                        //    s.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(textBox2.Text), dateTimePicker1.Value
-                        //     , txt_username.Text, " سحب مبلغ " + " " + (textBox2.Text) + "مدفوع مسبقا للحجز " + (txt_IdTeckit.Text));
-
-                        if (comboBox1.Text == Txt_OldBranch.Text)
-                        {
-                            for (int i = 0; i < dataGridView2.Rows.Count; i++)
-                            {
-                                t.UpdateticketsReturn(Convert.ToInt32(txt_IdTeckit.Text), Convert.ToInt32(cmb_Stock.SelectedValue),
-                                    comboBox1.Text,dateTimePicker1.Value, Convert.ToDecimal(textBox2.Text),
-                                txt_username.Text, Convert.ToInt32(comboBox1.SelectedValue), txt_reasonAddition.Text);
-
-
-
-                                t.Update_Revenue(Convert.ToInt32(comboBox1.SelectedValue), Convert.ToInt32(txt_IdTeckit.Text),
-                                    Convert.ToInt32(dataGridView2.Rows[i].Cells[0].Value), Convert.ToDecimal(dataGridView2.Rows[i].Cells[2].Value)
-                                   , 0, Convert.ToDecimal(Txt_PricePayment.Text), Convert.ToDecimal(Txt_RentCustomer.Text), dateTimePicker1.Value);
-                            }
-                        }
-                        else if (comboBox1.Text != Txt_OldBranch.Text)
-                        {
-                            for (int i = 0; i < dataGridView2.Rows.Count; i++)
-                            {
-                                t.addticketsReturn(Convert.ToInt32(txt_IdTeckit.Text), Convert.ToInt32(cmb_Stock.SelectedValue),
-                                    comboBox1.Text,
-                                      txt_patientname.Text, "تحويل الفحص إلى شركة", dataGridView2.Rows[i].Cells[1].Value.ToString(),
-                                      dateTimePicker1.Value, Convert.ToDecimal(textBox2.Text), txt_reasonAddition.Text,
-                                      Convert.ToDecimal(dataGridView2.Rows[i].Cells[2].Value),
-                                        Convert.ToDecimal(Txt_PricePayment.Text), txt_username.Text, Convert.ToInt32(dataGridView2.Rows[i].Cells[0].Value),
-                                        Convert.ToInt32(comboBox1.SelectedValue));
-
-
-                                t.Add_Revenue(Convert.ToInt32(comboBox1.SelectedValue), Convert.ToInt32(txt_IdTeckit.Text),
-                                Convert.ToInt32(dataGridView2.Rows[i].Cells[0].Value),0
-                                , 0, 0, 0, dateTimePicker1.Value);
-
-
-                                //Txt_IdOldBranch.Clear();
-                                //Txt_IdOldBranch.Text = (t.Select_IDBranch(Txt_OldBranch.Text).Rows[0][0].ToString());
-
-                                //t.Update_Revenue(Convert.ToInt32(Txt_IdOldBranch.Text), Convert.ToInt32(txt_IdTeckit.Text),
-                                //   Convert.ToInt32(dataGridView2.Rows[i].Cells[0].Value), Convert.ToDecimal(dataGridView2.Rows[i].Cells[2].Value)
-                                //  , 0, Convert.ToDecimal(Txt_PricePayment.Text), Convert.ToDecimal(Txt_RentCustomer.Text),
-                                //   dateTimePicker1.Value);
-                            }
-                        }
-                    }
+                   
                         t.UpdateTicketsActive(Convert.ToInt32(txt_IdTeckit.Text), "Transfer");
 
                         dt.Clear();
@@ -451,18 +395,6 @@ namespace Laboratory.PL
 
 
 
-                    //    dt.Clear();
-                    //    dt = cu.Select_CustomertotalBAlance(Convert.ToInt32(Txt_IdCust.Text));
-                    //decimal hrl = Convert.ToDecimal(dt.Rows[0][0]) * -1;
-
-                    ////decimal mno5 = Convert.ToDecimal(Txt_PayLast.Text) - Convert.ToDecimal(Txt_LastPayOut.Text);
-                    //    decimal mno4 = Convert.ToDecimal(dt.Rows[0][0]) + hrl;
-                    //    cu.Update_CustomerTotalBalance(Convert.ToInt32(Txt_IdCust.Text), mno4);
-                    //    cu.Add_CustomerAccountStatment(Convert.ToInt32(Txt_IdCust.Text), 0,
-                    //    hrl, dateTimePicker1.Value, mno4, Convert.ToInt32(cmb_Stock.SelectedValue)
-                    //    , txt_username.Text, Convert.ToInt32(comboBox1.SelectedValue),
-                    //    " إذن صرف مبلغ   " + " (" + (hrl )+" )"+ "  فرق المبلغ المدفوع مسبقا للحجز رقم  " +" ("+ (txt_IdTeckit.Text)+")");
-
 
 
                    
@@ -484,27 +416,6 @@ namespace Laboratory.PL
 
                         }
 
-
-                        for (int i = 0; i < dataGridView2.Rows.Count; i++)
-                        {
-                            // t.UpdateticketsReturn(Convert.ToInt32(txt_IdTeckit.Text), Convert.ToInt32(cmb_Stock.SelectedValue), comboBox1.Text,
-                            //dateTimePicker1.Value, Convert.ToDecimal(textBox2.Text),
-                            // txt_username.Text, Convert.ToInt32(comboBox1.SelectedValue), txt_reasonAddition.Text);
-
-                            Txt_IdOldBranch.Clear();
-                            Txt_IdOldBranch.Text=  (t.Select_IDBranch(Txt_OldBranch.Text)).Rows[0][0].ToString();
-
-                            t.Update_Revenue(Convert.ToInt32(Txt_IdOldBranch.Text), Convert.ToInt32(txt_IdTeckit.Text),
-                                Convert.ToInt32(dataGridView2.Rows[0].Cells[0].Value), Convert.ToDecimal(dataGridView2.Rows[i].Cells[2].Value)
-                               , 0, Convert.ToDecimal(Txt_PayLast.Text), Convert.ToDecimal(Txt_RentCustomer.Text), dateTimePicker1.Value);
-                        }
-                        //   dt.Clear();
-                        //   dt = cu.Select_CustomertotalBAlance(Convert.ToInt32(Txt_IdCust.Text));
-                        //   decimal mno4 = Convert.ToDecimal(dt.Rows[0][0]) + Convert.ToDecimal(Txt_PayLast.Text);
-                        //   cu.Update_CustomerTotalBalance(Convert.ToInt32(Txt_IdCust.Text), mno4);
-                        //   cu.Add_CustomerAccountStatment(Convert.ToInt32(Txt_IdCust.Text), 0,
-                        //   Convert.ToDecimal(Txt_PayLast.Text), dateTimePicker1.Value, mno4, Convert.ToInt32(cmb_Stock.SelectedValue)
-                        //, txt_username.Text, Convert.ToInt32(comboBox1.SelectedValue), " تم دفع للعميل مبلغ " + " " + ( Txt_PayLast.Text ) + "مدفوع مسبقا للحجز  " +( txt_IdTeckit.Text ));
 
 
                         dt.Clear();
