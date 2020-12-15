@@ -1297,7 +1297,6 @@ namespace Laboratory.PL
             {
                 //Frm_Revenue fr = new Frm_Revenue();
                 //fr.Show();
-
                 Laboratory.RPT.Order.Frm_Report fr = new RPT.Order.Frm_Report();
                 fr.Show();
             }

@@ -90,7 +90,7 @@ namespace Laboratory.RPT.Order {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_Date_From {
+        public CrystalDecisions.Shared.IParameterField Parameter_Branch {
             get {
                 return this.DataDefinition.ParameterFields[0];
             }
@@ -98,9 +98,17 @@ namespace Laboratory.RPT.Order {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_Date_To {
+        public CrystalDecisions.Shared.IParameterField Parameter_FromDate {
             get {
                 return this.DataDefinition.ParameterFields[1];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_Todate {
+            get {
+                return this.DataDefinition.ParameterFields[2];
             }
         }
     }

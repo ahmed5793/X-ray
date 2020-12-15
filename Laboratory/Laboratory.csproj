@@ -1031,6 +1031,12 @@
     <Compile Include="RPT\Order\Frm_Report.Designer.cs">
       <DependentUpon>Frm_Report.cs</DependentUpon>
     </Compile>
+    <Compile Include="RPT\Order\Rpt_DevRevenue.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPT\Order\Rpt_DevRevenue.Designer.cs">
+      <DependentUpon>Rpt_DevRevenue.cs</DependentUpon>
+    </Compile>
     <Compile Include="RPT\Order\RPT_FingerExcellDay.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -1447,6 +1453,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RPT\Order\Frm_Report.resx">
       <DependentUpon>Frm_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\Order\Rpt_DevRevenue.resx">
+      <DependentUpon>Rpt_DevRevenue.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RPT\Order\RPT_FingerExcellDay.resx">
       <DependentUpon>RPT_FingerExcellDay.cs</DependentUpon>
