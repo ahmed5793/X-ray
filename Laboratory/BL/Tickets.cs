@@ -1103,5 +1103,21 @@ namespace Laboratory.BL
             return dt;
         }
 
+        internal DataTable Report_RevenueDetails_AllBranch( DateTime Date_From, DateTime Date_To)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[2];
+            da.open();
+            param[0] = new SqlParameter("@FromDate", SqlDbType.Date);
+            param[0].Value = Date_From;
+            param[1] = new SqlParameter("@Todate", SqlDbType.Date);
+            param[1].Value = Date_To;
+            dt.Clear();
+            dt = da.selected("Report_RevenueDetails_AllBranch", param);
+            da.close();
+            return dt;
+        }
     }
 }
