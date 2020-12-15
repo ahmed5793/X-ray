@@ -4,6 +4,10 @@
 
     partial class DataSetRevenue
     {
+        partial class DataTableAllBranchDataTable
+        {
+        }
+
         partial class MasrofatDataTable
         {
         }
