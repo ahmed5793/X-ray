@@ -168,7 +168,7 @@
             this.BottomMargin.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.pageInfo1,
             this.pageInfo2});
-            this.BottomMargin.HeightF = 183F;
+            this.BottomMargin.HeightF = 69.16663F;
             this.BottomMargin.Name = "BottomMargin";
             // 
             // pageInfo1
@@ -895,7 +895,7 @@
             this.dataSetRevenue1});
             this.Font = new System.Drawing.Font("Arial", 9.75F);
             this.Landscape = true;
-            this.Margins = new System.Drawing.Printing.Margins(6, 8, 18, 183);
+            this.Margins = new System.Drawing.Printing.Margins(6, 8, 18, 69);
             this.PageHeight = 1268;
             this.PageWidth = 1752;
             this.PaperKind = System.Drawing.Printing.PaperKind.A3Extra;
