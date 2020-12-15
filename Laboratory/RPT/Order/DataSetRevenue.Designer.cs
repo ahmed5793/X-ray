@@ -388,9 +388,9 @@ namespace Laboratory.RPT.Order {
             
             private global::System.Data.DataColumn columncouTicNa2dy;
             
-            private global::System.Data.DataColumn columnValuTicNa2dy;
-            
             private global::System.Data.DataColumn columncouTicComp;
+            
+            private global::System.Data.DataColumn columnValuTicNa2dy;
             
             private global::System.Data.DataColumn columnValuTicComp;
             
@@ -467,17 +467,17 @@ namespace Laboratory.RPT.Order {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn ValuTicNa2dyColumn {
+            public global::System.Data.DataColumn couTicCompColumn {
                 get {
-                    return this.columnValuTicNa2dy;
+                    return this.columncouTicComp;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn couTicCompColumn {
+            public global::System.Data.DataColumn ValuTicNa2dyColumn {
                 get {
-                    return this.columncouTicComp;
+                    return this.columnValuTicNa2dy;
                 }
             }
             
@@ -617,8 +617,8 @@ namespace Laboratory.RPT.Order {
             public DataTableRow AddDataTableRow(
                         string Name, 
                         string couTicNa2dy, 
-                        string ValuTicNa2dy, 
                         string couTicComp, 
+                        string ValuTicNa2dy, 
                         string ValuTicComp, 
                         string couTransf, 
                         string Valuransf, 
@@ -635,8 +635,8 @@ namespace Laboratory.RPT.Order {
                 object[] columnValuesArray = new object[] {
                         Name,
                         couTicNa2dy,
-                        ValuTicNa2dy,
                         couTicComp,
+                        ValuTicNa2dy,
                         ValuTicComp,
                         couTransf,
                         Valuransf,
@@ -673,8 +673,8 @@ namespace Laboratory.RPT.Order {
             internal void InitVars() {
                 this.columnName = base.Columns["Name"];
                 this.columncouTicNa2dy = base.Columns["couTicNa2dy"];
-                this.columnValuTicNa2dy = base.Columns["ValuTicNa2dy"];
                 this.columncouTicComp = base.Columns["couTicComp"];
+                this.columnValuTicNa2dy = base.Columns["ValuTicNa2dy"];
                 this.columnValuTicComp = base.Columns["ValuTicComp"];
                 this.columncouTransf = base.Columns["couTransf"];
                 this.columnValuransf = base.Columns["Valuransf"];
@@ -696,10 +696,10 @@ namespace Laboratory.RPT.Order {
                 base.Columns.Add(this.columnName);
                 this.columncouTicNa2dy = new global::System.Data.DataColumn("couTicNa2dy", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncouTicNa2dy);
-                this.columnValuTicNa2dy = new global::System.Data.DataColumn("ValuTicNa2dy", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnValuTicNa2dy);
                 this.columncouTicComp = new global::System.Data.DataColumn("couTicComp", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncouTicComp);
+                this.columnValuTicNa2dy = new global::System.Data.DataColumn("ValuTicNa2dy", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnValuTicNa2dy);
                 this.columnValuTicComp = new global::System.Data.DataColumn("ValuTicComp", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnValuTicComp);
                 this.columncouTransf = new global::System.Data.DataColumn("couTransf", typeof(string), null, global::System.Data.MappingType.Element);
@@ -1867,22 +1867,6 @@ namespace Laboratory.RPT.Order {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string ValuTicNa2dy {
-                get {
-                    try {
-                        return ((string)(this[this.tableDataTable.ValuTicNa2dyColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ValuTicNa2dy\' in table \'DataTable\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDataTable.ValuTicNa2dyColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string couTicComp {
                 get {
                     try {
@@ -1894,6 +1878,22 @@ namespace Laboratory.RPT.Order {
                 }
                 set {
                     this[this.tableDataTable.couTicCompColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string ValuTicNa2dy {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable.ValuTicNa2dyColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ValuTicNa2dy\' in table \'DataTable\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable.ValuTicNa2dyColumn] = value;
                 }
             }
             
@@ -2115,18 +2115,6 @@ namespace Laboratory.RPT.Order {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsValuTicNa2dyNull() {
-                return this.IsNull(this.tableDataTable.ValuTicNa2dyColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetValuTicNa2dyNull() {
-                this[this.tableDataTable.ValuTicNa2dyColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IscouTicCompNull() {
                 return this.IsNull(this.tableDataTable.couTicCompColumn);
             }
@@ -2135,6 +2123,18 @@ namespace Laboratory.RPT.Order {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetcouTicCompNull() {
                 this[this.tableDataTable.couTicCompColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsValuTicNa2dyNull() {
+                return this.IsNull(this.tableDataTable.ValuTicNa2dyColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetValuTicNa2dyNull() {
+                this[this.tableDataTable.ValuTicNa2dyColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
