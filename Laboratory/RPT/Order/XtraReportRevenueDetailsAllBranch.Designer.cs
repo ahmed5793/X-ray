@@ -103,7 +103,6 @@
             this.xrLabel5 = new DevExpress.XtraReports.UI.XRLabel();
             this.ToDate = new DevExpress.XtraReports.Parameters.Parameter();
             this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
-            this.objectDataSource1 = new DevExpress.DataAccess.ObjectBinding.ObjectDataSource(this.components);
             this.tableCell20 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTable3 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow3 = new DevExpress.XtraReports.UI.XRTableRow();
@@ -119,14 +118,14 @@
             this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
             this.SumCouTicComp = new DevExpress.XtraReports.UI.CalculatedField();
             this.SumValTicN2dy = new DevExpress.XtraReports.UI.CalculatedField();
+            this.objectDataSource1 = new DevExpress.DataAccess.ObjectBinding.ObjectDataSource(this.components);
             this.xrLabel6 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel7 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.table2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.objectDataSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectDataSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Title
@@ -261,7 +260,7 @@
             // 
             this.Detail1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.table2});
-            this.Detail1.HeightF = 27.54167F;
+            this.Detail1.HeightF = 35F;
             this.Detail1.Name = "Detail1";
             // 
             // table2
@@ -275,7 +274,7 @@
             this.table2.OddStyleName = "DetailData3_Odd";
             this.table2.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.tableRow2});
-            this.table2.SizeF = new System.Drawing.SizeF(1730F, 25F);
+            this.table2.SizeF = new System.Drawing.SizeF(1730F, 35F);
             this.table2.StylePriority.UseBorders = false;
             this.table2.StylePriority.UseBorderWidth = false;
             this.table2.StylePriority.UseTextAlignment = false;
@@ -606,7 +605,6 @@
             // GroupHeader2
             // 
             this.GroupHeader2.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.xrLabel7,
             this.xrLabel6,
             this.xrLabel4,
             this.xrTable3});
@@ -1106,11 +1104,6 @@
             this.xrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.xrLabel2.TextFormatString = "{0:d}";
             // 
-            // objectDataSource1
-            // 
-            this.objectDataSource1.DataSource = typeof(Laboratory.RPT.Order.DataSetRevenue);
-            this.objectDataSource1.Name = "objectDataSource1";
-            // 
             // tableCell20
             // 
             this.tableCell20.BackColor = System.Drawing.Color.Transparent;
@@ -1246,29 +1239,18 @@
             this.SumValTicN2dy.FieldType = DevExpress.XtraReports.UI.FieldType.Decimal;
             this.SumValTicN2dy.Name = "SumValTicN2dy";
             // 
+            // objectDataSource1
+            // 
+            this.objectDataSource1.DataSource = typeof(Laboratory.RPT.Order.DataSetRevenue);
+            this.objectDataSource1.Name = "objectDataSource1";
+            // 
             // xrLabel6
             // 
-            this.xrLabel6.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[DataTableAllBranch].[SumCouTicComp]")});
-            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(348.3062F, 0F);
+            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(133.4707F, 0F);
             this.xrLabel6.Multiline = true;
             this.xrLabel6.Name = "xrLabel6";
-            this.xrLabel6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
-            this.xrLabel6.SizeF = new System.Drawing.SizeF(74.67261F, 23F);
-            this.xrLabel6.Text = "xrLabel6";
-            this.xrLabel6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
-            // 
-            // xrLabel7
-            // 
-            this.xrLabel7.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[DataTableAllBranch].[SumValTicN2dy]")});
-            this.xrLabel7.LocationFloat = new DevExpress.Utils.PointFloat(236.2971F, 0F);
-            this.xrLabel7.Multiline = true;
-            this.xrLabel7.Name = "xrLabel7";
-            this.xrLabel7.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
-            this.xrLabel7.SizeF = new System.Drawing.SizeF(111.9257F, 32.99999F);
-            this.xrLabel7.Text = "xrLabel7";
-            this.xrLabel7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            this.xrLabel6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel6.SizeF = new System.Drawing.SizeF(102.8264F, 23F);
             // 
             // XtraReportRevenueDetailsAllBranch
             // 
@@ -1308,8 +1290,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.table1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.objectDataSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectDataSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
@@ -1403,10 +1385,9 @@
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell16;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell17;
         private DevExpress.XtraReports.UI.CalculatedField sumCouTicN2dy;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel7;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel6;
         private DevExpress.XtraReports.UI.XRLabel xrLabel4;
         private DevExpress.XtraReports.UI.CalculatedField SumCouTicComp;
         private DevExpress.XtraReports.UI.CalculatedField SumValTicN2dy;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel6;
     }
 }
