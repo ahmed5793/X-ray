@@ -928,11 +928,14 @@
             // documentViewer1
             // 
             this.documentViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.documentViewer1.DockingViewStyle = DevExpress.XtraBars.Docking2010.Views.DockingViewStyle.Light;
             this.documentViewer1.IsMetric = true;
             this.documentViewer1.Location = new System.Drawing.Point(2, 155);
+            this.documentViewer1.LookAndFeel.SkinName = "Visual Studio 2013 Dark";
             this.documentViewer1.Name = "documentViewer1";
             this.documentViewer1.Size = new System.Drawing.Size(893, 205);
             this.documentViewer1.TabIndex = 0;
+            this.documentViewer1.Zoom = 0.75F;
             // 
             // documentViewerRibbonController1
             // 
@@ -1984,7 +1987,7 @@
             this.zoomTrackBarEditItem1.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
             this.zoomTrackBarEditItem1.ContextSpecifier = this.documentViewerRibbonController1;
             this.zoomTrackBarEditItem1.Edit = this.repositoryItemZoomTrackBar1;
-            this.zoomTrackBarEditItem1.EditValue = 90;
+            this.zoomTrackBarEditItem1.EditValue = 65;
             this.zoomTrackBarEditItem1.EditWidth = 140;
             this.zoomTrackBarEditItem1.Enabled = false;
             this.zoomTrackBarEditItem1.Id = 56;
