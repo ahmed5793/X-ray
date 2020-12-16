@@ -103,6 +103,7 @@ namespace Laboratory.RPT.Order
                     
                     DataSetRevenue dso1= new DataSetRevenue();
                     DataTable dt1 = new DataTable();
+                    DataTable dt2 = new DataTable();
                     ////////////
                     dt1.Clear();
                     dt1 = t.Report_RevenueDetails_AllBranch( dtb_from.Value, dtb_to.Value);
@@ -119,6 +120,14 @@ namespace Laboratory.RPT.Order
                            dt1.Rows[n][11], dt1.Rows[n][12], dt1.Rows[n][13], dt1.Rows[n][14],
                            dt1.Rows[n][15]);
                     }
+
+                    dt2 = m.Report_RevenueDetails_Masrofat_AllBranch(dtb_from.Value, dtb_to.Value);
+                    sr1.documentViewer1.Refresh();
+                    dso1.Tables["MasrofatAllBranch"].Clear();
+
+
+
+                    dso1.Tables["MasrofatAllBranch"].Rows.Add(dt2.Rows[0][0]);
 
                     reportB.DataSource = dso1;
                     reportB.Parameters["FromDate"].Value = dtb_from.Text;
