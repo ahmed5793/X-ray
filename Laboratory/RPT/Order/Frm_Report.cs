@@ -46,7 +46,7 @@ namespace Laboratory.RPT.Order
 
                     //  Rpt_Revenue report = new Rpt_Revenue();
                     Rpt_DevRevenue report = new Rpt_DevRevenue();
-                    Frm_Report sr = new Frm_Report();
+                  //  Frm_Report sr = new Frm_Report();
 
                     DataSetRevenue dso = new DataSetRevenue();
                     DataTable dt1 = new DataTable();
@@ -57,7 +57,7 @@ namespace Laboratory.RPT.Order
 
 
 
-                    sr.documentViewer1.Refresh();
+                    documentViewer1.Refresh();
                     dso.Tables["DataTable"].Clear();
                     for (int i = 0; i < dt1.Rows.Count; i++)
                     {
@@ -74,7 +74,7 @@ namespace Laboratory.RPT.Order
 
                     dt2 = m.Report_RevenueDetails_Masrofat_OneBranch(cmb_branches.Text, dtb_from.Value,
                         dtb_to.Value);
-                    sr.documentViewer1.Refresh();
+                   documentViewer1.Refresh();
                     dso.Tables["Masrofat"].Clear();
                   
 
@@ -85,15 +85,15 @@ namespace Laboratory.RPT.Order
                     report.Parameters["Branch"].Value = cmb_branches.Text;
                     report.Parameters["FromDate"].Value = dtb_from.Text;
                     report.Parameters["Todate"].Value = dtb_to.Text;
-                    sr.documentViewer1.DocumentSource = report;
+                 
                     report.Parameters["Branch"].Visible = false;
                     report.Parameters["FromDate"].Visible = false;
                     report.Parameters["Todate"].Visible = false;
-                  // documentViewer1.Refresh();
-                  //  documentViewer1.DocumentSource = report;
-                    // sr.documentViewer1.Enabled = true;
-
-                    sr.ShowDialog();
+                  
+                    documentViewer1.DocumentSource = report;
+                  
+                    report.CreateDocument();
+                  
 
                 }
                 else if(rdb_All.Checked==true)
@@ -123,14 +123,13 @@ namespace Laboratory.RPT.Order
                     reportB.DataSource = dso1;
                     reportB.Parameters["FromDate"].Value = dtb_from.Text;
                     reportB.Parameters["ToDate"].Value = dtb_to.Text;
-                    sr1.documentViewer1.DocumentSource = reportB;
                     reportB.Parameters["FromDate"].Visible = false;
                     reportB.Parameters["ToDate"].Visible = false;
                     // documentViewer1.Refresh();
-                     // documentViewer1.DocumentSource = reportB;
-                     sr1.documentViewer1.Enabled = true;
-
-                    sr1.ShowDialog();
+                      documentViewer1.DocumentSource = reportB;
+                  
+                    reportB.CreateDocument();
+                 
                 }
                
 
