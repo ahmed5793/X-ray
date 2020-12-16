@@ -26,8 +26,10 @@ namespace Laboratory.RPT.Order
         {
             try
             {
-               
+
+                Tickets t = new Tickets();
               
+                Masrofat m = new Masrofat();
 
                 if (rdb_one.Checked == true)
                 {
@@ -45,9 +47,10 @@ namespace Laboratory.RPT.Order
                     //  Rpt_Revenue report = new Rpt_Revenue();
                     Rpt_DevRevenue report = new Rpt_DevRevenue();
                     Frm_Report sr = new Frm_Report();
-                    Tickets t = new Tickets();
+
                     DataSetRevenue dso = new DataSetRevenue();
                     DataTable dt1 = new DataTable();
+                    DataTable dt2 = new DataTable();
                     ////////////
                     dt1.Clear();
                     dt1 = t.ReportRevenueAllDetails(cmb_branches.Text, dtb_from.Value, dtb_to.Value);
@@ -67,7 +70,17 @@ namespace Laboratory.RPT.Order
                            dt1.Rows[i][11], dt1.Rows[i][12], dt1.Rows[i][13], dt1.Rows[i][14],
                            dt1.Rows[i][15]);
                     }
-                   
+
+
+                    dt2 = m.Report_RevenueDetails_Masrofat_OneBranch(cmb_branches.Text, dtb_from.Value,
+                        dtb_to.Value);
+                    sr.documentViewer1.Refresh();
+                    dso.Tables["Masrofat"].Clear();
+                  
+
+
+                        dso.Tables["Masrofat"].Rows.Add(dt2.Rows[0][0]);
+                    
                     report.DataSource = dso;
                     report.Parameters["Branch"].Value = cmb_branches.Text;
                     report.Parameters["FromDate"].Value = dtb_from.Text;
@@ -87,7 +100,7 @@ namespace Laboratory.RPT.Order
                 {
                     XtraReportRevenueDetailsAllBranch reportB = new XtraReportRevenueDetailsAllBranch();
                     Frm_Report sr1 = new Frm_Report();
-                    Tickets t = new Tickets();
+                    
                     DataSetRevenue dso1= new DataSetRevenue();
                     DataTable dt1 = new DataTable();
                     ////////////
