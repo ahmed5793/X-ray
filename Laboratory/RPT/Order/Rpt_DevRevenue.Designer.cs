@@ -239,7 +239,7 @@
             this.pageInfo1,
             this.pageInfo2,
             this.xrTable3});
-            this.BottomMargin.HeightF = 285.5F;
+            this.BottomMargin.HeightF = 286F;
             this.BottomMargin.Name = "BottomMargin";
             this.BottomMargin.StylePriority.UseTextAlignment = false;
             this.BottomMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
@@ -1120,7 +1120,7 @@
             // xrTable4
             // 
             this.xrTable4.BackColor = System.Drawing.Color.Red;
-            this.xrTable4.BorderColor = System.Drawing.Color.Red;
+            this.xrTable4.BorderColor = System.Drawing.Color.Black;
             this.xrTable4.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
