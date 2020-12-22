@@ -106,11 +106,12 @@ namespace Laboratory.PL
                 SelectMasrofatType();
                 Permision();
 
-                dataGridView1.DataSource = m.SelectReserveDetails();
+                gridControl1.DataSource = m.SelectReserveDetails();
 
 
                 textBox1.Hide();
                 Btn_Delete.Enabled = false;
+                Btn_Update.Enabled = false;
             }
             catch (Exception ex)
             {
@@ -161,28 +162,7 @@ namespace Laboratory.PL
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
-            try
-            {
-                if (dataGridView1.Rows.Count>0)
-                {
-                    Btn_Delete.Enabled = true;
-                    Btn_Add.Enabled = false;
-                    cmb_Stock.Enabled = false;
-                    cmb_UserBranch.Enabled = false;
-                    textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                    comboBox1.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                    txt_notes.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                    txt_amount.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                    cmb_Stock.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-                    cmb_UserBranch.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
-                    //dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
+           
         }
 
         private void Btn_Update_Click(object sender, EventArgs e)
@@ -228,10 +208,15 @@ namespace Laboratory.PL
             txt_amount.Clear();
             textBox1.Clear();
             Btn_Delete.Enabled = false;
+            Btn_Update.Enabled = false;
             Btn_Add.Enabled = true;
             cmb_Stock.Enabled = true;
+            txt_amount.Enabled = true;
             dateTimePicker1.Value = DateTime.Now;
             cmb_UserBranch.Enabled = true;
+            cmb_Stock.Enabled = true;
+            dateTimePicker1.Enabled = true;
+
         }
         private void simpleButton1_Click(object sender, EventArgs e)
         {
@@ -284,7 +269,7 @@ namespace Laboratory.PL
                  
                     s.Add_StockPull(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_amount.Text), dateTimePicker1.Value, txt_username.Text, "مصروفات " + "لل" + comboBox1.Text);
                     MessageBox.Show("تم التسجيل بنجاح", "عمليه التسجيل");
-                    dataGridView1.DataSource = m.SelectReserveDetails();
+                    gridControl1.DataSource = m.SelectReserveDetails();
                     clear();
                 }
                 else
@@ -355,14 +340,14 @@ namespace Laboratory.PL
                 if (MessageBox.Show("هل تريد مسح المصروف", "مسح المصروف", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     s.add_insertStock(Convert.ToInt32(cmb_Stock.SelectedValue), Convert.ToDecimal(txt_amount.Text), DateTime.Now, txt_username.Text, "مسح مصروف " + " " + comboBox1.Text + " " + "من شاشة المصروفات");
-                   m.DeleteReserveDetails(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
+                   m.DeleteReserveDetails(Convert.ToInt32(textBox1.Text));
                     MessageBox.Show("تم مسح المصروف بنجاح");
                 }
                 else
                 {
                     MessageBox.Show("تم إلغاء مسح المصروف ");
                 }
-                dataGridView1.DataSource = m.SelectReserveDetails();
+                gridControl1.DataSource = m.SelectReserveDetails();
                 clear();
 
             }
@@ -379,6 +364,64 @@ namespace Laboratory.PL
             if (txt_amount.Text=="")
             {
                 txt_amount.Text = "0";
+            }
+        }
+
+        private void gridControl1_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+
+                if (gridView1.RowCount > 0)
+                {
+                    Btn_Delete.Enabled = true;
+                    Btn_Update.Enabled = true;
+                    Btn_Add.Enabled = false;
+                    cmb_Stock.Enabled = false;
+                    cmb_UserBranch.Enabled = false;
+                    txt_amount.Enabled = false;
+                    dateTimePicker1.Enabled = false;
+                    textBox1.Text = gridView1.GetFocusedRowCellValue("رقم المصروف").ToString();
+                    comboBox1.Text = gridView1.GetFocusedRowCellValue("نوع المصروف").ToString();
+                    txt_notes.Text = gridView1.GetFocusedRowCellValue("ملاحظات").ToString();
+                    txt_amount.Text = gridView1.GetFocusedRowCellValue("المبلغ").ToString();
+                    cmb_Stock.Text = gridView1.GetFocusedRowCellValue("إسم الخزنة").ToString();
+                    dateTimePicker1.Text = gridView1.GetFocusedRowCellValue("التاريخ").ToString();
+                    textBox1.Text = gridView1.GetFocusedRowCellValue("رقم المصروف").ToString();
+
+                    // cmb_UserBranch.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+
+        private void Btn_Update_Click_2(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("هل تريد تعديل المصروف", "تعديل المصروف", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    m.UpdateMasrofatDetails(Convert.ToInt32(textBox1.Text), Convert.ToInt32(comboBox1.SelectedValue),txt_notes.Text);
+                    MessageBox.Show("تم تعديل المصروف بنجاح");
+                }
+                else
+                {
+                    MessageBox.Show("تم إلغاء تعديل المصروف ");
+                }
+                gridControl1.DataSource = m.SelectReserveDetails();
+                clear();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
             }
         }
     }
