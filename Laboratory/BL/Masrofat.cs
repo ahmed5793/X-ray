@@ -100,26 +100,19 @@ namespace Laboratory.BL
             da.excutequery("DeleteReserveDetails", param);
             da.close();
         }
-        internal void UpdateResrveDetails(int id, int IdReserve, string decription, decimal amount, DateTime date, int Id_Stock , string Sales_Man)
+        internal void UpdateMasrofatDetails(int id_ReserveDetails, int Id_MasrofGender, string decription)
         {
             DataAccessLayer da = new DataAccessLayer();
-            SqlParameter[] param = new SqlParameter[7];
+            SqlParameter[] param = new SqlParameter[3];
             da.open();
-            param[0] = new SqlParameter("@idReserve", SqlDbType.Int);
-            param[0].Value = IdReserve;
-            param[1] = new SqlParameter("@decraiption", SqlDbType.NVarChar, 400);
-            param[1].Value = decription;
-            param[2] = new SqlParameter("@amount", SqlDbType.Decimal);
-            param[2].Value = amount;
-            param[3] = new SqlParameter("@date", SqlDbType.DateTime);
-            param[3].Value = date;
-            param[4] = new SqlParameter("@id", SqlDbType.Int);
-            param[4].Value = id;
-            param[5] = new SqlParameter("@ID_Stock", SqlDbType.Int);
-            param[5].Value = Id_Stock;
-            param[6] = new SqlParameter("@Sales_man", SqlDbType.Int);
-            param[6].Value = Sales_Man;
-            da.excutequery("UpdateResrveDetails", param);
+            param[0] = new SqlParameter("@id_ReserveDetails", SqlDbType.Int);
+            param[0].Value = id_ReserveDetails;
+            param[1] = new SqlParameter("@ID_Masrof", SqlDbType.Int);
+            param[1].Value = Id_MasrofGender;
+            param[2] = new SqlParameter("@Notes", SqlDbType.NVarChar,500);
+            param[2].Value = decription;
+         
+            da.excutequery("UpdateMasrofatDetails", param);
             da.close();
         }
         internal DataTable SelectReserveDetails()

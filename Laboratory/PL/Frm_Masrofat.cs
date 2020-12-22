@@ -111,6 +111,7 @@ namespace Laboratory.PL
 
                 textBox1.Hide();
                 Btn_Delete.Enabled = false;
+                Btn_Update.Enabled = false;
             }
             catch (Exception ex)
             {
@@ -207,10 +208,15 @@ namespace Laboratory.PL
             txt_amount.Clear();
             textBox1.Clear();
             Btn_Delete.Enabled = false;
+            Btn_Update.Enabled = false;
             Btn_Add.Enabled = true;
             cmb_Stock.Enabled = true;
+            txt_amount.Enabled = true;
             dateTimePicker1.Value = DateTime.Now;
             cmb_UserBranch.Enabled = true;
+            cmb_Stock.Enabled = true;
+            dateTimePicker1.Enabled = true;
+
         }
         private void simpleButton1_Click(object sender, EventArgs e)
         {
@@ -369,9 +375,12 @@ namespace Laboratory.PL
                 if (gridView1.RowCount > 0)
                 {
                     Btn_Delete.Enabled = true;
+                    Btn_Update.Enabled = true;
                     Btn_Add.Enabled = false;
                     cmb_Stock.Enabled = false;
                     cmb_UserBranch.Enabled = false;
+                    txt_amount.Enabled = false;
+                    dateTimePicker1.Enabled = false;
                     textBox1.Text = gridView1.GetFocusedRowCellValue("رقم المصروف").ToString();
                     comboBox1.Text = gridView1.GetFocusedRowCellValue("نوع المصروف").ToString();
                     txt_notes.Text = gridView1.GetFocusedRowCellValue("ملاحظات").ToString();
@@ -386,6 +395,31 @@ namespace Laboratory.PL
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+
+        private void Btn_Update_Click_2(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("هل تريد تعديل المصروف", "تعديل المصروف", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    m.UpdateMasrofatDetails(Convert.ToInt32(textBox1.Text), Convert.ToInt32(comboBox1.SelectedValue),txt_notes.Text);
+                    MessageBox.Show("تم تعديل المصروف بنجاح");
+                }
+                else
+                {
+                    MessageBox.Show("تم إلغاء تعديل المصروف ");
+                }
+                gridControl1.DataSource = m.SelectReserveDetails();
+                clear();
+
+            }
+            catch (Exception ex)
+            {
+
                 MessageBox.Show(ex.Message);
                 MessageBox.Show(ex.StackTrace);
             }

@@ -51,6 +51,7 @@
             this.Btn_Add = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Btn_Update = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -307,7 +308,7 @@
             this.simpleButton1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.simpleButton1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(612, 225);
+            this.simpleButton1.Location = new System.Drawing.Point(727, 218);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(154, 32);
             this.simpleButton1.TabIndex = 186;
@@ -328,7 +329,7 @@
             this.Btn_Delete.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_Delete.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.Btn_Delete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Delete.ImageOptions.Image")));
-            this.Btn_Delete.Location = new System.Drawing.Point(163, 225);
+            this.Btn_Delete.Location = new System.Drawing.Point(52, 215);
             this.Btn_Delete.Name = "Btn_Delete";
             this.Btn_Delete.Size = new System.Drawing.Size(181, 32);
             this.Btn_Delete.TabIndex = 185;
@@ -349,7 +350,7 @@
             this.Btn_Add.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_Add.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.Btn_Add.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Add.ImageOptions.Image")));
-            this.Btn_Add.Location = new System.Drawing.Point(409, 225);
+            this.Btn_Add.Location = new System.Drawing.Point(522, 218);
             this.Btn_Add.Name = "Btn_Add";
             this.Btn_Add.Size = new System.Drawing.Size(157, 32);
             this.Btn_Add.TabIndex = 184;
@@ -444,12 +445,34 @@
             this.gridView1.OptionsPrint.PrintPreview = true;
             this.gridView1.OptionsView.ShowFooter = true;
             // 
+            // Btn_Update
+            // 
+            this.Btn_Update.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Btn_Update.Appearance.BackColor = System.Drawing.Color.Black;
+            this.Btn_Update.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Update.Appearance.ForeColor = System.Drawing.Color.White;
+            this.Btn_Update.Appearance.Options.UseBackColor = true;
+            this.Btn_Update.Appearance.Options.UseFont = true;
+            this.Btn_Update.Appearance.Options.UseForeColor = true;
+            this.Btn_Update.Appearance.Options.UseTextOptions = true;
+            this.Btn_Update.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Btn_Update.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.Btn_Update.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.Btn_Update.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.Btn_Update.Location = new System.Drawing.Point(299, 217);
+            this.Btn_Update.Name = "Btn_Update";
+            this.Btn_Update.Size = new System.Drawing.Size(157, 32);
+            this.Btn_Update.TabIndex = 188;
+            this.Btn_Update.Text = "تعديل المصروف";
+            this.Btn_Update.Click += new System.EventHandler(this.Btn_Update_Click_2);
+            // 
             // Frm_Masrofat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(894, 538);
+            this.Controls.Add(this.Btn_Update);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.Btn_Delete);
@@ -491,5 +514,6 @@
         private System.Windows.Forms.Label label13;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraEditors.SimpleButton Btn_Update;
     }
 }
