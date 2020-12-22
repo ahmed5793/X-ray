@@ -73,7 +73,9 @@ namespace Laboratory.PL
                 {
                     t.Update_TeckietInformation(Convert.ToInt32(txt_idtickets.Text), Convert.ToInt32(cmb_Techincal.SelectedValue),
                 Convert.ToInt32(cmb_DoctorOfCenter.SelectedValue),dtb_kashf.Value,dtp_recive.Value,
-                Convert.ToInt32(cmb_branches.SelectedValue),txt_username.Text, Txt_NewNotes.Text);
+                Convert.ToInt32(cmb_branches.SelectedValue),txt_username.Text, Txt_NewNotes.Text,dtb_Visite.Value,Convert.ToInt32(txt_IdStock.Text),
+                Convert.ToInt32(txt_idCust.Text), "فاتورة حجز اشعة  رقم " + (txt_idtickets.Text) + " " + "للعميل" + " " + txt_name.Text,
+                 "حجز أشعة ورقم الحجز" + " " + (txt_idtickets.Text));
                     MessageBox.Show("تم حفظ التعديلات بنجاح");
                 }
                 else

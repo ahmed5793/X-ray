@@ -78,12 +78,18 @@ namespace Laboratory.BL
         //    decimal TotalAfterDiscount, decimal Patient_paymentAmount, string Activate);
 
         //}
+        
+
+ 
+
+
         internal void Update_TeckietInformation(int Id_Teckiet, int Id_Technical, int Id_DoctorOfCenter, DateTime Date_Revelation, 
-                                                DateTime Date_Recieve,int  palce_ToCheck, string User_Name , string Notes)
+        DateTime Date_Recieve,int  palce_ToCheck, string User_Name , string Notes, DateTime editDateVisite,int IDStock,
+      int IDCustomer, string ReassonAddStock,string elbayan)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[8];
+            SqlParameter[] param = new SqlParameter[13];
             param[0] = new SqlParameter("@Id_Teckiet", SqlDbType.Int);
             param[0].Value = Id_Teckiet;
             param[1] = new SqlParameter("@Id_Technical", SqlDbType.Int);
@@ -100,6 +106,16 @@ namespace Laboratory.BL
             param[6].Value = User_Name;
             param[7] = new SqlParameter("@ReasonForAdding", SqlDbType.NVarChar, 150);
             param[7].Value = Notes;
+            param[8] = new SqlParameter("@editDateVisite", SqlDbType.DateTime);
+            param[8].Value = editDateVisite;
+            param[9] = new SqlParameter("@IDStock", SqlDbType.Int);
+            param[9].Value = IDStock;
+            param[10] = new SqlParameter("@IDCustomer", SqlDbType.Int);
+            param[10].Value = IDCustomer;
+            param[11] = new SqlParameter("@ReassonAddStock", SqlDbType.NVarChar, 100);
+            param[11].Value = ReassonAddStock;
+            param[12] = new SqlParameter("@elbayan", SqlDbType.NVarChar,100);
+            param[12].Value = elbayan;
             da.excutequery("Update_TeckietInformation", param);
             da.close();
         }

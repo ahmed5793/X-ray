@@ -62,12 +62,22 @@
             this.txt_name = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.txt_visiteDate = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.dtb_Visite = new System.Windows.Forms.DateTimePicker();
+            this.txt_idCust = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txt_IdStock = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txt_visiteDate);
+            this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label28);
             this.groupBox2.Controls.Add(this.Txt_OldNotes);
             this.groupBox2.Controls.Add(this.txt_branch);
@@ -81,9 +91,9 @@
             this.groupBox2.Controls.Add(this.label23);
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(454, 121);
+            this.groupBox2.Location = new System.Drawing.Point(454, 139);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(434, 323);
+            this.groupBox2.Size = new System.Drawing.Size(434, 347);
             this.groupBox2.TabIndex = 118;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "بيانات الفحص قبل التعديل";
@@ -96,7 +106,7 @@
             this.label28.AutoSize = true;
             this.label28.BackColor = System.Drawing.Color.White;
             this.label28.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(328, 254);
+            this.label28.Location = new System.Drawing.Point(334, 308);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(71, 24);
             this.label28.TabIndex = 140;
@@ -107,13 +117,13 @@
             this.Txt_OldNotes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.Txt_OldNotes.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_OldNotes.Location = new System.Drawing.Point(6, 223);
+            this.Txt_OldNotes.Location = new System.Drawing.Point(12, 297);
             this.Txt_OldNotes.MaxLength = 3000;
             this.Txt_OldNotes.Multiline = true;
             this.Txt_OldNotes.Name = "Txt_OldNotes";
             this.Txt_OldNotes.ReadOnly = true;
             this.Txt_OldNotes.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Txt_OldNotes.Size = new System.Drawing.Size(316, 80);
+            this.Txt_OldNotes.Size = new System.Drawing.Size(316, 44);
             this.Txt_OldNotes.TabIndex = 139;
             this.Txt_OldNotes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -121,7 +131,7 @@
             // 
             this.txt_branch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_branch.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_branch.Location = new System.Drawing.Point(6, 182);
+            this.txt_branch.Location = new System.Drawing.Point(2, 257);
             this.txt_branch.Name = "txt_branch";
             this.txt_branch.ReadOnly = true;
             this.txt_branch.Size = new System.Drawing.Size(314, 26);
@@ -134,7 +144,7 @@
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.White;
             this.label13.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(325, 184);
+            this.label13.Location = new System.Drawing.Point(322, 256);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(99, 24);
             this.label13.TabIndex = 137;
@@ -144,7 +154,7 @@
             // 
             this.txt_dateRecive.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_dateRecive.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_dateRecive.Location = new System.Drawing.Point(6, 142);
+            this.txt_dateRecive.Location = new System.Drawing.Point(6, 114);
             this.txt_dateRecive.Name = "txt_dateRecive";
             this.txt_dateRecive.ReadOnly = true;
             this.txt_dateRecive.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -157,7 +167,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.White;
             this.label7.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(322, 144);
+            this.label7.Location = new System.Drawing.Point(321, 114);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(107, 24);
             this.label7.TabIndex = 135;
@@ -167,7 +177,7 @@
             // 
             this.txt_timeKa4f.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_timeKa4f.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_timeKa4f.Location = new System.Drawing.Point(6, 104);
+            this.txt_timeKa4f.Location = new System.Drawing.Point(6, 74);
             this.txt_timeKa4f.Name = "txt_timeKa4f";
             this.txt_timeKa4f.ReadOnly = true;
             this.txt_timeKa4f.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -179,7 +189,7 @@
             // 
             this.txt_techincal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_techincal.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_techincal.Location = new System.Drawing.Point(6, 26);
+            this.txt_techincal.Location = new System.Drawing.Point(4, 165);
             this.txt_techincal.Name = "txt_techincal";
             this.txt_techincal.ReadOnly = true;
             this.txt_techincal.Size = new System.Drawing.Size(316, 26);
@@ -191,7 +201,7 @@
             // 
             this.txt_doctorOfCenter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_doctorOfCenter.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_doctorOfCenter.Location = new System.Drawing.Point(6, 64);
+            this.txt_doctorOfCenter.Location = new System.Drawing.Point(4, 203);
             this.txt_doctorOfCenter.Name = "txt_doctorOfCenter";
             this.txt_doctorOfCenter.ReadOnly = true;
             this.txt_doctorOfCenter.Size = new System.Drawing.Size(315, 26);
@@ -204,7 +214,7 @@
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.White;
             this.label12.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(326, 28);
+            this.label12.Location = new System.Drawing.Point(334, 164);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(86, 24);
             this.label12.TabIndex = 98;
@@ -215,7 +225,7 @@
             this.label23.AutoSize = true;
             this.label23.BackColor = System.Drawing.Color.White;
             this.label23.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(323, 66);
+            this.label23.Location = new System.Drawing.Point(321, 205);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(99, 24);
             this.label23.TabIndex = 96;
@@ -226,7 +236,7 @@
             this.label17.AutoSize = true;
             this.label17.BackColor = System.Drawing.Color.White;
             this.label17.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(323, 106);
+            this.label17.Location = new System.Drawing.Point(322, 76);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(98, 24);
             this.label17.TabIndex = 104;
@@ -236,22 +246,24 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.dtb_Visite);
+            this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.Txt_NewNotes);
             this.groupBox1.Controls.Add(this.label21);
             this.groupBox1.Controls.Add(this.cmb_branches);
             this.groupBox1.Controls.Add(this.dtb_kashf);
-            this.groupBox1.Controls.Add(this.dtp_recive);
-            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.dtp_recive);
+            this.groupBox1.Controls.Add(this.cmb_Techincal);
+            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.cmb_DoctorOfCenter);
-            this.groupBox1.Controls.Add(this.cmb_Techincal);
             this.groupBox1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(3, 121);
+            this.groupBox1.Location = new System.Drawing.Point(3, 139);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(445, 323);
+            this.groupBox1.Size = new System.Drawing.Size(449, 347);
             this.groupBox1.TabIndex = 119;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "بيانات الفحص الجديده";
@@ -263,7 +275,7 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.White;
             this.label8.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(333, 254);
+            this.label8.Location = new System.Drawing.Point(339, 307);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(71, 24);
             this.label8.TabIndex = 145;
@@ -274,12 +286,12 @@
             this.Txt_NewNotes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.Txt_NewNotes.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_NewNotes.Location = new System.Drawing.Point(11, 223);
+            this.Txt_NewNotes.Location = new System.Drawing.Point(7, 297);
             this.Txt_NewNotes.MaxLength = 3000;
             this.Txt_NewNotes.Multiline = true;
             this.Txt_NewNotes.Name = "Txt_NewNotes";
             this.Txt_NewNotes.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Txt_NewNotes.Size = new System.Drawing.Size(316, 80);
+            this.Txt_NewNotes.Size = new System.Drawing.Size(316, 43);
             this.Txt_NewNotes.TabIndex = 144;
             this.Txt_NewNotes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -289,7 +301,7 @@
             this.label21.AutoSize = true;
             this.label21.BackColor = System.Drawing.Color.White;
             this.label21.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(333, 184);
+            this.label21.Location = new System.Drawing.Point(329, 258);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(99, 24);
             this.label21.TabIndex = 143;
@@ -303,10 +315,10 @@
             this.cmb_branches.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_branches.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_branches.FormattingEnabled = true;
-            this.cmb_branches.Location = new System.Drawing.Point(65, 183);
+            this.cmb_branches.Location = new System.Drawing.Point(9, 255);
             this.cmb_branches.Name = "cmb_branches";
             this.cmb_branches.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmb_branches.Size = new System.Drawing.Size(262, 26);
+            this.cmb_branches.Size = new System.Drawing.Size(305, 26);
             this.cmb_branches.TabIndex = 142;
             // 
             // dtb_kashf
@@ -315,11 +327,11 @@
             this.dtb_kashf.CustomFormat = "   dd/MM/yyyy       *      tt  mm:hh     ";
             this.dtb_kashf.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtb_kashf.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtb_kashf.Location = new System.Drawing.Point(65, 105);
+            this.dtb_kashf.Location = new System.Drawing.Point(9, 77);
             this.dtb_kashf.Name = "dtb_kashf";
             this.dtb_kashf.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dtb_kashf.ShowUpDown = true;
-            this.dtb_kashf.Size = new System.Drawing.Size(262, 25);
+            this.dtb_kashf.Size = new System.Drawing.Size(314, 25);
             this.dtb_kashf.TabIndex = 141;
             // 
             // dtp_recive
@@ -327,10 +339,10 @@
             this.dtp_recive.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dtp_recive.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_recive.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_recive.Location = new System.Drawing.Point(185, 144);
+            this.dtp_recive.Location = new System.Drawing.Point(9, 117);
             this.dtp_recive.Name = "dtp_recive";
             this.dtp_recive.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dtp_recive.Size = new System.Drawing.Size(140, 25);
+            this.dtp_recive.Size = new System.Drawing.Size(306, 25);
             this.dtp_recive.TabIndex = 140;
             // 
             // label3
@@ -338,7 +350,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(331, 145);
+            this.label3.Location = new System.Drawing.Point(321, 117);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(107, 24);
             this.label3.TabIndex = 139;
@@ -349,7 +361,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(336, 30);
+            this.label4.Location = new System.Drawing.Point(339, 165);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(86, 24);
             this.label4.TabIndex = 137;
@@ -360,7 +372,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(332, 69);
+            this.label5.Location = new System.Drawing.Point(329, 206);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(99, 24);
             this.label5.TabIndex = 136;
@@ -371,7 +383,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(332, 108);
+            this.label6.Location = new System.Drawing.Point(329, 77);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(98, 24);
             this.label6.TabIndex = 138;
@@ -384,10 +396,10 @@
             this.cmb_DoctorOfCenter.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmb_DoctorOfCenter.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_DoctorOfCenter.FormattingEnabled = true;
-            this.cmb_DoctorOfCenter.Location = new System.Drawing.Point(68, 67);
+            this.cmb_DoctorOfCenter.Location = new System.Drawing.Point(9, 204);
             this.cmb_DoctorOfCenter.Name = "cmb_DoctorOfCenter";
             this.cmb_DoctorOfCenter.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmb_DoctorOfCenter.Size = new System.Drawing.Size(261, 26);
+            this.cmb_DoctorOfCenter.Size = new System.Drawing.Size(305, 26);
             this.cmb_DoctorOfCenter.TabIndex = 97;
             // 
             // cmb_Techincal
@@ -397,17 +409,17 @@
             this.cmb_Techincal.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmb_Techincal.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_Techincal.FormattingEnabled = true;
-            this.cmb_Techincal.Location = new System.Drawing.Point(68, 27);
+            this.cmb_Techincal.Location = new System.Drawing.Point(17, 162);
             this.cmb_Techincal.Name = "cmb_Techincal";
             this.cmb_Techincal.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmb_Techincal.Size = new System.Drawing.Size(261, 26);
+            this.cmb_Techincal.Size = new System.Drawing.Size(306, 26);
             this.cmb_Techincal.TabIndex = 92;
             // 
             // txt_username
             // 
             this.txt_username.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_username.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_username.Location = new System.Drawing.Point(306, 8);
+            this.txt_username.Location = new System.Drawing.Point(281, 8);
             this.txt_username.Name = "txt_username";
             this.txt_username.ReadOnly = true;
             this.txt_username.Size = new System.Drawing.Size(259, 25);
@@ -420,7 +432,7 @@
             this.label18.AutoSize = true;
             this.label18.BackColor = System.Drawing.Color.White;
             this.label18.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(571, 10);
+            this.label18.Location = new System.Drawing.Point(563, 8);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(75, 18);
             this.label18.TabIndex = 121;
@@ -440,9 +452,9 @@
             this.Btn_Save.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_Save.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.Btn_Save.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Save.ImageOptions.Image")));
-            this.Btn_Save.Location = new System.Drawing.Point(343, 467);
+            this.Btn_Save.Location = new System.Drawing.Point(344, 492);
             this.Btn_Save.Name = "Btn_Save";
-            this.Btn_Save.Size = new System.Drawing.Size(208, 48);
+            this.Btn_Save.Size = new System.Drawing.Size(208, 35);
             this.Btn_Save.TabIndex = 181;
             this.Btn_Save.Text = "حفظ التعديلات للفاتوره";
             this.Btn_Save.Click += new System.EventHandler(this.Btn_Save_Click);
@@ -451,7 +463,7 @@
             // 
             this.txt_idtickets.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_idtickets.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_idtickets.Location = new System.Drawing.Point(441, 44);
+            this.txt_idtickets.Location = new System.Drawing.Point(346, 58);
             this.txt_idtickets.Name = "txt_idtickets";
             this.txt_idtickets.ReadOnly = true;
             this.txt_idtickets.Size = new System.Drawing.Size(124, 26);
@@ -461,7 +473,7 @@
             // txt_name
             // 
             this.txt_name.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_name.Location = new System.Drawing.Point(306, 83);
+            this.txt_name.Location = new System.Drawing.Point(281, 92);
             this.txt_name.Name = "txt_name";
             this.txt_name.ReadOnly = true;
             this.txt_name.Size = new System.Drawing.Size(259, 26);
@@ -473,7 +485,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(571, 86);
+            this.label1.Location = new System.Drawing.Point(562, 92);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 24);
             this.label1.TabIndex = 184;
@@ -484,19 +496,114 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(571, 45);
+            this.label2.Location = new System.Drawing.Point(562, 58);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 24);
             this.label2.TabIndex = 185;
             this.label2.Text = "رقم الحجز";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // txt_visiteDate
+            // 
+            this.txt_visiteDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_visiteDate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_visiteDate.Location = new System.Drawing.Point(6, 35);
+            this.txt_visiteDate.Name = "txt_visiteDate";
+            this.txt_visiteDate.ReadOnly = true;
+            this.txt_visiteDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txt_visiteDate.Size = new System.Drawing.Size(314, 26);
+            this.txt_visiteDate.TabIndex = 142;
+            this.txt_visiteDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.White;
+            this.label9.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(322, 37);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(100, 24);
+            this.label9.TabIndex = 141;
+            this.label9.Text = "تاريخ الزيارة";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.White;
+            this.label10.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(327, 37);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(100, 24);
+            this.label10.TabIndex = 143;
+            this.label10.Text = "تاريخ الزيارة";
+            // 
+            // dtb_Visite
+            // 
+            this.dtb_Visite.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtb_Visite.CustomFormat = "   dd/MM/yyyy       *      tt  mm:hh     ";
+            this.dtb_Visite.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtb_Visite.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtb_Visite.Location = new System.Drawing.Point(7, 35);
+            this.dtb_Visite.Name = "dtb_Visite";
+            this.dtb_Visite.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dtb_Visite.ShowUpDown = true;
+            this.dtb_Visite.Size = new System.Drawing.Size(314, 25);
+            this.dtb_Visite.TabIndex = 146;
+            // 
+            // txt_idCust
+            // 
+            this.txt_idCust.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_idCust.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_idCust.Location = new System.Drawing.Point(709, 107);
+            this.txt_idCust.Name = "txt_idCust";
+            this.txt_idCust.ReadOnly = true;
+            this.txt_idCust.Size = new System.Drawing.Size(124, 26);
+            this.txt_idCust.TabIndex = 186;
+            this.txt_idCust.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.White;
+            this.label11.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(705, 80);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(160, 24);
+            this.label11.TabIndex = 143;
+            this.label11.Text = "ID_CUSTOMER";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.White;
+            this.label14.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(41, 60);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(98, 24);
+            this.label14.TabIndex = 187;
+            this.label14.Text = "ID_stock";
+            // 
+            // txt_IdStock
+            // 
+            this.txt_IdStock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_IdStock.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_IdStock.Location = new System.Drawing.Point(45, 87);
+            this.txt_IdStock.Name = "txt_IdStock";
+            this.txt_IdStock.ReadOnly = true;
+            this.txt_IdStock.Size = new System.Drawing.Size(124, 26);
+            this.txt_IdStock.TabIndex = 188;
+            this.txt_IdStock.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // Frm_EditTeckit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(893, 527);
+            this.ClientSize = new System.Drawing.Size(897, 529);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.txt_IdStock);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.txt_idCust);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txt_name);
             this.Controls.Add(this.label1);
@@ -539,8 +646,6 @@
         public System.Windows.Forms.Label label6;
         public System.Windows.Forms.ComboBox cmb_DoctorOfCenter;
         public System.Windows.Forms.ComboBox cmb_Techincal;
-        private System.Windows.Forms.DateTimePicker dtb_kashf;
-        private System.Windows.Forms.DateTimePicker dtp_recive;
         private System.Windows.Forms.TextBox txt_username;
         private System.Windows.Forms.Label label18;
         public System.Windows.Forms.TextBox txt_branch;
@@ -556,5 +661,15 @@
         private System.Windows.Forms.Label label8;
         public System.Windows.Forms.TextBox Txt_OldNotes;
         public System.Windows.Forms.TextBox Txt_NewNotes;
+        public System.Windows.Forms.TextBox txt_visiteDate;
+        public System.Windows.Forms.Label label9;
+        public System.Windows.Forms.Label label10;
+        public System.Windows.Forms.TextBox txt_idCust;
+        public System.Windows.Forms.Label label11;
+        public System.Windows.Forms.Label label14;
+        public System.Windows.Forms.TextBox txt_IdStock;
+        public System.Windows.Forms.DateTimePicker dtb_kashf;
+        public System.Windows.Forms.DateTimePicker dtp_recive;
+        public System.Windows.Forms.DateTimePicker dtb_Visite;
     }
 }

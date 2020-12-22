@@ -228,9 +228,11 @@ namespace Laboratory.PL
 
 
                     }
+                    gridControl1.DataSource = dt;
+                  
+                    gridView1.Columns["Doc_ID"].Visible = false;
                 }
-                gridControl1.DataSource = dt;
-                gridView1.Columns["Doc_ID"].Visible = false;
+              
             }
             catch (Exception ex)
             {

@@ -214,7 +214,9 @@ namespace Laboratory.RPT.Order
         {
             if (rdb_All.Checked==true)
             {
+              
                 cmb_branches.Enabled = false;
+                cmb_branches.DataSource = null;
             }
            
         }

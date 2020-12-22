@@ -602,6 +602,22 @@ namespace Laboratory.PL
                             fd.txt_timeKa4f.Text = dr[18].ToString();
                             fd.txt_idtickets.Text = dr[0].ToString();
                             fd.Txt_OldNotes.Text = dr[22].ToString();
+                            fd.txt_idCust.Text = dr[26].ToString();
+                            fd.txt_visiteDate.Text = dr[5].ToString();
+                            fd.txt_IdStock.Text = dr[24].ToString();
+
+                            //--------------------------------------------البيانات الجديدة------------------------------------------
+
+                            fd.dtp_recive.Text = dr[6].ToString();
+                            fd.cmb_DoctorOfCenter.Text = dr[7].ToString();
+                            fd.cmb_branches.Text = dr[9].ToString();
+                            fd.cmb_Techincal.Text = dr[10].ToString();
+                            fd.dtb_kashf.Text = dr[18].ToString();
+                        
+                            fd.Txt_NewNotes.Text = dr[22].ToString();
+                         
+                            fd.dtb_Visite.Text = dr[5].ToString();
+                           
                         }
                     }
                     else
@@ -620,6 +636,23 @@ namespace Laboratory.PL
                             fd.txt_techincal.Text = dr[10].ToString();                            
                             fd.txt_timeKa4f.Text = dr[19].ToString();
                             fd.Txt_OldNotes.Text = dr[22].ToString();
+                            fd.txt_idCust.Text = dr[29].ToString();
+                            fd.txt_visiteDate.Text = dr[5].ToString();
+                            fd.txt_IdStock.Text = dr[26].ToString();
+
+                            //--------------------------------------------البيانات الجديدة------------------------------------------
+                            
+
+                            fd.dtp_recive.Text = dr[6].ToString();
+                            fd.cmb_DoctorOfCenter.Text = dr[7].ToString();
+                            fd.cmb_branches.Text = dr[9].ToString();
+                            fd.cmb_Techincal.Text = dr[10].ToString();
+                            fd.dtb_kashf.Text = dr[19].ToString();
+                            fd.Txt_NewNotes.Text = dr[22].ToString();
+                        
+                            fd.dtb_Visite.Text = dr[5].ToString();
+                          
+
 
                         }
                     }
