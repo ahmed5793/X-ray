@@ -22,6 +22,41 @@ namespace Laboratory.BL
             da.excutequery("AddReserve", param);
             da.close();
         }
+        internal void UpdatemasrofatType(string masroftyoe,int idmasrodtype)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[2];
+            da.open();
+            param[0] = new SqlParameter("@masroftyoe", SqlDbType.NVarChar, 100);
+            param[0].Value = masroftyoe;
+            param[1] = new SqlParameter("@idmasrodtype", SqlDbType.Int);
+            param[1].Value = idmasrodtype;
+
+            da.excutequery("UpdatemasrofatType", param);
+            da.close();
+        }
+        internal void DeleteemasrofatType( int idmasrodtype)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[1];
+            da.open();
+          
+            param[0] = new SqlParameter("@idmasrodtype", SqlDbType.Int);
+            param[0].Value = idmasrodtype;
+
+            da.excutequery("DeleteemasrofatType", param);
+            da.close();
+        }
+        internal DataTable selectmasrofatType()
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+
+            dt = da.selected("selectmasrofatType", null);
+            da.close();
+            return dt;
+        }
         internal DataTable SelectReserve()
         {
             DataTable dt = new DataTable();
