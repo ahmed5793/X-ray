@@ -54,9 +54,14 @@
             this.Btn_Print = new DevExpress.XtraEditors.SimpleButton();
             this.Cmb_CategoryItem = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.rdb_one = new System.Windows.Forms.RadioButton();
+            this.rdb_All = new System.Windows.Forms.RadioButton();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label3
@@ -66,7 +71,7 @@
             this.label3.BackColor = System.Drawing.Color.Black;
             this.label3.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(468, 107);
+            this.label3.Location = new System.Drawing.Point(394, 107);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 22);
             this.label3.TabIndex = 109;
@@ -79,7 +84,7 @@
             this.label2.BackColor = System.Drawing.Color.Black;
             this.label2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(711, 106);
+            this.label2.Location = new System.Drawing.Point(636, 107);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 24);
             this.label2.TabIndex = 108;
@@ -99,7 +104,7 @@
             this.Btn_Search.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_Search.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.Btn_Search.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Search.ImageOptions.Image")));
-            this.Btn_Search.Location = new System.Drawing.Point(186, 26);
+            this.Btn_Search.Location = new System.Drawing.Point(112, 26);
             this.Btn_Search.Name = "Btn_Search";
             this.Btn_Search.Size = new System.Drawing.Size(129, 41);
             this.Btn_Search.TabIndex = 115;
@@ -319,7 +324,7 @@
             this.cmb_UserBranch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_UserBranch.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_UserBranch.FormattingEnabled = true;
-            this.cmb_UserBranch.Location = new System.Drawing.Point(353, 8);
+            this.cmb_UserBranch.Location = new System.Drawing.Point(279, 8);
             this.cmb_UserBranch.Name = "cmb_UserBranch";
             this.cmb_UserBranch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmb_UserBranch.Size = new System.Drawing.Size(279, 30);
@@ -333,7 +338,7 @@
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.Yellow;
             this.label13.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(684, 13);
+            this.label13.Location = new System.Drawing.Point(610, 13);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(42, 22);
             this.label13.TabIndex = 165;
@@ -345,7 +350,7 @@
             this.DateTo.CustomFormat = "   dd/MM/yyyy       *      tt  mm:hh    ";
             this.DateTo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DateTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DateTo.Location = new System.Drawing.Point(313, 105);
+            this.DateTo.Location = new System.Drawing.Point(239, 105);
             this.DateTo.Name = "DateTo";
             this.DateTo.ShowUpDown = true;
             this.DateTo.Size = new System.Drawing.Size(149, 26);
@@ -357,7 +362,7 @@
             this.DateFrom.CustomFormat = "   dd/MM/yyyy       *      tt  mm:hh    ";
             this.DateFrom.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DateFrom.Location = new System.Drawing.Point(555, 105);
+            this.DateFrom.Location = new System.Drawing.Point(481, 105);
             this.DateFrom.Name = "DateFrom";
             this.DateFrom.ShowUpDown = true;
             this.DateFrom.Size = new System.Drawing.Size(149, 26);
@@ -365,7 +370,6 @@
             // 
             // Btn_Print
             // 
-            this.Btn_Print.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.Btn_Print.Appearance.BackColor = System.Drawing.Color.Black;
             this.Btn_Print.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_Print.Appearance.ForeColor = System.Drawing.Color.White;
@@ -377,9 +381,9 @@
             this.Btn_Print.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Btn_Print.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.Btn_Print.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Print.ImageOptions.Image")));
-            this.Btn_Print.Location = new System.Drawing.Point(9, 26);
+            this.Btn_Print.Location = new System.Drawing.Point(9, 9);
             this.Btn_Print.Name = "Btn_Print";
-            this.Btn_Print.Size = new System.Drawing.Size(146, 41);
+            this.Btn_Print.Size = new System.Drawing.Size(45, 41);
             this.Btn_Print.TabIndex = 174;
             this.Btn_Print.Text = "طباعة التقرير";
             this.Btn_Print.Click += new System.EventHandler(this.Btn_Print_Click);
@@ -391,7 +395,7 @@
             this.Cmb_CategoryItem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.Cmb_CategoryItem.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cmb_CategoryItem.FormattingEnabled = true;
-            this.Cmb_CategoryItem.Location = new System.Drawing.Point(353, 52);
+            this.Cmb_CategoryItem.Location = new System.Drawing.Point(279, 52);
             this.Cmb_CategoryItem.Name = "Cmb_CategoryItem";
             this.Cmb_CategoryItem.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Cmb_CategoryItem.Size = new System.Drawing.Size(279, 32);
@@ -403,11 +407,46 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Yellow;
             this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(637, 56);
+            this.label1.Location = new System.Drawing.Point(563, 56);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(92, 24);
             this.label1.TabIndex = 214;
             this.label1.Text = "نوع الفحص";
+            // 
+            // groupControl1
+            // 
+            this.groupControl1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.groupControl1.Controls.Add(this.rdb_one);
+            this.groupControl1.Controls.Add(this.rdb_All);
+            this.groupControl1.Location = new System.Drawing.Point(698, 14);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(276, 70);
+            this.groupControl1.TabIndex = 238;
+            this.groupControl1.Text = "نوع البحث";
+            // 
+            // rdb_one
+            // 
+            this.rdb_one.AutoSize = true;
+            this.rdb_one.Location = new System.Drawing.Point(19, 35);
+            this.rdb_one.Name = "rdb_one";
+            this.rdb_one.Size = new System.Drawing.Size(77, 17);
+            this.rdb_one.TabIndex = 186;
+            this.rdb_one.Text = "فحص محدد";
+            this.rdb_one.UseVisualStyleBackColor = true;
+            this.rdb_one.CheckedChanged += new System.EventHandler(this.rdb_one_CheckedChanged);
+            // 
+            // rdb_All
+            // 
+            this.rdb_All.AutoSize = true;
+            this.rdb_All.Checked = true;
+            this.rdb_All.Location = new System.Drawing.Point(163, 35);
+            this.rdb_All.Name = "rdb_All";
+            this.rdb_All.Size = new System.Drawing.Size(45, 17);
+            this.rdb_All.TabIndex = 184;
+            this.rdb_All.TabStop = true;
+            this.rdb_All.Text = "الكل";
+            this.rdb_All.UseVisualStyleBackColor = true;
+            this.rdb_All.CheckedChanged += new System.EventHandler(this.rdb_All_CheckedChanged);
             // 
             // Frm_ManagmentTicketsReturn
             // 
@@ -415,6 +454,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(986, 539);
+            this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.Cmb_CategoryItem);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Btn_Print);
@@ -434,6 +474,9 @@
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
+            this.groupControl1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -465,5 +508,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
+        private DevExpress.XtraEditors.GroupControl groupControl1;
+        private System.Windows.Forms.RadioButton rdb_one;
+        private System.Windows.Forms.RadioButton rdb_All;
     }
 }

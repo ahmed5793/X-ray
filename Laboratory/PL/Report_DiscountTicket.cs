@@ -26,14 +26,13 @@ namespace Laboratory.BL
         {
             try
             {
+                Cmb_CategoryItem.Enabled = false;
                 cmb_Branch.DataSource = b.SelectCompBranches();
                 cmb_Branch.DisplayMember = "Name";
                 cmb_Branch.ValueMember = "Branch_ID";
 
                 // select Category XRay
-                Cmb_CategoryItem.DataSource = c.selectCategoryXRaya();
-                Cmb_CategoryItem.DisplayMember = "الفئات";
-                Cmb_CategoryItem.ValueMember = "ID_CtegoryXrays";
+              
             }
             catch (Exception ex)
             {
@@ -61,8 +60,25 @@ namespace Laboratory.BL
         {
             try
             {
+                if (cmb_Branch.Text != "")
+                {
 
-               gridControl1.DataSource= t.SelectDiscountTicketsBranch(cmb_Branch.Text,Convert.ToDateTime(DateFrom.Text),Convert.ToDateTime(DateTo.Text), Convert.ToInt32(Cmb_CategoryItem.SelectedValue));
+
+                    if (rdb_All.Checked == true)
+                    {
+                        gridControl1.DataSource = t.SelectDiscountTicketsBranch(cmb_Branch.Text, Convert.ToDateTime(DateFrom.Text), Convert.ToDateTime(DateTo.Text));
+
+                    }
+                    else
+                    {
+                        gridControl1.DataSource = t.SelectDiscountTicketsBranchCategory(cmb_Branch.Text, Convert.ToDateTime(DateFrom.Text), Convert.ToDateTime(DateTo.Text), Convert.ToInt32(Cmb_CategoryItem.SelectedValue));
+
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("لابد من وجود فرع");
+                }
                 //Calc_AmountPull();
 
             }
@@ -84,6 +100,34 @@ namespace Laboratory.BL
                 MessageBox.Show(" لا يوجد بيانات للطباعة");
 
             }
+        }
+
+        private void rdb_All_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdb_All.Checked==true)
+            {
+                gridControl1.DataSource = null;
+                Cmb_CategoryItem.Enabled = false;
+                Cmb_CategoryItem.SelectedIndex = -1;
+            }
+        }
+
+        private void rdb_one_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdb_one.Checked == true)
+            {
+                gridControl1.DataSource = null;
+                Cmb_CategoryItem.DataSource = c.selectCategoryXRaya();
+                Cmb_CategoryItem.DisplayMember = "الفئات";
+                Cmb_CategoryItem.ValueMember = "ID_CtegoryXrays";
+                Cmb_CategoryItem.Enabled = true;
+               
+            }
+        }
+
+        private void cmb_Branch_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -38,7 +38,6 @@
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -52,9 +51,15 @@
             this.Cmb_CategoryItem = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.rdb_one = new System.Windows.Forms.RadioButton();
+            this.rdb_All = new System.Windows.Forms.RadioButton();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_search
@@ -71,7 +76,7 @@
             this.btn_search.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btn_search.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.btn_search.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_search.ImageOptions.Image")));
-            this.btn_search.Location = new System.Drawing.Point(210, 26);
+            this.btn_search.Location = new System.Drawing.Point(142, 24);
             this.btn_search.Name = "btn_search";
             this.btn_search.Size = new System.Drawing.Size(134, 43);
             this.btn_search.TabIndex = 211;
@@ -86,7 +91,7 @@
             this.groupBox1.Controls.Add(this.gridControl1);
             this.groupBox1.Location = new System.Drawing.Point(4, 147);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(982, 349);
+            this.groupBox1.Size = new System.Drawing.Size(1097, 349);
             this.groupBox1.TabIndex = 210;
             this.groupBox1.TabStop = false;
             // 
@@ -102,7 +107,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.gridControl1.Size = new System.Drawing.Size(973, 327);
+            this.gridControl1.Size = new System.Drawing.Size(1088, 327);
             this.gridControl1.TabIndex = 127;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -198,7 +203,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "رقم الفاتورة", "( {0} )  = عدد الفحوصات")});
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 138;
+            this.gridColumn1.Width = 151;
             // 
             // gridColumn2
             // 
@@ -207,7 +212,7 @@
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
-            this.gridColumn2.Width = 92;
+            this.gridColumn2.Width = 100;
             // 
             // gridColumn3
             // 
@@ -216,7 +221,7 @@
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
-            this.gridColumn3.Width = 92;
+            this.gridColumn3.Width = 100;
             // 
             // gridColumn4
             // 
@@ -225,7 +230,7 @@
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 3;
-            this.gridColumn4.Width = 92;
+            this.gridColumn4.Width = 100;
             // 
             // gridColumn5
             // 
@@ -234,14 +239,7 @@
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 4;
-            this.gridColumn5.Width = 92;
-            // 
-            // gridColumn6
-            // 
-            this.gridColumn6.Caption = "نوع الفحص";
-            this.gridColumn6.FieldName = "نوع الفحص";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Width = 20;
+            this.gridColumn5.Width = 100;
             // 
             // gridColumn7
             // 
@@ -249,8 +247,8 @@
             this.gridColumn7.FieldName = "الاجمالي";
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 5;
-            this.gridColumn7.Width = 79;
+            this.gridColumn7.VisibleIndex = 6;
+            this.gridColumn7.Width = 86;
             // 
             // gridColumn8
             // 
@@ -260,8 +258,8 @@
             this.gridColumn8.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "الخصم", "( {0:0.##} ) = إجمالى الخصومات")});
             this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 6;
-            this.gridColumn8.Width = 159;
+            this.gridColumn8.VisibleIndex = 7;
+            this.gridColumn8.Width = 174;
             // 
             // gridColumn9
             // 
@@ -269,8 +267,8 @@
             this.gridColumn9.FieldName = "الاجمالي بعد الخصم";
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 7;
-            this.gridColumn9.Width = 91;
+            this.gridColumn9.VisibleIndex = 8;
+            this.gridColumn9.Width = 99;
             // 
             // gridColumn10
             // 
@@ -278,8 +276,8 @@
             this.gridColumn10.FieldName = "ملاحظات";
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 8;
-            this.gridColumn10.Width = 120;
+            this.gridColumn10.VisibleIndex = 9;
+            this.gridColumn10.Width = 65;
             // 
             // label7
             // 
@@ -288,7 +286,7 @@
             this.label7.BackColor = System.Drawing.Color.Yellow;
             this.label7.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(720, 12);
+            this.label7.Location = new System.Drawing.Point(652, 10);
             this.label7.Name = "label7";
             this.label7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label7.Size = new System.Drawing.Size(43, 29);
@@ -303,11 +301,12 @@
             this.cmb_Branch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Branch.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_Branch.FormattingEnabled = true;
-            this.cmb_Branch.Location = new System.Drawing.Point(397, 11);
+            this.cmb_Branch.Location = new System.Drawing.Point(329, 9);
             this.cmb_Branch.Name = "cmb_Branch";
             this.cmb_Branch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmb_Branch.Size = new System.Drawing.Size(279, 32);
             this.cmb_Branch.TabIndex = 208;
+            this.cmb_Branch.SelectionChangeCommitted += new System.EventHandler(this.cmb_Branch_SelectionChangeCommitted);
             // 
             // DateTo
             // 
@@ -315,7 +314,7 @@
             this.DateTo.CustomFormat = "   dd/MM/yyyy   ";
             this.DateTo.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DateTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DateTo.Location = new System.Drawing.Point(313, 104);
+            this.DateTo.Location = new System.Drawing.Point(245, 102);
             this.DateTo.Name = "DateTo";
             this.DateTo.ShowUpDown = true;
             this.DateTo.Size = new System.Drawing.Size(157, 32);
@@ -327,7 +326,7 @@
             this.DateFrom.CustomFormat = "   dd/MM/yyyy   ";
             this.DateFrom.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DateFrom.Location = new System.Drawing.Point(577, 106);
+            this.DateFrom.Location = new System.Drawing.Point(498, 104);
             this.DateFrom.Name = "DateFrom";
             this.DateFrom.ShowUpDown = true;
             this.DateFrom.Size = new System.Drawing.Size(156, 32);
@@ -339,7 +338,7 @@
             this.label4.BackColor = System.Drawing.Color.Black;
             this.label4.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Yellow;
-            this.label4.Location = new System.Drawing.Point(475, 105);
+            this.label4.Location = new System.Drawing.Point(407, 103);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label4.Size = new System.Drawing.Size(68, 31);
@@ -353,7 +352,7 @@
             this.label3.BackColor = System.Drawing.Color.Black;
             this.label3.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Yellow;
-            this.label3.Location = new System.Drawing.Point(736, 107);
+            this.label3.Location = new System.Drawing.Point(668, 105);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label3.Size = new System.Drawing.Size(70, 31);
@@ -368,7 +367,7 @@
             this.Cmb_CategoryItem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.Cmb_CategoryItem.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cmb_CategoryItem.FormattingEnabled = true;
-            this.Cmb_CategoryItem.Location = new System.Drawing.Point(397, 60);
+            this.Cmb_CategoryItem.Location = new System.Drawing.Point(329, 58);
             this.Cmb_CategoryItem.Name = "Cmb_CategoryItem";
             this.Cmb_CategoryItem.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Cmb_CategoryItem.Size = new System.Drawing.Size(279, 32);
@@ -380,7 +379,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Yellow;
             this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(693, 64);
+            this.label1.Location = new System.Drawing.Point(625, 62);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(92, 24);
             this.label1.TabIndex = 212;
@@ -399,19 +398,63 @@
             this.simpleButton1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.simpleButton1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(21, 25);
+            this.simpleButton1.Location = new System.Drawing.Point(12, 2);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(144, 43);
+            this.simpleButton1.Size = new System.Drawing.Size(41, 43);
             this.simpleButton1.TabIndex = 236;
             this.simpleButton1.Text = "طباعة التقرير";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
+            // groupControl1
+            // 
+            this.groupControl1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.groupControl1.Controls.Add(this.rdb_one);
+            this.groupControl1.Controls.Add(this.rdb_All);
+            this.groupControl1.Location = new System.Drawing.Point(817, 10);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(276, 70);
+            this.groupControl1.TabIndex = 237;
+            this.groupControl1.Text = "نوع البحث";
+            // 
+            // rdb_one
+            // 
+            this.rdb_one.AutoSize = true;
+            this.rdb_one.Location = new System.Drawing.Point(19, 35);
+            this.rdb_one.Name = "rdb_one";
+            this.rdb_one.Size = new System.Drawing.Size(77, 17);
+            this.rdb_one.TabIndex = 186;
+            this.rdb_one.Text = "فحص محدد";
+            this.rdb_one.UseVisualStyleBackColor = true;
+            this.rdb_one.CheckedChanged += new System.EventHandler(this.rdb_one_CheckedChanged);
+            // 
+            // rdb_All
+            // 
+            this.rdb_All.AutoSize = true;
+            this.rdb_All.Checked = true;
+            this.rdb_All.Location = new System.Drawing.Point(163, 35);
+            this.rdb_All.Name = "rdb_All";
+            this.rdb_All.Size = new System.Drawing.Size(45, 17);
+            this.rdb_All.TabIndex = 184;
+            this.rdb_All.TabStop = true;
+            this.rdb_All.Text = "الكل";
+            this.rdb_All.UseVisualStyleBackColor = true;
+            this.rdb_All.CheckedChanged += new System.EventHandler(this.rdb_All_CheckedChanged);
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "نوع الفحص";
+            this.gridColumn6.FieldName = "نوع الفحص";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 5;
             // 
             // Report_DiscountTicket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(990, 501);
+            this.ClientSize = new System.Drawing.Size(1105, 501);
+            this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.Cmb_CategoryItem);
             this.Controls.Add(this.label1);
@@ -431,6 +474,9 @@
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
+            this.groupControl1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -455,11 +501,14 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.GroupControl groupControl1;
+        private System.Windows.Forms.RadioButton rdb_one;
+        private System.Windows.Forms.RadioButton rdb_All;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
     }
 }

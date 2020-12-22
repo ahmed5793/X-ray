@@ -170,24 +170,24 @@ namespace Laboratory.PL
 
         private void lookUpEdit1_KeyDown(object sender, KeyEventArgs e)
         {
-            try
-            {
+        //    try
+        //    {
                 
 
-                    gridControl1.DataSource = C.Select_AllPayCustomer(Convert.ToInt32(lookUpEdit1.EditValue));
-                    dt5.Clear();
-                    dt5 = C.Select_CustomertotalBAlance(Convert.ToInt32(lookUpEdit1.EditValue));
-                if (gridView1.RowCount > 0)
-                {
+        //            gridControl1.DataSource = C.Select_AllPayCustomer(Convert.ToInt32(lookUpEdit1.EditValue));
+        //            dt5.Clear();
+        //            dt5 = C.Select_CustomertotalBAlance(Convert.ToInt32(lookUpEdit1.EditValue));
+        //        if (gridView1.RowCount > 0)
+        //        {
 
-                    textBox1.Text = dt5.Rows[0][0].ToString();
-                }
-            }
-            catch (Exception ex)
-            {
+        //            textBox1.Text = dt5.Rows[0][0].ToString();
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
 
-                MessageBox.Show(ex.Message);
-            }
+        //        MessageBox.Show(ex.Message);
+        //    }
         }
 
         private void lookUpEdit1_MouseDown(object sender, MouseEventArgs e)

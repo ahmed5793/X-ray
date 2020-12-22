@@ -60,7 +60,7 @@ namespace Laboratory.PL
 
                 Frm_Masrofat.getmain.comboBox1.DisplayMember = "masrof_type";
                 Frm_Masrofat.getmain.comboBox1.ValueMember = "ID_masrof";
-                this.Close();
+               // this.Close();
             }
 
             else
@@ -113,8 +113,10 @@ namespace Laboratory.PL
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show("من فضلك قم بمسح تفاصيل المصروف من شاشه الصمروفات قبل مسح نوع المصروف");
                 MessageBox.Show(ex.Message);
+                
+
             }
         }
 
@@ -122,9 +124,9 @@ namespace Laboratory.PL
         {
             try
             {
-                btn_save.Enabled = false;
-                btn_remove.Enabled = true;
-                btn_update.Enabled = true;
+                btn_save.Enabled = true;
+                btn_remove.Enabled = false;
+                btn_update.Enabled = false;
                 txt_name.Clear();
             }
             catch (Exception ex)
