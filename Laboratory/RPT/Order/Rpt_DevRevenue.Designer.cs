@@ -351,7 +351,7 @@
             this.xrTableCell15.StylePriority.UseForeColor = false;
             this.xrTableCell15.StylePriority.UseTextAlignment = false;
             this.xrTableCell15.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell15.TextFormatString = "{0:#,#}";
+            this.xrTableCell15.TextFormatString = "{0:0.0}";
             this.xrTableCell15.Weight = 2.9402768447669989D;
             // 
             // xrTableRow5
