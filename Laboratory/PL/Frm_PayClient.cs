@@ -204,8 +204,11 @@ namespace Laboratory.PL
                     dataGridView2.Columns[8].Visible = false;
                     dataGridView2.Columns[1].Visible = false;
 
-        
-
+                }
+                else
+                {
+                    MessageBox.Show("لا بد من تحديد إسم عميل ");
+                    return;
                 }
             }
             catch (Exception EX)
@@ -226,8 +229,12 @@ namespace Laboratory.PL
                     MessageBox.Show("من فضلك قم بااختيار الخزينة");
                     return;
                 }
-
-                if (Convert.ToDecimal(Txt_CustAccount.Text) >0)
+                if (Convert.ToDecimal(TxtDisCount.Text )> Convert.ToDecimal(Txt_CustAccount.Text))
+                {
+                    MessageBox.Show("لأبد ان يكون مبلغ الخصم اقل من المتبقي على العميل");
+                    return;
+                }
+                if (Convert.ToDecimal(Txt_CustAcountAfterDisCount.Text) >=0 && Convert.ToDecimal(Txt_CustAccount.Text) > 0)
                 {
                     if (RdbAllPay.Checked == true)
                     {
@@ -301,7 +308,7 @@ namespace Laboratory.PL
                             txt_prise.Focus();
                             return;
                         }
-                        if (txt_prise.Text == "0" && txt_prise.Text == "")
+                        if (txt_prise.Text == "0" || txt_prise.Text == "")
                         {
                             MessageBox.Show("لا بد ان يكون المبلغ المدفوع اكبر من الصفر", "تاكيد", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             txt_prise.Focus();
@@ -379,10 +386,10 @@ namespace Laboratory.PL
 
                     dataGridView2.DataSource = c.SelectTicketsForCustomer(Convert.ToInt32(lookUpEdit1.EditValue));
 
-                    lookUpEdit1.Properties.DataSource = c.SelectRentCompoCustomer();
-                    lookUpEdit1.Properties.DisplayMember = "Cust_Name";
-                    lookUpEdit1.Properties.ValueMember = "Cust_ID";
-                    lookUpEdit1.Text = "";
+                    //lookUpEdit1.Properties.DataSource = c.SelectRentCompoCustomer();
+                    //lookUpEdit1.Properties.DisplayMember = "Cust_Name";
+                    //lookUpEdit1.Properties.ValueMember = "Cust_ID";
+                    //lookUpEdit1.Text = "";
                 }
                 else
                 {
