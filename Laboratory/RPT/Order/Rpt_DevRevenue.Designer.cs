@@ -313,7 +313,7 @@
             this.xrTableCell14.StylePriority.UseForeColor = false;
             this.xrTableCell14.StylePriority.UseTextAlignment = false;
             this.xrTableCell14.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell14.TextFormatString = "{0:#,#}";
+            this.xrTableCell14.TextFormatString = "{0:0.0}";
             this.xrTableCell14.Weight = 3.9629816089101824D;
             // 
             // xrTableRow4
@@ -379,7 +379,7 @@
             // 
             this.xrTableCell17.BackColor = System.Drawing.Color.DarkCyan;
             this.xrTableCell17.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[DataTable].[calculatedField1]-[Masrofat].[Money]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[DataTable].[calculatedField1]-[Masrofat].[Money] ")});
             this.xrTableCell17.Font = new System.Drawing.Font("Droid Arabic Kufi", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrTableCell17.ForeColor = System.Drawing.Color.White;
             this.xrTableCell17.Multiline = true;
@@ -391,7 +391,7 @@
             xrSummary1.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
             this.xrTableCell17.Summary = xrSummary1;
             this.xrTableCell17.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell17.TextFormatString = "{0:#,#}";
+            this.xrTableCell17.TextFormatString = "{0:0.0}";
             this.xrTableCell17.Weight = 2.9402768447669989D;
             // 
             // ReportHeader

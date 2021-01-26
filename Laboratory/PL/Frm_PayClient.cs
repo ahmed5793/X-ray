@@ -197,6 +197,11 @@ namespace Laboratory.PL
         {
             try
             {
+                txt_prise.Text = "0";
+                Txt_CustAccount.Text = "0";
+                Txt_CustAcountAfterDisCount.Text = "0";
+                TxtDisCount.Text = "0";
+                dataGridView2.DataSource = null;
                 if (lookUpEdit1.Text != "")
                 {
                   
