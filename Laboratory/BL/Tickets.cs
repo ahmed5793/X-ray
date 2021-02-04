@@ -1171,5 +1171,35 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
+
+        internal DataTable SelectPermissionMoneyCustomer(int Branch, DateTime FromDate, DateTime ToDate)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[3];
+            DataTable dt = new DataTable();
+            param[0] = new SqlParameter("@IDBranch", SqlDbType.Int);
+            param[0].Value = Branch;
+            param[1] = new SqlParameter("@FromDate", SqlDbType.Date);
+            param[1].Value = FromDate;
+            param[2] = new SqlParameter("@Todate", SqlDbType.Date);
+            param[2].Value = ToDate;
+            dt = da.selected("SelectPermissionMoneyCustomer", param);
+            return dt;
+
+        }
+        internal DataTable SelectPermissionMoneyCustomerAllBranch( DateTime FromDate, DateTime ToDate)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[2];
+            DataTable dt = new DataTable();
+           
+            param[0] = new SqlParameter("@FromDate", SqlDbType.Date);
+            param[0].Value = FromDate;
+            param[1] = new SqlParameter("@Todate", SqlDbType.Date);
+            param[1].Value = ToDate;
+            dt = da.selected("SelectPermissionMoneyCustomerAllBranch", param);
+            return dt;
+
+        }
     }
 }

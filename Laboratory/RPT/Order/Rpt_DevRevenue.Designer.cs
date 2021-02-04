@@ -155,6 +155,9 @@
             this.GroupFooter1 = new DevExpress.XtraReports.UI.GroupFooterBand();
             this.calculatedField1 = new DevExpress.XtraReports.UI.CalculatedField();
             this.calculatedField2 = new DevExpress.XtraReports.UI.CalculatedField();
+            this.xrTableRow7 = new DevExpress.XtraReports.UI.XRTableRow();
+            this.xrTableCell34 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell35 = new DevExpress.XtraReports.UI.XRTableCell();
             ((System.ComponentModel.ISupportInitialize)(this.objectDataSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
@@ -267,14 +270,15 @@
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTable3.BorderWidth = 4F;
-            this.xrTable3.LocationFloat = new DevExpress.Utils.PointFloat(762.3333F, 12.5F);
+            this.xrTable3.LocationFloat = new DevExpress.Utils.PointFloat(886.3333F, 4.5F);
             this.xrTable3.Name = "xrTable3";
             this.xrTable3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
             this.xrTable3.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow3,
             this.xrTableRow4,
+            this.xrTableRow7,
             this.xrTableRow5});
-            this.xrTable3.SizeF = new System.Drawing.SizeF(849.9999F, 150F);
+            this.xrTable3.SizeF = new System.Drawing.SizeF(849.9999F, 200F);
             this.xrTable3.StylePriority.UseBorders = false;
             this.xrTable3.StylePriority.UseBorderWidth = false;
             // 
@@ -297,7 +301,7 @@
             this.xrTableCell13.StylePriority.UseFont = false;
             this.xrTableCell13.StylePriority.UseForeColor = false;
             this.xrTableCell13.Text = "اجمالي الدخل المحصل";
-            this.xrTableCell13.Weight = 3.7870183910898176D;
+            this.xrTableCell13.Weight = 4.2176720137997243D;
             // 
             // xrTableCell14
             // 
@@ -314,7 +318,7 @@
             this.xrTableCell14.StylePriority.UseTextAlignment = false;
             this.xrTableCell14.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.xrTableCell14.TextFormatString = "{0:0.0}";
-            this.xrTableCell14.Weight = 3.9629816089101824D;
+            this.xrTableCell14.Weight = 3.5323279862002757D;
             // 
             // xrTableRow4
             // 
@@ -335,7 +339,7 @@
             this.xrTableCell12.StylePriority.UseFont = false;
             this.xrTableCell12.StylePriority.UseForeColor = false;
             this.xrTableCell12.Text = "مصروفات من خزينة الفرع";
-            this.xrTableCell12.Weight = 2.8097233078208919D;
+            this.xrTableCell12.Weight = 3.1292405202459874D;
             // 
             // xrTableCell15
             // 
@@ -352,7 +356,7 @@
             this.xrTableCell15.StylePriority.UseTextAlignment = false;
             this.xrTableCell15.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.xrTableCell15.TextFormatString = "{0:0.0}";
-            this.xrTableCell15.Weight = 2.9402768447669989D;
+            this.xrTableCell15.Weight = 2.6207596323419033D;
             // 
             // xrTableRow5
             // 
@@ -373,13 +377,14 @@
             this.xrTableCell16.StylePriority.UseFont = false;
             this.xrTableCell16.StylePriority.UseForeColor = false;
             this.xrTableCell16.Text = "صافي  الدخل بعد مصروفات خزينة الفرع ";
-            this.xrTableCell16.Weight = 2.8097233078208919D;
+            this.xrTableCell16.Weight = 3.1292405202459874D;
             // 
             // xrTableCell17
             // 
             this.xrTableCell17.BackColor = System.Drawing.Color.DarkCyan;
             this.xrTableCell17.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[DataTable].[calculatedField1]-[Masrofat].[Money] ")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[DataTable].[calculatedField1]-([Masrofat].[Money] +[PerimissionOneBranch].[Money" +
+                    "Pull])")});
             this.xrTableCell17.Font = new System.Drawing.Font("Droid Arabic Kufi", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrTableCell17.ForeColor = System.Drawing.Color.White;
             this.xrTableCell17.Multiline = true;
@@ -392,7 +397,7 @@
             this.xrTableCell17.Summary = xrSummary1;
             this.xrTableCell17.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.xrTableCell17.TextFormatString = "{0:0.0}";
-            this.xrTableCell17.Weight = 2.9402768447669989D;
+            this.xrTableCell17.Weight = 2.6207596323419033D;
             // 
             // ReportHeader
             // 
@@ -1439,6 +1444,45 @@
             this.calculatedField2.DisplayName = "صافي الدخل";
             this.calculatedField2.Name = "calculatedField2";
             // 
+            // xrTableRow7
+            // 
+            this.xrTableRow7.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
+            this.xrTableCell34,
+            this.xrTableCell35});
+            this.xrTableRow7.Name = "xrTableRow7";
+            this.xrTableRow7.Weight = 1D;
+            // 
+            // xrTableCell34
+            // 
+            this.xrTableCell34.BackColor = System.Drawing.Color.DarkOrange;
+            this.xrTableCell34.Font = new System.Drawing.Font("Droid Arabic Kufi", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrTableCell34.ForeColor = System.Drawing.Color.Black;
+            this.xrTableCell34.Multiline = true;
+            this.xrTableCell34.Name = "xrTableCell34";
+            this.xrTableCell34.StylePriority.UseBackColor = false;
+            this.xrTableCell34.StylePriority.UseFont = false;
+            this.xrTableCell34.StylePriority.UseForeColor = false;
+            this.xrTableCell34.Text = "اجمالي المبالغ المرتجعة للعملاء(فرق التحويلات)";
+            this.xrTableCell34.Weight = 3.1292405202459874D;
+            // 
+            // xrTableCell35
+            // 
+            this.xrTableCell35.BackColor = System.Drawing.Color.DarkOrange;
+            this.xrTableCell35.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[PerimissionOneBranch].[MoneyPull]")});
+            this.xrTableCell35.Font = new System.Drawing.Font("Droid Arabic Kufi", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrTableCell35.ForeColor = System.Drawing.Color.Black;
+            this.xrTableCell35.Multiline = true;
+            this.xrTableCell35.Name = "xrTableCell35";
+            this.xrTableCell35.StylePriority.UseBackColor = false;
+            this.xrTableCell35.StylePriority.UseFont = false;
+            this.xrTableCell35.StylePriority.UseForeColor = false;
+            this.xrTableCell35.StylePriority.UseTextAlignment = false;
+            this.xrTableCell35.Text = "xrTableCell35";
+            this.xrTableCell35.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.xrTableCell35.TextFormatString = "{0:0.0}";
+            this.xrTableCell35.Weight = 2.6207596323419033D;
+            // 
             // Rpt_DevRevenue
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -1593,5 +1637,8 @@
         private DevExpress.XtraReports.UI.CalculatedField calculatedField2;
         private DevExpress.XtraReports.UI.XRPictureBox xrPictureBox1;
         private DevExpress.XtraReports.UI.XRLabel xrLabel4;
+        private DevExpress.XtraReports.UI.XRTableRow xrTableRow7;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell34;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell35;
     }
 }

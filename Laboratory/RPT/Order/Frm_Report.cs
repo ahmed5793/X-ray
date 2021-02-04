@@ -26,7 +26,10 @@ namespace Laboratory.RPT.Order
         {
             try
             {
-
+                DataSetRevenue dso = new DataSetRevenue();
+                DataTable dt1 = new DataTable();
+                DataTable dt2 = new DataTable();
+                DataTable dt3 = new DataTable();
                 Tickets t = new Tickets();
               
                 Masrofat m = new Masrofat();
@@ -48,9 +51,8 @@ namespace Laboratory.RPT.Order
                     Rpt_DevRevenue report = new Rpt_DevRevenue();
                   //  Frm_Report sr = new Frm_Report();
 
-                    DataSetRevenue dso = new DataSetRevenue();
-                    DataTable dt1 = new DataTable();
-                    DataTable dt2 = new DataTable();
+                  
+
                     ////////////
                     dt1.Clear();
                     dt1 = t.ReportRevenueAllDetails(cmb_branches.Text, dtb_from.Value, dtb_to.Value);
@@ -76,11 +78,15 @@ namespace Laboratory.RPT.Order
                         dtb_to.Value);
                    documentViewer1.Refresh();
                     dso.Tables["Masrofat"].Clear();
-                  
+                    dso.Tables["Masrofat"].Rows.Add(dt2.Rows[0][0]);
 
 
-                        dso.Tables["Masrofat"].Rows.Add(dt2.Rows[0][0]);
-                    
+                    dt3.Clear();
+                    dt3 = t.SelectPermissionMoneyCustomer(Convert.ToInt32(cmb_branches.SelectedValue),
+                        dtb_from.Value, dtb_to.Value);
+                    dso.Tables["PerimissionOneBranch"].Clear();
+                    dso.Tables["PerimissionOneBranch"].Rows.Add(dt3.Rows[0][0]);
+
                     report.DataSource = dso;
                     report.Parameters["Branch"].Value = cmb_branches.Text;
                     report.Parameters["FromDate"].Value = dtb_from.Text;
@@ -101,9 +107,7 @@ namespace Laboratory.RPT.Order
                     XtraReportRevenueDetailsAllBranch reportB = new XtraReportRevenueDetailsAllBranch();
                     Frm_Report sr1 = new Frm_Report();
                     
-                    DataSetRevenue dso1= new DataSetRevenue();
-                    DataTable dt1 = new DataTable();
-                    DataTable dt2 = new DataTable();
+                   
                     ////////////
                     dt1.Clear();
                     dt1 = t.Report_RevenueDetails_AllBranch( dtb_from.Value, dtb_to.Value);
@@ -111,10 +115,10 @@ namespace Laboratory.RPT.Order
 
 
                     sr1.documentViewer1.Refresh();
-                    dso1.Tables["DataTableAllBranch"].Clear();
+                    dso.Tables["DataTableAllBranch"].Clear();
                     for (int n = 0; n < dt1.Rows.Count; n++)
                     {
-                        dso1.Tables["DataTableAllBranch"].Rows.Add(dt1.Rows[n][0], dt1.Rows[n][1], dt1.Rows[n][2],
+                        dso.Tables["DataTableAllBranch"].Rows.Add(dt1.Rows[n][0], dt1.Rows[n][1], dt1.Rows[n][2],
                            dt1.Rows[n][3], dt1.Rows[n][4], dt1.Rows[n][5], dt1.Rows[n][6],
                            dt1.Rows[n][7], dt1.Rows[n][8], dt1.Rows[n][9], dt1.Rows[n][10],
                            dt1.Rows[n][11], dt1.Rows[n][12], dt1.Rows[n][13], dt1.Rows[n][14],
@@ -123,13 +127,15 @@ namespace Laboratory.RPT.Order
 
                     dt2 = m.Report_RevenueDetails_Masrofat_AllBranch(dtb_from.Value, dtb_to.Value);
                     sr1.documentViewer1.Refresh();
-                    dso1.Tables["MasrofatAllBranch"].Clear();
+                    dso.Tables["MasrofatAllBranch"].Clear();
+                    dso.Tables["MasrofatAllBranch"].Rows.Add(dt2.Rows[0][0]);
 
+                    dt3.Clear();
+                    dt3 = t.SelectPermissionMoneyCustomerAllBranch(dtb_from.Value, dtb_to.Value);
+                    dso.Tables["PerimissionAllBranch"].Clear();
+                    dso.Tables["PerimissionAllBranch"].Rows.Add(dt3.Rows[0][0]);
 
-
-                    dso1.Tables["MasrofatAllBranch"].Rows.Add(dt2.Rows[0][0]);
-
-                    reportB.DataSource = dso1;
+                    reportB.DataSource = dso;
                     reportB.Parameters["FromDate"].Value = dtb_from.Text;
                     reportB.Parameters["ToDate"].Value = dtb_to.Text;
                     reportB.Parameters["FromDate"].Visible = false;

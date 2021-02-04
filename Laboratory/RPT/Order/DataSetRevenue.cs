@@ -4,6 +4,14 @@
 
     partial class DataSetRevenue
     {
+        partial class PerimissionAllBranchDataTable
+        {
+        }
+
+        partial class PerimissionOneBranchDataTable
+        {
+        }
+
         partial class DataTableAllBranchDataTable
         {
         }
