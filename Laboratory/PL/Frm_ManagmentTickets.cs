@@ -537,10 +537,21 @@ namespace Laboratory.PL
 
                     dt10.Clear();
                     dt10 = t.TicketDetailsSelectTickets(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
+                    dt5.Clear();
+                    dt5 = t.SelectMoneyPayCustomer(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
                     foreach (DataRow dr in dt10.Rows)
                     {
                         tc.txt_IdTeckit.Text = dr[0].ToString();
-                        tc.Txt_PayLast.Text = dr[13].ToString();
+                        if (dt5.Rows.Count>0)
+                        {
+                            int x = Convert.ToInt32(dr[13]) + Convert.ToInt32(dt5.Rows[0][1]);
+                            pa.txt_pay.Text = x.ToString();
+                        }
+                        else
+                        {
+                            tc.Txt_PayLast.Text = dr[13].ToString();
+
+                        }
                         tc.txt_patientname.Text = dr[1].ToString();
                         tc.Txt_IdCust.Text = dr[26].ToString();
                         tc.Txt_TotalBeforeTransfair.Text = dr[21].ToString();

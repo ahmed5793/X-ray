@@ -317,6 +317,19 @@ namespace Laboratory.BL
             da.close();
             return dt;
         }
+        internal DataTable SelectMoneyPayCustomer(int IDTickets)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@Id_Teckiet", SqlDbType.Int);
+            param[0].Value = IDTickets;
+            dt = da.selected("SelectMoneyPayCustomer", param);
+            da.close();
+            return dt;
+        }
         internal DataTable Select_IDBranch(string Branch_Name)
         {
             DataTable dt = new DataTable();

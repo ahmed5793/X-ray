@@ -141,12 +141,23 @@ namespace Laboratory.PL
                     }
                     dt7.Clear();
                     dt7 = t.TicketDetailsSelectTickets(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
+                    dt10.Clear();
+                    dt10 = t.SelectMoneyPayCustomer(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
                     foreach (DataRow dr in dt7.Rows)
                     {
                         pa.txt_name.Text = dr[1].ToString();
                         pa.txt_date.Text = dr[5].ToString();
                         pa.txt_total.Text = dr[21].ToString();
-                        pa.txt_pay.Text = dr[13].ToString();
+                        if (dt10.Rows.Count>0)
+                        {
+                            int x = Convert.ToInt32(dr[13]) + Convert.ToInt32(dt10.Rows[0][1]);
+                            pa.txt_pay.Text = x.ToString();
+
+                        }
+                        else
+                        {
+                            pa.txt_pay.Text = dr[13].ToString();
+                        }
                         pa.txt_rent.Text = dr[14].ToString();
                         pa.txt_statues.Text = dr[15].ToString();
                         pa.textBox1.Text = dr[9].ToString();
@@ -184,6 +195,7 @@ namespace Laboratory.PL
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
             }
         }
     }

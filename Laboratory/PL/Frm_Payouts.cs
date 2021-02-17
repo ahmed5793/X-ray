@@ -128,16 +128,37 @@ namespace Laboratory.PL
                         {
                 
                             t.UpdateTicketsActive(Convert.ToInt32(txt_num.Text), "return");
+                        dt5.Clear();
+                        dt5 = t.SelectMoneyPayCustomer(Convert.ToInt32(txt_num.Text));
 
-                          if (txt_statues.Text == "نقدى")
+                        if (dt5.Rows.Count > 0)
+                        {
+                            if (Convert.ToDecimal(dt5.Rows[0][7]) > 0)
+                            {
+
+                                dt.Clear();
+                                dt = c.Select_CustomertotalBAlance(Convert.ToInt32(Txt_IdCust.Text));
+                                decimal mno3 = Convert.ToDecimal(dt.Rows[0][0]) + Convert.ToDecimal(dt5.Rows[0][7]);
+                                c.Update_CustomerTotalBalance(Convert.ToInt32(Txt_IdCust.Text), mno3);
+                                c.Add_CustomerAccountStatment(Convert.ToInt32(Txt_IdCust.Text), 0,
+                                Convert.ToDecimal(dt5.Rows[0][7]), dateTimePicker2.Value, mno3,
+                                Convert.ToInt32(cmb_Stock.SelectedValue)
+                               , txt_username.Text, Convert.ToInt32(comboBox1.SelectedValue),
+                                "إلغاء الخصم التى تم عملة اثناء مدفوعات العميل");
+                            }
+                        }
+                        if (txt_statues.Text == "نقدى")
                           {
+                         
+                      
                             dt.Clear();
                             dt = c.Select_CustomertotalBAlance(Convert.ToInt32(Txt_IdCust.Text));
                             decimal mno1 = Convert.ToDecimal(dt.Rows[0][0]) + Convert.ToDecimal(txt_pay.Text);
                             c.Update_CustomerTotalBalance(Convert.ToInt32(Txt_IdCust.Text), mno1);
                             c.Add_CustomerAccountStatment(Convert.ToInt32(Txt_IdCust.Text), 0,
                             Convert.ToDecimal(txt_pay.Text), dateTimePicker2.Value, mno1, Convert.ToInt32(cmb_Stock.SelectedValue)
-                           , txt_username.Text, Convert.ToInt32(comboBox1.SelectedValue), "إذن صرف مبلغ " + " " + (txt_pay.Text )+ "مدفوع مسبقا للحجز  " + (txt_num.Text));
+                           , txt_username.Text, Convert.ToInt32(comboBox1.SelectedValue),
+                            "إذن صرف مبلغ " + " " + (txt_pay.Text )+ "مدفوع مسبقا للحجز  " + (txt_num.Text));
                          
                            
                             /////////////

@@ -267,7 +267,8 @@ namespace Laboratory.PL
                             decimal mno = Convert.ToDecimal(dt.Rows[0][0]) - Convert.ToDecimal(Txt_CustAcountAfterDisCount.Text);
 
                             c.Update_CustomerTotalBalance(Convert.ToInt32(lookUpEdit1.EditValue), mno);
-                            c.Add_CustomerAccountStatment(Convert.ToInt32(lookUpEdit1.EditValue), Convert.ToDecimal(Txt_CustAcountAfterDisCount.Text),
+                            c.Add_CustomerAccountStatment(Convert.ToInt32(lookUpEdit1.EditValue), 
+                                Convert.ToDecimal(Txt_CustAcountAfterDisCount.Text),
                                0
                                  , dateTimePicker1.Value, mno, Convert.ToInt32(cmb_Stock.SelectedValue)
                                  , Txt_SalesMAn.Text, Convert.ToInt32(Cmb_Branch.SelectedValue), "تسديد كل الحساب القديم للفحص رقم" +" "+ dataGridView2.CurrentRow.Cells[0].Value);
