@@ -87,8 +87,8 @@ namespace Laboratory.PL
         }
         private void Frm_DataRevaltionTicket_Load(object sender, EventArgs e)
         {
-            Lable_Date.Text=DateTime.Now.ToString("dd/MM/yyyy");
-            lable_day.Text = DateTime.Now.ToString("dddd", new System.Globalization.CultureInfo("ar-EG"));
+            //Lable_Date.Text=DateTime.Now.ToString("dd/MM/yyyy");
+            //lable_day.Text = DateTime.Now.ToString("dddd", new System.Globalization.CultureInfo("ar-EG"));
         }
 
         private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
@@ -111,7 +111,7 @@ namespace Laboratory.PL
             try
             {
 
-                gridControl1.DataSource = t.selectDataRevlation(Convert.ToInt32(comboBox1.SelectedValue), Convert.ToDateTime(x),
+                gridControl1.DataSource = t.selectDataRevlation(Convert.ToInt32(comboBox1.SelectedValue), DateFrom.Value,DateTo.Value,
                     Convert.ToInt32(Cmb_category.SelectedValue));
 
 

@@ -31,17 +31,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_DataRevaltionTicket));
             this.label7 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lable_day = new System.Windows.Forms.Label();
-            this.Lable_Date = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.label4 = new System.Windows.Forms.Label();
             this.Cmb_category = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.DateFrom = new System.Windows.Forms.DateTimePicker();
+            this.DateTo = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -54,7 +53,7 @@
             this.label7.BackColor = System.Drawing.Color.Yellow;
             this.label7.Font = new System.Drawing.Font("Droid Sans Arabic", 20.25F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(576, 67);
+            this.label7.Location = new System.Drawing.Point(576, 88);
             this.label7.Name = "label7";
             this.label7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label7.Size = new System.Drawing.Size(170, 38);
@@ -69,82 +68,12 @@
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(325, 73);
+            this.comboBox1.Location = new System.Drawing.Point(325, 94);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.comboBox1.Size = new System.Drawing.Size(245, 32);
             this.comboBox1.TabIndex = 163;
             this.comboBox1.SelectionChangeCommitted += new System.EventHandler(this.comboBox1_SelectionChangeCommitted);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Yellow;
-            this.label1.Font = new System.Drawing.Font("Droid Arabic Kufi", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(677, -3);
-            this.label1.Name = "label1";
-            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label1.Size = new System.Drawing.Size(71, 52);
-            this.label1.TabIndex = 166;
-            this.label1.Text = "يوم";
-            // 
-            // lable_day
-            // 
-            this.lable_day.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lable_day.AutoSize = true;
-            this.lable_day.BackColor = System.Drawing.Color.Red;
-            this.lable_day.Font = new System.Drawing.Font("Droid Sans Arabic", 18F, System.Drawing.FontStyle.Bold);
-            this.lable_day.ForeColor = System.Drawing.Color.White;
-            this.lable_day.Location = new System.Drawing.Point(574, 9);
-            this.lable_day.Name = "lable_day";
-            this.lable_day.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lable_day.Size = new System.Drawing.Size(54, 34);
-            this.lable_day.TabIndex = 167;
-            this.lable_day.Text = "يوم";
-            // 
-            // Lable_Date
-            // 
-            this.Lable_Date.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Lable_Date.AutoSize = true;
-            this.Lable_Date.BackColor = System.Drawing.Color.RoyalBlue;
-            this.Lable_Date.Font = new System.Drawing.Font("Droid Sans Arabic", 18F, System.Drawing.FontStyle.Bold);
-            this.Lable_Date.ForeColor = System.Drawing.Color.White;
-            this.Lable_Date.Location = new System.Drawing.Point(195, 7);
-            this.Lable_Date.Name = "Lable_Date";
-            this.Lable_Date.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Lable_Date.Size = new System.Drawing.Size(54, 34);
-            this.Lable_Date.TabIndex = 168;
-            this.Lable_Date.Text = "يوم";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Yellow;
-            this.label3.Font = new System.Drawing.Font("Droid Arabic Kufi", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(367, -3);
-            this.label3.Name = "label3";
-            this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label3.Size = new System.Drawing.Size(84, 52);
-            this.label3.TabIndex = 169;
-            this.label3.Text = "تاريخ";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Yellow;
-            this.label2.Font = new System.Drawing.Font("Droid Arabic Kufi", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(482, -1);
-            this.label2.Name = "label2";
-            this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label2.Size = new System.Drawing.Size(34, 52);
-            this.label2.TabIndex = 170;
-            this.label2.Text = "/";
             // 
             // simpleButton1
             // 
@@ -294,20 +223,69 @@
             this.Cmb_category.Size = new System.Drawing.Size(245, 32);
             this.Cmb_category.TabIndex = 226;
             // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(633, 57);
+            this.label1.Name = "label1";
+            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label1.Size = new System.Drawing.Size(53, 25);
+            this.label1.TabIndex = 229;
+            this.label1.Text = "إلى :";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(635, 18);
+            this.label3.Name = "label3";
+            this.label3.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label3.Size = new System.Drawing.Size(47, 26);
+            this.label3.TabIndex = 228;
+            this.label3.Text = " : من";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // DateFrom
+            // 
+            this.DateFrom.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.DateFrom.CustomFormat = "   dd/MM/yyyy       *      tt  mm:hh    ";
+            this.DateFrom.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DateFrom.Location = new System.Drawing.Point(377, 12);
+            this.DateFrom.Name = "DateFrom";
+            this.DateFrom.Size = new System.Drawing.Size(193, 32);
+            this.DateFrom.TabIndex = 230;
+            // 
+            // DateTo
+            // 
+            this.DateTo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.DateTo.CustomFormat = "   dd/MM/yyyy       *      tt  mm:hh    ";
+            this.DateTo.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DateTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DateTo.Location = new System.Drawing.Point(377, 50);
+            this.DateTo.Name = "DateTo";
+            this.DateTo.Size = new System.Drawing.Size(193, 32);
+            this.DateTo.TabIndex = 231;
+            // 
             // Frm_DataRevaltionTicket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(966, 533);
+            this.Controls.Add(this.DateTo);
+            this.Controls.Add(this.DateFrom);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.Cmb_category);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.simpleButton1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.Lable_Date);
-            this.Controls.Add(this.lable_day);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.comboBox1);
             this.MinimumSize = new System.Drawing.Size(968, 565);
@@ -327,16 +305,15 @@
         #endregion
         private System.Windows.Forms.Label label7;
         public System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lable_day;
-        private System.Windows.Forms.Label Lable_Date;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private System.Windows.Forms.GroupBox groupBox1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         public DevExpress.XtraGrid.GridControl gridControl1;
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.ComboBox Cmb_category;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DateTimePicker DateFrom;
+        private System.Windows.Forms.DateTimePicker DateTo;
     }
 }

@@ -180,6 +180,7 @@ namespace Laboratory.PL
             {
                 for (int i = 0; i < dataGridView1.Rows.Count; i++)
                 {
+                    dt12.Clear();
                     dt12 = c.selectXrayCompanyTransfer(Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToInt32(dataGridView1.Rows[i].Cells[3].Value));
                     if (dt12.Rows.Count>0)
                     {
@@ -290,6 +291,7 @@ namespace Laboratory.PL
                 {
                     for (int i = 0; i < dataGridView1.Rows.Count; i++)
                     {
+                        dt12.Clear();
                         dt12 = c.selectXrayCompanyTransfer(Convert.ToInt32(cmb_Company.SelectedValue), Convert.ToInt32(dataGridView1.Rows[i].Cells[3].Value));
                         if (dt12.Rows.Count > 0)
                         {

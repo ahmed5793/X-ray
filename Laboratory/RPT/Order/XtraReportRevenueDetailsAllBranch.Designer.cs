@@ -1779,8 +1779,8 @@
             // 
             this.calculatedField1.DataMember = "DataTableAllBranch";
             this.calculatedField1.DisplayName = "اجمالي الدخل";
-            this.calculatedField1.Expression = "(Sum([ValuTicNa2dy]) + Sum([ValuTicComp]) + Sum([PayCust]) + Sum([Valuransf])) - " +
-    "(Sum([ValuRetComp])+Sum([ValuRetNa2dy]))\n\n\n";
+            this.calculatedField1.Expression = "(Sum([ValuTicNa2dy]) + Sum([ValuTicComp]) + Sum([PayCust])) - (Sum([ValuRetComp])" +
+    "+Sum([ValuRetNa2dy]))\n\n\n";
             this.calculatedField1.FieldType = DevExpress.XtraReports.UI.FieldType.Decimal;
             this.calculatedField1.Name = "calculatedField1";
             // 

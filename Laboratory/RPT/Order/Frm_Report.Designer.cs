@@ -290,9 +290,11 @@
             this.printPreviewRibbonPageGroup1 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.documentViewer1 = new DevExpress.XtraPrinting.Preview.DocumentViewer();
+            this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.printPreviewStaticItem1 = new DevExpress.XtraPrinting.Preview.PrintPreviewStaticItem();
+            this.progressBarEditItem1 = new DevExpress.XtraPrinting.Preview.ProgressBarEditItem();
             this.documentViewerRibbonController1 = new DevExpress.XtraPrinting.Preview.DocumentViewerRibbonController(this.components);
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.printPreviewBarItem1 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
             this.printPreviewBarItem2 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
             this.printPreviewBarItem3 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
@@ -344,13 +346,10 @@
             this.printPreviewBarItem69 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
             this.printPreviewBarItem70 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
             this.printPreviewBarItem71 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewStaticItem1 = new DevExpress.XtraPrinting.Preview.PrintPreviewStaticItem();
-            this.repositoryItemProgressBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemProgressBar();
-            this.progressBarEditItem1 = new DevExpress.XtraPrinting.Preview.ProgressBarEditItem();
             this.printPreviewBarItem72 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
             this.printPreviewStaticItem2 = new DevExpress.XtraPrinting.Preview.PrintPreviewStaticItem();
-            this.repositoryItemZoomTrackBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemZoomTrackBar();
             this.zoomTrackBarEditItem1 = new DevExpress.XtraPrinting.Preview.ZoomTrackBarEditItem();
+            this.repositoryItemZoomTrackBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemZoomTrackBar();
             this.ribbonPage1 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPage();
             this.printPreviewRibbonPageGroup9 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup();
             this.printPreviewRibbonPageGroup10 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup();
@@ -360,6 +359,7 @@
             this.printPreviewRibbonPageGroup14 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup();
             this.printPreviewRibbonPageGroup15 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup();
             this.printPreviewRibbonPageGroup16 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup();
+            this.repositoryItemProgressBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemProgressBar();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -367,8 +367,8 @@
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.documentViewerRibbonController1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemProgressBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemZoomTrackBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemProgressBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // dtb_from
@@ -381,6 +381,7 @@
             this.dtb_from.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dtb_from.Size = new System.Drawing.Size(128, 25);
             this.dtb_from.TabIndex = 96;
+            this.dtb_from.ValueChanged += new System.EventHandler(this.dtb_from_ValueChanged);
             // 
             // dtb_to
             // 
@@ -392,6 +393,7 @@
             this.dtb_to.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dtb_to.Size = new System.Drawing.Size(128, 25);
             this.dtb_to.TabIndex = 97;
+            this.dtb_to.ValueChanged += new System.EventHandler(this.dtb_to_ValueChanged);
             // 
             // label1
             // 
@@ -404,6 +406,7 @@
             this.label1.Size = new System.Drawing.Size(22, 18);
             this.label1.TabIndex = 98;
             this.label1.Text = "من";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -416,6 +419,7 @@
             this.label2.Size = new System.Drawing.Size(25, 18);
             this.label2.TabIndex = 99;
             this.label2.Text = "الي";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // groupBox2
             // 
@@ -434,6 +438,7 @@
             this.groupBox2.Size = new System.Drawing.Size(888, 93);
             this.groupBox2.TabIndex = 101;
             this.groupBox2.TabStop = false;
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // groupControl1
             // 
@@ -445,6 +450,7 @@
             this.groupControl1.Size = new System.Drawing.Size(276, 70);
             this.groupControl1.TabIndex = 185;
             this.groupControl1.Text = "نوع البحث";
+            this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
             // 
             // rdb_one
             // 
@@ -483,6 +489,7 @@
             this.cmb_branches.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmb_branches.Size = new System.Drawing.Size(233, 26);
             this.cmb_branches.TabIndex = 183;
+            this.cmb_branches.SelectedIndexChanged += new System.EventHandler(this.cmb_branches_SelectedIndexChanged);
             // 
             // label13
             // 
@@ -495,6 +502,7 @@
             this.label13.Size = new System.Drawing.Size(35, 18);
             this.label13.TabIndex = 182;
             this.label13.Text = "الفرع";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // Btn_Save
             // 
@@ -532,6 +540,7 @@
             superToolTip1.Items.Add(toolTipItem1);
             superToolTip1.MaxWidth = 210;
             this.printPreviewBarItem9.SuperTip = superToolTip1;
+            this.printPreviewBarItem9.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem9_ItemClick);
             // 
             // printPreviewBarItem31
             // 
@@ -548,6 +557,7 @@
             superToolTip2.Items.Add(toolTipItem2);
             superToolTip2.MaxWidth = 210;
             this.printPreviewBarItem31.SuperTip = superToolTip2;
+            this.printPreviewBarItem31.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem31_ItemClick);
             // 
             // printPreviewBarItem32
             // 
@@ -564,6 +574,7 @@
             superToolTip3.Items.Add(toolTipItem3);
             superToolTip3.MaxWidth = 210;
             this.printPreviewBarItem32.SuperTip = superToolTip3;
+            this.printPreviewBarItem32.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem32_ItemClick);
             // 
             // printPreviewBarItem33
             // 
@@ -580,6 +591,7 @@
             superToolTip4.Items.Add(toolTipItem4);
             superToolTip4.MaxWidth = 210;
             this.printPreviewBarItem33.SuperTip = superToolTip4;
+            this.printPreviewBarItem33.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem33_ItemClick);
             // 
             // printPreviewBarItem34
             // 
@@ -596,6 +608,7 @@
             superToolTip5.Items.Add(toolTipItem5);
             superToolTip5.MaxWidth = 210;
             this.printPreviewBarItem34.SuperTip = superToolTip5;
+            this.printPreviewBarItem34.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem34_ItemClick);
             // 
             // printPreviewBarItem35
             // 
@@ -612,6 +625,7 @@
             superToolTip6.Items.Add(toolTipItem6);
             superToolTip6.MaxWidth = 210;
             this.printPreviewBarItem35.SuperTip = superToolTip6;
+            this.printPreviewBarItem35.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem35_ItemClick);
             // 
             // printPreviewBarItem36
             // 
@@ -628,6 +642,7 @@
             superToolTip7.Items.Add(toolTipItem7);
             superToolTip7.MaxWidth = 210;
             this.printPreviewBarItem36.SuperTip = superToolTip7;
+            this.printPreviewBarItem36.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem36_ItemClick);
             // 
             // printPreviewBarItem37
             // 
@@ -644,6 +659,7 @@
             superToolTip8.Items.Add(toolTipItem8);
             superToolTip8.MaxWidth = 210;
             this.printPreviewBarItem37.SuperTip = superToolTip8;
+            this.printPreviewBarItem37.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem37_ItemClick);
             // 
             // printPreviewBarItem38
             // 
@@ -660,6 +676,7 @@
             superToolTip9.Items.Add(toolTipItem9);
             superToolTip9.MaxWidth = 210;
             this.printPreviewBarItem38.SuperTip = superToolTip9;
+            this.printPreviewBarItem38.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem38_ItemClick);
             // 
             // printPreviewBarItem39
             // 
@@ -676,6 +693,7 @@
             superToolTip10.Items.Add(toolTipItem10);
             superToolTip10.MaxWidth = 210;
             this.printPreviewBarItem39.SuperTip = superToolTip10;
+            this.printPreviewBarItem39.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem39_ItemClick);
             // 
             // printPreviewBarItem40
             // 
@@ -692,6 +710,7 @@
             superToolTip11.Items.Add(toolTipItem11);
             superToolTip11.MaxWidth = 210;
             this.printPreviewBarItem40.SuperTip = superToolTip11;
+            this.printPreviewBarItem40.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem40_ItemClick);
             // 
             // printPreviewBarItem41
             // 
@@ -708,6 +727,7 @@
             superToolTip12.Items.Add(toolTipItem12);
             superToolTip12.MaxWidth = 210;
             this.printPreviewBarItem41.SuperTip = superToolTip12;
+            this.printPreviewBarItem41.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem41_ItemClick);
             // 
             // printPreviewBarItem42
             // 
@@ -724,6 +744,7 @@
             superToolTip13.Items.Add(toolTipItem13);
             superToolTip13.MaxWidth = 210;
             this.printPreviewBarItem42.SuperTip = superToolTip13;
+            this.printPreviewBarItem42.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem42_ItemClick);
             // 
             // printPreviewBarItem43
             // 
@@ -740,6 +761,7 @@
             superToolTip14.Items.Add(toolTipItem14);
             superToolTip14.MaxWidth = 210;
             this.printPreviewBarItem43.SuperTip = superToolTip14;
+            this.printPreviewBarItem43.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem43_ItemClick);
             // 
             // printPreviewBarItem44
             // 
@@ -756,6 +778,7 @@
             superToolTip15.Items.Add(toolTipItem15);
             superToolTip15.MaxWidth = 210;
             this.printPreviewBarItem44.SuperTip = superToolTip15;
+            this.printPreviewBarItem44.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem44_ItemClick);
             // 
             // printPreviewBarItem45
             // 
@@ -772,6 +795,7 @@
             superToolTip16.Items.Add(toolTipItem16);
             superToolTip16.MaxWidth = 210;
             this.printPreviewBarItem45.SuperTip = superToolTip16;
+            this.printPreviewBarItem45.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem45_ItemClick);
             // 
             // printPreviewBarItem46
             // 
@@ -788,6 +812,7 @@
             superToolTip17.Items.Add(toolTipItem17);
             superToolTip17.MaxWidth = 210;
             this.printPreviewBarItem46.SuperTip = superToolTip17;
+            this.printPreviewBarItem46.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem46_ItemClick);
             // 
             // printPreviewBarItem47
             // 
@@ -804,6 +829,7 @@
             superToolTip18.Items.Add(toolTipItem18);
             superToolTip18.MaxWidth = 210;
             this.printPreviewBarItem47.SuperTip = superToolTip18;
+            this.printPreviewBarItem47.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem47_ItemClick);
             // 
             // printPreviewBarItem48
             // 
@@ -820,6 +846,7 @@
             superToolTip19.Items.Add(toolTipItem19);
             superToolTip19.MaxWidth = 210;
             this.printPreviewBarItem48.SuperTip = superToolTip19;
+            this.printPreviewBarItem48.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem48_ItemClick);
             // 
             // printPreviewBarItem49
             // 
@@ -836,6 +863,7 @@
             superToolTip20.Items.Add(toolTipItem20);
             superToolTip20.MaxWidth = 210;
             this.printPreviewBarItem49.SuperTip = superToolTip20;
+            this.printPreviewBarItem49.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem49_ItemClick);
             // 
             // printPreviewRibbonPageGroup8
             // 
@@ -924,6 +952,7 @@
             this.groupControl2.Size = new System.Drawing.Size(897, 384);
             this.groupControl2.TabIndex = 102;
             this.groupControl2.Text = "groupControl2";
+            this.groupControl2.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl2_Paint);
             // 
             // documentViewer1
             // 
@@ -936,6 +965,41 @@
             this.documentViewer1.Size = new System.Drawing.Size(893, 205);
             this.documentViewer1.TabIndex = 0;
             this.documentViewer1.Zoom = 0.75F;
+            this.documentViewer1.Load += new System.EventHandler(this.documentViewer1_Load);
+            // 
+            // ribbonStatusBar1
+            // 
+            this.ribbonStatusBar1.ItemLinks.Add(this.printPreviewStaticItem1);
+            this.ribbonStatusBar1.ItemLinks.Add(this.progressBarEditItem1);
+            this.ribbonStatusBar1.ItemLinks.Add(this.printPreviewBarItem72);
+            this.ribbonStatusBar1.ItemLinks.Add(this.printPreviewStaticItem2);
+            this.ribbonStatusBar1.ItemLinks.Add(this.zoomTrackBarEditItem1);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(2, 360);
+            this.ribbonStatusBar1.Name = "ribbonStatusBar1";
+            this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(893, 22);
+            this.ribbonStatusBar1.Click += new System.EventHandler(this.ribbonStatusBar1_Click);
+            // 
+            // printPreviewStaticItem1
+            // 
+            this.printPreviewStaticItem1.Caption = "Nothing";
+            this.printPreviewStaticItem1.Id = 52;
+            this.printPreviewStaticItem1.LeftIndent = 1;
+            this.printPreviewStaticItem1.Name = "printPreviewStaticItem1";
+            this.printPreviewStaticItem1.RightIndent = 1;
+            this.printPreviewStaticItem1.Type = "PageOfPages";
+            this.printPreviewStaticItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewStaticItem1_ItemClick);
+            // 
+            // progressBarEditItem1
+            // 
+            this.progressBarEditItem1.ContextSpecifier = this.documentViewerRibbonController1;
+            this.progressBarEditItem1.Edit = this.repositoryItemProgressBar1;
+            this.progressBarEditItem1.EditHeight = 12;
+            this.progressBarEditItem1.EditWidth = 150;
+            this.progressBarEditItem1.Id = 53;
+            this.progressBarEditItem1.Name = "progressBarEditItem1";
+            this.progressBarEditItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.progressBarEditItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.progressBarEditItem1_ItemClick);
             // 
             // documentViewerRibbonController1
             // 
@@ -948,8 +1012,8 @@
             this.ribbonControl1.AutoHideEmptyItems = true;
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.ribbonControl1.SearchEditItem,
             this.ribbonControl1.ExpandCollapseItem,
+            this.ribbonControl1.SearchEditItem,
             this.printPreviewBarItem1,
             this.printPreviewBarItem2,
             this.printPreviewBarItem3,
@@ -1007,7 +1071,7 @@
             this.printPreviewStaticItem2,
             this.zoomTrackBarEditItem1});
             this.ribbonControl1.Location = new System.Drawing.Point(2, 23);
-            this.ribbonControl1.MaxItemId = 57;
+            this.ribbonControl1.MaxItemId = 58;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -1018,18 +1082,7 @@
             this.ribbonControl1.Size = new System.Drawing.Size(893, 132);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             this.ribbonControl1.TransparentEditorsMode = DevExpress.Utils.DefaultBoolean.True;
-            // 
-            // ribbonStatusBar1
-            // 
-            this.ribbonStatusBar1.ItemLinks.Add(this.printPreviewStaticItem1);
-            this.ribbonStatusBar1.ItemLinks.Add(this.progressBarEditItem1);
-            this.ribbonStatusBar1.ItemLinks.Add(this.printPreviewBarItem72);
-            this.ribbonStatusBar1.ItemLinks.Add(this.printPreviewStaticItem2);
-            this.ribbonStatusBar1.ItemLinks.Add(this.zoomTrackBarEditItem1);
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(2, 360);
-            this.ribbonStatusBar1.Name = "ribbonStatusBar1";
-            this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(893, 22);
+            this.ribbonControl1.Click += new System.EventHandler(this.ribbonControl1_Click_1);
             // 
             // printPreviewBarItem1
             // 
@@ -1049,6 +1102,7 @@
             superToolTip22.Items.Add(toolTipItem22);
             superToolTip22.MaxWidth = 210;
             this.printPreviewBarItem1.SuperTip = superToolTip22;
+            this.printPreviewBarItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem1_ItemClick);
             // 
             // printPreviewBarItem2
             // 
@@ -1068,6 +1122,7 @@
             superToolTip23.Items.Add(toolTipItem23);
             superToolTip23.MaxWidth = 210;
             this.printPreviewBarItem2.SuperTip = superToolTip23;
+            this.printPreviewBarItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem2_ItemClick);
             // 
             // printPreviewBarItem3
             // 
@@ -1087,6 +1142,7 @@
             superToolTip24.Items.Add(toolTipItem24);
             superToolTip24.MaxWidth = 210;
             this.printPreviewBarItem3.SuperTip = superToolTip24;
+            this.printPreviewBarItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem3_ItemClick);
             // 
             // printPreviewBarItem4
             // 
@@ -1105,6 +1161,7 @@
             superToolTip25.Items.Add(toolTipItem25);
             superToolTip25.MaxWidth = 210;
             this.printPreviewBarItem4.SuperTip = superToolTip25;
+            this.printPreviewBarItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem4_ItemClick);
             // 
             // printPreviewBarItem5
             // 
@@ -1123,6 +1180,7 @@
             superToolTip26.Items.Add(toolTipItem26);
             superToolTip26.MaxWidth = 210;
             this.printPreviewBarItem5.SuperTip = superToolTip26;
+            this.printPreviewBarItem5.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem5_ItemClick);
             // 
             // printPreviewBarItem6
             // 
@@ -1140,6 +1198,7 @@
             superToolTip27.Items.Add(toolTipItem27);
             superToolTip27.MaxWidth = 210;
             this.printPreviewBarItem6.SuperTip = superToolTip27;
+            this.printPreviewBarItem6.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem6_ItemClick);
             // 
             // printPreviewBarItem7
             // 
@@ -1157,6 +1216,7 @@
             superToolTip28.Items.Add(toolTipItem28);
             superToolTip28.MaxWidth = 210;
             this.printPreviewBarItem7.SuperTip = superToolTip28;
+            this.printPreviewBarItem7.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem7_ItemClick);
             // 
             // printPreviewBarItem8
             // 
@@ -1174,6 +1234,7 @@
             superToolTip29.Items.Add(toolTipItem29);
             superToolTip29.MaxWidth = 210;
             this.printPreviewBarItem8.SuperTip = superToolTip29;
+            this.printPreviewBarItem8.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem8_ItemClick);
             // 
             // printPreviewBarItem10
             // 
@@ -1191,6 +1252,7 @@
             superToolTip30.Items.Add(toolTipItem30);
             superToolTip30.MaxWidth = 210;
             this.printPreviewBarItem10.SuperTip = superToolTip30;
+            this.printPreviewBarItem10.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem10_ItemClick);
             // 
             // printPreviewBarItem11
             // 
@@ -1208,6 +1270,7 @@
             superToolTip31.Items.Add(toolTipItem31);
             superToolTip31.MaxWidth = 210;
             this.printPreviewBarItem11.SuperTip = superToolTip31;
+            this.printPreviewBarItem11.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem11_ItemClick);
             // 
             // printPreviewBarItem12
             // 
@@ -1226,6 +1289,7 @@
             superToolTip32.Items.Add(toolTipItem32);
             superToolTip32.MaxWidth = 210;
             this.printPreviewBarItem12.SuperTip = superToolTip32;
+            this.printPreviewBarItem12.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem12_ItemClick);
             // 
             // printPreviewBarItem13
             // 
@@ -1247,6 +1311,7 @@
             superToolTip33.Items.Add(toolTipItem33);
             superToolTip33.MaxWidth = 210;
             this.printPreviewBarItem13.SuperTip = superToolTip33;
+            this.printPreviewBarItem13.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem13_ItemClick);
             // 
             // printPreviewBarItem14
             // 
@@ -1267,6 +1332,7 @@
             superToolTip34.Items.Add(toolTipItem34);
             superToolTip34.MaxWidth = 210;
             this.printPreviewBarItem14.SuperTip = superToolTip34;
+            this.printPreviewBarItem14.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem14_ItemClick);
             // 
             // printPreviewBarItem15
             // 
@@ -1289,6 +1355,7 @@
             superToolTip35.Items.Add(toolTipItem35);
             superToolTip35.MaxWidth = 210;
             this.printPreviewBarItem15.SuperTip = superToolTip35;
+            this.printPreviewBarItem15.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem15_ItemClick);
             // 
             // printPreviewBarItem16
             // 
@@ -1306,6 +1373,7 @@
             superToolTip36.Items.Add(toolTipItem36);
             superToolTip36.MaxWidth = 210;
             this.printPreviewBarItem16.SuperTip = superToolTip36;
+            this.printPreviewBarItem16.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem16_ItemClick);
             // 
             // printPreviewBarItem17
             // 
@@ -1323,6 +1391,7 @@
             superToolTip37.Items.Add(toolTipItem37);
             superToolTip37.MaxWidth = 210;
             this.printPreviewBarItem17.SuperTip = superToolTip37;
+            this.printPreviewBarItem17.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem17_ItemClick);
             // 
             // printPreviewBarItem18
             // 
@@ -1341,6 +1410,7 @@
             superToolTip38.Items.Add(toolTipItem38);
             superToolTip38.MaxWidth = 210;
             this.printPreviewBarItem18.SuperTip = superToolTip38;
+            this.printPreviewBarItem18.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem18_ItemClick);
             // 
             // printPreviewBarItem19
             // 
@@ -1358,6 +1428,7 @@
             superToolTip39.Items.Add(toolTipItem39);
             superToolTip39.MaxWidth = 210;
             this.printPreviewBarItem19.SuperTip = superToolTip39;
+            this.printPreviewBarItem19.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem19_ItemClick);
             // 
             // printPreviewBarItem20
             // 
@@ -1375,6 +1446,7 @@
             superToolTip40.Items.Add(toolTipItem40);
             superToolTip40.MaxWidth = 210;
             this.printPreviewBarItem20.SuperTip = superToolTip40;
+            this.printPreviewBarItem20.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem20_ItemClick);
             // 
             // printPreviewBarItem21
             // 
@@ -1392,6 +1464,7 @@
             superToolTip41.Items.Add(toolTipItem41);
             superToolTip41.MaxWidth = 210;
             this.printPreviewBarItem21.SuperTip = superToolTip41;
+            this.printPreviewBarItem21.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem21_ItemClick);
             // 
             // printPreviewBarItem22
             // 
@@ -1409,6 +1482,7 @@
             superToolTip42.Items.Add(toolTipItem42);
             superToolTip42.MaxWidth = 210;
             this.printPreviewBarItem22.SuperTip = superToolTip42;
+            this.printPreviewBarItem22.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem22_ItemClick);
             // 
             // printPreviewBarItem23
             // 
@@ -1427,6 +1501,7 @@
             superToolTip43.Items.Add(toolTipItem43);
             superToolTip43.MaxWidth = 210;
             this.printPreviewBarItem23.SuperTip = superToolTip43;
+            this.printPreviewBarItem23.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem23_ItemClick);
             // 
             // printPreviewBarItem24
             // 
@@ -1445,6 +1520,7 @@
             superToolTip44.Items.Add(toolTipItem44);
             superToolTip44.MaxWidth = 210;
             this.printPreviewBarItem24.SuperTip = superToolTip44;
+            this.printPreviewBarItem24.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem24_ItemClick);
             // 
             // printPreviewBarItem25
             // 
@@ -1463,6 +1539,7 @@
             superToolTip45.Items.Add(toolTipItem45);
             superToolTip45.MaxWidth = 210;
             this.printPreviewBarItem25.SuperTip = superToolTip45;
+            this.printPreviewBarItem25.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem25_ItemClick);
             // 
             // printPreviewBarItem26
             // 
@@ -1482,6 +1559,7 @@
             superToolTip46.Items.Add(toolTipItem46);
             superToolTip46.MaxWidth = 210;
             this.printPreviewBarItem26.SuperTip = superToolTip46;
+            this.printPreviewBarItem26.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem26_ItemClick);
             // 
             // printPreviewBarItem27
             // 
@@ -1501,6 +1579,7 @@
             superToolTip47.Items.Add(toolTipItem47);
             superToolTip47.MaxWidth = 210;
             this.printPreviewBarItem27.SuperTip = superToolTip47;
+            this.printPreviewBarItem27.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem27_ItemClick);
             // 
             // printPreviewBarItem28
             // 
@@ -1518,6 +1597,7 @@
             superToolTip48.Items.Add(toolTipItem48);
             superToolTip48.MaxWidth = 210;
             this.printPreviewBarItem28.SuperTip = superToolTip48;
+            this.printPreviewBarItem28.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem28_ItemClick);
             // 
             // printPreviewBarItem29
             // 
@@ -1536,6 +1616,7 @@
             superToolTip49.Items.Add(toolTipItem49);
             superToolTip49.MaxWidth = 210;
             this.printPreviewBarItem29.SuperTip = superToolTip49;
+            this.printPreviewBarItem29.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem29_ItemClick);
             // 
             // printPreviewBarItem30
             // 
@@ -1554,6 +1635,7 @@
             superToolTip50.Items.Add(toolTipItem50);
             superToolTip50.MaxWidth = 210;
             this.printPreviewBarItem30.SuperTip = superToolTip50;
+            this.printPreviewBarItem30.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem30_ItemClick);
             // 
             // printPreviewBarItem50
             // 
@@ -1573,6 +1655,7 @@
             superToolTip51.Items.Add(toolTipItem51);
             superToolTip51.MaxWidth = 210;
             this.printPreviewBarItem50.SuperTip = superToolTip51;
+            this.printPreviewBarItem50.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem50_ItemClick);
             // 
             // printPreviewBarItem51
             // 
@@ -1590,6 +1673,7 @@
             superToolTip52.Items.Add(toolTipItem52);
             superToolTip52.MaxWidth = 210;
             this.printPreviewBarItem51.SuperTip = superToolTip52;
+            this.printPreviewBarItem51.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem51_ItemClick);
             // 
             // printPreviewBarItem52
             // 
@@ -1607,6 +1691,7 @@
             superToolTip53.Items.Add(toolTipItem53);
             superToolTip53.MaxWidth = 210;
             this.printPreviewBarItem52.SuperTip = superToolTip53;
+            this.printPreviewBarItem52.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem52_ItemClick);
             // 
             // printPreviewBarItem53
             // 
@@ -1624,6 +1709,7 @@
             superToolTip54.Items.Add(toolTipItem54);
             superToolTip54.MaxWidth = 210;
             this.printPreviewBarItem53.SuperTip = superToolTip54;
+            this.printPreviewBarItem53.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem53_ItemClick);
             // 
             // printPreviewBarItem54
             // 
@@ -1641,6 +1727,7 @@
             superToolTip55.Items.Add(toolTipItem55);
             superToolTip55.MaxWidth = 210;
             this.printPreviewBarItem54.SuperTip = superToolTip55;
+            this.printPreviewBarItem54.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem54_ItemClick);
             // 
             // printPreviewBarItem55
             // 
@@ -1658,6 +1745,7 @@
             superToolTip56.Items.Add(toolTipItem56);
             superToolTip56.MaxWidth = 210;
             this.printPreviewBarItem55.SuperTip = superToolTip56;
+            this.printPreviewBarItem55.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem55_ItemClick);
             // 
             // printPreviewBarItem56
             // 
@@ -1675,6 +1763,7 @@
             superToolTip57.Items.Add(toolTipItem57);
             superToolTip57.MaxWidth = 210;
             this.printPreviewBarItem56.SuperTip = superToolTip57;
+            this.printPreviewBarItem56.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem56_ItemClick);
             // 
             // printPreviewBarItem57
             // 
@@ -1692,6 +1781,7 @@
             superToolTip58.Items.Add(toolTipItem58);
             superToolTip58.MaxWidth = 210;
             this.printPreviewBarItem57.SuperTip = superToolTip58;
+            this.printPreviewBarItem57.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem57_ItemClick);
             // 
             // printPreviewBarItem58
             // 
@@ -1709,6 +1799,7 @@
             superToolTip59.Items.Add(toolTipItem59);
             superToolTip59.MaxWidth = 210;
             this.printPreviewBarItem58.SuperTip = superToolTip59;
+            this.printPreviewBarItem58.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem58_ItemClick);
             // 
             // printPreviewBarItem59
             // 
@@ -1726,6 +1817,7 @@
             superToolTip60.Items.Add(toolTipItem60);
             superToolTip60.MaxWidth = 210;
             this.printPreviewBarItem59.SuperTip = superToolTip60;
+            this.printPreviewBarItem59.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem59_ItemClick);
             // 
             // printPreviewBarItem60
             // 
@@ -1743,6 +1835,7 @@
             superToolTip61.Items.Add(toolTipItem61);
             superToolTip61.MaxWidth = 210;
             this.printPreviewBarItem60.SuperTip = superToolTip61;
+            this.printPreviewBarItem60.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem60_ItemClick);
             // 
             // printPreviewBarItem61
             // 
@@ -1760,6 +1853,7 @@
             superToolTip62.Items.Add(toolTipItem62);
             superToolTip62.MaxWidth = 210;
             this.printPreviewBarItem61.SuperTip = superToolTip62;
+            this.printPreviewBarItem61.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem61_ItemClick);
             // 
             // printPreviewBarItem62
             // 
@@ -1777,6 +1871,7 @@
             superToolTip63.Items.Add(toolTipItem63);
             superToolTip63.MaxWidth = 210;
             this.printPreviewBarItem62.SuperTip = superToolTip63;
+            this.printPreviewBarItem62.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem62_ItemClick);
             // 
             // printPreviewBarItem63
             // 
@@ -1794,6 +1889,7 @@
             superToolTip64.Items.Add(toolTipItem64);
             superToolTip64.MaxWidth = 210;
             this.printPreviewBarItem63.SuperTip = superToolTip64;
+            this.printPreviewBarItem63.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem63_ItemClick);
             // 
             // printPreviewBarItem64
             // 
@@ -1811,6 +1907,7 @@
             superToolTip65.Items.Add(toolTipItem65);
             superToolTip65.MaxWidth = 210;
             this.printPreviewBarItem64.SuperTip = superToolTip65;
+            this.printPreviewBarItem64.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem64_ItemClick);
             // 
             // printPreviewBarItem65
             // 
@@ -1828,6 +1925,7 @@
             superToolTip66.Items.Add(toolTipItem66);
             superToolTip66.MaxWidth = 210;
             this.printPreviewBarItem65.SuperTip = superToolTip66;
+            this.printPreviewBarItem65.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem65_ItemClick);
             // 
             // printPreviewBarItem66
             // 
@@ -1845,6 +1943,7 @@
             superToolTip67.Items.Add(toolTipItem67);
             superToolTip67.MaxWidth = 210;
             this.printPreviewBarItem66.SuperTip = superToolTip67;
+            this.printPreviewBarItem66.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem66_ItemClick);
             // 
             // printPreviewBarItem67
             // 
@@ -1862,6 +1961,7 @@
             superToolTip68.Items.Add(toolTipItem68);
             superToolTip68.MaxWidth = 210;
             this.printPreviewBarItem67.SuperTip = superToolTip68;
+            this.printPreviewBarItem67.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem67_ItemClick);
             // 
             // printPreviewBarItem68
             // 
@@ -1879,6 +1979,7 @@
             superToolTip69.Items.Add(toolTipItem69);
             superToolTip69.MaxWidth = 210;
             this.printPreviewBarItem68.SuperTip = superToolTip69;
+            this.printPreviewBarItem68.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem68_ItemClick);
             // 
             // printPreviewBarItem69
             // 
@@ -1896,6 +1997,7 @@
             superToolTip70.Items.Add(toolTipItem70);
             superToolTip70.MaxWidth = 210;
             this.printPreviewBarItem69.SuperTip = superToolTip70;
+            this.printPreviewBarItem69.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem69_ItemClick);
             // 
             // printPreviewBarItem70
             // 
@@ -1913,6 +2015,7 @@
             superToolTip71.Items.Add(toolTipItem71);
             superToolTip71.MaxWidth = 210;
             this.printPreviewBarItem70.SuperTip = superToolTip71;
+            this.printPreviewBarItem70.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem70_ItemClick);
             // 
             // printPreviewBarItem71
             // 
@@ -1930,29 +2033,7 @@
             superToolTip72.Items.Add(toolTipItem72);
             superToolTip72.MaxWidth = 210;
             this.printPreviewBarItem71.SuperTip = superToolTip72;
-            // 
-            // printPreviewStaticItem1
-            // 
-            this.printPreviewStaticItem1.Caption = "Nothing";
-            this.printPreviewStaticItem1.Id = 52;
-            this.printPreviewStaticItem1.LeftIndent = 1;
-            this.printPreviewStaticItem1.Name = "printPreviewStaticItem1";
-            this.printPreviewStaticItem1.RightIndent = 1;
-            this.printPreviewStaticItem1.Type = "PageOfPages";
-            // 
-            // repositoryItemProgressBar1
-            // 
-            this.repositoryItemProgressBar1.Name = "repositoryItemProgressBar1";
-            // 
-            // progressBarEditItem1
-            // 
-            this.progressBarEditItem1.ContextSpecifier = this.documentViewerRibbonController1;
-            this.progressBarEditItem1.Edit = this.repositoryItemProgressBar1;
-            this.progressBarEditItem1.EditHeight = 12;
-            this.progressBarEditItem1.EditWidth = 150;
-            this.progressBarEditItem1.Id = 53;
-            this.progressBarEditItem1.Name = "progressBarEditItem1";
-            this.progressBarEditItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.printPreviewBarItem71.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem71_ItemClick);
             // 
             // printPreviewBarItem72
             // 
@@ -1964,6 +2045,7 @@
             this.printPreviewBarItem72.Id = 54;
             this.printPreviewBarItem72.Name = "printPreviewBarItem72";
             this.printPreviewBarItem72.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.printPreviewBarItem72.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewBarItem72_ItemClick);
             // 
             // printPreviewStaticItem2
             // 
@@ -1973,14 +2055,7 @@
             this.printPreviewStaticItem2.Id = 55;
             this.printPreviewStaticItem2.Name = "printPreviewStaticItem2";
             this.printPreviewStaticItem2.Type = "ZoomFactorText";
-            // 
-            // repositoryItemZoomTrackBar1
-            // 
-            this.repositoryItemZoomTrackBar1.Alignment = DevExpress.Utils.VertAlignment.Center;
-            this.repositoryItemZoomTrackBar1.AllowFocused = false;
-            this.repositoryItemZoomTrackBar1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.repositoryItemZoomTrackBar1.Maximum = 180;
-            this.repositoryItemZoomTrackBar1.Name = "repositoryItemZoomTrackBar1";
+            this.printPreviewStaticItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewStaticItem2_ItemClick);
             // 
             // zoomTrackBarEditItem1
             // 
@@ -1995,6 +2070,15 @@
             this.zoomTrackBarEditItem1.Range = new int[] {
         10,
         500};
+            this.zoomTrackBarEditItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.zoomTrackBarEditItem1_ItemClick);
+            // 
+            // repositoryItemZoomTrackBar1
+            // 
+            this.repositoryItemZoomTrackBar1.Alignment = DevExpress.Utils.VertAlignment.Center;
+            this.repositoryItemZoomTrackBar1.AllowFocused = false;
+            this.repositoryItemZoomTrackBar1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.repositoryItemZoomTrackBar1.Maximum = 180;
+            this.repositoryItemZoomTrackBar1.Name = "repositoryItemZoomTrackBar1";
             // 
             // ribbonPage1
             // 
@@ -2122,6 +2206,10 @@
             this.printPreviewRibbonPageGroup16.Name = "printPreviewRibbonPageGroup16";
             this.printPreviewRibbonPageGroup16.Text = "Close";
             // 
+            // repositoryItemProgressBar1
+            // 
+            this.repositoryItemProgressBar1.Name = "repositoryItemProgressBar1";
+            // 
             // Frm_Report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2145,8 +2233,8 @@
             this.groupControl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.documentViewerRibbonController1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemProgressBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemZoomTrackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemProgressBar1)).EndInit();
             this.ResumeLayout(false);
 
         }
