@@ -56,6 +56,7 @@
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -200,6 +201,7 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.simpleButton5);
             this.groupBox2.Controls.Add(this.ToDate);
             this.groupBox2.Controls.Add(this.FromDate);
             this.groupBox2.Controls.Add(this.label2);
@@ -217,10 +219,10 @@
             this.ToDate.CustomFormat = "dd/MM/yyyy  *  tt mm:hh     ";
             this.ToDate.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ToDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.ToDate.Location = new System.Drawing.Point(225, 24);
+            this.ToDate.Location = new System.Drawing.Point(314, 23);
             this.ToDate.Name = "ToDate";
             this.ToDate.ShowUpDown = true;
-            this.ToDate.Size = new System.Drawing.Size(287, 32);
+            this.ToDate.Size = new System.Drawing.Size(279, 32);
             this.ToDate.TabIndex = 211;
             // 
             // FromDate
@@ -229,10 +231,10 @@
             this.FromDate.CustomFormat = "dd/MM/yyyy  *  tt mm:hh     ";
             this.FromDate.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FromDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FromDate.Location = new System.Drawing.Point(597, 24);
+            this.FromDate.Location = new System.Drawing.Point(652, 24);
             this.FromDate.Name = "FromDate";
             this.FromDate.ShowUpDown = true;
-            this.FromDate.Size = new System.Drawing.Size(287, 32);
+            this.FromDate.Size = new System.Drawing.Size(278, 32);
             this.FromDate.TabIndex = 210;
             // 
             // label2
@@ -242,7 +244,7 @@
             this.label2.BackColor = System.Drawing.Color.Black;
             this.label2.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(901, 24);
+            this.label2.Location = new System.Drawing.Point(934, 24);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 32);
             this.label2.TabIndex = 208;
@@ -255,7 +257,7 @@
             this.label3.BackColor = System.Drawing.Color.Black;
             this.label3.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(518, 24);
+            this.label3.Location = new System.Drawing.Point(595, 23);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 32);
             this.label3.TabIndex = 209;
@@ -275,9 +277,9 @@
             this.simpleButton1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.simpleButton1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(39, 19);
+            this.simpleButton1.Location = new System.Drawing.Point(194, 21);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(150, 37);
+            this.simpleButton1.Size = new System.Drawing.Size(115, 37);
             this.simpleButton1.TabIndex = 114;
             this.simpleButton1.Text = "بحث";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -408,7 +410,7 @@
             this.button1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.button1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.button1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("button1.ImageOptions.Image")));
-            this.button1.Location = new System.Drawing.Point(15, 480);
+            this.button1.Location = new System.Drawing.Point(55, 484);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(144, 33);
             this.button1.TabIndex = 243;
@@ -429,7 +431,7 @@
             this.btn_print.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btn_print.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.btn_print.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_print.ImageOptions.Image")));
-            this.btn_print.Location = new System.Drawing.Point(179, 482);
+            this.btn_print.Location = new System.Drawing.Point(209, 485);
             this.btn_print.Name = "btn_print";
             this.btn_print.Size = new System.Drawing.Size(144, 33);
             this.btn_print.TabIndex = 242;
@@ -450,7 +452,7 @@
             this.btn_save.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btn_save.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.btn_save.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_save.ImageOptions.Image")));
-            this.btn_save.Location = new System.Drawing.Point(384, 483);
+            this.btn_save.Location = new System.Drawing.Point(381, 487);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(143, 32);
             this.btn_save.TabIndex = 241;
@@ -492,7 +494,7 @@
             this.simpleButton3.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.simpleButton3.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
-            this.simpleButton3.Location = new System.Drawing.Point(771, 488);
+            this.simpleButton3.Location = new System.Drawing.Point(731, 487);
             this.simpleButton3.Name = "simpleButton3";
             this.simpleButton3.Size = new System.Drawing.Size(178, 31);
             this.simpleButton3.TabIndex = 244;
@@ -513,12 +515,33 @@
             this.simpleButton4.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.simpleButton4.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.simpleButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
-            this.simpleButton4.Location = new System.Drawing.Point(568, 488);
+            this.simpleButton4.Location = new System.Drawing.Point(550, 486);
             this.simpleButton4.Name = "simpleButton4";
             this.simpleButton4.Size = new System.Drawing.Size(158, 32);
             this.simpleButton4.TabIndex = 245;
             this.simpleButton4.Text = " تعديل الفاتورة";
             this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
+            // 
+            // simpleButton5
+            // 
+            this.simpleButton5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.simpleButton5.Appearance.BackColor = System.Drawing.Color.Black;
+            this.simpleButton5.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton5.Appearance.ForeColor = System.Drawing.Color.White;
+            this.simpleButton5.Appearance.Options.UseBackColor = true;
+            this.simpleButton5.Appearance.Options.UseFont = true;
+            this.simpleButton5.Appearance.Options.UseForeColor = true;
+            this.simpleButton5.Appearance.Options.UseTextOptions = true;
+            this.simpleButton5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.simpleButton5.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.simpleButton5.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.simpleButton5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
+            this.simpleButton5.Location = new System.Drawing.Point(7, 21);
+            this.simpleButton5.Name = "simpleButton5";
+            this.simpleButton5.Size = new System.Drawing.Size(177, 37);
+            this.simpleButton5.TabIndex = 246;
+            this.simpleButton5.Text = "طباعة التقرير بالكامل";
+            this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click_1);
             // 
             // Frm_ManagmentTickets
             // 
@@ -583,5 +606,6 @@
         private System.Windows.Forms.RadioButton rdb_pay;
         private System.Windows.Forms.RadioButton rdb_all;
         private System.Windows.Forms.GroupBox groupBox5;
+        private DevExpress.XtraEditors.SimpleButton simpleButton5;
     }
 }

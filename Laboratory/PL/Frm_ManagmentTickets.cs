@@ -732,5 +732,15 @@ namespace Laboratory.PL
         {
 
         }
+
+        private void simpleButton5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void simpleButton5_Click_1(object sender, EventArgs e)
+        {
+            gridControl1.ShowRibbonPrintPreview();
+        }
     }
 }
