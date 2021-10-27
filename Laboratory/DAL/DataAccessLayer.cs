@@ -21,11 +21,11 @@ namespace Laboratory.DAL
             //  con = new SqlConnection(@"server =.; database=DB_A54A03_LastLaboratory;integrated security=true");
        //     con = new SqlConnection("Data Source=sql5046.site4now.net; database=DB_A54A03_TestLaboratory;User Id=DB_A54A03_TestLaboratory_admin;Password=Titonasser1994;MultipleActiveResultSets=True;Max Pool Size=200;");
 
-            // con = new SqlConnection("Data Source=172.28.114.41,1334; database=DB_A54A03_TestLaboratory;User Id=DB_A54A03_TestLaboratory_admin;Password=Titonasser1994;MultipleActiveResultSets=True;Max Pool Size=200;");
+             con = new SqlConnection("Data Source=172.28.114.41,1334; database=DB_A54A03_TestLaboratory;User Id=DB_A54A03_TestLaboratory_admin;Password=Titonasser1994;MultipleActiveResultSets=True;Max Pool Size=200;");
 
             //last
-
-           con = new SqlConnection("Data Source=sql5033.site4now.net; database=DB_A54A03_LastLaboratory;User Id=  DB_A54A03_LastLaboratory_admin;Password=Titonasser1994;MultipleActiveResultSets=True;Max Pool Size=200;");
+            
+       /* جاما */ // con = new SqlConnection("Data Source=sql5033.site4now.net; database=DB_A54A03_LastLaboratory;User Id=  DB_A54A03_LastLaboratory_admin;Password=Titonasser1994;MultipleActiveResultSets=True;Max Pool Size=200;");
 
 
         }
