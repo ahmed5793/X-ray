@@ -161,6 +161,7 @@ namespace Laboratory.PL
             {
 
                 MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
             }
 
         }
@@ -212,22 +213,27 @@ namespace Laboratory.PL
                     {
                         dt2.Clear();
                         dt2 = Doctors.SelectDateCountDoctorOut(Convert.ToInt32(dt.Rows[i]["Doc_ID"]), DateFrom.Value, DateTo.Value);
-                        for (int y = 0; y < dt2.Rows.Count; y++)
-                        {
-                            int COUNT = Convert.ToInt32(dt2.Rows[y][0]);
-                            decimal VALUE = Convert.ToDecimal(dt2.Rows[y][1]);
+                      
+                       
+                           
+                            for (int y = 0; y < dt2.Rows.Count; y++)
+                            {
+                                int COUNT = dt2.Rows[y][0]!=null? Convert.ToInt32(dt2.Rows[y][0]):0;
+                                decimal VALUE =dt2.Rows[y][1]!=null ? Convert.ToDecimal(dt2.Rows[y][1]):0;
 
 
-                            dt.Rows[i]["COUNT"] = COUNT;
-                            dt.Rows[i]["VALUE"] = Math.Round(VALUE, 2);
+                                dt.Rows[i]["COUNT"] = COUNT;
+                                dt.Rows[i]["VALUE"] = Math.Round(VALUE, 2);
 
 
 
 
-                        }
+                            }
+                        
 
 
                     }
+                  
                     gridControl1.DataSource = dt;
                   
                     gridView1.Columns["Doc_ID"].Visible = false;
@@ -238,6 +244,7 @@ namespace Laboratory.PL
             {
 
                 MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
             }
 
 

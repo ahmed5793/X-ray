@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tourism Company", "Tourism Company\Tourism Company.csproj", "{74851FC0-1252-4FB9-82A8-BE0A9B264204}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		DEBUG18|Any CPU = DEBUG18|Any CPU
+		Debug19|Any CPU = Debug19|Any CPU
+		Debug20|Any CPU = Debug20|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{74851FC0-1252-4FB9-82A8-BE0A9B264204}.DEBUG18|Any CPU.ActiveCfg = DEBUG18|Any CPU
+		{74851FC0-1252-4FB9-82A8-BE0A9B264204}.DEBUG18|Any CPU.Build.0 = DEBUG18|Any CPU
+		{74851FC0-1252-4FB9-82A8-BE0A9B264204}.Debug19|Any CPU.ActiveCfg = Debug19|Any CPU
+		{74851FC0-1252-4FB9-82A8-BE0A9B264204}.Debug19|Any CPU.Build.0 = Debug19|Any CPU
+		{74851FC0-1252-4FB9-82A8-BE0A9B264204}.Debug20|Any CPU.ActiveCfg = Debug20|Any CPU
+		{74851FC0-1252-4FB9-82A8-BE0A9B264204}.Debug20|Any CPU.Build.0 = Debug20|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8B43B453-B9FA-4F2D-927D-760D5EEEAC70}
+	EndGlobalSection
+EndGlobal
