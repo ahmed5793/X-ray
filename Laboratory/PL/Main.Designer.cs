@@ -194,6 +194,7 @@
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barAndDockingController1)).BeginInit();
@@ -329,9 +330,10 @@
             this.barHeaderItem32,
             this.barHeaderItem33,
             this.barButtonItem8,
-            this.Btn_Return});
+            this.Btn_Return,
+            this.barButtonItem9});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 153;
+            this.ribbon.MaxItemId = 154;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.basic_information,
@@ -875,7 +877,7 @@
             // 
             this.barStaticItem10.Caption = "تقرير بالمرتجعات";
             this.barStaticItem10.Id = 131;
-            this.barStaticItem10.ItemAppearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barStaticItem10.ItemAppearance.Normal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.barStaticItem10.ItemAppearance.Normal.Options.UseFont = true;
             this.barStaticItem10.Name = "barStaticItem10";
             this.barStaticItem10.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barStaticItem10_ItemClick);
@@ -1120,7 +1122,7 @@
             this.barStaticItem3.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
             this.barStaticItem3.Caption = "Date Today";
             this.barStaticItem3.Id = 101;
-            this.barStaticItem3.ItemAppearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barStaticItem3.ItemAppearance.Normal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.barStaticItem3.ItemAppearance.Normal.Options.UseFont = true;
             this.barStaticItem3.Name = "barStaticItem3";
             // 
@@ -1138,7 +1140,7 @@
             this.barStaticItem5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barStaticItem5.ImageOptions.Image")));
             this.barStaticItem5.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barStaticItem5.ImageOptions.LargeImage")));
             this.barStaticItem5.ItemAppearance.Normal.BackColor = System.Drawing.Color.Black;
-            this.barStaticItem5.ItemAppearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barStaticItem5.ItemAppearance.Normal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.barStaticItem5.ItemAppearance.Normal.ForeColor = System.Drawing.Color.Yellow;
             this.barStaticItem5.ItemAppearance.Normal.Options.UseBackColor = true;
             this.barStaticItem5.ItemAppearance.Normal.Options.UseFont = true;
@@ -1152,10 +1154,10 @@
             this.barStaticItem6.Id = 104;
             this.barStaticItem6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barStaticItem6.ImageOptions.Image")));
             this.barStaticItem6.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barStaticItem6.ImageOptions.LargeImage")));
-            this.barStaticItem6.ItemAppearance.Disabled.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barStaticItem6.ItemAppearance.Disabled.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.barStaticItem6.ItemAppearance.Disabled.Options.UseFont = true;
             this.barStaticItem6.ItemAppearance.Normal.BackColor = System.Drawing.Color.Lime;
-            this.barStaticItem6.ItemAppearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barStaticItem6.ItemAppearance.Normal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.barStaticItem6.ItemAppearance.Normal.ForeColor = System.Drawing.Color.Black;
             this.barStaticItem6.ItemAppearance.Normal.Options.UseBackColor = true;
             this.barStaticItem6.ItemAppearance.Normal.Options.UseFont = true;
@@ -1167,7 +1169,7 @@
             // 
             this.barStaticItem7.Caption = "barStaticItem7";
             this.barStaticItem7.Id = 105;
-            this.barStaticItem7.ItemAppearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barStaticItem7.ItemAppearance.Normal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.barStaticItem7.ItemAppearance.Normal.Options.UseFont = true;
             this.barStaticItem7.Name = "barStaticItem7";
             this.barStaticItem7.TextAlignment = System.Drawing.StringAlignment.Center;
@@ -1328,13 +1330,13 @@
             this.barStaticItem8.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barStaticItem8.ImageOptions.Image")));
             this.barStaticItem8.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barStaticItem8.ImageOptions.LargeImage")));
             this.barStaticItem8.ItemAppearance.Disabled.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.barStaticItem8.ItemAppearance.Disabled.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barStaticItem8.ItemAppearance.Disabled.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.barStaticItem8.ItemAppearance.Disabled.ForeColor = System.Drawing.Color.Black;
             this.barStaticItem8.ItemAppearance.Disabled.Options.UseBackColor = true;
             this.barStaticItem8.ItemAppearance.Disabled.Options.UseFont = true;
             this.barStaticItem8.ItemAppearance.Disabled.Options.UseForeColor = true;
             this.barStaticItem8.ItemAppearance.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.barStaticItem8.ItemAppearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barStaticItem8.ItemAppearance.Normal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.barStaticItem8.ItemAppearance.Normal.ForeColor = System.Drawing.Color.Black;
             this.barStaticItem8.ItemAppearance.Normal.Options.UseBackColor = true;
             this.barStaticItem8.ItemAppearance.Normal.Options.UseFont = true;
@@ -1347,7 +1349,7 @@
             this.barStaticItem9.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
             this.barStaticItem9.Caption = "barStaticItem9";
             this.barStaticItem9.Id = 128;
-            this.barStaticItem9.ItemAppearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barStaticItem9.ItemAppearance.Normal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.barStaticItem9.ItemAppearance.Normal.Options.UseFont = true;
             this.barStaticItem9.Name = "barStaticItem9";
             // 
@@ -1454,7 +1456,7 @@
             // 
             // basic_information
             // 
-            this.basic_information.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.basic_information.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.basic_information.Appearance.ForeColor = System.Drawing.Color.White;
             this.basic_information.Appearance.Options.UseFont = true;
             this.basic_information.Appearance.Options.UseForeColor = true;
@@ -1489,6 +1491,7 @@
             // 
             this.ribbonPageGroup20.ItemLinks.Add(this.Download_finger);
             this.ribbonPageGroup20.ItemLinks.Add(this.report_finger);
+            this.ribbonPageGroup20.ItemLinks.Add(this.barButtonItem9);
             this.ribbonPageGroup20.Name = "ribbonPageGroup20";
             this.ribbonPageGroup20.Text = "ادارة التحكم في اجهزة البصمة";
             // 
@@ -1500,7 +1503,7 @@
             // 
             // ribbonPage2
             // 
-            this.ribbonPage2.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ribbonPage2.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ribbonPage2.Appearance.ForeColor = System.Drawing.Color.White;
             this.ribbonPage2.Appearance.Options.UseFont = true;
             this.ribbonPage2.Appearance.Options.UseForeColor = true;
@@ -1540,7 +1543,7 @@
             // 
             // ribbonPage3
             // 
-            this.ribbonPage3.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ribbonPage3.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ribbonPage3.Appearance.ForeColor = System.Drawing.Color.White;
             this.ribbonPage3.Appearance.Options.UseFont = true;
             this.ribbonPage3.Appearance.Options.UseForeColor = true;
@@ -1571,7 +1574,7 @@
             // 
             // ribbonPage4
             // 
-            this.ribbonPage4.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ribbonPage4.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ribbonPage4.Appearance.ForeColor = System.Drawing.Color.White;
             this.ribbonPage4.Appearance.Options.UseFont = true;
             this.ribbonPage4.Appearance.Options.UseForeColor = true;
@@ -1612,7 +1615,7 @@
             // 
             // ribbonPage5
             // 
-            this.ribbonPage5.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F);
+            this.ribbonPage5.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ribbonPage5.Appearance.ForeColor = System.Drawing.Color.White;
             this.ribbonPage5.Appearance.Options.UseFont = true;
             this.ribbonPage5.Appearance.Options.UseForeColor = true;
@@ -1666,7 +1669,7 @@
             // 
             // ribbonPage6
             // 
-            this.ribbonPage6.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F);
+            this.ribbonPage6.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ribbonPage6.Appearance.ForeColor = System.Drawing.Color.White;
             this.ribbonPage6.Appearance.Options.UseFont = true;
             this.ribbonPage6.Appearance.Options.UseForeColor = true;
@@ -1795,7 +1798,7 @@
             // simpleButton3
             // 
             this.simpleButton3.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton3.Appearance.ForeColor = System.Drawing.Color.White;
             this.simpleButton3.Appearance.Options.UseBackColor = true;
             this.simpleButton3.Appearance.Options.UseFont = true;
@@ -1847,6 +1850,13 @@
             this.accordionControlElement3.HeaderControl = this.simpleButton3;
             this.accordionControlElement3.Name = "accordionControlElement3";
             this.accordionControlElement3.Text = "Element3";
+            // 
+            // barButtonItem9
+            // 
+            this.barButtonItem9.Caption = "barButtonItem9";
+            this.barButtonItem9.Id = 153;
+            this.barButtonItem9.Name = "barButtonItem9";
+            this.barButtonItem9.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem9_ItemClick_2);
             // 
             // Main
             // 
@@ -2048,5 +2058,6 @@
         private DevExpress.XtraBars.BarHeaderItem barHeaderItem33;
         private DevExpress.XtraBars.BarButtonItem barButtonItem8;
         public DevExpress.XtraBars.BarButtonItem Btn_Return;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem9;
     }
 }

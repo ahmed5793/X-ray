@@ -108,6 +108,33 @@
   <PropertyGroup>
     <SignManifests>false</SignManifests>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == '64|x86'">
+    <OutputPath>bin\x86\64\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu_UI_v1.4, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -241,15 +268,11 @@
     <Compile Include="BL\Employee.cs" />
     <Compile Include="BL\Finger.cs" />
     <Compile Include="BL\Installment.cs" />
-    <Compile Include="PL\Frm_TeckeitReturn.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_TeckeitReturn.cs" />
     <Compile Include="PL\Frm_TeckeitReturn.Designer.cs">
       <DependentUpon>Frm_TeckeitReturn.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Report_DiscountTicket.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Report_DiscountTicket.cs" />
     <Compile Include="PL\Report_DiscountTicket.Designer.cs">
       <DependentUpon>Report_DiscountTicket.cs</DependentUpon>
     </Compile>
@@ -261,63 +284,43 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="PL\FingerPrint.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\FingerPrint.cs" />
     <Compile Include="PL\FingerPrint.Designer.cs">
       <DependentUpon>FingerPrint.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_AddAllOutDoctor.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_AddAllOutDoctor.cs" />
     <Compile Include="PL\Frm_AddAllOutDoctor.Designer.cs">
       <DependentUpon>Frm_AddAllOutDoctor.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_AddEmployeeShift.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_AddEmployeeShift.cs" />
     <Compile Include="PL\Frm_AddEmployeeShift.Designer.cs">
       <DependentUpon>Frm_AddEmployeeShift.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_AddTechnicalShift.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_AddTechnicalShift.cs" />
     <Compile Include="PL\Frm_AddTechnicalShift.Designer.cs">
       <DependentUpon>Frm_AddTechnicalShift.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_AllCasesDoctorOfCenter.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_AllCasesDoctorOfCenter.cs" />
     <Compile Include="PL\Frm_AllCasesDoctorOfCenter.Designer.cs">
       <DependentUpon>Frm_AllCasesDoctorOfCenter.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_AllCasesOFOutDoctor.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_AllCasesOFOutDoctor.cs" />
     <Compile Include="PL\Frm_AllCasesOFOutDoctor.Designer.cs">
       <DependentUpon>Frm_AllCasesOFOutDoctor.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_AllPAyCompsny.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_AllPAyCompsny.cs" />
     <Compile Include="PL\Frm_AllPAyCompsny.Designer.cs">
       <DependentUpon>Frm_AllPAyCompsny.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_AllXrayTechnical.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_AllXrayTechnical.cs" />
     <Compile Include="PL\Frm_AllXrayTechnical.Designer.cs">
       <DependentUpon>Frm_AllXrayTechnical.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_checkTimeUserName.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_checkTimeUserName.cs" />
     <Compile Include="PL\Frm_checkTimeUserName.Designer.cs">
       <DependentUpon>Frm_checkTimeUserName.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_CompanyItemXray.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_CompanyItemXray.cs" />
     <Compile Include="PL\Frm_CompanyItemXray.Designer.cs">
       <DependentUpon>Frm_CompanyItemXray.cs</DependentUpon>
     </Compile>
@@ -333,633 +336,423 @@
     <Compile Include="BL\Tickets.cs" />
     <Compile Include="BL\Users.cs" />
     <Compile Include="DAL\DataAccessLayer.cs" />
-    <Compile Include="PL\Add_Product.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Add_Product.cs" />
     <Compile Include="PL\Add_Product.Designer.cs">
       <DependentUpon>Add_Product.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Add_StoreProduct.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Add_StoreProduct.cs" />
     <Compile Include="PL\Add_StoreProduct.Designer.cs">
       <DependentUpon>Add_StoreProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_AddEmployeeBranch.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_AddEmployeeBranch.cs" />
     <Compile Include="PL\Frm_AddEmployeeBranch.Designer.cs">
       <DependentUpon>Frm_AddEmployeeBranch.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\frm_AddStock.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\frm_AddStock.cs" />
     <Compile Include="PL\frm_AddStock.designer.cs">
       <DependentUpon>frm_AddStock.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\frm_AddStockMoney.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\frm_AddStockMoney.cs" />
     <Compile Include="PL\frm_AddStockMoney.designer.cs">
       <DependentUpon>frm_AddStockMoney.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_AddStore.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_AddStore.cs" />
     <Compile Include="PL\Frm_AddStore.Designer.cs">
       <DependentUpon>Frm_AddStore.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_Branches.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_Branches.cs" />
     <Compile Include="PL\Frm_Branches.Designer.cs">
       <DependentUpon>Frm_Branches.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_CategoryXRaya.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_CategoryXRaya.cs" />
     <Compile Include="PL\Frm_CategoryXRaya.designer.cs">
       <DependentUpon>Frm_CategoryXRaya.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_Company.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_Company.cs" />
     <Compile Include="PL\Frm_Company.designer.cs">
       <DependentUpon>Frm_Company.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_Customer.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_Customer.cs" />
     <Compile Include="PL\Frm_Customer.designer.cs">
       <DependentUpon>Frm_Customer.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_DataRevaltionTicket.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_DataRevaltionTicket.cs" />
     <Compile Include="PL\Frm_DataRevaltionTicket.Designer.cs">
       <DependentUpon>Frm_DataRevaltionTicket.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_DebitCompany.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_DebitCompany.cs" />
     <Compile Include="PL\Frm_DebitCompany.Designer.cs">
       <DependentUpon>Frm_DebitCompany.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_DebitCustomer.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_DebitCustomer.cs" />
     <Compile Include="PL\Frm_DebitCustomer.Designer.cs">
       <DependentUpon>Frm_DebitCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_DebitSuppliers.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_DebitSuppliers.cs" />
     <Compile Include="PL\Frm_DebitSuppliers.Designer.cs">
       <DependentUpon>Frm_DebitSuppliers.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_DetailsCompay.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_DetailsCompay.cs" />
     <Compile Include="PL\Frm_DetailsCompay.designer.cs">
       <DependentUpon>Frm_DetailsCompay.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_DetailsPhone.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_DetailsPhone.cs" />
     <Compile Include="PL\Frm_DetailsPhone.Designer.cs">
       <DependentUpon>Frm_DetailsPhone.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_DetailsTickets.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_DetailsTickets.cs" />
     <Compile Include="PL\Frm_DetailsTickets.Designer.cs">
       <DependentUpon>Frm_DetailsTickets.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_Doctor.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_Doctor.cs" />
     <Compile Include="PL\Frm_Doctor.designer.cs">
       <DependentUpon>Frm_Doctor.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_DoctorJob.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_DoctorJob.cs" />
     <Compile Include="PL\Frm_DoctorJob.designer.cs">
       <DependentUpon>Frm_DoctorJob.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_DoctorOfCenter.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_DoctorOfCenter.cs" />
     <Compile Include="PL\Frm_DoctorOfCenter.Designer.cs">
       <DependentUpon>Frm_DoctorOfCenter.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_EditDiscount.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_EditDiscount.cs" />
     <Compile Include="PL\Frm_EditDiscount.Designer.cs">
       <DependentUpon>Frm_EditDiscount.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_EditPrice.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_EditPrice.cs" />
     <Compile Include="PL\Frm_EditPrice.Designer.cs">
       <DependentUpon>Frm_EditPrice.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_EditQantity.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_EditQantity.cs" />
     <Compile Include="PL\Frm_EditQantity.Designer.cs">
       <DependentUpon>Frm_EditQantity.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_EditTeckit.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_EditTeckit.cs" />
     <Compile Include="PL\Frm_EditTeckit.Designer.cs">
       <DependentUpon>Frm_EditTeckit.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_Employee.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_Employee.cs" />
     <Compile Include="PL\Frm_Employee.designer.cs">
       <DependentUpon>Frm_Employee.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_EmployeeDiscount.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_EmployeeDiscount.cs" />
     <Compile Include="PL\Frm_EmployeeDiscount.Designer.cs">
       <DependentUpon>Frm_EmployeeDiscount.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_EmpSarf.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_EmpSarf.cs" />
     <Compile Include="PL\Frm_EmpSarf.Designer.cs">
       <DependentUpon>Frm_EmpSarf.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_ExportExell.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_ExportExell.cs" />
     <Compile Include="PL\Frm_ExportExell.Designer.cs">
       <DependentUpon>Frm_ExportExell.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_ExportItemToCompany.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_ExportItemToCompany.cs" />
     <Compile Include="PL\Frm_ExportItemToCompany.Designer.cs">
       <DependentUpon>Frm_ExportItemToCompany.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_GenderJob.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_GenderJob.cs" />
     <Compile Include="PL\Frm_GenderJob.Designer.cs">
       <DependentUpon>Frm_GenderJob.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_installment.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_installment.cs" />
     <Compile Include="PL\Frm_installment.Designer.cs">
       <DependentUpon>Frm_installment.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_installmentType.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_installmentType.cs" />
     <Compile Include="PL\Frm_installmentType.Designer.cs">
       <DependentUpon>Frm_installmentType.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_ItemsXRaya.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_ItemsXRaya.cs" />
     <Compile Include="PL\Frm_ItemsXRaya.designer.cs">
       <DependentUpon>Frm_ItemsXRaya.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_LoginMain.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_LoginMain.cs" />
     <Compile Include="PL\Frm_LoginMain.designer.cs">
       <DependentUpon>Frm_LoginMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_Main.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_Main.cs" />
     <Compile Include="PL\Frm_Main.Designer.cs">
       <DependentUpon>Frm_Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_ManagmentTickets.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_ManagmentTickets.cs" />
     <Compile Include="PL\Frm_ManagmentTickets.Designer.cs">
       <DependentUpon>Frm_ManagmentTickets.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_ManagmentTicketsReturn.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_ManagmentTicketsReturn.cs" />
     <Compile Include="PL\Frm_ManagmentTicketsReturn.Designer.cs">
       <DependentUpon>Frm_ManagmentTicketsReturn.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_ManagmentUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_ManagmentUser.cs" />
     <Compile Include="PL\Frm_ManagmentUser.Designer.cs">
       <DependentUpon>Frm_ManagmentUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_Mansgmentinstallment.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_Mansgmentinstallment.cs" />
     <Compile Include="PL\Frm_Mansgmentinstallment.Designer.cs">
       <DependentUpon>Frm_Mansgmentinstallment.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_Masrofat.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_Masrofat.cs" />
     <Compile Include="PL\Frm_Masrofat.designer.cs">
       <DependentUpon>Frm_Masrofat.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_MasrofGender.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_MasrofGender.cs" />
     <Compile Include="PL\Frm_MasrofGender.designer.cs">
       <DependentUpon>Frm_MasrofGender.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_NoticeAmountCustomer.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_NoticeAmountCustomer.cs" />
     <Compile Include="PL\Frm_NoticeAmountCustomer.Designer.cs">
       <DependentUpon>Frm_NoticeAmountCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_Order.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_Order.cs" />
     <Compile Include="PL\Frm_Order.Designer.cs">
       <DependentUpon>Frm_Order.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_PayClient.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_PayClient.cs" />
     <Compile Include="PL\Frm_PayClient.Designer.cs">
       <DependentUpon>Frm_PayClient.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_PayCompany.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_PayCompany.cs" />
     <Compile Include="PL\Frm_PayCompany.Designer.cs">
       <DependentUpon>Frm_PayCompany.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_PayCompanyMoney.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_PayCompanyMoney.cs" />
     <Compile Include="PL\Frm_PayCompanyMoney.Designer.cs">
       <DependentUpon>Frm_PayCompanyMoney.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_Payouts.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_Payouts.cs" />
     <Compile Include="PL\Frm_Payouts.designer.cs">
       <DependentUpon>Frm_Payouts.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_PaySuppliers.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_PaySuppliers.cs" />
     <Compile Include="PL\Frm_PaySuppliers.Designer.cs">
       <DependentUpon>Frm_PaySuppliers.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_PermessionMoneyNotice.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_PermessionMoneyNotice.cs" />
     <Compile Include="PL\Frm_PermessionMoneyNotice.Designer.cs">
       <DependentUpon>Frm_PermessionMoneyNotice.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_ProductList.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_ProductList.cs" />
     <Compile Include="PL\Frm_ProductList.Designer.cs">
       <DependentUpon>Frm_ProductList.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_ProductMinimum.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_ProductMinimum.cs" />
     <Compile Include="PL\Frm_ProductMinimum.Designer.cs">
       <DependentUpon>Frm_ProductMinimum.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_Purshasing.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_Purshasing.cs" />
     <Compile Include="PL\Frm_Purshasing.Designer.cs">
       <DependentUpon>Frm_Purshasing.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\frm_RceiveMoney.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\frm_RceiveMoney.cs" />
     <Compile Include="PL\frm_RceiveMoney.Designer.cs">
       <DependentUpon>frm_RceiveMoney.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_ReportAllPayOfCustomer.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_ReportAllPayOfCustomer.cs" />
     <Compile Include="PL\Frm_ReportAllPayOfCustomer.Designer.cs">
       <DependentUpon>Frm_ReportAllPayOfCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_ReportDoctor.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_ReportDoctor.cs" />
     <Compile Include="PL\Frm_ReportDoctor.Designer.cs">
       <DependentUpon>Frm_ReportDoctor.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_ReportDoctorOfCenterData.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_ReportDoctorOfCenterData.cs" />
     <Compile Include="PL\Frm_ReportDoctorOfCenterData.Designer.cs">
       <DependentUpon>Frm_ReportDoctorOfCenterData.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_ReportEmployeeData.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_ReportEmployeeData.cs" />
     <Compile Include="PL\Frm_ReportEmployeeData.Designer.cs">
       <DependentUpon>Frm_ReportEmployeeData.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_ReportEmployeeDiscount.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_ReportEmployeeDiscount.cs" />
     <Compile Include="PL\Frm_ReportEmployeeDiscount.Designer.cs">
       <DependentUpon>Frm_ReportEmployeeDiscount.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_ReportEmployeeSalary.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_ReportEmployeeSalary.cs" />
     <Compile Include="PL\Frm_ReportEmployeeSalary.Designer.cs">
       <DependentUpon>Frm_ReportEmployeeSalary.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_ReportEmployeeSalf.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_ReportEmployeeSalf.cs" />
     <Compile Include="PL\Frm_ReportEmployeeSalf.Designer.cs">
       <DependentUpon>Frm_ReportEmployeeSalf.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_ReportEmployeeShift.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_ReportEmployeeShift.cs" />
     <Compile Include="PL\Frm_ReportEmployeeShift.Designer.cs">
       <DependentUpon>Frm_ReportEmployeeShift.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_reportFinger.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_reportFinger.cs" />
     <Compile Include="PL\Frm_reportFinger.Designer.cs">
       <DependentUpon>Frm_reportFinger.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\frm_ReportFingerExcell.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\frm_ReportFingerExcell.cs" />
     <Compile Include="PL\frm_ReportFingerExcell.Designer.cs">
       <DependentUpon>frm_ReportFingerExcell.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_ReportInsertStock.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_ReportInsertStock.cs" />
     <Compile Include="PL\Frm_ReportInsertStock.Designer.cs">
       <DependentUpon>Frm_ReportInsertStock.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_ReportMasrofat.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_ReportMasrofat.cs" />
     <Compile Include="PL\Frm_ReportMasrofat.Designer.cs">
       <DependentUpon>Frm_ReportMasrofat.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_ReportOfDoctorOfCenter.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_ReportOfDoctorOfCenter.cs" />
     <Compile Include="PL\Frm_ReportOfDoctorOfCenter.Designer.cs">
       <DependentUpon>Frm_ReportOfDoctorOfCenter.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_ReportOutDoctorData.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_ReportOutDoctorData.cs" />
     <Compile Include="PL\Frm_ReportOutDoctorData.Designer.cs">
       <DependentUpon>Frm_ReportOutDoctorData.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_ReportPAyCustomerCompany.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_ReportPAyCustomerCompany.cs" />
     <Compile Include="PL\Frm_ReportPAyCustomerCompany.Designer.cs">
       <DependentUpon>Frm_ReportPAyCustomerCompany.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_ReportPaySuppliers.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_ReportPaySuppliers.cs" />
     <Compile Include="PL\Frm_ReportPaySuppliers.Designer.cs">
       <DependentUpon>Frm_ReportPaySuppliers.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_ReportPurshasesInvoice.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_ReportPurshasesInvoice.cs" />
     <Compile Include="PL\Frm_ReportPurshasesInvoice.Designer.cs">
       <DependentUpon>Frm_ReportPurshasesInvoice.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_ReportReturnSuppliers.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_ReportReturnSuppliers.cs" />
     <Compile Include="PL\Frm_ReportReturnSuppliers.Designer.cs">
       <DependentUpon>Frm_ReportReturnSuppliers.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_ReportSelectOrder.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_ReportSelectOrder.cs" />
     <Compile Include="PL\Frm_ReportSelectOrder.Designer.cs">
       <DependentUpon>Frm_ReportSelectOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_ReportStockPull.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_ReportStockPull.cs" />
     <Compile Include="PL\Frm_ReportStockPull.Designer.cs">
       <DependentUpon>Frm_ReportStockPull.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_ReportTechnicalData.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_ReportTechnicalData.cs" />
     <Compile Include="PL\Frm_ReportTechnicalData.Designer.cs">
       <DependentUpon>Frm_ReportTechnicalData.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_ReportTechnicalShift.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_ReportTechnicalShift.cs" />
     <Compile Include="PL\Frm_ReportTechnicalShift.Designer.cs">
       <DependentUpon>Frm_ReportTechnicalShift.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_ReportTransfairProduct.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_ReportTransfairProduct.cs" />
     <Compile Include="PL\Frm_ReportTransfairProduct.Designer.cs">
       <DependentUpon>Frm_ReportTransfairProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_ReportTransfairStock.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_ReportTransfairStock.cs" />
     <Compile Include="PL\Frm_ReportTransfairStock.Designer.cs">
       <DependentUpon>Frm_ReportTransfairStock.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_ReportTransferForCompany.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_ReportTransferForCompany.cs" />
     <Compile Include="PL\Frm_ReportTransferForCompany.Designer.cs">
       <DependentUpon>Frm_ReportTransferForCompany.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_ReturnSupplier.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_ReturnSupplier.cs" />
     <Compile Include="PL\Frm_ReturnSupplier.Designer.cs">
       <DependentUpon>Frm_ReturnSupplier.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_Revenue.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_Revenue.cs" />
     <Compile Include="PL\Frm_Revenue.Designer.cs">
       <DependentUpon>Frm_Revenue.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_Salf.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_Salf.cs" />
     <Compile Include="PL\Frm_Salf.Designer.cs">
       <DependentUpon>Frm_Salf.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_SearchSupplierInformation.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_SearchSupplierInformation.cs" />
     <Compile Include="PL\Frm_SearchSupplierInformation.Designer.cs">
       <DependentUpon>Frm_SearchSupplierInformation.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_Search_Ticket.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_Search_Ticket.cs" />
     <Compile Include="PL\Frm_Search_Ticket.Designer.cs">
       <DependentUpon>Frm_Search_Ticket.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\frm_SerielNumber.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\frm_SerielNumber.cs" />
     <Compile Include="PL\frm_SerielNumber.Designer.cs">
       <DependentUpon>frm_SerielNumber.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_Settings.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_Settings.cs" />
     <Compile Include="PL\Frm_Settings.Designer.cs">
       <DependentUpon>Frm_Settings.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_ShowOldReturn.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_ShowOldReturn.cs" />
     <Compile Include="PL\Frm_ShowOldReturn.Designer.cs">
       <DependentUpon>Frm_ShowOldReturn.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_StockPull.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_StockPull.cs" />
     <Compile Include="PL\Frm_StockPull.designer.cs">
       <DependentUpon>Frm_StockPull.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_StockTransfair.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_StockTransfair.cs" />
     <Compile Include="PL\Frm_StockTransfair.designer.cs">
       <DependentUpon>Frm_StockTransfair.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_Suppliers.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_Suppliers.cs" />
     <Compile Include="PL\Frm_Suppliers.Designer.cs">
       <DependentUpon>Frm_Suppliers.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_Techincal.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_Techincal.cs" />
     <Compile Include="PL\Frm_Techincal.Designer.cs">
       <DependentUpon>Frm_Techincal.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_TechnicalShiftPrice.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_TechnicalShiftPrice.cs" />
     <Compile Include="PL\Frm_TechnicalShiftPrice.Designer.cs">
       <DependentUpon>Frm_TechnicalShiftPrice.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_Tickets.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_Tickets.cs" />
     <Compile Include="PL\Frm_Tickets.Designer.cs">
       <DependentUpon>Frm_Tickets.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_timeWork.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_timeWork.cs" />
     <Compile Include="PL\Frm_timeWork.Designer.cs">
       <DependentUpon>Frm_timeWork.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_TransferToCompany.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_TransferToCompany.cs" />
     <Compile Include="PL\Frm_TransferToCompany.Designer.cs">
       <DependentUpon>Frm_TransferToCompany.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_TransProductList.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_TransProductList.cs" />
     <Compile Include="PL\Frm_TransProductList.Designer.cs">
       <DependentUpon>Frm_TransProductList.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_Report_Technical.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_Report_Technical.cs" />
     <Compile Include="PL\Frm_Report_Technical.Designer.cs">
       <DependentUpon>Frm_Report_Technical.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_TypeShift.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_TypeShift.cs" />
     <Compile Include="PL\Frm_TypeShift.Designer.cs">
       <DependentUpon>Frm_TypeShift.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Frm_UpdateItemPrice.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Frm_UpdateItemPrice.cs" />
     <Compile Include="PL\Frm_UpdateItemPrice.Designer.cs">
       <DependentUpon>Frm_UpdateItemPrice.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Main.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Main.cs" />
     <Compile Include="PL\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\PrintSetting.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\PrintSetting.cs" />
     <Compile Include="PL\PrintSetting.Designer.cs">
       <DependentUpon>PrintSetting.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Report_StoreProduct.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Report_StoreProduct.cs" />
     <Compile Include="PL\Report_StoreProduct.Designer.cs">
       <DependentUpon>Report_StoreProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\SplashScreen1.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\SplashScreen1.cs" />
     <Compile Include="PL\SplashScreen1.Designer.cs">
       <DependentUpon>SplashScreen1.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Tranfair_product.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Tranfair_product.cs" />
     <Compile Include="PL\Tranfair_product.Designer.cs">
       <DependentUpon>Tranfair_product.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\UpdateSalf.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\UpdateSalf.cs" />
     <Compile Include="PL\UpdateSalf.Designer.cs">
       <DependentUpon>UpdateSalf.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Validate_Users.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\Validate_Users.cs" />
     <Compile Include="PL\Validate_Users.Designer.cs">
       <DependentUpon>Validate_Users.cs</DependentUpon>
     </Compile>
@@ -973,9 +766,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetMoveStock.xsd</DependentUpon>
     </Compile>
-    <Compile Include="RPT\Frm_ReportMoveStock.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="RPT\Frm_ReportMoveStock.cs" />
     <Compile Include="RPT\Frm_ReportMoveStock.Designer.cs">
       <DependentUpon>Frm_ReportMoveStock.cs</DependentUpon>
     </Compile>
@@ -983,7 +774,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CrystalReport2.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="RPT\Order\DataSetFingerExcelDay.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -1011,9 +801,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetOrderPay.xsd</DependentUpon>
     </Compile>
-    <Compile Include="frm_SingelReport.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frm_SingelReport.cs" />
     <Compile Include="frm_SingelReport.Designer.cs">
       <DependentUpon>frm_SingelReport.cs</DependentUpon>
     </Compile>
@@ -1025,27 +813,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetRevenue.xsd</DependentUpon>
     </Compile>
-    <Compile Include="RPT\Order\Frm_Report.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="RPT\Order\Frm_Report.cs" />
     <Compile Include="RPT\Order\Frm_Report.Designer.cs">
       <DependentUpon>Frm_Report.cs</DependentUpon>
     </Compile>
-    <Compile Include="RPT\Order\Rpt_DevRevenue.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="RPT\Order\Rpt_DevRevenue.cs" />
     <Compile Include="RPT\Order\Rpt_DevRevenue.Designer.cs">
       <DependentUpon>Rpt_DevRevenue.cs</DependentUpon>
     </Compile>
-    <Compile Include="RPT\Order\RPT_FingerExcellDay.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="RPT\Order\RPT_FingerExcellDay.cs" />
     <Compile Include="RPT\Order\RPT_FingerExcellDay.Designer.cs">
       <DependentUpon>RPT_FingerExcellDay.cs</DependentUpon>
     </Compile>
-    <Compile Include="RPT\Order\RPT_FingeerExcell.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="RPT\Order\RPT_FingeerExcell.cs" />
     <Compile Include="RPT\Order\RPT_FingeerExcell.Designer.cs">
       <DependentUpon>RPT_FingeerExcell.cs</DependentUpon>
     </Compile>
@@ -1053,41 +833,30 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Rpt_Revenue.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="RPT\Order\Rpt_RevenueDetalis.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Rpt_RevenueDetalis.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="RPT\Order\Rpt_RevenueDetalisAllBranch.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Rpt_RevenueDetalisAllBranch.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="RPT\Order\Rpt_TeckietCompanyOrder.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="RPT\Order\Rpt_TeckietCompanyOrder.cs" />
     <Compile Include="RPT\Order\Rpt_TeckietCompanyOrder.designer.cs">
       <DependentUpon>Rpt_TeckietCompanyOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="RPT\Order\Rpt_OrderPay.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="RPT\Order\Rpt_OrderPay.cs" />
     <Compile Include="RPT\Order\Rpt_OrderPay.designer.cs">
       <DependentUpon>Rpt_OrderPay.cs</DependentUpon>
     </Compile>
-    <Compile Include="RPT\Order\XtraReportRevenueDetailsAllBranch.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="RPT\Order\XtraReportRevenueDetailsAllBranch.cs" />
     <Compile Include="RPT\Order\XtraReportRevenueDetailsAllBranch.Designer.cs">
       <DependentUpon>XtraReportRevenueDetailsAllBranch.cs</DependentUpon>
     </Compile>
-    <Compile Include="RPT\Rpt_MoveStock.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="RPT\Rpt_MoveStock.cs" />
     <Compile Include="RPT\Rpt_MoveStock.Designer.cs">
       <DependentUpon>Rpt_MoveStock.cs</DependentUpon>
     </Compile>
@@ -1617,17 +1386,6 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <COMReference Include="zkemkeeper">
-      <Guid>{FE9DED34-E159-408E-8490-B720A5E632C7}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
-    </COMReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="CardiacMonitor_icon-icons.com_75042.ico" />

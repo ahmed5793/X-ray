@@ -1433,6 +1433,12 @@ namespace Laboratory.PL
         {
            
         }
+
+        private void barButtonItem9_ItemClick_2(object sender, ItemClickEventArgs e)
+        {
+            FingerPrint frn = new FingerPrint();
+            frn.ShowDialog();
+        }
     }
 }
 	
